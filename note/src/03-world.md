@@ -1,6 +1,6 @@
 # The UBL example world
 
-This section describes the world as decided on 16 November 2026. The
+This section describes the world as decided on 18 November 2026. The
 examples are being brought into line with it, and until that work is done
 some of them still differ from what is written here; where they do,
 `analysis/worklist.md` and `analysis/worklist-decisions.md` say what is to be
@@ -43,12 +43,15 @@ The tax schemes are identified with UN/EDIFACT 5153 codes: `VAT`, `STT`
 (state or provincial sales tax), `CUD` (customs duty) and `IMP` (import
 tax). Because 5153 has no code for a national sales tax, Bayvarra levies
 its sales tax at state level, which also gives the state in its addresses a
-purpose. Bayvarra has two states, Upland State inland and Coastal State
-around Lumeport, and a federal territory, the Northern Territory, on the
-thinly populated north coast, where the gas plant stands. The territory
-levies its own rate of the same sales tax: 4 %, against 5 % in Upland State
-and 6.5 % in Coastal State. Which state a place is in follows from its place
-on the map.
+purpose. Bayvarra has two states and a federal territory. Upland State lies
+inland, on the plateau in the west, with Marrowdale and the wheat land;
+Coastal State lies along the east coast, with Lumeport and Larkmouth. The
+Northern Territory, on the low north coast, is thinly populated: the fishing
+village of Gullhaven, where the gas plant stands, two fishing hamlets
+(Shinglebeck and Ploverness) and a few sheep stations, on land used only for
+grazing. The territory levies its own rate of the same sales tax: 4 %,
+against 5 % in Upland State and 6.5 % in Coastal State. Which state a place
+is in follows from its place on the map.
 
 XU, XB and XL are ISO 3166-1 user-assigned codes, which exist for exactly
 this purpose; each follows the initial of its country's name. ISO 4217 has
@@ -70,11 +73,15 @@ use their own code lists in the second phase of validation, so the world
 has its own: copies of the UBL 2.5 default lists, unchanged, with the
 world's codes added and their own identification.
 
-In the south-west the land border between Urvania and Bayvarra follows
-the river: all land south of it is Urvania. The river rises in the
-hills west of Ferrano and winds east to the sea, widening into an estuary at
-its mouth below Lumeport. The sawmill stands on its north bank in Upland
-State, by the water and its forests, as sawmills traditionally do.
+The land border between Urvania and Bayvarra has two parts. From the border
+crossing, where the largest river of the plateau joins the main river, it
+follows the main river down to the sea, and then the middle line of the
+estuary: all land south of the river is Urvania. North of the crossing it
+follows the watershed, so that Urvania keeps the whole valley of that
+plateau river. The boundary convention of about 1857 drew it so (see
+"History"). The sawmill stands in Marrowdale, in Upland State, and buys its
+logs from the Upland State Forest, a managed forest on the slope where the
+upland falls towards the town, about 50 km north of the river.
 
 Each country also has an address format (`address` in `world/countries.json`),
 which fixes the lines of an address: first the optional lines (attention,
@@ -125,17 +132,84 @@ one of them is the period to pay (see "Money and payment").
 
 ## History
 
-Urvania was an Italian territory and then under British rule. The British
-kept the Italian place and street names, and Urvania kept a continental
-cast in its institutions, among them its value added tax and its
-Italian-style bank codes. It became independent in 1962, bilingual in
-Urvanian and English, and built a protected economy around state mining,
-state energy and its own manufacturers: Ferrano Energy dates from 1949,
-Serravona Mining from 1958, and Valdara Industries, the bench maker, was
-founded in the year of independence. Bayvarra's settler economy is older
-than Urvania's state; the Bank of Lumeport was founded in 1903. When
-Bayvarra and the island were settled, and how they became independent, is
-not yet settled.
+Before the Europeans came, the Urvanians farmed the wet valley of the main
+river and the hills to the west of it. Their town, Ruldraz, grew where the
+valleys meet and where the river stops being navigable, below the rapids.
+It is the town the Italians later called Ferrano, and its old town still
+carries the Urvanian name.
+
+The first Europeans to reach it came from Tuscany. In reality, Grand Duke
+Ferdinando I of Tuscany sent the Thornton expedition from Livorno to Guiana
+and the Amazon in 1608–09, the only official attempt of an Italian state
+before unification at a colony overseas; a second voyage, with settlers from
+Livorno and Lucca, was cancelled when the Grand Duke died in 1609. In the
+world that second voyage sailed, in 1609–10, and reached Ruldraz. This is
+invented. A small Tuscan trading post lasted some decades and faded in the
+18th century. It left Ferrano's quarter Borgo Toscano and the chapel of San
+Ranieri del Guado, by an old ford of the upper river.
+
+In the 1820s British settlers landed at Larkmouth, at the mouth of the
+largest river of the east coast: a sheltered harbour, with fresh water and
+dry grassland behind it. They spread over the dry east and the plateau as
+graziers and wheat farmers. Larkmouth was their first town and first
+capital, and Bayvarra keeps the landing as Settlers' Day. The settlers held
+the coast through their own company, without the Crown: Britain's Colonial
+Office avoided new colonies in those years for what they cost. About 1840
+the company founded Lumeport at the narrows of the estuary, on the shore of
+the bay, where a brook gave fresh water; the narrows command the entry to
+the river.
+
+About 1840 the Sardinian corvette *Euridice* came from Sardinia's naval
+station on the Río de la Plata. Because Lumeport was a company town and the
+Crown had no sovereignty over the river, the warship of a friendly kingdom
+could sail past it up the river to Ruldraz. The Urvanian rulers signed a
+treaty of protection with Sardinia, which revived the old Tuscan claim, and
+Forte Euridice was built about 1842 in the angle of the main river and the
+largest river of the plateau. The station on the Plata and the corvette are
+real: Sardinia kept a naval station and a consulate general there from 1837,
+with some ten thousand subjects, most of them Ligurians, and the *Euridice*
+was stationed there in 1836–38 before it sailed up the Amazon. Its voyage to
+the world is invented; Italy's first real possession was Assab on the Red
+Sea, bought by the Rubattino shipping company in 1869 and taken over by the
+state in 1882. Ligurian fishermen from the Plata settled under the
+protectorate at Marina Ligure on the south coast.
+
+The treaty made Britain act. It annexed the coast and the dry east, as
+cheaply as it could, and Lumeport, which commands the river, became the
+colony's seat and, as the river trade grew, its capital in Larkmouth's
+place. Britain did not take the valley: Sardinia protected it, it was
+densely peopled and would have been costly to conquer, and the settlers
+wanted the grazing land, not the valley. A real parallel is New Zealand, which Britain annexed in
+1840 only under pressure, among it the fear of a French settlement at
+Akaroa, and where it then let the French settlers keep their settlement.
+Sardinia fought beside Britain and France in the Crimean War (1855) and sat
+at the Congress of Paris (1856). A boundary convention of about 1857 then set
+the border along the main river below the confluence and along the watershed
+north of it, with free navigation of the river to the sea, the principle the
+Final Act of the Congress of Vienna laid down for international rivers in
+1815 and the Berlin Act extended in 1885. The crossing has been known by the
+fort ever since. In 1861 the Kingdom of Italy inherited the protectorate,
+and Urvania stayed an Italian territory until 1941.
+
+In the late 19th century Bayvarra built its railway, and villages grew at its
+stations. On Lisavu, English settlers laid out cotton estates in the 19th
+century on the dry north-eastern plain, at Lintwell and Bollworth, and named
+the island's capital Port Wrenfield. In 1941, in the Second World War,
+British forces took Urvania and put it under British administration, which
+stayed after Italy renounced its colonies in the peace treaty of 1947. (In
+the real treaty, article 23 renounces Italy's possessions in Africa; in the
+world the renunciation also covers Urvania.) The British kept the Italian
+place and street names, and Urvania kept a continental cast in its
+institutions, among them its value added tax and its Italian-style bank
+codes. It became independent in 1962, bilingual in Urvanian and English, and
+built a protected economy around state mining, state energy and its own
+manufacturers: Ferrano Energy dates from 1949, Serravona Mining from 1958,
+and Valdara Industries, the bench maker, was founded in the year of
+independence. Bayvarra's settler economy is older than Urvania's state; the
+Bank of Lumeport was founded in 1903. The exact dates of the first landing,
+the treaty and the boundary convention are not yet settled, and neither is
+when the island was first settled or how Bayvarra and the island became
+independent.
 
 In 1974 Bayvarra and Lisavu signed the **Lumeport Agreement**. The island's
 cotton entered Bayvarra free of duty, a regular shipping service linked the
@@ -187,60 +261,142 @@ each party's day and month of founding are not yet settled.
 
 ## Geography
 
-The mainland is a land of about 560 by 390 km in the middle of the South
-Atlantic, astride the Mid-Atlantic Ridge, far from every continent: Urvania
-in the west, inland, and Bayvarra in the east, on the coast, with Lumeport on
-its east shore facing the open ocean. Urvania has about 84,000 km² and
-Bayvarra about 77,000 km², each about the size of Portugal. Lisavu is an
-isolated volcanic island about 1,000 km further east, about 110 by 85 km, a
-little smaller than Cyprus, standing on a seamount of the Walvis Ridge.
+The mainland is a land of about 550 by 411 km and about 159,000 km² in the
+middle of the South Atlantic, astride the Mid-Atlantic Ridge, far from every
+continent. Urvania holds the west and all the land south of the main river,
+about 90,500 km², about the size of Portugal; Bayvarra most of the plateau,
+the dry east and the north coast, about 70,100 km². Lumeport stands on the east
+coast, on a bay at the mouth of the estuary. Lisavu is an isolated volcanic
+island about 1,080 km east of Lumeport, about 116 by 85 km and
+7,100 km², smaller than Cyprus, standing on a seamount of the Walvis Ridge.
 
 The position is a current base: the mainland centred on 30.0° South, 15.0°
 West, from about 28.2° to 31.8° South and from 17.9° to 12.0° West (Ferrano at
-about 30.6° South, 15.8° West; Lumeport at about 31.1° South, 13.4° West), and
-the island around 33.0° South, 2.65° West. Both lie
+about 30.7° South, 15.5° West; Lumeport at about 31.0° South, 13.3° West), and
+the island around 33.0° South, 2.65° West, with Selanu at about 2.2° West
+(`geography` in `world/countries.json`). Both lie
 on the high seas, outside every country's waters and claims; the nearest real
-land is Tristan da Cunha, about 630 km south of the mainland's south coast. It
+land is Tristan da Cunha, about 600 km south of the mainland's south coast. It
 is still to be confirmed against a nautical chart that both areas lie outside
 the 200-nautical-mile zones of the nearest islands and that no extended-shelf
 claim or sea-bed licence reaches them. The mainland lies at the latitude of
 southern Brazil and South Africa, and the island, at 33° South, is warm
 enough for cotton.
 
-From the mainland the first sight of the island is a wall of cliffs. Its
-west coast, the side towards the mainland, faces the prevailing westerly
-wind and the ocean swell and has no landing. Ships round a cape to the lee
-side, the east coast, where the port, the airport, the town of Selanu and the
-cotton fields lie, in the island's rain shadow: high ground on the windward
-side catches the rain, and the lee side is drier and sunnier. An island cut
-off like this has to work for its ties, which is the story of the Lumeport
-Agreement and of the shipping line founded to serve it.
+The land is made from its geology (`tools/terrain.py` makes
+`world/terrain.json` from `world/terrain-inputs.json`): a volcanic massif in
+Urvania's north-west, which reaches about 1,920 m, and a rift valley 15 to
+18 km wide, where the Mid-Atlantic Ridge runs under the land. The main river
+rises on the massif at about 1,510 m and runs 470 km through the rift valley
+to the sea. It is the trunk of one large basin of about 53,000 km², a third
+of the mainland, and the larger branch at every confluence; its tributaries
+come from the massif, the plateau and the southern hills. Just above Ferrano
+it falls through rapids, from about 124 to 91 m in about 12 km, which end
+navigation: the barges work below them. From the border crossing the river
+forms the border, and some 45 km above Lumeport it becomes a drowned estuary,
+which narrows at Lumeport before it opens into the bay. Urvania's western
+hills and the land south of the river are green and hilly, wet from the
+westerly winds; east of them the plateau of Upland State falls to the dry
+east of Coastal State, grazing and wheat land, and the north coast is low.
 
-The land rises from the low north coast and the east coast to Urvania's
-north-west, where the hills around Serravona reach about 1,300 m. The river
-rises there, at about 900 m, runs south-east past Ferrano, forms the border
-below the crossing and reaches the sea at Lumeport. Upland State lies higher
-than Coastal State.
+From the mainland the first sight of the island is its west coast: cliffs of
+about 115 to 435 m, with two bays where the land has slid into the sea,
+stacks and islets, and flats of landslide debris at their foot. That side
+faces the prevailing westerly wind and the ocean swell and has no port. The
+island is an eroded volcano, which rises to about 1,810 m some 25 km inland
+from the west coast and falls to the east. Ships round a cape to the lee
+side, where the port and the town of Selanu lie on a sheltered bay of the
+east coast, the airport on the plain about 10 km to the north, and the cotton
+on a plain of about 690 km² in the dry north-east, in the island's rain
+shadow: the high ground on the windward side catches the rain, and the lee
+side is drier and sunnier. An island cut off like this has to work for its
+ties, which is the story of the Lumeport Agreement and of the shipping line
+founded to serve it.
 
-The towns and their people:
+The countries have about 2.1 million people: Urvania about 1.2 million,
+Bayvarra about 800,000 and Lisavu about 60,000. Each capital holds about half
+its country's people. The towns:
 
 | Town | Country | What it is | People | Built-up area |
 |---|---|---|---|---|
-| Ferrano | Urvania | the capital; works, rail hub | about 600,000 | about 15 km across |
-| Lumeport | Bayvarra | the capital and the port city | about 400,000 | about 12 km |
-| Marrowdale | Bayvarra, Upland State | inland town: distributor, sawmill, works | about 40,000 | about 5 km |
+| Ferrano (*Ruldraz*) | Urvania | the capital; works, rail hub, river port below the rapids | about 600,000 | about 15 km across |
+| Lumeport | Bayvarra, Coastal State | the capital and the port city, at the estuary's narrows | about 400,000 | about 12 km |
+| Larkmouth | Bayvarra, Coastal State | the first landing and first capital; a wool and meat port at the mouth of the east river | about 80,000 | about 6 km |
+| Marrowdale | Bayvarra, Upland State | inland town: distributor, sawmill, furniture maker, works | about 40,000 | about 5 km |
 | Selanu (Port Wrenfield) | Lisavu | the island's capital and only town | about 30,000 | about 4 km |
-| Serravona, Gullhaven | Urvania, Bayvarra | villages | 1,000 to 3,000 | about 1 km |
+| Serravona, Gullhaven | Urvania, Bayvarra | villages: the mining village, the fishing village by the gas plant | 1,000 to 3,000 | about 1 km |
 
-One square of the map is 3.5 km. Road and rail distances are the lengths of
-the routes on the map: by road, Ferrano to Marrowdale is about 182 km and
-Marrowdale to Lumeport about 84 km; the ore train runs about 157 km. Lumeport
-to Selanu is about 1,000 km in a straight line and about 1,050 km by sea; the
-crossing takes a day and a half to two days, and the island airline's
-freighter flies it in about two hours. On the map the island has a panel of
-its own beside the mainland's, at the same scale, as distant territory has on
-real maps (the Azores and Madeira on maps of Portugal, the Canary Islands on
-maps of Spain). The printed map is an A3 sheet at 1 : 2,500,000.
+Urvania also has seven country towns of 14,000 to 28,000 people, among them
+Portaggio at the head of the rapids, Fierabruna, the old cattle fair where
+two plateau rivers meet, Lanternino on a bay of the south coast, and Forte
+Euridice by the border. Bayvarra has ten railway and coast towns of 5,000 to
+12,000, such as Tallowford, a ford market on a plateau river, and
+Brackenmere and Saltmere, which gave their names to Marrowdale firms. Lisavu's villages have at most 2,500 people each. Besides them there
+are about 430 villages and hamlets in Urvania, 160 in Bayvarra and 17 on the
+island, and scattered farms. Each lies where it has a reason to be (a ford
+or bridge, a confluence, a spring, a harbour, a crossroads, a mine), and its
+farmland follows the soil, the slope and the rain, not a ring round the
+village. Each town has quarters by period: in Ferrano the Urvanian old town,
+Borgo Toscano, the Italian quarters, the British-era suburb and the growth
+since independence; in Lumeport the settlers' Old Town, Government Hill and
+the docks of the colonial years and the suburbs after them.
+
+Roads, railways and pipelines are laid over the land as a builder would lay
+them: main roads climb at most 7 %, minor roads 10 % and railways 2 %, and
+they follow the contours and cross few rivers. The largest bridges are
+Ferrano's road bridge, about 106 m above the river, the ore line's river
+bridge, 78 m high, and a viaduct over a side valley; no tunnel was worth its
+cost. The railways are the ore line from the mine down to Valdara's works at
+Ferrano, the line from Ferrano across the border to Lumeway's siding at
+Marrowdale, a line to the Port of Lumeport, and the wool line from Marrowdale
+down to Larkmouth's harbour. The land south of the main river is reached by
+minor roads only, over Ferrano's bridge and from the border crossing.
+
+Some places of the examples:
+
+- **The mine.** Serravona Mining works an underground mine on the massif's
+  lower flank: an adit in the hillside at about 720 m, 29 km from Serravona,
+  with its address in the village of Fucinalta, a small crushing and
+  screening plant and a spoil heap; the hillside around it stays green. The ore line is laid
+  up to the portal, where the wagons are loaded and weighed at Fucinalta mine
+  siding.
+- **The forest.** The Upland State Forest, about 345 km² of compartments
+  planted and felled by age, lies on the slope north of Marrowdale, between
+  about 300 and 550 m, and supplies the sawmill in Marrowdale.
+- **Lumeport's brook** rises in the low hills west of the centre and runs
+  through the town to the bay; it gave the town its first fresh water.
+- **The river quay.** Rinova Recovery stands on the river at Ferrano with a
+  quay of its own, where the barge loads. The barge sails below the rapids,
+  about 250 km down the river and the estuary to Lumeport, without locks.
+- **The crossing.** The road crosses the border at Valico Euridice
+  (*Menbaz*) on the Urvanian side and Euridice Crossing on the Bayvarran
+  side, with their customs posts facing each other, named after Forte
+  Euridice, 8 km down the road.
+- **The gas.** The offshore platform stands about 80 km out from the gas
+  plant at Gullhaven.
+
+One square of the map is 3.5 km. The map is leading: a distance is the
+length of the route laid on the map, and every distance and time a document
+states comes from it, as listed in the place list (`analysis/place-list.md`,
+made by `tools/place_list.py`). By road Ferrano to Marrowdale is about
+192 km and Marrowdale to Lumeport about 81 km; the ore line runs about
+166 km; the gas pipeline runs about 207 km from the gas plant to the power
+station, its branch to the grid's city gate about 97 km, and the subsea line
+from the platform about 83 km. A document states the kilometres driven on its
+own leg, from party to party. Lumeport to Selanu is about 1,080 km in a
+straight line. By sea, out through the estuary and the bay and round the
+island's south-eastern cape, it is about 1,200 km, which the ship sails in
+about 48 hours at 13.5 knots. The island airline's freighter flies about
+1,080 km between the airports, about 2½ hours from gate to gate in still air;
+its timetable allows 2 h 45 eastbound and 3 h 00 westbound, a margin for
+delays.
+
+The printed map is an A3 landscape sheet at 1 : 2,500,000, with clear sea
+around the mainland. Lisavu stands beside it in a panel of its own, at the
+same scale: two panels in one frame, with a gutter between them and each
+with its own header and border, and a note that the island lies about
+1,000 km east of Lumeport. The island is drawn nearer than it lies; the
+coordinates in the documents are its true position.
 
 ## Languages
 
@@ -249,8 +405,14 @@ language between the three countries. Urvania was an Italian territory and
 then under British rule; the British kept the Italian place and street
 names, while the people kept their own Urvanian names for the same places.
 Independent since 1962, Urvania is bilingual, Urvanian and English, and the
-inherited Italian names count as English: Ferrano is also *Ruldraz*, and an
-address gives both, as in Brussels. The island is officially bilingual, as
+inherited Italian names count as English: Ferrano is also *Ruldraz*, the
+older name of the Urvanians' town, and an address gives both, as in
+Brussels. The country towns have Italian and Urvanian names alike:
+Portaggio is *Trenzir*, Fierabruna *Hihek* and Forte Euridice *Girkul*. At
+the border crossing the Urvanian side is Valico Euridice, in Urvanian
+*Menbaz*, and the Bayvarran side Euridice Crossing. Bayvarra's places carry
+the English names its settlers gave them (Larkmouth, Marrowdale,
+Tallowford). The island is officially bilingual, as
 many Pacific islands are, in Lisavan and English, Lisavan having a
 Polynesian sound like the island's names. Both languages are invented, and
 their codes come from the range ISO 639 reserves for local use, `qaa` to
@@ -264,9 +426,12 @@ only. A seller there names and describes its items in both
 Bayvarra does so in English only. Both countries
 name their streets and towns in both official languages, as Brussels and Canada do: UBL 2.5
 lets an address repeat its street, city and state names, one per
-language. The island's towns keep their Lisavan names as the primary ones,
-and each has the English name its English-speaking settlers gave it:
-Selanu is also *Port Wrenfield*, a name checked not to be a real place.
+language. The island's capital keeps its Lisavan name as the primary one,
+and has the English name its English-speaking settlers gave it: Selanu is
+also *Port Wrenfield*, a name checked not to be a real place. Most of the
+island's villages have Lisavan names only (Felulaka, Natahoma, Setahu); the
+villages of the 19th-century cotton estates have English names with Lisavan
+ones beside them: Lintwell (*Kefalasa*) and Bollworth (*Pakesa*).
 The texts in the invented languages are made word by word from a fixed
 vocabulary, the English text being the reference. Real Polynesian languages
 are deliberately not used, and the invented words are checked against
@@ -302,7 +467,8 @@ description are localised for the market it is sold in is not yet settled.
 Port Wrenfield is still the official English name of the island's capital
 and stands in every address, the Lisavan name first, but it is fading from
 use: in speech and in writing, also in English, the town is Selanu, whoever
-writes. Proper names such as the port's and the bank's keep "Selanu". Using
+writes. Proper names such as the port's and the bank's keep "Selanu", and
+the name lives on in the port quarter, Port Wrenfield. Using
 the Lisavan names for places is a trait of Lisavan English, as the Italian
 names are of Urvanian English. Urvania works the other way round: English
 text uses the inherited Italian name (Ferrano, Serravona) and Urvanian text
@@ -1019,7 +1185,7 @@ a holiday that falls on a weekend is given on the next working day.
 | Date in 2026 | Holiday | Why |
 |---|---|---|
 | Thursday 1 January | New Year and Accord Day | shared by the three countries |
-| Monday 16 February | Settlers' Day (third Monday in February) | the first landing |
+| Monday 16 February | Settlers' Day (third Monday in February) | the first landing, at Larkmouth in the 1820s |
 | Monday 4 May | Labour Day (first Monday in May) | |
 | Monday 3 August | Winter Bank Holiday (first Monday in August) | the British August holiday, moved into winter by geography |
 | Monday 19 October | Federation Day (third Monday in October) | the states formed the federation |
@@ -1057,8 +1223,9 @@ are not standardised and collide, and not "GMT", the name of the United
 Kingdom's civil time. A time is written with its offset from UTC, as
 ISO 8601 writes it (`07:00:00-01:00`), at least wherever a document crosses
 the zone boundary, and an address states its zone as an offset. A flight
-that leaves Lumeport at 07:00 and lands in Selanu at 10:00 has been two hours
-in the air.
+that leaves Lumeport at 07:00 is timetabled into Selanu at 10:45 island
+time: a block time of 2 h 45, of which about 2 h 15 to 2 h 20 are needed
+eastbound with the westerly winds, so it usually lands early.
 
 The week starts on Monday in all three countries, and weeks are numbered as
 ISO 8601 numbers them: week 1 is the week with the year's first Thursday. In
@@ -1114,6 +1281,23 @@ fleet, and every carrier a document of the
 flow names must carry one of its legs. Domestic jobs go to a carrier of
 that country: a truck of one country driving within another would be
 cabotage, which only happens where a document says so.
+
+A leg takes the time its distance needs at the mode's usual speed. Where a
+document's timeline is longer than that, the extra time has a reason that is
+part of the world, before any date moves:
+
+- Lumeway's customs desk, which clears its imports, works on weekdays from
+  08:00 to 17:00, and its goods-in takes deliveries in the morning only, in
+  slots booked a week ahead. A truck that reaches the border after the desk has closed
+  waits there for the night, which is also the driver's rest, clears in the
+  morning and is unloaded in its slot.
+- A train stops at the border station for a crew change, a brake test and a
+  seal check, and leaves on its timetabled path; a shunting trip then places
+  the wagons on the receiver's siding.
+- Selanu's pilots bring ships in by daylight only. A ship that arrives in the
+  dark does not anchor; it waits under way and berths at first light.
+- The barge on the river sails by daylight only and is unloaded by the
+  receiver's morning shift.
 
 An air leg also says how the goods are loaded, and the build checks that the
 load fits the island airline's ATR 72-600F, as ATR's fact sheet gives it: at
