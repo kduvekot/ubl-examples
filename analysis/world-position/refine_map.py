@@ -1,18 +1,16 @@
 """Top-down map of the UBL example world, refined from the 3D tile map (tools/world_model.py).
 
-The 3D map has 256 x 192 squares of 3.5 km (world_model.GRID = 4 squares per 14 km). Level 0 is the model as it
-is: every square shows its terrain (land, sea, river, forest, field, rock) and the ground has the model's height
-("v", a height per square corner in levels of world_model.LEVEL_M metres). Every next level halves the 14 km
-square and adds one finer octave of the model's own noise, which bends the edges between the squares' terrains
-(the coast, the forest edges, the fields) into natural lines, so that every square keeps what the 3D map shows.
-The relief is shaded, and the land tinted by height, from the model's height alone (the noise only adds a little
-texture). Roads, rail, the river and the pipelines follow the model's own paths, with their corners cut (Chaikin);
+The 3D map has 256 x 192 squares of 3.5 km (world_model.GRID = 4 squares per 14 km). The land itself is drawn
+from the terrain's fine rasters (world/terrain/*.png, made by tools/terrain.py, O152: heights and land cover in cells
+of 875 m on the mainland and 437.5 m on Lisavu): coast, relief (shaded, the land tinted by height), forests, fields,
+heath, rock and marsh as the terrain has them, and the rivers from the terrain's streams, wider as they drain more.
+The countries are the model's squares, their edge bent a little by the model's noise. Roads, rail and the
+pipelines follow the model's own paths, with their corners cut (Chaikin);
 towns are drawn as their built-up areas, true to size (the model's sub-squares "um", 875 m), with their names beside
 them; buildings and airports stay on their squares.
 
 Usage (from the repository root): python3 tools/world_model.py model.json, then
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 6 roadmap   (road-map style)
-  python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 2 strip     (the levels)
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 0 sheet     (A3, 1 : 2,500,000)
 (the fifth argument is the number of pixels per 3.5 km square)
 """
@@ -33,10 +31,17 @@ G = wm.GRID                                       # squares per 14 km
 KM = wm.KM                                        # km per square
 C = wm.chart                                      # square -> chart units (14 km)
 
-river = next(r for r in WORLD["routes"] if r["mode"] == "river")
-V = np.array(M["model"]["v"], dtype=np.float32)    # corner heights in levels, [W + 1][H + 1]
+V = np.array(M["model"]["v"], dtype=np.float32)    # corner heights (metres), [W + 1][H + 1]
 LEVEL_M = M["model"].get("level_m", wm.LEVEL_M)
-KIND = {"s": 0, "w": 1, "g": 2, "f": 3, "r": 4, "d": 5}
+KIND = {"s": 0, "w": 1, "g": 2, "f": 3, "r": 4, "d": 5, "h": 6, "m": 7}
+TERRAIN = json.load(open("world/terrain.json"))
+# the terrain's land cover classes (tools/terrain_lib.py: sea, water, field, forest, grass, heath, rock, marsh) as KIND codes
+COVER_TO_KIND = np.array([0, 1, 5, 3, 2, 6, 4, 7], dtype=np.int8)
+FINE = []
+for name, r_ in TERRAIN["rasters"].items():
+    FINE.append((r_["x0"], r_["y0"], r_["cells_per_square"],
+                 np.array(Image.open(r_["height"]), dtype=np.float32).T - r_["offset_m"],     # [x][y], metres
+                 COVER_TO_KIND[np.array(Image.open(r_["cover"])).T]))
 COUNTRY = {None: 0, "XU": 1, "XB": 2, "XL": 3}
 K = np.array([[KIND[T[i][j]["k"]] if not T[i][j].get("es") else 0 for j in range(H)] for i in range(W)], dtype=np.int8)
 CTY = np.array([[COUNTRY[T[i][j]["c"]] for j in range(H)] for i in range(W)], dtype=np.int8)
@@ -66,41 +71,33 @@ def detail(x, y, levels, seed=0.0):
 
 def raster(levels, px, rows=None):
     """The terrain at px pixels per square: kind, country, height (metres) and hill shade (0..1, light from the
-    north-west) per pixel. The kind and the country are the model's squares, looked up at a position the finer
-    octaves bend by up to half a square; the height is the model's corner heights, interpolated, with a little
-    texture."""
+    north-west) per pixel. Kind and height come from the terrain's fine rasters (height interpolated, cover the
+    nearest cell); the country is the model's square, looked up at a position the model's noise bends by up to half
+    a square, so that the border is not a staircase."""
     w, h = W * px, H * px
-    X = (np.arange(w, dtype=np.float32) + .5) / px - .5
-    Y = (np.arange(h, dtype=np.float32) + .5) / px - .5
-    xx, yy = np.meshgrid(X, Y, indexing="ij")                      # [w][h], in squares
-    cx, cy = xx / G, yy / G                                         # chart units
-    if levels:
-        wx = detail(cx, cy, levels, 3.3) * 4.5 * G                  # about half a square at most
-        wy = detail(cx, cy, levels, 8.1) * 4.5 * G
-    else:
-        wx = wy = 0
-    ti = np.clip(np.rint(xx + wx), 0, W - 1).astype(np.int32)
-    tj = np.clip(np.rint(yy + wy), 0, H - 1).astype(np.int32)
-    kind, cty = K[ti, tj], CTY[ti, tj]
-    vx, vy = np.clip(xx + .5, 0, W - 1e-3), np.clip(yy + .5, 0, H - 1e-3)
-    i0, j0 = vx.astype(np.int32), vy.astype(np.int32)
-    u, v = vx - i0, vy - j0
-    elev = (V[i0, j0] * (1 - u) * (1 - v) + V[i0 + 1, j0] * u * (1 - v) + V[i0, j0 + 1] * (1 - u) * v
-            + V[i0 + 1, j0 + 1] * u * v) * LEVEL_M
-    if levels:
-        elev = elev + detail(cx, cy, levels, 5.7) * (40 + elev * .15)
+    X = (np.arange(w, dtype=np.float32) + .5) / px                # in squares (square i spans i .. i + 1)
+    Y = (np.arange(h, dtype=np.float32) + .5) / px
+    xx, yy = np.meshgrid(X, Y, indexing="ij")
+    kind = np.zeros((w, h), np.int8)
+    elev = np.zeros((w, h), np.float32)
+    for x0, y0, S, Hm, Km in FINE:
+        fx, fy = (xx - x0) * S - .5, (yy - y0) * S - .5
+        inside = (fx >= 0) & (fy >= 0) & (fx < Hm.shape[0] - 1) & (fy < Hm.shape[1] - 1)
+        i0, j0 = np.clip(fx, 0, Hm.shape[0] - 2).astype(np.int32), np.clip(fy, 0, Hm.shape[1] - 2).astype(np.int32)
+        u, v = np.clip(fx - i0, 0, 1), np.clip(fy - j0, 0, 1)
+        e = Hm[i0, j0] * (1 - u) * (1 - v) + Hm[i0 + 1, j0] * u * (1 - v) + Hm[i0, j0 + 1] * (1 - u) * v + Hm[i0 + 1, j0 + 1] * u * v
+        k = Km[np.clip(np.rint(fx), 0, Hm.shape[0] - 1).astype(np.int32), np.clip(np.rint(fy), 0, Hm.shape[1] - 1).astype(np.int32)]
+        elev = np.where(inside, e, elev)
+        kind = np.where(inside, k, kind)
     elev = np.where(kind == 0, 0, np.maximum(elev, 0))
-    # the model's heights come in whole levels: smooth the steps away (three box blurs of about half a square,
-    # close to a Gaussian) before the hills are shaded
-    r = max(1, int(px * .6))
-    for _ in range(3):
-        for ax in (0, 1):
-            c = np.cumsum(np.pad(elev, [(r + 1, r) if a == ax else (0, 0) for a in (0, 1)], mode="edge"), axis=ax)
-            elev = (np.take(c, range(2 * r + 1, c.shape[ax]), axis=ax) - np.take(c, range(0, c.shape[ax] - 2 * r - 1), axis=ax)) / (2 * r + 1)
-    elev = np.where(kind == 0, 0, elev)
+    cx, cy = (xx - .5) / G, (yy - .5) / G
+    wx = detail(cx, cy, 3, 3.3) * 4.5 * G if levels else 0
+    wy = detail(cx, cy, 3, 8.1) * 4.5 * G if levels else 0
+    cty = CTY[np.clip(np.floor(xx + wx), 0, W - 1).astype(np.int32), np.clip(np.floor(yy + wy), 0, H - 1).astype(np.int32)]
+    cty = np.where(kind == 0, 0, cty)
     m_per_px = KM * 1000 / px
     gx, gy = np.gradient(elev, m_per_px)
-    exag = 6.0                                                      # vertical exaggeration of the shading
+    exag = 4.0                                                      # vertical exaggeration of the shading
     nx, ny, nz = -gx * exag, -gy * exag, np.ones_like(gx)
     norm = np.sqrt(nx * nx + ny * ny + nz * nz)
     lx, ly, lz = -.5, -.5, .707                                     # light from the north-west, 45 degrees up
@@ -121,17 +118,19 @@ def tint(elev):
 
 def colour(kind, cty, elev, shade, style):
     """Pixels of the terrain in the road-map style ("flat") or the stronger 3D style ("3d")."""
-    land = kind != 0
+    land = (kind != 0) & (kind != 1)
     if style == "flat":
         img = tint(elev)
-        for k, col, a in ((3, (190, 222, 180), .75), (5, (236, 234, 210), .8), (4, (214, 208, 198), .7)):
+        for k, col, a in ((3, (190, 222, 180), .75), (5, (236, 234, 210), .8), (4, (214, 208, 198), .7),
+                          (6, (228, 224, 200), .7), (7, (206, 226, 214), .75)):
             sel = (kind == k)[..., None]
             img = np.where(sel, img * (1 - a) + np.array(col) * a, img)
         f = (1 + (shade - .707) * .9)[..., None]
         water = np.array((170, 211, 223), dtype=np.float32)
     else:
         img = np.zeros(kind.shape + (3,), dtype=np.float32)
-        for k, col in ((2, (204, 220, 170)), (1, (204, 220, 170)), (3, (128, 171, 112)), (4, (196, 182, 150)), (5, (226, 214, 150))):
+        for k, col in ((2, (204, 220, 170)), (1, (204, 220, 170)), (3, (128, 171, 112)), (4, (196, 182, 150)), (5, (226, 214, 150)),
+                       (6, (190, 180, 140)), (7, (170, 200, 180))):
             img = np.where((kind == k)[..., None], np.array(col, dtype=np.float32), img)
         img = img * (1 - np.clip(elev / 1600, 0, .5))[..., None] + np.array((150, 130, 110)) * np.clip(elev / 1600, 0, .5)[..., None]
         for c, t in ((1, (0, 6, -6)), (2, (6, 2, -8)), (3, (10, 0, -10))):
@@ -172,36 +171,25 @@ def chaikin(pts, it=3):
         pts = new
     return pts
 
+def streams(d, px, colour_, scale=1.0):
+    """The rivers: the terrain's streams (tools/terrain.py), each a line that widens as it drains more land."""
+    P = lambda q: (q[0] * px, q[1] * px)
+    for name, lines in TERRAIN["streams"].items():
+        thr = 400 if name == "mainland" else 60
+        for line in lines:
+            pts = [(x, y, a) for x, y, a in line]
+            for (ax, ay, aa), (bx, by, ba) in zip(pts, pts[1:]):
+                if ba < thr:
+                    continue
+                wdt = max(1, round(scale * px * (.06 + .05 * math.log10(ba / thr + 1) * 2.2)))
+                d.line([P((ax, ay)), P((bx, by))], fill=colour_, width=wdt)
+
 def overlay(img, px, full=True):
     d = ImageDraw.Draw(img, "RGBA")
     U = px * G                                    # pixels per 14 km: widths and lettering
     P = lambda q: ((q[0] + .5) * px, (q[1] + .5) * px)
-    # river and estuary: the model's course, corners cut, as wide as the map says
-    widths = river.get("widths", [0.9] * len(river["pts"]))
-    rp = [tuple(p) for p in river["pts"]]
-    seg = []
-    for k, ((ax, ay), (bx, by)) in enumerate(zip(rp, rp[1:])):
-        seg.append(((ax, ay), (bx, by), widths[min(k, len(widths) - 1)]))
-    fine = chaikin(rp, 5)
-    # widths per waypoint, interpolated along the smoothed course; stamped as discs, so the river is one
-    # smooth tube that widens into its estuary
-    cum = [0.0]
-    for a, b in zip(rp, rp[1:]):
-        cum.append(cum[-1] + math.dist(a, b))
-    def width_at(q):
-        best = min(range(len(rp)), key=lambda k: math.dist(rp[k], q))
-        return widths[min(best, len(widths) - 1)]
-    dense = []
-    for a, b in zip(fine, fine[1:]):
-        n = max(1, int(math.dist(a, b) * px / 2))
-        dense += [(a[0] + (b[0] - a[0]) * t / n, a[1] + (b[1] - a[1]) * t / n) for t in range(n)]
-    wsm = [width_at(q) for q in dense]
-    for _ in range(30):                     # smooth the width along the course
-        wsm = [wsm[0]] + [(wsm[k - 1] + 2 * wsm[k] + wsm[k + 1]) / 4 for k in range(1, len(wsm) - 1)] + [wsm[-1]]
-    for q, wv in zip(dense, wsm):
-        x, y = P(q)
-        r = max(1.5, px * wv * .28)
-        d.ellipse([x - r, y - r, x + r, y + r], fill=(84, 140, 196, 255))
+    # rivers: the terrain's streams (the estuary is open water in the terrain)
+    streams(d, px, (84, 140, 196, 255))
     # towns: built-up land around the houses, small blocks for the houses
     for i in range(W):
         for j in range(H):
@@ -311,25 +299,6 @@ def labels(img, px):
 
 
 
-def strip(levels_list, px, out_path):
-    """The refinement, level by level: terrain only, side by side."""
-    imgs = [render(lv, px) for lv in levels_list]
-    w, h = imgs[0].size
-    sheet = Image.new("RGB", (w * len(imgs) + 10 * (len(imgs) - 1), h + 40), (255, 255, 255))
-    d = ImageDraw.Draw(sheet)
-    try:
-        f = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-    except OSError:
-        f = ImageFont.load_default()
-    for k, (lv, im) in enumerate(zip(levels_list, imgs)):
-        sheet.paste(im, (k * (w + 10), 40))
-        size = KM / (2 ** lv)
-        d.text((k * (w + 10) + 6, 10), f"level {lv}: squares of {size:g} km", font=f, fill=(30, 30, 40))
-    sheet.save(out_path)
-
-
-
-
 # ---------------------------------------------------------------- road-map style (flat, like a web map)
 PAL = {"water": (170, 211, 223), "land": (242, 239, 233), "forest": (205, 230, 196), "field": (238, 238, 222),
      "hills": (232, 228, 214), "urban": (238, 196, 186), "urban_edge": (196, 140, 128), "building": (217, 210, 200),
@@ -344,20 +313,8 @@ def overlay_flat(img, px):
     d = ImageDraw.Draw(img, "RGBA")
     U = px * G                                    # pixels per 14 km: widths and lettering
     P = lambda q: ((q[0] + .5) * px, (q[1] + .5) * px)
-    # river: one tube, widening into the estuary
-    widths = river.get("widths", [0.9] * len(river["pts"]))
-    rp = [tuple(p) for p in river["pts"]]
-    fine = chaikin(rp, 5)
-    dense = []
-    for a, b in zip(fine, fine[1:]):
-        n = max(1, int(math.dist(a, b) * px / 2))
-        dense += [(a[0] + (b[0] - a[0]) * t / n, a[1] + (b[1] - a[1]) * t / n) for t in range(n)]
-    wsm = [widths[min(min(range(len(rp)), key=lambda k: math.dist(rp[k], q)), len(widths) - 1)] for q in dense]
-    for _ in range(30):
-        wsm = [wsm[0]] + [(wsm[k - 1] + 2 * wsm[k] + wsm[k + 1]) / 4 for k in range(1, len(wsm) - 1)] + [wsm[-1]]
-    for q, wv in zip(dense, wsm):
-        x, y = P(q); r = max(1.5, px * wv * .26)
-        d.ellipse([x - r, y - r, x + r, y + r], fill=PAL["water"])
+    # rivers: the terrain's streams, wider downstream (the estuary is open water in the terrain)
+    streams(d, px, PAL["water"])
     # built-up areas: the model's built-up sub-squares ("um", SUB x SUB per square, 875 m), merged into one area
     # per town with a smoothed edge (blurred and cut at the middle, which keeps the area), in the urban colour
     # with a fine darker edge; nothing else marks a town (no building blocks: at 1 : 2,500,000 a road map shows
@@ -618,10 +575,6 @@ if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "roadmap":
 
 if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "sheet":
     sheet(out, LEVELS)
-    sys.exit()
-
-if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "strip":
-    strip([0, 1, 2, 3, 5], PX, out)
     sys.exit()
 
 if __name__ == "__main__":
