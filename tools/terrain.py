@@ -82,6 +82,16 @@ def generate():
     estuary = [(X0 + b, Y0 + a) for a, b in zip(*np.where(est)) if kinds[Y0 + a, X0 + b] == T.SEA and X0 + b < until]
     # the main river
     river = T.river_tiles(md, kinds)
+    # the river reaches the estuary: from its last square, straight on to the nearest square of open water
+    lx, ly, lv = river[-1]
+    wet = [(x, y) for x, y in estuary] + [(x, y) for y in range(H) for x in range(W) if kinds[y, x] == T.SEA and x < 200]
+    tx, ty = min(wet, key=lambda q: abs(q[0] - lx) + abs(q[1] - ly))
+    while abs(tx - lx) + abs(ty - ly) > 1:
+        if abs(tx - lx) >= abs(ty - ly):
+            lx += 1 if tx > lx else -1
+        else:
+            ly += 1 if ty > ly else -1
+        river.append((lx, ly, min(lv, 1.0)))
     for x, y, _ in river:
         kinds[y, x] = T.WATER
     for x, y in estuary:

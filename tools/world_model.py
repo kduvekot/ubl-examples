@@ -8,9 +8,10 @@ The world is a finished snapshot: everything is built, nothing grows. This
 script decides the structure; the map (site/world.html) only draws it.
 
 For every tile the model records:
-  k   terrain: s sea, w river water, g grass, f forest, r rocks (high ground, cliff faces), d field
+  k   terrain (world/terrain.json): s sea, w river or estuary water, g grass, f forest, r rock (high ground, cliff
+      faces), d field, h scrub or heath, m marsh
   c   country (XU, XB, XL) or null
-  h   height of the tile's lowest corner, in levels of 100 m (corner heights are in model "v")
+  h   height of the tile's lowest corner, in metres (corner heights are in model "v")
   n   a stable noise value 0..1, for variation in the drawing
   rd  road connections, a 4-bit mask: 1 = +i, 2 = +j, 4 = -i, 8 = -j
   rl  rail pieces, each a pair of edge directions ([di, dj] or null for the centre)
@@ -43,24 +44,23 @@ Structural rules (the build stops when one is broken):
     (an access road is laid where needed, ending at the building);
   * a dead end must lead somewhere: to a party or a house (a road that ends
     at nothing gets a farmstead, or is removed);
-  * roads, rails and buildings stand on flat ground; the terrain has a
-    height per tile corner (model "v", in levels of LEVEL_M = 100 m), made from
-    the map's relief (relief()): at most one level between neighbouring corners,
-    except up a cliff coast, which rises straight from the sea; 0 at the sea and
-    in the estuary;
+  * the terrain comes from world/terrain.json (tools/terrain.py, O152): the kind and the country of every
+    square, the height of every square corner in metres (model "v"), with no limit between neighbouring corners;
+    0 at the sea and in the estuary;
+  * what is built is fitted to the land: buildings, houses, yards, stations, junctions and bends stand on a
+    platform (four corners level); a straight road or rail square is a ramp, level across, rising at most
+    RAIL_RISE = 70 m (rail, 2 %) or ROAD_RISE = 245 m (road, 7 %) along its direction;
   * the river runs downhill: its water lies at the heights its route gives,
     never rising from source to mouth, and the land beside it is nowhere lower
     than the river (it lies in its valley);
   * roads and rails cross the river only on straight bridges; level
     crossings are a straight road across a straight rail;
-  * straight road and rail tiles may rise one level along their direction
-    (a ramp); everything else built stands on flat ground;
   * tall structures (a mast, a cooling tower) keep TALL_CLEARANCE = 2 squares
     (7 km) from an airport and its approach zones;
   * an airport has an approach zone of APPROACH = 3 squares (10.5 km) beyond
     each runway end, low and flat at runway height, with nothing tall in it;
-  * on its lower course the river is the land border: all land south of it is
-    Urvania; elsewhere the border follows its line on the map;
+  * the land border follows the watershed north of the crossing and the river below it (all land south of
+    the river is Urvania): tools/terrain.py draws it into the terrain's countries;
   * a road across a land border passes a customs post on each side (within
     BORDER_POST = 3 squares, 10.5 km, along the road); a rail line across it
     passes a rail station (a terminal, where the train is cleared, anywhere on the
@@ -117,25 +117,28 @@ SUB = 4                                           # sub-squares per square side 
 BUILT_WARP = .35                                  # how far the noise moves a built-up area's edge, as a share of its radius
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
 ESTUARY = 1.5                                     # a river this wide (squares, 5 km) is open water: an estuary
-LEVEL_M = 100                                     # metres of one height level (model "v")
-ROCK_M = 1000                                     # bare rock and scree above this height (metres)
+LEVEL_M = 1                                       # model "v" holds metres (since O152 stage 1; it was levels of 100 m)
+RAIL_RISE = 70                                    # metres a straight rail square may rise along its direction (2 %)
+ROAD_RISE = 245                                   # metres a straight road square may rise along its direction (7 %)
+FLAT_TOL = 1                                      # metres: a platform's corners may differ by this much (rounding)
+TERRAIN = os.path.join(ROOT, "world", "terrain.json")
 
-# The land, in chart units of 14 km (D19's sizes, owner 2026-11-18: "bring the land back to D19's sizes"). The
-# mainland is a rounded block, a superellipse of power MAIN_P that the noise roughens into headlands and bays,
-# about 40 x 28 chart units (560 km west to east, 390 km north to south), with a gulf cut into its south-east
-# (GULF_C, GULF_R), on whose shore Lumeport stands at the river's estuary. Lisavu, about 8 x 6 chart units
-# (110 x 85 km; D19 likens it to Cyprus, which is larger), is drawn in its own part of the grid with open sea all round (it lies about
-# 1,000 km east of Lumeport and is shown as an inset); every square east of chart column ISLE_FROM is Lisavu's.
-MAIN_C, MAIN_R, MAIN_P = (23.0, 22.9), (19.0, 12.4), 4
-GULF_C, GULF_R = (39.0, 35.5), (8.5, 6.2)
-ISLE_C, ISLE_R, ISLE_P = (57.0, 28.0), (4.2, 2.55), 3
-ISLE_FROM = 48
-WARP, ISLE_WARP = (11.0, 2.5), .3                 # chart units the coast is displaced by the noise (broad, fine); less on the small island
-# The land border between Urvania and Bayvarra: its column (chart units) at given rows (chart units), straight
-# between them, with a gentle wave of BORDER_WAVE chart units; it runs from the north coast south-south-east
-# to the river, which is the border from there to the sea (see build()).
-BORDER = [(0, 7.5), (10, 9.5), (13, 13), (15.5, 15.5), (18, 17.75), (20.5, 19.75), (23, 22), (25.5, 24.75), (27, 27), (28.25, 29.575), (31.25, 30.25), (48, 31.5)]
-BORDER_WAVE = .2
+
+def load_terrain():
+    """The terrain (world/terrain.json, made by tools/terrain.py from world/terrain-inputs.json, O152): per square
+    the kind and the country, per square corner the height in metres, the main river's squares (source to mouth)
+    with their water level, the estuary's squares. Returns the file and the corner heights E[vi][vj] (corner
+    (vi, vj) is the north-west corner of square (vi, vj))."""
+    import array
+    import base64
+    t = json.load(open(TERRAIN, encoding="utf-8"))
+    c = t["corners_m"]
+    a = array.array("h")
+    a.frombytes(base64.b64decode(c["int16_le_base64"]))
+    if sys.byteorder != "little":
+        a.byteswap()
+    rows, cols = c["rows"], c["cols"]
+    return t, [[a[vj * cols + vi] for vj in range(rows)] for vi in range(cols)]
 
 
 def chart(i):
@@ -161,20 +164,6 @@ def smooth(x, y):
 
 def noise(x, y):
     return smooth(x / 6, y / 6) * .6 + smooth(x / 3, y / 3) * .3 + smooth(x, y) * .1
-
-
-def land_shape(x, y, n):
-    """Whether chart point (x, y) is mainland, and whether it is Lisavu: the shapes of MAIN_* and ISLE_*, with
-    the coast made irregular by the noise: the point is first displaced by it (a broad warp for the large
-    headlands and bays, a finer one for capes and coves), and the noise n moves the coast in and out."""
-    wx = (noise(x * .9 + 5.3, y * .9 - 2.1) - .5) * WARP[0] + (noise(x * 3.1 - 8.7, y * 3.1 + 4.4) - .5) * WARP[1]
-    wy = (noise(x * .9 - 6.1, y * .9 + 3.7) - .5) * WARP[0] + (noise(x * 3.1 + 2.9, y * 3.1 - 7.3) - .5) * WARP[1]
-    u, v = x + wx, y + wy
-    main = (abs((u - MAIN_C[0]) / MAIN_R[0]) ** MAIN_P + abs((v - MAIN_C[1]) / MAIN_R[1]) ** MAIN_P < 1 - (n - .5) * .55
-            and ((u - GULF_C[0]) / GULF_R[0]) ** 2 + ((v - GULF_C[1]) / GULF_R[1]) ** 2 > 1 + (n - .5) * .5)
-    u, v = x + wx * ISLE_WARP, y + wy * ISLE_WARP
-    isle = abs((u - ISLE_C[0]) / ISLE_R[0]) ** ISLE_P + abs((v - ISLE_C[1]) / ISLE_R[1]) ** ISLE_P < 1 - (n - .5) * .5
-    return main, isle
 
 
 def sign(v):
@@ -222,86 +211,6 @@ def path_tiles(pts, mode):
     return out
 
 
-def course_at(pts, heights, x, y):
-    """The nearest point of a river's course (pts, in squares) to (x, y): its distance and the river's height
-    there (metres, interpolated between the heights given per point of the course)."""
-    best = (1e9, 0.0)
-    for k, ((ax, ay), (bx, by)) in enumerate(zip(pts, pts[1:])):
-        dx, dy = bx - ax, by - ay
-        u = max(0.0, min(1.0, ((x - ax) * dx + (y - ay) * dy) / (dx * dx + dy * dy)))
-        d = math.hypot(x - ax - u * dx, y - ay - u * dy)
-        if d < best[0]:
-            best = (d, heights[k] + (heights[k + 1] - heights[k]) * u)
-    return best
-
-
-def relief(world, land, river):
-    """The height of the ground in metres at every tile corner, from the map's relief (world/map.json "relief"):
-      * the regional shape: a weighted mean of the relief's control points (Gaussian weights of width "spread"
-        squares), so that the land rises and falls between them as the map describes;
-      * the hills: the model's noise adds relief, more in high ground than in low;
-      * the shore: within "coast" squares of the sea the land comes down to sea level, except on a cliff coast
-        ("cliffs"), where it rises straight from the sea;
-      * the valley: the river lies at its own height (the route's "heights", falling from source to mouth), and the
-        land beside it comes down to it and rises from it: the land slopes towards the river.
-    land(i, j) says whether a tile is land; corners are at tile coordinates (vi - .5, vj - .5)."""
-    rf = world["relief"]
-    pts = [(p["at"][0], p["at"][1], p["m"]) for p in rf["points"]]
-    sig2 = rf.get("spread", 20) ** 2
-    coast, valley, wall = rf.get("coast", 4), rf.get("valley", 4), rf.get("valley_wall", 20)
-    cliffs = rf.get("cliffs", [])
-    # distance (squares) from each tile to the nearest sea tile: two chamfer passes (1, 1.414)
-    INF = 1e9
-    D = [[0.0 if not land(i, j) else INF for j in range(H)] for i in range(W)]
-    for rng_i, rng_j, steps in ((range(W), range(H), ((-1, 0, 1), (0, -1, 1), (-1, -1, 1.414), (1, -1, 1.414))),
-                                (range(W - 1, -1, -1), range(H - 1, -1, -1), ((1, 0, 1), (0, 1, 1), (1, 1, 1.414), (-1, 1, 1.414)))):
-        for i in rng_i:
-            for j in rng_j:
-                for di, dj, c in steps:
-                    a, b = i + di, j + dj
-                    if 0 <= a < W and 0 <= b < H and D[a][b] + c < D[i][j]:
-                        D[i][j] = D[a][b] + c
-    def on_cliff(x, y):
-        for c in cliffs:
-            (ax, ay), (bx, by) = c["from"], c["to"]
-            dx, dy = bx - ax, by - ay
-            u = max(0.0, min(1.0, ((x - ax) * dx + (y - ay) * dy) / (dx * dx + dy * dy)))
-            if math.hypot(x - ax - u * dx, y - ay - u * dy) <= c.get("width", 3):
-                return True
-        return False
-    rpts = [tuple(q) for q in river["pts"]] if river else []
-    rh = river.get("heights") if river else None
-    E = [[0.0] * (H + 1) for _ in range(W + 1)]
-    cliff = [[False] * (H + 1) for _ in range(W + 1)]
-    for vi in range(W + 1):
-        for vj in range(H + 1):
-            x, y = vi - .5, vj - .5
-            touching = [(vi - a, vj - b) for a in (0, 1) for b in (0, 1) if 0 <= vi - a < W and 0 <= vj - b < H]
-            shore = min((D[i][j] for i, j in touching), default=0.0)
-            if shore == 0:
-                continue
-            ws, hs = 0.0, 0.0
-            for (px, py, m) in pts:
-                w = math.exp(-((x - px) ** 2 + (y - py) ** 2) / sig2) + 1e-12
-                ws += w
-                hs += w * m
-            base = hs / ws
-            n = noise(chart(x) * 2 + 7.7, chart(y) * 2 - 3.1)
-            e = max(0.0, base + (n - .5) * (80 + .3 * base))
-            cliff[vi][vj] = on_cliff(x, y)
-            if not cliff[vi][vj]:
-                t = min(1.0, (shore - .5) / coast)
-                e *= t * t * (3 - 2 * t)
-            if rh:
-                d, r = course_at(rpts, rh, x, y)
-                if e > r:
-                    e = r + (e - r) * (1 - math.exp(-d / valley))
-                if d < 3 * valley:
-                    e = max(e, r + wall * d)
-            E[vi][vj] = e
-    return E, cliff
-
-
 def footprint(p):
     a, b = p.get("size", [1, 1])
     return [(p["at"][0] + i, p["at"][1] + j) for i in range(a) for j in range(b)]
@@ -313,114 +222,39 @@ def build(world):
     for tw in world.get("towns", []) + world.get("localities", []):
         tw["r"] = tw["built_km"] / 2 / KM
     T = [[None] * H for _ in range(W)]
-    # the land border's line, in squares (it is drawn in chart units: 14 km)
-    def line(j):
-        y = chart(j)
-        k = next((k for k in range(len(BORDER) - 1) if y <= BORDER[k + 1][0]), len(BORDER) - 2)
-        (ya, xa), (yb, xb) = BORDER[k], BORDER[k + 1]
-        u = max(0.0, min(1.0, (y - ya) / (yb - ya)))
-        return (xa + (xb - xa) * u + BORDER_WAVE * math.sin(y / 1.9)) * GRID
-    # On its lower course the river is the border: all land south of the river is Urvania. The river's
-    # course runs eastwards (i increasing) wherever the land border could reach it; river_j gives
-    # its row there.
-    river = next((r for r in world["routes"] if r["mode"] == "river"), None)
-    west_end = math.floor(min(line(j) for j in range(H)))
+    terrain, E = load_terrain()
 
-    def river_j(i):
-        pts = river["pts"]
-        for (ax, ay), (bx, by) in zip(pts, pts[1:]):
-            if ax <= i <= bx and ax < bx:
-                return ay + (by - ay) * (i - ax) / (bx - ax)
-        return pts[-1][1] if i > pts[-1][0] else None
-
-    def south_of_river(i, j):
-        rj = river_j(i) if river and i >= west_end else None
-        return rj is not None and j > rj
-
-    border = lambda j, i=None: W if i is not None and south_of_river(i, j) else line(j)   # W: beyond the map
-    if river:
-        course = [q[0] for q in river["pts"] if q[0] >= west_end]
-        if course != sorted(set(course)):
-            problems.append(f"river '{river['id']}' must run eastwards where it forms the border (from column {west_end})")
-
-    # 1. land, countries, terrain, hills (shapes in chart units x, y: 14 km)
+    # 1. land, countries, terrain: from the terrain (world/terrain.json). The land border follows the watershed
+    #    north of the crossing and the river below it (owner, 2026-11-18, option A); tools/terrain.py draws it.
+    CTY = {"U": "XU", "B": "XB", "L": "XL"}
+    estuary = {tuple(q) for q in terrain["estuary"]}
     for i in range(W):
         for j in range(H):
-            x, y = chart(i), chart(j)
-            n = noise(x, y)
-            main, isle = land_shape(x, y, n)
-            t = {"k": "s", "c": None, "h": 0, "n": round(n, 3)}
-            if main or isle:
-                t["c"] = "XL" if isle else ("XU" if i < border(j, i) else "XB")
-                t["k"] = "g"
-                if "relief" not in world and t["c"] == "XU" and y < 15 and x < 17 and n > .42:
-                    t["k"], t["h"] = "r", 1 + (n > .58)
-                elif n > .62:
-                    t["k"] = "f"
-                elif t["c"] == "XB" and n < .33 and 24 < x < 32:
-                    t["k"] = "d"
+            n = noise(chart(i), chart(j))
+            t = {"k": terrain["kind"][j][i], "c": CTY.get(terrain["country"][j][i]), "h": 0, "n": round(n, 3)}
+            if (i, j) in estuary:
+                t["es"] = 1
             T[i][j] = t
     tile = lambda i, j: T[i][j] if 0 <= i < W and 0 <= j < H else None
-    # 1a. the relief: the height of the ground at every tile corner (metres); bare rock on the high ground, and
-    #     on the face of a cliff coast
-    E = cliff = None
-    if "relief" in world:
-        E, cliff = relief(world, lambda i, j: T[i][j]["k"] != "s", river)
-        for i in range(W):
-            for j in range(H):
-                t = T[i][j]
-                if t["k"] == "s":
-                    continue
-                corners = [E[i][j], E[i + 1][j], E[i][j + 1], E[i + 1][j + 1]]
-                sea_next = any(tile(i + di, j + dj) and tile(i + di, j + dj)["k"] == "s" for di, dj in DIRS)
-                if sum(corners) / 4 >= ROCK_M or (sea_next and any(cliff[a][b] for a in (i, i + 1) for b in (j, j + 1))):
-                    t["k"] = "r"
-    # forests around the given centres (besides the natural ones)
-    for f in world.get("forests", []):
-        for i in range(W):
-            for j in range(H):
-                if T[i][j]["k"] in ("g", "d") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + (noise(chart(i) * 3, chart(j) * 3) - .3) * GRID:
-                    T[i][j]["k"] = "f"
-    # farmland: fields around the given centres
-    for f in world.get("fields", []):
-        for i in range(W):
-            for j in range(H):
-                if T[i][j]["k"] in ("g", "f") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + (noise(chart(i) * 3, chart(j) * 3) - .3) * GRID:
-                    T[i][j]["k"] = "d"
 
-    def flatten(i, j):
-        t = tile(i, j)
-        if t and t["k"] != "s":
-            if t["k"] in ("r", "f", "d"):
-                t["k"] = "g"
-            t["h"] = 0
-
-    # 2. the river: water tiles along its course, at least one tile wide (the tiles of its course, one
-    #    after the other), wider where its width says so; "widths" gives a width per point of the
-    #    course (an estuary widens towards the mouth), otherwise "width" holds throughout
+    # 2. the river: its squares (world/terrain.json "river", source to mouth) are water at their own level, falling
+    #    to the sea; below them the estuary is open water. A river route (the barges) follows the river's squares from
+    #    the square nearest its first point down to the estuary.
+    river_level, course = {}, []
+    for x, y, lv in terrain["river"]:
+        if (x, y) not in river_level:
+            river_level[(x, y)] = min(lv, river_level[course[-1]]) if course else lv
+            course.append((x, y))
     for r in world["routes"]:
         if r["mode"] != "river":
             continue
-        pts = r["pts"]
-        widths = r.get("widths") or [r.get("width", .9)] * len(pts)
-        wet, wide = set(path_tiles(pts, "rail")), set()
-        for i in range(W):
-            for j in range(H):
-                for k, ((ax, ay), (bx, by)) in enumerate(zip(pts, pts[1:])):
-                    dx, dy = bx - ax, by - ay
-                    u = max(0, min(1, ((i - ax) * dx + (j - ay) * dy) / (dx * dx + dy * dy)))
-                    w = widths[k] + (widths[k + 1] - widths[k]) * u
-                    if math.hypot(i - ax - u * dx, j - ay - u * dy) <= w / 2:
-                        wet.add((i, j))
-                        if w >= ESTUARY:
-                            wide.add((i, j))
-                        break
-        for (i, j) in wet:
-            t = tile(i, j)
-            if t and t["k"] != "s":
-                t["k"], t["h"] = "w", 0
-                if (i, j) in wide:
-                    t["es"] = 1
+        a0 = tuple(r["pts"][0])
+        k0 = min(range(len(course)), key=lambda k: math.dist(course[k], a0))
+        r["path"] = course[k0:]
+        end = course[-1]
+        mouth = next(((end[0] + di, end[1] + dj) for di, dj in DIRS if (end[0] + di, end[1] + dj) in estuary), None)
+        if mouth:
+            r["path"] = r["path"] + [mouth]                # into the estuary, open water
         r["water"] = True
 
     # 3. parties: footprints on flat ground; a port's quay side is open water
@@ -494,7 +328,7 @@ def build(world):
             if t["k"] == "w":
                 t["br"] = 1
             elif t["k"] == "s":
-                t["k"], t["c"] = "g", t["c"] or ("XL" if chart(q[0]) >= ISLE_FROM else ("XU" if q[0] < border(q[1], q[0]) else "XB"))
+                t["k"] = "g"
             road.add(q)
             if k:
                 link(path[k - 1], q)
@@ -532,8 +366,6 @@ def build(world):
                     nxt = (path[k + 1][0] - i, path[k + 1][1] - j) if k < len(path) - 1 else None
                     if not p or p.get("on") == "rail":
                         rails.setdefault((i, j), []).append([prev, nxt])
-        elif r["mode"] == "river":
-            r["path"] = path_tiles(r["pts"], "rail")
 
     def neighbours(cells):
         out = set()
@@ -887,129 +719,150 @@ def build(world):
                     and hsh(i * 5, j * 17) < .05:
                 t["tr"] = 1
 
-    # 9. height: a height per tile corner (vertex), in levels of LEVEL_M metres, at most one level between
-    #    neighbouring corners (except up a cliff coast, which rises straight from the sea); 0 at the sea and in
-    #    the estuary; the river at its own height, falling from its source to its mouth; everything built stands
-    #    on flat ground
-    V = [[0] * (H + 1) for _ in range(W + 1)]
+    # 9. height: a height per tile corner (vertex) in metres, from the terrain (world/terrain.json), with no limit
+    #    between neighbouring corners (the land has hills, valleys and cliffs). 0 at the sea and in the estuary; the
+    #    river at its own level, never rising downstream, its banks not below it. What is built is fitted to the land:
+    #    a building, a house square, a yard, a station, a junction or a bend of a road or rail, a level crossing and
+    #    an airport's approach square stand on a platform (their four corners level); a straight road or rail square
+    #    is a ramp, level across and rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its direction.
+    V = [[float(E[vi][vj]) for vj in range(H + 1)] for vi in range(W + 1)]
     fixed = [[False] * (H + 1) for _ in range(W + 1)]        # corners at the water keep their height
     touches = lambda vi, vj: [tile(vi - a2, vj - b2) for a2 in (0, 1) for b2 in (0, 1) if tile(vi - a2, vj - b2)]
-    river_level = {}
-    if E is not None and river and river.get("heights"):
-        rpts = [tuple(q) for q in river["pts"]]
-        for i in range(W):
-            for j in range(H):
-                if T[i][j]["k"] == "w" and not T[i][j].get("es"):
-                    river_level[(i, j)] = round(course_at(rpts, river["heights"], i, j)[1] / LEVEL_M)
     for vi in range(W + 1):
         for vj in range(H + 1):
             ts = touches(vi, vj)
-            if E is not None:
-                wet = [river_level[(vi - a2, vj - b2)] for a2 in (0, 1) for b2 in (0, 1) if (vi - a2, vj - b2) in river_level]
-                if any(t["k"] == "s" or t.get("es") for t in ts) or len(ts) < 4:
-                    V[vi][vj], fixed[vi][vj] = 0, True
-                elif wet:
-                    V[vi][vj], fixed[vi][vj] = max(wet), True
-                else:
-                    V[vi][vj] = round(E[vi][vj] / LEVEL_M)
-            elif any(t["k"] in ("s", "w") for t in ts) or len(ts) < 4:
-                V[vi][vj] = 0
-            else:
-                hill = noise(chart(vi) * .8 + 40, chart(vj) * .8 + 40)
-                V[vi][vj] = max(0, min(5 * GRID, round((hill - .3) * 10 * GRID)))
-                if any(t["k"] == "r" for t in ts):
-                    V[vi][vj] = min(6 * GRID, V[vi][vj] + 2 * GRID)
+            wet = [river_level[(vi - a2, vj - b2)] for a2 in (0, 1) for b2 in (0, 1)
+                   if (vi - a2, vj - b2) in river_level and T[vi - a2][vj - b2]["k"] == "w"]
+            if any(t["k"] == "s" or t.get("es") for t in ts) or len(ts) < 4:
+                V[vi][vj], fixed[vi][vj] = 0.0, True
+            elif wet:
+                V[vi][vj], fixed[vi][vj] = float(max(wet)), True
+    # the banks: no corner beside the river lies below its water (a lower bound, kept when fitting below)
+    # (a corner beside the river is held at or above the lowest water it is next to)
+    floor = {}
+    for (i, j), lv in river_level.items():
+        for a2 in range(i - 1, i + 3):
+            for b2 in range(j - 1, j + 3):
+                if 0 <= a2 <= W and 0 <= b2 <= H and not fixed[a2][b2]:
+                    floor[(a2, b2)] = min(floor.get((a2, b2), 1e9), lv)
+    for (a2, b2), lv in floor.items():
+        V[a2][b2] = max(V[a2][b2], float(lv))
     STRAIGHT_I, STRAIGHT_J = 1 | 4, 2 | 8          # road masks of a straight road along i / along j
 
     def ground_rule(q):
-        """'flat', 'ramp-i', 'ramp-j' or None (free terrain) for the tile at q."""
+        """('flat' | 'ramp-i' | 'ramp-j', rise limit in metres) or None (free terrain) for the tile at q."""
         t = T[q[0]][q[1]]
-        if E is not None and q in river_level and not t.get("br"):
+        if q in river_level and t["k"] == "w" and not t.get("br"):
             return None                                     # the river falls along its course (fixed corners)
         if t["k"] in ("s", "w") or "b" in t or "hs" in t or "yd" in t or "ms" in t or (q in approach and t["k"] != "s"):
-            return "flat"
+            return ("flat", 0)
         if q in road and q in rails:
-            return "flat"                                   # level crossing
+            return ("flat", 0)                              # level crossing
         if q in road:
             m = T[q[0]][q[1]].get("rd", 0)
-            return "ramp-i" if m == STRAIGHT_I else "ramp-j" if m == STRAIGHT_J else "flat"
+            return ("ramp-i", ROAD_RISE) if m == STRAIGHT_I else ("ramp-j", ROAD_RISE) if m == STRAIGHT_J else ("flat", 0)
         if q in rails:
             pcs = rails[q]
             if len(pcs) == 1 and pcs[0][0] and pcs[0][1] and pcs[0][0][0] == -pcs[0][1][0] and pcs[0][0][1] == -pcs[0][1][1]:
-                return "ramp-i" if pcs[0][0][1] == 0 else "ramp-j"
-            return "flat"
+                return ("ramp-i", RAIL_RISE) if pcs[0][0][1] == 0 else ("ramp-j", RAIL_RISE)
+            return ("flat", 0)
         return None
 
     def corner_groups(q, rule):
         i, j = q
         if rule == "flat":
             return [[(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]]
-        if rule == "ramp-i":                                # equal along each edge across the road
+        if rule == "ramp-i":                                # level across the road, along each of its ends
             return [[(i, j), (i, j + 1)], [(i + 1, j), (i + 1, j + 1)]]
         return [[(i, j), (i + 1, j)], [(i, j + 1), (i + 1, j + 1)]]
 
-    sea_v = lambda a2, b2: fixed[a2][b2] and V[a2][b2] == 0 and any(t["k"] == "s" for t in touches(a2, b2))
-    def limit_pairs(vi, vj):
-        """The neighbouring corners that limit corner (vi, vj) to one level above them: all of them, except the
-        sea's on a cliff coast."""
-        out = []
-        for a2, b2 in DIRS:
-            x, y = vi + a2, vj + b2
-            if 0 <= x <= W and 0 <= y <= H and not (cliff is not None and cliff[vi][vj] and sea_v(x, y)):
-                out.append((x, y))
-        return out
-    LIMIT = [[limit_pairs(vi, vj) for vj in range(H + 1)] for vi in range(W + 1)]
     RULES = [(i, j, ground_rule((i, j))) for i in range(W) for j in range(H)]
-    RULES = [(i, j, r) for i, j, r in RULES if r]
+    RULES = [(i, j, r) for i, j, r in RULES if r and not (T[i][j]["k"] == "s" and not ("b" in T[i][j] or "rd" in T[i][j] or "rl" in T[i][j]))]
+    fitted = [0.0]
 
     def settle():
-        moved = True
-        while moved:
-            moved = False
-            for vi in range(W + 1):
-                for vj in range(H + 1):
-                    if fixed[vi][vj]:
-                        continue
-                    lo = min([V[x][y] for x, y in LIMIT[vi][vj]] + [999]) + 1
-                    if V[vi][vj] > lo:
-                        V[vi][vj], moved = lo, True
-            for i, j, rule in RULES:
-                for group in corner_groups((i, j), rule):
-                    lo = min(V[a2][b2] for a2, b2 in group)
-                    for a2, b2 in group:
-                        if V[a2][b2] != lo and not fixed[a2][b2]:
-                            V[a2][b2], moved = lo, True
+        """Fit what is built to the land. The corners that must be level together (a platform's four, a ramp's two
+        across each end) are joined into groups; each group stands at the mean height of its corners' ground, or
+        at the water where it touches the river or the sea (a quay, a bridge: the highest water it touches, the
+        bank rising to it), and never below the river beside it. Then each ramp's two ends are brought within its
+        rise limit (cut and fill: both ends move towards each other, a group at the water stays)."""
+        parent = {}
+
+        def find(x):
+            while parent.setdefault(x, x) != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(x, y):
+            parent[find(x)] = find(y)
+        ramps = []
+        for i, j, (rule, limit) in RULES:
+            groups = corner_groups((i, j), rule)
+            for g in groups:
+                for c2 in g[1:]:
+                    union(g[0], c2)
+            if rule != "flat":
+                ramps.append((groups[0][0], groups[1][0], limit))
+        members = {}
+        for c2 in list(parent):
+            members.setdefault(find(c2), []).append(c2)
+        level, pinned = {}, set()
+        for root, cs in members.items():
+            fx = [V[a2][b2] for a2, b2 in cs if fixed[a2][b2]]
+            lo = max([floor.get(c2, -1e9) for c2 in cs])
+            if fx:
+                level[root] = max(fx)
+                pinned.add(root)
+            else:
+                level[root] = max(sum(E[a2][b2] for a2, b2 in cs) / len(cs), lo)
+        for _ in range(2000):
+            moved = 0.0
+            for x, y, limit in ramps:
+                rx, ry = find(x), find(y)
+                if rx == ry:
+                    continue
+                d = level[rx] - level[ry]
+                if abs(d) <= limit:
+                    continue
+                over = abs(d) - limit
+                sx = -1 if d > 0 else 1                     # the direction rx must move to close the gap
+                if rx in pinned and ry in pinned:
+                    continue
+                if rx in pinned:
+                    level[ry] += -sx * over
+                elif ry in pinned:
+                    level[rx] += sx * over
+                else:
+                    level[rx] += sx * over / 2
+                    level[ry] -= sx * over / 2
+                moved += over
+            if moved < 0.5:
+                break
+        for root, cs in members.items():
+            for a2, b2 in cs:
+                fitted[0] += abs(V[a2][b2] - level[root])
+                V[a2][b2] = level[root]
     settle()
+    for vi in range(W + 1):
+        for vj in range(H + 1):
+            V[vi][vj] = int(round(V[vi][vj]))
     for i in range(W):
         for j in range(H):
             T[i][j]["h"] = min(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1])
-            if T[i][j]["k"] == "r" and T[i][j]["h"] == 0 and max(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1]) == 0:
-                T[i][j]["k"] = "g"
 
     # 10. checks on the finished model
-    # the slopes: at most one level between neighbouring corners, except up a cliff coast
-    for vi in range(W + 1):
-        for vj in range(H + 1):
-            for x, y in LIMIT[vi][vj]:
-                if V[vi][vj] > V[x][y] + 1 and not (fixed[vi][vj] and fixed[x][y]):
-                    problems.append(f"the ground rises more than one level from corner {(x, y)} to {(vi, vj)}")
-    # the river runs downhill: from its source to its mouth its height never rises, and the land beside it is
+    # the river runs downhill: from its source to its mouth its level never rises, and the land beside it is
     # nowhere lower than the river (it lies in its valley)
-    if river and river_level:
-        prev = None
-        for q in path_tiles(river["pts"], "rail"):
-            t = tile(*q)
-            if not t or t["k"] != "w":
-                continue
-            lv = min(V[q[0]][q[1]], V[q[0] + 1][q[1]], V[q[0]][q[1] + 1], V[q[0] + 1][q[1] + 1])
-            if prev is not None and lv > prev:
-                problems.append(f"river '{river['id']}' rises from level {prev} to {lv} at {q}")
-            prev = lv if prev is None else min(prev, lv)
-        for (i, j) in river_level:
-            for a2, b2 in ((i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)):
-                for x, y in LIMIT[a2][b2]:
-                    if not fixed[x][y] and V[x][y] < V[a2][b2]:
-                        problems.append(f"the land at corner {(x, y)} lies below the river beside it (corner {(a2, b2)})")
+    prev = None
+    for q in course:
+        lv = river_level[q]
+        if prev is not None and lv > prev:
+            problems.append(f"the river rises from {prev} m to {lv} m at {q}")
+        prev = lv if prev is None else min(prev, lv)
+    for (a2, b2), lv in floor.items():
+        if not fixed[a2][b2] and V[a2][b2] < lv - FLAT_TOL:
+            problems.append(f"the land at corner {(a2, b2)} lies below the river beside it ({V[a2][b2]} m < {lv} m)")
     comps2, adj = components()
     for m in set(mass.values()):
         pieces = [c for c in comps2 if mass.get(next(iter(c))) == m]
@@ -1025,9 +878,14 @@ def build(world):
                 problems.append(f"route on the sea at {(i, j)}")
             if ("rd" in t or "rl" in t) and t["k"] == "w" and not t.get("br"):
                 problems.append(f"route on the river without a bridge at {(i, j)}")
-            rule = ground_rule((i, j))
-            if rule and any(len({V[a2][b2] for a2, b2 in g2}) > 1 for g2 in corner_groups((i, j), rule)):
-                problems.append(f"{'something built on a slope' if rule == 'flat' else 'a ramp that is not straight'} at {(i, j)}")
+            rule = ground_rule((i, j)) if t["k"] != "s" or "b" in t or "rd" in t or "rl" in t else None
+            if rule:
+                lv = [[V[a2][b2] for a2, b2 in g2] for g2 in corner_groups((i, j), rule[0])]
+                if any(max(g2) - min(g2) > FLAT_TOL for g2 in lv):
+                    problems.append(f"{'something built on a slope' if rule[0] == 'flat' else 'a ramp that is not level across'} at {(i, j)}")
+                elif rule[0] != "flat" and abs(lv[0][0] - lv[1][0]) > rule[1] + FLAT_TOL:
+                    problems.append(f"a {'rail' if rule[1] == RAIL_RISE else 'road'} square rises {abs(lv[0][0] - lv[1][0])} m "
+                                    f"(at most {rule[1]} m) at {(i, j)}")
             if (i, j) in approach and ("hs" in t or "tr" in t or "yd" in t or t["k"] in ("f", "r")):
                 problems.append(f"something tall in the approach zone of #{approach[(i, j)]['n']} at {(i, j)}")
             if t.get("br"):
@@ -1161,7 +1019,8 @@ def build(world):
     for tw in world.get("towns", []):
         tw.pop("streets", None)
 
-    model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs}
+    model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
+             "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs}
     return model, problems
 
 

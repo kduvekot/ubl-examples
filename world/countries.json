@@ -700,8 +700,8 @@
     "country": "XL",
     "from_column": 200,
     "centre_tile": [
-     229.5,
-     112.5
+     225.0,
+     112.0
     ],
     "centre": {
      "latitude_south": 33.0,
@@ -711,7 +711,7 @@
    }
   ],
   "timezone": "UTC-1",
-  "note": "The world lies in an empty part of the South Atlantic, on the base of D19, so every coordinate in the examples points to open sea on a real map. A map square is 3.5 km each way, and coordinates keep that scale on both axes: a degree of latitude is 111.0 km, a degree of longitude 111.32 km times the cosine of the latitude of the area's centre. The drawn mainland (columns 11 to 172, rows 38 to 150) is centred on 30.0 degrees South, 15.0 degrees West, the middle of D19's box, and so lies at about 28.2 to 31.8 degrees South and 17.9 to 12.0 degrees West (D19's box of 28.1 to 31.9 South and 17.7 to 12.3 West is not quite 560 by 390 km; the kilometres win). Lisavu is drawn nearer, as an inset: its squares are placed around its true centre, 33.0 degrees South, 2.65 degrees West.",
+  "note": "The world lies in an empty part of the South Atlantic, on the base of D19, so every coordinate in the examples points to open sea on a real map. A map square is 3.5 km each way, and coordinates keep that scale on both axes: a degree of latitude is 111.0 km, a degree of longitude 111.32 km times the cosine of the latitude of the area's centre. The drawn mainland (columns 11 to 170, rows 38 to 151, with a few islets just beyond; world/terrain.json) is centred on 30.0 degrees South, 15.0 degrees West, the middle of D19's box, and so lies at about 28.2 to 31.8 degrees South and 17.9 to 12.0 degrees West (D19's box of 28.1 to 31.9 South and 17.7 to 12.3 West is not quite 560 by 390 km; the kilometres win). Lisavu is drawn nearer, as an inset: its squares (columns 209 to 240, rows 100 to 123) are placed around its true centre, 33.0 degrees South, 2.65 degrees West.",
   "telephone_note": "Telephone numbers use +999, a country code that the ITU reserves for a future global service (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country, and each country has its own numbering plan and number length (world/countries.json, phone_plan)."
  },
  "payment_cross_border": {

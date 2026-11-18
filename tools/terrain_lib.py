@@ -38,7 +38,7 @@ DC = np.array([-1, 0, 1, -1, 1, -1, 0, 1], dtype=np.int64)
 DD = np.array([1.41421356, 1.0, 1.41421356, 1.0, 1.0, 1.41421356, 1.0, 1.41421356])
 
 
-@njit(cache=True)
+@njit
 def priority_flood(z, outlet, eps):
     """Fill depressions (priority-flood + epsilon): every land cell gets a descending path to an outlet."""
     ny, nx = z.shape
@@ -71,7 +71,7 @@ def priority_flood(z, outlet, eps):
     return out
 
 
-@njit(cache=True)
+@njit
 def receivers(z, outlet, cell):
     """D8 steepest-descent receiver of every cell (itself for outlets); distance in m."""
     ny, nx = z.shape
@@ -95,7 +95,7 @@ def receivers(z, outlet, cell):
     return rec, dist
 
 
-@njit(cache=True)
+@njit
 def accumulate(order, rec, w):
     """Flow accumulation; order = cell indices by descending height."""
     a = w.copy()
@@ -107,7 +107,7 @@ def accumulate(order, rec, w):
     return a
 
 
-@njit(cache=True)
+@njit
 def steady_heights(order_asc, rec, dist, area, u, a0, smax, base):
     """Steady-state stream-power heights (n = 1): each cell above its receiver by u * sqrt(a0 / A) * distance,
     the slope capped at smax (the hillslope threshold)."""
@@ -128,7 +128,7 @@ RR16 = np.array([-1, -1, -1, 0, 0, 1, 1, 1, -2, -2, -1, -1, 1, 1, 2, 2], dtype=n
 CC16 = np.array([-1, 0, 1, -1, 1, -1, 0, 1, -1, 1, -2, 2, -2, 2, -1, 1], dtype=np.int64)
 
 
-@njit(cache=True)
+@njit
 def least_cost(cost_cell, passable, start):
     """Dijkstra over the cells (16 directions): the cost of a step is its length times the mean cost of its cells."""
     ny, nx = cost_cell.shape
