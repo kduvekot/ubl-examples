@@ -8745,9 +8745,12 @@ PLATFORM = next(pf for pf in WORLD["platforms"] if pf["party"] == "42-xb")
 def platform_location(why):
     """The offshore platform: no name, no street; only its grid reference on the world's map grid and its WGS 84
     coordinates, as an offshore installation is identified."""
-    i, j = PLATFORM["at"]
-    return {"ID": V(f"{i:02d}/{j:02d}", why + " Identified by its square of the world's map grid (column/row), "
-                                             "as offshore installations are identified by grid references.",
+    import world_model
+    # the offshore grid counts blocks of 14 km (four map squares), so the reference keeps two digits each way
+    i, j = (v // world_model.GRID for v in PLATFORM["at"])
+    return {"ID": V(f"{i:02d}/{j:02d}", why + " Identified by its block of the world's offshore grid (blocks of "
+                                             "14 km, column/row), as offshore installations are identified by "
+                                             "grid references.",
                     schemeID="urn:ubl-examples:world:grid"),
             "LocationCoordinate": coordinate(PLATFORM["at"])}
 
