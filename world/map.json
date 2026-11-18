@@ -1,5 +1,5 @@
 {
- "description": "The map of the UBL example world: routes, towns, fields, forests and the relief, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it and from the parties. Stations are the pipelines' border metering stations. Towns and localities (villages) give their population (for the villages the decided range) and the width of their built-up area in km (built_km, owner 2026-11-18, O92): the model draws a built-up area of that size around the centre c. Localities give the parties outside the towns a place in their address. The relief gives the height of the ground (control points, cliff coasts, the river's heights along its course). The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
+ "description": "The map of the UBL example world: routes, towns and villages, the offshore platform and the pipelines' metering stations, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it, from the parties and from the terrain (world/terrain.json: land, sea, river, estuary, land cover, countries and heights, made by tools/terrain.py from world/terrain-inputs.json, O152). Stations are the pipelines' border metering stations. Towns and localities (villages) give their population (for the villages the decided range) and the width of their built-up area in km (built_km, owner 2026-11-18, O92): the model draws a built-up area of that size around the centre c. Localities give the parties outside the towns a place in their address. Roads and rails are given square by square (O152 stage 1: laid over the terrain by a least-cost way, rail at most 70 m and road 150 m of rise a square); the river route names the barges' first quay, and the model follows the river's squares from there to the estuary. The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
  "routes": [
   {
    "id": "ore",
@@ -825,7 +825,7 @@
    "id": "river",
    "mode": "river",
    "layer": "transport",
-   "label": "River barge (XU → XB)",
+   "label": "River barge (XU → XB), from the quay of Rinova Recovery down the river to the estuary",
    "pts": [
     [
      77,

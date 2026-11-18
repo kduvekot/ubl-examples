@@ -98,13 +98,13 @@ Inside `AccountingSupplierParty`:
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **25.41** (unitCode `D61`)  
+- `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **15.95** (unitCode `D61`)  
   The minutes of the latitude.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **42.48** (unitCode `D61`)  
+- `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **33.76** (unitCode `D61`)  
   The minutes of the longitude.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
@@ -384,19 +384,19 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/OriginAddress/ID` = **18/05** (schemeID `urn:ubl-examples:world:grid`)  
+- `Item/OriginAddress/ID` = **19/03** (schemeID `urn:ubl-examples:world:grid`)  
   Where the gas comes from: the field's platform. Identified by its block of the world's offshore grid (blocks of 14 km, column/row), as offshore installations are identified by grid references.
 - `Item/OriginAddress/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Item/OriginAddress/LocationCoordinate/LatitudeDegreesMeasure` = **27** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Item/OriginAddress/LocationCoordinate/LatitudeMinutesMeasure` = **41.89** (unitCode `D61`)  
+- `Item/OriginAddress/LocationCoordinate/LatitudeMinutesMeasure` = **30.54** (unitCode `D61`)  
   The minutes of the latitude.
 - `Item/OriginAddress/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Item/OriginAddress/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Item/OriginAddress/LocationCoordinate/LongitudeMinutesMeasure` = **38.12** (unitCode `D61`)  
+- `Item/OriginAddress/LocationCoordinate/LongitudeMinutesMeasure` = **29.41** (unitCode `D61`)  
   The minutes of the longitude.
 - `Item/OriginAddress/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
@@ -465,10 +465,10 @@ Inside `InvoiceLine`:
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>
-          <cbc:LatitudeMinutesMeasure unitCode="D61">25.41</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">15.95</cbc:LatitudeMinutesMeasure>
           <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
           <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-          <cbc:LongitudeMinutesMeasure unitCode="D61">42.48</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">33.76</cbc:LongitudeMinutesMeasure>
           <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:PhysicalLocation>
@@ -693,14 +693,14 @@ Inside `InvoiceLine`:
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
       <cac:OriginAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:grid">18/05</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:grid">19/03</cbc:ID>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">27</cbc:LatitudeDegreesMeasure>
-          <cbc:LatitudeMinutesMeasure unitCode="D61">41.89</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">30.54</cbc:LatitudeMinutesMeasure>
           <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
           <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-          <cbc:LongitudeMinutesMeasure unitCode="D61">38.12</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">29.41</cbc:LongitudeMinutesMeasure>
           <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:OriginAddress>

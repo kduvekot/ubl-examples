@@ -144,13 +144,13 @@ Inside `SellerSupplierParty`:
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **29** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **25.95** (unitCode `D61`)  
+- `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **48.65** (unitCode `D61`)  
   The minutes of the latitude.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **16** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **34.76** (unitCode `D61`)  
+- `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **28.22** (unitCode `D61`)  
   The minutes of the longitude.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
@@ -393,10 +393,10 @@ Inside `OrderLine`:
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">29</cbc:LatitudeDegreesMeasure>
-          <cbc:LatitudeMinutesMeasure unitCode="D61">25.95</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">48.65</cbc:LatitudeMinutesMeasure>
           <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
           <cbc:LongitudeDegreesMeasure unitCode="DD">16</cbc:LongitudeDegreesMeasure>
-          <cbc:LongitudeMinutesMeasure unitCode="D61">34.76</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">28.22</cbc:LongitudeMinutesMeasure>
           <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:PhysicalLocation>
