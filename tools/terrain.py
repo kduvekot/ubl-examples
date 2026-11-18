@@ -6,8 +6,9 @@ Inputs:  world/terrain-inputs.json (the geology: coast outline, river axis, rift
 Outputs: world/terrain.json        per 3.5 km square of the world model's grid (256 x 192): the kind (s sea,
                                    w river or estuary water, d field, f forest, g grass/pasture, h scrub/heath/moor,
                                    r rock, m marsh), the country, the corner heights in metres, the main river's
-                                   squares with their water level, the estuary's squares; the streams and the
-                                   border line for the printed map; measures of the land;
+                                   squares with their water level, the estuary's squares, the rapids above
+                                   Ferrano (O153); the streams, the small brooks the map shows as well (Lumeport's,
+                                   O153) and the border line for the printed map; measures of the land;
          world/terrain/*.png       the fine rasters (875 m cells on the mainland, 437.5 m on Lisavu): height
                                    (16-bit, metres + 1000) and land cover (8-bit, the class numbers), for the sheet.
 The world model (tools/world_model.py) and the site build read only the outputs: they need neither scipy nor numba.
@@ -20,6 +21,7 @@ Usage: python3 tools/terrain.py            generate (needs numpy, scipy, numba: 
 import base64
 import hashlib
 import json
+import math
 import os
 import sys
 
@@ -92,6 +94,13 @@ def generate():
         else:
             ly += 1 if ty > ly else -1
         river.append((lx, ly, min(lv, 1.0)))
+    # the rapids above Ferrano (O153): the river's squares from the top of the rapids to their foot
+    rapids = []
+    if md.get('rapids'):
+        tx, ty, fx, fy = md['rapids']
+        k0 = min(range(len(river)), key=lambda k: math.hypot(river[k][0] + .5 - tx, river[k][1] + .5 - ty))
+        k1 = min(range(len(river)), key=lambda k: math.hypot(river[k][0] + .5 - fx, river[k][1] + .5 - fy))
+        rapids = [[int(x), int(y)] for x, y, _ in river[k0:k1 + 1]]
     for x, y, _ in river:
         kinds[y, x] = T.WATER
     for x, y in estuary:
@@ -153,12 +162,23 @@ def generate():
                                     "p90": round(float(np.percentile(hc, 90))), "max": round(float(hc.max()))}
     for k, v in meas.items():
         log(f"{k}: {v}")
+    # small streams that the map shows although they are below the streams' threshold (O153: Lumeport's water)
+    brooks = {}
+    for b in inp["mainland"].get("brooks", []):
+        lines, km2, at = T.brook(md, b["mouth"], b["min_km2"])
+        brooks[b["id"]] = {"note": b["note"], "mouth": at, "km2": km2, "lines": lines}
+        log(f"brook {b['id']}: {km2} km2, mouth {at}, {len(lines)} channels")
+    if rapids:
+        lv = {(x, y): l for x, y, l in river}
+        log(f"rapids: squares {rapids[0]} to {rapids[-1]}, the water {lv[tuple(rapids[0])]:.0f} -> {lv[tuple(rapids[-1])]:.0f} m")
     cint = np.round(corners).astype("<i2")
     out = {
         "description": "The world's terrain, made by tools/terrain.py from world/terrain-inputs.json (O152): per 3.5 km "
                        "square of the world model's grid the kind and the country, per square corner the height in "
                        "metres, the main river's squares with their water level (source to mouth) and the estuary's "
-                       "squares; the border crossing on the river; streams for the printed map; the fine rasters in world/terrain/. "
+                       "squares; the rapids above Ferrano (the river's squares through them: the barges stay below); the border "
+                       "crossing on the river; streams for the printed map and the small brooks it shows "
+                       "as well; the fine rasters in world/terrain/. "
                        "Do not edit: change the inputs and run the script.",
         "made_from": fingerprint(),
         "W": W, "H": H, "km": T.KM,
@@ -170,7 +190,9 @@ def generate():
         "river": [[int(x), int(y), round(float(lv))] for x, y, lv in river],
         "estuary": sorted([[int(x), int(y)] for x, y in estuary]),
         "crossing": crossing,
+        "rapids": rapids,
         "streams": {"mainland": T.streams(md, 150, 2), "lisavu": T.streams(ld, 25, 2)},
+        "brooks": brooks,
         "rasters": rasters,
         "measures": meas,
     }

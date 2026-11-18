@@ -446,8 +446,81 @@ def mainland(inp, log=print):
     near = (~sea) & ndimage.binary_dilation(sea, structure=np.ones((3, 3), bool)) & (np.hypot(X - mx, Y - my) < 5)
     mouth = np.unravel_index(np.argmax(np.where(near, akm2, 0)), akm2.shape)
     stem = upstream_stem(rec, akm2, mouth, 0.5)
+    rapids = None
+    if "rapids" in m:
+        z, rapids = knickpoint(z, sea, stem, X, Y, cell, m["rapids"], log)
+        z, rec, akm2 = route(z, sea, cell, rain)
+        mouth = np.unravel_index(np.argmax(np.where(near, akm2, 0)), akm2.shape)
+        stem = upstream_stem(rec, akm2, mouth, 0.5)
     return dict(z=z, sea=sea, rain=rain, rec=rec, akm2=akm2, stem=stem, X=X, Y=Y, S=S, X0=X0, Y0=Y0, cell=cell,
-                estuary=estuary, west=west_cliff)
+                estuary=estuary, west=west_cliff, rapids=rapids)
+
+
+def knickpoint(z, sea, stem, X, Y, cell, r, log=print):
+    """Rapids on the main river (O153: navigation ends at Ferrano): a bar of hard rock that the river has not yet
+    cut through. Below its foot the valley is as the landscape made it; through the rapids the river falls
+    drop_m more than before; above its top the river and its valley floor stand drop_m higher, the extra height
+    fading upstream over upstream_km (the gentler reach above a knickpoint). The valley floor rises with the river
+    and the slopes less the higher they stand above it (fully at the river, not at all floor_m above it), within
+    side_km of the river; this keeps every way downhill. Returns the heights and the reach (stem positions from
+    the top to the foot of the rapids)."""
+    sx, sy = X[stem[:, 0], stem[:, 1]], Y[stem[:, 0], stem[:, 1]]
+    s = np.concatenate([[0], np.cumsum(np.hypot(np.diff(sx), np.diff(sy)))]) * KM      # km along the river
+    k_top = int(np.argmin(np.hypot(sx - r["top"][0], sy - r["top"][1])))
+    k_foot = int(np.argmin(np.hypot(sx - r["foot"][0], sy - r["foot"][1])))
+    s_top, s_foot = s[k_top], s[k_foot]
+    drop, up_km = r["drop_m"], r["upstream_km"]
+    raise_s = np.where(s >= s_foot, 0.0,
+                       np.where(s >= s_top, drop * (s_foot - s) / max(s_foot - s_top, 1e-6),
+                                drop * np.exp(-(s_top - s) / up_km)))
+    mask = np.zeros(z.shape, bool)
+    mask[stem[:, 0], stem[:, 1]] = True
+    dist, (ir, ic) = ndimage.distance_transform_edt(~mask, return_indices=True)
+    pos = np.full(z.shape, -1)
+    pos[stem[:, 0], stem[:, 1]] = np.arange(len(stem))
+    k = pos[ir, ic]
+    above = z - z[ir, ic]
+    w = np.clip(1 - above / r["floor_m"], 0, 1) * np.clip(1 - dist * cell / 1000 / r["side_km"], 0, 1) ** 0.5
+    z2 = np.where(sea, z, z + raise_s[k] * w)
+    log(f"rapids: {s_foot - s_top:.1f} km from {[round(float(sx[k_top]), 1), round(float(sy[k_top]), 1)]} to "
+        f"{[round(float(sx[k_foot]), 1), round(float(sy[k_foot]), 1)]}, the river {z[stem[k_top][0], stem[k_top][1]]:.0f} -> "
+        f"{z2[stem[k_top][0], stem[k_top][1]]:.0f} m at the top, {z2[stem[k_foot][0], stem[k_foot][1]]:.0f} m at the foot")
+    return z2, (float(sx[k_top]), float(sy[k_top]), float(sx[k_foot]), float(sy[k_foot]))
+
+
+def brook(d, mouth, min_km2, step=1):
+    """The streams of one small catchment (a brook too small for streams()), as polylines of [x, y, km2]: every
+    channel of at least min_km2 that drains to the sea at the coast cell nearest mouth (squares)."""
+    rec = d['rec'].ravel(); a = d['akm2'].ravel(); sea = d['sea'].ravel()
+    X, Y = d['X'].ravel(), d['Y'].ravel()
+    land = np.where(~sea & (np.hypot(X - mouth[0], Y - mouth[1]) < 1.0))[0]
+    out = land[np.argmax(a[land])]
+    ny, nx = d['z'].shape
+    # the cells that drain through it
+    inside = np.zeros(a.size, bool); inside[out] = True
+    order = np.argsort(d['z'].ravel(), kind='stable')      # lowest first: a cell's receiver comes before it
+    for i in order:
+        if not inside[i] and rec[i] != i and inside[rec[i]]:
+            inside[i] = True
+    ch = inside & (a >= min_km2)
+    donors = np.zeros(a.size, int)
+    for i in np.where(ch)[0]:
+        if rec[i] != i and ch[rec[i]]:
+            donors[rec[i]] += 1
+    seen = np.zeros(a.size, bool)
+    lines = []
+    for h in sorted(np.where(ch & (donors == 0))[0], key=lambda q: -a[q]):
+        i, pts = h, [h]
+        while i != out:
+            j = rec[i]
+            pts.append(j)
+            if seen[j]:
+                break
+            seen[j] = True
+            i = j
+        keep = pts[::step] + ([pts[-1]] if (len(pts) - 1) % step else [])
+        lines.append([[round(float(X[q]), 3), round(float(Y[q]), 3), int(a[q])] for q in keep])
+    return lines, int(a[out]), [round(float(X[out]), 2), round(float(Y[out]), 2)]
 
 
 # ------------------------------------------------------------------------------------------- Lisavu

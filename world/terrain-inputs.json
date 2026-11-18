@@ -1713,7 +1713,33 @@
    "x0": 40,
    "y0": 48,
    "y1": 118
-  }
+  },
+  "rapids": {
+   "note": "The rapids above Ferrano (O153, owner 2026-11-18: Ferrano grew where the navigable river ends): a bar of hard rock the river has not cut through. From the top to the foot the river falls drop_m more than the landscape made it; above the top the river and its valley floor stand higher, the extra height fading upstream over upstream_km; the floor rises with the river, the slopes less the higher they stand above it (none floor_m above it), within side_km. The barges and the quays stay below the foot.",
+   "top": [
+    70.1,
+    115.4
+   ],
+   "foot": [
+    72.6,
+    117.4
+   ],
+   "drop_m": 30,
+   "upstream_km": 60,
+   "floor_m": 80,
+   "side_km": 12
+  },
+  "brooks": [
+   {
+    "id": "lumeport",
+    "note": "Lumeport's brook (O153): it rises in the low hills west of the centre and runs through the town to the open bay on its east shore; the town's first fresh water. Shown on the map although it drains less than the streams it shows.",
+    "mouth": [
+     140.4,
+     124.4
+    ],
+    "min_km2": 2
+   }
+  ]
  },
  "lisavu": {
   "note": "Lisavu: a 437.5 m cell raster (8 cells per square) over columns 204-256, rows 92-134. An old shield-stratovolcano on the west with its ridge and caldera, a younger cone on the south-east, a low lava plain on the north-east (the cotton); the windward west cut back by the sea and two giant landslides, with fajãs and stacks; windward valleys with amphitheatre heads; Selanu's bay on the lee. References: Madeira's north coast, the Faroes (Enniberg), Kauaʻi's Nā Pali, Tenerife (Los Gigantes, Anaga), La Palma (Caldera de Taburiente), El Hierro (El Golfo).",

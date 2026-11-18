@@ -144,6 +144,8 @@ const ROUTES = WORLD.routes;
 // Built by tools/world_model.py from the world layers and checked there; the map only draws it.
 const hash = (x, y) => { let h = (x * 374761393 + y * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) / 4294967295; };
 const DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+// the eight steps of the model's road mask (bits 0..7): a diagonal step passes through the corner two squares share
+const DIRS8 = [...DIRS, [1, 1], [-1, 1], [-1, -1], [1, -1]];
 const KIND = { s: "sea", w: "river", g: "grass", f: "forest", r: "rock", d: "field", h: "heath", m: "marsh" };
 const byId = Object.fromEntries(P.map(p => [p.id, p]));
 const footprint = p => { const [a, b] = p.size || [1, 1], out = []; for (let i = 0; i < a; i++) for (let j = 0; j < b; j++) out.push([p.at[0] + i, p.at[1] + j]); return out; };
@@ -158,10 +160,16 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.az) t.approach = 1;
   if (m.es) t.estuary = 1;
   if (m.ms) t.station = 1;
-  if (m.rd) t.links = { road: new Set(DIRS.filter((d, bit) => m.rd & (1 << bit)).map(d => d.join())) };
+  if (m.tn) t.tunnel = 1;
+  if (m.dk != null) t.deck = m.dk;                     // the height of a bridge's deck or a tunnel's way (metres)
+  if (m.ab) t.abut = 1;                                // a bridge's or a tunnel's approach (an embankment, a cutting)
+  if (m.ov) t.over = m.ov;                             // which way is on the bridge where a road and a rail line cross
+  if (m.hb) t.harbour = 1;
+  if (m.rd) t.links = { road: new Set(DIRS8.filter((d, bit) => m.rd & (1 << bit)).map(d => d.join())) };
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
 const TOWNS = WORLD.towns.map(tw => ({ ...tw }));
+const RAPIDS = new Set((WORLD.model.rapids || []).map(q => q.join()));   // the rapids above Ferrano (O153)
 // terrain height: one value per tile corner (model "v"); the ground height anywhere is interpolated
 // The heights are metres (model "level_m" 1, since O152); HU pixels per metre draws them about 12 times higher than
 // true scale (a square, 3.5 km, is TW = 32 pixels wide across its diagonal of 4.95 km), so that hills and valleys read
@@ -297,7 +305,15 @@ function drawStream(g, i, j, t) {
   const water = t.n > .5 ? "#3d7fbf" : "#3a7ab8";
   for (const [hw, col] of [[RIVER_HW + .08, "#7f8f52"], [RIVER_HW, water]]) {
     if (wet.length === 2 && (wet[0][0] !== -wet[1][0] || wet[0][1] !== -wet[1][1])) curveBand(g, i, j, wet[0], wet[1], hw, col);
-    else { for (const d of wet) band(g, i, j, [0, 0], d, hw, col); disk(g, i, j, [0, 0], hw, col); } } }
+    else { for (const d of wet) band(g, i, j, [0, 0], d, hw, col); disk(g, i, j, [0, 0], hw, col); } }
+  if (RAPIDS.has(i + "," + j)) for (let k = 0; k < 7; k++) {          // the rapids above Ferrano: white water
+    const u = (hash(i * 7 + k, j) - .5) * .5, v = (hash(i, j * 5 + k) - .5) * .5, [x, y] = tp(i, j, u, v);
+    g.fillStyle = "rgba(240,248,255,.85)"; g.fillRect(x - 2.5, y - .6, 5, 1.3); } }
+// a town's own harbour (Larkmouth's, O153): a stone quay with a wool store and a crane
+function harbour(g, i, j) { const [x, y] = tileWorld(i, j);
+  poly(g, [tp(i, j, -.45, -.45), tp(i, j, .5, -.45), tp(i, j, .5, .45), tp(i, j, -.45, .45)], "#9b968a");
+  block(g, x - 5, y + 1, .45, .3, 8, "#b8a48a", "#7d4b3a"); block(g, x + 6, y - 3, .25, .25, 5, "#c9b79c", "#6f5f86");
+  g.strokeStyle = "#c0392b"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(x + 9, y + 2); g.lineTo(x + 9, y - 16); g.lineTo(x + 18, y - 12); g.stroke(); }
 // paint the part of the world inside box (world pixels) on g; detail: the small details too
 function paintWorld(g, box, detail) {
   g.imageSmoothingEnabled = false;
@@ -340,6 +356,7 @@ function paintWorld(g, box, detail) {
     if (t.urban && !t.building) townBlocks(g, i, j, t, detail);
     else if (t.house) { if (detail) house(g, x, y, t.house[0], hash(i, j * 7)); else block(g, x, y + 2, .6, .6, 6 + 8 * t.house[0], "#ddd3c2", "#9a5a48"); }
     if (t.station) meteringStation(g, i, j);
+    if (t.harbour) harbour(g, i, j);
     if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
       if (fr[0] === ri && fr[1] === rj) { const ring = t.urban && IN_TOWN.has(t.building.kind) && !(t.building.size && t.building.size[0] * t.building.size[1] > 1) ? ringBlocks(i, j, t) : null;
         if (ring) for (const [bx, by, n, m] of ring) if (by <= y) cityBlock(g, bx, by, Math.min(3, t.density), n, m, detail);
@@ -441,7 +458,8 @@ function urbanGround(g, i, j, t) {
 function townBlocks(g, i, j, t, detail) {
   const rd = t.links && t.links.road, rl = t.links && t.links.rail, out = [];
   const onWay = set => (u, v) => set && set.size && ((Math.abs(u) < .2 && Math.abs(v) < .2) ||
-    (Math.abs(v) < .2 && set.has(u > 0 ? "1,0" : "-1,0")) || (Math.abs(u) < .2 && set.has(v > 0 ? "0,1" : "0,-1")));
+    (Math.abs(v) < .2 && set.has(u > 0 ? "1,0" : "-1,0")) || (Math.abs(u) < .2 && set.has(v > 0 ? "0,1" : "0,-1")) ||
+    (Math.abs(u - v) < .25 && set.has(u > 0 ? "1,1" : "-1,-1")) || (Math.abs(u + v) < .25 && set.has(u > 0 ? "1,-1" : "-1,1")));
   const onRoad = onWay(rd), onRail = onWay(rl);
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) { if (!subBit(t, a, b)) continue;
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; if (onRoad(u, v) || onRail(u, v) || (t.bridge)) continue;
@@ -677,8 +695,19 @@ function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - L
 const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
 // world pixel position of an original tile, in the current rotation
 const tileWorld = (i, j) => { const [x, y] = iso(...R(i, j)); return [x + OX, y + OY - heightAt(i, j) * HU]; };
-// world position of a point inside tile (i, j): u, v in tile units from its centre
-const tp = (i, j, u, v) => tileWorld(i + u, j + v);
+// world position of a point inside tile (i, j): u, v in tile units from its centre; while a deck is drawn (DECK
+// set), at the deck's height instead of the ground's
+let DECK = null;
+const tp = (i, j, u, v) => { if (!DECK) return tileWorld(i + u, j + v);
+  const [x, y] = iso(...R(i + u, j + v)); return [x + OX, y + OY - DECK(u, v) * HU]; };
+// the height of a way on a bridge, in a tunnel or on an approach (model "dk" at the square's middle), at the middle
+// of the edge (or the corner) towards its neighbour in direction d: halfway to the neighbour's deck, or the ground
+function deckEnd(i, j, d) { const t = tiles[i][j], nb = tiles[i + d[0]]?.[j + d[1]];
+  return nb && nb.deck != null ? (t.deck + nb.deck) / 2 : heightAt(i + d[0] / 2, j + d[1] / 2); }
+// a function (u, v) -> height along a straight way through tile (i, j) between the link directions a and b
+function deckFn(i, j, a, b) { const t = tiles[i][j], ha = deckEnd(i, j, a), hb = deckEnd(i, j, b), B = [b[0] / 2, b[1] / 2], l2 = B[0] * B[0] + B[1] * B[1];
+  return (u, v) => { const s = Math.max(-1, Math.min(1, (u * B[0] + v * B[1]) / l2)); return s >= 0 ? t.deck + (hb - t.deck) * s : t.deck + (t.deck - ha) * s; }; }
+const BRIDGE_LIFT = 6;                                 // metres a deck is drawn above the water or a way it crosses
 // vehicles follow the pieces: roads from tile centre to tile centre, rail and river from edge to edge
 // The vehicles: one per transport leg of the flows (world/documents.json), on the way the world model found
 // for it ("legs" in the model): a road leg from the building of its from-party to that of its to-party, a rail
@@ -725,14 +754,25 @@ const half = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 // bend at right angles); a road leg starts and ends at the edge of its buildings (its first and last tiles)
 function wayPoints(mode, path) {
   if (mode === "sea" || mode === "air" || mode === "pipeline") return path.map(p => tileWorld(...p));
-  if (mode === "road") { const pts = path.map(p => p.slice()); if (pts.length > 1) { pts[0] = half(path[0], path[1]); pts[pts.length - 1] = half(path[path.length - 1], path[path.length - 2]); }
-    return pts.map(p => tileWorld(...p)); }
-  const out = [tileWorld(...path[0])];
-  for (let k = 0; k < path.length - 1; k++) out.push(tileWorld(...half(path[k], path[k + 1])));
-  if (path.length > 1) out.push(tileWorld(...path[path.length - 1]));
+  // a point of a road or rail way at (x, y) in tile units, between tiles a and b of its path (the same tile for a
+  // tile's middle): on the ground, or on a deck (a bridge, a tunnel, an approach)
+  const at = (x, y, a, b) => { const ta = tiles[a[0]]?.[a[1]], tb = tiles[b[0]]?.[b[1]]; let h;
+    if (a === b) h = ta && ta.deck != null ? ta.deck : heightAt(x, y);
+    else if (ta?.deck != null && tb?.deck != null) h = (ta.deck + tb.deck) / 2; else h = heightAt(x, y);
+    const [sx, sy] = iso(...R(x, y)); return [sx + OX, sy + OY - h * HU]; };
+  const inTunnel = q => !!tiles[q[0]]?.[q[1]]?.tunnel;
+  let out, hide;
+  if (mode === "road") { const pts = path.map(p => p.slice()); out = path.map(p => at(p[0], p[1], p, p));
+    if (path.length > 1) { const h0 = half(path[0], path[1]), h1 = half(path[path.length - 1], path[path.length - 2]);
+      out[0] = at(...h0, path[0], path[1]); out[out.length - 1] = at(...h1, path[path.length - 1], path[path.length - 2]); }
+    hide = path.slice(1).map((q, k) => inTunnel(q) || inTunnel(path[k])); }
+  else { out = [at(...path[0], path[0], path[0])]; hide = [];
+    for (let k = 0; k < path.length - 1; k++) { out.push(at(...half(path[k], path[k + 1]), path[k], path[k + 1])); hide.push(inTunnel(path[k])); }
+    if (path.length > 1) { out.push(at(...path[path.length - 1], path[path.length - 1], path[path.length - 1])); hide.push(inTunnel(path[path.length - 1])); } }
+  out.hide = hide;
   return out; }
 function measure(r, pts) { r.world = pts; let L = 0; r.seg = [];
-  for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [pts[k], pts[k + 1]]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); if (l) { r.seg.push([a, b, l]); L += l; } }
+  for (let k = 0; k < pts.length - 1; k++) { const [a, b] = [pts[k], pts[k + 1]]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); if (l) { r.seg.push([a, b, l, !!(pts.hide && pts.hide[k])]); L += l; } }
   r.L = L; }
 // a pipeline is drawn along its tiles, from where the gas enters to where it leaves: its ends reach to the
 // edge of the building it serves; a branch starts on the pipeline it leaves, and its dashes continue those
@@ -788,20 +828,43 @@ function drawRailPiece(g, i, j, a, b, bridge) { const A = mid(a), B = mid(b);
   const dx = B[0] - A[0], dy = B[1] - A[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
   for (let u = .05; u < l; u += .11) { const c = [A[0] + dx / l * u, A[1] + dy / l * u]; tline(g, i, j, [[c[0] + nx * .15, c[1] + ny * .15], [c[0] - nx * .15, c[1] - ny * .15]], "#4b3a2c", 1.5); }
   for (const o of [.07, -.07]) tline(g, i, j, [[A[0] + nx * o, A[1] + ny * o], [B[0] + nx * o, B[1] + ny * o]], "#d4d4d4", 1); }
+// the way of a tile that runs on a deck (a bridge, a tunnel, their approaches): "road", "rail" or null
+function deckWay(t) { if (t.deck == null) return null; if (t.over) return t.over; return t.links?.road ? "road" : t.links?.rail ? "rail" : null; }
+// piers under a bridge square, from the ground (or the water) up to the deck
+function piers(g, i, j, t) { const ground = t.water ? 0 : heightAt(i, j), top = t.deck;
+  if (top - ground < 4) return;
+  for (const f of [-.3, 0, .3]) { const dirs = (deckWay(t) === "road" ? [...t.links.road] : [(t.pieces.rail[0][0] || [1, 0]).join()]).map(d => d.split(",").map(Number));
+    const d = dirs[0], u = d[0] / 2 * f * 2, v = d[1] / 2 * f * 2, [x, y] = tileWorld(i + u, j + v), h = (DECK ? DECK(u, v) : top) - (t.water ? heightAt(i + u, j + v) : heightAt(i + u, j + v));
+    if (h < 3) continue; g.fillStyle = "#6f6a60"; g.fillRect(x - 1.5, y - h * HU, 3, h * HU); g.fillStyle = "#4e4a43"; g.fillRect(x + .5, y - h * HU, 1, h * HU); } }
+// a tunnel portal: a dark arch in a stone face where the way enters the hill, at the edge towards the tunnel
+function portal(g, i, j, d) { const m = [d[0] / 2, d[1] / 2], pv = [-d[1], d[0]], w = .3;
+  poly(g, [tp(i, j, m[0] + pv[0] * w * 1.4, m[1] + pv[1] * w * 1.4), tp(i, j, m[0] - pv[0] * w * 1.4, m[1] - pv[1] * w * 1.4),
+    tp(i, j, m[0] * .8 - pv[0] * w * 1.4, m[1] * .8 - pv[1] * w * 1.4), tp(i, j, m[0] * .8 + pv[0] * w * 1.4, m[1] * .8 + pv[1] * w * 1.4)], "#8c8576");
+  const [x, y] = tp(i, j, m[0] * .9, m[1] * .9); g.fillStyle = "#1e1b18"; g.beginPath(); g.ellipse(x, y - 2, 5, 4.5, 0, Math.PI, 0); g.lineTo(x + 5, y); g.lineTo(x - 5, y); g.fill(); }
 function drawRoutes(g, vis) {
   const order = []; for (let s2 = 0; s2 < W + H; s2++) for (let ri = 0; ri < RW(); ri++) { const rj = s2 - ri; if (rj < 0 || rj >= RH()) continue;
     const q = RI(ri, rj), tl = tiles[q[0]][q[1]]; if (!tl.links) continue; const [x, y] = tileWorld(...q); if (vis(x, y, 2 * TW)) order.push(q); }
-  for (const [i, j] of order) { const t = tiles[i][j]; for (const [a, b] of t.pieces?.rail || []) drawRailPiece(g, i, j, a, b, !!t.bridge); }
-  for (const [i, j] of order) { const t = tiles[i][j]; if (!t.links?.road) continue;
-    const dirs = [...t.links.road].map(d => d.split(",").map(Number)); drawRoadTile(g, i, j, dirs, !!t.bridge);
+  // on the ground: the rail pieces and the roads that do not run on a deck
+  for (const [i, j] of order) { const t = tiles[i][j]; if (deckWay(t) === "rail") continue; for (const [a, b] of t.pieces?.rail || []) drawRailPiece(g, i, j, a, b, false); }
+  for (const [i, j] of order) { const t = tiles[i][j]; if (!t.links?.road || deckWay(t) === "road") continue;
+    const dirs = [...t.links.road].map(d => d.split(",").map(Number)); drawRoadTile(g, i, j, dirs, false);
     if (t.links.rail) for (const [a, b] of t.pieces.rail) { const A = mid(a), B = mid(b), dx = B[0] - A[0], dy = B[1] - A[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
       for (const o of [.07, -.07]) tline(g, i, j, [[A[0] + nx * o, A[1] + ny * o], [B[0] + nx * o, B[1] + ny * o]], "#c9c9c9", 1); } }   // level crossing
+  // on a deck: bridges (with their piers) and approaches; in a tunnel nothing is seen but its portals
+  for (const [i, j] of order) { const t = tiles[i][j], way = deckWay(t); if (!way) continue;
+    const dirs = way === "road" ? [...t.links.road].map(d => d.split(",").map(Number)) : (t.pieces.rail[0] || []).filter(Boolean);
+    if (dirs.length !== 2) continue;
+    if (t.tunnel) continue;
+    DECK = deckFn(i, j, dirs[0], dirs[1]);
+    if (t.bridge) piers(g, i, j, t);
+    if (way === "road") drawRoadTile(g, i, j, dirs, !!t.bridge); else drawRailPiece(g, i, j, dirs[0], dirs[1], !!t.bridge);
+    if (t.abut) for (const d of dirs) if (tiles[i + d[0]]?.[j + d[1]]?.tunnel) portal(g, i, j, d);
+    DECK = null; }
 }
-
 function rotate(step) { rot = (rot + step + 4) % 4; drawWorld(); computeLand(); measureRoutes(); fit(); redraw();
   document.getElementById("compass").textContent = ["N", "E", "S", "W"][rot]; }
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
-function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0])]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0])]; }
+function along(r, f) { let d = f * r.L; for (const [a, b, l, hid] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0]), hid]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0]), s[3]]; }
 // where a vehicle is at time t: f, how far along its way (0 at its from-party, 1 at its to-party), and whether it
 // is on the way back. It waits at its from-party (loading), travels out at a steady speed, waits at its to-party
 // (unloading), travels back the same way, and sets out again; the vehicles keep their own timetables
@@ -815,7 +878,8 @@ function progress(v, t) { const travel = Math.max(1500, v.L * (v.mode === "air" 
 
 function drawVehicle(g, r, t) {
   if (!r.seg.length) return;
-  const [f, back] = progress(r, t), [x, y, a0] = along(r, f), ang = back ? a0 + Math.PI : a0;
+  const [f, back] = progress(r, t), [x, y, a0, hidden] = along(r, f), ang = back ? a0 + Math.PI : a0;
+  if (hidden) return;                                   // in a tunnel
   const [sx, sy] = toScreen(x, y), s = Math.max(.45, view.s);
   g.save(); g.translate(sx, sy); g.scale(s, s);
   const body = (x0, x1, w, color, dy = 0) => { g.fillStyle = shade(color, -.35); g.fillRect(x0, -w / 2 + dy + 1, x1 - x0, w);

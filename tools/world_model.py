@@ -13,9 +13,18 @@ For every tile the model records:
   c   country (XU, XB, XL) or null
   h   height of the tile's lowest corner, in metres (corner heights are in model "v")
   n   a stable noise value 0..1, for variation in the drawing
-  rd  road connections, a 4-bit mask: 1 = +i, 2 = +j, 4 = -i, 8 = -j
-  rl  rail pieces, each a pair of edge directions ([di, dj] or null for the centre)
-  br  1 if a road or rail crosses water here (a bridge)
+  rd  road connections, an 8-bit mask (DIRS8): 1 = +i, 2 = +j, 4 = -i, 8 = -j, and the diagonal steps 16 = (+i, +j),
+      32 = (-i, +j), 64 = (-i, -j), 128 = (+i, -j), which pass through the corner the two squares share (O152 stage 3)
+  rl  rail pieces, each a pair of directions to the neighbours it leads to ([di, dj], diagonals included, or null
+      for the centre)
+  br  1 for a bridge square: a road or rail crosses water here, or a route lists it as a bridge (a viaduct over a
+      valley, or a bridge over another way)
+  tn  1 for a tunnel square: the way runs under the land
+  dk  on a bridge or tunnel square and on its two approaches: the height of the way at the square's middle, in
+      metres (the deck runs straight from the ground at the far edge of one approach to the far edge of the other)
+  ab  1 for a bridge's or a tunnel's approach (an embankment or a cutting: its ground is left as it is)
+  ov  where a road and a rail line cross on a bridge (an overpass): "road" or "rail", the way on the bridge
+  hb  1 for a town's own harbour (map "towns", "harbour": Larkmouth's quay, without a party)
   b   id of the party standing here
   hs  a house: [level 1..4, facing direction 0..3 towards its street]; in a town, a square of houses (the
       built-up area's own streets run within it), outside the towns a single house (a farmstead)
@@ -35,7 +44,9 @@ Structural rules (the build stops when one is broken):
   * buildings do not share tiles and do not stand on roads, rails or water,
     except parties marked "on" a route (customs posts, rail stations);
   * every party has access: a road next to it, or rail for rail parties,
-    or water for ports and quays; missing access roads are laid by the model;
+    or water for ports and quays; missing access roads are laid by the model, over the terrain with the router of
+    the map's routes (tools/routing.py; tools/lay_routes.py writes them into the map, so that the map holds every
+    road and the model normally lays none);
   * every town and village is built up over the area its built_km gives (map "towns", "localities"), on land,
     off the airports and their approach zones and TOWN_CLEAR from a pipeline (step 6);
   * every house faces a street: the road next to it, or, in a town, the next square of houses on the way to
@@ -47,14 +58,25 @@ Structural rules (the build stops when one is broken):
   * the terrain comes from world/terrain.json (tools/terrain.py, O152): the kind and the country of every
     square, the height of every square corner in metres (model "v"), with no limit between neighbouring corners;
     0 at the sea and in the estuary;
-  * what is built is fitted to the land: buildings, houses, yards, stations, junctions and bends stand on a
-    platform (four corners level); a straight road or rail square is a ramp, level across, rising at most
-    RAIL_RISE = 70 m (rail, 2 %) or ROAD_RISE = 245 m (road, 7 %) along its direction;
+  * what is built is fitted to the land: buildings, houses, yards, stations, junctions, ends and bends of 90 degrees
+    between two sides stand on a platform (four corners level); a road or rail square a way passes straight through,
+    or bends 45 degrees in, is a ramp, level across, rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
+    (a main road, 7 %) or ROAD_RISE_MINOR = 350 m (a minor road, 10 %) along its direction; on a diagonal the
+    ramp runs from corner to corner, level across the other two corners;
+  * roads, rails and pipelines are given square by square (O152 stage 3, tools/lay_routes.py), each square a
+    neighbour of the last, diagonals included; no way crosses another, or passes between two squares of water,
+    through the corner two squares share;
+  * bridges and tunnels: a run of bridge or tunnel squares is straight, has an approach on the ground at each end
+    and holds no junction; its deck rises no more than its length allows; a bridge's deck stands above the ground
+    (at most BRIDGE_FREE below it) or the water, a tunnel's way at least TUNNEL_COVER under the ground; a road may
+    cross a rail line (or a rail line a road) on a bridge;
   * the river runs downhill: its water lies at the heights its route gives,
     never rising from source to mouth, and the land beside it is nowhere lower
     than the river (it lies in its valley);
   * roads and rails cross the river only on straight bridges; level
-    crossings are a straight road across a straight rail;
+    crossings are a straight road across a straight rail, at right angles or at 45 degrees (a skew crossing);
+  * the barges keep below the rapids above Ferrano (world/terrain.json "rapids", O153): no river route and no quay
+    at or above them;
   * tall structures (a mast, a cooling tower) keep TALL_CLEARANCE = 2 squares
     (7 km) from an airport and its approach zones;
   * an airport has an approach zone of APPROACH = 3 squares (10.5 km) beyond
@@ -64,12 +86,12 @@ Structural rules (the build stops when one is broken):
   * a road across a land border passes a customs post on each side (within
     BORDER_POST = 3 squares, 10.5 km, along the road); a rail line across it
     passes a rail station (a terminal, where the train is cleared, anywhere on the
-    line); rail lines end at a party;
+    line); rail lines end at a party, a town's harbour or another rail line (a branch);
   * sea routes run over water from port to port, air routes from airport
     to airport;
-  * pipelines are buried: they run in straight lines along the tile grid,
-    cross a road, a rail line or the river underneath, at right angles and
-    in a straight line, never along them, and keep out of towns; nothing is
+  * pipelines are buried: they run square by square over the land (as laid by tools/lay_routes.py),
+    cross a road, a rail line or the river underneath, straight on under a straight piece, at right angles or
+    at 45 degrees, never along them, and keep out of towns; nothing is
     built or planted on them (the right of way is kept clear); a pipeline
     leaves the sea only once, at its landfall, from an offshore platform;
   * a pipeline starts at a party, at its offshore platform or on another
@@ -94,6 +116,9 @@ import os
 import sys
 from collections import deque
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import routing  # noqa: E402  (tools/routing.py: the router of roads, rails and pipelines over the terrain)
+
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 # The grid. The first map had 64 x 48 squares of 14 km; on 2026-11-18 the owner made the squares four times
 # finer (3.5 km), so that the map can hold real detail. GRID is the number of squares per 14 km: every length
@@ -116,10 +141,15 @@ STREETS = 3                                       # squares between a town's sid
 SUB = 4                                           # sub-squares per square side for the built-up areas (875 m)
 BUILT_WARP = .35                                  # how far the noise moves a built-up area's edge, as a share of its radius
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
+DIAG = [(1, 1), (-1, 1), (-1, -1), (1, -1)]       # bit 4..7: the diagonal steps, through the corner two squares share
+DIRS8 = DIRS + DIAG
 ESTUARY = 1.5                                     # a river this wide (squares, 5 km) is open water: an estuary
 LEVEL_M = 1                                       # model "v" holds metres (since O152 stage 1; it was levels of 100 m)
-RAIL_RISE = 70                                    # metres a straight rail square may rise along its direction (2 %)
-ROAD_RISE = 245                                   # metres a straight road square may rise along its direction (7 %)
+RAIL_RISE = 70                                    # metres a rail square may rise along its direction (2 % of 3.5 km)
+ROAD_RISE = 245                                   # metres a main road square may rise along its direction (7 %)
+ROAD_RISE_MINOR = 350                             # metres a minor road square may rise (10 %; access roads, streets)
+BRIDGE_FREE = 25                                  # metres the ground may stand above a bridge deck's line (its abutments)
+TUNNEL_COVER = 20                                 # metres of ground at least above a tunnel's line
 FLAT_TOL = 1                                      # metres: a platform's corners may differ by this much (rounding)
 TERRAIN = os.path.join(ROOT, "world", "terrain.json")
 
@@ -171,8 +201,12 @@ def sign(v):
 
 
 def path_tiles(pts, mode):
-    """Roads: an L per pair of waypoints (longer leg first). Rail (and the river's course, the sea lanes): a
-    staircase that keeps as close as it can to the straight line between the waypoints."""
+    """The squares of a route. Given square by square (each point a neighbour of the last, diagonals included:
+    roads, rails and pipelines since O152 stage 3), as given. Otherwise between waypoints: roads an L per pair of
+    waypoints (longer leg first); rail (and the river's course, the sea lanes) a staircase that keeps as close as
+    it can to the straight line between the waypoints."""
+    if len(pts) > 1 and all(max(abs(b[0] - a[0]), abs(b[1] - a[1])) == 1 for a, b in zip(pts, pts[1:])):
+        return [tuple(q) for q in pts]                # given square by square (8-connected, O152 stage 3)
     out = [tuple(pts[0])]
     for bi, bj in pts[1:]:
         i, j = out[-1]
@@ -277,16 +311,39 @@ def build(world):
                     if t and "b" not in t:
                         t["k"], t["c"], t["h"] = "s", None, 0
 
-    # 3a. pipelines and their stations. A pipeline is buried: its tiles keep their terrain, but its right
+    # 3a. a town's harbour (map "towns", "harbour"; Larkmouth, O153): a quay square with open water in front, like
+    #     a port, without a party
+    harbours = {}
+    for tw in world.get("towns", []):
+        hb = tw.get("harbour")
+        if not hb:
+            continue
+        q = tuple(hb["at"])
+        t = tile(*q)
+        if not t or t["k"] in ("s", "w") or q in owner:
+            problems.append(f"the harbour of {tw['name']} at {q} must stand on free land")
+            continue
+        harbours[q] = tw
+        t["k"], t["hb"] = "g", 1
+        di, dj = hb["water"]
+        if (tile(q[0] + di, q[1] + dj) or {}).get("k") != "s":
+            problems.append(f"the harbour of {tw['name']} at {q} does not face the sea")
+        for k in range(1, PORT_BASIN + 1):
+            t2 = tile(q[0] + di * k, q[1] + dj * k)
+            if t2 and "b" not in t2:
+                t2["k"], t2["c"], t2["h"] = "s", None, 0
+
+    # 3b. pipelines and their stations. A pipeline is buried: its tiles keep their terrain, but its right
     #     of way is kept clear (no house, yard, tree or forest on it). A border metering station stands
-    #     on the pipeline, on flat land.
+    #     on the pipeline, on flat land. Since O152 stage 3 a pipeline is given square by square, as laid
+    #     over the land (tools/lay_routes.py): each square a neighbour of the last, diagonals included.
     pipes = {}
     for r in world["routes"]:
         if r["mode"] == "pipeline":
             pts = r["pts"]
-            for (ai, aj), (bi, bj) in zip(pts, pts[1:]):
-                if ai != bi and aj != bj:
-                    problems.append(f"pipeline '{r['id']}' is not straight along the tile grid from {(ai, aj)} to {(bi, bj)}")
+            for a2, b2 in zip(pts, pts[1:]):
+                if max(abs(b2[0] - a2[0]), abs(b2[1] - a2[1])) != 1:
+                    problems.append(f"pipeline '{r['id']}' jumps from {tuple(a2)} to {tuple(b2)}: give it square by square")
             r["path"] = pipes[r["id"]] = path_tiles(pts, "road")
     corridor = {q for path in pipes.values() for q in path}
     pipe_ends = frozenset(q for path in pipes.values() for q in (path[0], path[-1]))
@@ -295,7 +352,7 @@ def build(world):
         q = tuple(st["at"])
         stations[q] = st
         t = tile(*q)
-        if not t or t["k"] in ("s", "w") or q in owner:
+        if not t or t["k"] in ("s", "w") or q in owner or q in harbours:
             problems.append(f"{st['kind']} station at {q} must stand on free land")
             continue
         t["k"], t["ms"] = "g", 1
@@ -306,32 +363,63 @@ def build(world):
         if t and t["k"] == "f":
             t["k"] = "g"
 
-    # 3b. a sea route is a shipping lane: land on it becomes water, unless something is built there
+    # 3c. a sea route is a shipping lane: land on it becomes water, unless something is built there
     for r in world["routes"]:
         if r["mode"] == "sea":
             for q in path_tiles(r["pts"], "rail"):
                 t = tile(*q)
-                if t and t["k"] != "s" and q not in owner:
+                if t and t["k"] != "s" and q not in owner and q not in harbours:
                     t["k"], t["c"], t["h"] = "s", None, 0
 
-    # 4. routes. Road connections are explicit edges between neighbouring tiles; nothing is
-    #    connected just because two road tiles touch.
+    # 4. routes. Road connections are explicit edges between neighbouring tiles (diagonal neighbours included, O152
+    #    stage 3); nothing is connected just because two road tiles touch. A route's squares on the river, and those
+    #    it lists as "bridges", are bridge squares (model "br": the deck spans them); those it lists as "tunnels" are
+    #    tunnel squares (model "tn": the way runs under the land). A road route has a class ("main", 7 %, or "minor",
+    #    10 %; the model's own streets and access roads are minor).
     road, rails, edges, into = set(), {}, set(), {}
+    road_rise = {}                                     # road square -> the rise it may have (the strictest road on it)
+    struct = {}                                        # square -> "bridge" | "tunnel"
+    laid = []                                          # (name, mode, path) of every road and rail laid: for the checks
 
     def link(a, b):
         edges.add(frozenset((a, b)))
 
-    def lay_road(path):
-        """Lay a road along a chain of neighbouring tiles; water tiles become bridges."""
+    struct_way = {}                                    # structure square -> the mode of the way on the deck
+    abut = {}                                          # a structure's approach square -> the way
+    name_of = {}
+
+    def mark(q, structures, mode):
+        t = T[q[0]][q[1]]
+        kind_ = "bridge" if t["k"] == "w" else structures.get(q)
+        if kind_:
+            if q in struct_way and struct_way[q] != mode:
+                problems.append(f"a road and a rail line share the {kind_} at {q}")
+            struct[q], struct_way[q] = kind_, mode
+            t["br" if kind_ == "bridge" else "tn"] = 1
+        elif t["k"] == "s":
+            t["k"] = "g"
+
+    def lay_road(path, rise=ROAD_RISE_MINOR, structures=None, name="road"):
+        """Lay a road along a chain of neighbouring tiles; water tiles and the listed bridges become bridges, the
+        listed tunnels tunnels."""
         for k, q in enumerate(path):
-            t = T[q[0]][q[1]]
-            if t["k"] == "w":
-                t["br"] = 1
-            elif t["k"] == "s":
-                t["k"] = "g"
+            mark(q, structures or {}, "road")
             road.add(q)
+            road_rise[q] = min(road_rise.get(q, 1e9), rise)
             if k:
                 link(path[k - 1], q)
+        if path:
+            if name != "chain":
+                laid.append((name, "road", list(path)))
+            note_abut(path, "road")
+
+    def note_abut(path, mode):
+        """The approaches of the structures along a way: the squares before and after each run of them."""
+        for k, q in enumerate(path):
+            if struct.get(q) and struct_way.get(q) == mode:
+                for y in (path[k - 1] if k else None, path[k + 1] if k + 1 < len(path) else None):
+                    if y is not None and not (struct.get(y) and struct_way.get(y) == mode):
+                        abut[y] = name_of.get(mode, mode)
 
     def enter(q, building_tile):
         into.setdefault(q, set()).add((building_tile[0] - q[0], building_tile[1] - q[1]))
@@ -340,8 +428,11 @@ def build(world):
         if r["mode"] in ("road", "rail"):
             path = path_tiles(r["pts"], r["mode"])
             r["path"] = path
+            sts = {tuple(q): "bridge" for q in r.get("bridges", [])}
+            sts.update({tuple(q): "tunnel" for q in r.get("tunnels", [])})
             if r["mode"] == "road":
-                chain = []
+                rise = ROAD_RISE if r.get("class") == "main" else ROAD_RISE_MINOR
+                chain, after = [], None
                 for k, q in enumerate(path):
                     p = owner.get(q)
                     if p and p.get("on") != "road":
@@ -349,23 +440,26 @@ def build(world):
                             problems.append(f"#{p['n']} {p['name']} stands on road route '{r['id']}' at {q}")
                         if chain:
                             enter(chain[-1], q)          # the road ends at this building
-                        lay_road(chain)
-                        chain = []
+                        lay_road(chain, rise, sts, "chain")
+                        chain, after = [], q
                         continue
+                    if not chain and after and abs(after[0] - q[0]) + abs(after[1] - q[1]) == 1:
+                        enter(q, after)                  # the road leaves this building
                     chain.append(q)
-                lay_road(chain)
+                lay_road(chain, rise, sts, "chain")
+                laid.append((r["id"], "road", list(path)))  # the whole way, its buildings included: for the checks
             else:
                 for k, (i, j) in enumerate(path):
                     p = owner.get((i, j))
                     if p and p.get("on") != "rail" and 0 < k < len(path) - 1:
                         problems.append(f"#{p['n']} {p['name']} stands on rail route '{r['id']}' at {(i, j)}")
-                    t = T[i][j]
-                    if t["k"] == "w":
-                        t["br"] = 1
                     prev = (path[k - 1][0] - i, path[k - 1][1] - j) if k else None
                     nxt = (path[k + 1][0] - i, path[k + 1][1] - j) if k < len(path) - 1 else None
                     if not p or p.get("on") == "rail":
+                        mark((i, j), sts, "rail")
                         rails.setdefault((i, j), []).append([prev, nxt])
+                laid.append((r["id"], "rail", list(path)))
+                note_abut(path, "rail")
 
     def neighbours(cells):
         out = set()
@@ -378,7 +472,9 @@ def build(world):
 
     def free(q, water_ok=False):
         t = tile(*q)
-        return bool(t) and q not in owner and q not in rails and q not in stations and (t["k"] not in ("s", "w") or (water_ok and t["k"] == "w"))
+        return bool(t) and q not in owner and q not in rails and q not in stations and q not in harbours and q not in struct \
+            and q not in abut \
+            and (t["k"] not in ("s", "w") or (water_ok and t["k"] == "w"))
 
     # 5. towns: streets as lines (a main cross, side streets every third tile); only the part
     #    connected to the town centre stays
@@ -453,51 +549,50 @@ def build(world):
                             mass[y] = mid
                             st.append(y)
 
-    def crossable_rail(y, d):
-        """A rail tile a road may cross: one straight piece, at right angles to the road."""
-        pcs = rails.get(y)
-        if not pcs or len(pcs) != 1 or not (pcs[0][0] and pcs[0][1]):
-            return False
-        a2, b2 = pcs[0]
-        straight = a2[0] == -b2[0] and a2[1] == -b2[1]
-        return straight and (a2[0] == 0) != (d[0] == 0)
+    land = None
 
-    def connect(starts, goal, avoid=frozenset()):
-        """Shortest free path from any start tile to a goal tile, laid as road. It never crosses
-        a land border, never branches off a bridge, and crosses rail lines and the river only in
-        a straight line at right angles (a level crossing, a bridge)."""
-        prev, came, todo = {}, {}, deque()
-        for q in starts:
-            prev[q], came[q] = None, None
-            todo.append(q)
-        while todo:
-            q = todo.popleft()
-            if q in goal and q not in starts:
-                path = []
-                while q is not None:
-                    path.append(q)
-                    q = prev[q]
-                path.reverse()
-                lay_road(path)
-                return path
-            crossing = q not in starts and (q in rails or T[q[0]][q[1]]["k"] == "w")
-            for d in DIRS:
-                if crossing and d != came[q]:
-                    continue                      # keep straight on while crossing
-                y = (q[0] + d[0], q[1] + d[1])
-                ty = tile(*y)
-                if not ty or y in prev or y in avoid or y in owner or ty["k"] == "s":
-                    continue
-                cq, cy = T[q[0]][q[1]]["c"], ty["c"]
-                if cq and cy and cq != cy:
-                    continue                      # border crossings only on routes with customs
-                if y in goal and (ty["k"] == "w" or y in rails):
-                    continue                      # never join at a bridge or a level crossing
-                if y in rails and not crossable_rail(y, d):
-                    continue
-                prev[y], came[y] = q, d
-                todo.append(y)
-        return None
+    access = []                                         # the roads the model lays itself: {to, name, path, bridges}
+
+    def connect(starts, goal, avoid=frozenset(), to=None):
+        """The cheapest way from any start tile to a goal tile over the terrain, laid as a minor road
+        (tools/routing.py, the same cost as the map's routes: gradient, cross-fall, ground, turns; 8-connected). It
+        never crosses a land border, never joins at a bridge, a tunnel or a level crossing, and crosses rail lines
+        and pipelines only straight on at right angles, the river only on a bridge."""
+        nonlocal land
+        if land is None:
+            land = routing.Land([[T[i][j]["k"] for j in range(H)] for i in range(W)],
+                                [[T[i][j]["c"] for j in range(H)] for i in range(W)], E, W, H, estuary, river_level)
+            try:
+                land.load_fine(ROOT, terrain["rasters"])    # the same cost as tools/lay_routes.py (Pillow)
+            except ImportError:
+                pass
+        built_ = routing.Built()
+        built_.sq["road"] = set(road)
+        for e in edges:
+            a2, b2 = tuple(e)
+            built_.steps["road"].setdefault(a2, set()).add((b2[0] - a2[0], b2[1] - a2[1]))
+            built_.steps["road"].setdefault(b2, set()).add((a2[0] - b2[0], a2[1] - b2[1]))
+        for q, pcs in rails.items():
+            built_.sq["rail"].add(q)
+            built_.steps["rail"][q] = {d for pc in pcs for d in pc if d}
+        for path in pipes.values():
+            built_.add("pipeline", path)
+        built_.add("river", course)
+        built_.blocked = set(owner) | set(stations) | set(harbours)
+        built_.structures = set(struct) | set(abut)
+        goals = {q for q in goal if q not in rails and q not in struct and q not in abut and q not in corridor}
+        starts = [q for q in starts if q not in rails and q not in struct and q not in abut]
+        if not starts:
+            return None
+        got = routing.route(land, built_, "minor", list(starts), goals, avoid=set(avoid) | (set(corridor) - set(starts)))
+        if not got:
+            return None
+        path, sts = got
+        lay_road(path, ROAD_RISE_MINOR, sts, f"access-{to['id']}" if to else "link")
+        access.append({"to": to["id"] if to else None, "name": to["name"] if to else "the network",
+                       "path": [list(q) for q in path],
+                       "bridges": [list(q) for q in path if sts.get(q) == "bridge" or T[q[0]][q[1]]["k"] == "w"]})
+        return path
 
     def main_network(m):
         comps2, _ = components()
@@ -529,7 +624,7 @@ def build(world):
                     enter(q, next(b2 for b2 in fp if abs(b2[0] - q[0]) + abs(b2[1] - q[1]) == 1))
             continue
         starts = [q for q in around if free(q) and q not in corridor]     # not along a pipeline's right of way
-        path = connect(starts, net, avoid=pipe_ends)
+        path = connect(starts, net, avoid=pipe_ends, to=p)
         if not path:
             problems.append(f"#{p['n']} {p['name']} cannot be reached by road")
             continue
@@ -628,7 +723,7 @@ def build(world):
             t = tile(*q)
             u = spread(*q) / scale
             t["ul"] = min(top, 4 if u < .22 else 3 if u < .45 else 2 if u < .75 else 1)
-            if q in owner or q in road or q in rails or q in corridor or "hs" in t:
+            if q in owner or q in road or q in rails or q in corridor or q in harbours or "hs" in t:
                 continue
             t["k"], t["hs"] = "g", [t["ul"], None]
         n = len(cells)
@@ -676,7 +771,8 @@ def build(world):
     def leads_somewhere(q):
         if q in into:
             return True
-        return any((q[0] + di, q[1] + dj) in owner or "hs" in (tile(q[0] + di, q[1] + dj) or {}) for di, dj in DIRS)
+        return any((q[0] + di, q[1] + dj) in owner or (q[0] + di, q[1] + dj) in harbours or "hs" in (tile(q[0] + di, q[1] + dj) or {})
+                   for di, dj in DIRS)
 
     changed = True
     while changed:
@@ -694,10 +790,11 @@ def build(world):
                     drop({q})
                 changed = True
 
-    # road connections per tile: edges to neighbouring road tiles, plus the building a road ends at
+    # road connections per tile: edges to neighbouring road tiles (the eight neighbours: bits 0..7 of DIRS8), plus
+    # the building a road ends at
     for (i, j) in road:
         mask = 0
-        for bit, (di, dj) in enumerate(DIRS):
+        for bit, (di, dj) in enumerate(DIRS8):
             if frozenset(((i, j), (i + di, j + dj))) in edges or (di, dj) in into.get((i, j), ()):
                 mask |= 1 << bit
         T[i][j]["rd"] = mask
@@ -747,34 +844,125 @@ def build(world):
                     floor[(a2, b2)] = min(floor.get((a2, b2), 1e9), lv)
     for (a2, b2), lv in floor.items():
         V[a2][b2] = max(V[a2][b2], float(lv))
-    STRAIGHT_I, STRAIGHT_J = 1 | 4, 2 | 8          # road masks of a straight road along i / along j
+    HALF = math.sqrt(2) / 2                          # a diagonal square's ramp: two halves of a diagonal
+
+    def links(q, mode=None):
+        """The directions the road and the rail of square q lead to (a building a road ends at included); only the
+        road's or the rail's if mode is given."""
+        t = T[q[0]][q[1]]
+        out = set()
+        m = t.get("rd", 0) if q in road and mode != "rail" else 0
+        out |= {d for bit, d in enumerate(DIRS8) if m & (1 << bit)}
+        if mode != "road":
+            for pc in rails.get(q, ()):
+                out |= {tuple(d) for d in pc if d}
+        return out
+
+    def overpass(q):
+        """For a bridge square that also holds a way on the ground (a road over a rail line, or a rail line over
+        a road): the mode of that way below; else None."""
+        if struct.get(q) != "bridge" or T[q[0]][q[1]]["k"] == "w":
+            return None
+        under = "rail" if struct_way.get(q) == "road" else "road"
+        return under if (q in rails if under == "rail" else q in road) else None
+
+    def shape(ls):
+        """The ramp of a square a way passes through, from the two directions it leads to: straight along i or j
+        ('ramp-i', 'ramp-j'), straight on a diagonal ('ramp-d' from the north-west corner to the south-east one,
+        'ramp-a' from the north-east corner to the south-west one), a bend of 45 degrees along its straight side's
+        axis; a bend of 90 degrees between two sides is a platform ('flat')."""
+        a2, b2 = sorted(ls)
+        ortho = [d for d in (a2, b2) if d[0] == 0 or d[1] == 0]
+        if len(ortho) == 1:
+            return "ramp-i" if ortho[0][1] == 0 else "ramp-j"
+        if a2[0] == -b2[0] and a2[1] == -b2[1]:
+            if len(ortho) == 2:
+                return "ramp-i" if a2[1] == 0 else "ramp-j"
+            return "ramp-d" if a2[0] == a2[1] else "ramp-a"
+        if len(ortho) == 2:
+            return "flat"
+        v = (b2[0] - a2[0], b2[1] - a2[1])               # two diagonals at right angles: along their chord
+        return "ramp-i" if v[1] == 0 else "ramp-j"
 
     def ground_rule(q):
-        """('flat' | 'ramp-i' | 'ramp-j', rise limit in metres) or None (free terrain) for the tile at q."""
+        """(shape, rise limit in metres for a whole square) or None (free terrain) for the tile at q. Shapes: 'flat'
+        (four corners level), 'ramp-i', 'ramp-j', 'ramp-d', 'ramp-a' (see shape())."""
         t = T[q[0]][q[1]]
         if q in river_level and t["k"] == "w" and not t.get("br"):
             return None                                     # the river falls along its course (fixed corners)
-        if t["k"] in ("s", "w") or "b" in t or "hs" in t or "yd" in t or "ms" in t or (q in approach and t["k"] != "s"):
+        if q in abut:
+            return None                                     # an approach: the way on its embankment or in its cutting
+        if q in struct:
+            under = overpass(q)
+            if not under:
+                return None                                 # a bridge spans the ground, a tunnel runs under it
+            ls = links(q, under)                            # an overpass: the ground fitted to the way below
+            return (shape(ls), RAIL_RISE if under == "rail" else road_rise.get(q, ROAD_RISE_MINOR)) if len(ls) == 2 else ("flat", 0)
+        if t["k"] in ("s", "w") or "b" in t or "hs" in t or "yd" in t or "ms" in t or "hb" in t or (q in approach and t["k"] != "s"):
             return ("flat", 0)
         if q in road and q in rails:
             return ("flat", 0)                              # level crossing
-        if q in road:
-            m = T[q[0]][q[1]].get("rd", 0)
-            return ("ramp-i", ROAD_RISE) if m == STRAIGHT_I else ("ramp-j", ROAD_RISE) if m == STRAIGHT_J else ("flat", 0)
-        if q in rails:
-            pcs = rails[q]
-            if len(pcs) == 1 and pcs[0][0] and pcs[0][1] and pcs[0][0][0] == -pcs[0][1][0] and pcs[0][0][1] == -pcs[0][1][1]:
-                return ("ramp-i", RAIL_RISE) if pcs[0][0][1] == 0 else ("ramp-j", RAIL_RISE)
-            return ("flat", 0)
+        if q in road or q in rails:
+            ls = links(q)
+            if len(ls) != 2 or len(rails.get(q, ())) > 1:
+                return ("flat", 0)                          # an end, a junction, a siding's points
+            return (shape(ls), road_rise.get(q, ROAD_RISE_MINOR) if q in road else RAIL_RISE)
         return None
 
     def corner_groups(q, rule):
+        """The corners of square q that stand level together, in order along the way; and the ramps between them
+        (pairs of group indexes, the share of the square's rise limit)."""
         i, j = q
         if rule == "flat":
-            return [[(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]]
+            return [[(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]], []
         if rule == "ramp-i":                                # level across the road, along each of its ends
-            return [[(i, j), (i, j + 1)], [(i + 1, j), (i + 1, j + 1)]]
-        return [[(i, j), (i + 1, j)], [(i, j + 1), (i + 1, j + 1)]]
+            return [[(i, j), (i, j + 1)], [(i + 1, j), (i + 1, j + 1)]], [(0, 1, 1.0)]
+        if rule == "ramp-j":
+            return [[(i, j), (i + 1, j)], [(i, j + 1), (i + 1, j + 1)]], [(0, 1, 1.0)]
+        if rule == "ramp-d":                                # level across the diagonal: the two other corners
+            return [[(i, j)], [(i + 1, j), (i, j + 1)], [(i + 1, j + 1)]], [(0, 1, HALF), (1, 2, HALF)]
+        return [[(i + 1, j)], [(i, j), (i + 1, j + 1)], [(i, j + 1)]], [(0, 1, HALF), (1, 2, HALF)]
+
+    def shared(a2, b2):
+        """The corners two neighbouring squares share: an edge's two, or one for diagonal neighbours."""
+        ca = {(a2[0] + x, a2[1] + y) for x in (0, 1) for y in (0, 1)}
+        return sorted(ca & {(b2[0] + x, b2[1] + y) for x in (0, 1) for y in (0, 1)})
+
+    # the structures along the ways: each a run of bridge or tunnel squares with an approach square at each end (an
+    # embankment or a cutting, its ground left as it is): the deck runs straight from the ground at the far edge (or
+    # corner) of one approach to the ground at the far edge of the other
+    runs = []                    # (way, kind, squares with the approaches, entry corners, exit corners, rise limit, centres)
+    for name, mode, path in laid:
+        k = 0
+        on = lambda q: q in struct and struct_way.get(q) == mode and q not in owner
+        while k < len(path):
+            if not on(path[k]):
+                k += 1
+                continue
+            k1 = k
+            while k1 + 1 < len(path) and on(path[k1 + 1]):
+                k1 += 1
+            sq = path[k:k1 + 1]
+            if k < 2 or k1 > len(path) - 3 or path[k - 1] in owner or path[k1 + 1] in owner:
+                problems.append(f"{mode} '{name}': a {struct[sq[0]]} without an approach on the ground at each end at {sq[0]}")
+            else:
+                seq = path[k - 1:k1 + 2]
+                steps = [(b2[0] - a2[0], b2[1] - a2[1]) for a2, b2 in zip(seq, seq[1:])]
+                if len(set(steps)) != 1:
+                    problems.append(f"{mode} '{name}': the {struct[sq[0]]} at {sq[0]} is not straight")
+                if len({struct[q] for q in sq}) > 1:
+                    problems.append(f"{mode} '{name}': a bridge runs into a tunnel at {sq[0]}")
+                ell = lambda a2, b2: math.hypot(b2[0] - a2[0], b2[1] - a2[1])
+                pos = [ell(path[k - 2], seq[0]) / 2]
+                for a2, b2 in zip(seq, seq[1:]):
+                    pos.append(pos[-1] + ell(a2, b2))
+                total = pos[-1] + ell(seq[-1], path[k1 + 2]) / 2
+                lim = RAIL_RISE if mode == "rail" else min(road_rise.get(path[k - 1], ROAD_RISE), road_rise.get(path[k1 + 1], ROAD_RISE))
+                runs.append((name, struct[sq[0]], seq, shared(path[k - 2], seq[0]), shared(seq[-1], path[k1 + 2]), lim * total,
+                             [x / total for x in pos]))
+                for q in (seq[0], seq[-1]):
+                    abut[q] = name
+            k = k1 + 1
 
     RULES = [(i, j, ground_rule((i, j))) for i in range(W) for j in range(H)]
     RULES = [(i, j, r) for i, j, r in RULES if r and not (T[i][j]["k"] == "s" and not ("b" in T[i][j] or "rd" in T[i][j] or "rl" in T[i][j]))]
@@ -798,19 +986,27 @@ def build(world):
             parent[find(x)] = find(y)
         ramps = []
         for i, j, (rule, limit) in RULES:
-            groups = corner_groups((i, j), rule)
+            groups, pairs = corner_groups((i, j), rule)
             for g in groups:
+                find(g[0])
                 for c2 in g[1:]:
                     union(g[0], c2)
-            if rule != "flat":
-                ramps.append((groups[0][0], groups[1][0], limit))
+            for x, y, share in pairs:
+                ramps.append((groups[x][0], groups[y][0], limit * share))
+        for name, kind_, sq, ent, ext, lim, _ in runs:  # a deck: its two ends within the rise its length allows
+            for g in (ent, ext):
+                find(g[0])
+                for c2 in g[1:]:
+                    union(g[0], c2)
+            ramps.append((ent[0], ext[0], lim))
         members = {}
         for c2 in list(parent):
             members.setdefault(find(c2), []).append(c2)
-        level, pinned = {}, set()
+        level, pinned, low = {}, set(), {}
         for root, cs in members.items():
             fx = [V[a2][b2] for a2, b2 in cs if fixed[a2][b2]]
             lo = max([floor.get(c2, -1e9) for c2 in cs])
+            low[root] = lo
             if fx:
                 level[root] = max(fx)
                 pinned.add(root)
@@ -836,6 +1032,9 @@ def build(world):
                 else:
                     level[rx] += sx * over / 2
                     level[ry] -= sx * over / 2
+                for r_ in (rx, ry):                         # never below the river beside it
+                    if level[r_] < low[r_]:
+                        level[r_] = low[r_]
                 moved += over
             if moved < 0.5:
                 break
@@ -843,6 +1042,9 @@ def build(world):
             for a2, b2 in cs:
                 fitted[0] += abs(V[a2][b2] - level[root])
                 V[a2][b2] = level[root]
+                if root in pinned:
+                    at_water.add((a2, b2))
+    at_water = set()                                    # corners of what is built at the water (a quay, a bridgehead)
     settle()
     for vi in range(W + 1):
         for vj in range(H + 1):
@@ -850,6 +1052,38 @@ def build(world):
     for i in range(W):
         for j in range(H):
             T[i][j]["h"] = min(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1])
+    # the decks: a bridge's or a tunnel's way runs straight from the ground at one end to the ground at the other;
+    # model "dk" is its height at the middle of each of its squares (metres)
+    structures = []
+    for name, kind_, seq, ent, ext, lim, frac in runs:
+        h0, h1 = V[ent[0][0]][ent[0][1]], V[ext[0][0]][ext[0][1]]
+        for f, q in zip(frac, seq):
+            T[q[0]][q[1]]["dk"] = int(round(h0 + (h1 - h0) * f))
+        for q in (seq[0], seq[-1]):
+            T[q[0]][q[1]]["ab"] = 1
+            if len(links(q)) != 2 or (q in road and q in rails) or len(rails.get(q, ())) > 1 or q in struct:
+                problems.append(f"the approach of the {kind_} of '{name}' at {q} holds a junction or another way")
+        sq = seq[1:-1]
+        km_ = round(math.hypot(sq[-1][0] - seq[0][0], sq[-1][1] - seq[0][1]) * KM, 1)
+        rise = abs(h1 - h0)
+        if rise > lim + FLAT_TOL:
+            problems.append(f"the {kind_} of '{name}' at {sq[0]} rises {rise} m on its deck (at most {round(lim)} m)")
+        ground = lambda q: river_level[q] if T[q[0]][q[1]]["k"] == "w" and q in river_level else \
+            sum(V[q[0] + a2][q[1] + b2] for a2 in (0, 1) for b2 in (0, 1)) / 4
+        for q in sq:
+            t = T[q[0]][q[1]]
+            g = ground(q)
+            if kind_ == "bridge" and g > t["dk"] + BRIDGE_FREE:
+                problems.append(f"the bridge of '{name}' at {q} runs into the ground ({round(g)} m, the deck {t['dk']} m)")
+            if kind_ == "tunnel" and g < t["dk"] + TUNNEL_COVER:
+                problems.append(f"the tunnel of '{name}' at {q} has too little ground above it ({round(g)} m, the way {t['dk']} m)")
+        structures.append({"way": name, "kind": kind_, "squares": [list(q) for q in sq], "approaches": [list(seq[0]), list(seq[-1])],
+                           "km": km_, "ends_m": [h0, h1],
+                           "deck_above_m": max(0, round(max(T[q[0]][q[1]]["dk"] - ground(q) for q in sq))) if kind_ == "bridge" else None,
+                           "cover_m": round(min(ground(q) - T[q[0]][q[1]]["dk"] for q in sq)) if kind_ == "tunnel" else None,
+                           "over": sorted({T[q[0]][q[1]]["k"] == "w" and ("estuary" if q in estuary else "river") or
+                                           (("rail" if q in rails and struct_way[q] == "road" else "road" if q in road and struct_way[q] == "rail"
+                                             else "valley")) for q in sq}) if kind_ == "bridge" else None})
 
     # 10. checks on the finished model
     # the river runs downhill: from its source to its mouth its level never rises, and the land beside it is
@@ -861,7 +1095,7 @@ def build(world):
             problems.append(f"the river rises from {prev} m to {lv} m at {q}")
         prev = lv if prev is None else min(prev, lv)
     for (a2, b2), lv in floor.items():
-        if not fixed[a2][b2] and V[a2][b2] < lv - FLAT_TOL:
+        if not fixed[a2][b2] and (a2, b2) not in at_water and V[a2][b2] < lv - FLAT_TOL:
             problems.append(f"the land at corner {(a2, b2)} lies below the river beside it ({V[a2][b2]} m < {lv} m)")
     comps2, adj = components()
     for m in set(mass.values()):
@@ -880,26 +1114,41 @@ def build(world):
                 problems.append(f"route on the river without a bridge at {(i, j)}")
             rule = ground_rule((i, j)) if t["k"] != "s" or "b" in t or "rd" in t or "rl" in t else None
             if rule:
-                lv = [[V[a2][b2] for a2, b2 in g2] for g2 in corner_groups((i, j), rule[0])]
+                groups, pairs = corner_groups((i, j), rule[0])
+                lv = [[V[a2][b2] for a2, b2 in g2] for g2 in groups]
                 if any(max(g2) - min(g2) > FLAT_TOL for g2 in lv):
                     problems.append(f"{'something built on a slope' if rule[0] == 'flat' else 'a ramp that is not level across'} at {(i, j)}")
-                elif rule[0] != "flat" and abs(lv[0][0] - lv[1][0]) > rule[1] + FLAT_TOL:
-                    problems.append(f"a {'rail' if rule[1] == RAIL_RISE else 'road'} square rises {abs(lv[0][0] - lv[1][0])} m "
-                                    f"(at most {rule[1]} m) at {(i, j)}")
+                else:
+                    for x, y, share in pairs:
+                        if abs(lv[x][0] - lv[y][0]) > rule[1] * share + FLAT_TOL:
+                            problems.append(f"a {'rail' if rule[1] == RAIL_RISE else 'road'} square rises {abs(lv[x][0] - lv[y][0])} m "
+                                            f"(at most {round(rule[1] * share)} m) at {(i, j)}")
             if (i, j) in approach and ("hs" in t or "tr" in t or "yd" in t or t["k"] in ("f", "r")):
                 problems.append(f"something tall in the approach zone of #{approach[(i, j)]['n']} at {(i, j)}")
-            if t.get("br"):
-                m = t.get("rd")
-                pcs = t.get("rl", [])
-                straight_rail = len(pcs) == 1 and all(pcs[0]) and pcs[0][0][0] == -pcs[0][1][0] and pcs[0][0][1] == -pcs[0][1][1]
-                if (m is not None and m not in (STRAIGHT_I, STRAIGHT_J)) or (pcs and not straight_rail):
-                    problems.append(f"a bridge that is not straight (junction or bend on the bridge) at {(i, j)}")
-            if "rd" in t and "rl" in t:
-                pcs = t["rl"]
-                ok = t["rd"] in (STRAIGHT_I, STRAIGHT_J) and len(pcs) == 1 and all(pcs[0]) and \
-                    ((t["rd"] == STRAIGHT_I and pcs[0][0][0] == 0) or (t["rd"] == STRAIGHT_J and pcs[0][0][1] == 0))
+            if (i, j) in struct:
+                under = overpass((i, j))
+                st_ = lambda u, v: u[0] == -v[0] and u[1] == -v[1]
+                ls = links((i, j), struct_way[(i, j)])
+                ok = len(ls) == 2 and st_(*ls) and len(t.get("rl", [])) <= 1
+                if ok and under:
+                    us = links((i, j), under)
+                    ok = len(us) == 2 and st_(*us) and (lambda u, v: u[0] * v[1] - u[1] * v[0] != 0)(sorted(ls)[0], sorted(us)[0])
+                    t["ov"] = struct_way[(i, j)]
+                elif ok and ("rd" in t and "rl" in t):
+                    ok = False
                 if not ok:
-                    problems.append(f"level crossing at {(i, j)} is not a straight road across a straight rail")
+                    problems.append(f"a {struct[(i, j)]} that is not straight, or holds a junction or a second way, at {(i, j)}")
+            if "rd" in t and "rl" in t and not overpass((i, j)):
+                pcs = t["rl"]
+                rl_ = {tuple(d) for d in pcs[0] if d} if len(pcs) == 1 else set()
+                rd_ = links((i, j)) - rl_ if len(pcs) == 1 else set()
+                ok = len(pcs) == 1 and all(pcs[0]) and len(rl_) == 2 and len(rd_) == 2
+                if ok:
+                    (a2, b2), (c2, d2) = sorted(rl_), sorted(rd_)
+                    ok = a2[0] == -b2[0] and a2[1] == -b2[1] and c2[0] == -d2[0] and c2[1] == -d2[1] \
+                        and a2[0] * c2[1] - a2[1] * c2[0] != 0
+                if not ok:
+                    problems.append(f"level crossing at {(i, j)} is not a straight road across a straight rail (at 90 or 45 degrees)")
             if "hs" in t:
                 q, n = (i, j), 0                              # in a town, along the squares of houses to a road
                 while q not in road and n < 64 and "hs" in (tile(*q) or {}) and (n == 0 or "um" in tile(*q)):
@@ -950,9 +1199,10 @@ def build(world):
                     on_line = path + [y for q in (path[0], path[-1]) for y in neighbours({q})]
                     if not any(owner.get(q, {}).get("kind") == "terminal" for q in on_line):
                         problems.append(f"rail line '{r['id']}' crosses the {ca}/{cb} border at {path[k]} without passing a rail station (terminal)")
+            other_rail = {q for o in world["routes"] if o["mode"] == "rail" and o is not r for q in o["path"]}
             for end in (path[0], path[-1]):
-                if not (neighbours({end}) | {end}) & set(owner):
-                    problems.append(f"rail line '{r['id']}' ends at {end} without reaching a party")
+                if not ((neighbours({end}) | {end}) & (set(owner) | set(harbours)) or end in other_rail):
+                    problems.append(f"rail line '{r['id']}' ends at {end} without reaching a party, a harbour or another line")
         if r["mode"] == "sea":
             for q in path_tiles(r["pts"], "rail"):
                 if tile(*q)["k"] != "s":
@@ -992,15 +1242,17 @@ def build(world):
                 problems.append(f"{name} ends on a {crossed[0]} at {q}")
                 continue
             a, b = path[k - 1], path[k + 1]
-            along_i = a[1] == b[1]
-            if not (a[0] == b[0] or along_i):
+            d = (b[0] - q[0], b[1] - q[1])
+            if (q[0] - a[0], q[1] - a[1]) != d:
                 problems.append(f"{name} bends under a {crossed[0]} at {q}; it crosses in a straight line")
                 continue
-            pcs = t.get("rl", [])
-            if ("rd" in t and t["rd"] != (STRAIGHT_J if along_i else STRAIGHT_I)) or \
-                    (pcs and not (len(pcs) == 1 and all(pcs[0]) and pcs[0][0][0] == -pcs[0][1][0] and pcs[0][0][1] == -pcs[0][1][1]
-                                  and (pcs[0][0][0] == 0) == along_i)):
-                problems.append(f"{name} crosses a {crossed[0]} at {q} other than at right angles under a straight piece")
+            if q in struct:
+                problems.append(f"{name} crosses under a {struct[q]} at {q}")
+                continue
+            ls = links(q)
+            if ("rd" in t or "rl" in t) and not (len(ls) == 2 and len(t.get("rl", [])) <= 1 and
+                                                 (lambda u, v: u[0] == -v[0] and u[1] == -v[1] and u[0] * d[1] - u[1] * d[0] != 0)(*ls)):
+                problems.append(f"{name} crosses a {crossed[0]} at {q} other than straight across under a straight piece")
         for k in range(len(path) - 1):
             ca, cb = T[path[k][0]][path[k][1]]["c"], T[path[k + 1][0]][path[k + 1][1]]["c"]
             if ca and cb and ca != cb and T[path[k][0]][path[k][1]]["k"] != "s":
@@ -1013,6 +1265,38 @@ def build(world):
         if not touches(path[-1]):
             problems.append(f"{name} ends at {path[-1]} at no party")
 
+    # no way crosses another, or the river, through the corner two squares share: a diagonal step of one way and a
+    # diagonal step of another between the two other squares of the same four, or a diagonal step between two
+    # squares of water
+    diag_steps = set()
+    for name, mode, path in laid + [(r["id"], "pipeline", r["path"]) for r in world["routes"] if r["mode"] == "pipeline"]:
+        for a2, b2 in zip(path, path[1:]):
+            if a2[0] != b2[0] and a2[1] != b2[1]:
+                diag_steps.add((frozenset((a2, b2)), name))
+                s1, s2 = tile(b2[0], a2[1]), tile(a2[0], b2[1])
+                if s1 and s2 and s1["k"] in ("w", "s") and s2["k"] in ("w", "s") and mode != "pipeline":
+                    problems.append(f"{mode} '{name}' passes between two squares of water at the corner of {a2} and {b2}")
+    corners_ = {}
+    for e, name in diag_steps:
+        a2, b2 = tuple(e)
+        corners_.setdefault((max(a2[0], b2[0]), max(a2[1], b2[1])), set()).add((e, name))
+    for c2, es in corners_.items():
+        if len({e for e, _ in es}) > 1:
+            problems.append(f"{' and '.join(sorted({n for _, n in es}))} cross through the corner {c2} of four squares")
+    # the river is navigable below the rapids above Ferrano (world/terrain.json "rapids", O153): the barges and the
+    # quays stay below their foot
+    rapids = [tuple(q) for q in terrain.get("rapids", [])]
+    if rapids:
+        foot = course.index(rapids[-1]) if rapids[-1] in course else -1
+        for r in world["routes"]:
+            if r["mode"] == "river" and any(course.index(q) <= foot for q in r["path"] if q in course):
+                problems.append(f"river route '{r['id']}' uses the river at or above the rapids (from {rapids[0]} to {rapids[-1]})")
+        for p in world["parties"]:
+            if p.get("kind") == "quay":
+                wet = [y for y in neighbours(set(footprint(p))) if y in course]
+                if wet and min(course.index(y) for y in wet) <= foot:
+                    problems.append(f"#{p['n']} {p['name']} is a quay at or above the rapids")
+
     leg_problems, legs = check_legs(world, T, adj, owner, neighbours)
     problems += leg_problems
 
@@ -1020,7 +1304,8 @@ def build(world):
         tw.pop("streets", None)
 
     model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
-             "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs}
+             "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs, "structures": structures,
+             "rapids": [list(q) for q in rapids], "access": access}
     return model, problems
 
 
@@ -1164,7 +1449,9 @@ def main():
     roads = sum(1 for t in flat if "rd" in t)
     print(f"world model: {len(world['parties'])} parties, {len(world.get('towns', []))} towns, "
           f"{houses} houses, {roads} road tiles, {sum(1 for t in flat if t['k'] == 'w')} river tiles, "
-          f"{sum(1 for t in flat if t.get('br'))} bridges: "
+          f"{sum(1 for t in flat if t.get('br'))} bridge squares and {sum(1 for t in flat if t.get('tn'))} tunnel squares "
+          f"({sum(1 for x in model['structures'] if x['kind'] == 'bridge')} bridges, "
+          f"{sum(1 for x in model['structures'] if x['kind'] == 'tunnel')} tunnels): "
           + ("no problems" if not problems else f"{len(problems)} problems"), file=sys.stderr)
     for tw in world.get("towns", []) + world.get("localities", []):
         b = tw["built"]

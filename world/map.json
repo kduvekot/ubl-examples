@@ -1,5 +1,5 @@
 {
- "description": "The map of the UBL example world: routes, towns and villages, the offshore platform and the pipelines' metering stations, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it, from the parties and from the terrain (world/terrain.json: land, sea, river, estuary, land cover, countries and heights, made by tools/terrain.py from world/terrain-inputs.json, O152). Stations are the pipelines' border metering stations. Towns and localities (villages) give their population (for the villages the decided range) and the width of their built-up area in km (built_km, owner 2026-11-18, O92): the model draws a built-up area of that size around the centre c. Localities give the parties outside the towns a place in their address. Roads and rails are given square by square (O152 stage 1: laid over the terrain by a least-cost way, rail at most 70 m and road 150 m of rise a square); the river route names the barges' first quay, and the model follows the river's squares from there to the estuary. The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
+ "description": "The map of the UBL example world: routes, towns and villages, the offshore platform and the pipelines' metering stations, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it, from the parties and from the terrain (world/terrain.json: land, sea, river, estuary, land cover, countries and heights, made by tools/terrain.py from world/terrain-inputs.json, O152). Stations are the pipelines' border metering stations. Towns and localities (villages) give their population (for the villages the decided range) and the width of their built-up area in km (built_km, owner 2026-11-18, O92): the model draws a built-up area of that size around the centre c. Localities give the parties outside the towns a place in their address. A town may have a harbour of its own (a quay square and the side its water lies on), without a party: Larkmouth's. Roads, rails and pipelines are given square by square, each square a neighbour of the last, diagonals included, as tools/lay_routes.py laid them over the terrain (O152 stage 3: least-cost ways with the gradient of their class, a main road about 6 to 7 %, a minor road up to 10 %, a railway 1.5 to 2 %, following the valleys and crossing ridges at their passes; tools/routing.py): a road's \"class\" is main or minor, \"bridges\" and \"tunnels\" list the squares a route spans or runs under; the access roads to the parties are routes too (\"access-<party>\"). Do not edit these by hand: change the network in tools/lay_routes.py and run it. The river route names the barges' first quay, and the model follows the river's squares from there to the estuary, below the rapids above Ferrano. The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
  "routes": [
   {
    "id": "ore",
@@ -17,215 +17,145 @@
     ],
     [
      53,
-     88
+     87
+    ],
+    [
+     53,
+     86
     ],
     [
      54,
-     88
-    ],
-    [
-     54,
-     89
-    ],
-    [
-     54,
-     90
+     85
     ],
     [
      55,
-     90
+     84
     ],
     [
      56,
-     90
+     85
     ],
     [
      57,
-     90
-    ],
-    [
-     57,
-     91
-    ],
-    [
-     57,
-     92
-    ],
-    [
-     57,
-     93
-    ],
-    [
-     57,
-     94
+     86
     ],
     [
      58,
-     94
-    ],
-    [
-     58,
-     95
-    ],
-    [
-     58,
-     96
-    ],
-    [
-     58,
-     97
-    ],
-    [
-     58,
-     98
+     87
     ],
     [
      59,
-     98
+     88
     ],
     [
      60,
-     98
-    ],
-    [
-     60,
-     99
+     89
     ],
     [
      61,
-     99
+     90
     ],
     [
      62,
-     99
-    ],
-    [
-     62,
-     100
-    ],
-    [
-     62,
-     101
+     91
     ],
     [
      63,
-     101
+     92
     ],
     [
      64,
-     101
+     93
     ],
     [
      65,
-     101
+     94
     ],
     [
      66,
-     101
-    ],
-    [
-     66,
-     102
+     95
     ],
     [
      67,
-     102
+     96
     ],
     [
      67,
-     103
+     97
+    ],
+    [
+     67,
+     98
     ],
     [
      68,
-     103
-    ],
-    [
-     68,
-     104
-    ],
-    [
-     68,
-     105
-    ],
-    [
-     68,
-     106
+     99
     ],
     [
      69,
-     106
+     100
     ],
     [
      70,
-     106
+     101
     ],
     [
      71,
-     106
+     102
     ],
     [
      71,
-     107
+     103
     ],
     [
      72,
-     107
+     104
+    ],
+    [
+     72,
+     105
     ],
     [
      73,
-     107
-    ],
-    [
-     73,
-     108
-    ],
-    [
-     73,
-     109
-    ],
-    [
-     73,
-     110
+     106
     ],
     [
      74,
-     110
+     107
     ],
     [
      75,
-     110
+     108
     ],
     [
      76,
-     110
+     109
     ],
     [
      77,
      110
     ],
     [
-     77,
+     78,
      111
     ],
     [
-     77,
+     79,
      112
     ],
     [
-     78,
-     112
-    ],
-    [
-     78,
+     79,
      113
-    ],
-    [
-     78,
-     114
     ],
     [
      79,
      114
+    ]
+   ],
+   "bridges": [
+    [
+     54,
+     85
     ]
    ]
   },
@@ -236,212 +166,188 @@
    "label": "Containers from Ferrano past the border hub to the distributor's siding",
    "pts": [
     [
-     79,
+     80,
      118
     ],
     [
-     79,
-     117
-    ],
-    [
-     79,
-     116
-    ],
-    [
-     79,
-     115
-    ],
-    [
-     80,
-     115
-    ],
-    [
      81,
-     115
-    ],
-    [
-     81,
-     114
+     118
     ],
     [
      82,
-     114
+     118
     ],
     [
      83,
-     114
+     118
     ],
     [
      84,
-     114
+     118
     ],
     [
      85,
-     114
+     118
     ],
     [
      86,
-     114
+     119
     ],
     [
      87,
-     114
+     120
     ],
     [
      88,
-     114
+     120
     ],
     [
      89,
-     114
+     120
     ],
     [
      90,
-     114
+     120
     ],
     [
      91,
-     114
+     120
     ],
     [
      92,
-     114
+     120
     ],
     [
      93,
-     114
+     121
     ],
     [
      94,
-     114
+     122
     ],
     [
      95,
-     114
+     122
     ],
     [
      96,
-     114
+     122
     ],
     [
      97,
-     114
+     121
     ],
     [
      98,
-     114
+     121
     ],
     [
      99,
-     114
+     121
     ],
     [
      100,
-     114
+     121
     ],
     [
      101,
-     114
+     121
     ],
     [
      102,
-     114
+     121
     ],
     [
      103,
-     114
+     121
     ],
     [
      104,
-     114
+     120
     ],
     [
      105,
-     114
+     120
     ],
     [
      106,
-     114
+     120
     ],
     [
      107,
-     114
+     120
     ],
     [
      108,
-     114
+     121
     ],
     [
      109,
-     114
+     121
     ],
     [
      110,
-     114
+     121
     ],
     [
      111,
-     114
+     121
     ],
     [
      112,
-     114
+     121
     ],
     [
      113,
-     114
+     121
     ],
     [
      114,
-     114
+     121
     ],
     [
      115,
-     114
+     121
     ],
     [
      116,
-     114
+     120
     ],
     [
      117,
-     114
-    ],
-    [
-     117,
-     113
-    ],
-    [
-     117,
-     112
+     119
     ],
     [
      118,
-     112
+     118
     ],
     [
      119,
-     112
+     117
     ],
     [
      120,
-     112
+     117
     ],
     [
      121,
-     112
+     117
     ],
     [
      122,
-     112
+     117
     ],
     [
      123,
-     112
+     116
     ],
     [
      124,
-     112
+     115
+    ],
+    [
+     124,
+     114
     ],
     [
      124,
@@ -456,11 +362,11 @@
    "label": "The factory's second siding, for outgoing loads",
    "pts": [
     [
-     79,
+     80,
      114
     ],
     [
-     79,
+     80,
      115
     ],
     [
@@ -484,28 +390,52 @@
    "label": "Finished goods by road, across the border (XU → XB)",
    "pts": [
     [
-     83,
+     77,
+     116
+    ],
+    [
+     77,
      115
+    ],
+    [
+     78,
+     114
+    ],
+    [
+     79,
+     113
+    ],
+    [
+     80,
+     112
+    ],
+    [
+     81,
+     112
+    ],
+    [
+     82,
+     113
+    ],
+    [
+     83,
+     114
     ],
     [
      84,
-     115
+     114
     ],
     [
      85,
-     115
+     114
     ],
     [
      86,
-     115
-    ],
-    [
-     86,
-     116
+     114
     ],
     [
      87,
-     116
+     115
     ],
     [
      88,
@@ -513,43 +443,27 @@
     ],
     [
      89,
-     116
-    ],
-    [
-     90,
-     116
-    ],
-    [
-     91,
-     116
-    ],
-    [
-     92,
-     116
-    ],
-    [
-     93,
-     116
-    ],
-    [
-     94,
-     116
-    ],
-    [
-     95,
-     116
-    ],
-    [
-     95,
      117
     ],
     [
-     95,
+     90,
      118
     ],
     [
-     95,
+     91,
+     118
+    ],
+    [
+     92,
      119
+    ],
+    [
+     93,
+     120
+    ],
+    [
+     94,
+     120
     ],
     [
      95,
@@ -589,47 +503,35 @@
     ],
     [
      104,
-     120
-    ],
-    [
-     105,
-     120
-    ],
-    [
-     106,
-     120
-    ],
-    [
-     107,
-     120
-    ],
-    [
-     108,
-     120
-    ],
-    [
-     109,
-     120
-    ],
-    [
-     110,
-     120
-    ],
-    [
-     111,
-     120
-    ],
-    [
-     111,
      119
     ],
     [
-     111,
+     105,
+     119
+    ],
+    [
+     106,
+     119
+    ],
+    [
+     107,
+     119
+    ],
+    [
+     108,
+     118
+    ],
+    [
+     109,
+     118
+    ],
+    [
+     110,
      118
     ],
     [
      111,
-     117
+     118
     ],
     [
      112,
@@ -645,14 +547,6 @@
     ],
     [
      115,
-     117
-    ],
-    [
-     116,
-     117
-    ],
-    [
-     116,
      116
     ],
     [
@@ -661,41 +555,34 @@
     ],
     [
      117,
-     115
-    ],
-    [
-     118,
-     115
-    ],
-    [
-     118,
      114
     ],
     [
-     119,
-     114
-    ],
-    [
-     119,
+     118,
      113
+    ],
+    [
+     119,
+     112
     ],
     [
      120,
-     113
+     112
     ],
     [
      121,
-     113
+     112
     ],
     [
      122,
-     113
+     112
     ],
     [
      123,
-     113
+     112
     ]
-   ]
+   ],
+   "class": "main"
   },
   {
    "id": "road-b",
@@ -704,24 +591,28 @@
    "label": "Distributor to retailer (domestic XB)",
    "pts": [
     [
-     126,
-     113
+     123,
+     112
+    ],
+    [
+     124,
+     112
+    ],
+    [
+     125,
+     112
     ],
     [
      126,
-     114
+     112
     ],
     [
      127,
-     114
+     113
     ],
     [
      128,
      114
-    ],
-    [
-     128,
-     115
     ],
     [
      129,
@@ -729,14 +620,6 @@
     ],
     [
      130,
-     115
-    ],
-    [
-     131,
-     115
-    ],
-    [
-     131,
      116
     ],
     [
@@ -744,31 +627,15 @@
      117
     ],
     [
-     131,
-     118
-    ],
-    [
      132,
      118
     ],
     [
      133,
-     118
-    ],
-    [
-     134,
-     118
-    ],
-    [
-     135,
-     118
-    ],
-    [
-     135,
      119
     ],
     [
-     135,
+     134,
      120
     ],
     [
@@ -780,22 +647,23 @@
      122
     ],
     [
-     135,
-     123
-    ],
-    [
      136,
      123
-    ],
-    [
-     136,
-     124
     ],
     [
      137,
      124
+    ],
+    [
+     138,
+     125
+    ],
+    [
+     138,
+     126
     ]
-   ]
+   ],
+   "class": "main"
   },
   {
    "id": "road-port",
@@ -812,14 +680,15 @@
      127
     ],
     [
-     138,
+     137,
      128
     ],
     [
-     138,
+     137,
      129
     ]
-   ]
+   ],
+   "class": "main"
   },
   {
    "id": "river",
@@ -928,7 +797,8 @@
      237,
      112
     ]
-   ]
+   ],
+   "class": "minor"
   },
   {
    "id": "road-farm",
@@ -937,44 +807,48 @@
    "label": "Ferrano to the farms (domestic XU)",
    "pts": [
     [
-     76,
+     77,
+     116
+    ],
+    [
+     77,
+     117
+    ],
+    [
+     78,
      118
     ],
     [
-     76,
+     78,
      119
     ],
     [
-     76,
+     78,
      120
     ],
     [
-     76,
+     78,
      121
     ],
     [
-     76,
+     78,
      122
     ],
     [
-     76,
+     78,
      123
     ],
     [
-     76,
+     78,
      124
     ],
     [
-     76,
+     77,
      125
     ],
     [
-     76,
+     77,
      126
-    ],
-    [
-     76,
-     127
     ],
     [
      77,
@@ -983,6 +857,13 @@
     [
      77,
      128
+    ]
+   ],
+   "class": "main",
+   "bridges": [
+    [
+     78,
+     120
     ]
    ]
   },
@@ -993,23 +874,223 @@
    "label": "Gas pipeline from the gas plant across the border to the power station (XB → XU)",
    "pts": [
     [
-     76,
+     77,
      40
     ],
     [
+     77,
+     41
+    ],
+    [
+     77,
+     42
+    ],
+    [
+     77,
+     43
+    ],
+    [
+     77,
+     44
+    ],
+    [
+     77,
+     45
+    ],
+    [
+     77,
+     46
+    ],
+    [
      76,
      47
     ],
     [
-     70,
-     47
+     75,
+     48
+    ],
+    [
+     74,
+     49
+    ],
+    [
+     74,
+     50
+    ],
+    [
+     73,
+     51
+    ],
+    [
+     72,
+     52
+    ],
+    [
+     71,
+     53
     ],
     [
      70,
+     54
+    ],
+    [
+     70,
+     55
+    ],
+    [
+     69,
+     56
+    ],
+    [
+     68,
+     57
+    ],
+    [
+     67,
+     58
+    ],
+    [
+     67,
+     59
+    ],
+    [
+     67,
+     60
+    ],
+    [
+     66,
+     61
+    ],
+    [
+     66,
+     62
+    ],
+    [
+     66,
+     63
+    ],
+    [
+     66,
+     64
+    ],
+    [
+     66,
+     65
+    ],
+    [
+     66,
+     66
+    ],
+    [
+     66,
+     67
+    ],
+    [
+     65,
+     68
+    ],
+    [
+     64,
+     69
+    ],
+    [
+     64,
+     70
+    ],
+    [
+     63,
+     71
+    ],
+    [
+     63,
+     72
+    ],
+    [
+     63,
+     73
+    ],
+    [
+     63,
+     74
+    ],
+    [
+     63,
+     75
+    ],
+    [
+     63,
+     76
+    ],
+    [
+     63,
+     77
+    ],
+    [
+     63,
+     78
+    ],
+    [
+     63,
+     79
+    ],
+    [
+     63,
+     80
+    ],
+    [
+     63,
+     81
+    ],
+    [
+     63,
+     82
+    ],
+    [
+     63,
      83
     ],
     [
+     63,
+     84
+    ],
+    [
+     63,
+     85
+    ],
+    [
+     63,
+     86
+    ],
+    [
+     63,
+     87
+    ],
+    [
+     62,
+     87
+    ],
+    [
+     61,
+     86
+    ],
+    [
+     60,
+     86
+    ],
+    [
      59,
+     86
+    ],
+    [
+     58,
+     85
+    ],
+    [
+     57,
+     84
+    ],
+    [
+     56,
      83
     ]
    ]
@@ -1021,16 +1102,104 @@
    "label": "Branch of the gas pipeline to the grid operator's city gate (XU)",
    "pts": [
     [
-     70,
-     83
+     63,
+     87
+    ],
+    [
+     64,
+     88
+    ],
+    [
+     65,
+     89
+    ],
+    [
+     65,
+     90
+    ],
+    [
+     65,
+     91
+    ],
+    [
+     66,
+     92
+    ],
+    [
+     67,
+     93
+    ],
+    [
+     68,
+     94
+    ],
+    [
+     69,
+     95
     ],
     [
      70,
-     112
+     96
+    ],
+    [
+     70,
+     97
+    ],
+    [
+     70,
+     98
+    ],
+    [
+     70,
+     99
+    ],
+    [
+     70,
+     100
+    ],
+    [
+     70,
+     101
+    ],
+    [
+     70,
+     102
+    ],
+    [
+     70,
+     103
+    ],
+    [
+     70,
+     104
+    ],
+    [
+     70,
+     105
+    ],
+    [
+     70,
+     106
     ],
     [
      71,
-     112
+     107
+    ],
+    [
+     72,
+     108
+    ],
+    [
+     72,
+     109
+    ],
+    [
+     72,
+     110
+    ],
+    [
+     72,
+     111
     ]
    ]
   },
@@ -1045,8 +1214,1472 @@
      15
     ],
     [
+     77,
+     16
+    ],
+    [
+     76,
+     17
+    ],
+    [
+     76,
+     18
+    ],
+    [
+     76,
+     19
+    ],
+    [
+     76,
+     20
+    ],
+    [
+     76,
+     21
+    ],
+    [
+     76,
+     22
+    ],
+    [
+     76,
+     23
+    ],
+    [
+     76,
+     24
+    ],
+    [
+     76,
+     25
+    ],
+    [
+     76,
+     26
+    ],
+    [
+     76,
+     27
+    ],
+    [
+     76,
+     28
+    ],
+    [
+     76,
+     29
+    ],
+    [
+     76,
+     30
+    ],
+    [
+     76,
+     31
+    ],
+    [
+     76,
+     32
+    ],
+    [
+     76,
+     33
+    ],
+    [
+     76,
+     34
+    ],
+    [
+     76,
+     35
+    ],
+    [
+     76,
+     36
+    ],
+    [
+     76,
+     37
+    ],
+    [
+     76,
+     38
+    ]
+   ]
+  },
+  {
+   "mode": "rail",
+   "layer": "transport",
+   "label": "The wool line from Marrowdale down to Larkmouth's harbour",
+   "id": "rail-lark",
+   "pts": [
+    [
+     124,
+     114
+    ],
+    [
+     125,
+     114
+    ],
+    [
+     126,
+     113
+    ],
+    [
+     127,
+     113
+    ],
+    [
+     128,
+     113
+    ],
+    [
+     129,
+     113
+    ],
+    [
+     130,
+     113
+    ],
+    [
+     131,
+     112
+    ],
+    [
+     132,
+     111
+    ],
+    [
+     133,
+     110
+    ],
+    [
+     134,
+     109
+    ],
+    [
+     135,
+     108
+    ],
+    [
+     136,
+     107
+    ],
+    [
+     137,
+     106
+    ],
+    [
+     138,
+     105
+    ],
+    [
+     139,
+     104
+    ],
+    [
+     140,
+     103
+    ],
+    [
+     141,
+     102
+    ],
+    [
+     142,
+     101
+    ],
+    [
+     143,
+     100
+    ],
+    [
+     144,
+     100
+    ],
+    [
+     145,
+     99
+    ],
+    [
+     146,
+     98
+    ],
+    [
+     147,
+     97
+    ],
+    [
+     148,
+     96
+    ],
+    [
+     149,
+     95
+    ],
+    [
+     149,
+     94
+    ],
+    [
+     149,
+     93
+    ],
+    [
+     149,
+     92
+    ],
+    [
+     149,
+     91
+    ],
+    [
+     149,
+     90
+    ],
+    [
+     150,
+     89
+    ],
+    [
+     151,
+     88
+    ],
+    [
+     152,
+     87
+    ],
+    [
+     153,
+     86
+    ],
+    [
+     154,
+     85
+    ],
+    [
+     155,
+     85
+    ]
+   ]
+  },
+  {
+   "mode": "road",
+   "layer": "transport",
+   "label": "Larkmouth down the coast to Lumeport (domestic XB)",
+   "id": "road-lark",
+   "class": "main",
+   "pts": [
+    [
+     153,
+     85
+    ],
+    [
+     153,
+     86
+    ],
+    [
+     153,
+     87
+    ],
+    [
+     153,
+     88
+    ],
+    [
+     153,
+     89
+    ],
+    [
+     153,
+     90
+    ],
+    [
+     153,
+     91
+    ],
+    [
+     153,
+     92
+    ],
+    [
+     153,
+     93
+    ],
+    [
+     153,
+     94
+    ],
+    [
+     153,
+     95
+    ],
+    [
+     152,
+     96
+    ],
+    [
+     151,
+     97
+    ],
+    [
+     150,
+     98
+    ],
+    [
+     149,
+     99
+    ],
+    [
+     148,
+     100
+    ],
+    [
+     147,
+     101
+    ],
+    [
+     147,
+     102
+    ],
+    [
+     147,
+     103
+    ],
+    [
+     147,
+     104
+    ],
+    [
+     147,
+     105
+    ],
+    [
+     147,
+     106
+    ],
+    [
+     146,
+     107
+    ],
+    [
+     145,
+     108
+    ],
+    [
+     144,
+     109
+    ],
+    [
+     143,
+     110
+    ],
+    [
+     142,
+     111
+    ],
+    [
+     142,
+     112
+    ],
+    [
+     142,
+     113
+    ],
+    [
+     142,
+     114
+    ],
+    [
+     141,
+     115
+    ],
+    [
+     140,
+     116
+    ],
+    [
+     139,
+     117
+    ],
+    [
+     139,
+     118
+    ],
+    [
+     139,
+     119
+    ],
+    [
+     138,
+     120
+    ],
+    [
+     138,
+     121
+    ],
+    [
+     138,
+     122
+    ],
+    [
+     138,
+     123
+    ],
+    [
+     138,
+     124
+    ],
+    [
+     138,
+     125
+    ],
+    [
+     138,
+     126
+    ]
+   ]
+  },
+  {
+   "mode": "road",
+   "layer": "transport",
+   "label": "Larkmouth inland to Marrowdale (domestic XB)",
+   "id": "road-wool",
+   "class": "main",
+   "pts": [
+    [
+     153,
+     85
+    ],
+    [
+     152,
+     86
+    ],
+    [
+     152,
+     87
+    ],
+    [
+     152,
+     88
+    ],
+    [
+     153,
+     89
+    ],
+    [
+     153,
+     90
+    ],
+    [
+     153,
+     91
+    ],
+    [
+     153,
+     92
+    ],
+    [
+     153,
+     93
+    ],
+    [
+     153,
+     94
+    ],
+    [
+     153,
+     95
+    ],
+    [
+     152,
+     96
+    ],
+    [
+     151,
+     97
+    ],
+    [
+     150,
+     98
+    ],
+    [
+     149,
+     99
+    ],
+    [
+     148,
+     100
+    ],
+    [
+     147,
+     101
+    ],
+    [
+     147,
+     102
+    ],
+    [
+     147,
+     103
+    ],
+    [
+     147,
+     104
+    ],
+    [
+     147,
+     105
+    ],
+    [
+     147,
+     106
+    ],
+    [
+     146,
+     107
+    ],
+    [
+     145,
+     108
+    ],
+    [
+     144,
+     109
+    ],
+    [
+     143,
+     109
+    ],
+    [
+     142,
+     109
+    ],
+    [
+     141,
+     109
+    ],
+    [
+     140,
+     109
+    ],
+    [
+     139,
+     110
+    ],
+    [
+     138,
+     110
+    ],
+    [
+     137,
+     110
+    ],
+    [
+     136,
+     110
+    ],
+    [
+     135,
+     110
+    ],
+    [
+     134,
+     110
+    ],
+    [
+     133,
+     110
+    ],
+    [
+     132,
+     110
+    ],
+    [
+     131,
+     110
+    ],
+    [
+     130,
+     110
+    ],
+    [
+     129,
+     110
+    ],
+    [
+     128,
+     110
+    ],
+    [
+     127,
+     111
+    ],
+    [
+     126,
+     112
+    ],
+    [
+     125,
+     112
+    ],
+    [
+     124,
+     112
+    ],
+    [
+     123,
+     112
+    ]
+   ]
+  },
+  {
+   "mode": "road",
+   "layer": "transport",
+   "label": "Ferrano up the valley to Serravona and across the river to the mine (domestic XU)",
+   "id": "road-serra",
+   "class": "main",
+   "pts": [
+    [
+     77,
+     116
+    ],
+    [
+     76,
+     116
+    ],
+    [
+     75,
+     115
+    ],
+    [
+     74,
+     114
+    ],
+    [
+     73,
+     113
+    ],
+    [
+     73,
+     112
+    ],
+    [
+     73,
+     111
+    ],
+    [
+     73,
+     110
+    ],
+    [
+     73,
+     109
+    ],
+    [
+     73,
+     108
+    ],
+    [
+     73,
+     107
+    ],
+    [
+     73,
+     106
+    ],
+    [
+     73,
+     105
+    ],
+    [
+     73,
+     104
+    ],
+    [
+     73,
+     103
+    ],
+    [
+     72,
+     102
+    ],
+    [
+     71,
+     101
+    ],
+    [
+     71,
+     100
+    ],
+    [
+     71,
+     99
+    ],
+    [
+     71,
+     98
+    ],
+    [
+     70,
+     97
+    ],
+    [
+     69,
+     96
+    ],
+    [
+     68,
+     95
+    ],
+    [
+     67,
+     94
+    ],
+    [
+     66,
+     93
+    ],
+    [
+     65,
+     92
+    ],
+    [
+     64,
+     91
+    ],
+    [
+     63,
+     91
+    ],
+    [
+     62,
+     90
+    ],
+    [
+     61,
+     89
+    ],
+    [
+     60,
+     88
+    ],
+    [
+     59,
+     87
+    ],
+    [
+     58,
+     86
+    ],
+    [
+     57,
+     86
+    ],
+    [
+     56,
+     86
+    ],
+    [
+     56,
+     85
+    ],
+    [
+     56,
+     84
+    ],
+    [
+     57,
+     84
+    ],
+    [
+     58,
+     84
+    ],
+    [
+     59,
+     83
+    ],
+    [
+     59,
+     82
+    ],
+    [
+     58,
+     81
+    ],
+    [
+     57,
+     81
+    ],
+    [
+     56,
+     82
+    ],
+    [
+     55,
+     83
+    ],
+    [
+     54,
+     84
+    ],
+    [
+     53,
+     85
+    ],
+    [
+     52,
+     86
+    ],
+    [
+     51,
+     87
+    ],
+    [
+     51,
+     88
+    ]
+   ],
+   "bridges": [
+    [
+     55,
+     83
+    ],
+    [
+     54,
+     84
+    ]
+   ]
+  },
+  {
+   "mode": "road",
+   "layer": "transport",
+   "label": "Larkmouth north-west to Gullhaven on the north coast (domestic XB)",
+   "id": "road-north",
+   "class": "minor",
+   "pts": [
+    [
+     153,
+     85
+    ],
+    [
+     152,
+     84
+    ],
+    [
+     151,
+     83
+    ],
+    [
+     150,
+     82
+    ],
+    [
+     149,
+     81
+    ],
+    [
+     148,
+     80
+    ],
+    [
+     147,
+     79
+    ],
+    [
+     146,
+     78
+    ],
+    [
+     145,
+     77
+    ],
+    [
+     144,
+     77
+    ],
+    [
+     143,
+     77
+    ],
+    [
+     142,
+     77
+    ],
+    [
+     141,
+     76
+    ],
+    [
+     140,
+     75
+    ],
+    [
+     139,
+     74
+    ],
+    [
+     138,
+     73
+    ],
+    [
+     137,
+     73
+    ],
+    [
+     136,
+     73
+    ],
+    [
+     135,
+     73
+    ],
+    [
+     134,
+     73
+    ],
+    [
+     133,
+     73
+    ],
+    [
+     132,
+     73
+    ],
+    [
+     131,
+     73
+    ],
+    [
+     130,
+     73
+    ],
+    [
+     129,
+     72
+    ],
+    [
+     128,
+     71
+    ],
+    [
+     127,
+     71
+    ],
+    [
+     126,
+     70
+    ],
+    [
+     125,
+     69
+    ],
+    [
+     124,
+     68
+    ],
+    [
+     123,
+     67
+    ],
+    [
+     122,
+     66
+    ],
+    [
+     121,
+     65
+    ],
+    [
+     120,
+     65
+    ],
+    [
+     119,
+     64
+    ],
+    [
+     118,
+     63
+    ],
+    [
+     117,
+     62
+    ],
+    [
+     116,
+     62
+    ],
+    [
+     115,
+     61
+    ],
+    [
+     114,
+     60
+    ],
+    [
+     113,
+     59
+    ],
+    [
+     112,
+     59
+    ],
+    [
+     111,
+     59
+    ],
+    [
+     110,
+     59
+    ],
+    [
+     109,
+     58
+    ],
+    [
+     108,
+     57
+    ],
+    [
+     107,
+     56
+    ],
+    [
+     106,
+     55
+    ],
+    [
+     105,
+     54
+    ],
+    [
+     104,
+     53
+    ],
+    [
+     103,
+     52
+    ],
+    [
+     102,
+     51
+    ],
+    [
+     101,
+     50
+    ],
+    [
+     100,
+     49
+    ],
+    [
+     99,
+     48
+    ],
+    [
+     98,
+     47
+    ],
+    [
+     97,
+     46
+    ],
+    [
+     96,
+     46
+    ],
+    [
+     95,
+     46
+    ],
+    [
+     94,
+     46
+    ],
+    [
+     93,
+     46
+    ],
+    [
+     92,
+     46
+    ],
+    [
+     91,
+     45
+    ],
+    [
+     90,
+     45
+    ],
+    [
+     89,
+     45
+    ],
+    [
+     88,
+     45
+    ],
+    [
+     87,
+     45
+    ],
+    [
+     86,
+     44
+    ],
+    [
+     85,
+     43
+    ],
+    [
+     84,
+     42
+    ],
+    [
+     83,
+     42
+    ],
+    [
+     82,
+     42
+    ],
+    [
+     81,
+     42
+    ],
+    [
+     80,
+     42
+    ],
+    [
+     79,
+     42
+    ],
+    [
      78,
+     42
+    ],
+    [
+     77,
+     41
+    ],
+    [
+     76,
+     40
+    ],
+    [
+     75,
      39
+    ],
+    [
+     74,
+     39
+    ],
+    [
+     73,
+     39
+    ]
+   ]
+  },
+  {
+   "id": "access-8-xu",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Seller's Warehouse (3PL)",
+   "pts": [
+    [
+     82,
+     114
+    ],
+    [
+     82,
+     113
+    ]
+   ]
+  },
+  {
+   "id": "access-14-xu",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Rail Carrier",
+   "pts": [
+    [
+     55,
+     89
+    ],
+    [
+     54,
+     89
+    ],
+    [
+     53,
+     89
+    ],
+    [
+     52,
+     89
+    ],
+    [
+     51,
+     89
+    ],
+    [
+     50,
+     88
+    ],
+    [
+     51,
+     87
+    ]
+   ]
+  },
+  {
+   "id": "access-13-xu",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Road Carrier",
+   "pts": [
+    [
+     81,
+     116
+    ],
+    [
+     81,
+     115
+    ],
+    [
+     82,
+     114
+    ]
+   ]
+  },
+  {
+   "id": "access-15-xu",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Inland Waterway Carrier",
+   "pts": [
+    [
+     74,
+     116
+    ],
+    [
+     75,
+     116
+    ]
+   ]
+  },
+  {
+   "id": "access-11-xb",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Ocean Carrier",
+   "pts": [
+    [
+     140,
+     129
+    ],
+    [
+     139,
+     129
+    ],
+    [
+     138,
+     128
+    ]
+   ]
+  },
+  {
+   "id": "access-12-xl",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Air Carrier",
+   "pts": [
+    [
+     235,
+     109
+    ],
+    [
+     236,
+     110
+    ],
+    [
+     237,
+     110
+    ]
+   ]
+  },
+  {
+   "id": "access-9-xl",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Buyer's Warehouse (3PL)",
+   "pts": [
+    [
+     235,
+     112
+    ],
+    [
+     236,
+     112
+    ]
+   ]
+  },
+  {
+   "id": "access-20-xl",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Chamber of Commerce (XL)",
+   "pts": [
+    [
+     237,
+     114
+    ],
+    [
+     237,
+     113
+    ]
+   ]
+  },
+  {
+   "id": "access-34-xb",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Water Utility",
+   "pts": [
+    [
+     135,
+     125
+    ],
+    [
+     136,
+     126
+    ]
+   ]
+  },
+  {
+   "id": "access-35-xl",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Telecom Utility",
+   "pts": [
+    [
+     232,
+     113
+    ],
+    [
+     233,
+     113
+    ],
+    [
+     234,
+     112
+    ],
+    [
+     235,
+     112
+    ]
+   ]
+  },
+  {
+   "id": "access-36-xb",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Sawmill",
+   "pts": [
+    [
+     122,
+     113
+    ],
+    [
+     122,
+     112
+    ]
+   ]
+  },
+  {
+   "id": "access-41-xb",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Packaging Maker",
+   "pts": [
+    [
+     133,
+     124
+    ],
+    [
+     134,
+     124
+    ],
+    [
+     135,
+     125
+    ]
+   ]
+  },
+  {
+   "id": "access-38-xl",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Cotton Farm",
+   "pts": [
+    [
+     235,
+     105
+    ],
+    [
+     235,
+     106
+    ],
+    [
+     235,
+     107
+    ],
+    [
+     234,
+     108
+    ],
+    [
+     235,
+     109
+    ]
+   ]
+  },
+  {
+   "id": "access-39-xl",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Cotton Ginnery",
+   "pts": [
+    [
+     239,
+     108
+    ],
+    [
+     238,
+     109
+    ],
+    [
+     237,
+     110
     ]
    ]
   }
@@ -1092,6 +2725,27 @@
    "country": "XL",
    "population": 30000,
    "built_km": 4
+  },
+  {
+   "name": "Larkmouth",
+   "c": [
+    154,
+    85
+   ],
+   "country": "XB",
+   "population": 80000,
+   "built_km": 6,
+   "harbour": {
+    "at": [
+     155,
+     85
+    ],
+    "water": [
+     1,
+     0
+    ]
+   },
+   "note": "Bayvarra's first town and first capital (O153): the British settlers' landing of the 1820s at the mouth of the largest east-coast river, sheltered behind its headland, with fresh water and the dry grazing land behind it; a wool and meat port for the dry east. It has no parties: on the map and in the story only."
   }
  ],
  "localities": [
@@ -1137,8 +2791,8 @@
  "stations": [
   {
    "at": [
-    70,
-    51
+    72,
+    52
    ],
    "kind": "metering",
    "pipeline": "gas",

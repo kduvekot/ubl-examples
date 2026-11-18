@@ -43,6 +43,7 @@ for name, r_ in TERRAIN["rasters"].items():
                  np.array(Image.open(r_["height"]), dtype=np.float32).T - r_["offset_m"],     # [x][y], metres
                  COVER_TO_KIND[np.array(Image.open(r_["cover"])).T]))
 COUNTRY = {None: 0, "XU": 1, "XB": 2, "XL": 3}
+OWNED = {(i, j) for i in range(W) for j in range(H) if T[i][j].get("b")}
 K = np.array([[KIND[T[i][j]["k"]] if not T[i][j].get("es") else 0 for j in range(H)] for i in range(W)], dtype=np.int8)
 CTY = np.array([[COUNTRY[T[i][j]["c"]] for j in range(H)] for i in range(W)], dtype=np.int8)
 
@@ -172,8 +173,14 @@ def chaikin(pts, it=3):
     return pts
 
 def streams(d, px, colour_, scale=1.0):
-    """The rivers: the terrain's streams (tools/terrain.py), each a line that widens as it drains more land."""
+    """The rivers: the terrain's streams (tools/terrain.py), each a line that widens as it drains more land; and the
+    small brooks the terrain names (Lumeport's, O153), thin."""
     P = lambda q: (q[0] * px, q[1] * px)
+    for b in TERRAIN.get("brooks", {}).values():
+        for line in b["lines"]:
+            if len(line) > 1:
+                wdt = max(1, round(scale * px * .07))
+                d.line([P((x, y)) for x, y, _ in line], fill=colour_, width=wdt, joint="curve")
     for name, lines in TERRAIN["streams"].items():
         thr = 400 if name == "mainland" else 60
         for line in lines:
@@ -315,6 +322,16 @@ def overlay_flat(img, px):
     P = lambda q: ((q[0] + .5) * px, (q[1] + .5) * px)
     # rivers: the terrain's streams, wider downstream (the estuary is open water in the terrain)
     streams(d, px, PAL["water"])
+    # the rapids above Ferrano (O153): short bars across the river, the map sign for rapids
+    rp = [tuple(q) for q in M["model"].get("rapids", [])]
+    for k, q in enumerate(rp):
+        a, b = rp[max(0, k - 1)], rp[min(len(rp) - 1, k + 1)]
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        l = math.hypot(dx, dy) or 1
+        nx, ny = -dy / l, dx / l
+        for f in (-.25, .25):
+            cx, cy = P((q[0] + dx / l * f, q[1] + dy / l * f))
+            d.line([(cx - nx * px * .32, cy - ny * px * .32), (cx + nx * px * .32, cy + ny * px * .32)], fill=(40, 90, 150), width=max(2, U // 16))
     # built-up areas: the model's built-up sub-squares ("um", SUB x SUB per square, 875 m), merged into one area
     # per town with a smoothed edge (blurred and cut at the middle, which keeps the area), in the urban colour
     # with a fine darker edge; nothing else marks a town (no building blocks: at 1 : 2,500,000 a road map shows
@@ -339,13 +356,16 @@ def overlay_flat(img, px):
                 x, y = P((i, j))
                 d.rectangle([x - px * .55, y - px * .3, x + px * .55, y + px * .3], fill=PAL["airport"])
                 d.rectangle([x - px * .55, y - px * .06, x + px * .55, y + px * .06], fill=(190, 190, 200))
-    # minor roads (walked into chains), then rail, then main roads on top
+    # minor roads (walked into chains), then rail, then main roads on top. Every road, rail line and pipeline is a
+    # route laid square by square over the land (8-connected, tools/lay_routes.py, O152 stage 3): drawn as a smooth
+    # curve through its squares (Chaikin), with a cased bridge symbol over its bridge squares and a dashed line
+    # between the portals of a tunnel; the town streets the model adds are walked into chains from the road masks
     covered = {tuple(q) for r in ROUTES if r["mode"] == "road" for q in r.get("path", [])}
     adj = {}
     for i in range(W):
         for j in range(H):
             m = T[i][j].get("rd", 0)
-            for bit, (di, dj) in enumerate(wm.DIRS):
+            for bit, (di, dj) in enumerate(wm.DIRS8):
                 if m & (1 << bit):
                     adj.setdefault((i, j), set()).add((i + di, j + dj))
     chains, seen = [], set()
@@ -364,42 +384,110 @@ def overlay_flat(img, px):
             if all(town(q) for q in chain):
                 continue                          # the streets of a town: its built-up area stands for them
             chains.append([P(q) for q in chaikin(chain, 2)])
+
+    def pieces(r, it=3):
+        """A route's smooth curve, cut into its pieces on the ground, on bridges and in tunnels: [(kind, points)]
+        (kind None, "bridge" or "tunnel"); the curve is smoothed once, over the whole route, and each piece
+        takes the part of it between the middles of the edges (or corners) its squares share."""
+        path = [tuple(q) for q in (r.get("path") or r["pts"])]
+        kinds_ = []
+        for q in path:
+            t = T[q[0]][q[1]]
+            on_deck = r["mode"] != "pipeline" and ((t.get("br") or t.get("tn")) and (t.get("ov") in (None, r["mode"])))
+            kinds_.append(("tunnel" if t.get("tn") else "bridge") if on_deck else None)
+        if r["mode"] == "road":
+            kinds_ = [k if (q not in OWNED) else None for q, k in zip(path, kinds_)]
+        n = 2 ** it
+        curve = chaikin(path, it)
+        # the smoothed point that stands for path square k is near index k * n (Chaikin doubles the segments)
+        out, start = [], 0
+        for k in range(1, len(path) + 1):
+            if k == len(path) or kinds_[k] != kinds_[start]:
+                lo = max(0, start * n - n // 2) if start else 0
+                hi = min(len(curve) - 1, k * n - n // 2) if k < len(path) else len(curve) - 1
+                out.append((kinds_[start], [P(q) for q in curve[lo:hi + 1]]))
+                start = k
+        return out
+
+    def bridge_mark(d, xy, w):
+        """A cased bridge: the road's ends of the deck closed by two short ticks, the deck outlined in dark grey."""
+        if len(xy) < 2:
+            return
+        d.line(xy, fill=(70, 70, 70), width=w + max(4, U // 10), joint="curve")
+        for a, b in ((xy[0], xy[1]), (xy[-1], xy[-2])):
+            dx, dy = b[0] - a[0], b[1] - a[1]
+            l = math.hypot(dx, dy) or 1
+            nx, ny = -dy / l, dx / l
+            o = (w + max(4, U // 10)) / 2
+            for sgn in (1, -1):
+                p0 = (a[0] + nx * o * sgn, a[1] + ny * o * sgn)
+                d.line([p0, (p0[0] - dx / l * o * .9 + nx * o * .6 * sgn, p0[1] - dy / l * o * .9 + ny * o * .6 * sgn)],
+                       fill=(70, 70, 70), width=max(1, U // 26))
+
+    def draw_way(d, r, fill, edge, w, we):
+        for kind_, xy in pieces(r):
+            if len(xy) < 2:
+                continue
+            if kind_ == "tunnel":                 # between the portals: a dashed line, no casing
+                for a2, b2 in zip(xy[::2], xy[1::2]):
+                    d.line([a2, b2], fill=edge, width=max(1, w // 2))
+                continue
+            if kind_ == "bridge":
+                bridge_mark(d, xy, we)
+            if edge:
+                d.line(xy, fill=edge, width=we, joint="curve")
+            d.line(xy, fill=fill, width=w, joint="curve")
+
     for xy in chains:
         d.line(xy, fill=PAL["road_edge"], width=max(3, U // 6), joint="curve")
     for xy in chains:
         d.line(xy, fill=PAL["road"], width=max(2, U // 9), joint="curve")
     for r in ROUTES:
-        xy = [P(p) for p in chaikin([tuple(p) for p in (r.get("path") or r["pts"])], 3)]
         if r["mode"] == "rail":
-            d.line(xy, fill=PAL["rail"], width=max(2, U // 10), joint="curve")
-            for a, b in zip(xy[::3], xy[1::3]):
-                d.line([a, b], fill=(255, 255, 255), width=max(1, U // 18))
+            for kind_, xy in pieces(r):
+                if len(xy) < 2:
+                    continue
+                if kind_ == "tunnel":
+                    for a2, b2 in zip(xy[::2], xy[1::2]):
+                        d.line([a2, b2], fill=PAL["rail"], width=max(1, U // 20))
+                    continue
+                if kind_ == "bridge":
+                    bridge_mark(d, xy, max(2, U // 10))
+                d.line(xy, fill=PAL["rail"], width=max(2, U // 10), joint="curve")
+                for a2, b2 in zip(xy[::3], xy[1::3]):
+                    d.line([a2, b2], fill=(255, 255, 255), width=max(1, U // 18))
         elif r["mode"] == "pipeline":
-            for a, b in zip(xy[::2], xy[1::2]):
-                d.line([a, b], fill=(190, 170, 205), width=max(1, U // 16))
+            xy = [P(p) for p in chaikin([tuple(p) for p in (r.get("path") or r["pts"])], 3)]
+            for a2, b2 in zip(xy[::2], xy[1::2]):
+                d.line([a2, b2], fill=(190, 170, 205), width=max(1, U // 16))
         elif r["mode"] in ("sea", "air"):
-            for a, b in zip(xy[::2], xy[1::2]):
-                d.line([a, b], fill=(120, 160, 200) if r["mode"] == "sea" else (170, 170, 170), width=max(1, U // 16))
-    MAIN = {"road", "road-b", "road-port", "road-c"}
+            xy = [P(p) for p in chaikin([tuple(p) for p in (r.get("path") or r["pts"])], 3)]
+            for a2, b2 in zip(xy[::2], xy[1::2]):
+                d.line([a2, b2], fill=(120, 160, 200) if r["mode"] == "sea" else (170, 170, 170), width=max(1, U // 16))
+    MAIN = {r["id"] for r in ROUTES if r["mode"] == "road" and r.get("class") == "main"}
     for r in ROUTES:
         if r["mode"] == "road" and r["id"] not in MAIN:
-            xy = [P(p) for p in chaikin([tuple(p) for p in r["path"]], 3)]
-            d.line(xy, fill=PAL["road_edge"], width=max(3, U // 6), joint="curve")
-            d.line(xy, fill=PAL["road"], width=max(2, U // 9), joint="curve")
+            draw_way(d, r, PAL["road"], PAL["road_edge"], max(2, U // 9), max(3, U // 6))
     # the built-up areas over the minor roads and the rail (a town of 4 km is 1.6 mm on the sheet, narrower than
     # the road symbols through it), under the main roads
     edge = mask.filter(ImageFilter.MaxFilter(3))
     img.paste(Image.new("RGB", img.size, PAL["urban_edge"]), (0, 0), edge)
     img.paste(Image.new("RGB", img.size, PAL["urban"]), (0, 0), mask)
     d = ImageDraw.Draw(img, "RGBA")
+    # the small brooks over the built-up areas they run through (Lumeport's, O153: the town's first water)
+    for b in TERRAIN.get("brooks", {}).values():
+        for line in b["lines"]:
+            if len(line) > 1:
+                d.line([P((x - .5, y - .5)) for x, y, _ in line], fill=PAL["water"], width=max(2, U // 16), joint="curve")
     for r in ROUTES:
         if r["mode"] == "road" and r["id"] in MAIN:
-            xy = [P(p) for p in chaikin([tuple(p) for p in r["path"]], 3)]
-            d.line(xy, fill=PAL["road_main_edge"], width=max(4, U // 4), joint="curve")
-    for r in ROUTES:
-        if r["mode"] == "road" and r["id"] in MAIN:
-            xy = [P(p) for p in chaikin([tuple(p) for p in r["path"]], 3)]
-            d.line(xy, fill=PAL["road_main"], width=max(3, U // 6), joint="curve")
+            draw_way(d, r, PAL["road_main"], PAL["road_main_edge"], max(3, U // 6), max(4, U // 4))
+    # a town's own harbour (Larkmouth, O153): a quay on the water
+    for i in range(W):
+        for j in range(H):
+            if T[i][j].get("hb"):
+                x, y = P((i, j))
+                d.rectangle([x - px * .18, y - px * .3, x + px * .5, y + px * .3], fill=(120, 120, 130))
     # land border: dotted, traced where the country changes
     border_dots(img, px, 3, PAL["border"], U * .045)
 
