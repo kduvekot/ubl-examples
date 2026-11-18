@@ -190,14 +190,15 @@ each party's day and month of founding are not yet settled.
 The mainland is a land of about 560 by 390 km in the middle of the South
 Atlantic, astride the Mid-Atlantic Ridge, far from every continent: Urvania
 in the west, inland, and Bayvarra in the east, on the coast, with Lumeport on
-its east shore facing the open ocean. Each of the two has about 95,000 km²,
-the size of Portugal. Lisavu is an isolated volcanic island about 1,000 km
-further east, about 110 by 85 km, the size of Cyprus, standing on a seamount
-of the Walvis Ridge.
+its east shore facing the open ocean. Urvania has about 84,000 km² and
+Bayvarra about 77,000 km², each about the size of Portugal. Lisavu is an
+isolated volcanic island about 1,000 km further east, about 110 by 85 km, a
+little smaller than Cyprus, standing on a seamount of the Walvis Ridge.
 
-The position is a current base: the mainland from 28.1° to 31.9° South and
-from 17.7° to 12.3° West (Ferrano at 30.6° South, 16.4° West; Lumeport at
-31.4° South, 13.8° West), and the island at 33.0° South, 2.65° West. Both lie
+The position is a current base: the mainland centred on 30.0° South, 15.0°
+West, from about 28.2° to 31.8° South and from 17.9° to 12.0° West (Ferrano at
+about 30.6° South, 15.8° West; Lumeport at about 31.1° South, 13.4° West), and
+the island around 33.0° South, 2.65° West. Both lie
 on the high seas, outside every country's waters and claims; the nearest real
 land is Tristan da Cunha, about 630 km south of the mainland's south coast. It
 is still to be confirmed against a nautical chart that both areas lie outside
@@ -215,15 +216,31 @@ side catches the rain, and the lee side is drier and sunnier. An island cut
 off like this has to work for its ties, which is the story of the Lumeport
 Agreement and of the shipping line founded to serve it.
 
-One square of the map is 14 km. The houses on the map are not to scale: a
-square with one building stands for a district. Road and rail distances are
-the lengths of the routes on the map: by road, Ferrano to Marrowdale is about
-180 km and Marrowdale to Lumeport about 85 km; the ore train runs about
-155 km. Lumeport to Selanu is about 1,000 km in a straight line and about
-1,050 km by sea; the crossing takes a day and a half to two days, and the
-island airline's freighter flies it in about two hours. On the map of the
-site the island stands in an inset, as distant territory does on real maps
-(Shetland on maps of Britain, Hawaii on maps of the United States).
+The land rises from the low north coast and the east coast to Urvania's
+north-west, where the hills around Serravona reach about 1,300 m. The river
+rises there, at about 900 m, runs south-east past Ferrano, forms the border
+below the crossing and reaches the sea at Lumeport. Upland State lies higher
+than Coastal State.
+
+The towns and their people:
+
+| Town | Country | What it is | People | Built-up area |
+|---|---|---|---|---|
+| Ferrano | Urvania | the capital; works, rail hub | about 600,000 | about 15 km across |
+| Lumeport | Bayvarra | the capital and the port city | about 400,000 | about 12 km |
+| Marrowdale | Bayvarra, Upland State | inland town: distributor, sawmill, works | about 40,000 | about 5 km |
+| Selanu (Port Wrenfield) | Lisavu | the island's capital and only town | about 30,000 | about 4 km |
+| Serravona, Gullhaven | Urvania, Bayvarra | villages | 1,000 to 3,000 | about 1 km |
+
+One square of the map is 3.5 km. Road and rail distances are the lengths of
+the routes on the map: by road, Ferrano to Marrowdale is about 182 km and
+Marrowdale to Lumeport about 84 km; the ore train runs about 157 km. Lumeport
+to Selanu is about 1,000 km in a straight line and about 1,050 km by sea; the
+crossing takes a day and a half to two days, and the island airline's
+freighter flies it in about two hours. On the map the island has a panel of
+its own beside the mainland's, at the same scale, as distant territory has on
+real maps (the Azores and Madeira on maps of Portugal, the Canary Islands on
+maps of Spain). The printed map is an A3 sheet at 1 : 2,500,000.
 
 ## Languages
 
