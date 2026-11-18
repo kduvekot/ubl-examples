@@ -469,7 +469,7 @@
       "slat_thickness": 45,
       "back_rail_u_top": 350,
       "bolt_length": 65,
-      "frame_revision": "D",
+      "frame_revision": "E",
       "supply": "sawn, kiln-dried, thermally modified at about 212 °C and planed by Marrowdale Sawmill in its own thermal modification kiln; sold as finished modified slats"
     }
   },
@@ -491,5 +491,11 @@
       2480,
       2700
     ]
+  },
+  "maintenance": "Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits. Slats untreated, turning silver-grey; end grain sealed at the sawmill.",
+  "tariff": {
+    "bench": "9401.79",
+    "spare_frame": "9401.99",
+    "bolts_and_anchors": "chapter 73 (metal chapters)"
   }
 }

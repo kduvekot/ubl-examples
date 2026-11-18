@@ -1482,7 +1482,8 @@ def make_drawings(B, R, C, K):
         "3  Lay the three seat slats and two back slats; push the carriage",
         "   bolts (3, stainless A4) through slat and flange; washer (4) and",
         f"   nut (5) under the flange; tighten to {P['bolts']['torque_Nm']['tm_ash']} N m. Grout under the feet.",
-        "4  Yearly: retighten the slat bolts; touch up the coating.",
+        "4  Yearly: tighten the slat bolts, touch up the frame coating,",
+        "   clean the slats and check them for splits (slats untreated, silver-grey).",
     ], size=2.2)
     s.title_block(material="see BOM, drawing 005")
     s.save(dd / "VI-DWG-B180-004_exploded_assembly.svg")
