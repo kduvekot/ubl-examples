@@ -685,7 +685,7 @@ def labels_flat(img, px):
     # the villages (map "villages", O152): a dot by their size; the named ones with their name (in Urvania the
     # English (Italian) name, on Lisavu the Lisavan one, or the English one where settlers named the place), placed
     # where it covers the least
-    R_BAND = {"small": .07, "middle": .095, "large": .12}
+    R_BAND = {"hamlet": .055, "village": .075, "large": .1, "town": .13}
     for v in WORLD.get("villages", []):
         x, y = P(v["c"])
         r = U * R_BAND[v["band"]]
