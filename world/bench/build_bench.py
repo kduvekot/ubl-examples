@@ -359,8 +359,8 @@ class Frame2D:
         self.nodes.append(np.array(p, float))
         return len(self.nodes) - 1
 
-    def elem(self, i, j, sec, name, E=210000.0):
-        self.elems.append((i, j, sec, name, E))
+    def elem(self, i, j, sec, name, E=None):
+        self.elems.append((i, j, sec, name, E or FM()["E"]))
 
     def solve(self):
         n = len(self.nodes)
@@ -524,11 +524,17 @@ def build_casting(B, M):
             ("back rail, armrest to top", j_arm_back, back_top, True),
             ("armrest", j_post_arm, j_arm_back, False),
             ("rear leg", J, leg_bot, True)]
-    risers_pts = [("junction " + k, p) for k, p in junctions.items()]
+    dar = FM().get("risering") == "DAR"
+    ftk = f["feet"]["thickness"]
+    fl = (ftf["y1"] - ftf["y0"])
+    M_foot = f["feet"]["width"] * fl * ftk / (2 * f["feet"]["width"] * fl + 2 * ftk * (f["feet"]["width"] + fl))
+    M_S = max(M_wall, M_foot)
+    M_N = FM().get("MN_over_MS", 0.7) * M_S
+    risers_pts = [] if dar else [("junction " + k, p) for k, p in junctions.items()]
     run_info = []
     for name, a, b, _ in runs:
         Lr = float(np.linalg.norm(b - a))
-        n_int = max(0, math.ceil(Lr / (2 * FD)) - 1)
+        n_int = 0 if dar else max(0, math.ceil(Lr / (2 * FD)) - 1)
         for k in range(n_int):
             risers_pts.append(("on " + name, a + (b - a) * (k + 1) / (n_int + 1)))
         run_info.append(dict(run=name, length=round(Lr), intermediate_risers=n_int))
@@ -539,18 +545,21 @@ def build_casting(B, M):
         x0 = x_c + tw / 2
         h_tot = (top_x - x0) + H
         risers.append(Pos(x0 + h_tot / 2, float(p[0]), float(p[1])) * Rot(0, 90, 0) * Cylinder(D / 2, h_tot))
-    riser_union = risers[0]
-    for r in risers[1:]:
-        riser_union = riser_union + r
-    riser_net = riser_union - frame
     V_frame = frame.volume
-    V_risers = riser_net.volume
-    # junction-only scheme (no intermediate risers)
-    rj = risers[:len(junctions)]
-    ru = rj[0]
-    for r in rj[1:]:
-        ru = ru + r
-    V_risers_j = (ru - frame).volume
+    if risers:
+        riser_union = risers[0]
+        for r in risers[1:]:
+            riser_union = riser_union + r
+        riser_net = riser_union - frame
+        V_risers = riser_net.volume
+        # junction-only scheme (no intermediate risers)
+        rj = risers[:len(junctions)]
+        ru = rj[0]
+        for r in rj[1:]:
+            ru = ru + r
+        V_risers_j = (ru - frame).volume
+    else:
+        riser_net, V_risers, V_risers_j = None, 0.0, 0.0
     # gating for two frames in one mould
     n_fr = c["frames_per_mould"]
     W_guess = n_fr * (V_frame + V_risers) / 1e9 * rho * 1.12
@@ -573,6 +582,8 @@ def build_casting(B, M):
     n_gates = n_fr
     gate_w = 20.0
     gate_t = A_gate_tot / n_gates / gate_w
+    if dar:          # DAR in green sand: square gates of 4 x MN that feed the liquid contraction from the sprue (QIT)
+        gate_w = gate_t = 4 * M_N
     ys = (yr0 + yr1) / 2
     gating = [Pos(x_c, ys, zr) * Box(run_w, yr1 - yr0 - 2 * 30, run_h)]
     gating.append(Pos(x_c + c["pour_head"] / 2, ys, zr) * Rot(0, 90, 0) * Cylinder(d_sprue / 2, c["pour_head"]))
@@ -589,9 +600,12 @@ def build_casting(B, M):
     casting_kg = V_frame / 1e9 * rho
     poured = n_fr * (V_frame + V_risers) / 1e9 * rho + V_gating / 1e9 * rho
     poured_j = n_fr * (V_frame + V_risers_j) / 1e9 * rho + V_gating / 1e9 * rho
-    riser2 = riser_net.mirror(Plane(origin=(0, y_m, 0), z_dir=(0, 1, 0)))   # risers stay on the cope side
+    pieces = [(frame, "casting_1"), (frame2, "casting_2"), (g_net, "gating")]
+    if riser_net is not None:
+        riser2 = riser_net.mirror(Plane(origin=(0, y_m, 0), z_dir=(0, 1, 0)))   # risers stay on the cope side
+        pieces += [(riser_net, "risers_1"), (riser2, "risers_2")]
     parts = []
-    for sh, nm in ((frame, "casting_1"), (frame2, "casting_2"), (riser_net, "risers_1"), (riser2, "risers_2"), (g_net, "gating")):
+    for sh, nm in pieces:
         c_ = sh.moved(Location())
         c_.label = nm
         parts.append(c_)
@@ -603,7 +617,8 @@ def build_casting(B, M):
                 run_w=run_w, run_h=run_h, gate_t=gate_t, gate_w=gate_w, n_gates=n_gates,
                 gating_kg=V_gating / 1e9 * rho, casting_kg=casting_kg,
                 poured=poured, yield_=n_fr * casting_kg / poured, poured_j=poured_j, yield_j=n_fr * casting_kg / poured_j,
-                cluster=cluster, risers=riser_net, gating=g_net, junctions=junctions, runner_len=yr1 - yr0 - 60, y_m=y_m)
+                cluster=cluster, risers=riser_net, gating=g_net, junctions=junctions, runner_len=yr1 - yr0 - 60, y_m=y_m,
+                dar=dar, M_S=M_S, M_N=M_N, M_foot=M_foot, gate_len=4 * M_N * FM().get("gate_length_factor", 5))
 
 
 # --------------------------------------------------------------------------
@@ -613,6 +628,15 @@ def FM():
     """The selected frame material (parameters.json materials.frame_material)."""
     m = P["materials"]
     return m["frame_materials"][m["frame_material"]]
+
+
+def apply_frame_material():
+    """Walls and feet follow the selected frame material."""
+    fm = FM()
+    P["frame"]["t_web"] = P["frame"]["t_flange"] = fm["design_wall_mm"]
+    P["frame"]["feet"]["thickness"] = fm["feet_thickness"]
+    P["casting"]["liquid_density"] = fm["liquid_density"]
+    P["casting"]["melt_loss_pct"] = fm.get("melt_loss_pct", P["casting"]["melt_loss_pct"])
 
 
 def set_wood(key):
@@ -649,6 +673,8 @@ def analyse(B):
     g = mat["galvanising"]
     zinc_min = A_fr / 1e6 * g["mean_min_gm2"] / 1000 if FM()["galvanise"] else 0.0
     zinc_typ = zinc_min * g["typical_factor"]
+    if FM()["galvanise"] and FM().get("zinc_um_typ"):       # reactive (high-silicon) iron: thicker coating
+        zinc_typ = A_fr / 1e6 * FM()["zinc_um_typ"] * 1e-6 * FM()["zinc_density"]
     pc = mat["powder_coat"]
     powder = A_fr / 1e6 * pc["thickness_um"] * 1e-6 * pc["density"]
     m_frame = m_fr_bare + m_draft + zinc_typ + powder
@@ -1285,7 +1311,7 @@ def make_drawings(B, R, C, K):
     s.save(dd / "VI-DWG-B180-001_general_arrangement.svg")
     sheets.append("001")
     # ---------------- 002 side frame ----------------
-    s = Sheet("002", "Side frame VI-C180, cast steel", "1:4, 1:2")
+    s = Sheet("002", f"Side frame VI-C180, {FM()['name']}", "1:4, 1:2")
     k = 0.25
     fr = B["frame_L"]
     iv = project(fr, *VIEWS["inside"])
@@ -1355,16 +1381,17 @@ def make_drawings(B, R, C, K):
     s.text(tx, ty + 5, "hole   rail    y        z (from A)   axis", 2.2)
     for i, r in enumerate(rows):
         s.text(tx, ty + 9.5 + i * 3.6, f"{r[0]:<5}  {r[1]:<5}  {r[2]:6.1f}   {r[3]:6.1f}       normal to rail", 2.2)
-    s.notes(232, 205, [
+    s.notes(232, 196, [
         f"1  Material {FM()['grade']}, Rp0.2 ≥ {FM()['Rp02']} MPa.",
         f"2  Walls {f['t_web']} mm (web and flanges); concave radii R{f['fillet_concave']}, edges R{f['round_convex']}.",
         f"3  Draft {f['draft_deg']}° on faces normal to the parting plane (web mid-plane).",
         "4  Symmetric about the web mid-plane: one casting for both sides.",
         "5  Open T-sections only, no closed cavities (EN ISO 14713-2);",
         "   hang for galvanising from the anchor holes, armrest down.",
-        f"6  Hot-dip galvanised EN ISO 1461 (≥ {P['materials']['galvanising']['mean_min_um']} µm mean), then",
-        f"   powder coated {P['materials']['powder_coat']['thickness_um']} µm, RAL 7011 / 6005 approx.",
-        "7  General tolerances ISO 8062-3 DCTG 10; holes drilled ±0.3.",
+        "6  Blast-clean (grit/shot) to remove sand and surface graphite; hot-dip",
+        f"   galvanise EN ISO 1461 (≥ {P['materials']['galvanising']['mean_min_um']} µm mean" + (f"; about {FM()['zinc_um_typ']} µm expected, reactive iron)" if FM().get('zinc_um_typ') else ")") + ";",
+        f"   sweep-blast, powder coat {P['materials']['powder_coat']['thickness_um']} µm, RAL 7011 / 6005 approx.",
+        f"7  Pattern shrinkage {FM().get('pattern_shrinkage_pct', 2.0)} %; tolerances ISO 8062-3 DCTG 10; holes drilled ±0.3.",
         "8  Melt number cast in (loose letters, per casting day); serial number",
         "   hard-stamped on the inside of the rear leg after fettling.",
     ], size=2.2)
@@ -1599,18 +1626,23 @@ def make_drawings(B, R, C, K):
     kk = 0.2
     vc = ViewMap(25 - kk * mn[0], 40 + kk * mx[1], kk)
     draw_proj(s, vc, cv[0], [])
-    s.text(30 + (mx[0] - mn[0]) * kk / 2, 32, "PLAN OF THE MOULD, COPE REMOVED: two castings, top risers (circles), sprue, runner, ingates", 2.8, anchor="middle", weight="bold")
+    s.text(30 + (mx[0] - mn[0]) * kk / 2, 32, "PLAN OF THE MOULD, COPE REMOVED: two castings, sprue, runner, ingates" + ("" if C["dar"] else ", top risers (circles)"), 2.8, anchor="middle", weight="bold")
     s.notes(25, 212, [
         f"Two frames per mould (one bench), mirrored; sprue between them,",
         f"runner {fmt(C['run_w'])} x {fmt(C['run_h'])} mm, {fmt(C['runner_len'])} mm long; one ingate into each main",
         f"junction J ({fmt(C['gate_w'])} x {fmt(C['gate_t'])} mm). Choke (sprue) Ø{C['d_sprue']:.0f} mm.",
         f"Pouring {C['W_guess']:.0f} kg in about {C['t_pour']:.0f} s (t = {P['casting']['pour_time_k']}√W), head {P['casting']['pour_head']} mm.",
-        f"Risers (modulus method): wall modulus {C['M_wall']:.1f} mm, junction",
-        f"{C['M_j']:.1f} mm, riser ≥ {C['M_r']:.1f} mm: Ø{C['D']:.0f} x {C['H']:.0f} mm top risers.",
-        f"Feeding distance {C['FD']:.0f} mm each side (SFSA bar rule): {C['n_risers']} risers",
-        f"per frame ({C['n_risers_junction']} at junctions, {C['n_risers'] - C['n_risers_junction']} along members).",
+        *( [f"{FM()['name'].capitalize()}, green sand; pour {FM()['pour_temp_C'][0]}–{FM()['pour_temp_C'][1]} °C; Mg-treated and inoculated.",
+            f"Directly applied risering (QIT/Karsay): significant modulus {C['M_S']:.1f} mm ≤ 4 mm,",
+            f"so no risers; graphite expansion feeds the solidification, the sprue",
+            f"the liquid contraction through gates {C['gate_w']:.0f} x {C['gate_t']:.0f} mm (4 MN, MN {C['M_N']:.1f} mm), {C['gate_len']:.0f} mm long."]
+          if C["dar"] else
+          [f"Risers (modulus method): wall modulus {C['M_wall']:.1f} mm, junction",
+           f"{C['M_j']:.1f} mm, riser ≥ {C['M_r']:.1f} mm: Ø{C['D']:.0f} x {C['H']:.0f} mm top risers.",
+           f"Feeding distance {C['FD']:.0f} mm each side (SFSA bar rule): {C['n_risers']} risers",
+           f"per frame ({C['n_risers_junction']} at junctions, {C['n_risers'] - C['n_risers_junction']} along members)."]),
         f"Poured {C['poured']:.1f} kg for {2 * C['casting_kg']:.1f} kg of castings: yield {100 * C['yield_']:.0f} %.",
-        f"Junction risers only: {C['poured_j']:.1f} kg, yield {100 * C['yield_j']:.0f} % (centre-line porosity).",
+        *([] if C["dar"] else [f"Junction risers only: {C['poured_j']:.1f} kg, yield {100 * C['yield_j']:.0f} % (centre-line porosity)."]),
     ], size=2.3)
     s.title_block(mass=f"{C['poured']:.1f} kg poured per mould", material=FM()["grade"])
     s.save(dd / "VI-DWG-B180-008_casting_method.svg")
@@ -1704,14 +1736,16 @@ def material_comparison(B, R, C):
     f = P["frame"]
     saved = (f["t_web"], f["t_flange"])
     vols, areas = {}, {}
-    for t in sorted({4, 5, 6, 8} | {m["min_wall_mm"] for k, m in P["materials"]["frame_materials"].items() if not k.startswith("_")}):
+    for t in sorted({4, 5, 6, 7, 8} | {m["min_wall_mm"] for k, m in P["materials"]["frame_materials"].items() if not k.startswith("_")}):
         f["t_web"], f["t_flange"] = t, t
         fr, _ = frame_solid(Profile(P), f["x_centre"])
         vols[t], areas[t] = fr.volume / 1e6, fr.area / 1e6
     f["t_web"], f["t_flange"] = saved
     case = max(R["frame"]["cases"].values(), key=lambda v: v["sigma_max"])
     sig8, disp8 = case["sigma_max"], case["disp_max"]
-    sec8 = t_section(f["seat_rail"]["depth"], f["seat_rail"]["flange_width"], 8, 8)
+    t0 = f["t_web"]                    # the frame model ran at this wall
+    sec8 = t_section(f["seat_rail"]["depth"], f["seat_rail"]["flange_width"], t0, t0)
+    E0 = FM()["E"]
     out = {}
     for k, m in P["materials"]["frame_materials"].items():
         if k.startswith("_"):
@@ -1723,13 +1757,14 @@ def material_comparison(B, R, C):
             row["walls"][t] = dict(mass=vols[t] * m["density"] / 1000 * (1 + f["draft_mass_allowance_pct"] / 100),
                                    zinc=areas[t] * P["materials"]["galvanising"]["mean_min_gm2"] / 1000 * P["materials"]["galvanising"]["typical_factor"] if m["galvanise"] else 0.0,
                                    sigma=sig, util=P["loads"]["gamma_Q"] * sig / (m["Rp02"] / m["gamma_M"]),
-                                   disp=disp8 * (210000 / m["E"]) * sec8["I"] / sec["I"])
+                                   disp=disp8 * (E0 / m["E"]) * sec8["I"] / sec["I"])
         out[k] = row
     return dict(case=case["member"], sigma8=sig8, materials=out, selected=P["materials"]["frame_material"])
 
 
 def main():
     W = P["woods"]
+    apply_frame_material()
     set_wood(W["main_wood"])
     B = build_bench()
     R = analyse(B)

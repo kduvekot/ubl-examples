@@ -223,7 +223,7 @@
 <rect class="box" x="141.50" y="134.60" width="18.10" height="6.60"/>
 <text class="txt" x="170.00" y="125.00" font-size="2.4" text-anchor="start" font-weight="normal">13.6 m curtain-side semi-trailer: inside 13600 x 2480 x 2700</text>
 <text class="txt" x="170.00" y="129.50" font-size="2.4" text-anchor="start" font-weight="normal">21 floor positions (7 x 3); 3 layers fit; 25 pallets need 13 positions in 2 layers</text>
-<text class="txt" x="170.00" y="134.00" font-size="2.4" text-anchor="start" font-weight="normal">load 5.84 t of a payload of 24.7 t; grey: the 13 positions used</text>
+<text class="txt" x="170.00" y="134.00" font-size="2.4" text-anchor="start" font-weight="normal">load 5.36 t of a payload of 24.7 t; grey: the 13 positions used</text>
 <rect class="vis" x="30" y="152.00" width="120.32" height="23.52"/>
 <rect class="fillg" x="30.50" y="152.60" width="18.10" height="6.60"/>
 <rect class="fillg" x="30.50" y="159.60" width="18.10" height="6.60"/>
@@ -245,7 +245,7 @@
 <rect class="box" x="123.00" y="166.60" width="18.10" height="6.60"/>
 <text class="txt" x="154.32" y="157.00" font-size="2.4" text-anchor="start" font-weight="normal">40-foot dry container (ISO 668, 1AA): inside 12032 x 2352 x 2393</text>
 <text class="txt" x="154.32" y="161.50" font-size="2.4" text-anchor="start" font-weight="normal">18 floor positions (6 x 3); 3 layers fit; 25 pallets need 13 positions in 2 layers</text>
-<text class="txt" x="154.32" y="166.00" font-size="2.4" text-anchor="start" font-weight="normal">load 5.84 t of a payload of 26.5 t; grey: the 13 positions used</text>
+<text class="txt" x="154.32" y="166.00" font-size="2.4" text-anchor="start" font-weight="normal">load 5.36 t of a payload of 26.5 t; grey: the 13 positions used</text>
 <rect class="vis" x="30" y="184.00" width="135.56" height="24.40"/>
 <rect class="fillg" x="30.50" y="184.60" width="18.10" height="6.60"/>
 <rect class="fillg" x="30.50" y="191.60" width="18.10" height="6.60"/>
@@ -270,14 +270,14 @@
 <rect class="box" x="141.50" y="198.60" width="18.10" height="6.60"/>
 <text class="txt" x="169.56" y="189.00" font-size="2.4" text-anchor="start" font-weight="normal">45-foot pallet-wide rail container: inside 13556 x 2440 x 2585</text>
 <text class="txt" x="169.56" y="193.50" font-size="2.4" text-anchor="start" font-weight="normal">21 floor positions (7 x 3); 3 layers fit; 25 pallets need 13 positions in 2 layers</text>
-<text class="txt" x="169.56" y="198.00" font-size="2.4" text-anchor="start" font-weight="normal">load 5.84 t of a payload of 27.5 t; grey: the 13 positions used</text>
+<text class="txt" x="169.56" y="198.00" font-size="2.4" text-anchor="start" font-weight="normal">load 5.36 t of a payload of 27.5 t; grey: the 13 positions used</text>
 <text class="txt" x="232.00" y="40.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
 <text class="txt" x="232.00" y="44.50" font-size="2.3" text-anchor="start" font-weight="normal">Pallet: four-way block pallet, heat-treated softwood (ISPM 15),</text>
 <text class="txt" x="232.00" y="48.20" font-size="2.3" text-anchor="start" font-weight="normal">1850 x 700 x 144, 26.2 kg.</text>
 <text class="txt" x="232.00" y="51.90" font-size="2.3" text-anchor="start" font-weight="normal">Load: four slat bundles (2 x 2) at the bottom, a slip sheet,</text>
 <text class="txt" x="232.00" y="55.60" font-size="2.3" text-anchor="start" font-weight="normal">eight frame cartons in two columns of four, a top cap; stretch</text>
 <text class="txt" x="232.00" y="59.30" font-size="2.3" text-anchor="start" font-weight="normal">film; four corner boards. Moved by fork-lift, four-way entry.</text>
-<text class="txt" x="232.00" y="63.00" font-size="2.3" text-anchor="start" font-weight="normal">Goods 206.6 kg, pallet gross 234.7 kg.</text>
+<text class="txt" x="232.00" y="63.00" font-size="2.3" text-anchor="start" font-weight="normal">Goods 187.8 kg, pallet gross 215.9 kg.</text>
 <text class="txt" x="232.00" y="66.70" font-size="2.3" text-anchor="start" font-weight="normal">Stacking: up to 3 high (top load on the cartons only through</text>
 <text class="txt" x="232.00" y="70.40" font-size="2.3" text-anchor="start" font-weight="normal">the top cap and corner boards).</text>
 <rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
@@ -291,7 +291,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-007</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">B</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">C</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">1:20, 1:100</text>
@@ -300,7 +300,7 @@
 <text class="txt" x="317.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A3</text>
 <polyline class="tbl" points="330.00,270.00 330.00,279.50"/>
 <text class="lbl" x="331.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Date</text>
-<text class="txt" x="331.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">2026-11-17</text>
+<text class="txt" x="331.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">2026-11-18</text>
 <polyline class="tbl" points="356.00,270.00 356.00,279.50"/>
 <text class="lbl" x="357.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Units</text>
 <text class="txt" x="357.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">mm</text>
@@ -310,6 +310,6 @@
 <text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
 <polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
 <text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
-<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">heat-treated softwood (ISPM 15)   mass 235 kg per pallet</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">heat-treated softwood (ISPM 15)   mass 216 kg per pallet</text>
 <text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
 <text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>

@@ -26,11 +26,11 @@
 <polyline class="thin" points="20.00,32.00 320.00,32.00"/>
 <text class="txt" x="21.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">1</text>
 <text class="txt" x="33.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-C180</text>
-<text class="txt" x="67.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">Side frame, cast steel, hot-dip galvanised, powder coated</text>
+<text class="txt" x="67.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">Side frame, ductile cast iron, hot-dip galvanised, powder coated</text>
 <text class="txt" x="187.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">2</text>
-<text class="txt" x="199.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">GE240+N (EN 10293, 1.0446)</text>
-<text class="txt" x="279.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">13.44</text>
-<text class="txt" x="299.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">26.87</text>
+<text class="txt" x="199.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">EN-GJS-400-15 (EN 1563, 5.3106)</text>
+<text class="txt" x="279.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">11.09</text>
+<text class="txt" x="299.50" y="38.00" font-size="2.6" text-anchor="start" font-weight="normal">22.18</text>
 <polyline class="ext" points="20.00,40.50 320.00,40.50"/>
 <text class="txt" x="21.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">2</text>
 <text class="txt" x="33.50" y="45.00" font-size="2.6" text-anchor="start" font-weight="normal">VI-B180-03</text>
@@ -72,10 +72,10 @@
 <text class="txt" x="279.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">0.02</text>
 <text class="txt" x="299.50" y="73.00" font-size="2.6" text-anchor="start" font-weight="normal">0.02</text>
 <polyline class="ext" points="20.00,75.50 320.00,75.50"/>
-<text class="txt" x="318.00" y="84.00" font-size="3.2" text-anchor="end" font-weight="bold">Bench net mass 48.83 kg</text>
+<text class="txt" x="318.00" y="84.00" font-size="3.2" text-anchor="end" font-weight="bold">Bench net mass 44.13 kg</text>
 <text class="txt" x="20.00" y="98.00" font-size="3.0" text-anchor="start" font-weight="bold">Notes</text>
 <text class="txt" x="20.00" y="102.50" font-size="2.4" text-anchor="start" font-weight="normal">Not part of the bench: ground anchor set (4 x M12 with levelling nuts and washers), a separate item, supplied with it.</text>
-<text class="txt" x="20.00" y="106.30" font-size="2.4" text-anchor="start" font-weight="normal">Masses computed from the solid model: cast steel 7850 kg/m³, stainless A2 7930 kg/m³; thermally modified ash 554 kg/m³ (about 5 %); zinc per EN ISO 1461 for castings</text>
+<text class="txt" x="20.00" y="106.30" font-size="2.4" text-anchor="start" font-weight="normal">Masses computed from the solid model: ductile cast iron 7100 kg/m³, stainless A2 7930 kg/m³; thermally modified ash 554 kg/m³ (about 5 %); zinc per EN ISO 1461 for castings</text>
 <text class="txt" x="20.00" y="110.10" font-size="2.4" text-anchor="start" font-weight="normal">(≥ 575 g/m² mean, taken x 1.25 as typical); powder 70 µm at 1500 kg/m³; draft allowance 2.0 % of the casting.</text>
 <rect class="tb" x="230.00" y="249.00" width="180.00" height="38.00"/>
 <polyline class="tbl" points="230.00,258.00 410.00,258.00"/>
@@ -88,7 +88,7 @@
 <text class="txt" x="231.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-DWG-B180-005</text>
 <polyline class="tbl" points="282.00,270.00 282.00,279.50"/>
 <text class="lbl" x="283.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Rev.</text>
-<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">B</text>
+<text class="txt" x="283.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">C</text>
 <polyline class="tbl" points="294.00,270.00 294.00,279.50"/>
 <text class="lbl" x="295.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Scale</text>
 <text class="txt" x="295.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">–</text>
@@ -97,7 +97,7 @@
 <text class="txt" x="317.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">A3</text>
 <polyline class="tbl" points="330.00,270.00 330.00,279.50"/>
 <text class="lbl" x="331.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Date</text>
-<text class="txt" x="331.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">2026-11-17</text>
+<text class="txt" x="331.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">2026-11-18</text>
 <polyline class="tbl" points="356.00,270.00 356.00,279.50"/>
 <text class="lbl" x="357.50" y="273.00" font-size="1.8" text-anchor="start" font-weight="normal">Units</text>
 <text class="txt" x="357.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">mm</text>
@@ -107,6 +107,6 @@
 <text class="txt" x="371.50" y="278.00" font-size="3.0" text-anchor="start" font-weight="normal">VI-B180</text>
 <polyline class="tbl" points="230.00,279.50 410.00,279.50"/>
 <text class="lbl" x="231.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Material / mass</text>
-<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see bill of materials   mass 48.8 kg net</text>
+<text class="txt" x="231.50" y="285.80" font-size="2.4" text-anchor="start" font-weight="normal">see bill of materials   mass 44.1 kg net</text>
 <text class="lbl" x="371.50" y="282.00" font-size="1.8" text-anchor="start" font-weight="normal">Projection</text>
 <text class="txt" x="371.50" y="285.80" font-size="2.0" text-anchor="start" font-weight="normal">first angle (ISO 5456-2)</text></svg>
