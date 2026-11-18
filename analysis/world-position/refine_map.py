@@ -685,6 +685,10 @@ def labels_flat(img, px):
     # the villages (map "villages", O152): a dot by their size; the named ones with their name (in Urvania the
     # English (Italian) name, on Lisavu the Lisavan one, or the English one where settlers named the place), placed
     # where it covers the least
+    sp_ = lambda t: " ".join(t)                   # the country names (drawn last) are kept free of village names
+    for q_, t_, sz_ in (((5 * G, 30 * G), "URVANIA", 1.1), ((29 * G, 19 * G), "BAYVARRA", 1.1), ((52 * G, 33.5 * G), "LISAVU", 1.0)):
+        x_, y_ = P(q_)
+        placed.append(d.textbbox((x_, y_), sp_(t_), font=F(False, U * sz_), anchor="lm"))
     R_BAND = {"hamlet": .055, "village": .075, "large": .1, "town": .13}
     for v in WORLD.get("villages", []):
         x, y = P(v["c"])
@@ -698,7 +702,9 @@ def labels_flat(img, px):
         tw_, th_ = d.textbbox((0, 0), v["name"], font=vf)[2:]
         g = U * .16
         cands = [("lm", (x + g, y)), ("rm", (x - g, y)), ("ms", (x, y - g)), ("ma", (x, y + g)),
-                 ("lb", (x + g * .7, y - g * .4)), ("lt", (x + g * .7, y + g * .4))]
+                 ("lb", (x + g * .7, y - g * .4)), ("lt", (x + g * .7, y + g * .4)),
+                 ("rb", (x - g * .7, y - g * .4)), ("rt", (x - g * .7, y + g * .4)),
+                 ("ms", (x, y - 3 * g)), ("ma", (x, y + 3 * g))]
         def vbox(anchor, xy):
             bx = xy[0] if anchor[0] == "l" else xy[0] - tw_ if anchor[0] == "r" else xy[0] - tw_ / 2
             by = xy[1] - th_ / 2 if anchor[1] == "m" else xy[1] - th_ if anchor[1] in "sb" else xy[1]
