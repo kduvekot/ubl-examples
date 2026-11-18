@@ -1814,7 +1814,31 @@
     "duty": "murdrir",
     "ferra": "tezhul",
     "importer": "stazstan",
-    "landed": "tertek"
+    "landed": "tertek",
+    "alder": "skegek",
+    "beech": "vidraz",
+    "cattle": "belzhan",
+    "chestnut": "kritran",
+    "confluence": "krakgaz",
+    "cove": "gizaz",
+    "dovecote": "gitir",
+    "ferry": "krezvir",
+    "ford": "malzhan",
+    "granary": "triznaz",
+    "haven": "metir",
+    "jetty": "bikran",
+    "market": "hihek",
+    "milestone": "rekhir",
+    "orchard": "sizgul",
+    "portage": "trenzir",
+    "saltpan": "vaknan",
+    "smithy": "trazvul",
+    "spring": "zhazsan",
+    "stronghold": "girkul",
+    "tannery": "zhildir",
+    "terrace": "skazhaz",
+    "vineyard": "hulbir",
+    "willow": "stagir"
    }
   },
   "qal": {
@@ -2923,7 +2947,14 @@
     "duty": "namafe",
     "ferra": "vohala",
     "importer": "tanole",
-    "landed": "tafone"
+    "landed": "tafone",
+    "anchorage": "natahoma",
+    "cottonfield": "kefalasa",
+    "headland": "setahu",
+    "landing": "pakesa",
+    "landslide": "felulaka",
+    "rivermouth": "linukaha",
+    "waterfall": "nihekemo"
    }
   },
   "en": {

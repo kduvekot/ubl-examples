@@ -42,6 +42,14 @@ For every tile the model records:
   mf  on a square of a managed forest (world/terrain.json "managed_forests", the forest of Upland State): its
       compartments, a string of SUB x SUB characters (the sub-square a along i, b along j at a * SUB + b), each the
       number of its age class (0 felled and replanted, 1 young, 2 pole, 3 mature) or "." outside the forest
+  lu  the land use of the square's cells (tools/land_use.py: who farms the land around the towns and villages, and
+      how): a string of S x S characters, the cell a along i, b along j at a * S + b (S = 4 on the mainland, cells
+      of 875 m as the sub-squares; 8 on Lisavu, cells of 437.5 m): d field, p pasture or hay meadow, o orchard,
+      olive grove or vineyard, f wood, g open grass or grazing, h scrub or heath, r rock, m marsh, s and w water;
+      given where its cells are not all of the square's kind ("k" is the most common kind of its land cells,
+      pasture counted as grass and orchards as fields)
+  ud  in a town that gives its districts (map "towns", "districts"): the district of each built-up sub-square, a
+      string of SUB x SUB characters (as "um"), the district's index in its town's list (0-9, a-z) or "."
 
 Structural rules (the build stops when one is broken):
   * buildings do not share tiles and do not stand on roads, rails or water,
@@ -50,7 +58,9 @@ Structural rules (the build stops when one is broken):
     or water for ports and quays; missing access roads are laid by the model, over the terrain with the router of
     the map's routes (tools/routing.py; tools/lay_routes.py writes them into the map, so that the map holds every
     road and the model normally lays none);
-  * every town and village is built up over the area its built_km gives (map "towns", "localities"), on land,
+  * every town and village is built up over the area its built_km gives (map "towns", "localities", "villages"),
+    a town as the union of its districts where it gives them (each a circle of its size round its centre, grown
+    to the decided area), on land,
     off the airports and their approach zones and TOWN_CLEAR from a pipeline (step 6);
   * every house faces a street: the road next to it, or, in a town, the next square of houses on the way to
     one (the town's own streets);
@@ -256,10 +266,13 @@ def footprint(p):
 def build(world):
     problems = []
     # a town's radius in squares, from the width of its built-up area (map "built_km")
-    for tw in world.get("towns", []) + world.get("localities", []):
+    for tw in world.get("towns", []) + world.get("localities", []) + world.get("villages", []):
         tw["r"] = tw["built_km"] / 2 / KM
     T = [[None] * H for _ in range(W)]
     terrain, E = load_terrain()
+    import land_use                                 # tools/land_use.py: the land use round the towns and villages
+    managed_sq = [(i, j) for mf in terrain.get("managed_forests", []) for i, j, _ in mf["squares"]]
+    LU = land_use.tiles(land_use.land_use(ROOT, terrain, world, managed_sq), W, H)
 
     # 1. land, countries, terrain: from the terrain (world/terrain.json). The land border follows the watershed
     #    north of the crossing and the river below it (owner, 2026-11-18, option A); tools/terrain.py draws it.
@@ -636,6 +649,21 @@ def build(world):
             continue
         enter(path[0], next(b2 for b2 in fp if abs(b2[0] - path[0][0]) + abs(b2[1] - path[0][1]) == 1))
 
+    # 5a. the land use (tools/land_use.py): the kind of each square and the land use of its cells follow from who
+    #     farms it. Applied after the access roads, which are laid over the terrain's own cover (as
+    #     tools/lay_routes.py lays every way); not on the parties' squares, a harbour or a station; on a pipeline's
+    #     right of way nothing is planted (its wood is open grass).
+    for (i, j), (lu, kind) in LU.items():
+        t = T[i][j]
+        if t["k"] in ("s", "w") or "b" in t or "hb" in t or "ms" in t or kind is None or (i, j) in managed_sq:
+            continue
+        if (i, j) in corridor:
+            lu = lu.replace("f", "g")
+            kind = "g" if kind == "f" else kind
+        t["k"] = kind
+        if lu != kind * len(lu):
+            t["lu"] = lu
+
     # 5b. airports: the runway runs along the longer side; beyond each end an approach zone of
     #     APPROACH squares, as wide as the airport, must stay low and flat (water is fine): no buildings,
     #     houses, yards, forest or hills, and the land in it at runway height
@@ -657,6 +685,8 @@ def build(world):
             t["az"] = 1 if (k := abs(q[0] - p["at"][0]) if along_i else abs(q[1] - p["at"][1])) else 1
             if t["k"] in ("f", "r"):
                 t["k"] = "g"
+            if "lu" in t:                                    # no wood in the approach zone either
+                t["lu"] = t["lu"].replace("f", "g")
             o = owner.get(q)
             if o:
                 problems.append(f"#{o['n']} {o['name']} stands in the approach zone of #{p['n']} {p['name']} at {q}")
@@ -690,19 +720,31 @@ def build(world):
         return bool(t) and t["k"] not in ("s", "w") and q not in approach and q not in near_pipe and q not in stations \
             and not (o and o["kind"] == "airport")
 
-    for tw in world.get("towns", []) + world.get("localities", []):
+    for tw in world.get("towns", []) + world.get("localities", []) + world.get("villages", []):
         ci, cj, rad = tw["c"][0], tw["c"][1], tw["r"]
         pop = max(tw["population"]) if isinstance(tw.get("population"), list) else tw.get("population", 0)
-        reach = math.ceil(rad * 3) + 2
+        reach = math.ceil(rad * 3) + (2 if rad > .5 else 1)  # a village of a square or less: the squares round it
         box_ = [(i, j) for i in range(ci - reach, ci + reach + 1) for j in range(cj - reach, cj + reach + 1)
                 if buildable((i, j)) and (i, j) not in built]
         ways = [q for q in road if abs(q[0] - ci) <= reach + 1 and abs(q[1] - cj) <= reach + 1]
 
+        dists = tw.get("districts") or []
+
+        def district(x, y):
+            """(index, how far (x, y) lies out of the district it lies deepest in, in shares of its radius)."""
+            return min(((k, math.hypot(x - ds["at"][0], y - ds["at"][1]) / (ds["r_km"] / KM)) for k, ds in enumerate(dists)),
+                       key=lambda kd: kd[1])
+
         def spread(x, y):
-            """How far (x, y) lies out, in squares: from the centre, warped by the noise, nearer along the roads."""
+            """How far (x, y) lies out, in squares: from the centre (or, in a town that gives its districts, from
+            the district it lies deepest in, as a share of that district's radius times the town's), warped by the
+            noise, nearer along the roads."""
             wx = (noise(x * 1.7 + 31.7, y * 1.7 - 12.9) - .5) * 2 * BUILT_WARP * rad
             wy = (noise(x * 1.7 - 7.3, y * 1.7 + 45.1) - .5) * 2 * BUILT_WARP * rad
-            d = math.hypot(x - ci + wx, y - cj + wy)
+            if dists:
+                d = district(x + wx, y + wy)[1] * rad
+            else:
+                d = math.hypot(x - ci + wx, y - cj + wy)
             dr = min((max(abs(x - a2), abs(y - b2)) for a2, b2 in ways), default=9)
             if dr < 1:
                 d *= .78 + .22 * dr                    # ribbons along the roads
@@ -724,10 +766,17 @@ def build(world):
             t = tile(*q)
             t["um"] = t.get("um", 0) | 1 << (a2 * SUB + b2)
             built[q] = tw
+            if dists:                                  # the district of each built sub-square (model "ud")
+                x, y = q[0] - .5 + (a2 + .5) / SUB, q[1] - .5 + (b2 + .5) / SUB
+                k = district(x, y)[0]
+                ud = list(t.get("ud", "." * SUB * SUB))
+                ud[a2 * SUB + b2] = "0123456789abcdefghijklmnopqrstuvwxyz"[k]
+                t["ud"] = "".join(ud)
         top = 4 if pop >= 250_000 else 3 if pop >= 20_000 else 1
+        R_eq = math.sqrt(len(cells) / math.pi) / SUB       # the radius of a circle of the built-up area, in squares
         for q in {q for q, _, _ in cells}:
             t = tile(*q)
-            u = spread(*q) / scale
+            u = math.hypot(q[0] - ci, q[1] - cj) / R_eq * .8 if dists else spread(*q) / scale
             t["ul"] = min(top, 4 if u < .22 else 3 if u < .45 else 2 if u < .75 else 1)
             if q in owner or q in road or q in rails or q in corridor or q in harbours or "hs" in t:
                 continue

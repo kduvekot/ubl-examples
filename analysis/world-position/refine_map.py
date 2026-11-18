@@ -8,12 +8,17 @@ the managed forest of Upland State with its compartments by age (terrain "manage
 mine.
 The countries are the model's squares, their edge bent a little by the model's noise. Roads, rail and the
 pipelines follow the model's own paths, with their corners cut (Chaikin);
+the land use round the towns and villages from the model ("lu", tools/land_use.py: fields, pasture, orchards and
+vineyards, woods), elsewhere the terrain's natural cover; the villages as dots by their size, the named ones with
+their names, their minor roads as thin lines; the towns' built-up areas tinted by their districts' character (or,
+with "periods", by the period they grew in);
 towns are drawn as their built-up areas, true to size (the model's sub-squares "um", 875 m), with their names beside
 them; buildings and airports stay on their squares.
 
 Usage (from the repository root): python3 tools/world_model.py model.json, then
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 6 roadmap   (road-map style)
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 0 sheet     (A3, 1 : 2,500,000)
+  ... out.png 5 0 sheet periods   (the same, the towns' built-up areas coloured by the period of their districts)
 (the fifth argument is the number of pixels per 3.5 km square)
 """
 import json, math, sys
@@ -35,7 +40,7 @@ C = wm.chart                                      # square -> chart units (14 km
 
 V = np.array(M["model"]["v"], dtype=np.float32)    # corner heights (metres), [W + 1][H + 1]
 LEVEL_M = M["model"].get("level_m", wm.LEVEL_M)
-KIND = {"s": 0, "w": 1, "g": 2, "f": 3, "r": 4, "d": 5, "h": 6, "m": 7}
+KIND = {"s": 0, "w": 1, "g": 2, "f": 3, "r": 4, "d": 5, "h": 6, "m": 7, "p": 8, "o": 9}   # p pasture, o orchard (land use)
 TERRAIN = json.load(open("world/terrain.json"))
 # the terrain's land cover classes (tools/terrain_lib.py: sea, water, field, forest, grass, heath, rock, marsh) as KIND codes
 COVER_TO_KIND = np.array([0, 1, 5, 3, 2, 6, 4, 7], dtype=np.int8)
@@ -44,6 +49,18 @@ for name, r_ in TERRAIN["rasters"].items():
     FINE.append((r_["x0"], r_["y0"], r_["cells_per_square"],
                  np.array(Image.open(r_["height"]), dtype=np.float32).T - r_["offset_m"],     # [x][y], metres
                  COVER_TO_KIND[np.array(Image.open(r_["cover"])).T]))
+# the land use (tools/land_use.py, model "lu" and "k"): who farms each cell round the towns and villages; where the
+# model gives a square no "lu", its cells are all of its kind; the parties' squares, a harbour, a station and the
+# managed forest keep the terrain's cover
+for x0_, y0_, S_, _, Km_ in FINE:
+    for a_ in range(Km_.shape[0] // S_):
+        for b_ in range(Km_.shape[1] // S_):
+            t_ = M["model"]["tiles"][x0_ + a_][y0_ + b_]
+            if "lu" in t_:
+                lu_ = t_["lu"]
+                Km_[a_ * S_:(a_ + 1) * S_, b_ * S_:(b_ + 1) * S_] = np.array([KIND[c] for c in lu_], np.int8).reshape(S_, S_)
+            elif t_["k"] not in ("s", "w") and not any(k in t_ for k in ("b", "hb", "ms", "mf")):
+                Km_[a_ * S_:(a_ + 1) * S_, b_ * S_:(b_ + 1) * S_] = KIND[t_["k"]]
 COUNTRY = {None: 0, "XU": 1, "XB": 2, "XL": 3}
 PARTIES = json.load(open("world/parties.json", encoding="utf-8"))["parties"]
 OWNED = {(i, j) for i in range(W) for j in range(H) if T[i][j].get("b")}
@@ -125,8 +142,9 @@ def colour(kind, cty, elev, shade, style):
     land = (kind != 0) & (kind != 1)
     if style == "flat":
         img = tint(elev)
-        for k, col, a in ((3, (190, 222, 180), .75), (5, (236, 234, 210), .8), (4, (214, 208, 198), .7),
-                          (6, (228, 224, 200), .7), (7, (206, 226, 214), .75)):
+        for k, col, a in ((3, (190, 222, 180), .75), (5, (243, 228, 176), .8), (4, (214, 208, 198), .7),
+                          (6, (228, 224, 200), .7), (7, (206, 226, 214), .75), (8, (212, 234, 188), .75),
+                          (9, (228, 202, 224), .8)):
             sel = (kind == k)[..., None]
             img = np.where(sel, img * (1 - a) + np.array(col) * a, img)
         f = (1 + (shade - .707) * .9)[..., None]
@@ -134,7 +152,7 @@ def colour(kind, cty, elev, shade, style):
     else:
         img = np.zeros(kind.shape + (3,), dtype=np.float32)
         for k, col in ((2, (204, 220, 170)), (1, (204, 220, 170)), (3, (128, 171, 112)), (4, (196, 182, 150)), (5, (226, 214, 150)),
-                       (6, (190, 180, 140)), (7, (170, 200, 180))):
+                       (6, (190, 180, 140)), (7, (170, 200, 180)), (8, (180, 212, 150)), (9, (196, 170, 190))):
             img = np.where((kind == k)[..., None], np.array(col, dtype=np.float32), img)
         img = img * (1 - np.clip(elev / 1600, 0, .5))[..., None] + np.array((150, 130, 110)) * np.clip(elev / 1600, 0, .5)[..., None]
         for c, t in ((1, (0, 6, -6)), (2, (6, 2, -8)), (3, (10, 0, -10))):
@@ -314,7 +332,8 @@ PAL = {"water": (170, 211, 223), "land": (242, 239, 233), "forest": (205, 230, 1
      "hills": (232, 228, 214), "urban": (238, 196, 186), "urban_edge": (196, 140, 128), "building": (217, 210, 200),
      "road_main": (252, 214, 112), "road_main_edge": (226, 176, 70), "road": (255, 255, 255),
      "road_edge": (214, 208, 198), "rail": (150, 150, 150), "border": (150, 130, 170), "airport": (220, 220, 228),
-     "label": (60, 64, 67), "label_soft": (110, 110, 110), "water_label": (80, 130, 175)}
+     "label": (60, 64, 67), "label_soft": (110, 110, 110), "water_label": (80, 130, 175),
+     "road_village": (150, 140, 128), "village": (196, 120, 106)}
 
 def render_flat(levels, px):
     return colour(*raster(levels, px), "flat")
@@ -473,14 +492,18 @@ def overlay_flat(img, px):
             for a2, b2 in zip(xy[::2], xy[1::2]):
                 d.line([a2, b2], fill=(120, 160, 200) if r["mode"] == "sea" else (170, 170, 170), width=max(1, U // 16))
     MAIN = {r["id"] for r in ROUTES if r["mode"] == "road" and r.get("class") == "main"}
+    for r in ROUTES:                              # the villages' minor roads: a thin line, no casing (O152)
+        if r["mode"] == "road" and r["id"].startswith("village-"):
+            draw_way(d, r, PAL["road_village"], None, max(1, U // 26), max(2, U // 12))
     for r in ROUTES:
-        if r["mode"] == "road" and r["id"] not in MAIN:
+        if r["mode"] == "road" and r["id"] not in MAIN and not r["id"].startswith("village-"):
             draw_way(d, r, PAL["road"], PAL["road_edge"], max(2, U // 9), max(3, U // 6))
     # the built-up areas over the minor roads and the rail (a town of 4 km is 1.6 mm on the sheet, narrower than
     # the road symbols through it), under the main roads
     edge = mask.filter(ImageFilter.MaxFilter(3))
     img.paste(Image.new("RGB", img.size, PAL["urban_edge"]), (0, 0), edge)
     img.paste(Image.new("RGB", img.size, PAL["urban"]), (0, 0), mask)
+    districts(img, px, mask)
     d = ImageDraw.Draw(img, "RGBA")
     # the small brooks over the built-up areas they run through (Lumeport's, O153: the town's first water)
     for b in TERRAIN.get("brooks", {}).values():
@@ -498,6 +521,44 @@ def overlay_flat(img, px):
                 d.rectangle([x - px * .18, y - px * .3, x + px * .5, y + px * .3], fill=(120, 120, 130))
     # land border: dotted, traced where the country changes
     border_dots(img, px, 3, PAL["border"], U * .045)
+
+# the towns' districts (map "towns", "districts"; model "ud"): on the sheet the built-up area is tinted by the
+# district's character (the old core darker, industry and the port greyer); with DISTRICT_MODE "period" (the crops
+# of the towns' growth) by the period the district grew in
+CHAR_TINT = {"core": (214, 160, 150), "administration": (226, 178, 168), "residential": (238, 196, 186),
+             "suburb": (243, 212, 204), "industry": (206, 196, 210), "port": (196, 204, 218)}
+PERIOD_TINT = {"urvanian": (150, 60, 40), "tuscan": (214, 120, 30), "italian": (226, 196, 60), "british": (90, 150, 200),
+               "independence": (120, 180, 110), "lisavan": (150, 60, 40), "settler": (180, 70, 60),
+               "colonial": (226, 170, 60), "interwar": (160, 110, 190), "postwar": (90, 150, 200),
+               "agreement": (120, 180, 110)}
+DISTRICT_MODE = ["character"]
+
+def districts(img, px, mask):
+    S = wm.SUB
+    towns = [t for t in WORLD["towns"] if t.get("districts")]
+    lay = Image.new("RGB", img.size, (0, 0, 0))
+    sel = Image.new("L", img.size, 0)
+    d, ds = ImageDraw.Draw(lay), ImageDraw.Draw(sel)
+    for i in range(W):
+        for j in range(H):
+            ud = T[i][j].get("ud")
+            if not ud:
+                continue
+            tw = min(towns, key=lambda t: math.hypot(t["c"][0] - i, t["c"][1] - j))
+            for a in range(S):
+                for b in range(S):
+                    c = ud[a * S + b]
+                    if c == ".":
+                        continue
+                    dist = tw["districts"]["0123456789abcdefghijklmnopqrstuvwxyz".index(c)]
+                    col = PERIOD_TINT[dist["period"]] if DISTRICT_MODE[0] == "period" else CHAR_TINT[dist["character"]]
+                    x0, y0 = i * px + a * px / S, j * px + b * px / S
+                    box = [x0 - 1, y0 - 1, x0 + px / S, y0 + px / S]
+                    d.rectangle(box, fill=col)
+                    ds.rectangle(box, fill=255)
+    sel = sel.filter(ImageFilter.GaussianBlur(px / S * .5)).point(lambda v: 255 if v >= 128 else 0)
+    from PIL import ImageChops
+    img.paste(lay, (0, 0), ImageChops.multiply(sel, mask))
 
 MF_TINT = [(232, 234, 206), (204, 228, 188), (184, 216, 170), (166, 204, 154)]   # felled, young, pole, mature
 
@@ -597,8 +658,10 @@ def labels_flat(img, px):
     for t in WORLD["towns"]:
         ci, cj = t["c"]
         reach = 8
+        near = t["built_km"] / KM + 1                 # the town's own built-up area, not the villages round it
         cells = [(i * S + a, j * S + b) for i in range(ci - reach, ci + reach + 1) for j in range(cj - reach, cj + reach + 1)
-                 if 0 <= i < W and 0 <= j < H for a in range(S) for b in range(S) if T[i][j].get("um", 0) >> (a * S + b) & 1]
+                 if 0 <= i < W and 0 <= j < H and math.hypot(i - ci, j - cj) <= near
+                 for a in range(S) for b in range(S) if T[i][j].get("um", 0) >> (a * S + b) & 1]
         x0 = min(x for x, _ in cells) * px / S; x1 = (max(x for x, _ in cells) + 1) * px / S
         y0 = min(y for _, y in cells) * px / S; y1 = (max(y for _, y in cells) + 1) * px / S
         font = F(True, U * .85)
@@ -619,6 +682,31 @@ def labels_flat(img, px):
     for l in WORLD["localities"]:
         dot(l["c"], (120, 120, 120), .14)
         txt(l["c"], l["name"], F(False, U * .62), PAL["label"], dx=U * .3, dy=-U * .4)
+    # the villages (map "villages", O152): a dot by their size; the named ones with their name (in Urvania the
+    # English (Italian) name, on Lisavu the Lisavan one, or the English one where settlers named the place), placed
+    # where it covers the least
+    R_BAND = {"small": .07, "middle": .095, "large": .12}
+    for v in WORLD.get("villages", []):
+        x, y = P(v["c"])
+        r = U * R_BAND[v["band"]]
+        d.ellipse([x - r, y - r, x + r, y + r], fill=PAL["village"], outline=(120, 70, 60), width=max(1, U // 40))
+    vf = F(False, U * .44)
+    for v in WORLD.get("villages", []):
+        if not v["name"]:
+            continue
+        x, y = P(v["c"])
+        tw_, th_ = d.textbbox((0, 0), v["name"], font=vf)[2:]
+        g = U * .16
+        cands = [("lm", (x + g, y)), ("rm", (x - g, y)), ("ms", (x, y - g)), ("ma", (x, y + g)),
+                 ("lb", (x + g * .7, y - g * .4)), ("lt", (x + g * .7, y + g * .4))]
+        def vbox(anchor, xy):
+            bx = xy[0] if anchor[0] == "l" else xy[0] - tw_ if anchor[0] == "r" else xy[0] - tw_ / 2
+            by = xy[1] - th_ / 2 if anchor[1] == "m" else xy[1] - th_ if anchor[1] in "sb" else xy[1]
+            return (bx, by, bx + tw_, by + th_)
+        anchor, xy = min(cands, key=lambda c: free_score(vbox(*c)))
+        placed.append(vbox(anchor, xy))
+        d.text(xy, v["name"], font=vf, fill=PAL["label"], anchor=anchor, stroke_width=max(2, U // 14),
+               stroke_fill=(255, 255, 255, 230))
     sp = lambda t: " ".join(t)
     txt((5 * G, 30 * G), sp("URVANIA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
     txt((29 * G, 19 * G), sp("BAYVARRA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
@@ -709,6 +797,8 @@ if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "roadmap":
     sys.exit()
 
 if __name__ == "__main__" and len(sys.argv) > 6 and sys.argv[6] == "sheet":
+    if len(sys.argv) > 7 and sys.argv[7] == "periods":     # the built-up areas coloured by the period they grew in
+        DISTRICT_MODE[0] = "period"
     sheet(out, LEVELS)
     sys.exit()
 

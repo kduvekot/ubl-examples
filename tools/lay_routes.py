@@ -6,9 +6,10 @@ The network is given below (NETWORK): which places are linked, by which class of
 have built them (the railways first, then the main roads, the minor roads, the pipelines). Each link is laid by
 tools/routing.py over world/terrain.json and what was laid before it: 8-connected, with the gradient its class is
 built for, round hills and along valleys, across the river at a narrow place, with bridges and tunnels where a
-real engineer would choose them. The access roads to the parties no route reaches are laid last, by the world
+real engineer would choose them. The access roads to the parties no route reaches are laid next, by the world
 model's own access-road builder (tools/world_model.py, which uses the same router), and written as routes too, so
-that the map holds every road and the model has nothing left to lay. The border metering station is put on the
+that the map holds every road and the model has nothing left to lay. Last come the minor roads to the villages
+(map "villages", O152; lay_villages below), so that everything laid before them stays as it is. The border metering station is put on the
 gas pipeline on Bayvarra's side of the border.
 
 Run it when a place, the terrain or the network changes; tools/world_model.py then checks every rule.
@@ -238,6 +239,99 @@ def lay(world, terrain, land, log=print, upto=None):
     return out, list(st)
 
 
+def lay_villages(world, terrain, land, routes, log=print):
+    """The minor roads to the villages (map "villages", O152): each village is joined to the road network by a minor
+    road (up to 10 %, bridges as before, no tunnel), laid over the terrain with the same router after every other
+    way, so that the main roads, the railways, the pipelines and the access roads stay as they are. The road ends
+    on the square beside the village (its houses face it); a village beside a road needs none. The villages nearest
+    the network are joined first, so that the roads to the further ones can run on from them, as a network grows.
+    Returns the new routes."""
+    built = routing.Built()
+    fp = {p["id"]: set(wm.footprint(p)) for p in world["parties"]}
+    all_fp = set().union(*fp.values())
+    towns = world.get("towns", []) + world.get("localities", [])
+    built.blocked = set(all_fp) | {tuple(t["harbour"]["at"]) for t in towns if t.get("harbour")}
+    for p in world["parties"]:
+        if p.get("water"):
+            for q in fp[p["id"]]:
+                for k in (1, 2):
+                    built.blocked.add((q[0] + p["water"][0] * k, q[1] + p["water"][1] * k))
+    for t in towns:
+        if t.get("harbour"):
+            (i, j), (di, dj) = t["harbour"]["at"], t["harbour"]["water"]
+            for k in (1, 2):
+                built.blocked.add((i + di * k, j + dj * k))
+    built.blocked |= {tuple(st["at"]) for st in world.get("stations", [])}
+    built.add("river", [tuple(q[:2]) for q in terrain["river"]])
+    for q in land.estuary:
+        built.sq["river"].add(q)
+    for r in routes:
+        if r["mode"] in ("road", "rail", "pipeline"):
+            path = [tuple(q) for q in r["pts"]]
+            sts = {tuple(q): "bridge" for q in r.get("bridges", [])}
+            if r["mode"] != "pipeline":
+                sts.update({q: "bridge" for q in path if land.kind[q[0]][q[1]] == "w"})
+            sts.update({tuple(q): "tunnel" for q in r.get("tunnels", [])})
+            built.add(r["mode"], path, sts)
+    villages = world.get("villages", [])
+    vsq = {tuple(v["c"]) for v in villages}
+    built.blocked |= vsq
+    # squares a road may not join at: a level crossing, a structure and its approaches, a party's square
+    def joinable(q):
+        return q not in built.sq["rail"] and q not in built.sq["pipeline"] and q not in built.structures \
+            and q not in all_fp
+    D4 = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+    # a minor road keeps 2 squares off a bridge or a tunnel and its approaches (their ground is fitted to the deck)
+    near_struct = {(q[0] + a, q[1] + b) for q in built.structures for a in range(-2, 3) for b in range(-2, 3)}
+    def near_road(v):
+        return (min((abs(v["c"][0] - q[0]) + abs(v["c"][1] - q[1]) for q in built.sq["road"]), default=999), v["c"])
+
+    out = []
+
+    def link(v):
+        """Join village v to the roads: True if done (or beside a road already), None if no way was found."""
+        c = tuple(v["c"])
+        if any((c[0] + a, c[1] + b) in built.sq["road"] for a, b in D4):
+            return True                                    # on a road already
+        starts = [(c[0] + a, c[1] + b) for a, b in D4]
+        starts = [q for q in starts if land.inside(q) and land.kind[q[0]][q[1]] not in "sw" and q not in built.blocked
+                  and not any(q in built.sq[x] for x in ("rail", "pipeline")) and q not in near_struct]
+        for R in (8, 16, 32):
+            box = (c[0] - R, c[1] - R, c[0] + R, c[1] + R)
+            goals = {q for q in built.sq["road"] if box[0] <= q[0] <= box[2] and box[1] <= q[1] <= box[3] and joinable(q)
+                     and land.country[q[0]][q[1]] == land.country[c[0]][c[1]] and q not in near_struct}
+            if not goals or not starts:
+                continue
+            got = routing.route(land, built, "minor", sorted(starts), goals, box=box, avoid=vsq | (near_struct - goals))
+            if got:
+                break
+        else:
+            return None
+        path, sts = got
+        built.add("road", path, sts)
+        near_struct.update((q[0] + a, q[1] + b) for q in built.structures for a in range(-2, 3) for b in range(-2, 3))
+        r = {"id": f"village-{c[0]}-{c[1]}", "mode": "road", "layer": "network", "class": "minor",
+             "label": f"Minor road to {v['name'] or 'a village'}", "pts": [list(q) for q in path]}
+        br = [list(q) for q in path if sts.get(q) == "bridge" or land.kind[q[0]][q[1]] == "w"]
+        if br:
+            r["bridges"] = br
+        out.append(r)
+        return True
+
+    todo = sorted(villages, key=near_road)
+    while todo:                       # passes: a village far from every road is tried again once others have roads
+        failed = [v for v in todo if link(v) is None]
+        if len(failed) == len(todo):
+            break
+        todo = sorted(failed, key=near_road)
+    log(f"  laid {len(out)} minor roads to villages, {sum(len(r['pts']) for r in out)} squares, "
+        f"{sum(routing.length_km([tuple(q) for q in r['pts']]) for r in out):.0f} km; "
+        f"{len(villages) - len(out) - len(failed)} villages beside a road already")
+    for v in failed:
+        log(f"  no road to the village at {v['c']} ({v['name'] or 'unnamed'})")
+    return out
+
+
 def access_roads(world):
     """The roads the world model lays itself (to parties no route reaches), as routes."""
     model, problems = wm.build(json.loads(json.dumps(world)))
@@ -273,6 +367,7 @@ def main():
                 r["bridges"] = a["bridges"]
             routes.append(r)
             print(f"  laid {r['id']} (minor): {len(a['path'])} squares, {routing.length_km([tuple(q) for q in a['path']]):.0f} km")
+        routes += lay_villages(world, terrain, land, routes)
         write(routes, station)
         world = world_data.load()
     report(world)
