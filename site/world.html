@@ -125,10 +125,11 @@ canvas.dragging { cursor: grabbing; }
 (() => {
 "use strict";
 // ---------------------------------------------------------------- world data
-const W = 64, H = 48;               // tiles
-const TW = 32, TH = 16;             // tile size in pixels (isometric)
 // Countries, parties, routes and towns come from the world layers (world/*.json); the build puts them here.
 const WORLD = /*WORLD_JSON*/ null;
+const W = WORLD.model.W, H = WORLD.model.H;   // squares (tiles): 256 x 192 of 3.5 km
+const GRID = WORLD.model.grid || 1;           // squares per 14 km (the squares of the first map)
+const TW = 32, TH = 16;             // tile size in pixels (isometric)
 const COUNTRIES = WORLD.countries;
 const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
 const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov", finance: "fin", procurement: "proc" };
@@ -169,20 +170,29 @@ function heightAt(x, y) { const vx = Math.max(0, Math.min(W, x + .5)), vy = Math
 // middle of each country's land, for its name on the map
 const CENTRE = (() => { const sum = {}; for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
   if (!t.land || !t.country) continue; const a = sum[t.country] ||= [0, 0, 0]; a[0] += i; a[1] += j; a[2]++; }
-  return Object.fromEntries(Object.entries(sum).map(([c, [x, y, n]]) => [c, [Math.round(x / n), Math.round(y / n) + 3]])); })();
+  return Object.fromEntries(Object.entries(sum).map(([c, [x, y, n]]) => [c, [Math.round(x / n), Math.round(y / n) + 3 * GRID]])); })();
+// distance (in squares, diagonal steps count one) from every square to the nearest square where busy() holds, up
+// to cap: two passes over the grid
+function distanceTo(busy, cap) { const D = new Float32Array(W * H).fill(cap), at = (i, j) => i * H + j;
+  for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (busy(tiles[i][j])) D[at(i, j)] = 0;
+  for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { let d = D[at(i, j)];
+    if (i > 0) d = Math.min(d, D[at(i - 1, j)] + 1, j > 0 ? D[at(i - 1, j - 1)] + 1 : cap, j < H - 1 ? D[at(i - 1, j + 1)] + 1 : cap);
+    if (j > 0) d = Math.min(d, D[at(i, j - 1)] + 1); D[at(i, j)] = d; }
+  for (let i = W - 1; i >= 0; i--) for (let j = H - 1; j >= 0; j--) { let d = D[at(i, j)];
+    if (i < W - 1) d = Math.min(d, D[at(i + 1, j)] + 1, j > 0 ? D[at(i + 1, j - 1)] + 1 : cap, j < H - 1 ? D[at(i + 1, j + 1)] + 1 : cap);
+    if (j < H - 1) d = Math.min(d, D[at(i, j + 1)] + 1); D[at(i, j)] = d; }
+  return (i, j) => D[at(i, j)]; }
 
 // a spot for each country name: inside the country, away from buildings and routes
-const LABEL_AT = (() => { const busy = []; for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j]; if (t.building || t.house || t.links) busy.push([i, j]); }
+const LABEL_AT = (() => { const G = GRID, near = distanceTo(t => t.building || t.house || t.links, 6 * G), nearB = distanceTo(t => t.building, 3 * G);
   const out = {}; for (const [code, c] of Object.entries(CENTRE)) { let best = null, bs = -1e9;
     for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j]; if (!t.land || t.country !== code) continue;
-      const near = Math.min(6, ...busy.map(([a, b]) => Math.max(Math.abs(a - i), Math.abs(b - j))));
-      const edge = [[4,0],[-4,0],[0,4],[0,-4],[3,3],[-3,-3],[3,-3],[-3,3]].some(([a, b]) => !tiles[i + a]?.[j + b]?.land) ? 5 : 0;
-      const score = Math.min(near, 4) - edge - .25 * Math.hypot(i - c[0], j - c[1]); if (score > bs) { bs = score; best = [i, j]; } }
+      const edge = [[4,0],[-4,0],[0,4],[0,-4],[3,3],[-3,-3],[3,-3],[-3,3]].some(([a, b]) => !tiles[i + a * G]?.[j + b * G]?.land) ? 5 : 0;
+      const score = Math.min(near(i, j) / G, 4) - edge - .25 * Math.hypot(i - c[0], j - c[1]) / G; if (score > bs) { bs = score; best = [i, j]; } }
     out[code] = best; }
   for (const tw of TOWNS) { let best = null, bs = -1e9;
-    for (let i = tw.c[0] - 6; i <= tw.c[0] + 6; i++) for (let j = tw.c[1] - 6; j <= tw.c[1] + 6; j++) { const t = tiles[i]?.[j]; if (!t?.land || t.building) continue;
-      const near = Math.min(3, ...busy.filter(([a, b]) => tiles[a][b].building).map(([a, b]) => Math.max(Math.abs(a - i), Math.abs(b - j))));
-      const score = near - .4 * Math.hypot(i - tw.c[0], j - tw.c[1]); if (score > bs) { bs = score; best = [i, j]; } }
+    for (let i = tw.c[0] - 6 * G; i <= tw.c[0] + 6 * G; i++) for (let j = tw.c[1] - 6 * G; j <= tw.c[1] + 6 * G; j++) { const t = tiles[i]?.[j]; if (!t?.land || t.building) continue;
+      const score = nearB(i, j) / G - .4 * Math.hypot(i - tw.c[0], j - tw.c[1]) / G; if (score > bs) { bs = score; best = [i, j]; } }
     tw.label = best; }
   return out; })();
 
@@ -195,8 +205,9 @@ let rot = 0;
 const RW = () => rot % 2 ? H : W, RH = () => rot % 2 ? W : H;
 const R = (i, j) => [[i, j], [H - 1 - j, i], [W - 1 - i, H - 1 - j], [j, W - 1 - i]][rot];
 const RI = (i, j) => [[i, j], [j, H - 1 - i], [W - 1 - i, H - 1 - j], [W - 1 - j, i]][rot];
-let OX = H * TW / 2 + 40; const OY = 60;           // offset of rotated tile (0,0) on the world canvas
-const WORLD_W = (W + H) * TW / 2 + 80, WORLD_H = (W + H) * TH / 2 + 140;
+const TOP = Math.max(0, ...V.map(col => Math.max(...col))) * HU;   // the highest ground, in pixels
+let OX = H * TW / 2 + 40; const OY = 60 + TOP;     // offset of rotated tile (0,0) on the world canvas
+const WORLD_W = (W + H) * TW / 2 + 80, WORLD_H = (W + H) * TH / 2 + 140 + TOP;
 const shade = (hex, f) => { const v = parseInt(hex.slice(1), 16); let r = v >> 16, g = (v >> 8) & 255, b = v & 255;
   const m = c => Math.max(0, Math.min(255, Math.round(f > 0 ? c + (255 - c) * f : c * (1 + f)))); return `rgb(${m(r)},${m(g)},${m(b)})`; };
 function diamond(g, x, y, fill, stroke) { g.beginPath(); g.moveTo(x, y - TH / 2); g.lineTo(x + TW / 2, y); g.lineTo(x, y + TH / 2); g.lineTo(x - TW / 2, y); g.closePath();
@@ -210,7 +221,24 @@ function box(g, x, y, w, d, h, top, side) { // isometric block standing on (x, y
 }
 
 // ---------------------------------------------------------------- static world layer
-const world = document.createElement("canvas"); world.width = WORLD_W; world.height = WORLD_H;
+// The world is drawn in two levels of detail, so that the map stays quick with its 256 x 192 squares. Zoomed out
+// (view.s < DETAIL_S): an overview, the whole world drawn once at OV_S of its size, with the ground, the routes and
+// the buildings but without the small details (trees, rocks, hedges, windows of houses). Zoomed in: the world in
+// chunks of CHUNK x CHUNK world pixels at full size and detail, each drawn when it first comes into view (a few per
+// frame) and kept, up to CHUNK_KEEP of them; the overview stands in for a chunk until it is drawn.
+const OV_S = .35, DETAIL_S = .34, CHUNK = 1024, CHUNK_KEEP = 40;
+let overview = null; const chunks = new Map();
+function drawWorld() { overview = null; chunks.clear(); OX = RH() * TW / 2 + 40; }   // after a rotation or the grid toggle
+function ensureOverview() { if (overview) return overview;
+  overview = document.createElement("canvas"); overview.width = Math.ceil(WORLD_W * OV_S); overview.height = Math.ceil(WORLD_H * OV_S);
+  const g = overview.getContext("2d"); g.setTransform(OV_S, 0, 0, OV_S, 0, 0);
+  paintWorld(g, { x0: 0, y0: 0, x1: WORLD_W, y1: WORLD_H }, false); return overview; }
+function chunk(cx, cy) { const key = cx + "," + cy; let c = chunks.get(key);
+  if (c) { chunks.delete(key); chunks.set(key, c); return c; }                     // most recently used last
+  c = document.createElement("canvas"); c.width = c.height = CHUNK; const g = c.getContext("2d");
+  g.setTransform(1, 0, 0, 1, -cx * CHUNK, -cy * CHUNK);
+  paintWorld(g, { x0: cx * CHUNK, y0: cy * CHUNK, x1: (cx + 1) * CHUNK, y1: (cy + 1) * CHUNK }, true);
+  chunks.set(key, c); if (chunks.size > CHUNK_KEEP) chunks.delete(chunks.keys().next().value); return c; }
 const COLORS = { sea: "#2f6aa3", sea2: "#3a7bb6", grass: "#5f9e47", grass2: "#6aab4f", forest: "#3f7a36", rock: "#8a8676", field: "#b9a64a",
   river: "#3f86c4", road: "#7b7b78", rail: "#6b5848", sand: "#d8c98a" };
 let showGrid = false;
@@ -255,16 +283,17 @@ function drawStream(g, i, j, t) {
   for (const [hw, col] of [[RIVER_HW + .08, "#7f8f52"], [RIVER_HW, water]]) {
     if (wet.length === 2 && (wet[0][0] !== -wet[1][0] || wet[0][1] !== -wet[1][1])) curveBand(g, i, j, wet[0], wet[1], hw, col);
     else { for (const d of wet) band(g, i, j, [0, 0], d, hw, col); disk(g, i, j, [0, 0], hw, col); } } }
-function drawWorld() {
-  const g = world.getContext("2d"); g.clearRect(0, 0, WORLD_W, WORLD_H); g.imageSmoothingEnabled = false;
-  OX = RH() * TW / 2 + 40;
+// paint the part of the world inside box (world pixels) on g; detail: the small details too
+function paintWorld(g, box, detail) {
+  g.imageSmoothingEnabled = false;
+  const vis = (x, y, m) => x > box.x0 - m && x < box.x1 + m && y > box.y0 - m && y < box.y1 + m;
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
-    const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x, y] = tileWorld(i, j);
-    if (stream(t)) { drawStream(g, i, j, t); if (t.approach) approachLights(g, i, j); continue; }
+    const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x, y] = tileWorld(i, j); if (!vis(x, y, 2 * TW)) continue;
+    if (stream(t)) { drawStream(g, i, j, t); if (t.approach && detail) approachLights(g, i, j); continue; }
     if (!t.land) { const shallow = [[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => tiles[i+a]?.[j+b]?.land);
       groundTile(g, i, j, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea));
       coastCorners(g, i, j, false);
-      if (t.approach) approachLights(g, i, j); continue; }
+      if (t.approach && detail) approachLights(g, i, j); continue; }
     const yUp = y;
     let base = t.yard ? "#a59c87" : t.t === "field" ? (t.n > .5 ? "#b9a64a" : "#a9a04a") : t.t === "rock" ? COLORS.rock : (t.n > .5 ? COLORS.grass2 : COLORS.grass);
     groundTile(g, i, j, base);
@@ -274,25 +303,28 @@ function drawWorld() {
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
         tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : COLORS.sand); });
     // hedges around fields, fences around industry yards
+    if (!detail) continue;
     if (t.t === "field" || t.yard) DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || !nb.land || (t.yard ? (nb.yard || nb.building) : nb.t === "field")) return;
       const pv = [-dj, di]; tline(g, i, j, [[di * .48 + pv[0] * .5, dj * .48 + pv[1] * .5], [di * .48 - pv[0] * .5, dj * .48 - pv[1] * .5]], t.yard ? "#e8e4da" : "#3f6b30", t.yard ? 1 : 2.5, t.yard ? [2, 2] : null); });
     if (t.approach) approachLights(g, i, j);
     if (t.t === "field") { g.strokeStyle = "rgba(90,70,20,.35)"; g.lineWidth = 1; for (let k = -2; k <= 2; k++) { g.beginPath(); g.moveTo(x - 8 + k * 4, y - 4 + k * 2); g.lineTo(x + 8 + k * 4, y + 4 + k * 2); g.stroke(); } }
     if (t.t === "rock" && hash(i * 5, j * 3) > .3) rockMound(g, x + (hash(i, j) - .5) * 6, yUp + (hash(j, i) - .5) * 3, t.n * (.5 + hash(i * 7, j)));
   }
-  drawRoutes(g);
-  // objects, back to front: trees, houses, buildings
+  drawRoutes(g, vis);
+  // objects, back to front: trees, houses, buildings (a building is drawn from its front square, and may reach far
+  // up and back from it: hence the wide margin)
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
-    const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j);
-    if (t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
-    if (t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
-    if (t.house) house(g, x, y, t.house[0], hash(i, j * 7));
+    const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j); if (!vis(x, y, t.building ? 12 * TW : 2 * TW)) continue;
+    if (detail && t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
+    if (!detail && t.t === "forest" && !t.building && !t.links && hash(i, j) < .5) tree(g, x, y, hash(i * 3, j));
+    if (detail && t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
+    if (t.house) { if (detail) house(g, x, y, t.house[0], hash(i, j * 7)); else block(g, x, y + 2, .6, .6, 6 + 8 * t.house[0], "#ddd3c2", "#9a5a48"); }
     if (t.station) meteringStation(g, i, j);
     if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
       if (fr[0] === ri && fr[1] === rj) drawBuilding(g, x, y, t.building); }
   }
   // offshore platforms: legs in the sea, a deck with the process modules, a flare with its flame
-  for (const pf of WORLD.platforms || []) { const [x, y] = tileWorld(...pf.at), col = css(CAT[(byId[pf.party] || {}).cat]) || "#888";
+  for (const pf of WORLD.platforms || []) { const [x, y] = tileWorld(...pf.at), col = css(CAT[(byId[pf.party] || {}).cat]) || "#888"; if (!vis(x, y, 2 * TW)) continue;
     g.strokeStyle = "#4d5359"; g.lineWidth = 2; for (const [dx, dy] of [[-8, 2], [8, 2], [-3, 6], [3, -2]]) { g.beginPath(); g.moveTo(x + dx, y + dy + 4); g.lineTo(x + dx, y + dy - 10); g.stroke(); }
     const D = geo(x, y - 10, .7, .6, 3); walls(g, D, "#6b7177"); flatRoof(g, D, "#8a9096");
     block(g, x - 4, y - 13, .25, .2, 6, "#d7d2c4", col); block(g, x + 4, y - 13, .2, .2, 9, "#c9c4b6", "#9aa0a6");
@@ -303,9 +335,9 @@ function drawWorld() {
   g.strokeStyle = "#d94a4a"; g.lineWidth = 2; g.setLineDash([5, 4]);
   const T = (ri, rj) => { const [i, j] = RI(ri, rj); return tiles[i][j]; };
   for (let i = 0; i < RW() - 1; i++) for (let j = 0; j < RH(); j++) { const a = T(i, j), b = T(i + 1, j);
-    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); g.beginPath(); g.moveTo(x + OX, y + OY - TH / 2 + TH); g.lineTo(x + OX + TW / 2, y + OY); g.stroke(); } }
+    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); if (!vis(x + OX, y + OY, TW)) continue; g.beginPath(); g.moveTo(x + OX, y + OY - TH / 2 + TH); g.lineTo(x + OX + TW / 2, y + OY); g.stroke(); } }
   for (let i = 0; i < RW(); i++) for (let j = 0; j < RH() - 1; j++) { const a = T(i, j), b = T(i, j + 1);
-    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); g.beginPath(); g.moveTo(x + OX, y + OY + TH / 2); g.lineTo(x + OX - TW / 2, y + OY); g.stroke(); } }
+    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); if (!vis(x + OX, y + OY, TW)) continue; g.beginPath(); g.moveTo(x + OX, y + OY + TH / 2); g.lineTo(x + OX - TW / 2, y + OY); g.stroke(); } }
   g.setLineDash([]);
 }
 // ---- building kit: walls with windows, roofs and details, all on the isometric grid
@@ -557,13 +589,13 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function resize() { dpr = Math.min(2, window.devicePixelRatio || 1); const r = cv.getBoundingClientRect();
   cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); if (!view.fitted) fit(); }
 // bounding box of all land, in world pixels
-let LAND;
+let LAND; const MIN_S = .05;
 function computeLand() { let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
   for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].land) { const [x, y] = tileWorld(i, j);
     x0 = Math.min(x0, x - TW / 2); x1 = Math.max(x1, x + TW / 2); y0 = Math.min(y0, y - 40); y1 = Math.max(y1, y + TH); }
   LAND = { x0, y0, x1, y1 }; }
 function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - LAND.x0, h = LAND.y1 - LAND.y0;
-  view.s = Math.max(.35, Math.min(2.5, Math.min((r.width - 2 * pad) / w, (r.height - 2 * pad) / h)));
+  view.s = Math.max(MIN_S, Math.min(2.5, Math.min((r.width - 2 * pad) / w, (r.height - 2 * pad) / h)));
   view.x = (r.width - w * view.s) / 2 - LAND.x0 * view.s; view.y = (r.height - h * view.s) / 2 - LAND.y0 * view.s; view.fitted = true; }
 const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
 // world pixel position of an original tile, in the current rotation
@@ -591,7 +623,7 @@ const VEHICLES = (() => { const out = new Map();
 // runway end), flies the air route, joins the final approach 3 tiles before the runway of the airport it goes
 // to, in line with that runway, touches down at its threshold and rolls out to the far end. alts: the height
 // at each point of the way (0 on the ground, CRUISE at the route's turning points).
-const CRUISE = 30;
+const CRUISE = 30 * GRID, APPROACH = WORLD.model.approach || 3;   // cruising height (pixels); approach zone (squares)
 function runway(p) { const [a, b] = p.size || [1, 1], [i0, j0] = p.at, long = a >= b;
   return long ? { axis: [1, 0], ends: [[i0 - .4, j0 + (b - 1) / 2 + .15], [i0 + a - .6, j0 + (b - 1) / 2 + .15]] }
               : { axis: [0, 1], ends: [[i0 + (a - 1) / 2 + .15, j0 - .4], [i0 + (a - 1) / 2 + .15, j0 + b - .6]] }; }
@@ -601,7 +633,7 @@ function flight(v) { const A = byId[v.from], B = byId[v.to]; if (!A || !B || A.k
     return ((q[0] - c[0]) * r.axis[0] + (q[1] - c[1]) * r.axis[1]) >= 0 ? 1 : -1; };   // +1: towards ends[1]
   const da = toward(ra, mid[0] || B.at), [s0, s1] = da > 0 ? ra.ends : [ra.ends[1], ra.ends[0]];
   const db = -toward(rb, mid[mid.length - 1] || A.at), [t0, t1] = db > 0 ? rb.ends : [rb.ends[1], rb.ends[0]];
-  const out = [s1[0] + ra.axis[0] * da * 3, s1[1] + ra.axis[1] * da * 3], fin = [t0[0] - rb.axis[0] * db * 3, t0[1] - rb.axis[1] * db * 3];
+  const out = [s1[0] + ra.axis[0] * da * APPROACH, s1[1] + ra.axis[1] * da * APPROACH], fin = [t0[0] - rb.axis[0] * db * APPROACH, t0[1] - rb.axis[1] * db * APPROACH];
   const pts = [s0, s1, out, ...mid, fin, t0, t1], alts = [0, 0, CRUISE * .45, ...mid.map(() => CRUISE), CRUISE * .45, 0, 0];
   return { pts, alts }; }
 for (const v of VEHICLES) if (v.mode === "air") { const f = flight(v); if (f) { v.path = f.pts; v.alts = f.alts; } }
@@ -679,9 +711,9 @@ function drawRailPiece(g, i, j, a, b, bridge) { const A = mid(a), B = mid(b);
   const dx = B[0] - A[0], dy = B[1] - A[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
   for (let u = .05; u < l; u += .11) { const c = [A[0] + dx / l * u, A[1] + dy / l * u]; tline(g, i, j, [[c[0] + nx * .15, c[1] + ny * .15], [c[0] - nx * .15, c[1] - ny * .15]], "#4b3a2c", 1.5); }
   for (const o of [.07, -.07]) tline(g, i, j, [[A[0] + nx * o, A[1] + ny * o], [B[0] + nx * o, B[1] + ny * o]], "#d4d4d4", 1); }
-function drawRoutes(g) {
-  measureRoutes();
-  const order = []; for (let s2 = 0; s2 < W + H; s2++) for (let ri = 0; ri < RW(); ri++) { const rj = s2 - ri; if (rj < 0 || rj >= RH()) continue; order.push(RI(ri, rj)); }
+function drawRoutes(g, vis) {
+  const order = []; for (let s2 = 0; s2 < W + H; s2++) for (let ri = 0; ri < RW(); ri++) { const rj = s2 - ri; if (rj < 0 || rj >= RH()) continue;
+    const q = RI(ri, rj), tl = tiles[q[0]][q[1]]; if (!tl.links) continue; const [x, y] = tileWorld(...q); if (vis(x, y, 2 * TW)) order.push(q); }
   for (const [i, j] of order) { const t = tiles[i][j]; for (const [a, b] of t.pieces?.rail || []) drawRailPiece(g, i, j, a, b, !!t.bridge); }
   for (const [i, j] of order) { const t = tiles[i][j]; if (!t.links?.road) continue;
     const dirs = [...t.links.road].map(d => d.split(",").map(Number)); drawRoadTile(g, i, j, dirs, !!t.bridge);
@@ -698,7 +730,7 @@ function along(r, f) { let d = f * r.L; for (const [a, b, l] of r.seg) { if (d <
 // (unloading), travels back the same way, and sets out again; the vehicles keep their own timetables
 const DWELL = 1500;
 VEHICLES.forEach((v, k) => { v.phase = hash(k * 7 + 1, k * 3 + 2); });
-function progress(v, t) { const travel = Math.max(1500, v.L * (v.mode === "air" ? 45 : 22.5)), cycle = 2 * travel + 2 * DWELL, c = (t + v.phase * cycle) % cycle;
+function progress(v, t) { const travel = Math.max(1500, v.L * (v.mode === "air" ? 45 : 22.5) / GRID), cycle = 2 * travel + 2 * DWELL, c = (t + v.phase * cycle) % cycle;
   if (c < DWELL) return [0, false];
   if (c < DWELL + travel) return [(c - DWELL) / travel, false];
   if (c < 2 * DWELL + travel) return [1, false];
@@ -707,7 +739,7 @@ function progress(v, t) { const travel = Math.max(1500, v.L * (v.mode === "air" 
 function drawVehicle(g, r, t) {
   if (!r.seg.length) return;
   const [f, back] = progress(r, t), [x, y, a0] = along(r, f), ang = back ? a0 + Math.PI : a0;
-  const [sx, sy] = toScreen(x, y), s = Math.max(.7, view.s);
+  const [sx, sy] = toScreen(x, y), s = Math.max(.45, view.s);
   g.save(); g.translate(sx, sy); g.scale(s, s);
   const body = (x0, x1, w, color, dy = 0) => { g.fillStyle = shade(color, -.35); g.fillRect(x0, -w / 2 + dy + 1, x1 - x0, w);
     g.fillStyle = color; g.fillRect(x0, -w / 2 + dy - 1, x1 - x0, w); };
@@ -734,7 +766,7 @@ function sign(g, x, y, text, col, active) {
 function frame(t) {
   const r = cv.getBoundingClientRect(); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, r.width, r.height);
   ctx.fillStyle = "#2b5d8f"; ctx.fillRect(0, 0, r.width, r.height);
-  ctx.imageSmoothingEnabled = view.s < 1; ctx.drawImage(world, view.x, view.y, WORLD_W * view.s, WORLD_H * view.s);
+  const pending = paintView(r);
   // routes overlay for sea and air, highlighted when a layer is on
   for (const ro of ROUTES) { if (!layers[ro.layer]) continue;
     if (ro.mode === "sea" || ro.mode === "air") { ctx.strokeStyle = ro.mode === "sea" ? "rgba(255,255,255,.65)" : "rgba(255,255,255,.5)"; ctx.lineWidth = 2; ctx.setLineDash(ro.mode === "air" ? [2, 6] : [8, 6]);
@@ -743,7 +775,7 @@ function frame(t) {
       // drawn in world units, like the map under it: line width, dash pattern and flow speed scale with the
       // zoom, so the pipeline looks the same at every zoom level; the dashes move from the field towards the
       // consumers and continue from a pipeline into its branches
-      const pts = ro.world.map(p => toScreen(...p)), s = view.s, flow = reduced ? 0 : (t / 60) % PIPE_DASH;
+      const pts = ro.world.map(p => toScreen(...p)), s = Math.max(.6, view.s), flow = reduced ? 0 : (t / 60) % PIPE_DASH;
       const path = () => { ctx.beginPath(); pts.forEach(([x, y], k) => k ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); };
       ctx.save(); ctx.beginPath(); ctx.rect(0, 0, r.width, r.height);      // at a metering station the pipe comes up: the station shows it
       for (const [i, j] of [...STATIONS, ...PIPE_CROSS.map(c => [c.i, c.j])]) [[-.5, -.5], [.5, -.5], [.5, .5], [-.5, .5]].forEach(([u, v], k) => { const [x, y] = toScreen(...tp(i, j, u, v)); k ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
@@ -752,14 +784,14 @@ function frame(t) {
       ctx.strokeStyle = "rgba(40,30,10,.55)"; ctx.lineWidth = 4 * s; ctx.setLineDash([]); path(); ctx.stroke();
       ctx.strokeStyle = "#f0c419"; ctx.lineWidth = 2 * s; ctx.setLineDash([6 * s, 4 * s]); ctx.lineDashOffset = (((ro.d0 || 0) - flow) % PIPE_DASH) * s;
       path(); ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0; ctx.lineJoin = "miter"; ctx.restore();
-      for (const c of PIPE_CROSS) for (const e of [-.5, .5]) {             // marker posts on both sides of a crossing
+      if (view.s > .3) for (const c of PIPE_CROSS) for (const e of [-.5, .5]) {             // marker posts on both sides of a crossing
         const [x, y] = toScreen(...tp(c.i, c.j, c.d[0] * e, c.d[1] * e));
         ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.fillRect(x - .5 * s, y - .5 * s, 2.5 * s, 1.5 * s);
         ctx.fillStyle = "#f0c419"; ctx.fillRect(x - s, y - 7 * s, 2 * s, 7 * s); ctx.fillStyle = "#2b2b2b"; ctx.fillRect(x - s, y - 7 * s, 2 * s, 1.6 * s); } } }
   if (!reduced) for (const v of VEHICLES) if (layers[v.layer]) drawVehicle(ctx, v, t);
   // town and country names
   ctx.textAlign = "center";
-  if (view.s > .55) for (const tw of TOWNS) { const [x, y] = toScreen(...tileWorld(...tw.label));
+  if (view.s > .12) for (const tw of TOWNS) { const [x, y] = toScreen(...tileWorld(...tw.label));
     ctx.font = `600 ${Math.round(11 + 3 * view.s)}px Inter, system-ui, sans-serif`; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.fillStyle = "#fff6d8";
     ctx.strokeText(tw.name, x, y); ctx.fillText(tw.name, x, y); }
   for (const [code, pos] of Object.entries(LABEL_AT)) { const [x, y] = toScreen(...tileWorld(...pos));
@@ -772,14 +804,29 @@ function frame(t) {
   const placed = [], todo = [];
   for (const { p } of order.slice().reverse()) { if (!layers[LAYER_OF[p.cat]] && p !== selected) continue;
     const fg = footGeo(p, 0, 0), [x, y] = toScreen(fg.x, fg.y - 14 - p.h * 6);
-    p._sx = x; p._sy = y; const text = (view.s > 1.15 || p === selected) ? `#${p.n} ${p.name}` : `#${p.n}`;
+    p._sx = x; p._sy = y; const text = (view.s > .6 || p === selected) ? `#${p.n} ${p.name}` : `#${p.n}`;
     const [w, h] = signBox(ctx, text, p === selected), rect = [x - w / 2 - 2, y - h - 2, x + w / 2 + 2, y + 2];
     const free = !placed.some(q => rect[0] < q[2] && rect[2] > q[0] && rect[1] < q[3] && rect[3] > q[1]);
     if (free || p === selected) { placed.push(rect); todo.push([p, x, y, text, true]); } else todo.push([p, x, y, text, false]); }
   for (const [p, x, y, text, full] of todo.reverse()) full ? sign(ctx, x, y, text, css(CAT[p.cat]), p === selected) : dot(ctx, x, y, css(CAT[p.cat]));
   if (selected && selected._sx != null) sign(ctx, selected._sx, selected._sy, `#${selected.n} ${selected.name}`, css(CAT[selected.cat]), true);
-  if (!reduced) requestAnimationFrame(frame);
+  if (!reduced || pending) requestAnimationFrame(frame);
 }
+// the world under the view: the overview, and over it the chunks in view when zoomed in (drawing at most a few new
+// ones per frame); returns true while chunks in view are still to be drawn
+function paintView(r) {
+  const s = view.s; ctx.imageSmoothingEnabled = true;
+  ctx.drawImage(ensureOverview(), view.x, view.y, WORLD_W * s, WORLD_H * s);
+  if (s < DETAIL_S) return false;
+  ctx.imageSmoothingEnabled = s < 1;
+  const cx0 = Math.max(0, Math.floor(-view.x / s / CHUNK)), cy0 = Math.max(0, Math.floor(-view.y / s / CHUNK));
+  const cx1 = Math.min(Math.ceil(WORLD_W / CHUNK) - 1, Math.floor((r.width - view.x) / s / CHUNK)), cy1 = Math.min(Math.ceil(WORLD_H / CHUNK) - 1, Math.floor((r.height - view.y) / s / CHUNK));
+  const t0 = performance.now(); let pending = false;
+  for (let cy = cy0; cy <= cy1; cy++) for (let cx = cx0; cx <= cx1; cx++) {
+    if (!chunks.has(cx + "," + cy) && performance.now() - t0 > 30) { pending = true; continue; }
+    const x0 = Math.round(view.x + cx * CHUNK * s), y0 = Math.round(view.y + cy * CHUNK * s);
+    ctx.drawImage(chunk(cx, cy), x0, y0, Math.round(view.x + (cx + 1) * CHUNK * s) - x0, Math.round(view.y + (cy + 1) * CHUNK * s) - y0); }
+  return pending; }
 const redraw = () => { if (reduced) frame(0); };
 
 // panel
@@ -797,7 +844,7 @@ function showCard(p) {
 function select(p, center) { selected = p; showCard(p);
   history.replaceState(null, "", p ? "#" + p.id : location.pathname);
   for (const b of list.querySelectorAll(".party")) b.setAttribute("aria-current", b._p === p ? "true" : "false");
-  if (p && center) { const r = cv.getBoundingClientRect(); const [wx, wy] = tileWorld(...p.at); view.s = Math.max(view.s, 1.4); view.x = r.width / 2 - wx * view.s; view.y = r.height / 2 - wy * view.s; }
+  if (p && center) { const r = cv.getBoundingClientRect(); const [wx, wy] = tileWorld(...p.at); view.s = Math.max(view.s, .9); view.x = r.width / 2 - wx * view.s; view.y = r.height / 2 - wy * view.s; }
   redraw(); }
 for (const code of ["XU", "XB", "XL"]) { const h = document.createElement("h3"); h.textContent = `${COUNTRIES[code].name} · ${code}`; list.appendChild(h);
   for (const p of P.filter(p => p.c === code).sort((a, b) => (parseInt(a.n) || 99) - (parseInt(b.n) || 99))) {
@@ -809,7 +856,7 @@ for (const code of ["XU", "XB", "XL"]) { const h = document.createElement("h3");
 for (const b of document.querySelectorAll(".layers button")) b.addEventListener("click", () => {
   const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); layers[b.dataset.layer] = on; redraw(); });
 // pan and zoom
-const zoomAt = (f, cx, cy) => { const ns = Math.max(.35, Math.min(3, view.s * f)); view.x = cx - (cx - view.x) * ns / view.s; view.y = cy - (cy - view.y) * ns / view.s; view.s = ns; redraw(); };
+const zoomAt = (f, cx, cy) => { const ns = Math.max(MIN_S, Math.min(3, view.s * f)); view.x = cx - (cx - view.x) * ns / view.s; view.y = cy - (cy - view.y) * ns / view.s; view.s = ns; redraw(); };
 document.getElementById("zoom-in").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(1.25, r.width / 2, r.height / 2); };
 document.getElementById("zoom-out").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(.8, r.width / 2, r.height / 2); };
 document.getElementById("zoom-fit").onclick = () => { fit(); redraw(); };
@@ -833,7 +880,7 @@ const up = e => { pointers.delete(e.pointerId); if (pointers.size < 2) pinch = 0
 cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
 
 window.addEventListener("resize", () => { view.fitted = false; resize(); redraw(); });
-document.fonts?.ready.then(() => { drawWorld(); redraw(); });
+document.fonts?.ready.then(() => redraw());       // the world itself has no text: only the signs need the fonts
 drawWorld(); resize(); showCard(null);
 const fromHash = () => { const p = P.find(p => "#" + p.id === location.hash); if (p) select(p, true); };
 fromHash(); window.addEventListener("hashchange", fromHash);

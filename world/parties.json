@@ -8,8 +8,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    9,
-    10
+    36,
+    40
    ],
    "h": 2,
    "kind": "mine",
@@ -85,16 +85,16 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    15,
-    19
+    60,
+    76
    ],
    "h": 3,
    "kind": "factory",
    "what": "Makes park benches and street furniture: frames from steel made from the mine's ore, slats from the sawmill in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the distributor abroad and tenders in public procurement.",
    "how": "The manufacturer sits in the middle of the chain: it buys, produces, sells, exports and tenders. UBL gives it one vocabulary for all of that, from the order it places with the mine to the certificate of origin and the tender it submits to a public buyer, so the same item, party and price data are reused instead of re-entered for every partner.",
    "size": [
-    2,
-    2
+    5,
+    5
    ],
    "identity": {
     "name": "Valdara Industries",
@@ -247,15 +247,15 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    16,
-    22
+    64,
+    88
    ],
    "h": 2,
    "kind": "warehouse",
    "what": "Picks, packs and hands the goods to the carrier for the manufacturer; knows nothing about prices.",
    "how": "A third-party warehouse acts on instructions from its client but never sees the commercial terms. UBL separates the two: the warehouse sends despatch advices and inventory reports with exactly the logistic details (packages, weights, serial numbers) while prices stay in the documents between seller and buyer.",
    "size": [
-    2,
+    5,
     1
    ],
    "identity": {
@@ -354,8 +354,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    11,
-    24
+    44,
+    96
    ],
    "h": 2,
    "kind": "waste",
@@ -467,8 +467,8 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    8,
-    15
+    32,
+    60
    ],
    "h": 2,
    "kind": "depot",
@@ -565,8 +565,8 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    17,
-    25
+    68,
+    100
    ],
    "h": 1,
    "kind": "depot",
@@ -660,8 +660,8 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    12,
-    26
+    48,
+    104
    ],
    "h": 1,
    "kind": "quay",
@@ -737,6 +737,10 @@
      "registry": "Ferrano",
      "config": "DRYBARGE"
     }
+   ],
+   "size": [
+    1,
+    4
    ]
   },
   {
@@ -746,15 +750,15 @@
    "cat": "logistics",
    "c": "XU",
    "at": [
-    19,
-    18
+    76,
+    72
    ],
    "h": 2,
    "kind": "terminal",
    "what": "Transfers containers between rail and road at the border; manages tracks and slots.",
    "how": "An intermodal terminal is where rail and road meet. UBL status messages and transport reports let it tell carriers and forwarders when a container arrived, was transferred or left, using the same equipment and consignment identifiers on both sides of the transfer.",
    "size": [
-    2,
+    5,
     1
    ],
    "on": "rail",
@@ -803,8 +807,8 @@
    "cat": "finance",
    "c": "XU",
    "at": [
-    12,
-    21
+    48,
+    84
    ],
    "h": 3,
    "kind": "bank",
@@ -884,8 +888,8 @@
    "cat": "government",
    "c": "XU",
    "at": [
-    13,
-    22
+    52,
+    88
    ],
    "h": 2,
    "kind": "office",
@@ -939,8 +943,8 @@
    "cat": "government",
    "c": "XU",
    "at": [
-    20,
-    22
+    80,
+    88
    ],
    "h": 1,
    "kind": "customs",
@@ -1003,8 +1007,8 @@
    "cat": "government",
    "c": "XU",
    "at": [
-    11,
-    22
+    44,
+    88
    ],
    "h": 2,
    "kind": "office",
@@ -1045,8 +1049,8 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    23,
-    22
+    92,
+    88
    ],
    "h": 1,
    "kind": "customs",
@@ -1101,16 +1105,16 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    28,
-    26
+    112,
+    104
    ],
    "h": 3,
    "kind": "warehouse",
    "what": "Buys finished goods from #5, stocks them in its distribution centre, publishes the catalogue and sells to #26 and overseas to #1.",
    "how": "The distributor publishes the catalogue its customers order from, buys from manufacturers and sells at home and overseas. UBL links all of it: catalogue items appear unchanged in orders, orders are referenced by despatch advices and invoices, and receipt advices confirm what actually arrived.",
    "size": [
-    2,
-    2
+    5,
+    5
    ],
    "identity": {
     "name": "Lumeway Distribution",
@@ -1252,8 +1256,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    33,
-    30
+    132,
+    120
    ],
    "h": 2,
    "kind": "shop",
@@ -1405,8 +1409,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    35,
-    31
+    140,
+    124
    ],
    "h": 1,
    "kind": "house",
@@ -1469,8 +1473,8 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    32,
-    27
+    128,
+    108
    ],
    "h": 4,
    "kind": "townhall",
@@ -1554,8 +1558,8 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    26,
-    30
+    104,
+    120
    ],
    "h": 2,
    "kind": "office",
@@ -1625,8 +1629,8 @@
    "cat": "procurement",
    "c": "XB",
    "at": [
-    34,
-    26
+    136,
+    104
    ],
    "h": 3,
    "kind": "office",
@@ -1668,8 +1672,8 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    31,
-    25
+    124,
+    100
    ],
    "h": 3,
    "kind": "office",
@@ -1710,8 +1714,8 @@
    "cat": "government",
    "c": "XB",
    "at": [
-    30,
-    29
+    120,
+    116
    ],
    "h": 2,
    "kind": "office",
@@ -1753,8 +1757,8 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    31,
-    31
+    124,
+    124
    ],
    "h": 3,
    "kind": "bank",
@@ -1820,8 +1824,8 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    33,
-    32
+    132,
+    128
    ],
    "h": 2,
    "kind": "bank",
@@ -1902,8 +1906,8 @@
    "cat": "finance",
    "c": "XB",
    "at": [
-    34,
-    29
+    136,
+    116
    ],
    "h": 3,
    "kind": "bank",
@@ -1957,8 +1961,8 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    36,
-    25
+    144,
+    100
    ],
    "h": 2,
    "kind": "office",
@@ -2056,8 +2060,8 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    39,
-    22
+    156,
+    88
    ],
    "h": 2,
    "kind": "port",
@@ -2065,7 +2069,7 @@
    "how": "The seaport loads the ship. UBL transport reports and status messages tell the port which containers are coming, and tell carriers and authorities what was loaded, on which vessel and when.",
    "size": [
     1,
-    2
+    5
    ],
    "water": [
     1,
@@ -2122,8 +2126,8 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    36,
-    21
+    144,
+    84
    ],
    "h": 2,
    "kind": "office",
@@ -2222,16 +2226,16 @@
    "cat": "logistics",
    "c": "XB",
    "at": [
-    33,
-    19
+    132,
+    76
    ],
    "h": 1,
    "kind": "airport",
    "what": "Air cargo terminal for urgent shipments overseas.",
    "how": "The airport handles urgent cargo. UBL status messages let it report acceptance, loading and departure, with the air waybill reference the carrier and forwarder use.",
    "size": [
-    3,
-    2
+    9,
+    5
    ],
    "identity": {
     "name": "Lumeport Airport Cargo Terminal",
@@ -2285,8 +2289,8 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    46,
-    22
+    184,
+    88
    ],
    "h": 2,
    "kind": "port",
@@ -2294,7 +2298,7 @@
    "how": "The island's seaport discharges the ship. It receives the same UBL transport report the loading port sent, so it can plan berths and inform customs before the vessel arrives.",
    "size": [
     1,
-    2
+    5
    ],
    "water": [
     -1,
@@ -2346,16 +2350,16 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    52,
-    15
+    208,
+    60
    ],
    "h": 1,
    "kind": "airport",
    "what": "The island's airport, where the air cargo arrives.",
    "how": "The island's airport receives the air cargo and reports its arrival to the carrier and the consignee in UBL status messages.",
    "size": [
-    3,
-    2
+    9,
+    5
    ],
    "identity": {
     "name": "Selanu Airport Cargo",
@@ -2399,8 +2403,8 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    54,
-    17
+    216,
+    68
    ],
    "h": 2,
    "kind": "office",
@@ -2505,8 +2509,8 @@
    "cat": "government",
    "c": "XL",
    "at": [
-    47,
-    24
+    188,
+    96
    ],
    "h": 1,
    "kind": "customs",
@@ -2558,8 +2562,8 @@
    "cat": "logistics",
    "c": "XL",
    "at": [
-    49,
-    21
+    196,
+    84
    ],
    "h": 2,
    "kind": "office",
@@ -2612,15 +2616,15 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    50,
-    26
+    200,
+    104
    ],
    "h": 2,
    "kind": "warehouse",
    "what": "Receives the goods for the buyer and confirms what arrived; collects containers and cargo at the island's port and airport with its own truck.",
    "how": "The buyer's warehouse receives the goods. Its UBL receipt advice confirms what arrived, per line and per package, which lets the buyer approve the invoice for exactly what was delivered.",
    "size": [
-    2,
+    5,
     1
    ],
    "identity": {
@@ -2687,8 +2691,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    53,
-    25
+    212,
+    100
    ],
    "h": 3,
    "kind": "office",
@@ -2798,8 +2802,8 @@
    "cat": "finance",
    "c": "XL",
    "at": [
-    55,
-    27
+    220,
+    108
    ],
    "h": 3,
    "kind": "bank",
@@ -2866,8 +2870,8 @@
    "cat": "government",
    "c": "XL",
    "at": [
-    54,
-    22
+    216,
+    88
    ],
    "h": 2,
    "kind": "office",
@@ -2918,8 +2922,8 @@
    "cat": "government",
    "c": "XL",
    "at": [
-    56,
-    24
+    224,
+    96
    ],
    "h": 2,
    "kind": "office",
@@ -2957,8 +2961,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    18,
-    20
+    72,
+    80
    ],
    "h": 2,
    "kind": "office",
@@ -3045,8 +3049,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    37,
-    29
+    148,
+    116
    ],
    "h": 2,
    "kind": "waterworks",
@@ -3122,8 +3126,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    57,
-    28
+    228,
+    112
    ],
    "h": 2,
    "kind": "telecom",
@@ -3213,11 +3217,11 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    24,
-    33
+    96,
+    132
    ],
    "size": [
-    2,
+    5,
     1
    ],
    "h": 2,
@@ -3321,8 +3325,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    24,
-    31
+    96,
+    124
    ],
    "h": 2,
    "kind": "warehouse",
@@ -3430,11 +3434,11 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    37,
-    27
+    148,
+    108
    ],
    "size": [
-    2,
+    5,
     1
    ],
    "h": 2,
@@ -3547,8 +3551,8 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    34,
-    37
+    136,
+    148
    ],
    "h": 2,
    "kind": "factory",
@@ -3652,7 +3656,11 @@
      }
     },
     "week": "office"
-   }
+   },
+   "size": [
+    1,
+    3
+   ]
   },
   {
    "id": "38-xl",
@@ -3661,8 +3669,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    47,
-    18
+    188,
+    72
    ],
    "h": 1,
    "kind": "farm",
@@ -3744,8 +3752,8 @@
    "cat": "commerce",
    "c": "XL",
    "at": [
-    47,
-    28
+    188,
+    112
    ],
    "h": 2,
    "kind": "ginnery",
@@ -3851,11 +3859,11 @@
    "cat": "commerce",
    "c": "XB",
    "at": [
-    30,
-    8
+    120,
+    32
    ],
    "size": [
-    2,
+    5,
     1
    ],
    "h": 2,
@@ -3954,12 +3962,12 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    18,
-    13
+    72,
+    52
    ],
    "size": [
-    2,
-    2
+    5,
+    5
    ],
    "h": 2,
    "kind": "power",
@@ -4054,8 +4062,8 @@
    "cat": "commerce",
    "c": "XU",
    "at": [
-    16,
-    16
+    64,
+    64
    ],
    "h": 2,
    "kind": "grid",
@@ -4122,7 +4130,11 @@
      }
     },
     "week": "always"
-   }
+   },
+   "size": [
+    4,
+    1
+   ]
   }
  ],
  "referenced": [

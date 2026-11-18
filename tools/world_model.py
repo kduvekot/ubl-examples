@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Build the tile model of the UBL world from the world layers (map, parties), and check it.
 
+The map is a grid of W x H = 256 x 192 squares of 3.5 km (GRID = 4 squares per 14 km, the squares of the
+first map); every distance below is given in squares and in km.
+
 The world is a finished snapshot: everything is built, nothing grows. This
 script decides the structure; the map (site/world.html) only draws it.
 
@@ -38,14 +41,15 @@ Structural rules (the build stops when one is broken):
     crossings are a straight road across a straight rail;
   * straight road and rail tiles may rise one level along their direction
     (a ramp); everything else built stands on flat ground;
-  * tall structures (a mast, a cooling tower) keep 4 tiles from an airport and
-    its approach zones;
-  * an airport has an approach zone of 3 tiles beyond each runway end, low
-    and flat at runway height, with nothing tall in it;
+  * tall structures (a mast, a cooling tower) keep TALL_CLEARANCE = 16 squares
+    (56 km) from an airport and its approach zones;
+  * an airport has an approach zone of APPROACH = 12 squares (42 km) beyond each
+    runway end, low and flat at runway height, with nothing tall in it;
   * in the south-west the river is the land border: all land south of it is
     Urvania; elsewhere the border follows its line on the map;
-  * a road across a land border passes a customs post on each side; a rail
-    line across it passes a rail station; rail lines end at a party;
+  * a road across a land border passes a customs post on each side (within
+    BORDER_POST = 12 squares, 42 km, along the road); a rail line across it passes
+    a rail station; rail lines end at a party;
   * sea routes run over water from port to port, air routes from airport
     to airport;
   * pipelines are buried: they run in straight lines along the tile grid,
@@ -55,9 +59,11 @@ Structural rules (the build stops when one is broken):
     leaves the sea only once, at its landfall, from an offshore platform;
   * a pipeline starts at a party, at its offshore platform or on another
     pipeline (a branch), and ends at a party; across a land border it
-    passes a border metering station within 3 tiles of the crossing;
+    passes a border metering station within METERING = 12 squares (42 km) of the
+    crossing;
   * every transport leg of a flow (world/documents.json) is possible: road,
-    rail or river connects its two parties, a sea or air route their port
+    rail or river connects its two parties (in the estuary, which is open
+    water, a barge may use any of it), a sea or air route their port
     or airport, or the pipelines, in the direction of the flow, the gas
     producer and its customer; its carrier has a means of that mode; every
     carrier a document of the flow names carries one of its legs; and every
@@ -74,11 +80,29 @@ import sys
 from collections import deque
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-W, H = 64, 48
+# The grid. The first map had 64 x 48 squares of 14 km; on 2026-11-18 the owner made the squares four times
+# finer (3.5 km), so that the map can hold real detail. GRID is the number of squares per 14 km: every length
+# below that was written in squares of the first map is multiplied by it, and the shapes made by the noise
+# (land, border, hills, forests) are sampled in units of 14 km ("chart units", see chart()), so they keep
+# their shapes at any GRID.
+GRID = 4
+KM = 14 / GRID                                    # kilometres per square: 3.5
+W, H = 64 * GRID, 48 * GRID                       # 256 x 192 squares
 TALL = {"telecom", "power", "gasplant"}           # kinds with a mast, a cooling tower or a flare stack
-TALL_CLEARANCE = 4                                # tiles they keep from an airport and its approach zones
+TALL_CLEARANCE = 4 * GRID                         # squares they keep from an airport and its approach zones (56 km)
+APPROACH = 3 * GRID                               # squares of approach zone beyond each runway end (42 km)
+BORDER_POST = 3 * GRID                            # squares along the road within which a border crossing has its customs post
+METERING = 3 * GRID                               # squares along a pipeline within which a border crossing is metered
+TOWN_CLEAR = 1 * GRID                             # squares a pipeline keeps beyond a town's radius
+STREETS = 3                                       # squares between a town's side streets (the street pattern, not a distance)
 DIRS = [(1, 0), (0, 1), (-1, 0), (0, -1)]        # bit 0..3 of the road mask
-ESTUARY = 1.5                                     # a river this wide (tiles) is open water: an estuary
+ESTUARY = 1.5 * GRID                              # a river this wide (squares) is open water: an estuary (21 km)
+
+
+def chart(i):
+    """The chart coordinate of square i, in units of 14 km (the squares of the first map, whose square x is
+    square GRID * x now): the noise and the shapes of land and border are sampled in it."""
+    return i / GRID
 
 
 # ---------------------------------------------------------------- noise
@@ -135,7 +159,8 @@ def footprint(p):
 def build(world):
     problems = []
     T = [[None] * H for _ in range(W)]
-    line = lambda j: 21.5 + 1.6 * math.sin(j / 4.2)
+    # the land border's line, in squares (it is drawn in chart units: 14 km)
+    line = lambda j: (21.5 + 1.6 * math.sin(chart(j) / 4.2)) * GRID
     # In the south-west the river is the border: all land south of the river is Urvania. The river's
     # course runs eastwards (i increasing) wherever the land border could reach it; river_j gives
     # its row there.
@@ -153,27 +178,28 @@ def build(world):
         rj = river_j(i) if river and i >= west_end else None
         return rj is not None and j > rj
 
-    border = lambda j, i=None: 99 if i is not None and south_of_river(i, j) else line(j)
+    border = lambda j, i=None: W if i is not None and south_of_river(i, j) else line(j)   # W: beyond the map
     if river:
         course = [q[0] for q in river["pts"] if q[0] >= west_end]
         if course != sorted(set(course)):
             problems.append(f"river '{river['id']}' must run eastwards where it forms the border (from column {west_end})")
 
-    # 1. land, countries, terrain, hills
+    # 1. land, countries, terrain, hills (shapes in chart units x, y: 14 km)
     for i in range(W):
         for j in range(H):
-            n = noise(i, j)
-            main = ((i - 21.5) / 19.5) ** 2 + ((j - 24.5) / 20) ** 2 < 1 - (n - .5) * .55
-            isle = ((i - 52.5) / 8.2) ** 2 + ((j - 21.5) / 11.5) ** 2 < 1 - (n - .5) * .5
+            x, y = chart(i), chart(j)
+            n = noise(x, y)
+            main = ((x - 21.5) / 19.5) ** 2 + ((y - 24.5) / 20) ** 2 < 1 - (n - .5) * .55
+            isle = ((x - 52.5) / 8.2) ** 2 + ((y - 21.5) / 11.5) ** 2 < 1 - (n - .5) * .5
             t = {"k": "s", "c": None, "h": 0, "n": round(n, 3)}
             if main or isle:
                 t["c"] = "XL" if isle else ("XU" if i < border(j, i) else "XB")
                 t["k"] = "g"
-                if t["c"] == "XU" and j < 15 and i < 17 and n > .42:
+                if t["c"] == "XU" and y < 15 and x < 17 and n > .42:
                     t["k"], t["h"] = "r", 1 + (n > .58)
                 elif n > .62:
                     t["k"] = "f"
-                elif t["c"] == "XB" and n < .33 and 24 < i < 32:
+                elif t["c"] == "XB" and n < .33 and 24 < x < 32:
                     t["k"] = "d"
             T[i][j] = t
     tile = lambda i, j: T[i][j] if 0 <= i < W and 0 <= j < H else None
@@ -181,13 +207,13 @@ def build(world):
     for f in world.get("forests", []):
         for i in range(W):
             for j in range(H):
-                if T[i][j]["k"] in ("g", "d") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + noise(i * 3, j * 3) - .3:
+                if T[i][j]["k"] in ("g", "d") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + (noise(chart(i) * 3, chart(j) * 3) - .3) * GRID:
                     T[i][j]["k"] = "f"
     # farmland: fields around the given centres
     for f in world.get("fields", []):
         for i in range(W):
             for j in range(H):
-                if T[i][j]["k"] in ("g", "f") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + noise(i * 3, j * 3) - .3:
+                if T[i][j]["k"] in ("g", "f") and math.hypot(i - f["c"][0], j - f["c"][1]) <= f["r"] + (noise(chart(i) * 3, chart(j) * 3) - .3) * GRID:
                     T[i][j]["k"] = "d"
 
     def flatten(i, j):
@@ -204,7 +230,7 @@ def build(world):
         if r["mode"] != "river":
             continue
         pts = r["pts"]
-        widths = r.get("widths") or [r.get("width", 1.4)] * len(pts)
+        widths = r.get("widths") or [r.get("width", .9)] * len(pts)
         wet, wide = set(path_tiles(pts, "rail")), set()
         for i in range(W):
             for j in range(H):
@@ -240,7 +266,7 @@ def build(world):
         if p.get("water"):
             di, dj = p["water"]
             for (i, j) in footprint(p):
-                for k in (1, 2):
+                for k in range(1, 2 * GRID + 1):
                     t = tile(i + di * k, j + dj * k)
                     if t and "b" not in t:
                         t["k"], t["c"], t["h"] = "s", None, 0
@@ -257,6 +283,7 @@ def build(world):
                     problems.append(f"pipeline '{r['id']}' is not straight along the tile grid from {(ai, aj)} to {(bi, bj)}")
             r["path"] = pipes[r["id"]] = path_tiles(pts, "road")
     corridor = {q for path in pipes.values() for q in path}
+    pipe_ends = frozenset(q for path in pipes.values() for q in (path[0], path[-1]))
     stations = {}
     for st in world.get("stations", []):
         q = tuple(st["at"])
@@ -295,7 +322,7 @@ def build(world):
             if t["k"] == "w":
                 t["br"] = 1
             elif t["k"] == "s":
-                t["k"], t["c"] = "g", t["c"] or ("XL" if q[0] >= 42 else ("XU" if q[0] < border(q[1], q[0]) else "XB"))
+                t["k"], t["c"] = "g", t["c"] or ("XL" if chart(q[0]) >= 42 else ("XU" if q[0] < border(q[1], q[0]) else "XB"))
             road.add(q)
             if k:
                 link(path[k - 1], q)
@@ -354,7 +381,7 @@ def build(world):
     for tw in world.get("towns", []):
         ci, cj, rad = tw["c"][0], tw["c"][1], tw["r"]
         lines = [("i", cj, rad), ("j", ci, rad)]
-        for k in range(3, rad + 1, 3):
+        for k in range(STREETS, rad + 1, STREETS):
             lines += [("i", cj + k, rad * .75), ("i", cj - k, rad * .75), ("j", ci + k, rad * .75), ("j", ci - k, rad * .75)]
         streets = set()
         for axis, fixed, reach in lines:
@@ -497,15 +524,15 @@ def build(world):
                 if q in around and len([e for e in edges if q in e]) <= 1:
                     enter(q, next(b2 for b2 in fp if abs(b2[0] - q[0]) + abs(b2[1] - q[1]) == 1))
             continue
-        starts = [q for q in around if free(q)]
-        path = connect(starts, net)
+        starts = [q for q in around if free(q) and q not in corridor]     # not along a pipeline's right of way
+        path = connect(starts, net, avoid=pipe_ends)
         if not path:
             problems.append(f"#{p['n']} {p['name']} cannot be reached by road")
             continue
         enter(path[0], next(b2 for b2 in fp if abs(b2[0] - path[0][0]) + abs(b2[1] - path[0][1]) == 1))
 
     # 5b. airports: the runway runs along the longer side; beyond each end an approach zone of
-    #     3 tiles, as wide as the airport, must stay low and flat (water is fine): no buildings,
+    #     APPROACH squares, as wide as the airport, must stay low and flat (water is fine): no buildings,
     #     houses, yards, forest or hills, and the land in it at runway height
     approach = {}
     for p in world["parties"]:
@@ -514,7 +541,7 @@ def build(world):
         (i0, j0), (a, b) = p["at"], p.get("size", [1, 1])
         along_i = a >= b
         zone = []
-        for k in range(1, 4):
+        for k in range(1, APPROACH + 1):
             for w2 in range(b if along_i else a):
                 zone += [(i0 - k, j0 + w2), (i0 + a - 1 + k, j0 + w2)] if along_i else [(i0 + w2, j0 - k), (i0 + w2, j0 + b - 1 + k)]
         for q in zone:
@@ -614,10 +641,10 @@ def build(world):
             if any(t["k"] in ("s", "w") for t in ts) or len(ts) < 4:
                 V[vi][vj] = 0
             else:
-                hill = noise(vi * .8 + 40, vj * .8 + 40)
-                V[vi][vj] = max(0, min(5, round((hill - .3) * 10)))
+                hill = noise(chart(vi) * .8 + 40, chart(vj) * .8 + 40)
+                V[vi][vj] = max(0, min(5 * GRID, round((hill - .3) * 10 * GRID)))
                 if any(t["k"] == "r" for t in ts):
-                    V[vi][vj] = min(6, V[vi][vj] + 2)
+                    V[vi][vj] = min(6 * GRID, V[vi][vj] + 2 * GRID)
     STRAIGHT_I, STRAIGHT_J = 1 | 4, 2 | 8          # road masks of a straight road along i / along j
 
     def ground_rule(q):
@@ -717,7 +744,7 @@ def build(world):
         if p.get("kind") == "quay" and not any(tile(*q) and tile(*q)["k"] == "w" for q in neighbours(set(footprint(p)))):
             problems.append(f"#{p['n']} {p['name']} is a quay but not on the river bank")
     # border crossings: a road across the land border passes a customs post on each side
-    # (within 3 tiles along the road); a rail line passes a rail station near the border
+    # (within BORDER_POST squares along the road); a rail line passes a rail station near the border
     def along(start, steps, through):
         seen2, todo, found = {start}, deque([(start, 0)]), []
         while todo:
@@ -740,7 +767,7 @@ def build(world):
         ca, cb = T[a2[0]][a2[1]]["c"], T[b2[0]][b2[1]]["c"]
         if ca and cb and ca != cb:
             for side, c in ((a2, ca), (b2, cb)):
-                if not any(customs.get(q) == c for q in along(side, 3, "road")):
+                if not any(customs.get(q) == c for q in along(side, BORDER_POST, "road")):
                     problems.append(f"road crossing the {ca}/{cb} border at {side} has no customs post of {c} nearby")
     for r in world["routes"]:
         if r["mode"] == "rail":
@@ -748,7 +775,7 @@ def build(world):
             for k in range(len(path) - 1):
                 ca, cb = T[path[k][0]][path[k][1]]["c"], T[path[k + 1][0]][path[k + 1][1]]["c"]
                 if ca and cb and ca != cb:
-                    near = path[max(0, k - 3):k + 5]
+                    near = path[max(0, k - 3 * GRID):k + 4 * GRID + 1]
                     if not any(owner.get(q, {}).get("kind") == "terminal" for q in near):
                         problems.append(f"rail line '{r['id']}' crosses the {ca}/{cb} border at {path[k]} without a rail station nearby")
             for end in (path[0], path[-1]):
@@ -783,7 +810,7 @@ def build(world):
             if "hs" in t or "yd" in t or "tr" in t or t["k"] == "f":
                 problems.append(f"{name}: its right of way at {q} is built on or planted")
             for tw in world.get("towns", []):
-                if math.hypot(q[0] - tw["c"][0], q[1] - tw["c"][1]) <= tw["r"] + 1:
+                if math.hypot(q[0] - tw["c"][0], q[1] - tw["c"][1]) <= tw["r"] + TOWN_CLEAR:
                     problems.append(f"{name} runs through the town of {tw['name']} at {q}")
             crossed = [what for what, there in (("road", "rd" in t), ("rail line", "rl" in t), ("river", t["k"] == "w")) if there]
             if not crossed:
@@ -804,8 +831,8 @@ def build(world):
         for k in range(len(path) - 1):
             ca, cb = T[path[k][0]][path[k][1]]["c"], T[path[k + 1][0]][path[k + 1][1]]["c"]
             if ca and cb and ca != cb and T[path[k][0]][path[k][1]]["k"] != "s":
-                if not any(q in stations for q in path[max(0, k - 2):k + 4]):
-                    problems.append(f"{name} crosses the {ca}/{cb} border at {path[k]} without a metering station within 3 tiles")
+                if not any(q in stations for q in path[max(0, k - METERING + 1):k + METERING + 1]):
+                    problems.append(f"{name} crosses the {ca}/{cb} border at {path[k]} without a metering station within {METERING} squares")
         others = {q for o in world["routes"] if o["mode"] == "pipeline" and o is not r for q in o["path"]}
         touches = lambda q: {owner[y]["id"] for y in neighbours({q}) | {q} if y in owner}
         if not (touches(path[0]) or path[0] in platform_at or path[0] in others):
@@ -819,7 +846,7 @@ def build(world):
     for tw in world.get("towns", []):
         tw.pop("streets", None)
 
-    model = {"W": W, "H": H, "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs}
+    model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs}
     return model, problems
 
 
@@ -871,7 +898,13 @@ def check_legs(world, T, adj, owner, neighbours):
         return g
 
     rail = graph("rail")
-    course = graph("river")              # barges follow the river's course, not any water tile
+    course = graph("river")              # barges follow the river's course, not any water tile ...
+    for i in range(W):                   # ... except in the estuary, which is open water: any of it is navigable
+        for j in range(H):
+            if T[i][j].get("es"):
+                for di, dj in DIRS:
+                    if 0 <= i + di < W and 0 <= j + dj < H and T[i + di][j + dj].get("es"):
+                        course.setdefault((i, j), set()).add((i + di, j + dj))
     # pipelines: the gas flows from the first point of each to the last; a pipeline that ends at a party
     # feeds it, one that starts at a party (or at its platform) is fed by it
     pipe = graph("pipeline", directed=True)

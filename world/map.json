@@ -8,20 +8,24 @@
    "label": "Ore by rail (domestic XU)",
    "pts": [
     [
-     9,
-     11
+     36,
+     41
     ],
     [
-     9,
-     18
+     36,
+     44
     ],
     [
-     15,
-     18
+     36,
+     72
     ],
     [
-     15,
-     19
+     60,
+     72
+    ],
+    [
+     60,
+     76
     ]
    ]
   },
@@ -32,20 +36,28 @@
    "label": "Containers from Ferrano past the border hub to the distributor's siding",
    "pts": [
     [
-     15,
-     18
+     60,
+     75
     ],
     [
-     26,
-     18
+     60,
+     72
     ],
     [
-     30,
-     22
+     104,
+     72
     ],
     [
-     30,
-     26
+     120,
+     88
+    ],
+    [
+     120,
+     104
+    ],
+    [
+     117,
+     104
     ]
    ]
   },
@@ -56,12 +68,16 @@
    "label": "The factory's second siding, for outgoing loads",
    "pts": [
     [
-     16,
-     18
+     64,
+     75
     ],
     [
-     16,
-     19
+     64,
+     72
+    ],
+    [
+     64,
+     76
     ]
    ]
   },
@@ -72,16 +88,16 @@
    "label": "Finished goods by road, across the border (XU → XB)",
    "pts": [
     [
-     18,
-     22
+     72,
+     88
     ],
     [
-     27,
-     22
+     108,
+     88
     ],
     [
-     27,
-     26
+     108,
+     104
     ]
    ]
   },
@@ -92,16 +108,16 @@
    "label": "Distributor to retailer (domestic XB)",
    "pts": [
     [
-     28,
-     28
+     112,
+     112
     ],
     [
-     28,
-     30
+     112,
+     120
     ],
     [
-     32,
-     30
+     128,
+     120
     ]
    ]
   },
@@ -112,12 +128,12 @@
    "label": "Distributor to the seaport",
    "pts": [
     [
-     27,
-     23
+     108,
+     92
     ],
     [
-     38,
-     23
+     152,
+     92
     ]
    ]
   },
@@ -128,68 +144,68 @@
    "label": "River barge (XU → XB)",
    "pts": [
     [
-     7,
-     18
+     28,
+     72
     ],
     [
-     8,
-     20
-    ],
-    [
-     7,
-     22
-    ],
-    [
-     8,
-     24
-    ],
-    [
-     9,
-     26
-    ],
-    [
-     11,
-     27
-    ],
-    [
-     13,
-     27
-    ],
-    [
-     15,
-     28
-    ],
-    [
-     17,
-     30
-    ],
-    [
-     19,
-     30
-    ],
-    [
-     21,
-     32
-    ],
-    [
-     23,
-     34
-    ],
-    [
-     26,
-     34
+     32,
+     80
     ],
     [
      28,
-     36
+     88
     ],
     [
-     31,
-     38
+     32,
+     96
     ],
     [
-     35,
-     40
+     36,
+     104
+    ],
+    [
+     44,
+     108
+    ],
+    [
+     52,
+     108
+    ],
+    [
+     60,
+     112
+    ],
+    [
+     68,
+     120
+    ],
+    [
+     76,
+     120
+    ],
+    [
+     84,
+     128
+    ],
+    [
+     92,
+     136
+    ],
+    [
+     104,
+     136
+    ],
+    [
+     112,
+     144
+    ],
+    [
+     124,
+     152
+    ],
+    [
+     140,
+     160
     ]
    ],
    "widths": [
@@ -205,10 +221,10 @@
     0.9,
     0.9,
     0.9,
-    1.0,
-    1.8,
-    2.8,
-    3.6
+    0.9,
+    7.2,
+    11.2,
+    14.4
    ]
   },
   {
@@ -218,12 +234,12 @@
    "label": "Container ship overseas (XB → XL)",
    "pts": [
     [
-     40,
-     22
+     157,
+     88
     ],
     [
-     45,
-     22
+     183,
+     88
     ]
    ]
   },
@@ -234,16 +250,16 @@
    "label": "Air cargo (XB → XL)",
    "pts": [
     [
-     34,
-     19
+     136,
+     76
     ],
     [
-     43,
-     13
+     172,
+     52
     ],
     [
-     53,
-     15
+     212,
+     60
     ]
    ]
   },
@@ -254,16 +270,16 @@
    "label": "Port to buyer (domestic XL)",
    "pts": [
     [
-     47,
-     22
+     188,
+     88
     ],
     [
-     47,
-     25
+     188,
+     100
     ],
     [
-     52,
-     25
+     208,
+     100
     ]
    ]
   },
@@ -274,16 +290,16 @@
    "label": "Production waste",
    "pts": [
     [
-     14,
-     20
+     56,
+     80
     ],
     [
-     14,
-     24
+     56,
+     96
     ],
     [
-     12,
-     24
+     48,
+     96
     ]
    ]
   },
@@ -294,12 +310,12 @@
    "label": "Ferrano to the farms (domestic XU)",
    "pts": [
     [
-     14,
-     25
+     56,
+     100
     ],
     [
-     14,
-     31
+     56,
+     124
     ]
    ]
   },
@@ -310,20 +326,28 @@
    "label": "Gas pipeline from the gas plant across the border to the power station (XB → XU)",
    "pts": [
     [
-     29,
-     8
+     119,
+     32
     ],
     [
-     29,
-     11
+     116,
+     32
     ],
     [
-     19,
-     11
+     116,
+     44
     ],
     [
-     19,
-     12
+     76,
+     44
+    ],
+    [
+     76,
+     48
+    ],
+    [
+     76,
+     51
     ]
    ]
   },
@@ -334,16 +358,16 @@
    "label": "Branch of the gas pipeline to the grid operator's city gate (XU)",
    "pts": [
     [
-     19,
-     11
+     76,
+     44
     ],
     [
-     17,
-     11
+     68,
+     44
     ],
     [
-     17,
-     16
+     68,
+     64
     ]
    ]
   },
@@ -354,16 +378,20 @@
    "label": "Subsea pipeline from the offshore platform to the gas plant",
    "pts": [
     [
-     33,
-     3
+     132,
+     12
     ],
     [
-     33,
-     7
+     132,
+     28
     ],
     [
-     31,
-     7
+     124,
+     28
+    ],
+    [
+     124,
+     31
     ]
    ]
   }
@@ -372,53 +400,53 @@
   {
    "name": "Ferrano",
    "c": [
-    13,
-    22
+    52,
+    88
    ],
-   "r": 4,
+   "r": 16,
    "country": "XU"
   },
   {
    "name": "Lumeport",
    "c": [
-    31,
-    28
+    124,
+    112
    ],
-   "r": 5,
+   "r": 20,
    "country": "XB"
   },
   {
    "name": "Selanu",
    "c": [
-    52,
-    23
+    208,
+    92
    ],
-   "r": 4,
+   "r": 16,
    "country": "XL"
   }
  ],
  "fields": [
   {
    "c": [
-    16,
-    32
+    64,
+    128
    ],
-   "r": 3
+   "r": 12
   },
   {
    "c": [
-    28,
-    20
+    112,
+    80
    ],
-   "r": 3
+   "r": 12
   }
  ],
  "localities": [
   {
    "name": "Serravona",
    "c": [
-    9,
-    12
+    36,
+    48
    ],
    "country": "XU",
    "note": "The mining village at the ore mine."
@@ -426,8 +454,8 @@
   {
    "name": "Marrowdale",
    "c": [
-    26,
-    26
+    104,
+    104
    ],
    "country": "XB",
    "note": "An inland town in Upland State, near the border."
@@ -435,8 +463,8 @@
   {
    "name": "Gullhaven",
    "c": [
-    31,
-    10
+    124,
+    40
    ],
    "country": "XB",
    "note": "A fishing village on Bayvarra's north coast, by the gas plant."
@@ -445,8 +473,8 @@
  "platforms": [
   {
    "at": [
-    33,
-    3
+    132,
+    12
    ],
    "party": "42-xb",
    "note": "The gas field's production platform, offshore: it has no name or address in the documents, only its place in the world's map grid and its WGS 84 coordinates."
@@ -455,8 +483,8 @@
  "stations": [
   {
    "at": [
-    23,
-    11
+    92,
+    44
    ],
    "kind": "metering",
    "pipeline": "gas",
@@ -467,10 +495,10 @@
  "forests": [
   {
    "c": [
-    27,
-    33
+    108,
+    132
    ],
-   "r": 1.6,
+   "r": 6.4,
    "note": "Managed forest of Upland State on the north bank of the river, by the sawmill."
   }
  ]

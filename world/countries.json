@@ -320,12 +320,12 @@
     "line_rule": "A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines."
    },
    "subdivision_rule": {
-    "north_of_row": 15,
+    "north_of_row": 60,
     "north": "Northern Territory",
-    "column": 29,
+    "column": 116,
     "west": "Upland State",
     "east": "Coastal State",
-    "note": "Bayvarran land north of map row 15 (row < 15) is the Northern Territory, a federal territory on the thinly populated north coast with Gullhaven, the gas plant and, offshore, the gas field. South of it the state border runs north-south at map column 29: the border region and the distributor are in Upland State (column < 29), Lumeport and the coast in Coastal State."
+    "note": "Bayvarran land north of map row 60 (row < 60) is the Northern Territory, a federal territory on the thinly populated north coast with Gullhaven, the gas plant and, offshore, the gas field. South of it the state border runs north-south at map column 116: the border region and the distributor are in Upland State (column < 116), Lumeport and the coast in Coastal State."
    },
    "phone_prefix": "+999 2",
    "timezone": "-01:00",
@@ -688,9 +688,9 @@
    "latitude_south": 39.8,
    "longitude_west": 15.6
   },
-  "degrees_per_tile": 0.01,
+  "degrees_per_tile": 0.0025,
   "timezone": "UTC-1",
-  "note": "The world lies in an empty part of the South Atlantic, about 40° South and 15° West: every coordinate in the examples points to open sea on a real map. Map tile (i, j) lies at latitude 39.80 + 0.01·j degrees South and longitude 15.60 − 0.01·i degrees West.",
+  "note": "The world lies in an empty part of the South Atlantic, about 40° South and 15° West: every coordinate in the examples points to open sea on a real map. Map square (i, j) lies at latitude 39.80 + 0.0025·j degrees South and longitude 15.60 − 0.0025·i degrees West.",
   "telephone_note": "Telephone numbers use +999, a country code that the ITU reserves for a future global service (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country, and each country has its own numbering plan and number length (world/countries.json, phone_plan)."
  },
  "payment_cross_border": {
