@@ -1,5 +1,5 @@
 {
- "description": "The map of the UBL example world: routes, towns, fields, forests and the relief, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it and from the parties. Stations are the pipelines' border metering stations. Localities are small places without houses on the map; they give the parties outside the towns a place in their address. The relief gives the height of the ground (control points, cliff coasts, the river's heights along its course). The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, as an inset.",
+ "description": "The map of the UBL example world: routes, towns, fields, forests and the relief, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it and from the parties. Stations are the pipelines' border metering stations. Localities are small places without houses on the map; they give the parties outside the towns a place in their address. The relief gives the height of the ground (control points, cliff coasts, the river's heights along its course). The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset.",
  "routes": [
   {
    "id": "ore",
@@ -8,20 +8,24 @@
    "label": "Ore by rail (domestic XU)",
    "pts": [
     [
-     37,
-     47
+     49,
+     76
     ],
     [
-     37,
-     50
+     49,
+     82
     ],
     [
-     54,
-     72
+     67,
+     104
     ],
     [
-     54,
-     85
+     71,
+     104
+    ],
+    [
+     71,
+     110
     ]
    ]
   },
@@ -32,16 +36,16 @@
    "label": "Containers from Ferrano past the border hub to the distributor's siding",
    "pts": [
     [
-     55,
-     90
+     72,
+     115
     ],
     [
-     97,
-     90
+     125,
+     115
     ],
     [
-     97,
-     92
+     125,
+     114
     ]
    ]
   },
@@ -52,12 +56,12 @@
    "label": "The factory's second siding, for outgoing loads",
    "pts": [
     [
-     56,
-     86
+     73,
+     111
     ],
     [
-     56,
-     90
+     73,
+     115
     ]
    ]
   },
@@ -68,20 +72,12 @@
    "label": "Finished goods by road, across the border (XU → XB)",
    "pts": [
     [
-     54,
-     88
+     71,
+     113
     ],
     [
-     95,
-     88
-    ],
-    [
-     95,
-     93
-    ],
-    [
-     97,
-     93
+     124,
+     113
     ]
    ]
   },
@@ -92,24 +88,16 @@
    "label": "Distributor to retailer (domestic XB)",
    "pts": [
     [
-     101,
-     95
+     129,
+     115
     ],
     [
-     118,
-     95
+     136,
+     115
     ],
     [
-     118,
-     140
-    ],
-    [
-     138,
-     140
-    ],
-    [
-     138,
-     149
+     136,
+     126
     ]
    ]
   },
@@ -120,12 +108,12 @@
    "label": "Lumeport's centre to the port",
    "pts": [
     [
-     140,
-     151
+     138,
+     128
     ],
     [
-     140,
-     150
+     138,
+     127
     ]
    ]
   },
@@ -136,83 +124,63 @@
    "label": "River barge (XU → XB)",
    "pts": [
     [
-     29,
-     58
-    ],
-    [
-     32,
-     68
-    ],
-    [
      38,
-     78
+     74
     ],
     [
      44,
      86
     ],
     [
-     48,
-     92
-    ],
-    [
      52,
-     92
+     98
     ],
     [
-     58,
-     92
+     61,
+     111
     ],
     [
-     64,
-     97
+     65,
+     117
     ],
     [
-     70,
-     106
+     69,
+     117
     ],
     [
      75,
-     116
+     117
     ],
     [
-     80,
-     123
-    ],
-    [
-     84,
-     128
+     81,
+     122
     ],
     [
      92,
-     136
+     124
     ],
     [
-     104,
-     136
+     100,
+     123
     ],
     [
-     112,
-     144
+     110,
+     121
     ],
     [
-     124,
-     151
+     122,
+     128
     ],
     [
-     134,
-     155
+     132,
+     132
     ],
     [
-     140,
-     160
+     138,
+     137
     ]
    ],
    "widths": [
-    0.9,
-    0.9,
-    0.9,
-    0.9,
     0.9,
     0.9,
     0.9,
@@ -229,76 +197,56 @@
     3.6
    ],
    "heights": [
-    800,
+    900,
     700,
-    540,
-    380,
-    310,
-    290,
-    270,
-    240,
+    520,
+    360,
+    320,
+    300,
+    280,
+    250,
     210,
-    180,
-    160,
-    150,
-    130,
-    100,
-    50,
+    170,
+    60,
     0,
     0,
     0
    ],
-   "note": "The river rises in the high ground west of Serravona, passes just south of Ferrano, forms the land border on its south-western stretch and reaches the sea through its estuary at Lumeport. \"heights\" gives its height in metres at each point of its course: it falls all the way."
+   "note": "The river rises in the high ground west of Serravona, passes just south of Ferrano, forms the land border on its lower course, below the border crossing, and reaches the sea through its estuary at Lumeport. \"heights\" gives its height in metres at each point of its course: it falls all the way."
   },
   {
    "id": "sea",
    "mode": "sea",
    "layer": "chain",
-   "label": "Container ship overseas (XB → XL), round the island's southern cape to the lee side",
+   "label": "Container ship overseas (XB → XL), round the island's south-eastern cape to the lee side",
    "pts": [
     [
-     142,
-     151
+     140,
+     128
     ],
     [
      150,
-     151
-    ],
-    [
-     150,
-     160
-    ],
-    [
-     200,
-     146
-    ],
-    [
-     236,
      132
     ],
     [
-     250,
+     200,
+     132
+    ],
+    [
+     236,
+     128
+    ],
+    [
+     248,
+     122
+    ],
+    [
+     248,
      110
     ],
     [
-     250,
-     92
-    ],
-    [
-     243,
-     92
-    ],
-    [
-     243,
-     89
-    ],
-    [
-     242,
-     89
-    ],
-    [
-     242,
-     88
+     244,
+     110
     ]
    ]
   },
@@ -309,16 +257,16 @@
    "label": "Air cargo (XB → XL)",
    "pts": [
     [
-     134,
-     149
+     132,
+     126
     ],
     [
      190,
-     105
+     116
     ],
     [
      236,
-     87
+     109
     ]
    ]
   },
@@ -330,19 +278,19 @@
    "pts": [
     [
      240,
-     89
+     111
     ],
     [
      240,
-     85
+     107
     ],
     [
      243,
-     85
+     107
     ],
     [
      243,
-     86
+     108
     ]
    ]
   },
@@ -353,12 +301,12 @@
    "label": "Ferrano to the farms (domestic XU)",
    "pts": [
     [
-     50,
-     88
+     67,
+     113
     ],
     [
-     50,
-     112
+     67,
+     130
     ]
    ]
   },
@@ -369,24 +317,16 @@
    "label": "Gas pipeline from the gas plant across the border to the power station (XB → XU)",
    "pts": [
     [
-     119,
-     25
-    ],
-    [
-     116,
-     25
-    ],
-    [
-     116,
+     71,
      44
     ],
     [
-     76,
-     44
+     71,
+     81
     ],
     [
-     76,
-     51
+     52,
+     81
     ]
    ]
   },
@@ -397,24 +337,12 @@
    "label": "Branch of the gas pipeline to the grid operator's city gate (XU)",
    "pts": [
     [
-     76,
-     44
+     69,
+     81
     ],
     [
-     68,
-     44
-    ],
-    [
-     68,
-     80
-    ],
-    [
-     52,
-     80
-    ],
-    [
-     52,
-     84
+     69,
+     109
     ]
    ]
   },
@@ -425,20 +353,12 @@
    "label": "Subsea pipeline from the offshore platform to the gas plant",
    "pts": [
     [
-     132,
-     12
+     74,
+     21
     ],
     [
-     132,
-     26
-    ],
-    [
-     122,
-     26
-    ],
-    [
-     122,
-     25
+     74,
+     44
     ]
    ]
   }
@@ -447,8 +367,8 @@
   {
    "name": "Ferrano",
    "c": [
-    52,
-    88
+    69,
+    113
    ],
    "r": 2,
    "country": "XU"
@@ -456,8 +376,8 @@
   {
    "name": "Lumeport",
    "c": [
-    138,
-    151
+    136,
+    128
    ],
    "r": 2,
    "country": "XB"
@@ -465,8 +385,8 @@
   {
    "name": "Marrowdale",
    "c": [
-    100,
-    94
+    128,
+    114
    ],
    "r": 1,
    "country": "XB",
@@ -476,7 +396,7 @@
    "name": "Selanu",
    "c": [
     240,
-    89
+    111
    ],
    "r": 1,
    "country": "XL"
@@ -485,26 +405,26 @@
  "fields": [
   {
    "c": [
-    62,
-    104
+    79,
+    129
    ],
-   "r": 8,
+   "r": 7,
    "note": "Farmland of Urvania south of Ferrano, across the river."
   },
   {
    "c": [
-    110,
-    70
+    118,
+    96
    ],
-   "r": 10,
+   "r": 7,
    "note": "Farmland of Upland State north of Marrowdale."
   },
   {
    "c": [
-    228,
-    58
+    232,
+    104
    ],
-   "r": 4,
+   "r": 3,
    "note": "The cotton fields of Lisavu Cotton Farm, on the dry lee side of the north coast."
   }
  ],
@@ -512,8 +432,8 @@
   {
    "name": "Serravona",
    "c": [
-    36,
-    48
+    48,
+    77
    ],
    "country": "XU",
    "note": "The mining village at the ore mine."
@@ -521,8 +441,8 @@
   {
    "name": "Gullhaven",
    "c": [
-    124,
-    26
+    76,
+    45
    ],
    "country": "XB",
    "note": "A fishing village on Bayvarra's north coast, by the gas plant."
@@ -531,8 +451,8 @@
  "platforms": [
   {
    "at": [
-    132,
-    12
+    74,
+    21
    ],
    "party": "42-xb",
    "note": "The gas field's production platform, offshore: it has no name or address in the documents, only its place in the world's map grid and its WGS 84 coordinates."
@@ -541,8 +461,8 @@
  "stations": [
   {
    "at": [
-    92,
-    44
+    71,
+    70
    ],
    "kind": "metering",
    "pipeline": "gas",
@@ -553,400 +473,455 @@
  "forests": [
   {
    "c": [
-    108,
-    132
+    121,
+    120
    ],
-   "r": 6,
+   "r": 3,
    "note": "Managed forest of Upland State on the north bank of the river: the sawmill at Marrowdale buys its logs here."
   },
   {
    "c": [
-    190,
-    80
+    220,
+    112
    ],
-   "r": 8,
+   "r": 4,
    "note": "Rain forest on Lisavu's windward high ground, above the western cliffs."
   }
  ],
  "relief": {
   "note": "The relief of the world, from which tools/world_model.py makes the height of every square corner: control points with their height in metres (a weighted mean between them, spread over \"spread\" squares), the land coming down to the sea within \"coast\" squares except on the cliff coasts, and the river's valley (the river at the heights of its route, the land beside it sloping towards it within \"valley\" squares and rising from it by at least \"valley_wall\" metres a square). Urvania's north-west is the highest ground, the hills around Serravona, where the river rises; Upland State is higher than Coastal State and the land falls east and south-east to the coast; the north coast is low. On Lisavu the high ground runs along the west and ends in cliffs; the land falls to the drier, lower east and north-east coast.",
-  "spread": 16,
+  "spread": 12,
   "coast": 4,
   "valley": 4,
   "valley_wall": 25,
   "points": [
    {
     "at": [
-     44,
-     50
+     46,
+     70
     ],
     "m": 1300,
     "note": "the hills of Serravona: the highest ground"
    },
    {
     "at": [
+     38,
+     62
+    ],
+    "m": 1100
+   },
+   {
+    "at": [
+     56,
+     64
+    ],
+    "m": 1100
+   },
+   {
+    "at": [
      36,
-     44
-    ],
-    "m": 1100
-   },
-   {
-    "at": [
-     52,
-     44
-    ],
-    "m": 1100
-   },
-   {
-    "at": [
-     30,
-     54
+     72
     ],
     "m": 1050,
     "note": "the river's source"
    },
    {
     "at": [
-     24,
-     66
+     26,
+     70
     ],
     "m": 800
    },
    {
     "at": [
-     60,
+     28,
      54
+    ],
+    "m": 700
+   },
+   {
+    "at": [
+     62,
+     76
     ],
     "m": 900
    },
    {
     "at": [
-     44,
-     66
-    ],
-    "m": 800
-   },
-   {
-    "at": [
-     16,
+     50,
      88
     ],
-    "m": 450
+    "m": 750
    },
    {
     "at": [
-     30,
-     92
+     24,
+     90
+    ],
+    "m": 550
+   },
+   {
+    "at": [
+     36,
+     100
+    ],
+    "m": 500
+   },
+   {
+    "at": [
+     54,
+     104
+    ],
+    "m": 420
+   },
+   {
+    "at": [
+     69,
+     113
+    ],
+    "m": 330,
+    "note": "Ferrano"
+   },
+   {
+    "at": [
+     82,
+     98
+    ],
+    "m": 520
+   },
+   {
+    "at": [
+     88,
+     80
+    ],
+    "m": 600
+   },
+   {
+    "at": [
+     76,
+     62
+    ],
+    "m": 650
+   },
+   {
+    "at": [
+     62,
+     48
+    ],
+    "m": 550
+   },
+   {
+    "at": [
+     20,
+     112
     ],
     "m": 400
    },
    {
     "at": [
-     52,
-     84
+     36,
+     122
     ],
-    "m": 330
+    "m": 380
    },
    {
     "at": [
-     66,
-     80
+     54,
+     128
     ],
-    "m": 450
+    "m": 320
    },
    {
     "at": [
-     80,
-     60
+     76,
+     134
     ],
-    "m": 600
+    "m": 250
    },
    {
     "at": [
-     80,
-     40
+     96,
+     136
     ],
-    "m": 450
+    "m": 160
    },
    {
     "at": [
-     100,
-     40
-    ],
-    "m": 200
-   },
-   {
-    "at": [
-     124,
-     32
-    ],
-    "m": 40
-   },
-   {
-    "at": [
-     140,
-     50
+     110,
+     136
     ],
     "m": 80
    },
    {
     "at": [
-     64,
-     34
+     124,
+     136
     ],
-    "m": 600
+    "m": 30
    },
    {
     "at": [
-     80,
-     88
+     92,
+     114
+    ],
+    "m": 450
+   },
+   {
+    "at": [
+     72,
+     44
+    ],
+    "m": 30,
+    "note": "the north coast at Gullhaven: low"
+   },
+   {
+    "at": [
+     96,
+     48
+    ],
+    "m": 80
+   },
+   {
+    "at": [
+     126,
+     58
+    ],
+    "m": 60
+   },
+   {
+    "at": [
+     156,
+     66
+    ],
+    "m": 50
+   },
+   {
+    "at": [
+     100,
+     66
+    ],
+    "m": 350
+   },
+   {
+    "at": [
+     120,
+     78
+    ],
+    "m": 420
+   },
+   {
+    "at": [
+     104,
+     96
+    ],
+    "m": 520
+   },
+   {
+    "at": [
+     117,
+     113
     ],
     "m": 480,
     "note": "the border crossing"
    },
    {
     "at": [
-     100,
-     94
+     128,
+     114
     ],
-    "m": 520,
+    "m": 450,
     "note": "Marrowdale, Upland State"
    },
    {
     "at": [
-     100,
-     75
+     114,
+     100
     ],
     "m": 550
    },
    {
     "at": [
-     112,
-     110
+     128,
+     98
     ],
     "m": 420
    },
    {
     "at": [
-     96,
-     118
-    ],
-    "m": 380
-   },
-   {
-    "at": [
-     126,
-     96
-    ],
-    "m": 300
-   },
-   {
-    "at": [
-     146,
+     142,
      90
     ],
-    "m": 120
+    "m": 250
    },
    {
     "at": [
-     160,
-     100
+     158,
+     84
+    ],
+    "m": 90
+   },
+   {
+    "at": [
+     168,
+     76
     ],
     "m": 40
    },
    {
     "at": [
-     152,
-     120
+     150,
+     104
     ],
-    "m": 70
+    "m": 110
    },
    {
     "at": [
-     130,
-     125
+     136,
+     118
     ],
-    "m": 180
+    "m": 140
    },
    {
     "at": [
-     138,
-     151
+     136,
+     128
     ],
     "m": 15,
     "note": "Lumeport"
    },
    {
     "at": [
-     150,
-     70
+     218,
+     107
     ],
-    "m": 90
-   },
-   {
-    "at": [
-     24,
-     116
-    ],
-    "m": 380
-   },
-   {
-    "at": [
-     40,
-     132
-    ],
-    "m": 450
-   },
-   {
-    "at": [
-     62,
-     150
-    ],
-    "m": 380
-   },
-   {
-    "at": [
-     60,
-     110
-    ],
-    "m": 260
-   },
-   {
-    "at": [
-     84,
-     160
-    ],
-    "m": 220
-   },
-   {
-    "at": [
-     104,
-     168
-    ],
-    "m": 120
-   },
-   {
-    "at": [
-     118,
-     160
-    ],
-    "m": 60
-   },
-   {
-    "at": [
-     188,
-     60
-    ],
-    "m": 650,
+    "m": 700,
     "note": "Lisavu's western high ground"
    },
    {
     "at": [
-     184,
-     86
+     218,
+     113
     ],
     "m": 750
    },
    {
     "at": [
-     192,
-     110
+     220,
+     119
     ],
     "m": 650
    },
    {
     "at": [
-     205,
-     45
+     225,
+     104
     ],
-    "m": 300
-   },
-   {
-    "at": [
-     212,
-     86
-    ],
-    "m": 420
-   },
-   {
-    "at": [
-     210,
-     125
-    ],
-    "m": 250
+    "m": 400
    },
    {
     "at": [
      226,
-     70
+     112
+    ],
+    "m": 450
+   },
+   {
+    "at": [
+     226,
+     120
+    ],
+    "m": 350
+   },
+   {
+    "at": [
+     232,
+     107
     ],
     "m": 150
    },
    {
     "at": [
      232,
-     90
+     112
     ],
-    "m": 120,
+    "m": 250,
     "note": "Mast Hill"
    },
    {
     "at": [
-     240,
-     89
+     233,
+     119
     ],
-    "m": 20,
-    "note": "Selanu"
+    "m": 150
    },
    {
     "at": [
-     230,
-     56
+     236,
+     104
     ],
     "m": 40,
     "note": "the cotton farm"
    },
    {
     "at": [
-     236,
-     108
+     240,
+     111
     ],
-    "m": 60
+    "m": 20,
+    "note": "Selanu"
+   },
+   {
+    "at": [
+     242,
+     118
+    ],
+    "m": 40
    }
   ],
   "cliffs": [
    {
     "from": [
-     190,
-     44
+     222,
+     102
     ],
     "to": [
-     178,
-     70
+     216,
+     106
     ],
-    "width": 3
+    "width": 2
    },
    {
     "from": [
-     178,
-     70
+     216,
+     106
     ],
     "to": [
-     178,
-     98
+     214,
+     110
     ],
-    "width": 3
+    "width": 2
    },
    {
     "from": [
-     178,
-     98
+     214,
+     110
     ],
     "to": [
-     195,
-     126
+     214,
+     116
     ],
-    "width": 3,
+    "width": 2
+   },
+   {
+    "from": [
+     214,
+     116
+    ],
+    "to": [
+     220,
+     122
+    ],
+    "width": 2,
     "note": "Lisavu's west coast: cliffs facing the mainland, the westerly wind and the swell; no landing."
    }
   ]

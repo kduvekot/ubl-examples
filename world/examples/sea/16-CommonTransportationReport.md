@@ -486,15 +486,15 @@ Inside `Shipment`:
   Where the barge came alongside.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDegreesMeasure` = **40** (unitCode `DD`)  
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDegreesMeasure` = **31** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeMinutesMeasure` = **10.50** (unitCode `D61`)  
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeMinutesMeasure` = **2.43** (unitCode `D61`)  
   The minutes of the latitude.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDegreesMeasure` = **13** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeMinutesMeasure` = **14.85** (unitCode `D61`)  
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeMinutesMeasure` = **16.53** (unitCode `D61`)  
   The minutes of the longitude.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
@@ -1074,11 +1074,11 @@ Inside `Signature`:
             <cbc:Name>Lumeport anchorage</cbc:Name>
             <cac:LocationCoordinate>
               <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
-              <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
-              <cbc:LatitudeMinutesMeasure unitCode="D61">10.50</cbc:LatitudeMinutesMeasure>
+              <cbc:LatitudeDegreesMeasure unitCode="DD">31</cbc:LatitudeDegreesMeasure>
+              <cbc:LatitudeMinutesMeasure unitCode="D61">2.43</cbc:LatitudeMinutesMeasure>
               <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
-              <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-              <cbc:LongitudeMinutesMeasure unitCode="D61">14.85</cbc:LongitudeMinutesMeasure>
+              <cbc:LongitudeDegreesMeasure unitCode="DD">13</cbc:LongitudeDegreesMeasure>
+              <cbc:LongitudeMinutesMeasure unitCode="D61">16.53</cbc:LongitudeMinutesMeasure>
               <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
             </cac:LocationCoordinate>
           </cac:Location>

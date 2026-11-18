@@ -322,10 +322,10 @@
    "subdivision_rule": {
     "north_of_row": 60,
     "north": "Northern Territory",
-    "column": 116,
+    "column": 131,
     "west": "Upland State",
     "east": "Coastal State",
-    "note": "Bayvarran land north of map row 60 (row < 60) is the Northern Territory, a federal territory on the thinly populated north coast with Gullhaven, the gas plant and, offshore, the gas field. South of it the state border runs north-south at map column 116: the border region and the distributor are in Upland State (column < 116), Lumeport and the coast in Coastal State."
+    "note": "Bayvarran land north of map row 60 (row < 60) is the Northern Territory, a federal territory on the thinly populated north coast with Gullhaven, the gas plant and, offshore, the gas field. South of it the state border runs north-south at map column 131: the border region and Marrowdale with the distributor are in Upland State (column < 131), Lumeport and the coast in Coastal State."
    },
    "phone_prefix": "+999 2",
    "timezone": "-01:00",
@@ -684,13 +684,34 @@
  },
  "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral.",
  "geography": {
-  "origin": {
-   "latitude_south": 39.8,
-   "longitude_west": 15.6
+  "km_per_tile": 3.5,
+  "mainland": {
+   "centre_tile": [
+    91.5,
+    94
+   ],
+   "centre": {
+    "latitude_south": 30.0,
+    "longitude_west": 15.0
+   }
   },
-  "degrees_per_tile": 0.0025,
+  "insets": [
+   {
+    "country": "XL",
+    "from_column": 200,
+    "centre_tile": [
+     229.5,
+     112.5
+    ],
+    "centre": {
+     "latitude_south": 33.0,
+     "longitude_west": 2.65
+    },
+    "note": "Lisavu is drawn nearer, as an inset (O92, O151); its squares are placed around its true position on the seamount of the Walvis Ridge (D19)."
+   }
+  ],
   "timezone": "UTC-1",
-  "note": "The world lies in an empty part of the South Atlantic, about 40° South and 15° West: every coordinate in the examples points to open sea on a real map. Map square (i, j) lies at latitude 39.80 + 0.0025·j degrees South and longitude 15.60 − 0.0025·i degrees West.",
+  "note": "The world lies in an empty part of the South Atlantic, on the base of D19, so every coordinate in the examples points to open sea on a real map. A map square is 3.5 km each way, and coordinates keep that scale on both axes: a degree of latitude is 111.0 km, a degree of longitude 111.32 km times the cosine of the latitude of the area's centre. The drawn mainland (columns 11 to 172, rows 38 to 150) is centred on 30.0 degrees South, 15.0 degrees West, the middle of D19's box, and so lies at about 28.2 to 31.8 degrees South and 17.9 to 12.0 degrees West (D19's box of 28.1 to 31.9 South and 17.7 to 12.3 West is not quite 560 by 390 km; the kilometres win). Lisavu is drawn nearer, as an inset: its squares are placed around its true centre, 33.0 degrees South, 2.65 degrees West.",
   "telephone_note": "Telephone numbers use +999, a country code that the ITU reserves for a future global service (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country, and each country has its own numbering plan and number length (world/countries.json, phone_plan)."
  },
  "payment_cross_border": {

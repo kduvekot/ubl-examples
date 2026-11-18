@@ -618,10 +618,18 @@ def address(pid, register=False):
 
 
 def coordinate(at):
-    """Latitude and longitude of a map tile: the world lies in an empty part of the South Atlantic."""
+    """Latitude and longitude of a map tile: the world lies in an empty part of the South Atlantic. The squares keep
+    their size (km_per_tile) on both axes around the centre of their area; Lisavu, drawn nearer as an inset, is
+    placed around its own true centre (world/countries.json, geography)."""
+    import math
     g = WORLD["geography"]
-    lat = Decimal(str(g["origin"]["latitude_south"])) + Decimal(str(g["degrees_per_tile"])) * at[1]
-    lon = Decimal(str(g["origin"]["longitude_west"])) - Decimal(str(g["degrees_per_tile"])) * at[0]
+    area = next((a for a in g.get("insets", []) if at[0] >= a["from_column"]), g["mainland"])
+    (ci, cj), c = area["centre_tile"], area["centre"]
+    km = g["km_per_tile"]
+    lat_c, lon_c = c["latitude_south"], c["longitude_west"]
+    lat_f = lat_c + km * (at[1] - cj) / 111.0
+    lon_f = lon_c - km * (at[0] - ci) / (111.32 * math.cos(math.radians(lat_c)))
+    lat, lon = Decimal(f"{lat_f:.6f}"), Decimal(f"{lon_f:.6f}")
     why = "Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is " \
           "open sea on a real map (world/countries.json)."
     def dm(x):

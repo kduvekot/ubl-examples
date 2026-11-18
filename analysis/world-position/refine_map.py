@@ -293,10 +293,10 @@ def labels(img, px):
         txt(t["c"], t["name"], f, dx=U * .6, dy=-U * 1.2)
     for l in WORLD["localities"]:
         txt(l["c"], l["name"], fs, dx=U * .5, dy=-U * .8)
-    txt((7 * G, 33 * G), "URVANIA", fc, fill=(80, 100, 70, 220))
-    txt((30 * G, 14 * G), "BAYVARRA", fc, fill=(110, 95, 60, 220))
-    txt((49 * G, 34 * G), "LISAVU", fc, fill=(120, 90, 60, 220))
-    txt((44 * G, 40 * G), "Atlantic Ocean", fs, fill=(50, 90, 130, 230))
+    txt((5 * G, 30 * G), "URVANIA", fc, fill=(80, 100, 70, 220))
+    txt((30 * G, 19 * G), "BAYVARRA", fc, fill=(110, 95, 60, 220))
+    txt((53 * G, 33 * G), "LISAVU", fc, fill=(120, 90, 60, 220))
+    txt((42 * G, 41 * G), "Atlantic Ocean", fs, fill=(50, 90, 130, 230))
     # scale bar: 100 km
     x0, y0 = U * 2, img.size[1] - U * 2
     L = 100 / KM * px
@@ -458,12 +458,12 @@ def labels_flat(img, px):
         d.line([(k, y1), (min(x1, k + U * .2), y1)], fill=PAL["water_label"], width=max(1, U // 16))
     for k in range(int(y0), int(y1), int(U * .4)):
         d.line([(x0, k), (x0, min(y1, k + U * .2))], fill=PAL["water_label"], width=max(1, U // 16))
-    d.text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport: drawn nearer, at the same scale",
-           font=F(False, U * .45), fill=PAL["water_label"], anchor="la")
+    d.multiline_text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport:\ndrawn nearer, at the same scale",
+                     font=F(False, U * .45), fill=PAL["water_label"], anchor="la")
     for t in WORLD["towns"]:
         dot(t["c"], (90, 90, 90), .28)
         right = t["c"][0] > W - 40                                  # near the right edge: the name on the left
-        txt(t["c"], t["name"], F(True, U * .85), PAL["label"], dx=-U * .45 if right else U * .45, dy=-U * .7,
+        txt(t["c"], t["name"], F(True, U * .85), PAL["label"], dx=-U * .45 if right else U * .45, dy=U * .9 if right else -U * .7,
             anchor="rm" if right else "lm")
     for l in WORLD["localities"]:
         dot(l["c"], (120, 120, 120), .18)
@@ -476,7 +476,7 @@ def labels_flat(img, px):
             b = T[i][j].get("b")
             if b in POI:
                 where.setdefault(b, []).append((i, j))
-    PLACE = {"16-xb": (.5, .7, "lm"), "17-xb": (-.5, -.1, "rm"), "16-xl": (-.4, 1.1, "rm"), "17-xl": (-.5, -.5, "rm")}
+    PLACE = {"16-xb": (.5, .7, "lm"), "17-xb": (-.5, -.1, "rm"), "16-xl": (.5, 3.4, "rm"), "17-xl": (-.5, -1.2, "rm")}
     for b, sq in where.items():
         q = (sum(a for a, _ in sq) / len(sq), sum(c for _, c in sq) / len(sq))
         col = (66, 133, 244) if b.startswith("16") else (120, 120, 140)
@@ -484,10 +484,10 @@ def labels_flat(img, px):
         dx, dy, anchor = PLACE[b]
         txt(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else PAL["label_soft"], dx=U * dx, dy=U * dy, anchor=anchor)
     sp = lambda t: " ".join(t)
-    txt((6 * G, 31 * G), sp("URVANIA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
-    txt((29 * G, 15 * G), sp("BAYVARRA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
-    txt((48 * G, 35 * G), sp("LISAVU"), F(False, U * 1.0), (125, 125, 125, 255), anchor="lm")
-    txt((40 * G, 42 * G), "Atlantic Ocean", F(False, U * .75), PAL["water_label"], anchor="lm", halo=False)
+    txt((5 * G, 30 * G), sp("URVANIA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
+    txt((29 * G, 19 * G), sp("BAYVARRA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
+    txt((52 * G, 33.5 * G), sp("LISAVU"), F(False, U * 1.0), (125, 125, 125, 255), anchor="lm")
+    txt((42 * G, 41 * G), "Atlantic Ocean", F(False, U * .75), PAL["water_label"], anchor="lm", halo=False)
     # scale bar
     x0, y0 = U * 2.2, img.size[1] - U * 1.6
     L = 100 / KM * px

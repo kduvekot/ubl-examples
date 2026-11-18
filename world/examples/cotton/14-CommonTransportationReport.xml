@@ -85,11 +85,11 @@
       </cac:SubsidiaryLocation>
       <cac:LocationCoordinate>
         <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
-        <cbc:LatitudeDegreesMeasure unitCode="DD">40</cbc:LatitudeDegreesMeasure>
-        <cbc:LatitudeMinutesMeasure unitCode="D61">10.50</cbc:LatitudeMinutesMeasure>
+        <cbc:LatitudeDegreesMeasure unitCode="DD">31</cbc:LatitudeDegreesMeasure>
+        <cbc:LatitudeMinutesMeasure unitCode="D61">2.43</cbc:LatitudeMinutesMeasure>
         <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
-        <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-        <cbc:LongitudeMinutesMeasure unitCode="D61">14.85</cbc:LongitudeMinutesMeasure>
+        <cbc:LongitudeDegreesMeasure unitCode="DD">13</cbc:LongitudeDegreesMeasure>
+        <cbc:LongitudeMinutesMeasure unitCode="D61">16.53</cbc:LongitudeMinutesMeasure>
         <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
       </cac:LocationCoordinate>
     </cac:PhysicalLocation>

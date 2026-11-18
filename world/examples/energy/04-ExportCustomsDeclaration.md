@@ -73,15 +73,15 @@ Inside `ExporterParty`:
   Where to find more about the place.
 - `PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
-- `PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
+- `PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **51.75** (unitCode `D61`)  
+- `PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **25.41** (unitCode `D61`)  
   The minutes of the latitude.
 - `PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **18.00** (unitCode `D61`)  
+- `PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **42.48** (unitCode `D61`)  
   The minutes of the longitude.
 - `PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
@@ -152,19 +152,19 @@ Inside `CustomsDeclaration`:
   UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 7 = Fixed transport installations.
 - `Shipment/ShipmentStage/TransportMeans/TransportMeansTypeCode` = **71** (listID `UNECE Recommendation 28`)  
   The gas leaves by pipeline. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 71 = Pipeline.
-- `Shipment/OriginAddress/ID` = **33/03** (schemeID `urn:ubl-examples:world:grid`)  
+- `Shipment/OriginAddress/ID` = **18/05** (schemeID `urn:ubl-examples:world:grid`)  
   Where the gas is produced: the platform of the offshore field. Identified by its block of the world's offshore grid (blocks of 14 km, column/row), as offshore installations are identified by grid references.
 - `Shipment/OriginAddress/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
-- `Shipment/OriginAddress/LocationCoordinate/LatitudeDegreesMeasure` = **39** (unitCode `DD`)  
+- `Shipment/OriginAddress/LocationCoordinate/LatitudeDegreesMeasure` = **27** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Shipment/OriginAddress/LocationCoordinate/LatitudeMinutesMeasure` = **49.80** (unitCode `D61`)  
+- `Shipment/OriginAddress/LocationCoordinate/LatitudeMinutesMeasure` = **41.89** (unitCode `D61`)  
   The minutes of the latitude.
 - `Shipment/OriginAddress/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Shipment/OriginAddress/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
   Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
-- `Shipment/OriginAddress/LocationCoordinate/LongitudeMinutesMeasure` = **16.20** (unitCode `D61`)  
+- `Shipment/OriginAddress/LocationCoordinate/LongitudeMinutesMeasure` = **38.12** (unitCode `D61`)  
   The minutes of the longitude.
 - `Shipment/OriginAddress/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
@@ -298,11 +298,11 @@ Inside `CustomsDeclaration`:
       <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
       <cac:LocationCoordinate>
         <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
-        <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
-        <cbc:LatitudeMinutesMeasure unitCode="D61">51.75</cbc:LatitudeMinutesMeasure>
+        <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>
+        <cbc:LatitudeMinutesMeasure unitCode="D61">25.41</cbc:LatitudeMinutesMeasure>
         <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
         <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-        <cbc:LongitudeMinutesMeasure unitCode="D61">18.00</cbc:LongitudeMinutesMeasure>
+        <cbc:LongitudeMinutesMeasure unitCode="D61">42.48</cbc:LongitudeMinutesMeasure>
         <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
       </cac:LocationCoordinate>
     </cac:PhysicalLocation>
@@ -367,14 +367,14 @@ Inside `CustomsDeclaration`:
         </cac:TransportMeans>
       </cac:ShipmentStage>
       <cac:OriginAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:grid">33/03</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:grid">18/05</cbc:ID>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
-          <cbc:LatitudeDegreesMeasure unitCode="DD">39</cbc:LatitudeDegreesMeasure>
-          <cbc:LatitudeMinutesMeasure unitCode="D61">49.80</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">27</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">41.89</cbc:LatitudeMinutesMeasure>
           <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
           <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
-          <cbc:LongitudeMinutesMeasure unitCode="D61">16.20</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">38.12</cbc:LongitudeMinutesMeasure>
           <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:OriginAddress>

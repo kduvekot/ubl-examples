@@ -50,7 +50,7 @@ Structural rules (the build stops when one is broken):
     (7 km) from an airport and its approach zones;
   * an airport has an approach zone of APPROACH = 3 squares (10.5 km) beyond
     each runway end, low and flat at runway height, with nothing tall in it;
-  * in the south-west the river is the land border: all land south of it is
+  * on its lower course the river is the land border: all land south of it is
     Urvania; elsewhere the border follows its line on the map;
   * a road across a land border passes a customs post on each side (within
     BORDER_POST = 3 squares, 10.5 km, along the road); a rail line across it
@@ -109,6 +109,23 @@ ESTUARY = 1.5                                     # a river this wide (squares, 
 LEVEL_M = 100                                     # metres of one height level (model "v")
 ROCK_M = 1000                                     # bare rock and scree above this height (metres)
 
+# The land, in chart units of 14 km (D19's sizes, owner 2026-11-18: "bring the land back to D19's sizes"). The
+# mainland is a rounded block, a superellipse of power MAIN_P that the noise roughens into headlands and bays,
+# about 40 x 28 chart units (560 km west to east, 390 km north to south), with a gulf cut into its south-east
+# (GULF_C, GULF_R), on whose shore Lumeport stands at the river's estuary. Lisavu, about 8 x 6 chart units
+# (110 x 85 km; D19 likens it to Cyprus, which is larger), is drawn in its own part of the grid with open sea all round (it lies about
+# 1,000 km east of Lumeport and is shown as an inset); every square east of chart column ISLE_FROM is Lisavu's.
+MAIN_C, MAIN_R, MAIN_P = (23.0, 22.9), (19.0, 12.4), 4
+GULF_C, GULF_R = (39.0, 35.5), (8.5, 6.2)
+ISLE_C, ISLE_R, ISLE_P = (57.0, 28.0), (4.2, 2.55), 3
+ISLE_FROM = 48
+WARP, ISLE_WARP = (11.0, 2.5), .3                 # chart units the coast is displaced by the noise (broad, fine); less on the small island
+# The land border between Urvania and Bayvarra: its column (chart units) at given rows (chart units), straight
+# between them, with a gentle wave of BORDER_WAVE chart units; it runs from the north coast south-south-east
+# to the river, which is the border from there to the sea (see build()).
+BORDER = [(0, 7.5), (10, 9.5), (13, 13), (15.5, 15.5), (18, 17.75), (20.5, 19.75), (23, 22), (25.5, 24.75), (27, 27), (28.25, 29.575), (31.25, 30.25), (48, 31.5)]
+BORDER_WAVE = .2
+
 
 def chart(i):
     """The chart coordinate of square i, in units of 14 km (the squares of the first map, whose square x is
@@ -133,6 +150,20 @@ def smooth(x, y):
 
 def noise(x, y):
     return smooth(x / 6, y / 6) * .6 + smooth(x / 3, y / 3) * .3 + smooth(x, y) * .1
+
+
+def land_shape(x, y, n):
+    """Whether chart point (x, y) is mainland, and whether it is Lisavu: the shapes of MAIN_* and ISLE_*, with
+    the coast made irregular by the noise: the point is first displaced by it (a broad warp for the large
+    headlands and bays, a finer one for capes and coves), and the noise n moves the coast in and out."""
+    wx = (noise(x * .9 + 5.3, y * .9 - 2.1) - .5) * WARP[0] + (noise(x * 3.1 - 8.7, y * 3.1 + 4.4) - .5) * WARP[1]
+    wy = (noise(x * .9 - 6.1, y * .9 + 3.7) - .5) * WARP[0] + (noise(x * 3.1 + 2.9, y * 3.1 - 7.3) - .5) * WARP[1]
+    u, v = x + wx, y + wy
+    main = (abs((u - MAIN_C[0]) / MAIN_R[0]) ** MAIN_P + abs((v - MAIN_C[1]) / MAIN_R[1]) ** MAIN_P < 1 - (n - .5) * .55
+            and ((u - GULF_C[0]) / GULF_R[0]) ** 2 + ((v - GULF_C[1]) / GULF_R[1]) ** 2 > 1 + (n - .5) * .5)
+    u, v = x + wx * ISLE_WARP, y + wy * ISLE_WARP
+    isle = abs((u - ISLE_C[0]) / ISLE_R[0]) ** ISLE_P + abs((v - ISLE_C[1]) / ISLE_R[1]) ** ISLE_P < 1 - (n - .5) * .5
+    return main, isle
 
 
 def sign(v):
@@ -269,8 +300,13 @@ def build(world):
     problems = []
     T = [[None] * H for _ in range(W)]
     # the land border's line, in squares (it is drawn in chart units: 14 km)
-    line = lambda j: (21.5 + 1.6 * math.sin(chart(j) / 4.2)) * GRID
-    # In the south-west the river is the border: all land south of the river is Urvania. The river's
+    def line(j):
+        y = chart(j)
+        k = next((k for k in range(len(BORDER) - 1) if y <= BORDER[k + 1][0]), len(BORDER) - 2)
+        (ya, xa), (yb, xb) = BORDER[k], BORDER[k + 1]
+        u = max(0.0, min(1.0, (y - ya) / (yb - ya)))
+        return (xa + (xb - xa) * u + BORDER_WAVE * math.sin(y / 1.9)) * GRID
+    # On its lower course the river is the border: all land south of the river is Urvania. The river's
     # course runs eastwards (i increasing) wherever the land border could reach it; river_j gives
     # its row there.
     river = next((r for r in world["routes"] if r["mode"] == "river"), None)
@@ -298,8 +334,7 @@ def build(world):
         for j in range(H):
             x, y = chart(i), chart(j)
             n = noise(x, y)
-            main = ((x - 21.5) / 19.5) ** 2 + ((y - 24.5) / 20) ** 2 < 1 - (n - .5) * .55
-            isle = ((x - 52.5) / 8.2) ** 2 + ((y - 21.5) / 11.5) ** 2 < 1 - (n - .5) * .5
+            main, isle = land_shape(x, y, n)
             t = {"k": "s", "c": None, "h": 0, "n": round(n, 3)}
             if main or isle:
                 t["c"] = "XL" if isle else ("XU" if i < border(j, i) else "XB")
@@ -445,7 +480,7 @@ def build(world):
             if t["k"] == "w":
                 t["br"] = 1
             elif t["k"] == "s":
-                t["k"], t["c"] = "g", t["c"] or ("XL" if chart(q[0]) >= 42 else ("XU" if q[0] < border(q[1], q[0]) else "XB"))
+                t["k"], t["c"] = "g", t["c"] or ("XL" if chart(q[0]) >= ISLE_FROM else ("XU" if q[0] < border(q[1], q[0]) else "XB"))
             road.add(q)
             if k:
                 link(path[k - 1], q)
