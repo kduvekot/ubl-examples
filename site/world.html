@@ -162,7 +162,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   return t; }));
 const TOWNS = WORLD.towns.map(tw => ({ ...tw }));
 // terrain height: one value per tile corner (model "v"); the ground height anywhere is interpolated
-const V = WORLD.model.v, HU = 8;                    // HU: pixels per height level
+const V = WORLD.model.v, HU = 12;                   // HU: pixels per height level (a level is 100 m: model "level_m")
 function heightAt(x, y) { const vx = Math.max(0, Math.min(W, x + .5)), vy = Math.max(0, Math.min(H, y + .5));
   const i0 = Math.min(W - 1, Math.floor(vx)), j0 = Math.min(H - 1, Math.floor(vy)), u = vx - i0, v = vy - j0;
   return V[i0][j0] * (1 - u) * (1 - v) + V[i0 + 1][j0] * u * (1 - v) + V[i0][j0 + 1] * (1 - u) * v + V[i0 + 1][j0 + 1] * u * v; }
@@ -191,8 +191,8 @@ const LABEL_AT = (() => { const G = GRID, near = distanceTo(t => t.building || t
       const score = Math.min(near(i, j) / G, 4) - edge - .25 * Math.hypot(i - c[0], j - c[1]) / G; if (score > bs) { bs = score; best = [i, j]; } }
     out[code] = best; }
   for (const tw of TOWNS) { let best = null, bs = -1e9;
-    for (let i = tw.c[0] - 6 * G; i <= tw.c[0] + 6 * G; i++) for (let j = tw.c[1] - 6 * G; j <= tw.c[1] + 6 * G; j++) { const t = tiles[i]?.[j]; if (!t?.land || t.building) continue;
-      const score = nearB(i, j) / G - .4 * Math.hypot(i - tw.c[0], j - tw.c[1]) / G; if (score > bs) { bs = score; best = [i, j]; } }
+    for (let i = tw.c[0] - tw.r - 3; i <= tw.c[0] + tw.r + 3; i++) for (let j = tw.c[1] - tw.r - 3; j <= tw.c[1] + tw.r + 3; j++) { const t = tiles[i]?.[j]; if (!t?.land || t.building) continue;
+      const score = Math.min(nearB(i, j), 1.5) - .5 * Math.hypot(i - tw.c[0], j - tw.c[1]); if (score > bs) { bs = score; best = [i, j]; } }
     tw.label = best; }
   return out; })();
 
@@ -334,10 +334,11 @@ function paintWorld(g, box, detail) {
   // country borders: dashed line along tile edges where the country changes on land
   g.strokeStyle = "#d94a4a"; g.lineWidth = 2; g.setLineDash([5, 4]);
   const T = (ri, rj) => { const [i, j] = RI(ri, rj); return tiles[i][j]; };
+  const cw = (ri, rj) => { const [x, y] = iso(ri, rj), [i, j] = RI(ri, rj); return [x + OX, y + OY - heightAt(i, j) * HU]; };   // a corner, on the ground
   for (let i = 0; i < RW() - 1; i++) for (let j = 0; j < RH(); j++) { const a = T(i, j), b = T(i + 1, j);
-    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); if (!vis(x + OX, y + OY, TW)) continue; g.beginPath(); g.moveTo(x + OX, y + OY - TH / 2 + TH); g.lineTo(x + OX + TW / 2, y + OY); g.stroke(); } }
+    if (a.land && b.land && a.country !== b.country) { const p1 = cw(i + .5, j + .5), p2 = cw(i + .5, j - .5); if (!vis(p1[0], p1[1], TW)) continue; g.beginPath(); g.moveTo(...p1); g.lineTo(...p2); g.stroke(); } }
   for (let i = 0; i < RW(); i++) for (let j = 0; j < RH() - 1; j++) { const a = T(i, j), b = T(i, j + 1);
-    if (a.land && b.land && a.country !== b.country) { const [x, y] = iso(i, j); if (!vis(x + OX, y + OY, TW)) continue; g.beginPath(); g.moveTo(x + OX, y + OY + TH / 2); g.lineTo(x + OX - TW / 2, y + OY); g.stroke(); } }
+    if (a.land && b.land && a.country !== b.country) { const p1 = cw(i + .5, j + .5), p2 = cw(i - .5, j + .5); if (!vis(p1[0], p1[1], TW)) continue; g.beginPath(); g.moveTo(...p1); g.lineTo(...p2); g.stroke(); } }
   g.setLineDash([]);
 }
 // ---- building kit: walls with windows, roofs and details, all on the isometric grid
@@ -844,7 +845,7 @@ function showCard(p) {
 function select(p, center) { selected = p; showCard(p);
   history.replaceState(null, "", p ? "#" + p.id : location.pathname);
   for (const b of list.querySelectorAll(".party")) b.setAttribute("aria-current", b._p === p ? "true" : "false");
-  if (p && center) { const r = cv.getBoundingClientRect(); const [wx, wy] = tileWorld(...p.at); view.s = Math.max(view.s, .9); view.x = r.width / 2 - wx * view.s; view.y = r.height / 2 - wy * view.s; }
+  if (p && center) { const r = cv.getBoundingClientRect(); const [wx, wy] = tileWorld(...p.at); view.s = Math.max(view.s, 1.6); view.x = r.width / 2 - wx * view.s; view.y = r.height / 2 - wy * view.s; }
   redraw(); }
 for (const code of ["XU", "XB", "XL"]) { const h = document.createElement("h3"); h.textContent = `${COUNTRIES[code].name} · ${code}`; list.appendChild(h);
   for (const p of P.filter(p => p.c === code).sort((a, b) => (parseInt(a.n) || 99) - (parseInt(b.n) || 99))) {

@@ -1,11 +1,13 @@
 """Top-down map of the UBL example world, refined from the 3D tile map (tools/world_model.py).
 
-The 3D map has 256 x 192 squares of 3.5 km (world_model.GRID = 4 squares per 14 km); the noise that shapes
-it is sampled in chart units of 14 km (world_model.chart), the squares of the first map. Level 0 is the noise
-the model uses; every next level halves the 14 km square and adds one finer octave of the same noise, so the
-coastline, the hills and the forests grow detail while every square keeps what the 3D map shows. Roads, rail,
-the river and the pipelines follow the model's own paths, with their corners cut (Chaikin); towns, buildings
-and airports stay on their squares.
+The 3D map has 256 x 192 squares of 3.5 km (world_model.GRID = 4 squares per 14 km). Level 0 is the model as it
+is: every square shows its terrain (land, sea, river, forest, field, rock) and the ground has the model's height
+("v", a height per square corner in levels of world_model.LEVEL_M metres). Every next level halves the 14 km
+square and adds one finer octave of the model's own noise, which bends the edges between the squares' terrains
+(the coast, the forest edges, the fields) into natural lines, so that every square keeps what the 3D map shows.
+The relief is shaded, and the land tinted by height, from the model's height alone (the noise only adds a little
+texture). Roads, rail, the river and the pipelines follow the model's own paths, with their corners cut (Chaikin);
+towns, buildings and airports stay on their squares.
 
 Usage (from the repository root): python3 tools/world_model.py model.json, then
   python3 -I analysis/world-position/refine_map.py model.json world/map.json out.png 5 6 roadmap   (road-map style)
@@ -13,6 +15,7 @@ Usage (from the repository root): python3 tools/world_model.py model.json, then
 (the fifth argument is the number of pixels per 3.5 km square)
 """
 import json, math, sys
+import numpy as np
 sys.path.insert(0, "tools")
 import world_model as wm
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -29,114 +32,132 @@ KM = wm.KM                                        # km per square
 C = wm.chart                                      # square -> chart units (14 km)
 
 river = next(r for r in WORLD["routes"] if r["mode"] == "river")
-line = lambda j: (21.5 + 1.6 * math.sin(C(j) / 4.2)) * G           # the land border, in squares (as in the model)
-west_end = math.floor(min(line(j) for j in range(H)))
-def river_j(i):
-    pts = river["pts"]
-    for (ax, ay), (bx, by) in zip(pts, pts[1:]):
-        if ax <= i <= bx and ax < bx:
-            return ay + (by - ay) * (i - ax) / (bx - ax)
-    return pts[-1][1] if i > pts[-1][0] else None
-def south_of_river(i, j):
-    rj = river_j(i) if i >= west_end else None
-    return rj is not None and j > rj
+V = np.array(M["model"]["v"], dtype=np.float32)    # corner heights in levels, [W + 1][H + 1]
+LEVEL_M = M["model"].get("level_m", wm.LEVEL_M)
+KIND = {"s": 0, "w": 1, "g": 2, "f": 3, "r": 4, "d": 5}
+COUNTRY = {None: 0, "XU": 1, "XB": 2, "XL": 3}
+K = np.array([[KIND[T[i][j]["k"]] if not T[i][j].get("es") else 0 for j in range(H)] for i in range(W)], dtype=np.int8)
+CTY = np.array([[COUNTRY[T[i][j]["c"]] for j in range(H)] for i in range(W)], dtype=np.int8)
 
-def detail(x, y, levels):
-    """The finer octaves added level by level: each halves the square and the amplitude (x, y in chart units)."""
-    d, amp = 0.0, 0.10
+# ---------------------------------------------------------------- the model's noise, on arrays
+def np_hsh(x, y):
+    h = (x.astype(np.int64) * 374761393 + y.astype(np.int64) * 668265263) & 0xFFFFFFFF
+    h = ((h ^ (h >> 13)) * 1274126177) & 0xFFFFFFFF
+    return ((h ^ (h >> 16)) & 0xFFFFFFFF) / 4294967295
+
+def np_smooth(x, y):
+    xi, yi = np.floor(x), np.floor(y)
+    xf, yf = x - xi, y - yi
+    a, b, c, d = np_hsh(xi, yi), np_hsh(xi + 1, yi), np_hsh(xi, yi + 1), np_hsh(xi + 1, yi + 1)
+    u, v = xf * xf * (3 - 2 * xf), yf * yf * (3 - 2 * yf)
+    return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v
+
+def detail(x, y, levels, seed=0.0):
+    """The finer octaves added level by level (x, y in chart units of 14 km): each halves the square and the
+    amplitude."""
+    d, amp = np.zeros_like(x), 0.10
     for k in range(1, levels + 1):
         f = 2 ** k
-        d += (wm.smooth(x * f + 17.3 * k, y * f - 9.1 * k) - .5) * amp
+        d += (np_smooth(x * f + 17.3 * k + seed, y * f - 9.1 * k - seed) - .5) * amp
         amp /= 2
     return d
 
-def sample(x, y, levels):
-    """Land, country, terrain and height at a point in squares (square centres at integers)."""
-    sx, sy = x, y
-    x, y = C(x), C(y)                             # chart units from here on
-    n = wm.noise(x, y)
-    nd = n + detail(x, y, levels) * (1 if levels else 0)
-    main = ((x - 21.5) / 19.5) ** 2 + ((y - 24.5) / 20) ** 2 < 1 - (nd - .5) * .55
-    isle = ((x - 52.5) / 8.2) ** 2 + ((y - 21.5) / 11.5) ** 2 < 1 - (nd - .5) * .5
-    if not (main or isle):
-        return None
-    c = "XL" if isle else ("XU" if (sx < (9999 if south_of_river(sx, sy) else line(sy))) else "XB")
-    k = "g"
-    taper = max(0.0, x - 16.5) * .07 + max(0.0, y - 14.5) * .07   # the model's box x<17, y<15, faded out
-    if c == "XU" and nd - taper > .42:
-        k = "r"
-    elif nd > .62:
-        k = "f"
-    elif c == "XB" and nd < .33 and 24 < x < 32:
-        k = "d"
-    for f in WORLD.get("forests", []):
-        if k in ("g", "d") and math.hypot(sx - f["c"][0], sy - f["c"][1]) <= f["r"] + (wm.noise(x * 3, y * 3) - .3) * G:
-            k = "f"
-    for f in WORLD.get("fields", []):
-        if k == "g" and math.hypot(sx - f["c"][0], sy - f["c"][1]) <= f["r"] + ((wm.noise(x * 2, y * 2) - .5) * 1.6 + detail(x, y, levels) * 4) * G:
-            k = "d"
-    h = max(0.0, nd - .30) * 1.2 + (max(0.0, nd - taper - .40) * 3.0 if c == "XU" else 0)
-    return c, k, h
+def raster(levels, px, rows=None):
+    """The terrain at px pixels per square: kind, country, height (metres) and hill shade (0..1, light from the
+    north-west) per pixel. The kind and the country are the model's squares, looked up at a position the finer
+    octaves bend by up to half a square; the height is the model's corner heights, interpolated, with a little
+    texture."""
+    w, h = W * px, H * px
+    X = (np.arange(w, dtype=np.float32) + .5) / px - .5
+    Y = (np.arange(h, dtype=np.float32) + .5) / px - .5
+    xx, yy = np.meshgrid(X, Y, indexing="ij")                      # [w][h], in squares
+    cx, cy = xx / G, yy / G                                         # chart units
+    if levels:
+        wx = detail(cx, cy, levels, 3.3) * 4.5 * G                  # about half a square at most
+        wy = detail(cx, cy, levels, 8.1) * 4.5 * G
+    else:
+        wx = wy = 0
+    ti = np.clip(np.rint(xx + wx), 0, W - 1).astype(np.int32)
+    tj = np.clip(np.rint(yy + wy), 0, H - 1).astype(np.int32)
+    kind, cty = K[ti, tj], CTY[ti, tj]
+    vx, vy = np.clip(xx + .5, 0, W - 1e-3), np.clip(yy + .5, 0, H - 1e-3)
+    i0, j0 = vx.astype(np.int32), vy.astype(np.int32)
+    u, v = vx - i0, vy - j0
+    elev = (V[i0, j0] * (1 - u) * (1 - v) + V[i0 + 1, j0] * u * (1 - v) + V[i0, j0 + 1] * (1 - u) * v
+            + V[i0 + 1, j0 + 1] * u * v) * LEVEL_M
+    if levels:
+        elev = elev + detail(cx, cy, levels, 5.7) * (40 + elev * .15)
+    elev = np.where(kind == 0, 0, np.maximum(elev, 0))
+    # the model's heights come in whole levels: smooth the steps away (three box blurs of about half a square,
+    # close to a Gaussian) before the hills are shaded
+    r = max(1, int(px * .6))
+    for _ in range(3):
+        for ax in (0, 1):
+            c = np.cumsum(np.pad(elev, [(r + 1, r) if a == ax else (0, 0) for a in (0, 1)], mode="edge"), axis=ax)
+            elev = (np.take(c, range(2 * r + 1, c.shape[ax]), axis=ax) - np.take(c, range(0, c.shape[ax] - 2 * r - 1), axis=ax)) / (2 * r + 1)
+    elev = np.where(kind == 0, 0, elev)
+    m_per_px = KM * 1000 / px
+    gx, gy = np.gradient(elev, m_per_px)
+    exag = 6.0                                                      # vertical exaggeration of the shading
+    nx, ny, nz = -gx * exag, -gy * exag, np.ones_like(gx)
+    norm = np.sqrt(nx * nx + ny * ny + nz * nz)
+    lx, ly, lz = -.5, -.5, .707                                     # light from the north-west, 45 degrees up
+    shade = np.clip((nx * lx + ny * ly + nz * lz) / norm, 0, 1)
+    return kind, cty, elev, shade
 
-def coast_dist(x, y, levels):
-    x, y = C(x), C(y)
-    n = wm.noise(x, y) + detail(x, y, levels) * (1 if levels else 0)
-    a = 1 - (n - .5) * .55 - (((x - 21.5) / 19.5) ** 2 + ((y - 24.5) / 20) ** 2)
-    b = 1 - (n - .5) * .5 - (((x - 52.5) / 8.2) ** 2 + ((y - 21.5) / 11.5) ** 2)
-    return max(a, b)
+HYPSO = [(0, (232, 238, 222)), (150, (238, 238, 220)), (400, (236, 230, 208)), (700, (226, 214, 190)),
+         (1000, (212, 202, 186)), (1300, (236, 234, 230))]
 
-LAND = {"g": (204, 220, 170), "f": (128, 171, 112), "r": (196, 182, 150), "d": (226, 214, 150)}
-TINT = {"XU": (0, 6, -6), "XB": (6, 2, -8), "XL": (10, 0, -10)}
+def tint(elev):
+    """The land's colour by its height (hypsometric tint, light and soft as on a road map)."""
+    out = np.zeros(elev.shape + (3,), dtype=np.float32)
+    for (a, ca), (b, cb) in zip(HYPSO, HYPSO[1:]):
+        u = np.clip((elev - a) / (b - a), 0, 1)[..., None]
+        sel = ((elev >= a) & (elev < b)) | ((b == HYPSO[-1][0]) & (elev >= b))
+        out = np.where(sel[..., None], np.array(ca) + (np.array(cb) - np.array(ca)) * u, out)
+    return out
+
+def colour(kind, cty, elev, shade, style):
+    """Pixels of the terrain in the road-map style ("flat") or the stronger 3D style ("3d")."""
+    land = kind != 0
+    if style == "flat":
+        img = tint(elev)
+        for k, col, a in ((3, (190, 222, 180), .75), (5, (236, 234, 210), .8), (4, (214, 208, 198), .7)):
+            sel = (kind == k)[..., None]
+            img = np.where(sel, img * (1 - a) + np.array(col) * a, img)
+        f = (1 + (shade - .707) * .9)[..., None]
+        water = np.array((170, 211, 223), dtype=np.float32)
+    else:
+        img = np.zeros(kind.shape + (3,), dtype=np.float32)
+        for k, col in ((2, (204, 220, 170)), (1, (204, 220, 170)), (3, (128, 171, 112)), (4, (196, 182, 150)), (5, (226, 214, 150))):
+            img = np.where((kind == k)[..., None], np.array(col, dtype=np.float32), img)
+        img = img * (1 - np.clip(elev / 1600, 0, .5))[..., None] + np.array((150, 130, 110)) * np.clip(elev / 1600, 0, .5)[..., None]
+        for c, t in ((1, (0, 6, -6)), (2, (6, 2, -8)), (3, (10, 0, -10))):
+            img = np.where((cty == c)[..., None], img + np.array(t), img)
+        f = (1 + (shade - .707) * 1.4)[..., None]
+        water = np.array((150, 190, 225), dtype=np.float32)
+    img = np.where(land[..., None], np.clip(img * f, 0, 255), water)
+    return Image.fromarray(np.transpose(img.astype(np.uint8), (1, 0, 2)), "RGB")
 
 def render(levels, px):
-    """Raster at px pixels per square; levels = how many times the 14 km square was halved for the noise."""
-    w, h = W * px, H * px
-    img = Image.new("RGB", (w, h))
-    pix = img.load()
-    heights = [[0.0] * h for _ in range(w)]
-    step = 1 / px
-    block = max(1, px * G // (2 ** levels)) if levels < 8 else 1   # pixels per refined square
-    cache = {}
-    for X in range(w):
-        for Y in range(h):
-            bx, by = X // block, Y // block
-            key = (bx, by)
-            if key not in cache:
-                x = (bx * block + block / 2) * step - .5
-                y = (by * block + block / 2) * step - .5
-                cache[key] = (sample(x, y, levels), coast_dist(x, y, levels))
-            s, cd = cache[key]
-            if s is None:
-                depth = min(1.0, max(0.0, -cd) * 3)
-                col = tuple(int(a + (b - a) * depth) for a, b in zip((178, 214, 236), (112, 160, 200)))
-                pix[X, Y] = col
-            else:
-                c, k, hh = s
-                base = LAND[k]
-                t = TINT[c]
-                pix[X, Y] = tuple(max(0, min(255, base[i] + t[i])) for i in range(3))
-                heights[X][Y] = hh
-    # hill shading from the height field (light from the north-west)
-    shade = Image.new("L", (w, h), 128)
-    sp = shade.load()
-    for X in range(1, w - 1):
-        for Y in range(1, h - 1):
-            if heights[X][Y] <= 0:
-                continue
-            gx = heights[X + 1][Y] - heights[X - 1][Y]
-            gy = heights[X][Y + 1] - heights[X][Y - 1]
-            v = 128 - (gx + gy) * px * G * 9
-            sp[X, Y] = int(max(60, min(200, v)))
-    shade = shade.filter(ImageFilter.GaussianBlur(px * G / 10))
-    img = Image.composite(img, img, shade)
-    out_img = Image.new("RGB", (w, h))
-    op, ip, shp = out_img.load(), img.load(), shade.load()
-    for X in range(w):
-        for Y in range(h):
-            f = shp[X, Y] / 128
-            r, g, b = ip[X, Y]
-            op[X, Y] = (min(255, int(r * f)), min(255, int(g * f)), min(255, int(b * f)))
-    return out_img
+    """Raster at px pixels per square in the 3D style; levels = how many times the 14 km square was halved."""
+    return colour(*raster(levels, px), "3d")
+
+def border_dots(img, px, levels, colour_, r):
+    """The land border, dotted where the country changes between neighbouring pixels (not to the island)."""
+    _, cty, _, _ = raster(levels, px)
+    ok = (cty > 0) & (cty < 3)
+    edge = np.zeros(cty.shape, bool)
+    edge[1:, :] |= (cty[1:, :] != cty[:-1, :]) & ok[1:, :] & ok[:-1, :]
+    edge[:, 1:] |= (cty[:, 1:] != cty[:, :-1]) & ok[:, 1:] & ok[:, :-1]
+    q = max(2, int(px * G / 6))                                     # one dot per q x q pixels
+    d = ImageDraw.Draw(img, "RGBA")
+    done = set()
+    for x, y in zip(*np.nonzero(edge)):
+        cell = (x // q, y // q)
+        if cell not in done:
+            done.add(cell)
+            d.ellipse([x - r, y - r, x + r, y + r], fill=colour_)
 
 def chaikin(pts, it=3):
     for _ in range(it):
@@ -252,28 +273,8 @@ def overlay(img, px, full=True):
     return d
 
 def border_line(img, px):
-    """The land border, traced where the country changes between neighbouring fine samples."""
-    d = ImageDraw.Draw(img, "RGBA")
-    U = px * G                                    # pixels per 14 km: widths and lettering
-    st = G / 4
-    y = 0.0
-    while y < H:
-        x = 0.0
-        prev = None
-        while x < W:
-            s = sample(x, y, 3)
-            c = s[0] if s else None
-            if prev and c and prev != c and "XL" not in (prev, c):
-                X, Y = (x + .5) * px, (y + .5) * px
-                if int((x + y) * 6) % 3:
-                    d.ellipse([X - 1.3, Y - 1.3, X + 1.3, Y + 1.3], fill=(170, 45, 40, 235))
-            prev = c if c else prev
-            x += st
-        y += st / 2
-    # and along the river where it is the border
-    for i in range(W):
-        for j in range(H):
-            pass
+    """The land border, traced where the country changes."""
+    border_dots(img, px, 3, (170, 45, 40, 235), 1.3)
 
 def labels(img, px):
     d = ImageDraw.Draw(img, "RGBA")
@@ -335,24 +336,7 @@ PAL = {"water": (170, 211, 223), "land": (242, 239, 233), "forest": (205, 230, 1
      "label": (60, 64, 67), "label_soft": (110, 110, 110), "water_label": (80, 130, 175)}
 
 def render_flat(levels, px):
-    w, h = W * px, H * px
-    img = Image.new("RGB", (w, h), PAL["water"])
-    pix = img.load()
-    block = max(1, px * G // (2 ** levels))
-    cache = {}
-    step = 1 / px
-    for X in range(w):
-        for Y in range(h):
-            key = (X // block, Y // block)
-            if key not in cache:
-                x = (key[0] * block + block / 2) * step - .5
-                y = (key[1] * block + block / 2) * step - .5
-                cache[key] = sample(x, y, levels)
-            s = cache[key]
-            if s is not None:
-                k = s[1]
-                pix[X, Y] = PAL["forest"] if k == "f" else PAL["field"] if k == "d" else PAL["hills"] if k == "r" else PAL["land"]
-    return img
+    return colour(*raster(levels, px), "flat")
 
 def overlay_flat(img, px):
     d = ImageDraw.Draw(img, "RGBA")
@@ -451,22 +435,8 @@ def overlay_flat(img, px):
         if r["mode"] == "road" and r["id"] in MAIN:
             xy = [P(p) for p in chaikin([tuple(p) for p in r["path"]], 3)]
             d.line(xy, fill=PAL["road_main"], width=max(3, U // 6), joint="curve")
-    # land border: dashed, traced between neighbouring fine samples of different countries
-    st = G / 6                                    # squares between samples
-    pts = []
-    y = 0.0
-    while y < H:
-        x, prev = 0.0, None
-        while x < W:
-            s = sample(x, y, 3); c = s[0] if s else None
-            if prev and c and prev != c and "XL" not in (prev, c):
-                pts.append(((x + .5 - st / 2) * px, (y + .5) * px))
-            prev = c if c else prev
-            x += st
-        y += st / 3
-    for k, (X, Y) in enumerate(pts):
-        if (k // 6) % 2 == 0:
-            d.ellipse([X - U * .045, Y - U * .045, X + U * .045, Y + U * .045], fill=PAL["border"])
+    # land border: dotted, traced where the country changes
+    border_dots(img, px, 3, PAL["border"], U * .045)
 
 def labels_flat(img, px):
     d = ImageDraw.Draw(img, "RGBA")
@@ -479,9 +449,22 @@ def labels_flat(img, px):
                stroke_width=max(2, U // 10) if halo else 0, stroke_fill=(255, 255, 255, 230))
     def dot(q, col, r=.22):
         x, y = P(q); d.ellipse([x - U * r, y - U * r, x + U * r, y + U * r], fill=col, outline=(255, 255, 255), width=max(1, U // 14))
+    # Lisavu is an inset: about 1,000 km east of Lumeport, drawn nearer (a frame and a note say so)
+    isle = [(i, j) for i in range(W) for j in range(H) if T[i][j]["c"] == "XL"]
+    x0, y0 = P((min(i for i, _ in isle) - 4, min(j for _, j in isle) - 7))
+    x1, y1 = P((W - 1.5, max(j for _, j in isle) + 4))
+    for k in range(int(x0), int(x1), int(U * .4)):
+        d.line([(k, y0), (min(x1, k + U * .2), y0)], fill=PAL["water_label"], width=max(1, U // 16))
+        d.line([(k, y1), (min(x1, k + U * .2), y1)], fill=PAL["water_label"], width=max(1, U // 16))
+    for k in range(int(y0), int(y1), int(U * .4)):
+        d.line([(x0, k), (x0, min(y1, k + U * .2))], fill=PAL["water_label"], width=max(1, U // 16))
+    d.text((x0 + U * .3, y0 + U * .3), "Lisavu, about 1,000 km east of Lumeport: drawn nearer, at the same scale",
+           font=F(False, U * .45), fill=PAL["water_label"], anchor="la")
     for t in WORLD["towns"]:
         dot(t["c"], (90, 90, 90), .28)
-        txt(t["c"], t["name"], F(True, U * .85), PAL["label"], dx=U * .45, dy=-U * .7)
+        right = t["c"][0] > W - 40                                  # near the right edge: the name on the left
+        txt(t["c"], t["name"], F(True, U * .85), PAL["label"], dx=-U * .45 if right else U * .45, dy=-U * .7,
+            anchor="rm" if right else "lm")
     for l in WORLD["localities"]:
         dot(l["c"], (120, 120, 120), .18)
         txt(l["c"], l["name"], F(False, U * .62), PAL["label"], dx=U * .35, dy=-U * .5)
@@ -493,17 +476,18 @@ def labels_flat(img, px):
             b = T[i][j].get("b")
             if b in POI:
                 where.setdefault(b, []).append((i, j))
+    PLACE = {"16-xb": (.5, .7, "lm"), "17-xb": (-.5, -.1, "rm"), "16-xl": (-.4, 1.1, "rm"), "17-xl": (-.5, -.5, "rm")}
     for b, sq in where.items():
         q = (sum(a for a, _ in sq) / len(sq), sum(c for _, c in sq) / len(sq))
         col = (66, 133, 244) if b.startswith("16") else (120, 120, 140)
         dot(q, col, .3)
-        txt(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else PAL["label_soft"], dx=U * .5, dy=U * .6)
+        dx, dy, anchor = PLACE[b]
+        txt(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else PAL["label_soft"], dx=U * dx, dy=U * dy, anchor=anchor)
     sp = lambda t: " ".join(t)
     txt((6 * G, 31 * G), sp("URVANIA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
     txt((29 * G, 15 * G), sp("BAYVARRA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
     txt((48 * G, 35 * G), sp("LISAVU"), F(False, U * 1.0), (125, 125, 125, 255), anchor="lm")
     txt((40 * G, 42 * G), "Atlantic Ocean", F(False, U * .75), PAL["water_label"], anchor="lm", halo=False)
-    txt((44 * G, 9 * G), "Lisavu lies about 1,000 km east; drawn nearer", F(False, U * .45), PAL["water_label"], anchor="lm", halo=False)
     # scale bar
     x0, y0 = U * 2.2, img.size[1] - U * 1.6
     L = 100 / KM * px
