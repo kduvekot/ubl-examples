@@ -34,8 +34,8 @@ The direct debit for the settlement bill's balance is returned unpaid; the utili
   Why the bill is unpaid.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the unpaid bill; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `LineCountNumeric` = **2**  
-  The bill and the fee.
+- `LineCountNumeric` = **3**  
+  The bill, the fee and the interest.
 
 ### Reminder Period
 
@@ -265,9 +265,15 @@ Inside `PaymentMeans`:
 Inside `PaymentTerms`:
 
 - `Note` = **Please pay within ten days by credit transfer; the next collection will be by direct debit again.**  
-  What the household is asked to do. No interest is charged: the Trade Accord's utility term says nothing on late payment, and Bayvarra has no statutory rate (O148); the company charges only the bank's fee (utilities/10#F9).
+  What the household is asked to do. The Trade Accord's utility term says nothing on late payment, so Bayvarra's statutory interest applies (D22, O148), beside the bank's fee for the returned debit (utilities/10#F9).
 - `PaymentDueDate` = **2026-05-11**  
   Ten days after the reminder.
+- `PenaltyInterestRate/InterestRatePercent` = **7**  
+  Bayvarra's statutory interest on late payment, one federal rate.
+- `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
+- `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
+  Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
 ### Tax Total
 
@@ -275,14 +281,14 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   No sales tax on a reminder fee.
-- `TaxSubtotal/TaxableAmount` = **5.00** (currencyID `XBL`)  
-  The fee.
+- `TaxSubtotal/TaxableAmount` = **5.22** (currencyID `XBL`)  
+  The fee and the interest.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax: the fee is outside the scope of the sales tax.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A fee for a returned direct debit is compensation, not a supply: outside the scope of the sales tax. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Fee for a returned direct debit, outside the scope of the sales tax**  
-  Why no tax: the same charge as the fee line (utilities/10#F8).
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Fee for a returned direct debit and interest on late payment, outside the scope of the sales tax**  
+  Why no tax: the same charges as the lines (utilities/10#F8).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -290,10 +296,10 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **146.20** (currencyID `XBL`)  
-  The bill and the reminder fee.
-- `PayableAmount` = **146.20** (currencyID `XBL`)  
-  The amount now due: the whole bill and the fee.
+- `LineExtensionAmount` = **146.42** (currencyID `XBL`)  
+  The bill, the fee and the interest.
+- `PayableAmount` = **146.42** (currencyID `XBL`)  
+  The amount now due: the balance, the fee and the interest.
 
 ### Reminder Line
 
@@ -325,6 +331,18 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **5.00** (currencyID `XBL`)  
   The fee for a returned direct debit, as the terms set.
+- `ID` = **3**  
+  The interest on late payment.
+- `Note` = **7 % a year for 8 days on 141.20.**  
+  How it is counted.
+- `UUID` = **9895ebe3-caab-593a-a4cd-1474e2872144**  
+  A universally unique identifier of the line, derived from the document and the line number.
+- `DebitLineAmount` = **0.22** (currencyID `XBL`)  
+  141.20 × 7 % × 8/365, simple interest.
+- `ReminderPeriod/StartDate` = **2026-04-24**  
+  From the day after the due date.
+- `ReminderPeriod/EndDate` = **2026-05-01**  
+  To the reminder.
 
 ## The document
 
@@ -343,7 +361,7 @@ Inside `ReminderLine`:
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:ReminderPeriod>
     <cbc:StartDate>2026-04-23</cbc:StartDate>
     <cbc:EndDate>2026-05-01</cbc:EndDate>
@@ -533,15 +551,20 @@ Inside `ReminderLine`:
   <cac:PaymentTerms>
     <cbc:Note>Please pay within ten days by credit transfer; the next collection will be by direct debit again.</cbc:Note>
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">5.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">5.22</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReason>Fee for a returned direct debit, outside the scope of the sales tax</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Fee for a returned direct debit and interest on late payment, outside the scope of the sales tax</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -549,8 +572,8 @@ Inside `ReminderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">146.20</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">146.20</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">146.42</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">146.42</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
@@ -574,6 +597,16 @@ Inside `ReminderLine`:
     <cbc:Note>The fee for the returned direct debit.</cbc:Note>
     <cbc:UUID>d00e70a0-d7c3-5fb5-ac47-8f037a876e63</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
+  </cac:ReminderLine>
+  <cac:ReminderLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>7 % a year for 8 days on 141.20.</cbc:Note>
+    <cbc:UUID>9895ebe3-caab-593a-a4cd-1474e2872144</cbc:UUID>
+    <cbc:DebitLineAmount currencyID="XBL">0.22</cbc:DebitLineAmount>
+    <cac:ReminderPeriod>
+      <cbc:StartDate>2026-04-24</cbc:StartDate>
+      <cbc:EndDate>2026-05-01</cbc:EndDate>
+    </cac:ReminderPeriod>
   </cac:ReminderLine>
 </Reminder>
 ```

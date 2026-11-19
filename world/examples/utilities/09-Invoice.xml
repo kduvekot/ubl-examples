@@ -231,6 +231,11 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>21 days net from the bill. Collected by direct debit on that day.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
     <cbc:ID>CSW-OA-097315-2526</cbc:ID>

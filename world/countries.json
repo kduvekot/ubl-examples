@@ -423,6 +423,11 @@
     "cash_rounding": {
      "step": "0.05",
      "note": "The smallest coin of the lume is 5 cents: a cash payment is rounded to 0.05; a card payment is not."
+    },
+    "statutory_interest": {
+     "percent": "7",
+     "basis": "ANN",
+     "note": "Bayvarra's statutory interest on late payment, one federal rate under the federal commercial law, which applies wherever neither a contract nor the seller's terms say anything on late payment (D22, O148)."
     }
    },
    "phone_plan": {
@@ -675,7 +680,12 @@
       "RTGS"
      ]
     },
-    "note": "Island practice: longer terms, simple interest on late payment."
+    "note": "Island practice: longer terms, simple interest on late payment.",
+    "statutory_interest": {
+     "percent": "6",
+     "basis": "ANN",
+     "note": "Lisavu's statutory interest on late payment, which applies wherever neither a contract nor the seller's terms say anything on late payment (D22, O148)."
+    }
    },
    "cotton": {
     "fund_levy_percent": "1",

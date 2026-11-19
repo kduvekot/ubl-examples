@@ -4248,6 +4248,12 @@ def utilities(n, doc):
     if doc["doc"] == "Reminder":
         key, cur = bill_key(doc), "XBL"
         due = f.numbers[f"invoice-{key}-amount"]
+        # Bayvarra's statutory interest, as neither the Accord's utility term nor the bill says anything on late
+        # payment (D22's third layer, O148): simple, per day from the day after the due date to the reminder
+        rate_ = WORLD["countries"]["XB"]["payment"]["statutory_interest"]
+        days = (datetime.date.fromisoformat(f.date(30)) - datetime.date.fromisoformat(f.date(22))).days
+        interest = money(due * Decimal(rate_["percent"]) / 100 * days / 365, cur)
+        fee = Decimal("5.00")
         return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
                 "IssueDate": V(f.date(30), "Sent a week after the due date passed without payment."),
                 "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
@@ -4257,7 +4263,7 @@ def utilities(n, doc):
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the unpaid bill"),
                 "ReminderPeriod": {"StartDate": V(f.date(22), "Overdue from the failed collection."),
                                    "EndDate": V(f.date(30), "Until the reminder.")},
-                "LineCountNumeric": V("2", "The bill and the fee."),
+                "LineCountNumeric": V("3", "The bill, the fee and the interest."),
                 "AdditionalDocumentReference": {"ID": V("BLUM-RTN-26-04-0193", "The bank's notice that the direct "
                                                                                "debit was returned."),
                                                 "DocumentTypeCode": V("RETURNNOTICE", "What the document is."),
@@ -4267,22 +4273,30 @@ def utilities(n, doc):
                                                 "IssuerParty": party("25-xb", short=True)},
                 "PayeeParty": party("34-xb", short=True),
                 "PaymentTerms": {"Note": V("Please pay within ten days by credit transfer; the next collection will "
-                                           "be by direct debit again.", "What the household is asked to do. No "
-                                           "interest is charged: the Trade Accord's utility term says nothing on "
-                                           "late payment, and Bayvarra has no statutory rate (O148); the company "
-                                           "charges only the bank's fee (utilities/10#F9)."),
-                                 "PaymentDueDate": V(f.date(40), "Ten days after the reminder.")},
+                                           "be by direct debit again.", "What the household is asked to do. The "
+                                           "Trade Accord's utility term says nothing on late payment, so "
+                                           "Bayvarra's statutory interest applies (D22, O148), beside the bank's "
+                                           "fee for the returned debit (utilities/10#F9)."),
+                                 "PaymentDueDate": V(f.date(40), "Ten days after the reminder."),
+                                 "PenaltyInterestRate": {"InterestRatePercent": V(rate_["percent"], "Bayvarra's "
+                                                                                  "statutory interest on late "
+                                                                                  "payment, one federal rate."),
+                                                         "TimeBasisCode": V(rate_["basis"], "A yearly rate."),
+                                                         "CalculationMethodCode": V("SIMPLE", "Simple interest, per "
+                                                                                              "day late.")}},
                 "TaxTotal": {"TaxAmount": amount(0, cur, "No sales tax on a reminder fee."),
-                             "TaxSubtotal": {"TaxableAmount": amount(Decimal("5.00"), cur, "The fee."),
+                             "TaxSubtotal": {"TaxableAmount": amount(fee + interest, cur, "The fee and the "
+                                                                                          "interest."),
                                              "TaxAmount": amount(0, cur, "No tax: the fee is outside the scope "
                                                                          "of the sales tax."),
                                              "TaxCategory": {"ID": V("O", "A fee for a returned direct debit is "
                                                                           "compensation, not a supply: outside the "
                                                                           "scope of the sales tax."),
-                                                             "TaxExemptionReason": V("Fee for a returned direct debit, "
+                                                             "TaxExemptionReason": V("Fee for a returned direct debit "
+                                                                                     "and interest on late payment, "
                                                                                      "outside the scope of the sales "
                                                                                      "tax", "Why no tax: the same "
-                                                                                     "charge as the fee line "
+                                                                                     "charges as the lines "
                                                                                      "(utilities/10#F8)."),
                                                              "TaxScheme": {"ID": V("STT", "UN/EDIFACT 5153 code of "
                                                                                          "the state sales tax.")}}}},
@@ -4293,10 +4307,12 @@ def utilities(n, doc):
                                                 "(utilities/10#F7)."),
                                  "PayeeFinancialAccount": kit.account(doc["from"], "The utility's account, where the "
                                                                                    "overdue amount is to be paid.")},
-                "LegalMonetaryTotal": {"LineExtensionAmount": amount(due + Decimal("5.00"), cur, "The bill and the "
-                                                                                                 "reminder fee."),
-                                       "PayableAmount": amount(due + Decimal("5.00"), cur, "The amount now due: the "
-                                                                                          "whole bill and the fee.")},
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(due + fee + interest, cur, "The bill, the "
+                                                                                                "fee and the "
+                                                                                                "interest."),
+                                       "PayableAmount": amount(due + fee + interest, cur, "The amount now due: the "
+                                                                                         "balance, the fee and the "
+                                                                                         "interest.")},
                 "ReminderLine": [{"ID": V("1", "The unpaid bill."),
                                  "DebitLineAmount": amount(due, cur, "The amount of the unpaid invoice."),
                                  "BalanceBroughtForwardIndicator": V("false", "Not a balance carried over: one "
@@ -4308,8 +4324,15 @@ def utilities(n, doc):
                                      "ID": V(f.numbers[f"invoice-{key}"], "The invoice not paid."),
                                      "IssueDate": V(f.numbers[f"invoice-{key}-date"], "Its issue date.")}}},
                                  {"ID": V("2", "The reminder fee."),
-                                  "DebitLineAmount": amount(Decimal("5.00"), cur, "The fee for a returned direct "
-                                                                                  "debit, as the terms set.")}]}
+                                  "DebitLineAmount": amount(fee, cur, "The fee for a returned direct "
+                                                                      "debit, as the terms set.")},
+                                 {"ID": V("3", "The interest on late payment."),
+                                  "Note": V(f"{rate_['percent']} % a year for {days} days on {due}.", "How it is "
+                                                                                                      "counted."),
+                                  "DebitLineAmount": amount(interest, cur, f"{due} × {rate_['percent']} % × {days}/365, "
+                                                                           "simple interest."),
+                                  "ReminderPeriod": {"StartDate": V(f.date(23), "From the day after the due date."),
+                                                     "EndDate": V(f.date(30), "To the reminder.")}}]}
     raise SystemExit(f"utilities scenario: no document {n} {doc['doc']}")
 
 

@@ -1159,7 +1159,9 @@ standard terms, which follow its country's practice: Urvania gives 2 %
 discount for payment within ten days of 30 days net; Bayvarra charges a
 surcharge per month late on 30 days net; the island gives 45 days. Where
 neither says anything about late payment, the statutory interest of the
-seller's country applies (in Urvania 8 % a year). Across a border the
+seller's country applies: in Urvania 8 % a year, in Bayvarra 7 %, one
+federal rate under its federal commercial law, and on the island 6 %; so a
+utility bill, whose Accord term says nothing on late payment, carries it. Across a border the
 seller's country's rule applies, unless the contract chooses another. So
 Valdara's framework agreement with its rail carrier sets 30 days net from
 the consignment note, and the carrier's invoices fall due from the

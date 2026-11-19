@@ -308,6 +308,12 @@ Inside `PaymentTerms`:
   The Trade Accord's utility term, and how the household pays: by the direct debit of its mandate.
 - `PaymentDueDate` = **2026-04-23**  
   The day the amount is due, as the terms count it.
+- `PenaltyInterestRate/InterestRatePercent` = **7**  
+  The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
+- `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
+- `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
+  Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
 ### Prepaid Payment
 
@@ -774,6 +780,11 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>21 days net from the bill. Collected by direct debit on that day.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
     <cbc:ID>CSW-OA-097315-2526</cbc:ID>

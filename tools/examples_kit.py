@@ -203,7 +203,9 @@ def terms_of(flow, seller, day, kind=None):
     return {"id": f"{PARTY[seller]['c']}-STD", "id_why": f"The standard terms of {c['name']}.", "text": pay["terms"],
             "why": pay["note"], "start": day, "start_why": "From the invoice date.", "due": day + pay["due_days"],
             "discount": pay.get("discount"), "surcharge": pay.get("penalty_surcharge"),
-            "interest": pay.get("penalty_interest") or pay.get("statutory_interest")}
+            # terms that set a surcharge for late payment say something on it: no statutory interest beside it (D22)
+            "interest": pay.get("penalty_interest") or (None if pay.get("penalty_surcharge")
+                                                        else pay.get("statutory_interest"))}
 
 
 def payment_terms(flow, seller, buyer, t, total, cur, number):
