@@ -95,7 +95,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C55 | Standard terms IDs that do not mean the same number of days everywhere | world rule | 8 | 8 | 4 | 8/0/0 | decided: D23 | tools/examples_kit.py, payment_terms() | ready 7 of 8; D30 1 |
 | C56 | The map scale: all coordinates inside 35 km, against distances and times of hours and days | world rule | 8 | 7 | 2 | 4/0/4 | decided: D19 | world/countries.json, tools/build_examples.py | waits: D44 4, O82 4 |
 | C57 | Duties, import taxes and Trade Accord preference stated nowhere | world rule | 6 | 5 | 4 | 1/2/3 | decided: D18 | tools/examples_scenarios.py, import_extras() | ready 4 of 6; D40 2 |
-| C58 | One sea voyage with four passage times | world rule | 4 | 3 | 1 | 2/1/1 | decided: D19 | tools/examples_scenarios.py, sea() | waits: O91 (rule settled in D30) |
+| C58 | One sea voyage with four passage times | world rule | 4 | 3 | 1 | 2/1/1 | decided: D19 | tools/examples_scenarios.py, sea() | done (C58 fixed; O91 closed by O152) |
 | C59 | Lisavu's capital: "Port Wrenfield" in English addresses, "Selanu" in every other English text | world rule | 1 | 1 | 0 | 0/1/0 | decided: D3 | world/countries.json, tools/build_examples.py | ready |
 | C60 | Default founding date 1996-01-01 and size classes that do not fit the parties | master data | 181 | 169 | 15 | 4/0/177 | decided: D4 | world/parties.json, tools/codelists.py | ready 165 of 181; D28 8, owner, not settled 1, O17 7 |
 | C61 | World item numbers that are valid GTIN-12s; Valdara's items under Lumeway's GS1 prefix | master data | 76 | 54 | 9 | 0/0/76 | decided: D5 | world/items.json, world/parties.json | ready 74 of 76; owner, not settled 2 |
