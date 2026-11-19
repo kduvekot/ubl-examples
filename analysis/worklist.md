@@ -1184,6 +1184,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: ready to fix now.
 - Findings: energy: 01#F8, 02#F5, 03#F5, 07#F6; mast: 01#F10, 02#F13, 03#F15, 04#F10, 05#F13
 
+- **Fixed (2026-11-19):** Selanu Telecom's industry class is ISIC 6120 (wireless telecommunications) in `world/parties.json`; Ferrano Energy and Ferrano Grid keep 3510. No example states the class at present (the party table, O88), so no example changed.
+
 ### C65 · Bale weight of about 227 kg as `PackSizeNumeric`
 - Kind: master data · Findings: 7 (High 0, Medium 0, Low 7) in 7 files, 1 flow · Needs decision: decided (D12, 2026-11-16)
 - Decided: option a). The pack elements come off the cotton item; the nominal bale weight stays in the item's description; the number of bales is the shipment's package count, with the packaging type "bale"; each bale's real weight is in the weight statement. `PackSizeNumeric` stays covered by the sawmill's bundle of 50 slats.
