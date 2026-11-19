@@ -1264,7 +1264,7 @@ The three countries apply the limit of ISO 11228-1 for manual handling: 25 kg fo
 ### The goods chain of the park bench (D21)
 
 - **Valdara makes to order, in lots.** A lot has a date, a quantity, a coating batch; every side frame has a serial number that rises with the day it was cast, and every casting day has its own melt number.
-- **Lumeway holds stock in Marrowdale.** It received 96 benches and 12 spare frames by road on 25 March and 192 benches by rail on 15 April, and sells from that stock from the stock that arrived: 24 benches to Brightmarket on 29 April, 96 benches and the 12 frames to Velumi on the island on 13 May. At the end of May it still holds 168 benches.
+- **Lumeway holds stock in Marrowdale.** It received 96 benches and 12 spare frames by road on 25 March and 192 benches by rail on 15 April, and sells from the stock that arrived: 24 benches to Brightmarket on 29 April, 96 benches and the 12 frames to Velumi on the island on 13 May. At the end of May it still holds 168 benches.
 - **An urgent order does not come from stock.** When Velumi asks for eight more frames on 11 May, Lumeway has none; Valdara casts them and they are passed through Lumeway's dispatch area to the aircraft, a cross-dock.
 - **Valdara also sells direct:** 40 benches to the public works department on 30 March, from a lot of their own, and two benches travel to a fair under a carnet.
 
