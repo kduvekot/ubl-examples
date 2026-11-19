@@ -303,7 +303,7 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **66983** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **67095** (currencyID `XUF`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.ferranogrid.example/terms**  
   The seller's general terms of payment.
@@ -324,11 +324,11 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **558192** (currencyID `XUF`)  
+- `TaxAmount` = **559122** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **2790960** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **2795610** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **558192** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **559122** (currencyID `XUF`)  
   20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -341,13 +341,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **2790960** (currencyID `XUF`)  
+- `LineExtensionAmount` = **2795610** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **2790960** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **2795610** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **3349152** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **3354732** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **3349152** (currencyID `XUF`)  
+- `PayableAmount` = **3354732** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -388,10 +388,10 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **2**  
   The line number.
-- `InvoicedQuantity` = **18600** (unitCode `KWH`)  
+- `InvoicedQuantity` = **19350** (unitCode `KWH`)  
   The warehouse's electricity connection, March.
-- `LineExtensionAmount` = **115320** (currencyID `XUF`)  
-  18600 × 6.2, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **119970** (currencyID `XUF`)  
+  19350 × 6.2, rounded to the minor unit of the currency.
 - `Delivery/DeliveryLocation/ID` = **FG-CP-4160-E1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Warehouse of Castrano Logistics**  
@@ -686,7 +686,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">66983</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">67095</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranogrid.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -700,10 +700,10 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">559122</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">2790960</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">2795610</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">559122</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -714,10 +714,10 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">2790960</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">2790960</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">3349152</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">3349152</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">2795610</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">2795610</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">3354732</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">3354732</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -753,8 +753,8 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KWH">19350</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">119970</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID>FG-CP-4160-E1</cbc:ID>

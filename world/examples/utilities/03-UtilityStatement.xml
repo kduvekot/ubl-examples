@@ -129,7 +129,7 @@
     <cbc:ConsumptionID>FG-CP-4160-E1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Warehouse of Castrano Logistics</cbc:Note>
-    <cbc:TotalMeteredQuantity unitCode="KWH">18600</cbc:TotalMeteredQuantity>
+    <cbc:TotalMeteredQuantity unitCode="KWH">19350</cbc:TotalMeteredQuantity>
     <cac:SubscriberParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
@@ -144,7 +144,7 @@
       <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
       <cbc:SubscriberType>Commercial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
-      <cbc:TotalDeliveredQuantity unitCode="KWH">18600</cbc:TotalDeliveredQuantity>
+      <cbc:TotalDeliveredQuantity unitCode="KWH">19350</cbc:TotalDeliveredQuantity>
       <cac:Address>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
@@ -166,21 +166,21 @@
         <cbc:MeterName>Warehouse meter</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
-        <cbc:TotalDeliveredQuantity unitCode="KWH">18600</cbc:TotalDeliveredQuantity>
+        <cbc:TotalDeliveredQuantity unitCode="KWH">19350</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
           <cbc:ID>FG-E-20523-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
-          <cbc:PreviousMeterQuantity unitCode="KWH">117250</cbc:PreviousMeterQuantity>
+          <cbc:PreviousMeterQuantity unitCode="KWH">116500</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
           <cbc:LatestMeterQuantity unitCode="KWH">135850</cbc:LatestMeterQuantity>
-          <cbc:PreviousMeterReadingMethod>Estimated: no access to the meter</cbc:PreviousMeterReadingMethod>
-          <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">ESTIMATE</cbc:PreviousMeterReadingMethodCode>
+          <cbc:PreviousMeterReadingMethod>Load profile: derived from the warehouse's load profile between the readings of 31 January and 31 March, in place of February's estimate of 117,250 kWh</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">PROFILE</cbc:PreviousMeterReadingMethodCode>
           <cbc:LatestMeterReadingMethod>Read by the meter reader</cbc:LatestMeterReadingMethod>
           <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">MANUAL</cbc:LatestMeterReadingMethodCode>
-          <cbc:MeterReadingComments>The previous reading was an estimate.</cbc:MeterReadingComments>
-          <cbc:DeliveredQuantity unitCode="KWH">18600</cbc:DeliveredQuantity>
+          <cbc:MeterReadingComments>The previous reading replaces February's estimate of 117,250 kWh: February used 16,450 kWh, not the 17,200 kWh billed, and the 750 kWh are credited.</cbc:MeterReadingComments>
+          <cbc:DeliveredQuantity unitCode="KWH">19350</cbc:DeliveredQuantity>
         </cac:MeterReading>
         <cac:MeterProperty>
           <cbc:Name>Accuracy class</cbc:Name>
@@ -203,9 +203,22 @@
       <cac:TaxTotal>
         <cbc:TaxAmount currencyID="XUF">11160</cbc:TaxAmount>
         <cac:TaxSubtotal>
-          <cbc:TaxAmount currencyID="XUF">11160</cbc:TaxAmount>
+          <cbc:TaxAmount currencyID="XUF">11610</cbc:TaxAmount>
           <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
           <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Name>Energy tax</cbc:Name>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+          <cbc:TaxAmount currencyID="XUF">-450</cbc:TaxAmount>
+          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+          <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+          <cbc:TierRange>February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier</cbc:TierRange>
           <cac:TaxCategory>
             <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
             <cbc:Name>Energy tax</cbc:Name>
@@ -235,8 +248,8 @@
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
           <cbc:Description>March consumption of Warehouse of Castrano Logistics.</cbc:Description>
-          <cbc:TotalConsumedQuantity unitCode="KWH">18600</cbc:TotalConsumedQuantity>
-          <cbc:BasicConsumedQuantity unitCode="KWH">18600</cbc:BasicConsumedQuantity>
+          <cbc:TotalConsumedQuantity unitCode="KWH">19350</cbc:TotalConsumedQuantity>
+          <cbc:BasicConsumedQuantity unitCode="KWH">19350</cbc:BasicConsumedQuantity>
           <cac:Period>
             <cbc:StartDate>2026-03-01</cbc:StartDate>
             <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -265,11 +278,11 @@
           </cac:ConsumptionHistory>
           <cac:ConsumptionHistory>
             <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
-            <cbc:Quantity unitCode="KWH">17200</cbc:Quantity>
-            <cbc:Amount currencyID="XUF">469560</cbc:Amount>
+            <cbc:Quantity unitCode="KWH">16450</cbc:Quantity>
+            <cbc:Amount currencyID="XUF">449085</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
             <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
+            <cbc:Description>Earlier month, corrected from the estimate of 17,200 kWh.</cbc:Description>
             <cac:Period>
               <cbc:StartDate>2026-02-01</cbc:StartDate>
               <cbc:EndDate>2026-02-28</cbc:EndDate>
@@ -285,17 +298,14 @@
           </cac:TaxScheme>
         </cac:EnergyTaxReport>
         <cac:ConsumptionAverage>
-          <cbc:AverageAmount currencyID="XUF">507780</cbc:AverageAmount>
+          <cbc:AverageAmount currencyID="XUF">528255</cbc:AverageAmount>
           <cbc:Description>The average over the last three months is 17900 kWh.</cbc:Description>
         </cac:ConsumptionAverage>
         <cac:EnergyWaterConsumptionCorrection>
           <cbc:CorrectionType>Estimate correction</cbc:CorrectionType>
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">EST</cbc:CorrectionTypeCode>
           <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
-          <cbc:Description>February's estimate of 17,200 kWh was 750 kWh too high, as the actual reading shows.</cbc:Description>
-          <cbc:CorrectionUnitAmount currencyID="XUF">27.3</cbc:CorrectionUnitAmount>
-          <cbc:ConsumptionEnergyQuantity unitCode="KWH">-750</cbc:ConsumptionEnergyQuantity>
-          <cbc:CorrectionAmount currencyID="XUF">-20475</cbc:CorrectionAmount>
+          <cbc:Description>February's reading was estimated at 117,250 kWh, as the meter could not be reached; March's reading puts it at 116,500 kWh. February used 16,450 kWh, not the 17,200 kWh billed: the 750 kWh are credited on line 4 of this bill.</cbc:Description>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
@@ -342,9 +352,9 @@
       <cac:ConsumptionLine>
         <cbc:ID>2</cbc:ID>
         <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">622728</cbc:TaxInclusiveLineExtensionAmount>
+        <cbc:InvoicedQuantity unitCode="KWH">19350</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XUF">528255</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">647838</cbc:TaxInclusiveLineExtensionAmount>
         <cac:Period>
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -355,7 +365,52 @@
           </cac:DeliveryLocation>
         </cac:Delivery>
         <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XUF">114948</cbc:TaxAmount>
+          <cbc:TaxAmount currencyID="XUF">119583</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:UtilityItem>
+          <cbc:ID>FE-KWH</cbc:ID>
+          <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
+          <cbc:SubscriberType>Electricity</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:SubscriberTypeCode>
+          <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+          <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Percent>20</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+          <cac:Contract>
+            <cbc:ID>FE-C-0047120</cbc:ID>
+          </cac:Contract>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+      <cac:ConsumptionLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>4</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="KWH">-750</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XUF">-20475</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">-25110</cbc:TaxInclusiveLineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-02-01</cbc:StartDate>
+          <cbc:EndDate>2026-02-28</cbc:EndDate>
+        </cac:Period>
+        <cac:Delivery>
+          <cac:DeliveryLocation>
+            <cbc:Description>The consumption point of the statement.</cbc:Description>
+          </cac:DeliveryLocation>
+        </cac:Delivery>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">-4635</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>FE-KWH</cbc:ID>

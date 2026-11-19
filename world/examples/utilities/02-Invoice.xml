@@ -14,7 +14,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Energy</cbc:AccountingCost>
-  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -255,13 +255,13 @@
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
       <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
-      <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
+      <cbc:TierRange>The first 50,000 kWh of the month's 432,150 kWh of electricity</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
         <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
-        <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
+        <cbc:TierRange>The first 50,000 kWh of the month's 432,150 kWh of electricity</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>
@@ -271,17 +271,37 @@
       </cac:TaxDueCountry>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxAmount currencyID="XUF">228840</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XUF">229290</cbc:TaxAmount>
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
       <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
-      <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
+      <cbc:TierRange>The other 382,150 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
         <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
-        <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cbc:TierRange>The other 382,150 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+      <cac:TaxDueCountry>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:TaxDueCountry>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxAmount currencyID="XUF">-450</cbc:TaxAmount>
+      <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
+      <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+      <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+      <cbc:TierRange>February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier</cbc:TierRange>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Name>Energy tax</cbc:Name>
+        <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+        <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+        <cbc:TierRange>February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>
@@ -357,8 +377,8 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KWH">19350</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">528255</cbc:LineExtensionAmount>
     <cbc:AccountingCostCode>7100</cbc:AccountingCostCode>
     <cbc:AccountingCost>Warehouse, Castrano Logistics</cbc:AccountingCost>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
@@ -443,6 +463,51 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">8.4</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">-750</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">-20475</cbc:LineExtensionAmount>
+    <cbc:AccountingCostCode>7100</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Warehouse, Castrano Logistics</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-02-01</cbc:StartDate>
+      <cbc:EndDate>2026-02-28</cbc:EndDate>
+      <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:PeriodDescriptionCode">MONTH</cbc:DescriptionCode>
+      <cbc:Description>February 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FG-E-20523</cbc:ID>
+      <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Description>Castrano Logistics warehouse, Conciaro</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
+    <cac:Item>
+      <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+      <cbc:Name languageID="qau">Zuktrek</cbc:Name>
+      <cbc:Name languageID="en-XU">Electricity</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FE-KWH</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

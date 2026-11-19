@@ -38,7 +38,7 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Energy**  
   The cost centre in words.
-- `LineCountNumeric` = **3**  
+- `LineCountNumeric` = **4**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
@@ -65,7 +65,7 @@ Inside `BillingReference`:
 - `InvoiceDocumentReference/IssueDate` = **2026-03-01**  
   Its issue date.
 - `BillingReferenceLine/ID` = **2**  
-  Its warehouse line, which the statement of this bill corrects; the difference follows on the April bill.
+  Its warehouse line, billed on the estimate: line 4 of this bill credits the 750 kWh it charged too much, as the warehouse's statement explains (utilities/02#F7).
 
 ### Purchase Reference
 
@@ -354,7 +354,7 @@ Inside `TaxTotal`:
   The tax is per kilowatt hour.
 - `TaxSubtotal/PerUnitAmount` = **1.2** (currencyID `XUF`)  
   The tax per kWh in this tier.
-- `TaxSubtotal/TierRange` = **The first 50,000 kWh of the month's 431,400 kWh of electricity**  
+- `TaxSubtotal/TierRange` = **The first 50,000 kWh of the month's 432,150 kWh of electricity**  
   The tier of the monthly consumption, and the electricity it applies to.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -364,21 +364,21 @@ Inside `TaxTotal`:
   Per kilowatt hour.
 - `TaxSubtotal/TaxCategory/PerUnitAmount` = **1.2** (currencyID `XUF`)  
   The rate per kWh.
-- `TaxSubtotal/TaxCategory/TierRange` = **The first 50,000 kWh of the month's 431,400 kWh of electricity**  
+- `TaxSubtotal/TaxCategory/TierRange` = **The first 50,000 kWh of the month's 432,150 kWh of electricity**  
   The tier.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Due in Urvania. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `TaxSubtotal/TaxAmount` = **228840** (currencyID `XUF`)  
-  381400 kWh at 0.6 ferra.
+- `TaxSubtotal/TaxAmount` = **229290** (currencyID `XUF`)  
+  382150 kWh at 0.6 ferra.
 - `TaxSubtotal/CalculationSequenceNumeric` = **1**  
   The energy tax is calculated first.
 - `TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
   The tax is per kilowatt hour.
 - `TaxSubtotal/PerUnitAmount` = **0.6** (currencyID `XUF`)  
   The tax per kWh in this tier.
-- `TaxSubtotal/TierRange` = **The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate**  
+- `TaxSubtotal/TierRange` = **The other 382,150 kWh of electricity above 50,000 kWh: the industrial rate**  
   The tier of the monthly consumption, and the electricity it applies to.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -388,7 +388,31 @@ Inside `TaxTotal`:
   Per kilowatt hour.
 - `TaxSubtotal/TaxCategory/PerUnitAmount` = **0.6** (currencyID `XUF`)  
   The rate per kWh.
-- `TaxSubtotal/TaxCategory/TierRange` = **The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate**  
+- `TaxSubtotal/TaxCategory/TierRange` = **The other 382,150 kWh of electricity above 50,000 kWh: the industrial rate**  
+  The tier.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Due in Urvania. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `TaxSubtotal/TaxAmount` = **-450** (currencyID `XUF`)  
+  -750 kWh at 0.6 ferra.
+- `TaxSubtotal/CalculationSequenceNumeric` = **1**  
+  The energy tax is calculated first.
+- `TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  The tax is per kilowatt hour.
+- `TaxSubtotal/PerUnitAmount` = **0.6** (currencyID `XUF`)  
+  The tax per kWh in this tier.
+- `TaxSubtotal/TierRange` = **February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier**  
+  The tier of the monthly consumption, and the electricity it applies to.
+- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Name` = **Energy tax**  
+  The tax in words.
+- `TaxSubtotal/TaxCategory/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  Per kilowatt hour.
+- `TaxSubtotal/TaxCategory/PerUnitAmount` = **0.6** (currencyID `XUF`)  
+  The rate per kWh.
+- `TaxSubtotal/TaxCategory/TierRange` = **February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier**  
   The tier.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
@@ -482,10 +506,10 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **2**  
   The line number.
-- `InvoicedQuantity` = **18600** (unitCode `KWH`)  
-  The warehouse's metered consumption in March; the manufacturer pays for its building.
-- `LineExtensionAmount` = **507780** (currencyID `XUF`)  
-  18600 × 27.3, rounded to the minor unit of the currency.
+- `InvoicedQuantity` = **19350** (unitCode `KWH`)  
+  The warehouse's metered consumption in March, from February's corrected reading; the manufacturer pays for its building.
+- `LineExtensionAmount` = **528255** (currencyID `XUF`)  
+  19350 × 27.3, rounded to the minor unit of the currency.
 - `AccountingCostCode` = **7100**  
   The manufacturer books the warehouse's power on its transport cost centre.
 - `AccountingCost` = **Warehouse, Castrano Logistics**  
@@ -578,6 +602,56 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KWH`)  
   The price is per one unit.
+- `ID` = **4**  
+  The line number.
+- `InvoicedQuantity` = **-750** (unitCode `KWH`)  
+  February's estimate corrected: line 2 of February's bill charged the warehouse 750 kWh it did not use, which are credited (O159).
+- `LineExtensionAmount` = **-20475** (currencyID `XUF`)  
+  -750 × 27.3, rounded to the minor unit of the currency.
+- `AccountingCostCode` = **7100**  
+  The manufacturer books the warehouse's power on its transport cost centre.
+- `AccountingCost` = **Warehouse, Castrano Logistics**  
+  In words.
+- `PaymentPurposeCode` = **ELEC** (listID `ISO 20022 ExternalPurpose1Code`)  
+  What the payment of this line is for, as an ISO 20022 purpose: an electricity bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: ELEC = ElectricityBill.
+- `InvoicePeriod/StartDate` = **2026-02-01**  
+  The month corrected: February.
+- `InvoicePeriod/EndDate` = **2026-02-28**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **MONTH** (listID `urn:ubl-examples:world:codelist:PeriodDescriptionCode`)  
+  A month's consumption. The code is from the Trade Accord's period description list: MONTH = Calendar month.
+- `InvoicePeriod/Description` = **February 2026**  
+  The period in words.
+- `PurchaseReference/ID` = **FG-E-20523**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Warehouse of Castrano Logistics**  
+  Where it is.
+- `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  
+  Where the power was used.
+- `Item/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
+- `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item electricity of Ferrano Energy (world/items.json).
+- `Item/Name` = **Zuktrek** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
+- `Item/Name` = **Electricity** (languageID `en-XU`)  
+  The item's name in English, the working language between the countries; item electricity of Ferrano Energy (world/items.json).
+- `Item/SellersItemIdentification/ID` = **FE-KWH**  
+  The seller's own item number; item electricity of Ferrano Energy (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **20**  
+  The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **27.3** (currencyID `XUF`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `KWH`)  
+  The price is per one unit.
 
 ## The document
 
@@ -598,7 +672,7 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Energy</cbc:AccountingCost>
-  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -839,13 +913,13 @@ Inside `InvoiceLine`:
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
       <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
-      <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
+      <cbc:TierRange>The first 50,000 kWh of the month's 432,150 kWh of electricity</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
         <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
-        <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
+        <cbc:TierRange>The first 50,000 kWh of the month's 432,150 kWh of electricity</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>
@@ -855,17 +929,37 @@ Inside `InvoiceLine`:
       </cac:TaxDueCountry>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxAmount currencyID="XUF">228840</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XUF">229290</cbc:TaxAmount>
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
       <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
-      <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
+      <cbc:TierRange>The other 382,150 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
         <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
-        <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cbc:TierRange>The other 382,150 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+      <cac:TaxDueCountry>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:TaxDueCountry>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxAmount currencyID="XUF">-450</cbc:TaxAmount>
+      <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
+      <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+      <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+      <cbc:TierRange>February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier</cbc:TierRange>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Name>Energy tax</cbc:Name>
+        <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+        <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+        <cbc:TierRange>February's estimate correction: 750 kWh of the warehouse credited at the rate February's bill charged on them, the upper tier</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>
@@ -941,8 +1035,8 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KWH">19350</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">528255</cbc:LineExtensionAmount>
     <cbc:AccountingCostCode>7100</cbc:AccountingCostCode>
     <cbc:AccountingCost>Warehouse, Castrano Logistics</cbc:AccountingCost>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
@@ -1027,6 +1121,51 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">8.4</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">-750</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">-20475</cbc:LineExtensionAmount>
+    <cbc:AccountingCostCode>7100</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Warehouse, Castrano Logistics</cbc:AccountingCost>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-02-01</cbc:StartDate>
+      <cbc:EndDate>2026-02-28</cbc:EndDate>
+      <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:PeriodDescriptionCode">MONTH</cbc:DescriptionCode>
+      <cbc:Description>February 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:PurchaseReference>
+      <cbc:ID>FG-E-20523</cbc:ID>
+      <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Description>Castrano Logistics warehouse, Conciaro</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
+    <cac:Item>
+      <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+      <cbc:Name languageID="qau">Zuktrek</cbc:Name>
+      <cbc:Name languageID="en-XU">Electricity</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FE-KWH</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

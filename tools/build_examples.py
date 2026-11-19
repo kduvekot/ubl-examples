@@ -2869,7 +2869,8 @@ def check_unit_ids(flow_id, roots):
 def check_utility_statements(flow_id, roots):
     """The statements of one bill add up to it, and the tax arithmetic of a tax per unit holds (worklist C94): every
     tax subtotal per unit taxes a whole quantity (amount / rate per unit); the energy tax of an invoice is the sum
-    of the energy tax its statements report, and its tiers tax exactly the quantity those statements meter; a
+    of the energy tax its statements report, and its tiers tax exactly the quantity those statements bill on their
+    consumption lines (an estimate correction's credit included, O159); a
     statement's consumption is payable at its line amount plus its taxes, and its consumption line likewise; an
     estimate correction is its unit amount times its quantity."""
     def num(e):
@@ -2913,9 +2914,10 @@ def check_utility_statements(flow_id, roots):
         stmts = [(n_, r) for n_, r in roots if etree.QName(r).localname == "UtilityStatement"
                  and r.findtext(f"{c}ParentDocumentReference/{b}ID") == inv_id]
         reported = sum(num(e) for _, r in stmts for e in r.iter(f"{b}TaxEnergyAmount"))
-        metered = sum(num(sc.find(f"{b}TotalMeteredQuantity")) for _, r in stmts
-                      for sc in r.findall(f"{c}SubscriberConsumption")
-                      if sc.find(f"{c}Consumption/{c}EnergyWaterSupply/{c}EnergyTaxReport") is not None)
+        metered = sum(num(cl.find(f"{b}InvoicedQuantity")) for _, r in stmts      # an estimate correction credits
+                      for sc in r.findall(f"{c}SubscriberConsumption")               # its kWh on a line of its own
+                      if sc.find(f"{c}Consumption/{c}EnergyWaterSupply/{c}EnergyTaxReport") is not None
+                      for cl in sc.iter(f"{c}ConsumptionLine"))
         excise = sum(num(st.find(f"{b}TaxAmount")) for st in tiers)
         taxed = sum(num(st.find(f"{b}TaxAmount")) / num(st.find(f"{b}PerUnitAmount")) for st in tiers)
         if reported != excise:
@@ -2923,7 +2925,7 @@ def check_utility_statements(flow_id, roots):
                              f"{reported}")
         if taxed != metered:
             raise SystemExit(f"world/examples/{flow_id}/{name}: the energy tax tiers tax {taxed}, but its statements "
-                             f"meter {metered} with energy tax")
+                             f"bill {metered} with energy tax")
 
 
 def check_packages(flow_id, roots):

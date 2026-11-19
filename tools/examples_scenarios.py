@@ -2939,20 +2939,30 @@ def levy(m3, who):
                                                                                               "bills it.")}}
 
 
+FEBRUARY = {"InvoicePeriod": {"StartDate": V("2026-02-01", "The month corrected: February."),
+                              "EndDate": V("2026-02-28", "Its last day."),
+                              "DescriptionCode": V("MONTH", "A month's consumption."),
+                              "Description": V("February 2026", "The period in words.")}}
+WAREHOUSE_LINE = {"AccountingCostCode": V("7100", "The manufacturer books the warehouse's power on its transport cost "
+                                                  "centre."),
+                  "AccountingCost": V("Warehouse, Castrano Logistics", "In words."),
+                  "Delivery": {"DeliveryLocation": {"Description": V("Castrano Logistics warehouse, Conciaro",
+                                                                     "Where the power was used.")}}}
 BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The factory's metered consumption in March.",
                     "line_extra": MARCH},
-                   {"item": "electricity", "qty": 18600, "invoice_why": "The warehouse's metered consumption in March; "
-                                                                        "the manufacturer pays for its building.",
-                    "line_extra": {**MARCH, "AccountingCostCode": V("7100", "The manufacturer books the warehouse's "
-                                                                            "power on its transport cost centre."),
-                                   "AccountingCost": V("Warehouse, Castrano Logistics", "In words."),
-                                   "Delivery": {"DeliveryLocation": {"Description": V(
-                                       "Castrano Logistics warehouse, Conciaro", "Where the power was used.")}}}},
+                   {"item": "electricity", "qty": 19350, "invoice_why": "The warehouse's metered consumption in March, "
+                                                                        "from February's corrected reading; the "
+                                                                        "manufacturer pays for its building.",
+                    "line_extra": {**MARCH, **WAREHOUSE_LINE}},
                    {"item": "gas", "qty": 61200, "invoice_why": "The gas of the coating ovens in March, as the grid "
                                                                "operator metered and converted it.",
                     "line_extra": {**MARCH, "Note": V("1,350 m³ at 4 bar, converted to 61,200 kWh by the grid "
                                                       "operator's metering report.", "How the quantity is "
-                                                                                     "found.")}}],
+                                                                                     "found.")}},
+                   {"item": "electricity", "qty": -750, "correction_of": 1,
+                    "invoice_why": "February's estimate corrected: line 2 of February's bill charged the warehouse "
+                                   "750 kWh it did not use, which are credited (O159).",
+                    "line_extra": {**FEBRUARY, **WAREHOUSE_LINE}}],
          "34-xb:26-xb": [{"item": "water", "qty": 86, "invoice_why": "The shop's metered consumption in March.",
                           "line_extra": MARCH}, levy(86, "shop")],
          "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March.",
@@ -2963,7 +2973,8 @@ KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
 UTILITY = {"Electricity": "ELEC", "Water": "WATER", "Telephone": "TEL", "Gas": "GAS"}   # UtilityType list
 METERS = {"33-xu": ["FE-C-0047120", ("FG-E-20388", "Factory, main connection"),
                     ("FG-E-20523", "Warehouse of Castrano Logistics"), ("FG-G-20417", "Factory, gas of the coating "
-                                                                                       "line")],
+                                                                                       "line"),
+                    ("FG-E-20523", "Warehouse of Castrano Logistics")],
           "34-xb:26-xb": ["CSW-C-260118", ("CSW-W-55102", "Shop, Lumeport"), None],
           "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57"), None],
           "35-xl": ["ST-C-1077", ("ST-L-BUS6", "Six business lines"), ("ST-D-0042", "Mobile data pool")]}
@@ -2975,7 +2986,8 @@ EXCISE = next(x for x in WORLD["countries"]["XU"]["tax"]["schemes"] if x["id"] =
 def excise_tiers():
     """Urvania's energy tax on the month's electricity of one customer: (kWh, rate per kWh, tier in words) per tier
     (world/countries.json). Gas carries no energy tax."""
-    kwh = sum(Decimal(str(r["qty"])) for r in BILLS["33-xu"] if r["item"] == "electricity")
+    kwh = sum(Decimal(str(r["qty"])) for r in BILLS["33-xu"] if r["item"] == "electricity" and
+              "correction_of" not in r)
     t1 = min(kwh, Decimal(EXCISE["tiers"][0]["up_to"]))
     return [(t1, Decimal(EXCISE["tiers"][0]["per_unit"]),
              f"The first {t1:,} kWh of the month's {kwh:,} kWh of electricity"),
@@ -2990,6 +3002,9 @@ def excise_shares():
     left = [[q, r] for q, r, _ in excise_tiers()]
     shares = []
     for row in BILLS["33-xu"]:
+        if "correction_of" in row:      # a correction of an earlier month: taxed at the rate that month charged
+            shares.append([(Decimal(str(row["qty"])), correction_rate(row))])
+            continue
         need, mine = Decimal(str(row["qty"])) if row["item"] == "electricity" else Decimal(0), []
         for t in left:
             take = min(need, t[0])
@@ -2999,6 +3014,20 @@ def excise_shares():
                 need -= take
         shares.append(mine)
     return shares
+
+
+def correction_rate(row):
+    """The energy tax rate of the kWh an estimate correction credits (O159): the rate the corrected month charged on
+    them. February's bill counted the lower tier on the main connection, which alone took more than the tier, so
+    the warehouse's kWh were all taxed at the upper rate."""
+    main = POINTS[("33-xu", "5-xu")]
+    assert Decimal(main["history"][-1][2]) >= Decimal(EXCISE["tiers"][0]["up_to"]) and row["correction_of"] != 0
+    return Decimal(EXCISE["tiers"][1]["per_unit"])
+
+
+def correction_tier(q, r):
+    return (f"February's estimate correction: {-q:,} kWh of the warehouse credited at the rate February's bill "
+            "charged on them, the upper tier")
 
 
 def excise_subtotal(q, r, what):
@@ -3026,11 +3055,15 @@ def energy_tax(f, out, key):
     lines = Decimal(out["LegalMonetaryTotal"]["LineExtensionAmount"].value)
     tiers = excise_tiers()
     excise = sum(money(q * r, "XUF") for q, r, _ in tiers)
+    subs = [excise_subtotal(q, r, what) for q, r, what in tiers]
+    for row, sh in zip(BILLS["33-xu"], excise_shares()):
+        if "correction_of" in row:      # an estimate correction credits its kWh at the rate they were charged
+            subs += [excise_subtotal(q, r, correction_tier(q, r)) for q, r in sh]
+            excise += sum(money(q * r, "XUF") for q, r in sh)
     assert excise == Decimal(BILL_EXCISE)
     assert excise == sum(money(q * r, "XUF") for sh in excise_shares() for q, r in sh), "the lines' shares"
     vat_base = lines + excise
     vat_amt = money(vat_base * Decimal(vat["rates"]["standard"]) / 100, "XUF")
-    subs = [excise_subtotal(q, r, what) for q, r, what in tiers]
     subs.append({"TaxableAmount": amount(vat_base, "XUF", "The price plus the energy tax: value added tax is charged "
                                                          "on both."),
                  "TaxAmount": amount(vat_amt, "XUF", f"{vat['rates']['standard']} % of that base."),
@@ -3072,11 +3105,14 @@ POINTS = {  # the consumption points behind the bills: meters, readings, history
                         "history": [("2026-01-01", "2026-01-31", 398400), ("2026-02-01", "2026-02-28", 405100)]},
     ("33-xu", "8-xu"): {"line": 1, "id": "FG-CP-4160-E1", "desc": "Warehouse of Castrano Logistics",
                         "type": ("Commercial", "COM"), "meter": ("FG-E-20523", "Warehouse meter", "1", "Direct"),
-                        "prev": ("2026-02-28", 117250, "no access to the meter", "ESTIMATE"),
+                        "prev": ("2026-02-28", 116500, "derived from the warehouse's load profile between the "
+                                                       "readings of 31 January and 31 March, in place of "
+                                                       "February's estimate of 117,250 kWh", "PROFILE"),
                         "last": ("2026-03-31", 135850, "Read by the meter reader", "MANUAL"),
-                        "history": [("2026-01-01", "2026-01-31", 17900), ("2026-02-01", "2026-02-28", 17200)],
-                        "correction": (-750, "February's estimate of 17,200 kWh was 750 kWh too high, as the "
-                                             "actual reading shows.")},
+                        "history": [("2026-01-01", "2026-01-31", 17900), ("2026-02-01", "2026-02-28", 16450)],
+                        # February's reading was estimated (no access to the meter) at 117,250 and billed 17,200
+                        # kWh; March's actual reading corrects it (O159, D31 point 7)
+                        "correction": {"estimate": 117250, "billed": 17200, "row": 3}},
     ("34-xb", "26-xb"): {"line": 0, "id": "CSW-CP-38510-411", "desc": "Shop, Lumeport", "type": ("Commercial", "COM"),
                          "meter": ("CSW-W-55102", "Water meter, shop", "1", "Direct"),
                          "prev": ("2026-02-28", 4212, "Remote reading", "REMOTE"),
@@ -3104,7 +3140,9 @@ def consumption_line(f, sup, key, k, d, why):
             "InvoicedQuantity": qty(q, it["unit"], why),
             "LineExtensionAmount": amount(amt, cur, "Quantity times the tariff."),
             "TaxInclusiveLineExtensionAmount": amount(amt + tax, cur, "With the tax of the line."),
-            "Period": {"StartDate": V("2026-03-01", "March."), "EndDate": V("2026-03-31", "Its last day.")},
+            "Period": ({"StartDate": V("2026-02-01", "February, the month the line corrects."),
+                        "EndDate": V("2026-02-28", "Its last day.")} if "correction_of" in d else
+                       {"StartDate": V("2026-03-01", "March."), "EndDate": V("2026-03-31", "Its last day.")}),
             "TaxTotal": {"TaxAmount": amount(tax, cur, f"{rule[1]} % of the line.")},
             "UtilityItem": {"ID": V(it["sellers_id"], "The utility's tariff item."),
                             "SubscriberID": V(METERS[key][0], "The customer's contract."),
@@ -3152,6 +3190,11 @@ def utility_statement(f, n, doc, key, invoice_no):
         pt = POINTS[(sup, subscriber)]
         d = rows[pt["line"]]
         line, amt, tax = consumption_line(f, sup, key, pt["line"], d, "The consumption of this point.")
+        corr = pt.get("correction")
+        if corr:        # February's estimate corrected: a line of its own on the bill and here (O159, D31 point 7)
+            cd = rows[corr["row"]]
+            cline, camt, ctax = consumption_line(f, sup, key, corr["row"], cd, "The kWh February's estimate "
+                                                                               "charged too much, credited.")
         unit = ITEM[d["item"]]["unit"]
         consumed = Decimal(str(d["qty"]))
         constant = Decimal(pt["meter"][2])
@@ -3169,9 +3212,14 @@ def utility_statement(f, n, doc, key, invoice_no):
                    "DeliveredQuantity": qty(consumed, unit, f"The difference of the readings"
                                             + (f", times the meter constant of {constant}." if constant != 1 else
                                                "."))}
-        if pt.get("correction"):
-            reading["MeterReadingComments"] = V("The previous reading was an estimate.", "Why the readings are "
-                                                                                          "corrected.")
+        if corr:
+            billed, real = corr["billed"], pt["history"][-1][2]
+            assert corr["estimate"] - pt["prev"][1] == billed - real == -Decimal(str(cd["qty"])), "the correction"
+            reading["MeterReadingComments"] = V(f"The previous reading replaces February's estimate of "
+                                                f"{corr['estimate']:,} kWh: February used {real:,} kWh, not the "
+                                                f"{billed:,} kWh billed, and the {billed - real:,} kWh are "
+                                                "credited.", "Why the previous reading is not the one on "
+                                                             "February's statement.")
         assert (pt["last"][1] - pt["prev"][1]) * constant == consumed, (key, subscriber)
         report = {"ID": V(f"{pt['id']}-2603", "The consumption report of the point for March."),
                   "ConsumptionType": V("Monthly consumption", "What is reported."),
@@ -3184,7 +3232,9 @@ def utility_statement(f, n, doc, key, invoice_no):
                       "ConsumptionReportID": V(f"{pt['id']}-2602", "The report of February."),
                       "ConsumptionType": V("Monthly consumption", "Of the same kind."),
                       "ConsumptionTypeCode": V("MON", "As a code."),
-                      "TotalConsumedQuantity": qty(pt["history"][-1][2], unit, "What February's report said."),
+                      "TotalConsumedQuantity": qty(corr["billed"] if corr else pt["history"][-1][2], unit,
+                                                   "What February's report said" + (", from the estimated reading."
+                                                                                   if corr else ".")),
                       "Period": {"StartDate": V(pt["history"][-1][0], "February."),
                                  "EndDate": V(pt["history"][-1][1], "Its last day.")}},
                   "ConsumptionHistory": [{"MeterNumber": V(pt["meter"][0], "The meter."),
@@ -3194,7 +3244,9 @@ def utility_statement(f, n, doc, key, invoice_no):
                                                            "What it cost at the tariff."),
                                           "ConsumptionLevelCode": V("NORMAL", "Within the usual range."),
                                           "ConsumptionLevel": V("Normal", "In words."),
-                                          "Description": V("Earlier month.", "For comparison."),
+                                          "Description": V(f"Earlier month, corrected from the estimate of "
+                                                           f"{corr['billed']:,} kWh." if corr and b == "2026-02-28"
+                                                           else "Earlier month.", "For comparison."),
                                           "Period": {"StartDate": V(a, "The month."), "EndDate": V(b, "Its end.")}}
                                          for a, b, q_ in pt["history"]]}
         if pt.get("household"):
@@ -3217,6 +3269,12 @@ def utility_statement(f, n, doc, key, invoice_no):
                                                           f" {'kWh' if unit == 'KWH' else 'm³'}.", "For comparison.")}}
         taxes = {"TaxAmount": amount(tax, cur, "The tax of this point's consumption.")}
         share = excise_shares()[pt["line"]] if sup == "33-xu" else []
+        lines_ = [(line, amt, share)]
+        if corr:
+            lines_.append((cline, camt, excise_shares()[corr["row"]]))
+            amt += camt
+            tax += ctax
+            share = share + lines_[1][2]
         if share:
             # this point's share of the bill's energy tax, and the value added tax on the price plus it, so that
             # the statements of one bill add up to it (utilities/01#F1, F2, 03#F5)
@@ -3228,7 +3286,10 @@ def utility_statement(f, n, doc, key, invoice_no):
                                                                              f"energy tax: {split} ferra; the tiers "
                                                                              "apply to the customer's month as a "
                                                                              "whole, the lower tier counted on the "
-                                                                             "main connection."),
+                                                                             "main connection"
+                                                                             + ("; the credit of February's "
+                                                                                "estimate at the rate February "
+                                                                                "charged." if corr else ".")),
                                          "TaxEnergyOnAccountAmount": amount(0, cur, "No energy tax paid on account."),
                                          "TaxEnergyBalanceAmount": amount(exc, cur, "Due with this bill."),
                                          "TaxScheme": {"ID": V("EXC", "Urvania's energy tax.")}}
@@ -3236,6 +3297,8 @@ def utility_statement(f, n, doc, key, invoice_no):
                       "TaxSubtotal": [{"TaxAmount": amount(q * r, cur, f"{q} kWh at {r} ferra."),
                                        "BaseUnitMeasure": V("1", "Per kilowatt hour.", unitCode="KWH"),
                                        "PerUnitAmount": price(r, cur, "The rate of the tier."),
+                                       **({"TierRange": V(correction_tier(q, r), "The kWh this subtotal "
+                                                                                 "credits.")} if q < 0 else {}),
                                        "TaxCategory": {"ID": V("S", "The energy tax applies."),
                                                        "Name": V("Energy tax", "The tax in words."),
                                                        "TaxScheme": {"ID": V("EXC", "UN/EDIFACT 5153 code EXC: "
@@ -3247,28 +3310,34 @@ def utility_statement(f, n, doc, key, invoice_no):
                       "TaxSubtotal": {"TaxableAmount": amount(amt + exc, cur, "The price plus the energy tax."),
                                       "TaxAmount": amount(tax, cur, f"{rule[1]} % of it."),
                                       "TaxCategory": kit.tax_category(rule)}}]
-            line["TaxInclusiveLineExtensionAmount"] = amount(amt + exc + tax, cur, "With the energy tax and the "
+            for ln_, a_, sh in lines_:
+                e_ = sum(money(q * r, cur) for q, r in sh)
+                t_ = money((a_ + e_) * Decimal(str(rule[1])) / 100, cur)
+                ln_["TaxInclusiveLineExtensionAmount"] = amount(a_ + e_ + t_, cur, "With the energy tax and the "
                                                                                    "value added tax of the line.")
-            line["TaxTotal"] = {"TaxAmount": amount(exc + tax, cur, "The energy tax and the value added tax of "
-                                                                    "the line.")}
+                ln_["TaxTotal"] = {"TaxAmount": amount(e_ + t_, cur, "The energy tax and the value added tax of "
+                                                                     "the line.")}
             tax += exc
-        if pt.get("correction"):
-            dq, why = pt["correction"]
-            p_ = Decimal(str(ITEM[d["item"]]["price"]["amount"]))
+        if corr:
+            # the correction's quantity and amount are in its consumption line: the correction's own quantity
+            # and amount elements are defined for district heating (utilities/03#F7)
             supply["EnergyWaterConsumptionCorrection"] = {
                 "CorrectionType": V("Estimate correction", "The kind of correction."),
                 "CorrectionTypeCode": V("EST", "As a code."),
                 "MeterNumber": V(pt["meter"][0], "The meter."),
-                "Description": V(why, "Why."),
-                "CorrectionUnitAmount": price(p_, cur, "The tariff per kWh, as it is (utilities/03#F2)."),
-                "ConsumptionEnergyQuantity": qty(dq, unit, "The correction of February's quantity."),
-                "CorrectionAmount": amount(p_ * dq, cur, "Credited on the April bill.")}
+                "Description": V(f"February's reading was estimated at {corr['estimate']:,} kWh, as the meter "
+                                 "could not be reached; the readings of 31 January and 31 March, split by the "
+                                 f"warehouse's load profile, put it at {pt['prev'][1]:,} kWh. February used {pt['history'][-1][2]:,} kWh, not the "
+                                 f"{corr['billed']:,} kWh billed: the {corr['billed'] - pt['history'][-1][2]:,} "
+                                 f"kWh are credited on line {corr['row'] + 1} of this bill.", "Why and how.")}
         consumption = {"UtilityStatementTypeCode": V(UTILITY[KIND[sup]], "The kind of supply."),
                        "MainPeriod": {"StartDate": V("2026-03-01", "March."),
                                       "EndDate": V("2026-03-31", "Its last day.")},
                        "TaxTotal": taxes,
                        "EnergyWaterSupply": supply,
-                       "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, cur, "The consumption."),
+                       "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, cur, "The consumption" +
+                                                                            (", less February's correction." if corr
+                                                                             else ".")),
                                               "PayableAmount": amount(amt + tax, cur, "With its taxes." if share
                                                                                         else "With its tax.")}}
         sub = {"ConsumptionID": V(f"{pt['id']}-2603", "The consumption of the point in March."),
@@ -3318,13 +3387,15 @@ def utility_statement(f, n, doc, key, invoice_no):
                    "Consumption": {"UtilityStatementTypeCode": V(UTILITY[KIND[sup]], "The supply under the contract."),
                                    "MainPeriod": {"StartDate": V("2026-03-01", "March."),
                                                   "EndDate": V("2026-03-31", "Its last day.")},
-                                   "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, cur, "The line."),
+                                   "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, cur, "The lines, "
+                                                                                       "February's credit included."
+                                                                                       if corr else "The line."),
                                                           "PayableAmount": amount(amt + tax, cur, "With its taxes."
                                                                                   if share else "With its tax.")}},
                    "Contract": {"ID": V(METERS[key][0], "The supply contract."),
                                 "ContractType": V(f"{KIND[sup]} supply", "Its kind."),
                                 "ValidityPeriod": {"StartDate": V("2024-01-01", "In force since.")}},
-                   "ConsumptionLine": line}}
+                   "ConsumptionLine": [line, cline] if corr else line}}
         if subscriber != customer:
             sub["SubscriberParty"] = party(subscriber, short=True)
         if pt.get("household"):
@@ -3493,8 +3564,9 @@ def utilities(n, doc):
             out["BillingReference"] = {"InvoiceDocumentReference": {
                 "ID": V("FE-INV-26-0211", "February's bill, with an estimated reading of the warehouse meter."),
                 "IssueDate": V("2026-03-01", "Its issue date.")},
-                "BillingReferenceLine": {"ID": V("2", "Its warehouse line, which the statement of this bill "
-                                                      "corrects; the difference follows on the April bill.")}}
+                "BillingReferenceLine": {"ID": V("2", "Its warehouse line, billed on the estimate: line 4 of this "
+                                                      "bill credits the 750 kWh it charged too much, as the "
+                                                      "warehouse's statement explains (utilities/02#F7).")}}
             energy_tax(f, out, key)
         if key == "34-xb:c-xb":                 # the household pays by direct debit under a mandate
             m = PARTY["c-xb"]["identity"]["mandate"]
@@ -9485,7 +9557,7 @@ def energy(n, doc):
         out = kit.invoice(f, n, doc, 2, "The month's network charges.", {},
                            [{"item": "network-electricity", "qty": 412800, "invoice_why": "The factory's electricity "
                                                                                           "connection, March."},
-                            {"item": "network-electricity", "qty": 18600, "invoice_why": "The warehouse's electricity "
+                            {"item": "network-electricity", "qty": BILLS["33-xu"][1]["qty"], "invoice_why": "The warehouse's electricity "
                                                                                          "connection, March."},
                             {"item": "network-gas", "qty": FACTORY_GAS["kwh"], "invoice_why": "The factory's gas "
                                                                                               "connection, March."}],
