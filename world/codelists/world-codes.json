@@ -8407,7 +8407,8 @@
     "COMMERCIAL",
     "CHARITY",
     "ASSOCIATION",
-    "FARM"
+    "FARM",
+    "PUBLIC"
    ]
   },
   "AddressFormat": {

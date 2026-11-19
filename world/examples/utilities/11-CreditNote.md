@@ -133,7 +133,7 @@ Inside `AccountingSupplierParty`:
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412192** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Coastal State Water Company (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Customer Party
 
@@ -279,7 +279,7 @@ Inside `CollectionCreditNoteLine`:
   The city's levy on them.
 - `LineExtensionAmount` = **0.84** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `CollectedForParty/PartyIdentification/ID` = **20410548** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `CollectedForParty/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -548,7 +548,7 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">0.84</cbc:LineExtensionAmount>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410548</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Public Works Department</cbc:Name>

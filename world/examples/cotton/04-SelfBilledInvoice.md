@@ -115,10 +115,10 @@ Inside `AdditionalDocumentReference`:
   The weighbridge ticket of the gin, on whose weights the invoice rests.
 - `DocumentType` = **Weighbridge ticket**  
   The kind of document referred to, the ginnery's weighbridge ticket, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `ID` = **XL-FARM-REG-0412**  
-  The farm's registration, which the withholding needs.
+- `ID` = **LFR-0412**  
+  The farm's registration, which the withholding needs: its number in Lisavu's farm register (O142).
 - `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the farm's registration in Lisavu's farm register, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
+  The kind of document referred to, the farm's registration in Lisavu's farm register, under its number there, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
 
 ### Project Reference
 
@@ -234,14 +234,14 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
 
-- `Party/PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/PartyIdentification/ID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
+  The party's preferred identifier: its number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The trading name; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
@@ -306,8 +306,8 @@ Inside `AccountingSupplierParty`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
   The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
+- `Party/PartyLegalEntity/CompanyID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
+  Number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the farm register of Lisavu (LFR- and 4 digits, kept from season to season while the registration is renewed).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
   The island renews a farm's registration every year: it runs until this date.
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **SP** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -327,7 +327,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:FR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Farm register of Lisavu**  
-  The register the farm is entered in: Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46).
+  The register the farm is entered in: Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46). The register gives a grower a number of its own, derived from no other register (O142).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **FARM** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
   A register of farms, not the companies register. The code is from the Trade Accord's corporate registration type list: FARM = Register of farms.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -346,8 +346,8 @@ Inside `AccountingSupplierParty`:
   When the desk can be reached; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42544** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Lisavu Cotton Farm (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XL:LFR-0412** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -362,7 +362,7 @@ Inside `BuyerCustomerParty`:
 
 Inside `SellerSupplierParty`:
 
-- `Party/PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Party/PartyIdentification/ID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -389,7 +389,7 @@ Inside `BeneficiaryParty`:
 
 Inside `PayeeParty`:
 
-- `PartyIdentification/ID` = **IC42544** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `PartyIdentification/ID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `PartyName/Name` = **Lisavu Cotton Farm**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -633,7 +633,7 @@ Inside `CollectionInvoiceLine`:
   The levy, invoiced once.
 - `LineExtensionAmount` = **40.680** (currencyID `XLC`)  
   1 % of the value of the seed cotton.
-- `BeneficiaryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `BeneficiaryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `BeneficiaryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -729,7 +729,7 @@ Inside `InvoiceLine`:
     <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>XL-FARM-REG-0412</cbc:ID>
+    <cbc:ID>LFR-0412</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:ProjectReference>
@@ -824,7 +824,7 @@ Inside `InvoiceLine`:
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
@@ -873,7 +873,7 @@ Inside `InvoiceLine`:
       </cac:PhysicalLocation>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lisavu Cotton Farm</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:CompanyID>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:CompanyID>
         <cbc:RegistrationExpirationDate>2026-12-31</cbc:RegistrationExpirationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode">SP</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="qal">Fomofa nisakihi</cbc:CompanyLegalForm>
@@ -907,7 +907,7 @@ Inside `InvoiceLine`:
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42544</cbc:ElectronicAddressID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:LFR-0412</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
@@ -924,7 +924,7 @@ Inside `InvoiceLine`:
   <cac:SellerSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lisavu Cotton Farm</cbc:Name>
@@ -951,7 +951,7 @@ Inside `InvoiceLine`:
   </cac:BeneficiaryParty>
   <cac:PayeeParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42544</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
@@ -1111,7 +1111,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XLC">40.680</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Chamber of Commerce</cbc:Name>

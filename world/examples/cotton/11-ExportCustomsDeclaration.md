@@ -92,7 +92,7 @@ Inside `ExporterParty`:
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Customs Declaration
 
@@ -192,8 +192,8 @@ Inside `CustomsDeclaration`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ConsigneeParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `CustomsParty/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `CustomsParty/PartyIdentification/ID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CustomsParty/PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
 - `CustomsParty/PostalAddress/ID` = **65334843** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
@@ -220,6 +220,8 @@ Inside `CustomsDeclaration`:
   The country's name, for readers of the address.
 - `CustomsParty/PartyLegalEntity/RegistrationName` = **Island Customs Service**  
   The public body's official name; identity of Island Customs Service (world/parties.json).
+- `CustomsParty/PartyLegalEntity/CompanyID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  Number in the Government list of public bodies of Lisavu, which gives every public body a number of its own (GOV- and 3 digits), derived from no other register (O142); identity of Island Customs Service (world/parties.json). The schemeID names the scheme it is from: the government list of public bodies of Lisavu (GOV- and 3 digits).
 - `CustomsParty/Contact/Name` = **Export office**  
   The party's export office desk: the desk for its role in this document (an export); identity of Island Customs Service (world/parties.json).
 - `CustomsParty/Contact/JobTitle` = **Customs officer**  
@@ -234,8 +236,8 @@ Inside `CustomsDeclaration`:
   When the desk can be reached; identity of Island Customs Service (world/parties.json).
 - `CustomsParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XL:GOV-118** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `AdditionalDocumentReference/ID` = **LTM-PO-26-0198**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -414,7 +416,7 @@ Inside `Signature`:
     </cac:ConsigneeParty>
     <cac:CustomsParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Island Customs Service</cbc:Name>
@@ -436,6 +438,7 @@ Inside `Signature`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Export office</cbc:Name>
@@ -447,7 +450,7 @@ Inside `Signature`:
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-118</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>

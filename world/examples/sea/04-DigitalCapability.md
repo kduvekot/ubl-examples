@@ -37,7 +37,7 @@ Inside `Signature`:
 
 - `ID` = **LD-SIG-26-DC**  
   The sender's electronic seal.
-- `SignatoryParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `SignatoryParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SignatoryParty/PartyName/Name` = **Lumeport Trade Accord Council**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -48,8 +48,8 @@ Inside `SenderParty`:
 
 - `IndustryClassificationCode` = **9411** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeport Trade Accord Council (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 9411 = Activities of business and employers membership organizations.
-- `PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Lumeport Trade Accord Council**  
   The trading name; identity of Lumeport Trade Accord Council (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
@@ -86,10 +86,20 @@ Inside `SenderParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Lumeport Trade Accord Council**  
   The public body's official name; identity of Lumeport Trade Accord Council (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  Number in the Federal list of public bodies of Bayvarra, which gives every public body a number of its own (10 digits, the first not 0), derived from no other register (O142); identity of Lumeport Trade Accord Council (world/parties.json). The schemeID names the scheme it is from: the federal list of public bodies of Bayvarra (10 digits, the first not 0, given by the Bayvarra Information Service).
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FLPB**  
+  The identifier of the register in the world (world/countries.json).
+- `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal list of public bodies of Bayvarra**  
+  The register the public body is entered in, kept by Bayvarra Information Service: a public body is set up by law and is in no register of businesses (D46, O142).
+- `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **PUBLIC** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
+  A register of public bodies, not a register of businesses. The code is from the Trade Accord's corporate registration type list: PUBLIC = Register of public bodies.
+- `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Secretariat**  
   The party's main desk, which handles this document; identity of Lumeport Trade Accord Council (world/parties.json).
 - `Contact/JobTitle` = **Secretariat officer**  
@@ -104,8 +114,8 @@ Inside `SenderParty`:
   When the desk can be reached; identity of Lumeport Trade Accord Council (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XB:20411096** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Lumeport Trade Accord Council (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XB:8423019675** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -227,7 +237,7 @@ Inside `BusinessParty`:
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Digital Process
 
@@ -261,7 +271,7 @@ Inside `DigitalProcess`:
     <cbc:ID>LD-SIG-26-DC</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -271,7 +281,7 @@ Inside `DigitalProcess`:
   <cac:SenderParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">9411</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -300,12 +310,23 @@ Inside `DigitalProcess`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Lumeport Trade Accord Council</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:CompanyID>
       <cac:RegistrationAddress>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:RegistrationAddress>
+      <cac:CorporateRegistrationScheme>
+        <cbc:ID>XB:FLPB</cbc:ID>
+        <cbc:Name>Federal list of public bodies of Bayvarra</cbc:Name>
+        <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">PUBLIC</cbc:CorporateRegistrationTypeCode>
+        <cac:JurisdictionRegionAddress>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:CorporateRegistrationScheme>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Secretariat</cbc:Name>
@@ -317,7 +338,7 @@ Inside `DigitalProcess`:
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411096</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:8423019675</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>

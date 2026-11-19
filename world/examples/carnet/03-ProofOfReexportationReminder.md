@@ -46,8 +46,8 @@ Inside `ProofOfReexportationRequestDocumentReference`:
 
 Inside `ImportingGuarantorParty`:
 
-- `PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Chamber of Commerce**  
   The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
@@ -80,6 +80,8 @@ Inside `ImportingGuarantorParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Selanu Chamber of Commerce**  
   The public body's official name; identity of Selanu Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  Number in the Government list of public bodies of Lisavu, which gives every public body a number of its own (GOV- and 3 digits), derived from no other register (O142); identity of Selanu Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the government list of public bodies of Lisavu (GOV- and 3 digits).
 - `Contact/Name` = **Carnet office**  
   The party's carnet office desk: the desk for its role in this document (a carnet); identity of Selanu Chamber of Commerce (world/parties.json).
 - `Contact/JobTitle` = **Carnet officer**  
@@ -94,15 +96,15 @@ Inside `ImportingGuarantorParty`:
   When the desk can be reached; identity of Selanu Chamber of Commerce (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC42133** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XL:GOV-243** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Exporting Guarantor Party
 
 Inside `ExportingGuarantorParty`:
 
-- `PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `PostalAddress/ID` = **4160202319527073** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -133,6 +135,8 @@ Inside `ExportingGuarantorParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Ferrano Chamber of Commerce**  
   The public body's official name; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  Number in the Index of Public Administrations of Urvania, which gives every public body a number of its own (xu_ and four lower-case letters or digits), derived from no other register (O142); identity of Ferrano Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the index of public administrations of Urvania (xu_ and four lower-case letters or digits, assigned by the index on the body's accreditation; no real IPA code of Italy's index starts with xu_ (world/codelists/sources/ipa/)).
 - `Contact/Name` = **Carnet office**  
   The party's carnet office desk: the desk for its role in this document (a carnet); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/JobTitle` = **Carnet officer**  
@@ -147,15 +151,15 @@ Inside `ExportingGuarantorParty`:
   When the desk can be reached; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105370** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XU:xu_m2vd** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Importing Customs Party
 
 Inside `ImportingCustomsParty`:
 
-- `PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
 - `PostalAddress/ID` = **65334843** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
@@ -193,7 +197,7 @@ Inside `IssuerEndorsement`:
   The importing guarantor. The code is from the Trade Accord's endorser role list: GUARANTOR = Guaranteeing association.
 - `EndorserParty/SequenceNumeric` = **1**  
   The only one.
-- `EndorserParty/Party/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `EndorserParty/Party/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `EndorserParty/Party/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -233,7 +237,7 @@ Inside `Signature`:
 
 - `ID` = **SCC-SIG-26-PRM**  
   The sender's electronic seal.
-- `SignatoryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `SignatoryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -260,7 +264,7 @@ Inside `Signature`:
   </cac:ProofOfReexportationRequestDocumentReference>
   <cac:ImportingGuarantorParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
@@ -287,6 +291,7 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:CompanyID>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Carnet office</cbc:Name>
@@ -298,12 +303,12 @@ Inside `Signature`:
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42133</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-243</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ImportingGuarantorParty>
   <cac:ExportingGuarantorParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -327,6 +332,7 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:CompanyID>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Carnet office</cbc:Name>
@@ -338,12 +344,12 @@ Inside `Signature`:
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_m2vd</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ExportingGuarantorParty>
   <cac:ImportingCustomsParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Island Customs Service</cbc:Name>
@@ -372,7 +378,7 @@ Inside `Signature`:
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
@@ -399,7 +405,7 @@ Inside `Signature`:
     <cbc:ID>SCC-SIG-26-PRM</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Selanu Chamber of Commerce</cbc:Name>

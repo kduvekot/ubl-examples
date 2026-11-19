@@ -38,7 +38,7 @@
   </cac:Signature>
   <cac:GovernorParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -254,7 +254,7 @@
       <cbc:ValidateToolVersion>3.2</cbc:ValidateToolVersion>
       <cac:SignatoryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -324,7 +324,7 @@
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -360,7 +360,7 @@
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -404,7 +404,7 @@
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -440,7 +440,7 @@
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>

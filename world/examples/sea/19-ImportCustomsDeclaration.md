@@ -90,7 +90,7 @@ Inside `ImporterParty`:
   Signed in the morning.
 - `PowerOfAttorney/Description` = **Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.**  
   What the broker may do for the buyer.
-- `PowerOfAttorney/NotaryParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `PowerOfAttorney/NotaryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `PowerOfAttorney/NotaryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -194,8 +194,8 @@ Inside `FreightForwarderParty`:
 
 Inside `CustomsParty`:
 
-- `PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Island Customs Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Island Customs Service**  
   The trading name; identity of Island Customs Service (world/parties.json).
 - `PostalAddress/ID` = **65334843** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
@@ -222,6 +222,8 @@ Inside `CustomsParty`:
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Island Customs Service**  
   The public body's official name; identity of Island Customs Service (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  Number in the Government list of public bodies of Lisavu, which gives every public body a number of its own (GOV- and 3 digits), derived from no other register (O142); identity of Island Customs Service (world/parties.json). The schemeID names the scheme it is from: the government list of public bodies of Lisavu (GOV- and 3 digits).
 - `Contact/Name` = **Import office**  
   The party's import office desk: the desk for its role in this document (an import); identity of Island Customs Service (world/parties.json).
 - `Contact/JobTitle` = **Customs officer**  
@@ -236,8 +238,8 @@ Inside `CustomsParty`:
   When the desk can be reached; identity of Island Customs Service (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC41448** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XL:GOV-118** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; identity of Island Customs Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Notifier Party
 
@@ -389,7 +391,7 @@ Inside `Shipment`:
 - `ShipmentStage/CustomsAgentParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41585** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Tevaro Customs Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Additional Document Reference
 
@@ -483,7 +485,7 @@ Inside `Signature`:
       <cbc:Description>Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.</cbc:Description>
       <cac:NotaryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
@@ -577,7 +579,7 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:CustomsParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Island Customs Service</cbc:Name>
@@ -599,6 +601,7 @@ Inside `Signature`:
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
       <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:CompanyID>
     </cac:PartyLegalEntity>
     <cac:Contact>
       <cbc:Name>Import office</cbc:Name>
@@ -610,7 +613,7 @@ Inside `Signature`:
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41448</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-118</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:NotifierParty>

@@ -225,7 +225,7 @@ Inside `AccountingSupplierParty`:
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Customer Party
 
@@ -302,7 +302,7 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Payee Party
 
@@ -539,11 +539,11 @@ Inside `DebitNoteLine`:
   The kind of document referred to, the island customs' receipt for the inspection fee, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 917 = Receipt (Customs).
 - `PricingReference/AlternativeConditionPrice/PriceAmount` = **51.25** (currencyID `XLC`)  
   The fee as customs set it.
-- `OriginatorParty/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `OriginatorParty/PartyIdentification/ID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `OriginatorParty/PartyName/Name` = **Island Customs Service**  
   A party referred to from another party's details: its identifier and name are enough.
-- `CollectedForParty/PartyIdentification/ID` = **IC41448** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `CollectedForParty/PartyIdentification/ID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyName/Name` = **Island Customs Service**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -964,7 +964,7 @@ Inside `DebitNoteLine`:
     </cac:PricingReference>
     <cac:OriginatorParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Island Customs Service</cbc:Name>
@@ -972,7 +972,7 @@ Inside `DebitNoteLine`:
     </cac:OriginatorParty>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41448</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Island Customs Service</cbc:Name>

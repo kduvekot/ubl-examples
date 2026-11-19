@@ -99,5 +99,22 @@
             <SimpleValue>Makuna mutaki tokita</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PUBLIC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Register of public bodies</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Vinskul skul hakdrul sargir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Makuna mutaki paveli senatu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A register of the bodies of public administration, which are set up by law and are in no register of businesses: each country keeps one, and it gives each body a number of its own (O142).</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

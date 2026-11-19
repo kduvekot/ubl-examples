@@ -1941,7 +1941,8 @@
     "willow": "stagir",
     "ash": "darhir",
     "oak": "kenkrir",
-    "distributor": "guldran"
+    "distributor": "guldran",
+    "bodies": "sargir"
    }
   },
   "qal": {
@@ -3060,7 +3061,8 @@
     "waterfall": "nihekemo",
     "ash": "lalaki",
     "oak": "fofasu",
-    "distributor": "kelokifi"
+    "distributor": "kelokifi",
+    "bodies": "senatu"
    }
   },
   "en": {

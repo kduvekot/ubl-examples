@@ -68,8 +68,8 @@ Inside `Signature`:
 
 Inside `GovernorParty`:
 
-- `PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Trade Accord Council (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Lumeport Trade Accord Council**  
   The trading name; identity of Lumeport Trade Accord Council (world/parties.json).
 
@@ -160,7 +160,7 @@ Inside `ParticipantParty`:
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `LegalContact/Name` = **Legal department**  
   For legal notices under the agreement.
 - `TechnicalContact/Name` = **Integration desk**  
@@ -242,7 +242,7 @@ Inside `ParticipantParty`:
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `LegalContact/Name` = **Legal department**  
   For legal notices under the agreement.
 - `TechnicalContact/Name` = **Integration desk**  
@@ -331,7 +331,7 @@ Inside `RequiredCertificationDocumentReference`:
   The tool.
 - `ResultOfVerification/ValidateToolVersion` = **3.2**  
   Its version.
-- `ResultOfVerification/SignatoryParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `ResultOfVerification/SignatoryParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ResultOfVerification/SignatoryParty/PartyName/Name` = **Lumeport Trade Accord Council**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -420,14 +420,14 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
   The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -456,14 +456,14 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
   The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -500,14 +500,14 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
   The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
-- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -536,14 +536,14 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
   The trade accord's document network.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in its country's companies register).
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
   In production.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
   The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
   Its kind.
-- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **20411096** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
   A party referred to from another party's details: its identifier and name are enough.
@@ -599,7 +599,7 @@ Inside `DigitalProcess`:
   </cac:Signature>
   <cac:GovernorParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -815,7 +815,7 @@ Inside `DigitalProcess`:
       <cbc:ValidateToolVersion>3.2</cbc:ValidateToolVersion>
       <cac:SignatoryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -885,7 +885,7 @@ Inside `DigitalProcess`:
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -921,7 +921,7 @@ Inside `DigitalProcess`:
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -965,7 +965,7 @@ Inside `DigitalProcess`:
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -1001,7 +1001,7 @@ Inside `DigitalProcess`:
             <cbc:CertificateType>Access point</cbc:CertificateType>
             <cac:IssuerParty>
               <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
               </cac:PartyIdentification>
               <cac:PartyName>
                 <cbc:Name>Lumeport Trade Accord Council</cbc:Name>

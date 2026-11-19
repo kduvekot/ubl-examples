@@ -4143,6 +4143,10 @@
    "what": "Lumeway's extract from Bayvarra's business register",
    "type_code": "101"
   },
+  "LFR-0412": {
+   "what": "the farm's registration in Lisavu's farm register, under its number there",
+   "type_code": "101"
+  },
   "LTM-SEASON-2026": {
    "what": "the textile mill's season agreement with the ginnery",
    "type": "Season agreement"
@@ -4322,10 +4326,6 @@
   "XL-CUS-RCPT-26-0517": {
    "what": "the island customs' receipt for the inspection fee",
    "type_code": "917"
-  },
-  "XL-FARM-REG-0412": {
-   "what": "the farm's registration in Lisavu's farm register",
-   "type_code": "101"
   },
   "XU-CUS-REIMP-26-0044": {
    "what": "Urvanian customs' record of the re-importation",

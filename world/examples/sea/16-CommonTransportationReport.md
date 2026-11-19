@@ -92,14 +92,14 @@ Inside `ReporterParty`:
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411918** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Authority Party
 
 Inside `AuthorityParty`:
 
-- `PartyIdentification/ID` = **IC42270** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Maritime Administration of Lisavu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyIdentification/ID` = **GOV-131** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Maritime Administration of Lisavu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Maritime Administration of Lisavu**  
   The trading name; identity of Maritime Administration of Lisavu (world/parties.json).
 - `PostalAddress/ID` = **44886737** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
@@ -138,8 +138,8 @@ Inside `AuthorityParty`:
   When the desk can be reached; identity of Maritime Administration of Lisavu (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:IC42270** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Maritime Administration of Lisavu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XL:GOV-131** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; identity of Maritime Administration of Lisavu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Sender Party
 
@@ -154,7 +154,7 @@ Inside `SenderParty`:
 
 Inside `ReceiverParty`:
 
-- `PartyIdentification/ID` = **IC42270** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `PartyIdentification/ID` = **GOV-131** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
 - `PartyName/Name` = **Maritime Administration of Lisavu**  
   The same party as at AuthorityParty, where its full details are given; only its identifier and name are repeated.
@@ -500,7 +500,7 @@ Inside `Shipment`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `ShipmentStage/ISPSRequirements/ReportLocation/Name` = **At sea, 30 nautical miles off Selanu**  
   Where the report is made, as the report's own reporting location.
-- `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **20413014** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **5389612047** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Bayvarra**  
   Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
@@ -758,7 +758,7 @@ Inside `Signature`:
   </cac:ReporterParty>
   <cac:AuthorityParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-131</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
@@ -788,7 +788,7 @@ Inside `Signature`:
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC42270</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-131</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:AuthorityParty>
   <cac:SenderParty>
@@ -801,7 +801,7 @@ Inside `Signature`:
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42270</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-131</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
       <cbc:Name>Maritime Administration of Lisavu</cbc:Name>
@@ -1088,7 +1088,7 @@ Inside `Signature`:
         </cac:ReportLocation>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413014</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5389612047</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
             <cbc:Name>Maritime Administration of Bayvarra</cbc:Name>

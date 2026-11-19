@@ -256,7 +256,7 @@
         <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
             <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
@@ -268,7 +268,7 @@
           <cbc:ValidationDate>2026-02-20</cbc:ValidationDate>
           <cac:SignatoryParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
               <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
