@@ -717,9 +717,13 @@ number 0177 and `OD`, and GS1 itself is 0088 (the GLN) and the agency codes
   and digits only, without hyphens or spaces;
 - no identifier is longer than 20 characters, which ISO/IEC 15459 recommends
   for a one-line bar code;
-- there is no check character, as in ISO/IEC 15459 itself; the build checks
-  instead that the prefix of every identifier is the company number of the
-  party that issued it;
+- Codana adds no check character, as ISO/IEC 15459 itself adds none; the
+  build checks instead that the prefix of every identifier is the company
+  number of the party that issued it. A company may end its own reference
+  with a check character if that makes its processes more robust, as
+  Castrano does on its licence plates; it chooses the method (ISO/IEC 7064
+  gives systems for digits and for letters and digits, such as MOD 97-10 and
+  MOD 37,2), and the character stays inside its own part of the number;
 - Codana does not hand out item numbers. It gives a company its number, and
   the company numbers its own items, lots, pallets and places.
 
