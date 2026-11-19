@@ -1364,7 +1364,7 @@
    "doc": "CatalogueItemSpecificationUpdate",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The bench now comes with slats from a different hardwood; the description is updated.",
+   "why": "Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's revised datasheet: the slats are left untreated and turn silver-grey, only the end grain is sealed, with the yearly maintenance. The product, its GTIN and its price stay.",
    "parties": {
     "ProviderParty": "6-xb",
     "ReceiverParty": "26-xb",

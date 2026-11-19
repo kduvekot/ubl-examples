@@ -6,13 +6,13 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0220</cbc:ID>
   <cbc:UUID>7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448</cbc:UUID>
-  <cbc:Name>New slat wood for the Serra 180</cbc:Name>
+  <cbc:Name>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Name>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>09:01:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
   <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
   <cbc:Note>Applies to the spring catalogue.</cbc:Note>
-  <cbc:Description>New slat wood for the Serra 180</cbc:Description>
+  <cbc:Description>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Description>
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
@@ -189,7 +189,7 @@
   <cac:CatalogueItemSpecificationUpdateLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.</cbc:Description>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
@@ -217,6 +217,7 @@
       </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
+        <cbc:DocumentDescription>Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:DocumentDescription>
       </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -240,6 +241,10 @@
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat wood</cbc:Name>
         <cbc:Value>Thermally modified ash</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Slat finish</cbc:Name>
+        <cbc:Value>Untreated, turning silver-grey; end grain sealed at the sawmill</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>

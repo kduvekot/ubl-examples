@@ -4357,11 +4357,23 @@ def retail(n, doc):
                                                                                    "catalogue it replaces."),
                                                            "StatusCode": V("REPLACED", "No longer in force.")}}}}}}
     if d == "CatalogueItemSpecificationUpdate":
-        it = item("bench-serra-b")
-        it["Description"] = V("Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried "
-                              "hardwood, for bolting to the ground.", "The new description: the slats are now of a "
-                                                                      "different hardwood.")
-        return {**head(f, "spec-update", doc, 31, "The bench's slats changed wood."), "RelatedCatalogueReference": cat,
+        it = item("bench-serra-b")     # the product, its GTIN and its price stay; the maker's datasheet is revised
+        it["ItemSpecificationDocumentReference"] = {
+            "ID": V("VI-DS-B180", "The maker's datasheet, the same document number in its revised issue."),
+            "DocumentDescription": V("Revised: the slats are left untreated and turn silver-grey; only the end grain "
+                                     "is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch "
+                                     "up the frame coating, clean the slats and check them for splits.",
+                                     "What Valdara changed in the datasheet, as Lumeway passes it on: customers asked "
+                                     "whether the slats need oil, as the Marrow furniture beside them does.")}
+        it["AdditionalItemProperty"].insert(2, {
+            "Name": V("Slat finish", "The property the revised datasheet adds."),
+            "Value": V("Untreated, turning silver-grey; end grain sealed at the sawmill", "The thermally modified ash "
+                                                                                          "needs no oil; only the end "
+                                                                                          "grain is sealed against "
+                                                                                          "splitting.")})
+        return {**head(f, "spec-update", doc, 31, "Lumeway passes on Valdara's revised datasheet after the first weeks "
+                                                  "of sales, when customers asked whether the slats need oil."),
+                "RelatedCatalogueReference": cat,
                 "CatalogueItemSpecificationUpdateLine": {"ID": V("1", "The line of the bench."), "Item": it}}
     if d == "CatalogueDeletion":
         return {**head(f, "catalogue-deletion", doc, 60, "The spring catalogue is withdrawn before the summer one."),
@@ -4686,7 +4698,7 @@ def _(f, n, doc, out):
 
 @enrich("retail", "CatalogueItemSpecificationUpdate")
 def _(f, n, doc, out):
-    return {**catalogue_update_head(f, "New slat wood for the Serra 180", "1.2"),
+    return {**catalogue_update_head(f, "Revised datasheet of the Serra 180: slat finish and maintenance", "1.2"),
             "CatalogueItemSpecificationUpdateLine": {"ContractorCustomerParty": {"Party": party("26-xb",
                                                                                                 short=True)},
                                                      "SellerSupplierParty": {"Party": party("6-xb", short=True)}}}

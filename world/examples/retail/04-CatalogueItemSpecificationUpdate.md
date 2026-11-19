@@ -2,7 +2,7 @@
 
 *Example 4 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Catalogue Item Specification Update in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-ITEM-SPECIFICATION-UPDATE-SCHEMA)*
 
-The bench now comes with slats from a different hardwood; the description is updated.
+Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's revised datasheet: the slats are left untreated and turn silver-grey, only the end grain is sealed, with the yearly maintenance. The product, its GTIN and its price stay.
 
 [The XML file](04-CatalogueItemSpecificationUpdate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,10 +22,10 @@ The bench now comes with slats from a different hardwood; the description is upd
   The sender's number for this document.
 - `UUID` = **7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `Name` = **New slat wood for the Serra 180**  
+- `Name` = **Revised datasheet of the Serra 180: slat finish and maintenance**  
   What the update is.
 - `IssueDate` = **2026-05-21**  
-  The bench's slats changed wood.
+  Lumeway passes on Valdara's revised datasheet after the first weeks of sales, when customers asked whether the slats need oil.
 - `IssueTime` = **09:01:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `RevisionDate` = **2026-05-20**  
@@ -34,7 +34,7 @@ The bench now comes with slats from a different hardwood; the description is upd
   At that time.
 - `Note` = **Applies to the spring catalogue.**  
   Which catalogue.
-- `Description` = **New slat wood for the Serra 180**  
+- `Description` = **Revised datasheet of the Serra 180: slat finish and maintenance**  
   In words.
 - `VersionID` = **1.2**  
   The catalogue version after the update.
@@ -275,8 +275,8 @@ Inside `CatalogueItemSpecificationUpdateLine`:
 
 - `ID` = **1**  
   The line of the bench.
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.**  
-  The new description: the slats are now of a different hardwood.
+- `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
+  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
@@ -308,7 +308,9 @@ Inside `CatalogueItemSpecificationUpdateLine`:
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
-  The maker's datasheet with drawings and assembly instructions.
+  The maker's datasheet, the same document number in its revised issue.
+- `Item/ItemSpecificationDocumentReference/DocumentDescription` = **Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.**  
+  What Valdara changed in the datasheet, as Lumeway passes it on: customers asked whether the slats need oil, as the Marrow furniture beside them does.
 - `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Where the item was produced; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
@@ -331,6 +333,10 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Thermally modified ash**  
   Its value; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemProperty/Name` = **Slat finish**  
+  The property the revised datasheet adds.
+- `Item/AdditionalItemProperty/Value` = **Untreated, turning silver-grey; end grain sealed at the sawmill**  
+  The thermally modified ash needs no oil; only the end grain is sealed against splitting.
 - `Item/AdditionalItemProperty/Name` = **Seats**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **3**  
@@ -509,13 +515,13 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0220</cbc:ID>
   <cbc:UUID>7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448</cbc:UUID>
-  <cbc:Name>New slat wood for the Serra 180</cbc:Name>
+  <cbc:Name>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Name>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>09:01:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
   <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
   <cbc:Note>Applies to the spring catalogue.</cbc:Note>
-  <cbc:Description>New slat wood for the Serra 180</cbc:Description>
+  <cbc:Description>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Description>
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
@@ -692,7 +698,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cac:CatalogueItemSpecificationUpdateLine>
     <cbc:ID>1</cbc:ID>
     <cac:Item>
-      <cbc:Description>Park bench, 1800 mm, frame of cast and galvanised steel, five slats of another kiln-dried hardwood, for bolting to the ground.</cbc:Description>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation>Supplied with four ground anchors and the bolts to fix them.</cbc:AdditionalInformation>
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
@@ -720,6 +726,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
+        <cbc:DocumentDescription>Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:DocumentDescription>
       </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -743,6 +750,10 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat wood</cbc:Name>
         <cbc:Value>Thermally modified ash</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Slat finish</cbc:Name>
+        <cbc:Value>Untreated, turning silver-grey; end grain sealed at the sawmill</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>
