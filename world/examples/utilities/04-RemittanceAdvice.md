@@ -22,8 +22,8 @@ The manufacturer pays both electricity bills in one transfer.
   The payer's remittance number.
 - `UUID` = **2d5c6916-4910-521a-8f1e-a8eed2f264ea**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-19**  
-  Paid before the due date.
+- `IssueDate` = **2026-04-20**  
+  Paid on Monday 20 April, before the due date (D27, D31 point 7).
 - `IssueTime` = **13:33:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Rikrir skul drek tirnan krirstul.** (languageID `qau`)  
@@ -292,13 +292,6 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
-### Tax Total
-
-Inside `TaxTotal`:
-
-- `TaxAmount` = **2516028** (currencyID `XUF`)  
-  The value added tax included in the payment, which the manufacturer deducts in its own return (20 % of the price before tax).
-
 ### Remittance Advice Line
 
 Inside `RemittanceAdviceLine`:
@@ -333,7 +326,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>13:33:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Rikrir skul drek tirnan krirstul.</cbc:Note>
   <cbc:Note languageID="en-XU">Payment of the invoice below.</cbc:Note>
@@ -536,9 +529,6 @@ Inside `RemittanceAdviceLine`:
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
-  </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XUF">15096168</cbc:DebitLineAmount>

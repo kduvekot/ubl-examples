@@ -180,8 +180,8 @@ Inside `SubscriberConsumption`:
   The company's connection.
 - `UtilityConsumptionPoint/Description` = **Office of Velumi Trading, Selanu**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **ST-C-1077**  
-  The contract.
+- `UtilityConsumptionPoint/SubscriberID` = **ST-CU-20418**  
+  The subscriber's customer number with the telecom company; the contract number stays in the contract (D31 point 5).
 - `UtilityConsumptionPoint/SubscriberType` = **Business**  
   The name of code BUS in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **BUS** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -227,43 +227,33 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyTypeCode` = **BUS** (listID `urn:ubl-examples:world:codelist:TelecomSupplyTypeCode`)  
   As a code. The code is from the Trade Accord's telecommunications supply type list: BUS = Business lines and data.
 - `Consumption/TelecommunicationsSupply/PrivacyCode` = **MASKED** (listID `urn:ubl-examples:world:codelist:PrivacyCode`)  
-  Numbers called inside the island are not listed; calls abroad are. The code is from the Trade Accord's privacy list: MASKED = Numbers masked.
+  Numbers called inside the island are not listed; calls abroad are, their last digits masked. The code is from the Trade Accord's privacy list: MASKED = Numbers masked.
 - `Consumption/TelecommunicationsSupply/Description` = **Six business lines and a mobile data pool.**  
   In words.
-- `Consumption/TelecommunicationsSupply/TotalAmount` = **141.920** (currencyID `XLC`)  
+- `Consumption/TelecommunicationsSupply/TotalAmount` = **146.224** (currencyID `XLC`)  
   The telecom supply of March.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **1**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1850**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
-  The subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+  The subscription, as the invoice line names it (utilities/13#F10).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
-  The line's share of the bundle discount.
+  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
   The month's calls on the island, summed: they are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **140** (unitCode `MIN`)  
-  Minutes called on the island.
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **C-0311-01**  
@@ -272,8 +262,8 @@ Inside `SubscriberConsumption`:
   The day.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00**  
   The time.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 955 964**  
-  The distributor in Bayvarra.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 955 *****  
+  The distributor in Bayvarra, its last digits masked as the privacy code says (utilities/12#F2).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International: a call to Bayvarra**  
   The name of code INT in the Trade Accord's telecommunications service category list, followed by the detail of this case: the call went to the distributor in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **INT** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  
@@ -284,12 +274,14 @@ Inside `SubscriberConsumption`:
   The name of code OUT in the Trade Accord's telecommunications call type list.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCallCode` = **OUT** (listID `urn:ubl-examples:world:codelist:TelecomCallTypeCode`)  
   As a code. The code is from the Trade Accord's telecommunications call type list: OUT = Outgoing.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallBaseAmount` = **0.000** (currencyID `XLC`)  
-  No set-up charge: included.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallBaseAmount` = **0.050** (currencyID `XLC`)  
+  The set-up charge of a call abroad, the base of every call.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
-  Calls to the trade accord countries are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **0** (currencyID `XLC`)  
-  Included in the subscription.
+  The set-up and the twelve minutes, less the allowance: nothing to pay (utilities/12#F4).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **0.2** (currencyID `XLC`)  
+  The tariff per minute for calls abroad.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/BaseQuantity` = **1** (unitCode `MIN`)  
+  Per minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country called. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/ChargeIndicator` = **false**  
@@ -297,71 +289,43 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
   The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the trade accord countries are included in the subscription**  
-  Why the call costs nothing.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.400** (currencyID `XLC`)  
-  All of it.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/BaseAmount` = **2.400** (currencyID `XLC`)  
-  Twelve minutes at the 0.200 tariff for calls abroad.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Amount` = **0.000** (currencyID `XLC`)  
-  No call duty: included.
+  Why the service costs nothing.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.450** (currencyID `XLC`)  
+  The whole charge of the call: 0.050 set-up and 12 minutes at 0.200.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Amount` = **0.050** (currencyID `XLC`)  
+  The set-up charge of the call.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/Duty` = **Set-up**  
   The name of code SETUP in the Trade Accord's telecommunications duty list.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDuty/DutyCode` = **SETUP** (listID `urn:ubl-examples:world:codelist:TelecomDutyCode`)  
   As a code. The code is from the Trade Accord's telecommunications duty list: SETUP = Set-up.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TimeDuty/Amount` = **0.000** (currencyID `XLC`)  
-  No time duty: included.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TimeDuty/Amount` = **2.400** (currencyID `XLC`)  
+  12 minutes at 0.200.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TimeDuty/Duty` = **Per minute**  
   The name of code MIN in the Trade Accord's telecommunications duty list.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TimeDuty/DutyCode` = **MIN** (listID `urn:ubl-examples:world:codelist:TelecomDutyCode`)  
   As a code. The code is from the Trade Accord's telecommunications duty list: MIN = Per minute.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **D-0318-01**  
-  Mobile data abroad.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-18**  
-  The day.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **08:00:00**  
-  From the morning.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
-  Mobile data, no number called.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Roaming: mobile data in Bayvarra**  
-  The name of code ROAM in the Trade Accord's telecommunications service category list, followed by the detail of this case: the phone used mobile data on a network in Bayvarra.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **ROAM** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  
-  As a code. The code is from the Trade Accord's telecommunications service category list: ROAM = Roaming.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/RoamingPartnerName` = **Lumeport mobile network**  
-  The network used in Bayvarra.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **35** (unitCode `E34`)  
-  35 gigabytes beyond the subscriptions, at the trade fair in Lumeport.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **2**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1851**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
-  The subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+  The subscription, as the invoice line names it (utilities/13#F10).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
-  The line's share of the bundle discount.
+  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
   The month's calls on the island, summed: they are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **165** (unitCode `MIN`)  
-  Minutes called on the island.
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **V-0320-02**  
@@ -371,7 +335,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **12:30:00**  
   At lunch.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **video**  
-  The operator's video service, no number called.
+  The operator's video service, no number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Video on demand**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/MovieTitle` = **Safe Lifting in the Warehouse**  
@@ -381,287 +345,173 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **1** (unitCode `EA`)  
   One film.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
-  Training films are included in the business bundle.
+  The film's price less the allowance (utilities/12#F18).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **2** (currencyID `XLC`)  
+  The price of a training film.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  Per film.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
+  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Training films are included in the business bundle**  
+  Why the service costs nothing.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.000** (currencyID `XLC`)  
+  The film's price.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **3**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1852**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
-  The subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+  The subscription, as the invoice line names it (utilities/13#F10).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
-  The line's share of the bundle discount.
+  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
   The month's calls on the island, summed: they are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **190** (unitCode `MIN`)  
-  Minutes called on the island.
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **4**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1853**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
-  The subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+  The subscription, as the invoice line names it (utilities/13#F10).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
-  The line's share of the bundle discount.
+  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
   The month's calls on the island, summed: they are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **215** (unitCode `MIN`)  
-  Minutes called on the island.
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **5**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1854**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
-  The subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+  The subscription, as the invoice line names it (utilities/13#F10).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
-  The line's share of the bundle discount.
+  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
   The month's calls on the island, summed: they are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **240** (unitCode `MIN`)  
-  Minutes called on the island.
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **6**  
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1855**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line with calls on the island included.**  
-  The subscription.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+  The subscription, as the invoice line names it (utilities/13#F10).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/AllowanceCharge/Amount` = **1.059** (currencyID `XLC`)  
-  The line's share of the bundle discount.
+  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
   The month's calls on the island, summed: they are included.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **265** (unitCode `MIN`)  
-  Minutes called on the island.
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **7**  
-  The data pool.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **data pool**  
-  No number: the company's data pool.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Mobile data beyond the subscriptions.**  
-  What it is.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **14.840** (currencyID `XLC`)  
-  35 GB at the data tariff.
+  The data pool, a line of its own.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1856**  
+  The data pool's own number, which the phones of the six lines share (D31 point 6, utilities/12#F7).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.**  
+  What it is, as the invoice lines name it (utilities/13#F10).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **19.144** (currencyID `XLC`)  
+  The data at the data tariff and the roaming at the roaming tariff.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **19.144** (currencyID `XLC`)  
+  No tax on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **D-03**  
-  The month's data beyond the subscriptions.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-31**  
-  Summed at the end of the month.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **23:59:00**  
-  At the close of the month.
+  The month's data on the island beyond the subscriptions.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
+  The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
-  Mobile data.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/PayPerView` = **false**  
-  Not a pay-per-view service.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **35** (unitCode `E34`)  
-  Gigabytes.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **14.840** (currencyID `XLC`)  
+  Mobile data, no number called (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Mobile data**  
+  The kind of service.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **31** (unitCode `E34`)  
+  Gigabytes used on the island (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **13.144** (currencyID `XLC`)  
   At the data tariff.
-- `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **141.920** (currencyID `XLC`)  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **0.424** (currencyID `XLC`)  
+  The data tariff per GB.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/BaseQuantity` = **1** (unitCode `E34`)  
+  Per gigabyte.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **D-0316-01**  
+  Mobile data abroad.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-16**  
+  The first day of the trip.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **08:00:00**  
+  From the morning.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
+  Mobile data, no number called (O107).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Roaming: mobile data in Bayvarra**  
+  The name of code ROAM in the Trade Accord's telecommunications service category list, followed by the detail of this case: the phones used mobile data on a network in Bayvarra.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **ROAM** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  
+  As a code. The code is from the Trade Accord's telecommunications service category list: ROAM = Roaming.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/RoamingPartnerName` = **Lumeport mobile network**  
+  The network used in Bayvarra.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **4** (unitCode `E34`)  
+  Gigabytes used at the trade fair in Lumeport, 16 to 18 March, part of the pool's 35 GB (utilities/12#F1).
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **6.000** (currencyID `XLC`)  
+  At the roaming tariff: the Trade Accord has no roaming rule, so roaming is charged.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **1.5** (currencyID `XLC`)  
+  The roaming tariff per GB in Bayvarra.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/BaseQuantity` = **1** (unitCode `E34`)  
+  Per gigabyte.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Where the data was used. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **146.224** (currencyID `XLC`)  
   The supply.
 - `Consumption/LegalMonetaryTotal/AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
   The bundle discount.
-- `Consumption/LegalMonetaryTotal/PayableAmount` = **135.566** (currencyID `XLC`)  
+- `Consumption/LegalMonetaryTotal/PayableAmount` = **139.870** (currencyID `XLC`)  
   The supply less the discount; no tax.
-- `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Selanu Telecom**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/UtilityCustomerParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/UtilityCustomerParty/PartyName/Name` = **Velumi Trading**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **141.920** (currencyID `XLC`)  
-  The supply.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
-  The bundle discount.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **135.566** (currencyID `XLC`)  
-  The supply less the discount.
-- `SupplierConsumption/ConsumptionLine/ID` = **1**  
-  The line of the consumption.
-- `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **1**  
-  The line of the invoice this line explains.
-- `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **6** (unitCode `MON`)  
-  Six business lines for the month.
-- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **127.080** (currencyID `XLC`)  
-  Quantity times the tariff.
-- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **127.080** (currencyID `XLC`)  
-  With the tax of the line.
-- `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
-  March.
-- `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
-  Its last day.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/Amount` = **6.354** (currencyID `XLC`)  
-  On the subscriptions of this line.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-BL**  
-  The utility's tariff item.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **ST-C-1077**  
-  The customer's contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Telephone**  
-  The name of code TEL in the Trade Accord's utility type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply the item is for, as a code. The code is from the Trade Accord's utility type list: TEL = Telephone.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Levise nikeile tofami titefe litile, pafipa vivukane.** (languageID `qal`)  
-  The tariff in words in Lisavan, the seller's language; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Business telephone and data line, monthly subscription.** (languageID `en-XL`)  
-  The tariff in words in English, the working language between the countries; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Subscription**  
-  The name of code SUB in the Trade Accord's consumption type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **SUB** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: SUB = Subscription.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType` = **Monthly**  
-  The name of code M in the Trade Accord's utility charge type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
-  As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
-  The supply contract the tariff belongs to.
-- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **21.18** (currencyID `XLC`)  
-  The tariff (world/items.json).
-- `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MON`)  
-  Per unit.
-- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/PriceAmount` = **21.18** (currencyID `XLC`)  
-  The subscription price as the tariff sheet states it.
-- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/TaxInclusivePriceAmount` = **21.18** (currencyID `XLC`)  
-  No tax on the island.
-- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/TimeAmount` = **per month**  
-  The period the price is for.
-- `SupplierConsumption/ConsumptionLine/ID` = **2**  
-  The line of the consumption.
-- `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **2**  
-  The line of the invoice this line explains.
-- `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **35** (unitCode `E34`)  
-  Mobile data beyond the subscriptions.
-- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **14.840** (currencyID `XLC`)  
-  Quantity times the tariff.
-- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **14.840** (currencyID `XLC`)  
-  With the tax of the line.
-- `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
-  March.
-- `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
-  Its last day.
-- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
-  Where it was delivered.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-GB**  
-  The utility's tariff item.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **ST-C-1077**  
-  The customer's contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Telephone**  
-  The name of code TEL in the Trade Accord's utility type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply the item is for, as a code. The code is from the Trade Accord's utility type list: TEL = Telephone.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Livule titefe lehimi vivukane, tatata menuti.** (languageID `qal`)  
-  The tariff in words in Lisavan, the seller's language; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Mobile data beyond the subscription, per gigabyte.** (languageID `en-XL`)  
-  The tariff in words in English, the working language between the countries; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/PackQuantity` = **5** (unitCode `E34`)  
-  Data beyond the subscriptions is sold in packs of 5 GB.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/PackSizeNumeric` = **7**  
-  Seven packs: the 35 GB of March.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
-  The name of code MET in the Trade Accord's consumption type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: MET = Metered.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType` = **Monthly**  
-  The name of code M in the Trade Accord's utility charge type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
-  As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
-  The supply contract the tariff belongs to.
-- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **0.424** (currencyID `XLC`)  
-  The tariff (world/items.json).
-- `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `E34`)  
-  Per unit.
 
 ## The document
 
@@ -780,7 +630,7 @@ Inside `SubscriberConsumption`:
     <cac:UtilityConsumptionPoint>
       <cbc:ID>ST-CP-1077</cbc:ID>
       <cbc:Description>Office of Velumi Trading, Selanu</cbc:Description>
-      <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
+      <cbc:SubscriberID>ST-CU-20418</cbc:SubscriberID>
       <cbc:SubscriberType>Business</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">BUS</cbc:SubscriberTypeCode>
       <cac:Address>
@@ -816,24 +666,17 @@ Inside `SubscriberConsumption`:
         <cbc:TelecommunicationsSupplyTypeCode listID="urn:ubl-examples:world:codelist:TelecomSupplyTypeCode">BUS</cbc:TelecommunicationsSupplyTypeCode>
         <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">MASKED</cbc:PrivacyCode>
         <cbc:Description>Six business lines and a mobile data pool.</cbc:Description>
-        <cbc:TotalAmount currencyID="XLC">141.920</cbc:TotalAmount>
+        <cbc:TotalAmount currencyID="XLC">146.224</cbc:TotalAmount>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>1</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1850</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">140</cbc:Quantity>
@@ -843,16 +686,17 @@ Inside `SubscriberConsumption`:
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 955 964</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>
             <cbc:TelecommunicationsServiceCall>Outgoing</cbc:TelecommunicationsServiceCall>
             <cbc:TelecommunicationsServiceCallCode listID="urn:ubl-examples:world:codelist:TelecomCallTypeCode">OUT</cbc:TelecommunicationsServiceCallCode>
-            <cbc:CallBaseAmount currencyID="XLC">0.000</cbc:CallBaseAmount>
+            <cbc:CallBaseAmount currencyID="XLC">0.050</cbc:CallBaseAmount>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
             <cac:Price>
-              <cbc:PriceAmount currencyID="XLC">0</cbc:PriceAmount>
+              <cbc:PriceAmount currencyID="XLC">0.2</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="MIN">1</cbc:BaseQuantity>
             </cac:Price>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -861,48 +705,30 @@ Inside `SubscriberConsumption`:
               <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
               <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
               <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
-              <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
-              <cbc:BaseAmount currencyID="XLC">2.400</cbc:BaseAmount>
+              <cbc:Amount currencyID="XLC">2.450</cbc:Amount>
             </cac:AllowanceCharge>
             <cac:CallDuty>
-              <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
+              <cbc:Amount currencyID="XLC">0.050</cbc:Amount>
               <cbc:Duty>Set-up</cbc:Duty>
               <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">SETUP</cbc:DutyCode>
             </cac:CallDuty>
             <cac:TimeDuty>
-              <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
+              <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
               <cbc:Duty>Per minute</cbc:Duty>
               <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">MIN</cbc:DutyCode>
             </cac:TimeDuty>
-          </cac:TelecommunicationsService>
-          <cac:TelecommunicationsService>
-            <cbc:ID>D-0318-01</cbc:ID>
-            <cbc:CallDate>2026-03-18</cbc:CallDate>
-            <cbc:CallTime>08:00:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
-            <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
-            <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
-            <cbc:Quantity unitCode="E34">35</cbc:Quantity>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>2</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1851</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">165</cbc:Quantity>
@@ -918,25 +744,28 @@ Inside `SubscriberConsumption`:
             <cbc:PayPerView>true</cbc:PayPerView>
             <cbc:Quantity unitCode="EA">1</cbc:Quantity>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
+            <cac:Price>
+              <cbc:PriceAmount currencyID="XLC">2</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+            </cac:Price>
+            <cac:AllowanceCharge>
+              <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+              <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
+              <cbc:AllowanceChargeReason>Training films are included in the business bundle</cbc:AllowanceChargeReason>
+              <cbc:Amount currencyID="XLC">2.000</cbc:Amount>
+            </cac:AllowanceCharge>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1852</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">190</cbc:Quantity>
@@ -946,20 +775,13 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>4</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1853</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">215</cbc:Quantity>
@@ -969,20 +791,13 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>5</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1854</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">240</cbc:Quantity>
@@ -992,20 +807,13 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>6</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1855</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">265</cbc:Quantity>
@@ -1014,130 +822,49 @@ Inside `SubscriberConsumption`:
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>7</cbc:ID>
-          <cbc:PhoneNumber>data pool</cbc:PhoneNumber>
-          <cbc:Description>Mobile data beyond the subscriptions.</cbc:Description>
-          <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
+          <cbc:PhoneNumber>+999 3 721 1856</cbc:PhoneNumber>
+          <cbc:Description>Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.</cbc:Description>
+          <cbc:LineExtensionAmount currencyID="XLC">19.144</cbc:LineExtensionAmount>
+          <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">19.144</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
             <cbc:ID>D-03</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:PayPerView>false</cbc:PayPerView>
-            <cbc:Quantity unitCode="E34">35</cbc:Quantity>
-            <cbc:CallExtensionAmount currencyID="XLC">14.840</cbc:CallExtensionAmount>
+            <cbc:TelecommunicationsServiceCategory>Mobile data</cbc:TelecommunicationsServiceCategory>
+            <cbc:Quantity unitCode="E34">31</cbc:Quantity>
+            <cbc:CallExtensionAmount currencyID="XLC">13.144</cbc:CallExtensionAmount>
+            <cac:Price>
+              <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
+            </cac:Price>
+          </cac:TelecommunicationsService>
+          <cac:TelecommunicationsService>
+            <cbc:ID>D-0316-01</cbc:ID>
+            <cbc:CallDate>2026-03-16</cbc:CallDate>
+            <cbc:CallTime>08:00:00</cbc:CallTime>
+            <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
+            <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
+            <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
+            <cbc:Quantity unitCode="E34">4</cbc:Quantity>
+            <cbc:CallExtensionAmount currencyID="XLC">6.000</cbc:CallExtensionAmount>
+            <cac:Price>
+              <cbc:PriceAmount currencyID="XLC">1.5</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
+            </cac:Price>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
       </cac:TelecommunicationsSupply>
       <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="XLC">146.224</cbc:LineExtensionAmount>
         <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
-        <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
+        <cbc:PayableAmount currencyID="XLC">139.870</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
-    <cac:SupplierConsumption>
-      <cac:UtilitySupplierParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Selanu Telecom</cbc:Name>
-        </cac:PartyName>
-      </cac:UtilitySupplierParty>
-      <cac:UtilityCustomerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
-        </cac:PartyName>
-      </cac:UtilityCustomerParty>
-      <cac:Consumption>
-        <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-          <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
-          <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
-        </cac:LegalMonetaryTotal>
-      </cac:Consumption>
-      <cac:ConsumptionLine>
-        <cbc:ID>1</cbc:ID>
-        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">127.080</cbc:TaxInclusiveLineExtensionAmount>
-        <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
-          <cbc:EndDate>2026-03-31</cbc:EndDate>
-        </cac:Period>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-          <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-          <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
-        </cac:AllowanceCharge>
-        <cac:UtilityItem>
-          <cbc:ID>ST-BL</cbc:ID>
-          <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
-          <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
-          <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
-          <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
-          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:Contract>
-            <cbc:ID>ST-C-1077</cbc:ID>
-          </cac:Contract>
-        </cac:UtilityItem>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
-        </cac:Price>
-        <cac:UnstructuredPrice>
-          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-          <cbc:TaxInclusivePriceAmount currencyID="XLC">21.18</cbc:TaxInclusivePriceAmount>
-          <cbc:TimeAmount>per month</cbc:TimeAmount>
-        </cac:UnstructuredPrice>
-      </cac:ConsumptionLine>
-      <cac:ConsumptionLine>
-        <cbc:ID>2</cbc:ID>
-        <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">14.840</cbc:TaxInclusiveLineExtensionAmount>
-        <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
-          <cbc:EndDate>2026-03-31</cbc:EndDate>
-        </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
-        <cac:UtilityItem>
-          <cbc:ID>ST-GB</cbc:ID>
-          <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
-          <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
-          <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
-          <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
-          <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
-          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
-          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:Contract>
-            <cbc:ID>ST-C-1077</cbc:ID>
-          </cac:Contract>
-        </cac:UtilityItem>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
-        </cac:Price>
-      </cac:ConsumptionLine>
-    </cac:SupplierConsumption>
   </cac:SubscriberConsumption>
 </UtilityStatement>
 ```

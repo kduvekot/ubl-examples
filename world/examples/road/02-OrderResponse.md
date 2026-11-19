@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
 
-The manufacturer accepts the order and confirms the collection date at its warehouse.
+The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier (decision D35).
 
 [The XML file](02-OrderResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -168,8 +168,8 @@ Inside `Delivery`:
 
 - `PromisedDeliveryPeriod/StartDate` = **2026-03-23**  
   Under FCA delivery is the handover to the buyer's carrier: on day 7.
-- `PromisedDeliveryPeriod/EndDate` = **2026-03-23**  
-  The same day.
+- `PromisedDeliveryPeriod/EndDate` = **2026-03-24**  
+  Or the morning after, by the guaranteed despatch (road/02#F4).
 - `Despatch/EstimatedDespatchDate` = **2026-03-23**  
   The goods will be ready on the requested day.
 - `Despatch/EstimatedDespatchTime` = **14:00:00**  
@@ -182,9 +182,9 @@ Inside `Delivery`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Despatch/NotifyParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Despatch/ResponsibleParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Despatch/ResponsibleParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Despatch/ResponsibleParty/PartyName/Name` = **Castrano Logistics**  
+- `Despatch/ResponsibleParty/PartyName/Name` = **Trasvia Haulage**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Despatch/EstimatedDespatchPeriod/StartDate` = **2026-03-23**  
   The afternoon of day 7.
@@ -225,16 +225,6 @@ Inside `OrderLine`:
   The frame ordered.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
   Its number.
-- `SellerProposedSubstituteLineItem/ID` = **2**  
-  What the seller would also accept to ship, if the buyer prefers.
-- `SellerProposedSubstituteLineItem/Quantity` = **12** (unitCode `EA`)  
-  The same quantity.
-- `SellerProposedSubstituteLineItem/Item/Name` = **Bench side frame casting, 2025, from stock**  
-  Six left in stock; the rest would follow in May.
-- `SellerProposedSubstituteLineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
-  The item number.
-- `SellerProposedSubstituteLineItem/Item/SellersItemIdentification/ExtendedID` = **2025**  
-  The old version.
 - `SellerSubstitutedLineItem/ID` = **2**  
   The substitute for line 2.
 - `SellerSubstitutedLineItem/Quantity` = **12** (unitCode `EA`)  
@@ -248,7 +238,7 @@ Inside `OrderLine`:
 - `SellerSubstitutedLineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
   The same item number.
 - `SellerSubstitutedLineItem/Item/SellersItemIdentification/ExtendedID` = **2026**  
-  The new version.
+  The new version, the 2026 casting: every later document of the flow identifies the frame so (D35 point 3).
 - `OrderLineReference/LineID` = **2**  
   The order line.
 - `OrderLineReference/SalesOrderLineID` = **2**  
@@ -382,7 +372,7 @@ Inside `OrderLine`:
   <cac:Delivery>
     <cac:PromisedDeliveryPeriod>
       <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-03-23</cbc:EndDate>
+      <cbc:EndDate>2026-03-24</cbc:EndDate>
     </cac:PromisedDeliveryPeriod>
     <cac:Despatch>
       <cbc:EstimatedDespatchDate>2026-03-23</cbc:EstimatedDespatchDate>
@@ -399,10 +389,10 @@ Inside `OrderLine`:
       </cac:NotifyParty>
       <cac:ResponsibleParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Castrano Logistics</cbc:Name>
+          <cbc:Name>Trasvia Haulage</cbc:Name>
         </cac:PartyName>
       </cac:ResponsibleParty>
       <cac:EstimatedDespatchPeriod>
@@ -445,17 +435,6 @@ Inside `OrderLine`:
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
-    <cac:SellerProposedSubstituteLineItem>
-      <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Bench side frame casting, 2025, from stock</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>VI-C180</cbc:ID>
-          <cbc:ExtendedID>2025</cbc:ExtendedID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-    </cac:SellerProposedSubstituteLineItem>
     <cac:SellerSubstitutedLineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>

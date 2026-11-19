@@ -30,7 +30,7 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
   UBL's receipt advice type code: the goods actually received. The code is from the world's copy of UBL's Receipt advice type list, with a listID: Actual = An arrival that has passed goods inspection and is accepted (or not)..
 - `DeliveryAcceptanceCode` = **ACCEPTED** (listID `urn:ubl-examples:world:codelist:DeliveryAcceptanceCode`)  
   All goods accepted. The code is from the Trade Accord's delivery acceptance list: ACCEPTED = All accepted.
-- `Note` = **Counted and checked at goods-in: one bench short, one box of side frames over.**  
+- `Note` = **Counted and checked at goods-in: one bench short of a parcel, one frame carton over.**  
   The result.
 - `LineCountNumeric` = **2**  
   The number of lines.
@@ -259,14 +259,14 @@ Inside `ReceiptLine`:
   The line number.
 - `UUID` = **01193af5-785e-5e35-84c8-25a8b365acea**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **One pallet held three benches and a box of side frames: mis-picked at the 3PL.**  
+- `Note` = **One bench without its frame carton with the bolt set, parcel 2 of 3: 95 complete benches.**  
   What was found.
 - `ReceivedQuantity` = **95** (unitCode `EA`)  
-  One bench fewer than despatched.
+  One bench fewer than despatched, counted as complete benches.
 - `ShortQuantity` = **1** (unitCode `EA`)  
-  One bench short.
+  One bench without its second frame carton.
 - `ShortageActionCode` = **REPLACE** (listID `urn:ubl-examples:world:codelist:ShortageActionCode`)  
-  The distributor asks for the missing bench with the next truck. The code is from the Trade Accord's shortage action list: REPLACE = Deliver the rest.
+  The distributor asks for the bench's missing parcel with the next truck. The code is from the Trade Accord's shortage action list: REPLACE = Deliver the rest.
 - `ReceivedDate` = **2026-03-25**  
   Unloaded.
 - `OrderLineReference/LineID` = **1**  
@@ -311,12 +311,12 @@ Inside `ReceiptLine`:
   The line number.
 - `UUID` = **986c8783-e70e-596b-82d0-e70c728412de**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **The mis-picked box, in place of the missing bench.**  
+- `Note` = **13 frame cartons on the pallet of side frames, one more than despatched.**  
   What was found.
 - `ReceivedQuantity` = **13** (unitCode `EA`)  
-  One box more than despatched.
+  Thirteen frame cartons on the pallet of side frames.
 - `OversupplyQuantity` = **1** (unitCode `EA`)  
-  The extra box, held for collection by the next truck.
+  One carton more than despatched.
 - `ReceivedDate` = **2026-03-25**  
   Unloaded.
 - `OrderLineReference/LineID` = **2**  
@@ -339,6 +339,8 @@ Inside `ReceiptLine`:
   The buyer's own item number: it resells this item as its item bench-casting-b.
 - `Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; item bench-casting of Valdara Industries (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **2026**  
+  The 2026 casting with the reinforced foot, which the order response substituted for the casting ordered.
 - `Item/StandardItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-casting of Valdara Industries (world/items.json).
 
@@ -357,7 +359,7 @@ Inside `ReceiptLine`:
   <cbc:IssueTime>15:40:00-01:00</cbc:IssueTime>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Counted and checked at goods-in: one bench short, one box of side frames over.</cbc:Note>
+  <cbc:Note>Counted and checked at goods-in: one bench short of a parcel, one frame carton over.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -526,7 +528,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>01193af5-785e-5e35-84c8-25a8b365acea</cbc:UUID>
-    <cbc:Note>One pallet held three benches and a box of side frames: mis-picked at the 3PL.</cbc:Note>
+    <cbc:Note>One bench without its frame carton with the bolt set, parcel 2 of 3: 95 complete benches.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">95</cbc:ReceivedQuantity>
     <cbc:ShortQuantity unitCode="EA">1</cbc:ShortQuantity>
     <cbc:ShortageActionCode listID="urn:ubl-examples:world:codelist:ShortageActionCode">REPLACE</cbc:ShortageActionCode>
@@ -572,7 +574,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>986c8783-e70e-596b-82d0-e70c728412de</cbc:UUID>
-    <cbc:Note>The mis-picked box, in place of the missing bench.</cbc:Note>
+    <cbc:Note>13 frame cartons on the pallet of side frames, one more than despatched.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">13</cbc:ReceivedQuantity>
     <cbc:OversupplyQuantity unitCode="EA">1</cbc:OversupplyQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
@@ -596,6 +598,7 @@ Inside `ReceiptLine`:
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
+        <cbc:ExtendedID>2026</cbc:ExtendedID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

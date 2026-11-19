@@ -2,7 +2,7 @@
 
 *Example 4 of the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
-The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration.
+The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration: one shipment, the month's flow measured at the border metering station, with a consignment for each buyer, the power station and the retail company.
 
 [The XML file](04-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -115,22 +115,100 @@ Inside `CustomsDeclaration`:
 - `Shipment/ID` = **KG-SH-26-0154**  
   The shipment declared.
 - `Shipment/Consignment/ID` = **KG-CS-26-0155**  
-  The consignment carried.
-- `Shipment/Consignment/GrossWeightMeasure` = **2940000** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
+  The consignment of Montebrio Power.
+- `Shipment/Consignment/SummaryDescription` = **Goods item 1: 36,800 MWh of natural gas, delivered to the power station.**  
+  What the consignment holds: the goods item of this buyer.
+- `Shipment/Consignment/GrossWeightMeasure` = **2760000** (unitCode `KGM`)  
+  The weight of this buyer's gas.
+- `Shipment/Consignment/ConsigneeParty/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Shipment/Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10087** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XU-TR-105918** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
+  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PartyName/Name` = **Montebrio Power**  
+  The trading name; identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/ID` = **4170200397702895** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/StreetName` = **Bek Hekrul Trinskul** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/StreetName` = **Via della Centrale** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **44**  
+  Building number of the postal address. identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/PostalZone` = **4310**  
+  Postal code in Urvania's format (4 digits). identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
+  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Montebrio Power (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
+- `Shipment/Consignment/CarrierParty/PartyName/Name` = **Kelpstone Gas**  
+  The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
+- `Shipment/Consignment/ID` = **KG-CS-26-0156**  
+  The consignment of Ferrano Energy.
+- `Shipment/Consignment/SummaryDescription` = **Goods item 2: 2,400 MWh of natural gas, fed into the grid at the city gate for the retail company's gas customers.**  
+  What the consignment holds: the goods item of this buyer.
+- `Shipment/Consignment/GrossWeightMeasure` = **180000** (unitCode `KGM`)  
+  The weight of this buyer's gas.
+- `Shipment/Consignment/ConsigneeParty/PartyIdentification/ID` = **XU-R-105781** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Energy (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Shipment/Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XU-TR-105781** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
+  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PartyName/Name` = **Ferrano Energy**  
+  The trading name; identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/ID` = **4160202777983743** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/StreetName` = **Duznaz Hekrul Skultrir** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **9**  
+  Building number of the postal address. identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/PostalZone` = **4150**  
+  Postal code in Urvania's format (4 digits). identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
+  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Energy (world/parties.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Shipment/Consignment/ConsigneeParty/PostalAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Kelpstone Gas**  
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `Shipment/GoodsItem/ID` = **1**  
-  The goods item number.
+  The goods item number: one per buyer.
 - `Shipment/GoodsItem/Description` = **Natural gas**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **1411200.00** (currencyID `XBL`)  
-  The value of the gas at the contract price, in lume.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **2940000** (unitCode `KGM`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **1324800.00** (currencyID `XBL`)  
+  The value of this buyer's gas at the contract price, in lume.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **2760000** (unitCode `KGM`)  
   The gross weight of the goods of this item.
-- `Shipment/GoodsItem/Quantity` = **39200** (unitCode `MWH`)  
+- `Shipment/GoodsItem/Quantity` = **36800** (unitCode `MWH`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.**  
   The seller's description; item natural-gas of Kelpstone Gas (world/items.json).
@@ -140,8 +218,28 @@ Inside `CustomsDeclaration`:
   Where the item was produced; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **V** (listID `WCO HS 2022 Sections`)  
   The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: V = Mineral products.
-- `Shipment/GoodsItem/Item/CommodityClassification/CargoTypeCode` = **BULK** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
-  The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: BULK = Dry bulk.
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **271121** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 271121 = Natural gas, in gaseous state.
+- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **12020** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 12020 = Natural gas, liquefied or in the gaseous state.
+- `Shipment/GoodsItem/ID` = **2**  
+  The goods item number: one per buyer.
+- `Shipment/GoodsItem/Description` = **Natural gas**  
+  What the goods are, in words.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **86400.00** (currencyID `XBL`)  
+  The value of this buyer's gas at the contract price, in lume.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **180000** (unitCode `KGM`)  
+  The gross weight of the goods of this item.
+- `Shipment/GoodsItem/Quantity` = **2400** (unitCode `MWH`)  
+  The quantity declared.
+- `Shipment/GoodsItem/Item/Description` = **Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.**  
+  The seller's description; item natural-gas of Kelpstone Gas (world/items.json).
+- `Shipment/GoodsItem/Item/Name` = **Natural gas**  
+  The item's short name; item natural-gas of Kelpstone Gas (world/items.json).
+- `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Where the item was produced; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **V** (listID `WCO HS 2022 Sections`)  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: V = Mineral products.
 - `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **271121** (listID `WCO HS 2022`)  
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 271121 = Natural gas, in gaseous state.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **12020** (listID `UN CPC Ver.2.1`)  
@@ -150,6 +248,10 @@ Inside `CustomsDeclaration`:
   The only stage.
 - `Shipment/ShipmentStage/TransportModeCode` = **7** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 7 = Fixed transport installations.
+- `Shipment/ShipmentStage/TransitPeriod/StartDate` = **2026-03-01**  
+  The gas declared flowed through the pipeline in March: a monthly declaration of a continuous flow (energy/04#F5).
+- `Shipment/ShipmentStage/TransitPeriod/EndDate` = **2026-03-31**  
+  The month's last day.
 - `Shipment/ShipmentStage/TransportMeans/TransportMeansTypeCode` = **71** (listID `UNECE Recommendation 28`)  
   The gas leaves by pipeline. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 71 = Pipeline.
 - `Shipment/OriginAddress/ID` = **19/03** (schemeID `urn:ubl-examples:world:grid`)  
@@ -168,40 +270,24 @@ Inside `CustomsDeclaration`:
   The minutes of the longitude.
 - `Shipment/OriginAddress/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `ConsigneeParty/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10087** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/AdditionalPartyIdentification/ID` = **XU-TR-105918** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PartyName/Name` = **Montebrio Power**  
-  The trading name; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/ID` = **4170200397702895** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `ConsigneeParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `ConsigneeParty/PostalAddress/StreetName` = **Bek Hekrul Trinskul** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/StreetName` = **Via della Centrale** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/BuildingNumber` = **44**  
-  Building number of the postal address. identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/PostalZone` = **4310**  
-  Postal code in Urvania's format (4 digits). identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Montebrio Power (world/parties.json).
-- `ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
-- `ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `ConsigneeParty/PostalAddress/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
+- `Shipment/LastExitPortLocation/Description` = **On Bayvarra's side of the border with Urvania, in the Northern Territory.**  
+  Where it stands.
+- `Shipment/LastExitPortLocation/Name` = **Border metering station of the Kelpstone gas pipeline**  
+  Where the gas leaves Bayvarra: the border metering station measures the gas declared.
+- `Shipment/LastExitPortLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
+  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
+- `Shipment/LastExitPortLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Shipment/LastExitPortLocation/LocationCoordinate/LatitudeMinutesMeasure` = **40.54** (unitCode `D61`)  
+  The minutes of the latitude.
+- `Shipment/LastExitPortLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
+  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
+- `Shipment/LastExitPortLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `Shipment/LastExitPortLocation/LocationCoordinate/LongitudeMinutesMeasure` = **42.48** (unitCode `D61`)  
+  The minutes of the longitude.
+- `Shipment/LastExitPortLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
+  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `CustomsParty/PartyIdentification/ID` = **3071845926** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `CustomsParty/PartyName/Name` = **Customs and Border Service of Bayvarra**  
@@ -333,7 +419,80 @@ Inside `CustomsDeclaration`:
       <cbc:ID>KG-SH-26-0154</cbc:ID>
       <cac:Consignment>
         <cbc:ID>KG-CS-26-0155</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">2940000</cbc:GrossWeightMeasure>
+        <cbc:SummaryDescription>Goods item 1: 36,800 MWh of natural gas, delivered to the power station.</cbc:SummaryDescription>
+        <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
+        <cac:ConsigneeParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:AdditionalPartyIdentification>
+            <cbc:ID schemeID="ISO 6523">0990:10087</cbc:ID>
+          </cac:AdditionalPartyIdentification>
+          <cac:AdditionalPartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-105918</cbc:ID>
+          </cac:AdditionalPartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Montebrio Power</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4170200397702895</cbc:ID>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+            <cbc:StreetName languageID="qau">Bek Hekrul Trinskul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Via della Centrale</cbc:StreetName>
+            <cbc:BuildingNumber>44</cbc:BuildingNumber>
+            <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
+            <cbc:PostalZone>4310</cbc:PostalZone>
+            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
+            </cac:Country>
+          </cac:PostalAddress>
+        </cac:ConsigneeParty>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Kelpstone Gas</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+      </cac:Consignment>
+      <cac:Consignment>
+        <cbc:ID>KG-CS-26-0156</cbc:ID>
+        <cbc:SummaryDescription>Goods item 2: 2,400 MWh of natural gas, fed into the grid at the city gate for the retail company's gas customers.</cbc:SummaryDescription>
+        <cbc:GrossWeightMeasure unitCode="KGM">180000</cbc:GrossWeightMeasure>
+        <cac:ConsigneeParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:AdditionalPartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-105781</cbc:ID>
+          </cac:AdditionalPartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Ferrano Energy</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202777983743</cbc:ID>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+            <cbc:StreetName languageID="qau">Duznaz Hekrul Skultrir</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Corso della Repubblica</cbc:StreetName>
+            <cbc:BuildingNumber>9</cbc:BuildingNumber>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4150</cbc:PostalZone>
+            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
+            </cac:Country>
+          </cac:PostalAddress>
+        </cac:ConsigneeParty>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
@@ -346,9 +505,9 @@ Inside `CustomsDeclaration`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Natural gas</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">1411200.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">2940000</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="MWH">39200</cbc:Quantity>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">1324800.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="MWH">36800</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
           <cbc:Name>Natural gas</cbc:Name>
@@ -357,7 +516,25 @@ Inside `CustomsDeclaration`:
           </cac:OriginCountry>
           <cac:CommodityClassification>
             <cbc:NatureCode listID="WCO HS 2022 Sections">V</cbc:NatureCode>
-            <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">BULK</cbc:CargoTypeCode>
+            <cbc:CommodityCode listID="WCO HS 2022">271121</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">12020</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:GoodsItem>
+      <cac:GoodsItem>
+        <cbc:ID>2</cbc:ID>
+        <cbc:Description>Natural gas</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">86400.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">180000</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="MWH">2400</cbc:Quantity>
+        <cac:Item>
+          <cbc:Description>Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.</cbc:Description>
+          <cbc:Name>Natural gas</cbc:Name>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:NatureCode listID="WCO HS 2022 Sections">V</cbc:NatureCode>
             <cbc:CommodityCode listID="WCO HS 2022">271121</cbc:CommodityCode>
             <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">12020</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
@@ -366,6 +543,10 @@ Inside `CustomsDeclaration`:
       <cac:ShipmentStage>
         <cbc:ID>1</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">7</cbc:TransportModeCode>
+        <cac:TransitPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:TransitPeriod>
         <cac:TransportMeans>
           <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">71</cbc:TransportMeansTypeCode>
         </cac:TransportMeans>
@@ -382,38 +563,20 @@ Inside `CustomsDeclaration`:
           <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
         </cac:LocationCoordinate>
       </cac:OriginAddress>
+      <cac:LastExitPortLocation>
+        <cbc:Description>On Bayvarra's side of the border with Urvania, in the Northern Territory.</cbc:Description>
+        <cbc:Name>Border metering station of the Kelpstone gas pipeline</cbc:Name>
+        <cac:LocationCoordinate>
+          <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+          <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>
+          <cbc:LatitudeMinutesMeasure unitCode="D61">40.54</cbc:LatitudeMinutesMeasure>
+          <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+          <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+          <cbc:LongitudeMinutesMeasure unitCode="D61">42.48</cbc:LongitudeMinutesMeasure>
+          <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+        </cac:LocationCoordinate>
+      </cac:LastExitPortLocation>
     </cac:Shipment>
-    <cac:ConsigneeParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10087</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-105918</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Montebrio Power</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4170200397702895</cbc:ID>
-        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Bek Hekrul Trinskul</cbc:StreetName>
-        <cbc:StreetName languageID="en-XU">Via della Centrale</cbc:StreetName>
-        <cbc:BuildingNumber>44</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
-        <cbc:PostalZone>4310</cbc:PostalZone>
-        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          <cbc:Name>Urvania</cbc:Name>
-        </cac:Country>
-      </cac:PostalAddress>
-    </cac:ConsigneeParty>
     <cac:CustomsParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">3071845926</cbc:ID>

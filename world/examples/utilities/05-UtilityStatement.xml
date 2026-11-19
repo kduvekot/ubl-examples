@@ -122,7 +122,7 @@
     <cac:UtilityConsumptionPoint>
       <cbc:ID>CSW-CP-38510-411</cbc:ID>
       <cbc:Description>Shop, Lumeport</cbc:Description>
-      <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
+      <cbc:SubscriberID>CSW-CU-118204</cbc:SubscriberID>
       <cbc:SubscriberType>Commercial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="MTQ">86</cbc:TotalDeliveredQuantity>
@@ -169,79 +169,13 @@
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
         <cac:MeterProperty>
-          <cbc:Name>Maximum flow</cbc:Name>
+          <cbc:Name>Permanent flow rate (Q3)</cbc:Name>
           <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
         </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
-    <cac:Consumption>
-      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
-      <cac:MainPeriod>
-        <cbc:StartDate>2026-03-01</cbc:StartDate>
-        <cbc:EndDate>2026-03-31</cbc:EndDate>
-      </cac:MainPeriod>
-      <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-      </cac:TaxTotal>
-      <cac:EnergyWaterSupply>
-        <cac:ConsumptionReport>
-          <cbc:ID>CSW-CP-38510-411-2603</cbc:ID>
-          <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-          <cbc:Description>March consumption of Shop, Lumeport.</cbc:Description>
-          <cbc:TotalConsumedQuantity unitCode="MTQ">86</cbc:TotalConsumedQuantity>
-          <cbc:BasicConsumedQuantity unitCode="MTQ">86</cbc:BasicConsumedQuantity>
-          <cac:Period>
-            <cbc:StartDate>2026-03-01</cbc:StartDate>
-            <cbc:EndDate>2026-03-31</cbc:EndDate>
-          </cac:Period>
-          <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
-            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-            <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionReportReference>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
-            <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
-            <cbc:Amount currencyID="XBL">190.35</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-01-01</cbc:StartDate>
-              <cbc:EndDate>2026-01-31</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
-            <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
-            <cbc:Amount currencyID="XBL">185.65</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-        </cac:ConsumptionReport>
-        <cac:ConsumptionAverage>
-          <cbc:AverageAmount currencyID="XBL">202.10</cbc:AverageAmount>
-          <cbc:Description>The average over the last three months is 82 m³.</cbc:Description>
-        </cac:ConsumptionAverage>
-      </cac:EnergyWaterSupply>
-      <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
-      </cac:LegalMonetaryTotal>
-    </cac:Consumption>
     <cac:SupplierConsumption>
-      <cbc:Description>The supply under the customer's contract.</cbc:Description>
+      <cbc:Description>The drinking water, which the water company supplies under the customer's contract.</cbc:Description>
       <cac:UtilitySupplierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
@@ -264,6 +198,72 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:MainPeriod>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="XBL">202.10</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+              <cbc:Percent>0</cbc:Percent>
+              <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
+              <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:EnergyWaterSupply>
+          <cac:ConsumptionReport>
+            <cbc:ID>CSW-CP-38510-411-2603</cbc:ID>
+            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+            <cbc:Description>March consumption of Shop, Lumeport.</cbc:Description>
+            <cbc:TotalConsumedQuantity unitCode="MTQ">86</cbc:TotalConsumedQuantity>
+            <cbc:BasicConsumedQuantity unitCode="MTQ">86</cbc:BasicConsumedQuantity>
+            <cac:Period>
+              <cbc:StartDate>2026-03-01</cbc:StartDate>
+              <cbc:EndDate>2026-03-31</cbc:EndDate>
+            </cac:Period>
+            <cac:ConsumptionReportReference>
+              <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
+              <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+              <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+              <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionReportReference>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+              <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
+              <cbc:Amount currencyID="XBL">190.35</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-01-01</cbc:StartDate>
+                <cbc:EndDate>2026-01-31</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+              <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
+              <cbc:Amount currencyID="XBL">185.65</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+          </cac:ConsumptionReport>
+          <cac:ConsumptionAverage>
+            <cbc:AverageAmount currencyID="XBL">192.70</cbc:AverageAmount>
+            <cbc:Description>The average over the last three months is 82 m³.</cbc:Description>
+          </cac:ConsumptionAverage>
+        </cac:EnergyWaterSupply>
         <cac:LegalMonetaryTotal>
           <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
           <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
@@ -286,19 +286,14 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>CW-M3</cbc:ID>
-          <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
-          <cbc:SubscriberType>Water</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:SubscriberTypeCode>
+          <cbc:SubscriberID>CSW-CU-118204</cbc:SubscriberID>
+          <cbc:SubscriberType>Commercial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
@@ -319,6 +314,68 @@
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+    </cac:SupplierConsumption>
+    <cac:SupplierConsumption>
+      <cbc:Description>The city of Lumeport's sewage levy on the water used, which the water company collects with its bill and pays to the city.</cbc:Description>
+      <cac:UtilitySupplierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Public Works Department</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilitySupplierParty>
+      <cac:UtilityCustomerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilityCustomerParty>
+      <cac:Consumption>
+        <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
+        <cac:MainPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:MainPeriod>
+        <cac:LegalMonetaryTotal>
+          <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XBL">36.12</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal>
+      </cac:Consumption>
+      <cac:ConsumptionLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:Period>
+        <cac:UtilityItem>
+          <cbc:ID>CSW-LEVY</cbc:ID>
+          <cbc:SubscriberType>Commercial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
+          <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+            <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
+            <cbc:TaxExemptionReason>Collected for a public body, outside the scope of the state sales tax</cbc:TaxExemptionReason>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
         </cac:Price>
       </cac:ConsumptionLine>

@@ -13,7 +13,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
   <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -205,6 +205,11 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>21 days net from the bill.</cbc:Note>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
@@ -215,16 +220,16 @@
     <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
   </cac:AllowanceCharge>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">135.566</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">146.224</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">139.870</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">139.870</cbc:TaxInclusiveAmount>
     <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
     <cbc:AllowanceTotalTaxInclusiveAmount currencyID="XLC">6.354</cbc:AllowanceTotalTaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XLC">139.870</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
@@ -232,8 +237,8 @@
       <cbc:Description>Six business lines</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
-      <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
+      <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, vivukane tatata litile tofami lovofe.</cbc:Description>
+      <cbc:Description languageID="en-XL">Business telephone and data line, subscription per line and month.</cbc:Description>
       <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
       <cbc:Name languageID="en-XL">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
@@ -242,13 +247,13 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="E34">31</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">13.144</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
       <cbc:ID>ST-D-0042</cbc:ID>
@@ -265,6 +270,29 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="E34">4</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">6.000</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
+    <cac:PurchaseReference>
+      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:Description>Mobile data pool, roaming in Bayvarra</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:Item>
+      <cbc:Description languageID="qal">Livule titefe vimihi lelala vapiseva fivava pelahi, tatata menuti; Trade Accord sohone lelaha helate vamufe.</cbc:Description>
+      <cbc:Description languageID="en-XL">Mobile data used on a partner's network abroad, per gigabyte; the Trade Accord has no roaming rule.</cbc:Description>
+      <cbc:Name languageID="qal">Livule titefe helate</cbc:Name>
+      <cbc:Name languageID="en-XL">Mobile data roaming</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>ST-GB-RX</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XLC">1.5</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

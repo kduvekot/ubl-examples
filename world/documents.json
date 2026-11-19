@@ -998,7 +998,7 @@
    "doc": "OrderResponse",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "The manufacturer accepts the order and confirms the collection date at its warehouse.",
+   "why": "The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier (decision D35).",
    "parties": {
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb"
@@ -1051,7 +1051,7 @@
    "doc": "CertificateOfOrigin",
    "from": "5-xu",
    "to": "20-xu",
-   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin.",
+   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin. The application is Valdara's own document, with its own number; the chamber's e-certificate system gives it a job number when it is lodged (decision D35).",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
@@ -1063,7 +1063,7 @@
    "doc": "CertificateOfOrigin",
    "from": "20-xu",
    "to": "6-xb",
-   "why": "The chamber endorses the certificate and makes it available to the importer, who needs it for the import declaration.",
+   "why": "The chamber, the body Urvania authorises under the Trade Accord to issue proofs of preferential origin, checks the application, issues the certificate under its own number and is its only endorser: a certificate between Accord members needs no legalisation. It makes the certificate available to the importer, who needs it for the import declaration (decision D35).",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
@@ -1128,7 +1128,7 @@
    "doc": "FulfilmentCancellation",
    "from": "6-xb",
    "to": "5-xu",
-   "why": "The next morning the distributor's recount finds the 96th bench on the last pallet: the receipt advice reported a shortage that is not there, so the distributor cancels it.",
+   "why": "The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like, so goods-in reported 95 benches and one carton of frames over. The next morning the distributor's recount reads the carton's label: it is the 96th bench's. The receipt advice reported a shortage and a carton over that are not there, so the distributor cancels it (decision D35).",
    "parties": {
     "BuyerCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu",
@@ -1140,7 +1140,7 @@
    "doc": "ReceiptAdvice",
    "from": "6-xb",
    "to": "8-xu",
-   "why": "The corrected receipt advice: all 96 benches received, and one box of side frames more than despatched.",
+   "why": "The corrected receipt advice: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; it names the receipt advice it replaces (decision D35).",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
     "DespatchSupplierParty": "8-xu",
@@ -2651,7 +2651,7 @@
    "doc": "UtilityStatement",
    "from": "33-xu",
    "to": "5-xu",
-   "why": "The factory's monthly electricity consumption: meter readings and consumption per connection, in the energy and water supply structure.",
+   "why": "The factory's monthly electricity consumption: meter readings and consumption at its main connection, with Ferrano Energy's energy and Ferrano Grid's network charges as the two suppliers of the bill's tariff.",
    "parties": {
     "SenderParty": "33-xu",
     "ReceiverParty": "5-xu",
@@ -2677,11 +2677,11 @@
    "doc": "UtilityStatement",
    "from": "33-xu",
    "to": "8-xu",
-   "why": "The 3PL's warehouse is the manufacturer's building: the 3PL is the subscriber at the connection and receives the statement, but the manufacturer pays. The statement therefore names the manufacturer as customer, the buyer that differs from the receiver.",
+   "why": "The warehouse is the manufacturer's building: the manufacturer owns it and holds the subscription, the 3PL operates the warehouse and receives the statement of its consumption point; the statement names the manufacturer as subscriber and customer (D31 point 4).",
    "parties": {
     "SenderParty": "33-xu",
     "ReceiverParty": "8-xu",
-    "SubscriberParty": "8-xu",
+    "SubscriberParty": "5-xu",
     "CustomerParty": "5-xu"
    }
   },
@@ -2703,7 +2703,7 @@
    "doc": "UtilityStatement",
    "from": "34-xb",
    "to": "26-xb",
-   "why": "The shop's water consumption, read from its meter.",
+   "why": "The shop's water consumption, read from its meter, with the water company's water and the city's sewage levy as the two parts of the bill.",
    "parties": {
     "SenderParty": "34-xb",
     "ReceiverParty": "26-xb",
@@ -2742,7 +2742,7 @@
    "doc": "UtilityStatement",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household's water consumption.",
+   "why": "The household's annual statement for water and district heat, April 2025 to March 2026: the annual readings, the year's water with the city's levy, the heat with its cooling correction, and the new payments on account from April (D31).",
    "parties": {
     "SenderParty": "34-xb",
     "ReceiverParty": "c-xb",
@@ -2754,7 +2754,7 @@
    "doc": "Invoice",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household's water bill, exempt from sales tax like every water bill.",
+   "why": "The household's settlement bill for the account year: water (exempt), the city's levy (outside the tax), district heat and its cooling correction (with the state's sales tax), less the twelve payments on account; the balance is collected by direct debit 21 days later (D31, D23).",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb",
@@ -2766,7 +2766,7 @@
    "doc": "Reminder",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household has not paid by the due date; the utility reminds it of the amount past due, referring to the invoice.",
+   "why": "The direct debit for the settlement bill's balance is returned unpaid; the utility reminds the household of the amount past due, referring to the invoice.",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb",
@@ -2778,7 +2778,7 @@
    "doc": "CreditNote",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "After the reminder the household had its meter tested: it over-read by two cubic metres in March. The utility credits the water and the city's levy on them.",
+   "why": "After the reminder the household had its water meter tested: it over-read by two cubic metres at the annual reading. The utility credits the water and the city's levy on them, which reduces the balance still open.",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb"
@@ -4109,11 +4109,10 @@
    "doc": "ExportCustomsDeclaration",
    "from": "42-xb",
    "to": "19-xb",
-   "why": "The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration.",
+   "why": "The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration: one shipment, the month's flow measured at the border metering station, with a consignment for each buyer, the power station and the retail company.",
    "parties": {
     "ExporterParty": "42-xb",
     "CustomsDeclaration/CustomsParty": "19-xb",
-    "CustomsDeclaration/ConsigneeParty": "43-xu",
     "CustomsDeclaration/Shipment/Consignment/CarrierParty": "42-xb"
    }
   },
@@ -4122,7 +4121,7 @@
    "doc": "ImportCustomsDeclaration",
    "from": "43-xu",
    "to": "19-xu",
-   "why": "The power station declares the gas it received in March into Urvania.",
+   "why": "The power station declares its consignment of March's gas into Urvania, under the shipment of the export declaration.",
    "parties": {
     "ImporterParty": "43-xu",
     "ConsignorParty": "42-xb",
@@ -4176,6 +4175,19 @@
    "parties": {
     "AccountingCustomerParty": "43-xu",
     "AccountingSupplierParty": "42-xb"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "ImportCustomsDeclaration",
+   "from": "33-xu",
+   "to": "19-xu",
+   "why": "The retail company declares its own consignment of March's gas, 2,400 MWh fed into the grid at the city gate for its gas customers, into Urvania (D44).",
+   "parties": {
+    "ImporterParty": "33-xu",
+    "ConsignorParty": "42-xb",
+    "ConsigneeParty": "33-xu",
+    "CustomsParty": "19-xu"
    }
   }
  ],

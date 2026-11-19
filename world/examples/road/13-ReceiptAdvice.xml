@@ -11,7 +11,7 @@
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Revised</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Recounted: all benches received; one box of side frames over.</cbc:Note>
+  <cbc:Note>Recounted: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; the 300 parcels agree with the carrier's count.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -22,6 +22,10 @@
   <cac:AdditionalDocumentReference>
     <cbc:ID>TH-WB-26-0159</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-RA-26-0162</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
@@ -180,7 +184,7 @@
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>afd193d4-be23-5ad3-a6ff-ef6bced12366</cbc:UUID>
-    <cbc:Note>All 96 benches, after the recount.</cbc:Note>
+    <cbc:Note>All 96 benches, after the recount: the 13th carton on the pallet of side frames is this line's, parcel 2 of 3 of the bench reported short.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
@@ -221,9 +225,8 @@
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>6a91536d-d850-5bf2-94a7-500493ffb33a</cbc:UUID>
-    <cbc:Note>One box more than despatched: picked twice at the 3PL.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">13</cbc:ReceivedQuantity>
-    <cbc:OversupplyQuantity unitCode="EA">1</cbc:OversupplyQuantity>
+    <cbc:Note>12 spare frames, as despatched: the 13th carton on their pallet was a bench's parcel.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="EA">12</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -245,6 +248,7 @@
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
+        <cbc:ExtendedID>2026</cbc:ExtendedID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

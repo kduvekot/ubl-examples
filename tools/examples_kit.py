@@ -84,10 +84,10 @@ def tax_rule(seller, buyer, iid):
     s, b, it = PARTY[seller], PARTY[buyer], ITEM[iid]
     c = WORLD["countries"][s["c"]]
     scheme = c["tax"]["schemes"][0]
-    if it.get("levy"):
+    if it.get("levy"):      # the reason a supply is outside the tax, in the exemption reason (D31 point 3, O107)
         return ("O", 0, scheme, f"A public levy the seller collects for {PARTY[it['levy']]['identity']['name']}: not a "
-                                "supply, so outside the scope of the sales tax (category O).", "Levy collected for a "
-                                                                                               "public body")
+                                "supply, so outside the scope of the sales tax (category O, without a rate).",
+                "Collected for a public body, outside the scope of the state sales tax")
     if s["c"] == "XU":
         if it.get("export_carriage"):       # the carriage of exported goods (D41)
             return ("E", 0, scheme, "The carriage of goods directly linked to their export from Urvania is exempt "
@@ -207,7 +207,9 @@ def terms_of(flow, seller, day, kind=None):
     return {"id": f"{PARTY[seller]['c']}-STD", "id_why": f"The standard terms of {c['name']}.", "text": pay["terms"],
             "why": pay["note"], "start": day, "start_why": "From the invoice date.", "due": day + pay["due_days"],
             "discount": pay.get("discount"), "surcharge": pay.get("penalty_surcharge"),
-            "interest": pay.get("penalty_interest") or pay.get("statutory_interest")}
+            # terms that set a surcharge for late payment say something on it: no statutory interest beside it (D22)
+            "interest": pay.get("penalty_interest") or (None if pay.get("penalty_surcharge")
+                                                        else pay.get("statutory_interest"))}
 
 
 def payment_terms(flow, seller, buyer, t, total, cur, number):
@@ -1200,8 +1202,9 @@ def customs_item(iid):
     if cc and hs:
         cc["NatureCode"] = V(HS_SECTION[hs[:2]], "The section of the Harmonized System the goods fall in, the "
                                                  "highest level of the World Customs Organization's classification.")
-        cc["CargoTypeCode"] = V("BULK" if (ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26") or hs[:4] == "2711"
-                                else "GEN", "The kind of cargo: bulk, or general cargo in packages.")
+        if hs[:4] != "2711":        # gas in a pipeline is no cargo: the HS code and the mode say what it is (C82)
+            cc["CargoTypeCode"] = V("BULK" if ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26" else "GEN",
+                                    "The kind of cargo: bulk, or general cargo in packages.")
     return out
 
 
