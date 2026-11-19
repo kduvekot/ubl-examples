@@ -1219,7 +1219,7 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-AIR",
-   "description": "Airport-to-airport air freight per kilogram chargeable weight, road feeder included.",
+   "description": "Airport-to-airport air freight per kilogram chargeable weight.",
    "purchase": "freight"
   },
   {
@@ -1605,20 +1605,20 @@
   {
    "id": "battery-pack",
    "seller": "27-xb",
-   "name": "Lithium-ion battery pack 48 V 100 Ah",
+   "name": "Lithium-ion battery module 48 V 50 Ah",
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 2400.0,
+    "amount": 1200.0,
     "currency": "XBL"
    },
-   "sellers_id": "SE-BAT-48100",
+   "sellers_id": "SE-BAT-4850",
    "hs": "850760",
    "cpc": "46420",
    "origin": "XB",
-   "description": "Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.",
-   "net_kg": 52,
-   "gross_kg": 58,
+   "description": "Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.",
+   "net_kg": 24,
+   "gross_kg": 27,
    "package": {
     "type": "CR",
     "per_package": 1
@@ -1664,12 +1664,13 @@
     "label": "",
     "ems": "F-I,S-S",
     "erg": "161",
-    "isotope": [
-     "Americium-241",
-     "37",
-     "2Q"
-    ],
-    "note": "Excepted package: no radioactive label, the UN number on the package."
+    "note": "Excepted package: no radioactive label; the UN number on the package.",
+    "radioactive": {
+     "nuclide": "Am-241",
+     "kbq_each": 37,
+     "count": 10,
+     "form": "Sealed sources inside the detectors, not special form."
+    }
    },
    "origin_criterion": "S"
   },
@@ -1683,15 +1684,15 @@
     "amount": 9.5,
     "currency": "XBL"
    },
-   "sellers_id": "SE-CS-05",
+   "sellers_id": "SE-CS-01",
    "hs": "381400",
    "cpc": "35110",
    "origin": "XB",
-   "description": "Remover for the protective coating of circuit boards, in 5-litre cans.",
+   "description": "Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.",
    "net_kg": 1.1,
-   "gross_kg": 1.25,
+   "gross_kg": 1.35,
    "package": {
-    "type": "CA",
+    "type": "BX",
     "per_package": 5
    },
    "hazard": {
@@ -1705,7 +1706,8 @@
     "flash": "28",
     "ems": "F-E,S-C",
     "erg": "132",
-    "tunnel": "D/E"
+    "tunnel": "D/E",
+    "pi": "855"
    },
    "origin_criterion": "S"
   },

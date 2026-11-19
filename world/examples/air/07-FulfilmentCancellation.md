@@ -1,8 +1,8 @@
 # Fulfilment Cancellation: Lumeway Distribution to Velumi Trading
 
-*Example 7 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Fulfilment Cancellation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA)*
+*Example 7 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Fulfilment Cancellation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA)*
 
-The cargo missed its flight; the despatch advice is cancelled and a new one follows for the next flight.
+The cargo missed the afternoon flight of 13 May; the despatch advice, which named it, is cancelled, and a new one follows for the next morning's flight.
 
 [The XML file](07-FulfilmentCancellation.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,14 +22,14 @@ The cargo missed its flight; the despatch advice is cancelled and a new one foll
   The sender's number for this document.
 - `UUID` = **4068fe1a-3095-5164-a12c-994c102fc830**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-14**  
-  The flight left without the cargo.
-- `IssueTime` = **08:05:00-01:00**  
-  In the morning, when the distributor learned that the cargo had missed its flight, before the new despatch advice it announces (air/07#F1, air/08#F1); in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **A new despatch advice follows today.**  
+- `IssueDate` = **2026-05-13**  
+  On 13 May, the day of the missed flight.
+- `IssueTime` = **19:50:00-01:00**  
+  In the evening, when the terminal reported the cargo accepted for the next morning's flight, before the new despatch advice it announces (air/07#F1, air/08#F1); in the issuer's local time, with its offset from UTC (D27).
+- `Note` = **A new despatch advice follows this evening.**  
   What happens next.
-- `CancellationNote` = **The cargo missed its flight; it goes on the next day's flight under a new despatch advice.**  
-  Why the despatch advice is cancelled.
+- `CancellationNote` = **The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.**  
+  Why the despatch advice is cancelled: the flight and the arrival it gave no longer hold (air/07#F2, F7).
 
 ### Despatch Document Reference
 
@@ -50,8 +50,8 @@ Inside `OrderReference`:
   Its UUID.
 - `IssueDate` = **2026-05-11**  
   Its date.
-- `IssueTime` = **07:50:00**  
-  Its time.
+- `IssueTime` = **07:50:00+00:00**  
+  Its time, in island time.
 - `OrderTypeCode` = **230** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 230: order change. The code is from the world's copy of UN/EDIFACT 1001 Document name: 230 = Purchase order change request.
 - `DocumentReference/ID` = **VT-PO-26-0127**  
@@ -63,10 +63,10 @@ Inside `OrderReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KXL-OFFLOAD-26-0513**  
-  The airline's offload notice.
-- `DocumentType` = **Offload notice**  
-  The kind of document referred to, the airline's offload notice, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+- `ID` = **LACT-TS-26-0326**  
+  The cargo terminal's status: the cargo accepted after the cut-off, for the next morning's flight.
+- `DocumentTypeCode` = **TransportationStatus** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LACT-TS-26-0326 is the example air/05, a TransportationStatus; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportationStatus = Transportation Status.
 
 ### Signature
 
@@ -250,10 +250,10 @@ Inside `DespatchSupplierParty`:
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0328</cbc:ID>
   <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
-  <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>08:05:00-01:00</cbc:IssueTime>
-  <cbc:Note>A new despatch advice follows today.</cbc:Note>
-  <cbc:CancellationNote>The cargo missed its flight; it goes on the next day's flight under a new despatch advice.</cbc:CancellationNote>
+  <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>19:50:00-01:00</cbc:IssueTime>
+  <cbc:Note>A new despatch advice follows this evening.</cbc:Note>
+  <cbc:CancellationNote>The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0327</cbc:ID>
   </cac:DespatchDocumentReference>
@@ -262,7 +262,7 @@ Inside `DespatchSupplierParty`:
     <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
     <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
     <cbc:IssueDate>2026-05-11</cbc:IssueDate>
-    <cbc:IssueTime>07:50:00</cbc:IssueTime>
+    <cbc:IssueTime>07:50:00+00:00</cbc:IssueTime>
     <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">230</cbc:OrderTypeCode>
     <cac:DocumentReference>
       <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -270,8 +270,8 @@ Inside `DespatchSupplierParty`:
     </cac:DocumentReference>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KXL-OFFLOAD-26-0513</cbc:ID>
-    <cbc:DocumentType>Offload notice</cbc:DocumentType>
+    <cbc:ID>LACT-TS-26-0326</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportationStatus</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-FC</cbc:ID>

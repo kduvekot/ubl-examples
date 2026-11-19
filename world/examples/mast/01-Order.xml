@@ -108,13 +108,27 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:Description>Selanu Telecom, mast site</cbc:Description>
+      <cbc:Description>Selanu Telecom's mast site on Mast Hill</cbc:Description>
+      <cac:Address>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
+        <cbc:BuildingNumber>58</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:Address>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">14770.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">14627.50</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -128,24 +142,24 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">14770.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">14770.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">14627.50</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">14627.50</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">1200</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
-        <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+        <cbc:Description>Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.</cbc:Description>
+        <cbc:Name>Lithium-ion battery module 48 V 50 Ah</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>
-          <cbc:ID>SE-BAT-48100</cbc:ID>
+          <cbc:ID>SE-BAT-4850</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -172,18 +186,18 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
-      <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">190.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="LTR">5</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">47.50</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">9.5</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="LTR">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
+        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>
-          <cbc:ID>SE-CS-05</cbc:ID>
+          <cbc:ID>SE-CS-01</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

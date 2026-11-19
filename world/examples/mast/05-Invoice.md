@@ -211,10 +211,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-06-04**  
-  The day the goods billed were delivered.
-- `DeliveryLocation/Name` = **Selanu Telecom mast site**  
+- `DeliveryLocation/Name` = **Selanu Telecom's mast site on Mast Hill**  
   Where the goods billed are delivered.
+- `Despatch/ActualDespatchDate` = **2026-06-04**  
+  The invoice is issued on despatch: the day the goods left.
 
 ### Payment Means
 
@@ -295,7 +295,7 @@ Inside `PaymentTerms`:
   Bayvarran practice: a surcharge per month of late payment, no discount.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **221.55** (currencyID `XBL`)  
+- `PenaltyAmount` = **219.41** (currencyID `XBL`)  
   The surcharge for each month late.
 - `PaymentDueDate` = **2026-07-04**  
   The day the amount is due, as the terms count it.
@@ -308,7 +308,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **14770.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **14627.50** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -327,13 +327,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **14770.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **14627.50** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **14770.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **14627.50** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **14770.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **14627.50** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **14770.00** (currencyID `XBL`)  
+- `PayableAmount` = **14627.50** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -342,25 +342,19 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **6** (unitCode `EA`)  
+- `InvoicedQuantity` = **12** (unitCode `EA`)  
   The quantity delivered.
 - `LineExtensionAmount` = **14400.00** (currencyID `XBL`)  
-  6 × 2400.0, rounded to the minor unit of the currency.
+  12 × 1200.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
-- `PricingReference/OriginalItemLocationQuantity/HazardousRiskIndicator` = **true**  
-  The batteries are dangerous goods wherever they are delivered.
-- `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/BatchQuantity` = **1** (unitCode `EA`)  
-  Delivered in single crates.
-- `PricingReference/OriginalItemLocationQuantity/DeliveryUnit/HazardousRiskIndicator` = **true**  
-  Each crate is dangerous goods: lithium-ion batteries.
-- `Item/Description` = **Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.**  
+- `Item/Description` = **Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.**  
   The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
-- `Item/Name` = **Lithium-ion battery pack 48 V 100 Ah**  
+- `Item/Name` = **Lithium-ion battery module 48 V 50 Ah**  
   The item's short name; item battery-pack of Saltmere Engineering (world/items.json).
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
+- `Item/SellersItemIdentification/ID` = **SE-BAT-4850**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -374,7 +368,7 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **2400** (currencyID `XBL`)  
+- `Price/PriceAmount` = **1200** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -412,19 +406,19 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **3**  
   The line number.
-- `InvoicedQuantity` = **20** (unitCode `LTR`)  
+- `InvoicedQuantity` = **5** (unitCode `LTR`)  
   The quantity delivered.
-- `LineExtensionAmount` = **190.00** (currencyID `XBL`)  
-  20 × 9.5, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **47.50** (currencyID `XBL`)  
+  5 × 9.5, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **3**  
   The order line this invoice line bills.
-- `Item/Description` = **Remover for the protective coating of circuit boards, in 5-litre cans.**  
+- `Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `Item/SellersItemIdentification/ID` = **SE-CS-05**  
+- `Item/SellersItemIdentification/ID` = **SE-CS-01**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -608,10 +602,12 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-06-04</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
-      <cbc:Name>Selanu Telecom mast site</cbc:Name>
+      <cbc:Name>Selanu Telecom's mast site on Mast Hill</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-06-04</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
@@ -667,7 +663,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">221.55</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">219.41</cbc:PenaltyAmount>
     <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-07-05</cbc:StartDate>
@@ -676,7 +672,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">14770.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">14627.50</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -690,33 +686,24 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">14770.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">14770.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">14770.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">14770.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">14627.50</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">14627.50</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">14627.50</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">14627.50</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
-    <cac:PricingReference>
-      <cac:OriginalItemLocationQuantity>
-        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:DeliveryUnit>
-          <cbc:BatchQuantity unitCode="EA">1</cbc:BatchQuantity>
-          <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        </cac:DeliveryUnit>
-      </cac:OriginalItemLocationQuantity>
-    </cac:PricingReference>
     <cac:Item>
-      <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
-      <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+      <cbc:Description>Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.</cbc:Description>
+      <cbc:Name>Lithium-ion battery module 48 V 50 Ah</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>SE-BAT-48100</cbc:ID>
+        <cbc:ID>SE-BAT-4850</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -730,7 +717,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">1200</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
@@ -766,17 +753,17 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="LTR">20</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">190.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="LTR">5</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">47.50</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
+      <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
       <cbc:Name>Coating stripper for electronics</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>SE-CS-05</cbc:ID>
+        <cbc:ID>SE-CS-01</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

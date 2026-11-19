@@ -1,8 +1,8 @@
 # Invoice: Bayforth Forwarding to Lumeway Distribution
 
-*Example 10 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 10 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The forwarder invoices the air freight, including the road feeder leg, to the distributor, who sold carriage paid to the island airport.
+The forwarder invoices the airport-to-airport air freight at the chargeable weight of the airline's waybill to the distributor, who sold carriage paid to the island airport.
 
 [The XML file](10-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -324,7 +324,7 @@ Inside `PaymentTerms`:
   Bayvarran practice: a surcharge per month of late payment, no discount.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **10.00** (currencyID `XBL`)  
+- `PenaltyAmount` = **10.71** (currencyID `XBL`)  
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.bayforth.example/terms**  
   The seller's general terms of payment.
@@ -339,7 +339,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **666.40** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **714.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -358,13 +358,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **666.40** (currencyID `XBL`)  
+- `LineExtensionAmount` = **714.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **666.40** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **714.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **666.40** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **714.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **666.40** (currencyID `XBL`)  
+- `PayableAmount` = **714.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -373,11 +373,11 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **98** (unitCode `KGM`)  
+- `InvoicedQuantity` = **105** (unitCode `KGM`)  
   The chargeable weight of the air waybill: the gross weight of the frame cartons, rounded up to the next half kilogram (D39).
-- `LineExtensionAmount` = **666.40** (currencyID `XBL`)  
-  98 × 6.8, rounded to the minor unit of the currency.
-- `Item/Description` = **Airport-to-airport air freight per kilogram chargeable weight, road feeder included.**  
+- `LineExtensionAmount` = **714.00** (currencyID `XBL`)  
+  105 × 6.8, rounded to the minor unit of the currency.
+- `Item/Description` = **Airport-to-airport air freight per kilogram chargeable weight.**  
   The seller's description; item air-freight of Bayforth Forwarding (world/items.json).
 - `Item/Name` = **Air freight**  
   The item's short name; item air-freight of Bayforth Forwarding (world/items.json).
@@ -657,7 +657,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">10.00</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">10.71</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-06-14</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -667,7 +667,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">666.40</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">714.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -681,17 +681,17 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">666.40</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">666.40</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">666.40</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">666.40</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">714.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">714.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">714.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">714.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KGM">98</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">666.40</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KGM">105</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">714.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Airport-to-airport air freight per kilogram chargeable weight, road feeder included.</cbc:Description>
+      <cbc:Description>Airport-to-airport air freight per kilogram chargeable weight.</cbc:Description>
       <cbc:Name>Air freight</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-AIR</cbc:ID>

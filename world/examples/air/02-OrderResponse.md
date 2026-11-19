@@ -1,8 +1,8 @@
 # Order Response: Lumeway Distribution to Velumi Trading
 
-*Example 2 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
+*Example 2 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
 
-The distributor accepts the change: the urgent part goes by air at an extra charge, the rest stays on the ship.
+The distributor accepts the change: the frames fly on the afternoon flight of 13 May; the rest of the order stays on the ship.
 
 [The XML file](02-OrderResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,7 +28,7 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderResponseCode` = **AP** (listID `UN/EDIFACT EDED 4343`)  
   UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
-- `Note` = **Accepted: the frames fly on the morning flight; the forwarder is booked.**  
+- `Note` = **Accepted: the frames fly on the afternoon flight KXL209 of 13 May; the forwarder is booked.**  
   In words.
 - `NetNetWeightMeasure` = **88.8** (unitCode `KGM`)  
   The frames alone.
@@ -38,13 +38,6 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   The buyer's cost centre, from the change.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `EndDate` = **2026-05-13**  
-  The flight booking holds for a day.
 
 ### Order Reference
 
@@ -213,7 +206,7 @@ Inside `AllowanceCharge`:
   The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
 - `AllowanceChargeReason` = **Air freight for the urgent delivery, recharged at cost**  
   The air freight the buyer accepted in its change: the distributor pays it to its forwarder under CPT and recharges it, without margin.
-- `Amount` = **666.40** (currencyID `XBL`)  
+- `Amount` = **714.00** (currencyID `XBL`)  
   As the forwarder quoted it for the eight frame cartons; invoiced at cost.
 
 ### Order Line
@@ -224,6 +217,12 @@ Inside `OrderLine`:
   The added line, line 4 of the order as changed.
 - `LineItem/Quantity` = **8** (unitCode `EA`)  
   Confirmed.
+- `LineItem/Delivery/PromisedDeliveryPeriod/StartDate` = **2026-05-13**  
+  The frames are promised at Selanu airport on 13 May, on KXL209 (air/02#F6).
+- `LineItem/Delivery/PromisedDeliveryPeriod/StartTime` = **18:45:00+00:00**  
+  The flight's arrival, in island time.
+- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-13**  
+  The same day.
 - `LineItem/DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
   Carriage paid to the airport of Selanu, for this line. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/Item/Name` = **Bench side frame casting**  
@@ -245,14 +244,11 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
-  <cbc:Note>Accepted: the frames fly on the morning flight; the forwarder is booked.</cbc:Note>
+  <cbc:Note>Accepted: the frames fly on the afternoon flight KXL209 of 13 May; the forwarder is booked.</cbc:Note>
   <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
   <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cac:ValidityPeriod>
-    <cbc:EndDate>2026-05-13</cbc:EndDate>
-  </cac:ValidityPeriod>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -376,12 +372,19 @@ Inside `OrderLine`:
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Air freight for the urgent delivery, recharged at cost</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">666.40</cbc:Amount>
+    <cbc:Amount currencyID="XBL">714.00</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>4</cbc:ID>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-13</cbc:StartDate>
+          <cbc:StartTime>18:45:00+00:00</cbc:StartTime>
+          <cbc:EndDate>2026-05-13</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
       <cac:DeliveryTerms>
         <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
       </cac:DeliveryTerms>

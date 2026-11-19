@@ -1,8 +1,8 @@
 # Transportation Status: Lumeport Airport Cargo Terminal to Kelaro Air Cargo
 
-*Example 5 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
+*Example 5 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
 
-The air cargo terminal reports the cargo accepted and built up for the flight.
+The air cargo terminal reports the cargo accepted after the cut-off for the afternoon flight and built up for the next morning's.
 
 [The XML file](05-TransportationStatus.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,19 +23,19 @@ The air cargo terminal reports the cargo accepted and built up for the flight.
 - `UUID` = **6938a110-04c3-536b-96b3-9bd3bd8bb1c1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
-  Reported when the cargo is built up for the flight.
-- `IssueTime` = **10:05:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Reported when the cargo was accepted, on the evening of 13 May.
+- `IssueTime` = **19:20:00-01:00**  
+  When the cargo had been accepted; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Transportation status**  
   The kind of report.
-- `Description` = **Cargo accepted and built up for the flight.**  
+- `Description` = **Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.**  
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
 - `ShippingOrderID` = **LD-FI-26-0322**  
   The forwarding instructions of the shipment it reports on.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do.
+- `OtherInstruction` = **The built-up skid goes to the aircraft for KXL207 on 14 May between 06:00 and 06:20; reply only if that slot must change.**  
+  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -174,9 +174,11 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-05-13**  
   The day the event took place.
+- `OccurrenceTime` = **19:10:00-01:00**  
+  Accepted at 19:10, long after the cut-off at 12:00 for the afternoon flight (D39).
 - `TransportEventTypeCode` = **ACCEPTANCE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
-- `Description` = **Cargo accepted and built up for the flight.**  
+- `Description` = **Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.**  
   What happened, in words.
 - `Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
@@ -251,12 +253,12 @@ Inside `StatusPeriod`:
   <cbc:ID>LACT-TS-26-0326</cbc:ID>
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>10:05:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>19:20:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
-  <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
+  <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>The built-up skid goes to the aircraft for KXL207 on 14 May between 06:00 and 06:20; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
@@ -362,8 +364,9 @@ Inside `StatusPeriod`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>19:10:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
-    <cbc:Description>Cargo accepted and built up for the flight.</cbc:Description>
+    <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
       <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>

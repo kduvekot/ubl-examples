@@ -9,14 +9,11 @@
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
-  <cbc:Note>Accepted: the frames fly on the morning flight; the forwarder is booked.</cbc:Note>
+  <cbc:Note>Accepted: the frames fly on the afternoon flight KXL209 of 13 May; the forwarder is booked.</cbc:Note>
   <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
   <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cac:ValidityPeriod>
-    <cbc:EndDate>2026-05-13</cbc:EndDate>
-  </cac:ValidityPeriod>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -140,12 +137,19 @@
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Air freight for the urgent delivery, recharged at cost</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">666.40</cbc:Amount>
+    <cbc:Amount currencyID="XBL">714.00</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>4</cbc:ID>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-13</cbc:StartDate>
+          <cbc:StartTime>18:45:00+00:00</cbc:StartTime>
+          <cbc:EndDate>2026-05-13</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
       <cac:DeliveryTerms>
         <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
       </cac:DeliveryTerms>
