@@ -130,7 +130,9 @@
     <cbc:ID>LTM-SH-26-0527</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0528</cbc:ID>
+      <cbc:CarrierAssignedID>BF-NATROAD-26-0521</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity unitCode="EA">20</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>

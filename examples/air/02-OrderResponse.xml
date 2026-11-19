@@ -136,6 +136,12 @@
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:FreightForwarderParty>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Air freight for the urgent delivery, recharged at cost</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">554.88</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>

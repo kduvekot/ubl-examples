@@ -56,9 +56,11 @@ First thing in the morning, when the shortage was noticed; in the
 issuer's local time, with its offset from UTC (D27).</li>
 <li><code>SequenceNumberID</code> = <strong>1</strong><br />
 The first change to the order.</li>
-<li><code>Note</code> = <strong>Add eight side frames by air; the rest
-of the order is unchanged.</strong><br />
-The change in words.</li>
+<li><code>Note</code> = <strong>Add eight side frames by air; we pay the
+air freight as a surcharge at cost. The rest of the order is
+unchanged.</strong><br />
+The change in words: the buyer asks for the urgent delivery and accepts
+that it pays for it.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
 The lume, the seller's currency, in which the seller's prices are; it
@@ -615,8 +617,8 @@ The change: the eight frames added; the sea order's lines are
 unchanged.</li>
 <li><code>PayableAmount</code> = <strong>512.00</strong> (currencyID
 <code>XBL</code>)<br />
-What the change adds to the order: no tax on an export; freight comes on
-the invoices.</li>
+What the change adds to the goods of the order: no tax on an export; the
+air freight comes on top, on the invoice, at cost.</li>
 </ul>
 <h3 id="order-line">Order Line</h3>
 <p>Inside <code>OrderLine</code>:</p>
@@ -632,7 +634,9 @@ Eight side frames, needed before the ship arrives.</li>
 Quantity times price, rounded to the minor unit.</li>
 <li><code>LineItem/Price/PriceAmount</code> = <strong>64</strong>
 (currencyID <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+Lumeway's trade price, carriage paid to Selanu airport: its price for
+the island is a CIF price with the sea freight in it, and the air
+freight is charged on top, at cost.</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
@@ -680,7 +684,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;07:50:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SequenceNumberID</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumberID</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Add eight side frames by air; the rest of the order is unchanged.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the order is unchanged.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomerReference</span>&gt;Harbour parks Selanu&lt;/<span class="kw">cbc:CustomerReference</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;500&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
@@ -929,6 +933,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderChange</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
 </body>
 </html>

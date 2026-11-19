@@ -632,16 +632,17 @@ The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931
 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance
 or charge identification: 95 = Discount.</li>
 <li><code>AllowanceCharge/AllowanceChargeReason</code> = <strong>Two
-shirts: 5.00 off the pair</strong><br />
-The store's offer.</li>
+shirts: 5.00 off the pair, Friday 22 May only</strong><br />
+The store's offer, for one day: the next day's sale of three shirts is
+at the full price (packaging/09#F6).</li>
 <li><code>AllowanceCharge/Amount</code> = <strong>5.00</strong>
 (currencyID <code>XBL</code>)<br />
 Off the pair.</li>
 <li><code>AllowanceCharge/BaseAmount</code> = <strong>59.90</strong>
 (currencyID <code>XBL</code>)<br />
 Two shirts at the shelf price.</li>
-<li><code>Item/Description</code> = <strong>Men's cotton shirt; the
-state sales tax is added at the till.</strong><br />
+<li><code>Item/Description</code> = <strong>Men's cotton
+shirt.</strong><br />
 The seller's description; item shirt-r of Brightmarket Stores
 (world/items.json).</li>
 <li><code>Item/Name</code> = <strong>Cotton shirt</strong><br />
@@ -916,12 +917,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;false&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 5189&quot;</span>&gt;95&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Two shirts: 5.00 off the pair&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Two shirts: 5.00 off the pair, Friday 22 May only&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;5.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;59.90&lt;/<span class="kw">cbc:BaseAmount</span>&gt;</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Men&#39;s cotton shirt; the state sales tax is added at the till.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Men&#39;s cotton shirt.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Cotton shirt&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BrandName</span>&gt;Lumeport&lt;/<span class="kw">cbc:BrandName</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -951,6 +952,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PurchaseReceipt</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
 </body>
 </html>

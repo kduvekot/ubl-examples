@@ -71,7 +71,6 @@
       </cac:PostalAddress>
       <cac:PhysicalLocation>
         <cbc:Description>The cotton fields</cbc:Description>
-        <cbc:InformationURI>https://www.lisavufarm.example</cbc:InformationURI>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">32</cbc:LatitudeDegreesMeasure>

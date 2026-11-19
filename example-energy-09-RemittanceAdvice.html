@@ -628,28 +628,10 @@ The invoice.</li>
 The surcharge.</li>
 <li><code>DebitLineAmount</code> = <strong>1987200</strong> (currencyID
 <code>XUF</code>)<br />
-19872.00 lume in ferra.</li>
+The surcharge of the reminder.</li>
 <li><code>BillingReference/ReminderDocumentReference/ID</code> =
 <strong>KG-DOC-26-0159</strong><br />
 The reminder.</li>
-<li><code>ExchangeRate/SourceCurrencyCode</code> = <strong>XBL</strong>
-(listID <code>ISO 4217 Alpha</code>)<br />
-The reminder's currency. The code is from the world's copy of UBL's
-Currency (ISO 4217) list: XBL = Lume.</li>
-<li><code>ExchangeRate/TargetCurrencyCode</code> = <strong>XUF</strong>
-(listID <code>ISO 4217 Alpha</code>)<br />
-The payment's. The code is from the world's copy of UBL's Currency (ISO
-4217) list: XUF = Ferra.</li>
-<li><code>ExchangeRate/CalculationRate</code> =
-<strong>100</strong><br />
-1 lume = 100 ferra.</li>
-<li><code>ExchangeRate/MathematicOperatorCode</code> =
-<strong>Multiply</strong> (listID
-<code>urn:oasis:names:specification:ubl:codelist:gc:OperatorCode</code>)<br />
-Lume times the rate. The code is from the world's copy of UBL's Operator
-list, with a listID: Multiply.</li>
-<li><code>ExchangeRate/Date</code> = <strong>2026-06-06</strong><br />
-The payment date.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -854,17 +836,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;KG-DOC-26-0159&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ReminderDocumentReference</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExchangeRate</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SourceCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TargetCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:TargetCurrencyCode</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CalculationRate</span>&gt;100&lt;/<span class="kw">cbc:CalculationRate</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MathematicOperatorCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:OperatorCode&quot;</span>&gt;Multiply&lt;/<span class="kw">cbc:MathematicOperatorCode</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Date</span>&gt;2026-06-06&lt;/<span class="kw">cbc:Date</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExchangeRate</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
 </body>
 </html>
