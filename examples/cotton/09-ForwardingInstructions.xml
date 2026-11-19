@@ -89,6 +89,7 @@
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0201</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
@@ -149,6 +150,9 @@
           <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         </cac:CommodityClassification>
       </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+      </cac:ContainingPackage>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>

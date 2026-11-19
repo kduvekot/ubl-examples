@@ -102,34 +102,11 @@
   </cac:ReceiverParty>
   <cac:WeighingParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">63597165</cbc:ID>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
-      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
-      <cbc:BuildingNumber>32</cbc:BuildingNumber>
-      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        <cbc:Name>Lisavu</cbc:Name>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Port control</cbc:Name>
-      <cbc:JobTitle>Duty port controller</cbc:JobTitle>
-      <cbc:Department>Port operations</cbc:Department>
-      <cbc:Telephone>+999 3 727 7653</cbc:Telephone>
-      <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
-    </cac:Contact>
   </cac:WeighingParty>
   <cac:ShipperParty>
     <cac:PartyIdentification>
@@ -150,11 +127,255 @@
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
     <cac:TransportHandlingUnit>
+      <cbc:TotalPackageQuantity unitCode="EA">27</cbc:TotalPackageQuantity>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">9940.29</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
       </cac:TransportEquipment>
+      <cac:Package>
+        <cbc:ID>SCG-26-00412</cbc:ID>
+        <cbc:Quantity unitCode="KGM">227.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">229.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00413</cbc:ID>
+        <cbc:Quantity unitCode="KGM">223.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">225.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00414</cbc:ID>
+        <cbc:Quantity unitCode="KGM">224</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">226.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00415</cbc:ID>
+        <cbc:Quantity unitCode="KGM">226</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">228.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00416</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00417</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00418</cbc:ID>
+        <cbc:Quantity unitCode="KGM">228</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">230.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00419</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00420</cbc:ID>
+        <cbc:Quantity unitCode="KGM">229</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">231.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00517</cbc:ID>
+        <cbc:Quantity unitCode="KGM">225</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">227.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00518</cbc:ID>
+        <cbc:Quantity unitCode="KGM">228.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">230.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00519</cbc:ID>
+        <cbc:Quantity unitCode="KGM">232</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">234.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00520</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00521</cbc:ID>
+        <cbc:Quantity unitCode="KGM">226</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">228.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00522</cbc:ID>
+        <cbc:Quantity unitCode="KGM">231</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">233.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00523</cbc:ID>
+        <cbc:Quantity unitCode="KGM">228</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">230.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00524</cbc:ID>
+        <cbc:Quantity unitCode="KGM">232</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">234.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00525</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00603</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00604</cbc:ID>
+        <cbc:Quantity unitCode="KGM">224</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">226.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00605</cbc:ID>
+        <cbc:Quantity unitCode="KGM">223</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">225.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00606</cbc:ID>
+        <cbc:Quantity unitCode="KGM">226</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">228.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00607</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00608</cbc:ID>
+        <cbc:Quantity unitCode="KGM">232</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">234.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00609</cbc:ID>
+        <cbc:Quantity unitCode="KGM">224</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">226.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00610</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00611</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
 </WeightStatement>

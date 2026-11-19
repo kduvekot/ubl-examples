@@ -414,13 +414,6 @@ kg.</strong> (languageID <code>en-XB</code>)<br />
 The seller's description in English, the working language between the
 countries; item cotton-bale of Selanu Cotton Ginnery
 (world/items.json).</li>
-<li><code>SalesItem/Item/PackQuantity</code> = <strong>1</strong>
-(unitCode <code>EA</code>)<br />
-One pack of this item.</li>
-<li><code>SalesItem/Item/PackSizeNumeric</code> =
-<strong>227</strong><br />
-The units in one pack: 227 kg in a bale; item cotton-bale of Selanu
-Cotton Ginnery (world/items.json).</li>
 <li><code>SalesItem/Item/Name</code> = <strong>Tekapa suhema, lafatite
 senehu</strong> (languageID <code>qal</code>)<br />
 The item's name in Lisavan, the seller's language; item cotton-bale of
@@ -577,19 +570,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;227&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Tekapa suhema, lafatite senehu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Cotton lint, compressed bale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SCG-LINT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SalesItem</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ForecastLine</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Forecast</span>&gt;</span></code></pre></div>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Tekapa suhema, lafatite senehu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Cotton lint, compressed bale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;SCG-LINT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SalesItem</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ForecastLine</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Forecast</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/14f7152b8825798009049eeb324f598d676c70a2"><code>14f7152</code></a> of 2026-11-19 11:25 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
 </body>
 </html>

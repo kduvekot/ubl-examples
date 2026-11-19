@@ -187,6 +187,10 @@
   </cac:ApplicantParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
+    </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Cotton lint, compressed bale</cbc:Description>
@@ -213,13 +217,16 @@
           </cac:Country>
         </cac:OriginAddress>
       </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+      </cac:ContainingPackage>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
     <cbc:ID>SCC-ATT-26-0042</cbc:ID>
     <cbc:Name>Freedom from pests</cbc:Name>
     <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
-    <cbc:Note>10 bales sampled out of 80.</cbc:Note>
+    <cbc:Note>10 bales sampled out of 27.</cbc:Note>
     <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
     <cac:ValidityPeriod>
       <cbc:EndDate>2026-03-14</cbc:EndDate>

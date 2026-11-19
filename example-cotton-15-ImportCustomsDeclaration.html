@@ -519,6 +519,16 @@ deprecated.</li>
 <ul>
 <li><code>ID</code> = <strong>SCG-SH-26-0200</strong><br />
 The shipment declared.</li>
+<li><code>Consignment/ID</code> = <strong>LTM-CS-26-0201</strong><br />
+The consignment, as the mill's forwarding instructions number it.</li>
+<li><code>Consignment/GrossWeightMeasure</code> =
+<strong>6190.29</strong> (unitCode <code>KGM</code>)<br />
+The gross weight of the goods with their packaging, without the
+transport equipment, as a consignment's weight is defined (worklist
+C15). The gross weight arriving.</li>
+<li><code>Consignment/TotalPackagesQuantity</code> = <strong>27</strong>
+(unitCode <code>EA</code>)<br />
+The number of packages declared for import: the bales.</li>
 <li><code>GoodsItem/ID</code> = <strong>1</strong><br />
 The goods item number.</li>
 <li><code>GoodsItem/Description</code> = <strong>Cotton lint, compressed
@@ -597,6 +607,13 @@ address names it.</li>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 The country of origin. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XL = Lisavu.</li>
+<li><code>GoodsItem/ContainingPackage/PackagingTypeCode</code> =
+<strong>BL</strong> (listID
+<code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code>)<br />
+UN/ECE Recommendation 21 code BL: bale, compressed. The goods travel in
+27 of them, the consignment's package count. The code is from the
+world's copy of UBL's Packaging type (UNECE Recommendation 21) list,
+with a listID: BL = Bale, compressed.</li>
 <li><code>ShipmentStage/TransportModeCode</code> = <strong>1</strong>
 (listID
 <code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
@@ -818,65 +835,73 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CustomsParty</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-SH-26-0200&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Cotton lint, compressed bale&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;15138.63&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;6190.29&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;6129&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;P&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Tekapa suhema, lafatite senehu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Cotton lint, compressed bale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XI&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;520100&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;01921&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginAddress</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:District</span>&gt;North coast&lt;/<span class="kw">cbc:District</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginAddress</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;1&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-BL-26-0206&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;BillOfLading&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-EX-26-0203&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LTM-CS-26-0201&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;6190.29&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalPackagesQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;27&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Cotton lint, compressed bale&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;15138.63&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;6190.29&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;6129&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;P&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Tekapa suhema, lafatite senehu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Cotton lint, compressed bale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XI&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;520100&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;01921&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginAddress</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:District</span>&gt;North coast&lt;/<span class="kw">cbc:District</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginAddress</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;BL&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;1&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-INV-26-0210&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-BL-26-0206&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;BillOfLading&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-SIG-IM-cotton&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Textile Mill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ImportCustomsDeclaration</span>&gt;</span></code></pre></div>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-EX-26-0203&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-INV-26-0210&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-SIG-IM-cotton&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Textile Mill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ImportCustomsDeclaration</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/14f7152b8825798009049eeb324f598d676c70a2"><code>14f7152</code></a> of 2026-11-19 11:25 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
 </body>
 </html>
