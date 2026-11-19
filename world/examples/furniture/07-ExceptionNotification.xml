@@ -17,6 +17,10 @@
     <cbc:ID>BS-DOC-26-0571</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
   </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
+  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0609</cbc:ID>
     <cac:SignatoryParty>
@@ -146,25 +150,15 @@
     <cbc:SourceValueMeasure unitCode="EA">3</cbc:SourceValueMeasure>
     <cbc:VarianceQuantity unitCode="EA">-1</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
-      <cbc:ID>BS-DOC-26-0572</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
+      <cbc:ID>BS-DOC-26-0571</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
+      <cbc:DocumentDescription>Criterion line 1: slow sales of the oak bench.</cbc:DocumentDescription>
     </cac:DocumentReference>
-    <cac:ForecastException>
-      <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
-      <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-      <cbc:IssueDate>2026-03-16</cbc:IssueDate>
-      <cbc:IssueTime>10:00:00</cbc:IssueTime>
-      <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
-      <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
-      <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
-    </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
@@ -193,25 +187,15 @@
     <cbc:SourceValueMeasure unitCode="EA">2</cbc:SourceValueMeasure>
     <cbc:VarianceQuantity unitCode="EA">-1</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
-      <cbc:ID>BS-DOC-26-0572</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
+      <cbc:ID>BS-DOC-26-0571</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
+      <cbc:DocumentDescription>Criterion line 2: slow sales of the ash bench.</cbc:DocumentDescription>
     </cac:DocumentReference>
-    <cac:ForecastException>
-      <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
-      <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-      <cbc:IssueDate>2026-03-16</cbc:IssueDate>
-      <cbc:IssueTime>10:00:00</cbc:IssueTime>
-      <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
-      <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
-      <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
-    </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>

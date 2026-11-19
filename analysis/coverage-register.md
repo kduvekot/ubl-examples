@@ -602,6 +602,25 @@ Stage 6, building group G7 (C103 to C105, C110 to C113, the packaging leftovers)
 | `OrderCancellation/OriginatorDocumentReference` | 0..1 | furniture/11-OrderCancellation |  |  | open |
 | `RequestForQuotation/CatalogueDocumentReference` | 0..1 | furniture/01-RequestForQuotation |  |  | open |
 
+> C104, D32 (Encoding): each collaboration document carries one kind of criterion per line: the maker asks for sales only (03#F1), the criteria and the notification are sales criteria without a performance metric (05#F2, 07#F1), and the notification reports no forecast exception, because the flow has no forecast it could compare (07#F1, F3 to F5); the criteria give no exception status, which UBL defines for shipments (05#F8).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ExceptionCriteriaLine/ExceptionStatusCode` | 0..1 | furniture/05-ExceptionCriteria |  |  | open |
+| `ExceptionCriteriaLine/PerformanceMetricTypeCode` | 0..1 | furniture/05-ExceptionCriteria |  |  | open |
+| `ExceptionNotificationLine/ForecastException` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ExceptionNotificationLine/PerformanceMetricTypeCode` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ComparisonDataCode` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ComparisonForecastIssueDate` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ComparisonForecastIssueTime` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/DataSourceCode` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ForecastPurposeCode` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ForecastTypeCode` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/IssueDate` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/IssueTime` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ItemInformationRequestLine/ForecastTypeCode` | 0..1 | furniture/03-ItemInformationRequest |  |  | open |
+| `ItemInformationRequestLine/PerformanceMetricTypeCode` | 0..1 | furniture/03-ItemInformationRequest |  |  | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

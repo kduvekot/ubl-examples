@@ -4691,11 +4691,12 @@ def marrow_profile(f, iid, target, minimum, multiple, why_multiple, smallest):
             "MinimumInventoryQuantity": qty(minimum, "EA", f"Never fewer than {minimum} in the shop."),
             "MultipleOrderQuantity": qty(multiple, "EA", why_multiple),
             "OrderIntervalDaysNumeric": V("14", "An order every two weeks."),
-            "ReplenishmentOwnerDescription": V("The store orders; the maker proposes.", "Who replenishes."),
+            "ReplenishmentOwnerDescription": V("Brightmarket Stores", "The partner that replenishes the stock: the "
+                                                                      "store orders, on the maker's proposals "
+                                                                      "(furniture/04#F1)."),
             "TargetServicePercent": V("95", "On the shelf on 95 % of the days."),
             "TargetInventoryQuantity": qty(target, "EA", f"The stock the store aims at: {target}."),
-            "ItemLocationQuantity": {"LeadTimeMeasure": V("5", "Five days from order to shelf.", unitCode="DAY"),
-                                     "MinimumQuantity": qty(smallest, "EA", "The smallest order.")},
+            "ItemLocationQuantity": {"LeadTimeMeasure": V("5", "Five days from order to shelf.", unitCode="DAY")},
             "Item": item(iid)}
 
 
@@ -4758,8 +4759,11 @@ def furniture(n, doc):
                 "ExceptionCriteriaLine": [{
                     "ID": V(str(k), f"A sales criterion on the {w} bench: the line is planned around the bench, and "
                                     "a criterion is set per item, so each wood has its own."),
-                    "ThresholdValueComparisonCode": V("LT", "An exception is raised when actual sales fall "
-                                                            "below the threshold."),
+                    "ThresholdValueComparisonCode": V("FALLS_BELOW_EXCEPTION_VALUE", "An exception is raised "
+                                                                                     "when actual sales fall below "
+                                                                                     "the threshold: one of the two "
+                                                                                     "values UBL's definition allows "
+                                                                                     "(furniture/05#F7)."),
                     "ThresholdQuantity": qty(MARROW_THRESHOLD[w], "EA", (
                         f"Fewer than {'three' if w == 'oak' else 'two'} {w} benches sold in the first four weeks is "
                         "worth a message: five benches in all, shared by the woods as the stock targets are.")),
@@ -5672,18 +5676,24 @@ def seal(pid, no, why="The sender's electronic seal."):
 
 @enrich("furniture", "ItemInformationRequest")
 def _(f, n, doc, out):
-    return {"Note": V("Weekly figures, please, for the whole season.", "What the maker asks."),
+    return {"Note": V("Sales figures every four weeks, please, per piece and wood, for the whole season: the first "
+                      "for the first four weeks of sales, which the sale-or-return trial measures.",
+                      "What the maker asks (furniture/06#F6: the report gives one figure for four weeks)."),
             "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation of the line.")},
             "Signature": seal(doc["from"], "BF-SIG-26-0312"),
-            "ItemInformationRequestLine": {"TimeFrequencyCode": V("WEEKLY", "Figures per week."),
-                                           "SupplyChainActivityTypeCode": V("SALES", "Sales to consumers."),
-                                           "ForecastTypeCode": V("TOTAL", "Total quantities."),
-                                           "PerformanceMetricTypeCode": V("SALESUNITS", "Measured in pieces sold.")}}
+            "ItemInformationRequestLine": {"TimeFrequencyCode": V("FOURWEEKLY", "Figures every four weeks, the "
+                                                                                "rhythm of the trial and of the "
+                                                                                "exception criteria."),
+                                           "SupplyChainActivityTypeCode": V("SALES", "The one kind of data asked: "
+                                                                                     "sales to consumers "
+                                                                                     "(furniture/03#F1).")}}
 
 
 @enrich("furniture", "TradeItemLocationProfile")
 def _(f, n, doc, out):
-    return {"Note": V("The store holds stock; the maker replenishes.", "Who does what."),
+    return {"Note": V("The store holds the stock of the line in its Lumeport store, for the home and garden "
+                      "department, its only stock point for the line, and orders on the maker's proposals.",
+                      "Who does what, and for which location (furniture/04#F1, F9)."),
             "ProfileStatusCode": V("ACTIVE", "In force."),
             "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation the line is bought under.")},
             "Signature": seal(doc["from"], "BM-SIG-26-0313")}
@@ -5698,12 +5708,14 @@ def _(f, n, doc, out):
             "Signature": seal(doc["from"], "BM-SIG-26-0313C"),
             "ExceptionCriteriaLine": [
                 *({**ln,
-                 "Note": V("Slow sales.", "What the criterion catches."),
-                 "ExceptionStatusCode": V("ACTIVE", "In force."),
+                 "Note": V(f"Slow sales: fewer than {({'2': 'two', '3': 'three'})[ln['ThresholdQuantity'].value]} benches of this wood sold in "
+                           "the first four weeks of sales.", "What the criterion catches, with its time basis "
+                                                            "(furniture/05#F1)."),
                  "CollaborationPriorityCode": V("HIGH", "Answered within two days."),
-                 "ExceptionResolutionCode": V("REVIEW", "The partners review the line together."),
-                 "SupplyChainActivityTypeCode": V("SALES", "Measured on sales."),
-                 "PerformanceMetricTypeCode": V("SALESUNITS", "In benches sold."),
+                 "ExceptionResolutionCode": V("REVIEW", "The partners review the line together: a world extension of "
+                                                        "the values UBL names, which all default to a value "
+                                                        "(furniture/05#F7)."),
+                 "SupplyChainActivityTypeCode": V("SALES", "The one kind of criterion: sales (furniture/05#F2)."),
                  "EffectivePeriod": {"StartDate": V(f.date(70), "From the first day of sales, the reopening of "
                                                                 "the home and garden department: the first four "
                                                                 "weeks are measured from it."),
@@ -5711,7 +5723,9 @@ def _(f, n, doc, out):
                   for ln in out["ExceptionCriteriaLine"]),
                 {"ID": V(str(len(out["ExceptionCriteriaLine"]) + 1), "The forecast criterion."),
                  "Note": V("Forecast far from the store's own plan.", "What it catches."),
-                 "ThresholdValueComparisonCode": V("GT", "When the difference is larger."),
+                 "ThresholdValueComparisonCode": V("EXCEEDS_EXCEPTION_VALUE", "When the difference is larger: "
+                                                                             "the other value UBL's definition "
+                                                                             "allows."),
                  "ThresholdQuantity": qty(30, "P1", "More than 30 % difference."),
                  "SupplyItem": marrow_items("bench") + marrow_items("chair"),
                  "ForecastExceptionCriterionLine": {"ForecastPurposeCode": V("SALES", "A sales forecast."),
@@ -5748,20 +5762,17 @@ def _(f, n, doc, out):
                 "VarianceQuantity": qty(sold - limit, "EA", f"{words[limit - sold].capitalize()} {w} "
                                                             f"bench{'es' if limit - sold > 1 else ''} fewer than the "
                                                             "threshold."),
-                "SupplyChainActivityTypeCode": V("SALES", "Measured on sales."),
-                "PerformanceMetricTypeCode": V("SALESUNITS", "In benches sold."),
-                "DocumentReference": {"ID": V(f.numbers["activity"], "The product activity reported.")},
-                "ForecastException": {"ForecastPurposeCode": V("SALES", "The sales forecast compared."),
-                                      "ForecastTypeCode": V("TOTAL", "In total."),
-                                      "IssueDate": V(f.date(14), "The forecast of the first delivery."),
-                                      "IssueTime": V("10:00:00", "Its time."),
-                                      "DataSourceCode": V("SELLER", "The maker's forecast."),
-                                      "ComparisonDataCode": V("ACTUAL", "Compared with actual sales."),
-                                      "ComparisonForecastIssueDate": V(f.date(98), "The store's figures of 8 "
-                                                                                   "June."),
-                                      "ComparisonForecastIssueTime": V("18:00:00", "Their time.")}})
+                "SupplyChainActivityTypeCode": V("SALES", "A sales exception, as the criterion it meets "
+                                                          "(furniture/07#F1)."),
+                "DocumentReference": {"ID": V(f.numbers["exception-criteria"], "The exception criteria whose line "
+                                                                               "this exception meets "
+                                                                               "(furniture/07#F2)."),
+                                      "DocumentDescription": V(f"Criterion line {WOODS.index(w) + 1}: slow sales of "
+                                                               f"the {w} bench.", "Which criterion.")}})
     return {"Note": V("Please review the line with us.", "What the maker proposes."),
-            "DocumentReference": {"ID": V(f.numbers["exception-criteria"], "The criteria that were met.")},
+            "DocumentReference": [{"ID": V(f.numbers["exception-criteria"], "The criteria that were met.")},
+                                  {"ID": V(f.numbers["activity"], "The store's sales report the figures come "
+                                                                  "from.")}],
             "Signature": seal(doc["from"], "BF-SIG-26-0609")}
 
 

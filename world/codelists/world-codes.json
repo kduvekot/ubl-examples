@@ -7486,6 +7486,7 @@
    "codes": [
     "DAILY",
     "WEEKLY",
+    "FOURWEEKLY",
     "MONTHLY"
    ]
   },
@@ -7538,10 +7539,8 @@
    "name": "Threshold value comparison",
    "location": "world/codelists/gc/ThresholdValueComparisonCode.gc",
    "codes": [
-    "GT",
-    "LT",
-    "GE",
-    "LE"
+    "EXCEEDS_EXCEPTION_VALUE",
+    "FALLS_BELOW_EXCEPTION_VALUE"
    ]
   },
   "ForecastAdjustmentReason": {

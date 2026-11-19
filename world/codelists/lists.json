@@ -4907,6 +4907,10 @@
      "Weekly",
      ""
     ],
+    "FOURWEEKLY": [
+     "Every four weeks",
+     ""
+    ],
     "MONTHLY": [
      "Monthly",
      ""
@@ -4920,7 +4924,7 @@
    "codes": {
     "REVIEW": [
      "Joint review",
-     "The partners review the exception together."
+     "The partners review the exception together. A world extension: the values UBL's definition of ExceptionResolutionCode lists all default to a value."
     ],
     "ADJUST": [
      "Adjust the forecast",
@@ -4988,22 +4992,14 @@
   "ThresholdValueComparison": {
    "scope": "regional",
    "name": "Threshold value comparison",
-   "description": "How a value is compared with the threshold of an exception criterion.",
+   "description": "How a value is compared with the threshold of an exception criterion: the two values UBL's definition of ThresholdValueComparisonCode allows.",
    "codes": {
-    "GT": [
-     "Greater than",
+    "EXCEEDS_EXCEPTION_VALUE": [
+     "Exceeds the exception value",
      ""
     ],
-    "LT": [
-     "Less than",
-     ""
-    ],
-    "GE": [
-     "Greater than or equal to",
-     ""
-    ],
-    "LE": [
-     "Less than or equal to",
+    "FALLS_BELOW_EXCEPTION_VALUE": [
+     "Falls below the exception value",
      ""
     ]
    }
