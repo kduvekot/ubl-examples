@@ -1546,8 +1546,8 @@
     "tax_id": "CO-0900002",
     "customs_id": "XB-TR-397184",
     "cost_centre": {
-     "code": "PWD-PARKS-26",
-     "name": "Parks renewal programme 2026"
+     "code": "4.2.110",
+     "name": "Parks and green spaces: parks renewal programme 2026"
     },
     "tax_exemption_kind": "Sale to a public body",
     "tax_registration_office": "Lumeport",

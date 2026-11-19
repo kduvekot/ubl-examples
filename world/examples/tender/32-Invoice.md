@@ -40,9 +40,9 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   The seller reports its value added tax in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The manufacturer is paid in ferra, the contract currency, to its account in Urvania over the trade accord's link. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
@@ -83,14 +83,14 @@ Inside `ContractDocumentReference`:
 
 Inside `ProjectReference`:
 
-- `ID` = **PWD-PARKS-26**  
-  The programme the department books it on.
+- `ID` = **PARKS-26**  
+  The programme the department books it on, by its code in the procurement documents.
 
 ### Buyer Assigned Reference
 
 Inside `BuyerAssignedReference`:
 
-- `BuyerReferenceCode` = **PWD-PARKS-26-AP**  
+- `BuyerReferenceCode` = **4.2.110-AP**  
   The buyer's routing code for its invoices: the accounts-payable desk of the cost centre.
 - `BuyerReference` = **Accounts payable, public works**  
   The desk in words.
@@ -726,8 +726,8 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
@@ -744,10 +744,10 @@ Inside `InvoiceLine`:
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:ProjectReference>
-    <cbc:ID>PWD-PARKS-26</cbc:ID>
+    <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
   <cac:BuyerAssignedReference>
-    <cbc:BuyerReferenceCode>PWD-PARKS-26-AP</cbc:BuyerReferenceCode>
+    <cbc:BuyerReferenceCode>4.2.110-AP</cbc:BuyerReferenceCode>
     <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
   </cac:BuyerAssignedReference>
   <cac:Annotation>

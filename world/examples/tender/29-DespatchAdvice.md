@@ -30,9 +30,9 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
   What the receiver should do; the note names the transport document the flow uses (worklist C30).
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **4.2.110**  
   The department's cost centre.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of lines.
@@ -48,8 +48,8 @@ Inside `OrderReference`:
 
 Inside `ProjectReference`:
 
-- `ID` = **PWD-PARKS-26**  
-  The parks renewal programme.
+- `ID` = **PARKS-26**  
+  The parks renewal programme, by its code in the procurement documents.
 
 ### Signature
 
@@ -315,9 +315,9 @@ Inside `DespatchLine`:
   Still to come under the contract.
 - `OutstandingReason` = **Later releases under the framework contract.**  
   Why.
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **4.2.110**  
   The department's programme.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
@@ -399,14 +399,14 @@ Inside `DespatchLine`:
   <cbc:IssueTime>17:37:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
-    <cbc:ID>PWD-PARKS-26</cbc:ID>
+    <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
   <cac:Signature>
     <cbc:ID>CL-SIG-26-DA</cbc:ID>
@@ -616,8 +616,8 @@ Inside `DespatchLine`:
     <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
     <cbc:OutstandingQuantity unitCode="EA">200</cbc:OutstandingQuantity>
     <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
-    <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+    <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

@@ -3416,7 +3416,7 @@ def tender(n, doc):
                                     "a call-off number (tender/26#F5)."),
                           "PricingCurrencyCode": V("XUF", "The contract prices are the manufacturer's, in ferra."),
                           "PricingExchangeRate": PRICING_RATE,
-                          "ProjectReference": {"ID": V("PWD-PARKS-26", "The parks renewal programme the benches "
+                          "ProjectReference": {"ID": V("PARKS-26", "The parks renewal programme the benches "
                                                                        "are for.")},
                           "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure the order "
                                                                           "results from.")}},
@@ -3433,7 +3433,8 @@ def tender(n, doc):
         out = kit.invoice(f, n, doc, 78, "Issued on delivery.",
                           {"OrderReference": ref(f, "order", "The authority's call-off order."),
                            "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")},
-                           "ProjectReference": {"ID": V("PWD-PARKS-26", "The programme the department books it on.")},
+                           "ProjectReference": {"ID": V("PARKS-26", "The programme the department books it on, by "
+                                                        "its code in the procurement documents.")},
                            "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure.")}},
                           [{"item": "bench-serra", "qty": 40, "invoice_why": "The benches of the first release.",
                             "line_extra": {"OrderLineReference": {"LineID": V("1", "The call-off line.")}}},
@@ -6238,7 +6239,8 @@ def _(f, n, doc, out):
                      "OutstandingReason": V("Later releases under the framework contract.", "Why."),
                      **kit.cost_centre("2-xb", "The department's programme."),
                      "DocumentReference": {"ID": V(FOLDER, "The contract.")}})
-    return {"ProjectReference": {"ID": V("PWD-PARKS-26", "The parks renewal programme.")},
+    return {"ProjectReference": {"ID": V("PARKS-26", "The parks renewal programme, by its code in the "
+                                                     "procurement documents.")},
             **kit.cost_centre("2-xb", "The department's cost centre."),
             "Signature": seal(doc["from"], "CL-SIG-26-DA")}
 
@@ -7902,8 +7904,8 @@ SCENARIOS["tender"] = _with_enrichment("tender", tender_with_credit)
 
 # ================================================================ public procurement: the shared blocks of the tender
 PWD, BOARD, INFO = "2-xb", "28-xb", "21-xb"
-EST_BENCHES = Decimal(TENDER_QTY) * Decimal("499.00")
-EST_INSTALL = Decimal(TENDER_QTY) * Decimal("18.00")
+EST_BENCHES = Decimal(TENDER_QTY) * Decimal("500.00")   # the department's own estimate, in round figures, made
+EST_INSTALL = Decimal(TENDER_QTY) * Decimal("20.00")    # before the tenders: 500 a bench, 20 an installation (D28 p2)
 TENDER_ESTIMATE = Decimal("124800")     # the department's own estimate for the two years (D28 point 2)
 TURNOVER_MIN = 2 * TENDER_ESTIMATE / 2  # twice the yearly estimate of 62,400 (D28 point 2)
 BRACKENMERE_TURNOVER_2024 = Decimal("6410000.00")   # its accounts for 2024 (D29 point 6)
@@ -7918,17 +7920,19 @@ def procurement_project(f, lot=None):
     goods = lot != "LOT-2"
     est = EST_BENCHES if lot == "LOT-1" else EST_INSTALL if lot == "LOT-2" else EST_BENCHES + EST_INSTALL
     out = {"ID": V(lot or FOLDER, "The project's identifier."),
-           "Name": V({"LOT-1": "Park benches", "LOT-2": "Installation of the benches"}.get(lot, "Park benches for the "
-                                                                                        "parks renewal programme"),
-                     "The project's name."),
-           "Description": V("240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.",
-                            "What is bought."),
-           "ProcurementTypeCode": V("SUPPLIES" if goods else "SERVICES", "Supplies or services."),
+           "Name": V(LOT_NAMES.get(lot, CONTRACT_NAME), "The project's name, the same in every document "
+                                                       "(tender/01#F4, 08#F6)."),
+           "Description": V(LOT_DESCRIPTIONS[lot], "What is bought; each lot describes its own part "
+                                                    "(tender/02#F32)."),
+           "ProcurementTypeCode": V("SUPPLIES" if goods else "SERVICES", "Supplies or services; the installation "
+                                                                         "is services in every document."),
            "ProcurementSubTypeCode": V("PURCHASE" if goods else "INSTALL", "The kind within it."),
-           "QualityControlCode": V("INSPECTION", "Each release is inspected on delivery."),
            "RequestedDeliveryDate": V(f.date(80), "The first release."),
-           "EstimatedOverallContractQuantity": qty(TENDER_QTY, "EA", "240 benches over the contract."),
-           "Note": V("Part of the parks renewal programme 2026.", "The programme."),
+           "EstimatedOverallContractQuantity": qty(TENDER_QTY, "EA", "240 benches over the contract." if goods
+                                                   else "240 installations over the contract."),
+           "Note": V("Part of the parks renewal programme 2026. Each release is inspected on delivery and "
+                     "accepted with its installation.", "The programme, and the inspection as an acceptance term "
+                                                        "(tender/01#F28)."),
            "SMESuitableIndicator": V("true", "Small and medium firms can tender."),
            **({"ProcurementAdditionalType": {
                "ProcurementTypeCode": V("SERVICES", "The procurement buys supplies with services as a second type: "
@@ -7939,11 +7943,14 @@ def procurement_project(f, lot=None):
            "RequestedTenderTotal": {
                "EstimatedOverallContractAmount": amount(est, "XBL", "The estimated value."),
                "EstimatedOverallFrameworkContractsAmount": amount(est, "XBL", "The framework's estimate."),
-               "TotalAmount": amount(est, "XBL", "The budget."),
+               "TotalAmount": amount(est, "XBL", "The budget: the estimate."),
                "TaxIncludedIndicator": V("false", "Without tax: a public body pays no sales tax."),
                "MinimumAmount": amount(est * Decimal("0.5"), "XBL", "At least half will be called off."),
                "MaximumAmount": amount(est * Decimal("1.2"), "XBL", "At most 20 % more."),
-               "MonetaryScope": V("Two years of releases.", "What the amount covers."),
+               "MonetaryScope": V("Two years of releases, without tax: a two-year commitment of the 2026 budget, "
+                                  "estimated at 500 lume a bench and 20 lume an installation.", "What the amount "
+                                  "covers, and that the department made the estimate before the tenders (D28 point 2, "
+                                  "tender/01#F27, F29)."),
                "AverageSubsequentContractAmount": amount(est / 6, "XBL", "Six releases on average."),
                "ApplicableTaxCategory": kit.tax_category(kit.tax_rule("6-xb", PWD, "bench-serra-b"))},
            "MainCommodityClassification": {"ItemClassificationCode": V("38111" if goods else "87390",
@@ -7954,16 +7961,19 @@ def procurement_project(f, lot=None):
                                                                        "the UN Central Product Classification, which "
                                                                        "classifies services as well: installation "
                                                                        "services of other goods.")},
-           "AdditionalCommodityClassification": {"ItemClassificationCode": V("381", "The wider category of the "
-                                                                             "procurement, as a group of the UN CPC: "
-                                                                             "furniture.")},
+           **({"AdditionalCommodityClassification": {"ItemClassificationCode": V(
+               "87390", "The installation the project buys besides the benches, as a subclass of the UN CPC: "
+                        "installation services of other goods (tender/01#F30).")}} if lot is None else {}),
            "RealizedLocation": {"Name": V("Harbour park and town parks, Lumeport", "Where the benches go."),
                                 "Address": {"CityName": V("Lumeport", "The city."),
                                             "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
            "PlannedPeriod": {"StartDate": V(f.date(70), "From the first release."),
                              "EndDate": V(f.date(800), "For two years.")},
-           "ContractExtension": {"OptionsDescription": V("One extension of a year with 120 more benches.", "The "
-                                                                                                           "option."),
+           "ContractExtension": {"OptionsDescription": V({"LOT-1": "One extension of a year with 120 more benches.",
+                                                          "LOT-2": "One extension of a year with the installation of "
+                                                                   "120 more benches."}.get(
+                                                              lot, "One extension of a year with 120 more benches and "
+                                                                   "their installation."), "The option."),
                                  "MaximumNumberNumeric": V("1", "At most one."),
                                  "RenewalsIndicator": V("true", "The contract may be renewed."),
                                  "OptionValidityPeriod": {"EndDate": V(f.date(800), "Decided before it ends.")},
@@ -7984,7 +7994,7 @@ def procurement_project(f, lot=None):
                                                                        "(tender/01#F13)."),
             "MaximumAmount": amount(Decimal("600") * TENDER_QTY, "XBL", "The line's total at the most the budget "
                                                                        "allows per bench, 600 lume."),
-            "EstimatedAmount": amount(EST_BENCHES, "XBL", "The estimate."),
+            "EstimatedAmount": amount(EST_BENCHES, "XBL", "The estimate: 240 benches at 500 lume."),
             "DocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The technical specification.")},
             "DeliveryPeriod": {"StartDate": V(f.date(80), "Releases from."), "EndDate": V(f.date(800), "To.")},
             "RequiredItemLocationQuantity": {"LeadTimeMeasure": V("10", "Ten days per release.", unitCode="DAY")},
@@ -7993,7 +8003,18 @@ def procurement_project(f, lot=None):
             "SubRequestForTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One "
                                                                                                          "set per "
                                                                                                          "bench."),
-                                        "Item": {"Name": V("Ground anchor set", "Part of the bench.")}}}
+                                        "Item": {"Name": V("Ground anchor set", "Part of the bench: the anchors "
+                                                                               "are in lot 1, the anchoring in "
+                                                                               "lot 2.")}}}
+    if lot != "LOT-1":
+        line = {"ID": V("2", "The installation."),
+                "Note": V("Assembly of each bench and anchoring in the ground with its anchor set.", "The "
+                                                                                                   "requirement."),
+                "Quantity": qty(TENDER_QTY, "EA", "One installation per bench."),
+                "TaxIncludedIndicator": V("false", "Prices without tax."),
+                "EstimatedAmount": amount(EST_INSTALL, "XBL", "The estimate: 240 installations at 20 lume."),
+                "Item": {"Name": V("Installation of a park bench", "The service asked for.")}}
+        out["RequestForTenderLine"] = [out["RequestForTenderLine"], line] if "RequestForTenderLine" in out else line
     return out
 
 
@@ -8254,7 +8275,9 @@ def tendering_terms(f, call=False):
             "Language": {"ID": V("en", "English."), "Name": V("English", "In words."),
                          "LocaleCode": V("en-XB", "Bayvarran English, the city's.")},
             "BudgetAccountLine": {"ID": V("BL-PARKS-26", "The budget line."),
-                                  "TotalAmount": amount(EST_BENCHES + EST_INSTALL, "XBL", "Its amount."),
+                                  "TotalAmount": amount(EST_BENCHES + EST_INSTALL, "XBL", "Its amount: the whole "
+                                                        "two-year commitment, as the monetary scope says "
+                                                        "(tender/01#F27)."),
                                   "BudgetAccount": {"ID": V("4.2.110", "The city's budget account."),
                                                     "BudgetYearNumeric": V("2026", "The budget year."),
                                                     "RequiredClassificationScheme": {
@@ -8864,12 +8887,22 @@ def contract_name():
     return V(CONTRACT_NAME, "The name of the contract the procedure is for.")
 
 
+LOT_NAMES = {"LOT-1": "Park benches", "LOT-2": "Installation of the benches"}
+LOT_DESCRIPTIONS = {
+    None: "240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their "
+          "ground anchors and anchored.",
+    "LOT-1": "240 park benches with galvanised metal frames and hardwood slats, each with its ground anchor set, "
+             "delivered in releases over two years.",
+    "LOT-2": "The assembly and anchoring in the ground of the 240 benches in the parks of Lumeport, release by "
+             "release, over two years."}
+
+
 def project_brief(lot=None):
     """A short procurement project: what is bought, without the full detail of the notice."""
-    name = {"LOT-1": "Park benches", "LOT-2": "Installation of the park benches"}.get(lot, "Park benches for the "
-                                                                                          "city parks")
-    return {"Name": V(name, "The project, or the lot, the document is about."),
-            "ProcurementTypeCode": V("WORKS" if lot == "LOT-2" else "SUPPLIES", "The kind of procurement.")}
+    return {"Name": V(LOT_NAMES.get(lot, CONTRACT_NAME), "The project, or the lot, the document is about, by the "
+                                                         "name the notices give it (tender/08#F6)."),
+            "ProcurementTypeCode": V("SERVICES" if lot == "LOT-2" else "SUPPLIES", "The kind of procurement; the "
+                                     "installation is services in every document (tender/01#F4).")}
 
 
 def appeal_terms():

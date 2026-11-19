@@ -75,7 +75,7 @@ Inside `ProjectReference`:
 
 Inside `BuyerAssignedReference`:
 
-- `BuyerReferenceCode` = **PWD-PARKS-26-AP**  
+- `BuyerReferenceCode` = **4.2.110-AP**  
   The buyer's routing code for its invoices: the accounts-payable desk of the cost centre.
 - `BuyerReference` = **Accounts payable, public works**  
   The desk in words.
@@ -535,7 +535,7 @@ Inside `InvoiceLine`:
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
   <cac:BuyerAssignedReference>
-    <cbc:BuyerReferenceCode>PWD-PARKS-26-AP</cbc:BuyerReferenceCode>
+    <cbc:BuyerReferenceCode>4.2.110-AP</cbc:BuyerReferenceCode>
     <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
   </cac:BuyerAssignedReference>
   <cac:AccountingSupplierParty>

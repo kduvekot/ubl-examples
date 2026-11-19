@@ -227,7 +227,7 @@
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
-    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>

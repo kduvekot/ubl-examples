@@ -163,27 +163,26 @@
   <cac:ProcurementProject>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
-    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
-    <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
     <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
     <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
-    <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+    <cbc:Note>Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.</cbc:Note>
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
       <cbc:ProcurementType>Services: the installation of the benches, lot 2</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
-      <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
-      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124080.00</cbc:EstimatedOverallFrameworkContractsAmount>
-      <cbc:TotalAmount currencyID="XBL">124080.00</cbc:TotalAmount>
+      <cbc:EstimatedOverallContractAmount currencyID="XBL">124800.00</cbc:EstimatedOverallContractAmount>
+      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124800.00</cbc:EstimatedOverallFrameworkContractsAmount>
+      <cbc:TotalAmount currencyID="XBL">124800.00</cbc:TotalAmount>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
-      <cbc:MinimumAmount currencyID="XBL">62040.00</cbc:MinimumAmount>
-      <cbc:MaximumAmount currencyID="XBL">148896.00</cbc:MaximumAmount>
-      <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
-      <cbc:AverageSubsequentContractAmount currencyID="XBL">20680.00</cbc:AverageSubsequentContractAmount>
+      <cbc:MinimumAmount currencyID="XBL">62400.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">149760.00</cbc:MaximumAmount>
+      <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+      <cbc:AverageSubsequentContractAmount currencyID="XBL">20800.00</cbc:AverageSubsequentContractAmount>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -198,7 +197,7 @@
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:MainCommodityClassification>
     <cac:AdditionalCommodityClassification>
-      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">87390</cbc:ItemClassificationCode>
     </cac:AdditionalCommodityClassification>
     <cac:RealizedLocation>
       <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
@@ -214,14 +213,14 @@
       <cbc:EndDate>2028-03-22</cbc:EndDate>
     </cac:PlannedPeriod>
     <cac:ContractExtension>
-      <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+      <cbc:OptionsDescription>One extension of a year with 120 more benches and their installation.</cbc:OptionsDescription>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
         <cbc:EndDate>2028-03-22</cbc:EndDate>
       </cac:OptionValidityPeriod>
       <cac:Renewal>
-        <cbc:Amount currencyID="XBL">62040.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">62400.00</cbc:Amount>
         <cac:Period>
           <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
         </cac:Period>
@@ -237,7 +236,7 @@
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
       <cbc:MinimumAmount currencyID="XBL">84000.00</cbc:MinimumAmount>
       <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
-      <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
+      <cbc:EstimatedAmount currencyID="XBL">120000.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
         <cbc:DocumentType>Technical specification</cbc:DocumentType>
@@ -263,6 +262,16 @@
         </cac:Item>
       </cac:SubRequestForTenderLine>
     </cac:RequestForTenderLine>
+    <cac:RequestForTenderLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Note>Assembly of each bench and anchoring in the ground with its anchor set.</cbc:Note>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+      <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+      <cbc:EstimatedAmount currencyID="XBL">4800.00</cbc:EstimatedAmount>
+      <cac:Item>
+        <cbc:Name>Installation of a park bench</cbc:Name>
+      </cac:Item>
+    </cac:RequestForTenderLine>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
@@ -274,8 +283,8 @@
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-2</cbc:ID>
     <cac:ProcurementProject>
-      <cbc:Name>Installation of the park benches</cbc:Name>
-      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">WORKS</cbc:ProcurementTypeCode>
+      <cbc:Name>Installation of the benches</cbc:Name>
+      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
     </cac:ProcurementProject>
   </cac:ProcurementProjectLot>
   <cac:TenderResult>

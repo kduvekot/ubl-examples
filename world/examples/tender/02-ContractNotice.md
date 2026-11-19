@@ -456,8 +456,8 @@ Inside `TenderingTerms`:
   Bayvarran English, the city's. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `BudgetAccountLine/ID` = **BL-PARKS-26**  
   The budget line.
-- `BudgetAccountLine/TotalAmount` = **124080.00** (currencyID `XBL`)  
-  Its amount.
+- `BudgetAccountLine/TotalAmount` = **124800.00** (currencyID `XBL`)  
+  Its amount: the whole two-year commitment, as the monetary scope says (tender/01#F27).
 - `BudgetAccountLine/BudgetAccount/ID` = **4.2.110**  
   The city's budget account.
 - `BudgetAccountLine/BudgetAccount/BudgetYearNumeric` = **2026**  
@@ -595,46 +595,44 @@ Inside `ProcurementProject`:
 - `ID` = **PWD-2026-PARKS**  
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme** (languageID `en-XB`)  
-  The project's name.
+  The project's name, the same in every document (tender/01#F4, 08#F6).
 - `Name` = **Haz guknaz gan drek zatir nezsan naktran** (languageID `qau`)  
-  The same in Urvanian, the notice's additional language: The project's name.
-- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.** (languageID `en-XB`)  
-  What is bought.
-- `Description` = **240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.** (languageID `qau`)  
-  The same in Urvanian, the notice's additional language: What is bought.
+  The same in Urvanian, the notice's additional language: The project's name, the same in every document (tender/01#F4, 08#F6).
+- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.** (languageID `en-XB`)  
+  What is bought; each lot describes its own part (tender/02#F32).
+- `Description` = **240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran vek haskek tarkul ziztan stan banvir.** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: What is bought; each lot describes its own part (tender/02#F32).
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+  Supplies or services; the installation is services in every document. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 - `ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
   The kind within it. The code is from the Trade Accord's procurement subtype list: PURCHASE = Purchase.
-- `QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
-  Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
 - `RequestedDeliveryDate` = **2026-04-02**  
   The first release.
 - `EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
   240 benches over the contract.
-- `Note` = **Part of the parks renewal programme 2026.**  
-  The programme.
+- `Note` = **Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.**  
+  The programme, and the inspection as an acceptance term (tender/01#F28).
 - `SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
 - `ProcurementAdditionalType/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   The procurement buys supplies with services as a second type: the installation of the benches (tender/01#F12). The code is from the Trade Accord's contract nature list: SERVICES = Services.
 - `ProcurementAdditionalType/ProcurementType` = **Services: the installation of the benches, lot 2**  
   The name of code SERVICES in the Trade Accord's contract nature list, followed by the detail of this case: what the services are; the environmental aims are in the execution requirement and the tenderer requirement.
-- `RequestedTenderTotal/EstimatedOverallContractAmount` = **124080.00** (currencyID `XBL`)  
+- `RequestedTenderTotal/EstimatedOverallContractAmount` = **124800.00** (currencyID `XBL`)  
   The estimated value.
-- `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124080.00** (currencyID `XBL`)  
+- `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124800.00** (currencyID `XBL`)  
   The framework's estimate.
-- `RequestedTenderTotal/TotalAmount` = **124080.00** (currencyID `XBL`)  
-  The budget.
+- `RequestedTenderTotal/TotalAmount` = **124800.00** (currencyID `XBL`)  
+  The budget: the estimate.
 - `RequestedTenderTotal/TaxIncludedIndicator` = **false**  
   Without tax: a public body pays no sales tax.
-- `RequestedTenderTotal/MinimumAmount` = **62040.00** (currencyID `XBL`)  
+- `RequestedTenderTotal/MinimumAmount` = **62400.00** (currencyID `XBL`)  
   At least half will be called off.
-- `RequestedTenderTotal/MaximumAmount` = **148896.00** (currencyID `XBL`)  
+- `RequestedTenderTotal/MaximumAmount` = **149760.00** (currencyID `XBL`)  
   At most 20 % more.
-- `RequestedTenderTotal/MonetaryScope` = **Two years of releases.**  
-  What the amount covers.
-- `RequestedTenderTotal/AverageSubsequentContractAmount` = **20680.00** (currencyID `XBL`)  
+- `RequestedTenderTotal/MonetaryScope` = **Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.**  
+  What the amount covers, and that the department made the estimate before the tenders (D28 point 2, tender/01#F27, F29).
+- `RequestedTenderTotal/AverageSubsequentContractAmount` = **20800.00** (currencyID `XBL`)  
   Six releases on average.
 - `RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -648,8 +646,8 @@ Inside `ProcurementProject`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
-  The wider category of the procurement, as a group of the UN CPC: furniture. The code is from the world's copy of UN Central Product Classification, Version 2.1: 381 = Furniture.
+- `AdditionalCommodityClassification/ItemClassificationCode` = **87390** (listID `UN CPC Ver.2.1`)  
+  The installation the project buys besides the benches, as a subclass of the UN CPC: installation services of other goods (tender/01#F30). The code is from the world's copy of UN Central Product Classification, Version 2.1: 87390 = Installation services of other goods n.e.c..
 - `RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `RealizedLocation/Address/CityName` = **Lumeport**  
@@ -660,7 +658,7 @@ Inside `ProcurementProject`:
   From the first release.
 - `PlannedPeriod/EndDate` = **2028-03-22**  
   For two years.
-- `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
+- `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches and their installation.**  
   The option.
 - `ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
@@ -668,7 +666,7 @@ Inside `ProcurementProject`:
   The contract may be renewed.
 - `ContractExtension/OptionValidityPeriod/EndDate` = **2028-03-22**  
   Decided before it ends.
-- `ContractExtension/Renewal/Amount` = **62040.00** (currencyID `XBL`)  
+- `ContractExtension/Renewal/Amount` = **62400.00** (currencyID `XBL`)  
   The value of a renewal.
 - `ContractExtension/Renewal/Period/DurationMeasure` = **12** (unitCode `MON`)  
   Twelve months.
@@ -690,8 +688,8 @@ Inside `ProcurementProject`:
   The line's total at 350 lume a bench, below which a tender would be abnormally low: on the same basis as the estimate (tender/01#F13).
 - `RequestForTenderLine/MaximumAmount` = **144000.00** (currencyID `XBL`)  
   The line's total at the most the budget allows per bench, 600 lume.
-- `RequestForTenderLine/EstimatedAmount` = **119760.00** (currencyID `XBL`)  
-  The estimate.
+- `RequestForTenderLine/EstimatedAmount` = **120000.00** (currencyID `XBL`)  
+  The estimate: 240 benches at 500 lume.
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
@@ -711,7 +709,19 @@ Inside `ProcurementProject`:
 - `RequestForTenderLine/SubRequestForTenderLine/Quantity` = **240** (unitCode `SET`)  
   One set per bench.
 - `RequestForTenderLine/SubRequestForTenderLine/Item/Name` = **Ground anchor set**  
-  Part of the bench.
+  Part of the bench: the anchors are in lot 1, the anchoring in lot 2.
+- `RequestForTenderLine/ID` = **2**  
+  The installation.
+- `RequestForTenderLine/Note` = **Assembly of each bench and anchoring in the ground with its anchor set.**  
+  The requirement.
+- `RequestForTenderLine/Quantity` = **240** (unitCode `EA`)  
+  One installation per bench.
+- `RequestForTenderLine/TaxIncludedIndicator` = **false**  
+  Prices without tax.
+- `RequestForTenderLine/EstimatedAmount` = **4800.00** (currencyID `XBL`)  
+  The estimate: 240 installations at 20 lume.
+- `RequestForTenderLine/Item/Name` = **Installation of a park bench**  
+  The service asked for.
 
 ### Procurement Project Lot
 
@@ -738,38 +748,36 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/ID` = **LOT-1**  
   The project's identifier.
 - `ProcurementProject/Name` = **Park benches**  
-  The project's name.
-- `ProcurementProject/Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.**  
-  What is bought.
+  The project's name, the same in every document (tender/01#F4, 08#F6).
+- `ProcurementProject/Description` = **240 park benches with galvanised metal frames and hardwood slats, each with its ground anchor set, delivered in releases over two years.**  
+  What is bought; each lot describes its own part (tender/02#F32).
 - `ProcurementProject/ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+  Supplies or services; the installation is services in every document. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 - `ProcurementProject/ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
   The kind within it. The code is from the Trade Accord's procurement subtype list: PURCHASE = Purchase.
-- `ProcurementProject/QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
-  Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
 - `ProcurementProject/RequestedDeliveryDate` = **2026-04-02**  
   The first release.
 - `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
   240 benches over the contract.
-- `ProcurementProject/Note` = **Part of the parks renewal programme 2026.**  
-  The programme.
+- `ProcurementProject/Note` = **Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.**  
+  The programme, and the inspection as an acceptance term (tender/01#F28).
 - `ProcurementProject/SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **119760.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **120000.00** (currencyID `XBL`)  
   The estimated value.
-- `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **119760.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **120000.00** (currencyID `XBL`)  
   The framework's estimate.
-- `ProcurementProject/RequestedTenderTotal/TotalAmount` = **119760.00** (currencyID `XBL`)  
-  The budget.
+- `ProcurementProject/RequestedTenderTotal/TotalAmount` = **120000.00** (currencyID `XBL`)  
+  The budget: the estimate.
 - `ProcurementProject/RequestedTenderTotal/TaxIncludedIndicator` = **false**  
   Without tax: a public body pays no sales tax.
-- `ProcurementProject/RequestedTenderTotal/MinimumAmount` = **59880.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/MinimumAmount` = **60000.00** (currencyID `XBL`)  
   At least half will be called off.
-- `ProcurementProject/RequestedTenderTotal/MaximumAmount` = **143712.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/MaximumAmount` = **144000.00** (currencyID `XBL`)  
   At most 20 % more.
-- `ProcurementProject/RequestedTenderTotal/MonetaryScope` = **Two years of releases.**  
-  What the amount covers.
-- `ProcurementProject/RequestedTenderTotal/AverageSubsequentContractAmount` = **19960.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/MonetaryScope` = **Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.**  
+  What the amount covers, and that the department made the estimate before the tenders (D28 point 2, tender/01#F27, F29).
+- `ProcurementProject/RequestedTenderTotal/AverageSubsequentContractAmount` = **20000.00** (currencyID `XBL`)  
   Six releases on average.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -783,8 +791,6 @@ Inside `ProcurementProjectLot`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `ProcurementProject/AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
-  The wider category of the procurement, as a group of the UN CPC: furniture. The code is from the world's copy of UN Central Product Classification, Version 2.1: 381 = Furniture.
 - `ProcurementProject/RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `ProcurementProject/RealizedLocation/Address/CityName` = **Lumeport**  
@@ -803,7 +809,7 @@ Inside `ProcurementProjectLot`:
   The contract may be renewed.
 - `ProcurementProject/ContractExtension/OptionValidityPeriod/EndDate` = **2028-03-22**  
   Decided before it ends.
-- `ProcurementProject/ContractExtension/Renewal/Amount` = **59880.00** (currencyID `XBL`)  
+- `ProcurementProject/ContractExtension/Renewal/Amount` = **60000.00** (currencyID `XBL`)  
   The value of a renewal.
 - `ProcurementProject/ContractExtension/Renewal/Period/DurationMeasure` = **12** (unitCode `MON`)  
   Twelve months.
@@ -825,8 +831,8 @@ Inside `ProcurementProjectLot`:
   The line's total at 350 lume a bench, below which a tender would be abnormally low: on the same basis as the estimate (tender/01#F13).
 - `ProcurementProject/RequestForTenderLine/MaximumAmount` = **144000.00** (currencyID `XBL`)  
   The line's total at the most the budget allows per bench, 600 lume.
-- `ProcurementProject/RequestForTenderLine/EstimatedAmount` = **119760.00** (currencyID `XBL`)  
-  The estimate.
+- `ProcurementProject/RequestForTenderLine/EstimatedAmount` = **120000.00** (currencyID `XBL`)  
+  The estimate: 240 benches at 500 lume.
 - `ProcurementProject/RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `ProcurementProject/RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
@@ -846,7 +852,7 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/RequestForTenderLine/SubRequestForTenderLine/Quantity` = **240** (unitCode `SET`)  
   One set per bench.
 - `ProcurementProject/RequestForTenderLine/SubRequestForTenderLine/Item/Name` = **Ground anchor set**  
-  Part of the bench.
+  Part of the bench: the anchors are in lot 1, the anchoring in lot 2.
 - `ID` = **LOT-2**  
   Lot 2.
 - `LegalDocumentReference/ID` = **XB-PPA-2019**  
@@ -872,38 +878,36 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/ID` = **LOT-2**  
   The project's identifier.
 - `ProcurementProject/Name` = **Installation of the benches**  
-  The project's name.
-- `ProcurementProject/Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.**  
-  What is bought.
+  The project's name, the same in every document (tender/01#F4, 08#F6).
+- `ProcurementProject/Description` = **The assembly and anchoring in the ground of the 240 benches in the parks of Lumeport, release by release, over two years.**  
+  What is bought; each lot describes its own part (tender/02#F32).
 - `ProcurementProject/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  Supplies or services. The code is from the Trade Accord's contract nature list: SERVICES = Services.
+  Supplies or services; the installation is services in every document. The code is from the Trade Accord's contract nature list: SERVICES = Services.
 - `ProcurementProject/ProcurementSubTypeCode` = **INSTALL** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
   The kind within it. The code is from the Trade Accord's procurement subtype list: INSTALL = Installation.
-- `ProcurementProject/QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
-  Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
 - `ProcurementProject/RequestedDeliveryDate` = **2026-04-02**  
   The first release.
 - `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
-  240 benches over the contract.
-- `ProcurementProject/Note` = **Part of the parks renewal programme 2026.**  
-  The programme.
+  240 installations over the contract.
+- `ProcurementProject/Note` = **Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.**  
+  The programme, and the inspection as an acceptance term (tender/01#F28).
 - `ProcurementProject/SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **4320.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **4800.00** (currencyID `XBL`)  
   The estimated value.
-- `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **4320.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **4800.00** (currencyID `XBL`)  
   The framework's estimate.
-- `ProcurementProject/RequestedTenderTotal/TotalAmount` = **4320.00** (currencyID `XBL`)  
-  The budget.
+- `ProcurementProject/RequestedTenderTotal/TotalAmount` = **4800.00** (currencyID `XBL`)  
+  The budget: the estimate.
 - `ProcurementProject/RequestedTenderTotal/TaxIncludedIndicator` = **false**  
   Without tax: a public body pays no sales tax.
-- `ProcurementProject/RequestedTenderTotal/MinimumAmount` = **2160.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/MinimumAmount` = **2400.00** (currencyID `XBL`)  
   At least half will be called off.
-- `ProcurementProject/RequestedTenderTotal/MaximumAmount` = **5184.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/MaximumAmount` = **5760.00** (currencyID `XBL`)  
   At most 20 % more.
-- `ProcurementProject/RequestedTenderTotal/MonetaryScope` = **Two years of releases.**  
-  What the amount covers.
-- `ProcurementProject/RequestedTenderTotal/AverageSubsequentContractAmount` = **720.00** (currencyID `XBL`)  
+- `ProcurementProject/RequestedTenderTotal/MonetaryScope` = **Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.**  
+  What the amount covers, and that the department made the estimate before the tenders (D28 point 2, tender/01#F27, F29).
+- `ProcurementProject/RequestedTenderTotal/AverageSubsequentContractAmount` = **800.00** (currencyID `XBL`)  
   Six releases on average.
 - `ProcurementProject/RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -917,8 +921,6 @@ Inside `ProcurementProjectLot`:
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `ProcurementProject/MainCommodityClassification/ItemClassificationCode` = **87390** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies services as well: installation services of other goods. The code is from the world's copy of UN Central Product Classification, Version 2.1: 87390 = Installation services of other goods n.e.c..
-- `ProcurementProject/AdditionalCommodityClassification/ItemClassificationCode` = **381** (listID `UN CPC Ver.2.1`)  
-  The wider category of the procurement, as a group of the UN CPC: furniture. The code is from the world's copy of UN Central Product Classification, Version 2.1: 381 = Furniture.
 - `ProcurementProject/RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `ProcurementProject/RealizedLocation/Address/CityName` = **Lumeport**  
@@ -929,7 +931,7 @@ Inside `ProcurementProjectLot`:
   From the first release.
 - `ProcurementProject/PlannedPeriod/EndDate` = **2028-03-22**  
   For two years.
-- `ProcurementProject/ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches.**  
+- `ProcurementProject/ContractExtension/OptionsDescription` = **One extension of a year with the installation of 120 more benches.**  
   The option.
 - `ProcurementProject/ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
@@ -937,10 +939,22 @@ Inside `ProcurementProjectLot`:
   The contract may be renewed.
 - `ProcurementProject/ContractExtension/OptionValidityPeriod/EndDate` = **2028-03-22**  
   Decided before it ends.
-- `ProcurementProject/ContractExtension/Renewal/Amount` = **2160.00** (currencyID `XBL`)  
+- `ProcurementProject/ContractExtension/Renewal/Amount` = **2400.00** (currencyID `XBL`)  
   The value of a renewal.
 - `ProcurementProject/ContractExtension/Renewal/Period/DurationMeasure` = **12** (unitCode `MON`)  
   Twelve months.
+- `ProcurementProject/RequestForTenderLine/ID` = **2**  
+  The installation.
+- `ProcurementProject/RequestForTenderLine/Note` = **Assembly of each bench and anchoring in the ground with its anchor set.**  
+  The requirement.
+- `ProcurementProject/RequestForTenderLine/Quantity` = **240** (unitCode `EA`)  
+  One installation per bench.
+- `ProcurementProject/RequestForTenderLine/TaxIncludedIndicator` = **false**  
+  Prices without tax.
+- `ProcurementProject/RequestForTenderLine/EstimatedAmount` = **4800.00** (currencyID `XBL`)  
+  The estimate: 240 installations at 20 lume.
+- `ProcurementProject/RequestForTenderLine/Item/Name` = **Installation of a park bench**  
+  The service asked for.
 
 ## The document
 
@@ -1309,7 +1323,7 @@ Inside `ProcurementProjectLot`:
     </cac:Language>
     <cac:BudgetAccountLine>
       <cbc:ID>BL-PARKS-26</cbc:ID>
-      <cbc:TotalAmount currencyID="XBL">124080.00</cbc:TotalAmount>
+      <cbc:TotalAmount currencyID="XBL">124800.00</cbc:TotalAmount>
       <cac:BudgetAccount>
         <cbc:ID>4.2.110</cbc:ID>
         <cbc:BudgetYearNumeric>2026</cbc:BudgetYearNumeric>
@@ -1426,28 +1440,27 @@ Inside `ProcurementProjectLot`:
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:Name languageID="en-XB">Park benches for the parks renewal programme</cbc:Name>
     <cbc:Name languageID="qau">Haz guknaz gan drek zatir nezsan naktran</cbc:Name>
-    <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
-    <cbc:Description languageID="qau">240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.</cbc:Description>
+    <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.</cbc:Description>
+    <cbc:Description languageID="qau">240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran vek haskek tarkul ziztan stan banvir.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
-    <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
     <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
     <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
-    <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+    <cbc:Note>Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.</cbc:Note>
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
       <cbc:ProcurementType>Services: the installation of the benches, lot 2</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
-      <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
-      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124080.00</cbc:EstimatedOverallFrameworkContractsAmount>
-      <cbc:TotalAmount currencyID="XBL">124080.00</cbc:TotalAmount>
+      <cbc:EstimatedOverallContractAmount currencyID="XBL">124800.00</cbc:EstimatedOverallContractAmount>
+      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124800.00</cbc:EstimatedOverallFrameworkContractsAmount>
+      <cbc:TotalAmount currencyID="XBL">124800.00</cbc:TotalAmount>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
-      <cbc:MinimumAmount currencyID="XBL">62040.00</cbc:MinimumAmount>
-      <cbc:MaximumAmount currencyID="XBL">148896.00</cbc:MaximumAmount>
-      <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
-      <cbc:AverageSubsequentContractAmount currencyID="XBL">20680.00</cbc:AverageSubsequentContractAmount>
+      <cbc:MinimumAmount currencyID="XBL">62400.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">149760.00</cbc:MaximumAmount>
+      <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+      <cbc:AverageSubsequentContractAmount currencyID="XBL">20800.00</cbc:AverageSubsequentContractAmount>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
@@ -1462,7 +1475,7 @@ Inside `ProcurementProjectLot`:
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:MainCommodityClassification>
     <cac:AdditionalCommodityClassification>
-      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
+      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">87390</cbc:ItemClassificationCode>
     </cac:AdditionalCommodityClassification>
     <cac:RealizedLocation>
       <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
@@ -1478,14 +1491,14 @@ Inside `ProcurementProjectLot`:
       <cbc:EndDate>2028-03-22</cbc:EndDate>
     </cac:PlannedPeriod>
     <cac:ContractExtension>
-      <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+      <cbc:OptionsDescription>One extension of a year with 120 more benches and their installation.</cbc:OptionsDescription>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
         <cbc:EndDate>2028-03-22</cbc:EndDate>
       </cac:OptionValidityPeriod>
       <cac:Renewal>
-        <cbc:Amount currencyID="XBL">62040.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">62400.00</cbc:Amount>
         <cac:Period>
           <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
         </cac:Period>
@@ -1501,7 +1514,7 @@ Inside `ProcurementProjectLot`:
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
       <cbc:MinimumAmount currencyID="XBL">84000.00</cbc:MinimumAmount>
       <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
-      <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
+      <cbc:EstimatedAmount currencyID="XBL">120000.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
         <cbc:DocumentType>Technical specification</cbc:DocumentType>
@@ -1527,6 +1540,16 @@ Inside `ProcurementProjectLot`:
         </cac:Item>
       </cac:SubRequestForTenderLine>
     </cac:RequestForTenderLine>
+    <cac:RequestForTenderLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Note>Assembly of each bench and anchoring in the ground with its anchor set.</cbc:Note>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+      <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+      <cbc:EstimatedAmount currencyID="XBL">4800.00</cbc:EstimatedAmount>
+      <cac:Item>
+        <cbc:Name>Installation of a park bench</cbc:Name>
+      </cac:Item>
+    </cac:RequestForTenderLine>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
@@ -1551,23 +1574,22 @@ Inside `ProcurementProjectLot`:
     <cac:ProcurementProject>
       <cbc:ID>LOT-1</cbc:ID>
       <cbc:Name>Park benches</cbc:Name>
-      <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+      <cbc:Description>240 park benches with galvanised metal frames and hardwood slats, each with its ground anchor set, delivered in releases over two years.</cbc:Description>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
       <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
-      <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
       <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
-      <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+      <cbc:Note>Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:RequestedTenderTotal>
-        <cbc:EstimatedOverallContractAmount currencyID="XBL">119760.00</cbc:EstimatedOverallContractAmount>
-        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">119760.00</cbc:EstimatedOverallFrameworkContractsAmount>
-        <cbc:TotalAmount currencyID="XBL">119760.00</cbc:TotalAmount>
+        <cbc:EstimatedOverallContractAmount currencyID="XBL">120000.00</cbc:EstimatedOverallContractAmount>
+        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">120000.00</cbc:EstimatedOverallFrameworkContractsAmount>
+        <cbc:TotalAmount currencyID="XBL">120000.00</cbc:TotalAmount>
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
-        <cbc:MinimumAmount currencyID="XBL">59880.00</cbc:MinimumAmount>
-        <cbc:MaximumAmount currencyID="XBL">143712.00</cbc:MaximumAmount>
-        <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
-        <cbc:AverageSubsequentContractAmount currencyID="XBL">19960.00</cbc:AverageSubsequentContractAmount>
+        <cbc:MinimumAmount currencyID="XBL">60000.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
+        <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+        <cbc:AverageSubsequentContractAmount currencyID="XBL">20000.00</cbc:AverageSubsequentContractAmount>
         <cac:ApplicableTaxCategory>
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
@@ -1581,9 +1603,6 @@ Inside `ProcurementProjectLot`:
       <cac:MainCommodityClassification>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:MainCommodityClassification>
-      <cac:AdditionalCommodityClassification>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
-      </cac:AdditionalCommodityClassification>
       <cac:RealizedLocation>
         <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
         <cac:Address>
@@ -1605,7 +1624,7 @@ Inside `ProcurementProjectLot`:
           <cbc:EndDate>2028-03-22</cbc:EndDate>
         </cac:OptionValidityPeriod>
         <cac:Renewal>
-          <cbc:Amount currencyID="XBL">59880.00</cbc:Amount>
+          <cbc:Amount currencyID="XBL">60000.00</cbc:Amount>
           <cac:Period>
             <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
           </cac:Period>
@@ -1621,7 +1640,7 @@ Inside `ProcurementProjectLot`:
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
         <cbc:MinimumAmount currencyID="XBL">84000.00</cbc:MinimumAmount>
         <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
-        <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
+        <cbc:EstimatedAmount currencyID="XBL">120000.00</cbc:EstimatedAmount>
         <cac:DocumentReference>
           <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
           <cbc:DocumentType>Technical specification</cbc:DocumentType>
@@ -1676,23 +1695,22 @@ Inside `ProcurementProjectLot`:
     <cac:ProcurementProject>
       <cbc:ID>LOT-2</cbc:ID>
       <cbc:Name>Installation of the benches</cbc:Name>
-      <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+      <cbc:Description>The assembly and anchoring in the ground of the 240 benches in the parks of Lumeport, release by release, over two years.</cbc:Description>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
       <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">INSTALL</cbc:ProcurementSubTypeCode>
-      <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
       <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
-      <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
+      <cbc:Note>Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:RequestedTenderTotal>
-        <cbc:EstimatedOverallContractAmount currencyID="XBL">4320.00</cbc:EstimatedOverallContractAmount>
-        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">4320.00</cbc:EstimatedOverallFrameworkContractsAmount>
-        <cbc:TotalAmount currencyID="XBL">4320.00</cbc:TotalAmount>
+        <cbc:EstimatedOverallContractAmount currencyID="XBL">4800.00</cbc:EstimatedOverallContractAmount>
+        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">4800.00</cbc:EstimatedOverallFrameworkContractsAmount>
+        <cbc:TotalAmount currencyID="XBL">4800.00</cbc:TotalAmount>
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
-        <cbc:MinimumAmount currencyID="XBL">2160.00</cbc:MinimumAmount>
-        <cbc:MaximumAmount currencyID="XBL">5184.00</cbc:MaximumAmount>
-        <cbc:MonetaryScope>Two years of releases.</cbc:MonetaryScope>
-        <cbc:AverageSubsequentContractAmount currencyID="XBL">720.00</cbc:AverageSubsequentContractAmount>
+        <cbc:MinimumAmount currencyID="XBL">2400.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">5760.00</cbc:MaximumAmount>
+        <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+        <cbc:AverageSubsequentContractAmount currencyID="XBL">800.00</cbc:AverageSubsequentContractAmount>
         <cac:ApplicableTaxCategory>
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
           <cbc:Percent>0</cbc:Percent>
@@ -1706,9 +1724,6 @@ Inside `ProcurementProjectLot`:
       <cac:MainCommodityClassification>
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">87390</cbc:ItemClassificationCode>
       </cac:MainCommodityClassification>
-      <cac:AdditionalCommodityClassification>
-        <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">381</cbc:ItemClassificationCode>
-      </cac:AdditionalCommodityClassification>
       <cac:RealizedLocation>
         <cbc:Name>Harbour park and town parks, Lumeport</cbc:Name>
         <cac:Address>
@@ -1723,19 +1738,29 @@ Inside `ProcurementProjectLot`:
         <cbc:EndDate>2028-03-22</cbc:EndDate>
       </cac:PlannedPeriod>
       <cac:ContractExtension>
-        <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
+        <cbc:OptionsDescription>One extension of a year with the installation of 120 more benches.</cbc:OptionsDescription>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
           <cbc:EndDate>2028-03-22</cbc:EndDate>
         </cac:OptionValidityPeriod>
         <cac:Renewal>
-          <cbc:Amount currencyID="XBL">2160.00</cbc:Amount>
+          <cbc:Amount currencyID="XBL">2400.00</cbc:Amount>
           <cac:Period>
             <cbc:DurationMeasure unitCode="MON">12</cbc:DurationMeasure>
           </cac:Period>
         </cac:Renewal>
       </cac:ContractExtension>
+      <cac:RequestForTenderLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:Note>Assembly of each bench and anchoring in the ground with its anchor set.</cbc:Note>
+        <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+        <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+        <cbc:EstimatedAmount currencyID="XBL">4800.00</cbc:EstimatedAmount>
+        <cac:Item>
+          <cbc:Name>Installation of a park bench</cbc:Name>
+        </cac:Item>
+      </cac:RequestForTenderLine>
     </cac:ProcurementProject>
   </cac:ProcurementProjectLot>
 </ContractNotice>

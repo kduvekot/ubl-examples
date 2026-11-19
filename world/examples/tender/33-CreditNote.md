@@ -38,9 +38,9 @@ One bench was damaged during installation and is replaced free of charge; the ma
   The contract prices are in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   Settled in ferra, like the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, as on the invoice credited.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
   The number of lines.
@@ -536,8 +536,8 @@ Inside `CreditNoteLine`:
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>

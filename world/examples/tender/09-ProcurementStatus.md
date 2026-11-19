@@ -218,10 +218,10 @@ Inside `EconomicOperatorParty`:
 
 Inside `ProcurementProject`:
 
-- `Name` = **Park benches for the city parks**  
-  The project, or the lot, the document is about.
+- `Name` = **Park benches for the parks renewal programme**  
+  The project, or the lot, the document is about, by the name the notices give it (tender/08#F6).
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  The kind of procurement. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+  The kind of procurement; the installation is services in every document (tender/01#F4). The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 
 ### Procurement Project Lot
 
@@ -377,7 +377,7 @@ Inside `ProcurementProjectLot`:
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ProcurementProject>
-    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>

@@ -677,6 +677,12 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `TenderingTerms/SecurityClearanceTerm` | 0..n | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
 | `TenderingTerms/VariantConstraintIndicator` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
 
+> C121, D28 point 2: `QualityControlCode` is for works; the inspection of the benches on delivery is an acceptance term of a supply and goes to the project's note (tender/01#F28, 02#F34, 03#F35).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ProcurementProject/QualityControlCode` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

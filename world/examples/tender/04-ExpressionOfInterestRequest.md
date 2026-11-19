@@ -193,9 +193,9 @@ Inside `ContractingParty`:
 Inside `ProcurementProject`:
 
 - `Name` = **Park benches**  
-  The project, or the lot, the document is about.
+  The project, or the lot, the document is about, by the name the notices give it (tender/08#F6).
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  The kind of procurement. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+  The kind of procurement; the installation is services in every document (tender/01#F4). The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 
 ### Procurement Project Lot Reference
 

@@ -12,8 +12,8 @@
   <cbc:Note>Release 1 under the framework contract: 40 of the 240 benches.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
@@ -23,7 +23,7 @@
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:Contract>
   <cac:ProjectReference>
-    <cbc:ID>PWD-PARKS-26</cbc:ID>
+    <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
   <cac:BuyerCustomerParty>
     <cac:Party>

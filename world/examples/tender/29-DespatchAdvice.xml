@@ -10,14 +10,14 @@
   <cbc:IssueTime>17:37:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
-    <cbc:ID>PWD-PARKS-26</cbc:ID>
+    <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
   <cac:Signature>
     <cbc:ID>CL-SIG-26-DA</cbc:ID>
@@ -227,8 +227,8 @@
     <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
     <cbc:OutstandingQuantity unitCode="EA">200</cbc:OutstandingQuantity>
     <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
-    <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+    <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

@@ -34,9 +34,9 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The lume, the buyer's currency, agreed in the contract; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The manufacturer accounts its value added tax in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `AccountingCostCode` = **PWD-PARKS-26**  
+- `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, to be quoted on the invoice.
-- `AccountingCost` = **Parks renewal programme 2026**  
+- `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of order lines.
@@ -61,7 +61,7 @@ Inside `Contract`:
 
 Inside `ProjectReference`:
 
-- `ID` = **PWD-PARKS-26**  
+- `ID` = **PARKS-26**  
   The parks renewal programme the benches are for.
 
 ### Buyer Customer Party
@@ -342,8 +342,8 @@ Inside `OrderLine`:
   <cbc:Note>Release 1 under the framework contract: 40 of the 240 benches.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
@@ -353,7 +353,7 @@ Inside `OrderLine`:
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
   </cac:Contract>
   <cac:ProjectReference>
-    <cbc:ID>PWD-PARKS-26</cbc:ID>
+    <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
