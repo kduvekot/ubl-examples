@@ -360,7 +360,7 @@ Inside `InvoiceLine`:
   The factory's electricity connection, March.
 - `LineExtensionAmount` = **2559360** (currencyID `XUF`)  
   412800 × 6.2, rounded to the minor unit of the currency.
-- `Delivery/DeliveryLocation/ID` = **FE-CP-4120-01**  
+- `Delivery/DeliveryLocation/ID` = **FG-CP-4120-E1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Factory, main connection at 10 kV**  
   The connection in words.
@@ -392,7 +392,7 @@ Inside `InvoiceLine`:
   The warehouse's electricity connection, March.
 - `LineExtensionAmount` = **115320** (currencyID `XUF`)  
   18600 × 6.2, rounded to the minor unit of the currency.
-- `Delivery/DeliveryLocation/ID` = **FE-CP-4160-07**  
+- `Delivery/DeliveryLocation/ID` = **FG-CP-4160-E1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Warehouse of Castrano Logistics**  
   The connection in words.
@@ -725,7 +725,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FE-CP-4120-01</cbc:ID>
+        <cbc:ID>FG-CP-4120-E1</cbc:ID>
         <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -757,7 +757,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FE-CP-4160-07</cbc:ID>
+        <cbc:ID>FG-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>

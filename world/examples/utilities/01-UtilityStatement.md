@@ -180,7 +180,7 @@ Inside `SubscriberParty`:
 
 Inside `SubscriberConsumption`:
 
-- `ConsumptionID` = **FE-CP-4120-01-2603**  
+- `ConsumptionID` = **FG-CP-4120-E1-2603**  
   The consumption of the point in March.
 - `SpecificationTypeCode` = **DETAILED** (listID `urn:ubl-examples:world:codelist:SpecificationTypeCode`)  
   A detailed specification. The code is from the Trade Accord's specification type list: DETAILED = Detailed.
@@ -188,8 +188,8 @@ Inside `SubscriberConsumption`:
   The point.
 - `TotalMeteredQuantity` = **412800** (unitCode `KWH`)  
   Metered in March.
-- `UtilityConsumptionPoint/ID` = **FE-CP-4120-01**  
-  The connection's number.
+- `UtilityConsumptionPoint/ID` = **FG-CP-4120-E1**  
+  The connection, numbered by the grid operator, Ferrano Grid, which owns and reads the meters; the retail company uses its numbers, its own reference being the contract (O161).
 - `UtilityConsumptionPoint/Description` = **Factory, main connection at 10 kV**  
   Where.
 - `UtilityConsumptionPoint/SubscriberID` = **FE-C-0047120**  
@@ -224,8 +224,8 @@ Inside `SubscriberConsumption`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **FE-M-881204**  
-  The meter.
+- `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **FG-E-20388**  
+  The meter, numbered by the grid operator, Ferrano Grid, which owns and reads the meters; the retail company uses its numbers, its own reference being the contract (O161).
 - `UtilityConsumptionPoint/UtilityMeter/MeterName` = **Main meter, factory**  
   Its name.
 - `UtilityConsumptionPoint/UtilityMeter/MeterConstant` = **40**  
@@ -234,7 +234,7 @@ Inside `SubscriberConsumption`:
   Why: transformer ratio. The code is from the Trade Accord's meter constant type list: CTRATIO = Transformer ratio.
 - `UtilityConsumptionPoint/UtilityMeter/TotalDeliveredQuantity` = **412800** (unitCode `KWH`)  
   Delivered in March.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/ID` = **FE-M-881204-2603**  
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/ID` = **FG-E-20388-2603**  
   The reading of March.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/MeterReadingType` = **Monthly reading**  
   The name of code M in the Trade Accord's meter reading type list.
@@ -314,7 +314,7 @@ Inside `SubscriberConsumption`:
   The rate for this category.
 - `Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FE-CP-4120-01-2603**  
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FG-CP-4120-E1-2603**  
   The consumption report of the point for March.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
   The name of code MON in the Trade Accord's consumption type list.
@@ -330,7 +330,7 @@ Inside `SubscriberConsumption`:
   March.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate` = **2026-03-31**  
   Its last day.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **FE-CP-4120-01-2602**  
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **FG-CP-4120-E1-2602**  
   The report of February.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
   The name of code MON in the Trade Accord's consumption type list.
@@ -342,7 +342,7 @@ Inside `SubscriberConsumption`:
   February.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate` = **2026-02-28**  
   Its last day.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FE-M-881204**  
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FG-E-20388**  
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **398400** (unitCode `KWH`)  
   The month's consumption.
@@ -358,7 +358,7 @@ Inside `SubscriberConsumption`:
   The month.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-01-31**  
   Its end.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FE-M-881204**  
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FG-E-20388**  
   The meter.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **405100** (unitCode `KWH`)  
   The month's consumption.
@@ -589,12 +589,12 @@ Inside `SubscriberConsumption`:
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FE-CP-4120-01-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FG-CP-4120-E1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Factory, main connection at 10 kV</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="KWH">412800</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FE-CP-4120-01</cbc:ID>
+      <cbc:ID>FG-CP-4120-E1</cbc:ID>
       <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
@@ -617,13 +617,13 @@ Inside `SubscriberConsumption`:
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+        <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>
         <cbc:MeterConstant>40</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTRATIO</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FE-M-881204-2603</cbc:ID>
+          <cbc:ID>FG-E-20388-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
@@ -697,7 +697,7 @@ Inside `SubscriberConsumption`:
       </cac:TaxTotal>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
-          <cbc:ID>FE-CP-4120-01-2603</cbc:ID>
+          <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
           <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
@@ -708,7 +708,7 @@ Inside `SubscriberConsumption`:
             <cbc:EndDate>2026-03-31</cbc:EndDate>
           </cac:Period>
           <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>FE-CP-4120-01-2602</cbc:ConsumptionReportID>
+            <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
             <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
@@ -718,7 +718,7 @@ Inside `SubscriberConsumption`:
             </cac:Period>
           </cac:ConsumptionReportReference>
           <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
             <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -730,7 +730,7 @@ Inside `SubscriberConsumption`:
             </cac:Period>
           </cac:ConsumptionHistory>
           <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
             <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>

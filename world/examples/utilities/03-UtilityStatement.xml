@@ -126,7 +126,7 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FE-CP-4160-07-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FG-CP-4160-E1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Warehouse of Castrano Logistics</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="KWH">18600</cbc:TotalMeteredQuantity>
@@ -139,7 +139,7 @@
       </cac:PartyName>
     </cac:SubscriberParty>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FE-CP-4160-07</cbc:ID>
+      <cbc:ID>FG-CP-4160-E1</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
       <cbc:SubscriberType>Commercial</cbc:SubscriberType>
@@ -162,13 +162,13 @@
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FE-M-881377</cbc:MeterNumber>
+        <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
         <cbc:MeterName>Warehouse meter</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">18600</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FE-M-881377-2603</cbc:ID>
+          <cbc:ID>FG-E-20523-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
@@ -231,7 +231,7 @@
       </cac:TaxTotal>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
-          <cbc:ID>FE-CP-4160-07-2603</cbc:ID>
+          <cbc:ID>FG-CP-4160-E1-2603</cbc:ID>
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
           <cbc:Description>March consumption of Warehouse of Castrano Logistics.</cbc:Description>
@@ -242,7 +242,7 @@
             <cbc:EndDate>2026-03-31</cbc:EndDate>
           </cac:Period>
           <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>FE-CP-4160-07-2602</cbc:ConsumptionReportID>
+            <cbc:ConsumptionReportID>FG-CP-4160-E1-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
             <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="KWH">17200</cbc:TotalConsumedQuantity>
@@ -252,7 +252,7 @@
             </cac:Period>
           </cac:ConsumptionReportReference>
           <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FE-M-881377</cbc:MeterNumber>
+            <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">17900</cbc:Quantity>
             <cbc:Amount currencyID="XUF">488670</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -264,7 +264,7 @@
             </cac:Period>
           </cac:ConsumptionHistory>
           <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FE-M-881377</cbc:MeterNumber>
+            <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">17200</cbc:Quantity>
             <cbc:Amount currencyID="XUF">469560</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -291,7 +291,7 @@
         <cac:EnergyWaterConsumptionCorrection>
           <cbc:CorrectionType>Estimate correction</cbc:CorrectionType>
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">EST</cbc:CorrectionTypeCode>
-          <cbc:MeterNumber>FE-M-881377</cbc:MeterNumber>
+          <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
           <cbc:Description>February's estimate of 17,200 kWh was 750 kWh too high, as the actual reading shows.</cbc:Description>
           <cbc:CorrectionUnitAmount currencyID="XUF">27.3</cbc:CorrectionUnitAmount>
           <cbc:ConsumptionEnergyQuantity unitCode="KWH">-750</cbc:ConsumptionEnergyQuantity>

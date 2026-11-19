@@ -330,7 +330,7 @@
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FE-M-881204</cbc:ID>
+      <cbc:ID>FG-E-20388</cbc:ID>
       <cbc:Description>Factory, main connection</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -369,7 +369,7 @@
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FE-M-881377</cbc:ID>
+      <cbc:ID>FG-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
     <cac:OriginatorParty>

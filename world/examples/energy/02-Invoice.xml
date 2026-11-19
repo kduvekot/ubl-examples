@@ -263,7 +263,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FE-CP-4120-01</cbc:ID>
+        <cbc:ID>FG-CP-4120-E1</cbc:ID>
         <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -295,7 +295,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FE-CP-4160-07</cbc:ID>
+        <cbc:ID>FG-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>

@@ -454,7 +454,7 @@ Inside `InvoiceLine`:
   A monthly bill. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
-- `PurchaseReference/ID` = **FE-M-881204**  
+- `PurchaseReference/ID` = **FG-E-20388**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Factory, main connection**  
   Where it is.
@@ -500,7 +500,7 @@ Inside `InvoiceLine`:
   A monthly bill. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
-- `PurchaseReference/ID` = **FE-M-881377**  
+- `PurchaseReference/ID` = **FG-E-20523**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Warehouse of Castrano Logistics**  
   Where it is.
@@ -914,7 +914,7 @@ Inside `InvoiceLine`:
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FE-M-881204</cbc:ID>
+      <cbc:ID>FG-E-20388</cbc:ID>
       <cbc:Description>Factory, main connection</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -953,7 +953,7 @@ Inside `InvoiceLine`:
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FE-M-881377</cbc:ID>
+      <cbc:ID>FG-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
     <cac:OriginatorParty>

@@ -2900,8 +2900,8 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
                    {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
 UTILITY = {"Electricity": "ELEC", "Water": "WATER", "Telephone": "TEL", "Gas": "GAS"}   # UtilityType list
-METERS = {"33-xu": ["FE-C-0047120", ("FE-M-881204", "Factory, main connection"),
-                    ("FE-M-881377", "Warehouse of Castrano Logistics"), ("FG-G-20417", "Factory, gas of the coating "
+METERS = {"33-xu": ["FE-C-0047120", ("FG-E-20388", "Factory, main connection"),
+                    ("FG-E-20523", "Warehouse of Castrano Logistics"), ("FG-G-20417", "Factory, gas of the coating "
                                                                                        "line")],
           "34-xb:26-xb": ["CSW-C-260118", ("CSW-W-55102", "Shop, Lumeport"), None],
           "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57"), None],
@@ -2999,16 +2999,18 @@ def reading_method(detail, why):
     return Detail(detail, "from the utility's record of the reading.") if detail[0].islower() else V(detail, why)
 
 
+GRID_NUMBERS = (", numbered by the grid operator, Ferrano Grid, which owns and reads the meters; the retail company "
+                "uses its numbers, its own reference being the contract (O161).")
 BILL_EXCISE = "288840"     # the energy tax of the electricity bill (see energy_tax), shown on the statement too
 POINTS = {  # the consumption points behind the bills: meters, readings, history (the utilities' own records)
-    ("33-xu", "5-xu"): {"line": 0, "id": "FE-CP-4120-01", "desc": "Factory, main connection at 10 kV",
-                        "type": ("Industrial", "IND"), "meter": ("FE-M-881204", "Main meter, factory", "40",
+    ("33-xu", "5-xu"): {"line": 0, "id": "FG-CP-4120-E1", "desc": "Factory, main connection at 10 kV",
+                        "type": ("Industrial", "IND"), "meter": ("FG-E-20388", "Main meter, factory", "40",
                                                                  "Transformer ratio"),
                         "prev": ("2026-02-28", 52960, "Remote reading", "REMOTE"),
                         "last": ("2026-03-31", 63280, "Remote reading", "REMOTE"),
                         "history": [("2026-01-01", "2026-01-31", 398400), ("2026-02-01", "2026-02-28", 405100)]},
-    ("33-xu", "8-xu"): {"line": 1, "id": "FE-CP-4160-07", "desc": "Warehouse of Castrano Logistics",
-                        "type": ("Commercial", "COM"), "meter": ("FE-M-881377", "Warehouse meter", "1", "Direct"),
+    ("33-xu", "8-xu"): {"line": 1, "id": "FG-CP-4160-E1", "desc": "Warehouse of Castrano Logistics",
+                        "type": ("Commercial", "COM"), "meter": ("FG-E-20523", "Warehouse meter", "1", "Direct"),
                         "prev": ("2026-02-28", 117250, "no access to the meter", "ESTIMATE"),
                         "last": ("2026-03-31", 135850, "Read by the meter reader", "MANUAL"),
                         "history": [("2026-01-01", "2026-01-31", 17900), ("2026-02-01", "2026-02-28", 17200)],
@@ -3213,7 +3215,8 @@ def utility_statement(f, n, doc, key, invoice_no):
                "Note": V(pt["desc"], "The point."),
                "TotalMeteredQuantity": qty(consumed, unit, "Metered in March."),
                "UtilityConsumptionPoint": {
-                   "ID": V(pt["id"], "The connection's number."),
+                   "ID": V(pt["id"], "The connection" + GRID_NUMBERS if sup == "33-xu" else "The connection's "
+                                                                                             "number."),
                    "Description": V(pt["desc"], "Where."),
                    "SubscriberID": V(METERS[key][0], "The contract it belongs to."),
                    "SubscriberType": V(pt["type"][0], "The kind of customer."),
@@ -3228,7 +3231,8 @@ def utility_statement(f, n, doc, key, invoice_no):
                                                    "statement: it opens the reading page only, from 28 April to 5 May "
                                                    "2026, so a household needs no account to send its reading.")}}
                       if pt["prev"][3] == "CUSTOMER" else {}),
-                   "UtilityMeter": {"MeterNumber": V(pt["meter"][0], "The meter."),
+                   "UtilityMeter": {"MeterNumber": V(pt["meter"][0], "The meter" + (GRID_NUMBERS if sup == "33-xu"
+                                                                                     else ".")),
                                     "MeterName": V(pt["meter"][1], "Its name."),
                                     "MeterConstant": V(pt["meter"][2], "The register is multiplied by this."),
                                     "MeterConstantCode": V({"Direct": "DIRECT", "Transformer ratio": "CTRATIO"}[pt["meter"][3]],
