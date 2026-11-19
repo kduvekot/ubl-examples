@@ -330,7 +330,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **50688.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **50724.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -349,9 +349,9 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **50688.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **50724.00** (currencyID `XBL`)  
   The sum of the lines.
-- `PayableAmount` = **50688.00** (currencyID `XBL`)  
+- `PayableAmount` = **50724.00** (currencyID `XBL`)  
   The goods; freight and insurance follow on the invoice under CIF.
 
 ### Order Line
@@ -406,9 +406,9 @@ Inside `OrderLine`:
   The line's status in words.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   The quantity confirmed.
-- `LineItem/LineExtensionAmount` = **768.00** (currencyID `XBL`)  
+- `LineItem/LineExtensionAmount` = **804.00** (currencyID `XBL`)  
   As ordered.
-- `LineItem/TaxInclusiveLineExtensionAmount` = **768.00** (currencyID `XBL`)  
+- `LineItem/TaxInclusiveLineExtensionAmount` = **804.00** (currencyID `XBL`)  
   No tax on an export: the same amount.
 - `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   No tax on an export.
@@ -422,8 +422,8 @@ Inside `OrderLine`:
   Shipped on the sailing of day 10.
 - `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-17**  
   Arriving at Selanu.
-- `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+- `LineItem/Price/PriceAmount` = **67** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Name` = **Bench side frame casting**  
@@ -675,7 +675,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">50688.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">50724.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -689,8 +689,8 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50688.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">50688.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">50724.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -742,8 +742,8 @@ Inside `OrderLine`:
       <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">768.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">804.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
       <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
@@ -755,7 +755,7 @@ Inside `OrderLine`:
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

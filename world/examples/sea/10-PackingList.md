@@ -262,7 +262,7 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **768.00** (currencyID `XBL`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **804.00** (currencyID `XBL`)  
   The value of the goods, in lume.
 - `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
   The gross weight of the goods of this item.
@@ -515,7 +515,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">768.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">804.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Item>

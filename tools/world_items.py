@@ -46,12 +46,18 @@ Checks:
   * the exchange rates between the world's currencies agree with each other;
   * a price agreed for one buyer (buyer_prices: Valdara's distributor price
     for Lumeway, D14) is below the seller's own price, in its currency, with
-    a price type of the world's list that is before tax (O28);
+    a price type of the world's list that is before tax (O28); a price that
+    includes the carriage to the buyer (delivered: an Incoterms rule under
+    which the seller pays the main carriage, such as Lumeway's CIF price for
+    the island, O30) may be above it;
   * prices along the chain (D14, O30; items.json resales): nobody resells
     below what they paid plus the freight the documents state (shared over
     a transport's load by gross weight) and the import tax they bear, and a
-    reseller's gross margin falls in the band for its kind of business (a
-    promotion only below the upper limit); every resold item is in a resale;
+    reseller's gross margin falls in the band for its kind of business, or
+    for the kind of goods where a sale names one (clothing), a promotion only
+    below the upper limit; freight the buyer pays on top at cost (recharged)
+    is neither the reseller's cost nor part of its price; every resold item
+    is in a resale;
     a resale listed as awaiting the owner must still fail.
 
 Usage: python3 tools/world_items.py      (prints the problems, exit 1 if any)
@@ -303,10 +309,14 @@ def price_types():
     return lst["tax_included"]
 
 
+CARRIAGE_PAID = {"CPT", "CIP", "CFR", "CIF", "DAP", "DPU", "DDP"}   # Incoterms 2020: the seller pays the main carriage
+
+
 def buyer_price_problems(world):
     """A price agreed for one buyer (buyer_prices: Valdara's distributor price for Lumeway, D14) is in the seller's
     currency, names a price type of the world's list that is before tax, as every item price is (O28), and is
-    below the seller's own price."""
+    below the seller's own price, unless it includes the carriage to the buyer (delivered: an Incoterms rule under
+    which the seller pays the main carriage, such as Lumeway's CIF price for the island, O30)."""
     problems = []
     parties = {p["id"]: p for p in world["parties"]}
     types = price_types()
@@ -321,7 +331,10 @@ def buyer_price_problems(world):
                 problems.append(f"{where}: price type {bp.get('type')!r} is not a code of the world's price type list")
             elif types[bp["type"]]:
                 problems.append(f"{where}: price type {bp['type']} includes tax, but item prices are before tax (O28)")
-            if not 0 < bp["amount"] < it["price"]["amount"]:
+            if bp.get("delivered") and bp["delivered"] not in CARRIAGE_PAID:
+                problems.append(f"{where}: delivered {bp['delivered']!r} is not an Incoterms rule under which the "
+                                f"seller pays the main carriage ({', '.join(sorted(CARRIAGE_PAID))})")
+            if not 0 < bp["amount"] or (bp["amount"] >= it["price"]["amount"] and not bp.get("delivered")):
                 problems.append(f"{where}: {bp['amount']} is not below the seller's own price {it['price']['amount']}")
             if not bp.get("why"):
                 problems.append(f"{where}: needs the reason for the price (why)")
@@ -376,9 +389,21 @@ def freight_costs(world, items):
     return out
 
 
+def sale_price(it, s):
+    """The price per unit a resale s is made at: the price agreed for the sale's buyer (buyer_prices), where it
+    holds for the sale's delivery terms (a price with the carriage in it, delivered, holds only for those terms),
+    else the item's own price."""
+    bp = it.get("buyer_prices", {}).get(s.get("buyer"))
+    if bp and (not bp.get("delivered") or bp["delivered"] == s.get("terms")):
+        return bp
+    return it["price"]
+
+
 def resale_figures(world):
     """Each resale of items.json resales with its price, its cost and its gross margin, in lume per sale:
-    [(sale, price, cost, margin percent, how the cost is made)]."""
+    [(sale, price, cost, margin percent, how the cost is made)]. The price is the buyer's own price for the item
+    (buyer_prices), where one holds for the sale's delivery terms, else the reseller's price; freight the buyer pays
+    on top at cost (recharged) is left out of the cost, as it is out of the price."""
     from decimal import Decimal
     items = {i["id"]: i for i in world["items"]}
     parties = {p["id"]: p for p in world["parties"]}
@@ -387,7 +412,7 @@ def resale_figures(world):
     out = {}
     for s in world["resales"]["sales"]:
         seller_cur = world["countries"][parties[s["seller"]]["c"]]["currency"]["code"]
-        listed = sum(Decimal(str(items[i]["price"]["amount"])) * q for i, q in s["items"])
+        listed = sum(Decimal(str(sale_price(items[i], s)["amount"])) * q for i, q in s["items"])
         p = Decimal(str(s.get("price", listed))) * (1 - Decimal(str(s.get("less_percent", 0))) / 100)
         price = _lume(world, p, seller_cur)
         parts, cost = [], Decimal(0)
@@ -400,9 +425,13 @@ def resale_figures(world):
                 paid = _lume(world, pr["amount"], pr["currency"])
             cost += paid * q
             parts.append(f"{q} × {paid:.2f} paid for {orig}")
-            for name in s.get("freight", []):      # the share of the goods carried that are the same goods
+            for name in s.get("freight", []) + s.get("recharged", []):
+                # the share of the goods carried that are the same goods
                 f = freight[name][next(l["item"] for l in world["resales"]["freight"][name]["load"]
                                        if maker_item(items, l["item"]) == maker_item(items, iid))]
+                if name in s.get("recharged", []):      # paid by the buyer on top, at cost: a pass-through
+                    parts.append(f"{f:.2f} {name} recharged to the buyer")
+                    continue
                 cost += f * q
                 parts.append(f"{f:.2f} {name}")
             if s.get("import_tax"):
@@ -428,12 +457,13 @@ def resale_problems(world):
     for sid, (s, price, cost, margin, how) in resale_figures(world).items():
         where = f"resale {sid} ({s['what']})"
         kind = parties[s["seller"]]["identity"].get("legal", {}).get("business")
+        kind = s.get("band", kind)                 # a band for the kind of goods (clothing), else the business's
         band = rs["margin_bands"].get(kind)
         found = []
         if price < cost:
             found.append(f"sold at {price:.2f} lume, below its cost of {cost:.2f} ({how}) (D14, O30)")
         if not band:
-            found.append(f"no margin band for the seller's business {kind!r}")
+            found.append(f"no margin band {kind!r} for the seller's business or the sale's kind of goods")
         elif (margin < band["min"] and not s.get("promotion")) or margin > band["max"]:
             found.append(f"gross margin {margin:.1f} % (price {price:.2f}, cost {cost:.2f} lume: {how}) is outside the "
                          f"band of {band['min']} to {band['max']} % for a {band['name'].lower()}"

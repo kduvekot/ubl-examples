@@ -100,7 +100,7 @@ Inside `Payment`:
 
 - `ID` = **VT-PAY-26-0199**  
   The payment planned.
-- `PaidAmount` = **43778.00** (currencyID `XBL`)  
+- `PaidAmount` = **43814.00** (currencyID `XBL`)  
   The balance to be paid.
 - `PaidDate` = **2026-06-25**  
   The planned payment day.
@@ -195,7 +195,7 @@ Inside `DocumentResponse`:
   </cac:ReceiverParty>
   <cac:Payment>
     <cbc:ID>VT-PAY-26-0199</cbc:ID>
-    <cbc:PaidAmount currencyID="XBL">43778.00</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XBL">43814.00</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-25</cbc:PaidDate>
     <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
     <cac:BillingReference>

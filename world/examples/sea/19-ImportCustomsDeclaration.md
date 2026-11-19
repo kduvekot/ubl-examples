@@ -32,9 +32,9 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,511.200 venamo, 2,151.120 venamo.** (languageID `qal`)  
+- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,525.600 venamo, 2,152.560 venamo.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
-- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,511.200 coral, 2,151.120 coral.** (languageID `en-XL`)  
+- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,525.600 coral, 2,152.560 coral.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
@@ -260,7 +260,7 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **21185.273** (currencyID `XLC`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **21184.409** (currencyID `XLC`)  
   Lisavu values the goods with freight and insurance to the island (D16): the goods at 19,968.000 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.000 XLC), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
   The gross weight of the goods of this item.
@@ -296,8 +296,8 @@ Inside `Shipment`:
   The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
 - `GoodsItem/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight, share of the benches**  
   Part of the CIF value.
-- `GoodsItem/FreightAllowanceCharge/Amount` = **1162.121** (currencyID `XLC`)  
-  The benches' share of the 2,950 lume freight by value (49,920 of 50,688 lume), in coral at 0.4.
+- `GoodsItem/FreightAllowanceCharge/Amount` = **1161.296** (currencyID `XLC`)  
+  The benches' share of the 2,950 lume freight by value (49,920 of 50,724 lume), in coral at 0.4.
 - `GoodsItem/InvoiceLine/ID` = **1**  
   The line of the seller's invoice for these goods.
 - `GoodsItem/InvoiceLine/InvoicedQuantity` = **96** (unitCode `EA`)  
@@ -306,14 +306,14 @@ Inside `Shipment`:
   Named only: described in full above.
 - `GoodsItem/InsurancePolicy/ID` = **WS-CP-26-4471**  
   The cargo policy covering the goods.
-- `GoodsItem/InsurancePolicy/InsuredValueAmount` = **59155.80** (currencyID `XBL`)  
+- `GoodsItem/InsurancePolicy/InsuredValueAmount` = **59195.40** (currencyID `XBL`)  
   As on the insurance certificate.
 - `GoodsItem/ID` = **2**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **325.927** (currencyID `XLC`)  
-  Lisavu values the goods with freight and insurance to the island (D16): the goods at 307.200 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.000 XLC), shared over the goods items by their value.
+- `GoodsItem/DeclaredCustomsValueAmount` = **341.191** (currencyID `XLC`)  
+  Lisavu values the goods with freight and insurance to the island (D16): the goods at 321.600 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.000 XLC), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
   The gross weight of the goods of this item.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
@@ -437,8 +437,8 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,511.200 venamo, 2,151.120 venamo.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,511.200 coral, 2,151.120 coral.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,525.600 venamo, 2,152.560 venamo.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,525.600 coral, 2,152.560 coral.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -629,7 +629,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">21185.273</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">21184.409</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
@@ -658,7 +658,7 @@ Inside `Signature`:
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Ocean freight, share of the benches</cbc:AllowanceChargeReason>
-        <cbc:Amount currencyID="XLC">1162.121</cbc:Amount>
+        <cbc:Amount currencyID="XLC">1161.296</cbc:Amount>
       </cac:FreightAllowanceCharge>
       <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
@@ -669,13 +669,13 @@ Inside `Signature`:
       </cac:InvoiceLine>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuredValueAmount currencyID="XBL">59155.80</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">59195.40</cbc:InsuredValueAmount>
       </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">325.927</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">341.191</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>

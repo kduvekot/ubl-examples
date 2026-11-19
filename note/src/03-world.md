@@ -1163,7 +1163,13 @@ the island's importer at a trade price of 520.00, a margin of about 22 %
 after the truck from Ferrano. The store sells it to a shopper at a shop
 price of 749.00, or 674.10 during the spring promotion, 10 % off. The
 island's shop price is not yet settled. The spare side frame goes from
-Valdara to Lumeway at 47.50 and from Lumeway to the island at 64.00. In the
+Valdara to Lumeway at 47.50; Lumeway's trade price for it is 64.00, and
+58.00 on its revised list of 20 May. To the island Lumeway sells it at 67.00, CIF Selanu: a price
+with the frame's share of the sea freight, export clearance and insurance in
+it, which leaves Lumeway about 16 %. The eight urgent frames that fly to the
+island go at the trade price, carriage paid to Selanu airport, and Lumeway
+recharges the air freight at cost, a surcharge the island's buyer accepted
+when it asked for them. In the
 public tender Valdara bids 499 a bench plus 18 for installation: above what
 its distributor pays and below what its distributor charges, a direct
 project price.
@@ -1181,7 +1187,9 @@ nobody resells below what they paid plus the freight the documents state
 (shared over a transport's load by gross weight) and the import tax they
 bear; a
 reseller's gross margin falls in a band for its kind (a distributor 15 to
-30 %, a retailer 30 to 45 %, lower during a promotion); and a company's
+30 %, a retailer 30 to 45 %, and 40 to 60 % on clothing, lower during a
+promotion), freight recharged at cost counting neither as cost nor as price;
+and a company's
 turnover per person falls in a band for its kind.
 
 ## Document numbers

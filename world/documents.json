@@ -196,7 +196,7 @@
   {
    "id": "air",
    "title": "An urgent part of the order by air (Bayvarra → island Lisavu)",
-   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport.",
+   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
    "legs": [
     {
      "mode": "road",
@@ -2090,6 +2090,19 @@
     "SellerSupplierParty": "10-xb",
     "BuyerCustomerParty": "6-xb",
     "Delivery/Shipment/Consignment/CarrierParty": "12-xl"
+   }
+  },
+  {
+   "flow": "air",
+   "doc": "Invoice",
+   "from": "6-xb",
+   "to": "1-xl",
+   "why": "The distributor invoices the eight frames at its trade price, carriage paid to the island airport, and recharges the air freight at cost as a surcharge, which the buyer accepted in its order change (O30).",
+   "parties": {
+    "AccountingSupplierParty": "6-xb",
+    "AccountingCustomerParty": "1-xl",
+    "SellerSupplierParty": "6-xb",
+    "BuyerCustomerParty": "1-xl"
    }
   },
   {

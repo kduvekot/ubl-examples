@@ -1093,6 +1093,15 @@
     "amount": 64.0,
     "currency": "XBL"
    },
+   "buyer_prices": {
+    "1-xl": {
+     "amount": 67.0,
+     "currency": "XBL",
+     "type": "TRD",
+     "delivered": "CIF",
+     "why": "Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11)."
+    }
+   },
    "sellers_id": "LD-10443",
    "resale_of": "bench-casting",
    "description": "Spare side frame for the Serra bench.",
@@ -1574,7 +1583,7 @@
   }
  ],
  "resales": {
-  "note": "Every resale of the world, with what the reseller paid and the freight the documents state, for the build check of decision D14 and open point O30 (tools/world_items.py): nobody resells below what they paid plus the stated freight and the import tax they bear, and a reseller's gross margin on the sale, (price - cost) / price, falls in the band for its kind of business (parties.json identity.legal.business), except during a promotion, when only the upper limit applies. What the reseller paid is the price its seller asks it (items.json buyer_prices, else the seller's price). Freight is shared over the goods a transport carries by their gross weight. Prices before tax; amounts compared in lume at the reference rates. A sale listed under awaiting_owner fails the check for a reason the owner has still to decide.",
+  "note": "Every resale of the world, with what the reseller paid and the freight the documents state, for the build check of decision D14 and open point O30 (tools/world_items.py): nobody resells below what they paid plus the stated freight and the import tax they bear, and a reseller's gross margin on the sale, (price - cost) / price, falls in the band for its kind of business (parties.json identity.legal.business), or for the kind of goods where a sale names one (band: clothing, whose margins are higher, O30), except during a promotion, when only the upper limit applies. A price agreed for the buyer (items.json buyer_prices) is the sale's price where it holds for the sale's delivery terms (terms). Freight the buyer pays on top at cost (recharged, a pass-through) is neither the reseller's cost nor part of its price. What the reseller paid is the price its seller asks it (items.json buyer_prices, else the seller's price). Freight is shared over the goods a transport carries by their gross weight. Prices before tax; amounts compared in lume at the reference rates. A sale listed under awaiting_owner fails the check for a reason the owner has still to decide.",
   "margin_bands": {
    "distributor": {
     "name": "Distributor, wholesaler",
@@ -1585,6 +1594,11 @@
     "name": "Retailer",
     "min": 30,
     "max": 45
+   },
+   "clothing": {
+    "name": "Retailer, for clothing",
+    "min": 40,
+    "max": 60
    }
   },
   "freight": {
@@ -1721,7 +1735,8 @@
     "freight": [
      "road-truck",
      "sea"
-    ]
+    ],
+    "terms": "CIF"
    },
    {
     "id": "lumeway-frame-island",
@@ -1733,11 +1748,12 @@
       1
      ]
     ],
-    "what": "The spare side frames by sea, CIF Selanu (sea/22)",
+    "what": "The spare side frames by sea, at Lumeway's CIF price for the island (sea/22; O30)",
     "freight": [
      "road-truck",
      "sea"
-    ]
+    ],
+    "terms": "CIF"
    },
    {
     "id": "lumeway-frame-air",
@@ -1749,8 +1765,9 @@
       1
      ]
     ],
-    "what": "The urgent side frames by air, CPT Selanu airport (air/01)",
-    "freight": [
+    "what": "The urgent side frames by air, CPT Selanu airport, at the trade price with the air freight recharged at cost (air/01, 02, 11; O30, D39)",
+    "terms": "CPT",
+    "recharged": [
      "air"
     ]
    },
@@ -1827,7 +1844,8 @@
       1
      ]
     ],
-    "what": "The shirt in the shop (packaging/08, 09)"
+    "what": "The shirt in the shop, with a clothing retailer's margin (packaging/08, 09; O30)",
+    "band": "clothing"
    },
    {
     "id": "velumi-bench",
@@ -1844,10 +1862,7 @@
    }
   ],
   "awaiting_owner": {
-   "velumi-bench": "Velumi's shop price of 289 coral gives a retailer's margin of about 21 %; D30 decided 375 coral (about 38 %), applied with the sea flow's decision (O48).",
-   "lumeway-frame-island": "Under CIF the twelve spare frames bear their share of the sea freight, export clearance and insurance (by gross weight, about 7.90 a frame), so 64.00 leaves Lumeway about 12 %, below the distributor band; the price table's 24 % leaves the sea freight out. For the owner (C68 report).",
-   "lumeway-frame-air": "Under CPT Lumeway pays the air freight of 554.88 for eight frames it sells at 64.00 each (512.00): a sale below cost, which no document explains. For the owner, with D39 (C68 report).",
-   "store-shirt": "The store's shirt at 29.95 against 14.50 paid gives about 52 %, above the retailer band of 30 to 45 % (normal for clothing). For the owner: a band for clothing or another price (C68 report)."
+   "velumi-bench": "Velumi's shop price of 289 coral gives a retailer's margin of about 21 %; D30 decided 375 coral (about 38 %), applied with the sea flow's decision (O48)."
   }
  }
 }

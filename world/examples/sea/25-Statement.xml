@@ -10,9 +10,9 @@
   <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">53778.00</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">53814.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">10000.00</cbc:TotalCreditAmount>
-  <cbc:TotalBalanceAmount currencyID="XBL">43778.00</cbc:TotalBalanceAmount>
+  <cbc:TotalBalanceAmount currencyID="XBL">43814.00</cbc:TotalBalanceAmount>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode listID="urn:ubl-examples:world:codelist:StatementTypeCode">ACCOUNT</cbc:StatementTypeCode>
   <cac:StatementPeriod>
@@ -210,8 +210,8 @@
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>
     <cbc:UUID>56439119-78e3-59ec-bc7d-84c3d3a46f09</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">53778.00</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">53778.00</cbc:BalanceAmount>
+    <cbc:DebitLineAmount currencyID="XBL">53814.00</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">53814.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
       <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
@@ -282,7 +282,7 @@
     <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
     <cbc:UUID>16aec267-0a53-5561-ad4f-79c534c1d918</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">43778.00</cbc:BalanceAmount>
+    <cbc:BalanceAmount currencyID="XBL">43814.00</cbc:BalanceAmount>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
