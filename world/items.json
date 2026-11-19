@@ -1523,13 +1523,13 @@
    "seller": "35-xl",
    "name": "Business telephone line",
    "kind": "service",
-   "unit": "MON",
+   "unit": "EA",
    "price": {
     "amount": 21.18,
     "currency": "XLC"
    },
    "sellers_id": "ST-BL",
-   "description": "Business telephone and data line, monthly subscription.",
+   "description": "Business telephone and data line, subscription per line and month.",
    "purchase": "telecom"
   },
   {
@@ -1544,6 +1544,20 @@
    },
    "sellers_id": "ST-GB",
    "description": "Mobile data beyond the subscription, per gigabyte.",
+   "purchase": "telecom"
+  },
+  {
+   "id": "telecom-roaming",
+   "seller": "35-xl",
+   "name": "Mobile data roaming",
+   "kind": "service",
+   "unit": "E34",
+   "price": {
+    "amount": 1.5,
+    "currency": "XLC"
+   },
+   "sellers_id": "ST-GB-RX",
+   "description": "Mobile data used on a partner's network abroad, per gigabyte; the Trade Accord has no roaming rule.",
    "purchase": "telecom"
   },
   {

@@ -36,7 +36,7 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Telephone and data**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
@@ -308,17 +308,17 @@ Inside `AllowanceCharge`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **141.920** (currencyID `XLC`)  
+- `LineExtensionAmount` = **146.224** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **135.566** (currencyID `XLC`)  
+- `TaxExclusiveAmount` = **139.870** (currencyID `XLC`)  
   The lines less the discount.
-- `TaxInclusiveAmount` = **135.566** (currencyID `XLC`)  
+- `TaxInclusiveAmount` = **139.870** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
   The bundle discount.
 - `AllowanceTotalTaxInclusiveAmount` = **6.354** (currencyID `XLC`)  
   The same: no tax on the island.
-- `PayableAmount` = **135.566** (currencyID `XLC`)  
+- `PayableAmount` = **139.870** (currencyID `XLC`)  
   What the trader pays.
 
 ### Invoice Line
@@ -327,7 +327,7 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **6** (unitCode `MON`)  
+- `InvoicedQuantity` = **6** (unitCode `EA`)  
   Six business lines for the month.
 - `LineExtensionAmount` = **127.080** (currencyID `XLC`)  
   6 × 21.18, rounded to the minor unit of the currency.
@@ -337,9 +337,9 @@ Inside `InvoiceLine`:
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Six business lines**  
   Where it is.
-- `Item/Description` = **Levise nikeile tofami titefe litile, pafipa vivukane.** (languageID `qal`)  
+- `Item/Description` = **Levise nikeile tofami titefe litile, vivukane tatata litile tofami lovofe.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language; item telecom-line of Selanu Telecom (world/items.json).
-- `Item/Description` = **Business telephone and data line, monthly subscription.** (languageID `en-XL`)  
+- `Item/Description` = **Business telephone and data line, subscription per line and month.** (languageID `en-XL`)  
   The seller's description in English, the working language between the countries; item telecom-line of Selanu Telecom (world/items.json).
 - `Item/Name` = **Levise nikeile litile** (languageID `qal`)  
   The item's name in Lisavan, the seller's language; item telecom-line of Selanu Telecom (world/items.json).
@@ -349,14 +349,14 @@ Inside `InvoiceLine`:
   The seller's own item number; item telecom-line of Selanu Telecom (world/items.json).
 - `Price/PriceAmount` = **21.18** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `MON`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **2**  
   The line number.
-- `InvoicedQuantity` = **35** (unitCode `E34`)  
-  Mobile data beyond the subscriptions.
-- `LineExtensionAmount` = **14.840** (currencyID `XLC`)  
-  35 × 0.424, rounded to the minor unit of the currency.
+- `InvoicedQuantity` = **31** (unitCode `E34`)  
+  Mobile data of the data pool beyond the subscriptions, used on the island.
+- `LineExtensionAmount` = **13.144** (currencyID `XLC`)  
+  31 × 0.424, rounded to the minor unit of the currency.
 - `PaymentPurposeCode` = **PHON** (listID `ISO 20022 ExternalPurpose1Code`)  
   What the payment of this line is for, as an ISO 20022 purpose: a telephone bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: PHON = TelephoneBill.
 - `PurchaseReference/ID` = **ST-D-0042**  
@@ -374,6 +374,32 @@ Inside `InvoiceLine`:
 - `Item/SellersItemIdentification/ID` = **ST-GB**  
   The seller's own item number; item telecom-data of Selanu Telecom (world/items.json).
 - `Price/PriceAmount` = **0.424** (currencyID `XLC`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `E34`)  
+  The price is per one unit.
+- `ID` = **3**  
+  The line number.
+- `InvoicedQuantity` = **4** (unitCode `E34`)  
+  Mobile data of the data pool used while roaming in Bayvarra.
+- `LineExtensionAmount` = **6.000** (currencyID `XLC`)  
+  4 × 1.5, rounded to the minor unit of the currency.
+- `PaymentPurposeCode` = **PHON** (listID `ISO 20022 ExternalPurpose1Code`)  
+  What the payment of this line is for, as an ISO 20022 purpose: a telephone bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: PHON = TelephoneBill.
+- `PurchaseReference/ID` = **ST-D-0042**  
+  The meter or subscription the line is for.
+- `PurchaseReference/Description` = **Mobile data pool, roaming in Bayvarra**  
+  Where it is.
+- `Item/Description` = **Livule titefe vimihi lelala vapiseva fivava pelahi, tatata menuti; Trade Accord sohone lelaha helate vamufe.** (languageID `qal`)  
+  The seller's description in Lisavan, the seller's language; item telecom-roaming of Selanu Telecom (world/items.json).
+- `Item/Description` = **Mobile data used on a partner's network abroad, per gigabyte; the Trade Accord has no roaming rule.** (languageID `en-XL`)  
+  The seller's description in English, the working language between the countries; item telecom-roaming of Selanu Telecom (world/items.json).
+- `Item/Name` = **Livule titefe helate** (languageID `qal`)  
+  The item's name in Lisavan, the seller's language; item telecom-roaming of Selanu Telecom (world/items.json).
+- `Item/Name` = **Mobile data roaming** (languageID `en-XL`)  
+  The item's name in English, the working language between the countries; item telecom-roaming of Selanu Telecom (world/items.json).
+- `Item/SellersItemIdentification/ID` = **ST-GB-RX**  
+  The seller's own item number; item telecom-roaming of Selanu Telecom (world/items.json).
+- `Price/PriceAmount` = **1.5** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `E34`)  
   The price is per one unit.
@@ -396,7 +422,7 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
   <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -598,16 +624,16 @@ Inside `InvoiceLine`:
     <cbc:BaseAmount currencyID="XLC">127.080</cbc:BaseAmount>
   </cac:AllowanceCharge>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">135.566</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">135.566</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">146.224</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">139.870</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">139.870</cbc:TaxInclusiveAmount>
     <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
     <cbc:AllowanceTotalTaxInclusiveAmount currencyID="XLC">6.354</cbc:AllowanceTotalTaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XLC">139.870</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
@@ -615,8 +641,8 @@ Inside `InvoiceLine`:
       <cbc:Description>Six business lines</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
-      <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
-      <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
+      <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, vivukane tatata litile tofami lovofe.</cbc:Description>
+      <cbc:Description languageID="en-XL">Business telephone and data line, subscription per line and month.</cbc:Description>
       <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
       <cbc:Name languageID="en-XL">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
@@ -625,13 +651,13 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="E34">31</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">13.144</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
       <cbc:ID>ST-D-0042</cbc:ID>
@@ -648,6 +674,29 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="E34">4</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XLC">6.000</cbc:LineExtensionAmount>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
+    <cac:PurchaseReference>
+      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:Description>Mobile data pool, roaming in Bayvarra</cbc:Description>
+    </cac:PurchaseReference>
+    <cac:Item>
+      <cbc:Description languageID="qal">Livule titefe vimihi lelala vapiseva fivava pelahi, tatata menuti; Trade Accord sohone lelaha helate vamufe.</cbc:Description>
+      <cbc:Description languageID="en-XL">Mobile data used on a partner's network abroad, per gigabyte; the Trade Accord has no roaming rule.</cbc:Description>
+      <cbc:Name languageID="qal">Livule titefe helate</cbc:Name>
+      <cbc:Name languageID="en-XL">Mobile data roaming</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>ST-GB-RX</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XLC">1.5</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

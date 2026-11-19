@@ -3199,7 +3199,10 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
          "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March.",
                          "line_extra": MARCH}, levy(14, "household")],
          "35-xl": [{"item": "telecom-line", "qty": 6, "invoice_why": "Six business lines for the month."},
-                   {"item": "telecom-data", "qty": 35, "invoice_why": "Mobile data beyond the subscriptions."}]}
+                   {"item": "telecom-data", "qty": 31, "invoice_why": "Mobile data of the data pool beyond the "
+                                                                       "subscriptions, used on the island."},
+                   {"item": "telecom-roaming", "qty": 4, "invoice_why": "Mobile data of the data pool used while "
+                                                                        "roaming in Bayvarra."}]}
 KIND = {"33-xu": "Electricity", "34-xb": "Water", "35-xl": "Telephone"}
 UTILITY = {"Electricity": "ELEC", "Water": "WATER", "Telephone": "TEL", "Gas": "GAS"}   # UtilityType list
 METERS = {"33-xu": ["FE-C-0047120", ("FG-E-20388", "Factory, main connection"),
@@ -3208,7 +3211,8 @@ METERS = {"33-xu": ["FE-C-0047120", ("FG-E-20388", "Factory, main connection"),
                     ("FG-E-20523", "Warehouse of Castrano Logistics")],
           "34-xb:26-xb": ["CSW-C-260118", ("CSW-W-55102", "Shop, Lumeport"), None],
           "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57"), None],
-          "35-xl": ["ST-C-1077", ("ST-L-BUS6", "Six business lines"), ("ST-D-0042", "Mobile data pool")]}
+          "35-xl": ["ST-C-1077", ("ST-L-BUS6", "Six business lines"), ("ST-D-0042", "Mobile data pool"),
+                    ("ST-D-0042", "Mobile data pool, roaming in Bayvarra")]}
 
 
 EXCISE = next(x for x in WORLD["countries"]["XU"]["tax"]["schemes"] if x["id"] == "EXC")
@@ -3698,77 +3702,137 @@ METER_CONSTANT = {"Direct": "DIRECT", "Transformer ratio": "CTRATIO",
                   "Current and voltage transformers": "CTVT"}     # MeterConstantType list
 
 
+TEL_DATA = {"island": 31, "roaming": 4}     # the data pool's 35 GB in March: on the island, and roaming in Bayvarra
+
+
+def masked(number):
+    """A called number as the privacy code MASKED shows it: its last three digits replaced (utilities/12#F2)."""
+    return number[:-3] + "***"
+
+
+def included(amt, reason, why):
+    """An allowance for a service included in the subscription: the whole of its charge."""
+    return {"ChargeIndicator": V("false", "An allowance."),
+            "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as "
+                                                 "EN 16931 uses it."),
+            "AllowanceChargeReason": V(reason, "Why the service costs nothing."),
+            "Amount": amount(amt, "XLC", why)}
+
+
 def telecom_consumption(f, sup, key, customer):
+    """The telephone statement of the island's trader: six business lines and a data pool of 35 GB, of which a few
+    used while roaming in Bayvarra (D31 point 6). A month's summary of a line's calls or data is a service record
+    too, as UBL requires a call record on every supply line; it is dated at the start of the month it sums (O107)."""
     cur = "XLC"
-    line_item, data_item = ITEM["telecom-line"], ITEM["telecom-data"]
+    line_item, data_item, roam_item = ITEM["telecom-line"], ITEM["telecom-data"], ITEM["telecom-roaming"]
     base = "+999 3 721 18"
+    month_start = {"CallDate": V("2026-03-01", "The start of the month the record sums: UBL asks every service "
+                                               "record for a call date and time, a summary has none of its own "
+                                               "(O107)."),
+                   "CallTime": V("00:00:00", "The month's first minute.")}
     lines = []
     for k in range(6):
-        number = f"{base}{50 + k}"
         x = {"ID": V(str(k + 1), "A business line."),
-             "PhoneNumber": V(number, "The line's number; +999 is reserved, no real country's code."),
-             "Description": V("Business line with calls on the island included.", "The subscription."),
+             "PhoneNumber": V(f"{base}{50 + k}", "The line's number; +999 is reserved, no real country's code."),
+             "Description": V(f"Business line {k + 1} of the six of subscription {METERS[key][1][0]}, with calls "
+                              "on the island included.", "The subscription, as the invoice line names it "
+                                                         "(utilities/13#F10)."),
              "LineExtensionAmount": amount(line_item["price"]["amount"], cur, "The monthly subscription."),
-             "TaxInclusiveLineExtensionAmount": amount(line_item["price"]["amount"], cur, "No tax on the island."),
-             "TaxTotal": {"TaxAmount": amount(0, cur, "No tax on the island.")}}
-        x["TelecommunicationsService"] = {
-            "ID": V(f"S-03-{k + 1}", "The month's calls on the island, summed: they are included."),
-            "CallDate": V("2026-03-31", "Summed at the end of the month."),
-            "CallTime": V("23:59:00", "At the close of the month."),
-            "ServiceNumberCalled": V("island", "Calls within the island, not listed (privacy)."),
-            "TelecommunicationsServiceCategory": V("Island calls", "The kind of service."),
-            "Quantity": qty(140 + 25 * k, "MIN", "Minutes called on the island."),
-            "CallExtensionAmount": amount(0, cur, "Included in the subscription.")}
-        if k == 0:
-            x["TelecommunicationsService"] = [x["TelecommunicationsService"],
-                {"ID": V("C-0311-01", "A call."), "CallDate": V("2026-03-11", "The day."),
-                 "CallTime": V("10:14:00", "The time."),
-                 "ServiceNumberCalled": V(PARTY["6-xb"]["identity"]["contact"]["telephone"], "The distributor in "
-                                                                                            "Bayvarra."),
-                 "TelecommunicationsServiceCategory": Detail("a call to Bayvarra", "the call went to the "
-                                                                                     "distributor in Bayvarra."),
-                 "TelecommunicationsServiceCategoryCode": V("INT", "As a code."),
-                 "Quantity": qty(12, "MIN", "Twelve minutes."),
-                 "TelecommunicationsServiceCall": V("Outgoing", "The direction."),
-                 "TelecommunicationsServiceCallCode": V("OUT", "As a code."),
-                 "CallBaseAmount": amount(0, cur, "No set-up charge: included."),
-                 "CallExtensionAmount": amount(0, cur, "Calls to the trade accord countries are included."),
-                 "Country": {"IdentificationCode": V("XB", "The country called.")},
-                 "CallDuty": {"Amount": amount(0, cur, "No call duty: included."),
-                              "Duty": V("Set-up", "The kind of duty."), "DutyCode": V("SETUP", "As a code."),
-                              "TaxCategory": kit.tax_category(kit.tax_rule(sup, customer, "telecom-line"))},
-                 "TimeDuty": {"Amount": amount(0, cur, "No time duty: included."),
-                              "Duty": V("Per minute", "The kind of duty."), "DutyCode": V("MIN", "As a code.")},
-                 "Price": {"PriceAmount": price("0", cur, "Included in the subscription.")},
-                 "TaxTotal": {"TaxAmount": amount(0, cur, "No tax on the island.")}},
-                {"ID": V("D-0318-01", "Mobile data abroad."), "CallDate": V("2026-03-18", "The day."),
-                 "CallTime": V("08:00:00", "From the morning."),
-                 "ServiceNumberCalled": V("data", "Mobile data, no number called."),
-                 "TelecommunicationsServiceCategory": Detail("mobile data in Bayvarra", "the phone used mobile "
-                                                                                      "data on a network in Bayvarra."),
-                 "TelecommunicationsServiceCategoryCode": V("ROAM", "As a code."),
-                 "RoamingPartnerName": V("Lumeport mobile network", "The network used in Bayvarra."),
-                 "Quantity": qty(35, "E34", "35 gigabytes beyond the subscriptions, at the trade fair in Lumeport."),
-                 "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The partner network's currency."),
-                                  "TargetCurrencyCode": V("XLC", "The bill's currency."),
-                                  "CalculationRate": V("0.4", "The reference rate.")}}]
+             "TaxInclusiveLineExtensionAmount": amount(line_item["price"]["amount"], cur, "No tax on the island; "
+                                                       "the bundle discount is given once, on the whole supply "
+                                                       "(utilities/12#F3, F6)."),
+             "TelecommunicationsService": [{
+                 "ID": V(f"S-03-{k + 1}", "The month's calls on the island, summed: they are included."),
+                 **month_start,
+                 "ServiceNumberCalled": V("island", "Calls within the island, not listed (privacy): no number, a "
+                                                    "word where UBL asks for the number called (O107)."),
+                 "TelecommunicationsServiceCategory": V("Island calls", "The kind of service."),
+                 "Quantity": qty(140 + 25 * k, "MIN", "Minutes called on the island: UBL's quantity is \"the number "
+                                                      "of calls\" and has no sibling for a duration (O107)."),
+                 "CallExtensionAmount": amount(0, cur, "Included in the subscription.")}]}
         lines.append(x)
-    data_amt = money(Decimal(35) * Decimal(str(data_item["price"]["amount"])), cur)
-    lines.append({"ID": V("7", "The data pool."), "PhoneNumber": V("data pool", "No number: the company's data pool."),
-                  "Description": V("Mobile data beyond the subscriptions.", "What it is."),
-                  "LineExtensionAmount": amount(data_amt, cur, "35 GB at the data tariff."),
-                  "TelecommunicationsService": {"ID": V("D-03", "The month's data beyond the subscriptions."),
-                                                "CallDate": V("2026-03-31", "Summed at the end of the month."),
-                                                "CallTime": V("23:59:00", "At the close of the month."),
-                                                "ServiceNumberCalled": V("data", "Mobile data."),
-                                                "Quantity": qty(35, "E34", "Gigabytes."),
-                                                "PayPerView": V("false", "Not a pay-per-view service."),
-                                                "CallExtensionAmount": amount(data_amt, cur, "At the data "
-                                                                                             "tariff.")}})
-    total = Decimal(6) * Decimal(str(line_item["price"]["amount"])) + data_amt
+    s0 = lines[0]["TelecommunicationsService"]
+    setup, per_min, minutes = Decimal("0.050"), Decimal("0.200"), 12
+    gross = setup + per_min * minutes
+    s0.append({"ID": V("C-0311-01", "A call."), "CallDate": V("2026-03-11", "The day."),
+               "CallTime": V("10:14:00", "The time."),
+               "ServiceNumberCalled": V(masked(PARTY["6-xb"]["identity"]["contact"]["telephone"]),
+                                        "The distributor in Bayvarra, its last digits masked as the privacy code "
+                                        "says (utilities/12#F2)."),
+               "TelecommunicationsServiceCategory": Detail("a call to Bayvarra", "the call went to the distributor "
+                                                                                 "in Bayvarra."),
+               "TelecommunicationsServiceCategoryCode": V("INT", "As a code."),
+               "Quantity": qty(minutes, "MIN", "Twelve minutes."),
+               "TelecommunicationsServiceCall": V("Outgoing", "The direction."),
+               "TelecommunicationsServiceCallCode": V("OUT", "As a code."),
+               "CallBaseAmount": amount(setup, cur, "The set-up charge of a call abroad, the base of every call."),
+               "CallExtensionAmount": amount(gross - gross, cur, "The set-up and the twelve minutes, less the "
+                                                                 "allowance: nothing to pay (utilities/12#F4)."),
+               "Price": {"PriceAmount": price(per_min, cur, "The tariff per minute for calls abroad."),
+                         "BaseQuantity": qty(1, "MIN", "Per minute.")},
+               "Country": {"IdentificationCode": V("XB", "The country called.")},
+               "AllowanceCharge": included(gross, "Calls to the trade accord countries are included in the "
+                                                  "subscription", f"The whole charge of the call: {setup} set-up and "
+                                                                  f"{minutes} minutes at {per_min}."),
+               "CallDuty": {"Amount": amount(setup, cur, "The set-up charge of the call."),
+                            "Duty": V("Set-up", "The kind of duty."), "DutyCode": V("SETUP", "As a code.")},
+               "TimeDuty": {"Amount": amount(per_min * minutes, cur, f"{minutes} minutes at {per_min}."),
+                            "Duty": V("Per minute", "The kind of duty."), "DutyCode": V("MIN", "As a code.")}})
+    film = Decimal("2.000")
+    lines[1]["TelecommunicationsService"].append({
+        "ID": V("V-0320-02", "A film rented on line 2."), "CallDate": V("2026-03-20", "The day."),
+        "CallTime": V("12:30:00", "At lunch."),
+        "ServiceNumberCalled": V("video", "The operator's video service, no number called (O107)."),
+        "TelecommunicationsServiceCategory": V("Video on demand", "The kind of service."),
+        "MovieTitle": V("Safe Lifting in the Warehouse", "A training film the trader's staff watched."),
+        "PayPerView": V("true", "Paid per film."),
+        "Quantity": qty(1, "EA", "One film."),
+        "CallExtensionAmount": amount(0, cur, "The film's price less the allowance (utilities/12#F18)."),
+        "Price": {"PriceAmount": price(film, cur, "The price of a training film."),
+                  "BaseQuantity": qty(1, "EA", "Per film.")},
+        "AllowanceCharge": included(film, "Training films are included in the business bundle", "The film's "
+                                                                                                 "price.")})
+    island_amt = money(Decimal(TEL_DATA["island"]) * Decimal(str(data_item["price"]["amount"])), cur)
+    roam_amt = money(Decimal(TEL_DATA["roaming"]) * Decimal(str(roam_item["price"]["amount"])), cur)
+    gb = sum(TEL_DATA.values())
+    lines.append({"ID": V("7", "The data pool, a line of its own."),
+                  "PhoneNumber": V(f"{base}56", "The data pool's own number, which the phones of the six lines "
+                                                "share (D31 point 6, utilities/12#F7)."),
+                  "Description": V(f"Mobile data pool {METERS[key][2][0]}, shared by the six lines: {gb} GB beyond "
+                                   f"the subscriptions in March, {TEL_DATA['roaming']} GB of them roaming in "
+                                   "Bayvarra.", "What it is, as the invoice lines name it (utilities/13#F10)."),
+                  "LineExtensionAmount": amount(island_amt + roam_amt, cur, "The data at the data tariff and the "
+                                                                            "roaming at the roaming tariff."),
+                  "TaxInclusiveLineExtensionAmount": amount(island_amt + roam_amt, cur, "No tax on the island."),
+                  "TelecommunicationsService": [
+                      {"ID": V("D-03", "The month's data on the island beyond the subscriptions."), **month_start,
+                       "ServiceNumberCalled": V("data", "Mobile data, no number called (O107)."),
+                       "TelecommunicationsServiceCategory": V("Mobile data", "The kind of service."),
+                       "Quantity": qty(TEL_DATA["island"], "E34", "Gigabytes used on the island (O107)."),
+                       "CallExtensionAmount": amount(island_amt, cur, "At the data tariff."),
+                       "Price": {"PriceAmount": price(data_item["price"]["amount"], cur, "The data tariff per GB."),
+                                 "BaseQuantity": qty(1, "E34", "Per gigabyte.")}},
+                      {"ID": V("D-0316-01", "Mobile data abroad."), "CallDate": V("2026-03-16", "The first day "
+                                                                                               "of the trip."),
+                       "CallTime": V("08:00:00", "From the morning."),
+                       "ServiceNumberCalled": V("data", "Mobile data, no number called (O107)."),
+                       "TelecommunicationsServiceCategory": Detail("mobile data in Bayvarra", "the phones used "
+                                                                   "mobile data on a network in Bayvarra."),
+                       "TelecommunicationsServiceCategoryCode": V("ROAM", "As a code."),
+                       "RoamingPartnerName": V("Lumeport mobile network", "The network used in Bayvarra."),
+                       "Quantity": qty(TEL_DATA["roaming"], "E34", "Gigabytes used at the trade fair in Lumeport, "
+                                                                   "16 to 18 March, part of the pool's "
+                                                                   f"{gb} GB (utilities/12#F1)."),
+                       "CallExtensionAmount": amount(roam_amt, cur, "At the roaming tariff: the Trade Accord has no "
+                                                                    "roaming rule, so roaming is charged."),
+                       "Price": {"PriceAmount": price(roam_item["price"]["amount"], cur, "The roaming tariff per "
+                                                                                         "GB in Bayvarra."),
+                                 "BaseQuantity": qty(1, "E34", "Per gigabyte.")},
+                       "Country": {"IdentificationCode": V("XB", "Where the data was used.")}}]})
+    total = Decimal(6) * Decimal(str(line_item["price"]["amount"])) + island_amt + roam_amt
     return {"ConsumptionID": V("ST-1077-2603", "The telecom consumption of March."),
             "SpecificationTypeCode": V("DETAILED", "With the calls."),
-            "TotalMeteredQuantity": qty(35, "E34", "The data beyond the subscriptions."),
+            "TotalMeteredQuantity": qty(gb, "E34", "The data beyond the subscriptions."),
             "UtilityConsumptionPoint": {"ID": V("ST-CP-1077", "The company's connection."),
                                         "Description": V("Office of Velumi Trading, Selanu", "Where."),
                                         "SubscriberID": V(CUSTOMER_NO[key], "The subscriber's customer number with "
@@ -3786,7 +3850,7 @@ def telecom_consumption(f, sup, key, customer):
                                 "TelecommunicationsSupplyType": V("Business lines and data", "The supply."),
                                 "TelecommunicationsSupplyTypeCode": V("BUS", "As a code."),
                                 "PrivacyCode": V("MASKED", "Numbers called inside the island are not listed; "
-                                                           "calls abroad are."),
+                                                           "calls abroad are, their last digits masked."),
                                 "Description": V("Six business lines and a mobile data pool.", "In words."),
                                 "TotalAmount": amount(total, cur, "The telecom supply of March."),
                                 "TelecommunicationsSupplyLine": lines},
@@ -9060,34 +9124,6 @@ def _(f, n, doc, out):
         total = Decimal(lmt["LineExtensionAmount"].value)
         lmt.update({"AllowanceTotalAmount": amount(disc, "XLC", "The bundle discount."),
                     "PayableAmount": amount(total - disc, "XLC", "The supply less the discount; no tax.")})
-        tsl = cons["TelecommunicationsSupply"]["TelecommunicationsSupplyLine"]
-        per_line = money(disc / 6, "XLC")
-        for x in tsl[:6]:
-            x["AllowanceCharge"] = bundle_allowance(per_line, "The line's share of the bundle discount.")
-        first = tsl[0]
-        first["ExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The currency the roaming partner charged in."),
-                                 "TargetCurrencyCode": V("XLC", "The bill's currency."),
-                                 "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The reference rate."),
-                                 "MathematicOperatorCode": V("Multiply", "Lume times the rate."),
-                                 "Date": V("2026-03-31", "The rate at the end of the month.")}
-        services = first["TelecommunicationsService"]
-        call = services[1]
-        call["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance."),
-                                   "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
-                                   "AllowanceChargeReason": V("Calls to the trade accord countries are included in "
-                                                              "the subscription", "Why the call costs nothing."),
-                                   "BaseAmount": amount(Decimal("2.400"), "XLC", "Twelve minutes at the 0.200 "
-                                                                                 "tariff for calls abroad."),
-                                   "Amount": amount(Decimal("2.400"), "XLC", "All of it.")}
-        tsl[1]["TelecommunicationsService"] = [tsl[1]["TelecommunicationsService"], {
-            "ID": V("V-0320-02", "A film rented on line 2."), "CallDate": V("2026-03-20", "The day."),
-            "CallTime": V("12:30:00", "At lunch."),
-            "ServiceNumberCalled": V("video", "The operator's video service, no number called."),
-            "TelecommunicationsServiceCategory": V("Video on demand", "The kind of service."),
-            "MovieTitle": V("Safe Lifting in the Warehouse", "A training film the trader's staff watched."),
-            "PayPerView": V("true", "Paid per film."),
-            "Quantity": qty(1, "EA", "One film."),
-            "CallExtensionAmount": amount(0, "XLC", "Training films are included in the business bundle.")}]
     return {}
 
 

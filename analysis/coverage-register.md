@@ -516,6 +516,12 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `UtilityItem/PackQuantity` | 0..1 | utilities/12-UtilityStatement | | | open |
 | `UtilityItem/PackSizeNumeric` | 0..1 | utilities/12-UtilityStatement | | | open |
 
+> C92, D31 point 6: the bundle discount of the telephone statement is given once, on the whole supply, as on the invoice (utilities/12#F6); the six business lines no longer repeat their share of it.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TelecommunicationsSupplyLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
