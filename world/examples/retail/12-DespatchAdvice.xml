@@ -165,10 +165,6 @@
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
-      <cac:DocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
-        <cbc:DocumentType>Consignment note</cbc:DocumentType>
-      </cac:DocumentReference>
     </cac:Consignment>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -289,6 +285,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
@@ -383,6 +383,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
@@ -477,6 +481,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
@@ -571,6 +579,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
@@ -665,6 +677,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
@@ -759,6 +775,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>

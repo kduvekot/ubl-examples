@@ -727,13 +727,11 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `PricingReference/OriginalItemLocationQuantity` | 0..1 | retail/18-Invoice |  |  | open |
 | `SupplierParty/DataSendingCapability` | 0..1 | retail/08-Order |  |  | open |
 
-> C113, D34: the despatch advice gives the truck once, for the shipment, and no empty goods item on a pallet (12#F10); the consignment note is referred to by the shipment's consignment, not as a pallet's shipping document (12#F11); Lumeway's status request to the carrier does not name the store's order (14#F6); the receipt advice has one typed reference to the damage photos, at document level (17#F8).
+> C113, D34: the despatch advice gives the truck once, for the shipment, and no empty goods item on a pallet (12#F10); Lumeway's status request to the carrier does not name the store's order (14#F6).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `ReceiptLine/DocumentReference` | 0..n | retail/17-ReceiptAdvice |  |  | open |
 | `TransportHandlingUnit/GoodsItem` | 0..n | retail/12-DespatchAdvice |  |  | open |
-| `TransportHandlingUnit/ShipmentDocumentReference` | 0..n | retail/12-DespatchAdvice |  |  | open |
 | `TransportHandlingUnit/TransportMeans` | 0..n | retail/12-DespatchAdvice |  |  | open |
 | `TransportationStatusRequest/DocumentReference` | 0..n | retail/14-TransportationStatusRequest |  |  | open |
 

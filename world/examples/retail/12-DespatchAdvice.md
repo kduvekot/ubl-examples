@@ -226,10 +226,6 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
-- `Consignment/DocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note, issued when the truck was loaded (retail/12#F11).
-- `Consignment/DocumentReference/DocumentType` = **Consignment note**  
-  What the document is.
 - `ShipmentStage/ID` = **1**  
   The one stage: the truck from the distribution centre to the store.
 - `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -358,6 +354,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729026** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -462,6 +462,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -566,6 +570,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729040** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -670,6 +678,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729057** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -774,6 +786,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729064** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -878,6 +894,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+- `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
 
 ### Despatch Line
 
@@ -1094,10 +1114,6 @@ Inside `DespatchLine`:
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
-      <cac:DocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
-        <cbc:DocumentType>Consignment note</cbc:DocumentType>
-      </cac:DocumentReference>
     </cac:Consignment>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -1218,6 +1234,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
@@ -1312,6 +1332,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
@@ -1406,6 +1430,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
@@ -1500,6 +1528,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
@@ -1594,6 +1626,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
@@ -1688,6 +1724,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
+      <cac:ShipmentDocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>

@@ -55,15 +55,6 @@ Inside `DespatchDocumentReference`:
 - `ID` = **LD-DA-26-0229**  
   The despatch advice this receipt answers.
 
-### Additional Document Reference
-
-Inside `AdditionalDocumentReference`:
-
-- `ID` = **BM-GI-PHOTO-26-0430**  
-  The goods-in photographs of the delivery of 30 April (retail/17#F8).
-- `DocumentType` = **Damage photos**  
-  What the document is.
-
 ### Signature
 
 Inside `Signature`:
@@ -282,6 +273,10 @@ Inside `ReceiptLine`:
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+- `DocumentReference/ID` = **BM-GI-PHOTO-26-0430**  
+  The goods-in photographs of the refused bench, delivery of 30 April: the one typed reference, on the line it concerns (retail/17#F8).
+- `DocumentReference/DocumentType` = **Damage photos**  
+  What the document is.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -333,10 +328,6 @@ Inside `ReceiptLine`:
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
-  <cac:AdditionalDocumentReference>
-    <cbc:ID>BM-GI-PHOTO-26-0430</cbc:ID>
-    <cbc:DocumentType>Damage photos</cbc:DocumentType>
-  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-RA</cbc:ID>
     <cac:SignatoryParty>
@@ -514,6 +505,10 @@ Inside `ReceiptLine`:
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
+    <cac:DocumentReference>
+      <cbc:ID>BM-GI-PHOTO-26-0430</cbc:ID>
+      <cbc:DocumentType>Damage photos</cbc:DocumentType>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

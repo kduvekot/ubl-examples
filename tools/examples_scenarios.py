@@ -1650,8 +1650,12 @@ def retail(n, doc):
                 "Item": {"Name": V(bench["name"], "The item, named only: it is described in full on despatch line "
                                                   "1."),
                          "SellersItemIdentification": {"ID": V(bench["sellers_id"], "The seller's item number.")}}}
+        wb = f.number("waybill", "10-xb", "Waybill")
         for u in units:      # the goods are described by the despatch line, not by an empty goods item (12#F10)
             u.pop("TotalGoodsItemQuantity", None)
+            u["ShipmentDocumentReference"] = {"ID": V(wb, "The carrier's consignment note the pallet travels under, "
+                                                          "issued when the truck was loaded (retail/12#F11, D34)."),
+                                              "DocumentType": V("Consignment note", "What the document is.")}
         out["Shipment"]["TransportHandlingUnit"] = units
         # the truck once, for the whole shipment, and the consignment note it travels under (retail/12#F10, F11)
         out["Shipment"]["ShipmentStage"] = {"ID": V("1", "The one stage: the truck from the distribution centre to "
@@ -1659,10 +1663,6 @@ def retail(n, doc):
                                             "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road "
                                                                         "transport."),
                                             "TransportMeans": kit.means("10-xb", "B-03")}
-        out["Shipment"]["Consignment"]["DocumentReference"] = {
-            "ID": V(f.number("waybill", "10-xb", "Waybill"), "The carrier's consignment note, issued when the truck "
-                                                            "was loaded (retail/12#F11)."),
-            "DocumentType": V("Consignment note", "What the document is.")}
         out["IssueTime"] = V("15:34:00", "When the truck was loaded and the carrier had signed its consignment note, "
                                          "on the afternoon before the delivery (retail/12#F4, D34).")
         return out
@@ -6773,9 +6773,12 @@ def _(f, n, doc, out):
                                           "to 10:30; unloading delayed the next truck.", "The complaint: the slot of "
                                                                                           "the carrier's plan "
                                                                                           "(retail/17#F14, D34).")})
-    return {"AdditionalDocumentReference": {"ID": V("BM-GI-PHOTO-26-0430", "The goods-in photographs of the "
-                                                                           "delivery of 30 April (retail/17#F8)."),
-                                            "DocumentType": V("Damage photos", "What the document is.")},
+    lines[0]["DocumentReference"] = {"ID": V("BM-GI-PHOTO-26-0430", "The goods-in photographs of the refused "
+                                                                    "bench, delivery of 30 April: the one typed "
+                                                                    "reference, on the line it concerns "
+                                                                    "(retail/17#F8)."),
+                                     "DocumentType": V("Damage photos", "What the document is.")}
+    return {
             "Signature": seal(doc["from"], "BM-SIG-26-RA")}
 
 
