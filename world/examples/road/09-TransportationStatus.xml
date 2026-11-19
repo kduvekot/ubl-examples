@@ -158,7 +158,7 @@
       <cbc:SequenceID>3</cbc:SequenceID>
       <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.</cbc:Text>
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
-      <cbc:Percent>39</cbc:Percent>
+      <cbc:Percent>37</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
       <cac:DocumentationAttachment>
         <cac:ExternalReference>

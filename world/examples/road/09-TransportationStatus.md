@@ -174,7 +174,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/ExaminationTransportEvent/Location/Name` = **Road border crossing Urvania–Bayvarra**  
   Where customs checked the seals.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
-  The truck left the warehouse; the land border is 70 km ahead.
+  The truck left the warehouse; the land border is 65 km ahead.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
   The local time.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
@@ -220,8 +220,8 @@ Inside `TransportEvent`:
   A note for the consignee.
 - `CurrentStatus/IndicationIndicator` = **true**  
   The status applies: the truck is on time.
-- `CurrentStatus/Percent` = **39**  
-  The share of the route driven: 70 of 179 km.
+- `CurrentStatus/Percent` = **37**  
+  The share of the route driven: 65 of 174 km.
 - `CurrentStatus/ReliabilityPercent` = **90**  
   How sure the carrier is of the arrival time.
 - `CurrentStatus/DocumentationAttachment/ExternalReference/URI` = **https://www.trasvia.example/tracking/TH-26-04471/seal.jpg**  
@@ -265,7 +265,7 @@ Inside `TransportEvent`:
 - `Signature/SignatoryParty/PartyName/Name` = **Customs and Border Service of Bayvarra**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Period/StartTime` = **07:30:00**  
-  The truck joined the queue at the border, after the driver's night rest in the border truck park: it arrived about 17:25 the evening before, when the importer's customs desk was closed.
+  The truck joined the queue at the border, after the driver's night rest in the border truck park: it arrived about 17:20 the evening before, when the importer's customs desk was closed.
 - `Period/EndTime` = **10:40:00**  
   And left the customs post, once the import declaration, lodged when the importer's desk opened, was accepted.
 
@@ -514,7 +514,7 @@ Inside `StatusPeriod`:
       <cbc:SequenceID>3</cbc:SequenceID>
       <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.</cbc:Text>
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
-      <cbc:Percent>39</cbc:Percent>
+      <cbc:Percent>37</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
       <cac:DocumentationAttachment>
         <cac:ExternalReference>

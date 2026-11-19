@@ -335,7 +335,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/CabotageIndicator` = **false**  
   A carriage between two countries, not within a foreign one.
 - `Consignment/MainCarriageShipmentStage/EstimatedDeliveryDate` = **2026-03-25**  
-  The carrier's estimate when it takes over the goods: the goods-in slot of the third day. The leg is 179 km, about three hours' driving, but the truck reaches the border about 17:25, after the distributor's customs desk has closed, so the driver takes his night rest at the border and the import is declared in the morning; the distribution centre takes full loads in morning slots only, and the slot booked a week ahead is the next morning's.
+  The carrier's estimate when it takes over the goods: the goods-in slot of the third day. The leg is 174 km, about three hours' driving, but the truck reaches the border about 17:20, after the distributor's customs desk has closed, so the driver takes his night rest at the border and the import is declared in the morning; the distribution centre takes full loads in morning slots only, and the slot booked a week ahead is the next morning's.
 - `Consignment/MainCarriageShipmentStage/EstimatedDeliveryTime` = **09:00:00**  
   Early in the working day.
 - `Consignment/MainCarriageShipmentStage/RequiredDeliveryDate` = **2026-03-25**  
