@@ -451,10 +451,10 @@ function paintWorld(g, box, level) { const detail = level === 2;
   // up and back from it: hence the wide margin)
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j); if (!vis(x, y, t.building ? 12 * TW : 2 * TW)) continue;
-    if (t.mf) { if (detail && !t.building && !t.links) plantation(g, i, j, t); }
+    if (t.mf) { if (detail && !t.building) plantation(g, i, j, t); }
     else if (t.lu) { if (detail && !t.building && !t.urban) landUseTrees(g, i, j, t); }
-    else if (detail && t.t === "forest" && !t.building && !t.links) for (const [dx, dy] of [[-6, -1], [4, -2], [-1, 3]]) tree(g, x + dx, y + dy, hash(i * 3 + dx, j));
-    if (detail && t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
+    else if (detail && t.t === "forest" && !t.building) for (const [dx, dy, u, v] of [[-6, -1, -.25, .1], [4, -2, .15, -.25], [-1, 3, .1, .2]]) { if (!nearWay(t, u, v) && !coversWay(i, j, x + dx, y + dy)) tree(g, x + dx, y + dy, hash(i * 3 + dx, j)); }
+    if (detail && t.tree && !coversWay(i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4)) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     // the villages and the farmsteads from the middle level on
     if (t.urban && !t.building) { if (level === 1 && t.village) villageCluster(g, i, j, t); else if (level || !t.village) townBlocks(g, i, j, t, detail); }
     else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7)); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
@@ -577,12 +577,34 @@ function landUseGround(g, i, j, t, detail) { const n = Math.round(Math.sqrt(t.lu
     if (c === "d" || c === "p") for (const [da, db] of [[1, 0], [0, 1]]) { const o = t.lu[(a + da) * n + b + db];   // hedges between fields and meadows
       if (a + da >= n || b + db >= n || o === c) continue;
       tline(g, i, j, da ? [[u1, v0], [u1, v1]] : [[u0, v1], [u1, v1]], "#3f6b30", 1.2); } } }
+// a road or a railway runs through a clearing (owner, 2026-11-19, MO005): no tree within ROAD_CLEAR of its line in the
+// square (from the square's middle to each edge or corner it leads to), so that the trees neither stand on it nor hide it
+const ROAD_CLEAR = .16;
+function nearWay(t, u, v) { if (!t.links) return false;
+  for (const set of [t.links.road, t.links.rail]) { if (!set) continue;
+    for (const k of set) { const [di, dj] = k.split(",").map(Number), bx = di / 2, by = dj / 2, l2 = bx * bx + by * by;
+      const f = Math.max(0, Math.min(1, (u * bx + v * by) / l2)), dx = u - f * bx, dy = v - f * by; if (dx * dx + dy * dy < ROAD_CLEAR * ROAD_CLEAR) return true; } }
+  return false; }
+// ... and a tree whose picture would cover a road or a railway behind it is left out too (a tree is drawn 12 pixels
+// tall, on a square 16 pixels high: it would hide most of the square behind it). The ways' points on the screen are
+// worked out per square and per rotation.
+const WAY_PTS = new Map();
+function wayPts(i, j) { const t = tiles[i]?.[j]; if (!t?.links) return null; const key = rot + ":" + i + "," + j;
+  let pts = WAY_PTS.get(key); if (pts) return pts; pts = [];
+  for (const set of [t.links.road, t.links.rail]) if (set) for (const k of set) { const [di, dj] = k.split(",").map(Number);
+    for (let f = 0; f <= 1; f += .2) pts.push(tileWorld(i + di / 2 * f, j + dj / 2 * f)); }
+  WAY_PTS.set(key, pts); return pts; }
+function coversWay(i, j, x, y) {
+  for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) { const pts = wayPts(i + a, j + b); if (!pts) continue;
+    for (const [px, py] of pts) if (Math.abs(px - x) < 9 && py < y + 5 && py > y - 15) return true; }   // the road is a band, not a line
+  return false; }
 function landUseTrees(g, i, j, t) { const n = Math.round(Math.sqrt(t.lu.length)), out = [];
   for (let a = 0; a < n; a++) for (let b = 0; b < n; b++) { const c = t.lu[a * n + b];
+    if ((c === "f" || c === "o") && nearWay(t, (a + .5) / n - .5, (b + .5) / n - .5)) continue;
     if (c === "f") { const [x, y] = tp(i, j, (a + .5) / n - .5, (b + .5) / n - .5); out.push([x, y, 0, hash(j * n + b, i * n + a)]); }
     if (c === "o") for (const [du, dv] of [[.3, .3], [.7, .3], [.3, .7], [.7, .7]]) { const [x, y] = tp(i, j, (a + du) / n - .5, (b + dv) / n - .5); out.push([x, y, 1, 0]); } }
   out.sort((p, q) => p[1] - q[1]);
-  for (const [x, y, k, m] of out) if (k) { g.fillStyle = "#4e7a2c"; g.beginPath(); g.arc(x, y - 1.5, 1.6, 0, 7); g.fill(); }
+  for (const [x, y, k, m] of out) if (coversWay(i, j, x, y)) continue; else if (k) { g.fillStyle = "#4e7a2c"; g.beginPath(); g.arc(x, y - 1.5, 1.6, 0, 7); g.fill(); }
     else tree(g, x, y, m); }
 function conifer(g, x, y, s, c) { g.fillStyle = c; g.beginPath(); g.moveTo(x - 2 * s, y); g.lineTo(x, y - 6 * s); g.lineTo(x + 2 * s, y); g.fill();
   g.fillStyle = shade(c, .2); g.beginPath(); g.moveTo(x - 2 * s, y); g.lineTo(x, y - 6 * s); g.lineTo(x - .3 * s, y); g.fill(); }
@@ -591,9 +613,10 @@ function plantation(g, i, j, t) { const out = [];
       if (c === "0") for (const [du, dv] of [[.3, .35], [.7, .6], [.45, .8]]) { const [x, y] = tp(i, j, (a + du) / SUB - .5, (b + dv) / SUB - .5); g.fillStyle = "#6e5a3e"; g.fillRect(x - .7, y - .7, 1.4, 1.4); }
       continue; }
     const n = c === "1" ? 3 : 2;                         // trees per compartment side: rows of young trees, then fewer and taller
-    for (let p = 0; p < n; p++) for (let q = 0; q < n; q++) { const [x, y] = tp(i, j, (a + (p + .5) / n) / SUB - .5, (b + (q + .5) / n) / SUB - .5); out.push([x, y, c]); } }
+    for (let p = 0; p < n; p++) for (let q = 0; q < n; q++) { const u = (a + (p + .5) / n) / SUB - .5, v = (b + (q + .5) / n) / SUB - .5;
+      if (nearWay(t, u, v)) continue; const [x, y] = tp(i, j, u, v); out.push([x, y, c]); } }
   out.sort((A, B) => A[1] - B[1]);
-  for (const [x, y, c] of out) if (c === "1") { g.fillStyle = "#6fa84a"; g.beginPath(); g.arc(x, y - 1, 1.1, 0, 7); g.fill(); }
+  for (const [x, y, c] of out) if (coversWay(i, j, x, y)) continue; else if (c === "1") { g.fillStyle = "#6fa84a"; g.beginPath(); g.arc(x, y - 1, 1.1, 0, 7); g.fill(); }
     else conifer(g, x, y + 1, c === "2" ? .75 : 1.05, c === "2" ? "#3f7f35" : "#2c5f29"); }
 // The built-up areas of the towns and villages (model "um"): each square is cut into SUB x SUB blocks of 875 m;
 // the blocks inside the area are paved (the streets show between the buildings), and every block off the roads
