@@ -1199,6 +1199,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: ready to fix now.
 - Findings: cotton: 02#F9, 07#F9, 08#F14, 10#F7, 11#F4, 15#F5, 16#F7
 
+- **Fixed (2026-11-19):** no pack elements on the cotton; the 27 bales are the shipment's packages (type BL, compressed bale) with the ginnery's bale numbers and net weights in the weight statement; package counts on the consignments; a build check (`check_packages`) that the bales, totals and VGM agree (27 bales, 6,129 kg net, 6,190.29 kg gross, VGM 9,940.29 kg). Also resolves C107 10#F1, 10#F6 and C108 11#F5, 15#F6, 12#F4.
+
 ### C66 · Debit notes with accounting supplier and customer reversed
 - Kind: master data · Findings: 5 (High 5, Medium 0, Low 0) in 5 files, 3 flows · Needs decision: decided (D9, 2026-11-16)
 - Decided: neither a) nor b) as written. In this world a debit note is the supplier's addition to an invoice it issued, the counterpart of the credit note. None of the three is one: furniture/14 (the store bills the maker for return transport), sea/28 (the importer passes on a customs inspection cost) and tender/34 (the public buyer claims a contract penalty) are re-homed with their flows (D32, D30, D28): a service the buyer performed becomes an invoice from the buyer, a cost passed on an invoice or a supplier's credit note, a penalty a supplier's credit note or a deduction in the remittance advice. The earlier recommendation to swap the roles is withdrawn.
