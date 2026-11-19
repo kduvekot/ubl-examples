@@ -1,0 +1,20 @@
+# The shape of Urvania's public-body codes (O142), checked against Italy's IPA
+# Source: IndicePA open data (Indice dei domicili digitali delle pubbliche amministrazioni, run by AgID),
+# https://www.indicepa.gov.it/ipa-dati/ , datasets "enti" and "unita-organizzative", fetched 2026-11-19
+# (CKAN API package_show; the resources are XLSX files). The result of the check, not a copy of the lists.
+#
+# file read                                   SHA-256
+# enti.xlsx (column Codice_IPA)               7ffcd2be395f0600631cf5bfa8c935cf0e6476c286e82b4282742ebcab0e8f18
+# unita-organizzative.xlsx (Codice_IPA,       335a85e3fc1b65445d71f83c91e5b2bbd5fa264d9007aab6d639786b6d44df32
+#   Codice_uni_uo, Codice_uni_aoo)
+#
+# 23,775 bodies and 123,281 units; 183,313 distinct codes, compared without regard to case.
+# Real IPA codes take many shapes: lower-case words and abbreviations (inps), c_ and a municipality code
+# (c_h501), eight upper-case letters and digits for newer bodies, and six for the unique office codes.
+#
+# shape tried                      result on 2026-11-19
+# xu and four letters or digits    rejected: 62 real codes have it (xu0n22, xu1dnk, xu34xq ... , mostly unit codes)
+# xu_ and four letters or digits   no real code starts with xu_          used by the world
+#
+# used by the world: xu_k4r7 (Customs Administration of Urvania, 19-xu), xu_m2vd (Ferrano Chamber of
+# Commerce, 20-xu), xu_t6hq (Codana Identification Agency, 31-xu)
