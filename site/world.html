@@ -424,7 +424,7 @@ function paintWorld(g, box, level) { const detail = level === 2;
     if (detail && t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     // the villages and the farmsteads from the middle level on
     if (t.urban && !t.building) { if (level === 1 && t.village) villageCluster(g, i, j, t); else if (level || !t.village) townBlocks(g, i, j, t, detail); }
-    else if (t.house) { if (detail) house(g, x, y, t.house[0], hash(i, j * 7)); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
+    else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7)); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
     if (t.station) meteringStation(g, i, j);
     if (t.harbour) harbour(g, i, j);
     if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
@@ -581,15 +581,31 @@ function townBlocks(g, i, j, t, detail) {
   const onRoad = onWay(rd), onRail = onWay(rl);
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) { if (!subBit(t, a, b)) continue;
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; if (onRoad(u, v) || onRail(u, v) || (t.bridge)) continue;
-    const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a)]); }
+    const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a), u, v]); }
   out.sort((p, q) => p[1] - q[1] || p[0] - q[0]);
-  for (const [x, y, n, m] of out) cityBlock(g, x, y, t.density, n, m, detail); }
+  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail); }
 // a village at the middle level: a small cluster of red roofs, one house to each built-up sub-square, that reads
 // as a dot when zoomed out
 function villageCluster(g, i, j, t) { const out = [];
-  for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) out.push(tp(i, j, (a + .5) / SUB - .5, (b + .5) / SUB - .5));
+  for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) { const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; out.push([...tp(i, j, u, v), u, v]); }
   out.sort((p, q) => p[1] - q[1]);
-  for (const [x, y] of out) cityBox(g, x, y, .2, .18, 5, "#ece4d6", "#b5533c"); }
+  for (const [x, y, u, v] of out) cityBox(g, x, y - foundation(g, i, j, u, v, .11), .2, .18, 5, "#ece4d6", "#b5533c"); }
+// a house on sloping ground is dug into the slope (owner, 2026-11-19, MO004): it stands on ground cut down to the
+// lowest point under it (natural ground, not fill, as builders do), with the cut face of earth and stone behind it on
+// the uphill side; the village square keeps the land's own shape. r: half its size in squares. Returns how many
+// pixels the house stands below the ground at its middle (a negative lift).
+function foundation(g, i, j, u, v, r) {
+  const cs = [[-r, -r], [r, -r], [r, r], [-r, r]], hs = cs.map(([a, b]) => heightAt(i + u + a, j + v + b)), hc = heightAt(i + u, j + v);
+  const lo = Math.min(...hs); if (Math.max(...hs) - lo < 3) return 0;
+  const at = k => { const [x, y] = tp(i, j, u + cs[k][0], v + cs[k][1]); return [[x, y], [x, y + (hs[k] - lo) * HU]]; };   // ground, floor
+  const P = [0, 1, 2, 3].map(at);
+  poly(g, P.map(p => p[1]), "#a69a82");                                                     // the levelled floor
+  const [ri, rj] = R(i, j);
+  for (let k = 0; k < 4; k++) { const k2 = (k + 1) % 4, mu = (cs[k][0] + cs[k2][0]) / 2, mv = (cs[k][1] + cs[k2][1]) / 2;
+    const [qi, qj] = R(i + Math.sign(mu), j + Math.sign(mv)); if (qi + qj > ri + rj) continue;   // only the cut faces at the back show
+    if (hs[k] - lo < 1 && hs[k2] - lo < 1) continue;
+    poly(g, [P[k][0], P[k2][0], P[k2][1], P[k][1]], (qi - ri) + (qj - rj) < -0.5 ? "#8a7d68" : "#97896f"); }
+  return -(hc - lo) * HU; }
 // around an office, a bank or a shop in town, smaller buildings stand on the edge of its square
 const IN_TOWN = new Set(["office", "bank", "shop", "townhall", "house"]);
 function ringBlocks(i, j, t) { const out = [];
