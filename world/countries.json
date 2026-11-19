@@ -48,7 +48,8 @@
     ],
     "exemption_codes": {
      "Export of goods outside Urvania": "EXP",
-     "Service supplied outside Urvania": "SVCABROAD"
+     "Service supplied outside Urvania": "SVCABROAD",
+     "Transport of goods exported from Urvania": "EXPTRANSPORT"
     },
     "exemption_codes_note": "The exemption reasons as codes of Urvania's national list (world/codelists/lists.json, XU:TaxExemptionReason); the EU's VATEX list does not apply in the world."
    },
@@ -238,8 +239,15 @@
     },
     "waste-permit": {
      "name": "register of waste treatment permits of Urvania",
+     "keeper": "46-xu",
      "pattern": "^XU-ENV-\\d{4}-\\d{4}$",
      "format": "XU-ENV-, the year of issue and a four-digit number"
+    },
+    "waste-carrier": {
+     "name": "register of waste carriers of Urvania",
+     "keeper": "46-xu",
+     "pattern": "^XU-ENV-T-\\d{4}-\\d{4}$",
+     "format": "XU-ENV-T-, the year of registration and a four-digit number"
     }
    },
    "province": "Province of Ferrano",
@@ -1948,7 +1956,18 @@
     "ductile": "zhukvan",
     "modified": "dunnir",
     "powder": "krarhir",
-    "thermally": "zhaznul"
+    "thermally": "zhaznul",
+    "acque": "drarban",
+    "cardboard": "skankek",
+    "composite": "dukstan",
+    "glass": "hezkan",
+    "metallic": "bikmek",
+    "stream": "nutul",
+    "tare": "miskir",
+    "textile": "trilbaz",
+    "wooden": "zhendul",
+    "weighs": "ranskir",
+    "exported": "gazvan"
    }
   },
   "qal": {
@@ -3068,7 +3087,9 @@
     "ash": "lalaki",
     "oak": "fofasu",
     "distributor": "kelokifi",
-    "bodies": "senatu"
+    "bodies": "senatu",
+    "stream": "tamohi",
+    "tare": "nimeme"
    }
   },
   "en": {
@@ -3199,6 +3220,10 @@
   }
  },
  "payment_terms_note": "Which payment terms an invoice applies, in three layers (decision D22): what the parties agreed in a contract or framework agreement; where they agreed nothing, the seller's standard terms (XU-STD, XB-STD, XL-STD); where neither says anything about late payment, the statutory interest of the seller's country, where it has one. A cross-border sale follows the seller's country unless the contract chooses otherwise. Utility bills follow the Trade Accord's own term TA-UTIL (decision D23).",
+ "road_rules_accord": {
+  "max_combination_kg": 40000,
+  "note": "The Trade Accord's road protocol: a tractor unit with its semi-trailer, or a truck with its trailer, may weigh at most 40 tonnes with its load on the roads of all three countries (decision D42, O134). A carrier's fleet gives each vehicle's empty weight, so its payload is what is left to the limit; the build checks that a weighed road load stays within both."
+ },
  "working_weeks": {
   "office": {
    "days": [

@@ -11,6 +11,7 @@ import uuid
 from decimal import Decimal
 
 import build_examples
+import codelists
 import examples_kit as kit
 import world_ids
 import world_items
@@ -863,10 +864,15 @@ BARGE_QUAY = kit.place("XUFER", "At the recovery plant's own quay on the river."
 BARGE_BORDER = {"Name": V("River border Urvania–Bayvarra", "Where the barge leaves Urvania.")}
 BARGE_UNLOADING = {"Name": V("River quay, Lumeport", "The quay named in the CPT terms, where the bags are unloaded.")}
 PLASTICS = kit.Flow("plastics", "2026-04-13", [
-    {"item": "granulate-pe", "ordered": 120, "why": "One barge load of recycled granulate in jumbo bags."}])
+    {"item": "granulate-pe", "ordered": 120, "why": "120 tonnes of recycled granulate, in jumbo bags of one tonne."}])
 
 
 BARGE_VOYAGE = "FB4-26-031"
+BARGE_LOAD = 7       # Monday 20 April: loading and sailing on a working day of the quay and the barge (D27, D41)
+# the granulate's lot (world/items.json lot_prefix and the day it was made, three days before loading): one number in
+# the waybill and the despatch advice (D41)
+PE_LOT = ITEM["granulate-pe"]["lot_prefix"] + PLASTICS.date(BARGE_LOAD - 3)[5:].replace("-", "")
+DIESEL_TTW = Decimal("0.268")    # kg CO2e per kWh of diesel, tank to wheel (D41)
 # the voyage on the map (O152): the river leg from Rinova's quay to Rivermouth's, with no locks (the river runs free
 # below the rapids above Ferrano); the barge sails by day, downstream at about 11 km/h, and moors at night
 BARGE_KM = wmap.leg_km("plastics", "7-xu", "41-xb")
@@ -876,14 +882,14 @@ BARGE_SAILS = "15:10"
 
 
 def barge_time(f, km):
-    """When the barge, sailing at day 6 BARGE_SAILS, has made km: to the quarter hour."""
-    t = wmap.sail_by_day(wmap.at(f.date(6), BARGE_SAILS), km, BARGE_KMH, *BARGE_DAY)
+    """When the barge, sailing on BARGE_LOAD at BARGE_SAILS, has made km: to the quarter hour."""
+    t = wmap.sail_by_day(wmap.at(f.date(BARGE_LOAD), BARGE_SAILS), km, BARGE_KMH, *BARGE_DAY)
     q = round((t.hour * 60 + t.minute) / 15) * 15
     return (t.date() - datetime.date.fromisoformat(f.date(0))).days, f"{q // 60:02d}:{q % 60:02d}:00"
 
 
 def barge_stage(f, actual):
-    if barge_time(f, BARGE_KM)[0] != 8:
+    if barge_time(f, BARGE_KM)[0] != BARGE_LOAD + 2:
         raise SystemExit("plastics: the barge no longer arrives the day before its discharge (O152); set the dates")
     out = {"ID": V("1", "Down the river, from the recovery plant's quay to the river quay in Lumeport."),
            "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
@@ -895,14 +901,14 @@ def barge_stage(f, actual):
            "EstimatedTransitPeriod": {"DurationMeasure": V("3", f"Three days from takeover to discharge: about "
                                                                 f"{wmap.nearest(BARGE_KM, 10)} km downstream, with "
                                                                 "no locks, sailing by day.", unitCode="DAY")},
-           "TakeoverTransportEvent": kit.event(f, 6, "09:00:00", "The barge operator takes over the bags at the "
+           "TakeoverTransportEvent": kit.event(f, BARGE_LOAD, "09:00:00", "The barge operator takes over the bags at the "
                                                                  "quay.", location=BARGE_QUAY),
-           "LoadingTransportEvent": kit.event(f, 6, "13:30:00", "Loading finished: 120 bags in the hold.", location=BARGE_QUAY),
+           "LoadingTransportEvent": kit.event(f, BARGE_LOAD, "13:30:00", "Loading finished: 120 bags in the hold.", location=BARGE_QUAY),
            "ExportationTransportEvent": kit.event(f, *barge_time(f, BARGE_BORDER_KM), "The barge leaves Urvania at "
                                                   f"the river border, {wmap.whole(BARGE_BORDER_KM)} km below the "
                                                   "quay: sailing from the afternoon of loading and through the "
                                                   "next day from first light.", location=BARGE_BORDER),
-           "DischargeTransportEvent": kit.event(f, 9, "08:00:00", "Planned unloading at the Lumeport quay, with the "
+           "DischargeTransportEvent": kit.event(f, BARGE_LOAD + 3, "08:00:00", "Planned unloading at the Lumeport quay, with the "
                                                 "consignee's morning shift: the barge arrives about "
                                                 f"{barge_time(f, BARGE_KM)[1][:5]} the day before and moors at the "
                                                 "quay overnight.", done=False, location=BARGE_UNLOADING)}
@@ -915,7 +921,6 @@ def barge_goods(f, w):
     return {"ID": V("1", "The only goods item."),
             "SequenceNumberID": V("1", "Its place in the cargo list."),
             "Description": V(it["name"], "What the goods are."),
-            "ValueAmount": amount(goods_xuf, "XUF", "The value of the goods, the sales price under CPT."),
             "DeclaredForCarriageValueAmount": amount(goods_xuf, "XUF", "Declared to the barge operator, which raises "
                                                                        "its liability to this value."),
             "GrossWeightMeasure": qty(w, "KGM", "With the bags."),
@@ -923,29 +928,31 @@ def barge_goods(f, w):
             "NetNetWeightMeasure": qty(120000, "KGM", "No inner packaging: the same as the net weight."),
             "ChargeableWeightMeasure": qty(120000, "KGM", "The freight is charged per tonne of granulate."),
             "GrossVolumeMeasure": V("204", "The 120 bags take 1.7 m³ each.", unitCode="MTQ"),
-            "NetVolumeMeasure": V("130", "The granulate's own volume, at 0.92 tonne per m³.", unitCode="MTQ"),
+            "NetVolumeMeasure": V("200", "The granulate as it lies in the bags, at a bulk density of about 0.6 "
+                                         "tonne per m³; the bags' fabric and loops make up the rest of the gross "
+                                         "volume (D41).", unitCode="MTQ"),
             "ChargeableQuantity": qty(120, "TNE", "The tonnes charged."),
-            "ReturnableQuantity": qty(120, "EA", "The 120 jumbo bags go back to the recovery plant."),
-            "TraceID": V("RR-PE-LOT-26-0416", "The lot on the bags' labels."),
+            "TraceID": V(PE_LOT, "The lot on the bags' labels, the seller's lot number, as in its despatch advice "
+                                 "(D41)."),
             "Quantity": qty(120, "TNE", "120 tonnes."),
             "OriginAddress": address("7-xu"),
-            "ContainingPackage": {"ID": V("RR-JB-0416", "The 120 bags of the lot as one package entry, with their "
-                                                    "number: the plant numbers its bags by lot."),
-                                  "Quantity": qty(120, "EA", "120 bags."),
+            "ContainingPackage": {"Quantity": qty(1, "TNE", "What one bag holds: a tonne of granulate; the "
+                                                            "consignment counts the 120 bags (D41)."),
                                   "PackagingTypeCode": V("JB", "UN/ECE Recommendation 21 code JB: bag, jumbo."),
                                   "PackagingType": V("Jumbo bag of one tonne with four lifting loops", "In words."),
                                   "PackingMaterial": V("Woven polypropylene", "What the bags are made of."),
-                                  "ReturnableMaterialIndicator": V("true", "The bags go back for reuse.")},
-            "MeasurementDimension": {"AttributeID": V("HEIGHT", "The height of one filled bag."),
-                                     "Measure": V("1300", "In millimetres.", unitCode="MMT")},
-            "Pickup": {"EarliestPickupDate": V(f.date(6), "The bags are ready on the quay."),
+                                  "ReturnableMaterialIndicator": V("true", "The bags go back to the recovery plant "
+                                                                           "for reuse."),
+                                  "MeasurementDimension": {"AttributeID": V("HEIGHT", "The height of one filled bag."),
+                                                           "Measure": V("1300", "In millimetres.", unitCode="MMT")}},
+            "Pickup": {"EarliestPickupDate": V(f.date(BARGE_LOAD), "The bags are ready on the quay."),
                        "EarliestPickupTime": V("08:00:00", "From eight."),
-                       "LatestPickupDate": V(f.date(6), "They must go the same day."),
+                       "LatestPickupDate": V(f.date(BARGE_LOAD), "They must go the same day."),
                        "LatestPickupTime": V("16:00:00", "Before the quay closes.")},
-            "Despatch": {"ActualDespatchDate": V(f.date(6), "The barge cast off."),
+            "Despatch": {"ActualDespatchDate": V(f.date(BARGE_LOAD), "The barge cast off."),
                          "ActualDespatchTime": V(BARGE_SAILS + ":00", "In the afternoon.")},
-            "Delivery": {"LatestDeliveryDate": V(f.date(10), "The packaging maker's production starts the day "
-                                                             "after.")},
+            "Delivery": {"LatestDeliveryDate": V(f.date(BARGE_LOAD + 4), "The last day of the delivery window "
+                                                                     "the buyer's order asks for (D41).")},
             "OrderLineReference": {"LineID": V("1", "The order line."),
                                    "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
             "DespatchLineReference": {"LineID": V("1", "The line of the despatch advice."),
@@ -974,17 +981,26 @@ def barge_consignment(f, view):
     out.update({"CarrierAssignedID": V(BARGE_VOYAGE + "/2", "The barge operator's number: the second lot of "
                                                              "the voyage."),
                 "MainCarriageShipmentStage": barge_stage(f, True),
+                "TotalPackagesQuantity": V("120", "The 120 jumbo bags of a tonne each (D41)."),
                 "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight, a charge."),
                                            "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                            "AllowanceChargeReason": V("River freight", "What it is for."),
                                            "Amount": amount(Decimal("179400"), "XUF", "120 tonnes at 1,495 ferra."),
-                                           "BaseAmount": amount(Decimal("1495"), "XUF", "The rate per tonne.")}})
+                                           "PerUnitAmount": amount(Decimal("1495"), "XUF", "The rate per tonne, "
+                                                                   "times the 120 chargeable tonnes of the goods "
+                                                                   "item (D41).")}})
     return out
 
 
 def plastics(n, doc):
     f = PLASTICS
     w = kit.gross_weight(f, "ordered")
+    if doc["doc"] == "Catalogue":          # plastics/12, first in time (D28, O193)
+        out = kit.catalogue(f, n, doc, -12, "Rinova's product information for the quarter, sent before the "
+                                             "packaging maker plans its next production run.", ["granulate-pe"], 90)
+        out["Name"] = V("Recycled PE granulate, second quarter 2026", "The catalogue's title: one product, for the "
+                                                                       "quarter.")
+        return out
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 0, "The packaging maker orders for the next production run.",
                          "Carriage paid to the river quay: the seller books and pays the barge, the buyer bears the "
@@ -992,35 +1008,43 @@ def plastics(n, doc):
     if doc["doc"] == "OrderResponse":
         return kit.order_response(f, n, doc, 1, "The waste processor confirms the lot.")
     if doc["doc"] == "TransportExecutionPlanRequest":
-        out = kit.tep_request(f, n, doc, 1, "Under CPT the seller is the transport user and books the barge.", 6, w,
+        out = kit.tep_request(f, n, doc, 1, "Under CPT the seller is the transport user and books the barge.",
+                              BARGE_LOAD, w,
                               "120 jumbo bags of one tonne, with their bags.")
         kit.deep_merge(out["Consignment"], barge_consignment(f, "request"))
         return out
     if doc["doc"] == "TransportExecutionPlan":
-        out = kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", 6, w)
+        out = kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", BARGE_LOAD, w)
+        out.pop("TransportUserRemarks")          # the request's "please confirm" is answered, not repeated (D41)
         kit.deep_merge(out["Consignment"], barge_consignment(f, "plan"))
         return out
     if doc["doc"] == "ExportCustomsDeclaration":
-        out = kit.export_declaration(f, n, doc, 6, "Declared the day the barge is loaded.",
+        out = kit.export_declaration(f, n, doc, BARGE_LOAD, "Declared the day the barge is loaded.",
                                      "The value of the granulate, in ferra.")
         out["IssueTime"] = V("12:40:00", "Before the bags are loaded, so that customs releases them before the barge "
                                          "leaves (timelines#F6).")
         return out
     if doc["doc"] == "Waybill":
-        out = kit.waybill(f, n, doc, 6, "Issued when the barge is loaded.", w, "The gross weight on board.")
+        out = kit.waybill(f, n, doc, BARGE_LOAD, "Issued when the barge is loaded.", w, "The gross weight on board.")
         kit.deep_merge(out["Shipment"]["Consignment"], barge_consignment(f, "note"))
         g = barge_goods(f, w)
         out["Shipment"]["GoodsItem"] = {k: v for k, v in g.items() if v is not None}
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "15-xu":
-        return kit.invoice(f, n, doc, 9, "Issued after the sailing.",
+        return kit.invoice(f, n, doc, BARGE_LOAD + 3, "Issued when the bags have been unloaded.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
                            [{"item": "barge-freight", "qty": 120, "invoice_why": "The tonnes carried."}],
                            key="freight-invoice", terms="plan")
     if doc["doc"] == "DespatchAdvice":
-        return kit.despatch_advice(f, n, doc, 6, "The day the barge was loaded.", "The gross weight loaded.")
+        out = kit.despatch_advice(f, n, doc, BARGE_LOAD, "The day the barge was loaded.", "The gross weight loaded.",
+                                  extra={"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The barge's "
+                                                                                "consignment note, on which damage "
+                                                                                "is to be reported (D41).")}})
+        kit.deep_merge(out, {"Shipment": {"Consignment": {"TotalPackagesQuantity": V(
+            "120", "The 120 jumbo bags of a tonne each, as the consignment note counts them (D41).")}}})
+        return out
     if doc["doc"] == "ImportCustomsDeclaration":
-        out = kit.import_declaration(f, n, doc, 9, "Declared when the barge arrives at the coast.",
+        out = kit.import_declaration(f, n, doc, BARGE_LOAD + 3, "Declared on the morning of the unloading.",
                                      "The customs value in lume: the invoice value in ferra at the world's reference "
                                      "rate (1 ferra = 0.01 lume).")
         kit.deep_merge(out["Shipment"]["GoodsItem"][0], {
@@ -1040,7 +1064,8 @@ def plastics(n, doc):
             "AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The barge's consignment note.")}})
         return out
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 7, "Issued once the granulate is on board.",
+        return kit.invoice(f, n, doc, BARGE_LOAD + 1, "Issued the day after the granulate went on board, the "
+                                                      "delivery under CPT.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
                            extra={"Note": V("Carriage paid to: the price includes the barge to the river quay.",
@@ -2974,34 +2999,158 @@ def carnet(n, doc):
 
 # ---------------------------------------------------------------- the waste flow (Urvania, domestic)
 WASTE = kit.Flow("waste", "2026-03-23")
-WASTE_DESCRIPTION = "Mixed polyethylene production waste, sorted, in big bags"
+# The waste stream of D42: Valdara's baled polyethylene film to Rinova, about 275 t a year in twelve loads; the first
+# load on day 10 (Thursday 2 April), 54 bales, weighed on Rinova's weighbridge with Trasvia's truck T-07.
+WASTE_DESCRIPTION = "Used polyethylene stretch film and film offcuts, baled"
+WASTE_CODE = "150102"            # Urvania's waste list (XU:Waste), after the European List of Waste (O191)
+WASTE_YEAR_T, WASTE_LOADS = 275, 12
+WASTE_BALES, WASTE_GROSS = 54, 38200        # the load: bales, and the truck full on the weighbridge, kg
+WASTE_TRUCK = kit.fleet("13-xu", "T-07")
+WASTE_TARE = sum(WASTE_TRUCK["tare_kg"].values())          # tractor and trailer, empty (O134)
+WASTE_NET = WASTE_GROSS - WASTE_TARE
+WASTE_LOAD_DAY, WASTE_ACK_DAY = 10, 2
+WASTE_STREAM = "XU-ENV-WS-2026-04417"     # the agency's waste-stream number, given on its acknowledgement
+LIMIT = WORLD["road_rules_accord"]["max_combination_kg"]
+if WASTE_GROSS > LIMIT or WASTE_NET > LIMIT - WASTE_TARE:
+    raise SystemExit(f"waste: the load of {WASTE_GROSS} kg exceeds the Accord's {LIMIT} kg for a combination (O134)")
 
 
-def waste_shipment(f, tonnes, why):
-    return {"ID": V(f.number("waste-shipment", "5-xu", "Shipment"), "The movement's shipment number."),
-            "GrossWeightMeasure": qty(Decimal(tonnes) * 1000, "KGM", why),
-            "Consignment": {"ID": V(f.number("waste-consignment", "5-xu", "Consignment"), "The consignment carried "
-                                                                                          "by the road carrier.")},
-            "GoodsItem": {"ID": V("1", "The only goods item."),
-                          "Description": V(WASTE_DESCRIPTION, "What the waste is."),
-                          "HazardousRiskIndicator": V("false", "Sorted polyethylene is not hazardous waste.")}}
+def waste_item(why):
+    return {"Description": V(WASTE_DESCRIPTION, why),
+            "CommodityClassification": {"ItemClassificationCode": V(
+                WASTE_CODE, "The waste by its entry in Urvania's waste list, numbered after the European List of "
+                            "Waste: the film comes from the packaging of the parts and materials the factory receives "
+                            "and from the wrapping of its own pallets, and no chapter for the factory's activity "
+                            "(metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the "
+                            "list's rule sends it to chapter 15: 15 01 02 plastic packaging (O191).",
+                listID=codelists.NATIONAL.format("XU", "Waste"))}}
+
+
+def waste_goods():
+    return {"ID": V("1", "The only goods item: one kind of waste."),
+            "Description": V(WASTE_DESCRIPTION, "What the waste is, in words."),
+            "HazardousRiskIndicator": V("false", "Polyethylene film is not hazardous waste: its entry in the waste "
+                                                 "list has no asterisk."),
+            "Item": waste_item("The waste, in words."),
+            "ContainingPackage": {"PackagingTypeCode": V("BL", "UN/ECE Recommendation 21 code BL: bale, compressed. "
+                                                               "Loose film would fill the trailer long before its "
+                                                               "payload; pressed into bales of about 1.2 × 0.8 × "
+                                                               "1.0 m and 425 kg, two layers high, a load reaches "
+                                                               "the weight limit first (D42)."),
+                                  "PackingMaterial": V("Steel baling wire", "What holds a bale together.")}}
+
+
+def waste_load_consignment(f, why):
+    return {"ID": V(f.number("waste-load-1-consignment", "5-xu", "Consignment"), why),
+            "TotalPackagesQuantity": V(str(WASTE_BALES), f"{WASTE_BALES} bales on the truck, in two layers.")}
+
+
+def waste_places(f, actual):
+    """Where the waste is loaded and where it is delivered: the waste leg (world/documents.json)."""
+    leg = kit.flow_leg(f, "13-xu")
+    if not actual:
+        return {"DeliveryLocation": kit.leg_location(leg, "to", "The recovery facility's plant, where the waste "
+                                                                "of the stream is delivered."),
+                "EstimatedDeliveryPeriod": {"StartDate": V("2026-04-01", "The stream's year starts in April."),
+                                            "EndDate": V("2027-03-31", "And ends after twelve months."),
+                                            "Description": V(f"About one load a month, {WASTE_LOADS} in the year.",
+                                                             "How the deliveries are spread.")},
+                "Despatch": {"DespatchLocation": kit.leg_location(leg, "from", "The producer's works, where the "
+                                                                               "bales are loaded.")}}
+    return {"ActualDeliveryDate": V(f.date(WASTE_LOAD_DAY), "The load arrived at the recovery plant."),
+            "ActualDeliveryTime": V("10:05:00", "Trasvia's truck at the weighbridge."),
+            "DeliveryLocation": kit.leg_location(leg, "to", "Where the waste was delivered."),
+            "Despatch": {"ActualDespatchDate": V(f.date(WASTE_LOAD_DAY), "Loaded at the factory the same morning."),
+                         "ActualDespatchTime": V("09:35:00", "The truck left the factory; the two sites are a few "
+                                                             "kilometres apart in Ferrano."),
+                         "DespatchLocation": kit.leg_location(leg, "from", "Where the bales were loaded.")}}
+
+
+def waste_stage(why):
+    return {"ID": V("1", "The one road leg, across Ferrano."),
+            "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road transport.",
+                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+            "TransportMeans": kit.means("13-xu", "T-07"),
+            "DriverPerson": kit.person(WASTE_TRUCK["driver"]["first"], WASTE_TRUCK["driver"]["family"], why,
+                                       pid=WASTE_TRUCK["driver"]["id"])}
+
+
+def waste_stream_ref(f, why):
+    return {"ID": V(WASTE_STREAM, "The waste-stream number the environment agency gave the notified stream."),
+            "IssueDate": V(f.date(WASTE_ACK_DAY), "The day of the agency's acknowledgement."),
+            "DocumentType": V("Acknowledgement of the waste-stream notification", why),
+            "IssuerParty": party("46-xu", short=True)}
 
 
 def waste(n, doc):
     f = WASTE
     if doc["doc"] == "WasteNotification":
         return {"ID": V(f.number("notification", doc["from"], "WasteNotification"), "The notification number."),
-                "IssueDate": V(f.date(0), "Notified before the movements start."),
-                "Shipment": waste_shipment(f, 40, "The planned movement: about 40 tonnes in two truck loads.")}
+                "IssueDate": V(f.date(0), "Notified before the year's movements start."),
+                "Shipment": {"ID": V(f.number("waste-stream", "5-xu", "Shipment"), "The producer's number for the "
+                                     "notified stream as a whole: each load gets a shipment number of its own."),
+                             "NetWeightMeasure": qty(WASTE_YEAR_T, "TNE", f"The total planned for the year: about "
+                                                     f"{WASTE_LOADS} loads of about 23 tonnes."),
+                             "Consignment": {"ID": V(f.number("waste-consignment", "5-xu", "Consignment"),
+                                                     "The consignment of the notified stream, which names its "
+                                                     "carrier.")},
+                             "GoodsItem": waste_goods(),
+                             "Delivery": waste_places(f, False)}}
     if doc["doc"] == "WasteMovement":
-        return {"ID": V(f.number("movement", doc["from"], "WasteMovement"), "The movement document number."),
-                "IssueDate": V(f.date(10), "Reported when the waste has been received."),
-                "Shipment": waste_shipment(f, "38.2", "Weighed on arrival at the recovery facility.")}
+        return {"ID": V(f.number("movement", doc["from"], "WasteMovement"), "The movement report number."),
+                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Reported the day the load was received."),
+                "IssueTime": V("11:45:00", "Once the truck had been weighed empty."),
+                "Shipment": {"ID": V(f.number("waste-load-1", "5-xu", "Shipment"), "This load's own shipment "
+                                     "number, beside the stream's."),
+                             "NetWeightMeasure": qty(WASTE_NET, "KGM", "The waste received, net, from the "
+                                                     "weighbridge ticket."),
+                             "Consignment": waste_load_consignment(f, "This load's consignment, carried by the waste "
+                                                                      "carrier."),
+                             "GoodsItem": waste_goods(),
+                             "ShipmentStage": waste_stage("The driver."),
+                             "Delivery": waste_places(f, True)}}
+    if doc["doc"] == "WeightStatement":
+        t = WASTE_TRUCK["tare_kg"]
+        return {"ID": V(f.number("weighbridge", doc["from"], "WeightStatement"), "The weighbridge ticket number."),
+                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Printed after the second weighing."),
+                "IssueTime": V("10:50:00", "When the empty truck left the weighbridge."),
+                "Shipment": {"ID": V(f.numbers["waste-load-1"], "The load weighed."),
+                             "NetWeightMeasure": qty(WASTE_NET, "KGM", f"The waste: the truck full less the truck "
+                                                     f"empty, {WASTE_GROSS:,} kg − {WASTE_TARE:,} kg."),
+                             "Consignment": waste_load_consignment(f, "The consignment weighed."),
+                             "GoodsItem": waste_goods(),
+                             "ShipmentStage": {**waste_stage("The driver, who took the ticket."),
+                                               "TransportMeans": {
+                                                   **kit.means("13-xu", "T-07"),
+                                                   "MeasurementDimension": [
+                                                       {"AttributeID": V("GROSSWEIGHT", "The first weighing: the "
+                                                                         "truck with its load, on arrival."),
+                                                        "Measure": V(str(WASTE_GROSS), "Within the Accord's "
+                                                                     f"{LIMIT:,} kg for a combination.",
+                                                                     unitCode="KGM"),
+                                                        "Description": V("Loaded, at 10:07", "When it was weighed.")},
+                                                       {"AttributeID": V("TAREWEIGHT", "The second weighing: the "
+                                                                         "same truck after unloading."),
+                                                        "Measure": V(str(WASTE_TARE), f"The tractor about "
+                                                                     f"{t['tractor']:,} kg and the trailer about "
+                                                                     f"{t['trailer']:,} kg (world/parties.json).",
+                                                                     unitCode="KGM"),
+                                                        "Description": V("Empty, at 10:46", "When it was weighed.")}]}}}}
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 12, "Issued after the waste was collected and recovered.",
-                           {"AdditionalDocumentReference": ref(f, "movement", "The waste movement document.")},
-                           [{"item": "waste-recovery", "qty": "38.2", "invoice_why": "The tonnes received, from the "
-                                                                                     "waste movement document."}])
+        return kit.invoice(f, n, doc, 14, "Issued on the next working day after the load (D27).",
+                           {"AdditionalDocumentReference": [
+                               {**ref(f, "movement", "The movement report of the load billed."),
+                                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")},
+                               {"ID": V(f.number("weighbridge", "7-xu", "WeightStatement"), "The weighbridge ticket "
+                                        "whose net weight is billed."),
+                                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")}]},
+                           [{"item": "waste-recovery", "qty": str(Decimal(WASTE_NET) / 1000),
+                             "invoice_why": "The net tonnes received, from the weighbridge ticket."}],
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(WASTE_LOAD_DAY), "The day of the "
+                                                                       "service: the load collected and received."),
+                                               "DeliveryLocation": kit.leg_location(kit.flow_leg(f, "13-xu"), "to",
+                                                                                    "Where the waste was received "
+                                                                                    "for recovery.")}})
     raise SystemExit(f"waste scenario: no document {n} {doc['doc']}")
 
 
@@ -3747,13 +3896,55 @@ def utilities(n, doc):
 
 
 # ---------------------------------------------------------------- the wood flow (Bayvarra -> Urvania, and at home)
-PALLETS_CHARGE = {"like": "slat-1800", "amount": "240.00", "reason": "Heat-treated export pallets", "code": "ACH",
+PALLETS_CHARGE = {"like": "slat-bundle-1800", "amount": "240.00", "reason": "Heat-treated export pallets",
+                  "code": "ACH",
                   "code_why": "The reason for the charge as a code of UN/EDIFACT 7161: the pallets are heat-treated.",
-                  "why": "96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.",
-                  "amount_why": "96 pallets at 2.50 lume."}
-SLATS = [{"item": "slat-1800", "ordered": 4800, "why": "Slats for 960 benches: five per bench, 96 bundles of 50."}]
+                  "why": "The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM 15, as the quotation "
+                         "offered for the export.",
+                  "amount_why": "24 pallets at 10.00 lume."}
+# D43: the sawmill sells the bundle of 50 slats as its item; this quarter's delivery is oak, 96 bundles (4,800 slats,
+# enough for 960 benches) on 24 pallets of four, one truck
+SLATS = [{"item": "slat-bundle-1800", "ordered": 96, "why": "96 bundles of 50 oak slats, 4,800 slats: enough for 960 "
+                                                            "benches at five a bench, a quarter's supply (D43)."}]
+WOOD_PALLETS = 24
+ASH_BUNDLE = Decimal("330.00")       # the priced alternative of the quotation: the same bundle in ash (D43)
+# the furniture maker's certificate that it buys timber for manufacture, which frees the sale from Upland State's sales
+# tax (wood/11#F5): issued by the state's revenue office, quoted in its order and in the sawmill's invoice
+EXEMPTION_CERT = {"ID": V("UL-STT-EX-2024-0377", "The number of Brackenmere's exemption certificate, as Upland State's "
+                                                 "revenue office issued it."),
+                  "IssueDate": V("2024-01-15", "The day it was issued."),
+                  "DocumentType": V("Sales tax exemption certificate: purchase for manufacture (Upland State)",
+                                    "The certificate the exemption of the sale rests on (D43).")}
 TIMBER = [{"item": "timber-beam", "ordered": 12, "why": "Hardwood for a month of furniture production."}]
 WOOD = kit.Flow("wood", "2026-02-16", SLATS)
+
+
+def wood_pallets(f):
+    """The 24 pallets of the slat delivery as transport handling units, each with its four bundles as packages (D43,
+    wood/06#F12, 08#F10): what the pallet charge is for."""
+    it = ITEM["slat-bundle-1800"]
+    pal = it["pallet"]
+    per = pal["per"]
+    out = {"TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+           "HandlingCode": V("STACK2", "The carrier's handling code: two high."),
+           "HandlingInstructions": V("Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by "
+                                     "machine, never by hand.", "The handling, in words, with the world's rule for "
+                                                                "manual handling (D20)."),
+           "TotalPackageQuantity": qty(per, "EA", f"{per} bundles on each pallet, two by two."),
+           "Package": {"Quantity": qty(it["pack"]["size"], "EA", f"{it['pack']['size']} slats in a bundle."),
+                       "PackagingTypeCode": V("BE", "UN/ECE Recommendation 21 code BE: bundle."),
+                       "PackingMaterial": V("Steel straps", "What holds a bundle together.")},
+           "MeasurementDimension": [
+               {"AttributeID": V("LENGTH", "The loaded pallet's footprint."),
+                "Measure": V(str(pal["mm"][0]), "Its length: the slats' length.", unitCode="MMT")},
+               {"AttributeID": V("WIDTH", "The loaded pallet's footprint."),
+                "Measure": V(str(pal["mm"][1]), "Its width: two bundles of 475 mm side by side.", unitCode="MMT")},
+               {"AttributeID": V("HEIGHT", "The height of the loaded pallet."),
+                "Measure": V(str(pal["mm"][2]), "Two bundles of 380 mm on the pallet.", unitCode="MMT")},
+               {"AttributeID": V("GROSSWEIGHT", "The loaded pallet's weight."),
+                "Measure": V(kit.kg(per * it["gross_kg"] + pal["tare_kg"]), f"Four bundles of {it['gross_kg']} kg "
+                             f"and the pallet's own {pal['tare_kg']} kg.", unitCode="KGM")}]}
+    return [{"ID": kit.unit_id("36-xb", f, k), **out} for k in range(1, WOOD_PALLETS + 1)]
 
 
 def quotation_lines(f, deal, cur, with_price):
@@ -3796,13 +3987,24 @@ def wood(n, doc):
     if doc["doc"] == "Quotation":
         return quotation(f, doc, 3, "The sawmill quotes for the slats.", SLATS, 30)
     if doc["doc"] == "Order" and doc["from"] == "5-xu":
-        return kit.order(f, n, doc, 6, "The manufacturer accepts the quotation and orders.",
+        return kit.order(f, n, doc, 7, "The manufacturer accepts the quotation and orders, on the Monday after it "
+                                       "(D27).",
                          "Delivered at place, the factory: the sawmill delivers; the manufacturer clears the import.",
                          "Valdara Industries, goods-in, Ferrano",
                          {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
     if doc["doc"] == "TransportExecutionPlanRequest":
-        return kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck across the border.", 10,
-                               kit.gross_weight(f, "ordered"), "96 bundles of slats.")
+        w = kit.gross_weight(f, "ordered")
+        truck = kit.fleet("13-xu", "T-07")
+        tare = sum(truck["tare_kg"].values())
+        if w > WORLD["road_rules_accord"]["max_combination_kg"] - tare:
+            raise SystemExit(f"wood: {w} kg of slats exceed the payload of Trasvia's truck (O134)")
+        out = kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck across the border.", 10, w,
+                              "96 bundles of slats on 24 pallets, with the pallets.")
+        kit.deep_merge(out["Consignment"], {
+            "TotalTransportHandlingUnitQuantity": V(str(WOOD_PALLETS), "The pallets to be carried, four bundles on "
+                                                                       "each (D43)."),
+            "TotalPackagesQuantity": V(str(WOOD_PALLETS * 4), "The bundles on them.")})
+        return out
     if doc["doc"] == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, 10, "Declared the morning the truck leaves for the border.",
                                      "The value of the slats, in lume.")
@@ -3811,7 +4013,8 @@ def wood(n, doc):
         return out
     if doc["doc"] == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, 10, "The day the truck was loaded at the sawmill.",
-                                  "The gross weight of the bundles.")
+                                  "The gross weight of the bundles with their pallets.")
+        out["Shipment"]["TransportHandlingUnit"] = wood_pallets(f)
         out["IssueTime"] = V("08:10:00", "When the truck is loaded, before it leaves once customs has released "
                                          "the export.")
         return out
@@ -3822,20 +4025,25 @@ def wood(n, doc):
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
         return kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
-                           [{"item": "slat-1800", "qty": 4800, "invoice_why": "The slats despatched."}],
+                           [{"item": "slat-bundle-1800", "qty": 96, "invoice_why": "The bundles despatched, "
+                                                                                   "4,800 slats."}],
                            charges=[PALLETS_CHARGE])
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 38, "The manufacturer pays across the border.")
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 20, "The furniture maker orders timber, collected with its own van.",
+        return kit.order(f, n, doc, 21, "The furniture maker orders timber, collected with its own van; ordered on "
+                                        "the Monday (D27).",
                          "Ex works the sawmill: the buyer collects the timber and bears every cost from the sawmill's "
-                         "yard.", "Marrowdale Sawmill, timber yard", deal=TIMBER, key="order-timber")
+                         "yard.", "Marrowdale Sawmill, timber yard", {"AdditionalDocumentReference": EXEMPTION_CERT},
+                         deal=TIMBER,
+                         key="order-timber")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 21, "Issued when the timber was collected.",
-                           {"OrderReference": ref(f, "order-timber", "The furniture maker's order.")},
+        return kit.invoice(f, n, doc, 22, "Issued when the timber was collected.",
+                           {"OrderReference": ref(f, "order-timber", "The furniture maker's order."),
+                            "AdditionalDocumentReference": EXEMPTION_CERT},
                            [{"item": "timber-beam", "qty": 12, "invoice_why": "The cubic metres collected."}],
                            key="invoice-timber",
-                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(21), "Ex works: delivered when the "
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(22), "Ex works: delivered when the "
                                                                                   "furniture maker collected the "
                                                                                   "timber (wood/11#F4)."),
                                                "DeliveryLocation": {"Name": V("Marrowdale Sawmill, timber yard",
@@ -6063,38 +6271,47 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     base = Decimal(out["QuotedMonetaryTotal"]["LineExtensionAmount"].value)
     line = out["QuotationLine"][0] if isinstance(out["QuotationLine"], list) else out["QuotationLine"]
-    line.update({"ID": V("1", "The quotation line."), "Note": V("As drawn; ash or oak.", "What is quoted."),
-                 "Quantity": qty(4800, "EA", "The quantity quoted."),
+    line.update({"ID": V("1", "The quotation line."), "Note": V("Oak, as drawn, in bundles of 50; the same "
+                                                                 "bundle in ash is offered below.", "What is quoted."),
+                 "Quantity": qty(96, "EA", "The bundles quoted: 4,800 slats, one truck."),
                  "LineExtensionAmount": amount(base, "XBL", "The quoted amount."),
                  "TaxInclusiveLineExtensionAmount": amount(base, "XBL", "No tax on an export."),
                  "TotalTaxAmount": amount(0, "XBL", "No tax on an export."),
                  "RequestForQuotationLineID": V("1", "The line of the request."),
-                 "DocumentReference": {"ID": V("MS-SPEC-SL1800", "The sawmill's specification.")},
+                 "DocumentReference": [{"ID": V("VI-DS-SL1800", "The buyer's drawing the slat is quoted to "
+                                                                 "(D43).")},
+                                       {"ID": V("MS-SPEC-SL1800", "The sawmill's own specification of the slat, "
+                                                                  "derived from the buyer's drawing (D43).")}],
                  "RequestLineReference": {"LineID": V("1", "The request line answered.")},
-                 "SellerProposedSubstituteLineItem": {"ID": V("1-S", "A substitute the sawmill proposes."),
-                                                      "Quantity": qty(4800, "EA", "The same quantity."),
-                                                      "Item": {"Name": V("Hardwood bench slat 1800 × 95 × 35",
-                                                                         "Three millimetres thinner: less waste, "
-                                                                         "five per cent cheaper.")}},
-                 "AlternativeLineItem": {"ID": V("1-A", "An alternative species."),
-                                         "Quantity": qty(4800, "EA", "The same quantity."),
-                                         "Item": {"Name": V("Oak bench slat 1800", "Oak instead of ash, at a higher "
-                                                                                   "price.")}}})
+                 "AlternativeLineItem": {"ID": V("1-A", "The other species the request allowed (D43)."),
+                                         "Quantity": qty(96, "EA", "The same quantity."),
+                                         "Price": {"PriceAmount": price(ASH_BUNDLE, "XBL", "The price of a bundle "
+                                                                        "in ash, below oak's."),
+                                                   "BaseQuantity": qty(1, "EA", "Per bundle.")},
+                                         "Item": {"Name": V("Bench slat 1800, bundle of 50, ash", "The same bundle "
+                                                            "in ash, which the sawmill can saw from its next "
+                                                            "felling.")}}})
     return {"Note": V("Valid for 30 days.", "The validity."),
             "PricingCurrencyCode": V("XBL", "Prices in lume."), "LineCountNumeric": V("1", "One line."),
-            "AdditionalDocumentReference": {"ID": V("MS-GTC-2026", "The sawmill's terms of sale.")},
-            "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, accepted.")},
+            "AdditionalDocumentReference": {"ID": V("MS-GTC-2026", "The sawmill's general terms of sale, "
+                                                                  "subsidiary to the buyer's terms (D43)."),
+                                            "DocumentDescription": V("The sawmill's general terms of sale apply only "
+                                                                     "where the buyer's purchasing terms "
+                                                                     "VI-PUR-TERMS-2026, which govern, say nothing.",
+                                                                     "Which terms govern.")},
+            "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, which govern the quotation "
+                                                      "(D43).")},
             "Signature": seal(doc["from"], "MS-SIG-26-QT"),
             "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(10), "From the end of the second week, "
                                                                               "as asked."),
                                                     "EndDate": V(f.date(18), "Within about a week.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory, as asked.", schemeID="INCOTERMS")},
             "PaymentMeans": {"PaymentMeansCode": V("30", "By credit transfer.", listID="UN/EDIFACT EDED 4461")},
-            "TransactionConditions": {"Description": V("Quoted per thousand slats; minimum one truck.", "The "
-                                                                                                       "conditions.")},
+            "TransactionConditions": {"Description": V("Priced per bundle of 50 slats; the smallest order is one "
+                                                       "truck: 96 bundles on 24 pallets.", "The conditions (D43).")},
             "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
-            "TaxTotal": kit.tax_total([({"item": "slat-1800"}, None, Decimal("34800.00"),
-                                        kit.tax_rule("36-xb", "5-xu", "slat-1800"))], "XBL")[1]}
+            "TaxTotal": kit.tax_total([({"item": "slat-bundle-1800"}, None, Decimal("34800.00"),
+                                        kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800"))], "XBL")[1]}
 
 
 @enrich("furniture", "RequestForQuotation")
@@ -8518,41 +8735,58 @@ def _(f, n, doc, out):
 
 @enrich("waste", "WasteNotification")
 def _(f, n, doc, out):
-    return {"WasteNotificationTypeCode": V("RECOVERY", "A notification of waste for recovery, not disposal."),
-            "ConsignmentQuantity": qty(12, "EA", "About twelve movements over the year."),
+    return {"WasteNotificationTypeCode": V("DOMESTIC", "A notification of a waste stream within Urvania under its "
+                                                      "national waste law, not of a transboundary movement: producer "
+                                                      "and recovery facility are both in Ferrano (D42)."),
+            "ConsignmentQuantity": qty(WASTE_LOADS, "EA", "About one load a month over the year."),
             "DocumentReference": {"ID": V("VI-WASTE-CONTRACT-26", "The contract between producer and recovery "
                                                                   "facility, which the notification needs.")},
-            "Signature": seal("5-xu", "VI-SIG-WN"),
-            "DisposalFacilityParty": party("7-xu", short=True)}
+            "Signature": seal("5-xu", "VI-SIG-WN")}
 
 
 @enrich("waste", "WasteMovement")
 def _(f, n, doc, out):
-    return {"WasteMovementTypeCode": V("RECOVERY", "A movement of waste for recovery."),
-            "SequenceNumberID": V("1", "The first movement under the notification."),
-            "ConsignmentQuantity": qty(12, "EA", "Of about twelve notified."),
+    return {"WasteMovementTypeCode": V("RECOVERY", "The waste goes to recovery: Rinova recycles the film into "
+                                                   "granulate (operation R3 of its permit)."),
+            "SequenceNumberID": V("1", "The first load of the stream."),
+            "ConsignmentQuantity": qty(WASTE_LOADS, "EA", "Of about twelve notified."),
             "WasteNotificationDocumentReference": {"ID": V(f.numbers["notification"],
-                                                           "The notification the movement is made under.")},
-            "WeightStatementDocumentReference": {"ID": V("RR-WB-26-0412", "The weighbridge ticket of the "
-                                                                          "recovery plant (not shown).")},
-            "DocumentReference": {"ID": V("RR-REC-26-0412", "The certificate of recovery to follow.")},
+                                                           "The notification of the stream the load belongs to."),
+                                                   "IssueDate": V(f.date(0), "Its date.")},
+            "WeightStatementDocumentReference": {"ID": V(f.number("weighbridge", "7-xu", "WeightStatement"),
+                                                         "The weighbridge ticket of the load, whose net weight this "
+                                                         "report states."),
+                                                 "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")},
+            "DocumentReference": [waste_stream_ref(f, "The agency's acknowledgement, whose number each report of "
+                                                      "the stream quotes; a domestic stream of non-hazardous waste "
+                                                      "for recovery needs no consent (D42)."),
+                                  {"ID": V("RR-REC-26-0412", "The certificate of recovery to follow.")}],
             "DocumentDistribution": {"DocumentTypeCode": V("WasteMovement", "The document distributed: this "
                                                                             "movement document."),
                                      "DistributionTypeCode": V("ELECTRONICCOPY", "Sent electronically, as a copy."),
                                      "DistributionType": Detail("the producer must keep it with the notification",
                                                                 "why the producer gets a copy."),
                                      "Party": party("5-xu", short=True)},
-            "Signature": seal("7-xu", "RR-SIG-WM"),
-            "DisposalFacilityParty": party("7-xu", short=True)}
+            "Signature": seal("7-xu", "RR-SIG-WM")}
+
+
+@enrich("waste", "WeightStatement")
+def _(f, n, doc, out):
+    return {"WeightStatementTypeCode": V("WEIGHBRIDGE", "A weighbridge ticket: the vehicle and its load weighed.")}
 
 
 @enrich("plastics", "Waybill")
 def _(f, n, doc, out):
     for d in find_dicts(out, "EnergyConsumptionAllocation"):
         for e in lines_of(d, "EnergyConsumptionAllocation"):
+            kwh = Decimal(e["AllocatedEnergyMeasure"].value)
             e["EnvironmentalEmission"] = {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases as CO2 "
                                                                                     "equivalent."),
-                                          "ValueMeasure": V("14.3", "2.65 kg per litre of the diesel allocated.",
+                                          "ValueMeasure": V(str(round(kwh * DIESEL_TTW)),
+                                                            f"Tank to wheel: the {kwh:,} kWh of diesel allocated to "
+                                                            f"the goods times {DIESEL_TTW} kg CO2e per kWh, about "
+                                                            "2.67 kg per litre of diesel of about 10 kWh, the order "
+                                                            "of the default factor for diesel in EN 16258 (D41).",
                                                             unitCode="KGM")}
     return {}
 

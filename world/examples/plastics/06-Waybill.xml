@@ -9,7 +9,7 @@
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>15:26:00-01:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
@@ -137,6 +137,7 @@
       <cbc:ID>RR-CS-26-0885</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
@@ -180,7 +181,7 @@
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>River freight</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="XUF">179400</cbc:Amount>
-        <cbc:BaseAmount currencyID="XUF">1495</cbc:BaseAmount>
+        <cbc:PerUnitAmount currencyID="XUF">1495</cbc:PerUnitAmount>
       </cac:FreightAllowanceCharge>
       <cac:MainCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
@@ -212,7 +213,7 @@
           <cbc:Name>River quay, Lumeport</cbc:Name>
         </cac:UnloadingPortLocation>
         <cac:LoadingTransportEvent>
-          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -225,14 +226,14 @@
           </cac:Location>
         </cac:LoadingTransportEvent>
         <cac:ExportationTransportEvent>
-          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-21</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:ExportationTransportEvent>
         <cac:DischargeTransportEvent>
-          <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
@@ -240,7 +241,7 @@
           </cac:Location>
         </cac:DischargeTransportEvent>
         <cac:TakeoverTransportEvent>
-          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -267,17 +268,15 @@
       <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
       <cbc:DeclaredForCarriageValueAmount currencyID="XUF">9984000</cbc:DeclaredForCarriageValueAmount>
-      <cbc:ValueAmount currencyID="XUF">9984000</cbc:ValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:NetWeightMeasure unitCode="KGM">120000</cbc:NetWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">120000</cbc:NetNetWeightMeasure>
       <cbc:ChargeableWeightMeasure unitCode="KGM">120000</cbc:ChargeableWeightMeasure>
       <cbc:GrossVolumeMeasure unitCode="MTQ">204</cbc:GrossVolumeMeasure>
-      <cbc:NetVolumeMeasure unitCode="MTQ">130</cbc:NetVolumeMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">200</cbc:NetVolumeMeasure>
       <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
       <cbc:ChargeableQuantity unitCode="TNE">120</cbc:ChargeableQuantity>
-      <cbc:ReturnableQuantity unitCode="EA">120</cbc:ReturnableQuantity>
-      <cbc:TraceID>RR-PE-LOT-26-0416</cbc:TraceID>
+      <cbc:TraceID>RR-PE-0417</cbc:TraceID>
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cac:OrderReference>
@@ -301,29 +300,28 @@
         </cac:Country>
       </cac:OriginAddress>
       <cac:Delivery>
-        <cbc:LatestDeliveryDate>2026-04-23</cbc:LatestDeliveryDate>
+        <cbc:LatestDeliveryDate>2026-04-24</cbc:LatestDeliveryDate>
       </cac:Delivery>
       <cac:Pickup>
-        <cbc:EarliestPickupDate>2026-04-19</cbc:EarliestPickupDate>
+        <cbc:EarliestPickupDate>2026-04-20</cbc:EarliestPickupDate>
         <cbc:EarliestPickupTime>08:00:00</cbc:EarliestPickupTime>
-        <cbc:LatestPickupDate>2026-04-19</cbc:LatestPickupDate>
+        <cbc:LatestPickupDate>2026-04-20</cbc:LatestPickupDate>
         <cbc:LatestPickupTime>16:00:00</cbc:LatestPickupTime>
       </cac:Pickup>
       <cac:Despatch>
-        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
         <cbc:ActualDespatchTime>15:10:00</cbc:ActualDespatchTime>
       </cac:Despatch>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1300</cbc:Measure>
-      </cac:MeasurementDimension>
       <cac:ContainingPackage>
-        <cbc:ID>RR-JB-0416</cbc:ID>
-        <cbc:Quantity unitCode="EA">120</cbc:Quantity>
+        <cbc:Quantity unitCode="TNE">1</cbc:Quantity>
         <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">JB</cbc:PackagingTypeCode>
         <cbc:PackagingType>Jumbo bag of one tonne with four lifting loops</cbc:PackagingType>
         <cbc:PackingMaterial>Woven polypropylene</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1300</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ContainingPackage>
       <cac:ShipmentDocumentReference>
         <cbc:ID>FB-TEP-26-0886</cbc:ID>
@@ -334,7 +332,7 @@
         <cbc:AllocatedEnergyMeasure unitCode="KWH">5400</cbc:AllocatedEnergyMeasure>
         <cac:EnvironmentalEmission>
           <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
-          <cbc:ValueMeasure unitCode="KGM">14.3</cbc:ValueMeasure>
+          <cbc:ValueMeasure unitCode="KGM">1447</cbc:ValueMeasure>
         </cac:EnvironmentalEmission>
       </cac:EnergyConsumptionAllocation>
     </cac:GoodsItem>

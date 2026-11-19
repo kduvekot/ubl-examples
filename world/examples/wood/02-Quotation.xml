@@ -20,6 +20,7 @@
   <cac:AdditionalDocumentReference>
     <cbc:ID>MS-GTC-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>The sawmill's general terms of sale apply only where the buyer's purchasing terms VI-PUR-TERMS-2026, which govern, say nothing.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
     <cbc:ID>VI-PUR-TERMS-2026</cbc:ID>
@@ -138,7 +139,7 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
   <cac:TransactionConditions>
-    <cbc:Description>Quoted per thousand slats; minimum one truck.</cbc:Description>
+    <cbc:Description>Priced per bundle of 50 slats; the smallest order is one truck: 96 bundles on 24 pallets.</cbc:Description>
   </cac:TransactionConditions>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
@@ -181,32 +182,35 @@
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>As drawn; ash or oak.</cbc:Note>
-    <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+    <cbc:Note>Oak, as drawn, in bundles of 50; the same bundle in ash is offered below.</cbc:Note>
+    <cbc:Quantity unitCode="EA">96</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">34560.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
     <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
+    <cac:DocumentReference>
+      <cbc:ID>VI-DS-SL1800</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
     <cac:DocumentReference>
       <cbc:ID>MS-SPEC-SL1800</cbc:ID>
       <cbc:DocumentType>Product specification</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">7.2</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-        <cbc:OrderableUnitFactorRate>50</cbc:OrderableUnitFactorRate>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
-        <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800</cbc:ID>
+          <cbc:ID>MS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -282,29 +286,29 @@
         <cac:Dimension>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
           <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+          <cbc:Description>The bundle: the slats' length</cbc:Description>
         </cac:Dimension>
         <cac:Dimension>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">95</cbc:Measure>
+          <cbc:Measure unitCode="MMT">475</cbc:Measure>
+          <cbc:Description>The bundle: five slats of 95 mm side by side</cbc:Description>
         </cac:Dimension>
         <cac:Dimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">38</cbc:Measure>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">380</cbc:Measure>
+          <cbc:Description>The bundle: ten slats of 38 mm stacked</cbc:Description>
         </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
-    <cac:SellerProposedSubstituteLineItem>
-      <cbc:ID>1-S</cbc:ID>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Hardwood bench slat 1800 × 95 × 35</cbc:Name>
-      </cac:Item>
-    </cac:SellerProposedSubstituteLineItem>
     <cac:AlternativeLineItem>
       <cbc:ID>1-A</cbc:ID>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">330</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
       <cac:Item>
-        <cbc:Name>Oak bench slat 1800</cbc:Name>
+        <cbc:Name>Bench slat 1800, bundle of 50, ash</cbc:Name>
       </cac:Item>
     </cac:AlternativeLineItem>
     <cac:RequestLineReference>

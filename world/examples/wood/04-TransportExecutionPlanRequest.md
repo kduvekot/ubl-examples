@@ -229,12 +229,16 @@ Inside `Consignment`:
 
 - `ID` = **MS-CS-26-0629**  
   The transport user's number for this consignment, quoted along the chain.
-- `SummaryDescription` = **4800 × Hardwood bench slat 1800**  
+- `SummaryDescription` = **96 × Bench slat 1800, bundle of 50**  
   What is to be carried, in a few words (worklist C21).
-- `GrossWeightMeasure` = **21600** (unitCode `KGM`)  
-  96 bundles of slats.
+- `GrossWeightMeasure` = **22200** (unitCode `KGM`)  
+  96 bundles of slats on 24 pallets, with the pallets.
 - `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   The number of goods items.
+- `TotalTransportHandlingUnitQuantity` = **24**  
+  The pallets to be carried, four bundles on each (D43).
+- `TotalPackagesQuantity` = **96**  
+  The bundles on them.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
@@ -437,9 +441,11 @@ Inside `Consignment`:
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>MS-CS-26-0629</cbc:ID>
-    <cbc:SummaryDescription>4800 × Hardwood bench slat 1800</cbc:SummaryDescription>
-    <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+    <cbc:SummaryDescription>96 × Bench slat 1800, bundle of 50</cbc:SummaryDescription>
+    <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalTransportHandlingUnitQuantity>24</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:TotalPackagesQuantity>96</cbc:TotalPackagesQuantity>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

@@ -22,17 +22,17 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
   The seller's invoice number.
 - `UUID` = **462dcfae-0a9f-5692-9219-92c1bf595e5d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-20**  
-  Issued once the granulate is on board.
+- `IssueDate` = **2026-04-21**  
+  Issued the day after the granulate went on board, the delivery under CPT.
 - `IssueTime` = **11:20:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-20**  
+- `DueDate` = **2026-05-21**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Carriage paid to: the price includes the barge to the river quay. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion P).**  
   Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
-- `TaxPointDate` = **2026-04-20**  
+- `TaxPointDate` = **2026-04-21**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
@@ -233,7 +233,7 @@ Inside `Delivery`:
 
 - `DeliveryLocation/Name` = **River quay of Rivermouth Packaging, Lumeport**  
   Where the goods billed are delivered.
-- `Despatch/ActualDespatchDate` = **2026-04-19**  
+- `Despatch/ActualDespatchDate` = **2026-04-20**  
   The invoice is issued on despatch: the day the goods left.
 
 ### Payment Means
@@ -246,7 +246,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-20**  
+- `PaymentDueDate` = **2026-05-21**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
@@ -323,11 +323,11 @@ Inside `PaymentTerms`:
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.rinova.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-20**  
+- `PaymentDueDate` = **2026-05-21**  
   The day the amount is due, as the terms count it.
-- `SettlementPeriod/StartDate` = **2026-04-20**  
+- `SettlementPeriod/StartDate` = **2026-04-21**  
   From the invoice date.
-- `SettlementPeriod/EndDate` = **2026-04-30**  
+- `SettlementPeriod/EndDate` = **2026-05-01**  
   For 10 days.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
   The interest on late payment.
@@ -422,12 +422,12 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-INV-26-0894</cbc:ID>
   <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
-  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-20</cbc:DueDate>
+  <cbc:DueDate>2026-05-21</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion P).</cbc:Note>
-  <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-21</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
@@ -594,14 +594,14 @@ Inside `InvoiceLine`:
       <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
     </cac:DeliveryLocation>
     <cac:Despatch>
-      <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+      <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
     </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-21</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF89RRINV260894</cbc:InstructionNote>
@@ -655,10 +655,10 @@ Inside `InvoiceLine`:
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">199680</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.rinova.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-21</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-20</cbc:StartDate>
-      <cbc:EndDate>2026-04-30</cbc:EndDate>
+      <cbc:StartDate>2026-04-21</cbc:StartDate>
+      <cbc:EndDate>2026-05-01</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>

@@ -2602,7 +2602,8 @@
    "element": "ItemClassificationCode",
    "address": "cbc:ItemClassificationCode",
    "lists": [
-    "CPC21"
+    "CPC21",
+    "XU:Waste"
    ]
   },
   {
@@ -5058,6 +5059,7 @@
    "codes": [
     "EXP",
     "SVCABROAD",
+    "EXPTRANSPORT",
     "HEALTH",
     "EDUCATION",
     "FINANCE",
@@ -6383,7 +6385,8 @@
     "SUSTFOREST",
     "RECYCLED",
     "ORIGIN",
-    "TEST"
+    "TEST",
+    "WASTECARRIER"
    ]
   },
   "GoodsCertificateType": {
@@ -6480,7 +6483,8 @@
    "codes": [
     "RECOVERY",
     "DISPOSAL",
-    "GENERAL"
+    "GENERAL",
+    "DOMESTIC"
    ]
   },
   "ProcurementProcedure": {
@@ -7981,6 +7985,7 @@
     "6512",
     "8299",
     "8411",
+    "8412",
     "8413",
     "8423",
     "9411"
@@ -8511,6 +8516,22 @@
     "940330"
    ]
   },
+  "XU:Waste": {
+   "listID": "urn:ubl-examples:world:XU:codelist:WasteCode",
+   "scope": "XU",
+   "name": "Waste list",
+   "location": "world/codelists/gc/XU-WasteCode.gc",
+   "codes": [
+    "150101",
+    "150102",
+    "150103",
+    "150104",
+    "150105",
+    "150106",
+    "150107",
+    "150109"
+   ]
+  },
   "XU:CustomsTariff": {
    "listID": "urn:ubl-examples:world:XU:codelist:CustomsTariffCode",
    "scope": "XU",
@@ -8723,6 +8744,7 @@
     "THICKNESS",
     "DIAMETER",
     "GROSSWEIGHT",
+    "TAREWEIGHT",
     "SEATHEIGHT",
     "BENCHLENGTH",
     "LOADINGLENGTH",

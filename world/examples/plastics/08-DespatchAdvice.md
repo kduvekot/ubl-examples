@@ -22,7 +22,7 @@ The waste processor announces the lot loaded on the barge.
   The despatching party's number.
 - `UUID` = **908c065b-6da7-5dbc-bc84-ae4eb333a8dd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-19**  
+- `IssueDate` = **2026-04-20**  
   The day the barge was loaded.
 - `IssueTime` = **17:57:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -39,6 +39,15 @@ Inside `OrderReference`:
 
 - `ID` = **RP-PO-26-0882**  
   The order this despatch fulfils.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **FB-WB-26-0890**  
+  The barge's consignment note, on which damage is to be reported (D41).
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: FB-WB-26-0890 is the example plastics/06, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Despatch Supplier Party
 
@@ -178,6 +187,8 @@ Inside `Shipment`:
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
+- `Consignment/TotalPackagesQuantity` = **120**  
+  The 120 jumbo bags of a tonne each, as the consignment note counts them (D41).
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Fiumella Barges (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Fiumella Barges**  
@@ -220,11 +231,11 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Fiumella Barges (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; identity of Fiumella Barges (world/parties.json).
-- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-21**  
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-23**  
   Expected after the usual transit by river.
-- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-21**  
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-23**  
   The same day.
-- `Delivery/Despatch/ActualDespatchDate` = **2026-04-19**  
+- `Delivery/Despatch/ActualDespatchDate` = **2026-04-20**  
   The goods left on the day of this advice.
 
 ### Despatch Line
@@ -233,7 +244,7 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **One barge load of recycled granulate in jumbo bags.**  
+- `Note` = **120 tonnes of recycled granulate, in jumbo bags of one tonne.**  
   The line as the order put it.
 - `DeliveredQuantity` = **120** (unitCode `TNE`)  
   What was despatched.
@@ -251,14 +262,10 @@ Inside `DespatchLine`:
   The seller's own item number; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/StandardItemIdentification/ID` = **KXU13362PER1** (schemeID `ISO 15459-6`)  
   The item's number in its globally unique form under ISO/IEC 15459, which Rinova Recovery gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Rinova Recovery and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item granulate-pe of Rinova Recovery (world/items.json).
-- `Item/ItemInstance/ManufactureDate` = **2026-04-16**  
+- `Item/ItemInstance/ManufactureDate` = **2026-04-17**  
   The day the lot was produced.
-- `Item/ItemInstance/BestBeforeDate` = **2027-04-16**  
-  Best used within 12 months: the granulate takes up moisture in storage.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **RR-PE-0416**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **RR-PE-0417**  
   The production lot, from the maker's prefix and the production day; a recall names the lot.
-- `Item/ItemInstance/LotIdentification/ExpiryDate` = **2027-04-16**  
-  The lot's quality data apply until then.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Melt flow index**  
   A fact about this lot.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **0.9 g/10 min**  
@@ -275,7 +282,7 @@ Inside `DespatchLine`:
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-DA-26-0892</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -283,6 +290,10 @@ Inside `DespatchLine`:
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FB-WB-26-0890</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -396,6 +407,7 @@ Inside `DespatchLine`:
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
@@ -432,17 +444,17 @@ Inside `DespatchLine`:
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-04-21</cbc:StartDate>
-        <cbc:EndDate>2026-04-21</cbc:EndDate>
+        <cbc:StartDate>2026-04-23</cbc:StartDate>
+        <cbc:EndDate>2026-04-23</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
-        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>One barge load of recycled granulate in jumbo bags.</cbc:Note>
+    <cbc:Note>120 tonnes of recycled granulate, in jumbo bags of one tonne.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="TNE">120</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -459,11 +471,9 @@ Inside `DespatchLine`:
         <cbc:ID schemeID="ISO 15459-6">KXU13362PER1</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ItemInstance>
-        <cbc:ManufactureDate>2026-04-16</cbc:ManufactureDate>
-        <cbc:BestBeforeDate>2027-04-16</cbc:BestBeforeDate>
+        <cbc:ManufactureDate>2026-04-17</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>RR-PE-0416</cbc:LotNumberID>
-          <cbc:ExpiryDate>2027-04-16</cbc:ExpiryDate>
+          <cbc:LotNumberID>RR-PE-0417</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Melt flow index</cbc:Name>
             <cbc:Value>0.9 g/10 min</cbc:Value>

@@ -343,10 +343,13 @@ def party(pid, short=False, desk=None, lang=None):
                                                              "names the register, and with it the authority that keeps "
                                                              "it, so no issuer party is needed (decision ID-Q10).",
                                                              schemeID=world_ids.national_scheme(p["c"], au["register"])),
-                                                     "CertificateTypeCode": V("PERMIT", "A permit issued by an authority "
-                                                                                        "of the party's country."),
-                                                     "CertificateType": V("Operating permit", "The kind of certificate, "
-                                                                                              "in words.")}}
+                                                     "CertificateTypeCode": V(au.get("type_code", "PERMIT"),
+                                                                              "A permit issued by an authority of the "
+                                                                              "party's country." if "type_code" not in au
+                                                                              else "A registration with an authority "
+                                                                                   "of the party's country."),
+                                                     "CertificateType": V(au.get("type", "Operating permit"),
+                                                                          "The kind of certificate, in words.")}}
     if idn.get("shop_website"):
         out["AdditionalWebSite"] = {"Name": V("Online shop", "The store's second website, where consumers buy."),
                                     "URI": V(idn["shop_website"], "Under the reserved .example domain.")}
@@ -1136,7 +1139,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if tax:
         out["ClassifiedTaxCategory"] = tax
     props = []
-    for pr in maker.get("properties", []):
+    for pr in (ITEM[maker["content"]["item"]] if maker.get("content") else maker).get("properties", []):
         props.append(item_property(pr, msrc))
     for name, value, unit in maker.get("quantity_properties", []):
         props.append({"Name": V(name, "A measured property of the item."),
@@ -1159,8 +1162,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                 "Country": {"IdentificationCode": V(maker["origin"], "The country of origin.")}}
     if instance:
         out["ItemInstance"] = instance
-    if maker.get("certificate"):
-        ce = maker["certificate"]
+    facts = ITEM[maker["content"]["item"]] if maker.get("content") else maker   # a pack: the facts of its content
+    if facts.get("certificate"):
+        ce = facts["certificate"]
         reg = ce.get("register") and world_ids.national_scheme(maker["origin"], ce["register"])
         cert = {"ID": V(ce["id"], "The number of the certificate" + (
                     f", in the {SCHEMES[reg]['name']}, which keeps the certificates issued under each registration; "
@@ -1222,8 +1226,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         if ci.get("type"):
             circ["CircularityTypeCode"] = V(ci["type"], "The circular strategy behind the item.")
         if ci.get("recycled"):
-            circ["RecycledContentPercent"] = V(ci["recycled"], "The share of recycled material: the film is made from "
-                                                               "the recycled granulate.")
+            circ["RecycledContentPercent"] = V(ci["recycled"], ci.get("recycled_why", "The share of recycled material: "
+                                                               "the film is made from the recycled granulate."))
         if ci.get("recyclable"):
             circ["RecyclabilityPercent"] = V(ci["recyclable"], "The share that can be recycled again.")
         if ci.get("maintenance"):
@@ -3197,14 +3201,11 @@ CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the documen
     ('tender', '25-Catalogue.xml'): 'D28',
     ('tender', '33-CreditNote.xml'): 'D28',
     ('carnet', '03-ProofOfReexportationReminder.xml'): 'D40',
-    ('waste', '03-Invoice.xml'): 'D42',
     ('utilities', '04-RemittanceAdvice.xml'): 'D31',
     ('utilities', '07-RemittanceAdvice.xml'): 'D31',
     ('utilities', '14-RemittanceAdvice.xml'): 'D31',
     ('plastics', '05-ExportCustomsDeclaration.xml'): 'D41',
     ('plastics', '08-DespatchAdvice.xml'): 'D41',
-    ('wood', '03-Order.xml'): 'D43',
-    ('wood', '10-Order.xml'): 'D43',
     ('cotton', '04-SelfBilledInvoice.xml'): 'D33',
     ('cotton', '05-SelfBilledCreditNote.xml'): 'D33',
     ('cotton', '07-ForecastRevision.xml'): 'D33',
@@ -3394,8 +3395,7 @@ def check_issue_order(flow_id, name, root, doc, request=None):
 # ---------------------------------------------------------------- references resolve (C73)
 UNRESOLVED = []        # references to a kind of document the examples have, under an ID no example has: (file, el, ID)
 # References to documents the flow decisions add (D38), each waiting for its flow (stage 6): ID -> the document.
-REFERENCE_WAITS = {"RR-WB-26-0412": "waste/04, Rinova's weight statement (D38, with D42)",
-                   "BF-DN-26-0323": "furniture/19, Brackenmere's despatch advice (D38, with D32)",
+REFERENCE_WAITS = {"BF-DN-26-0323": "furniture/19, Brackenmere's despatch advice (D38, with D32)",
                    "BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
                    "PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
                                     "D28)"}

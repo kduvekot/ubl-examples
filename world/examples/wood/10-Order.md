@@ -22,8 +22,8 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
   The buyer's order number.
 - `UUID` = **8e01f6c6-41e2-54ce-8e02-1e6edf7207ba**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-08**  
-  The furniture maker orders timber, collected with its own van.
+- `IssueDate` = **2026-03-09**  
+  The furniture maker orders timber, collected with its own van; ordered on the Monday (D27).
 - `IssueTime` = **16:20:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -36,6 +36,17 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of order lines.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **UL-STT-EX-2024-0377**  
+  The number of Brackenmere's exemption certificate, as Upland State's revenue office issued it.
+- `IssueDate` = **2024-01-15**  
+  The day it was issued.
+- `DocumentType` = **Sales tax exemption certificate: purchase for manufacture (Upland State)**  
+  The certificate the exemption of the sale rests on (D43).
 
 ### Buyer Customer Party
 
@@ -227,13 +238,18 @@ Inside `OrderLine`:
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-PO-26-0637</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
-  <cbc:IssueDate>2026-03-08</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>16:20:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
+    <cbc:IssueDate>2024-01-15</cbc:IssueDate>
+    <cbc:DocumentType>Sales tax exemption certificate: purchase for manufacture (Upland State)</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>

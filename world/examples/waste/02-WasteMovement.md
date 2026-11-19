@@ -1,8 +1,8 @@
-# Waste Movement: Rinova Recovery to Customs Administration of Urvania
+# Waste Movement: Rinova Recovery to Environment Agency of Urvania
 
 *Example 2 of the flow "Production waste to recovery (domestic, Urvania)" · [Waste Movement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-MOVEMENT-SCHEMA)*
 
-The recovery facility reports each movement received to the competent authority.
+The recovery facility reports to the environment agency the first load it has received under the notified stream: 54 bales, 22.9 tonnes net as its weighbridge found them, under the waste-stream number.
 
 [The XML file](02-WasteMovement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -19,17 +19,17 @@ The recovery facility reports each movement received to the competent authority.
 - `ProfileExecutionID` = **WASTE-2026-01**  
   This run of the process: the same in every document of the flow.
 - `ID` = **RR-DOC-26-0207**  
-  The movement document number.
+  The movement report number.
 - `UUID` = **dbd3deda-0d71-53e4-9a07-a1f9d4add949**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
-  Reported when the waste has been received.
-- `IssueTime` = **12:34:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Reported the day the load was received.
+- `IssueTime` = **11:45:00-01:00**  
+  Once the truck had been weighed empty; in the issuer's local time, with its offset from UTC (D27).
 - `WasteMovementTypeCode` = **RECOVERY** (listID `urn:ubl-examples:world:codelist:WasteOperationCategoryCode`)  
-  A movement of waste for recovery. The code is from the Trade Accord's waste operation category list: RECOVERY = Recovery.
+  The waste goes to recovery: Rinova recycles the film into granulate (operation R3 of its permit). The code is from the Trade Accord's waste operation category list: RECOVERY = Recovery.
 - `SequenceNumberID` = **1**  
-  The first movement under the notification.
+  The first load of the stream.
 - `ConsignmentQuantity` = **12** (unitCode `EA`)  
   Of about twelve notified.
 
@@ -119,56 +119,52 @@ Inside `SenderParty`:
 
 Inside `ReceiverParty`:
 
-- `PartyIdentification/ID` = **xu_k4r7** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
-  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Customs Administration of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Customs Administration of Urvania**  
-  The trading name; identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/ID` = **4180202968066555** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/AddressTypeCode` = **POSTAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: POSTAL = Postal address.
+- `PartyIdentification/ID` = **xu_p3wz** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Environment Agency of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyName/Name` = **Environment Agency of Urvania**  
+  The trading name; identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/ID` = **4160204417730582** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `PostalAddress/Postbox` = **PB 18**  
-  The customs office receives its post in a post box. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/StreetName` = **Zalsul Han Trurdrek** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/StreetName` = **Strada del Confine** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/BuildingNumber` = **22**  
-  Building number of the postal address. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/CityName` = **Menbaz** (languageID `qau`)  
-  The place's Urvanian name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/CityName` = **Valico Euridice** (languageID `en-XU`)  
-  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Customs Administration of Urvania (world/parties.json).
-- `PostalAddress/PostalZone` = **4530**  
-  Postal code in Urvania's format (4 digits). identity of Customs Administration of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Bek Stuzman Drarban** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Via delle Acque** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/BuildingNumber` = **8**  
+  Building number of the postal address. identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Environment Agency of Urvania (world/parties.json).
+- `PostalAddress/PostalZone` = **4150**  
+  Postal code in Urvania's format (4 digits). identity of Environment Agency of Urvania (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Customs Administration of Urvania (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Environment Agency of Urvania (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Contact/Name` = **Border office**  
-  The party's main desk, which handles this document; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/JobTitle` = **Customs officer**  
-  The job of the person who answers at the desk; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Department` = **Customs**  
-  The department the desk belongs to; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 850 3855**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Telefax` = **+999 1 041 545 1432**  
-  The customs office still lists a fax number; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/ElectronicMail` = **border@customs-xu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Customs Administration of Urvania (world/parties.json).
+- `Contact/Name` = **Waste reporting office**  
+  The party's main desk, which handles this document; identity of Environment Agency of Urvania (world/parties.json).
+- `Contact/JobTitle` = **Waste reporting officer**  
+  The job of the person who answers at the desk; identity of Environment Agency of Urvania (world/parties.json).
+- `Contact/Department` = **Waste and resources**  
+  The department the desk belongs to; identity of Environment Agency of Urvania (world/parties.json).
+- `Contact/Telephone` = **+999 1 041 732 5019**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Environment Agency of Urvania (world/parties.json).
+- `Contact/ElectronicMail` = **waste@environment-xu.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Environment Agency of Urvania (world/parties.json).
+- `Contact/Note` = **Weekdays 08:00–16:00**  
+  When the desk can be reached; identity of Environment Agency of Urvania (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XU:xu_k4r7** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XU:xu_p3wz** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Environment Agency of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Notifier Party
 
@@ -223,15 +219,6 @@ Inside `NotifierParty`:
 - `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
   The sales desk's mobile number, also under the reserved +999.
 
-### Disposal Facility Party
-
-Inside `DisposalFacilityParty`:
-
-- `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Rinova Recovery**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Recovery Facility Party
 
 Inside `RecoveryFacilityParty`:
@@ -254,12 +241,14 @@ Inside `WasteProducerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0205**  
-  The movement's shipment number.
-- `GrossWeightMeasure` = **38200** (unitCode `KGM`)  
-  Weighed on arrival at the recovery facility.
-- `Consignment/ID` = **VI-CS-26-0206**  
-  The consignment carried by the road carrier.
+- `ID` = **VI-SH-26-0208**  
+  This load's own shipment number, beside the stream's.
+- `NetWeightMeasure` = **22900** (unitCode `KGM`)  
+  The waste received, net, from the weighbridge ticket.
+- `Consignment/ID` = **VI-CS-26-0209**  
+  This load's consignment, carried by the waste carrier.
+- `Consignment/TotalPackagesQuantity` = **54**  
+  54 bales on the truck, in two layers.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
@@ -302,43 +291,113 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/CarrierParty/PartyAuthorization/Purpose` = **International road haulage**  
+- `Consignment/CarrierParty/PartyAuthorization/Purpose` = **Transport of non-hazardous waste by road**  
   What the authority has authorized the party to do; identity of Trasvia Haulage (world/parties.json).
-- `Consignment/CarrierParty/PartyAuthorization/ValidityPeriod/EndDate` = **2030-06-30**  
+- `Consignment/CarrierParty/PartyAuthorization/ValidityPeriod/EndDate` = **2028-10-31**  
   The authorization expires on this date.
-- `Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-HAUL-2020-0877** (schemeID `urn:ubl-examples:world:XU:haulage-licence`)  
-  The number of the permit in the register of road haulage licences of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
-- `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
-  A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
-- `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In Urvanian, the sender's language.
-- `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Operating permit** (languageID `en-XU`)  
-  The name of code PERMIT in the Trade Accord's certificate type list. In English.
+- `Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-ENV-T-2023-0187** (schemeID `urn:ubl-examples:world:XU:waste-carrier`)  
+  The number of the permit in the register of waste carriers of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
+- `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateTypeCode` = **WASTECARRIER** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
+  A registration with an authority of the party's country. The code is from the Trade Accord's certificate type list: WASTECARRIER = Waste carrier registration.
+- `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Drunvir sundraz dradrek** (languageID `qau`)  
+  The name of code WASTECARRIER in the Trade Accord's certificate type list. In Urvanian, the sender's language.
+- `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Waste carrier registration** (languageID `en-XU`)  
+  The name of code WASTECARRIER in the Trade Accord's certificate type list. In English.
 - `GoodsItem/ID` = **1**  
-  The only goods item.
-- `GoodsItem/Description` = **Mixed polyethylene production waste, sorted, in big bags**  
-  What the waste is.
+  The only goods item: one kind of waste.
+- `GoodsItem/Description` = **Used polyethylene stretch film and film offcuts, baled**  
+  What the waste is, in words.
 - `GoodsItem/HazardousRiskIndicator` = **false**  
-  Sorted polyethylene is not hazardous waste.
+  Polyethylene film is not hazardous waste: its entry in the waste list has no asterisk.
+- `GoodsItem/Item/Description` = **Used polyethylene stretch film and film offcuts, baled**  
+  The waste, in words.
+- `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **150102** (listID `urn:ubl-examples:world:XU:codelist:WasteCode`)  
+  The waste by its entry in Urvania's waste list, numbered after the European List of Waste: the film comes from the packaging of the parts and materials the factory receives and from the wrapping of its own pallets, and no chapter for the factory's activity (metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the list's rule sends it to chapter 15: 15 01 02 plastic packaging (O191). The code is from Urvania's national waste list list: 150102 = Plastic packaging.
+- `GoodsItem/ContainingPackage/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. Loose film would fill the trailer long before its payload; pressed into bales of about 1.2 × 0.8 × 1.0 m and 425 kg, two layers high, a load reaches the weight limit first (D42). The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `GoodsItem/ContainingPackage/PackingMaterial` = **Steel baling wire**  
+  What holds a bale together.
+- `ShipmentStage/ID` = **1**  
+  The one road leg, across Ferrano.
+- `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `ShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **395** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: tractor unit 07 with curtain-side trailer; the fleet of Trasvia Haulage (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 395 = Truck, with trailer.
+- `ShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 KT** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
+  The registration plate of the truck; the fleet of Trasvia Haulage (world/parties.json). The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
+- `ShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **UR 4160 TR** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
+  The trailer's own plate. The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
+- `ShipmentStage/TransportMeans/OwnerParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/TransportMeans/OwnerParty/PartyName/Name` = **Trasvia Haulage**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **LOADINGLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The length of the loading floor. The code is from the Trade Accord's dimension attribute list: LOADINGLENGTH = Loading length. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
+  Room for 33 pallets.
+- `ShipmentStage/DriverPerson/ID` = **XU-DL-0417722**  
+  The number of the driving licence.
+- `ShipmentStage/DriverPerson/FirstName` = **Ilario**  
+  The driver.
+- `ShipmentStage/DriverPerson/FamilyName` = **Bencetti**  
+  The family name.
+- `Delivery/ActualDeliveryDate` = **2026-04-02**  
+  The load arrived at the recovery plant.
+- `Delivery/ActualDeliveryTime` = **10:05:00**  
+  Trasvia's truck at the weighbridge.
+- `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Delivery/DeliveryLocation/Name` = **Rinova Recovery plant, Ferrano**  
+  Where the waste was delivered.
+- `Delivery/DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-04-02**  
+  Loaded at the factory the same morning.
+- `Delivery/Despatch/ActualDespatchTime` = **09:35:00**  
+  The truck left the factory; the two sites are a few kilometres apart in Ferrano.
+- `Delivery/Despatch/DespatchLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Delivery/Despatch/DespatchLocation/Name` = **Valdara Industries works, Ferrano**  
+  Where the bales were loaded.
+- `Delivery/Despatch/DespatchLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Waste Notification Document Reference
 
 Inside `WasteNotificationDocumentReference`:
 
 - `ID` = **VI-DOC-26-0204**  
-  The notification the movement is made under.
+  The notification of the stream the load belongs to.
+- `IssueDate` = **2026-03-23**  
+  Its date.
 
 ### Weight Statement Document Reference
 
 Inside `WeightStatementDocumentReference`:
 
-- `ID` = **RR-WB-26-0412**  
-  The weighbridge ticket of the recovery plant (not shown).
+- `ID` = **RR-WS-26-0210**  
+  The weighbridge ticket of the load, whose net weight this report states.
+- `IssueDate` = **2026-04-02**  
+  Its date.
 
 ### Document Reference
 
 Inside `DocumentReference`:
 
+- `ID` = **XU-ENV-WS-2026-04417**  
+  The waste-stream number the environment agency gave the notified stream.
+- `IssueDate` = **2026-03-25**  
+  The day of the agency's acknowledgement.
+- `DocumentType` = **Acknowledgement of the waste-stream notification**  
+  The agency's acknowledgement, whose number each report of the stream quotes; a domestic stream of non-hazardous waste for recovery needs no consent (D42).
+- `IssuerParty/PartyIdentification/ID` = **xu_p3wz** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `IssuerParty/PartyName/Name` = **Environment Agency of Urvania**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **RR-REC-26-0412**  
   The certificate of recovery to follow.
 - `DocumentType` = **Certificate of recovery**  
@@ -373,7 +432,7 @@ Inside `DocumentDistribution`:
   <cbc:ID>RR-DOC-26-0207</cbc:ID>
   <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>12:34:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:45:00-01:00</cbc:IssueTime>
   <cbc:WasteMovementTypeCode listID="urn:ubl-examples:world:codelist:WasteOperationCategoryCode">RECOVERY</cbc:WasteMovementTypeCode>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:ConsignmentQuantity unitCode="EA">12</cbc:ConsignmentQuantity>
@@ -447,22 +506,21 @@ Inside `DocumentDistribution`:
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_k4r7</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_p3wz</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Customs Administration of Urvania</cbc:Name>
+      <cbc:Name>Environment Agency of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4180202968066555</cbc:ID>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">POSTAL</cbc:AddressTypeCode>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160204417730582</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Zalsul Han Trurdrek</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Strada del Confine</cbc:StreetName>
-      <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Menbaz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Valico Euridice</cbc:CityName>
-      <cbc:PostalZone>4530</cbc:PostalZone>
+      <cbc:StreetName languageID="qau">Bek Stuzman Drarban</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via delle Acque</cbc:StreetName>
+      <cbc:BuildingNumber>8</cbc:BuildingNumber>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+      <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
@@ -471,17 +529,16 @@ Inside `DocumentDistribution`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Border office</cbc:Name>
-      <cbc:JobTitle>Customs officer</cbc:JobTitle>
-      <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 1 041 850 3855</cbc:Telephone>
-      <cbc:Telefax>+999 1 041 545 1432</cbc:Telefax>
-      <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
+      <cbc:Name>Waste reporting office</cbc:Name>
+      <cbc:JobTitle>Waste reporting officer</cbc:JobTitle>
+      <cbc:Department>Waste and resources</cbc:Department>
+      <cbc:Telephone>+999 1 041 732 5019</cbc:Telephone>
+      <cbc:ElectronicMail>waste@environment-xu.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–16:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_k4r7</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_p3wz</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:NotifierParty>
@@ -524,14 +581,6 @@ Inside `DocumentDistribution`:
       </cac:OtherCommunication>
     </cac:Contact>
   </cac:NotifierParty>
-  <cac:DisposalFacilityParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Rinova Recovery</cbc:Name>
-    </cac:PartyName>
-  </cac:DisposalFacilityParty>
   <cac:RecoveryFacilityParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
@@ -549,10 +598,11 @@ Inside `DocumentDistribution`:
     </cac:PartyName>
   </cac:WasteProducerParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0205</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">38200</cbc:GrossWeightMeasure>
+    <cbc:ID>VI-SH-26-0208</cbc:ID>
+    <cbc:NetWeightMeasure unitCode="KGM">22900</cbc:NetWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0206</cbc:ID>
+      <cbc:ID>VI-CS-26-0209</cbc:ID>
+      <cbc:TotalPackagesQuantity>54</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -586,31 +636,112 @@ Inside `DocumentDistribution`:
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
         <cac:PartyAuthorization>
-          <cbc:Purpose>International road haulage</cbc:Purpose>
+          <cbc:Purpose>Transport of non-hazardous waste by road</cbc:Purpose>
           <cac:ValidityPeriod>
-            <cbc:EndDate>2030-06-30</cbc:EndDate>
+            <cbc:EndDate>2028-10-31</cbc:EndDate>
           </cac:ValidityPeriod>
           <cac:Certificate>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
-            <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
-            <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
-            <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-carrier">XU-ENV-T-2023-0187</cbc:ID>
+            <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">WASTECARRIER</cbc:CertificateTypeCode>
+            <cbc:CertificateType languageID="qau">Drunvir sundraz dradrek</cbc:CertificateType>
+            <cbc:CertificateType languageID="en-XU">Waste carrier registration</cbc:CertificateType>
           </cac:Certificate>
         </cac:PartyAuthorization>
       </cac:CarrierParty>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Description>Mixed polyethylene production waste, sorted, in big bags</cbc:Description>
+      <cbc:Description>Used polyethylene stretch film and film offcuts, baled</cbc:Description>
       <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cac:Item>
+        <cbc:Description>Used polyethylene stretch film and film offcuts, baled</cbc:Description>
+        <cac:CommodityClassification>
+          <cbc:ItemClassificationCode listID="urn:ubl-examples:world:XU:codelist:WasteCode">150102</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel baling wire</cbc:PackingMaterial>
+      </cac:ContainingPackage>
     </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 KT</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 TR</cbc:TrailerLicensePlateID>
+        </cac:RoadTransport>
+        <cac:OwnerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+        </cac:OwnerParty>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:TransportMeans>
+      <cac:DriverPerson>
+        <cbc:ID>XU-DL-0417722</cbc:ID>
+        <cbc:FirstName>Ilario</cbc:FirstName>
+        <cbc:FamilyName>Bencetti</cbc:FamilyName>
+      </cac:DriverPerson>
+    </cac:ShipmentStage>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-04-02</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryTime>10:05:00</cbc:ActualDeliveryTime>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Rinova Recovery plant, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:DeliveryLocation>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-04-02</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchTime>09:35:00</cbc:ActualDespatchTime>
+        <cac:DespatchLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DespatchLocation>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:WasteNotificationDocumentReference>
     <cbc:ID>VI-DOC-26-0204</cbc:ID>
+    <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   </cac:WasteNotificationDocumentReference>
   <cac:WeightStatementDocumentReference>
-    <cbc:ID>RR-WB-26-0412</cbc:ID>
+    <cbc:ID>RR-WS-26-0210</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   </cac:WeightStatementDocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>XU-ENV-WS-2026-04417</cbc:ID>
+    <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+    <cbc:DocumentType>Acknowledgement of the waste-stream notification</cbc:DocumentType>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_p3wz</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Environment Agency of Urvania</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+  </cac:DocumentReference>
   <cac:DocumentReference>
     <cbc:ID>RR-REC-26-0412</cbc:ID>
     <cbc:DocumentType>Certificate of recovery</cbc:DocumentType>
