@@ -134,7 +134,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/Description` = **Lumeport airport**  
   Where the party actually operates, apart from its postal address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/InformationURI` = **https://www.lumeport-cargo.example**  
-  Where to find more about the place.
+  A page about the place itself: the port's or the airport's own site, with its access and services.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **30** (unitCode `DD`)  

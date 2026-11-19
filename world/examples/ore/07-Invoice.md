@@ -103,8 +103,6 @@ Inside `AccountingSupplierParty`:
   Where the party actually operates, apart from its postal address.
 - `Party/PhysicalLocation/Conditions` = **Unpaved access road; heavy vehicles only.**  
   What a visitor must know about getting there.
-- `Party/PhysicalLocation/InformationURI` = **https://www.serravona.example**  
-  Where to find more about the place.
 - `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **29** (unitCode `DD`)  
@@ -514,7 +512,6 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
         <cbc:Description>The mine and its rail siding</cbc:Description>
         <cbc:Conditions>Unpaved access road; heavy vehicles only.</cbc:Conditions>
-        <cbc:InformationURI>https://www.serravona.example</cbc:InformationURI>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">29</cbc:LatitudeDegreesMeasure>

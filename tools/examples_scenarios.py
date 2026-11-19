@@ -9077,10 +9077,6 @@ FACTORY_GAS = {"meter": "FG-G-20417", "m3": Decimal("1350"), "gauge_bar": Decima
                "factor": Decimal("4.9477"), "cv": Decimal("9.163"), "kwh": 61200}
 ENERGY = kit.Flow("energy", "2026-04-01", [{"item": "natural-gas", "ordered": GAS_TO_POWER + GAS_TO_RETAIL,
                                             "why": "March's gas through the border station."}])
-TO_LUME = {"SourceCurrencyCode": V("XUF", "The invoice's currency, ferra."),
-           "TargetCurrencyCode": V("XBL", "The reminder's currency, lume."),
-           "CalculationRate": V("0.01", "100 ferra = 1 lume, the reference rate."),
-           "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume.")}
 
 
 PLATFORM = next(pf for pf in WORLD["platforms"] if pf["party"] == "42-xb")
@@ -9104,6 +9100,22 @@ def pipeline_stage(why):
             "TransportModeCode": V("7", "UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline.",
                                    listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
             "TransportMeans": {"TransportMeansTypeCode": V(kit.fleet("42-xb", "KG-P1")["type"], why)}}
+
+
+def network_gas_total(doc):
+    """What the parent network invoice charges for this consumption: its gas line, the kWh at the network tariff,
+    with value added tax (energy/01#F1)."""
+    it = ITEM["network-gas"]
+    net = money(FACTORY_GAS["kwh"] * Decimal(str(it["price"]["amount"])), "XUF")
+    rate_ = Decimal(str(kit.tax_rule(doc["from"], doc["to"], "network-gas")[1]))
+    tax = money(net * rate_ / 100, "XUF")
+    return {"LineExtensionAmount": amount(net, "XUF", f"{FACTORY_GAS['kwh']} kWh at the gas network tariff of "
+                                                      f"{it['price']['amount']} ferra: line 3 of the network "
+                                                      "invoice."),
+            "TaxExclusiveAmount": amount(net, "XUF", "Without the value added tax."),
+            "TaxInclusiveAmount": amount(net + tax, "XUF", f"With {rate_.normalize():f} % value added tax."),
+            "PayableAmount": amount(net + tax, "XUF", "What the network invoice charges the retail company for this "
+                                                      "consumption.")}
 
 
 def energy(n, doc):
@@ -9170,13 +9182,9 @@ def energy(n, doc):
                                                  f"of March) = {g['kwh']} kWh.", "The conversion."),
                                 "ConsumptionEnergyQuantity": qty(g["kwh"], "KWH", "The energy, which the retail "
                                                                                   "company bills.")}},
-                        "LegalMonetaryTotal": {"PayableAmount": amount(0, "XUF", "Nothing to pay on it: the "
-                                                                                 "statement carries no amounts, the "
-                                                                                 "retail company prices the energy. "
-                                                                                 "The element is required, so it "
-                                                                                 "is 0.")}}}}
+                        "LegalMonetaryTotal": network_gas_total(doc)}}}
     if d == "Invoice" and doc["from"] == "44-xu":
-        return kit.invoice(f, n, doc, 2, "The month's network charges.", {},
+        out = kit.invoice(f, n, doc, 2, "The month's network charges.", {},
                            [{"item": "network-electricity", "qty": 412800, "invoice_why": "The factory's electricity "
                                                                                           "connection, March."},
                             {"item": "network-electricity", "qty": 18600, "invoice_why": "The warehouse's electricity "
@@ -9184,6 +9192,23 @@ def energy(n, doc):
                             {"item": "network-gas", "qty": FACTORY_GAS["kwh"], "invoice_why": "The factory's gas "
                                                                                               "connection, March."}],
                            key="network-invoice", extra=MARCH)
+        if not isinstance(out["InvoiceLine"], list):
+            out["InvoiceLine"] = [out["InvoiceLine"]]
+        # each line names the connection it bills, so the retail company can check it against its own metering
+        # (energy/02#F1); the gas line refers to the metering statement behind it (energy/02#F2)
+        for ln, (pid, desc) in zip(out["InvoiceLine"], [
+                (POINTS[("33-xu", "5-xu")]["id"], POINTS[("33-xu", "5-xu")]["desc"]),
+                (POINTS[("33-xu", "8-xu")]["id"], POINTS[("33-xu", "8-xu")]["desc"]),
+                ("FG-CP-4120-G1", "Valdara Industries, gas connection of the coating line")]):
+            ln["Delivery"] = {"DeliveryLocation": {"ID": V(pid, "The consumption point whose network use the line "
+                                                                "bills."),
+                                                   "Description": V(desc, "The connection in words.")}}
+        out["InvoiceLine"][2]["DocumentReference"] = {
+            "ID": V(f.numbers["metering"], "The grid operator's metering statement with the readings and the volume "
+                                           "conversion behind the line's kWh."),
+            "IssueDate": V(f.date(1), "Its issue date."),
+            "DocumentTypeCode": V("UtilityStatement", "A utility statement.")}
+        return out
     if d == "Invoice" and doc["from"] == "43-xu":
         return kit.invoice(f, n, doc, 2, "The month's electricity.", {},
                            [{"item": "power-wholesale", "qty": POWER_MWH, "invoice_why": "Fed into the grid for the "
@@ -9218,29 +9243,34 @@ def energy(n, doc):
         ln["Price"].pop("PricingExchangeRate", None)   # the contract price is in ferra: nothing converted (energy/06#F1)
         return out
     if d == "Reminder":
+        # the debt is in ferra by contract, so the reminder is too: the invoice and the surcharge in ferra, as the
+        # payer pays them (energy/08#F1); Bayvarra's statutory surcharge applies, the seller's rule (D22, D44)
         inv = f.numbers["gas-invoice-amount"]
         due = f.date(32)
-        lume = money(inv * Decimal("0.01"), "XBL")
         pct = Decimal(WORLD["countries"]["XB"]["payment"]["penalty_surcharge"]["percent"])
-        sur = money(lume * pct / 100, "XBL")
+        sur = money(inv * pct / 100, "XUF")
         f.numbers["surcharge"] = sur
+        late = {"StartDate": V(f.date(33), "Overdue from the day after the due date"),
+                "EndDate": V(f.date(63), "to the reminder: one month.")}
+        invoice_ref = {"InvoiceDocumentReference": {
+            "ID": V(f.numbers["gas-invoice"], "The invoice not paid."),
+            "IssueDate": V(f.numbers["gas-invoice-date"], "Its issue date.")}}
         return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
                 "IssueDate": V(f.date(63), "A month after the due date."),
                 "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
                 "Note": V("The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month "
                           "applies.", "What it says."),
-                "DocumentCurrencyCode": kit.currency_line("XBL", "the creditor's own currency"),
-                "ReminderPeriod": {"StartDate": V(f.date(33), "Overdue from the day after the due date"),
-                                   "EndDate": V(f.date(63), "to the reminder.")},
+                "DocumentCurrencyCode": kit.currency_line("XUF", "the currency of the debt: the supply contract "
+                                                                 "prices the gas in ferra, the buyer's currency"),
+                "ReminderPeriod": late,
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account("42-xb", "The gas producer's account.")},
-                "PaymentTerms": {"Note": V("Please pay the invoice in ferra and the surcharge with it.", "What is "
-                                                                                                        "asked."),
+                "PaymentTerms": {"Note": V("Please pay the invoice and the surcharge together.", "What is asked."),
                                  "PaymentDueDate": V(f.date(70), "A week after the reminder.")},
-                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax on a surcharge for late payment."),
-                             "TaxSubtotal": {"TaxableAmount": amount(sur, "XBL", "The surcharge."),
-                                             "TaxAmount": amount(0, "XBL", "No tax: the surcharge is compensation, "
+                "TaxTotal": {"TaxAmount": amount(0, "XUF", "No tax on a surcharge for late payment."),
+                             "TaxSubtotal": {"TaxableAmount": amount(sur, "XUF", "The surcharge."),
+                                             "TaxAmount": amount(0, "XUF", "No tax: the surcharge is compensation, "
                                                                            "not a supply (energy/08#F7)."),
                                              "TaxCategory": {"ID": V("O", "Outside the scope of the state sales "
                                                                           "tax: compensation for late payment."),
@@ -9248,35 +9278,31 @@ def energy(n, doc):
                                                                                      "Why no tax."),
                                                              "TaxScheme": {"ID": V("STT", "UN/EDIFACT 5153 code of "
                                                                                          "the state sales tax.")}}}},
-                "LegalMonetaryTotal": {"LineExtensionAmount": amount(lume + sur, "XBL", "The invoice in lume and "
-                                                                                        "the surcharge."),
-                                       "PayableAmount": amount(lume + sur, "XBL", "Now due, in lume at the rate.")},
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(inv + sur, "XUF", "The invoice and the "
+                                                                                       "surcharge."),
+                                       "PayableAmount": amount(inv + sur, "XUF", "Now due, in ferra.")},
                 "ReminderLine": [
                     {"ID": V("1", "The unpaid invoice."), "UUID": line_uuid(f, "reminder", 1),
-                     "Note": V(f"Invoice of {inv} ferra, due {due}.", "What it is."),
-                     "DebitLineAmount": amount(lume, "XBL", f"{inv} ferra in lume."),
+                     "Note": V(f"Invoice due {due}.", "What it is."),
+                     "DebitLineAmount": amount(inv, "XUF", "The invoice's amount payable."),
                      "PaymentPurposeCode": V("SUPP", "ISO 20022 purpose code SUPP: payment to a supplier."),
                      "ReminderPeriod": {"StartDate": V(f.date(33), "Overdue since.")},
-                     "ExchangeRate": {**TO_LUME, "Date": V(f.date(63), "The rate of the reminder's date.")},
-                     "BillingReference": {"InvoiceDocumentReference": {
-                         "ID": V(f.numbers["gas-invoice"], "The invoice not paid."),
-                         "IssueDate": V(f.numbers["gas-invoice-date"], "Its issue date.")}}},
+                     "BillingReference": invoice_ref},
                     {"ID": V("2", "The surcharge."), "UUID": line_uuid(f, "reminder", 2),
                      "Note": V("One month late at 1.5 %.", "What it is."),
-                     "DebitLineAmount": amount(sur, "XBL", "1.5 % of the invoice in lume."),
+                     "DebitLineAmount": amount(sur, "XUF", f"{pct} % of the invoice's {inv} ferra."),
                      "PenaltySurchargePercent": V(str(pct), "Bayvarra's surcharge per month late."),
-                     "Amount": amount(sur, "XBL", "The surcharge.")}]}
+                     "ReminderPeriod": late,
+                     "BillingReference": invoice_ref}]}   # the line's base: the invoice and the month (energy/08#F8)
     if d == "RemittanceAdvice":
         inv, sur = f.numbers["gas-invoice-amount"], f.numbers["surcharge"]
-        sur_xuf = money(sur * 100, "XUF")
         return {"ID": V(f.number("remittance", doc["from"], "RemittanceAdvice"), "The power station's number."),
                 "IssueDate": V(f.date(66), "Paid three days after the reminder."),
                 "Note": V("The March gas invoice, with the surcharge of the reminder.", "What it settles."),
                 "DocumentCurrencyCode": kit.currency_line("XUF", "the currency of the invoice paid"),
-                "TotalDebitAmount": amount(inv + sur_xuf, "XUF", "The invoice and the surcharge."),
+                "TotalDebitAmount": amount(inv + sur, "XUF", "The invoice and the surcharge."),
                 "TotalCreditAmount": amount(0, "XUF", "No credits."),
-                "TotalPaymentAmount": amount(inv + sur_xuf, "XUF", "Transferred in ferra over the trade accord's "
-                                                                   "link."),
+                "TotalPaymentAmount": amount(inv + sur, "XUF", "Transferred in ferra over the trade accord's link."),
                 "LineCountNumeric": V("2", "The invoice and the surcharge."),
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PaymentID": V(kit.rf_reference(f.numbers["gas-invoice"]), "The invoice's creditor "
@@ -9287,13 +9313,8 @@ def energy(n, doc):
                     {"ID": V("1", "The invoice."), "DebitLineAmount": amount(inv, "XUF", "Its amount."),
                      "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["gas-invoice"],
                                                                                "The invoice.")}}},
-                    {"ID": V("2", "The surcharge."), "DebitLineAmount": amount(sur_xuf, "XUF", f"{sur} lume in "
-                                                                                               "ferra."),
-                     "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The reminder's currency."),
-                                      "TargetCurrencyCode": V("XUF", "The payment's."),
-                                      "CalculationRate": V("100", "1 lume = 100 ferra."),
-                                      "MathematicOperatorCode": V("Multiply", "Lume times the rate."),
-                                      "Date": V(f.date(66), "The payment date.")},
+                    {"ID": V("2", "The surcharge."), "DebitLineAmount": amount(sur, "XUF", "The surcharge of the "
+                                                                                          "reminder."),
                      "BillingReference": {"ReminderDocumentReference": {"ID": V(f.numbers["reminder"],
                                                                                 "The reminder.")}}}]}
     raise SystemExit(f"energy scenario: no document {n} {doc['doc']}")

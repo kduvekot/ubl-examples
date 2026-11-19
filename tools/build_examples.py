@@ -675,8 +675,9 @@ def location(pid):
     out["Description"] = V(text, why)
     if site.get("conditions"):
         out["Conditions"] = V(site["conditions"], "What a visitor must know about getting there.")
-    if p["identity"].get("website"):
-        out["InformationURI"] = V(p["identity"]["website"], "Where to find more about the place.")
+    if site.get("information_uri"):     # a page about the place itself, not the company's home page (energy/04#F9)
+        out["InformationURI"] = V(site["information_uri"], "A page about the place itself: the port's or the "
+                                                           "airport's own site, with its access and services.")
     out["LocationCoordinate"] = coordinate(p["at"])
     if site.get("altitude") == "map":           # the level the 3D map gives the party's ground (O152 stage 2 B)
         import world_map

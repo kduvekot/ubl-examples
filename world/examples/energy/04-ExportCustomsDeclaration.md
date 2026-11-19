@@ -71,8 +71,6 @@ Inside `ExporterParty`:
   The country's name, for readers of the address.
 - `PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.**  
   Where the party actually operates, apart from its postal address. The distance is the length of the map's route gas-field, rounded to 10 km.
-- `PhysicalLocation/InformationURI` = **https://www.kelpstone.example**  
-  Where to find more about the place.
 - `PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
@@ -300,7 +298,6 @@ Inside `CustomsDeclaration`:
     </cac:PostalAddress>
     <cac:PhysicalLocation>
       <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.</cbc:Description>
-      <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
       <cac:LocationCoordinate>
         <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
         <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>

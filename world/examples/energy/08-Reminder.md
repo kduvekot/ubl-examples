@@ -2,7 +2,7 @@
 
 *Example 8 of the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)" · [Reminder in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA)*
 
-The power station has not paid by the due date. The gas producer reminds it in lume, its own currency: the reminder shows the ferra invoice at the exchange rate and adds Bayvarra's surcharge for the month late.
+The power station has not paid by the due date. The gas producer reminds it in ferra, the currency of the debt under the supply contract, and adds Bayvarra's surcharge for the month late: the seller's statutory rule, as the contract says nothing on late payment.
 
 [The XML file](08-Reminder.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -32,8 +32,8 @@ The power station has not paid by the due date. The gas producer reminds it in l
   The first reminder.
 - `Note` = **The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month applies.**  
   What it says.
-- `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The lume, the creditor's own currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
+  The ferra, the currency of the debt: the supply contract prices the gas in ferra, the buyer's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 
 ### Reminder Period
 
@@ -42,7 +42,7 @@ Inside `ReminderPeriod`:
 - `StartDate` = **2026-05-04**  
   Overdue from the day after the due date
 - `EndDate` = **2026-06-03**  
-  to the reminder.
+  to the reminder: one month.
 
 ### Accounting Supplier Party
 
@@ -86,8 +86,6 @@ Inside `AccountingSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.**  
   Where the party actually operates, apart from its postal address. The distance is the length of the map's route gas-field, rounded to 10 km.
-- `Party/PhysicalLocation/InformationURI` = **https://www.kelpstone.example**  
-  Where to find more about the place.
 - `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
@@ -263,7 +261,7 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Please pay the invoice in ferra and the surcharge with it.**  
+- `Note` = **Please pay the invoice and the surcharge together.**  
   What is asked.
 - `PaymentDueDate` = **2026-06-10**  
   A week after the reminder.
@@ -272,11 +270,11 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **0.00** (currencyID `XBL`)  
+- `TaxAmount` = **0** (currencyID `XUF`)  
   No tax on a surcharge for late payment.
-- `TaxSubtotal/TaxableAmount` = **19872.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **1987200** (currencyID `XUF`)  
   The surcharge.
-- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   No tax: the surcharge is compensation, not a supply (energy/08#F7).
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   Outside the scope of the state sales tax: compensation for late payment. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
@@ -289,10 +287,10 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **1344672.00** (currencyID `XBL`)  
-  The invoice in lume and the surcharge.
-- `PayableAmount` = **1344672.00** (currencyID `XBL`)  
-  Now due, in lume at the rate.
+- `LineExtensionAmount` = **134467200** (currencyID `XUF`)  
+  The invoice and the surcharge.
+- `PayableAmount` = **134467200** (currencyID `XUF`)  
+  Now due, in ferra.
 
 ### Reminder Line
 
@@ -300,12 +298,12 @@ Inside `ReminderLine`:
 
 - `ID` = **1**  
   The unpaid invoice.
-- `Note` = **Invoice of 132480000 ferra, due 2026-05-03.**  
+- `Note` = **Invoice due 2026-05-03.**  
   What it is.
 - `UUID` = **bd4ac5e5-9633-5639-a227-c92e47041205**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `DebitLineAmount` = **1324800.00** (currencyID `XBL`)  
-  132480000 ferra in lume.
+- `DebitLineAmount` = **132480000** (currencyID `XUF`)  
+  The invoice's amount payable.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
 - `ReminderPeriod/StartDate` = **2026-05-04**  
@@ -314,28 +312,24 @@ Inside `ReminderLine`:
   The invoice not paid.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-03**  
   Its issue date.
-- `ExchangeRate/SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The invoice's currency, ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `ExchangeRate/TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The reminder's currency, lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `ExchangeRate/CalculationRate` = **0.01**  
-  100 ferra = 1 lume, the reference rate.
-- `ExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `ExchangeRate/Date` = **2026-06-03**  
-  The rate of the reminder's date.
 - `ID` = **2**  
   The surcharge.
 - `Note` = **One month late at 1.5 %.**  
   What it is.
 - `UUID` = **f70f6d5a-0179-50e0-8ee0-dc958371518d**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `DebitLineAmount` = **19872.00** (currencyID `XBL`)  
-  1.5 % of the invoice in lume.
+- `DebitLineAmount` = **1987200** (currencyID `XUF`)  
+  1.5 % of the invoice's 132480000 ferra.
 - `PenaltySurchargePercent` = **1.5**  
   Bayvarra's surcharge per month late.
-- `Amount` = **19872.00** (currencyID `XBL`)  
-  The surcharge.
+- `ReminderPeriod/StartDate` = **2026-05-04**  
+  Overdue from the day after the due date
+- `ReminderPeriod/EndDate` = **2026-06-03**  
+  to the reminder: one month.
+- `BillingReference/InvoiceDocumentReference/ID` = **KG-INV-26-0157**  
+  The invoice not paid.
+- `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-03**  
+  Its issue date.
 
 ## The document
 
@@ -353,7 +347,7 @@ Inside `ReminderLine`:
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month applies.</cbc:Note>
-  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ReminderPeriod>
     <cbc:StartDate>2026-05-04</cbc:StartDate>
     <cbc:EndDate>2026-06-03</cbc:EndDate>
@@ -392,7 +386,6 @@ Inside `ReminderLine`:
       </cac:PostalAddress>
       <cac:PhysicalLocation>
         <cbc:Description>Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.</cbc:Description>
-        <cbc:InformationURI>https://www.kelpstone.example</cbc:InformationURI>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>
@@ -541,14 +534,14 @@ Inside `ReminderLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>Please pay the invoice in ferra and the surcharge with it.</cbc:Note>
+    <cbc:Note>Please pay the invoice and the surcharge together.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-10</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">19872.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">1987200</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
@@ -559,14 +552,14 @@ Inside `ReminderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">1344672.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">1344672.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">134467200</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XUF">134467200</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Invoice of 132480000 ferra, due 2026-05-03.</cbc:Note>
+    <cbc:Note>Invoice due 2026-05-03.</cbc:Note>
     <cbc:UUID>bd4ac5e5-9633-5639-a227-c92e47041205</cbc:UUID>
-    <cbc:DebitLineAmount currencyID="XBL">1324800.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">132480000</cbc:DebitLineAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cac:ReminderPeriod>
       <cbc:StartDate>2026-05-04</cbc:StartDate>
@@ -577,21 +570,23 @@ Inside `ReminderLine`:
         <cbc:IssueDate>2026-04-03</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>0.01</cbc:CalculationRate>
-      <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-06-03</cbc:Date>
-    </cac:ExchangeRate>
   </cac:ReminderLine>
   <cac:ReminderLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>One month late at 1.5 %.</cbc:Note>
     <cbc:UUID>f70f6d5a-0179-50e0-8ee0-dc958371518d</cbc:UUID>
-    <cbc:DebitLineAmount currencyID="XBL">19872.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">1987200</cbc:DebitLineAmount>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:Amount currencyID="XBL">19872.00</cbc:Amount>
+    <cac:ReminderPeriod>
+      <cbc:StartDate>2026-05-04</cbc:StartDate>
+      <cbc:EndDate>2026-06-03</cbc:EndDate>
+    </cac:ReminderPeriod>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>KG-INV-26-0157</cbc:ID>
+        <cbc:IssueDate>2026-04-03</cbc:IssueDate>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
   </cac:ReminderLine>
 </Reminder>
 ```

@@ -127,7 +127,7 @@ Inside `AuthorityParty`:
 - `PhysicalLocation/Description` = **Port of Lumeport**  
   Where the party actually operates, apart from its postal address.
 - `PhysicalLocation/InformationURI` = **https://www.port-lumeport.example**  
-  Where to find more about the place.
+  A page about the place itself: the port's or the airport's own site, with its access and services.
 - `PhysicalLocation/SubsidiaryLocation/Name` = **Container quay**  
   A part of the port with its own location: where containers are handled.
 - `PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  

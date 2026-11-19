@@ -199,12 +199,5 @@
         <cbc:ID>KG-DOC-26-0159</cbc:ID>
       </cac:ReminderDocumentReference>
     </cac:BillingReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>100</cbc:CalculationRate>
-      <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-06-06</cbc:Date>
-    </cac:ExchangeRate>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

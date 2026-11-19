@@ -265,8 +265,14 @@ Inside `SubscriberConsumption`:
   The conversion.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity` = **61200** (unitCode `KWH`)  
   The energy, which the retail company bills.
-- `Consumption/LegalMonetaryTotal/PayableAmount` = **0** (currencyID `XUF`)  
-  Nothing to pay on it: the statement carries no amounts, the retail company prices the energy. The element is required, so it is 0.
+- `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **116280** (currencyID `XUF`)  
+  61200 kWh at the gas network tariff of 1.9 ferra: line 3 of the network invoice.
+- `Consumption/LegalMonetaryTotal/TaxExclusiveAmount` = **116280** (currencyID `XUF`)  
+  Without the value added tax.
+- `Consumption/LegalMonetaryTotal/TaxInclusiveAmount` = **139536** (currencyID `XUF`)  
+  With 20 % value added tax.
+- `Consumption/LegalMonetaryTotal/PayableAmount` = **139536** (currencyID `XUF`)  
+  What the network invoice charges the retail company for this consumption.
 
 ## The document
 
@@ -453,7 +459,10 @@ Inside `SubscriberConsumption`:
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
-        <cbc:PayableAmount currencyID="XUF">0</cbc:PayableAmount>
+        <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="XUF">116280</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="XUF">139536</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="XUF">139536</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
   </cac:SubscriberConsumption>
