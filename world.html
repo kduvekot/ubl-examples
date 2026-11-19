@@ -1204,7 +1204,7 @@ function drawBuilding(g, x, y, p) {
 const cv = document.getElementById("map"), ctx = cv.getContext("2d");
 const view = { s: 1, x: 0, y: 0 };
 const layers = { chain: true, transport: true, gov: true, fin: true, proc: true };
-let selected = null, dpr = 1;
+let selected = null, hovered = null, dpr = 1;
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function resize() { dpr = Math.min(2, window.devicePixelRatio || 1); const r = cv.getBoundingClientRect();
   cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); if (!view.fitted) fit(); }
@@ -1536,26 +1536,39 @@ function frame(t) {
         ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.fillRect(x - .5 * s, y - .5 * s, 2.5 * s, 1.5 * s);
         ctx.fillStyle = "#f0c419"; ctx.fillRect(x - s, y - 7 * s, 2 * s, 7 * s); ctx.fillStyle = "#2b2b2b"; ctx.fillRect(x - s, y - 7 * s, 2 * s, 1.6 * s); } } }
   if (!reduced) for (const v of VEHICLES) if (layers[v.layer]) drawVehicle(ctx, v, t);
-  // town and country names
+  // country names under everything else
   ctx.textAlign = "center";
-  if (view.s > .12) for (const tw of TOWNS) { const [x, y] = toScreen(...tileWorld(...tw.label));
-    ctx.font = `600 ${Math.round(11 + 3 * view.s)}px Inter, system-ui, sans-serif`; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.fillStyle = "#fff6d8";
-    ctx.strokeText(tw.name, x, y); ctx.fillText(tw.name, x, y); }
   for (const [code, pos] of Object.entries(LABEL_AT)) { const [x, y] = toScreen(...tileWorld(...pos));
     ctx.font = `700 ${Math.round(14 + 5 * view.s)}px Inter, system-ui, sans-serif`; ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.strokeStyle = "rgba(0,0,0,.55)"; ctx.lineWidth = 3;
     const label = `${COUNTRIES[code].name} · ${code}`; ctx.strokeText(label, x, y); ctx.fillText(label, x, y); }
+  // town names and party signs (owner, 2026-11-19, MO006): the town names are placed first and kept free of signs,
+  // in every direction; in a town a party shows only its number, on a pin above its building, and its name when it
+  // is pointed at or chosen, so the town stays visible; outside the towns a party shows its name from the close
+  // level on. Signs are placed front to back so the nearest win; those that would overlap become dots, drawn under
+  // the signs.
+  const placed = [], names = [], fs = Math.round(11 + 3 * view.s), townFont = `600 ${fs}px Inter, system-ui, sans-serif`;
+  if (view.s > .12) for (const tw of TOWNS) { const [x, y] = toScreen(...tileWorld(...tw.label)); ctx.font = townFont;
+    const w = ctx.measureText(tw.name).width; placed.push([x - w / 2 - 3, y - fs, x + w / 2 + 3, y + 4]); names.push([tw.name, x, y]); }
   ctx.textAlign = "left";
-  // party signs, back to front
   const order = P.map((p, k) => ({ p, k })).sort((a, b) => (a.p.at[0] + a.p.at[1]) - (b.p.at[0] + b.p.at[1]));
-  // place signs front to back so the nearest ones win; overlapping ones become dots
-  const placed = [], todo = [];
+  const todo = [];
   for (const { p } of order.slice().reverse()) { if (!layers[LAYER_OF[p.cat]] && p !== selected) continue;
-    const fg = footGeo(p, 0, 0), [x, y] = toScreen(fg.x, fg.y - 14 - p.h * 6);
-    p._sx = x; p._sy = y; const text = (view.s > .6 || p === selected) ? `#${p.n} ${p.name}` : `#${p.n}`;
-    const [w, h] = signBox(ctx, text, p === selected), rect = [x - w / 2 - 2, y - h - 2, x + w / 2 + 2, y + 2];
+    if (p._town == null) p._town = footprint(p).some(([i, j]) => tiles[i]?.[j]?.urban || TOWNS.some(tw => Math.hypot(i - tw.c[0], j - tw.c[1]) <= tw.r + 1.5));   // in or at a town
+    const fg = footGeo(p, 0, 0), [bx, by] = toScreen(fg.x, fg.y - 14 - p.h * 6), lift = p._town && view.s > .6 ? Math.round(10 + 6 * view.s) : 0, x = bx, y = by - lift;
+    p._sx = x; p._sy = y; p._ax = bx; p._ay = by; const named = p === selected || p === hovered || (view.s > .6 && !p._town);
+    const text = named ? `#${p.n} ${p.name}` : `#${p.n}`;
+    const [w, h] = signBox(ctx, text, p === selected), rect = [x - w / 2 - 2, y - h - 2, x + w / 2 + 2, y + 2]; p._rect = rect;
     const free = !placed.some(q => rect[0] < q[2] && rect[2] > q[0] && rect[1] < q[3] && rect[3] > q[1]);
-    if (free || p === selected) { placed.push(rect); todo.push([p, x, y, text, true]); } else todo.push([p, x, y, text, false]); }
-  for (const [p, x, y, text, full] of todo.reverse()) full ? sign(ctx, x, y, text, css(CAT[p.cat]), p === selected) : dot(ctx, x, y, css(CAT[p.cat]));
+    if (free || p === selected || p === hovered) { placed.push(rect); todo.push([p, x, y, text, true, bx, by]); } else todo.push([p, x, y, text, false]); }
+  todo.reverse();
+  for (const [p, x, y, , full] of todo) if (!full) dot(ctx, x, y, css(CAT[p.cat]));
+  for (const [p, x, y, text, full, bx, by] of todo) { if (!full) continue;
+    if (by !== y) { ctx.strokeStyle = "rgba(17,21,31,.8)"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x, by); ctx.lineTo(x, y); ctx.stroke(); }
+    if (p !== selected && p !== hovered) sign(ctx, x, y, text, css(CAT[p.cat]), false); }
+  ctx.textAlign = "center"; ctx.font = townFont; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.fillStyle = "#fff6d8";
+  for (const [name, x, y] of names) { ctx.strokeText(name, x, y); ctx.fillText(name, x, y); }
+  ctx.textAlign = "left";
+  if (hovered && hovered !== selected && hovered._sx != null) sign(ctx, hovered._sx, hovered._sy, `#${hovered.n} ${hovered.name}`, css(CAT[hovered.cat]), false);
   if (selected && selected._sx != null) sign(ctx, selected._sx, selected._sy, `#${selected.n} ${selected.name}`, css(CAT[selected.cat]), true);
   if (!reduced || pending) requestAnimationFrame(frame);
 }
@@ -1621,13 +1634,18 @@ window.addEventListener("keydown", e => { if (e.target.closest("input, textarea"
 cv.addEventListener("wheel", e => { e.preventDefault(); const r = cv.getBoundingClientRect(); zoomAt(e.deltaY < 0 ? 1.12 : .89, e.clientX - r.left, e.clientY - r.top); }, { passive: false });
 const pointers = new Map(); let moved = 0, pinch = 0;
 cv.addEventListener("pointerdown", e => { cv.setPointerCapture(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]); moved = 0; cv.classList.add("dragging"); });
+cv.addEventListener("pointermove", e => { if (pointers.size || e.pointerType === "touch") return;   // a sign's name when pointed at
+  const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+  const h = P.find(p => p._sx != null && p._rect && x >= p._rect[0] && x <= p._rect[2] && y >= p._rect[1] && y <= p._rect[3]) || null;
+  if (h !== hovered) { hovered = h; redraw(); } });
 cv.addEventListener("pointermove", e => { if (!pointers.has(e.pointerId)) return; const [px, py] = pointers.get(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]);
   if (pointers.size === 2) { const [a, b] = [...pointers.values()]; const d = Math.hypot(a[0] - b[0], a[1] - b[1]); const r = cv.getBoundingClientRect();
     if (pinch) zoomAt(d / pinch, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top); pinch = d; moved += 10; return; }
   view.x += e.clientX - px; view.y += e.clientY - py; moved += Math.abs(e.clientX - px) + Math.abs(e.clientY - py); redraw(); });
 const up = e => { pointers.delete(e.pointerId); if (pointers.size < 2) pinch = 0; cv.classList.remove("dragging");
   if (moved < 5 && e.type === "pointerup") { const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-    let best = null, bd = 30; for (const p of P) { if (p._sx == null) continue; const d = Math.hypot(p._sx - x, p._sy - y + 6); if (d < bd) { bd = d; best = p; } }
+    let best = null, bd = 30; for (const p of P) { if (p._sx == null) continue; const d = Math.min(Math.hypot(p._sx - x, p._sy - y + 6), Math.hypot(p._ax - x, p._ay - y + 6));
+      if (d < bd) { bd = d; best = p; } }
     select(best, false); } };
 cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
 
