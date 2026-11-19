@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Batteries for the island's telecom mast, by air (dangerous goods)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-The telecom company orders back-up power and safety equipment for its mast. Carriage paid to its site: the seller arranges the dangerous goods transport.
+The telecom company orders back-up power and safety equipment for its mast. Carriage paid to the mast site: the seller arranges the dangerous goods transport.
 
 [The XML file](01-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -153,9 +153,29 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **CPT** (schemeID `INCOTERMS`)  
-  Carriage paid to the telecom company's site: the seller arranges the dangerous goods transport. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryLocation/Description` = **Selanu Telecom, mast site**  
+  Carriage paid to the telecom company's mast site: the seller arranges the dangerous goods transport. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/Description` = **Selanu Telecom's mast site on Mast Hill**  
   Where the delivery terms place the handover of the goods.
+- `DeliveryLocation/Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `DeliveryLocation/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+- `DeliveryLocation/Address/StreetName` = **Kitata Vekase Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/StreetName` = **Mast Hill Road** (languageID `en-XL`)  
+  The street's name in English, the country's other official language; identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/BuildingNumber` = **58**  
+  Building number of the postal address. identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `DeliveryLocation/Address/Country/Name` = **Lisavu**  
+  The country's name, for readers of the address.
 
 ### Tax Total
 
@@ -237,7 +257,7 @@ Inside `OrderLine`:
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `LTR`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.**  
+- `LineItem/Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `LineItem/Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
@@ -359,7 +379,21 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:Description>Selanu Telecom, mast site</cbc:Description>
+      <cbc:Description>Selanu Telecom's mast site on Mast Hill</cbc:Description>
+      <cac:Address>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
+        <cbc:BuildingNumber>58</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:Address>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>
@@ -430,7 +464,7 @@ Inside `OrderLine`:
         <cbc:BaseQuantity unitCode="LTR">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.</cbc:Description>
+        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>

@@ -42,19 +42,19 @@
    <SimpleCodeList>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>PI851</SimpleValue>
+            <SimpleValue>PI855</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Packing instruction 851</SimpleValue>
+            <SimpleValue>Packing instruction 855</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Neldrek duzmaz 851</SimpleValue>
+            <SimpleValue>Neldrek duzmaz 855</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Palavo sipatusa 851</SimpleValue>
+            <SimpleValue>Palavo sipatusa 855</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Corrosive liquids of packing group II, in quantities passenger aircraft may carry.</SimpleValue>
+            <SimpleValue>Corrosive liquids of packing group II, on cargo aircraft only.</SimpleValue>
          </Value>
       </Row>
       <Row>

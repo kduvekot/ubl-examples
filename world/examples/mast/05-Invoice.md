@@ -211,10 +211,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-06-04**  
-  The day the goods billed were delivered.
-- `DeliveryLocation/Name` = **Selanu Telecom mast site**  
+- `DeliveryLocation/Name` = **Selanu Telecom's mast site on Mast Hill**  
   Where the goods billed are delivered.
+- `Despatch/ActualDespatchDate` = **2026-06-04**  
+  The invoice is issued on despatch: the day the goods left.
 
 ### Payment Means
 
@@ -412,7 +412,7 @@ Inside `InvoiceLine`:
   5 × 9.5, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **3**  
   The order line this invoice line bills.
-- `Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.**  
+- `Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
@@ -602,10 +602,12 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-06-04</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
-      <cbc:Name>Selanu Telecom mast site</cbc:Name>
+      <cbc:Name>Selanu Telecom's mast site on Mast Hill</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-06-04</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
@@ -757,7 +759,7 @@ Inside `InvoiceLine`:
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.</cbc:Description>
+      <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
       <cbc:Name>Coating stripper for electronics</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

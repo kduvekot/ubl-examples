@@ -24,8 +24,8 @@ The engineering firm announces the goods to the telecom company.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-04**  
   Sent when the goods leave for the airport.
-- `IssueTime` = **13:20:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **09:40:00-01:00**  
+  When the forwarder's truck left Saltmere's works for the airport, about an hour away; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the air waybill.**  
@@ -168,7 +168,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **SE-CS-26-0716**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **334.25** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -208,9 +208,9 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; identity of Kelaro Air Cargo (world/parties.json).
-- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-06-04**  
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-06-05**  
   Expected after the usual transit by air.
-- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-06-04**  
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-06-05**  
   The same day.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-06-04**  
   The goods left on the day of this advice.
@@ -303,7 +303,7 @@ Inside `DespatchLine`:
   What was despatched.
 - `OrderLineReference/LineID` = **3**  
   The order line this line fulfils.
-- `Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.**  
+- `Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
@@ -354,7 +354,7 @@ Inside `DespatchLine`:
   <cbc:ID>SE-DA-26-0718</cbc:ID>
   <cbc:UUID>7619027f-bad8-5009-935f-978a56d56a14</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
-  <cbc:IssueTime>13:20:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:40:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -465,7 +465,7 @@ Inside `DespatchLine`:
     <cbc:ID>SE-SH-26-0715</cbc:ID>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">334.25</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -500,8 +500,8 @@ Inside `DespatchLine`:
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-06-04</cbc:StartDate>
-        <cbc:EndDate>2026-06-04</cbc:EndDate>
+        <cbc:StartDate>2026-06-05</cbc:StartDate>
+        <cbc:EndDate>2026-06-05</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-06-04</cbc:ActualDespatchDate>
@@ -576,7 +576,7 @@ Inside `DespatchLine`:
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.</cbc:Description>
+      <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
       <cbc:Name>Coating stripper for electronics</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

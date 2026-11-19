@@ -1121,6 +1121,8 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
                         "Consignment": {"ID": V(flow.numbers.get("consignment") or
                                                 flow.number("consignment", doc["from"], "Consignment"),
                                                 "The consignment of the transport booking.")}}}
+    if leg["mode"] == "air":        # an air waybill has one number, the airline's (mast/03#F9, air/04#F17)
+        out.pop("CarrierAssignedID")
     if "tep" in flow.numbers:
         out["DocumentReference"] = {"ID": V(flow.numbers["tep"], "The transport plan under which the carriage is "
                                                                  "performed.")}

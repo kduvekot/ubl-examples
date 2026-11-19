@@ -1688,12 +1688,12 @@
    "hs": "381400",
    "cpc": "35110",
    "origin": "XB",
-   "description": "Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.",
+   "description": "Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.",
    "net_kg": 1.1,
-   "gross_kg": 1.45,
+   "gross_kg": 1.35,
    "package": {
     "type": "BX",
-    "per_package": 1
+    "per_package": 5
    },
    "hazard": {
     "un": "UN2920",
@@ -1707,7 +1707,7 @@
     "ems": "F-E,S-C",
     "erg": "132",
     "tunnel": "D/E",
-    "pi": "851"
+    "pi": "855"
    },
    "origin_criterion": "S"
   },

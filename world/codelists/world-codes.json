@@ -6215,7 +6215,7 @@
    "name": "Air packing instruction",
    "location": "world/codelists/gc/PackingInstructionCode.gc",
    "codes": [
-    "PI851",
+    "PI855",
     "PI965IA",
     "PI965IB",
     "PI966",

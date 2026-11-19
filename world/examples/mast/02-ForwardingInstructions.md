@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Batteries for the island's telecom mast, by air (dangerous goods)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
 
-The engineering firm instructs the forwarder, with the shipper's declaration of dangerous goods.
+The engineering firm instructs the forwarder, with the shipper's declaration of dangerous goods and how the cargo-aircraft-only packages must be stowed.
 
 [The XML file](02-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -141,7 +141,7 @@ Inside `Shipment`:
   The shipment.
 - `Consignment/ID` = **SE-CS-26-0716**  
   The consignment.
-- `Consignment/GrossWeightMeasure` = **334.25** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
@@ -187,148 +187,22 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/HazardousItemNotificationParty/PartyName/Name` = **Saltmere Engineering**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/ID` = **RKN41207K0**  
-  The container as a handling unit.
+- `Consignment/TransportHandlingUnit/ID` = **SE-PL-1**  
+  The pallet of battery crates as a handling unit.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **Twelve crates of 27 kg on one pallet: move the pallet by fork-lift; a single crate is a two-person lift. Stow where the crew can reach it, and not next to packages with a class 3 label.**  
+  How the pallet is handled, and the stowage the airline must give it: what the consignor asks, not the airline's container and position (mast/02#F16).
 - `Consignment/TransportHandlingUnit/HazardousRiskIndicator` = **true**  
-  Dangerous goods inside.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **RKN41207K0**  
-  The temperature-controlled air container, numbered as unit load devices are: its type RKN, its serial number 41207 and the designator of its owner, the airline Kelaro Air Cargo (world/parties.json).
-- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **AM** (listID `UN/EDIFACT EDED 8053`)  
-  UN/EDIFACT 8053 code AM: refrigerated container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: AM = Refrigerated container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/RefrigerationOnIndicator` = **true**  
-  The unit is switched on.
-- `Consignment/TransportHandlingUnit/TransportEquipment/AirFlowPercent` = **40**  
-  The fan's air flow.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HumidityPercent` = **50**  
-  Humidity kept below 50 %.
-- `Consignment/TransportHandlingUnit/TransportEquipment/AnimalFoodApprovedIndicator` = **false**  
-  Not for feed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HumanFoodApprovedIndicator` = **false**  
-  Not for food.
-- `Consignment/TransportHandlingUnit/TransportEquipment/DangerousGoodsApprovedIndicator` = **true**  
-  Approved for dangerous goods.
-- `Consignment/TransportHandlingUnit/TransportEquipment/RefrigeratedIndicator` = **true**  
-  A temperature-controlled unit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PowerIndicator` = **true**  
-  Battery-powered cooling and heating.
-- `Consignment/TransportHandlingUnit/TransportEquipment/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  The lowest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  The highest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransportEmergencyCardCode` = **TEC9** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
-  The emergency card on board. The code is from the Trade Accord's transport emergency card list: TEC9 = Emergency card for class 9.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/PackingCriteriaCode` = **PI965IA** (listID `urn:ubl-examples:world:codelist:PackingInstructionCode`)  
-  IATA packing instruction 965, section IA. The code is from the Trade Accord's air packing instruction list: PI965IA = Packing instruction 965, section IA.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
-  Air: the IATA Dangerous Goods Regulations. The code is from the world's copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA ICAO.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/InhalationToxicityZoneCode` = **NOTTOXIC** (listID `urn:ubl-examples:world:codelist:InhalationToxicityZoneCode`)  
-  Not toxic by inhalation. The code is from the Trade Accord's inhalation toxicity zone list: NOTTOXIC = Not toxic by inhalation.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransportAuthorizationCode` = **CAO** (listID `urn:ubl-examples:world:codelist:TransportAuthorizationCode`)  
-  Cargo aircraft only. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.**  
-  The conditions.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  The highest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HazardousGoodsTransit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  The lowest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ID` = **SE-BAT-4850-DG**  
-  The battery modules in the container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations Dangerous Goods List`)  
-  The UN number of the battery modules. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/CategoryName` = **Miscellaneous dangerous goods**  
-  Class 9 in words.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ProperShippingName` = **Lithium ion batteries**  
-  As on the declaration.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
-  Class 9. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousTypeCode` = **ARTICLE** (listID `urn:ubl-examples:world:codelist:HazardousGoodsTypeCode`)  
-  Batteries are articles, not substances. The code is from the Trade Accord's dangerous goods type list: ARTICLE = Article.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/GrossWeightMeasure` = **324** (unitCode `KGM`)  
-  Twelve modules in their crates, 27 kg each: within the 35 kg a package of packing instruction 965 section IA may weigh on a cargo aircraft, so no approval is needed (D36).
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/NetWeightMeasure` = **288** (unitCode `KGM`)  
-  The modules alone.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/NetVolumeMeasure` = **0.24** (unitCode `MTQ`)  
-  Their volume: the same cells as the six larger packs first planned.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity` = **12** (unitCode `EA`)  
-  Twelve modules.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyName/Name` = **Saltmere Engineering**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Name` = **Dangerous goods emergency line**  
-  Whom to call in an incident with the batteries.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Telephone` = **+999 2 7121 930 486**  
-  The line answers around the clock, while the goods are on the way; under the reserved +999.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Note` = **Every day, around the clock**  
-  When it answers.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransportEmergencyCardCode` = **TEC9** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
-  The emergency card on board. The code is from the Trade Accord's transport emergency card list: TEC9 = Emergency card for class 9.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/PackingCriteriaCode` = **PI965IA** (listID `urn:ubl-examples:world:codelist:PackingInstructionCode`)  
-  IATA packing instruction 965, section IA. The code is from the Trade Accord's air packing instruction list: PI965IA = Packing instruction 965, section IA.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
-  Air: the IATA Dangerous Goods Regulations. The code is from the world's copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA ICAO.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/InhalationToxicityZoneCode` = **NOTTOXIC** (listID `urn:ubl-examples:world:codelist:InhalationToxicityZoneCode`)  
-  Not toxic by inhalation. The code is from the Trade Accord's inhalation toxicity zone list: NOTTOXIC = Not toxic by inhalation.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransportAuthorizationCode` = **CAO** (listID `urn:ubl-examples:world:codelist:TransportAuthorizationCode`)  
-  Cargo aircraft only. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.**  
-  The conditions.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  The highest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  The lowest allowed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/AdditionalTemperature/AttributeID` = **STORAGE** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Recommended storage. The code is from the Trade Accord's temperature attribute list: STORAGE = Storage temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/AdditionalTemperature/Measure` = **20** (unitCode `CEL`)  
-  Around 20 °C.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PositionOnBoardStowage/LocationID` = **MD-2**  
-  Main deck, LD3 position 2 from the front (world/parties.json, the aircraft's positions).
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PositionOnBoardStowage/Location` = **Main deck, accessible**  
-  Where it flies: cargo aircraft only packages must be accessible to the crew.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/Quantity` = **1** (unitCode `EA`)  
-  One battery module to a crate; the twelve crates are counted above and listed with their own numbers in the handling unit (mast/02#F1).
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransportEmergencyCardCode` = **TEC9** (listID `urn:ubl-examples:world:codelist:TransportEmergencyCardCode`)  
-  The emergency card on board. The code is from the Trade Accord's transport emergency card list: TEC9 = Emergency card for class 9.
+  Dangerous goods.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/PackingCriteriaCode` = **PI965IA** (listID `urn:ubl-examples:world:codelist:PackingInstructionCode`)  
-  IATA packing instruction 965, section IA. The code is from the Trade Accord's air packing instruction list: PI965IA = Packing instruction 965, section IA.
+  IATA packing instruction 965, section IA: lithium ion batteries of more than 100 Wh, packed alone. The code is from the Trade Accord's air packing instruction list: PI965IA = Packing instruction 965, section IA.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
   Air: the IATA Dangerous Goods Regulations. The code is from the world's copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA ICAO.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/InhalationToxicityZoneCode` = **NOTTOXIC** (listID `urn:ubl-examples:world:codelist:InhalationToxicityZoneCode`)  
-  Not toxic by inhalation. The code is from the Trade Accord's inhalation toxicity zone list: NOTTOXIC = Not toxic by inhalation.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransportAuthorizationCode` = **CAO** (listID `urn:ubl-examples:world:codelist:TransportAuthorizationCode`)  
-  Cargo aircraft only. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
+  Cargo aircraft only: section IA batteries may not fly on passenger aircraft. The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.**  
-  The conditions.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  The highest allowed.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  The lowest allowed.
-- `Consignment/TransportHandlingUnit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  The lowest allowed.
-- `Consignment/TransportHandlingUnit/MaximumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Lithium-ion packs must not freeze nor overheat. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  The highest allowed.
+  The conditions, as on the shipper's declaration.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-1**  
   Crate 1 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -336,7 +210,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0001**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-2**  
   Crate 2 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -344,7 +218,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0002**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-3**  
   Crate 3 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -352,7 +226,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0003**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-4**  
   Crate 4 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -360,7 +234,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0004**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-5**  
   Crate 5 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -368,7 +242,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0005**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-6**  
   Crate 6 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -376,7 +250,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0006**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-7**  
   Crate 7 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -384,7 +258,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0007**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-8**  
   Crate 8 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -392,7 +266,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0008**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-9**  
   Crate 9 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -400,7 +274,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0009**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-10**  
   Crate 10 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -408,7 +282,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0010**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-11**  
   Crate 11 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -416,7 +290,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0011**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-CR-12**  
   Crate 12 of twelve: the engineering company numbers each crate of dangerous goods it packs, so that each can be traced; its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
@@ -424,107 +298,39 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CR** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CR: crate. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CR = Crate.
 - `Consignment/TransportHandlingUnit/Package/TraceID` = **SE-DL-26-0012**  
-  The serial number of the data logger fixed to the crate, which records its temperature and shocks on the way, for tracing a battery that is damaged.
-- `Consignment/TransportHandlingUnit/ID` = **AKE20514K0**  
-  The second air container, numbered as unit load devices are: its type AKE (an LD3 container), its serial number 20514 and the designator of its owner, the airline.
+  The serial number of the data logger fixed to the crate, which records shocks on the way, for tracing a battery that is damaged.
+- `Consignment/TransportHandlingUnit/ID` = **SE-BX-2**  
+  The box of stripper as a handling unit.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
+- `Consignment/TransportHandlingUnit/HandlingInstructions` = **Stow where the crew can reach it, and not next to the lithium batteries.**  
+  The stowage asked for (O210).
 - `Consignment/TransportHandlingUnit/HazardousRiskIndicator` = **true**  
-  Dangerous goods inside.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **AKE20514K0**  
-  The container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **UL** (listID `UN/EDIFACT EDED 8053`)  
-  UN/EDIFACT 8053 code UL: unit load device. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: UL = ULD (Unit load device).
-- `Consignment/TransportHandlingUnit/TransportEquipment/DangerousGoodsApprovedIndicator` = **true**  
-  Loaded with dangerous goods.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ID` = **SE-SMK-10-DG**  
-  The ionisation smoke detector set in the container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode` = **2911** (listID `UN Model Regulations Dangerous Goods List`)  
-  The UN number. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2911 = Radioactive material, excepted package – instruments or articles.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ProperShippingName` = **Radioactive material, excepted package - instruments or articles**  
-  As on the declaration.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
-  Class 7. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/GrossWeightMeasure` = **3** (unitCode `KGM`)  
-  Packed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity` = **1** (unitCode `SET`)  
-  As ordered.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyName/Name` = **Saltmere Engineering**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Name` = **Dangerous goods emergency line**  
-  Whom to call in an incident with these goods.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Telephone` = **+999 2 7121 930 486**  
-  The line answers around the clock, while the goods are on the way; under the reserved +999.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Note` = **Every day, around the clock**  
-  When it answers.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PositionOnBoardStowage/LocationID` = **MD-6**  
-  Main deck, LD3 position 6. The smoke detectors are an excepted package of class 7, which needs no segregation from other classes (IATA DGR Table 9.3.A, note 1), so they share the container with the stripper.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ID` = **SE-CS-01-DG**  
-  The coating stripper for electronics in the container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/UNDGCode` = **2920** (listID `UN Model Regulations Dangerous Goods List`)  
-  The UN number. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2920 = Corrosive liquid, flammable, n.o.s..
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ProperShippingName` = **Corrosive liquid, flammable, n.o.s.**  
-  As on the declaration.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardClassID` = **8** (schemeID `UN Model Regulations hazard class`)  
-  Class 8. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PackagingDangerLevelCode` = **2** (listID `UN/EDIFACT EDED 8339`)  
-  The packaging danger level of UN/EDIFACT 8339 that matches the packing group II. The code is from the world's copy of UN/EDIFACT 8339 Packaging danger level: 2 = Medium danger.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/GrossWeightMeasure` = **7.25** (unitCode `KGM`)  
-  Packed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity` = **5** (unitCode `LTR`)  
-  As ordered.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyName/Name` = **Saltmere Engineering**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Name` = **Dangerous goods emergency line**  
-  Whom to call in an incident with these goods.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Telephone` = **+999 2 7121 930 486**  
-  The line answers around the clock, while the goods are on the way; under the reserved +999.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Note` = **Every day, around the clock**  
-  When it answers.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/PackingCriteriaCode` = **PI851** (listID `urn:ubl-examples:world:codelist:PackingInstructionCode`)  
-  IATA packing instruction 851: one 1-litre tin to a box, within the quantity a passenger aircraft may carry (D36). The code is from the Trade Accord's air packing instruction list: PI851 = Packing instruction 851.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
+  Dangerous goods.
+- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/PackingCriteriaCode` = **PI855** (listID `urn:ubl-examples:world:codelist:PackingInstructionCode`)  
+  IATA packing instruction 855, for cargo aircraft (O210). The code is from the Trade Accord's air packing instruction list: PI855 = Packing instruction 855.
+- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
   Air: the IATA Dangerous Goods Regulations. The code is from the world's copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA ICAO.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/HazardousGoodsTransit/TransportAuthorizationCode` = **PCA** (listID `urn:ubl-examples:world:codelist:TransportAuthorizationCode`)  
-  Passenger and cargo aircraft: no crew access needed. The code is from the Trade Accord's transport authorization list: PCA = Passenger and cargo aircraft.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PositionOnBoardStowage/LocationID` = **MD-6**  
-  Main deck, LD3 position 6, four positions aft of the batteries: the stripper bears a class 3 label for its subsidiary hazard, and lithium-ion batteries of packing instruction 965 section IA must not be stowed next to, or where a fire could reach, packages with a class 3 label (IATA DGR 9.3.2.1.3).
+- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransportAuthorizationCode` = **CAO** (listID `urn:ubl-examples:world:codelist:TransportAuthorizationCode`)  
+  Cargo aircraft only: five litres in one package are more than the 1 litre a package of this entry may hold on a passenger aircraft (O210). The code is from the Trade Accord's transport authorization list: CAO = Cargo aircraft only.
+- `Consignment/TransportHandlingUnit/HazardousGoodsTransit/TransitDescription` = **Cargo aircraft only; five 1-litre tins in one box.**  
+  The conditions, as on the shipper's declaration.
+- `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-2**  
+  The box of coating stripper, the engineering company's own number.
+- `Consignment/TransportHandlingUnit/Package/Quantity` = **5** (unitCode `EA`)  
+  Five 1-litre tins in the box.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
+- `Consignment/TransportHandlingUnit/ID` = **SE-BX-1**  
+  The box of smoke detectors as a handling unit.
+- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
+- `Consignment/TransportHandlingUnit/HazardousRiskIndicator` = **true**  
+  Dangerous goods: an excepted package, which needs no particular stowage.
 - `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-1**  
   The box of smoke detectors, the engineering company's own number.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
-  One box: the set of ten.
-- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-2**  
-  Box 1 of five of coating stripper.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
-  One 1-litre tin in the box.
-- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-3**  
-  Box 2 of five of coating stripper.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
-  One 1-litre tin in the box.
-- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-4**  
-  Box 3 of five of coating stripper.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
-  One 1-litre tin in the box.
-- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-5**  
-  Box 4 of five of coating stripper.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
-  One 1-litre tin in the box.
-- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/Package/ID` = **SE-BX-6**  
-  Box 5 of five of coating stripper.
-- `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
-  One 1-litre tin in the box.
+  One box: the pack of ten.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
 - `GoodsItem/ID` = **1**  
@@ -561,16 +367,6 @@ Inside `Shipment`:
   The UN number marked on each package.
 - `GoodsItem/Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
   The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
-  Around 20 °C.
-- `GoodsItem/Temperature/Description` = **Keep away from heat.**  
-  Why.
-- `GoodsItem/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  At least.
-- `GoodsItem/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  At most.
 - `GoodsItem/ID` = **2**  
   A goods item.
 - `GoodsItem/Description` = **Ionisation smoke detector set**  
@@ -607,21 +403,11 @@ Inside `Shipment`:
   The nuclide and the activity of the pack as carried, in the name: UBL defines ApplicableRadioactiveIsotope for fissile contents only, and americium-241 is not fissile, so the name is the only place left for them (D36, O127).
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Sealed sources inside the detectors, not special form.**  
   Its form.
-- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
-  Around 20 °C.
-- `GoodsItem/Temperature/Description` = **Keep away from heat.**  
-  Why.
-- `GoodsItem/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  At least.
-- `GoodsItem/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  At most.
 - `GoodsItem/ID` = **3**  
   A goods item.
 - `GoodsItem/Description` = **Coating stripper for electronics**  
   The goods.
-- `GoodsItem/Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.**  
+- `GoodsItem/Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `GoodsItem/Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
@@ -663,16 +449,6 @@ Inside `Shipment`:
   Closed cup. The code is from the Trade Accord's temperature attribute list: FLASHPOINT = Flashpoint. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/HazardousItem/FlashpointTemperature/Measure` = **28** (unitCode `CEL`)  
   The flashpoint.
-- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  The temperature in transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Temperature/Measure` = **20** (unitCode `CEL`)  
-  Around 20 °C.
-- `GoodsItem/Temperature/Description` = **Keep away from heat.**  
-  Why.
-- `GoodsItem/MinimumTemperature/Measure` = **5** (unitCode `CEL`)  
-  At least.
-- `GoodsItem/MaximumTemperature/Measure` = **35** (unitCode `CEL`)  
-  At most.
 
 ## The document
 
@@ -769,7 +545,7 @@ Inside `Shipment`:
     <cbc:ID>SE-SH-26-0715</cbc:ID>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">334.25</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -811,121 +587,16 @@ Inside `Shipment`:
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
       <cac:TransportHandlingUnit>
-        <cbc:ID>RKN41207K0</cbc:ID>
+        <cbc:ID>SE-PL-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Twelve crates of 27 kg on one pallet: move the pallet by fork-lift; a single crate is a two-person lift. Stow where the crew can reach it, and not next to packages with a class 3 label.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:TransportEquipment>
-          <cbc:ID>RKN41207K0</cbc:ID>
-          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">AM</cbc:TransportEquipmentTypeCode>
-          <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
-          <cbc:AirFlowPercent>40</cbc:AirFlowPercent>
-          <cbc:HumidityPercent>50</cbc:HumidityPercent>
-          <cbc:AnimalFoodApprovedIndicator>false</cbc:AnimalFoodApprovedIndicator>
-          <cbc:HumanFoodApprovedIndicator>false</cbc:HumanFoodApprovedIndicator>
-          <cbc:DangerousGoodsApprovedIndicator>true</cbc:DangerousGoodsApprovedIndicator>
-          <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-          <cbc:PowerIndicator>true</cbc:PowerIndicator>
-          <cac:MinimumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">5</cbc:Measure>
-          </cac:MinimumTemperature>
-          <cac:MaximumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">35</cbc:Measure>
-          </cac:MaximumTemperature>
-          <cac:HazardousGoodsTransit>
-            <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
-            <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
-            <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-            <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
-            <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
-            <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.</cbc:TransitDescription>
-            <cac:MaximumTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">35</cbc:Measure>
-            </cac:MaximumTemperature>
-            <cac:MinimumTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">5</cbc:Measure>
-            </cac:MinimumTemperature>
-          </cac:HazardousGoodsTransit>
-          <cac:LoadedHazardousItem>
-            <cbc:ID>SE-BAT-4850-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
-            <cbc:CategoryName>Miscellaneous dangerous goods</cbc:CategoryName>
-            <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
-            <cbc:HazardousTypeCode listID="urn:ubl-examples:world:codelist:HazardousGoodsTypeCode">ARTICLE</cbc:HazardousTypeCode>
-            <cbc:GrossWeightMeasure unitCode="KGM">324</cbc:GrossWeightMeasure>
-            <cbc:NetWeightMeasure unitCode="KGM">288</cbc:NetWeightMeasure>
-            <cbc:NetVolumeMeasure unitCode="MTQ">0.24</cbc:NetVolumeMeasure>
-            <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-            <cac:ContactParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Saltmere Engineering</cbc:Name>
-              </cac:PartyName>
-              <cac:Contact>
-                <cbc:Name>Dangerous goods emergency line</cbc:Name>
-                <cbc:Telephone>+999 2 7121 930 486</cbc:Telephone>
-                <cbc:Note>Every day, around the clock</cbc:Note>
-              </cac:Contact>
-            </cac:ContactParty>
-            <cac:HazardousGoodsTransit>
-              <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
-              <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
-              <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-              <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
-              <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
-              <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.</cbc:TransitDescription>
-              <cac:MaximumTemperature>
-                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-                <cbc:Measure unitCode="CEL">35</cbc:Measure>
-              </cac:MaximumTemperature>
-              <cac:MinimumTemperature>
-                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-                <cbc:Measure unitCode="CEL">5</cbc:Measure>
-              </cac:MinimumTemperature>
-            </cac:HazardousGoodsTransit>
-            <cac:AdditionalTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">STORAGE</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">20</cbc:Measure>
-            </cac:AdditionalTemperature>
-            <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-2</cbc:LocationID>
-              <cbc:Location>Main deck, accessible</cbc:Location>
-            </cac:PositionOnBoardStowage>
-            <cac:Package>
-              <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-              <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
-            </cac:Package>
-          </cac:LoadedHazardousItem>
-        </cac:TransportEquipment>
         <cac:HazardousGoodsTransit>
-          <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
           <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
           <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-          <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
           <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
           <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.</cbc:TransitDescription>
-          <cac:MaximumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">35</cbc:Measure>
-          </cac:MaximumTemperature>
-          <cac:MinimumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">5</cbc:Measure>
-          </cac:MinimumTemperature>
         </cac:HazardousGoodsTransit>
-        <cac:MinimumTemperature>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">5</cbc:Measure>
-        </cac:MinimumTemperature>
-        <cac:MaximumTemperature>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">35</cbc:Measure>
-        </cac:MaximumTemperature>
         <cac:Package>
           <cbc:ID>SE-CR-1</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
@@ -1000,94 +671,28 @@ Inside `Shipment`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>AKE20514K0</cbc:ID>
+        <cbc:ID>SE-BX-2</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Stow where the crew can reach it, and not next to the lithium batteries.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:TransportEquipment>
-          <cbc:ID>AKE20514K0</cbc:ID>
-          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">UL</cbc:TransportEquipmentTypeCode>
-          <cbc:DangerousGoodsApprovedIndicator>true</cbc:DangerousGoodsApprovedIndicator>
-          <cac:LoadedHazardousItem>
-            <cbc:ID>SE-SMK-10-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
-            <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
-            <cbc:GrossWeightMeasure unitCode="KGM">3</cbc:GrossWeightMeasure>
-            <cbc:Quantity unitCode="SET">1</cbc:Quantity>
-            <cac:ContactParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Saltmere Engineering</cbc:Name>
-              </cac:PartyName>
-              <cac:Contact>
-                <cbc:Name>Dangerous goods emergency line</cbc:Name>
-                <cbc:Telephone>+999 2 7121 930 486</cbc:Telephone>
-                <cbc:Note>Every day, around the clock</cbc:Note>
-              </cac:Contact>
-            </cac:ContactParty>
-            <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-6</cbc:LocationID>
-            </cac:PositionOnBoardStowage>
-          </cac:LoadedHazardousItem>
-          <cac:LoadedHazardousItem>
-            <cbc:ID>SE-CS-01-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
-            <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
-            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">2</cbc:PackagingDangerLevelCode>
-            <cbc:GrossWeightMeasure unitCode="KGM">7.25</cbc:GrossWeightMeasure>
-            <cbc:Quantity unitCode="LTR">5</cbc:Quantity>
-            <cac:ContactParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Saltmere Engineering</cbc:Name>
-              </cac:PartyName>
-              <cac:Contact>
-                <cbc:Name>Dangerous goods emergency line</cbc:Name>
-                <cbc:Telephone>+999 2 7121 930 486</cbc:Telephone>
-                <cbc:Note>Every day, around the clock</cbc:Note>
-              </cac:Contact>
-            </cac:ContactParty>
-            <cac:HazardousGoodsTransit>
-              <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI851</cbc:PackingCriteriaCode>
-              <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-              <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">PCA</cbc:TransportAuthorizationCode>
-            </cac:HazardousGoodsTransit>
-            <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-6</cbc:LocationID>
-            </cac:PositionOnBoardStowage>
-          </cac:LoadedHazardousItem>
-        </cac:TransportEquipment>
-        <cac:Package>
-          <cbc:ID>SE-BX-1</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-        </cac:Package>
+        <cac:HazardousGoodsTransit>
+          <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI855</cbc:PackingCriteriaCode>
+          <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+          <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
+          <cbc:TransitDescription>Cargo aircraft only; five 1-litre tins in one box.</cbc:TransitDescription>
+        </cac:HazardousGoodsTransit>
         <cac:Package>
           <cbc:ID>SE-BX-2</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:Quantity unitCode="EA">5</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
         </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>SE-BX-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:Package>
-          <cbc:ID>SE-BX-3</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-        </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-BX-4</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-        </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-BX-5</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-        </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-BX-6</cbc:ID>
+          <cbc:ID>SE-BX-1</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
         </cac:Package>
@@ -1117,17 +722,6 @@ Inside `Shipment`:
           <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
         </cac:HazardousItem>
       </cac:Item>
-      <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:Description>Keep away from heat.</cbc:Description>
-      </cac:Temperature>
-      <cac:MinimumTemperature>
-        <cbc:Measure unitCode="CEL">5</cbc:Measure>
-      </cac:MinimumTemperature>
-      <cac:MaximumTemperature>
-        <cbc:Measure unitCode="CEL">35</cbc:Measure>
-      </cac:MaximumTemperature>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
@@ -1156,23 +750,12 @@ Inside `Shipment`:
           </cac:RadioactiveMaterial>
         </cac:HazardousItem>
       </cac:Item>
-      <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:Description>Keep away from heat.</cbc:Description>
-      </cac:Temperature>
-      <cac:MinimumTemperature>
-        <cbc:Measure unitCode="CEL">5</cbc:Measure>
-      </cac:MinimumTemperature>
-      <cac:MaximumTemperature>
-        <cbc:Measure unitCode="CEL">35</cbc:Measure>
-      </cac:MaximumTemperature>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Coating stripper for electronics</cbc:Description>
       <cac:Item>
-        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.</cbc:Description>
+        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
@@ -1202,17 +785,6 @@ Inside `Shipment`:
           </cac:FlashpointTemperature>
         </cac:HazardousItem>
       </cac:Item>
-      <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:Description>Keep away from heat.</cbc:Description>
-      </cac:Temperature>
-      <cac:MinimumTemperature>
-        <cbc:Measure unitCode="CEL">5</cbc:Measure>
-      </cac:MinimumTemperature>
-      <cac:MaximumTemperature>
-        <cbc:Measure unitCode="CEL">35</cbc:Measure>
-      </cac:MaximumTemperature>
     </cac:GoodsItem>
   </cac:Shipment>
 </ForwardingInstructions>

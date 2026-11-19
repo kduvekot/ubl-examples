@@ -20,8 +20,6 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
   This run of the process: the same in every document of the flow.
 - `ID` = **KXL-WB-26-0325**  
   The consignment note number.
-- `CarrierAssignedID` = **KXL-AWB-26-0319**  
-  The carrier's own number for the carriage.
 - `UUID` = **cbf5d04c-eecc-510a-b84b-bf76e2526b98**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `VersionID` = **1**  
@@ -458,7 +456,6 @@ Inside `Signature`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>KXL-WB-26-0325</cbc:ID>
-  <cbc:CarrierAssignedID>KXL-AWB-26-0319</cbc:CarrierAssignedID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>

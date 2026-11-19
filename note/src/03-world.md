@@ -1459,11 +1459,17 @@ load fits the island airline's ATR 72-600F, as ATR's fact sheet gives it: at
 most 9,200 kg, 75 m³ and seven LD3 containers, each within its own maximum
 weight, and loose pieces that pass the 2.94 × 1.80 m cargo door into the aft
 bulk compartment. The sample benches, at 1.8 m, fly loose. Dangerous goods are
-stowed as the IATA Dangerous Goods Regulations ask: the smoke detectors (class
-7, an excepted package) may share a container with the corrosive coating
-stripper, because class 7 needs no segregation, but the stripper's flammable
-subsidiary label keeps it away from the lithium batteries, which must not be
-stowed next to a package with a class 3 label. A subsidiary hazard has no
+stowed as the IATA Dangerous Goods Regulations ask. The mast flow's twelve
+lithium-ion battery modules, 27 kg each in their crates on a pallet, and its
+box of five 1-litre tins of coating stripper may fly on cargo aircraft only,
+the stripper because five litres in one package are more than a passenger
+aircraft may take of it; both go in LD3 containers with net doors at the front
+of the main deck, where the crew can reach them, with an empty position between
+them, because the stripper's flammable subsidiary label must not be stowed next
+to the batteries. The smoke detectors, an excepted package of class 7, need
+neither crew access nor segregation and fly in a closed container further aft.
+No container is cooled: batteries on a flight of under three hours in the
+island's winter need no temperature control. A subsidiary hazard has no
 emergency schedule of its own in the IMDG Code, which gives one per UN entry;
 the road rules give the crew's actions per hazard label, so the subsidiary
 hazard names the Accord's emergency card of its class.
