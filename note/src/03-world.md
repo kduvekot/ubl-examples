@@ -597,6 +597,29 @@ ports and the island's telecom operator are companies owned by the state and
 are in the register like any company. A farmer on the island is entered in
 Lisavu's farm register, which renews a grower's registration each season.
 
+Instead, each country keeps a register of its public bodies, on the model of
+Italy's IPA code, and the register gives each body a number of its own
+shape, derived from no other register:
+
+| Register | Kept by | A number | Scheme |
+|---|---|---|---|
+| Index of Public Administrations of Urvania | the Agency for Digital Administration | `xu_` and four lower-case letters or digits (`xu_k4r7`, the customs administration) | `XU:public-body-register` |
+| Federal list of public bodies of Bayvarra | the Bayvarra Information Service | ten digits, the first not 0 (`3071845926`, the customs and border service) | `XB:public-body-register` |
+| Government list of public bodies of Lisavu | the Government Secretariat | `GOV-` and three digits (`GOV-118`, the customs service) | `XL:public-body-register` |
+| Farm register of Lisavu | the island's government | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
+
+A public body's party identifier and the `CompanyID` of its legal entity
+carry that number under its register's scheme (`urn:ubl-examples:world:` and
+the scheme), and its electronic address is built from it, as a company's is
+from its business register number; the farm's likewise from its number in the
+farm register. Bayvarra's customs, which register a company under its
+business register number, give a public body that imports a number of their
+own, starting with 9. No real code of Italy's index starts with `xu_`. The
+build checks that each public body carries a number of its country's
+register in that register's shape, that no company carries a number in a
+public body's shape and no public body one in a company register's, and that
+the number repeats the digits of none of the party's other identifiers.
+
 A code held in an identifier element, such as the tax category in
 `TaxCategory/ID`, the language in `Language/ID`, the hazard class or the
 Incoterms rule in `DeliveryTerms/ID`, names its code list in `schemeID`, with

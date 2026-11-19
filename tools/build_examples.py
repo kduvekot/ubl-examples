@@ -425,7 +425,7 @@ def legal_entity(pid):
         out["CorporateRegistrationScheme"] = {
             "ID": V(reg["scheme"], "The identifier of the register in the world (world/countries.json)."),
             "Name": V(reg["name"], f"The register the public body is entered in, kept by "
-                                   f"{PARTY[reg['keeper']]['identity']['name'] if reg['keeper'] in PARTY else reg['keeper']}"
+                                   f"{'the ' + PARTY[reg['keeper']]['identity']['name'] if reg['keeper'] in PARTY else reg['keeper']}"
                                    ": a public body is set up by law and is in no register of businesses (D46, O142)."),
             "CorporateRegistrationTypeCode": V("PUBLIC", "A register of public bodies, not a register of businesses."),
             "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "

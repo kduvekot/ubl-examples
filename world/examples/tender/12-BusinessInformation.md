@@ -114,7 +114,7 @@ Inside `SenderParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FLPB**  
   The identifier of the register in the world (world/countries.json).
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal list of public bodies of Bayvarra**  
-  The register the public body is entered in, kept by Bayvarra Information Service: a public body is set up by law and is in no register of businesses (D46, O142).
+  The register the public body is entered in, kept by the Bayvarra Information Service: a public body is set up by law and is in no register of businesses (D46, O142).
 - `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **PUBLIC** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
   A register of public bodies, not a register of businesses. The code is from the Trade Accord's corporate registration type list: PUBLIC = Register of public bodies.
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  

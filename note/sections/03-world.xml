@@ -1102,6 +1102,116 @@
       registration each season.
     </para>
     <para>
+      Instead, each country keeps a register of its public bodies, on
+      the model of Italy's IPA code, and the register gives each body a
+      number of its own shape, derived from no other register:
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Register
+            </entry>
+            <entry>
+              Kept by
+            </entry>
+            <entry>
+              A number
+            </entry>
+            <entry>
+              Scheme
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              Index of Public Administrations of Urvania
+            </entry>
+            <entry>
+              the Agency for Digital Administration
+            </entry>
+            <entry>
+              <literal>xu_</literal> and four lower-case letters or
+              digits (<literal>xu_k4r7</literal>, the customs
+              administration)
+            </entry>
+            <entry>
+              <literal>XU:public-body-register</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Federal list of public bodies of Bayvarra
+            </entry>
+            <entry>
+              the Bayvarra Information Service
+            </entry>
+            <entry>
+              ten digits, the first not 0
+              (<literal>3071845926</literal>, the customs and border
+              service)
+            </entry>
+            <entry>
+              <literal>XB:public-body-register</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Government list of public bodies of Lisavu
+            </entry>
+            <entry>
+              the Government Secretariat
+            </entry>
+            <entry>
+              <literal>GOV-</literal> and three digits
+              (<literal>GOV-118</literal>, the customs service)
+            </entry>
+            <entry>
+              <literal>XL:public-body-register</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Farm register of Lisavu
+            </entry>
+            <entry>
+              the island's government
+            </entry>
+            <entry>
+              <literal>LFR-</literal> and four digits
+              (<literal>LFR-0412</literal>, the cotton farm)
+            </entry>
+            <entry>
+              <literal>XL:farm-register</literal>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+    <para>
+      A public body's party identifier and the
+      <literal>CompanyID</literal> of its legal entity carry that number
+      under its register's scheme
+      (<literal>urn:ubl-examples:world:</literal> and the scheme), and
+      its electronic address is built from it, as a company's is from
+      its business register number; the farm's likewise from its number
+      in the farm register. Bayvarra's customs, which register a company
+      under its business register number, give a public body that
+      imports a number of their own, starting with 9. No real code of
+      Italy's index starts with <literal>xu_</literal>. The build checks
+      that each public body carries a number of its country's register
+      in that register's shape, that no company carries a number in a
+      public body's shape and no public body one in a company
+      register's, and that the number repeats the digits of none of the
+      party's other identifiers.
+    </para>
+    <para>
       A code held in an identifier element, such as the tax category in
       <literal>TaxCategory/ID</literal>, the language in
       <literal>Language/ID</literal>, the hazard class or the Incoterms

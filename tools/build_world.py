@@ -15,6 +15,7 @@ out, mddir = sys.argv[1], sys.argv[2]
 root = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, os.path.dirname(__file__))
 import world_data  # noqa: E402
+import world_ids  # noqa: E402
 world = world_data.load()
 parties = {p["id"]: p for p in world["parties"]}
 
@@ -129,7 +130,7 @@ def identity(p):
     idn, c = p["identity"], world["countries"][p["c"]]
     rows = [("Name", idn["name"])]
     if idn.get("registry_id"):
-        rows.append(("Registry number", f"`{idn['registry_id']}` ({c['registry']['name']})"))
+        rows.append(("Registry number", f"`{idn['registry_id']}` ({world_ids.register_of(world, p)[1]['name']})"))
     if idn.get("tax_id"):
         scheme = c["tax"]["schemes"][0]
         rows.append(("Tax number", f"`{idn['tax_id']}` ({scheme['name']}, `{scheme['id']}`)"))
