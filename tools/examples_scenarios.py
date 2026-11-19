@@ -191,6 +191,8 @@ def goods_items(f, currency, value_why, convert=None):
 
 HARBOUR_PROJECT = "VT-PRJ-26-07"   # the buyer's number for its project "Harbour parks Selanu"
 ROAD_JOB = "TH-26-04471"          # the carrier's job number for the truck
+ROAD_CASTING = "2026"             # the extended ID of the 2026 side frame casting, which replaced the 2025 one
+ROAD_CO_JOB = "FCC-JOB-26-0418"   # the chamber's job number for Valdara's application for a certificate of origin
 
 
 def road_stage(f, actual):
@@ -221,7 +223,8 @@ def road_stage(f, actual):
                                                        "next morning's."),
              "EstimatedDeliveryTime": V("09:00:00", "Early in the working day."),
              "RequiredDeliveryDate": V(f.date(9), "The distributor's goods-in slot."),
-             "RequiredDeliveryTime": V("10:00:00", "The slot starts at ten.")}
+             "RequiredDeliveryTime": V("10:00:00", "By the end of the goods-in slot, 09:00 to 10:00; the latest "
+                                                    "delivery time of the note is the same (road/08#F14).")}
     if actual:      # what the carrier's status reports once it has happened (C72)
         stage["ActualDepartureTransportEvent"] = kit.event(f, 7, ROAD_DEPARTS + ":00", "The truck left the warehouse; "
                                                            f"the land border is {wmap.whole(ROAD_BORDER_KM)} km ahead.",
@@ -264,21 +267,29 @@ def road_consignment(f, view):
     if view == "request":
         out["RequestedPickupTransportEvent"] = kit.event(f, 7, "14:00:00", "The day the goods are ready.",
                                                          kit.place("XUFER", "The 3PL's warehouse."))
-        out["RequestedDeliveryTransportEvent"] = kit.event(f, 9, "10:00:00", "The distributor's goods-in slot.",
+        out["RequestedDeliveryTransportEvent"] = kit.event(f, 9, "10:00:00", "By the end of the distributor's goods-in slot, 09:00 to 10:00.",
                                                            kit.place("XBMRW", "The distribution centre."))
         out["CarrierServiceInstructions"] = V("Curtain-side trailer; the goods are loaded from the side by forklift.",
                                               "What the carrier must bring.")
+        # what the carrier plans the trailer by: the pallets and the floor they take (road/03#F9)
+        out["TotalTransportHandlingUnitQuantity"] = qty(len(kit.pallets(f, d)), "EA", "The pallets to collect: 24 of "
+                                                        "benches and one of frame cartons.")
+        out["LoadingLengthMeasure"] = V(road_loading_length(f), "The bench pallets go two high, three abreast, in "
+                                        "four rows of 1.85 m, and the pallet of frame cartons in a fifth row: that "
+                                        "much of the trailer floor is needed.", unitCode="MTR")
         return out
     out.update({
         "CarrierAssignedID": V(ROAD_JOB, "The carrier's job number."),
-        "ConsignorAssignedID": V(f.numbers["despatch"], "The consignor's reference: its despatch advice."),
+        # no ConsignorAssignedID: the despatch advice is the 3PL's document, not a consignment number of the
+        # consignor's (road/08#F11)
         "ConsigneeAssignedID": V("LD-GI-0412", "The distributor's goods-in booking for the slot."),
         "NetWeightMeasure": qty(net, "KGM", "The weight of the goods without packaging."),
         "LoadingLengthMeasure": V(road_loading_length(f), "The 24 bench pallets two high, three abreast, in four rows "
                                   "of 1.85 m, and the pallet of frame cartons in a fifth row: that much of the 13.6 m "
                                   "floor.", unitCode="MTR"),
-        "Remarks": V("Received in apparent good order; seals XU-CL-77310 on the trailer doors.",
-                     "The driver's remarks at taking over, as the consignment note asks."),
+        "Remarks": V("Received in apparent good order; trailer doors sealed by the 3PL, seal as recorded.",
+                     "The driver's remarks at taking over, as the consignment note asks; the seal's number is in the "
+                     "trailer's own seal element (road/08#F26)."),
         "ThirdPartyPayerIndicator": V("false", "The consignee, who booked the truck, pays the freight."),
         "HaulageInstructions": V("Wait at the warehouse until customs has released the export declaration.",
                                  "What the driver must do before leaving."),
@@ -304,8 +315,32 @@ def road_consignment(f, view):
                                                                         "under."),
                                "IssuerParty": party("5-xu", short=True)},     # the declarant (road/08#F5, D46)
         "MainCarriageShipmentStage": road_stage(f, False),
-        "TransportHandlingUnit": kit.handling_units(f, d, "8-xu", "LD MARROWDALE", detail=True)})
+        # the 25 pallets travel in the sealed trailer: the trailer is the transport equipment, with its seal and its
+        # empty weight, and the pallets are the handling units packed in it (road/08#F26, D35)
+        "TransportHandlingUnit": {"TransportEquipment": road_trailer(f, kit.handling_units(f, d, "8-xu",
+                                                                                          "LD MARROWDALE",
+                                                                                          detail=True))}})
     return out
+
+
+def road_trailer(f, pallets):
+    """The carrier's curtain-side trailer as transport equipment: its plate, its tare from the fleet, the 3PL's seal
+    on the doors, and the pallets loaded in it."""
+    v = kit.fleet("13-xu", "T-07")
+    return {"ID": V(v["trailer"], "The trailer, by its licence plate.",
+                    schemeID="urn:ubl-examples:world:XU:vehicle-register"),
+            "TransportEquipmentTypeCode": V("TE", "UN/EDIFACT 8053 code TE: trailer."),
+            "Description": V("Curtain-side semi-trailer, 13.6 m loading length", "The trailer in words."),
+            "TareWeightMeasure": qty(v["tare_kg"]["trailer"], "KGM", "The trailer's empty weight, from the carrier's "
+                                                                    "fleet (world/parties.json)."),
+            "TransportEquipmentSeal": {"ID": V("XU-CL-77310", "The number of the bolt seal on the trailer doors."),
+                                       "SealIssuerTypeCode": V("SHIPPER", "The seal is the 3PL's, which loads for "
+                                                                          "the consignor."),
+                                       "SealingPartyType": V("Shipper", "Put on by the 3PL when the trailer was "
+                                                                        "loaded."),
+                                       "SealStatusCode": V("APPLIED", "In place when the carrier took over the "
+                                                                      "goods.")},
+            "PackagedTransportHandlingUnit": pallets}
 
 
 def road(n, doc):
@@ -333,8 +368,7 @@ def road(n, doc):
                              "MinimumDeliveryUnit": {"BatchQuantity": qty(4, "EA", "Benches come in pallets of "
                                                                                     "four."),
                                                      "ConsumerUnitQuantity": qty(1, "EA", "One bench.")},
-                             "MaximumDeliveryUnit": {"BatchQuantity": qty(100, "EA", "A truck takes at most 25 "
-                                                                                      "pallets of four.")},
+                             # no MaximumDeliveryUnit: one delivery of 108 pieces has no upper batch (road/01#F11)
                              "Despatch": {
                                  "RequestedDespatchDate": V(f.date(7), "The day the buyer's truck will collect."),
                                  "RequestedDespatchTime": V("14:00:00", "In the afternoon."),
@@ -353,7 +387,8 @@ def road(n, doc):
         out = kit.order_response(f, n, doc, 1, "The manufacturer answers the next day.")
         out["Delivery"] = {"PromisedDeliveryPeriod": {"StartDate": V(f.date(7), "Under FCA delivery is the handover "
                                                                                 "to the buyer's carrier: on day 7."),
-                                                      "EndDate": V(f.date(7), "The same day.")},
+                                                      "EndDate": V(f.date(8), "Or the morning after, by the "
+                                                                              "guaranteed despatch (road/02#F4).")},
                            "Despatch": {
                                "EstimatedDespatchDate": V(f.date(7), "The goods will be ready on the requested day."),
                                "EstimatedDespatchTime": V("14:00:00", "At the requested time."),
@@ -361,7 +396,8 @@ def road(n, doc):
                                "GuaranteedDespatchTime": V("12:00:00", "By noon."),
                                "EstimatedDespatchPeriod": {"StartDate": V(f.date(7), "The afternoon of day 7."),
                                                            "EndDate": V(f.date(8), "Or the morning after.")},
-                               "ResponsibleParty": party("8-xu", short=True),
+                               # the party that picks the goods up: the buyer's carrier (road/02#F5)
+                               "ResponsibleParty": party("13-xu", short=True),
                                "NotifyParty": party("6-xb", short=True)}}
         bench, frame = ITEM["bench-serra"], ITEM["bench-casting"]
         out["OrderResponseCode"] = V("CA", "UN/EDIFACT 4343 code CA: conditionally accepted, with the substitution "
@@ -387,14 +423,12 @@ def road(n, doc):
                  "Price": kit.price_block("bench-casting", buyer=f.buyer),
                  "Item": {"Name": V("Bench side frame casting, 2026", "The substitute."),
                           "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The same item number."),
-                                                        "ExtendedID": V("2026", "The new version.")}}},
-             "SellerProposedSubstituteLineItem": {
-                 "ID": V("2", "What the seller would also accept to ship, if the buyer prefers."),
-                 "Quantity": qty(12, "EA", "The same quantity."),
-                 "Item": {"Name": V("Bench side frame casting, 2025, from stock", "Six left in stock; the rest would "
-                                                                                  "follow in May."),
-                          "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The item number."),
-                                                        "ExtendedID": V("2025", "The old version.")}}},
+                                                        "ExtendedID": V(ROAD_CASTING, "The new version, the 2026 "
+                                                                                      "casting: every later document "
+                                                                                      "of the flow identifies the "
+                                                                                      "frame so (D35 point 3).")}}},
+             # no proposed substitute: the 2026 casting is the substitute, decided; the old casting is no longer made
+             # (road/02#F6, D35 point 3)
              "OrderLineReference": {"LineID": V("2", "The order line."),
                                     "SalesOrderLineID": V("2", "The seller's line.")}}]
         return out
@@ -402,6 +436,7 @@ def road(n, doc):
         out = kit.tep_request(f, n, doc, 1, "The distributor books the truck once the order is accepted.", 7, weight,
                               "The gross weight of the order: benches and castings with their packaging.")
         kit.deep_merge(out["Consignment"], road_consignment(f, "request"))
+        del out["Note"]      # the leg's description is a caption of the example, not a message to the carrier (road/03#F5)
         return out
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 7, "The day the 3PL loaded the truck.",
@@ -427,31 +462,49 @@ def road(n, doc):
                                                                      "ferra."),
                                  "Consignment": {"ID": V(f.numbers["consignment"], "The consignment of the truck.")}}}}
     if doc["doc"] == "CertificateOfOrigin":
+        # D35 point 2: Valdara's application (06) and the chamber's certificate (07) are two documents with their own
+        # numbers; the chamber, the body Urvania authorises under the Accord to issue proofs of preferential origin,
+        # is the only endorser; its e-certificate system gives the application a job number when it is lodged
         chamber, exporter = "20-xu", "5-xu"
         endorsed = doc["from"] == chamber
-        signer = {"RoleCode": V("CHAMBER", "The endorser is the chamber of commerce of the exporting country."),
-                  "SequenceNumeric": V("1", "The first and only endorsement."),
+        certificate = f.number("certificate", chamber, "CertificateOfOrigin")
+        application = f.number("certificate-application", exporter, "Application")
+        signer = {"RoleCode": V("CHAMBER", "The endorser is the chamber of commerce of the exporting country, the "
+                                           "body Urvania authorises under the Accord to issue proofs of preferential "
+                                           "origin (D35)."),
+                  "SequenceNumeric": V("1", "The first and only endorsement: a certificate between Accord members "
+                                            "needs no legalisation."),
                   "Party": party(chamber),
                   "SignatoryContact": {"Name": V("Certificates office", "The office of the chamber that signs "
-                                                 "certificates of origin.")}}
+                                                 "certificates of origin. UBL defines this contact as the exporter's "
+                                                 "signer of the application; the element is mandatory in an "
+                                                 "endorser party, so it names the endorser's signer, a finding for "
+                                                 "the UBL TC (road/06#F15, O121)."),
+                                       "JobTitle": V("Certificates officer", "The signing function: the officer who "
+                                                                             "signs certificates for the chamber "
+                                                                             "(road/06#F16).")}}
         return {
             "EndorserParty": {k: v for k, v in signer.items() if k != "Party"},
-            "ID": V(f.number("certificate", chamber, "CertificateOfOrigin"), "The number of the certificate, given by "
-                                                                            "the chamber."),
-            "IssueDate": V(f.date(7 if endorsed else 4), "The day the chamber endorsed the certificate: Monday "
-                           "morning, before the export declaration (road/07#F11)." if endorsed
+            "ID": V(certificate, "The number of the certificate, given by the chamber.") if endorsed else
+                  V(application, "The exporter's number for its application (road/06#F1)."),
+            "VersionID": V("1", "The first version of the certificate." if endorsed else
+                                "The first version of the application."),
+            "IssueDate": V(f.date(7 if endorsed else 4), "The day the chamber issued the certificate: Monday "
+                           "morning, before the export declaration (road/07#F11, D27)." if endorsed
                            else "The day the exporter applies, before the goods leave."),
-            "Description": V("Certificate of origin for park benches and castings made in Urvania.",
-                             "What the certificate is for."),
+            "Description": V("Certificate of origin for park benches and castings made in Urvania." if endorsed else
+                             "Application for a certificate of origin for park benches and castings made in "
+                             "Urvania.", "What the document is for."),
             "CertificateOfOriginApplication": {
-                "ReferenceID": V(f.number("certificate-application", exporter, "Application"),
-                                 "The exporter's reference for its application."),
+                "ReferenceID": V(application, "The exporter's reference for its application."),
                 "CertificateType": V("Preferential", "The goods qualify for the preferential duty rate in Bayvarra; "
                                                      "the importer needs this certificate to claim it."),
                 "ApplicationStatusCode": V("APPROVED" if endorsed else "SUBMITTED",
                                            "The chamber has approved the application." if endorsed
                                            else "The exporter submits the application."),
-                "OriginalJobID": V(f.numbers["order"], "The order the goods are for."),
+                "OriginalJobID": V(ROAD_CO_JOB, "The job number the chamber's e-certificate system gave the "
+                                                "application when it was lodged, by which it tracks amendments; "
+                                                "not the buyer's order (road/06#F7, D35)."),
                 "Shipment": {"ID": V(f.number("shipment", "8-xu", "Shipment"), "The shipment the certificate covers."),
                              "GoodsItem": goods_items(f, "XUF", "The value of the goods, in ferra.")},
                 "EndorserParty": signer,
@@ -460,7 +513,8 @@ def road(n, doc):
                 "IssuingCountry": {"IdentificationCode": V("XU", "The goods were made in Urvania, and the certificate is "
                                                                  "issued there.")}},
             "IssuerEndorsement": {
-                "DocumentID": V(f.numbers["certificate"], "The certificate this endorsement belongs to."),
+                "DocumentID": V(f"{ROAD_CO_JOB}-E1", "The identifier of this endorsement: the first of the chamber's "
+                                                      "job."),
                 "ApprovalStatus": V("Approved" if endorsed else "Pending", "The chamber has endorsed the certificate."
                                     if endorsed else "Not yet endorsed: the application is with the chamber."),
                 "EndorserParty": signer}}
@@ -472,7 +526,16 @@ def road(n, doc):
             "NetNetWeightMeasure": qty(net, "KGM", "The goods alone, without any packaging."),
             "GrossVolumeMeasure": V(kit.kg(kit.pallets_volume(f)), "The volume of the 25 loaded pallets.",
                                     unitCode="MTQ"),
-            "TotalGoodsItemQuantity": qty(2, "EA", "Two kinds of goods: benches and side frames."),
+            "TotalGoodsItemQuantity": qty(2, "EA", "Two kinds of goods, the goods items below: benches and side "
+                                                  "frames."),
+            # the goods as the consignment note describes them: nature, quantity and gross weight (road/08#F25)
+            "GoodsItem": [{"ID": V(str(i), "The goods item number, as in the export declaration."),
+                           "Description": V(ITEM[x["item"]]["name"], "What the goods are, in words."),
+                           "Quantity": qty(x["ordered"], ITEM[x["item"]]["unit"], "The pieces taken over."),
+                           "GrossWeightMeasure": qty(kit.line_gross(f, x, "ordered"), "KGM",
+                                                     "Their gross weight in their parcels, with the pallets they "
+                                                     "travel on.")}
+                          for i, x in enumerate(f.deal, 1)],
             "SplitConsignmentIndicator": V("false", "The whole consignment travels on this truck."),
             "ConsignmentQuantity": qty(1, "EA", "One consignment on the truck."),
             "HandlingCode": V("KEEPDRY", "The carrier's handling code: keep dry, for the goods travel in cardboard "
@@ -485,10 +548,12 @@ def road(n, doc):
             "Consignment": road_consignment(f, "note"),
             "Delivery": {"TrackingID": V(ROAD_JOB, "Track the truck with the carrier's job number."),
                          "EstimatedDeliveryPeriod": {"StartDate": V(f.date(9), "The morning of the third day."),
-                                                     "StartTime": V("09:00:00", "From nine."),
-                                                     "EndTime": V("11:00:00", "Until eleven.")},
+                                                     "StartTime": V("09:00:00", "From nine, when the slot opens."),
+                                                     "EndTime": V("10:00:00", "Until ten, when it closes.")},
                          "LatestDeliveryDate": V(f.date(9), "The goods-in slot cannot move."),
-                         "LatestDeliveryTime": V("12:00:00", "Dock 4 closes for the lunch change.")}})
+                         "LatestDeliveryTime": V("10:00:00", "The end of the slot, the time the delivery is required "
+                                                             "by (road/08#F14).")}})
+        del out["Description"]   # the leg's description is a caption of the example (road/08#F18)
         return out
     if doc["doc"] == "TransportationStatus":
         border = {"Name": V("Land border crossing Urvania–Bayvarra",
@@ -521,16 +586,15 @@ def road(n, doc):
                     CurrentStatus={
                         "ConditionCode": V("ONTIME", "The carriage runs to plan."),
                         "ReferenceDate": V(f.date(9), "The delivery the status is measured against."),
-                        "ReferenceTime": V("10:00:00", "The start of the goods-in slot."),
+                        "ReferenceTime": V("10:00:00", "The end of the goods-in slot, the time delivery is required by."),
                         "Description": V("In transit in Bayvarra, expected at the distribution centre on time.",
                                          "The status in words."),
                         "StatusReasonCode": V("CLEARED", "Why: the border is behind it."),
                         "StatusReason": V("Customs released the goods at the border.", "In words."),
                         "SequenceID": V("3", "The third report on this truck: collection, departure, border."),
                         "Text": V(f"Expected in Marrowdale about {wmap.about(ROAD_IN_MARROWDALE)}, after the morning "
-                                  "goods-in slots; the truck waits at the business park for its slot tomorrow at "
-                                  "10:00, and the driver takes his rest there.", "A note for the consignee."),
-                        "IndicationIndicator": V("true", "The status applies: the truck is on time."),
+                                  "goods-in slots; the truck waits at the business park for its slot tomorrow, "
+                                  "09:00 to 10:00, and the driver takes his rest there.", "A note for the consignee."),
                         "Percent": V(str(wmap.whole(100 * ROAD_BORDER_KM / ROAD_LEG_KM)),
                                      f"The share of the route driven: {wmap.whole(ROAD_BORDER_KM)} of "
                                      f"{DISTANCE_KM} km."),
@@ -607,7 +671,14 @@ def road(n, doc):
                                 "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume."),
                                 "Date": V(f.date(8), "The invoice date.")}})
     if doc["doc"] == "RemittanceAdvice":
-        return kit.remittance(f, n, doc, 37, "The day the payment is made across the border, before the due date.")
+        # Lumeway pays within the ten days of Valdara's standard terms and takes the 2 % (O218): Thursday 2 April,
+        # a working day in both countries, the last before the discount period ends on 3 April
+        out = kit.remittance(f, n, doc, 17, "The day the payment is made across the border, within the ten days "
+                                            "of the invoice's discount period (O218).", discount="2")
+        # the alias "receivables" names the account as Lumeway's payee account; paying from it, the name is given
+        # and stands for itself (road/17#F8)
+        out["PaymentMeans"]["PayerFinancialAccount"].pop("AliasName", None)
+        return out
     raise SystemExit(f"road scenario: no document {n} {doc['doc']}")
 
 
@@ -6267,13 +6338,14 @@ def _(f, n, doc, out):
 
 @enrich("road", "CertificateOfOrigin")
 def _(f, n, doc, out):
+    # no previous job: a first application (road/06#F17, 07#F18); no embassy and no insurance endorsement: the chamber
+    # is the only endorser and a certificate between Accord members needs no legalisation (road/07#F10, 06#F3, D35)
     x = {"Note": V("Preferential origin under the trade accord.", "What the certificate is for."),
-         "VersionID": V("1", "The first version."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-CO-{n:02d}"),
          "CertificateOfOriginApplication": {
-             "PreviousJobID": V("VI-CO-25-0412", "The exporter's application of last year for the same goods."),
-             "Remarks": V("Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives "
-                          "origin.", "Why the goods are of Urvanian origin."),
+             "Remarks": V("Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, "
+                          "finishing and making of the benches in Urvania give origin.", "Why the goods are of "
+                                                                                       "Urvanian origin."),
              "ExporterParty": party("5-xu", short=True),
              "ImporterParty": party("6-xb", short=True),
              "DocumentDistribution": {"ID": V("1", "The importer's copy."),
@@ -6288,16 +6360,6 @@ def _(f, n, doc, out):
                                                                          "goods.")},
              "Signature": seal("5-xu", "VI-SIG-COA")}}
     if doc["from"] == "20-xu":
-        x["EmbassyEndorsement"] = {"DocumentID": V(out["ID"].value, "The certificate legalised."),
-                                   "ApprovalStatus": V("Legalised", "The trade accord council confirms the "
-                                                                    "chamber's signature."),
-                                   "Remarks": V("Signature of the Ferrano chamber confirmed.", "What was checked."),
-                                   "EndorserParty": {"RoleCode": V("LEGALISATION", "The council legalises."),
-                                                     "SequenceNumeric": V("2", "After the chamber."),
-                                                     "Party": party("32-xb", short=True),
-                                                     "SignatoryContact": {"Name": V("Legalisation desk", "The "
-                                                                                    "council's desk that signs.")}},
-                                   "Signature": seal("32-xb", "LTAC-SIG-26-0311")}
         x["IssuerEndorsement"] = {"Remarks": V("Origin verified against the exporter's production records.",
                                                "What the chamber checked."),
                                   "Signature": seal("20-xu", "FCC-SIG-26-0309")}
@@ -6694,8 +6756,7 @@ def _(f, n, doc, out):
                              "EffectiveTime": V("14:05:00", "When matched."),
                              "Status": {"ConditionCode": V("MATCHED", "The invoice matched order and receipt."),
                                         "Description": V("Three-way match passed.", "In words.")}},
-                "IssuerParty": party(doc["from"], short=True),
-                "RecipientParty": party(doc["to"], short=True),
+                # no issuer and recipient of the invoice: the invoice names its parties (road/16#F11, D35)
                 "LineResponse": {"LineReference": {"LineID": V("2", "The invoice line of the side frames.")},
                                  "Response": {"ReferenceID": V("2", "The line."),
                                               "ResponseCode": V("AP", "Accepted."),
@@ -7079,17 +7140,8 @@ def _(f, n, doc, out):
                                                                         "its 3PL.")}}}}
 
 
-@enrich("road", "TransportationStatus")
-def _(f, n, doc, out):
-    st = out["TransportEvent"]["CurrentStatus"]
-    st["Condition"] = [st["Condition"], {"AttributeID": V("TRANSPORT", "Recorded by the trailer's "
-                                                                                 "sensor."),
-                                         "Measure": V("14", "The temperature in the trailer.", unitCode="CEL"),
-                                         "MinimumMeasure": V("4", "The lowest during the night.", unitCode="CEL"),
-                                         "MaximumMeasure": V("18", "The highest in the afternoon.", unitCode="CEL"),
-                                         "Description": V("No protection needed for galvanised frames and thermally modified slats.", "Why it is "
-                                                                                                    "only noted.")}]
-    return {}
+# road/09: no temperature condition: neither the goods nor the contract ask for one (road/09#F11); no indication
+# indicator, which said nothing the status does not (road/09#F10)
 
 
 @enrich("retail", "RetailEvent")
@@ -9038,17 +9090,7 @@ def _(f, n, doc, out):
     return {}
 
 
-@enrich("road", "CertificateOfOrigin")
-def _(f, n, doc, out):
-    return {"InsuranceEndorsement": {
-        "DocumentID": V("WS-CP-26-4471-E1", "The insurer's endorsement of the cargo policy for this consignment."),
-        "ApprovalStatus": V("Endorsed", "The insurer confirms the cover."),
-        "Remarks": V("The goods described in this certificate are insured door to door.", "What it confirms."),
-        "EndorserParty": {"RoleCode": V("INSURER", "It endorses as insurer."),
-                          "SequenceNumeric": V("2", "After the chamber; the embassy legalises separately."),
-                          "Party": party("29-xb", short=True),
-                          "SignatoryContact": {"Name": V("Cargo claims desk", "Who signs for the insurer.")}},
-        "Signature": seal("29-xb", "WS-SIG-26-E1", "The insurer's seal on the endorsement.")}}
+# road: no insurance endorsement on the certificate of origin; the chamber is its only endorser (road/06#F3, D35)
 
 
 @enrich("tender", "Order")
@@ -9553,34 +9595,45 @@ def _(f, n, doc, out):
 
 @enrich("road", "ReceiptAdvice")
 def _(f, n, doc, out):
+    """The bench's parcel on the wrong pallet (D35 point 1): a knocked-down bench travels as three parcels, and the 3PL
+    put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like. Goods-in
+    counts 95 complete benches and 13 frame cartons; the recount the next morning reads the carton's label and finds
+    it the 96th bench's. Nothing crossed the border beyond the 300 parcels the carrier took over."""
     b, c = out["ReceiptLine"][0], out["ReceiptLine"][1]
     if nth("road", n, doc) == 2:
         f.numbers["receipt-1"] = f.numbers["receipt"]
         no = f.number("receipt-2", doc["from"], "ReceiptAdvice")
         f.numbers["receipt"] = no
-        b.update({"UUID": line_uuid(f, "receipt-2", 1), "Note": V("All 96 benches, after the recount.", "The line.")})
-        c.update({"ReceivedQuantity": qty(13, "EA", "One box more than despatched."),
-                  "OversupplyQuantity": qty(1, "EA", "The extra box, held for collection by the next truck."),
-                  "Note": V("One box more than despatched: picked twice at the 3PL.", "What was found."),
+        b.update({"UUID": line_uuid(f, "receipt-2", 1),
+                  "Note": V("All 96 benches, after the recount: the 13th carton on the pallet of side frames is this "
+                            "line's, parcel 2 of 3 of the bench reported short.", "The line.")})
+        c.update({"Note": V("12 spare frames, as despatched: the 13th carton on their pallet was a bench's parcel.",
+                            "The line."),
                   "UUID": line_uuid(f, "receipt-2", 2)})
+        given = out.get("AdditionalDocumentReference")
+        out["AdditionalDocumentReference"] = ([given] if isinstance(given, dict) else given or []) + [
+            {"ID": V(f.numbers["receipt-1"], "The receipt advice this one replaces, cancelled by the fulfilment "
+                                             "cancellation of the same morning (road/13#F8).")}]
         return {"ID": V(no, "A new number: the first receipt advice was cancelled."),
                 "IssueDate": V(f.date(10), "The morning after the delivery, after the recount."),
-                "DocumentStatusCode": V("Revised", "UBL document status code Revised: it replaces the cancelled receipt advice."),
-                "Note": V("Recounted: all benches received; one box of side frames over.", "The result.")}
-    b.update({"ReceivedQuantity": qty(95, "EA", "One bench fewer than despatched."),
-              "ShortQuantity": qty(1, "EA", "One bench short."),
-              "ShortageActionCode": V("REPLACE", "The distributor asks for the missing bench with the next truck."),
-              "Note": V("One pallet held three benches and a box of side frames: mis-picked at the 3PL.", "What "
-                                                                                                          "was "
-                                                                                                          "found."),
+                "DocumentStatusCode": V("Revised", "UBL document status code Revised: it replaces the cancelled "
+                                                   "receipt advice."),
+                "Note": V("Recounted: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; "
+                          "the 300 parcels agree with the carrier's count.", "The result (road/13#F15).")}
+    b.update({"ReceivedQuantity": qty(95, "EA", "One bench fewer than despatched, counted as complete benches."),
+              "ShortQuantity": qty(1, "EA", "One bench without its second frame carton."),
+              "ShortageActionCode": V("REPLACE", "The distributor asks for the bench's missing parcel with the next "
+                                                 "truck."),
+              "Note": V("One bench without its frame carton with the bolt set, parcel 2 of 3: 95 complete "
+                        "benches.", "What was found."),
               "UUID": line_uuid(f, "receipt", 1),
               "Shipment": {"ID": V(f.numbers["shipment"], "The shipment received.")}})
-    c.update({"ReceivedQuantity": qty(13, "EA", "One box more than despatched."),
-              "OversupplyQuantity": qty(1, "EA", "The extra box, held for collection by the next truck."),
-              "Note": V("The mis-picked box, in place of the missing bench.", "What was found."),
+    c.update({"ReceivedQuantity": qty(13, "EA", "Thirteen frame cartons on the pallet of side frames."),
+              "OversupplyQuantity": qty(1, "EA", "One carton more than despatched."),
+              "Note": V("13 frame cartons on the pallet of side frames, one more than despatched.", "What was found."),
               "UUID": line_uuid(f, "receipt", 2)})
-    return {"Note": V("Counted and checked at goods-in: one bench short, one box of side frames over.", "The "
-                                                                                                        "result.")}
+    return {"Note": V("Counted and checked at goods-in: one bench short of a parcel, one frame carton over.", "The "
+                                                                                                         "result.")}
 
 
 # --- Coverage completion, batch D: utilities -------------------------------------------------------------------
@@ -10462,18 +10515,35 @@ SCENARIOS["packaging"] = _with_enrichment("packaging", packaging_complete)
 
 
 
+def road_casting(out, key):
+    """From the order response on, the side frame shipped is the 2026 casting: its seller's number with the extended
+    ID the response gave it (road/04#F15, 11#F12, 13#F18, 15#F13; D35 point 3, D5)."""
+    for ln in lines_of(out, key):
+        it = ln.get("Item", {})
+        sid = it.get("SellersItemIdentification")
+        if isinstance(sid, dict) and sid["ID"].value == ITEM["bench-casting"]["sellers_id"]:
+            sid["ExtendedID"] = V(ROAD_CASTING, "The 2026 casting with the reinforced foot, which the order response "
+                                                "substituted for the casting ordered.")
+
+
 def road_complete(n, doc):
     f = ROAD
+    lines = {"DespatchAdvice": "DespatchLine", "ReceiptAdvice": "ReceiptLine",
+             "Invoice": "InvoiceLine"}.get(doc["doc"])
+    if lines and doc["from"] != "13-xu":
+        out = road(n, doc)
+        road_casting(out, lines)
+        return out
     if doc["doc"] == "FulfilmentCancellation":
         return {**head(f, "receipt-cancellation", doc, 10, "Sent with the recount, before the corrected receipt "
                                                            "advice."),
                 "Note": V("A corrected receipt advice follows.", "What happens next."),
-                "CancellationNote": V("The recount found the bench reported short; the shortage did not exist.",
-                                      "Why the receipt advice is cancelled."),
+                "CancellationNote": V("The recount read the label of the 13th carton on the pallet of side frames: "
+                                      "\"Serra 180, parcel 2 of 3\", the bench reported short. Neither the shortage "
+                                      "nor the carton over existed.", "Why the receipt advice is cancelled."),
                 "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice cancelled.")},
-                "OrderReference": {"ID": V(f.numbers["order"], "The distributor's order.")},
-                "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
-                                                                             "delivery.")}}
+                # only the receipt advice is cancelled: the despatch advice stands (road/12#F1)
+                "OrderReference": {"ID": V(f.numbers["order"], "The distributor's order.")}}
     return road(n, doc)
 
 

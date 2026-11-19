@@ -998,7 +998,7 @@
    "doc": "OrderResponse",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "The manufacturer accepts the order and confirms the collection date at its warehouse.",
+   "why": "The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier (decision D35).",
    "parties": {
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb"
@@ -1051,7 +1051,7 @@
    "doc": "CertificateOfOrigin",
    "from": "5-xu",
    "to": "20-xu",
-   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin.",
+   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin. The application is Valdara's own document, with its own number; the chamber's e-certificate system gives it a job number when it is lodged (decision D35).",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
@@ -1063,7 +1063,7 @@
    "doc": "CertificateOfOrigin",
    "from": "20-xu",
    "to": "6-xb",
-   "why": "The chamber endorses the certificate and makes it available to the importer, who needs it for the import declaration.",
+   "why": "The chamber, the body Urvania authorises under the Trade Accord to issue proofs of preferential origin, checks the application, issues the certificate under its own number and is its only endorser: a certificate between Accord members needs no legalisation. It makes the certificate available to the importer, who needs it for the import declaration (decision D35).",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
@@ -1128,7 +1128,7 @@
    "doc": "FulfilmentCancellation",
    "from": "6-xb",
    "to": "5-xu",
-   "why": "The next morning the distributor's recount finds the 96th bench on the last pallet: the receipt advice reported a shortage that is not there, so the distributor cancels it.",
+   "why": "The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like, so goods-in reported 95 benches and one carton of frames over. The next morning the distributor's recount reads the carton's label: it is the 96th bench's. The receipt advice reported a shortage and a carton over that are not there, so the distributor cancels it (decision D35).",
    "parties": {
     "BuyerCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu",
@@ -1140,7 +1140,7 @@
    "doc": "ReceiptAdvice",
    "from": "6-xb",
    "to": "8-xu",
-   "why": "The corrected receipt advice: all 96 benches received, and one box of side frames more than despatched.",
+   "why": "The corrected receipt advice: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; it names the receipt advice it replaces (decision D35).",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
     "DespatchSupplierParty": "8-xu",

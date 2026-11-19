@@ -2,7 +2,7 @@
 
 *Example 12 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Fulfilment Cancellation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA)*
 
-The next morning the distributor's recount finds the 96th bench on the last pallet: the receipt advice reported a shortage that is not there, so the distributor cancels it.
+The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like, so goods-in reported 95 benches and one carton of frames over. The next morning the distributor's recount reads the carton's label: it is the 96th bench's. The receipt advice reported a shortage and a carton over that are not there, so the distributor cancels it (decision D35).
 
 [The XML file](12-FulfilmentCancellation.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,15 +28,8 @@ The next morning the distributor's recount finds the 96th bench on the last pall
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **A corrected receipt advice follows.**  
   What happens next.
-- `CancellationNote` = **The recount found the bench reported short; the shortage did not exist.**  
+- `CancellationNote` = **The recount read the label of the 13th carton on the pallet of side frames: "Serra 180, parcel 2 of 3", the bench reported short. Neither the shortage nor the carton over existed.**  
   Why the receipt advice is cancelled.
-
-### Despatch Document Reference
-
-Inside `DespatchDocumentReference`:
-
-- `ID` = **CL-DA-26-0153**  
-  The despatch advice of the delivery.
 
 ### Receipt Document Reference
 
@@ -233,10 +226,7 @@ Inside `DespatchSupplierParty`:
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:Note>A corrected receipt advice follows.</cbc:Note>
-  <cbc:CancellationNote>The recount found the bench reported short; the shortage did not exist.</cbc:CancellationNote>
-  <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0153</cbc:ID>
-  </cac:DespatchDocumentReference>
+  <cbc:CancellationNote>The recount read the label of the 13th carton on the pallet of side frames: "Serra 180, parcel 2 of 3", the bench reported short. Neither the shortage nor the carton over existed.</cbc:CancellationNote>
   <cac:ReceiptDocumentReference>
     <cbc:ID>LD-RA-26-0162</cbc:ID>
   </cac:ReceiptDocumentReference>

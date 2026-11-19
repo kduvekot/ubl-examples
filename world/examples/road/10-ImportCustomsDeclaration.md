@@ -412,7 +412,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **FCC-CO-26-0157**  
   The certificate of origin, to claim the preferential duty rate; the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **CertificateOfOrigin** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FCC-CO-26-0157 is the example road/06, a CertificateOfOrigin; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
+  The kind of document referred to: FCC-CO-26-0157 is the example road/07, a CertificateOfOrigin; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
 - `ID` = **VI-EX-26-0155**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  

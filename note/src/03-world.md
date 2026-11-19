@@ -1142,7 +1142,13 @@ every import declaration claims the preference, names the criterion
 refers to its proof of origin. The proof is a certificate of origin from a
 chamber of commerce where the exporter asks for one, or else the exporter's
 statement on origin on its commercial invoice, worded as the origin
-declarations of the EU's preferential arrangements. Goods from outside the Accord pay each
+declarations of the EU's preferential arrangements. Each country names the
+bodies that may issue the certificates under the Accord; Urvania has
+authorised its chambers of commerce, as real agreements delegate this to
+chambers too. The exporter applies with a document of its own; the chamber
+checks it, issues the certificate under its own number and is its only
+endorser, for a certificate between Accord members needs no legalisation by
+an embassy. Goods from outside the Accord pay each
 country's own tariff. What is still due at the border differs. In Urvania,
 value added tax of 20 % on the value with freight to the border, which a
 business deducts again. In Bayvarra nothing, because its sales tax is
