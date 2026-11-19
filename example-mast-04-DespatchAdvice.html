@@ -51,9 +51,10 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-06-04</strong><br />
 Sent when the goods leave for the airport.</li>
-<li><code>IssueTime</code> = <strong>13:20:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+<li><code>IssueTime</code> = <strong>09:40:00-01:00</strong><br />
+When the forwarder's truck left Saltmere's works for the airport, about
+an hour away; in the issuer's local time, with its offset from UTC
+(D27).</li>
 <li><code>DespatchAdviceTypeCode</code> = <strong>DELIVERY</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code>)<br />
@@ -365,8 +366,8 @@ The despatching party's shipment number.</li>
 <li><code>Consignment/ID</code> = <strong>SE-CS-26-0716</strong><br />
 The consignment the goods travel in, as numbered when the transport was
 booked.</li>
-<li><code>Consignment/GrossWeightMeasure</code> = <strong>376</strong>
-(unitCode <code>KGM</code>)<br />
+<li><code>Consignment/GrossWeightMeasure</code> =
+<strong>333.75</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined (worklist
 C15). The gross weight.</li>
@@ -479,10 +480,10 @@ day 06:00–22:00</strong><br />
 When the desk can be reached; identity of Kelaro Air Cargo
 (world/parties.json).</li>
 <li><code>Delivery/EstimatedDeliveryPeriod/StartDate</code> =
-<strong>2026-06-04</strong><br />
+<strong>2026-06-05</strong><br />
 Expected after the usual transit by air.</li>
 <li><code>Delivery/EstimatedDeliveryPeriod/EndDate</code> =
-<strong>2026-06-04</strong><br />
+<strong>2026-06-05</strong><br />
 The same day.</li>
 <li><code>Delivery/Despatch/ActualDespatchDate</code> =
 <strong>2026-06-04</strong><br />
@@ -493,19 +494,19 @@ The goods left on the day of this advice.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
-<li><code>Note</code> = <strong>Six packs: four hours of back-up power
-for the mast.</strong><br />
+<li><code>Note</code> = <strong>Twelve modules of 2.4 kWh: four hours of
+back-up power for the mast.</strong><br />
 The line as the order put it.</li>
-<li><code>DeliveredQuantity</code> = <strong>6</strong> (unitCode
+<li><code>DeliveredQuantity</code> = <strong>12</strong> (unitCode
 <code>EA</code>)<br />
 What was despatched.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>1</strong><br />
 The order line this line fulfils.</li>
-<li><code>Item/Description</code> = <strong>Back-up battery for telecom
-masts, lithium-ion, 4.8 kWh, in a steel case.</strong><br />
+<li><code>Item/Description</code> = <strong>Back-up battery module for
+telecom masts, lithium-ion, 2.4 kWh, in a steel case.</strong><br />
 The seller's description; item battery-pack of Saltmere Engineering
 (world/items.json).</li>
-<li><code>Item/Name</code> = <strong>Lithium-ion battery pack 48 V 100
+<li><code>Item/Name</code> = <strong>Lithium-ion battery module 48 V 50
 Ah</strong><br />
 The item's short name; item battery-pack of Saltmere Engineering
 (world/items.json).</li>
@@ -513,22 +514,16 @@ The item's short name; item battery-pack of Saltmere Engineering
 <strong>true</strong><br />
 The item is dangerous goods.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
-<strong>SE-BAT-48100</strong><br />
+<strong>SE-BAT-4850</strong><br />
 The seller's own item number; item battery-pack of Saltmere Engineering
 (world/items.json).</li>
 <li><code>Item/HazardousItem/ID</code> =
-<strong>SE-BAT-48100-DG</strong><br />
+<strong>SE-BAT-4850-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
-<li><code>Item/HazardousItem/PlacardNotation</code> =
-<strong>9</strong><br />
-The class shown on the placard.</li>
-<li><code>Item/HazardousItem/PlacardEndorsement</code> =
-<strong>9A</strong><br />
-The hazard label on the package.</li>
 <li><code>Item/HazardousItem/AdditionalInformation</code> =
 <strong>State of charge below 30 %, as the air rules
 require.</strong><br />
-What the shipper adds.</li>
+What the shipper adds about handling.</li>
 <li><code>Item/HazardousItem/UNDGCode</code> = <strong>3480</strong>
 (listID <code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number, from the Dangerous Goods List of the UN Model
@@ -545,24 +540,13 @@ assigned.</li>
 <li><code>Item/HazardousItem/UNPackingGroup</code> = <strong>No packing
 group assigned</strong><br />
 The name of code NA in the Trade Accord's packing group list.</li>
-<li><code>Item/HazardousItem/EmergencyProceduresCode</code> =
-<strong>F-A,S-I</strong> (listID <code>IMO IMDG EmS</code>)<br />
-The emergency schedules for ships (EmS) of the IMDG Code for this UN
-entry: the fire schedule and the spillage schedule. The code is from the
-world's copy of IMO IMDG Code emergency schedules (EmS): F-A,S-I = Fire
-schedule Alpha, spillage schedule India.</li>
 <li><code>Item/HazardousItem/MedicalFirstAidGuideCode</code> =
 <strong>147</strong> (listID <code>ERG 2024</code>)<br />
 The guide number of the Emergency Response Guidebook (ERG 2024) for this
-UN number: the world's carriers use the ERG, as the IMDG Code no longer
-gives medical first aid table numbers per UN number. The code is from
-the world's copy of Emergency Response Guidebook 2024, guide numbers:
-147 = Lithium Ion and Sodium Ion Batteries.</li>
-<li><code>Item/HazardousItem/TunnelRestrictionCode</code> =
-<strong>E</strong> (listID
-<code>UNECE ADR tunnel restriction code</code>)<br />
-The tunnel restriction code for road transport. The code is from the
-world's copy of ADR tunnel restriction code: E.</li>
+UN number: the world's carriers and receivers use the ERG, as the IMDG
+Code no longer gives medical first aid table numbers per UN number. The
+code is from the world's copy of Emergency Response Guidebook 2024,
+guide numbers: 147 = Lithium Ion and Sodium Ion Batteries.</li>
 <li><code>Item/HazardousItem/ProperShippingName</code> = <strong>Lithium
 ion batteries</strong><br />
 The proper shipping name of the UN entry; the build checks that UN
@@ -585,7 +569,7 @@ dangerous substances and articles. An identifier that holds a code names
 the code's list in its schemeID.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The line number.</li>
-<li><code>Note</code> = <strong>One set of ten for the equipment
+<li><code>Note</code> = <strong>One pack of ten for the equipment
 room.</strong><br />
 The line as the order put it.</li>
 <li><code>DeliveredQuantity</code> = <strong>1</strong> (unitCode
@@ -612,13 +596,10 @@ Engineering (world/items.json).</li>
 <li><code>Item/HazardousItem/ID</code> =
 <strong>SE-SMK-10-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
-<li><code>Item/HazardousItem/PlacardNotation</code> =
-<strong>7</strong><br />
-The class shown on the placard.</li>
 <li><code>Item/HazardousItem/AdditionalInformation</code> =
-<strong>Excepted package: no radioactive label, the UN number on the
+<strong>Excepted package: no radioactive label; the UN number on the
 package.</strong><br />
-What the shipper adds.</li>
+What the shipper adds about handling.</li>
 <li><code>Item/HazardousItem/UNDGCode</code> = <strong>2911</strong>
 (listID <code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number, from the Dangerous Goods List of the UN Model
@@ -635,19 +616,13 @@ assigned.</li>
 <li><code>Item/HazardousItem/UNPackingGroup</code> = <strong>No packing
 group assigned</strong><br />
 The name of code NA in the Trade Accord's packing group list.</li>
-<li><code>Item/HazardousItem/EmergencyProceduresCode</code> =
-<strong>F-I,S-S</strong> (listID <code>IMO IMDG EmS</code>)<br />
-The emergency schedules for ships (EmS) of the IMDG Code for this UN
-entry: the fire schedule and the spillage schedule. The code is from the
-world's copy of IMO IMDG Code emergency schedules (EmS): F-I,S-S = Fire
-schedule India, spillage schedule Sierra.</li>
 <li><code>Item/HazardousItem/MedicalFirstAidGuideCode</code> =
 <strong>161</strong> (listID <code>ERG 2024</code>)<br />
 The guide number of the Emergency Response Guidebook (ERG 2024) for this
-UN number: the world's carriers use the ERG, as the IMDG Code no longer
-gives medical first aid table numbers per UN number. The code is from
-the world's copy of Emergency Response Guidebook 2024, guide numbers:
-161 = Radioactive Materials (Low Level Radiation).</li>
+UN number: the world's carriers and receivers use the ERG, as the IMDG
+Code no longer gives medical first aid table numbers per UN number. The
+code is from the world's copy of Emergency Response Guidebook 2024,
+guide numbers: 161 = Radioactive Materials (Low Level Radiation).</li>
 <li><code>Item/HazardousItem/ProperShippingName</code> =
 <strong>Radioactive material, excepted package - instruments or
 articles</strong><br />
@@ -669,29 +644,29 @@ UN Model Regulations hazard class and division: 7 = Radioactive
 material. An identifier that holds a code names the code's list in its
 schemeID.</li>
 <li><code>Item/HazardousItem/RadioactiveMaterial/Name</code> =
-<strong>Americium-241 sources in smoke detectors</strong><br />
-The material.</li>
+<strong>Am-241, 10 × 37 kBq (370 kBq) in ionisation smoke
+detectors</strong><br />
+The nuclide and the activity of the pack as carried, in the name: UBL
+defines ApplicableRadioactiveIsotope for fissile contents only, and
+americium-241 is not fissile, so the name is the only place left for
+them (D36, O127).</li>
 <li><code>Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription</code>
-= <strong>Sealed source, not special form.</strong><br />
+= <strong>Sealed sources inside the detectors, not special
+form.</strong><br />
 Its form.</li>
-<li><code>Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/Name</code>
-= <strong>Americium-241</strong><br />
-The isotope.</li>
-<li><code>Item/HazardousItem/RadioactiveMaterial/ApplicableRadioactiveIsotope/ActivityLevelMeasure</code>
-= <strong>37</strong> (unitCode <code>2Q</code>)<br />
-Per detector.</li>
 <li><code>ID</code> = <strong>3</strong><br />
 The line number.</li>
-<li><code>Note</code> = <strong>Four cans of five litres for the circuit
-boards.</strong><br />
+<li><code>Note</code> = <strong>Five litres for the circuit boards, in
+1-litre tins.</strong><br />
 The line as the order put it.</li>
-<li><code>DeliveredQuantity</code> = <strong>20</strong> (unitCode
+<li><code>DeliveredQuantity</code> = <strong>5</strong> (unitCode
 <code>LTR</code>)<br />
 What was despatched.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>3</strong><br />
 The order line this line fulfils.</li>
 <li><code>Item/Description</code> = <strong>Remover for the protective
-coating of circuit boards, in 5-litre cans.</strong><br />
+coating of circuit boards, in 1-litre tins, five to a
+box.</strong><br />
 The seller's description; item coating-stripper of Saltmere Engineering
 (world/items.json).</li>
 <li><code>Item/Name</code> = <strong>Coating stripper for
@@ -702,21 +677,12 @@ The item's short name; item coating-stripper of Saltmere Engineering
 <strong>true</strong><br />
 The item is dangerous goods.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
-<strong>SE-CS-05</strong><br />
+<strong>SE-CS-01</strong><br />
 The seller's own item number; item coating-stripper of Saltmere
 Engineering (world/items.json).</li>
 <li><code>Item/HazardousItem/ID</code> =
-<strong>SE-CS-05-DG</strong><br />
+<strong>SE-CS-01-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
-<li><code>Item/HazardousItem/PlacardNotation</code> =
-<strong>8</strong><br />
-The class shown on the placard.</li>
-<li><code>Item/HazardousItem/PlacardEndorsement</code> =
-<strong>8</strong><br />
-The hazard label on the package.</li>
-<li><code>Item/HazardousItem/AdditionalInformation</code> =
-<strong>Packed as the rules require.</strong><br />
-What the shipper adds.</li>
 <li><code>Item/HazardousItem/UNDGCode</code> = <strong>2920</strong>
 (listID <code>UN Model Regulations Dangerous Goods List</code>)<br />
 The UN number, from the Dangerous Goods List of the UN Model
@@ -732,29 +698,13 @@ from the Trade Accord's packing group list: II = Medium danger.</li>
 <li><code>Item/HazardousItem/UNPackingGroup</code> = <strong>Medium
 danger</strong><br />
 The name of code II in the Trade Accord's packing group list.</li>
-<li><code>Item/HazardousItem/EmergencyProceduresCode</code> =
-<strong>F-E,S-C</strong> (listID <code>IMO IMDG EmS</code>)<br />
-The emergency schedules for ships (EmS) of the IMDG Code for this UN
-entry: the fire schedule and the spillage schedule. The code is from the
-world's copy of IMO IMDG Code emergency schedules (EmS): F-E,S-C = Fire
-schedule Echo, spillage schedule Charlie.</li>
 <li><code>Item/HazardousItem/MedicalFirstAidGuideCode</code> =
 <strong>132</strong> (listID <code>ERG 2024</code>)<br />
 The guide number of the Emergency Response Guidebook (ERG 2024) for this
-UN number: the world's carriers use the ERG, as the IMDG Code no longer
-gives medical first aid table numbers per UN number. The code is from
-the world's copy of Emergency Response Guidebook 2024, guide numbers:
-132 = Flammable Liquids - Corrosive.</li>
-<li><code>Item/HazardousItem/TunnelRestrictionCode</code> =
-<strong>D/E</strong> (listID
-<code>UNECE ADR tunnel restriction code</code>)<br />
-The tunnel restriction code for road transport. The code is from the
-world's copy of ADR tunnel restriction code: D/E.</li>
-<li><code>Item/HazardousItem/MaritimePollutantCode</code> =
-<strong>N</strong> (listID
-<code>urn:ubl-examples:world:codelist:MarinePollutantCode</code>)<br />
-Not a marine pollutant. The code is from the Trade Accord's marine
-pollutant list: N = Not a marine pollutant.</li>
+UN number: the world's carriers and receivers use the ERG, as the IMDG
+Code no longer gives medical first aid table numbers per UN number. The
+code is from the world's copy of Emergency Response Guidebook 2024,
+guide numbers: 132 = Flammable Liquids - Corrosive.</li>
 <li><code>Item/HazardousItem/TechnicalName</code> =
 <strong>ethanolamine, propanol</strong><br />
 The technical name, needed with an n.o.s. entry.</li>
@@ -787,20 +737,6 @@ schemeID.</li>
 <li><code>Item/HazardousItem/SecondaryHazard/PlacardNotation</code> =
 <strong>3</strong><br />
 Shown on a second label.</li>
-<li><code>Item/HazardousItem/SecondaryHazard/PlacardEndorsement</code> =
-<strong>3</strong><br />
-The flammable liquid label.</li>
-<li><code>Item/HazardousItem/SecondaryHazard/EmergencyProceduresCode</code>
-= <strong>TEC3</strong> (listID
-<code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code>)<br />
-UBL defines it as "A code signifying the emergency procedures for this
-secondary hazard": the Trade Accord's emergency card for class 3. The
-IMDG Code gives one pair of emergency schedules for the whole UN entry
-(on the item above), not one per hazard; the instructions in writing of
-road transport (ADR 5.4.3), which the Accord's cards follow, give the
-actions per danger label, the subsidiary hazard's label included. The
-code is from the Trade Accord's transport emergency card list: TEC3 =
-Emergency card for class 3.</li>
 <li><code>Item/HazardousItem/SecondaryHazard/Extension</code> =
 <strong>Subsidiary risk 3</strong><br />
 In words.</li>
@@ -825,7 +761,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SE-DA-26-0718&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;7619027f-bad8-5009-935f-978a56d56a14&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-04&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;13:20:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:40:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DespatchAdviceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DespatchAdviceTypeCode&quot;</span>&gt;DELIVERY&lt;/<span class="kw">cbc:DespatchAdviceTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the goods on arrival and report any damage on the air waybill.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;3&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
@@ -936,7 +872,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SE-SH-26-0715&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-26-0716&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;376&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;333.75&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -971,8 +907,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDeliveryPeriod</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-06-04&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-04&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-06-05&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-05&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-06-04&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
@@ -981,122 +917,104 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Six packs: four hours of back-up power for the mast.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Twelve modules of 2.4 kWh: four hours of back-up power for the mast.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lithium-ion battery pack 48 V 100 Ah&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lithium-ion battery module 48 V 50 Ah&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-48100&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-4850&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-48100-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlacardNotation</span>&gt;9&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;9A&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;State of charge below 30 %, as the air rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-A,S-I&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;147&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TunnelRestrictionCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE ADR tunnel restriction code&quot;</span>&gt;E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Lithium ion batteries&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;9&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarkingID</span>&gt;UN3480&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;9&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;One set of ten for the equipment room.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;1&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;2&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Ten ionisation smoke detectors for the mast&#39;s equipment room, each with a small americium-241 source.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ionisation smoke detector set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlacardNotation</span>&gt;7&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Excepted package: no radioactive label, the UN number on the package.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2911&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-I,S-S&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;161&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Radioactive material, excepted package - instruments or articles&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;7&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2911&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;7&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Americium-241 sources in smoke detectors&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SpecialFormDescription</span>&gt;Sealed source, not special form.&lt;/<span class="kw">cbc:SpecialFormDescription</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Americium-241&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ActivityLevelMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;2Q&quot;</span>&gt;37&lt;/<span class="kw">cbc:ActivityLevelMeasure</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ApplicableRadioactiveIsotope</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Four cans of five litres for the circuit boards.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;LTR&quot;</span>&gt;20&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;3&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Remover for the protective coating of circuit boards, in 5-litre cans.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-05-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlacardNotation</span>&gt;8&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;8&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Packed as the rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO IMDG EmS&quot;</span>&gt;F-E,S-C&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;132&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TunnelRestrictionCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE ADR tunnel restriction code&quot;</span>&gt;D/E&lt;/<span class="kw">cbc:TunnelRestrictionCode</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaritimePollutantCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MarinePollutantCode&quot;</span>&gt;N&lt;/<span class="kw">cbc:MaritimePollutantCode</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TechnicalName</span>&gt;ethanolamine, propanol&lt;/<span class="kw">cbc:TechnicalName</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Corrosive liquid, flammable, n.o.s.&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2920&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardEndorsement</span>&gt;3&lt;/<span class="kw">cbc:PlacardEndorsement</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmergencyProceduresCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEmergencyCardCode&quot;</span>&gt;TEC3&lt;/<span class="kw">cbc:EmergencyProceduresCode</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-BAT-4850-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;State of charge below 30 %, as the air rules require.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;3480&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;147&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Lithium ion batteries&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;9&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarkingID</span>&gt;UN3480&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;9&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;One pack of ten for the equipment room.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;1&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;2&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Ten ionisation smoke detectors for the mast&#39;s equipment room, each with a small americium-241 source.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ionisation smoke detector set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-SMK-10-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AdditionalInformation</span>&gt;Excepted package: no radioactive label; the UN number on the package.&lt;/<span class="kw">cbc:AdditionalInformation</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2911&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;NA&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;No packing group assigned&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;161&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Radioactive material, excepted package - instruments or articles&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;7&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2911&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;7&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Am-241, 10 × 37 kBq (370 kBq) in ionisation smoke detectors&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SpecialFormDescription</span>&gt;Sealed sources inside the detectors, not special form.&lt;/<span class="kw">cbc:SpecialFormDescription</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RadioactiveMaterial</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Five litres for the circuit boards, in 1-litre tins.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;LTR&quot;</span>&gt;5&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;3&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Coating stripper for electronics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;SE-CS-01-DG&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNDGCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations Dangerous Goods List&quot;</span>&gt;2920&lt;/<span class="kw">cbc:UNDGCode</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroupCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UNPackingGroupCode&quot;</span>&gt;II&lt;/<span class="kw">cbc:UNPackingGroupCode</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UNPackingGroup</span>&gt;Medium danger&lt;/<span class="kw">cbc:UNPackingGroup</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MedicalFirstAidGuideCode</span> <span class="ot">listID=</span><span class="st">&quot;ERG 2024&quot;</span>&gt;132&lt;/<span class="kw">cbc:MedicalFirstAidGuideCode</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TechnicalName</span>&gt;ethanolamine, propanol&lt;/<span class="kw">cbc:TechnicalName</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ProperShippingName</span>&gt;Corrosive liquid, flammable, n.o.s.&lt;/<span class="kw">cbc:ProperShippingName</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardousCategoryCode</span> <span class="ot">listID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardousCategoryCode</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MarkingID</span>&gt;UN2920&lt;/<span class="kw">cbc:MarkingID</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HazardClassID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;8&lt;/<span class="kw">cbc:HazardClassID</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN Model Regulations hazard class&quot;</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PlacardNotation</span>&gt;3&lt;/<span class="kw">cbc:PlacardNotation</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Extension</span>&gt;Subsidiary risk 3&lt;/<span class="kw">cbc:Extension</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SecondaryHazard</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;FLASHPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;28&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FlashpointTemperature</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:HazardousItem</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/98147139a909334924aca8fe0f1b47359c99567e"><code>9814713</code></a> of 2026-11-19 19:22 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
 </body>
 </html>

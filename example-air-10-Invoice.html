@@ -13,13 +13,13 @@ Distribution · UBL Example Documents</title>
 <main class="prose">
 <h1 id="invoice-bayforth-forwarding-to-lumeway-distribution">Invoice:
 Bayforth Forwarding to Lumeway Distribution</h1>
-<p><em>Example 10 of the flow "An urgent part of the order by air
-(Bayvarra → island Lisavu)" · <a
+<p><em>Example 10 of the flow "Urgent spare frames by air (Urvania →
+Bayvarra → island Lisavu)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">Invoice
 in the UBL 2.5 specification</a></em></p>
-<p>The forwarder invoices the air freight, including the road feeder
-leg, to the distributor, who sold carriage paid to the island
-airport.</p>
+<p>The forwarder invoices the airport-to-airport air freight at the
+chargeable weight of the airline's waybill to the distributor, who sold
+carriage paid to the island airport.</p>
 <p><a href="examples/air/10-Invoice.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -724,7 +724,7 @@ Bayvarran practice: a surcharge per month of late payment, no
 discount.</li>
 <li><code>PenaltySurchargePercent</code> = <strong>1.5</strong><br />
 The surcharge per month of late payment.</li>
-<li><code>PenaltyAmount</code> = <strong>10.00</strong> (currencyID
+<li><code>PenaltyAmount</code> = <strong>10.71</strong> (currencyID
 <code>XBL</code>)<br />
 The surcharge for each month late.</li>
 <li><code>PaymentTermsDetailsURI</code> = <strong><a
@@ -743,7 +743,7 @@ month for as long as the amount is late (worklist C38).</li>
 <li><code>TaxAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
 The sum of the tax of all categories.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>666.40</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>714.00</strong>
 (currencyID <code>XBL</code>)<br />
 The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
@@ -780,16 +780,16 @@ the code's list in its schemeID.</li>
 <h3 id="legal-monetary-total">Legal Monetary Total</h3>
 <p>Inside <code>LegalMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>666.40</strong>
+<li><code>LineExtensionAmount</code> = <strong>714.00</strong>
 (currencyID <code>XBL</code>)<br />
 The sum of the line amounts.</li>
-<li><code>TaxExclusiveAmount</code> = <strong>666.40</strong>
+<li><code>TaxExclusiveAmount</code> = <strong>714.00</strong>
 (currencyID <code>XBL</code>)<br />
 The total without tax: the line amounts, no allowances or charges.</li>
-<li><code>TaxInclusiveAmount</code> = <strong>666.40</strong>
+<li><code>TaxInclusiveAmount</code> = <strong>714.00</strong>
 (currencyID <code>XBL</code>)<br />
 The total without tax plus the tax.</li>
-<li><code>PayableAmount</code> = <strong>666.40</strong> (currencyID
+<li><code>PayableAmount</code> = <strong>714.00</strong> (currencyID
 <code>XBL</code>)<br />
 What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 2.2.2 Manifest Values).</li>
@@ -799,16 +799,15 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
-<li><code>InvoicedQuantity</code> = <strong>98</strong> (unitCode
+<li><code>InvoicedQuantity</code> = <strong>105</strong> (unitCode
 <code>KGM</code>)<br />
 The chargeable weight of the air waybill: the gross weight of the frame
 cartons, rounded up to the next half kilogram (D39).</li>
-<li><code>LineExtensionAmount</code> = <strong>666.40</strong>
+<li><code>LineExtensionAmount</code> = <strong>714.00</strong>
 (currencyID <code>XBL</code>)<br />
-98 × 6.8, rounded to the minor unit of the currency.</li>
+105 × 6.8, rounded to the minor unit of the currency.</li>
 <li><code>Item/Description</code> = <strong>Airport-to-airport air
-freight per kilogram chargeable weight, road feeder
-included.</strong><br />
+freight per kilogram chargeable weight.</strong><br />
 The seller's description; item air-freight of Bayforth Forwarding
 (world/items.json).</li>
 <li><code>Item/Name</code> = <strong>Air freight</strong><br />
@@ -1112,7 +1111,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansID</span>&gt;1&lt;/<span class="kw">cbc:PaymentMeansID</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;30 days net; 1.5 % surcharge per month late.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PenaltySurchargePercent</span>&gt;1.5&lt;/<span class="kw">cbc:PenaltySurchargePercent</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PenaltyAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10.00&lt;/<span class="kw">cbc:PenaltyAmount</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PenaltyAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10.71&lt;/<span class="kw">cbc:PenaltyAmount</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.bayforth.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-14&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyPeriod</span>&gt;</span>
@@ -1122,7 +1121,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;666.40&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;714.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1136,17 +1135,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;666.40&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;666.40&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;666.40&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;666.40&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;714.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;714.00&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;714.00&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;714.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;98&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;666.40&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;105&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;714.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Airport-to-airport air freight per kilogram chargeable weight, road feeder included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Airport-to-airport air freight per kilogram chargeable weight.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Air freight&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-AIR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1170,6 +1169,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/98147139a909334924aca8fe0f1b47359c99567e"><code>9814713</code></a> of 2026-11-19 19:22 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
 </body>
 </html>

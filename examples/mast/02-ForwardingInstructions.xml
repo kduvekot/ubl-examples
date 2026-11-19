@@ -90,7 +90,7 @@
     <cbc:ID>SE-SH-26-0715</cbc:ID>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -132,123 +132,16 @@
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
       <cac:TransportHandlingUnit>
-        <cbc:ID>RKN41207K0</cbc:ID>
+        <cbc:ID>SE-PL-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Twelve crates of 27 kg on one pallet: move the pallet by fork-lift; a single crate is a two-person lift. Stow where the crew can reach it, and not next to packages with a class 3 label.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:TransportEquipment>
-          <cbc:ID>RKN41207K0</cbc:ID>
-          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">AM</cbc:TransportEquipmentTypeCode>
-          <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
-          <cbc:AirFlowPercent>40</cbc:AirFlowPercent>
-          <cbc:HumidityPercent>50</cbc:HumidityPercent>
-          <cbc:AnimalFoodApprovedIndicator>false</cbc:AnimalFoodApprovedIndicator>
-          <cbc:HumanFoodApprovedIndicator>false</cbc:HumanFoodApprovedIndicator>
-          <cbc:DangerousGoodsApprovedIndicator>true</cbc:DangerousGoodsApprovedIndicator>
-          <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
-          <cbc:PowerIndicator>true</cbc:PowerIndicator>
-          <cac:MinimumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">5</cbc:Measure>
-          </cac:MinimumTemperature>
-          <cac:MaximumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">35</cbc:Measure>
-          </cac:MaximumTemperature>
-          <cac:HazardousGoodsTransit>
-            <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
-            <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
-            <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-            <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
-            <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
-            <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
-            <cac:MaximumTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">35</cbc:Measure>
-            </cac:MaximumTemperature>
-            <cac:MinimumTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">5</cbc:Measure>
-            </cac:MinimumTemperature>
-          </cac:HazardousGoodsTransit>
-          <cac:LoadedHazardousItem>
-            <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
-            <cbc:CategoryName>Miscellaneous dangerous goods</cbc:CategoryName>
-            <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
-            <cbc:UpperOrangeHazardPlacardID>90</cbc:UpperOrangeHazardPlacardID>
-            <cbc:LowerOrangeHazardPlacardID>3480</cbc:LowerOrangeHazardPlacardID>
-            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
-            <cbc:HazardousTypeCode listID="urn:ubl-examples:world:codelist:HazardousGoodsTypeCode">ARTICLE</cbc:HazardousTypeCode>
-            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
-            <cbc:GrossWeightMeasure unitCode="KGM">348</cbc:GrossWeightMeasure>
-            <cbc:NetWeightMeasure unitCode="KGM">312</cbc:NetWeightMeasure>
-            <cbc:NetVolumeMeasure unitCode="MTQ">0.24</cbc:NetVolumeMeasure>
-            <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-            <cac:ContactParty>
-              <cac:PartyIdentification>
-                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
-              </cac:PartyIdentification>
-              <cac:PartyName>
-                <cbc:Name>Saltmere Engineering</cbc:Name>
-              </cac:PartyName>
-            </cac:ContactParty>
-            <cac:HazardousGoodsTransit>
-              <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
-              <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
-              <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-              <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
-              <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
-              <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
-              <cac:MaximumTemperature>
-                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-                <cbc:Measure unitCode="CEL">35</cbc:Measure>
-              </cac:MaximumTemperature>
-              <cac:MinimumTemperature>
-                <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-                <cbc:Measure unitCode="CEL">5</cbc:Measure>
-              </cac:MinimumTemperature>
-            </cac:HazardousGoodsTransit>
-            <cac:EmergencyTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">EMERGENCY</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">60</cbc:Measure>
-            </cac:EmergencyTemperature>
-            <cac:AdditionalTemperature>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">STORAGE</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">20</cbc:Measure>
-            </cac:AdditionalTemperature>
-            <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-2</cbc:LocationID>
-              <cbc:Location>Main deck, accessible</cbc:Location>
-            </cac:PositionOnBoardStowage>
-            <cac:Package>
-              <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-              <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
-            </cac:Package>
-          </cac:LoadedHazardousItem>
-        </cac:TransportEquipment>
         <cac:HazardousGoodsTransit>
-          <cbc:TransportEmergencyCardCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC9</cbc:TransportEmergencyCardCode>
           <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI965IA</cbc:PackingCriteriaCode>
           <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
-          <cbc:InhalationToxicityZoneCode listID="urn:ubl-examples:world:codelist:InhalationToxicityZoneCode">NOTTOXIC</cbc:InhalationToxicityZoneCode>
           <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
-          <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %.</cbc:TransitDescription>
-          <cac:MaximumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">35</cbc:Measure>
-          </cac:MaximumTemperature>
-          <cac:MinimumTemperature>
-            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-            <cbc:Measure unitCode="CEL">5</cbc:Measure>
-          </cac:MinimumTemperature>
+          <cbc:TransitDescription>Cargo aircraft only; state of charge below 30 %; each crate within 35 kg.</cbc:TransitDescription>
         </cac:HazardousGoodsTransit>
-        <cac:MinimumTemperature>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">5</cbc:Measure>
-        </cac:MinimumTemperature>
-        <cac:MaximumTemperature>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">35</cbc:Measure>
-        </cac:MaximumTemperature>
         <cac:Package>
           <cbc:ID>SE-CR-1</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
@@ -285,104 +178,95 @@
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
           <cbc:TraceID>SE-DL-26-0006</cbc:TraceID>
         </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-7</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0007</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-8</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0008</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-9</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0009</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-10</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0010</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-11</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0011</cbc:TraceID>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>SE-CR-12</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CR</cbc:PackagingTypeCode>
+          <cbc:TraceID>SE-DL-26-0012</cbc:TraceID>
+        </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>AKE20514K0</cbc:ID>
+        <cbc:ID>SE-BX-2</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Stow where the crew can reach it, and not next to the lithium batteries.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
-        <cac:TransportEquipment>
-          <cbc:ID>AKE20514K0</cbc:ID>
-          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">UL</cbc:TransportEquipmentTypeCode>
-          <cbc:DangerousGoodsApprovedIndicator>true</cbc:DangerousGoodsApprovedIndicator>
-          <cac:LoadedHazardousItem>
-            <cbc:ID>SE-SMK-10-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
-            <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
-            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
-            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">4</cbc:PackagingDangerLevelCode>
-            <cbc:GrossWeightMeasure unitCode="KGM">3</cbc:GrossWeightMeasure>
-            <cbc:Quantity unitCode="SET">1</cbc:Quantity>
-            <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-6</cbc:LocationID>
-            </cac:PositionOnBoardStowage>
-          </cac:LoadedHazardousItem>
-          <cac:LoadedHazardousItem>
-            <cbc:ID>SE-CS-05-DG</cbc:ID>
-            <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
-            <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
-            <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
-            <cbc:PackagingDangerLevelCode listID="UN/EDIFACT EDED 8339">2</cbc:PackagingDangerLevelCode>
-            <cbc:GrossWeightMeasure unitCode="KGM">25</cbc:GrossWeightMeasure>
-            <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
-            <cac:PositionOnBoardStowage>
-              <cbc:LocationID>MD-6</cbc:LocationID>
-            </cac:PositionOnBoardStowage>
-          </cac:LoadedHazardousItem>
-        </cac:TransportEquipment>
+        <cac:HazardousGoodsTransit>
+          <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI855</cbc:PackingCriteriaCode>
+          <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+          <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">CAO</cbc:TransportAuthorizationCode>
+          <cbc:TransitDescription>Cargo aircraft only; five 1-litre tins in one box.</cbc:TransitDescription>
+        </cac:HazardousGoodsTransit>
+        <cac:Package>
+          <cbc:ID>SE-BX-2</cbc:ID>
+          <cbc:Quantity unitCode="EA">5</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>SE-BX-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:Package>
           <cbc:ID>SE-BX-1</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
         </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-CA-1</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
-        </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-CA-2</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
-        </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-CA-3</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
-        </cac:Package>
-        <cac:Package>
-          <cbc:ID>SE-CA-4</cbc:ID>
-          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CA</cbc:PackagingTypeCode>
-        </cac:Package>
       </cac:TransportHandlingUnit>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Description>Lithium-ion battery pack 48 V 100 Ah</cbc:Description>
+      <cbc:Description>Lithium-ion battery module 48 V 50 Ah</cbc:Description>
       <cac:Item>
-        <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
-        <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+        <cbc:Description>Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.</cbc:Description>
+        <cbc:Name>Lithium-ion battery module 48 V 50 Ah</cbc:Name>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">850760</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">46420</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
-          <cbc:ID>SE-BAT-48100-DG</cbc:ID>
+          <cbc:ID>SE-BAT-4850-DG</cbc:ID>
           <cbc:PlacardNotation>9</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
           <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
           <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
           <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
           <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
           <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN3480</cbc:MarkingID>
           <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
         </cac:HazardousItem>
       </cac:Item>
-      <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:Description>Keep away from heat.</cbc:Description>
-      </cac:Temperature>
-      <cac:MinimumTemperature>
-        <cbc:Measure unitCode="CEL">5</cbc:Measure>
-      </cac:MinimumTemperature>
-      <cac:MaximumTemperature>
-        <cbc:Measure unitCode="CEL">35</cbc:Measure>
-      </cac:MaximumTemperature>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
@@ -396,61 +280,39 @@
         </cac:CommodityClassification>
         <cac:HazardousItem>
           <cbc:ID>SE-SMK-10-DG</cbc:ID>
-          <cbc:PlacardNotation>7</cbc:PlacardNotation>
-          <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
+          <cbc:AdditionalInformation>Excepted package: no radioactive label; the UN number on the package.</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
           <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
           <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
           <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
           <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
           <cbc:MarkingID>UN2911</cbc:MarkingID>
           <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
-            <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
-            <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-            <cac:ApplicableRadioactiveIsotope>
-              <cbc:Name>Americium-241</cbc:Name>
-              <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>
-            </cac:ApplicableRadioactiveIsotope>
+            <cbc:Name>Am-241, 10 × 37 kBq (370 kBq) in ionisation smoke detectors</cbc:Name>
+            <cbc:SpecialFormDescription>Sealed sources inside the detectors, not special form.</cbc:SpecialFormDescription>
           </cac:RadioactiveMaterial>
         </cac:HazardousItem>
       </cac:Item>
-      <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:Description>Keep away from heat.</cbc:Description>
-      </cac:Temperature>
-      <cac:MinimumTemperature>
-        <cbc:Measure unitCode="CEL">5</cbc:Measure>
-      </cac:MinimumTemperature>
-      <cac:MaximumTemperature>
-        <cbc:Measure unitCode="CEL">35</cbc:Measure>
-      </cac:MaximumTemperature>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Coating stripper for electronics</cbc:Description>
       <cac:Item>
-        <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
+        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">381400</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
-          <cbc:ID>SE-CS-05-DG</cbc:ID>
+          <cbc:ID>SE-CS-01-DG</cbc:ID>
           <cbc:PlacardNotation>8</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
-          <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
           <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
           <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
-          <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
           <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
-          <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
-          <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
           <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
           <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
           <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
@@ -459,7 +321,6 @@
           <cac:SecondaryHazard>
             <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
             <cbc:PlacardNotation>3</cbc:PlacardNotation>
-            <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
             <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
             <cbc:Extension>Subsidiary risk 3</cbc:Extension>
           </cac:SecondaryHazard>
@@ -469,17 +330,6 @@
           </cac:FlashpointTemperature>
         </cac:HazardousItem>
       </cac:Item>
-      <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">20</cbc:Measure>
-        <cbc:Description>Keep away from heat.</cbc:Description>
-      </cac:Temperature>
-      <cac:MinimumTemperature>
-        <cbc:Measure unitCode="CEL">5</cbc:Measure>
-      </cac:MinimumTemperature>
-      <cac:MaximumTemperature>
-        <cbc:Measure unitCode="CEL">35</cbc:Measure>
-      </cac:MaximumTemperature>
     </cac:GoodsItem>
   </cac:Shipment>
 </ForwardingInstructions>

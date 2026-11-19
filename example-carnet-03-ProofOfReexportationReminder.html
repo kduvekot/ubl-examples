@@ -52,8 +52,9 @@ The sender's number for this document.</li>
 <strong>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-08-23</strong><br />
-No answer after a month.</li>
+<li><code>IssueDate</code> = <strong>2026-08-24</strong><br />
+Monday 24 August, a month after the request: no answer yet (D40; the
+Sunday a month later is no working day, D27).</li>
 <li><code>IssueTime</code> = <strong>12:04:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -62,8 +63,9 @@ time; in the issuer's local time, with its offset from UTC (D27).</li>
 The procedure the samples were under on the island. The code is from the
 Trade Accord's customs procedure list: 2000 = Temporary admission, no
 previous procedure.</li>
-<li><code>Note</code> = <strong>Without proof, the import duties will be
-claimed from the guarantee.</strong><br />
+<li><code>Note</code> = <strong>Without proof within 30 days, the
+island's import consumption tax on the samples and the carnet surcharge
+will be claimed from the guarantee.</strong><br />
 What happens otherwise.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
 The first reminder.</li>
@@ -457,10 +459,12 @@ The country's name, for readers of the address.</li>
 <h3 id="issuer-endorsement">Issuer Endorsement</h3>
 <p>Inside <code>IssuerEndorsement</code>:</p>
 <ul>
-<li><code>DocumentID</code> = <strong>SCC-DOC-26-0726</strong><br />
-The request repeated.</li>
-<li><code>ApprovalStatus</code> = <strong>Open</strong><br />
-Still unanswered.</li>
+<li><code>DocumentID</code> = <strong>SCC-DOC-26-0727</strong><br />
+The reminder the chamber endorses, as the guaranteeing association whose
+guarantee is at stake.</li>
+<li><code>ApprovalStatus</code> = <strong>Endorsed</strong><br />
+The status of the endorsement itself; the request's open state is in the
+note (carnet/03#F8).</li>
 <li><code>EndorserParty/RoleCode</code> = <strong>GUARANTOR</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:EndorserRoleCode</code>)<br />
@@ -479,27 +483,71 @@ Chamber of Commerce</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>EndorserParty/SignatoryContact/Name</code> = <strong>Carnet
-desk</strong><br />
-The chamber's desk.</li>
+office</strong><br />
+The chamber's carnet office.</li>
 </ul>
 <h3 id="payment-terms">Payment Terms</h3>
 <p>Inside <code>PaymentTerms</code>:</p>
 <ul>
-<li><code>Note</code> = <strong>Duties and import consumption tax of
-1,300 coral fall due if no proof arrives within 30 days.</strong><br />
-The claim that would follow.</li>
-<li><code>Amount</code> = <strong>1300.000</strong> (currencyID
+<li><code>Note</code> = <strong>Import consumption tax of 10 % on the
+declared value of 399.20 coral, 39.920, and the carnet surcharge of 10 %
+of the tax, 3.992: 43.912 coral fall due if no proof arrives within 30
+days. Benches of Accord origin owe no duty (D18).</strong><br />
+The claim that would follow (D40).</li>
+<li><code>Amount</code> = <strong>43.912</strong> (currencyID
 <code>XLC</code>)<br />
-The duties at stake.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-09-22</strong><br />
-The day they fall due.</li>
+The tax and surcharge at stake.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-09-23</strong><br />
+The day they fall due: 30 days after the reminder.</li>
 </ul>
 <h3 id="goods-item-passport-counterfoil">Goods Item Passport
 Counterfoil</h3>
 <p>Inside <code>GoodsItemPassportCounterfoil</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>IMP-1</strong><br />
-The importation counterfoil without a re-export stamp.</li>
+The importation counterfoil (white sheet) of the carnet.</li>
+<li><code>GoodsItemPassportID</code> =
+<strong>FCC-DOC-26-0724</strong><br />
+The carnet the counterfoil belongs to (carnet/04#F4).</li>
+<li><code>FinalReexportationDate</code> =
+<strong>2026-06-30</strong><br />
+The limit the island's customs set on the importation counterfoil,
+shorter than the carnet's year: a short fair admission (D40,
+carnet/01#F22).</li>
+<li><code>Note</code> = <strong>Stamped at Selanu airport on 2 June; no
+discharged re-exportation voucher on file.</strong><br />
+The counterfoil the claim rests on.</li>
+<li><code>CustomsOfficeLocation/ID</code> = <strong>XLSLA</strong>
+(schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>CustomsOfficeLocation/LocationTypeCode</code> =
+<strong>CUSTOMSOFFICE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CustomsLocationTypeCode</code>)<br />
+A customs office at the airport. The code is from the Trade Accord's
+customs location type list: CUSTOMSOFFICE = Customs office.</li>
+<li><code>CustomsOfficeLocation/Name</code> = <strong>Island Customs
+Service, Selanu airport</strong><br />
+The customs office where the counterfoil is presented.</li>
+<li><code>CustomsOfficeLocation/Address/Country/IdentificationCode</code>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
+<li><code>GoodsItem/ID</code> = <strong>1</strong><br />
+The two sample benches.</li>
+<li><code>GoodsItem/Quantity</code> = <strong>2</strong> (unitCode
+<code>EA</code>)<br />
+Two.</li>
+<li><code>ImportationDocumentReference/ID</code> =
+<strong>XL-CUS-ATA-26-0049</strong><br />
+The island's customs' registration of the importation, noted with the
+stamp.</li>
+<li><code>ImportationDocumentReference/IssueDate</code> =
+<strong>2026-06-02</strong><br />
+The day customs stamped the counterfoil.</li>
+<li><code>ImportationDocumentReference/DocumentType</code> =
+<strong>Importation registration</strong><br />
+The kind of customs record, in words.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -537,10 +585,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;CARNET-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SCC-DOC-26-0727&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-08-23&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-08-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;12:04:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsProcedureCode&quot;</span>&gt;2000&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Without proof, the import duties will be claimed from the guarantee.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Without proof within 30 days, the island&#39;s import consumption tax on the samples and the carnet surcharge will be claimed from the guarantee.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:GoodsItemPassportID</span>&gt;FCC-DOC-26-0724&lt;/<span class="kw">cbc:GoodsItemPassportID</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProofOfReexportationRequestDocumentReference</span>&gt;</span>
@@ -655,8 +703,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ImportingCustomsParty</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:IssuerEndorsement</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentID</span>&gt;SCC-DOC-26-0726&lt;/<span class="kw">cbc:DocumentID</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApprovalStatus</span>&gt;Open&lt;/<span class="kw">cbc:ApprovalStatus</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentID</span>&gt;SCC-DOC-26-0727&lt;/<span class="kw">cbc:DocumentID</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApprovalStatus</span>&gt;Endorsed&lt;/<span class="kw">cbc:ApprovalStatus</span>&gt;</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EndorserParty</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EndorserRoleCode&quot;</span>&gt;GUARANTOR&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
@@ -669,36 +717,58 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Carnet desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Carnet office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:IssuerEndorsement</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;1300.000&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-09-22&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Import consumption tax of 10 % on the declared value of 399.20 coral, 39.920, and the carnet surcharge of 10 % of the tax, 3.992: 43.912 coral fall due if no proof arrives within 30 days. Benches of Accord origin owe no duty (D18).&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;43.912&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-09-23&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;IMP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-ATA-26-0071&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Customs notice&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCC-SIG-26-PRM&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-243&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Selanu Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProofOfReexportationReminder</span>&gt;</span></code></pre></div>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GoodsItemPassportID</span>&gt;FCC-DOC-26-0724&lt;/<span class="kw">cbc:GoodsItemPassportID</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FinalReexportationDate</span>&gt;2026-06-30&lt;/<span class="kw">cbc:FinalReexportationDate</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSLA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsLocationTypeCode&quot;</span>&gt;CUSTOMSOFFICE&lt;/<span class="kw">cbc:LocationTypeCode</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service, Selanu airport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ImportationDocumentReference</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-ATA-26-0049&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Importation registration&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ImportationDocumentReference</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-ATA-26-0071&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Customs notice&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCC-SIG-26-PRM&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-243&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Selanu Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProofOfReexportationReminder</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/98147139a909334924aca8fe0f1b47359c99567e"><code>9814713</code></a> of 2026-11-19 19:22 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
 </body>
 </html>

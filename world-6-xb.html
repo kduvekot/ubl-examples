@@ -849,29 +849,38 @@ supplier party).</p>
 <p>Also mentions: <a href="world-22-xl.html">Bank of Selanu</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
-<h2 id="an-urgent-part-of-the-order-by-air-bayvarra--island-lisavu">An
-urgent part of the order by air (Bayvarra → island Lisavu)</h2>
-<p>The buyer needs part of the quantity before the ship arrives. It
-changes the order: that part goes by air, carriage paid to (CPT) the
-island's airport. The forwarder books the airline, whose road feeder
-service (the road carrier) trucks the cargo to the airport. The
-distributor pays the air freight and recharges it to the buyer at cost,
-as a surcharge on its invoice for the frames.</p>
+<h2
+id="urgent-spare-frames-by-air-urvania--bayvarra--island-lisavu">Urgent
+spare frames by air (Urvania → Bayvarra → island Lisavu)</h2>
+<p>On 11 May the buyer asks for eight more side frames by air, spares
+for the Port of Selanu's harbour benches, on top of the twelve on the
+ship: it changes its order with a line carriage paid to (CPT) the
+island's airport. The distributor has none left: Valdara casts them on
+12 May and packs them on 13 May, and Trasvia trucks them under the Trade
+Accord's common transit to the distributor's dispatch area in
+Marrowdale, where the forwarder takes them straight on to Lumeport
+airport, a cross-dock. They are booked on the afternoon flight KXL209,
+but the truck from Ferrano is late and the cargo reaches the terminal
+after the cut-off; the island's airline flies it on the next morning's
+KXL207 under a direct air waybill. The distributor cancels its despatch
+advice and replaces it, and the 3PL collects the skid at Selanu airport
+on 14 May. The distributor pays the air freight and recharges it to the
+buyer at cost, as a surcharge on its invoice for the frames.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
 Response</strong></a> to <a href="world-1-xl.html">Velumi Trading</a>:
-The distributor accepts the change: the urgent part goes by air at an
-extra charge, the rest stays on the ship. <a
+The distributor accepts the change: the frames fly on the afternoon
+flight of 13 May; the rest of the order stays on the ship. <a
 href="example-air-02-OrderResponse.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
 Instructions</strong></a> to <a href="world-10-xb.html">Bayforth
-Forwarding</a>: The distributor asks its forwarder to book air freight
-for the urgent part. <a
+Forwarding</a>: The distributor asks its forwarder to book the frames on
+the afternoon flight of 13 May. <a
 href="example-air-03-ForwardingInstructions.html">See the example
 document</a>.</p>
 <p>In it as <code>ConsignorParty</code>.</p>
@@ -880,9 +889,11 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> to <a href="world-9-xl.html">Nalevi Warehousing</a>:
-The distributor announces the air part to the buyer's 3PL, with the
-airline as carrier. <a href="example-air-06-DespatchAdvice.html">See the
-example document</a>.</p>
+The distributor announces the frames to the buyer's 3PL with the flight
+they are booked on: first the afternoon flight of 13 May, then,
+replacing it, the morning flight of 14 May. <a
+href="example-air-06-DespatchAdvice.html">See the example
+document</a>.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-1-xl.html">Velumi Trading</a> as
@@ -891,8 +902,9 @@ Cargo</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA"><strong>Fulfilment
 Cancellation</strong></a> to <a href="world-1-xl.html">Velumi
-Trading</a>: The cargo missed its flight; the despatch advice is
-cancelled and a new one follows for the next flight. <a
+Trading</a>: The cargo missed the afternoon flight of 13 May; the
+despatch advice, which named it, is cancelled, and a new one follows for
+the next morning's flight. <a
 href="example-air-07-FulfilmentCancellation.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
@@ -901,7 +913,9 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> to <a href="world-9-xl.html">Nalevi Warehousing</a>:
-The new despatch advice, for the next day's flight. <a
+The distributor announces the frames to the buyer's 3PL with the flight
+they are booked on: first the afternoon flight of 13 May, then,
+replacing it, the morning flight of 14 May. <a
 href="example-air-08-DespatchAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
@@ -924,8 +938,9 @@ href="example-air-11-Invoice.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA"><strong>Order
 Change</strong></a> from <a href="world-1-xl.html">Velumi Trading</a>:
-Part of the quantity is needed urgently: delivery by air, CPT island
-airport, at an extra charge. <a
+Eight more side frames are needed urgently, spares for the port's
+harbour benches: a line added to the sea order, by air, carriage paid to
+the island airport, with the air freight at cost. <a
 href="example-air-01-OrderChange.html">See the example document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-9-xl.html">Nalevi Warehousing</a> as
@@ -933,9 +948,10 @@ href="example-air-01-OrderChange.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-10-xb.html">Bayforth Forwarding</a>: The forwarder
-invoices the air freight, including the road feeder leg, to the
-distributor, who sold carriage paid to the island airport. <a
-href="example-air-10-Invoice.html">See the example document</a>.</p>
+invoices the airport-to-airport air freight at the chargeable weight of
+the airline's waybill to the distributor, who sold carriage paid to the
+island airport. <a href="example-air-10-Invoice.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-12-xl.html">Kelaro Air Cargo</a> as
@@ -946,16 +962,17 @@ href="example-air-10-Invoice.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
 from <a href="world-12-xl.html">Kelaro Air Cargo</a> to <a
-href="world-10-xb.html">Bayforth Forwarding</a>: The air waybill; the
-airline's road feeder service, run by the road carrier, is named as
-substitute carrier for the truck leg to the airport. <a
-href="example-air-04-Waybill.html">See the example document</a>.</p>
+href="world-10-xb.html">Bayforth Forwarding</a>: The direct air waybill,
+issued when the airline accepted the cargo after the cut-off for the
+afternoon flight: it names the next morning's flight, and the 3PL as the
+party to notify. <a href="example-air-04-Waybill.html">See the example
+document</a>.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p>
 <p>Also mentions: <a href="world-1-xl.html">Velumi Trading</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>; <a
 href="world-9-xl.html">Nalevi Warehousing</a> as
-<code>Shipment/Consignment/SubstituteCarrierParty</code>.</p></li>
+<code>Shipment/Consignment/NotifyParty</code>.</p></li>
 </ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
@@ -996,6 +1013,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/98147139a909334924aca8fe0f1b47359c99567e"><code>9814713</code></a> of 2026-11-19 19:22 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
 </body>
 </html>

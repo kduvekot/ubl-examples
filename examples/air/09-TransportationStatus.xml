@@ -7,12 +7,12 @@
   <cbc:ID>SAC-TS-26-0330</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>17:58:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>10:55:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
-  <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
+  <cbc:Description>Cargo arrived on KXL207 and ready for customs clearance.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs clearance; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
@@ -127,8 +127,9 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>10:30:00+00:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TransportEventTypeCode>
-    <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
+    <cbc:Description>Cargo arrived on KXL207 and ready for customs clearance.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
       <cbc:Name>Selanu airport, cargo terminal</cbc:Name>

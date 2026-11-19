@@ -19,8 +19,9 @@ Commerce</h1>
 (temporary export)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PROOF-OF-REEXPORTATION-SCHEMA">Proof
 of Reexportation in the UBL 2.5 specification</a></em></p>
-<p>Urvania's chamber proves the samples were re-exported: they came home
-through Urvania's customs.</p>
+<p>Urvania's chamber proves the samples were re-exported, with the
+stamped re-exportation counterfoil and Urvania's record of their
+re-importation; the claim of the island's tax falls away.</p>
 <p><a href="examples/carnet/04-ProofOfReexportation.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -54,12 +55,13 @@ The sender's number for this document.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-08-28</strong><br />
-Urvania's chamber answers with the proof.</li>
+Friday 28 August: Urvania's chamber answers with the proof (D40).</li>
 <li><code>IssueTime</code> = <strong>13:19:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>The samples came home on the date
-stamped.</strong><br />
+<li><code>Note</code> = <strong>The samples left Selanu airport on 9
+June and were re-imported into Urvania on 10 June, as the stamped
+counterfoils show.</strong><br />
 The proof.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
 The first version.</li>
@@ -456,48 +458,231 @@ here; Party/EndpointID is deprecated.</li>
 Counterfoil</h3>
 <p>Inside <code>GoodsItemPassportCounterfoil</code>:</p>
 <ul>
+<li><code>ID</code> = <strong>IMP-1</strong><br />
+The importation counterfoil (white sheet) of the carnet.</li>
+<li><code>GoodsItemPassportID</code> =
+<strong>FCC-DOC-26-0724</strong><br />
+The carnet the counterfoil belongs to (carnet/04#F4).</li>
+<li><code>FinalReexportationDate</code> =
+<strong>2026-06-30</strong><br />
+The limit the island's customs set on the importation counterfoil,
+shorter than the carnet's year: a short fair admission (D40,
+carnet/01#F22).</li>
+<li><code>Note</code> = <strong>Stamped at Selanu airport on 2 June; no
+discharged re-exportation voucher on file.</strong><br />
+The counterfoil the claim rests on.</li>
+<li><code>CustomsOfficeLocation/ID</code> = <strong>XLSLA</strong>
+(schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>CustomsOfficeLocation/LocationTypeCode</code> =
+<strong>CUSTOMSOFFICE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CustomsLocationTypeCode</code>)<br />
+A customs office at the airport. The code is from the Trade Accord's
+customs location type list: CUSTOMSOFFICE = Customs office.</li>
+<li><code>CustomsOfficeLocation/Name</code> = <strong>Island Customs
+Service, Selanu airport</strong><br />
+The customs office where the counterfoil is presented.</li>
+<li><code>CustomsOfficeLocation/Address/Country/IdentificationCode</code>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
+<li><code>GoodsItem/ID</code> = <strong>1</strong><br />
+The two sample benches.</li>
+<li><code>GoodsItem/Quantity</code> = <strong>2</strong> (unitCode
+<code>EA</code>)<br />
+Two.</li>
+<li><code>ImportationDocumentReference/ID</code> =
+<strong>XL-CUS-ATA-26-0049</strong><br />
+The island's customs' registration of the importation, noted with the
+stamp.</li>
+<li><code>ImportationDocumentReference/IssueDate</code> =
+<strong>2026-06-02</strong><br />
+The day customs stamped the counterfoil.</li>
+<li><code>ImportationDocumentReference/DocumentType</code> =
+<strong>Importation registration</strong><br />
+The kind of customs record, in words.</li>
+<li><code>ID</code> = <strong>REEXP-1</strong><br />
+The re-exportation counterfoil (white sheet) of the carnet.</li>
+<li><code>GoodsItemPassportID</code> =
+<strong>FCC-DOC-26-0724</strong><br />
+The carnet the counterfoil belongs to (carnet/04#F4).</li>
+<li><code>Note</code> = <strong>Stamped at Selanu airport on 9 June; its
+voucher did not reach the importation office's records.</strong><br />
+What went wrong: the voucher, not the stamp (D40).</li>
+<li><code>CustomsOfficeLocation/ID</code> = <strong>XLSLA</strong>
+(schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>CustomsOfficeLocation/LocationTypeCode</code> =
+<strong>CUSTOMSOFFICE</strong> (listID
+<code>urn:ubl-examples:world:codelist:CustomsLocationTypeCode</code>)<br />
+A customs office at the airport. The code is from the Trade Accord's
+customs location type list: CUSTOMSOFFICE = Customs office.</li>
+<li><code>CustomsOfficeLocation/Name</code> = <strong>Island Customs
+Service, Selanu airport</strong><br />
+The customs office where the counterfoil is presented.</li>
+<li><code>CustomsOfficeLocation/Address/Country/IdentificationCode</code>
+= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
+<li><code>GoodsItem/ID</code> = <strong>1</strong><br />
+The two sample benches.</li>
+<li><code>GoodsItem/Quantity</code> = <strong>2</strong> (unitCode
+<code>EA</code>)<br />
+Two.</li>
+<li><code>ImportationDocumentReference/ID</code> =
+<strong>XL-CUS-ATA-26-0049</strong><br />
+The importation the re-exportation discharges.</li>
+<li><code>ImportationDocumentReference/IssueDate</code> =
+<strong>2026-06-02</strong><br />
+The day customs stamped the counterfoil.</li>
+<li><code>ImportationDocumentReference/DocumentType</code> =
+<strong>Importation registration</strong><br />
+The kind of customs record, in words.</li>
+<li><code>ReexportationDocumentReference/ID</code> =
+<strong>XL-CUS-ATA-26-0053</strong><br />
+The island's customs' registration of the re-exportation.</li>
+<li><code>ReexportationDocumentReference/IssueDate</code> =
+<strong>2026-06-09</strong><br />
+The day customs stamped the counterfoil.</li>
+<li><code>ReexportationDocumentReference/DocumentType</code> =
+<strong>Re-exportation registration</strong><br />
+The kind of customs record, in words.</li>
+<li><code>VoucherDocumentReference/ID</code> =
+<strong>V-REEXP-1</strong><br />
+The voucher that went astray.</li>
 <li><code>ID</code> = <strong>REIMP-1</strong><br />
-The re-importation counterfoil, stamped by Urvania's customs when the
-samples came home.</li>
+The re-importation counterfoil (yellow sheet) of the carnet.</li>
+<li><code>GoodsItemPassportID</code> =
+<strong>FCC-DOC-26-0724</strong><br />
+The carnet the counterfoil belongs to (carnet/04#F4).</li>
+<li><code>Note</code> = <strong>Stamped at Valico Euridice on 10
+June.</strong><br />
+The samples came home.</li>
+<li><code>CustomsOfficeLocation/LocationTypeCode</code> =
+<strong>BORDERPOST</strong> (listID
+<code>urn:ubl-examples:world:codelist:CustomsLocationTypeCode</code>)<br />
+A customs post at the road border crossing. The code is from the Trade
+Accord's customs location type list: BORDERPOST = Border crossing
+point.</li>
+<li><code>CustomsOfficeLocation/Name</code> = <strong>Customs
+Administration of Urvania, Valico Euridice</strong><br />
+The customs office where the counterfoil is presented.</li>
+<li><code>GoodsItem/ID</code> = <strong>1</strong><br />
+The two sample benches.</li>
+<li><code>GoodsItem/Quantity</code> = <strong>2</strong> (unitCode
+<code>EA</code>)<br />
+Two.</li>
+<li><code>ExportationDocumentReference/ID</code> =
+<strong>XU-CUS-EXP-26-0031</strong><br />
+The exportation the samples came back from, as the re-importation
+counterfoil states it.</li>
+<li><code>ExportationDocumentReference/IssueDate</code> =
+<strong>2026-06-01</strong><br />
+The day customs stamped the counterfoil.</li>
+<li><code>ExportationDocumentReference/DocumentType</code> =
+<strong>Exportation registration</strong><br />
+The kind of customs record, in words.</li>
+<li><code>ReimportationDocumentReference/ID</code> =
+<strong>XU-CUS-REIMP-26-0044</strong><br />
+Urvania's customs' record of the re-importation, the same number as in
+the evidence (carnet/01#F23).</li>
+<li><code>ReimportationDocumentReference/IssueDate</code> =
+<strong>2026-06-10</strong><br />
+The day customs stamped the counterfoil.</li>
+<li><code>ReimportationDocumentReference/DocumentType</code> =
+<strong>Re-importation record</strong><br />
+The kind of customs record, in words.</li>
 </ul>
 <h3 id="reexportation-evidence">Reexportation Evidence</h3>
 <p>Inside <code>ReexportationEvidence</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>REIMP-1</strong><br />
-The evidence is the re-importation counterfoil itself.</li>
-<li><code>Description</code> = <strong>Re-importation counterfoil of the
-carnet, stamped by Urvania's customs: the samples left the island and
-came home.</strong><br />
-What the evidence shows.</li>
+<li><code>ID</code> = <strong>EV-1</strong><br />
+The first evidence, under an ID of its own (carnet/04#F9).</li>
+<li><code>Description</code> = <strong>The re-exportation counterfoil
+REEXP-1 of the carnet, stamped by the Island Customs Service at Selanu
+airport on 9 June: the samples left the island. Its voucher never
+reached the importation office's records.</strong><br />
+What the evidence shows; the stamped counterfoil is in the attached
+scan.</li>
+<li><code>EvidenceIssuingParty/PartyIdentification/ID</code> =
+<strong>GOV-118</strong> (schemeID
+<code>urn:ubl-examples:world:XL:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>EvidenceIssuingParty/PartyName/Name</code> = <strong>Island
+Customs Service</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>ID</code> = <strong>EV-2</strong><br />
+The second evidence.</li>
+<li><code>Description</code> = <strong>Urvania's customs re-imported the
+samples at Valico Euridice on 10 June.</strong><br />
+What it shows: goods back in Urvania cannot still be on the island.</li>
+<li><code>EvidenceIssuingParty/PartyIdentification/ID</code> =
+<strong>xu_k4r7</strong> (schemeID
+<code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>EvidenceIssuingParty/PartyName/Name</code> = <strong>Customs
+Administration of Urvania</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DocumentReference/ID</code> =
+<strong>XU-CUS-REIMP-26-0044</strong><br />
+Urvania's customs' record of the re-importation.</li>
+<li><code>DocumentReference/IssueDate</code> =
+<strong>2026-06-10</strong><br />
+The day of the re-importation.</li>
+<li><code>DocumentReference/DocumentType</code> = <strong>Re-importation
+record</strong><br />
+The kind of document referred to, Urvanian customs' record of the
+re-importation, a document outside the examples, in words: no list has
+an exact code for it (world/documents.json, cited; decision Q29).</li>
 </ul>
 <h3 id="goods-item-passport-attachment">Goods Item Passport
 Attachment</h3>
 <p>Inside <code>GoodsItemPassportAttachment</code>:</p>
 <ul>
-<li><code>EmbeddedDocument</code> = <strong>Re-exportation counterfoil
-of carnet FCC-DOC-26-0724, stamped by the Island Customs Service: all
-items re-exported.</strong><br />
-The counterfoil, as clear text.</li>
 <li><code>ExternalReference/URI</code> = <strong><a
-href="https://www.ferrano-chamber.example/ata/carnet-scan.pdf">https://www.ferrano-chamber.example/ata/carnet-scan.pdf</a></strong><br />
-A scan of the stamped counterfoil.</li>
+href="https://www.camera-ferrano.example/ata/carnet-scan.pdf">https://www.camera-ferrano.example/ata/carnet-scan.pdf</a></strong><br />
+A scan of the stamped counterfoils, on the chamber's own domain
+(carnet/04#F11).</li>
 <li><code>ExternalReference/MimeCode</code> =
 <strong>application/pdf</strong> (listID
 <code>IANA Media Types</code>)<br />
 A PDF. The code is from UBL's default Media type (IANA) list:
 application/pdf.</li>
+<li><code>ExternalReference/Description</code> = <strong>Scan of the
+stamped re-exportation and re-importation counterfoils of the
+carnet</strong><br />
+What the attachment is (carnet/04#F10).</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>XU-CUS-REIMP-26-0044</strong><br />
-Urvania's customs' re-import record.</li>
-<li><code>DocumentType</code> = <strong>Re-importation
-record</strong><br />
-The kind of document referred to, Urvanian customs' record of the
-re-importation, a document outside the examples, in words: no list has
-an exact code for it (world/documents.json, cited; decision Q29).</li>
+<li><code>ID</code> = <strong>SCC-DOC-26-0726</strong><br />
+The request this proof answers (carnet/04#F4).</li>
+<li><code>DocumentTypeCode</code> =
+<strong>ProofOfReexportationRequest</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The kind of document referred to: SCC-DOC-26-0726 is the example
+carnet/02, a ProofOfReexportationRequest; a generic reference names the
+UBL document type (decision Q29). The code is from the Trade Accord's
+UBL document type list: ProofOfReexportationRequest = Proof Of
+Reexportation Request.</li>
+<li><code>ID</code> = <strong>SCC-DOC-26-0727</strong><br />
+And its reminder.</li>
+<li><code>DocumentTypeCode</code> =
+<strong>ProofOfReexportationReminder</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The kind of document referred to: SCC-DOC-26-0727 is the example
+carnet/03, a ProofOfReexportationReminder; a generic reference names the
+UBL document type (decision Q29). The code is from the Trade Accord's
+UBL document type list: ProofOfReexportationReminder = Proof Of
+Reexportation Reminder.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -526,7 +711,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;a5be84f0-33dc-58b3-97e4-10dea98880ab&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-08-28&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;13:19:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The samples came home on the date stamped.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The samples left Selanu airport on 9 June and were re-imported into Urvania on 10 June, as the stamped counterfoils show.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ExportingCustomsParty</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -640,37 +825,143 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ExportingGuarantorParty</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;REIMP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReexportationEvidence</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;REIMP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Re-importation counterfoil of the carnet, stamped by Urvania&#39;s customs: the samples left the island and came home.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReexportationEvidence</span>&gt;</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GoodsItemPassportAttachment</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EmbeddedDocument</span>&gt;Re-exportation counterfoil of carnet FCC-DOC-26-0724, stamped by the Island Customs Service: all items re-exported.&lt;/<span class="kw">cbc:EmbeddedDocument</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExternalReference</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:URI</span>&gt;https://www.ferrano-chamber.example/ata/carnet-scan.pdf&lt;/<span class="kw">cbc:URI</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MimeCode</span> <span class="ot">listID=</span><span class="st">&quot;IANA Media Types&quot;</span>&gt;application/pdf&lt;/<span class="kw">cbc:MimeCode</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExternalReference</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportAttachment</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XU-CUS-REIMP-26-0044&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Re-importation record&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FCC-SIG-26-POR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_m2vd&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProofOfReexportation</span>&gt;</span></code></pre></div>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;IMP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GoodsItemPassportID</span>&gt;FCC-DOC-26-0724&lt;/<span class="kw">cbc:GoodsItemPassportID</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FinalReexportationDate</span>&gt;2026-06-30&lt;/<span class="kw">cbc:FinalReexportationDate</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSLA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsLocationTypeCode&quot;</span>&gt;CUSTOMSOFFICE&lt;/<span class="kw">cbc:LocationTypeCode</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service, Selanu airport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ImportationDocumentReference</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-ATA-26-0049&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Importation registration&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ImportationDocumentReference</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;REEXP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GoodsItemPassportID</span>&gt;FCC-DOC-26-0724&lt;/<span class="kw">cbc:GoodsItemPassportID</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Stamped at Selanu airport on 9 June; its voucher did not reach the importation office&#39;s records.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSLA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsLocationTypeCode&quot;</span>&gt;CUSTOMSOFFICE&lt;/<span class="kw">cbc:LocationTypeCode</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service, Selanu airport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ImportationDocumentReference</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-ATA-26-0049&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Importation registration&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ImportationDocumentReference</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReexportationDocumentReference</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XL-CUS-ATA-26-0053&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-09&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Re-exportation registration&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReexportationDocumentReference</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:VoucherDocumentReference</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;V-REEXP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:VoucherDocumentReference</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;REIMP-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GoodsItemPassportID</span>&gt;FCC-DOC-26-0724&lt;/<span class="kw">cbc:GoodsItemPassportID</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Stamped at Valico Euridice on 10 June.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsLocationTypeCode&quot;</span>&gt;BORDERPOST&lt;/<span class="kw">cbc:LocationTypeCode</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Customs Administration of Urvania, Valico Euridice&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExportationDocumentReference</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XU-CUS-EXP-26-0031&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-01&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Exportation registration&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExportationDocumentReference</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReimportationDocumentReference</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XU-CUS-REIMP-26-0044&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Re-importation record&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReimportationDocumentReference</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportCounterfoil</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReexportationEvidence</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;EV-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;The re-exportation counterfoil REEXP-1 of the carnet, stamped by the Island Customs Service at Selanu airport on 9 June: the samples left the island. Its voucher never reached the importation office&#39;s records.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EvidenceIssuingParty</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-118&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EvidenceIssuingParty</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReexportationEvidence</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReexportationEvidence</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;EV-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Urvania&#39;s customs re-imported the samples at Valico Euridice on 10 June.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EvidenceIssuingParty</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_k4r7&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customs Administration of Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EvidenceIssuingParty</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;XU-CUS-REIMP-26-0044&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Re-importation record&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReexportationEvidence</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GoodsItemPassportAttachment</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExternalReference</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:URI</span>&gt;https://www.camera-ferrano.example/ata/carnet-scan.pdf&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MimeCode</span> <span class="ot">listID=</span><span class="st">&quot;IANA Media Types&quot;</span>&gt;application/pdf&lt;/<span class="kw">cbc:MimeCode</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Scan of the stamped re-exportation and re-importation counterfoils of the carnet&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExternalReference</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsItemPassportAttachment</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCC-DOC-26-0726&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ProofOfReexportationRequest&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCC-DOC-26-0727&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ProofOfReexportationReminder&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FCC-SIG-26-POR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_m2vd&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProofOfReexportation</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/98147139a909334924aca8fe0f1b47359c99567e"><code>9814713</code></a> of 2026-11-19 19:22 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
 </body>
 </html>
