@@ -89,13 +89,6 @@ Inside `OriginatorDocumentReference`:
 - `DocumentType` = **Claim**  
   The kind of document referred to, Velumi's claim, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
-### Project Reference
-
-Inside `ProjectReference`:
-
-- `ID` = **VT-PRJ-26-07**  
-  The buyer's project: the harbour parks of Selanu.
-
 ### Buyer Assigned Reference
 
 Inside `BuyerAssignedReference`:
@@ -406,9 +399,6 @@ Inside `CreditNoteLine`:
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
     <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
-  <cac:ProjectReference>
-    <cbc:ID>VT-PRJ-26-07</cbc:ID>
-  </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>VT-CLAIMS</cbc:BuyerReferenceCode>
   </cac:BuyerAssignedReference>

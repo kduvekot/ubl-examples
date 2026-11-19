@@ -31,12 +31,12 @@ The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for 
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `CustomerReference` = **Harbour parks Selanu**  
-  The buyer's project the benches are for.
+  The buyer's project, for which it places the order: the Port of Selanu's benches of line 1; the other lines are for the buyer's own stock and travel in the same container (O172).
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of order lines.
 
 ### Buyer Customer Party
@@ -147,24 +147,6 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
@@ -272,16 +254,24 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **b79591a7-1ff5-5442-b47e-328e3c23e0c7**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `LineItem/Quantity` = **104** (unitCode `EA`)  
-  104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.
-- `LineItem/LineExtensionAmount` = **54080.00** (currencyID `XBL`)  
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
+  96 benches on 24 pallets of four for the Port of Selanu's harbour parks.
+- `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `LineItem/OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/OriginatorParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/OrderedShipment/Shipment/ID` = **VT-SH-PLAN-1**  
   The shipment the buyer plans for this line: one container.
 - `LineItem/OrderedShipment/Shipment/ShippingPriorityLevelCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ShippingPriorityCode`)  
   No urgency for the sea part. The code is from the Trade Accord's shipping priority list: STANDARD = Standard.
-- `LineItem/OrderedShipment/Shipment/TotalTransportHandlingUnitQuantity` = **26** (unitCode `EA`)  
-  The pallets the line's benches come on: 26 of four (sea/05#F1).
+- `LineItem/OrderedShipment/Shipment/TotalTransportHandlingUnitQuantity` = **24** (unitCode `EA`)  
+  The pallets the line's benches come on: 24 of four (sea/05#F1).
 - `LineItem/OrderedShipment/Package/ID` = **PAL**  
   Packed on pallets.
 - `LineItem/OrderedShipment/Package/Quantity` = **4** (unitCode `EA`)  
@@ -402,6 +392,46 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **6c15f781-fb79-59c5-b7b2-bbd9c564ae2b**  
   A universally unique identifier of the line, derived from the document and the line number.
+- `LineItem/Quantity` = **8** (unitCode `EA`)  
+  Two pallets of four benches for the buyer's own stock: it buys by the pallet, and two pallets add little to the freight of a container already booked.
+- `LineItem/LineExtensionAmount` = **4160.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `LineItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
+  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `LineItem/Item/CatalogueIndicator` = **true**  
+  The item is ordered from the seller's catalogue, which the order cites.
+- `LineItem/Item/Name` = **Park bench Serra 180**  
+  The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `LineItem/Item/BuyersItemIdentification/ID` = **VT-PB-180**  
+  The buyer's own item number: it resells this item as its item bench-serra-x.
+- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The variant of the item: the frame colour, added to the item number.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+  The variant in words.
+- `LineItem/Item/ManufacturersItemIdentification/ID` = **VI-B180**  
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
+- `LineItem/Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+- `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0124**  
+  The catalogue the item was ordered from.
+- `LineItem/ID` = **3**  
+  The line number: a line added by a change keeps a number of its own (worklist C34).
+- `LineItem/UUID` = **eea8f7b8-36a1-5cf0-9cd2-4a67427e3a86**  
+  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   Spare side frames for the buyer's own service stock.
 - `LineItem/LineExtensionAmount` = **804.00** (currencyID `XBL`)  
@@ -445,7 +475,7 @@ Inside `OrderLine`:
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -531,24 +561,6 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -630,13 +642,29 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
-      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
       <cac:OrderedShipment>
         <cac:Shipment>
           <cbc:ID>VT-SH-PLAN-1</cbc:ID>
           <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
-          <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">26</cbc:TotalTransportHandlingUnitQuantity>
+          <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
         </cac:Shipment>
         <cac:Package>
           <cbc:ID>PAL</cbc:ID>
@@ -753,6 +781,48 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:UUID>6c15f781-fb79-59c5-b7b2-bbd9c564ae2b</cbc:UUID>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+        <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>VT-PB-180</cbc:ID>
+        </cac:BuyersItemIdentification>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ExtendedID>GRY</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+            <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+            <cbc:Description>Frame in Ferro grey</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:ManufacturersItemIdentification>
+          <cbc:ID>VI-B180</cbc:ID>
+        </cac:ManufacturersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:AdditionalItemIdentification>
+          <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+        </cac:AdditionalItemIdentification>
+        <cac:CatalogueDocumentReference>
+          <cbc:ID>LD-CAT-26-0124</cbc:ID>
+        </cac:CatalogueDocumentReference>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:UUID>eea8f7b8-36a1-5cf0-9cd2-4a67427e3a86</cbc:UUID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
       <cac:Price>

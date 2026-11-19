@@ -237,7 +237,14 @@
       </cac:FreightAllowanceCharge>
       <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
         </cac:Item>

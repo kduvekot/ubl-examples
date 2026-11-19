@@ -38,7 +38,7 @@ The buyer's 3PL confirms what arrived, for the buyer.
   A credit is asked for the refused goods. The code is from the Trade Accord's reject action list: CREDIT = Credit requested.
 - `Note` = **Counted and checked at goods-in.**  
   How the goods were received.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of lines.
 
 ### Order Reference
@@ -249,7 +249,7 @@ Inside `ReceiptLine`:
   The line number.
 - `Note` = **Received as despatched.**  
   The line in words.
-- `ReceivedQuantity` = **104** (unitCode `EA`)  
+- `ReceivedQuantity` = **96** (unitCode `EA`)  
   Counted at the goods-in and found as announced.
 - `ReceivedDate` = **2026-05-20**  
   Unloaded.
@@ -285,6 +285,44 @@ Inside `ReceiptLine`:
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `ID` = **2**  
   The line number.
+- `Note` = **Received as despatched.**  
+  The line in words.
+- `ReceivedQuantity` = **8** (unitCode `EA`)  
+  Counted at the goods-in and found as announced.
+- `ReceivedDate` = **2026-05-20**  
+  Unloaded.
+- `OrderLineReference/LineID` = **2**  
+  The order line.
+- `DespatchLineReference/LineID` = **2**  
+  The despatch line.
+- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0145**  
+  The despatch advice.
+- `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-DA-26-0145 is the example sea/20, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+- `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
+  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/Name` = **Park bench Serra 180**  
+  The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The variant of the item: the frame colour, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+  The variant in words.
+- `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
+- `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
+- `ID` = **3**  
+  The line number.
 - `Note` = **One frame carton crushed at the port; the frame inside is cracked.**  
   The line in words.
 - `ReceivedQuantity` = **11** (unitCode `EA`)  
@@ -301,9 +339,9 @@ Inside `ReceiptLine`:
   Why the quantity differs from the despatch. The code is from the Trade Accord's quantity discrepancy list: DAMAGED = Damaged.
 - `ReceivedDate` = **2026-05-20**  
   Unloaded.
-- `OrderLineReference/LineID` = **2**  
+- `OrderLineReference/LineID` = **3**  
   The order line.
-- `DespatchLineReference/LineID` = **2**  
+- `DespatchLineReference/LineID` = **3**  
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0145**  
   The despatch advice.
@@ -341,7 +379,7 @@ Inside `ReceiptLine`:
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
   <cbc:Note>Counted and checked at goods-in.</cbc:Note>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -499,7 +537,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">104</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -537,6 +575,45 @@ Inside `ReceiptLine`:
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Received as despatched.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="EA">8</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>2</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+      </cac:AdditionalItemIdentification>
+    </cac:Item>
+  </cac:ReceiptLine>
+  <cac:ReceiptLine>
+    <cbc:ID>3</cbc:ID>
     <cbc:Note>One frame carton crushed at the port; the frame inside is cracked.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
@@ -546,10 +623,10 @@ Inside `ReceiptLine`:
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:DespatchLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>

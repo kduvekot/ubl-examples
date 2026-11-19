@@ -1353,8 +1353,13 @@ SEA_3PL = {"Name": V("Nalevi Warehousing, Selanu", "The 3PL's warehouse on the i
                                                    "and stored.")}
 SEA = kit.Flow("sea", "2026-05-04", [
     # O165: Velumi buys by the pallet, and two pallets more in a container already booked add little to the freight
-    {"item": "bench-serra-b", "ordered": 104, "why": "104 benches on 26 pallets of four: 96 for the Port of Selanu's "
-                                                     "harbour parks and two pallets for the buyer's own stock."},
+    # O172: the port's benches and the buyer's own on lines of their own; the goods chain's lots go to them in turn
+    # (the April rail lot VI-LOT-260409 to the port's line, two pallets of VI-LOT-260410 to the stock line)
+    {"item": "bench-serra-b", "ordered": 96, "port": True,
+     "why": "96 benches on 24 pallets of four for the Port of Selanu's harbour parks."},
+    {"item": "bench-serra-b", "ordered": 8, "why": "Two pallets of four benches for the buyer's own stock: it buys "
+                                                   "by the pallet, and two pallets add little to the freight of a "
+                                                   "container already booked."},
     {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock.",
      "received": 11, "received_why": "One frame carton crushed at the port; the frame inside is cracked."}],
     buyer="1-xl")       # Lumeway's CIF price for the island's frames (items.json buyer_prices; O30)
@@ -1703,8 +1708,11 @@ def sea_order_response(f, n, doc):
         "DocumentCurrencyCode": kit.currency_line("XBL", "the distributor's currency, as in the order"),
         "CustomerReference": V("Harbour parks Selanu", "The buyer's project, as the buyer named it when ordering."),
         "LineCountNumeric": V(str(len(rows)), "The number of lines."),
-        "TotalPackagesQuantity": qty(kit.parcel_count(f), "EA", f"The parcels: {f.deal[0]['ordered']} benches in "
-                                     f"three parcels each and {f.deal[1]['ordered']} frame cartons (D20)."),
+        "TotalPackagesQuantity": qty(kit.parcel_count(f), "EA", f"The parcels: "
+                                     f"{sum(d['ordered'] for d in f.deal if d['item'] == 'bench-serra-b')} benches "
+                                     f"in three parcels each and "
+                                     f"{sum(d['ordered'] for d in f.deal if d['item'] == 'bench-casting-b')} frame "
+                                     "cartons (D20)."),
         "GrossWeightMeasure": qty(w, "KGM", "The expected gross weight, for the booking."),
         "NetWeightMeasure": qty(net, "KGM", "The goods alone."),
         "GrossVolumeMeasure": V(kit.kg(kit.pallets_volume(f)), f"The {len(kit.pallets(f, f.deal))} loaded pallets: "
@@ -1782,8 +1790,10 @@ def sea(n, doc):
         return kit.order(f, n, doc, 3, "The island buyer orders benches for its city's parks.",
                          "Cost, insurance and freight to the port of Selanu: the seller pays the sea freight and insures "
                          "the cargo; the risk passes when the goods are on board in Lumeport.", "Port of Selanu",
-                         {"CustomerReference": V("Harbour parks Selanu", "The buyer's project the benches are "
-                                                                         "for."),
+                         {"CustomerReference": V("Harbour parks Selanu", "The buyer's project, for which it "
+                                                 "places the order: the Port of Selanu's benches of line 1; the "
+                                                 "other lines are for the buyer's own stock and travel in the same "
+                                                 "container (O172)."),
                           "Delivery": {"DeliveryLocation": {"Description": V("Lanoro warehouse, Selanu",
                                                                              "The buyer's 3PL, where the goods go after "
                                                                              "customs clearance.")}}})
@@ -1996,10 +2006,12 @@ def sea(n, doc):
         first["InsurancePolicy"] = {"ID": V("WS-CP-26-4471", "The cargo policy covering the goods."),
                                     "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                                  "As on the insurance certificate.")}
-        first["InvoiceLine"] = {"ID": V("1", "The line of the seller's invoice for these goods."),
-                                "InvoicedQuantity": qty(f.deal[0]["ordered"], "EA", "The benches invoiced."),
-                                "Item": {"Name": V(ITEM["bench-serra-b"]["name"], "Named only: described in full "
-                                                                                  "above.")}}
+        first["InvoiceLine"] = [{"ID": V(str(i), "A line of the seller's invoice for these goods: the benches are "
+                                                 "on two lines, the port's and the buyer's own stock (O172)."),
+                                 "InvoicedQuantity": qty(d["ordered"], "EA", "The benches invoiced on the line."),
+                                 "Item": {"Name": V(ITEM["bench-serra-b"]["name"], "Named only: described in full "
+                                                                                   "above.")}}
+                                for i, d in enumerate(f.deal, 1) if d["item"] == "bench-serra-b"]
         return out
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 9, "Sent to the delivery party named in the order when the container "
@@ -2101,8 +2113,6 @@ def sea(n, doc):
                                "StatementDocumentReference": {"ID": V(f.numbers["statement"], "The factor's statement "
                                                                       "the invoice is on.")},
                                "OriginatorDocumentReference": {"ID": V("VT-CLAIM-26-0019", "The buyer's claim.")},
-                               "ProjectReference": {"ID": V(HARBOUR_PROJECT, "The buyer's project: the harbour "
-                                                                                 "parks of Selanu.")},
                                "BuyerAssignedReference": {"BuyerReferenceCode": V("VT-CLAIMS", "The buyer's claims "
                                                                                                "desk.")},
                                "Delivery": {"ActualDeliveryDate": V(f.date(SEA_ARRIVES + 3), "The goods arrived at the 3PL.")},
@@ -2127,7 +2137,7 @@ def sea(n, doc):
 # ---------------------------------------------------------------- the air flow (an urgent part, CPT airport)
 AIR = kit.Flow("air", "2026-05-11", [
     {"item": "bench-casting-b", "ordered": 8, "why": "Eight side frames, needed before the ship arrives.",
-     "line": "3",       # added by the order change to the sea order's lines 1 and 2 (air/01#F1)
+     "line": "4",       # added by the order change to the sea order's lines 1 to 3 (air/01#F1, O172)
      # the trade price: Lumeway's island price is a CIF price with the sea freight in it; the air freight comes on
      # the invoice as a surcharge at cost (O30, owner 2026-11-19)
      "unit_price": f'{ITEM["bench-casting-b"]["price"]["amount"]:.2f}',
@@ -2288,7 +2298,7 @@ def air(n, doc):
             "Signature": {"ID": V("LD-SIG-26-0512", "The distributor's seal."),
                           "SignatoryParty": party("6-xb", short=True)},
             "OrderLine": {"LineItem": {
-                "ID": V("3", "The added line, line 3 of the order as changed."),
+                "ID": V(f.deal[0]["line"], f"The added line, line {f.deal[0]['line']} of the order as changed."),
                 "Quantity": qty(8, "EA", "Confirmed."),
                 "DeliveryTerms": {"ID": V("CPT", "Carriage paid to the airport of Selanu, for this line.",
                                           schemeID="INCOTERMS")},
@@ -8214,13 +8224,24 @@ def find_dicts(x, key):
             yield from find_dicts(v, key)
 
 
+def for_harbour_line(li):
+    """The port's line of the sea order (O172): the Port of Selanu originated it and its harbour parks get the
+    benches; the buyer's own stock lines name neither."""
+    li["OriginatorParty"] = party(HARBOUR, short=True)
+    li["BeneficiaryParty"] = party(HARBOUR, short=True)
+
+
+def harbour_lines(f, lines):
+    """The lines of a sea document that bill or move the port's benches (O172), in the order of the deal."""
+    return [ln for ln, d in zip(lines, f.deal) if d.get("port")]
+
+
 @enrich("sea", "Order")
 def _(f, n, doc, out):
     for i, ol in enumerate(lines_of(out, "OrderLine"), 1):
-        li = ol["LineItem"]
-        li["UUID"] = line_uuid(f, "order", i)
-        li["OriginatorParty"] = party(HARBOUR, short=True)
-        li["BeneficiaryParty"] = party(HARBOUR, short=True)
+        ol["LineItem"]["UUID"] = line_uuid(f, "order", i)
+    for ol in harbour_lines(f, lines_of(out, "OrderLine")):
+        for_harbour_line(ol["LineItem"])
     out["OrderLine"][0]["LineItem"]["OrderedShipment"] = {
         "Shipment": {"ID": V("VT-SH-PLAN-1", "The shipment the buyer plans for this line: one container."),
                      "ShippingPriorityLevelCode": V("STANDARD", "No urgency for the sea part."),
@@ -8232,27 +8253,23 @@ def _(f, n, doc, out):
                     "Quantity": qty(4, "EA", "The benches on one pallet: four, as the distributor sells them."),
                     "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
                     "ContainedPackage": [kit.parcel_package(p) for p in kit.maker("bench-serra-b")["parcels"]]}}
-    return for_harbour()
+    return {}       # the whole order is not the port's: its originator and beneficiary are on its line (O172)
 
 
 @enrich("sea", "OrderResponse")
 def _(f, n, doc, out):
-    return {**for_harbour(), "OriginatorDocumentReference": {"ID": V("PS-REQ-26-0031", "The Port of Selanu's "
-                                                                                       "request to the trader, "
-                                                                                       "which the order "
-                                                                                       "follows.")}}
-
-
-@enrich("sea", "DespatchAdvice")
-def _(f, n, doc, out):
-    return for_harbour()
+    for ol in harbour_lines(f, lines_of(out, "OrderLine")):
+        for_harbour_line(ol["LineItem"])
+    return {"OriginatorDocumentReference": {"ID": V("PS-REQ-26-0031", "The Port of Selanu's request to the trader, "
+                                                                      "which the order's port line follows.")}}
 
 
 @enrich("sea", "Invoice")
 def _(f, n, doc, out):
     if doc["from"] != "6-xb":
         return {}
-    for ln in lines_of(out, "InvoiceLine"):
+    for ln in harbour_lines(f, lines_of(out, "InvoiceLine")):        # the port's line only (O172)
+        ln["OriginatorParty"] = party(HARBOUR, short=True)
         ln["BeneficiaryParty"] = party(HARBOUR, short=True)
     terms = out["PaymentTerms"]
     issued = out["IssueDate"].value         # the terms and their rate date from the invoice itself (sea/22#F2, C72)
@@ -8267,24 +8284,20 @@ def _(f, n, doc, out):
     pm = out["PaymentMeans"]
     pm["CreditAccount"] = {"AccountID": V("HF-CL-VT-001", "The credit line the factor granted the buyer, against "
                                                           "which the receivable is held.")}
-    return for_harbour()
+    return {}       # the invoice bills the buyer's stock too: the port is named on its line only (O172)
 
 
 @enrich("sea", "Statement")
 def _(f, n, doc, out):
-    for ln in lines_of(out, "StatementLine"):
+    for ln in lines_of(out, "StatementLine"):       # a line is the whole invoice, not the port's alone (O172)
         ln["UUID"] = line_uuid(f, "statement", ln["ID"].value)
-        ln["OriginatorCustomerParty"] = {"Party": party(HARBOUR, short=True)}
-        ln["BeneficiaryParty"] = party(HARBOUR, short=True)
-    return {**for_harbour()}       # a statement of account states no tax (sea/25#F7)
+    return {}       # a statement of account states no tax (sea/25#F7)
 
 
 @enrich("sea", "RemittanceAdvice")
 def _(f, n, doc, out):
-    for ln in lines_of(out, "RemittanceAdviceLine"):
+    for ln in lines_of(out, "RemittanceAdviceLine"):      # the invoice it pays is not the port's alone (O172)
         ln["UUID"] = line_uuid(f, "remittance", ln["ID"].value)
-        ln["OriginatorCustomerParty"] = {"Party": party(HARBOUR, short=True)}
-        ln["BeneficiaryParty"] = party(HARBOUR, short=True)
     return {}
 
 

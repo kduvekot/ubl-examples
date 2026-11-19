@@ -301,9 +301,15 @@ Inside `Shipment`:
 - `GoodsItem/FreightAllowanceCharge/Amount` = **1162.714** (currencyID `XLC`)  
   The benches' share of the 2,950 lume freight by value (54,080 of 54,884 lume), in coral at 0.4.
 - `GoodsItem/InvoiceLine/ID` = **1**  
-  The line of the seller's invoice for these goods.
-- `GoodsItem/InvoiceLine/InvoicedQuantity` = **104** (unitCode `EA`)  
-  The benches invoiced.
+  A line of the seller's invoice for these goods: the benches are on two lines, the port's and the buyer's own stock (O172).
+- `GoodsItem/InvoiceLine/InvoicedQuantity` = **96** (unitCode `EA`)  
+  The benches invoiced on the line.
+- `GoodsItem/InvoiceLine/Item/Name` = **Park bench Serra 180**  
+  Named only: described in full above.
+- `GoodsItem/InvoiceLine/ID` = **2**  
+  A line of the seller's invoice for these goods: the benches are on two lines, the port's and the buyer's own stock (O172).
+- `GoodsItem/InvoiceLine/InvoicedQuantity` = **8** (unitCode `EA`)  
+  The benches invoiced on the line.
 - `GoodsItem/InvoiceLine/Item/Name` = **Park bench Serra 180**  
   Named only: described in full above.
 - `GoodsItem/ContainingPackage/Quantity` = **4** (unitCode `EA`)  
@@ -771,7 +777,14 @@ Inside `Signature`:
       </cac:FreightAllowanceCharge>
       <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
         </cac:Item>
