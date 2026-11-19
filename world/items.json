@@ -1413,7 +1413,22 @@
     "40-xb": "LT-RAW-COT"
    },
    "origin_district": "North coast",
-   "origin_criterion": "P"
+   "origin_criterion": "P",
+   "classed_lot": {
+    "id": "SCG-L26-017",
+    "why": "The ginnery's lot of 27 bales, the season's seventeenth, which the chamber classed as one lot on 20 February: its classing certificate gives the lot's results (O160)."
+   },
+   "buyer_requirements": {
+    "40-xb": {
+     "grade": "Middling",
+     "staple_mm": "27.8",
+     "micronaire": [
+      "3.5",
+      "4.9"
+     ],
+     "why": "The mill's buying specification for its spinning: at least Middling, a staple of at least 27.8 mm (1-3/32 inch) and a micronaire from 3.5 to 4.9, fibre neither too fine nor too coarse for its yarns (O160)."
+    }
+   }
   },
   {
    "id": "telecom-line",

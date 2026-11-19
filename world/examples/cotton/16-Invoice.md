@@ -347,6 +347,22 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **SCG-L26-017**  
+  The ginnery's lot of 27 bales, the season's seventeenth, which the chamber classed as one lot on 20 February: its classing certificate gives the lot's results (O160).
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Grade**  
+  A classing result of the lot, the grade the order asks for.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **Middling**  
+  The lot's grade; the lot's classing certificate XL-CLS-2026-0042: at least the Middling the order requires.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Staple length**  
+  A classing result of the lot, the staple the order asks for.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/ValueQuantity` = **28.6** (unitCode `MMT`)  
+  The lot's staple length, 1-1/8 inch; the lot's classing certificate XL-CLS-2026-0042: longer than the order's minimum.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Micronaire**  
+  A classing result of the lot, from the chamber's classing certificate: the fineness and maturity of the fibre, which spinners ask for beside grade and staple.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/TestMethod` = **Airflow measurement on the classer's high-volume instrument**  
+  How the value was measured.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **4.2**  
+  The lot's micronaire; the lot's classing certificate XL-CLS-2026-0042: within the order's range.
 - `Item/Certificate/ID` = **XL-CLS-2026-0042**  
   The number of the certificate, unique only with its issuer, who is named below (decision ID-Q10).
 - `Item/Certificate/CertificateTypeCode` = **COTTONCLASS** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
@@ -626,6 +642,24 @@ Inside `InvoiceLine`:
       <cac:SellersItemIdentification>
         <cbc:ID>SCG-LINT</cbc:ID>
       </cac:SellersItemIdentification>
+      <cac:ItemInstance>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>SCG-L26-017</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Grade</cbc:Name>
+            <cbc:Value>Middling</cbc:Value>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Staple length</cbc:Name>
+            <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Micronaire</cbc:Name>
+            <cbc:TestMethod>Airflow measurement on the classer's high-volume instrument</cbc:TestMethod>
+            <cbc:Value>4.2</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
       <cac:Certificate>
         <cbc:ID>XL-CLS-2026-0042</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>

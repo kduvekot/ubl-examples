@@ -153,6 +153,24 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Grade</cbc:Name>
+          <cbc:Value>Middling</cbc:Value>
+          <cbc:ValueQualifier>Minimum: this grade or better</cbc:ValueQualifier>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Staple length</cbc:Name>
+          <cbc:ValueQuantity unitCode="MMT">27.8</cbc:ValueQuantity>
+          <cbc:ValueQualifier>Minimum: this length or longer</cbc:ValueQualifier>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Micronaire</cbc:Name>
+          <cbc:TestMethod>Airflow measurement on the classer's high-volume instrument</cbc:TestMethod>
+          <cac:ItemPropertyRange>
+            <cbc:MinimumValue>3.5</cbc:MinimumValue>
+            <cbc:MaximumValue>4.9</cbc:MaximumValue>
+          </cac:ItemPropertyRange>
+        </cac:AdditionalItemProperty>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

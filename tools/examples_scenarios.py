@@ -2364,6 +2364,62 @@ ADVANCE_KG = 4500                  # the season advance: a quarter of the farm's
 ADVANCE = Decimal("1017.000")      # 4,500 kg at the agreed 0.226 coral, on the prepayment self-billed invoice
 
 
+def cotton_results():
+    """The classed lot's results (world/items.json): grade, staple length and micronaire, from the chamber's classing
+    certificate."""
+    it = ITEM["cotton-bale"]
+    props = {(p[0] if isinstance(p, list) else p["name"]): p for p in it["properties"]}
+    staple = next(q for q in it["quantity_properties"] if q[0] == "Staple length")
+    return props["Grade"][1], Decimal(staple[1]), Decimal(props["Micronaire"]["value"]), props, staple
+
+
+def cotton_required(buyer):
+    """The quality the mill's order requires of the lint (O160): a minimum grade and staple and a micronaire range,
+    the mill's buying specification (world/items.json buyer_requirements)."""
+    req = ITEM["cotton-bale"]["buyer_requirements"][buyer]
+    lo, hi = req["micronaire"]
+    grade, staple, mic, props, _ = cotton_results()
+    grades = ["Good Middling", "Strict Middling", "Middling", "Strict Low Middling", "Low Middling"]
+    assert grades.index(grade) <= grades.index(req["grade"]) and staple >= Decimal(req["staple_mm"]) \
+        and Decimal(lo) <= mic <= Decimal(hi), "the classed lot must meet the order's quality (O160)"
+    src = "the mill's buying specification"
+    return [{"Name": V("Grade", "A quality the mill requires: " + req["why"]),
+             "Value": V(req["grade"], f"The lowest grade the mill accepts; {src}."),
+             "ValueQualifier": V("Minimum: this grade or better", "The value is the lowest acceptable.")},
+            {"Name": V("Staple length", "A quality the mill requires: the length of the fibre, which its spinning "
+                                        "needs."),
+             "ValueQuantity": V(req["staple_mm"], f"The shortest staple the mill accepts, 1-3/32 inch; {src}.",
+                                unitCode="MMT"),
+             "ValueQualifier": V("Minimum: this length or longer", "The value is the lowest acceptable.")},
+            {"Name": V("Micronaire", "A quality the mill requires: the fineness and maturity of the fibre."),
+             "TestMethod": V(props["Micronaire"]["test"], "The method the result is to be measured by, the "
+                                                          "classer's."),
+             "ItemPropertyRange": {"MinimumValue": V(lo, f"The lowest micronaire accepted; {src}."),
+                                   "MaximumValue": V(hi, f"The highest micronaire accepted; {src}.")}}]
+
+
+def cotton_lot(buyer):
+    """The ItemInstance of the classed lot on the invoice to the mill (O160): the lot's number and its classing
+    results, on which the order's quality is settled."""
+    lot = ITEM["cotton-bale"]["classed_lot"]
+    cert = ITEM["cotton-bale"]["certificate"]["id"]
+    grade, staple, mic, props, st = cotton_results()
+    cotton_required(buyer)          # the lot meets the order's quality
+    src = f"the lot's classing certificate {cert}"
+    return {"LotIdentification": {
+        "LotNumberID": V(lot["id"], lot["why"]),
+        "AdditionalItemProperty": [
+            {"Name": V("Grade", "A classing result of the lot, the grade the order asks for."),
+             "Value": V(grade, f"The lot's grade; {src}: at least the "
+                               f"{ITEM['cotton-bale']['buyer_requirements'][buyer]['grade']} the order requires.")},
+            {"Name": V(st[0], "A classing result of the lot, the staple the order asks for."),
+             "ValueQuantity": V(st[1], f"The lot's staple length, 1-1/8 inch; {src}: longer than the order's "
+                                       "minimum.", unitCode=st[2])},
+            {"Name": V("Micronaire", props["Micronaire"]["why"]),
+             "TestMethod": V(props["Micronaire"]["test"], "How the value was measured."),
+             "Value": V(str(mic), f"The lot's micronaire; {src}: within the order's range.")}]}}
+
+
 def cotton(n, doc):
     f = COTTON
     w = kit.gross_weight(f, "ordered")
@@ -2516,7 +2572,7 @@ def cotton(n, doc):
                                          "SalesItem": {"Quantity": qty(30000, "KGM", "Raised to five containers."),
                                                        "Item": item("cotton-bale")}}}
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 22, "The mill orders the first container of the season.",
+        out = kit.order(f, n, doc, 22, "The mill orders the first container of the season.",
                          "Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk "
                          "passes when the bales are on board.", "Port of Selanu",
                          {"FreightForwarderParty": party("10-xb", short=True),
@@ -2524,6 +2580,8 @@ def cotton(n, doc):
                           "RequestedInvoiceCurrencyCode": V("XLC", "The mill asks to be invoiced in coral, the "
                                                                    "ginnery's currency, and pays the exchange "
                                                                    "itself.")})
+        out["OrderLine"][0]["LineItem"]["Item"]["AdditionalItemProperty"] = cotton_required(doc["from"])
+        return out
     if doc["doc"] == "ForwardingInstructions":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The mill's instruction "
                                                                                        "number."),
@@ -2593,7 +2651,7 @@ def cotton(n, doc):
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment shipped.")}}}})
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 28, "Issued when the bales are on board.",
+        out = kit.invoice(f, n, doc, 28, "Issued when the bales are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")},
                             "AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading: the bales "
                                                                                      "are on board, which is the "
@@ -2603,6 +2661,9 @@ def cotton(n, doc):
                                                                                   "ship (cotton/16#F6)."),
                                                "DeliveryLocation": kit.place("XLSEL", "The port of loading, where "
                                                                                       "FOB delivers.")}})
+        ln = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
+        ln["Item"]["ItemInstance"] = cotton_lot(doc["to"])
+        return out
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 55, "The mill pays the ginnery: money flows to the island.")
     raise SystemExit(f"cotton scenario: no document {n} {doc['doc']}")

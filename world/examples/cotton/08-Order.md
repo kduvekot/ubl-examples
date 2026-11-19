@@ -218,6 +218,26 @@ Inside `OrderLine`:
   The number the buyer keeps for this item in its own system (world/items.json).
 - `LineItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
+- `LineItem/Item/AdditionalItemProperty/Name` = **Grade**  
+  A quality the mill requires: The mill's buying specification for its spinning: at least Middling, a staple of at least 27.8 mm (1-3/32 inch) and a micronaire from 3.5 to 4.9, fibre neither too fine nor too coarse for its yarns (O160).
+- `LineItem/Item/AdditionalItemProperty/Value` = **Middling**  
+  The lowest grade the mill accepts; the mill's buying specification.
+- `LineItem/Item/AdditionalItemProperty/ValueQualifier` = **Minimum: this grade or better**  
+  The value is the lowest acceptable.
+- `LineItem/Item/AdditionalItemProperty/Name` = **Staple length**  
+  A quality the mill requires: the length of the fibre, which its spinning needs.
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **27.8** (unitCode `MMT`)  
+  The shortest staple the mill accepts, 1-3/32 inch; the mill's buying specification.
+- `LineItem/Item/AdditionalItemProperty/ValueQualifier` = **Minimum: this length or longer**  
+  The value is the lowest acceptable.
+- `LineItem/Item/AdditionalItemProperty/Name` = **Micronaire**  
+  A quality the mill requires: the fineness and maturity of the fibre.
+- `LineItem/Item/AdditionalItemProperty/TestMethod` = **Airflow measurement on the classer's high-volume instrument**  
+  The method the result is to be measured by, the classer's.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MinimumValue` = **3.5**  
+  The lowest micronaire accepted; the mill's buying specification.
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MaximumValue` = **4.9**  
+  The highest micronaire accepted; the mill's buying specification.
 
 ## The document
 
@@ -377,6 +397,24 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Grade</cbc:Name>
+          <cbc:Value>Middling</cbc:Value>
+          <cbc:ValueQualifier>Minimum: this grade or better</cbc:ValueQualifier>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Staple length</cbc:Name>
+          <cbc:ValueQuantity unitCode="MMT">27.8</cbc:ValueQuantity>
+          <cbc:ValueQualifier>Minimum: this length or longer</cbc:ValueQualifier>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Micronaire</cbc:Name>
+          <cbc:TestMethod>Airflow measurement on the classer's high-volume instrument</cbc:TestMethod>
+          <cac:ItemPropertyRange>
+            <cbc:MinimumValue>3.5</cbc:MinimumValue>
+            <cbc:MaximumValue>4.9</cbc:MaximumValue>
+          </cac:ItemPropertyRange>
+        </cac:AdditionalItemProperty>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

@@ -249,6 +249,24 @@
       <cac:SellersItemIdentification>
         <cbc:ID>SCG-LINT</cbc:ID>
       </cac:SellersItemIdentification>
+      <cac:ItemInstance>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>SCG-L26-017</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Grade</cbc:Name>
+            <cbc:Value>Middling</cbc:Value>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Staple length</cbc:Name>
+            <cbc:ValueQuantity unitCode="MMT">28.6</cbc:ValueQuantity>
+          </cac:AdditionalItemProperty>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Micronaire</cbc:Name>
+            <cbc:TestMethod>Airflow measurement on the classer's high-volume instrument</cbc:TestMethod>
+            <cbc:Value>4.2</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
       <cac:Certificate>
         <cbc:ID>XL-CLS-2026-0042</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>
