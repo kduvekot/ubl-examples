@@ -739,6 +739,88 @@ function box3(g, F, u0, v0, u1, v1, z0, z1, wall, top) {
 // a window or a door on a face of a box: s0..s1 along the face, z0..z1 up
 function onFace(g, F, a, b, s0, s1, z0, z1, color) { const P = s => [a[0] + (b[0] - a[0]) * s, a[1] + (b[1] - a[1]) * s];
   poly(g, [F(...P(s0), z0), F(...P(s1), z0), F(...P(s1), z1), F(...P(s0), z1)], color); }
+// a gable roof over a box in a building's frame, its ridge along u (swap the frame for a ridge along v): the far slope,
+// the gable ends turned to the viewer, the near slope
+const hexOf = c => { if (c[0] === "#") return c; const m = c.match(/\d+/g).slice(0, 3).map(Number); return "#" + m.map(x => x.toString(16).padStart(2, "0")).join(""); };
+function gable3(g, F, u0, v0, u1, v1, z, rise, roof, wall) { roof = hexOf(roof); wall = hexOf(wall);
+  const vm = (v0 + v1) / 2, c = F((u0 + u1) / 2, vm, z)[1], um = (u0 + u1) / 2;
+  const sl = (va) => [F(u0, va, z), F(u1, va, z), F(u1, vm, z + rise), F(u0, vm, z + rise)];
+  const nearV = F(um, v0, z)[1] > F(um, v1, z)[1] ? v0 : v1, farV = nearV === v0 ? v1 : v0;
+  poly(g, sl(farV), shade(roof, .12));
+  for (const ue of [u0, u1]) if (F(ue, vm, z)[1] > c) poly(g, [F(ue, v0, z), F(ue, v1, z), F(ue, vm, z + rise)], shade(wall, -.12));
+  poly(g, sl(nearV), roof); }
+const swapF = F => { const S = (a, b, z) => F(b, a, z); S.LA = F.LF; S.LF = F.LA; return S; };
+// a round thing standing on the ground in a building's frame (a basin's rim, a tank's foot): its outline at height z
+function ring3(F, u, v, r, z = 0) { const out = []; for (let k = 0; k < 16; k++) { const a = k * Math.PI / 8; out.push(F(u + Math.cos(a) * r / F.LA, v + Math.sin(a) * r / F.LF, z)); } return out; }
+// a vertical round tank: a cylinder of radius r (squares) and height h (pixels), its top lighter
+function tank3(g, F, u, v, r, h, col) { const base = ring3(F, u, v, r), top = ring3(F, u, v, r, h);
+  const xs = base.map(p => p[0]), l = Math.min(...xs), rr = Math.max(...xs), [cx, cy] = F(u, v, 0), ry = Math.max(...base.map(p => p[1])) - cy;
+  g.fillStyle = shade(col, -.15); g.beginPath(); g.moveTo(l, cy); g.lineTo(l, cy - h); g.lineTo(rr, cy - h); g.lineTo(rr, cy); g.ellipse(cx, cy, (rr - l) / 2, ry, 0, 0, Math.PI); g.fill();
+  g.fillStyle = shade(col, .1); g.beginPath(); g.moveTo(cx, cy - h); g.lineTo(cx, cy); g.ellipse(cx, cy, (rr - l) / 2, ry, 0, 0, Math.PI / 2); g.lineTo(rr, cy - h); g.fill();
+  poly(g, top, shade(col, .25)); }
+// draw parts back to front: each { u, v, draw }
+function inOrder(F, parts) { parts.map(q => [F(q.u, q.v)[1], q]).sort((a, b) => a[0] - b[0]).forEach(([, q]) => q.draw()); }
+function windowsOn(g, F, faces, perSq, z0, z1, color, rows = 1, skip = null) {
+  for (const fc of faces) { if (skip && skip(fc)) continue; const len = Math.hypot((fc.b[0] - fc.a[0]) * F.LA, (fc.b[1] - fc.a[1]) * F.LF), n = Math.max(1, Math.round(len * perSq));
+    for (let r = 0; r < rows; r++) { const zz0 = z0 + r * (z1 - z0) / rows, zz1 = zz0 + (z1 - z0) / rows * .62;
+      for (let w = 0; w < n; w++) onFace(g, F, fc.a, fc.b, .1 + w * .8 / n + .1 / n, .1 + (w + .6) * .8 / n + .1 / n, zz0, zz1, color); } } }
+
+// ---- batch 1: the large sites ----
+function power3(g, p, col, glass) {          // a thermal power station: turbine hall, two cooling towers, a chimney, the switchyard
+  const F = buildingFrame(p, .04);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#9c9a90");
+  inOrder(F, [
+    { u: .3, v: .2, draw: () => { poly(g, [F(.08, .06), F(.5, .06), F(.5, .3), F(.08, .3)], "#8b8a82");          // the switchyard
+        for (const [u, v] of [[.16, .14], [.28, .14], [.4, .14], [.16, .23], [.28, .23], [.4, .23]]) box3(g, F, u - .03, v - .025, u + .03, v + .025, 0, 4, "#6f7a80", "#545d62");
+        g.strokeStyle = "#4e555a"; g.lineWidth = .8; for (const u of [.1, .48]) { const A = F(u, .1, 0), B = F(u, .1, 12); g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); }
+        const a = F(.1, .1, 11), b = F(.48, .1, 11); g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.stroke(); } },
+    { u: .3, v: .62, draw: () => { const fc = box3(g, F, .08, .4, .52, .9, 0, 16, "#c9c2b2", shade(col, -.15));
+        windowsOn(g, F, fc, 4, 6, 13, glass); gable3(g, F, .08, .4, .52, .9, 16, 4, shade(col, -.25), "#c9c2b2"); } },
+    { u: .44, v: .94, draw: () => { box3(g, F, .41, .91, .47, .97, 0, 40, "#a7a49b", null); box3(g, F, .405, .905, .475, .975, 37, 41, "#7c3a2e", "#5a2a22"); } },
+    { u: .76, v: .74, draw: () => coolingTower(g, F, .76, .74) },
+    { u: .76, v: .3, draw: () => coolingTower(g, F, .76, .3) } ]); }
+function coolingTower(g, F, u, v) { const [cx, cy] = F(u, v, 0), w = 10.5, ht = 25;
+  g.fillStyle = "#d9d6cf"; g.beginPath(); g.moveTo(cx - w, cy); g.quadraticCurveTo(cx - w * .45, cy - ht * .55, cx - w * .62, cy - ht); g.lineTo(cx + w * .62, cy - ht); g.quadraticCurveTo(cx + w * .45, cy - ht * .55, cx + w, cy); g.ellipse(cx, cy, w, w * .45, 0, 0, Math.PI); g.fill();
+  g.fillStyle = "#bdb9b0"; g.beginPath(); g.moveTo(cx + 2, cy + w * .45); g.quadraticCurveTo(cx + w * .3, cy - ht * .5, cx + w * .2, cy - ht); g.lineTo(cx + w * .62, cy - ht); g.quadraticCurveTo(cx + w * .45, cy - ht * .55, cx + w, cy); g.ellipse(cx, cy, w, w * .45, 0, 0, Math.PI / 2); g.fill();
+  g.fillStyle = "#8f8b83"; g.beginPath(); g.ellipse(cx, cy - ht, w * .62, w * .25, 0, 0, 7); g.fill();
+  for (const [dx, dy, r, a] of [[0, -4, 5, .7], [4, -11, 7, .5], [9, -20, 9, .3]]) { g.fillStyle = `rgba(245,245,245,${a})`; g.beginPath(); g.arc(cx + dx, cy - ht + dy, r, 0, 7); g.fill(); } }
+function gasplant3(g, p, col, glass) {       // a gas treatment plant: control house at the gate, columns, spheres, a flare stack
+  const F = buildingFrame(p, .04);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a3a49f");
+  inOrder(F, [
+    { u: .2, v: .2, draw: () => { const fc = box3(g, F, .08, .08, .32, .3, 0, 7, "#d6dbe0", shade(col, -.1)); windowsOn(g, F, fc, 4, 2.5, 5.5, glass); } },
+    { u: .2, v: .55, draw: () => { const fc = box3(g, F, .08, .42, .3, .62, 0, 9, "#c3c7ca", null); windowsOn(g, F, fc, 3, 4, 7, glass); gable3(g, F, .08, .42, .3, .62, 9, 3, "#7f8c8d", "#c3c7ca"); } },
+    { u: .55, v: .3, draw: () => { for (const u of [.4, .55, .7]) { g.strokeStyle = "#7d858b"; g.lineWidth = 1; g.beginPath(); g.moveTo(...F(u, .3, 0)); g.lineTo(...F(u, .3, 5)); g.stroke(); }
+        g.strokeStyle = "#9aa2a8"; g.lineWidth = 1.6; g.beginPath(); g.moveTo(...F(.35, .3, 5)); g.lineTo(...F(.75, .3, 5)); g.stroke(); g.strokeStyle = "#f0c419"; g.lineWidth = 1.4; g.beginPath(); g.moveTo(...F(.35, .3, 1.5)); g.lineTo(...F(.8, .3, 1.5)); g.lineTo(...F(.8, .7, 1.5)); g.stroke(); } },
+    { u: .5, v: .6, draw: () => { for (const [u, v, h] of [[.45, .55, 22], [.55, .62, 17]]) { tank3(g, F, u, v, .05, h, "#b8bcc0"); } } },
+    { u: .72, v: .45, draw: () => tank3(g, F, .72, .45, .1, 3, "#e8e6df") },
+    { u: .72, v: .45, draw: () => { const [x, y] = F(.72, .45, 0); g.fillStyle = "#ecebe6"; g.beginPath(); g.arc(x, y - 7, 6.5, 0, 7); g.fill(); g.fillStyle = "#d4d1c8"; g.beginPath(); g.arc(x + 2, y - 6, 4.5, 0, 7); g.fill(); } },
+    { u: .3, v: .72, draw: () => { const [x, y] = F(.3, .72, 0); g.fillStyle = "#e8e6df"; g.beginPath(); g.arc(x, y - 6, 5.5, 0, 7); g.fill(); g.fillStyle = "#cfccc3"; g.beginPath(); g.arc(x + 2, y - 5, 3.8, 0, 7); g.fill(); } },
+    { u: .9, v: .9, draw: () => { const A = F(.9, .9, 0), B = F(.9, .9, 32); g.strokeStyle = "#5c6166"; g.lineWidth = 1.6; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke();
+        g.fillStyle = "#f39c12"; g.beginPath(); g.moveTo(B[0] - 2, B[1]); g.quadraticCurveTo(B[0], B[1] - 9, B[0] + 2.5, B[1] - 1); g.quadraticCurveTo(B[0], B[1] + 2, B[0] - 2, B[1]); g.fill(); } } ]); }
+function sawmill3(g, p, col, glass) {        // a sawmill: an open saw shed, log piles, stacks of sawn timber, the office
+  const F = buildingFrame(p, .04), long = F.LA >= F.LF, L = long ? F : swapF(F);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a8936f");
+  const logs = (u0, u1, v) => { for (let r = 0; r < 3; r++) for (let k = 0; k < 4 - r; k++) { const vv = v + (k + r / 2) * .045; const [x, y] = L(u1, vv, 1.6 + r * 2.4);
+      const [x0, y0] = L(u0, vv, 1.6 + r * 2.4); g.strokeStyle = "#7a5636"; g.lineWidth = 2.6; g.lineCap = "round"; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x, y); g.stroke();
+      g.fillStyle = "#d9b98c"; g.beginPath(); g.arc(x, y, 1.2, 0, 7); g.fill(); } g.lineCap = "butt"; };
+  inOrder(L, [
+    { u: .2, v: .2, draw: () => { const fc = box3(g, L, .05, .07, .3, .32, 0, 8, "#9b7b58", null); windowsOn(g, L, fc, 4, 2.5, 6, glass); gable3(g, L, .05, .07, .3, .32, 8, 4, col, "#9b7b58"); } },
+    { u: .62, v: .2, draw: () => { for (let k = 0; k < 3; k++) box3(g, L, .45 + k * .1, .1, .52 + k * .1, .3, 0, 3 + k % 2, "#e2c79a", "#ecd6ae"); } },
+    { u: .55, v: .6, draw: () => { for (const [u, v] of [[.32, .42], [.32, .84], [.78, .42], [.78, .84], [.55, .42], [.55, .84]]) { const A = L(u, v, 0), B = L(u, v, 12); g.strokeStyle = "#5a4632"; g.lineWidth = 1.2; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); }
+        gable3(g, L, .3, .4, .8, .86, 12, 4, shade(col, -.1), "#7c6247"); } },
+    { u: .2, v: .7, draw: () => logs(.06, .26, .5) },
+    { u: .9, v: .7, draw: () => logs(.84, .96, .48) } ]); }
+function warehouse3(g, p, col, glass) {      // a warehouse: a long hall with a gable roof, loading docks along its front, an office at one end
+  const F = buildingFrame(p, .05), big = F.LA * F.LF > 1.5;
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a8a294");
+  inOrder(F, [
+    { u: .5, v: .55, draw: () => { const fc = box3(g, F, .06, .26, .94, .88, 0, big ? 12 : 10, "#cfc4ad", null);
+        for (const f2 of fc) if (f2.k === 0) { const n = big ? 7 : 3; for (let d = 0; d < n; d++) onFace(g, F, f2.a, f2.b, .08 + d * .84 / n, .08 + (d + .6) * .84 / n, 0, 6.5, "#5d6670"); }
+          else windowsOn(g, F, [f2], 2.5, 7, 9.5, glass);
+        gable3(g, F, .06, .26, .94, .88, big ? 12 : 10, 4, shade(col, -.1), "#cfc4ad"); } },
+    { u: .85, v: .14, draw: () => { const fc = box3(g, F, .76, .06, .94, .26, 0, 7, "#e4ddcc", shade(col, -.2)); windowsOn(g, F, fc, 5, 2.5, 5.5, glass); } },
+    { u: .4, v: .12, draw: () => { if (!big) return; for (const u of [.2, .4]) box3(g, F, u - .07, .07, u + .07, .13, 0, 4, "#c0392b", "#d35445"); } } ]); }
 function factory3(g, p, col, glass) {
   const F = buildingFrame(p, .04), H = 13, long = F.LA >= F.LF;
   const front = (a, b) => F(a, b)[1];                                        // how near the viewer a point is
@@ -806,10 +888,10 @@ function multiTile(g, p, k, col, glass) {
     g.strokeStyle = col; g.lineWidth = 2.5; g.lineCap = "butt"; g.beginPath(); g.moveTo(x0 + 6, y0 + 2); g.lineTo(x0 + 6, y0 - 22); g.moveTo(x1 - 6, y1 + 2); g.lineTo(x1 - 6, y1 - 22);
     g.moveTo(x0 + 4, y0 - 22); g.lineTo(x1 - 4, y1 - 22); g.stroke(); return true; }
   if (k === "factory") { factory3(g, p, col, glass); return true; }   // large hall, drawn in its own directions (MO006)
-  if (k === "warehouse") {                              // long hall with loading docks along the front
-    poly(g, q(base), "#a8a294"); const G = footGeo(p, .1, 11 + (p.h > 2 ? 3 : 0)); walls(g, G, "#cfc4ad");
-    for (let u = .06; u < .94; u += .15) door(g, G, "L", u, .09, 7, "#5d6670"); windows(g, G, "R", 3, 1, glass, { top: .9, bottom: .65 });
-    gableRoof(g, G, 5, shade(col, -.1), "#cfc4ad"); return true; }
+  if (k === "power") { power3(g, p, col, glass); return true; }
+  if (k === "gasplant") { gasplant3(g, p, col, glass); return true; }
+  if (k === "sawmill") { sawmill3(g, p, col, glass); return true; }
+  if (k === "warehouse") { warehouse3(g, p, col, glass); return true; }
   return false;
 }
 
