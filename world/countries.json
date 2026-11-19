@@ -745,6 +745,7 @@
    },
    "farm_registry": {
     "name": "Farm register of Lisavu",
+    "keeper": "the island's Department of Agriculture, which also runs the plant protection service (O157)",
     "scheme": "XL:FR",
     "id_format": "LFR- and 4 digits",
     "example": "LFR-0412",

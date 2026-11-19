@@ -606,7 +606,7 @@ shape, derived from no other register:
 | Index of Public Administrations of Urvania | the Agency for Digital Administration | `xu_` and four lower-case letters or digits (`xu_k4r7`, the customs administration) | `XU:public-body-register` |
 | Federal list of public bodies of Bayvarra | the Bayvarra Information Service | ten digits, the first not 0 (`3071845926`, the customs and border service) | `XB:public-body-register` |
 | Government list of public bodies of Lisavu | the Government Secretariat | `GOV-` and three digits (`GOV-118`, the customs service) | `XL:public-body-register` |
-| Farm register of Lisavu | the island's government | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
+| Farm register of Lisavu | the island's Department of Agriculture, which also runs the plant protection service | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
 
 A public body's party identifier and the `CompanyID` of its legal entity
 carry that number under its register's scheme (`urn:ubl-examples:world:` and
