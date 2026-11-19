@@ -37,7 +37,7 @@ jobs:
             echo "::notice::main is now at ${head::7}, newer than ${GITHUB_SHA::7}: skipping, the run for the newer commit publishes the site"
           fi
 
-      # The packages (pandoc alone is about 29 MB) are kept between runs: on
+      # The packages (pandoc alone is about 29 MB; numpy, Pillow and the fonts draw the map sheet) are kept between runs: on
       # 2026-11-18 the Ubuntu mirror served them at about 55 kB/s and the install
       # took ten minutes instead of twenty seconds. apt still checks for newer
       # versions and downloads only what the cache lacks.
@@ -46,7 +46,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: ~/apt-cache
-          key: apt-ubuntu-26.04-${{ runner.arch }}-xsltproc-libxml2-utils-pandoc-python3-lxml-v1
+          key: apt-ubuntu-26.04-${{ runner.arch }}-xsltproc-libxml2-utils-pandoc-python3-lxml-numpy-pil-dejavu-v1
 
       - name: Install tools
         if: steps.newest.outputs.newest == 'true'
@@ -56,7 +56,7 @@ jobs:
           sudo apt-get install -y -q --no-install-recommends \
             -o Dir::Cache::Archives="$HOME/apt-cache" \
             -o Acquire::http::Timeout=30 -o Acquire::Retries=3 \
-            xsltproc libxml2-utils pandoc python3-lxml
+            xsltproc libxml2-utils pandoc python3-lxml python3-numpy python3-pil fonts-dejavu-core
           sudo chown -R "$(id -u):$(id -g)" ~/apt-cache
 
       - name: Build site

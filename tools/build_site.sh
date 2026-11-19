@@ -84,8 +84,11 @@ page history/README.md history.html "How the history was built" 2
 page README.md releases.html "Releases" 3
 page analysis/element-coverage.md coverage.html "Element coverage" 2
 page analysis/element-coverage-details.md coverage-details.html "Element coverage: details" 3
-# The printed map sheet (O151): the A3 sheet at 1 : 2,500,000, made by analysis/world-position/refine_map.py
-cp analysis/world-position/world-roadmap.png "$OUT/map-sheet.png"
+# The printed map sheet (O151): the A3 sheet at 1 : 2,500,000, drawn from the world data at every build
+# (analysis/world-position/refine_map.py; needs numpy, Pillow and the DejaVu fonts), so it always matches the map
+python3 tools/world_model.py "$OUT/.model.json" > /dev/null
+python3 -I analysis/world-position/refine_map.py "$OUT/.model.json" world/map.json "$OUT/map-sheet.png" 5 0 sheet > /dev/null
+rm -f "$OUT/.model.json"
 cat > "$OUT/.map-sheet.md" <<'SHEET'
 # The map sheet
 

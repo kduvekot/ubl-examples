@@ -32,8 +32,7 @@ from the drawn land, not from D19's box.
 | `check_maritime_claims.py` | The check of O55: whether any part of the world, or any coordinate in the examples, lies inside a zone, a claim or a sea-bed contract area, and the distances to each and to real land. |
 | `world-position-rio-grande-rise-withdrawn.png` | The first proposal, on the Rio Grande Rise. Withdrawn: Brazil has claimed that plateau as continental shelf since 7 December 2018. Kept so that the reason stays visible. |
 | `plot_world_position_rio_grande_rise.py` | Draws it. |
-| `world-roadmap.png` | The printed map sheet (O151): A3 landscape at 1 : 2,500,000 and 300 dpi (4,961 × 3,508 pixels), the mainland and Lisavu in two panels. The site build publishes it as `map-sheet.png`. |
-| `refine_map.py` | Draws the map sheet, or a road map, top-down from the 3D tile model and the terrain's fine rasters: relief, land cover, rivers, the towns' built-up areas, villages, roads, rail and pipelines. |
+| `refine_map.py` | Draws the printed map sheet (O151): A3 landscape at 1 : 2,500,000 and 300 dpi (4,961 × 3,508 pixels), the mainland and Lisavu in two panels. The site build draws it from the world data at every build and publishes it as `map-sheet.png` (owner, 2026-11-19), so it is not committed; its earlier versions are in the history of `world-roadmap.png`. It can also draw a road map, top-down from the 3D tile model and the terrain's fine rasters: relief, land cover, rivers, the towns' built-up areas, villages, roads, rail and pipelines. |
 | `site_villages.py` | Sites the villages between the towns (O152) and writes `world/map.json` "villages". |
 
 ## How to redraw
@@ -49,7 +48,7 @@ The scripts fetch their data once into `.review/geo/`, which is not committed: t
 The map sheet, from the repository root (`refine_map.py` needs numpy and Pillow, and the DejaVu fonts):
 
     python3 tools/world_model.py model.json
-    python3 -I analysis/world-position/refine_map.py model.json world/map.json analysis/world-position/world-roadmap.png 5 0 sheet
+    python3 -I analysis/world-position/refine_map.py model.json world/map.json map-sheet.png 5 0 sheet
 
 The fourth argument is the number of relief levels, the fifth the pixels per square (the sheet computes its own,
 16.5 at 300 dpi); `sheet periods` colours the towns' built-up areas by the period of their districts, and
