@@ -181,6 +181,8 @@ def gc_list(key, lst):
     columns += [("description", "Description", "string", "en", "optional")]
     if any(c.get("mime") for c in lst["codes"].values()):
         columns.append(("mime", "MimeType", "string", None, "optional"))
+    if "tax_included" in lst:              # a price type says whether its price includes tax (O28)
+        columns.append(("tax-included", "TaxIncluded", "boolean", None, "required"))
     for cid, short, typ, lang, use in columns:
         col = ET.SubElement(cols, "Column", Id=cid, Use=use)
         ET.SubElement(col, "ShortName").text = short
@@ -196,6 +198,8 @@ def gc_list(key, lst):
             vals.append(("description", c["description"]))
         if c.get("mime"):
             vals.append(("mime", c["mime"]))
+        if "tax_included" in lst:
+            vals.append(("tax-included", "true" if lst["tax_included"][code] else "false"))
         rows.append(row(vals))
     ET.indent(root, space="   ")
     if scope == "external" and lst.get("source"):

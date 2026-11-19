@@ -43,8 +43,9 @@ def initials(pid):
 
 class Flow:
     """The context of one flow: its start date, its numbering and its deal."""
-    def __init__(self, flow_id, start, deal=None):
+    def __init__(self, flow_id, start, deal=None, buyer=None):
         self.id, self.start, self.deal = flow_id, datetime.date.fromisoformat(start), deal or []
+        self.buyer = buyer         # the buyer of the deal, where the seller has a price of its own for it (D14)
         self.base = 100 + zlib.crc32(flow_id.encode()) % 800      # a stable sequence per flow
         self.numbers = {}          # document numbers, and amounts and dates other documents refer to
         self.count = 0             # the sequence counts document numbers only
@@ -288,13 +289,21 @@ def cost_centre(pid, why, iid=None):
 
 
 # ---------------------------------------------------------------- lines and totals
-def unit_price(iid, currency):
-    """The item's price in `currency`: its own price, or converted at the world's reference rate."""
+def price_of(iid, buyer=None):
+    """The price the seller asks this buyer for the item (world/items.json): a price agreed for the buyer
+    (buyer_prices, such as Valdara's distributor price for Lumeway, D14), or else the item's own price, the
+    seller's list price."""
     it = ITEM[iid]
-    p = Decimal(str(it["price"]["amount"]))
-    if it["price"]["currency"] == currency:
+    return it.get("buyer_prices", {}).get(buyer) or it["price"]
+
+
+def unit_price(iid, currency, buyer=None):
+    """The item's price for the buyer in `currency`: its own price, or converted at the world's reference rate."""
+    pr = price_of(iid, buyer)
+    p = Decimal(str(pr["amount"]))
+    if pr["currency"] == currency:
         return p
-    return money(p * rate(it["price"]["currency"], currency), currency)
+    return money(p * rate(pr["currency"], currency), currency)
 
 
 def lines(flow, seller, buyer, currency, which="ordered", deal=None):
@@ -302,7 +311,7 @@ def lines(flow, seller, buyer, currency, which="ordered", deal=None):
     out = []
     for d in (deal or flow.deal):
         q = Decimal(str(d[which]))
-        p = unit_price(d["item"], currency)
+        p = unit_price(d["item"], currency, buyer)
         out.append((d, q, money(q * p, currency), tax_rule(seller, buyer, d["item"])))
     return out
 
@@ -376,7 +385,7 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
                                            "(worklist C34)."),
             "Quantity": qty(q, ITEM[d["item"]]["unit"], d.get("why", "The quantity ordered.")),
             "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-            "Price": price_block(d["item"], cur),
+            "Price": price_block(d["item"], cur, buyer),
             "Item": item(d["item"], buyer=buyer, catalogue_ref=flow.numbers.get("catalogue")
                          if flow.numbers.get("catalogue-from") == seller else None)}}
             for i, (d, q, amt, rule) in enumerate(rows, 1)],
@@ -394,16 +403,17 @@ def order_response(flow, n, doc, day, why, key="order"):
             "OrderReference": {"ID": V(flow.numbers[key], "The order this response answers.")}}
 
 
-def price_block(iid, currency=None):
+def price_block(iid, currency=None, buyer=None):
     it = ITEM[iid]
-    if currency and currency != it["price"]["currency"]:
-        r = rate(it["price"]["currency"], currency)
-        return {"PriceAmount": price(unit_price(iid, currency), currency,
-                                     f"The seller's price of {it['price']['amount']} {it['price']['currency']}, converted "
+    pr = price_of(iid, buyer)
+    if currency and currency != pr["currency"]:
+        r = rate(pr["currency"], currency)
+        return {"PriceAmount": price(unit_price(iid, currency, buyer), currency,
+                                     f"The seller's price of {pr['amount']} {pr['currency']}, converted "
                                      f"to the buyer's currency at the world's reference rate, as the contract provides."),
                 "BaseQuantity": qty(1, it["unit"], "The price is per one unit."),
                 "PricingExchangeRate": {
-                    "SourceCurrencyCode": V(it["price"]["currency"], "The currency of the seller's price list."),
+                    "SourceCurrencyCode": V(pr["currency"], "The currency of the seller's price list."),
                     "TargetCurrencyCode": V(currency, "The currency of the order."),
                     "SourceCurrencyBaseRate": V("1", "The rate is for one unit of the seller's currency."),
                     "TargetCurrencyBaseRate": V("1", "Given in single units of the order's currency."),
@@ -411,9 +421,10 @@ def price_block(iid, currency=None):
                     "MathematicOperatorCode": V("Multiply", "The seller's price times the rate gives the order price."),
                     "Date": V("2026-01-02", "The reference rate of the first working day of the year, fixed in the "
                                             "contract.")}}
-    out = {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"],
+    out = {"PriceAmount": price(pr["amount"], pr["currency"],
                                 f"No price: the item comes free with each {free_with_name(it)} "
                                 "(world/items.json)." if it.get("free_with") else
+                                pr["why"] if pr.get("why") else
                                 "The seller's price per unit (world/items.json)."),
            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
     if it.get("pack") and it["unit"] == "EA":
@@ -572,7 +583,7 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
         rows = lines(flow, seller, buyer, cur, which)
     else:
-        rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * unit_price(d["item"], cur), cur),
+        rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * unit_price(d["item"], cur, buyer), cur),
                  tax_rule(seller, buyer, d["item"])) for d in rows_spec]
     rows, gross = line_allowances(rows, cur)
     base = sum(r[2] for r in rows)
@@ -613,10 +624,10 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         "InvoiceLine": [{
             "ID": V(str(i), "The line number."),
             "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], d.get("invoice_why", "The quantity delivered.")),
-            "LineExtensionAmount": amount(amt, cur, f"{q} × {unit_price(d['item'], cur)}, rounded to the minor unit of "
-                                                    "the currency."),
+            "LineExtensionAmount": amount(amt, cur, f"{q} × {unit_price(d['item'], cur, buyer)}, rounded to the minor "
+                                                    "unit of the currency."),
             "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
-            "Price": price_block(d["item"], cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
+            "Price": price_block(d["item"], cur, buyer)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     line_features(rows, out["InvoiceLine"], cur, gross)
     if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
@@ -1108,7 +1119,8 @@ def goods_items(flow, currency, value_why, deal=None):
     for i, d in enumerate(deal, 1):
         it = ITEM[d["item"]]
         q = Decimal(str(d[which]))
-        value = q * Decimal(str(it["price"]["amount"])) * rate(it["price"]["currency"], currency)
+        pr = price_of(d["item"], flow.buyer)        # the transaction value: the price the flow's buyer pays
+        value = q * Decimal(str(pr["amount"])) * rate(pr["currency"], currency)
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What the goods are, in words."),
                     "DeclaredCustomsValueAmount": amount(value, currency, value_why),
@@ -1232,7 +1244,7 @@ def credit_note(flow, n, doc, day, why, rows_spec, refs, currency=None):
                                 "CreditedQuantity": qty(q, ITEM[d["item"]]["unit"], d["why"]),
                                 "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
                                 "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
-                                "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+                                "Price": line_price(d, cur, buyer)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     line_features(rows, out["CreditNoteLine"], cur, gross)
     return out
 
@@ -1277,16 +1289,16 @@ def spec_rows(rows_spec, seller, buyer, cur):
     """Rows from an explicit list: item, quantity and, for a price difference, an own unit price."""
     out = []
     for d in rows_spec:
-        p = Decimal(str(d.get("unit_price", ITEM[d["item"]]["price"]["amount"])))
+        p = Decimal(str(d.get("unit_price", price_of(d["item"], buyer)["amount"])))
         out.append((d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * p, cur), tax_rule(seller, buyer, d["item"])))
     return out
 
 
-def line_price(d, cur):
+def line_price(d, cur, buyer=None):
     if "unit_price" in d:
         return {"PriceAmount": price(d["unit_price"], cur, d["unit_price_why"]),
                 "BaseQuantity": qty(1, ITEM[d["item"]]["unit"], "The price is per one unit.")}
-    return price_block(d["item"])
+    return price_block(d["item"], buyer=buyer)
 
 
 def catalogue(flow, n, doc, day, why, items, validity_days, alternative=None):
@@ -1301,6 +1313,16 @@ def catalogue(flow, n, doc, day, why, items, validity_days, alternative=None):
                                "RequiredItemLocationQuantity": catalogue_terms(flow, doc, day, validity_days, iid,
                                                                                alternative)}
                               for i, iid in enumerate(items, 1)]}
+
+
+def price_type(code, tax_included):
+    """A code of the world's price type list (lists.json PriceType), checked against what the price it names is:
+    with tax or before tax (O28)."""
+    lst = codelists.load()["lists"]["PriceType"]
+    if lst["tax_included"][code] != tax_included:
+        raise SystemExit(f"price type {code}: the list says its price {'includes' if lst['tax_included'][code] else 'excludes'}"
+                         f" tax, but the document's price {'includes' if tax_included else 'excludes'} it (O28)")
+    return code
 
 
 def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
@@ -1325,7 +1347,8 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
                                                                               "category below treats (worklist C25).")}},
            "Price": p}
     contract = flow.id == "tender"
-    p["PriceTypeCode"] = V("CON" if contract else "TRD", "The kind of price, which buyer and seller both understand: "
+    kind = price_type("CON" if contract else "TRD", tax_included=False)     # a catalogue price is before tax
+    p["PriceTypeCode"] = V(kind, "The kind of price, which buyer and seller both understand: "
                            + ("the price agreed in the framework contract." if contract else "a trade price."))
     p["PriceType"] = V("Contract price" if contract else "Trade price", "The kind of price in words.")
     if alternative:
@@ -1445,7 +1468,7 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
                    qname: qty(q, ITEM[d["item"]]["unit"], d["why"]),
                    "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
                    "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
-                   "Price": line_price(d, cur)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+                   "Price": line_price(d, cur, customer)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
     if not credit:
         out["InvoiceTypeCode"] = V("389", "UN/EDIFACT 1001 code 389, \"An invoice the invoicee is producing instead "
                                           "of the seller\": exactly what this document is. It repeats what the root "

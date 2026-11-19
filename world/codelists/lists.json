@@ -4579,28 +4579,40 @@
   "PriceType": {
    "scope": "regional",
    "name": "Price type",
-   "description": "The kind of a price, as both buyer and seller understand it.",
+   "description": "The kind of a price, as both buyer and seller understand it, and whether it includes tax (tax_included, O28). Every price type of the world is a price before tax: the seller's tax is added on the invoice, and a consumer's tax at the sale (Bayvarra's sales tax at the till; D14, \"Consumer prices and tax\").",
    "codes": {
     "TRD": [
      "Trade price",
-     "A price for resellers, before sales tax."
+     "A price for resellers, before tax."
+    ],
+    "DST": [
+     "Distributor price",
+     "The maker's price for its appointed distributor under a distribution agreement, below its list price; before tax."
     ],
     "RRP": [
      "Recommended retail price",
-     "The price the maker recommends for consumers."
+     "The price the maker recommends for consumers, before tax; the shop adds the tax its country levies on a sale to a consumer."
     ],
     "CAT": [
      "Catalogue price",
-     "The price in the seller's general catalogue."
+     "The price in the seller's general catalogue: its list price, before tax."
     ],
     "CON": [
      "Contract price",
-     "The price agreed in a contract, such as a framework contract."
+     "The price agreed in a contract, such as a framework contract, before tax."
     ],
     "PRO": [
      "Promotional price",
-     "A price for a limited time."
+     "A price for a limited time, before tax."
     ]
+   },
+   "tax_included": {
+    "TRD": false,
+    "DST": false,
+    "RRP": false,
+    "CAT": false,
+    "CON": false,
+    "PRO": false
    }
   },
   "PackLevel": {

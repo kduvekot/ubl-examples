@@ -39,7 +39,16 @@
    "unit": "EA",
    "price": {
     "amount": 49900,
-    "currency": "XUF"
+    "currency": "XUF",
+    "list": "VI-PL-2026"
+   },
+   "buyer_prices": {
+    "6-xb": {
+     "amount": 39900,
+     "currency": "XUF",
+     "type": "DST",
+     "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays."
+    }
    },
    "sellers_id": "VI-B180",
    "standard_id": "KXU10014B180",
@@ -238,7 +247,16 @@
    "unit": "EA",
    "price": {
     "amount": 5980,
-    "currency": "XUF"
+    "currency": "XUF",
+    "list": "VI-PL-2026"
+   },
+   "buyer_prices": {
+    "6-xb": {
+     "amount": 4750,
+     "currency": "XUF",
+     "type": "DST",
+     "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays."
+    }
    },
    "sellers_id": "VI-C180",
    "standard_id": "KXU10014C180",

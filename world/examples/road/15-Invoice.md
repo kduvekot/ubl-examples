@@ -331,7 +331,7 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **97243** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **77748** (currencyID `XUF`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
   The seller's general terms of payment.
@@ -354,7 +354,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **4862160** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **3887400** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -373,13 +373,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **4862160** (currencyID `XUF`)  
+- `LineExtensionAmount` = **3887400** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **4862160** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **3887400** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **4862160** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **3887400** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **4862160** (currencyID `XUF`)  
+- `PayableAmount` = **3887400** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -390,8 +390,8 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **96** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **4790400** (currencyID `XUF`)  
-  96 × 49900, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **3830400** (currencyID `XUF`)  
+  96 × 39900, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
@@ -432,16 +432,16 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **49900** (currencyID `XUF`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **39900** (currencyID `XUF`)  
+  Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **2**  
   The line number.
 - `InvoicedQuantity` = **12** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **71760** (currencyID `XUF`)  
-  12 × 5980, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **57000** (currencyID `XUF`)  
+  12 × 4750, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The order line this invoice line bills.
 - `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
@@ -468,8 +468,8 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **5980** (currencyID `XUF`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **4750** (currencyID `XUF`)  
+  Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
@@ -727,7 +727,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">97243</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">77748</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -743,7 +743,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">4862160</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">3887400</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -757,15 +757,15 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">4862160</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">4862160</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">4862160</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">4862160</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">3887400</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">3887400</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">3887400</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">3887400</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">4790400</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">3830400</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -801,14 +801,14 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XUF">39900</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">71760</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">57000</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -835,7 +835,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XUF">5980</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XUF">4750</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

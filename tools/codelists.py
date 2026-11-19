@@ -190,6 +190,9 @@ def load():
         else:
             codes = {c: {"name": v[0], "description": v[1] if len(v) > 1 else ""} for c, v in spec["codes"].items()}
         lst["codes"] = codes
+        if "tax_included" in spec and set(spec["tax_included"]) != set(codes):     # O28: said for every code
+            raise SystemExit(f"world/codelists/lists.json: {key}: tax_included must say for every code whether "
+                             "its price includes tax")
         lst["listID"] = list_id(key, lst)
         lst["key"] = key
         lists[key] = lst

@@ -185,7 +185,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **9580800** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **7660800** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -204,9 +204,9 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **9580800** (currencyID `XUF`)  
+- `LineExtensionAmount` = **7660800** (currencyID `XUF`)  
   The sum of the line amounts.
-- `PayableAmount` = **9580800** (currencyID `XUF`)  
+- `PayableAmount` = **7660800** (currencyID `XUF`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -217,10 +217,10 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **192** (unitCode `EA`)  
   Two containers of 24 pallets, 4 benches on each pallet.
-- `LineItem/LineExtensionAmount` = **9580800** (currencyID `XUF`)  
+- `LineItem/LineExtensionAmount` = **7660800** (currencyID `XUF`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **49900** (currencyID `XUF`)  
-  The seller's price per unit (world/items.json).
+- `LineItem/Price/PriceAmount` = **39900** (currencyID `XUF`)  
+  Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
@@ -388,7 +388,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">9580800</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">7660800</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -402,16 +402,16 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">9580800</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XUF">9580800</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">7660800</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XUF">7660800</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">192</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XUF">9580800</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XUF">7660800</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XUF">39900</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

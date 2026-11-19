@@ -239,8 +239,8 @@ Inside `OrderLine`:
   The substitute for line 2.
 - `SellerSubstitutedLineItem/Quantity` = **12** (unitCode `EA`)  
   The same quantity.
-- `SellerSubstitutedLineItem/Price/PriceAmount` = **5980** (currencyID `XUF`)  
-  The seller's price per unit (world/items.json).
+- `SellerSubstitutedLineItem/Price/PriceAmount` = **4750** (currencyID `XUF`)  
+  Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays.
 - `SellerSubstitutedLineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `SellerSubstitutedLineItem/Item/Name` = **Bench side frame casting, 2026**  
@@ -460,7 +460,7 @@ Inside `OrderLine`:
       <cbc:ID>2</cbc:ID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">5980</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XUF">4750</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

@@ -7321,6 +7321,7 @@
    "location": "world/codelists/gc/PriceTypeCode.gc",
    "codes": [
     "TRD",
+    "DST",
     "RRP",
     "CAT",
     "CON",

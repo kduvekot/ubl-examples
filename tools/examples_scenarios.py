@@ -81,7 +81,8 @@ def ore(n, doc):
 # ---------------------------------------------------------------- the road flow (Urvania -> Bayvarra)
 ROAD = kit.Flow("road", "2026-03-16", [
     {"item": "bench-serra", "ordered": 96, "why": "24 pallets of 4 benches: one full truck."},
-    {"item": "bench-casting", "ordered": 12, "why": "Spare side frames, for the distributor's service stock."}])
+    {"item": "bench-casting", "ordered": 12, "why": "Spare side frames, for the distributor's service stock."}],
+    buyer="6-xb")
 # the truck's leg on the map, from the 3PL in Conciaro to the distributor in Marrowdale (O152: the kilometres stated
 # are those driven on the leg), and how far along it the land border is
 ROAD_LEG_KM = wmap.leg_km("road", "8-xu", "6-xb")
@@ -99,9 +100,10 @@ def goods_items(f, currency, value_why, convert=None):
     out = []
     for i, d in enumerate(f.deal, 1):
         it = ITEM[d["item"]]
-        value = Decimal(str(d["ordered"])) * Decimal(str(it["price"]["amount"]))
+        pr = kit.price_of(d["item"], f.buyer)          # the transaction value: the price the buyer pays (D14)
+        value = Decimal(str(d["ordered"])) * Decimal(str(pr["amount"]))
         if convert:
-            value = value * rate(it["price"]["currency"], currency)
+            value = value * rate(pr["currency"], currency)
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What the goods are, in words."),
                     "DeclaredCustomsValueAmount": amount(value, currency, value_why),
@@ -288,7 +290,7 @@ def road(n, doc):
              "SellerSubstitutedLineItem": {
                  "ID": V("2", "The substitute for line 2."),
                  "Quantity": qty(12, "EA", "The same quantity."),
-                 "Price": kit.price_block("bench-casting"),
+                 "Price": kit.price_block("bench-casting", buyer=f.buyer),
                  "Item": {"Name": V("Bench side frame casting, 2026", "The substitute."),
                           "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The same item number."),
                                                         "ExtendedID": V("2026", "The new version.")}}},
@@ -513,7 +515,8 @@ SCENARIOS = {"ore": ore, "road": road}
 
 # ---------------------------------------------------------------- the rail flow (Urvania -> Bayvarra, DAP, transit)
 RAIL = kit.Flow("rail", "2026-04-06", [
-    {"item": "bench-serra", "ordered": 192, "why": "Two containers of 24 pallets, 4 benches on each pallet."}])
+    {"item": "bench-serra", "ordered": 192, "why": "Two containers of 24 pallets, 4 benches on each pallet."}],
+    buyer="6-xb")
 
 
 RAIL_BOXES = [kit.container_number("FRX", 104417), kit.container_number("FRX", 104418)]

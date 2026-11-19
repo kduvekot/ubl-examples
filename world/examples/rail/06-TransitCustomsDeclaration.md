@@ -339,7 +339,7 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **9580800** (currencyID `XUF`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **7660800** (currencyID `XUF`)  
   The value of the goods, in ferra, for the transit guarantee.
 - `GoodsItem/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
   The gross weight of the goods of this item.
@@ -647,7 +647,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XUF">9580800</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">7660800</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">192</cbc:Quantity>
       <cac:Item>

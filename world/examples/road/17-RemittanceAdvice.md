@@ -30,11 +30,11 @@ The distributor announces the cross-border payment and which invoices it settles
   What the advice is for.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the currency of the invoice paid; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TotalDebitAmount` = **4862160** (currencyID `XUF`)  
+- `TotalDebitAmount` = **3887400** (currencyID `XUF`)  
   The invoices paid.
 - `TotalCreditAmount` = **0** (currencyID `XUF`)  
   No credits taken.
-- `TotalPaymentAmount` = **4862160** (currencyID `XUF`)  
+- `TotalPaymentAmount` = **3887400** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **LD-PAY-26-0149**  
   The payment order the payer gave its bank.
@@ -264,7 +264,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **4862160** (currencyID `XUF`)  
+- `DebitLineAmount` = **3887400** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0** (currencyID `XUF`)  
   Nothing remains open on the invoice after this payment.
@@ -292,9 +292,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XUF">4862160</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XUF">3887400</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XUF">4862160</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">3887400</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -472,7 +472,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XUF">4862160</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XUF">3887400</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
