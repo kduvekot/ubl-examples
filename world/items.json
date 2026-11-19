@@ -2112,6 +2112,14 @@
   "ledgers": {
    "6-xb": {
     "where": "Lumeway Distribution, Marrowdale",
+    "closing": [
+     {
+      "item": "bench-serra",
+      "qty": 161,
+      "damaged": 1,
+      "why": "Lumeway's benches at the end of May, as the story states them: 72 of the March road lot and 88 of the April rail lot for sale, and the bench Brightmarket refused, held apart as damaged (O174)."
+     }
+    ],
     "entries": [
      {
       "date": "2026-03-25",
@@ -2167,6 +2175,19 @@
        }
       ],
       "why": "Brightmarket's benches come from the March road lot (D21)."
+     },
+     {
+      "date": "2026-04-30",
+      "flow": "retail",
+      "in": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260320",
+        "qty": 1,
+        "damaged": true
+       }
+      ],
+      "why": "The bench Brightmarket refused at goods-in, its frame carton torn and the side frame's armrest bent (retail/17), comes back on the truck the same day; Lumeway holds it apart as damaged stock, not for sale, and credits the store (retail/19; D34, O174)."
      },
      {
       "date": "2026-05-13",

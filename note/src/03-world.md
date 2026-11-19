@@ -1043,8 +1043,10 @@ cast, and every casting day has its own melt number. Lumeway holds stock in
 Marrowdale. It receives 96 benches and 12 spare frames by road on 25 March
 and 192 benches by rail on 15 April, and sells from that stock in the order
 the goods arrived: 24 benches to Brightmarket on 29 April, and 104 benches
-and the 12 frames to Velumi on the island on 13 May. At the end of May it
-still holds 160 benches. Velumi buys by the pallet: of its 104 benches, on
+and the 12 frames to Velumi on the island on 13 May. The store refuses one
+of its 24 benches at goods-in, damaged; it goes back to Marrowdale on the
+truck the same day and is held apart as damaged stock, not for sale. At the
+end of May Lumeway holds 161 benches, 160 for sale and the damaged one. Velumi buys by the pallet: of its 104 benches, on
 26 pallets of four, 96 are for the Port of Selanu's harbour parks and two
 pallets are for its own stock, from which its shop sells two benches to a
 cotton farm in June; six remain. An urgent order does not come from stock: when

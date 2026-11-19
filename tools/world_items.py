@@ -355,12 +355,17 @@ def chain_problems(world, items):
     def unit(ln):
         return ln.get("lot") or (tuple(ln["serials"]) if ln.get("serials") else None)
 
+    def key(ln):
+        """A ledger line's stock: its item, lot or serials, and whether it is damaged stock, which is held apart
+        and is not for sale (O174): a sale or despatch takes only sound stock."""
+        return (ln["item"], unit(ln), bool(ln.get("damaged")))
+
     def count(ln):
         return ln["qty"] if "qty" in ln else ln["serials"][1] - ln["serials"][0] + 1
     for pid, led in chain["ledgers"].items():
         stock = {}
         for o in led.get("opening", []):
-            stock[(o["item"], None)] = stock.get((o["item"], None), 0) + o["qty"]
+            stock[key(o)] = stock.get(key(o), 0) + o["qty"]
         last = ""
         for e in led["entries"]:
             where = f"goods chain, ledger of {pid}, {e['date']} ({e['flow']})"
@@ -368,22 +373,26 @@ def chain_problems(world, items):
                 out.append(f"{where}: entries out of date order")
             last = e["date"]
             for ln in e.get("in", []):
-                k = (ln["item"], unit(ln))
-                p = made.get(k) if k[1] else None
+                k = key(ln)
+                p = made.get(k[:2]) if k[1] else None
                 if p and not any(d <= e["date"] for _, d in p["shipped"]):
                     out.append(f"{where}: {k[1]} arrives before Valdara shipped it")
+                if k[2] and not ln.get("lot") and not ln.get("serials"):
+                    out.append(f"{where}: damaged stock of {ln['item']} needs its lot or serials (O174)")
                 stock[k] = stock.get(k, 0) + count(ln)
             for ln in e.get("out", []):
-                k = (ln["item"], unit(ln))
-                have = stock.get(k, 0) if k[1] else sum(v for (i, _), v in stock.items() if i == ln["item"])
+                k = key(ln)
+                same = [kk for kk in stock if kk[0] == ln["item"] and kk[2] == k[2]]     # sound and damaged apart
+                have = stock.get(k, 0) if k[1] else sum(stock[kk] for kk in same)
                 if have < count(ln):
-                    out.append(f"{where}: {count(ln)} of {ln['item']} {k[1] or ''} leave, but only {have} are in "
-                               "stock (D21, O65)")
+                    out.append(f"{where}: {count(ln)} of {ln['item']} {k[1] or ''}{' (damaged)' if k[2] else ''} "
+                               f"leave, but only {have} are in {'damaged ' if k[2] else 'sound '}stock (D21, O65, "
+                               "O174)")
                 if k[1]:
                     stock[k] = have - count(ln)
                 else:          # an issue without a lot: from the oldest stock of the item
                     left = count(ln)
-                    for kk in [kk for kk in stock if kk[0] == ln["item"]]:
+                    for kk in same:
                         take = min(left, stock[kk])
                         stock[kk] -= take
                         left -= take
@@ -394,6 +403,14 @@ def chain_problems(world, items):
         for k, v in stock.items():
             if v < 0:
                 out.append(f"goods chain, ledger of {pid}: {k} below zero")
+        if led.get("closing"):          # the stock the story states at the end of the ledger (O174)
+            for c in led["closing"]:
+                sound = sum(v for (i, _, d), v in stock.items() if i == c["item"] and not d)
+                damaged = sum(v for (i, _, d), v in stock.items() if i == c["item"] and d)
+                if (sound, damaged) != (c["qty"] - c.get("damaged", 0), c.get("damaged", 0)):
+                    out.append(f"goods chain, ledger of {pid}: ends with {sound + damaged} of {c['item']}, "
+                               f"{damaged} damaged; the closing stock says {c['qty']}, {c.get('damaged', 0)} "
+                               "damaged")
     return out
 
 
