@@ -9431,8 +9431,8 @@ def energy(n, doc):
                            key="network-invoice", extra=MARCH)
         if not isinstance(out["InvoiceLine"], list):
             out["InvoiceLine"] = [out["InvoiceLine"]]
-        # each line names the connection it bills, so the retail company can check it against its own metering
-        # (energy/02#F1); the gas line refers to the metering statement behind it (energy/02#F2)
+        # each line names the connection it bills by the grid operator's number (energy/02#F1, O161), which the retail
+        # company's statements use too; the gas line refers to the metering statement behind it (energy/02#F2)
         for ln, (pid, desc) in zip(out["InvoiceLine"], [
                 (POINTS[("33-xu", "5-xu")]["id"], POINTS[("33-xu", "5-xu")]["desc"]),
                 (POINTS[("33-xu", "8-xu")]["id"], POINTS[("33-xu", "8-xu")]["desc"]),
