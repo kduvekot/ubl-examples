@@ -68,18 +68,19 @@ The response in words.</li>
 The lume, the distributor's currency, as in the order; it has two
 decimals. The code is from the world's copy of UBL's Currency (ISO 4217)
 list: XBL = Lume.</li>
-<li><code>TotalPackagesQuantity</code> = <strong>108</strong> (unitCode
+<li><code>TotalPackagesQuantity</code> = <strong>300</strong> (unitCode
 <code>EA</code>)<br />
-96 benches and 12 boxed frames.</li>
-<li><code>GrossWeightMeasure</code> = <strong>4106.4</strong> (unitCode
+The parcels: 96 benches in three parcels each and 12 frame cartons
+(D20).</li>
+<li><code>GrossWeightMeasure</code> = <strong>5363.4</strong> (unitCode
 <code>KGM</code>)<br />
 The expected gross weight, for the booking.</li>
-<li><code>NetWeightMeasure</code> = <strong>3762</strong> (unitCode
+<li><code>NetWeightMeasure</code> = <strong>4366.8</strong> (unitCode
 <code>KGM</code>)<br />
 The goods alone.</li>
-<li><code>GrossVolumeMeasure</code> = <strong>41.5</strong> (unitCode
+<li><code>GrossVolumeMeasure</code> = <strong>24.1</strong> (unitCode
 <code>MTQ</code>)<br />
-One 40-foot container's load.</li>
+The 25 loaded pallets: about half of a 40-foot container's volume.</li>
 <li><code>CustomerReference</code> = <strong>Harbour parks
 Selanu</strong><br />
 The buyer's project, as the buyer named it when ordering.</li>
@@ -843,10 +844,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OrderResponseCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4343&quot;</span>&gt;AP&lt;/<span class="kw">cbc:OrderResponseCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPackagesQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;108&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;4106.4&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;3762&lt;/<span class="kw">cbc:NetWeightMeasure</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:GrossVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;41.5&lt;/<span class="kw">cbc:GrossVolumeMeasure</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPackagesQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;300&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;5363.4&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;4366.8&lt;/<span class="kw">cbc:NetWeightMeasure</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:GrossVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;24.1&lt;/<span class="kw">cbc:GrossVolumeMeasure</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomerReference</span>&gt;Harbour parks Selanu&lt;/<span class="kw">cbc:CustomerReference</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;2&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
@@ -1170,6 +1171,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/683f612108131dfc41105ac557042c3254c70f18"><code>683f612</code></a> of 2026-11-19 13:34 UTC</p></div></footer>
 </body>
 </html>

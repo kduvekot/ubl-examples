@@ -171,9 +171,9 @@
     <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
-      <cbc:ChargeableWeightMeasure unitCode="KGM">96</cbc:ChargeableWeightMeasure>
-      <cbc:GrossVolumeMeasure unitCode="MTQ">0.576</cbc:GrossVolumeMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">98</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">0.43</cbc:GrossVolumeMeasure>
       <cbc:SpecialSecurityIndicator>true</cbc:SpecialSecurityIndicator>
       <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
       <cbc:SequenceID>1</cbc:SequenceID>
@@ -312,7 +312,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>

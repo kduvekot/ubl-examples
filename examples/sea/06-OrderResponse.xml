@@ -12,10 +12,10 @@
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPackagesQuantity unitCode="EA">108</cbc:TotalPackagesQuantity>
-  <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
-  <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
+  <cbc:TotalPackagesQuantity unitCode="EA">300</cbc:TotalPackagesQuantity>
+  <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure unitCode="MTQ">24.1</cbc:GrossVolumeMeasure>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>

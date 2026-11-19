@@ -559,7 +559,7 @@ The despatching party's shipment number.</li>
 <li><code>Consignment/ID</code> = <strong>CL-CS-26-0217</strong><br />
 The consignment the goods travel in, as numbered when the transport was
 booked.</li>
-<li><code>Consignment/GrossWeightMeasure</code> = <strong>1660</strong>
+<li><code>Consignment/GrossWeightMeasure</code> = <strong>2162</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined (worklist
@@ -730,13 +730,15 @@ procurement file of the park benches, a document outside the examples,
 in words: no list has an exact code for it (world/documents.json, cited;
 decision Q29).</li>
 <li><code>Item/Description</code> = <strong>Haz nanskir, 1800 mm,
-manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan
-zharsul krir drek tarkul.</strong> (languageID <code>qau</code>)<br />
+manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek
+kalnan skul zhaznul dunnir darhir, gan zharsul krir drek
+tarkul.</strong> (languageID <code>qau</code>)<br />
 The seller's description in Urvanian, the seller's language; item
 bench-serra of Valdara Industries (world/items.json).</li>
 <li><code>Item/Description</code> = <strong>Park bench, 1800 mm, frame
-of cast and galvanised steel, five hardwood slats, for bolting to the
-ground.</strong> (languageID <code>en-XU</code>)<br />
+of galvanised and powder-coated ductile cast iron, five slats of
+thermally modified ash, for bolting to the ground.</strong> (languageID
+<code>en-XU</code>)<br />
 The seller's description in English, the working language between the
 countries; item bench-serra of Valdara Industries
 (world/items.json).</li>
@@ -801,10 +803,13 @@ The production lot, from the maker's prefix and the production day; a
 recall names the lot.</li>
 <li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name</code>
 = <strong>Coating batch</strong><br />
-A fact about this lot.</li>
+A fact about this lot: the galvanising and powder-coating batch its
+frames went through.</li>
 <li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value</code>
-= <strong>ZN-26-114</strong><br />
-Its value for this lot.</li>
+= <strong>ZN-26-062</strong><br />
+Its batch: each lot has its own, in the coating line's running count of
+the year (the production record, world/items.json goods_chain,
+D21).</li>
 <li><code>Shipment/ID</code> = <strong>CL-SH-26-0216</strong><br />
 The shipment the line travels in.</li>
 <li><code>SubDespatchLine/ID</code> = <strong>1.1</strong><br />
@@ -1019,7 +1024,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0216&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CL-CS-26-0217&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;1660&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;2162&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1081,8 +1086,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Procurement file&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1106,7 +1111,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LotNumberID</span>&gt;VI-LOT-260327&lt;/<span class="kw">cbc:LotNumberID</span>&gt;</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Coating batch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Value</span>&gt;ZN-26-114&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Value</span>&gt;ZN-26-062&lt;/<span class="kw">cbc:Value</span>&gt;</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
@@ -1141,6 +1146,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/683f612108131dfc41105ac557042c3254c70f18"><code>683f612</code></a> of 2026-11-19 13:34 UTC</p></div></footer>
 </body>
 </html>

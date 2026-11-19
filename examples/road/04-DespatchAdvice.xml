@@ -160,7 +160,7 @@
     <cbc:ID>CL-SH-26-0154</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0152</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -205,14 +205,14 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>24 pallets of 4 benches: one full truck.</cbc:Note>
+    <cbc:Note>24 pallets of four benches, on a truck booked for this delivery alone.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:BuyersItemIdentification>
@@ -239,7 +239,7 @@
           <cbc:LotNumberID>VI-LOT-260320</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
-            <cbc:Value>ZN-26-114</cbc:Value>
+            <cbc:Value>ZN-26-057</cbc:Value>
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>
@@ -253,8 +253,8 @@
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
-      <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
+      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.</cbc:Description>
       <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
       <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
       <cac:BuyersItemIdentification>
@@ -270,132 +270,120 @@
         <cbc:ProductTraceID>VI-TR-01490</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01490</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01490</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01491</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01491</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01491</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01492</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01492</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01492</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01493</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01493</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01493</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01494</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01494</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01494</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01495</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01495</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01495</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01496</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01496</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01496</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01497</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01497</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01497</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01498</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01498</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01498</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01499</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01499</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01499</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01500</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01500</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01500</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01501</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01501</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01501</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
     </cac:Item>

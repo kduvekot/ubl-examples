@@ -546,18 +546,18 @@ The value declared on the air waybill, as the distributor
 instructed.</li>
 <li><code>Consignment/ID</code> = <strong>LD-CS-26-0324</strong><br />
 The consignment of the transport booking.</li>
-<li><code>Consignment/GrossWeightMeasure</code> = <strong>81.6</strong>
+<li><code>Consignment/GrossWeightMeasure</code> = <strong>97.6</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined (worklist
 C15). The gross weight of the cargo.</li>
 <li><code>Consignment/ChargeableWeightMeasure</code> =
-<strong>96</strong> (unitCode <code>KGM</code>)<br />
-The volume weight is higher than the 81.6 kg: 0.576 m³ at 167 kg per m³,
-rounded up.</li>
-<li><code>Consignment/GrossVolumeMeasure</code> = <strong>0.576</strong>
+<strong>98</strong> (unitCode <code>KGM</code>)<br />
+The gross weight of 97.6 kg, rounded up to the next half kilogram: it is
+higher than the volume weight, 0.43 m³ at 167 kg per m³.</li>
+<li><code>Consignment/GrossVolumeMeasure</code> = <strong>0.43</strong>
 (unitCode <code>MTQ</code>)<br />
-Eight boxes of 0.072 m³.</li>
+Eight frame cartons of 790 x 680 x 100 mm.</li>
 <li><code>Consignment/SpecialSecurityIndicator</code> =
 <strong>true</strong><br />
 The cargo was screened by the forwarder, a known consignor; it may fly
@@ -911,9 +911,9 @@ The goods item number.</li>
 <li><code>GoodsItem/Description</code> = <strong>Bench side frame
 casting</strong><br />
 What is carried, in words.</li>
-<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>81.6</strong>
+<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>97.6</strong>
 (unitCode <code>KGM</code>)<br />
-The gross weight of the goods of this item, with their packaging.</li>
+The gross weight of the goods of this item, in their parcels.</li>
 <li><code>GoodsItem/Quantity</code> = <strong>8</strong> (unitCode
 <code>EA</code>)<br />
 How much is carried.</li>
@@ -1168,9 +1168,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeclaredForCarriageValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;512.00&lt;/<span class="kw">cbc:DeclaredForCarriageValueAmount</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0324&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;81.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeableWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;96&lt;/<span class="kw">cbc:ChargeableWeightMeasure</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;0.576&lt;/<span class="kw">cbc:GrossVolumeMeasure</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;97.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeableWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;98&lt;/<span class="kw">cbc:ChargeableWeightMeasure</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;0.43&lt;/<span class="kw">cbc:GrossVolumeMeasure</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SpecialSecurityIndicator</span>&gt;true&lt;/<span class="kw">cbc:SpecialSecurityIndicator</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SpecialServiceInstructions</span>&gt;Priority handling at Selanu: the customer is waiting.&lt;/<span class="kw">cbc:SpecialServiceInstructions</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SequenceID</span>&gt;1&lt;/<span class="kw">cbc:SequenceID</span>&gt;</span>
@@ -1309,7 +1309,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;81.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;97.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1360,6 +1360,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/683f612108131dfc41105ac557042c3254c70f18"><code>683f612</code></a> of 2026-11-19 13:34 UTC</p></div></footer>
 </body>
 </html>

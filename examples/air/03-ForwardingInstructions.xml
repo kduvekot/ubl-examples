@@ -102,9 +102,9 @@
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
-      <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
-      <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
@@ -176,27 +176,22 @@
         <cac:Package>
           <cbc:ID>LD-AIR-BOX</cbc:ID>
           <cbc:Quantity unitCode="EA">8</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-          <cac:ContainedPackage>
-            <cbc:ID>LD-AIR-BAG</cbc:ID>
-            <cbc:Quantity unitCode="EA">8</cbc:Quantity>
-            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BG</cbc:PackagingTypeCode>
-          </cac:ContainedPackage>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Bench side frame castings</cbc:Description>
           </cac:GoodsItem>
           <cac:MeasurementDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">800</cbc:Measure>
+            <cbc:Measure unitCode="MMT">790</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:MeasurementDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+            <cbc:Measure unitCode="MMT">680</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:MeasurementDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+            <cbc:Measure unitCode="MMT">100</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:DeliveryUnit>
             <cbc:BatchQuantity unitCode="EA">8</cbc:BatchQuantity>
@@ -232,7 +227,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>

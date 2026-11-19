@@ -427,11 +427,11 @@ its identifier and name are repeated.</li>
 <ul>
 <li><code>ID</code> = <strong>VI-SH-26-0332</strong><br />
 The shipment as the despatching party numbered it.</li>
-<li><code>GrossWeightMeasure</code> = <strong>15768</strong> (unitCode
+<li><code>GrossWeightMeasure</code> = <strong>18177.6</strong> (unitCode
 <code>KGM</code>)<br />
-The gross weights of the transport equipment with the goods in it (7884
-+ 7884 kg): a shipment's gross weight includes the equipment (worklist
-C15).</li>
+The gross weights of the transport equipment with the goods in it
+(9088.8 + 9088.8 kg): a shipment's gross weight includes the equipment
+(worklist C15).</li>
 <li><code>Consignment/ID</code> = <strong>VI-CS-26-0327</strong><br />
 The manufacturer's consignment number.</li>
 <li><code>Consignment/ContractedCarrierAssignedID</code> =
@@ -440,8 +440,8 @@ The call-off under the framework contract.</li>
 <li><code>Consignment/SummaryDescription</code> = <strong>192 park
 benches in two 40-foot containers.</strong><br />
 The goods in a few words.</li>
-<li><code>Consignment/GrossWeightMeasure</code> = <strong>7968</strong>
-(unitCode <code>KGM</code>)<br />
+<li><code>Consignment/GrossWeightMeasure</code> =
+<strong>10377.6</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined (worklist
 C15). The gross weight of the two containers' cargo.</li>
@@ -820,8 +820,9 @@ The container in words.</li>
 = <strong>Load with the doors to the rear of the wagon.</strong><br />
 How it rides.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure</code>
-= <strong>7884</strong> (unitCode <code>KGM</code>)<br />
-Half the benches and the container's own 3,900 kg.</li>
+= <strong>9088.8</strong> (unitCode <code>KGM</code>)<br />
+Half the benches, on their 24 pallets, and the container's own 3,900
+kg.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/GrossVolumeMeasure</code>
 = <strong>76.3</strong> (unitCode <code>MTQ</code>)<br />
 The inside volume of a 40-foot high cube.</li>
@@ -1140,8 +1141,9 @@ code: 45G1 = 40 ft, 9 ft 6 in high, general purpose.</li>
 A full container load for one consignee. The code is from the Trade
 Accord's load type list: FCL = Full container load.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure</code>
-= <strong>7884</strong> (unitCode <code>KGM</code>)<br />
-Half the benches and the container's own 3,900 kg.</li>
+= <strong>9088.8</strong> (unitCode <code>KGM</code>)<br />
+Half the benches, on their 24 pallets, and the container's own 3,900
+kg.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID</code>
 = <strong>XU-VI-30412</strong><br />
 The number of the bolt seal on the doors.</li>
@@ -1217,9 +1219,10 @@ The goods item number.</li>
 <li><code>GoodsItem/Description</code> = <strong>Park bench Serra
 180</strong><br />
 What is carried, in words.</li>
-<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>7968</strong>
+<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>10377.6</strong>
 (unitCode <code>KGM</code>)<br />
-The gross weight of the goods of this item, with their packaging.</li>
+The gross weight of the goods of this item, in their parcels and with
+the pallets they travel on.</li>
 <li><code>GoodsItem/Quantity</code> = <strong>192</strong> (unitCode
 <code>EA</code>)<br />
 How much is carried.</li>
@@ -1456,12 +1459,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-SH-26-0332&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;15768&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;18177.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0327&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractedCarrierAssignedID</span>&gt;FRC-CON-2026-005/88&lt;/<span class="kw">cbc:ContractedCarrierAssignedID</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SummaryDescription</span>&gt;192 park benches in two 40-foot containers.&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;7968&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10377.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContainerizedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ContainerizedIndicator</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LoadingSequenceID</span>&gt;7&lt;/<span class="kw">cbc:LoadingSequenceID</span>&gt;</span>
@@ -1614,7 +1617,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DamageRemarks</span>&gt;Small dent in the left side panel, noted at pick-up; no effect on the cargo.&lt;/<span class="kw">cbc:DamageRemarks</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;40-foot high cube container&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SpecialTransportRequirements</span>&gt;Load with the doors to the rear of the wagon.&lt;/<span class="kw">cbc:SpecialTransportRequirements</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;7884&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;9088.8&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossVolumeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;76.3&lt;/<span class="kw">cbc:GrossVolumeMeasure</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TrackingDeviceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TrackingDeviceCode&quot;</span>&gt;GPS&lt;/<span class="kw">cbc:TrackingDeviceCode</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PowerIndicator</span>&gt;false&lt;/<span class="kw">cbc:PowerIndicator</span>&gt;</span>
@@ -1812,7 +1815,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEquipmentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8053&quot;</span>&gt;CN&lt;/<span class="kw">cbc:TransportEquipmentTypeCode</span>&gt;</span>
 <span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SizeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 6346&quot;</span>&gt;45G1&lt;/<span class="kw">cbc:SizeTypeCode</span>&gt;</span>
 <span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FullnessIndicationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:LoadTypeCode&quot;</span>&gt;FCL&lt;/<span class="kw">cbc:FullnessIndicationCode</span>&gt;</span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;7884&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;9088.8&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TransportEquipmentSeal</span>&gt;</span>
 <span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XU-VI-30412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SealIssuerTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SealIssuerTypeCode&quot;</span>&gt;SHIPPER&lt;/<span class="kw">cbc:SealIssuerTypeCode</span>&gt;</span>
@@ -1859,7 +1862,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;7968&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10377.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;192&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1915,6 +1918,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/328501099256d9a85d45b3e7237312903eaf1a17"><code>3285010</code></a> of 2026-11-19 12:37 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/683f612108131dfc41105ac557042c3254c70f18"><code>683f612</code></a> of 2026-11-19 13:34 UTC</p></div></footer>
 </body>
 </html>
