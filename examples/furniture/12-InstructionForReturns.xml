@@ -8,10 +8,10 @@
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>14:21:00-01:00</cbc:IssueTime>
-  <cbc:Note>The maker takes back six sets to free the store's shelf.</cbc:Note>
+  <cbc:Note>The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery of 23 March: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.</cbc:Note>
   <cac:DocumentReference>
-    <cbc:ID>BF-DOC-26-0573</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
+    <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
+    <cbc:DocumentType>Own-label agreement</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0427</cbc:ID>
@@ -126,7 +126,7 @@
   </cac:ManufacturerParty>
   <cac:Shipment>
     <cbc:ID>BM-RET-26-0427</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">282</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:RequestedDeliveryPeriod>
         <cbc:StartDate>2026-04-29</cbc:StartDate>
@@ -137,15 +137,45 @@
   <cac:InstructionForReturnsLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>In their original cartons.</cbc:Note>
-    <cbc:Quantity unitCode="SET">6</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">7</cbc:Quantity>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:InstructionForReturnsLine>
+  <cac:InstructionForReturnsLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
+    <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:InstructionForReturnsLine>
+  <cac:InstructionForReturnsLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
+    <cbc:Quantity unitCode="EA">7</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
+      <cbc:Name>Elderwick care kit</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-K</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
   </cac:InstructionForReturnsLine>

@@ -17,10 +17,11 @@ to Brightmarket Stores</h1>
 paid (domestic, Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA">Order
 in the UBL 2.5 specification</a></em></p>
-<p>The consumer orders a garden bench set in the store's webshop, to
-collect it in the store, and pays by credit card: the order carries the
-full card data, security code included, so that the store can have the
-payment authorised before it reserves the set.</p>
+<p>The consumer orders a Marrow set, an Elderwick Marrow bench and two
+chairs, in the store's webshop, to collect it in the store, and pays by
+credit card: the order carries the full card data, security code
+included, so that the store can have the payment authorised before it
+reserves the pieces.</p>
 <p><a href="examples/retail/22-Order.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -62,7 +63,7 @@ time; in the issuer's local time, with its offset from UTC (D27).</li>
 <code>UN/EDIFACT EDED 1001</code>)<br />
 UN/EDIFACT 1001 code 220: order. The code is from the world's copy of
 UN/EDIFACT 1001 Document name: 220 = Order.</li>
-<li><code>Note</code> = <strong>Click and collect: ready in the garden
+<li><code>Note</code> = <strong>Click and collect: ready in the home
 department from Tuesday; bring the card used for the
 order.</strong><br />
 What the webshop tells the customer.</li>
@@ -71,7 +72,7 @@ What the webshop tells the customer.</li>
 The lume, the seller's currency, in which the seller's prices are; it
 has two decimals. The code is from the world's copy of UBL's Currency
 (ISO 4217) list: XBL = Lume.</li>
-<li><code>LineCountNumeric</code> = <strong>1</strong><br />
+<li><code>LineCountNumeric</code> = <strong>3</strong><br />
 The number of order lines.</li>
 </ul>
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
@@ -310,13 +311,12 @@ UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 <h3 id="delivery">Delivery</h3>
 <p>Inside <code>Delivery</code>:</p>
 <ul>
-<li><code>DeliveryLocation/ID</code> = <strong>9522610900026</strong>
+<li><code>DeliveryLocation/ID</code> = <strong>9522610900033</strong>
 (schemeID <code>GS1 GLN</code>)<br />
-The Global Location Number of the place, garden department of the
-lumeport store: Brightmarket Stores identifies its places the GS1 way,
-under its company prefix (952, reserved for examples);
-world/parties.json.</li>
-<li><code>DeliveryLocation/Name</code> = <strong>Garden department,
+The Global Location Number of the place, home department of the lumeport
+store: Brightmarket Stores identifies its places the GS1 way, under its
+company prefix (952, reserved for examples); world/parties.json.</li>
+<li><code>DeliveryLocation/Name</code> = <strong>Home department,
 Lumeport store</strong><br />
 Where the set is collected.</li>
 <li><code>RequestedDeliveryPeriod/StartDate</code> =
@@ -339,12 +339,12 @@ Ex works the store: the customer collects the set; there is no transport
 to arrange. The code is from the world's copy of Incoterms 2020: EXW =
 Ex Works. An identifier that holds a code names the code's list in its
 schemeID.</li>
-<li><code>DeliveryLocation/ID</code> = <strong>9522610900026</strong>
+<li><code>DeliveryLocation/ID</code> = <strong>9522610900033</strong>
 (schemeID <code>GS1 GLN</code>)<br />
 The place's identifier, as the world gives it wherever the place appears
 (a GLN; worklist C23).</li>
-<li><code>DeliveryLocation/Description</code> = <strong>Garden
-department of the Lumeport store</strong><br />
+<li><code>DeliveryLocation/Description</code> = <strong>Home department
+of the Lumeport store</strong><br />
 Where the delivery terms place the handover of the goods.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
@@ -395,6 +395,39 @@ The name on the card, as typed in.</li>
 The customer pays with its own card. The code is from the Trade Accord's
 card account role list: HOLDER = Card holder.</li>
 </ul>
+<h3 id="allowance-charge">Allowance Charge</h3>
+<p>Inside <code>AllowanceCharge</code>:</p>
+<ul>
+<li><code>ChargeIndicator</code> = <strong>false</strong><br />
+An allowance: it lowers the amount.</li>
+<li><code>AllowanceChargeReasonCode</code> = <strong>95</strong> (listID
+<code>UN/EDIFACT EDED 5189</code>)<br />
+The reason for the allowance as a code of UN/EDIFACT 5189: a discount;
+the text names the offer. The code is from the world's copy of
+UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.</li>
+<li><code>AllowanceChargeReason</code> = <strong>Marrow
+set</strong><br />
+The shop's offer: a bench and two chairs bought together cost 899 lume
+instead of 947. The set is no item of its own, so the pieces are on
+their lines and the offer is this allowance.</li>
+<li><code>Amount</code> = <strong>48.00</strong> (currencyID
+<code>XBL</code>)<br />
+549 + 2 × 199 = 947, less 48 = 899.</li>
+<li><code>TaxCategory/ID</code> = <strong>S</strong> (schemeID
+<code>UN/EDIFACT EDED 5305</code>)<br />
+A sale to a consumer: the sales tax of Coastal State, where the sale
+takes place, applies (category S). The code is from the world's copy of
+UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An
+identifier that holds a code names the code's list in its schemeID.</li>
+<li><code>TaxCategory/Percent</code> = <strong>6.5</strong><br />
+The rate for this category.</li>
+<li><code>TaxCategory/TaxScheme/ID</code> = <strong>STT</strong>
+(schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+STT = State/provincial sales tax. An identifier that holds a code names
+the code's list in its schemeID.</li>
+</ul>
 <h3 id="tax-total">Tax Total</h3>
 <p>Inside <code>TaxTotal</code>:</p>
 <ul>
@@ -403,7 +436,7 @@ card account role list: HOLDER = Card holder.</li>
 The sum of the tax of all categories.</li>
 <li><code>TaxSubtotal/TaxableAmount</code> = <strong>899.00</strong>
 (currencyID <code>XBL</code>)<br />
-The sum of the line amounts in this tax category.</li>
+The line amounts less the set allowance.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>58.44</strong>
 (currencyID <code>XBL</code>)<br />
 6.5 % of the taxable amount, rounded to the minor unit of the
@@ -427,12 +460,16 @@ the code's list in its schemeID.</li>
 <h3 id="anticipated-monetary-total">Anticipated Monetary Total</h3>
 <p>Inside <code>AnticipatedMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>899.00</strong>
+<li><code>LineExtensionAmount</code> = <strong>947.00</strong>
 (currencyID <code>XBL</code>)<br />
-The sum of the line amounts.</li>
+The sum of the line amounts: the pieces at their shelf prices.</li>
+<li><code>AllowanceTotalAmount</code> = <strong>48.00</strong>
+(currencyID <code>XBL</code>)<br />
+The set allowance.</li>
 <li><code>PayableAmount</code> = <strong>957.44</strong> (currencyID
 <code>XBL</code>)<br />
-What the buyer expects to pay, tax included.</li>
+What the customer pays: the set at 899 lume and Coastal State's 6.5 %
+sales tax.</li>
 </ul>
 <h3 id="order-line">Order Line</h3>
 <p>Inside <code>OrderLine</code>:</p>
@@ -441,40 +478,128 @@ What the buyer expects to pay, tax included.</li>
 The line number: a line added by a change keeps a number of its own
 (worklist C34).</li>
 <li><code>LineItem/Quantity</code> = <strong>1</strong> (unitCode
-<code>SET</code>)<br />
-One garden bench set.</li>
-<li><code>LineItem/LineExtensionAmount</code> = <strong>899.00</strong>
+<code>EA</code>)<br />
+The bench of the Marrow set.</li>
+<li><code>LineItem/LineExtensionAmount</code> = <strong>549.00</strong>
 (currencyID <code>XBL</code>)<br />
 Quantity times price, rounded to the minor unit.</li>
-<li><code>LineItem/Price/PriceAmount</code> = <strong>899</strong>
+<li><code>LineItem/Price/PriceAmount</code> = <strong>549</strong>
 (currencyID <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
-(unitCode <code>SET</code>)<br />
+(unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
-<li><code>LineItem/Item/Description</code> = <strong>The store's own
-garden bench set.</strong><br />
-The seller's description; item garden-set-r of Brightmarket Stores
+<li><code>LineItem/Item/Description</code> = <strong>Dining bench, 1400
+mm, in solid oak or ash, from the home department; also sold in the
+Marrow set of a bench and two chairs, 899 lume instead of 947; the state
+sales tax is added at the till.</strong><br />
+The seller's description; item marrow-bench-r of Brightmarket Stores
 (world/items.json).</li>
-<li><code>LineItem/Item/Name</code> = <strong>Garden bench set
-Marrow</strong><br />
-The item's short name; item garden-set-r of Brightmarket Stores
+<li><code>LineItem/Item/Name</code> = <strong>Elderwick Marrow
+bench</strong><br />
+The item's short name; item marrow-bench-r of Brightmarket Stores
 (world/items.json).</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
-<strong>BM-551004</strong><br />
-The seller's own item number; item garden-set-r of Brightmarket Stores
+<strong>BM-551005</strong><br />
+The seller's own item number; item marrow-bench-r of Brightmarket Stores
 (world/items.json).</li>
 <li><code>LineItem/Item/ManufacturersItemIdentification/ID</code> =
-<strong>BF-GS-01</strong><br />
+<strong>BF-MRW-B14</strong><br />
 The item number of the maker, Brackenmere Furniture: the reseller's item
-is resale of item garden-set.</li>
+is resale of item marrow-bench.</li>
 <li><code>LineItem/Item/StandardItemIdentification/ID</code> =
-<strong>9523710000012</strong> (schemeID <code>GS1 GTIN</code>)<br />
-The GTIN Brackenmere Furniture gives the item, under its GS1 company
+<strong>9522610000016</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
-under GS1 rules the brand owner numbers the item, and the brand
-Brackenmere is Brackenmere Furniture's (world/items.json).</li>
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>LineItem/ID</code> = <strong>2</strong><br />
+The line number: a line added by a change keeps a number of its own
+(worklist C34).</li>
+<li><code>LineItem/Quantity</code> = <strong>2</strong> (unitCode
+<code>EA</code>)<br />
+The two chairs of the Marrow set.</li>
+<li><code>LineItem/LineExtensionAmount</code> = <strong>398.00</strong>
+(currencyID <code>XBL</code>)<br />
+Quantity times price, rounded to the minor unit.</li>
+<li><code>LineItem/Price/PriceAmount</code> = <strong>199</strong>
+(currencyID <code>XBL</code>)<br />
+The seller's price per unit (world/items.json).</li>
+<li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
+(unitCode <code>EA</code>)<br />
+The price is per one unit.</li>
+<li><code>LineItem/Item/Description</code> = <strong>Dining chair in
+solid oak or ash, from the home department; also sold in the Marrow set
+of a bench and two chairs, 899 lume instead of 947; the state sales tax
+is added at the till.</strong><br />
+The seller's description; item marrow-chair-r of Brightmarket Stores
+(world/items.json).</li>
+<li><code>LineItem/Item/Name</code> = <strong>Elderwick Marrow
+chair</strong><br />
+The item's short name; item marrow-chair-r of Brightmarket Stores
+(world/items.json).</li>
+<li><code>LineItem/Item/SellersItemIdentification/ID</code> =
+<strong>BM-551006</strong><br />
+The seller's own item number; item marrow-chair-r of Brightmarket Stores
+(world/items.json).</li>
+<li><code>LineItem/Item/ManufacturersItemIdentification/ID</code> =
+<strong>BF-MRW-C</strong><br />
+The item number of the maker, Brackenmere Furniture: the reseller's item
+is resale of item marrow-chair.</li>
+<li><code>LineItem/Item/StandardItemIdentification/ID</code> =
+<strong>9522610000023</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>LineItem/ID</code> = <strong>3</strong><br />
+The line number: a line added by a change keeps a number of its own
+(worklist C34).</li>
+<li><code>LineItem/Quantity</code> = <strong>1</strong> (unitCode
+<code>EA</code>)<br />
+The care kit that comes free with the bench.</li>
+<li><code>LineItem/LineExtensionAmount</code> = <strong>0.00</strong>
+(currencyID <code>XBL</code>)<br />
+Quantity times price, rounded to the minor unit.</li>
+<li><code>LineItem/Price/PriceAmount</code> = <strong>0</strong>
+(currencyID <code>XBL</code>)<br />
+No price: the item comes free with each Elderwick Marrow bench
+(world/items.json).</li>
+<li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
+(unitCode <code>EA</code>)<br />
+The price is per one unit.</li>
+<li><code>LineItem/Item/Description</code> = <strong>Hard-wax oil and a
+cloth for the Marrow dining furniture, free with each
+bench.</strong><br />
+The seller's description; item marrow-care-kit-r of Brightmarket Stores
+(world/items.json).</li>
+<li><code>LineItem/Item/Name</code> = <strong>Elderwick care
+kit</strong><br />
+The item's short name; item marrow-care-kit-r of Brightmarket Stores
+(world/items.json).</li>
+<li><code>LineItem/Item/SellersItemIdentification/ID</code> =
+<strong>BM-551007</strong><br />
+The seller's own item number; item marrow-care-kit-r of Brightmarket
+Stores (world/items.json).</li>
+<li><code>LineItem/Item/ManufacturersItemIdentification/ID</code> =
+<strong>BF-MRW-K</strong><br />
+The item number of the maker, Brackenmere Furniture: the reseller's item
+is resale of item marrow-care-kit.</li>
+<li><code>LineItem/Item/StandardItemIdentification/ID</code> =
+<strong>9522610000030</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -489,9 +614,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-30&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:25:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OrderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;220&lt;/<span class="kw">cbc:OrderTypeCode</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Click and collect: ready in the garden department from Tuesday; bring the card used for the order.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Click and collect: ready in the home department from Tuesday; bring the card used for the order.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;3&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
@@ -567,8 +692,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Garden department, Lumeport store&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900033&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Home department, Lumeport store&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-06-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -583,8 +708,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DeliveryTerms</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;INCOTERMS&quot;</span>&gt;EXW&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Garden department of the Lumeport store&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900033&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Home department of the Lumeport store&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DeliveryTerms</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
@@ -601,51 +726,113 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CardAccountRoleCode&quot;</span>&gt;HOLDER&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CardAccount</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;58.44&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;899.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;58.44&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;6.5&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;899.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;957.44&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;899.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;899&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The store&#39;s own garden bench set.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Garden bench set Marrow&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BM-551004&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-GS-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9523710000012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;false&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 5189&quot;</span>&gt;95&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Marrow set&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;48.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Percent</span>&gt;6.5&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;58.44&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;899.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;58.44&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;6.5&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;947.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceTotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;48.00&lt;/<span class="kw">cbc:AllowanceTotalAmount</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;957.44&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;549.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;549&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BM-551005&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-B14&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;398.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;199&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow chair&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BM-551006&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-C&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000023&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Elderwick care kit&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BM-551007&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-K&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000030&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>50aad93</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>7c976a9</code></p></div></footer>
 </body>
 </html>

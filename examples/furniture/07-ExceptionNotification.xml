@@ -138,14 +138,14 @@
   </cac:SellerSupplierParty>
   <cac:ExceptionNotificationLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Three sets sold against five expected.</cbc:Note>
+    <cbc:Note>Three benches sold against a threshold of five.</cbc:Note>
     <cbc:Description>Sales below the agreed threshold.</cbc:Description>
     <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">OPEN</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ResolutionCode listID="urn:ubl-examples:world:codelist:ResolutionCode">REVIEW</cbc:ResolutionCode>
-    <cbc:ComparedValueMeasure unitCode="SET">5</cbc:ComparedValueMeasure>
-    <cbc:SourceValueMeasure unitCode="SET">3</cbc:SourceValueMeasure>
-    <cbc:VarianceQuantity unitCode="SET">-2</cbc:VarianceQuantity>
+    <cbc:ComparedValueMeasure unitCode="EA">3</cbc:ComparedValueMeasure>
+    <cbc:SourceValueMeasure unitCode="EA">5</cbc:SourceValueMeasure>
+    <cbc:VarianceQuantity unitCode="EA">-2</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
@@ -167,13 +167,13 @@
       <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
     </cac:ForecastException>
     <cac:SupplyItem>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:SupplyItem>
   </cac:ExceptionNotificationLine>

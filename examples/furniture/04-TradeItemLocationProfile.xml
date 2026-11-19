@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0570</cbc:ID>
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
-  <cbc:IssueDate>2026-03-14</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cbc:IssueTime>08:23:00-01:00</cbc:IssueTime>
   <cbc:Note>The store holds stock; the maker replenishes.</cbc:Note>
   <cbc:ProfileStatusCode listID="urn:ubl-examples:world:codelist:ProfileStatusCode">ACTIVE</cbc:ProfileStatusCode>
@@ -19,7 +19,7 @@
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Quotation</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-26-0314</cbc:ID>
+    <cbc:ID>BM-SIG-26-0313</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -138,30 +138,55 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemManagementProfile>
-    <cbc:FrozenPeriodDaysNumeric>7</cbc:FrozenPeriodDaysNumeric>
-    <cbc:MinimumInventoryQuantity unitCode="SET">4</cbc:MinimumInventoryQuantity>
-    <cbc:MultipleOrderQuantity unitCode="SET">2</cbc:MultipleOrderQuantity>
+    <cbc:MinimumInventoryQuantity unitCode="EA">4</cbc:MinimumInventoryQuantity>
+    <cbc:MultipleOrderQuantity unitCode="EA">2</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
     <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
-    <cbc:TargetInventoryQuantity unitCode="SET">10</cbc:TargetInventoryQuantity>
+    <cbc:TargetInventoryQuantity unitCode="EA">10</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
-      <cbc:StartDate>2026-03-16</cbc:StartDate>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="SET">2</cbc:MinimumQuantity>
+      <cbc:MinimumQuantity unitCode="EA">2</cbc:MinimumQuantity>
+    </cac:ItemLocationQuantity>
+  </cac:ItemManagementProfile>
+  <cac:ItemManagementProfile>
+    <cbc:MinimumInventoryQuantity unitCode="EA">8</cbc:MinimumInventoryQuantity>
+    <cbc:MultipleOrderQuantity unitCode="EA">4</cbc:MultipleOrderQuantity>
+    <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
+    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
+    <cbc:TargetInventoryQuantity unitCode="EA">20</cbc:TargetInventoryQuantity>
+    <cac:EffectivePeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-08-29</cbc:EndDate>
+    </cac:EffectivePeriod>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+    <cac:ItemLocationQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
 </TradeItemLocationProfile>

@@ -18,8 +18,8 @@ For Returns: Brackenmere Furniture to Brightmarket Stores</h1>
 for public offices (Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-RETURNS-SCHEMA">Instruction
 For Returns in the UBL 2.5 specification</a></em></p>
-<p>The bench set does not sell; the furniture maker asks for the
-remaining stock back to free shelf space.</p>
+<p>At the end of the sale-or-return trial the furniture maker asks for
+the stock above the target back, at its own cost.</p>
 <p><a href="examples/furniture/12-InstructionForReturns.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -53,26 +53,29 @@ The sender's number for its returns.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-27</strong><br />
-The furniture maker takes back the sets that do not sell.</li>
+The last day of the sale-or-return trial.</li>
 <li><code>IssueTime</code> = <strong>14:21:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>The maker takes back six sets to free
-the store's shelf.</strong><br />
-Why.</li>
+<li><code>Note</code> = <strong>The sale-or-return trial of the
+own-label agreement ends today, five weeks after the delivery of 23
+March: the stock above the target goes back at the maker's cost. The
+store's van brings it; the maker pays the transport.</strong><br />
+Why the goods go back, and at whose cost.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>BF-DOC-26-0573</strong><br />
-The exception that led to the return.</li>
-<li><code>DocumentTypeCode</code> =
-<strong>ExceptionNotification</strong> (listID
-<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: BF-DOC-26-0573 is the example
-furniture/07, a ExceptionNotification; a generic reference names the UBL
-document type (decision Q29). The code is from the Trade Accord's UBL
-document type list: ExceptionNotification = Exception Notification.</li>
+<li><code>ID</code> = <strong>BM-OWN-BRAND-2026</strong><br />
+The own-label agreement, whose sale-or-return terms the return
+follows.</li>
+<li><code>DocumentType</code> = <strong>Own-label
+agreement</strong><br />
+The kind of document referred to, the own-label agreement between
+Brightmarket Stores and Brackenmere Furniture for the Elderwick Marrow
+line: the store's specification, the sale-or-return trial and the
+returns, a document outside the examples, in words: no list has an exact
+code for it (world/documents.json, cited; decision Q29).</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -392,9 +395,10 @@ are given; only its identifier and name are repeated.</li>
 <ul>
 <li><code>ID</code> = <strong>BM-RET-26-0427</strong><br />
 The return shipment.</li>
-<li><code>GrossWeightMeasure</code> = <strong>282</strong> (unitCode
+<li><code>GrossWeightMeasure</code> = <strong>285.45</strong> (unitCode
 <code>KGM</code>)<br />
-Six sets of 47 kg.</li>
+Seven benches of 24 kg, ten chairs of 11.5 kg and seven care kits of
+0.35 kg, packed.</li>
 <li><code>Delivery/RequestedDeliveryPeriod/StartDate</code> =
 <strong>2026-04-29</strong><br />
 The store's van brings them.</li>
@@ -406,32 +410,95 @@ Within the week.</li>
 <p>Inside <code>InstructionForReturnsLine</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
-The only line.</li>
+A line per piece.</li>
 <li><code>Note</code> = <strong>In their original
 cartons.</strong><br />
 How they are to be returned.</li>
-<li><code>Quantity</code> = <strong>6</strong> (unitCode
-<code>SET</code>)<br />
-Six of the remaining sets, to free shelf space.</li>
-<li><code>Item/Description</code> = <strong>Garden bench and two chairs
-in hardwood, made for the department store's own line.</strong><br />
-The seller's description; item garden-set of Brackenmere Furniture
+<li><code>Quantity</code> = <strong>7</strong> (unitCode
+<code>EA</code>)<br />
+Seven benches: the stock above the target of ten.</li>
+<li><code>Item/Description</code> = <strong>Dining bench, 1400 mm, in
+solid kiln-dried oak or ash with a hard-wax oil finish: closed seat,
+glued joints, felt pads under the legs, seat height 45
+cm.</strong><br />
+The seller's description; item marrow-bench of Brackenmere Furniture
 (world/items.json).</li>
-<li><code>Item/Name</code> = <strong>Garden bench set
-Marrow</strong><br />
-The item's short name; item garden-set of Brackenmere Furniture
+<li><code>Item/Name</code> = <strong>Elderwick Marrow
+bench</strong><br />
+The item's short name; item marrow-bench of Brackenmere Furniture
 (world/items.json).</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
-<strong>BF-GS-01</strong><br />
-The seller's own item number; item garden-set of Brackenmere Furniture
+<strong>BF-MRW-B14</strong><br />
+The seller's own item number; item marrow-bench of Brackenmere Furniture
 (world/items.json).</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
-<strong>9523710000012</strong> (schemeID <code>GS1 GTIN</code>)<br />
-The GTIN Brackenmere Furniture gives the item, under its GS1 company
+<strong>9522610000016</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
-under GS1 rules the brand owner numbers the item, and the brand
-Brackenmere is Brackenmere Furniture's (world/items.json).</li>
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>ID</code> = <strong>2</strong><br />
+A line per piece.</li>
+<li><code>Note</code> = <strong>In their original
+cartons.</strong><br />
+How they are to be returned.</li>
+<li><code>Quantity</code> = <strong>10</strong> (unitCode
+<code>EA</code>)<br />
+Ten chairs: the stock above the target of twenty.</li>
+<li><code>Item/Description</code> = <strong>Dining chair in solid
+kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued
+joints, felt pads under the legs, seat height 45 cm.</strong><br />
+The seller's description; item marrow-chair of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Elderwick Marrow
+chair</strong><br />
+The item's short name; item marrow-chair of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ID</code> =
+<strong>BF-MRW-C</strong><br />
+The seller's own item number; item marrow-chair of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/StandardItemIdentification/ID</code> =
+<strong>9522610000023</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>ID</code> = <strong>3</strong><br />
+A line per piece.</li>
+<li><code>Note</code> = <strong>In their original
+cartons.</strong><br />
+How they are to be returned.</li>
+<li><code>Quantity</code> = <strong>7</strong> (unitCode
+<code>EA</code>)<br />
+The care kits of the seven benches.</li>
+<li><code>Item/Description</code> = <strong>Care kit for the Marrow
+dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in
+one pack. One comes free with each bench.</strong><br />
+The seller's description; item marrow-care-kit of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Elderwick care kit</strong><br />
+The item's short name; item marrow-care-kit of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ID</code> =
+<strong>BF-MRW-K</strong><br />
+The seller's own item number; item marrow-care-kit of Brackenmere
+Furniture (world/items.json).</li>
+<li><code>Item/StandardItemIdentification/ID</code> =
+<strong>9522610000030</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -445,10 +512,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;1e930432-0fbd-5872-a8b6-1646ccb09ff0&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-27&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:21:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The maker takes back six sets to free the store&#39;s shelf.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery of 23 March: the stock above the target goes back at the maker&#39;s cost. The store&#39;s van brings it; the maker pays the transport.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-DOC-26-0573&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExceptionNotification&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BM-OWN-BRAND-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Own-label agreement&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-26-0427&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -563,7 +630,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ManufacturerParty</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BM-RET-26-0427&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;282&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;285.45&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RequestedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-29&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -574,21 +641,51 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InstructionForReturnsLine</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;In their original cartons.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;7&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Garden bench and two chairs in hardwood, made for the department store&#39;s own line.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Garden bench set Marrow&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-GS-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-B14&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9523710000012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InstructionForReturnsLine</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">InstructionForReturns</span>&gt;</span></code></pre></div>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InstructionForReturnsLine</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;In their original cartons.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow chair&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-C&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000023&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InstructionForReturnsLine</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InstructionForReturnsLine</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;In their original cartons.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;7&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick care kit&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-K&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000030&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InstructionForReturnsLine</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">InstructionForReturns</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>50aad93</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>7c976a9</code></p></div></footer>
 </body>
 </html>

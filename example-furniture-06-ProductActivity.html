@@ -55,8 +55,8 @@ The store's report of the first four weeks.</li>
 <li><code>IssueTime</code> = <strong>16:35:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>Sales were slow after the promotion
-ended.</strong><br />
+<li><code>Note</code> = <strong>The chairs sell better than the set: the
+bench is too long for many apartment kitchens.</strong><br />
 The store's remark.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
@@ -391,24 +391,6 @@ The only line.</li>
 <code>urn:ubl-examples:world:codelist:SupplyChainActivityCode</code>)<br />
 The activity reported: sales to consumers. The code is from the Trade
 Accord's supply chain activity list: SALES = Sales.</li>
-<li><code>BuyerCustomerParty/Party/PartyIdentification/ID</code> =
-<strong>20410411</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>BuyerCustomerParty/Party/PartyName/Name</code> =
-<strong>Brightmarket Stores</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>SellerSupplierParty/Party/PartyIdentification/ID</code> =
-<strong>20412466</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>SellerSupplierParty/Party/PartyName/Name</code> =
-<strong>Brackenmere Furniture</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
 <li><code>ActivityPeriod/StartDate</code> =
 <strong>2026-03-23</strong><br />
 The four weeks.</li>
@@ -416,52 +398,100 @@ The four weeks.</li>
 <strong>2026-04-20</strong><br />
 Their end.</li>
 <li><code>ActivityOriginLocation/ID</code> =
-<strong>9522610900026</strong> (schemeID <code>GS1 GLN</code>)<br />
-The Global Location Number of the place, garden department of the
-lumeport store: Brightmarket Stores identifies its places the GS1 way,
-under its company prefix (952, reserved for examples);
-world/parties.json.</li>
+<strong>9522610900033</strong> (schemeID <code>GS1 GLN</code>)<br />
+The Global Location Number of the place, home department of the lumeport
+store: Brightmarket Stores identifies its places the GS1 way, under its
+company prefix (952, reserved for examples); world/parties.json.</li>
 <li><code>ActivityOriginLocation/Name</code> = <strong>Brightmarket
-Stores, garden department, Lumeport</strong><br />
+Stores, home department, Lumeport</strong><br />
 Where the sales took place.</li>
-<li><code>ActivityFinalLocation/Name</code> = <strong>Customers' gardens
-in Lumeport</strong><br />
-Where the sets end up.</li>
 <li><code>SalesItem/Quantity</code> = <strong>3</strong> (unitCode
-<code>SET</code>)<br />
-Three sets sold in four weeks.</li>
-<li><code>SalesItem/ActivityProperty/Name</code> =
-<strong>Weather</strong><br />
-What the store notes.</li>
-<li><code>SalesItem/ActivityProperty/Value</code> = <strong>Rain three
-weeks out of four.</strong><br />
-Why sales were slow.</li>
+<code>EA</code>)<br />
+Three benches sold in four weeks, all in the Marrow set.</li>
 <li><code>SalesItem/TaxExclusivePrice/PriceAmount</code> =
-<strong>899</strong> (currencyID <code>XBL</code>)<br />
-The shelf price, before sales tax.</li>
+<strong>549</strong> (currencyID <code>XBL</code>)<br />
+The shelf price of the bench, before sales tax.</li>
+<li><code>SalesItem/TaxExclusivePrice/AllowanceCharge/ChargeIndicator</code>
+= <strong>false</strong><br />
+An allowance on the price.</li>
+<li><code>SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReasonCode</code>
+= <strong>95</strong> (listID <code>UN/EDIFACT EDED 5189</code>)<br />
+The reason for the allowance as a code of UN/EDIFACT 5189: a discount;
+the text names the offer. The code is from the world's copy of
+UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.</li>
+<li><code>SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReason</code>
+= <strong>Marrow set</strong><br />
+The shop's offer: a bench and two chairs for 899 lume instead of
+947.</li>
+<li><code>SalesItem/TaxExclusivePrice/AllowanceCharge/Amount</code> =
+<strong>48.00</strong> (currencyID <code>XBL</code>)<br />
+The set allowance, given once with each bench sold in a set: 549 + 2 ×
+199 − 48 = 899.</li>
 <li><code>SalesItem/TaxInclusivePrice/PriceAmount</code> =
-<strong>957.44</strong> (currencyID <code>XBL</code>)<br />
+<strong>584.69</strong> (currencyID <code>XBL</code>)<br />
 With Coastal State's 6.5 % sales tax.</li>
-<li><code>SalesItem/Item/Description</code> = <strong>Garden bench and
-two chairs in hardwood, made for the department store's own
-line.</strong><br />
-The seller's description; item garden-set of Brackenmere Furniture
+<li><code>SalesItem/Item/Description</code> = <strong>Dining bench, 1400
+mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed
+seat, glued joints, felt pads under the legs, seat height 45
+cm.</strong><br />
+The seller's description; item marrow-bench of Brackenmere Furniture
 (world/items.json).</li>
-<li><code>SalesItem/Item/Name</code> = <strong>Garden bench set
-Marrow</strong><br />
-The item's short name; item garden-set of Brackenmere Furniture
+<li><code>SalesItem/Item/Name</code> = <strong>Elderwick Marrow
+bench</strong><br />
+The item's short name; item marrow-bench of Brackenmere Furniture
 (world/items.json).</li>
 <li><code>SalesItem/Item/SellersItemIdentification/ID</code> =
-<strong>BF-GS-01</strong><br />
-The seller's own item number; item garden-set of Brackenmere Furniture
+<strong>BF-MRW-B14</strong><br />
+The seller's own item number; item marrow-bench of Brackenmere Furniture
 (world/items.json).</li>
 <li><code>SalesItem/Item/StandardItemIdentification/ID</code> =
-<strong>9523710000012</strong> (schemeID <code>GS1 GTIN</code>)<br />
-The GTIN Brackenmere Furniture gives the item, under its GS1 company
+<strong>9522610000016</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
-under GS1 rules the brand owner numbers the item, and the brand
-Brackenmere is Brackenmere Furniture's (world/items.json).</li>
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>SalesItem/Quantity</code> = <strong>10</strong> (unitCode
+<code>EA</code>)<br />
+Ten chairs sold: six in the three sets and four alone.</li>
+<li><code>SalesItem/ActivityProperty/Name</code> = <strong>Sold
+alone</strong><br />
+What the store notes.</li>
+<li><code>SalesItem/ActivityProperty/Value</code> = <strong>4 of 10: the
+1400 mm bench is too long for many apartment kitchens, so shoppers buy
+the chairs.</strong><br />
+Why the chairs sell better than the set.</li>
+<li><code>SalesItem/TaxExclusivePrice/PriceAmount</code> =
+<strong>199</strong> (currencyID <code>XBL</code>)<br />
+The shelf price of the chair, before sales tax.</li>
+<li><code>SalesItem/TaxInclusivePrice/PriceAmount</code> =
+<strong>211.94</strong> (currencyID <code>XBL</code>)<br />
+With Coastal State's 6.5 % sales tax.</li>
+<li><code>SalesItem/Item/Description</code> = <strong>Dining chair in
+solid kiln-dried oak or ash with a hard-wax oil finish: closed seat,
+glued joints, felt pads under the legs, seat height 45
+cm.</strong><br />
+The seller's description; item marrow-chair of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>SalesItem/Item/Name</code> = <strong>Elderwick Marrow
+chair</strong><br />
+The item's short name; item marrow-chair of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>SalesItem/Item/SellersItemIdentification/ID</code> =
+<strong>BF-MRW-C</strong><br />
+The seller's own item number; item marrow-chair of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>SalesItem/Item/StandardItemIdentification/ID</code> =
+<strong>9522610000023</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -475,7 +505,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;35444c15-3be6-5365-a08f-55521605590a&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:35:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Sales were slow after the promotion ended.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The chairs sell better than the set: the bench is too long for many apartment kitchens.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ActivityPeriod</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -587,64 +617,66 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SupplyChainActivityDataLine</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SupplyChainActivityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyChainActivityCode&quot;</span>&gt;SALES&lt;/<span class="kw">cbc:SupplyChainActivityTypeCode</span>&gt;</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412466&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brackenmere Furniture&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityPeriod</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActivityPeriod</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityOriginLocation</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores, garden department, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActivityOriginLocation</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityFinalLocation</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Customers&#39; gardens in Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActivityFinalLocation</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SalesItem</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;3&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActivityProperty</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Weather&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;Rain three weeks out of four.&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ActivityProperty</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxExclusivePrice</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;899&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxExclusivePrice</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxInclusivePrice</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;957.44&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxInclusivePrice</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Garden bench and two chairs in hardwood, made for the department store&#39;s own line.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Garden bench set Marrow&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-GS-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9523710000012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SalesItem</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SupplyChainActivityDataLine</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProductActivity</span>&gt;</span></code></pre></div>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityPeriod</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActivityPeriod</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityOriginLocation</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900033&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores, home department, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActivityOriginLocation</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SalesItem</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;3&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxExclusivePrice</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;549&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;false&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 5189&quot;</span>&gt;95&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Marrow set&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;48.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxExclusivePrice</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxInclusivePrice</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;584.69&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxInclusivePrice</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-B14&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SalesItem</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SalesItem</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActivityProperty</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sold alone&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;4 of 10: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ActivityProperty</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxExclusivePrice</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;199&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxExclusivePrice</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxInclusivePrice</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;211.94&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxInclusivePrice</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow chair&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-C&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000023&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SalesItem</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SupplyChainActivityDataLine</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProductActivity</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>50aad93</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>7c976a9</code></p></div></footer>
 </body>
 </html>

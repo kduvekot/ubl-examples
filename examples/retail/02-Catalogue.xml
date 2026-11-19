@@ -244,11 +244,6 @@
       <cbc:Quantity unitCode="SET">1</cbc:Quantity>
       <cbc:Description>Four ground anchors and bolts.</cbc:Description>
     </cac:AccessoryRelatedItem>
-    <cac:ComplementaryRelatedItem>
-      <cbc:ID>BM-551004</cbc:ID>
-      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
-      <cbc:Description>Garden bench set Marrow</cbc:Description>
-    </cac:ComplementaryRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
