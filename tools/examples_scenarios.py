@@ -10165,8 +10165,8 @@ def _(f, n, doc, out):
 # --- Coverage completion, batch F: self-billing on the island ---------------------------------------------------
 # The gin withholds the island's presumptive tax on farm produce (1 % up to 2,000 coral of a delivery, 2 % above)
 # and the farm collects the cotton fund's levy of 1 % from the gin (world/countries.json). Seed cotton is priced from
-# the trade accord's lint reference price in lume; the farm is paid in coral and may ask for lume instead. Its tax
-# affairs with the island's tax office are handled by its customs broker, as tax representative.
+# the trade accord's lint reference price in lume; the farm is paid in coral. A purchase between two Lisavan
+# businesses needs no tax representative: the ginnery withholds the presumptive tax itself (D33 point 3).
 XL_TAX = WORLD["countries"]["XL"]["tax"]["withholding"]
 XL_COTTON = WORLD["countries"]["XL"]["cotton"]
 

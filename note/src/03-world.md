@@ -1531,9 +1531,10 @@ hazard names the Accord's emergency card of its class.
 
 A ship reports to the port before it arrives, with its security and health
 certificates. The ocean carrier's second feeder came under Bayvarra's flag in
-January: it sails with an interim security certificate and says why, and it
-carries a sanitation control exemption certificate, which the port health
-office issues when an inspection finds no control measures needed; the first
+January: it sails with an interim security certificate, valid like a full
+one for its six months, and says that it is interim; it carries a sanitation
+control exemption certificate, which Bayvarra's port health office at
+Lumeport issues when an inspection finds no control measures needed; the first
 feeder carries a sanitation control certificate, as its inspection found pests
 in the galley stores. The security report lists the ship-to-ship activities of
 the last ten port calls, here a bunkering from the port's barge, with the
