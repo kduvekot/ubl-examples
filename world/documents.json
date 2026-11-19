@@ -2620,11 +2620,11 @@
    "doc": "UtilityStatement",
    "from": "33-xu",
    "to": "8-xu",
-   "why": "The 3PL's warehouse is the manufacturer's building: the 3PL is the subscriber at the connection and receives the statement, but the manufacturer pays. The statement therefore names the manufacturer as customer, the buyer that differs from the receiver.",
+   "why": "The warehouse is the manufacturer's building: the manufacturer owns it and holds the subscription, the 3PL operates the warehouse and receives the statement of its consumption point; the statement names the manufacturer as subscriber and customer (D31 point 4).",
    "parties": {
     "SenderParty": "33-xu",
     "ReceiverParty": "8-xu",
-    "SubscriberParty": "8-xu",
+    "SubscriberParty": "5-xu",
     "CustomerParty": "5-xu"
    }
   },

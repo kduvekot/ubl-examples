@@ -331,8 +331,6 @@
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cbc:OneTimeChargeType>Connection to the 10 kV grid, paid once in 2024</cbc:OneTimeChargeType>
-          <cbc:OneTimeChargeTypeCode listID="urn:ubl-examples:world:codelist:OneTimeChargeTypeCode">CONN</cbc:OneTimeChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
             <cbc:Percent>20</cbc:Percent>

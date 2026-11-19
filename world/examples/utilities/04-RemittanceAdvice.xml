@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>13:33:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Rikrir skul drek tirnan krirstul.</cbc:Note>
   <cbc:Note languageID="en-XU">Payment of the invoice below.</cbc:Note>
@@ -209,9 +209,6 @@
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">2516028</cbc:TaxAmount>
-  </cac:TaxTotal>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:DebitLineAmount currencyID="XUF">15096168</cbc:DebitLineAmount>

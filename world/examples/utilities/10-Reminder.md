@@ -32,8 +32,6 @@ The direct debit for the settlement bill's balance is returned unpaid; the utili
   The first reminder.
 - `Note` = **The direct debit was returned by your bank: insufficient funds.**  
   Why the bill is unpaid.
-- `TaxPointDate` = **2026-05-01**  
-  The fee becomes due on the reminder date.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the unpaid bill; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **2**  
@@ -344,7 +342,6 @@ Inside `ReminderLine`:
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
-  <cbc:TaxPointDate>2026-05-01</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ReminderPeriod>

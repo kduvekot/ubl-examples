@@ -438,10 +438,6 @@ Inside `SubscriberConsumption`:
   The name of code M in the Trade Accord's utility charge type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
   As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/OneTimeChargeType` = **Connection to the 10 kV grid, paid once in 2024**  
-  The one-time charge of the contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/OneTimeChargeTypeCode` = **CONN** (listID `urn:ubl-examples:world:codelist:OneTimeChargeTypeCode`)  
-  As a code: a connection charge. The code is from the Trade Accord's one-time charge type list: CONN = Connection charge.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/Percent` = **20**  
@@ -867,8 +863,6 @@ Inside `SubscriberConsumption`:
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cbc:OneTimeChargeType>Connection to the 10 kV grid, paid once in 2024</cbc:OneTimeChargeType>
-          <cbc:OneTimeChargeTypeCode listID="urn:ubl-examples:world:codelist:OneTimeChargeTypeCode">CONN</cbc:OneTimeChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
             <cbc:Percent>20</cbc:Percent>

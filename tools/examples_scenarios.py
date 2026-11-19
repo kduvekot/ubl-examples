@@ -3969,8 +3969,6 @@ def utility_statement(f, n, doc, key, invoice_no):
                                                                                        if pt["meter"][3] !=
                                                                                        "Direct" else "."))}]}},
            "SupplierConsumption": parts}
-    if subscriber != customer:
-        sub["SubscriberParty"] = party(subscriber, short=True)
     if pt.get("household"):
         out["MainOnAccountPayment"] = {"EstimatedConsumedQuantity": qty(14, unit, "The household's expected "
                                                                                   "monthly use."),
@@ -4193,7 +4191,7 @@ def utilities(n, doc):
                 line["PurchaseReference"] = {"ID": V(meter[0], "The meter or subscription the line is for."),
                                              "Description": V(meter[1], "Where it is.")}
         if key == "33-xu":
-            out["InvoiceLine"][1]["OriginatorParty"] = party("8-xu", short=True)
+            out["InvoiceLine"][1]["Delivery"]["DeliveryParty"] = party("8-xu", short=True)    # utilities/02#F5
             out["BillingReference"] = {"InvoiceDocumentReference": {
                 "ID": V("FE-INV-26-0211", "February's bill, with an estimated reading of the warehouse meter."),
                 "IssueDate": V("2026-03-01", "Its issue date.")},
@@ -4244,7 +4242,8 @@ def utilities(n, doc):
     if doc["doc"] == "RemittanceAdvice":
         purpose = {"33-xu": ("ELEC", "an electricity bill, the larger part of the bill paid"),
                    "35-xl": ("PHON", "a telephone bill")}.get(bill_key(doc), ("WTER", "a water bill"))
-        return kit.remittance(f, n, doc, 18, "Paid before the due date.", key=f"invoice-{bill_key(doc)}",
+        return kit.remittance(f, n, doc, 19, "Paid on Monday 20 April, before the due date (D27, D31 point 7).",
+                              key=f"invoice-{bill_key(doc)}",
                               purpose=purpose)
     if doc["doc"] == "Reminder":
         key, cur = bill_key(doc), "XBL"
@@ -8825,17 +8824,6 @@ def _(f, n, doc, out):
     return {}      # no forward contract in a tender document: the hedge is Valdara's, in the story only (D28, O50)
 
 
-@enrich("utilities", "RemittanceAdvice")
-def _(f, n, doc, out):
-    if doc["from"] != "5-xu":
-        return {}
-    a = f.numbers["invoice-33-xu-amount"]
-    vat = (a - a / Decimal("1.2")).quantize(Decimal(1))
-    return {"TaxTotal": {"TaxAmount": amount(vat, "XUF", "The value added tax included in the payment, which the "
-                                                        "manufacturer deducts in its own return (20 % of the price "
-                                                        "before tax).")}}
-
-
 @enrich("utilities", "Invoice")
 def _(f, n, doc, out):
     pm = out.get("PaymentMeans")
@@ -9405,11 +9393,6 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     sc = out["SubscriberConsumption"]
     sup = doc["from"]
-    if sup == "33-xu" and doc["to"] == "5-xu":
-        it = sc["SupplierConsumption"][0]["ConsumptionLine"]["UtilityItem"]
-        it["OneTimeChargeType"] = V("Connection to the 10 kV grid, paid once in 2024", "The one-time charge of the "
-                                                                                     "contract.")
-        it["OneTimeChargeTypeCode"] = V("CONN", "As a code: a connection charge.")
     if sup == "35-xl":
         disc = bundle_discount()
         cons = sc["Consumption"]
@@ -9427,8 +9410,7 @@ def _(f, n, doc, out):
         ln["UUID"] = line_uuid(f, "reminder", ln["ID"].value)
     out["ReminderLine"][0]["Note"] = V("The direct debit of 23 April was returned.", "What happened.")
     out["ReminderLine"][1]["Note"] = V("The fee for the returned direct debit.", "What it is.")
-    return {"Signature": seal("34-xb", "CSWC-SIG-26-REM"),
-            "TaxPointDate": V(f.date(30), "The fee becomes due on the reminder date.")}
+    return {"Signature": seal("34-xb", "CSWC-SIG-26-REM")}
 
 
 # --- Coverage completion, batch E: the call-off from order to payment ------------------------------------------

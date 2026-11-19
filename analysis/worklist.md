@@ -1562,6 +1562,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: utilities: 01#F6, 02#F5, 02#F7, 03#F6, 04#F2, 08#F13, 10#F3
 - **Partly fixed (2026-11-19):** 02#F7 with O159 (D31 point 7): the billing reference to line 2 of February's bill FE-INV-26-0211 has its purpose, line 4 crediting the 750 kWh February's estimate charged too much, and says so. The other findings of the cause remain.
+- **Fixed (2026-11-19, D31 points 4 and 7):** Valdara, which owns the warehouse, is the subscriber of statement 03; Castrano Logistics receives it and the consumption point names its warehouse (03#F6); on the bill Castrano is the delivery party of the warehouse line, not its originator (02#F5); no one-time charge type on the monthly tariff (01#F6); the remittance advice carries no tax total (04#F2); the reminder no tax point date (10#F3); the reading website and its password had gone with the annual account (08#F13, C93). The three remittances of Sunday 19 April are dated Monday 20 April (04, 07, 14; D27). 02#F7 was fixed with O159. Coverage 4909 → 4904.
 
 ### C96 · Qualification requests and responses (ESPD-like) in contest and tender
 - Kind: flow story · Findings: 32 (High 1, Medium 11, Low 20) in 8 files, 2 flows · Needs decision: owner: D29

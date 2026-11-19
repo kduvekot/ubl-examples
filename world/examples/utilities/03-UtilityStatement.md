@@ -2,7 +2,7 @@
 
 *Example 3 of the flow "Electricity, water and telecom (one utility in each country)" · [Utility Statement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA)*
 
-The 3PL's warehouse is the manufacturer's building: the 3PL is the subscriber at the connection and receives the statement, but the manufacturer pays. The statement therefore names the manufacturer as customer, the buyer that differs from the receiver.
+The warehouse is the manufacturer's building: the manufacturer owns it and holds the subscription, the 3PL operates the warehouse and receives the statement of its consumption point; the statement names the manufacturer as subscriber and customer (D31 point 4).
 
 [The XML file](03-UtilityStatement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -182,10 +182,10 @@ Inside `CustomerParty`:
 
 Inside `SubscriberParty`:
 
-- `PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
-- `PartyName/Name` = **Castrano Logistics**  
-  The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
+- `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The same party as at CustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `PartyName/Name` = **Valdara Industries**  
+  The same party as at CustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 
 ### Subscriber Consumption
 
@@ -199,10 +199,6 @@ Inside `SubscriberConsumption`:
   The point.
 - `TotalMeteredQuantity` = **19350** (unitCode `KWH`)  
   Metered in March.
-- `SubscriberParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SubscriberParty/PartyName/Name` = **Castrano Logistics**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `UtilityConsumptionPoint/ID` = **FG-CP-4160-E1**  
   The connection, numbered by the grid operator, Ferrano Grid, which owns and reads the meters; the retail company uses its numbers, its own reference being the contract (O161).
 - `UtilityConsumptionPoint/Description` = **Warehouse of Castrano Logistics**  
@@ -772,10 +768,10 @@ Inside `SubscriberConsumption`:
   </cac:CustomerParty>
   <cac:SubscriberParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Castrano Logistics</cbc:Name>
+      <cbc:Name>Valdara Industries</cbc:Name>
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
@@ -783,14 +779,6 @@ Inside `SubscriberConsumption`:
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Warehouse of Castrano Logistics</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="KWH">19350</cbc:TotalMeteredQuantity>
-    <cac:SubscriberParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Castrano Logistics</cbc:Name>
-      </cac:PartyName>
-    </cac:SubscriberParty>
     <cac:UtilityConsumptionPoint>
       <cbc:ID>FG-CP-4160-E1</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>

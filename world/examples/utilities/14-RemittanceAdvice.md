@@ -22,8 +22,8 @@ The buyer pays the telecom bill from its account at the island's bank.
   The payer's remittance number.
 - `UUID` = **bcb6eadf-33b2-550e-b57c-1a63cfc06bfc**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-19**  
-  Paid before the due date.
+- `IssueDate` = **2026-04-20**  
+  Paid on Monday 20 April, before the due date (D27, D31 point 7).
 - `IssueTime` = **11:40:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Mamohe mutaki tohala titutu.** (languageID `qal`)  
@@ -310,7 +310,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Mamohe mutaki tohala titutu.</cbc:Note>
   <cbc:Note languageID="en-XL">Payment of the invoice below.</cbc:Note>

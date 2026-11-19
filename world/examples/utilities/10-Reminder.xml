@@ -11,7 +11,6 @@
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The direct debit was returned by your bank: insufficient funds.</cbc:Note>
-  <cbc:TaxPointDate>2026-05-01</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ReminderPeriod>

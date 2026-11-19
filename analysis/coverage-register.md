@@ -532,6 +532,16 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `Person/FinancialAccount` | 0..1 | utilities/09-Invoice, utilities/11-CreditNote | | | open |
 | `ReminderLine/Amount` | 0..1 | utilities/10-Reminder | | | open |
 
+> C95, D31 points 4 and 7: Valdara, which owns the warehouse, holds its subscription, so the warehouse statement's consumption names no subscriber of its own (03#F6); a monthly tariff carries no one-time charge (01#F6); a remittance advice of one bill carries no tax total (04#F2); a reminder without tax no tax point date (10#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Reminder/TaxPointDate` | 0..1 | utilities/10-Reminder | | | open |
+| `RemittanceAdvice/TaxTotal` | 0..n | utilities/04-RemittanceAdvice | | | open |
+| `SubscriberConsumption/SubscriberParty` | 0..1 | utilities/03-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeType` | 0..n | utilities/01-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeTypeCode` | 0..1 | utilities/01-UtilityStatement | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
