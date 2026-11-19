@@ -12,7 +12,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:OrderDocumentReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderDocumentReference>
@@ -152,28 +152,34 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">10</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">3686.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">2211.60</cbc:LineExtensionAmount>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
-        <cbc:Amount currencyID="XBL">114.00</cbc:Amount>
-        <cbc:BaseAmount currencyID="XBL">3800.00</cbc:BaseAmount>
+        <cbc:Amount currencyID="XBL">68.40</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">2280.00</cbc:BaseAmount>
       </cac:AllowanceCharge>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-        <cbc:Name>Elderwick Marrow bench</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
         <cac:BuyersItemIdentification>
           <cbc:ID>BM-551005</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>OAK</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:Description>Solid oak</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
@@ -184,28 +190,72 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="EA">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">2231.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">4</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">1474.40</cbc:LineExtensionAmount>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
-        <cbc:Amount currencyID="XBL">69.00</cbc:Amount>
-        <cbc:BaseAmount currencyID="XBL">2300.00</cbc:BaseAmount>
+        <cbc:Amount currencyID="XBL">45.60</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">1520.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>BM-551008</cbc:ID>
+        </cac:BuyersItemIdentification>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">1338.60</cbc:LineExtensionAmount>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">41.40</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">1380.00</cbc:BaseAmount>
       </cac:AllowanceCharge>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
         <cac:BuyersItemIdentification>
           <cbc:ID>BM-551006</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>OAK</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:Description>Solid oak</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
@@ -215,7 +265,45 @@
   </cac:OrderLine>
   <cac:OrderLine>
     <cac:LineItem>
-      <cbc:ID>3</cbc:ID>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">892.40</cbc:LineExtensionAmount>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">27.60</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">920.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>BM-551009</cbc:ID>
+        </cac:BuyersItemIdentification>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>5</cbc:ID>
       <cbc:Quantity unitCode="EA">10</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
       <cac:Price>

@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>11:25:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Click and collect: ready in the home department from Tuesday; bring the card used for the order.</cbc:Note>
+  <cbc:Note>Click and collect: ready in the home and garden department from Tuesday; bring the card used for the order.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
@@ -87,8 +87,8 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
-      <cbc:Name>Home department, Lumeport store</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
+      <cbc:Name>Home and garden department, Lumeport store</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-06-01</cbc:StartDate>
@@ -103,8 +103,8 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">EXW</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
-      <cbc:Description>Home department of the Lumeport store</cbc:Description>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
+      <cbc:Description>Home and garden department of the Lumeport store</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:PaymentMeans>
@@ -163,16 +163,22 @@
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
-        <cbc:Name>Elderwick Marrow bench</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid ash, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BM-551005</cbc:ID>
+          <cbc:ID>BM-551008</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -187,16 +193,22 @@
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
-        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cbc:Description>Dining chair in solid ash, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BM-551006</cbc:ID>
+          <cbc:ID>BM-551009</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>

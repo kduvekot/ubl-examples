@@ -137,12 +137,18 @@
   <cac:InstructionForReturnsLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>In their original cartons.</cbc:Note>
-    <cbc:Quantity unitCode="EA">7</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">4</cbc:Quantity>
     <cac:Item>
-      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow bench</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
@@ -152,12 +158,39 @@
   <cac:InstructionForReturnsLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>In their original cartons.</cbc:Note>
-    <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cac:Item>
-      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:InstructionForReturnsLine>
+  <cac:InstructionForReturnsLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
+    <cbc:Quantity unitCode="EA">5</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
@@ -165,7 +198,28 @@
     </cac:Item>
   </cac:InstructionForReturnsLine>
   <cac:InstructionForReturnsLine>
-    <cbc:ID>3</cbc:ID>
+    <cbc:ID>4</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
+    <cbc:Quantity unitCode="EA">5</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:InstructionForReturnsLine>
+  <cac:InstructionForReturnsLine>
+    <cbc:ID>5</cbc:ID>
     <cbc:Note>In their original cartons.</cbc:Note>
     <cbc:Quantity unitCode="EA">7</cbc:Quantity>
     <cac:Item>

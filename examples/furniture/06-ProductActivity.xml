@@ -9,7 +9,6 @@
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>16:35:00-01:00</cbc:IssueTime>
   <cbc:Note>The chairs sell better than the set: the bench is too long for many apartment kitchens.</cbc:Note>
-  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ActivityPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>
@@ -125,28 +124,26 @@
       <cbc:EndDate>2026-04-20</cbc:EndDate>
     </cac:ActivityPeriod>
     <cac:ActivityOriginLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
-      <cbc:Name>Brightmarket Stores, home department, Lumeport</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
+      <cbc:Name>Brightmarket Stores, home and garden department, Lumeport</cbc:Name>
     </cac:ActivityOriginLocation>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="EA">3</cbc:Quantity>
-      <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">549</cbc:PriceAmount>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Marrow set</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">48.00</cbc:Amount>
-        </cac:AllowanceCharge>
-      </cac:TaxExclusivePrice>
-      <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">584.69</cbc:PriceAmount>
-      </cac:TaxInclusivePrice>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+      <cac:ActivityProperty>
+        <cbc:Name>Sold in a Marrow set</cbc:Name>
+        <cbc:Value>2 of 2, each with two oak chairs.</cbc:Value>
+      </cac:ActivityProperty>
       <cac:Item>
-        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-        <cbc:Name>Elderwick Marrow bench</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>OAK</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:Description>Solid oak</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
@@ -154,25 +151,71 @@
       </cac:Item>
     </cac:SalesItem>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cac:ActivityProperty>
+        <cbc:Name>Sold in a Marrow set</cbc:Name>
+        <cbc:Value>1 of 1, with two ash chairs.</cbc:Value>
+      </cac:ActivityProperty>
+      <cac:Item>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:SalesItem>
+    <cac:SalesItem>
+      <cbc:Quantity unitCode="EA">7</cbc:Quantity>
       <cac:ActivityProperty>
         <cbc:Name>Sold alone</cbc:Name>
-        <cbc:Value>4 of 10: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.</cbc:Value>
+        <cbc:Value>3 of 7: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.</cbc:Value>
       </cac:ActivityProperty>
-      <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">199</cbc:PriceAmount>
-      </cac:TaxExclusivePrice>
-      <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">211.94</cbc:PriceAmount>
-      </cac:TaxInclusivePrice>
       <cac:Item>
-        <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>OAK</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:Description>Solid oak</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:SalesItem>
+    <cac:SalesItem>
+      <cbc:Quantity unitCode="EA">3</cbc:Quantity>
+      <cac:ActivityProperty>
+        <cbc:Name>Sold alone</cbc:Name>
+        <cbc:Value>1 of 3: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.</cbc:Value>
+      </cac:ActivityProperty>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:SalesItem>

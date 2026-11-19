@@ -8,9 +8,9 @@
   <cbc:UUID>ec533b8c-fd3b-5c84-8198-dd0da43309d9</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cbc:IssueTime>08:58:00-01:00</cbc:IssueTime>
-  <cbc:Note>The Elderwick Marrow bench and chair, made to the store's specification under its own label; a care kit free with each bench.</cbc:Note>
+  <cbc:Note>The Elderwick Marrow bench and chair, made to the store's specification under its own label, each in oak and in ash at the same price; a care kit free with each bench.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
-  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-05-05</cbc:EndDate>
   </cac:ValidityPeriod>
@@ -132,19 +132,25 @@
   <cac:QuotationLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4560.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-        <cbc:Name>Elderwick Marrow bench</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>OAK</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:Description>Solid oak</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
@@ -156,6 +162,10 @@
           <cbc:CommodityCode listID="WCO HS 2022">940169</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38112</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Wood</cbc:Name>
+          <cbc:Value>Oak</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
@@ -178,19 +188,81 @@
   <cac:QuotationLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">3040.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+        <cbc:BrandName>Elderwick</cbc:BrandName>
+        <cbc:ModelName>Marrow</cbc:ModelName>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940169</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38112</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Wood</cbc:Name>
+          <cbc:Value>Ash</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:ManufacturerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Brackenmere Furniture</cbc:Name>
+          </cac:PartyName>
+        </cac:ManufacturerParty>
+        <cac:Dimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">BENCHLENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1400</cbc:Measure>
+        </cac:Dimension>
+        <cac:Dimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">450</cbc:Measure>
+        </cac:Dimension>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+  <cac:QuotationLine>
+    <cac:LineItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">2760.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
           <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>OAK</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:Description>Solid oak</cbc:Description>
+          </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
@@ -202,6 +274,62 @@
           <cbc:CommodityCode listID="WCO HS 2022">940169</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38112</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Wood</cbc:Name>
+          <cbc:Value>Oak</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:ManufacturerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Brackenmere Furniture</cbc:Name>
+          </cac:PartyName>
+        </cac:ManufacturerParty>
+        <cac:Dimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">SEATHEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">450</cbc:Measure>
+        </cac:Dimension>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+  <cac:QuotationLine>
+    <cac:LineItem>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Quantity unitCode="EA">16</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">1840.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
+        <cbc:BrandName>Elderwick</cbc:BrandName>
+        <cbc:ModelName>Marrow</cbc:ModelName>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ExtendedID>ASH</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:Description>Solid ash</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940169</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38112</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Wood</cbc:Name>
+          <cbc:Value>Ash</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
@@ -220,7 +348,7 @@
   <cac:QuotationLine>
     <cbc:Note>Free: one care kit with each bench.</cbc:Note>
     <cac:LineItem>
-      <cbc:ID>3</cbc:ID>
+      <cbc:ID>5</cbc:ID>
       <cbc:Quantity unitCode="EA">20</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
       <cac:Price>

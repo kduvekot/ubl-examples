@@ -77,7 +77,7 @@ The buyer's cost centre, as on the invoice credited.</li>
 <li><code>AccountingCost</code> = <strong>Home and garden
 department</strong><br />
 The cost centre in words.</li>
-<li><code>LineCountNumeric</code> = <strong>2</strong><br />
+<li><code>LineCountNumeric</code> = <strong>4</strong><br />
 The number of lines.</li>
 <li><code>DefaultLanguageCode</code> = <strong>en</strong> (listID
 <code>ISO 639</code>)<br />
@@ -780,26 +780,42 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
-<li><code>CreditedQuantity</code> = <strong>7</strong> (unitCode
+<li><code>CreditedQuantity</code> = <strong>4</strong> (unitCode
 <code>EA</code>)<br />
-Seven benches: the stock above the target of ten.</li>
-<li><code>LineExtensionAmount</code> = <strong>2660.00</strong>
+Four oak benches: the stock above the target of six.</li>
+<li><code>LineExtensionAmount</code> = <strong>1520.00</strong>
 (currencyID <code>XBL</code>)<br />
 Quantity times price, rounded to the minor unit.</li>
 <li><code>Item/Description</code> = <strong>Dining bench, 1400 mm, in
-solid kiln-dried oak or ash with a hard-wax oil finish: closed seat,
-glued joints, felt pads under the legs, seat height 45
-cm.</strong><br />
-The seller's description; item marrow-bench of Brackenmere Furniture
+solid kiln-dried oak with a hard-wax oil finish: closed seat, glued
+joints, felt pads under the legs, seat height 45 cm.</strong><br />
+The seller's description; item marrow-bench-oak of Brackenmere Furniture
 (world/items.json).</li>
-<li><code>Item/Name</code> = <strong>Elderwick Marrow
-bench</strong><br />
-The item's short name; item marrow-bench of Brackenmere Furniture
+<li><code>Item/Name</code> = <strong>Elderwick Marrow bench,
+oak</strong><br />
+The item's short name; item marrow-bench-oak of Brackenmere Furniture
 (world/items.json).</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>BF-MRW-B14</strong><br />
-The seller's own item number; item marrow-bench of Brackenmere Furniture
-(world/items.json).</li>
+The seller's own item number; item marrow-bench-oak of Brackenmere
+Furniture (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ExtendedID</code> =
+<strong>OAK</strong><br />
+The variant of the item: the wood, added to the item number.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/AttributeID</code>
+= <strong>WOOD</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:OtherAttributeCode</code>)<br />
+The attribute the variant differs in. The code is from the Trade
+Accord's attribute list: WOOD = Wood. An identifier that holds a code
+names the code's list in its schemeID.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
+= <strong>OAK</strong> (listID
+<code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
+The variant's code for it. The code is from the Trade Accord's wood
+list: OAK = Oak.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
+= <strong>Solid oak</strong><br />
+The variant in words.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>9522610000016</strong> (schemeID <code>GS1 GTIN</code>)<br />
 The GTIN Brightmarket Stores gives the item, under its GS1 company
@@ -848,27 +864,212 @@ The seller's price per unit (world/items.json).</li>
 The price is per one unit.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The line number.</li>
-<li><code>CreditedQuantity</code> = <strong>10</strong> (unitCode
+<li><code>CreditedQuantity</code> = <strong>3</strong> (unitCode
 <code>EA</code>)<br />
-Ten chairs: the stock above the target of twenty.</li>
-<li><code>LineExtensionAmount</code> = <strong>1150.00</strong>
+Three ash benches: the stock above the target of four.</li>
+<li><code>LineExtensionAmount</code> = <strong>1140.00</strong>
+(currencyID <code>XBL</code>)<br />
+Quantity times price, rounded to the minor unit.</li>
+<li><code>Item/Description</code> = <strong>Dining bench, 1400 mm, in
+solid kiln-dried ash with a hard-wax oil finish: closed seat, glued
+joints, felt pads under the legs, seat height 45 cm.</strong><br />
+The seller's description; item marrow-bench-ash of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Elderwick Marrow bench,
+ash</strong><br />
+The item's short name; item marrow-bench-ash of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ID</code> =
+<strong>BF-MRW-B14</strong><br />
+The seller's own item number; item marrow-bench-ash of Brackenmere
+Furniture (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ExtendedID</code> =
+<strong>ASH</strong><br />
+The variant of the item: the wood, added to the item number.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/AttributeID</code>
+= <strong>WOOD</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:OtherAttributeCode</code>)<br />
+The attribute the variant differs in. The code is from the Trade
+Accord's attribute list: WOOD = Wood. An identifier that holds a code
+names the code's list in its schemeID.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
+= <strong>ASH</strong> (listID
+<code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
+The variant's code for it. The code is from the Trade Accord's wood
+list: ASH = Ash.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
+= <strong>Solid ash</strong><br />
+The variant in words.</li>
+<li><code>Item/StandardItemIdentification/ID</code> =
+<strong>9522610000047</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>E</strong>
+(schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+A sale to a business that resells or processes the goods is exempt from
+the state sales tax, which is charged only on the sale to the final
+consumer (category E). The code is from the world's copy of UN/EDIFACT
+5305 Duty or tax or fee category: E = Exempt from tax. An identifier
+that holds a code names the code's list in its schemeID.</li>
+<li><code>Item/ClassifiedTaxCategory/Percent</code> =
+<strong>0</strong><br />
+No tax is charged in this category.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxExemptionReasonCode</code> =
+<strong>RESALE</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
+The exemption reason as a code of Bayvarra's national list, the list of
+the seller's country. The code is from Bayvarra's national sales tax
+exemption reason list: RESALE = Sale for resale or manufacture.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxExemptionReason</code> =
+<strong>Sale for resale or manufacture</strong><br />
+The name of code RESALE in Bayvarra's national sales tax exemption
+reason list.</li>
+<li><code>Item/ClassifiedTaxCategory/SupplyTypeCode</code> =
+<strong>GOODS</strong> (listID
+<code>urn:ubl-examples:world:codelist:SupplyTypeCode</code>)<br />
+Whether the category applies to goods or services. The code is from the
+Trade Accord's supply type list: GOODS = Goods.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
+<strong>STT</strong> (schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+STT = State/provincial sales tax. An identifier that holds a code names
+the code's list in its schemeID.</li>
+<li><code>Price/PriceAmount</code> = <strong>380</strong> (currencyID
+<code>XBL</code>)<br />
+The seller's price per unit (world/items.json).</li>
+<li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
+<code>EA</code>)<br />
+The price is per one unit.</li>
+<li><code>ID</code> = <strong>3</strong><br />
+The line number.</li>
+<li><code>CreditedQuantity</code> = <strong>5</strong> (unitCode
+<code>EA</code>)<br />
+Five oak chairs: the stock above the target of twelve.</li>
+<li><code>LineExtensionAmount</code> = <strong>575.00</strong>
 (currencyID <code>XBL</code>)<br />
 Quantity times price, rounded to the minor unit.</li>
 <li><code>Item/Description</code> = <strong>Dining chair in solid
-kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued
-joints, felt pads under the legs, seat height 45 cm.</strong><br />
-The seller's description; item marrow-chair of Brackenmere Furniture
+kiln-dried oak with a hard-wax oil finish: closed seat, glued joints,
+felt pads under the legs, seat height 45 cm.</strong><br />
+The seller's description; item marrow-chair-oak of Brackenmere Furniture
 (world/items.json).</li>
-<li><code>Item/Name</code> = <strong>Elderwick Marrow
-chair</strong><br />
-The item's short name; item marrow-chair of Brackenmere Furniture
+<li><code>Item/Name</code> = <strong>Elderwick Marrow chair,
+oak</strong><br />
+The item's short name; item marrow-chair-oak of Brackenmere Furniture
 (world/items.json).</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>BF-MRW-C</strong><br />
-The seller's own item number; item marrow-chair of Brackenmere Furniture
-(world/items.json).</li>
+The seller's own item number; item marrow-chair-oak of Brackenmere
+Furniture (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ExtendedID</code> =
+<strong>OAK</strong><br />
+The variant of the item: the wood, added to the item number.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/AttributeID</code>
+= <strong>WOOD</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:OtherAttributeCode</code>)<br />
+The attribute the variant differs in. The code is from the Trade
+Accord's attribute list: WOOD = Wood. An identifier that holds a code
+names the code's list in its schemeID.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
+= <strong>OAK</strong> (listID
+<code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
+The variant's code for it. The code is from the Trade Accord's wood
+list: OAK = Oak.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
+= <strong>Solid oak</strong><br />
+The variant in words.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>9522610000023</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Brightmarket Stores gives the item, under its GS1 company
+prefix, which starts with 952: GS1 reserves that prefix for
+demonstrations and examples, so the number belongs to no real product;
+the item is Brightmarket Stores' own label Elderwick, made for it by
+Brackenmere Furniture: under GS1 rules the brand owner numbers the item,
+not the manufacturer, so the number is Brightmarket Stores', whoever
+sells the item (world/items.json).</li>
+<li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>E</strong>
+(schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+A sale to a business that resells or processes the goods is exempt from
+the state sales tax, which is charged only on the sale to the final
+consumer (category E). The code is from the world's copy of UN/EDIFACT
+5305 Duty or tax or fee category: E = Exempt from tax. An identifier
+that holds a code names the code's list in its schemeID.</li>
+<li><code>Item/ClassifiedTaxCategory/Percent</code> =
+<strong>0</strong><br />
+No tax is charged in this category.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxExemptionReasonCode</code> =
+<strong>RESALE</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
+The exemption reason as a code of Bayvarra's national list, the list of
+the seller's country. The code is from Bayvarra's national sales tax
+exemption reason list: RESALE = Sale for resale or manufacture.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxExemptionReason</code> =
+<strong>Sale for resale or manufacture</strong><br />
+The name of code RESALE in Bayvarra's national sales tax exemption
+reason list.</li>
+<li><code>Item/ClassifiedTaxCategory/SupplyTypeCode</code> =
+<strong>GOODS</strong> (listID
+<code>urn:ubl-examples:world:codelist:SupplyTypeCode</code>)<br />
+Whether the category applies to goods or services. The code is from the
+Trade Accord's supply type list: GOODS = Goods.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
+<strong>STT</strong> (schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+STT = State/provincial sales tax. An identifier that holds a code names
+the code's list in its schemeID.</li>
+<li><code>Price/PriceAmount</code> = <strong>115</strong> (currencyID
+<code>XBL</code>)<br />
+The seller's price per unit (world/items.json).</li>
+<li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
+<code>EA</code>)<br />
+The price is per one unit.</li>
+<li><code>ID</code> = <strong>4</strong><br />
+The line number.</li>
+<li><code>CreditedQuantity</code> = <strong>5</strong> (unitCode
+<code>EA</code>)<br />
+Five ash chairs: the stock above the target of eight.</li>
+<li><code>LineExtensionAmount</code> = <strong>575.00</strong>
+(currencyID <code>XBL</code>)<br />
+Quantity times price, rounded to the minor unit.</li>
+<li><code>Item/Description</code> = <strong>Dining chair in solid
+kiln-dried ash with a hard-wax oil finish: closed seat, glued joints,
+felt pads under the legs, seat height 45 cm.</strong><br />
+The seller's description; item marrow-chair-ash of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Elderwick Marrow chair,
+ash</strong><br />
+The item's short name; item marrow-chair-ash of Brackenmere Furniture
+(world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ID</code> =
+<strong>BF-MRW-C</strong><br />
+The seller's own item number; item marrow-chair-ash of Brackenmere
+Furniture (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ExtendedID</code> =
+<strong>ASH</strong><br />
+The variant of the item: the wood, added to the item number.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/AttributeID</code>
+= <strong>WOOD</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:OtherAttributeCode</code>)<br />
+The attribute the variant differs in. The code is from the Trade
+Accord's attribute list: WOOD = Wood. An identifier that holds a code
+names the code's list in its schemeID.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
+= <strong>ASH</strong> (listID
+<code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
+The variant's code for it. The code is from the Trade Accord's wood
+list: ASH = Ash.</li>
+<li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
+= <strong>Solid ash</strong><br />
+The variant in words.</li>
+<li><code>Item/StandardItemIdentification/ID</code> =
+<strong>9522610000054</strong> (schemeID <code>GS1 GTIN</code>)<br />
 The GTIN Brightmarket Stores gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
@@ -932,7 +1133,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;6120&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Home and garden department&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;2&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;4&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DefaultLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:DefaultLanguageCode</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BS-PO-26-0574&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1189,65 +1390,147 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CreditNoteLine</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;7&lt;/<span class="kw">cbc:CreditedQuantity</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2660.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:CreditedQuantity</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;1520.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow bench, oak&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-B14&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;RESALE&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Sale for resale or manufacture&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;380&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CreditNoteLine</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CreditNoteLine</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:CreditedQuantity</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;1150.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow chair&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-C&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000023&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;RESALE&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Sale for resale or manufacture&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CreditNoteLine</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CreditNote</span>&gt;</span></code></pre></div>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;OAK&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;OAK&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid oak&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;RESALE&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Sale for resale or manufacture&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;380&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;3&lt;/<span class="kw">cbc:CreditedQuantity</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;1140.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow bench, ash&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-B14&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;ASH&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;ASH&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid ash&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000047&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;RESALE&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Sale for resale or manufacture&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;380&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;5&lt;/<span class="kw">cbc:CreditedQuantity</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;575.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow chair, oak&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-C&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;OAK&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;OAK&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid oak&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000023&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;RESALE&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Sale for resale or manufacture&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;5&lt;/<span class="kw">cbc:CreditedQuantity</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;575.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Elderwick Marrow chair, ash&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BF-MRW-C&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;ASH&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;ASH&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid ash&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000054&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;RESALE&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Sale for resale or manufacture&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CreditNoteLine</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CreditNote</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>7c976a9</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3ab705d095f69e49c4edfc1567461103d919cc78"><code>3ab705d</code></a> of 2026-11-19 10:57 UTC</p></div></footer>
 </body>
 </html>
