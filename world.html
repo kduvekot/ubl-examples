@@ -43,6 +43,9 @@ body { margin: 0; background: var(--ui-bg); color: var(--ui-text); font: 14px/1.
   border: 1px solid var(--ui-line); border-bottom-width: 3px; border-radius: 4px; padding: 6px 10px; cursor: pointer;
   display: inline-flex; align-items: center; gap: 6px; }
 .layers button[aria-pressed="false"], #grid[aria-pressed="false"] { opacity: .55; }
+.sheet-link { font: 500 13px/1 var(--font-pixel); color: var(--ui-text); background: var(--ui-bg-2); border: 1px solid var(--ui-line);
+  border-bottom-width: 3px; border-radius: 4px; padding: 6px 10px; text-decoration: none; white-space: nowrap; }
+.sheet-link:hover, .sheet-link:focus-visible { outline: 2px solid var(--c-logistics); outline-offset: 2px; }
 .layers button:focus-visible, .zoom button:focus-visible, .party:focus-visible { outline: 2px solid var(--c-logistics); outline-offset: 2px; }
 .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 .zoom { margin-left: auto; display: flex; gap: 6px; align-items: center; }
@@ -106,6 +109,7 @@ canvas.dragging { cursor: grabbing; }
     <button id="zoom-in" aria-label="Zoom in">+</button>
     <button id="zoom-fit">Fit</button>
     <button id="grid" aria-pressed="false" title="Show the tile grid">Grid</button>
+    <a class="sheet-link" href="map-sheet.html" title="The printed map sheet (A3, 1 : 2,500,000)">Map sheet</a>
   </div>
 </header>
 
