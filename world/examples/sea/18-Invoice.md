@@ -41,6 +41,13 @@ The forwarder invoices what it arranged for the distributor: its truck to the po
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
 
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **LD-FI-26-0131**  
+  The distributor's forwarding instructions, the order the forwarder's services follow (sea/18#F8).
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -443,6 +450,10 @@ Inside `InvoiceLine`:
   One export declaration.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
   1 × 85.0, rounded to the minor unit of the currency.
+- `DocumentReference/ID` = **BF-EX-26-0135**  
+  The export declaration the forwarder lodged as customs agent (sea/18#F8).
+- `DocumentReference/DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-EX-26-0135 is the example sea/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 - `Item/Description` = **Preparing and lodging one export declaration as customs agent.**  
   The seller's description; item export-clearance of Bayforth Forwarding (world/items.json).
 - `Item/Name` = **Export customs clearance**  
@@ -520,6 +531,9 @@ Inside `InvoiceLine`:
   <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>LD-FI-26-0131</cbc:ID>
+  </cac:OrderReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
@@ -855,6 +869,10 @@ Inside `InvoiceLine`:
     <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cac:DocumentReference>
+      <cbc:ID>BF-EX-26-0135</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Preparing and lodging one export declaration as customs agent.</cbc:Description>
       <cbc:Name>Export customs clearance</cbc:Name>

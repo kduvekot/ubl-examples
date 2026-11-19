@@ -314,8 +314,8 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Frame carton crushed at the port of Selanu.**  
-  What happened.
+- `Note` = **Frame carton crushed at the port of Selanu; the cracked frame VI-SF-01501 is scrapped by the buyer, not returned.**  
+  What happened, and what becomes of the frame (D30, goods balance).
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The frame that arrived cracked.
 - `LineExtensionAmount` = **68.00** (currencyID `XBL`)  
@@ -607,7 +607,7 @@ Inside `CreditNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Frame carton crushed at the port of Selanu.</cbc:Note>
+    <cbc:Note>Frame carton crushed at the port of Selanu; the cracked frame VI-SF-01501 is scrapped by the buyer, not returned.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">68.00</cbc:LineExtensionAmount>
     <cac:BillingReference>

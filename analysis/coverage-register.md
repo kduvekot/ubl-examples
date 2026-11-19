@@ -157,6 +157,12 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `DocumentReference/XPath` | 0..n | sea/03-DigitalAgreement |  |  | open |
 | `ExternalReference/CharacterSetCode` | 0..1 | sea/03-DigitalAgreement |  |  | open |
 
+> C115, D30 points 6 and 9: the carrier's service description classifies its service with no goods code for seats (sea/08#F7).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TransportationService/CommodityClassification` | 0..n | sea/08-TransportServiceDescription |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

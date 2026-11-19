@@ -1947,7 +1947,9 @@ def sea_consignment(f, view):
                                                                  "Transport"),
             "OnCarriageIndicator": V("true", "After the main carriage."),
             "CarrierParty": party("9-xl", short=True),
-            "ReceiptTransportEvent": kit.event(f, SEA_ARRIVES + 1, None, "Planned receipt at the 3PL.", done=False, location=SEA_3PL),
+            "ReceiptTransportEvent": kit.event(f, SEA_ARRIVES + 1, None, "Planned receipt at the 3PL, the day after "
+                                               "discharge, as planned when the bill was issued.", done=False,
+                                               location=SEA_3PL),
             "WarehousingTransportEvent": kit.event(f, SEA_ARRIVES + 1, None, "Stored at the 3PL until called off.", done=False, location=SEA_3PL)},
         "InsurancePolicy": {"ID": V("WS-CP-26-4471", "The cargo policy of the insurer."),
                             "InsuranceTypeCode": V("ALLRISKS", "Cover against all risks."),
@@ -2111,10 +2113,14 @@ def sea_order_response(f, n, doc):
                           "DeliveryLocation": kit.place("XLSEL", "The named port.")},
         "PaymentMeans": kit.payment_means(f, seller, buyer, seller, 4, 1, so, "The distributor's account for the "
                                           "deposit."),
-        "PaymentTerms": {"ID": V("DEPOSIT", "The deposit."),
-                         "Note": V("Deposit due on acceptance.", "The first instalment."),
-                         "Amount": amount(DEPOSIT, "XBL", "The deposit asked."),
-                         "PaymentDueDate": V(f.date(5), "Within a day.")},
+        "PaymentTerms": [{"ID": V("DEPOSIT", "The deposit."),
+                          "Note": V("Deposit due on acceptance.", "The first instalment."),
+                          "Amount": amount(DEPOSIT, "XBL", "The deposit asked."),
+                          "PaymentDueDate": V(f.date(5), "Within a day.")},
+                         {"ID": V("BALANCE", "The balance, the second instalment, as the note says (sea/06#F12)."),
+                          "Note": V("The balance 45 days after shipment.", "The second instalment."),
+                          "Amount": amount(base + tax - DEPOSIT, "XBL", "The confirmed total less the deposit."),
+                          "InstallmentDueDate": V(f.date(55), "45 days after the shipment on the sailing of 14 May.")}],
         "TransactionConditions": {"ID": V("LD-TC-01", "The distributor's conditions of sale."),
                                   "Description": V("Sold to trade customers only.", "The condition.")},
         "DestinationCountry": {"IdentificationCode": V("XL", "The goods go to the island.")},
@@ -2156,7 +2162,8 @@ def sea(n, doc):
     f = SEA
     w = kit.gross_weight(f, "ordered")
     if doc["doc"] == "Catalogue":
-        return kit.catalogue(f, n, doc, 0, "The export catalogue for the island customer.",
+        return kit.catalogue(f, n, doc, 1, "The export catalogue for the island customer, sent on Tuesday 5 May, "
+                                           "after Bayvarra's Labour Day (D27, D30 point 6).",
                              ["bench-serra-b", "bench-casting-b"], 180, alternative="XLC")
     if doc["doc"] == "DigitalAgreement":
         return {"ID": V(f.number("agreement", doc["from"], "DigitalAgreement"), "The agreement's number."),
@@ -2195,7 +2202,9 @@ def sea(n, doc):
     if doc["doc"] == "ForwardingInstructions" and doc["from"] == "6-xb":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The distributor's "
                                                                                        "instruction number."),
-                "IssueDate": V(f.date(5), "The distributor instructs its forwarder once the order is accepted."),
+                "IssueDate": V(f.date(7), "The distributor instructs its forwarder on the first working day after "
+                                          "the order was accepted and the deposit paid (D27, D30 point 6)."),
+                "IssueTime": V("08:40:00", "First thing in the morning."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
                              "Consignment": sea_consignment_fi(f, doc),
@@ -2240,12 +2249,23 @@ def sea(n, doc):
             "Consignment": {"OfficeOfExportLocation": {"Name": V("Customs office, port of Lumeport", "Where the "
                                                                  "export is declared.")},
                             "OfficeOfExitLocation": {"Name": V("Customs office, port of Lumeport", "Where the goods "
-                                                               "leave Bayvarra: the same port.")}}})
+                                                               "leave Bayvarra: the same port.")}},
+            "ShipmentStage": {"ID": V("2", "The sea leg on which the goods leave Bayvarra, stage 2 as on the bill of "
+                                           "lading (sea/11#F14)."),
+                              "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
+                                                                                        "Codes for Modes of "
+                                                                                        "Transport"),
+                              "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage the container is "
+                                                          "booked on.", "EB"),
+                              "EstimatedDepartureTransportEvent": kit.event(f, 10, SEA_SAILS + ":00", "The "
+                                                                            "timetable departure from Lumeport.",
+                                                                            done=False, location=SEA_LUMEPORT)}})
         return out
     if doc["doc"] == "ForwardingInstructions":
         return {"ID": V(f.number("instructions-carrier", doc["from"], "ForwardingInstructions"),
                         "The forwarder's booking number with the ocean carrier."),
-                "IssueDate": V(f.date(6), "The forwarder books the container."),
+                "IssueDate": V(f.date(7), "The forwarder books the container the same morning (D27, D30 point 6)."),
+                "IssueTime": V("09:15:00", "After the distributor's instructions."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment booked."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
                              "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")}}}
@@ -2337,25 +2357,32 @@ def sea(n, doc):
                                              "TransportHandlingUnit": {"TransportEquipment": {
                                                  "ID": V(CONTAINER, "The container.", schemeID="ISO6346"),
                                                  "QuarantineTransportEvent": kit.event(
-                                                     f, SEA_ARRIVES, "15:00:00", "Released from the quarantine check, "
-                                                     "which held the container from 12:00: the pallets' heat-treatment "
-                                                     "marks checked, all pallets heat-treated (sea/17#F2).",
-                                                     description="Held from 12:00 for a check of the pallets: wooden "
-                                                                 "pallets must carry the heat-treatment mark, and "
-                                                                 "one mark was illegible.",
-                                                     done=True, location=SEA_SELANU),
+                                                     f, SEA_ARRIVES, "12:00:00", "The container held from 12:00 at the "
+                                                     "plant health check of its pallets: the hold is the container's, "
+                                                     "not the ship's (sea/17#F2).",
+                                                     description="Held for a check of the pallets: wooden pallets must "
+                                                                 "carry the heat-treatment mark, and one mark is "
+                                                                 "illegible, so customs inspects the container "
+                                                                 "tomorrow, 18 May.",
+                                                     done=False, location=SEA_SELANU),
                                                  "TransportEvent": kit.event(f, SEA_ARRIVES, "11:40:00", "Stacked in the "
                                                                                                 "import yard.", location=SEA_SELANU, type_code="STORAGE")}}}}, event_type="DISCHARGE")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return kit.invoice(f, n, doc, 15, "Issued after the sailing.",
-                           {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
+                           {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")},
+                            "OrderReference": {"ID": V(f.numbers["instructions"], "The distributor's forwarding "
+                                                       "instructions, the order the forwarder's services follow "
+                                                       "(sea/18#F8).")}},
                            [{"item": "container-haulage", "qty": 1, "invoice_why": "The container from the quay to "
                                                                                    "Marrowdale and back packed: the "
                                                                                    "pre-carriage the bill of lading "
                                                                                    "names, the forwarder's own "
                                                                                    "truck."},
                             {"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container."},
-                            {"item": "export-clearance", "qty": 1, "invoice_why": "One export declaration."},
+                            {"item": "export-clearance", "qty": 1, "invoice_why": "One export declaration.",
+                             "line_extra": {"DocumentReference": {"ID": V(f.numbers["export"], "The "
+                                                                          "export declaration the forwarder lodged "
+                                                                          "as customs agent (sea/18#F8).")}}},
                             {"item": "cargo-insurance", "qty": 1, "invoice_why": "Insurance of this shipment.",
                              "unit_price": f"{INSURANCE:.2f}",
                              "unit_price_why": f"The premium: {insurance_basis()}, the cover CIF asks (O173).",
@@ -2407,7 +2434,8 @@ def sea(n, doc):
     if doc["doc"] == "Statement":
         cur, total = "XBL", f.numbers["invoice-amount"]
         out = {"ID": V(f.number("statement", doc["from"], "Statement"), "The factor's statement number."),
-                "IssueDate": V(f.date(40), "The monthly statement of account."),
+                "IssueDate": V(f.date(39), "The monthly statement of account, on Friday 12 June, the factor's last "
+                                           "working day of the week (D27, D30 point 6)."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
                 "StatementTypeCode": V("ACCOUNT", "A statement of the account."),
                 "Note": V("Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring "
@@ -2474,7 +2502,10 @@ def sea(n, doc):
         frames_line = next(i for i, d in enumerate(f.deal, 1) if d["item"] == "bench-casting-b")
         out = kit.credit_note(f, n, doc, 42, "Issued when the distributor accepted the buyer's claim.",
                               [{"item": "bench-casting-b", "qty": 1, "why": "The frame that arrived cracked.",
-                                "line_extra": {"Note": V("Frame carton crushed at the port of Selanu.", "What happened."),
+                                "line_extra": {"Note": V(f"Frame carton crushed at the port of Selanu; the cracked "
+                                                         f"frame {SEA_CRACKED_FRAME} is scrapped by the buyer, not "
+                                                         "returned.", "What happened, and what becomes of the "
+                                                                      "frame (D30, goods balance)."),
                                                "BillingReference": {
                                                    "InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
                                                                                         "invoice of the frames.")},
@@ -5167,15 +5198,20 @@ def rail(n, doc):
 
 def sea(n, doc):
     f, d = SEA, doc["doc"]
-    service = {"TransportServiceCode": V("OCEANCONT", "The service, as a code of the Trade Accord's transport services."),
-               "Name": V("Weekly service Lumeport–Selanu", "The name of the service.")}
+    service = {"TransportServiceCode": V("PORTTOPORT", "The extent of the service, as UBL's element asks: from the "
+                                                        "port of loading to the port of discharge (sea/08#F6)."),
+               "Name": V("Weekly container liner service Lumeport–Selanu", "The name of the service: a scheduled "
+                                                                         "liner service for containers.")}
     if d == "BusinessCard":
-        return head(f, "business-card", doc, 0, "Sent before the first offer to the new customer.")
+        return head(f, "business-card", doc, 1, "Sent before the first offer to the new customer, on Tuesday 5 May, "
+                                                "after Bayvarra's Labour Day (D27, D30 point 6).")
     if d == "TransportServiceDescriptionRequest":
         return {**head(f, "tsd-request", doc, 4, "Asked once the order is accepted."),
                 "IssueTime": V("14:00:00", "The time of the request."),
-                "TransportationService": {"TransportServiceCode": V("OCEANCONT", "The service asked about: a "
-                                                                                      "container liner service.")}}
+                "TransportationService": {"TransportServiceCode": V("PORTTOPORT", "The extent of the service asked "
+                                                                    "about: port to port, the forwarder bringing the "
+                                                                    "container to the quay itself (sea/07#F3)."),
+                                          "Name": V("Container liner service", "The kind of service asked about.")}}
     if d == "TransportServiceDescription":
         return {**head(f, "tsd", doc, 5, "The carrier answers the next day."), "TransportationService": {
             **service,
@@ -5187,8 +5223,9 @@ def sea(n, doc):
                                                   "The service in words."),
             "TransportationServiceDetailsURI": V("https://www.tidewell.example/services/island", "Where the "
                                                                                                  "schedule is."),
-            "NominationDate": V(f.date(5), "The day the service is offered for this shipment."),
-            "NominationTime": V("10:00:00", "In the morning."),
+            "NominationDate": V(f.date(8), "The deadline for booking a container on this sailing: two days before "
+                                           "it, after the forwarder's booking of 11 May (sea/08#F1)."),
+            "NominationTime": V("12:00:00", "At noon."),
             "SequenceNumeric": V("1", "The first of the services offered."),
             "SupportedTransportEquipment": [
                 {"SizeTypeCode": V("22G1", "A 20-foot dry container, as an ISO 6346 size and type: the size type "
@@ -5200,21 +5237,31 @@ def sea(n, doc):
                                                              "container.")},
             "SupportedCommodityClassification": {"CargoTypeCode": V("GEN", "General cargo in containers.")},
             "UnsupportedCommodityClassification": {"CargoTypeCode": V("BULK", "No loose bulk on this service.")},
-            "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a subclass of the UN Central Product Classification: seats with metal frames.")},
             "TotalCapacityDimension": {"AttributeID": V("TEU", "The ship's capacity in twenty-foot units."),
                                        "Measure": V("1000", "One thousand twenty-foot units (unit 20: twenty foot container).",
                                                     unitCode="20")},
             "ShipmentStage": {"ID": V("1", "Lumeport to Selanu."),
                               "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
                                                                                         "Codes for Modes of "
-                                                                                        "Transport")},
+                                                                                        "Transport"),
+                              "LoadingPortLocation": kit.place("XBLMP", "The port the service loads at."),
+                              "UnloadingPortLocation": kit.place("XLSEL", "The port it discharges at "
+                                                                          "(sea/08#F12).")},
             "TransportEvent": kit.event(f, 10, SEA_SAILS + ":00", "The next departure from Lumeport.", done=False,
                                       location=kit.place("XBLMP", "The port the service sails from."),
                                       type_code="DEPARTURE"),
             "ResponsibleTransportServiceProviderParty": party("11-xb", short=True),
             "EnvironmentalEmission": {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases."),
                                       "ValueMeasure": V("380", "Per 40-foot container on the crossing.",
-                                                        unitCode="KGM")},
+                                                        unitCode="KGM"),
+                                      "Description": V("Per 40-foot container from Lumeport to Selanu: the ship's "
+                                                       "fuel of the crossing shared over the containers it carries.",
+                                                       "What the figure applies to (sea/08#F13)."),
+                                      "EmissionCalculationMethod": {
+                                          "CalculationMethodCode": V("CALCULATED", "Calculated from the ship's fuel "
+                                                                                   "use."),
+                                          "MeasurementFromLocation": {"Name": V("Port of Lumeport", "From.")},
+                                          "MeasurementToLocation": {"Name": V("Port of Selanu", "To.")}}},
             "EstimatedDurationPeriod": {"DurationMeasure": V(str(wmap.whole(SEA_HOURS / 24)), f"Two days at sea: "
                                                              f"{wmap.nearest(SEA_KM, 10):,} km "
                                                              f"({wmap.nearest(SEA_KM / 1.852, 10)} nautical miles) "
@@ -6062,7 +6109,9 @@ def fi_extras(f, n, doc, out):
     x = {"Name": V("Forwarding instructions", "What they are."),
          "Description": V("Instructions for the shipment to the island." if f.id != "cotton" else
                           "Instructions for the bales to Bayvarra.", "In words."),
-         "Note": V("Please confirm the booking.", "What the sender expects."),
+         "Note": V(f"Please confirm the shipping instructions for booking {SEA_BOOKING}." if carrier_booking else
+                   "Please confirm the booking.", "What the sender expects: from the carrier, the instructions for "
+                   "the booking it already gave (sea/12#F6)." if carrier_booking else "What the sender expects."),
          "ToOrderIndicator": V("true" if f.id == "sea" else "false", "A bill of lading to order, so the buyer can "
                                                                      "transfer it." if f.id == "sea" else
                                "A straight bill: the consignee is named."),
@@ -6231,9 +6280,23 @@ def _(f, n, doc, out):
 
 @enrich("sea", "ReceiptAdvice")
 def _(f, n, doc, out):
-    return {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading the goods came "
+    frames = next(ln for d, ln in zip(f.deal, out["ReceiptLine"]) if d["item"] == "bench-casting-b")
+    frames["ReceivedQuantity"] = qty(12, "EA", "All twelve frames arrived; one of them is refused, so eleven go into "
+                                               "the buyer's stock (sea/21#F8).")
+    frames["Item"] = {**frames.get("Item", {}),
+                      "ItemInstance": {"SerialID": V(SEA_CRACKED_FRAME, "The serial of the cracked frame, as the "
+                                                     "despatch advice lists it (sea/21#F9).")}}
+    return {"Note": V("Counted and checked at goods-in. The container was collected from the port on 19 May, the "
+                      "day after customs released it; one frame is refused as damaged, and we pass on Velumi "
+                      "Trading's request for its credit.", "What the receipt says: when the on-carriage took place "
+                      "(timelines#F7), and that the 3PL relays the buyer's request for a credit, not its own "
+                      "(sea/21#F7, D30 point 9)."),
+            "AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading the goods came "
                                                                      "under.")},
             "Signature": seal(doc["from"], "NW-SIG-26-RA")}
+
+
+SEA_CRACKED_FRAME = "VI-SF-01501"     # the frame in the carton crushed at Selanu, the last of the twelve
 
 
 @enrich("sea", "DespatchAdvice")
@@ -9084,20 +9147,25 @@ def _(f, n, doc, out):
     cd = out.get("CustomsDeclaration")
     if isinstance(cd, dict):
         prev = previous_declarations(f, "6-xb")      # the exporter's ledger: Lumeway, for whom the forwarder declares
-        # rail/14 exists since G3 (D37); O164 makes it this declaration's previous declaration when the sea flow is
-        # built, the road import becoming a typed additional reference; until then the road import stays
-        built = [(fl, what) for fl, what in prev if FLOWS[fl].numbers.get("import") and fl != "rail"]
-        if len(built) != 1:
-            raise SystemExit(f"sea export: the goods chain gives {built} as previous declarations; UBL allows one")
-        fl, what = built[0]
-        missing = [w for fl2, w in prev if (fl2, w) != built[0]]
+        # O164: the previous declaration is the rail import of the benches, the bulk of the goods (rail/14, D37); the
+        # frames' road import is a typed additional reference (UBL allows one previous declaration)
+        by_flow = {}
+        for fl, what in prev:
+            by_flow.setdefault(fl, []).append(what)
+        if set(by_flow) != {"rail", "road"}:
+            raise SystemExit(f"sea export: the goods chain gives {sorted(by_flow)} as previous declarations, not the "
+                             "rail import of the benches and the road import of the frames (O164)")
         cd["PreviousCustomsDeclaration"] = {
-            "ID": V(FLOWS[fl].numbers["import"], f"The import declaration under which {what} entered Bayvarra from "
-                    f"Urvania (flow {fl}; the stock ledger of world/items.json, D21): they now leave again."
-                    + (f" {(' and '.join(missing))[0].upper() + (' and '.join(missing))[1:]} entered under the "
-                       f"rail delivery's import declaration {FLOWS['rail'].numbers.get('import')} (rail/14, D37), which "
-                       "becomes this declaration's previous declaration with the sea flow (O164)." if missing else "")),
+            "ID": V(FLOWS["rail"].numbers["import"], f"The import declaration under which {' and '.join(by_flow['rail'])} "
+                    "entered Bayvarra from Urvania (rail/14, the Accord's common transit ended at Marrowdale; the "
+                    "stock ledger of world/items.json, D21): the bulk of the goods now leaves again (O164)."),
             "FunctionCode": V("IMPORT", "The kind of the previous declaration.")}
+        refs = cd.get("AdditionalDocumentReference")
+        refs = [refs] if isinstance(refs, dict) else list(refs or [])
+        cd["AdditionalDocumentReference"] = refs + [{"ID": V(FLOWS["road"].numbers["import"], f"The import "
+                                                             f"declaration under which {' and '.join(by_flow['road'])} "
+                                                             "entered Bayvarra by road in March, a previous customs "
+                                                             "declaration of the goods beside the one above (O164).")}]
     return {}
 
 
@@ -9233,7 +9301,10 @@ def _(f, n, doc, out):
                     "Quantity": qty(4, "EA", "The benches on one pallet: four, as the distributor sells them."),
                     "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
                     "ContainedPackage": [kit.parcel_package(p) for p in kit.maker("bench-serra-b")["parcels"]]}}
-    return {}       # the whole order is not the port's: its originator and beneficiary are on its line (O172)
+    # the whole order is not the port's: its originator and beneficiary are on its line (O172); the port's request
+    # it follows is named from the order on (sea/06#F6)
+    return {"OriginatorDocumentReference": {"ID": V("PS-REQ-26-0031", "The Port of Selanu's request to the trader, "
+                                                                      "which the order's port line follows.")}}
 
 
 @enrich("sea", "OrderResponse")

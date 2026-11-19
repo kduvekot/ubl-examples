@@ -1977,7 +1977,8 @@
     "then": "vabul",
     "timetable": "santul",
     "was": "kagaz",
-    "rules": "trilhek"
+    "rules": "trilhek",
+    "port": "sterstul"
    }
   },
   "qal": {
@@ -3100,7 +3101,8 @@
     "bodies": "senatu",
     "stream": "tamohi",
     "tare": "nimeme",
-    "rules": "lelahe"
+    "rules": "lelahe",
+    "port": "kaloli"
    }
   },
   "en": {

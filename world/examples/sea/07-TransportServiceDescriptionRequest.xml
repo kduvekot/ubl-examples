@@ -113,6 +113,7 @@
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:TransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">OCEANCONT</cbc:TransportServiceCode>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">PORTTOPORT</cbc:TransportServiceCode>
+    <cbc:Name>Container liner service</cbc:Name>
   </cac:TransportationService>
 </TransportServiceDescriptionRequest>

@@ -15,6 +15,9 @@
   <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>LD-FI-26-0131</cbc:ID>
+  </cac:OrderReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
@@ -350,6 +353,10 @@
     <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cac:DocumentReference>
+      <cbc:ID>BF-EX-26-0135</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Preparing and lodging one export declaration as customs agent.</cbc:Description>
       <cbc:Name>Export customs clearance</cbc:Name>

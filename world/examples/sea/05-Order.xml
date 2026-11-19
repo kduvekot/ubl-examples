@@ -14,6 +14,10 @@
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:DocumentType>Request</cbc:DocumentType>
+  </cac:OriginatorDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>

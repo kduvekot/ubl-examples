@@ -22,8 +22,8 @@ The distributor introduces itself to the new island customer.
   The sender's number for this document.
 - `UUID` = **da594e74-bfa8-5df5-ab8d-930b60c73ea9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-04**  
-  Sent before the first offer to the new customer.
+- `IssueDate` = **2026-05-05**  
+  Sent before the first offer to the new customer, on Tuesday 5 May, after Bayvarra's Labour Day (D27, D30 point 6).
 - `IssueTime` = **16:39:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `VersionID` = **2**  
@@ -255,7 +255,7 @@ Inside `BusinessCapability`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0123</cbc:ID>
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
-  <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>16:39:00-01:00</cbc:IssueTime>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>

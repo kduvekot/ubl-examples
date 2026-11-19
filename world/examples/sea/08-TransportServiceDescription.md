@@ -198,8 +198,8 @@ Inside `ValidityPeriod`:
 
 Inside `TransportationService`:
 
-- `TransportServiceCode` = **OCEANCONT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The service, as a code of the Trade Accord's transport services. The code is from the Trade Accord's transport service list: OCEANCONT = Container liner service.
+- `TransportServiceCode` = **PORTTOPORT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
+  The extent of the service, as UBL's element asks: from the port of loading to the port of discharge (sea/08#F6). The code is from the Trade Accord's transport service list: PORTTOPORT = Port to port.
 - `TariffClassCode` = **FAK** (listID `urn:ubl-examples:world:codelist:TariffClassCode`)  
   Freight all kinds: one rate whatever the goods. The code is from the Trade Accord's tariff class list: FAK = Freight all kinds.
 - `Priority` = **Standard**  
@@ -210,12 +210,12 @@ Inside `TransportationService`:
   The service in words.
 - `TransportationServiceDetailsURI` = **https://www.tidewell.example/services/island**  
   Where the schedule is.
-- `NominationDate` = **2026-05-09**  
-  The day the service is offered for this shipment.
-- `NominationTime` = **10:00:00**  
-  In the morning.
-- `Name` = **Weekly service Lumeport–Selanu**  
-  The name of the service.
+- `NominationDate` = **2026-05-12**  
+  The deadline for booking a container on this sailing: two days before it, after the forwarder's booking of 11 May (sea/08#F1).
+- `NominationTime` = **12:00:00**  
+  At noon.
+- `Name` = **Weekly container liner service Lumeport–Selanu**  
+  The name of the service: a scheduled liner service for containers.
 - `SequenceNumeric` = **1**  
   The first of the services offered.
 - `TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
@@ -226,8 +226,6 @@ Inside `TransportationService`:
   A 40-foot dry container, as an ISO 6346 size and type. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
 - `UnsupportedTransportEquipment/SizeTypeCode` = **45R1** (listID `ISO 6346`)  
   A 40-foot reefer, as an ISO 6346 size and type: the island port has no reefer plugs. The code is from the world's copy of ISO 6346 container size and type code: 45R1 = 40 ft, 9 ft 6 in high, thermal, refrigerated and heated.
-- `CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
-  The benches, as a subclass of the UN Central Product Classification: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `SupportedCommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
   General cargo in containers. The code is from the Trade Accord's cargo type list: GEN = General cargo.
 - `UnsupportedCommodityClassification/CargoTypeCode` = **BULK** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
@@ -240,6 +238,18 @@ Inside `TransportationService`:
   Lumeport to Selanu.
 - `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `ShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/LoadingPortLocation/Name` = **Port of Lumeport**  
+  The port the service loads at.
+- `ShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `ShipmentStage/UnloadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/UnloadingPortLocation/Name` = **Port of Selanu**  
+  The port it discharges at (sea/08#F12).
+- `ShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `TransportEvent/OccurrenceDate` = **2026-05-14**  
   The next departure from Lumeport.
 - `TransportEvent/OccurrenceTime` = **18:00:00**  
@@ -262,6 +272,18 @@ Inside `TransportationService`:
   Greenhouse gases. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `EnvironmentalEmission/ValueMeasure` = **380** (unitCode `KGM`)  
   Per 40-foot container on the crossing.
+- `EnvironmentalEmission/Description` = **Per 40-foot container from Lumeport to Selanu: the ship's fuel of the crossing shared over the containers it carries.**  
+  What the figure applies to (sea/08#F13).
+- `EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode` = **CALCULATED** (listID `urn:ubl-examples:world:codelist:EmissionCalculationMethodCode`)  
+  Calculated from the ship's fuel use. The code is from the Trade Accord's emission calculation method list: CALCULATED = Calculated.
+- `EnvironmentalEmission/EmissionCalculationMethod/MeasurementFromLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `EnvironmentalEmission/EmissionCalculationMethod/MeasurementFromLocation/Name` = **Port of Lumeport**  
+  From.
+- `EnvironmentalEmission/EmissionCalculationMethod/MeasurementToLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `EnvironmentalEmission/EmissionCalculationMethod/MeasurementToLocation/Name` = **Port of Selanu**  
+  To.
 - `EstimatedDurationPeriod/DurationMeasure` = **2** (unitCode `DAY`)  
   Two days at sea: 1,200 km (650 nautical miles) at 13.5 knots, about 48 hours.
 - `ScheduledServiceFrequency/WeekDayCode` = **4** (listID `urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode`)  
@@ -401,15 +423,15 @@ Inside `TransportationService`:
     <cbc:EndDate>2026-08-07</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:TransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">OCEANCONT</cbc:TransportServiceCode>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">PORTTOPORT</cbc:TransportServiceCode>
     <cbc:TariffClassCode listID="urn:ubl-examples:world:codelist:TariffClassCode">FAK</cbc:TariffClassCode>
     <cbc:Priority>Standard</cbc:Priority>
     <cbc:FreightRateClassCode listID="urn:ubl-examples:world:codelist:FreightRateClassCode">BOX</cbc:FreightRateClassCode>
     <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.</cbc:TransportationServiceDescription>
     <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
-    <cbc:NominationDate>2026-05-09</cbc:NominationDate>
-    <cbc:NominationTime>10:00:00</cbc:NominationTime>
-    <cbc:Name>Weekly service Lumeport–Selanu</cbc:Name>
+    <cbc:NominationDate>2026-05-12</cbc:NominationDate>
+    <cbc:NominationTime>12:00:00</cbc:NominationTime>
+    <cbc:Name>Weekly container liner service Lumeport–Selanu</cbc:Name>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportEquipment>
       <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
@@ -423,9 +445,6 @@ Inside `TransportationService`:
     <cac:UnsupportedTransportEquipment>
       <cbc:SizeTypeCode listID="ISO 6346">45R1</cbc:SizeTypeCode>
     </cac:UnsupportedTransportEquipment>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
     <cac:SupportedCommodityClassification>
       <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
     </cac:SupportedCommodityClassification>
@@ -439,6 +458,24 @@ Inside `TransportationService`:
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
     </cac:ShipmentStage>
     <cac:TransportEvent>
       <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
@@ -466,6 +503,18 @@ Inside `TransportationService`:
     <cac:EnvironmentalEmission>
       <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
       <cbc:ValueMeasure unitCode="KGM">380</cbc:ValueMeasure>
+      <cbc:Description>Per 40-foot container from Lumeport to Selanu: the ship's fuel of the crossing shared over the containers it carries.</cbc:Description>
+      <cac:EmissionCalculationMethod>
+        <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
+        <cac:MeasurementFromLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+        </cac:MeasurementFromLocation>
+        <cac:MeasurementToLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:MeasurementToLocation>
+      </cac:EmissionCalculationMethod>
     </cac:EnvironmentalEmission>
     <cac:EstimatedDurationPeriod>
       <cbc:DurationMeasure unitCode="DAY">2</cbc:DurationMeasure>

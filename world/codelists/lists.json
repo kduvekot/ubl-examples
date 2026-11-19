@@ -1053,6 +1053,10 @@
      "Air cargo",
      "Carriage as air cargo."
     ],
+    "PORTTOPORT": [
+     "Port to port",
+     "The extent of a carriage by sea: from the port of loading to the port of discharge, without the carriage to or from the ports."
+    ],
     "MERCHHAUL": [
      "Merchant haulage",
      "The carriage of a container to or from the port or rail terminal arranged by the merchant, not by the carrier of the main carriage."

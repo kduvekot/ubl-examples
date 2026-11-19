@@ -228,12 +228,12 @@ Inside `Consignment`:
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceDate` = **2026-05-17**  
-  Released from the quarantine check, which held the container from 12:00: the pallets' heat-treatment marks checked, all pallets heat-treated (sea/17#F2).
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **15:00:00**  
+  The container held from 12:00 at the plant health check of its pallets: the hold is the container's, not the ship's (sea/17#F2).
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **12:00:00**  
   The local time.
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Description` = **Held from 12:00 for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark was illegible.**  
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Description` = **Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.**  
   What happened, in words.
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/CompletionIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -555,9 +555,9 @@ Inside `StatusPeriod`:
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cac:QuarantineTransportEvent>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
-          <cbc:Description>Held from 12:00 for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark was illegible.</cbc:Description>
-          <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+          <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
+          <cbc:Description>Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.</cbc:Description>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
             <cbc:Name>Port of Selanu</cbc:Name>

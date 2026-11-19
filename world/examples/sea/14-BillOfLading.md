@@ -545,7 +545,7 @@ Inside `Shipment`:
 - `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  
   The 3PL's warehouse on the island, where the goods are received and stored.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-05-18**  
-  Planned receipt at the 3PL.
+  Planned receipt at the 3PL, the day after discharge, as planned when the bill was issued.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  

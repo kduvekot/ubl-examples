@@ -260,6 +260,40 @@ Inside `CustomsDeclaration`:
   The carton in words; the goods item's frames travel one to a carton.
 - `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
   What the packaging is made of.
+- `Shipment/ShipmentStage/ID` = **2**  
+  The sea leg on which the goods leave Bayvarra, stage 2 as on the bill of lading (sea/11#F14).
+- `Shipment/ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `Shipment/ShipmentStage/TransportMeans/JourneyID` = **TH-26-19E**  
+  The voyage the container is booked on.
+- `Shipment/ShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/ShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `Shipment/ShipmentStage/TransportMeans/DirectionCode` = **EB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
+  The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: EB = Eastbound.
+- `Shipment/ShipmentStage/TransportMeans/TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: tidewell Harbour; the fleet of Tidewell Ocean Lines (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
+  The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTH7**  
+  The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702117**  
+  The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
+  The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
+  The ship's certificate of registry.
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `Shipment/ShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
+  The port the vessel is registered in.
 - `Shipment/ShipmentStage/CustomsAgentParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Shipment/ShipmentStage/CustomsAgentParty/PartyName/Name` = **Bayforth Forwarding**  
@@ -316,6 +350,18 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `Shipment/ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The timetable departure from Lumeport.
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **18:00:00**  
+  The local time.
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/CompletionIndicator` = **false**  
+  Whether the event has taken place (true) or is still to come (false).
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `CustomsExitOfficeLocation/Name` = **Customs office, port of Lumeport**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -402,14 +448,18 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:3071845926** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `PreviousCustomsDeclaration/ID` = **LD-IM-26-0161**  
-  The import declaration under which the 12 side frames entered Bayvarra from Urvania (flow road; the stock ledger of world/items.json, D21): they now leave again. The 96 benches of lot VI-LOT-260409 and the 8 benches of lot VI-LOT-260410 entered under the rail delivery's import declaration LD-IM-26-0340 (rail/14, D37), which becomes this declaration's previous declaration with the sea flow (O164).
+- `PreviousCustomsDeclaration/ID` = **LD-IM-26-0340**  
+  The import declaration under which the 96 benches of lot VI-LOT-260409 and the 8 benches of lot VI-LOT-260410 entered Bayvarra from Urvania (rail/14, the Accord's common transit ended at Marrowdale; the stock ledger of world/items.json, D21): the bulk of the goods now leaves again (O164).
 - `PreviousCustomsDeclaration/FunctionCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **LD-IM-26-0161**  
+  The import declaration under which the 12 side frames entered Bayvarra by road in March, a previous customs declaration of the goods beside the one above (O164).
+- `AdditionalDocumentReference/DocumentTypeCode` = **ImportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-IM-26-0161 is the example road/10, a ImportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
 
 ### Signature
 
@@ -628,6 +678,31 @@ Inside `Signature`:
         </cac:ContainingPackage>
       </cac:GoodsItem>
       <cac:ShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-19E</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+            <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+            <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20117</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
         <cac:CustomsAgentParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -674,6 +749,20 @@ Inside `Signature`:
             <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
           </cac:ElectronicAddress>
         </cac:CustomsAgentParty>
+        <cac:EstimatedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:EstimatedDepartureTransportEvent>
       </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
@@ -762,12 +851,16 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:PreviousCustomsDeclaration>
-      <cbc:ID>LD-IM-26-0161</cbc:ID>
+      <cbc:ID>LD-IM-26-0340</cbc:ID>
       <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:FunctionCode>
     </cac:PreviousCustomsDeclaration>
     <cac:AdditionalDocumentReference>
       <cbc:ID>VT-PO-26-0127</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>LD-IM-26-0161</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ImportCustomsDeclaration</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

@@ -203,6 +203,12 @@
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
     <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
   </cac:PaymentTerms>
+  <cac:PaymentTerms>
+    <cbc:ID>BALANCE</cbc:ID>
+    <cbc:Note>The balance 45 days after shipment.</cbc:Note>
+    <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
+    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
+  </cac:PaymentTerms>
   <cac:TransactionConditions>
     <cbc:ID>LD-TC-01</cbc:ID>
     <cbc:Description>Sold to trade customers only.</cbc:Description>

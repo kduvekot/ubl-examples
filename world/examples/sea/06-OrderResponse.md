@@ -289,6 +289,14 @@ Inside `PaymentTerms`:
   The deposit asked.
 - `PaymentDueDate` = **2026-05-09**  
   Within a day.
+- `ID` = **BALANCE**  
+  The balance, the second instalment, as the note says (sea/06#F12).
+- `Note` = **The balance 45 days after shipment.**  
+  The second instalment.
+- `Amount` = **44896.00** (currencyID `XBL`)  
+  The confirmed total less the deposit.
+- `InstallmentDueDate` = **2026-06-28**  
+  45 days after the shipment on the sailing of 14 May.
 
 ### Transaction Conditions
 
@@ -676,6 +684,12 @@ Inside `OrderLine`:
     <cbc:Note>Deposit due on acceptance.</cbc:Note>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
     <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+  </cac:PaymentTerms>
+  <cac:PaymentTerms>
+    <cbc:ID>BALANCE</cbc:ID>
+    <cbc:Note>The balance 45 days after shipment.</cbc:Note>
+    <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
+    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
   <cac:TransactionConditions>
     <cbc:ID>LD-TC-01</cbc:ID>

@@ -1912,8 +1912,7 @@
     "ConsignorParty": "6-xb",
     "ConsigneeParty": "1-xl",
     "CustomsParty": "19-xl",
-    "FreightForwarderParty": "10-xb",
-    "Shipment/ShipmentStage/CustomsAgentParty": "3-xl"
+    "FreightForwarderParty": "10-xb"
    },
    "sends_for": "ImporterParty"
   },

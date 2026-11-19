@@ -39,6 +39,15 @@ The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for 
 - `LineCountNumeric` = **3**  
   The number of order lines.
 
+### Originator Document Reference
+
+Inside `OriginatorDocumentReference`:
+
+- `ID` = **PS-REQ-26-0031**  
+  The Port of Selanu's request to the trader, which the order's port line follows.
+- `DocumentType` = **Request**  
+  The kind of document referred to, the Port of Selanu's request to the trader, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -476,6 +485,10 @@ Inside `OrderLine`:
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:DocumentType>Request</cbc:DocumentType>
+  </cac:OriginatorDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
