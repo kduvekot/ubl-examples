@@ -1428,6 +1428,18 @@ def plastics(n, doc):
     if doc["doc"] == "TransportExecutionPlan":
         out = kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", BARGE_LOAD, w)
         out.pop("TransportUserRemarks")          # the request's "please confirm" is answered, not repeated (D41)
+        # confirmed as requested: the request asked for no additional service and gave no terms of its own, so the
+        # pre-arrival notice stays in the carrier's terms and remarks and the slot terms are the carrier's (O215,
+        # as ore/03#F3)
+        out.pop("AdditionalTransportationService", None)
+        out["DocumentStatusReasonDescription"] = V("Capacity available on the requested day: the barge sails on "
+                                                   f"{day_text(f, BARGE_LOAD)}.", "Why it is confirmed as "
+                                                                                      "requested.")
+        terms = out["TransportExecutionTerms"]
+        terms.pop("TransportUserSpecialTerms", None)
+        terms["TransportServiceProviderSpecialTerms"] = V("Delivery within the agreed slot; the consignee unloads. "
+                                                          "Waiting time beyond two hours is charged.", "The carrier's "
+                                                                                                       "terms.")
         kit.deep_merge(out["Consignment"], barge_consignment(f, "plan"))
         return out
     if doc["doc"] == "ExportCustomsDeclaration":
