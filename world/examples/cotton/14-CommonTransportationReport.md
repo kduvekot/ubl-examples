@@ -195,18 +195,16 @@ Inside `Shipment`:
   The person's role on board. The code is from the Trade Accord's role on board list: MASTER = Master.
 - `ShipmentStage/ISPSRequirements/ID` = **IISSC-XB-2026-0115**  
   The number of the ship's interim International Ship Security Certificate.
-- `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **false**  
-  The ship has no full certificate yet.
-- `ShipmentStage/ISPSRequirements/ISSCAbsenceReason` = **The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for June.**  
-  Why the ship has no full certificate, which the port needs to know.
+- `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **true**  
+  The ship holds a valid certificate: an interim certificate under ISPS Code A/19.4 is valid for its six months, and the ship trades on it as on a full one (D33 point 5, cotton/14#F3).
 - `ShipmentStage/ISPSRequirements/ISSCExpiryDate` = **2026-07-14**  
   The interim certificate's last day: six months, the most the ISPS Code allows.
 - `ShipmentStage/ISPSRequirements/SSPOnBoardIndicator` = **true**  
   The ship security plan is on board.
 - `ShipmentStage/ISPSRequirements/CurrentOperatingSecurityLevelCode` = **1** (listID `IMO ISPS security level`)  
   Security level 1, the normal level. The code is from the world's copy of IMO ISPS Code security level: 1 = Security level 1.
-- `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.**  
-  A security matter the port should know about.
+- `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **The ship's certificate is an interim one: it came under Bayvarra's flag on 15 January 2026, and the flag state's verification for the full certificate is set for June. The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.**  
+  What the port should know: the interim status of the certificate, and a security matter.
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **5389612047** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name` = **Maritime Administration of Bayvarra**  
@@ -413,12 +411,11 @@ Inside `TransportMeans`:
       </cac:ReportingPerson>
       <cac:ISPSRequirements>
         <cbc:ID>IISSC-XB-2026-0115</cbc:ID>
-        <cbc:ValidISSCIndicator>false</cbc:ValidISSCIndicator>
-        <cbc:ISSCAbsenceReason>The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for June.</cbc:ISSCAbsenceReason>
+        <cbc:ValidISSCIndicator>true</cbc:ValidISSCIndicator>
         <cbc:ISSCExpiryDate>2026-07-14</cbc:ISSCExpiryDate>
         <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
         <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
-        <cbc:AdditionalMattersDescription>The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.</cbc:AdditionalMattersDescription>
+        <cbc:AdditionalMattersDescription>The ship's certificate is an interim one: it came under Bayvarra's flag on 15 January 2026, and the flag state's verification for the full certificate is set for June. The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.</cbc:AdditionalMattersDescription>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5389612047</cbc:ID>

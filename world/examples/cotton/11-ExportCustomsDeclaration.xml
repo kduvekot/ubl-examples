@@ -198,6 +198,10 @@
       <cbc:ID>LTM-PO-26-0198</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>DAL-GC-26-0202</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>
     <cbc:ID>SCG-SIG-EX-cotton</cbc:ID>

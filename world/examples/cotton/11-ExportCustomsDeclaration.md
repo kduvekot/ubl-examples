@@ -242,6 +242,10 @@ Inside `CustomsDeclaration`:
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **DAL-GC-26-0202**  
+  The phytosanitary certificate of the bales, presented with the export of plant products: the Plant Protection Service's certificate goes with the goods from export onward (cotton/11#F6).
+- `AdditionalDocumentReference/DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: DAL-GC-26-0202 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
 
 ### Signature
 
@@ -456,6 +460,10 @@ Inside `Signature`:
     <cac:AdditionalDocumentReference>
       <cbc:ID>LTM-PO-26-0198</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>DAL-GC-26-0202</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

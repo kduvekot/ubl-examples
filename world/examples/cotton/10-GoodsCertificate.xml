@@ -259,7 +259,6 @@
       </cac:PartyName>
     </cac:ProcessingParty>
     <cac:CriterionItem>
-      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsProcessingTypeCode">PROCESSING</cbc:TypeCode>
       <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
       <cac:DeclaredPropertyItem>
         <cbc:Name>Cotton lint</cbc:Name>
@@ -270,10 +269,6 @@
       <cbc:Description>Bales of about 227 kg.</cbc:Description>
     </cac:SubGoodsProcessing>
   </cac:GoodsProcessing>
-  <cac:OriginalDocumentReference>
-    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
-  </cac:OriginalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>

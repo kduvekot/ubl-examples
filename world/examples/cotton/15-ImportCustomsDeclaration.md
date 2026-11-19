@@ -281,6 +281,10 @@ Inside `AdditionalDocumentReference`:
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: SCG-EX-26-0203 is the example cotton/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **DAL-GC-26-0202**  
+  The phytosanitary certificate made out for Bayvarra, on which the release of the lint under Bayvarra's plant health rules depends (cotton/15#F7).
+- `DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: DAL-GC-26-0202 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
 - `ID` = **SCG-INV-26-0210**  
   The commercial invoice the customs value rests on (worklist C12); its statement on origin is the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -511,6 +515,10 @@ Inside `Signature`:
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-EX-26-0203</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>DAL-GC-26-0202</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-INV-26-0210</cbc:ID>

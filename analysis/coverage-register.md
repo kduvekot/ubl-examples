@@ -45,6 +45,14 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `SelfBilledInvoice/TaxRepresentativeParty` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
 | `SelfBilledInvoice/WorkReportDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
 
+> C107, D33: the classing certificate is no earlier version of the phytosanitary certificate (cotton/10#F3); the criterion type code only repeated "processing" (10#F17); the feeder's interim security certificate is a valid one, so the report gives no reason for an absence (14#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CriterionItem/TypeCode` | 0..1 | cotton/10-GoodsCertificate |  |  | open |
+| `GoodsCertificate/OriginalDocumentReference` | 0..1 | cotton/10-GoodsCertificate |  |  | open |
+| `ISPSRequirements/ISSCAbsenceReason` | 0..n | cotton/14-CommonTransportationReport |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

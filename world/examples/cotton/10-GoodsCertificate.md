@@ -336,8 +336,6 @@ Inside `GoodsProcessing`:
   A party referred to from another party's details: its identifier and name are enough.
 - `ProcessingParty/PartyName/Name` = **Selanu Cotton Ginnery**  
   A party referred to from another party's details: its identifier and name are enough.
-- `CriterionItem/TypeCode` = **PROCESSING** (listID `urn:ubl-examples:world:codelist:GoodsProcessingTypeCode`)  
-  A criterion on how the goods were processed. The code is from the Trade Accord's goods processing type list: PROCESSING = Processing.
 - `CriterionItem/CriterionDescription` = **Seed removed; lint only.**  
   What processing the rule requires.
 - `CriterionItem/DeclaredPropertyItem/Name` = **Cotton lint**  
@@ -346,15 +344,6 @@ Inside `GoodsProcessing`:
   Pressed into bales. The code is from the Trade Accord's goods processing type list: PRESSING = Pressing.
 - `SubGoodsProcessing/Description` = **Bales of about 227 kg.**  
   In words.
-
-### Original Document Reference
-
-Inside `OriginalDocumentReference`:
-
-- `ID` = **XL-CLS-2026-0042**  
-  The classing certificate of the cotton.
-- `DocumentType` = **Classing certificate**  
-  The kind of document referred to, the classing certificate of the cotton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Additional Document Reference
 
@@ -640,7 +629,6 @@ Inside `Signature`:
       </cac:PartyName>
     </cac:ProcessingParty>
     <cac:CriterionItem>
-      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsProcessingTypeCode">PROCESSING</cbc:TypeCode>
       <cbc:CriterionDescription>Seed removed; lint only.</cbc:CriterionDescription>
       <cac:DeclaredPropertyItem>
         <cbc:Name>Cotton lint</cbc:Name>
@@ -651,10 +639,6 @@ Inside `Signature`:
       <cbc:Description>Bales of about 227 kg.</cbc:Description>
     </cac:SubGoodsProcessing>
   </cac:GoodsProcessing>
-  <cac:OriginalDocumentReference>
-    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
-  </cac:OriginalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>

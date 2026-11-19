@@ -6283,6 +6283,31 @@ def import_extras(f, n, doc, out):
 for _fid in ("road", "sea", "tender", "plastics", "wood", "cotton"):
     enrich(_fid, "ExportCustomsDeclaration")(export_extras)
     enrich(_fid, "ImportCustomsDeclaration")(import_extras)
+
+
+def cotton_phyto_ref(f, why):
+    return {"ID": V(f.numbers["goods-certificate"], why)}
+
+
+@enrich("cotton", "ExportCustomsDeclaration")
+def _(f, n, doc, out):
+    cd = out["CustomsDeclaration"]
+    refs = cd.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    cd["AdditionalDocumentReference"] = refs + [cotton_phyto_ref(
+        f, "The phytosanitary certificate of the bales, presented with the export of plant products: the Plant "
+           "Protection Service's certificate goes with the goods from export onward (cotton/11#F6).")]
+    return {}
+
+
+@enrich("cotton", "ImportCustomsDeclaration")
+def _(f, n, doc, out):
+    refs = out.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    out["AdditionalDocumentReference"] = refs + [cotton_phyto_ref(
+        f, "The phytosanitary certificate made out for Bayvarra, on which the release of the lint under Bayvarra's "
+           "plant health rules depends (cotton/15#F7).")]
+    return {}
 enrich("rail", "ImportCustomsDeclaration")(import_extras)      # rail/14, Lumeway's import at Marrowdale (D37)
 
 
@@ -6404,7 +6429,6 @@ def _(f, n, doc, out):
                                                   "DeclaredPropertyItem": {"Name": V("Cotton lint", "The goods.")}},
                                 "SubGoodsProcessing": {"TypeCode": V("PRESSING", "Pressed into bales."),
                                                        "Description": V("Bales of about 227 kg.", "In words.")}},
-            "OriginalDocumentReference": {"ID": V("XL-CLS-2026-0042", "The classing certificate of the cotton.")},
             "AdditionalDocumentReference": {"ID": V(f.numbers["order"], "The mill's order.")},
             "Signature": seal(doc["from"], "DAL-SIG-26-PH")}
 
@@ -9014,9 +9038,6 @@ def _(f, n, doc, out):
         g.pop("DeclaredCustomsValueAmount", None)              # health: no customs value, no classing certificate
         if isinstance(g.get("Item"), dict):                    # (cotton/10#F9)
             g["Item"].pop("Certificate", None)
-    gp = out.get("GoodsProcessing")
-    if isinstance(gp, dict) and isinstance(gp.get("CriterionItem"), dict):
-        gp["CriterionItem"]["TypeCode"] = V("PROCESSING", "A criterion on how the goods were processed.")
     return {}
 
 
@@ -11384,22 +11405,23 @@ def cotton_ctr(n, doc):
                              "ISPSRequirements": {
                                  "ID": V("IISSC-XB-2026-0115", "The number of the ship's interim International Ship "
                                                                "Security Certificate."),
-                                 "ValidISSCIndicator": V("false", "The ship has no full certificate yet."),
-                                 "ISSCAbsenceReason": V("The ship came under Bayvarra's flag on 15 January 2026 and "
-                                                        "sails with an interim certificate (ISPS Code A/19.4), valid "
-                                                        "for six months; the flag state's verification for the full "
-                                                        "certificate is set for June.", "Why the ship has no full "
-                                                                                         "certificate, which the "
-                                                                                         "port needs to know."),
+                                 "ValidISSCIndicator": V("true", "The ship holds a valid certificate: an interim "
+                                                                 "certificate under ISPS Code A/19.4 is valid for "
+                                                                 "its six months, and the ship trades on it as on a "
+                                                                 "full one (D33 point 5, cotton/14#F3)."),
                                  "ISSCExpiryDate": V("2026-07-14", "The interim certificate's last day: six months, "
                                                                    "the most the ISPS Code allows."),
                                  "CurrentOperatingSecurityLevelCode": V("1", "Security level 1, the normal level."),
                                  "SSPOnBoardIndicator": V("true", "The ship security plan is on board."),
-                                 "AdditionalMattersDescription": V("The ship was searched for stowaways before it "
-                                                                   "left Selanu, because the port facility had "
-                                                                   "reported a gap in its perimeter fence on 6 May. "
-                                                                   "Nothing was found.", "A security matter the port "
-                                                                                         "should know about."),
+                                 "AdditionalMattersDescription": V("The ship's certificate is an interim one: it "
+                                                                   "came under Bayvarra's flag on 15 January 2026, "
+                                                                   "and the flag state's verification for the full "
+                                                                   "certificate is set for June. The ship was "
+                                                                   "searched for stowaways before it left Selanu, "
+                                                                   "because the port facility had reported a gap in "
+                                                                   "its perimeter fence on 6 May. Nothing was found.",
+                                                                   "What the port should know: the interim status "
+                                                                   "of the certificate, and a security matter."),
                                  "ISSCIssuerParty": party("ma-xb", short=True)},
                              "MaritimeHealthDeclaration": {
                                  "ID": V("MDH-26-0303", "The maritime declaration of health."),
