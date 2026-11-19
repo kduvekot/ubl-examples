@@ -616,9 +616,10 @@ A public body's party identifier and the `CompanyID` of its legal entity
 carry that number under its register's scheme (`urn:ubl-examples:world:` and
 the scheme), and its electronic address is built from it, as a company's is
 from its business register number; the farm's likewise from its number in the
-farm register. Bayvarra's customs, which register a company under its
-business register number, give a public body that imports a number of their
-own, starting with 9. No real code of Italy's index starts with `xu_`. The
+farm register. Bayvarra's customs build a trader number from the last six
+digits of the trader's number in its register: a company's business register
+number, a public body's number in the federal list (`XB-TR-397184` for the
+Lumeport Public Works Department). No real code of Italy's index starts with `xu_`. The
 build checks that each public body carries a number of its country's
 register in that register's shape, that no company carries a number in a
 public body's shape and no public body one in a company register's, and that

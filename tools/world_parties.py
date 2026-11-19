@@ -384,9 +384,9 @@ def party_identifiers(world, p):
     prefix in its GLNs and GTINs); between families no digits may repeat."""
     idn = p.get("identity", {})
     out = [("register", k, idn.get(k)) for k in ("registry_id", "endpoint")]
-    # customs registers a company under its business register number (D18); a public body, which is in no business
-    # register, under a number customs gives it (O142)
-    out.append(("customs" if idn.get("kind") == "public" else "register", "customs_id", idn.get("customs_id")))
+    # customs registers a company under its business register number (D18), a public body under its number in its
+    # country's register of public bodies (O142, O158): a stated reuse of the register number
+    out.append(("register", "customs_id", idn.get("customs_id")))
     out.append(("tax", "tax_id", idn.get("tax_id")))
     out.append(("isin", "listing", idn.get("legal", {}).get("listing", {}).get("id")))
     conv = idn.get("identification") or {}
@@ -554,6 +554,11 @@ def identifier_problems(world, p):
     a = idn.get("address", {})
     if a.get("ID"):
         out += address_register_problems(world, p, a)
+    cid, reg = idn.get("customs_id"), re.sub(r"\D", "", idn.get("registry_id", ""))
+    if p["c"] == "XB" and cid and cid != f"XB-TR-{reg[-6:]}":
+        out.append(f"{where}: customs trader number {cid} is not XB-TR- and the last six digits of its register "
+                   f"number {idn.get('registry_id')}: Bayvarra's customs builds it from the trader's register, the "
+                   "business register or the federal list of public bodies (O158)")
     for kind, value in values:
         if not value or (kind == "tax" and p["c"] == "XL"):
             continue

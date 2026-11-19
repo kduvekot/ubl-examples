@@ -436,7 +436,7 @@
     "customs-trader": {
      "name": "customs trader number of Bayvarra",
      "pattern": "^XB-TR-\\d{6}$",
-     "format": "XB-TR- and 6 digits: a company's are the last six digits of its business register number; a public body, which is in no business register, gets a number customs gives it, starting with 9 (O142)"
+     "format": "XB-TR- and 6 digits, the last six digits of the trader's number in its register: a company's business register number, a public body's number in the federal list of public bodies (O142, O158)"
     },
     "public-body-register": {
      "name": "federal list of public bodies of Bayvarra",

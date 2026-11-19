@@ -50,7 +50,7 @@ Inside `ImporterParty`:
 
 - `PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **XB-TR-903826** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
+- `AdditionalPartyIdentification/ID` = **XB-TR-397184** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Lumeport Public Works Department (world/parties.json).
 - `PartyName/Name` = **Lumeport Public Works Department**  
   The trading name; identity of Lumeport Public Works Department (world/parties.json).
@@ -417,7 +417,7 @@ Inside `Signature`:
       <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-903826</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-397184</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
