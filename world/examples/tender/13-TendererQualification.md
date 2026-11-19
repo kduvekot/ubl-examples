@@ -362,6 +362,10 @@ Inside `Evidence`:
   The reference.
 - `Name` = **Ferrano reference**  
   Name.
+- `ID` = **EV-DEC-1**  
+  The evidence the declaration names (tender/13#F13).
+- `Name` = **Signed declaration of no conflict of interest**  
+  Name.
 
 ### Additional Document Reference
 
@@ -674,6 +678,10 @@ Inside `AdditionalDocumentReference`:
   <cac:Evidence>
     <cbc:ID>EV-FER-PARKS</cbc:ID>
     <cbc:Name>Ferrano reference</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-DEC-1</cbc:ID>
+    <cbc:Name>Signed declaration of no conflict of interest</cbc:Name>
   </cac:Evidence>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-ESPD-26</cbc:ID>

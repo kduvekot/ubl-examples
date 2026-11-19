@@ -37,8 +37,14 @@ The new despatch advice, for the next day's flight.
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0319**  
+- `ID` = **VT-OC-26-0320**  
   The order this despatch fulfils.
+- `OrderTypeCode` = **230** (listID `UN/EDIFACT EDED 1001`)  
+  UN/EDIFACT 1001 code 230: the order referred to is an order change. The code is from the world's copy of UN/EDIFACT 1001 Document name: 230 = Purchase order change request.
+- `DocumentReference/ID` = **VT-PO-26-0127**  
+  The sea order the change extends.
+- `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Despatch Supplier Party
 
@@ -393,7 +399,12 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0319</cbc:ID>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">230</cbc:OrderTypeCode>
+    <cac:DocumentReference>
+      <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>

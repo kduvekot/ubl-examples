@@ -382,10 +382,10 @@ Inside `TenderingCriterion`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **PWD-2026-PARKS-CFT**  
-  The call for tenders.
+- `ID` = **LPWD-DOC-26-0189**  
+  The call for tenders, sent with this request (tender/06#F1).
 - `DocumentTypeCode` = **CallForTenders** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, the call for tenders of the park benches (tender/03), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: CallForTenders = Call For Tenders.
+  The kind of document referred to: LPWD-DOC-26-0189 is the example tender/03, a CallForTenders; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: CallForTenders = Call For Tenders.
 
 ### Signature
 
@@ -665,7 +665,7 @@ Inside `Signature`:
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CallForTenders</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

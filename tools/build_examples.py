@@ -3390,6 +3390,40 @@ def check_issue_order(flow_id, name, root, doc, request=None):
                              f"issued {h[2][1] or h[2][0]}, after this document's issue {own[1] or own[0]} (C72)")
 
 
+# ---------------------------------------------------------------- references resolve (C73)
+UNRESOLVED = []        # references to a kind of document the examples have, under an ID no example has: (file, el, ID)
+# References to documents the flow decisions add (D38), each waiting for its flow (stage 6): ID -> the document.
+REFERENCE_WAITS = {"RR-WB-26-0412": "waste/04, Rinova's weight statement (D38, with D42)",
+                   "BF-DN-26-0323": "furniture/19, Brackenmere's despatch advice (D38, with D32)",
+                   "BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
+                   "PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
+                                    "D28)"}
+REFERENCE_ALIASES = {"CallForTender": "CallForTenders", "Despatch": "DespatchAdvice", "Receipt": "ReceiptAdvice",
+                     "Remittance": "RemittanceAdvice", "TenderNotification": "TenderReceipt",
+                     "Notice": "ContractNotice"}
+
+
+def reference_kind(name):
+    """The kind of document a specific reference element names (OrderReference -> Order, StatementDocumentReference
+    -> Statement, RequestedCatalogueReference -> Catalogue ...), when the examples have documents of that kind."""
+    base = re.sub(r"(Document)?Reference$", "", name)
+    base = re.sub(r"^(Requested|Source|Related|Deleted|Replaced)(?=[A-Z])", "", base)
+    base = REFERENCE_ALIASES.get(base, base)
+    return base if base in {d["doc"] for d in WORLD["documents"]} else None
+
+
+def check_reference_targets(root, where):
+    """C73: a reference to a kind of document the examples have resolves to an example, or is declared a document
+    outside the examples (world/documents.json, cited), or waits for the document its flow adds (REFERENCE_WAITS)."""
+    for e in root.iter(f"{{{NS_CAC}}}*"):
+        name = etree.QName(e).localname
+        rid = e.findtext(f"{{{NS_CBC}}}ID")
+        if not name.endswith("Reference") or rid is None or not reference_kind(name):
+            continue
+        if rid not in doc_types() and rid not in WORLD["cited"] and rid not in REFERENCE_WAITS:
+            UNRESOLVED.append((where, name, rid))
+
+
 PARTY_SAYS = {}        # pid -> {"self": element paths it gives about itself, "other": paths others give about it}
 
 
@@ -3535,6 +3569,7 @@ def main(flow_id, check=False):
                                      f"{where}, which cites it at {m[1] or m[0]} (C72)")
             ISSUED.setdefault(doc_id, []).append((flow_id, xmlname(n, doc), here))
         check_issue_order(flow_id, xmlname(n, doc), root, doc, asked)
+        check_reference_targets(root, f"{flow_id}/{xmlname(n, doc)}")
         if here and (flow_id, xmlname(n, doc)) not in ISSUE_ORDER_WAITS:
             for e in root.iter(f"{{{NS_CBC}}}*"):        # citations of examples not built yet: checked when they are
                 if etree.QName(e).localname.endswith("ID") and e.text and e.text != doc_id and \
@@ -3621,6 +3656,11 @@ if __name__ == "__main__":
         print(f"references without a document type that point to no example and are not in world/documents.json "
               f"cited ({len(build_examples.UNTYPED)}):",
               "; ".join(f"{w} {e} {i}" for w, e, i in build_examples.UNTYPED), file=sys.stderr)
+        ok = False
+    if build_examples.UNRESOLVED:
+        print(f"references to a kind of document the examples have, under an ID no example has and not in "
+              f"world/documents.json cited (C73, {len(build_examples.UNRESOLVED)}):",
+              "; ".join(f"{w} {e} {i}" for w, e, i in build_examples.UNRESOLVED), file=sys.stderr)
         ok = False
     if build_examples.UNBOUND:
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",

@@ -16,7 +16,7 @@
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
   <cac:CallForTenderDocumentReference>
-    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>BF-DS-PARK</cbc:ID>
@@ -248,7 +248,7 @@
         <cbc:LineID>1</cbc:LineID>
       </cac:CallForTendersLineReference>
       <cac:CallForTendersDocumentReference>
-        <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+        <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
       </cac:CallForTendersDocumentReference>
     </cac:TenderLine>
     <cac:TenderLine>

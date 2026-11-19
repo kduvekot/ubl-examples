@@ -262,7 +262,7 @@
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CallForTenders</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

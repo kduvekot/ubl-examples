@@ -4715,7 +4715,7 @@ def _(f, n, doc, out):
             "Signature": {"ID": V("BM-SIG-26-0420", "The store's seal."), "SignatoryParty": party("26-xb",
                                                                                                 short=True)},
             "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
-            "RequestedCatalogueReference": {"ID": V("LD-CAT-SPRING-26", "The catalogue as announced at the fair.")},
+            # no catalogue named: the store asks for a new one, which does not exist yet (retail/01#F1, D34, C73)
             "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement.")},
             "TradingTerms": {"Information": V("Delivered duty paid to the store.", "The terms the store expects.")},
             "DocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan.")},
@@ -4813,7 +4813,7 @@ def _(f, n, doc, out):
     return {"Note": V("Agreed with the distributor's sales team.", "Status of the agreement."),
             "SellerEventID": V("LD-PROMO-26-03", "The distributor's number for the promotion."),
             "BuyerEventID": V("BM-SPRING-GARDEN-26", "The store's number."),
-            "OriginalDocumentReference": {"ID": V("BM-PROMO-PLAN-26", "The store's promotion plan.")},
+            # no "original" forecast: the event comes first and the forecast follows it (retail/06#F2, C73)
             "Signature": {"ID": V("BM-SIG-26-0422E", "The store's seal."),
                           "SignatoryParty": party("26-xb", short=True)},
             "EventComment": {"Comment": V("Shelf space for 12 benches at the entrance.", "What the store "
@@ -6157,6 +6157,16 @@ def _(f, n, doc, out):
             "Contract": {"ID": V(OWN_LABEL, "The own-label agreement the line runs under; it allows "
                                             "cancellation before production.")},
             "Signature": seal(doc["from"], "BM-SIG-26-OC")}
+
+
+@enrich("air", "DespatchAdvice")
+def _(f, n, doc, out):
+    # the frames were ordered by the order change of the sea order: the reference names both, as the cancellation
+    # does (air/06#F1, 08#F2, C73)
+    out["OrderReference"]["OrderTypeCode"] = V("230", "UN/EDIFACT 1001 code 230: the order referred to is an order "
+                                                      "change.")
+    out["OrderReference"]["DocumentReference"] = {"ID": V(SEA.numbers["order"], "The sea order the change extends.")}
+    return {}
 
 
 @enrich("air", "FulfilmentCancellation")
@@ -8343,7 +8353,7 @@ def _(f, n, doc, out):
                                   "DocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
         "ReceiptLineReference": {"LineID": V("1", "The receipt line, with the damaged carton."),
                                  "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")}},
-        "DocumentReference": {"ID": V("LD-DS-B180", "The distributor's datasheet for the bench.")},
+        # no line reference to a datasheet: the catalogue names the maker's (retail/18#F12, C73)
         "PricingReference": {"OriginalItemLocationQuantity": {
             "LeadTimeMeasure": V("5", "As in the catalogue.", unitCode="DAY")}},
         "DeliveryTerms": {"ID": V("DDP", "Delivered duty paid, the store's shop, as for the whole order.",

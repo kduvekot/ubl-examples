@@ -46,8 +46,8 @@ Inside `ValidityPeriod`:
 
 Inside `CallForTenderDocumentReference`:
 
-- `ID` = **PWD-2026-PARKS-CFT**  
-  The call for tenders.
+- `ID` = **LPWD-DOC-26-0189**  
+  The call for tenders, by its ID (tender/15#F1, 17#F1, 19#F4).
 
 ### Document Reference
 
@@ -328,7 +328,7 @@ Inside `TenderedProject`:
   Included.
 - `TenderLine/CallForTendersLineReference/LineID` = **1**  
   The line of the call for tenders.
-- `TenderLine/CallForTendersDocumentReference/ID` = **PWD-2026-PARKS-CFT**  
+- `TenderLine/CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
   The call for tenders.
 - `TenderLine/ID` = **2**  
   The installation.
@@ -378,7 +378,7 @@ Inside `TenderedProject`:
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
   <cac:CallForTenderDocumentReference>
-    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>BF-DS-PARK</cbc:ID>
@@ -610,7 +610,7 @@ Inside `TenderedProject`:
         <cbc:LineID>1</cbc:LineID>
       </cac:CallForTendersLineReference>
       <cac:CallForTendersDocumentReference>
-        <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+        <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
       </cac:CallForTendersDocumentReference>
     </cac:TenderLine>
     <cac:TenderLine>

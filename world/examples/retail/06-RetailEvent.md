@@ -48,15 +48,6 @@ Inside `Period`:
 - `EndDate` = **2026-05-24**  
   It lasts two weeks.
 
-### Original Document Reference
-
-Inside `OriginalDocumentReference`:
-
-- `ID` = **BM-PROMO-PLAN-26**  
-  The store's promotion plan.
-- `DocumentType` = **Promotion plan**  
-  The kind of document referred to, the store's promotion plan, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-
 ### Signature
 
 Inside `Signature`:
@@ -302,10 +293,6 @@ Inside `MiscellaneousEvent`:
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-05-24</cbc:EndDate>
   </cac:Period>
-  <cac:OriginalDocumentReference>
-    <cbc:ID>BM-PROMO-PLAN-26</cbc:ID>
-    <cbc:DocumentType>Promotion plan</cbc:DocumentType>
-  </cac:OriginalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0422E</cbc:ID>
     <cac:SignatoryParty>

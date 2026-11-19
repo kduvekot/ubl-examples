@@ -238,7 +238,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0319</cbc:ID>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

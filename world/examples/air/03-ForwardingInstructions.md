@@ -296,10 +296,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **VT-PO-26-0319**  
+- `ID` = **VT-OC-26-0320**  
   The order the goods are for.
 - `DocumentTypeCode` = **OrderChange** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, Velumi's order change for the frames by air (air/01), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
+  The kind of document referred to: VT-OC-26-0320 is the example air/01, a OrderChange; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
 
 ### Signature
 
@@ -555,7 +555,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0319</cbc:ID>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

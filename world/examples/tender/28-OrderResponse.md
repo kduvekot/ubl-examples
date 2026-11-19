@@ -46,13 +46,6 @@ Inside `OrderReference`:
 - `ID` = **LPWD-PO-26-0212**  
   The order this response answers.
 
-### Order Document Reference
-
-Inside `OrderDocumentReference`:
-
-- `ID` = **PWD-PO-26-0212**  
-  The department's next call-off, already announced: it will be in moss green too (not shown).
-
 ### Order Change Document Reference
 
 Inside `OrderChangeDocumentReference`:
@@ -277,9 +270,6 @@ Inside `LegalMonetaryTotal`:
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
-  <cac:OrderDocumentReference>
-    <cbc:ID>PWD-PO-26-0212</cbc:ID>
-  </cac:OrderDocumentReference>
   <cac:OrderChangeDocumentReference>
     <cbc:ID>LPWD-OC-26-0213</cbc:ID>
   </cac:OrderChangeDocumentReference>
