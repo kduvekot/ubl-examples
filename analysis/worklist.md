@@ -1235,6 +1235,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: ready to fix now.
 - Findings: consistency: conditions#F11
 
+- **Fixed (2026-11-19):** Valdara's distributor price for Lumeway (bench 399.00, side frame 47.50, type DST) beside its list price `VI-PL-2026` (499.00, 59.80); road and rail orders, invoices, settlement discounts, remittance and customs values follow (road 3,887,400 XUF, rail 7,660,800 XUF); O28: every price type states whether it includes tax (all before tax); O30: a build check that nobody resells below cost plus freight and margins fall in their bands (`tools/world_items.py`, `items.json` resales). Four resales on a temporary exception list for the owner.
+
 ### C69 · The bench as shipped: pallets that do not fit, and a bench lighter than its parts
 - Kind: cross-flow story · Findings: 7 (High 1, Medium 3, Low 3) in 6 files, 3 flows · Needs decision: decided (D20, 2026-11-16)
 - Decided: option a), the bench ships knocked down, as three parcels: two frame cartons (10.2 kg, and 11.2 kg with the bolt set) and a strapped bundle of five slats (23.0 kg); bench net 43.5 kg, gross 44.4 kg. A pallet of four benches is about 1,850 × 650 × 750 mm and 200 kg; 24 such pallets and the castings pallet fit a 13.6 m trailer, a 40-foot container and a 45-foot rail container, in two layers. New rule: the handling limit of ISO 11228-1 (25 kg for one person; two people together about two thirds of their combined capacity). "One full truck" and "one 40-foot container" stay as kinds of booking.
