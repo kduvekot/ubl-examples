@@ -42,6 +42,8 @@ xmllint --noent --dropdtd note/ubl-examples-method.xml > "$OUT/note/ubl-examples
 # (GitHub Pages lets browsers cache files for 10 minutes)
 CSSV=$(sha256sum site/site.css | cut -c1-10)
 BUILT=$(git rev-parse --short HEAD 2>/dev/null || echo local)
+BUILT_SHA=$(git rev-parse HEAD 2>/dev/null || echo "")
+BUILT_DATE=$(TZ=UTC git log -1 --format=%cd --date=format-local:'%Y-%m-%d %H:%M UTC' 2>/dev/null || echo "")
 
 # Header, the same on every page; $2 is the page it is shown on
 NAV_ITEMS="note/ubl-examples-method.html|Method world.html|World examples.html|Examples releases.html|Releases history.html|History coverage.html|Coverage"
@@ -67,7 +69,11 @@ nav() { # root-prefix, current-page
 footer() {
   printf '<footer class="site-footer"><div>'
   printf '<p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p>'
-  printf '<p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>%s</code></p>' "$BUILT"
+  if [ -n "$BUILT_SHA" ]; then
+    printf '<p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/%s"><code>%s</code></a> of %s</p>' "$BUILT_SHA" "$BUILT" "$BUILT_DATE"
+  else
+    printf '<p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>%s</code></p>' "$BUILT"
+  fi
   printf '</div></footer>'
 }
 
