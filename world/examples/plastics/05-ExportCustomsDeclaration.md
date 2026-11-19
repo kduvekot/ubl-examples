@@ -84,7 +84,7 @@ Inside `ExporterParty`:
 - `PartyLegalEntity/CompanyID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   Number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Rinova Recovery (world/parties.json).
+  The party's customs desk: the desk for its role in this document (it deals with customs); identity of Rinova Recovery (world/parties.json).
 - `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Contact/Department` = **Logistics**  

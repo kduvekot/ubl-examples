@@ -118,7 +118,8 @@ DESK_ROLE = {"sales": "it sells", "purchasing": "it buys", "receivables": "it is
              "logistics": "it books or uses the transport", "customs": "it deals with customs",
              "tenders": "it bids", "operations": "it carries or handles the goods", "procurement": "it buys",
              "customs_export": "an export", "customs_import": "an import", "customs_transit": "a transit",
-             "carnet": "a carnet", "certificates": "a certificate"}
+             "carnet": "a carnet", "certificates": "a certificate",
+             "export": "it handles the transport of goods between the countries"}
 CHAMBER_DOCS = {"GoodsItemPassport": "carnet", "ProofOfReexportation": "carnet",
                 "ProofOfReexportationRequest": "carnet", "ProofOfReexportationReminder": "carnet",
                 "CertificateOfOrigin": "certificates", "GoodsCertificate": "certificates"}
@@ -142,7 +143,22 @@ SELLS, CARRIERS = _role_index()
 
 
 def desk_for(doc, path, pid):
-    """The function of the desk that speaks for party pid in its role at path of document doc."""
+    """The function of the desk that speaks for party pid in its role at path of document doc. A party with an
+    export desk names it for its transport work on goods that cross a border: a document whose parties, or the
+    flow's transport legs those parties run, send or receive, are in more than one country; at home its main
+    contact or its operations desk speaks (O224)."""
+    fn = _desk_for(doc, path, pid)
+    if fn in (None, "operations", "logistics") and "export" in PARTY[pid]["identity"].get("desks", {}):
+        pids = {doc.get("from"), doc.get("to")} | {v for v in doc.get("parties", {}).values() if isinstance(v, str)}
+        legs = [leg for fl in WORLD["flows"] if fl["id"] == doc["flow"] for leg in fl.get("legs", [])]
+        pids |= {x for leg in legs if pids & {leg.get("from"), leg.get("to"), leg.get("carrier")}
+                 for x in (leg.get("from"), leg.get("to"))}
+        if len({PARTY[x]["c"] for x in pids if x in PARTY}) > 1:
+            return "export"
+    return fn
+
+
+def _desk_for(doc, path, pid):
     role = path.split("/")[-1]
     kind = doc["doc"]
     if kind in CUSTOMS_DOCS and PARTY[pid]["kind"] == "customs":
@@ -289,7 +305,8 @@ def party(pid, short=False, desk=None, lang=None):
         own = idn.get("desks", {}).get(desk)
         if own:
             ct = {**{k: v for k, v in ct.items() if k not in ("id", "mobile", "telefax")}, **own}
-            why = (f"The party's {own['name'].lower()} desk: the desk for its role in this document "
+            desk_name = own["name"].lower().removesuffix(" desk")
+            why = (f"The party's {desk_name} desk: the desk for its role in this document "
                    f"({DESK_ROLE[desk]}); {src}.")
         else:
             why = f"The party's main desk, which handles this document; {src}."

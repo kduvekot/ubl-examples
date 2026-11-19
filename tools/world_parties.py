@@ -63,10 +63,11 @@ import world_data  # noqa: E402
 
 
 # the functions a party's desk can have (world/parties.json identity.desks; tools/build_examples.py desk_for);
-# "emergency" is a shipper's 24-hour line for its dangerous goods in transit, named as their contact (D36)
+# "emergency" is a shipper's 24-hour line for its dangerous goods in transit, named as their contact (D36);
+# "export" is a forwarder's desk for its work between the countries, its main contact the one at home (O224)
 DESK_FUNCTIONS = {"sales", "purchasing", "receivables", "payables", "goods_in", "despatch", "logistics", "customs",
                   "tenders", "operations", "procurement", "customs_export", "customs_import", "customs_transit",
-                  "carnet", "certificates", "emergency"}
+                  "carnet", "certificates", "emergency", "export"}
 
 
 def mod11(digits):
