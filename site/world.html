@@ -1005,6 +1005,17 @@ function wayPoints(mode, path) {
     const [sx, sy] = iso(...R(x, y)); return [sx + OX, sy + OY - h * HU]; };
   const inTunnel = q => !!tiles[q[0]]?.[q[1]]?.tunnel;
   let out, hide;
+  if (path.length > 2) {   // along the curves the map draws (owner, 2026-11-19, MO005): through each square from the
+    // middle of the edge it enters by to the middle of the edge it leaves by, its middle as the control point
+    const H = k => at(...half(path[k], path[k + 1]), path[k], path[k + 1]), n = path.length;
+    out = [mode === "road" ? H(0) : at(...path[0], path[0], path[0])]; hide = [];
+    if (mode !== "road") { out.push(H(0)); hide.push(inTunnel(path[0])); }
+    for (let k = 1; k < n - 1; k++) { const A = half(path[k - 1], path[k]), B = half(path[k], path[k + 1]), C = path[k];
+      for (const u of [.25, .5, .75]) { const a = (1 - u) * (1 - u), b = 2 * u * (1 - u), c = u * u;
+        out.push(at(a * A[0] + b * C[0] + c * B[0], a * A[1] + b * C[1] + c * B[1], C, C)); hide.push(inTunnel(C)); }
+      out.push(H(k)); hide.push(inTunnel(C)); }
+    if (mode !== "road") { out.push(at(...path[n - 1], path[n - 1], path[n - 1])); hide.push(inTunnel(path[n - 1])); }
+    out.hide = hide; return out; }
   if (mode === "road") { const pts = path.map(p => p.slice()); out = path.map(p => at(p[0], p[1], p, p));
     if (path.length > 1) { const h0 = half(path[0], path[1]), h1 = half(path[path.length - 1], path[path.length - 2]);
       out[0] = at(...h0, path[0], path[1]); out[out.length - 1] = at(...h1, path[path.length - 1], path[path.length - 2]); }
@@ -1058,8 +1069,19 @@ function roadShape(dirs) { if (dirs.length === 1) return "stub"; if (dirs.length
 // narrow and paler, without markings (O152). dirs: the directions drawn; main: the main roads' directions of the
 // square (t.main), or none
 // square (t.main), or none; faint: the minor roads thinner and fainter still (the middle level)
+// a road that bends in a square is drawn as one smooth curve from edge to edge (owner, 2026-11-19, MO005), through
+// the square's middle as its control point, so that it leaves the square in the direction the next square's curve
+// arrives in: no kink at the middles. A straight road, a junction and an end are drawn as before.
+const isBend = ds => ds.length === 2 && (ds[0][0] !== -ds[1][0] || ds[0][1] !== -ds[1][1]);
+function curvePts(A, B) { const out = []; for (let k = 0; k <= 8; k++) { const u = k / 8; out.push([(1 - u) * (1 - u) * A[0] + u * u * B[0], (1 - u) * (1 - u) * A[1] + u * u * B[1]]); } return out; }
 function drawRoadTile(g, i, j, dirs, bridge, main, faint) {
   const key = d => d.join(), minor = dirs.filter(d => !main?.has(key(d)));
+  if (!bridge && isBend(dirs) && (minor.length === 0 || minor.length === 2)) {   // one class of road through the bend
+    const A = mid(dirs[0]), B = mid(dirs[1]);
+    if (minor.length) { const mw = faint ? .075 : .1;
+      for (const [w, c] of faint ? [[mw, "#8f8a7f"]] : [[mw + .03, "#5a5750"], [mw, "#8e897d"]]) curveBand(g, i, j, A, B, w, c); return; }
+    for (const [w, c] of [[.25, "#3d3f42"], [.21, "#64676b"]]) curveBand(g, i, j, A, B, w, c);
+    tline(g, i, j, curvePts(A, B), "#e6dfa8", 1, [3, 3]); return; }
   if (minor.length) { const mw = faint ? .075 : .1;
     if (bridge) for (const d of minor) { band(g, i, j, [0, 0], mid(d), mw + .08, "#5b4a36"); const pv = [-d[1], d[0]];
       if (!faint) for (const o of [mw + .06, -mw - .06]) tline(g, i, j, [[pv[0] * o, pv[1] * o], [mid(d)[0] + pv[0] * o, mid(d)[1] + pv[1] * o]], "#c0392b", 1.5); }
@@ -1078,6 +1100,15 @@ function drawRoadTile(g, i, j, dirs, bridge, main, faint) {
     tline(g, i, j, [mid(d), [d[0] * (hw + .1), d[1] * (hw + .1)]], mark, 1, dash);
     tline(g, i, j, [[stop[0] + perp[0] * hw, stop[1] + perp[1] * hw], [stop[0] - perp[0] * hw * .1, stop[1] - perp[1] * hw * .1]], "#f2f2f2", 1.5); } }
 function drawRailPiece(g, i, j, a, b, bridge) { const A = mid(a), B = mid(b);
+  if (a && b && (a[0] !== -b[0] || a[1] !== -b[1])) {        // a bend: one smooth curve, as the roads (MO005)
+    if (bridge) curveBand(g, i, j, A, B, .26, "#5b4a36");
+    curveBand(g, i, j, A, B, .17, "#8d7d63");
+    const P = curvePts(A, B);
+    for (let k = 0; k < P.length - 1; k++) { const dx = P[k + 1][0] - P[k][0], dy = P[k + 1][1] - P[k][1], l = Math.hypot(dx, dy) || 1, c = [(P[k][0] + P[k + 1][0]) / 2, (P[k][1] + P[k + 1][1]) / 2];
+      tline(g, i, j, [[c[0] - dy / l * .15, c[1] + dx / l * .15], [c[0] + dy / l * .15, c[1] - dx / l * .15]], "#4b3a2c", 1.5); }
+    for (const o of [.07, -.07]) { const Q = P.map((q, k) => { const p0 = P[Math.max(0, k - 1)], p1 = P[Math.min(P.length - 1, k + 1)], dx = p1[0] - p0[0], dy = p1[1] - p0[1], l = Math.hypot(dx, dy) || 1;
+        return [q[0] - dy / l * o, q[1] + dx / l * o]; }); tline(g, i, j, Q, "#d4d4d4", 1); }
+    return; }
   if (bridge) band(g, i, j, A, B, .26, "#5b4a36");
   band(g, i, j, A, B, .17, "#8d7d63");
   const dx = B[0] - A[0], dy = B[1] - A[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;

@@ -1,8 +1,8 @@
-# Transport Progress Status: Ferrano Intermodal Hub to Ferrano Rail Cargo
+# Transport Progress Status: Rail Infrastructure Agency of Urvania to Ferrano Rail Cargo
 
-*Example 5 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Transport Progress Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-SCHEMA)*
+*Example 5 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Transport Progress Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-SCHEMA)*
 
-The hub, as network manager, reports the train's position and timetable.
+The rail infrastructure manager reports the train's position and timetable on its network, from the hub to the border station (D37).
 
 [The XML file](05-TransportProgressStatus.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,7 +18,7 @@ The hub, as network manager, reports the train's position and timetable.
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **FIH-DOC-26-0330**  
+- `ID` = **RIAU-DOC-26-0330**  
   The sender's number for this document.
 - `UUID` = **78d6602f-27f8-5e6a-b8c0-36b493a71754**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -26,10 +26,10 @@ The hub, as network manager, reports the train's position and timetable.
   Answered the same morning.
 - `IssueTime` = **06:55:00-01:00**  
   Answered once the train has left, so that the status can report the actual departure (rail/05#F1); in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Nul rek baz.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): The answer.
-- `Note` = **Left on time.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: The answer.
+- `Note` = **Nul hir 06:52, 7 krizstek skuskan drek santul.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The answer, as the times say it (rail/05#F5).
+- `Note` = **Left at 06:52, 7 minutes after the timetable.** (languageID `en-XU`)  
+  The same note in English, the working language between the countries: The answer, as the times say it (rail/05#F5).
 - `StatusAvailableIndicator` = **true**  
   A status is available.
 
@@ -37,67 +37,67 @@ The hub, as network manager, reports the train's position and timetable.
 
 Inside `Signature`:
 
-- `ID` = **FIH-SIG-TPS**  
+- `ID` = **RIAU-SIG-TPS**  
   The sender's electronic seal.
-- `SignatoryParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `SignatoryParty/PartyIdentification/ID` = **xu_t8rn** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `SignatoryParty/PartyName/Name` = **Ferrano Intermodal Hub**  
+- `SignatoryParty/PartyName/Name` = **Rail Infrastructure Agency of Urvania**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Sender Party
 
 Inside `SenderParty`:
 
-- `PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Ferrano Intermodal Hub**  
-  The trading name; identity of Ferrano Intermodal Hub (world/parties.json).
+- `PartyIdentification/ID` = **xu_t8rn** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Rail Infrastructure Agency of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyName/Name` = **Rail Infrastructure Agency of Urvania**  
+  The trading name; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
   Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
-- `PostalAddress/ID` = **4160200139820702** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Intermodal Hub (world/parties.json).
+- `PostalAddress/ID` = **4160207305518243** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `PostalAddress/StreetName` = **Bek Han Krazhul** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Intermodal Hub (world/parties.json).
-- `PostalAddress/StreetName` = **Via del Terminal** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Intermodal Hub (world/parties.json).
-- `PostalAddress/BuildingNumber` = **59**  
-  Building number of the postal address. identity of Ferrano Intermodal Hub (world/parties.json).
+- `PostalAddress/StreetName` = **Bek Hekrul Zhuzkek** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `PostalAddress/StreetName` = **Via della Stazione** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `PostalAddress/BuildingNumber` = **2**  
+  Building number of the postal address. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Intermodal Hub (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Intermodal Hub (world/parties.json).
-- `PostalAddress/PostalZone` = **4180**  
-  Postal code in Urvania's format (4 digits). identity of Ferrano Intermodal Hub (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `PostalAddress/PostalZone` = **4150**  
+  Postal code in Urvania's format (4 digits). identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Intermodal Hub (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Contact/Name` = **Terminal control**  
-  The party's main desk, which handles this document; identity of Ferrano Intermodal Hub (world/parties.json).
-- `Contact/JobTitle` = **Terminal controller**  
-  The job of the person who answers at the desk; identity of Ferrano Intermodal Hub (world/parties.json).
-- `Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Ferrano Intermodal Hub (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 371 6482**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Intermodal Hub (world/parties.json).
-- `Contact/ElectronicMail` = **terminal@ferranohub.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Intermodal Hub (world/parties.json).
+- `Contact/Name` = **Traffic control**  
+  The party's main desk, which handles this document; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `Contact/JobTitle` = **Train controller**  
+  The job of the person who answers at the desk; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `Contact/Department` = **Traffic management**  
+  The department the desk belongs to; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `Contact/Telephone` = **+999 1 041 816 2047**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+- `Contact/ElectronicMail` = **traffic@railinfra-xu.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Ferrano Intermodal Hub (world/parties.json).
+  When the desk can be reached; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105096** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ElectronicAddress/ElectronicAddressID` = **XU:xu_t8rn** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Rail Infrastructure Agency of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
@@ -167,25 +167,29 @@ Inside `TransportMeans`:
 
 - `JourneyID` = **CT 4471**  
   The number of the container train in the hub's timetable.
+- `RailTransport/TrainID` = **FRC 4417**  
+  The train itself, so that the run of this day is meant, not the timetable service on other days (rail/04#F7).
 
 ### Transport Schedule
 
 Inside `TransportSchedule`:
 
 - `SequenceNumeric` = **1**  
-  The first stop: the hub.
+  The first point: the hub, where the train starts.
 - `ReferenceDate` = **2026-04-14**  
   The day.
 - `ReferenceTime` = **06:45:00**  
-  The time.
+  The timetabled departure the status refers to.
 - `ReliabilityPercent` = **95**  
   How sure the schedule is.
-- `Remarks` = **On time.**  
-  The status.
+- `Remarks` = **Left 7 minutes late, two after the estimate.**  
+  The status at the hub.
 - `StatusLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+  The place's code in the form of a UN/LOCODE, with the world's country code.
 - `StatusLocation/Name` = **Ferrano Intermodal Hub**  
-  The stop.
+  At the intermodal hub, where the boxes go on the train.
+- `StatusLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ActualArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
   The train arrived at the hub for loading.
 - `ActualArrivalTransportEvent/OccurrenceTime` = **05:30:00**  
@@ -216,14 +220,6 @@ Inside `TransportSchedule`:
   At the intermodal hub, where the boxes go on the train.
 - `EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
-  Expected in Marrowdale.
-- `EstimatedArrivalTransportEvent/OccurrenceTime` = **10:40:00**  
-  The local time.
-- `EstimatedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
-  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
-- `EstimatedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
-  Where the boxes are placed for unloading.
 - `PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The timetable.
 - `PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00**  
@@ -234,14 +230,30 @@ Inside `TransportSchedule`:
   At the intermodal hub, where the boxes go on the train.
 - `PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
-  The timetable.
-- `PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
+- `SequenceNumeric` = **2**  
+  The second point: the border station, the end of Urvania's network.
+- `Remarks` = **The path into Bayvarra at 13:00 holds.**  
+  The status ahead.
+- `StatusLocation/Name` = **Rail border station Urvania–Bayvarra**  
+  Where the train crosses the border.
+- `EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
+  Expected from the actual departure.
+- `EstimatedArrivalTransportEvent/OccurrenceTime` = **08:08:00**  
   The local time.
-- `PlannedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
-  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
-- `PlannedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
-  Where the boxes are placed for unloading.
+- `EstimatedArrivalTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
+  Where the train crosses the border.
+- `PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The timetabled path into Bayvarra, after the crew change, the brake test and the customs' check of the seals.
+- `PlannedDepartureTransportEvent/OccurrenceTime` = **13:00:00**  
+  The local time.
+- `PlannedDepartureTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
+  Where the train crosses the border.
+- `PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
+  The timetable: 63 km from the hub.
+- `PlannedArrivalTransportEvent/OccurrenceTime` = **08:01:00**  
+  The local time.
+- `PlannedArrivalTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
+  Where the train crosses the border.
 
 ## The document
 
@@ -252,45 +264,45 @@ Inside `TransportSchedule`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-progress-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FIH-DOC-26-0330</cbc:ID>
+  <cbc:ID>RIAU-DOC-26-0330</cbc:ID>
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:55:00-01:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Nul rek baz.</cbc:Note>
-  <cbc:Note languageID="en-XU">Left on time.</cbc:Note>
+  <cbc:Note languageID="qau">Nul hir 06:52, 7 krizstek skuskan drek santul.</cbc:Note>
+  <cbc:Note languageID="en-XU">Left at 06:52, 7 minutes after the timetable.</cbc:Note>
   <cbc:StatusAvailableIndicator>true</cbc:StatusAvailableIndicator>
   <cac:Signature>
-    <cbc:ID>FIH-SIG-TPS</cbc:ID>
+    <cbc:ID>RIAU-SIG-TPS</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_t8rn</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cbc:Name>Rail Infrastructure Agency of Urvania</cbc:Name>
       </cac:PartyName>
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:SenderParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_t8rn</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      <cbc:Name>Rail Infrastructure Agency of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:Language>
       <cbc:ID schemeID="ISO 639">qau</cbc:ID>
       <cbc:Name>Urvanian</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200139820702</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160207305518243</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Han Krazhul</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Via del Terminal</cbc:StreetName>
-      <cbc:BuildingNumber>59</cbc:BuildingNumber>
+      <cbc:StreetName languageID="qau">Bek Hekrul Zhuzkek</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via della Stazione</cbc:StreetName>
+      <cbc:BuildingNumber>2</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4180</cbc:PostalZone>
+      <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
@@ -299,16 +311,16 @@ Inside `TransportSchedule`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Terminal control</cbc:Name>
-      <cbc:JobTitle>Terminal controller</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 371 6482</cbc:Telephone>
-      <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
+      <cbc:Name>Traffic control</cbc:Name>
+      <cbc:JobTitle>Train controller</cbc:JobTitle>
+      <cbc:Department>Traffic management</cbc:Department>
+      <cbc:Telephone>+999 1 041 816 2047</cbc:Telephone>
+      <cbc:ElectronicMail>traffic@railinfra-xu.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_t8rn</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:SenderParty>
   <cac:ReceiverParty>
@@ -357,16 +369,24 @@ Inside `TransportSchedule`:
   </cac:TransportProgressStatusRequestDocumentReference>
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
+    <cac:RailTransport>
+      <cbc:TrainID>FRC 4417</cbc:TrainID>
+    </cac:RailTransport>
   </cac:TransportMeans>
   <cac:TransportSchedule>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cbc:ReferenceDate>2026-04-14</cbc:ReferenceDate>
     <cbc:ReferenceTime>06:45:00</cbc:ReferenceTime>
     <cbc:ReliabilityPercent>95</cbc:ReliabilityPercent>
-    <cbc:Remarks>On time.</cbc:Remarks>
+    <cbc:Remarks>Left 7 minutes late, two after the estimate.</cbc:Remarks>
     <cac:StatusLocation>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:StatusLocation>
     <cac:ActualArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
@@ -407,14 +427,6 @@ Inside `TransportSchedule`:
         </cac:Address>
       </cac:Location>
     </cac:EstimatedDepartureTransportEvent>
-    <cac:EstimatedArrivalTransportEvent>
-      <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
-      <cac:Location>
-        <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
-        <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
-      </cac:Location>
-    </cac:EstimatedArrivalTransportEvent>
     <cac:PlannedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
@@ -428,12 +440,32 @@ Inside `TransportSchedule`:
         </cac:Address>
       </cac:Location>
     </cac:PlannedDepartureTransportEvent>
-    <cac:PlannedArrivalTransportEvent>
-      <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+  </cac:TransportSchedule>
+  <cac:TransportSchedule>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
+    <cbc:Remarks>The path into Bayvarra at 13:00 holds.</cbc:Remarks>
+    <cac:StatusLocation>
+      <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+    </cac:StatusLocation>
+    <cac:EstimatedArrivalTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>08:08:00</cbc:OccurrenceTime>
       <cac:Location>
-        <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
-        <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+        <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+      </cac:Location>
+    </cac:EstimatedArrivalTransportEvent>
+    <cac:PlannedDepartureTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+      </cac:Location>
+    </cac:PlannedDepartureTransportEvent>
+    <cac:PlannedArrivalTransportEvent>
+      <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+      <cbc:OccurrenceTime>08:01:00</cbc:OccurrenceTime>
+      <cac:Location>
+        <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>
     </cac:PlannedArrivalTransportEvent>
   </cac:TransportSchedule>

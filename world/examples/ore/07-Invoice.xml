@@ -22,6 +22,13 @@
   <cac:DespatchDocumentReference>
     <cbc:ID>SM-DA-26-0308</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>SM-VI-SA-2026</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SM-ASSAY-26-12</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">1</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -299,7 +306,7 @@
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Moisture deduction</cbc:AllowanceChargeReason>
+      <cbc:AllowanceChargeReason>Moisture deduction under the moisture clause of supply agreement SM-VI-SA-2026: 7.5 % moisture measured at loading, above the 6 % agreed</cbc:AllowanceChargeReason>
       <cbc:MultiplierFactorNumeric>0.015</cbc:MultiplierFactorNumeric>
       <cbc:Amount currencyID="XUF">216218</cbc:Amount>
       <cbc:BaseAmount currencyID="XUF">14414504</cbc:BaseAmount>

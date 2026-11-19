@@ -173,7 +173,7 @@
             <SimpleValue>Kaketa motetu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The carriage of a container to or from the port arranged by the merchant, not the shipping line.</SimpleValue>
+            <SimpleValue>The carriage of a container to or from the port or rail terminal arranged by the merchant, not by the carrier of the main carriage.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -190,7 +190,7 @@
             <SimpleValue>Topatu motetu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The carriage of a container to or from the port arranged by the shipping line.</SimpleValue>
+            <SimpleValue>The carriage of a container to or from the port or rail terminal arranged by the carrier of the main carriage (the shipping line or the rail carrier), not by the merchant.</SimpleValue>
          </Value>
       </Row>
       <Row>

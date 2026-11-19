@@ -4,7 +4,7 @@
   {
    "id": "ore",
    "title": "Ore from the mine to the factory (domestic, Urvania)",
-   "text": "The manufacturer buys ore free carrier (FCA) at the mine: the buyer arranges and pays the main transport, so the manufacturer, not the mine, books the ore train with the rail carrier.",
+   "text": "Under a supply agreement for 2026, which sets the price basis, one train a month and a moisture clause, Valdara calls off one train of iron ore a month from Serravona Mining, free carrier (FCA) at Fucinalta mine siding: the buyer arranges and pays the main transport, so Valdara, not the mine, books Ferrano Rail Cargo's ore train under their framework transport agreement, within the standing plan for the year. On Tuesday 10 March, the first day of the loading window, the mine loads 30 wagons, which are weighed at the siding: 1,788.4 t of lump ore with 62 % iron. The train runs about 160 km on the line past Ferrano into the factory's siding and arrives the same afternoon, which earns the carrier the 2 % bonus of the plan, so that the factory can start the blend a day early. The mine deducts 1.5 % of the value for the 7.5 % moisture measured at loading, as the agreement's moisture clause says (decision D45).",
    "legs": [
     {
      "mode": "rail",
@@ -50,8 +50,8 @@
   },
   {
    "id": "rail",
-   "title": "Containers by rail under transit (Urvania → Bayvarra)",
-   "text": "For full container loads the manufacturer sells delivered at place (DAP) the distributor's rail siding. Now the seller arranges and pays the transport: it books the container train and moves the goods under a transit declaration, so that import formalities happen at the destination. The intermodal hub loads the containers on the train.",
+   "title": "Containers by rail under the Accord's common transit (Urvania → Bayvarra)",
+   "text": "For full container loads Valdara sells Lumeway 192 benches delivered at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges and pays the transport: it books Ferrano Rail Cargo under their framework contract for container slots. The carrier's tractor brings the two packed 40-foot containers from Castrano's warehouse to the intermodal hub at Ferrano, a pre-carriage by road of the same contract, and the hub lifts them onto the container train FRC 4417; the consignment note follows the Accord's uniform rules for international carriage by rail, modelled on the CIM. Urvania's rail infrastructure manager, which runs the tracks and the train paths since the state separated them from the train operators, reports the train's progress to the carrier. The goods travel under the Accord's common transit, which Valdara lodges the evening before departure, to Bayvarra customs' inland office at Marrowdale, where Lumeway declares the import on 15 April and claims the Accord preference. Lumeway empties the first container the next day; the second waits until 22 April, because the siding's fork-lift is in repair, and runs two days past the five days' free time. Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to its freight invoice, and Valdara passes it on to Lumeway, which bears a delay in unloading under DAP, in a debit note to its goods invoice: the world's debit notes (decision D37).",
    "legs": [
     {
      "mode": "road",
@@ -196,15 +196,30 @@
   },
   {
    "id": "air",
-   "title": "An urgent part of the order by air (Bayvarra → island Lisavu)",
-   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
+   "title": "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)",
+   "text": "On 11 May the buyer asks for eight more side frames by air, spares for the Port of Selanu's harbour benches, on top of the twelve on the ship: it changes its order with a line carriage paid to (CPT) the island's airport. The distributor has none left: Valdara casts them on 12 May and packs them on 13 May, and Trasvia trucks them under the Trade Accord's common transit to the distributor's dispatch area in Marrowdale, where the forwarder takes them straight on to Lumeport airport, a cross-dock. They are booked on the afternoon flight KXL209, but the truck from Ferrano is late and the cargo reaches the terminal after the cut-off; the island's airline flies it on the next morning's KXL207 under a direct air waybill. The distributor cancels its despatch advice and replaces it, and the 3PL collects the skid at Selanu airport on 14 May. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
    "legs": [
+    {
+     "mode": "road",
+     "from": "5-xu",
+     "to": "6-xb",
+     "carrier": "13-xu",
+     "why": "Trasvia trucks the freshly packed frames under transit to the distributor's dispatch area, where they pass through without entering its stock (D39).",
+     "from_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Lumeway distribution centre, dispatch area, Marrowdale",
+      "gln": "6-xb:dc"
+     }
+    },
     {
      "mode": "road",
      "from": "6-xb",
      "to": "17-xb",
      "carrier": "10-xb",
-     "why": "The forwarder picks up the boxes and takes them to the cargo terminal.",
+     "why": "The forwarder takes the skid straight on from the dispatch area to the cargo terminal.",
      "from_place": {
       "name": "Lumeway distribution centre, goods-out, Marrowdale",
       "gln": "6-xb:dc"
@@ -219,13 +234,13 @@
      "from": "17-xb",
      "to": "17-xl",
      "carrier": "12-xl",
-     "why": "The flight to the island.",
+     "why": "The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.",
      "load": {
       "ulds": [],
       "bulk": [
        "bench-casting-b"
       ],
-      "why": "One skid of eight boxed side frames, lashed in the aft bulk compartment."
+      "why": "One skid of eight frame cartons, lashed in the aft bulk compartment."
      },
      "from_place": {
       "name": "Lumeport airport, cargo terminal",
@@ -241,7 +256,7 @@
      "from": "17-xl",
      "to": "9-xl",
      "carrier": "9-xl",
-     "why": "The 3PL collects the boxes at the airport.",
+     "why": "The 3PL collects the skid at the airport.",
      "from_place": {
       "name": "Selanu airport, cargo terminal",
       "locode": "XLSLA"
@@ -282,7 +297,7 @@
   {
    "id": "carnet",
    "title": "Samples to a trade fair on the island (temporary export)",
-   "text": "The manufacturer shows samples at a trade fair on the island and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, avoids paying duties.",
+   "text": "The manufacturer shows two sample benches at the Selanu Chamber of Commerce's trade fair in early June and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, lets them into the island without its import consumption tax; customs stamp its counterfoils as the samples go, and they cross Bayvarra on the carnet's transit vouchers.",
    "legs": [
     {
      "mode": "road",
@@ -730,7 +745,7 @@
   {
    "id": "mast",
    "title": "Batteries for the island's telecom mast, by air (dangerous goods)",
-   "text": "The island's telecom company orders back-up batteries, smoke detectors and a coating stripper for its mast from an engineering firm in Bayvarra. All three are dangerous goods; the batteries fly in a temperature-controlled container.",
+   "text": "The island's telecom company orders back-up batteries, smoke detectors and a coating stripper for its mast from an engineering firm in Bayvarra, carriage paid to the mast site. All three are dangerous goods: the forwarder trucks them to Lumeport airport and the island's airline flies them on its freighter, the batteries and the stripper, which may fly on cargo aircraft only, where the crew can reach them and apart from each other, the smoke detectors in a closed container.",
    "legs": [
     {
      "mode": "road",
@@ -751,27 +766,35 @@
      "from": "17-xb",
      "to": "17-xl",
      "carrier": "12-xl",
-     "why": "A cargo-aircraft-only flight to the island.",
+     "why": "A cargo-aircraft-only flight to the island on the airline's freighter.",
      "load": {
       "ulds": [
        {
-        "id": "RKN41207K0",
-        "type": "RKN",
-        "position": "MD-2",
+        "id": "AKE20513K0",
+        "type": "AKE",
+        "position": "MD-1",
         "items": [
          "battery-pack"
         ],
-        "why": "The lithium-ion packs in the active container, kept between 5 and 35 °C, at a position the crew can reach (cargo aircraft only)."
+        "why": "The pallet of battery crates in an LD3 container with a net door, at the front of the main deck where the crew can see and reach it: lithium ion batteries of packing instruction 965 section IA fly on cargo aircraft only."
+       },
+       {
+        "id": "AKE20516K0",
+        "type": "AKE",
+        "position": "MD-3",
+        "items": [
+         "coating-stripper"
+        ],
+        "why": "The box of stripper, cargo aircraft only as well (five litres in one package), in a net-door container of its own within the crew's reach; position 2 between them stays empty, because the stripper's class 3 label must not be stowed next to the lithium batteries."
        },
        {
         "id": "AKE20514K0",
         "type": "AKE",
         "position": "MD-6",
         "items": [
-         "smoke-detector",
-         "coating-stripper"
+         "smoke-detector"
         ],
-        "why": "The smoke detectors (class 7, excepted package) and the coating stripper (class 8, subsidiary hazard 3) share a container: class 7 needs no segregation (IATA DGR Table 9.3.A, note 1). The stripper's flammable label keeps it away from the lithium batteries (DGR 9.3.2.1.3), so its container is four positions aft of theirs."
+        "why": "The smoke detectors, an excepted package of class 7, need neither crew access nor segregation: a closed container further aft."
        }
       ],
       "bulk": []
@@ -783,20 +806,21 @@
      "to_place": {
       "name": "Selanu airport, cargo terminal",
       "locode": "XLSLA"
-     }
+     },
+     "transit_days": 1
     },
     {
      "mode": "road",
      "from": "17-xl",
      "to": "35-xl",
      "carrier": "9-xl",
-     "why": "The 3PL trucks them to the telecom company.",
+     "why": "The 3PL trucks them from the airport to the mast site the next morning.",
      "from_place": {
       "name": "Selanu airport, cargo terminal",
       "locode": "XLSLA"
      },
      "to_place": {
-      "name": "Selanu Telecom mast site"
+      "name": "Selanu Telecom's mast site on Mast Hill"
      }
     }
    ]
@@ -1211,7 +1235,7 @@
    "doc": "TransportExecutionPlan",
    "from": "14-xu",
    "to": "5-xu",
-   "why": "The rail carrier confirms the train and the slot at the intermodal hub.",
+   "why": "The rail carrier confirms the haulage to the hub and the slots on the container train to the distributor's siding.",
    "parties": {
     "SenderParty": "14-xu",
     "ReceiverParty": "5-xu",
@@ -1224,21 +1248,21 @@
    "flow": "rail",
    "doc": "TransportProgressStatusRequest",
    "from": "14-xu",
-   "to": "18-xu",
-   "why": "The rail carrier asks the hub, which manages the tracks and slots, where the container train stands.",
+   "to": "47-xu",
+   "why": "The rail carrier asks Urvania's rail infrastructure manager, the transportation network manager that runs the tracks and the train paths, to report the container train's departure (D37).",
    "parties": {
     "SenderParty": "14-xu",
-    "ReceiverParty": "18-xu"
+    "ReceiverParty": "47-xu"
    }
   },
   {
    "flow": "rail",
    "doc": "TransportProgressStatus",
-   "from": "18-xu",
+   "from": "47-xu",
    "to": "14-xu",
-   "why": "The hub, as network manager, reports the train's position and timetable.",
+   "why": "The rail infrastructure manager reports the train's position and timetable on its network, from the hub to the border station (D37).",
    "parties": {
-    "SenderParty": "18-xu",
+    "SenderParty": "47-xu",
     "ReceiverParty": "14-xu"
    }
   },
@@ -1247,7 +1271,7 @@
    "doc": "TransitCustomsDeclaration",
    "from": "5-xu",
    "to": "19-xu",
-   "why": "The goods travel under customs transit from Urvania to the destination in Bayvarra; the manufacturer, as holder of the procedure, lodges the declaration at the office of departure.",
+   "why": "The goods travel under the Accord's common transit from Urvania's office of departure at the hub to Bayvarra customs' inland office at Marrowdale, the office of destination; the manufacturer, as holder of the procedure, lodges the declaration the evening before the train leaves (D37).",
    "parties": {
     "TransitExporterParty": "5-xu",
     "ConsignorParty": "5-xu",
@@ -1274,7 +1298,7 @@
    "doc": "Waybill",
    "from": "14-xu",
    "to": "5-xu",
-   "why": "The rail consignment note goes to the transport user, now the seller.",
+   "why": "The rail consignment note under the Accord's uniform rules, modelled on the CIM, goes to the transport user, the seller; the road haulage to the hub is a pre-carriage stage of the same contract (D37).",
    "parties": {
     "SenderParty": "14-xu",
     "ReceiverParty": "5-xu",
@@ -1291,8 +1315,7 @@
    "why": "The carrier tells the transport user the route and timing of the containers.",
    "parties": {
     "SenderParty": "14-xu",
-    "ReceiverParty": "5-xu",
-    "TransportationSegment/TransportServiceProviderParty": "14-xu"
+    "ReceiverParty": "5-xu"
    }
   },
   {
@@ -1314,13 +1337,50 @@
    "doc": "Invoice",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "Under DAP the price includes the transport, so the invoice covers goods and freight.",
+   "why": "Under DAP the price includes the transport, so the invoice covers goods and freight; Valdara invoices on despatch, so the importer has it when it declares the goods.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "DebitNote",
+   "from": "14-xu",
+   "to": "5-xu",
+   "why": "The carrier charges Valdara, the transport user under DAP, the demurrage on the second container, which stood at Lumeway's siding two days beyond the free time, as a debit note to its freight invoice under the framework contract: the world's real debit note (D37, D9).",
+   "parties": {
+    "AccountingSupplierParty": "14-xu",
+    "AccountingCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "DebitNote",
+   "from": "5-xu",
+   "to": "6-xb",
+   "why": "Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes the carrier's demurrage on to Lumeway as a debit note to its goods invoice (D37, D9).",
+   "parties": {
+    "AccountingSupplierParty": "5-xu",
+    "AccountingCustomerParty": "6-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "ImportCustomsDeclaration",
+   "from": "6-xb",
+   "to": "19-xb",
+   "why": "At Bayvarra customs' inland office in Marrowdale, the office of destination of the Accord's common transit, the distributor, as importer under DAP, declares the benches for import and claims the Accord preference with the statement on origin on Valdara's invoice (D37, D18).",
+   "parties": {
+    "ImporterParty": "6-xb",
+    "ConsignorParty": "5-xu",
+    "ConsigneeParty": "6-xb",
+    "CustomsParty": "19-xb"
    }
   },
   {
@@ -1963,14 +2023,11 @@
    "doc": "OrderChange",
    "from": "1-xl",
    "to": "6-xb",
-   "why": "Part of the quantity is needed urgently: delivery by air, CPT island airport, at an extra charge.",
+   "why": "Eight more side frames are needed urgently, spares for the port's harbour benches: a line added to the sea order, by air, carriage paid to the island airport, with the air freight at cost.",
    "parties": {
     "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
     "Delivery/DeliveryParty": "9-xl"
-   },
-   "values": {
-    "DeliveryTerms/ID": "CPT"
    }
   },
   {
@@ -1978,7 +2035,7 @@
    "doc": "OrderResponse",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "The distributor accepts the change: the urgent part goes by air at an extra charge, the rest stays on the ship.",
+   "why": "The distributor accepts the change: the frames fly on the afternoon flight of 13 May; the rest of the order stays on the ship.",
    "parties": {
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "1-xl"
@@ -1989,7 +2046,7 @@
    "doc": "ForwardingInstructions",
    "from": "6-xb",
    "to": "10-xb",
-   "why": "The distributor asks its forwarder to book air freight for the urgent part.",
+   "why": "The distributor asks its forwarder to book the frames on the afternoon flight of 13 May.",
    "parties": {
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
@@ -2001,7 +2058,7 @@
    "doc": "Waybill",
    "from": "12-xl",
    "to": "10-xb",
-   "why": "The air waybill; the airline's road feeder service, run by the road carrier, is named as substitute carrier for the truck leg to the airport.",
+   "why": "The direct air waybill, issued when the airline accepted the cargo after the cut-off for the afternoon flight: it names the next morning's flight, and the 3PL as the party to notify.",
    "parties": {
     "SenderParty": "12-xl",
     "ReceiverParty": "10-xb",
@@ -2009,7 +2066,7 @@
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
     "Shipment/Consignment/ConsigneeParty": "1-xl",
-    "Shipment/Consignment/SubstituteCarrierParty": "9-xl"
+    "Shipment/Consignment/NotifyParty": "9-xl"
    }
   },
   {
@@ -2017,7 +2074,7 @@
    "doc": "TransportationStatus",
    "from": "17-xb",
    "to": "12-xl",
-   "why": "The air cargo terminal reports the cargo accepted and built up for the flight.",
+   "why": "The air cargo terminal reports the cargo accepted after the cut-off for the afternoon flight and built up for the next morning's.",
    "parties": {
     "SenderParty": "17-xb",
     "ReceiverParty": "12-xl",
@@ -2030,7 +2087,7 @@
    "doc": "DespatchAdvice",
    "from": "6-xb",
    "to": "9-xl",
-   "why": "The distributor announces the air part to the buyer's 3PL, with the airline as carrier.",
+   "why": "The distributor announces the frames to the buyer's 3PL with the flight they are booked on: first the afternoon flight of 13 May, then, replacing it, the morning flight of 14 May.",
    "parties": {
     "DespatchSupplierParty": "6-xb",
     "DeliveryCustomerParty": "9-xl",
@@ -2044,7 +2101,7 @@
    "doc": "FulfilmentCancellation",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "The cargo missed its flight; the despatch advice is cancelled and a new one follows for the next flight.",
+   "why": "The cargo missed the afternoon flight of 13 May; the despatch advice, which named it, is cancelled, and a new one follows for the next morning's flight.",
    "parties": {
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "1-xl",
@@ -2056,7 +2113,7 @@
    "doc": "DespatchAdvice",
    "from": "6-xb",
    "to": "9-xl",
-   "why": "The new despatch advice, for the next day's flight.",
+   "why": "The distributor announces the frames to the buyer's 3PL with the flight they are booked on: first the afternoon flight of 13 May, then, replacing it, the morning flight of 14 May.",
    "parties": {
     "DespatchSupplierParty": "6-xb",
     "DeliveryCustomerParty": "9-xl",
@@ -2084,7 +2141,7 @@
    "doc": "Invoice",
    "from": "10-xb",
    "to": "6-xb",
-   "why": "The forwarder invoices the air freight, including the road feeder leg, to the distributor, who sold carriage paid to the island airport.",
+   "why": "The forwarder invoices the airport-to-airport air freight at the chargeable weight of the airline's waybill to the distributor, who sold carriage paid to the island airport.",
    "parties": {
     "AccountingSupplierParty": "10-xb",
     "AccountingCustomerParty": "6-xb",
@@ -2504,7 +2561,7 @@
    "doc": "ProofOfReexportationRequest",
    "from": "20-xl",
    "to": "20-xu",
-   "why": "The island's chamber has no re-export stamp for the samples and asks for proof that they left.",
+   "why": "The re-exportation limit of 30 June has passed and the island's customs have no discharged re-exportation voucher: it went astray. The island's chamber asks Urvania's chamber for proof that the samples left.",
    "parties": {
     "ImportingGuarantorParty": "20-xl",
     "ExportingGuarantorParty": "20-xu",
@@ -2528,7 +2585,7 @@
    "doc": "ProofOfReexportation",
    "from": "20-xu",
    "to": "20-xl",
-   "why": "Urvania's chamber proves the samples were re-exported: they came home through Urvania's customs.",
+   "why": "Urvania's chamber proves the samples were re-exported, with the stamped re-exportation counterfoil and Urvania's record of their re-importation; the claim of the island's tax falls away.",
    "parties": {
     "ExportingGuarantorParty": "20-xu",
     "ImportingGuarantorParty": "20-xl",
@@ -3660,7 +3717,7 @@
    "doc": "Order",
    "from": "35-xl",
    "to": "27-xb",
-   "why": "The telecom company orders back-up power and safety equipment for its mast. Carriage paid to its site: the seller arranges the dangerous goods transport.",
+   "why": "The telecom company orders back-up power and safety equipment for its mast. Carriage paid to the mast site: the seller arranges the dangerous goods transport.",
    "parties": {
     "BuyerCustomerParty": "35-xl",
     "SellerSupplierParty": "27-xb",
@@ -3675,7 +3732,7 @@
    "doc": "ForwardingInstructions",
    "from": "27-xb",
    "to": "10-xb",
-   "why": "The engineering firm instructs the forwarder, with the shipper's declaration of dangerous goods.",
+   "why": "The engineering firm instructs the forwarder, with the shipper's declaration of dangerous goods and how the cargo-aircraft-only packages must be stowed.",
    "parties": {
     "ConsignorParty": "27-xb",
     "FreightForwarderParty": "10-xb",
@@ -3687,7 +3744,7 @@
    "doc": "Waybill",
    "from": "12-xl",
    "to": "10-xb",
-   "why": "The air waybill for cargo aircraft only, with the dangerous goods on it.",
+   "why": "The air waybill for the cargo-aircraft-only flight on 4 June, with the dangerous goods, the containers and their positions on board.",
    "parties": {
     "SenderParty": "12-xl",
     "ReceiverParty": "10-xb",
@@ -4177,10 +4234,6 @@
    "what": "the factoring agreement between Lumeway and Harbourline",
    "type": "Factoring agreement"
   },
-  "KXL-OFFLOAD-26-0513": {
-   "what": "the airline's offload notice",
-   "type": "Offload notice"
-  },
   "LD-GTC-2026": {
    "what": "Lumeway's general terms of trade",
    "type_code": "774"
@@ -4301,6 +4354,10 @@
    "what": "Serravona Mining's assay of the ore lot",
    "type_code": "1"
   },
+  "SM-ASSAY-26-12": {
+   "what": "Serravona Mining's assay certificate of the sample taken when March's ore train was loaded on 10 March: 62 % iron, 7.5 % moisture (D45)",
+   "type_code": "1"
+  },
   "VGM-26-0510": {
    "what": "the shipper's verified gross mass of the container",
    "type_code": "749"
@@ -4345,6 +4402,10 @@
    "what": "Valdara's reference letters",
    "type": "Reference letters"
   },
+  "VI-TD-26-0513": {
+   "what": "Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport",
+   "type": "Transit declaration"
+  },
   "VI-WARRANTY-B180": {
    "what": "the maker's warranty card of the bench",
    "type": "Warranty card"
@@ -4369,13 +4430,13 @@
    "what": "Velumi's claim",
    "type": "Claim"
   },
-  "XB-FOR-AUD-2025-0118": {
-   "what": "the audit report behind the forestry certificate",
-   "type": "Forest management audit report"
-  },
   "WS-CERT-26-0884": {
    "what": "Wavesure's insurance certificate of the sea shipment, with its insured value",
    "type": "Insurance certificate"
+  },
+  "XB-FOR-AUD-2025-0118": {
+   "what": "the audit report behind the forestry certificate",
+   "type": "Forest management audit report"
   },
   "XL-CLS-2026-0042": {
    "what": "the classing certificate of the cotton",

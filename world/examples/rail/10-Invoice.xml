@@ -16,6 +16,13 @@
   <cbc:AccountingCost>Freight</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:ContractDocumentReference>
+    <cbc:ID>FRC-CON-2026-005</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-WB-26-0334</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
@@ -167,6 +174,13 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-04-15</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+      <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -228,13 +242,16 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">21840</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">109200</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">21840</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>20</cbc:Percent>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXPTRANSPORT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason languageID="qau">Drutraz skul valnir gazvan mir Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason languageID="en-XU">Transport of goods exported from Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -244,24 +261,27 @@
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">109200</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XUF">109200</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">131040</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">131040</cbc:PayableAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">109200</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">109200</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="E48">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">109200</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qau">Zan titran skir rek drek titran sezhul krir drek hazman nintrek.</cbc:Description>
-      <cbc:Description languageID="en-XU">One container slot on the container train to the distributor's siding.</cbc:Description>
+      <cbc:Description languageID="qau">Zan titran skir rek drek titran sezhul krir drek hazman nintrek, vek drek vuznek ranrek skul drek stul mir drek mazmul krir drek gul.</cbc:Description>
+      <cbc:Description languageID="en-XU">One container slot on the container train to the distributor's siding, with the carrier's haulage of the box from the warehouse to the hub.</cbc:Description>
       <cbc:Name languageID="qau">Kaz musaz, titran skir</cbc:Name>
       <cbc:Name languageID="en-XU">Rail freight, container slot</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>FRC-CTR</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>20</cbc:Percent>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXPTRANSPORT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason languageID="qau">Drutraz skul valnir gazvan mir Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason languageID="en-XU">Transport of goods exported from Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>

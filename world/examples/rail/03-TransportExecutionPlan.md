@@ -1,8 +1,8 @@
 # Transport Execution Plan: Ferrano Rail Cargo to Valdara Industries
 
-*Example 3 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Transport Execution Plan in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA)*
+*Example 3 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Transport Execution Plan in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA)*
 
-The rail carrier confirms the train and the slot at the intermodal hub.
+The rail carrier confirms the haulage to the hub and the slots on the container train to the distributor's siding.
 
 [The XML file](03-TransportExecutionPlan.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -32,12 +32,12 @@ The rail carrier confirms the train and the slot at the intermodal hub.
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed). The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
 - `DocumentStatusReasonCode` = **ASREQUESTED** (listID `urn:ubl-examples:world:codelist:DocumentStatusReasonCode`)  
   Confirmed without changes. The code is from the Trade Accord's document status reason list: ASREQUESTED = As requested.
-- `DocumentStatusReasonDescription` = **Capacity available on the requested day.**  
-  Why it is confirmed.
-- `Note` = **Sundraz ranrek: drek kaz vuznek kazdrek rizvek drek drazkir trakran krir drek gul.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): The transport agreed.
-- `Note` = **Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: The transport agreed.
+- `DocumentStatusReasonDescription` = **Capacity available in the requested window: slots on the train of 14 April.**  
+  Why it is confirmed as requested.
+- `Note` = **Kan trunskir mir drek mazmul trek Conciaro krir drek kaz nintrek trek Marrowdale: drek vuznek kazdrek krir drek gul, vabul drek titran sezhul.** (languageID `qau`)  
+  The note in Urvanian, the sender's language (world/countries.json): The transport asked for and agreed.
+- `Note` = **Two containers from the warehouse in Conciaro to the rail siding in Marrowdale: the carrier's tractor to the hub, then the container train.** (languageID `en-XU`)  
+  The same note in English, the working language between the countries: The transport asked for and agreed.
 - `TransportUserRemarks` = **Please confirm by return.**  
   The user's remark from the request.
 - `TransportServiceProviderRemarks` = **Collection as requested; notice two hours before arrival.**  
@@ -204,18 +204,20 @@ Inside `TransportExecutionPlanRequestDocumentReference`:
 
 Inside `TransportContract`:
 
-- `ID` = **VI-FRC-FW-2026**  
-  The framework agreement.
+- `ID` = **FRC-CON-2026-005**  
+  The framework contract for container slots, in the carrier's numbering, the same in every document (rail/02#F13, 03#F14).
+- `IssueDate` = **2026-01-05**  
+  Signed at the start of the year: the time below has its date (rail/03#F15).
 - `IssueTime` = **10:00:00**  
   Signed in the morning.
 - `NominationDate` = **2026-04-08**  
-  The slots of this train were nominated today.
+  The deadline for booking this train's slots: the request of the day before met it.
 - `NominationTime` = **09:00:00**  
   At that time.
 - `ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
   A framework contract. The code is from the Trade Accord's contract type list: FRAMEWORK = Framework agreement.
-- `ContractType` = **Framework transport agreement**  
-  Its kind.
+- `ContractType` = **Framework contract for container slots**  
+  Its kind, as the consignment note names it.
 - `Note` = **Call-off 88 of the year.**  
   Which call-off.
 - `VersionID` = **2**  
@@ -224,14 +226,16 @@ Inside `TransportContract`:
   Amended for higher volumes. The code is from the Trade Accord's contract modification reason list: VOLUME = Volume change.
 - `ModificationReasonDescription` = **Ten more slots a month from April.**  
   The change.
-- `Description` = **Container slots between the Ferrano hub and Marrowdale.**  
+- `Description` = **Container slots on the trains from the Ferrano hub to Marrowdale, with the carrier's haulage of the boxes to the hub.**  
   What it covers.
 - `ContractDocumentReference/ID` = **FRC-CON-2026-005-A1**  
   The amendment.
 - `NominationPeriod/StartDate` = **2026-04-06**  
-  Slots are nominated a week
-- `NominationPeriod/EndDate` = **2026-04-12**  
-  before the train.
+  Slots are booked from a week before the train
+- `NominationPeriod/EndDate` = **2026-04-08**  
+  until the deadline above, so period and deadline agree (rail/03#F15).
+- `NominationPeriod/EndTime` = **09:00:00**  
+  The deadline's time.
 - `ContractualDelivery/LatestDeliveryDate` = **2026-04-16**  
   The contract's latest delivery for this call-off.
 
@@ -267,15 +271,6 @@ Inside `MainTransportationService`:
 - `Name` = **Container train**  
   In words.
 
-### Additional Transportation Service
-
-Inside `AdditionalTransportationService`:
-
-- `TransportServiceCode` = **NOTIFY** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  Pre-arrival notice. The code is from the Trade Accord's transport service list: NOTIFY = Pre-arrival notice.
-- `Name` = **Notice two hours before arrival**  
-  In words.
-
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
@@ -297,7 +292,7 @@ Inside `FromLocation`:
 - `ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Name` = **Castrano Logistics warehouse, Conciaro**  
-  Where the goods are taken over.
+  Where the carrier takes the packed boxes over.
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
@@ -305,21 +300,17 @@ Inside `FromLocation`:
 
 Inside `ToLocation`:
 
-- `ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Name` = **Ferrano Intermodal Hub**  
-  Where the goods are handed over.
-- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `ID` = **9520610900015** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Name` = **Lumeway rail siding, Marrowdale**  
+  Where the service ends: the boxes are placed on Lumeway's siding.
 
 ### Transport Execution Terms
 
 Inside `TransportExecutionTerms`:
 
-- `TransportUserSpecialTerms` = **Delivery within the agreed slot; the consignee unloads.**  
-  The user's terms.
-- `TransportServiceProviderSpecialTerms` = **Waiting time beyond two hours is charged.**  
-  The carrier's.
+- `TransportServiceProviderSpecialTerms` = **Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.**  
+  The carrier's terms.
 - `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
@@ -330,9 +321,9 @@ Inside `TransportExecutionTerms`:
   Notice before arrival. The code is from the Trade Accord's transport notification type list: PREARRIVAL = Pre-arrival notice.
 - `NotificationRequirement/PreEventNotificationDurationMeasure` = **2** (unitCode `HUR`)  
   Two hours before.
-- `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `NotificationRequirement/NotifyParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `NotificationRequirement/NotifyParty/PartyName/Name` = **Ferrano Intermodal Hub**  
+- `NotificationRequirement/NotifyParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 - `NotificationRequirement/NotificationLocation/ID` = **9520610900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
@@ -354,8 +345,8 @@ Inside `Consignment`:
 - `ContainerizedIndicator` = **true**  
   Two full containers.
 - `PlannedPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
-  The carrier collects the packed boxes.
-- `PlannedPickupTransportEvent/OccurrenceTime` = **15:00:00**  
+  The carrier collects the packed boxes, in two runs.
+- `PlannedPickupTransportEvent/OccurrenceTime` = **13:00:00**  
   The local time.
 - `PlannedPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -417,15 +408,9 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
-- `TransportContract/ID` = **FRC-CON-2026-005**  
-  The framework contract for container slots.
-- `TransportContract/IssueDate` = **2026-01-05**  
-  Signed at the start of the year.
-- `TransportContract/ContractType` = **Framework contract for container slots**  
-  What it is.
 - `PrepaidPaymentTerms/Note` = **Freight prepaid by the consignor under DAP.**  
   The seller pays the carriage.
-- `MainCarriageShipmentStage/ID` = **1**  
+- `MainCarriageShipmentStage/ID` = **2**  
   The main carriage, by rail.
 - `MainCarriageShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   UN/ECE Recommendation 19 code 2: rail transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 2 = Rail transport.
@@ -433,14 +418,12 @@ Inside `Consignment`:
   The order the boxes go on the train: these two are the seventh lift.
 - `MainCarriageShipmentStage/SuccessiveSequenceID` = **1**  
   The first and only rail stage.
-- `MainCarriageShipmentStage/Instructions` = **Shunt to the Lumeway siding on arrival in Marrowdale.**  
+- `MainCarriageShipmentStage/Instructions` = **Shunt to the Lumeway siding in Marrowdale once the import is declared.**  
   What the railway must do.
-- `MainCarriageShipmentStage/DemurrageInstructions` = **Free time five days at the siding, then demurrage per container day.**  
-  What waiting costs.
+- `MainCarriageShipmentStage/DemurrageInstructions` = **Free time five days at the siding, counted from the day after the boxes are placed; then demurrage of 7,500 ferra per container day, under framework contract FRC-CON-2026-005.**  
+  What waiting costs: the framework contract's free time and rate (D37, O128).
 - `MainCarriageShipmentStage/CrewQuantity` = **2** (unitCode `IE`)  
   Two persons: a driver and a train manager.
-- `MainCarriageShipmentStage/PassengerQuantity` = **0** (unitCode `IE`)  
-  No persons: a freight train carries no passengers.
 - `MainCarriageShipmentStage/TransportMeans/JourneyID` = **CT 4471**  
   The number of the container train in the hub's timetable.
 - `MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
@@ -464,7 +447,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
-  The timetable arrival at the siding in Marrowdale: the train reaches Marrowdale yard about 15:30 the day before, 173 km from the hub, and the next morning's shunting trip places the boxes on Lumeway's siding.
+  The timetable arrival at the siding in Marrowdale: the train reaches Marrowdale yard about 15:10 the day before, 173 km from the hub, and the next morning's shunting trip places the boxes on Lumeway's siding.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
   The local time.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
@@ -472,7 +455,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
   Where the boxes are placed for unloading.
 - `MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceDate` = **2026-04-14**  
-  Planned departure from the border station, 63 km from the hub: the train stops there from about 08:10 for the crew change, the brake test and the customs' check of the seals, and leaves on its timetabled path into Bayvarra.
+  Planned departure from the border station, 63 km from the hub: the train stops there from about 08:00 for the crew change, the brake test and the customs' check of the seals, and leaves on its timetabled path into Bayvarra.
 - `MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceTime` = **13:00:00**  
   The local time.
 - `MainCarriageShipmentStage/PlannedWaypointTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
@@ -495,6 +478,50 @@ Inside `Consignment`:
   The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
   Where the boxes are placed for unloading.
+- `PreCarriageShipmentStage/ID` = **1**  
+  The pre-carriage: the carrier's tractor brings the packed boxes to the hub.
+- `PreCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
+- `PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **37** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: container tractor for carrier haulage; the fleet of Ferrano Rail Cargo (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 37 = Truck, container.
+- `PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 RC** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
+  The registration plate of the truck; the fleet of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
+- `PreCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/LoadingPortLocation/Name` = **Castrano Logistics warehouse, Conciaro**  
+  Where the boxes are collected.
+- `PreCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/UnloadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/UnloadingPortLocation/Name` = **Ferrano Intermodal Hub**  
+  Where they are handed to the terminal.
+- `PreCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The first run leaves the warehouse.
+- `PreCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **13:00:00**  
+  The local time.
+- `PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
+  At the 3PL's warehouse in Conciaro, where the boxes are packed.
+- `PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The second box at the hub: 46 km each way, two runs.
+- `PreCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **15:50:00**  
+  The local time.
+- `PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
+  At the intermodal hub, where the boxes go on the train.
+- `PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ## The document
 
@@ -512,9 +539,9 @@ Inside `Consignment`:
   <cbc:IssueTime>16:46:00-01:00</cbc:IssueTime>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">ASREQUESTED</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
-  <cbc:Note languageID="qau">Sundraz ranrek: drek kaz vuznek kazdrek rizvek drek drazkir trakran krir drek gul.</cbc:Note>
-  <cbc:Note languageID="en-XU">Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Note>
+  <cbc:DocumentStatusReasonDescription>Capacity available in the requested window: slots on the train of 14 April.</cbc:DocumentStatusReasonDescription>
+  <cbc:Note languageID="qau">Kan trunskir mir drek mazmul trek Conciaro krir drek kaz nintrek trek Marrowdale: drek vuznek kazdrek krir drek gul, vabul drek titran sezhul.</cbc:Note>
+  <cbc:Note languageID="en-XU">Two containers from the warehouse in Conciaro to the rail siding in Marrowdale: the carrier's tractor to the hub, then the container train.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
@@ -641,23 +668,25 @@ Inside `Consignment`:
     <cbc:ID>VI-TR-26-0326</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
-    <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+    <cbc:ID>FRC-CON-2026-005</cbc:ID>
+    <cbc:IssueDate>2026-01-05</cbc:IssueDate>
     <cbc:IssueTime>10:00:00</cbc:IssueTime>
     <cbc:NominationDate>2026-04-08</cbc:NominationDate>
     <cbc:NominationTime>09:00:00</cbc:NominationTime>
     <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
-    <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+    <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
     <cbc:Note>Call-off 88 of the year.</cbc:Note>
     <cbc:VersionID>2</cbc:VersionID>
     <cbc:ModificationReasonCode listID="urn:ubl-examples:world:codelist:ContractModificationReasonCode">VOLUME</cbc:ModificationReasonCode>
     <cbc:ModificationReasonDescription>Ten more slots a month from April.</cbc:ModificationReasonDescription>
-    <cbc:Description>Container slots between the Ferrano hub and Marrowdale.</cbc:Description>
+    <cbc:Description>Container slots on the trains from the Ferrano hub to Marrowdale, with the carrier's haulage of the boxes to the hub.</cbc:Description>
     <cac:ContractDocumentReference>
       <cbc:ID>FRC-CON-2026-005-A1</cbc:ID>
     </cac:ContractDocumentReference>
     <cac:NominationPeriod>
       <cbc:StartDate>2026-04-06</cbc:StartDate>
-      <cbc:EndDate>2026-04-12</cbc:EndDate>
+      <cbc:EndDate>2026-04-08</cbc:EndDate>
+      <cbc:EndTime>09:00:00</cbc:EndTime>
     </cac:NominationPeriod>
     <cac:ContractualDelivery>
       <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
@@ -677,10 +706,6 @@ Inside `Consignment`:
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
     <cbc:Name>Container train</cbc:Name>
   </cac:MainTransportationService>
-  <cac:AdditionalTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">NOTIFY</cbc:TransportServiceCode>
-    <cbc:Name>Notice two hours before arrival</cbc:Name>
-  </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-13</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
@@ -697,17 +722,11 @@ Inside `Consignment`:
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-    <cac:Address>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+    <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
   </cac:ToLocation>
   <cac:TransportExecutionTerms>
-    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
-    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
@@ -720,10 +739,10 @@ Inside `Consignment`:
       <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
       <cac:NotifyParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:NotifyParty>
       <cac:NotificationLocation>
@@ -742,7 +761,7 @@ Inside `Consignment`:
     <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
     <cac:PlannedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -798,23 +817,17 @@ Inside `Consignment`:
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:ConsigneeParty>
-    <cac:TransportContract>
-      <cbc:ID>FRC-CON-2026-005</cbc:ID>
-      <cbc:IssueDate>2026-01-05</cbc:IssueDate>
-      <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
-    </cac:TransportContract>
     <cac:PrepaidPaymentTerms>
       <cbc:Note>Freight prepaid by the consignor under DAP.</cbc:Note>
     </cac:PrepaidPaymentTerms>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
       <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
       <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
-      <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
-      <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
+      <cbc:Instructions>Shunt to the Lumeway siding in Marrowdale once the import is declared.</cbc:Instructions>
+      <cbc:DemurrageInstructions>Free time five days at the siding, counted from the day after the boxes are placed; then demurrage of 7,500 ferra per container day, under framework contract FRC-CON-2026-005.</cbc:DemurrageInstructions>
       <cbc:CrewQuantity unitCode="IE">2</cbc:CrewQuantity>
-      <cbc:PassengerQuantity unitCode="IE">0</cbc:PassengerQuantity>
       <cac:TransportMeans>
         <cbc:JourneyID>CT 4471</cbc:JourneyID>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
@@ -875,6 +888,62 @@ Inside `Consignment`:
         </cac:Location>
       </cac:EstimatedArrivalTransportEvent>
     </cac:MainCarriageShipmentStage>
+    <cac:PreCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">37</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 RC</cbc:LicensePlateID>
+        </cac:RoadTransport>
+      </cac:TransportMeans>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+      <cac:PlannedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:PlannedDepartureTransportEvent>
+      <cac:PlannedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:50:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:PlannedArrivalTransportEvent>
+    </cac:PreCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlan>
 ```

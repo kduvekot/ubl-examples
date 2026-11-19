@@ -43,16 +43,23 @@ Under FCA the buyer pays the carriage: the rail carrier invoices the ore freight
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
 
+### Contract Document Reference
+
+Inside `ContractDocumentReference`:
+
+- `ID` = **VI-FRC-FW-2026**  
+  The framework transport agreement the freight and its terms rest on (ore/06#F5).
+
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **FRC-TEP-26-0307**  
-  The transport plan with the agreed price.
+  The transport plan with the agreed price and the bonus.
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: FRC-TEP-26-0307 is the example ore/03, a TransportExecutionPlan; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 - `ID` = **FRC-WB-26-0310**  
-  The consignment note of the carriage invoiced.
+  The consignment note of the carriage invoiced, with its arrival.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: FRC-WB-26-0310 is the example ore/05, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 
@@ -222,6 +229,21 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Ferrano Rail Cargo**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-03-10**  
+  The day the train was delivered in the factory's siding, the first day of the window: why the bonus is due.
+- `ActualDeliveryTime` = **14:18:00**  
+  As the consignment note records it.
+- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Valdara Industries works siding, Ferrano**  
+  The factory's siding, where the train is placed for unloading.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -308,15 +330,34 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
   Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge, not an allowance: it adds to the amount.
+- `AllowanceChargeReasonCode` = **ZZZ** (listID `UN/EDIFACT EDED 7161`)  
+  UN/EDIFACT 7161 has no code for a bonus: mutually defined, the plan's bonus term. The code is from the world's copy of UN/EDIFACT 7161 Special service description: ZZZ = Mutually defined.
+- `AllowanceChargeReason` = **Bonus: train delivered on the first day of the window, 10 March**  
+  The plan's bonus term, earned: the factory could start the blend a day early (D45).
+- `Amount` = **34409** (currencyID `XUF`)  
+  2 % of the freight of 1,720,441.
+- `TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+
 ### Tax Total
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **344088** (currencyID `XUF`)  
+- `TaxAmount` = **350970** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **1720441** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **1754850** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **344088** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **350970** (currencyID `XUF`)  
   20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -331,11 +372,13 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **1720441** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **1720441** (currencyID `XUF`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **2064529** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **1754850** (currencyID `XUF`)  
+  The line amounts plus the charges, without tax.
+- `TaxInclusiveAmount` = **2105820** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **2064529** (currencyID `XUF`)  
+- `ChargeTotalAmount` = **34409** (currencyID `XUF`)  
+  The sum of the charges at document level.
+- `PayableAmount` = **2105820** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -392,6 +435,9 @@ Inside `InvoiceLine`:
   <cbc:AccountingCost>Freight</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:ContractDocumentReference>
+    <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+  </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
@@ -547,6 +593,19 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryTime>14:18:00</cbc:ActualDeliveryTime>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -607,11 +666,24 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ZZZ</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Bonus: train delivered on the first day of the window, 10 March</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XUF">34409</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>20</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">344088</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">350970</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">1720441</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">344088</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">1754850</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">350970</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -623,9 +695,10 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">1720441</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">1720441</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">2064529</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">2064529</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">1754850</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">2105820</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XUF">34409</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XUF">2105820</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

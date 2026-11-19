@@ -925,9 +925,9 @@ def address_of(pid):
 
 
 # Bonus and commission terms of a transport plan, only where the flow has them (a plan without them says nothing).
-TEP_BONUS = {"ore": ("2 % of the freight when the train is delivered on the first day of the window, so that the "
-                     "factory can start the blend a day early.", "The bonus the factory pays for an early train: "
-                                                                 "its stockyard can use the ore at once.")}
+TEP_BONUS = {"ore": ("2 % of the freight when the train is delivered on the first day of the service window, "
+                     "so that the factory can start the blend a day early.", "The bonus the factory pays for an "
+                     "early train: its stockyard can use the ore at once.")}
 TEP_COMMISSION = {}      # the barge is booked directly under the framework terms: no broker (plastics/04#F15)
 WAITING_LUME = 40        # the waiting-time rate of the framework terms, in lume an hour
 
@@ -962,7 +962,7 @@ def tep_terms(flow, user, provider, days):
             "NotificationRequirement": {"NotificationTypeCode": V("PREARRIVAL", "Notice before arrival."),
                                         "PreEventNotificationDurationMeasure": V("2", "Two hours before.",
                                                                                  unitCode="HUR"),
-                                        "NotifyParty": party_short(leg["to"]),
+                                        "NotifyParty": party_short(main_leg(flow, provider)["to"]),
                                         "NotificationLocation": leg_location(main_leg(flow, provider), "to",
                                                                              "The place the notice is for: where "
                                                                              "the goods arrive.")}}
@@ -1033,7 +1033,8 @@ def tep(flow, n, doc, day, why, start_day, weight):
 
 
 WAYBILL_KIND = {"road": ("CMR", "Consignment note under the road convention, the CMR"),
-                "rail": ("CIM", "Rail consignment note under the CIM uniform rules"),
+                "rail": ("CIM", "Rail consignment note under the Accord's uniform rules for international carriage "
+                                "by rail, modelled on the CIM"),       # D37 point 5
                 "river": ("CMNI", "Inland waterway consignment note under the CMNI"),
                 "air": ("AWB", "Air waybill under the Montreal Convention")}
 
@@ -1121,6 +1122,8 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
                         "Consignment": {"ID": V(flow.numbers.get("consignment") or
                                                 flow.number("consignment", doc["from"], "Consignment"),
                                                 "The consignment of the transport booking.")}}}
+    if leg["mode"] == "air":        # an air waybill has one number, the airline's (mast/03#F9, air/04#F17)
+        out.pop("CarrierAssignedID")
     if "tep" in flow.numbers:
         out["DocumentReference"] = {"ID": V(flow.numbers["tep"], "The transport plan under which the carriage is "
                                                                  "performed.")}
