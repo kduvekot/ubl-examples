@@ -291,10 +291,12 @@ distributor for import.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
 Response</strong></a> to <a href="world-6-xb.html">Lumeway
-Distribution</a>: The manufacturer accepts the order and confirms the
-collection date at its warehouse. <a
-href="example-road-02-OrderResponse.html">See the example
-document</a>.</p>
+Distribution</a>: The manufacturer accepts the order with one change:
+the 2026 casting with the reinforced foot replaces the side frame
+ordered, at the same price, for the old casting is no longer made. It
+confirms the collection at its 3PL's warehouse by the buyer's carrier
+(decision D35). <a href="example-road-02-OrderResponse.html">See the
+example document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
@@ -313,8 +315,11 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-O
 of Origin</strong></a> to <a href="world-20-xu.html">Ferrano Chamber of
 Commerce</a>: The goods qualify for preferential duty in Bayvarra; the
 manufacturer applies to its chamber of commerce for a certificate of
-origin. <a href="example-road-06-CertificateOfOrigin.html">See the
-example document</a>.</p>
+origin. The application is Valdara's own document, with its own number;
+the chamber's e-certificate system gives it a job number when it is
+lodged (decision D35). <a
+href="example-road-06-CertificateOfOrigin.html">See the example
+document</a>.</p>
 <p>In it as <code>ExporterParty</code>.</p>
 <p>Also mentions: <a href="world-6-xb.html">Lumeway Distribution</a> as
 <code>ImporterParty</code>.</p></li>
@@ -346,9 +351,12 @@ href="world-13-xu.html">Trasvia Haulage</a> as
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FULFILMENT-CANCELLATION-SCHEMA"><strong>Fulfilment
 Cancellation</strong></a> from <a href="world-6-xb.html">Lumeway
-Distribution</a>: The next morning the distributor's recount finds the
-96th bench on the last pallet: the receipt advice reported a shortage
-that is not there, so the distributor cancels it. <a
+Distribution</a>: The 3PL had put one bench's frame carton (parcel 2 of
+3) on the pallet of spare frame cartons, which it looks like, so
+goods-in reported 95 benches and one carton of frames over. The next
+morning the distributor's recount reads the carton's label: it is the
+96th bench's. The receipt advice reported a shortage and a carton over
+that are not there, so the distributor cancels it (decision D35). <a
 href="example-road-12-FulfilmentCancellation.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p>
@@ -401,10 +409,13 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA"><strong>Certificate
 of Origin</strong></a> from <a href="world-20-xu.html">Ferrano Chamber
 of Commerce</a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
-The chamber endorses the certificate and makes it available to the
-importer, who needs it for the import declaration. <a
-href="example-road-07-CertificateOfOrigin.html">See the example
-document</a>.</p>
+The chamber, the body Urvania authorises under the Trade Accord to issue
+proofs of preferential origin, checks the application, issues the
+certificate under its own number and is its only endorser: a certificate
+between Accord members needs no legalisation. It makes the certificate
+available to the importer, who needs it for the import declaration
+(decision D35). <a href="example-road-07-CertificateOfOrigin.html">See
+the example document</a>.</p>
 <p>In it as <code>ExporterParty</code> (The Party who makes the export
 declaration, or on whose behalf the export declaration is made, and who
 is the owner of the goods or has similar right of disposal over them at
@@ -442,8 +453,9 @@ document</a>.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
 Advice</strong></a> from <a href="world-6-xb.html">Lumeway
 Distribution</a> to <a href="world-8-xu.html">Castrano Logistics</a>:
-The corrected receipt advice: all 96 benches received, and one box of
-side frames more than despatched. <a
+The corrected receipt advice: 96 benches and 12 spare frames, as
+despatched, nothing short and nothing over; it names the receipt advice
+it replaces (decision D35). <a
 href="example-road-13-ReceiptAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code> (The seller).</p></li>
@@ -1223,6 +1235,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d96c38388ddc5be04fb317abdd90569805d6dffa"><code>d96c383</code></a> of 2026-11-19 22:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
 </body>
 </html>

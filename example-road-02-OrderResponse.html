@@ -17,8 +17,10 @@ Response: Valdara Industries to Lumeway Distribution</h1>
 border (Urvania → Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA">Order
 Response in the UBL 2.5 specification</a></em></p>
-<p>The manufacturer accepts the order and confirms the collection date
-at its warehouse.</p>
+<p>The manufacturer accepts the order with one change: the 2026 casting
+with the reinforced foot replaces the side frame ordered, at the same
+price, for the old casting is no longer made. It confirms the collection
+at its 3PL's warehouse by the buyer's carrier (decision D35).</p>
 <p><a href="examples/road/02-OrderResponse.xml">The XML file</a> is
 valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -391,8 +393,8 @@ Party/EndpointID is deprecated.</li>
 Under FCA delivery is the handover to the buyer's carrier: on day
 7.</li>
 <li><code>PromisedDeliveryPeriod/EndDate</code> =
-<strong>2026-03-23</strong><br />
-The same day.</li>
+<strong>2026-03-24</strong><br />
+Or the morning after, by the guaranteed despatch (road/02#F4).</li>
 <li><code>Despatch/EstimatedDespatchDate</code> =
 <strong>2026-03-23</strong><br />
 The goods will be ready on the requested day.</li>
@@ -415,12 +417,12 @@ Distribution</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>Despatch/ResponsibleParty/PartyIdentification/ID</code> =
-<strong>XU-R-104411</strong> (schemeID
+<strong>XU-R-104822</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>Despatch/ResponsibleParty/PartyName/Name</code> =
-<strong>Castrano Logistics</strong><br />
+<strong>Trasvia Haulage</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>Despatch/EstimatedDespatchPeriod/StartDate</code> =
@@ -483,21 +485,6 @@ The frame ordered.</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
 <strong>VI-C180</strong><br />
 Its number.</li>
-<li><code>SellerProposedSubstituteLineItem/ID</code> =
-<strong>2</strong><br />
-What the seller would also accept to ship, if the buyer prefers.</li>
-<li><code>SellerProposedSubstituteLineItem/Quantity</code> =
-<strong>12</strong> (unitCode <code>EA</code>)<br />
-The same quantity.</li>
-<li><code>SellerProposedSubstituteLineItem/Item/Name</code> =
-<strong>Bench side frame casting, 2025, from stock</strong><br />
-Six left in stock; the rest would follow in May.</li>
-<li><code>SellerProposedSubstituteLineItem/Item/SellersItemIdentification/ID</code>
-= <strong>VI-C180</strong><br />
-The item number.</li>
-<li><code>SellerProposedSubstituteLineItem/Item/SellersItemIdentification/ExtendedID</code>
-= <strong>2025</strong><br />
-The old version.</li>
 <li><code>SellerSubstitutedLineItem/ID</code> = <strong>2</strong><br />
 The substitute for line 2.</li>
 <li><code>SellerSubstitutedLineItem/Quantity</code> =
@@ -519,7 +506,8 @@ The substitute.</li>
 The same item number.</li>
 <li><code>SellerSubstitutedLineItem/Item/SellersItemIdentification/ExtendedID</code>
 = <strong>2026</strong><br />
-The new version.</li>
+The new version, the 2026 casting: every later document of the flow
+identifies the frame so (D35 point 3).</li>
 <li><code>OrderLineReference/LineID</code> = <strong>2</strong><br />
 The order line.</li>
 <li><code>OrderLineReference/SalesOrderLineID</code> =
@@ -663,7 +651,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PromisedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-24&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PromisedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedDespatchDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:EstimatedDespatchDate</span>&gt;</span>
@@ -680,10 +668,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:NotifyParty</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ResponsibleParty</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ResponsibleParty</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDespatchPeriod</span>&gt;</span>
@@ -726,46 +714,35 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SellerProposedSubstituteLineItem</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SellerSubstitutedLineItem</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting, 2025, from stock&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExtendedID</span>&gt;2025&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SellerProposedSubstituteLineItem</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SellerSubstitutedLineItem</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;4750&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting, 2026&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExtendedID</span>&gt;2026&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SellerSubstitutedLineItem</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;2&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SalesOrderLineID</span>&gt;2&lt;/<span class="kw">cbc:SalesOrderLineID</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UUID</span>&gt;058a35ee-7283-5e0f-831e-dc6fe709773f&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode&quot;</span>&gt;Revised&lt;/<span class="kw">cbc:LineStatusCode</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-DS-C180-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Product data sheet&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderResponse</span>&gt;</span></code></pre></div>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;4750&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting, 2026&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExtendedID</span>&gt;2026&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SellerSubstitutedLineItem</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;2&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SalesOrderLineID</span>&gt;2&lt;/<span class="kw">cbc:SalesOrderLineID</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UUID</span>&gt;058a35ee-7283-5e0f-831e-dc6fe709773f&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode&quot;</span>&gt;Revised&lt;/<span class="kw">cbc:LineStatusCode</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-DS-C180-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Product data sheet&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d96c38388ddc5be04fb317abdd90569805d6dffa"><code>d96c383</code></a> of 2026-11-19 22:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
 </body>
 </html>

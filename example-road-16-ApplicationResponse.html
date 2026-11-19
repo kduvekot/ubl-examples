@@ -236,24 +236,6 @@ The kind of document referred to: VI-INV-26-0166 is the example road/15,
 a Invoice; a generic reference names the UBL document type (decision
 Q29). The code is from the Trade Accord's UBL document type list:
 Invoice.</li>
-<li><code>IssuerParty/PartyIdentification/ID</code> =
-<strong>20410274</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>IssuerParty/PartyName/Name</code> = <strong>Lumeway
-Distribution</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>RecipientParty/PartyIdentification/ID</code> =
-<strong>XU-R-104274</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>RecipientParty/PartyName/Name</code> = <strong>Valdara
-Industries</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
 <li><code>LineResponse/LineReference/LineID</code> =
 <strong>2</strong><br />
 The invoice line of the side frames.</li>
@@ -357,36 +339,20 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0166&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RecipientParty</span>&gt;</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RecipientParty</span>&gt;</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineResponse</span>&gt;</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LineReference</span>&gt;</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;2&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LineReference</span>&gt;</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Response</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReferenceID</span>&gt;2&lt;/<span class="kw">cbc:ReferenceID</span>&gt;</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ResponseCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4343&quot;</span>&gt;AP&lt;/<span class="kw">cbc:ResponseCode</span>&gt;</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Matched to the substituted 2026 casting.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Response</span>&gt;</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineResponse</span>&gt;</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentResponse</span>&gt;</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ApplicationResponse</span>&gt;</span></code></pre></div>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineResponse</span>&gt;</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LineReference</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;2&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LineReference</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Response</span>&gt;</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReferenceID</span>&gt;2&lt;/<span class="kw">cbc:ReferenceID</span>&gt;</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ResponseCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4343&quot;</span>&gt;AP&lt;/<span class="kw">cbc:ResponseCode</span>&gt;</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Matched to the substituted 2026 casting.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Response</span>&gt;</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineResponse</span>&gt;</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentResponse</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ApplicationResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d96c38388ddc5be04fb317abdd90569805d6dffa"><code>d96c383</code></a> of 2026-11-19 22:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
 </body>
 </html>

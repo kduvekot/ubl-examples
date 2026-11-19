@@ -68,7 +68,7 @@ not)..</li>
 All goods accepted. The code is from the Trade Accord's delivery
 acceptance list: ACCEPTED = All accepted.</li>
 <li><code>Note</code> = <strong>Counted and checked at goods-in: one
-bench short, one box of side frames over.</strong><br />
+bench short of a parcel, one frame carton over.</strong><br />
 The result.</li>
 <li><code>LineCountNumeric</code> = <strong>2</strong><br />
 The number of lines.</li>
@@ -579,20 +579,20 @@ The line number.</li>
 <strong>01193af5-785e-5e35-84c8-25a8b365acea</strong><br />
 A universally unique identifier of the line, derived from the document
 and the line number.</li>
-<li><code>Note</code> = <strong>One pallet held three benches and a box
-of side frames: mis-picked at the 3PL.</strong><br />
+<li><code>Note</code> = <strong>One bench without its frame carton with
+the bolt set, parcel 2 of 3: 95 complete benches.</strong><br />
 What was found.</li>
 <li><code>ReceivedQuantity</code> = <strong>95</strong> (unitCode
 <code>EA</code>)<br />
-One bench fewer than despatched.</li>
+One bench fewer than despatched, counted as complete benches.</li>
 <li><code>ShortQuantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
-One bench short.</li>
+One bench without its second frame carton.</li>
 <li><code>ShortageActionCode</code> = <strong>REPLACE</strong> (listID
 <code>urn:ubl-examples:world:codelist:ShortageActionCode</code>)<br />
-The distributor asks for the missing bench with the next truck. The code
-is from the Trade Accord's shortage action list: REPLACE = Deliver the
-rest.</li>
+The distributor asks for the bench's missing parcel with the next truck.
+The code is from the Trade Accord's shortage action list: REPLACE =
+Deliver the rest.</li>
 <li><code>ReceivedDate</code> = <strong>2026-03-25</strong><br />
 Unloaded.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>1</strong><br />
@@ -686,15 +686,15 @@ The line number.</li>
 <strong>986c8783-e70e-596b-82d0-e70c728412de</strong><br />
 A universally unique identifier of the line, derived from the document
 and the line number.</li>
-<li><code>Note</code> = <strong>The mis-picked box, in place of the
-missing bench.</strong><br />
+<li><code>Note</code> = <strong>13 frame cartons on the pallet of side
+frames, one more than despatched.</strong><br />
 What was found.</li>
 <li><code>ReceivedQuantity</code> = <strong>13</strong> (unitCode
 <code>EA</code>)<br />
-One box more than despatched.</li>
+Thirteen frame cartons on the pallet of side frames.</li>
 <li><code>OversupplyQuantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
-The extra box, held for collection by the next truck.</li>
+One carton more than despatched.</li>
 <li><code>ReceivedDate</code> = <strong>2026-03-25</strong><br />
 Unloaded.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>2</strong><br />
@@ -738,6 +738,10 @@ bench-casting-b.</li>
 <strong>VI-C180</strong><br />
 The seller's own item number; item bench-casting of Valdara Industries
 (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ExtendedID</code> =
+<strong>2026</strong><br />
+The 2026 casting with the reinforced foot, which the order response
+substituted for the casting ordered.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>KXU10014C180</strong> (schemeID <code>ISO 15459-6</code>)<br />
 The item's number in its globally unique form under ISO/IEC 15459, which
@@ -761,7 +765,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:40:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ReceiptAdviceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode&quot;</span>&gt;Actual&lt;/<span class="kw">cbc:ReceiptAdviceTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DeliveryAcceptanceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DeliveryAcceptanceCode&quot;</span>&gt;ACCEPTED&lt;/<span class="kw">cbc:DeliveryAcceptanceCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Counted and checked at goods-in: one bench short, one box of side frames over.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Counted and checked at goods-in: one bench short of a parcel, one frame carton over.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;2&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-PO-26-0149&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -930,7 +934,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiptLine</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;01193af5-785e-5e35-84c8-25a8b365acea&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;One pallet held three benches and a box of side frames: mis-picked at the 3PL.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;One bench without its frame carton with the bolt set, parcel 2 of 3: 95 complete benches.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;95&lt;/<span class="kw">cbc:ReceivedQuantity</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ShortQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ShortQuantity</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ShortageActionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShortageActionCode&quot;</span>&gt;REPLACE&lt;/<span class="kw">cbc:ShortageActionCode</span>&gt;</span>
@@ -976,7 +980,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiptLine</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;986c8783-e70e-596b-82d0-e70c728412de&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The mis-picked box, in place of the missing bench.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;13 frame cartons on the pallet of side frames, one more than despatched.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;13&lt;/<span class="kw">cbc:ReceivedQuantity</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OversupplyQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:OversupplyQuantity</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedDate</span>&gt;2026-03-25&lt;/<span class="kw">cbc:ReceivedDate</span>&gt;</span>
@@ -1000,15 +1004,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiptLine</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ReceiptAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;2026&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiptLine</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ReceiptAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d96c38388ddc5be04fb317abdd90569805d6dffa"><code>d96c383</code></a> of 2026-11-19 22:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
 </body>
 </html>

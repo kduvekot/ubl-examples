@@ -51,8 +51,9 @@ The payer's remittance number.</li>
 <strong>079daaa2-67ec-5103-9652-83ba2c17dabd</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-22</strong><br />
-The day the payment is made across the border, before the due date.</li>
+<li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
+The day the payment is made across the border, within the ten days of
+the invoice's discount period (O218).</li>
 <li><code>IssueTime</code> = <strong>15:05:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -67,12 +68,13 @@ Ferra.</li>
 <li><code>TotalDebitAmount</code> = <strong>3887400</strong> (currencyID
 <code>XUF</code>)<br />
 The invoices paid.</li>
-<li><code>TotalCreditAmount</code> = <strong>0</strong> (currencyID
+<li><code>TotalCreditAmount</code> = <strong>77748</strong> (currencyID
 <code>XUF</code>)<br />
-No credits taken.</li>
-<li><code>TotalPaymentAmount</code> = <strong>3887400</strong>
+Credits taken: the settlement discount.</li>
+<li><code>TotalPaymentAmount</code> = <strong>3809652</strong>
 (currencyID <code>XUF</code>)<br />
-The amount transferred: the payable amount of the invoice.</li>
+The amount transferred: the payable amount less the 2 % discount for
+payment within the discount period.</li>
 <li><code>PaymentOrderReference</code> =
 <strong>LD-PAY-26-0149</strong><br />
 The payment order the payer gave its bank.</li>
@@ -406,10 +408,6 @@ countries.</li>
 <li><code>PayerFinancialAccount/Name</code> = <strong>Lumeway
 Distribution Ltd</strong><br />
 The account holder, as the bank knows it.</li>
-<li><code>PayerFinancialAccount/AliasName</code> = <strong>Lumeway
-receivables</strong><br />
-The short name the holder gave the account, shown in its bank's
-app.</li>
 <li><code>PayerFinancialAccount/AccountTypeCode</code> =
 <strong>CACC</strong> (listID
 <code>ISO 20022 ExternalCashAccountType1Code</code>)<br />
@@ -642,11 +640,17 @@ of UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 One invoice paid.</li>
+<li><code>Note</code> = <strong>2 % discount taken: paid within the
+discount period of the invoice's terms.</strong><br />
+Why less is paid than invoiced.</li>
 <li><code>DebitLineAmount</code> = <strong>3887400</strong> (currencyID
 <code>XUF</code>)<br />
 The amount of the invoice this payment settles: the whole payable
 amount. Paid invoices are debits on a remittance advice, as in the OASIS
 example UBL-RemittanceAdvice-2.0-Example.</li>
+<li><code>CreditLineAmount</code> = <strong>77748</strong> (currencyID
+<code>XUF</code>)<br />
+The settlement discount taken, a credit against the invoice.</li>
 <li><code>BalanceAmount</code> = <strong>0</strong> (currencyID
 <code>XUF</code>)<br />
 Nothing remains open on the invoice after this payment.</li>
@@ -675,13 +679,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;ROAD-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LD-RM-26-0168&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;079daaa2-67ec-5103-9652-83ba2c17dabd&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:05:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Payment of the invoice below.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3887400&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3887400&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;77748&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3809652&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentOrderReference</span>&gt;LD-PAY-26-0149&lt;/<span class="kw">cbc:PaymentOrderReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF78VIINV260166&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
@@ -782,97 +786,98 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayerFinancialAccount</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XB19BLUM38712001466206&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution Ltd&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AliasName</span>&gt;Lumeway receivables&lt;/<span class="kw">cbc:AliasName</span>&gt;</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:bank-branch&quot;</span>&gt;387120&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:bank-identifier&quot;</span>&gt;BLUMXBLX&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bank of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span>&gt;Exchange Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;48&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PostalZone</span>&gt;38523&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayerFinancialAccount</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XU790351041600000000209458&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:bank-branch&quot;</span>&gt;03510-41600&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano main branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:bank-identifier&quot;</span>&gt;CREVXUFR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Crevalto Bank&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Trazhek Hekrul Rikbul&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Piazza della Banca&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;8&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PostalZone</span>&gt;4100&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:bank-branch&quot;</span>&gt;387120&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:bank-identifier&quot;</span>&gt;BLUMXBLX&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bank of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span>&gt;Exchange Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;48&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PostalZone</span>&gt;38523&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayerFinancialAccount</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XU790351041600000000209458&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:bank-branch&quot;</span>&gt;03510-41600&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano main branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:bank-identifier&quot;</span>&gt;CREVXUFR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Crevalto Bank&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Trazhek Hekrul Rikbul&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Piazza della Banca&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;8&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PostalZone</span>&gt;4100&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;2 % discount taken: paid within the discount period of the invoice&#39;s terms.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3887400&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;SUPP&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF78VIINV260166&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0166&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;77748&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;SUPP&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF78VIINV260166&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0166&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d96c38388ddc5be04fb317abdd90569805d6dffa"><code>d96c383</code></a> of 2026-11-19 22:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
 </body>
 </html>

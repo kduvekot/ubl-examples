@@ -19,7 +19,10 @@ border (Urvania → Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate
 of Origin in the UBL 2.5 specification</a></em></p>
 <p>The goods qualify for preferential duty in Bayvarra; the manufacturer
-applies to its chamber of commerce for a certificate of origin.</p>
+applies to its chamber of commerce for a certificate of origin. The
+application is Valdara's own document, with its own number; the
+chamber's e-certificate system gives it a job number when it is lodged
+(decision D35).</p>
 <p><a href="examples/road/06-CertificateOfOrigin.xml">The XML file</a>
 is valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -45,8 +48,8 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>ROAD-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>FCC-CO-26-0157</strong><br />
-The number of the certificate, given by the chamber.</li>
+<li><code>ID</code> = <strong>VI-AP-26-0158</strong><br />
+The exporter's number for its application (road/06#F1).</li>
 <li><code>UUID</code> =
 <strong>a46337e2-176c-5866-9871-158007b21756</strong><br />
 A universally unique identifier of the document, derived from its place
@@ -56,9 +59,9 @@ The day the exporter applies, before the goods leave.</li>
 <li><code>IssueTime</code> = <strong>12:39:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Description</code> = <strong>Certificate of origin for park
-benches and castings made in Urvania.</strong><br />
-What the certificate is for.</li>
+<li><code>Description</code> = <strong>Application for a certificate of
+origin for park benches and castings made in Urvania.</strong><br />
+What the document is for.</li>
 <li><code>Note</code> = <strong>Drakhan dranan karul drek rizir
 denskek.</strong> (languageID <code>qau</code>)<br />
 The note in Urvanian, the sender's language (world/countries.json): What
@@ -68,7 +71,7 @@ accord.</strong> (languageID <code>en-XU</code>)<br />
 The same note in English, the working language between the countries:
 What the certificate is for.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
-The first version.</li>
+The first version of the application.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -356,11 +359,13 @@ The country's name, for readers of the address.</li>
 <ul>
 <li><code>RoleCode</code> = <strong>CHAMBER</strong> (listID
 <code>urn:ubl-examples:world:codelist:EndorserRoleCode</code>)<br />
-The endorser is the chamber of commerce of the exporting country. The
-code is from the Trade Accord's endorser role list: CHAMBER = Chamber of
-commerce.</li>
+The endorser is the chamber of commerce of the exporting country, the
+body Urvania authorises under the Accord to issue proofs of preferential
+origin (D35). The code is from the Trade Accord's endorser role list:
+CHAMBER = Chamber of commerce.</li>
 <li><code>SequenceNumeric</code> = <strong>1</strong><br />
-The first and only endorsement.</li>
+The first and only endorsement: a certificate between Accord members
+needs no legalisation.</li>
 <li><code>Party/PartyIdentification/ID</code> = <strong>xu_m2vd</strong>
 (schemeID
 <code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
@@ -511,7 +516,14 @@ Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it
 here; Party/EndpointID is deprecated.</li>
 <li><code>SignatoryContact/Name</code> = <strong>Certificates
 office</strong><br />
-The office of the chamber that signs certificates of origin.</li>
+The office of the chamber that signs certificates of origin. UBL defines
+this contact as the exporter's signer of the application; the element is
+mandatory in an endorser party, so it names the endorser's signer, a
+finding for the UBL TC (road/06#F15, O121).</li>
+<li><code>SignatoryContact/JobTitle</code> = <strong>Certificates
+officer</strong><br />
+The signing function: the officer who signs certificates for the chamber
+(road/06#F16).</li>
 </ul>
 <h3 id="certificate-of-origin-application">Certificate of Origin
 Application</h3>
@@ -527,12 +539,13 @@ importer needs this certificate to claim it.</li>
 <code>urn:ubl-examples:world:codelist:ApplicationStatusCode</code>)<br />
 The exporter submits the application. The code is from the Trade
 Accord's application status list: SUBMITTED = Submitted.</li>
-<li><code>OriginalJobID</code> = <strong>LD-PO-26-0149</strong><br />
-The order the goods are for.</li>
-<li><code>PreviousJobID</code> = <strong>VI-CO-25-0412</strong><br />
-The exporter's application of last year for the same goods.</li>
-<li><code>Remarks</code> = <strong>Benches made of Urvanian steel and
-Bayvarran timber; the processing in Urvania gives origin.</strong><br />
+<li><code>OriginalJobID</code> = <strong>FCC-JOB-26-0418</strong><br />
+The job number the chamber's e-certificate system gave the application
+when it was lodged, by which it tracks amendments; not the buyer's order
+(road/06#F7, D35).</li>
+<li><code>Remarks</code> = <strong>Side frames cast in Urvania from
+Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and
+making of the benches in Urvania give origin.</strong><br />
 Why the goods are of Urvanian origin.</li>
 <li><code>Shipment/ID</code> = <strong>CL-SH-26-0154</strong><br />
 The shipment the certificate covers.</li>
@@ -900,12 +913,14 @@ What the packaging is made of.</li>
 <li><code>EndorserParty/RoleCode</code> = <strong>CHAMBER</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:EndorserRoleCode</code>)<br />
-The endorser is the chamber of commerce of the exporting country. The
-code is from the Trade Accord's endorser role list: CHAMBER = Chamber of
-commerce.</li>
+The endorser is the chamber of commerce of the exporting country, the
+body Urvania authorises under the Accord to issue proofs of preferential
+origin (D35). The code is from the Trade Accord's endorser role list:
+CHAMBER = Chamber of commerce.</li>
 <li><code>EndorserParty/SequenceNumeric</code> =
 <strong>1</strong><br />
-The first and only endorsement.</li>
+The first and only endorsement: a certificate between Accord members
+needs no legalisation.</li>
 <li><code>EndorserParty/Party/PartyIdentification/ID</code> =
 <strong>xu_m2vd</strong> (schemeID
 <code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
@@ -917,7 +932,14 @@ The same party as at EndorserParty/Party, where its full details are
 given; only its identifier and name are repeated.</li>
 <li><code>EndorserParty/SignatoryContact/Name</code> =
 <strong>Certificates office</strong><br />
-The office of the chamber that signs certificates of origin.</li>
+The office of the chamber that signs certificates of origin. UBL defines
+this contact as the exporter's signer of the application; the element is
+mandatory in an endorser party, so it names the endorser's signer, a
+finding for the UBL TC (road/06#F15, O121).</li>
+<li><code>EndorserParty/SignatoryContact/JobTitle</code> =
+<strong>Certificates officer</strong><br />
+The signing function: the officer who signs certificates for the chamber
+(road/06#F16).</li>
 <li><code>PreparationParty/PartyIdentification/ID</code> =
 <strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
@@ -1006,19 +1028,21 @@ name are enough.</li>
 <h3 id="issuer-endorsement">Issuer Endorsement</h3>
 <p>Inside <code>IssuerEndorsement</code>:</p>
 <ul>
-<li><code>DocumentID</code> = <strong>FCC-CO-26-0157</strong><br />
-The certificate this endorsement belongs to.</li>
+<li><code>DocumentID</code> = <strong>FCC-JOB-26-0418-E1</strong><br />
+The identifier of this endorsement: the first of the chamber's job.</li>
 <li><code>ApprovalStatus</code> = <strong>Pending</strong><br />
 Not yet endorsed: the application is with the chamber.</li>
 <li><code>EndorserParty/RoleCode</code> = <strong>CHAMBER</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:EndorserRoleCode</code>)<br />
-The endorser is the chamber of commerce of the exporting country. The
-code is from the Trade Accord's endorser role list: CHAMBER = Chamber of
-commerce.</li>
+The endorser is the chamber of commerce of the exporting country, the
+body Urvania authorises under the Accord to issue proofs of preferential
+origin (D35). The code is from the Trade Accord's endorser role list:
+CHAMBER = Chamber of commerce.</li>
 <li><code>EndorserParty/SequenceNumeric</code> =
 <strong>1</strong><br />
-The first and only endorsement.</li>
+The first and only endorsement: a certificate between Accord members
+needs no legalisation.</li>
 <li><code>EndorserParty/Party/PartyIdentification/ID</code> =
 <strong>xu_m2vd</strong> (schemeID
 <code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
@@ -1030,49 +1054,14 @@ The same party as at EndorserParty/Party, where its full details are
 given; only its identifier and name are repeated.</li>
 <li><code>EndorserParty/SignatoryContact/Name</code> =
 <strong>Certificates office</strong><br />
-The office of the chamber that signs certificates of origin.</li>
-</ul>
-<h3 id="insurance-endorsement">Insurance Endorsement</h3>
-<p>Inside <code>InsuranceEndorsement</code>:</p>
-<ul>
-<li><code>DocumentID</code> = <strong>WS-CP-26-4471-E1</strong><br />
-The insurer's endorsement of the cargo policy for this consignment.</li>
-<li><code>ApprovalStatus</code> = <strong>Endorsed</strong><br />
-The insurer confirms the cover.</li>
-<li><code>Remarks</code> = <strong>The goods described in this
-certificate are insured door to door.</strong><br />
-What it confirms.</li>
-<li><code>EndorserParty/RoleCode</code> = <strong>INSURER</strong>
-(listID
-<code>urn:ubl-examples:world:codelist:EndorserRoleCode</code>)<br />
-It endorses as insurer. The code is from the Trade Accord's endorser
-role list: INSURER = Insurer.</li>
-<li><code>EndorserParty/SequenceNumeric</code> =
-<strong>2</strong><br />
-After the chamber; the embassy legalises separately.</li>
-<li><code>EndorserParty/Party/PartyIdentification/ID</code> =
-<strong>20411507</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>EndorserParty/Party/PartyName/Name</code> = <strong>Wavesure
-Cargo Insurance</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>EndorserParty/SignatoryContact/Name</code> = <strong>Cargo
-claims desk</strong><br />
-Who signs for the insurer.</li>
-<li><code>Signature/ID</code> = <strong>WS-SIG-26-E1</strong><br />
-The insurer's seal on the endorsement.</li>
-<li><code>Signature/SignatoryParty/PartyIdentification/ID</code> =
-<strong>20411507</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>Signature/SignatoryParty/PartyName/Name</code> =
-<strong>Wavesure Cargo Insurance</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
+The office of the chamber that signs certificates of origin. UBL defines
+this contact as the exporter's signer of the application; the element is
+mandatory in an endorser party, so it names the endorser's signer, a
+finding for the UBL TC (road/06#F15, O121).</li>
+<li><code>EndorserParty/SignatoryContact/JobTitle</code> =
+<strong>Certificates officer</strong><br />
+The signing function: the officer who signs certificates for the chamber
+(road/06#F16).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -1082,11 +1071,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:certificate-of-origin:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:customs:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;ROAD-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FCC-CO-26-0157&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-AP-26-0158&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;a46337e2-176c-5866-9871-158007b21756&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;12:39:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Certificate of origin for park benches and castings made in Urvania.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Application for a certificate of origin for park benches and castings made in Urvania.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Drakhan dranan karul drek rizir denskek.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Preferential origin under the trade accord.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
@@ -1230,15 +1219,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryContact</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Certificates office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CertificateOfOriginApplication</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceID</span>&gt;VI-AP-26-0158&lt;/<span class="kw">cbc:ReferenceID</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CertificateType</span>&gt;Preferential&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApplicationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ApplicationStatusCode&quot;</span>&gt;SUBMITTED&lt;/<span class="kw">cbc:ApplicationStatusCode</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OriginalJobID</span>&gt;LD-PO-26-0149&lt;/<span class="kw">cbc:OriginalJobID</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PreviousJobID</span>&gt;VI-CO-25-0412&lt;/<span class="kw">cbc:PreviousJobID</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Remarks</span>&gt;Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Certificates officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CertificateOfOriginApplication</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceID</span>&gt;VI-AP-26-0158&lt;/<span class="kw">cbc:ReferenceID</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CertificateType</span>&gt;Preferential&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApplicationStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ApplicationStatusCode&quot;</span>&gt;SUBMITTED&lt;/<span class="kw">cbc:ApplicationStatusCode</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OriginalJobID</span>&gt;FCC-JOB-26-0418&lt;/<span class="kw">cbc:OriginalJobID</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Remarks</span>&gt;Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0154&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
@@ -1390,125 +1379,96 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryContact</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Certificates office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PreparationParty</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PreparationParty</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_m2vd&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExporterParty</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExporterParty</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ImporterParty</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ImporterParty</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuingCountry</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:IssuingCountry</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;CertificateOfOrigin&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ELECTRONICCOPY&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupportingDocumentReference</span>&gt;</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-PO-26-0149&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupportingDocumentReference</span>&gt;</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-SIG-COA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CertificateOfOriginApplication</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:IssuerEndorsement</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentID</span>&gt;FCC-CO-26-0157&lt;/<span class="kw">cbc:DocumentID</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApprovalStatus</span>&gt;Pending&lt;/<span class="kw">cbc:ApprovalStatus</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EndorserParty</span>&gt;</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EndorserRoleCode&quot;</span>&gt;CHAMBER&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_m2vd&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Certificates office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:IssuerEndorsement</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InsuranceEndorsement</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentID</span>&gt;WS-CP-26-4471-E1&lt;/<span class="kw">cbc:DocumentID</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApprovalStatus</span>&gt;Endorsed&lt;/<span class="kw">cbc:ApprovalStatus</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Remarks</span>&gt;The goods described in this certificate are insured door to door.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EndorserParty</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EndorserRoleCode&quot;</span>&gt;INSURER&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;2&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411507&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Wavesure Cargo Insurance&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Cargo claims desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;WS-SIG-26-E1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411507&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Wavesure Cargo Insurance&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InsuranceEndorsement</span>&gt;</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CertificateOfOrigin</span>&gt;</span></code></pre></div>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Certificates officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PreparationParty</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PreparationParty</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_m2vd&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExporterParty</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExporterParty</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ImporterParty</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ImporterParty</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuingCountry</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:IssuingCountry</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;CertificateOfOrigin&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ELECTRONICCOPY&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupportingDocumentReference</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-PO-26-0149&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupportingDocumentReference</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-SIG-COA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CertificateOfOriginApplication</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:IssuerEndorsement</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentID</span>&gt;FCC-JOB-26-0418-E1&lt;/<span class="kw">cbc:DocumentID</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ApprovalStatus</span>&gt;Pending&lt;/<span class="kw">cbc:ApprovalStatus</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EndorserParty</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EndorserRoleCode&quot;</span>&gt;CHAMBER&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_m2vd&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Chamber of Commerce&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryContact</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Certificates office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Certificates officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SignatoryContact</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EndorserParty</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:IssuerEndorsement</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CertificateOfOrigin</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d96c38388ddc5be04fb317abdd90569805d6dffa"><code>d96c383</code></a> of 2026-11-19 22:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
 </body>
 </html>

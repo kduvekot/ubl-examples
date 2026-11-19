@@ -156,8 +156,7 @@
       <cbc:StatusReasonCode listID="urn:ubl-examples:world:codelist:StatusReasonCode">CLEARED</cbc:StatusReasonCode>
       <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
       <cbc:SequenceID>3</cbc:SequenceID>
-      <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.</cbc:Text>
-      <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
+      <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow, 09:00 to 10:00, and the driver takes his rest there.</cbc:Text>
       <cbc:Percent>37</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
       <cac:DocumentationAttachment>
@@ -173,13 +172,6 @@
       <cac:Condition>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">SEAL</cbc:AttributeID>
         <cbc:Description>Intact, as checked by customs.</cbc:Description>
-      </cac:Condition>
-      <cac:Condition>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">14</cbc:Measure>
-        <cbc:Description>No protection needed for galvanised frames and thermally modified slats.</cbc:Description>
-        <cbc:MinimumMeasure unitCode="CEL">4</cbc:MinimumMeasure>
-        <cbc:MaximumMeasure unitCode="CEL">18</cbc:MaximumMeasure>
       </cac:Condition>
     </cac:CurrentStatus>
     <cac:ResponsibleParty>
