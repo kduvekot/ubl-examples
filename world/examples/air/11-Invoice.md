@@ -26,8 +26,8 @@ The distributor invoices the eight frames at its trade price, carriage paid to t
   Issued the day after the flight, with the forwarder's invoice of the air freight it recharges.
 - `IssueTime` = **13:37:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-14**  
-  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
+- `DueDate` = **2026-06-15**  
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Sunday 14 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 15 June (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Air freight recharged at cost, as agreed in the order change. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
@@ -244,7 +244,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-14**  
+- `PaymentDueDate` = **2026-06-15**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
@@ -319,9 +319,9 @@ Inside `PaymentTerms`:
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-06-14**  
-  The day the amount is due, as the terms count it.
-- `PenaltyPeriod/StartDate` = **2026-06-15**  
+- `PaymentDueDate` = **2026-06-15**  
+  The day the amount is due, as the terms count it. The count ends on Sunday 14 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 15 June (O180).
+- `PenaltyPeriod/StartDate` = **2026-06-16**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Allowance Charge
@@ -439,7 +439,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>5e8ce777-529c-5b9e-99b6-c68de9c624a7</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>13:37:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-14</cbc:DueDate>
+  <cbc:DueDate>2026-06-15</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Air freight recharged at cost, as agreed in the order change. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -615,7 +615,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-14</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-15</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF69LDINV260332</cbc:InstructionNote>
@@ -668,9 +668,9 @@ Inside `InvoiceLine`:
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">18.39</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-06-14</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-15</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-06-15</cbc:StartDate>
+      <cbc:StartDate>2026-06-16</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>

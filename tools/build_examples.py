@@ -3173,9 +3173,10 @@ def check_air_uld_ids(flow_id, roots):
 DUE_DATE_WAITS = {"sea/22-Invoice.xml": "O72"}   # due dates settled with a later decision
 
 
-def check_payment_terms(root, where):
+def check_payment_terms(root, where, payee_country=None):
     """O70: one terms ID means one text and one period everywhere (D23); the due dates of a document agree with each
-    other, and where it cites standard or Accord terms, with the period those terms give from the issue date."""
+    other, and where it cites standard or Accord terms, with the period those terms give from the issue date,
+    moved to the next business day of the payee's country where it ends on none (O180)."""
     import datetime as _dt
     short = "/".join(where.split("/")[-2:])
     q = lambda e, p: [x.text for x in e.iterfind(p, {"cac": NS_CAC, "cbc": NS_CBC})]
@@ -3198,6 +3199,8 @@ def check_payment_terms(root, where):
         due = t.findtext(f"{{{NS_CBC}}}PaymentDueDate")
         if due and issue and short not in DUE_DATE_WAITS and t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None:
             want = (_dt.date.fromisoformat(issue) + _dt.timedelta(days=days)).isoformat()
+            while payee_country and not business_day(payee_country, want):
+                want = (_dt.date.fromisoformat(want) + _dt.timedelta(days=1)).isoformat()
             if due != want:
                 raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due} (O70)")
 
@@ -3220,6 +3223,44 @@ def working_day(pid, day):
     days.update(hol.get("states", {}).get(addr.get("CountrySubentity"), {}))
     days.update(hol.get("towns", {}).get(addr.get("CityName"), {}))
     return day not in days
+
+
+def business_day(country, day):
+    """Whether `day` (an ISO date) is a business day in the calendar of a country: Monday to Friday and no public
+    holiday of the country (world/countries.json holidays). A payment falls due on one (O180)."""
+    import datetime as _dt
+    d = _dt.date.fromisoformat(day)
+    return d.weekday() < 5 and day not in WORLD["countries"][country].get("holidays", {}).get(str(d.year), {})
+
+
+def payee_of(root, doc):
+    """The party a document's amount is paid to (O180): its payee where it names one; for a credit note the
+    customer, who gets the credit back; for an invoice, a self-billed invoice, an order response or a reminder
+    the supplier or seller; for any other document its issuer."""
+    p = doc.get("parties", {})
+    kind = etree.QName(root).localname
+    if "PayeeParty" in p:
+        return p["PayeeParty"]
+    if kind in ("CreditNote", "SelfBilledCreditNote"):
+        return p.get("AccountingCustomerParty")
+    if kind in ("Invoice", "SelfBilledInvoice", "OrderResponse", "Reminder"):
+        return p.get("AccountingSupplierParty") or p.get("SellerSupplierParty")
+    return doc["from"]
+
+
+def check_due_dates(root, doc, where):
+    """O180: no stated due date falls on a weekend or a holiday of the payee's country."""
+    dues = [e for e in root.iter(f"{{{NS_CBC}}}DueDate", f"{{{NS_CBC}}}PaymentDueDate",
+                                 f"{{{NS_CBC}}}InstallmentDueDate") if e.text]
+    payee = payee_of(root, doc) if dues else None
+    if dues and payee not in PARTY:
+        raise SystemExit(f"{where}: states a due date but its payee is unknown (O180)")
+    for e in dues:
+        country = PARTY[payee]["c"]
+        if not business_day(country, e.text):
+            raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
+                             f"{e.text} is no business day in {WORLD['countries'][country]['name']}, the payee's "
+                             "country (O180)")
 
 
 CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
@@ -3639,7 +3680,9 @@ def main(flow_id, check=False):
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
-        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}",
+                            PARTY.get(payee_of(root, doc), {}).get("c"))
+        check_due_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():

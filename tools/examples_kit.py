@@ -181,7 +181,44 @@ def cross_border(a, b):
 PLAN_PAYMENT = ("30 days net from the consignment note.", 30)    # the freight term of the framework transport plans
 
 
-def terms_of(flow, seller, day, kind=None):
+def due_day(flow, day, payee):
+    """O180: the day a payment falls due, as an offset of the flow: `day`, or where that is a weekend or a public
+    holiday, the next business day in the calendar of the payee's country (for a payment between the countries
+    too)."""
+    import build_examples
+    while not build_examples.business_day(PARTY[payee]["c"], flow.date(day)):
+        day += 1
+    return day
+
+
+def due_moved(flow, day, payee):
+    """The reason a due date moved (O180), to add to its explanation, or "" where it did not."""
+    moved = due_day(flow, day, payee)
+    if moved == day:
+        return ""
+    d0, d1 = (datetime.date.fromisoformat(flow.date(x)) for x in (day, moved))
+    country = WORLD["countries"][PARTY[payee]["c"]]
+    hol = country.get("holidays", {}).get(str(d0.year), {}).get(d0.isoformat())
+    return (f" The count ends on {d0:%A} {d0.day} {d0:%B}" + (f", {hol}" if hol else "") +
+            f", no business day in {country['name']}, the payee's country, so the payment is due on the next "
+            f"one, {d1:%A} {d1.day} {d1:%B} (O180).")
+
+
+def due_date(flow, day, payee, why):
+    """A due date `day` of the flow with its reason, moved to the payee's next business day where it is none
+    (O180)."""
+    return V(flow.date(due_day(flow, day, payee)), why + due_moved(flow, day, payee))
+
+
+def terms_of(flow, seller, day, kind=None, payee=None):
+    """The payment terms of _terms_of, with the due day moved to the payee's next business day where it is none
+    (due_day, O180); payee: the seller unless another party is paid."""
+    t = _terms_of(flow, seller, day, kind)
+    payee = payee or seller
+    return {**t, "due": due_day(flow, t["due"], payee), "moved": due_moved(flow, t["due"], payee)}
+
+
+def _terms_of(flow, seller, day, kind=None):
     """The payment terms an invoice issued on `day` applies, in the three layers of D22: the contract's (kind
     "plan": the transport plan's freight term, counted from the consignment note), the Trade Accord's utility
     term (kind "utility", D23), or else the seller's standard terms; late payment, where the terms say nothing,
@@ -189,7 +226,7 @@ def terms_of(flow, seller, day, kind=None):
     due day, so that every due date follows from the terms the document cites (O70)."""
     pay = WORLD["countries"][PARTY[seller]["c"]]["payment"]
     if isinstance(kind, tuple) and kind[0] == "until-O72":   # sea/22: its balance term is settled with the sea flow
-        t = terms_of(flow, seller, day)
+        t = _terms_of(flow, seller, day)
         return {**t, "due": day + kind[1]}
     if kind == "plan":
         text, days = PLAN_PAYMENT
@@ -216,7 +253,7 @@ def payment_terms(flow, seller, buyer, t, total, cur, number):
     """The payment terms t (terms_of) as cac:PaymentTerms of an invoice."""
     out = {**({"ID": V(t["id"], t["id_why"])} if t["id"] else {}),
            "Note": V(t["text"], t["why"]),
-           "PaymentDueDate": V(flow.date(t["due"]), "The day the amount is due, as the terms count it."),
+           "PaymentDueDate": V(flow.date(t["due"]), "The day the amount is due, as the terms count it." + t["moved"]),
            "PaymentMeansID": V("1", "The payment means these terms apply to: the credit transfer below.")}
     if t["discount"]:
         dsc = t["discount"]
@@ -263,7 +300,8 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
                                        "UBL's payment means code list, which code list validation checks.",
                                  listID="UN/EDIFACT EDED 4461"),
            "PaymentMeansDescription": V("Credit transfer", "In words."),
-           "PaymentDueDate": V(flow.date(day + due_days), "When the transfer must be credited."),
+           "PaymentDueDate": V(flow.date(due_day(flow, day + due_days, payee)), "When the transfer must be "
+                               "credited." + due_moved(flow, day + due_days, payee)),
            "PaymentChannelCode": V(clearing_channel(border, seller), "How the payment system clears and settles the "
                                    "transfer, as an ISO 20022 clearing channel (world/countries.json)."),
            "PaymentRailID": V(system, "The payment system the transfer runs over: "
@@ -710,7 +748,7 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
     """A commercial invoice from the seller (doc['from']) to the buyer; rows_spec overrides the deal. terms: the
     kind of payment terms (terms_of): "plan", "utility", or the seller's standard terms."""
     seller, buyer = doc["from"], doc["to"]
-    t = terms_of(flow, seller, day, terms)
+    t = terms_of(flow, seller, day, terms, doc["parties"].get("PayeeParty", seller))
     due_days = t["due"] - day
     flow.numbers[f"{key}-terms"] = t
     cur = currency or currency_of(seller)
@@ -728,7 +766,8 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
     out = {
         "ID": V(flow.number(key, seller, "Invoice"), "The seller's invoice number."),
         "IssueDate": V(flow.date(day), why_date),
-        "DueDate": V(flow.date(t["due"]), f"As the payment terms below count it: {t['text'][0].lower()}{t['text'][1:]}"),
+        "DueDate": V(flow.date(t["due"]), f"As the payment terms below count it: {t['text'][0].lower()}{t['text'][1:]}"
+                     + t["moved"]),
         "InvoiceTypeCode": V("393", "The invoice is assigned to the factor, who collects it: a factored invoice, a "
                                     "subtype UN/EDIFACT 1001 has its own code for.")
         if PARTY.get(doc["parties"].get("PayeeParty"), {}).get("name") == "Factor" else
@@ -1653,7 +1692,8 @@ def self_billed(flow, n, doc, day, why, rows_spec, refs, credit=False):
         number = flow.numbers[f"self-billed-{n}"]
         t = terms_of(flow, supplier, day)
         flow.numbers[f"self-billed-{n}-terms"] = t
-        out["DueDate"] = V(flow.date(t["due"]), "The supplier's usual term, which the customer applies to itself.")
+        out["DueDate"] = V(flow.date(t["due"]), "The supplier's usual term, which the customer applies to itself."
+                           + t["moved"])
         out["PaymentMeans"] = payment_means(flow, supplier, customer, supplier, day, t["due"] - day, number,
                                             "The supplier's account, where the customer pays what it billed itself.")
         out["PaymentTerms"] = payment_terms(flow, supplier, customer, t, base + tax, cur, number)

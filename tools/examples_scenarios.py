@@ -2112,12 +2112,13 @@ def sea_invoice_terms(f, out):
          "PaymentPercent": V(str(round(DEPOSIT * 100 / total, 2)), "Its share of the invoice total."),
          "Amount": amount(DEPOSIT, "XBL", "The deposit."),
          "ReferenceEventCode": V("8", "Due when the order is accepted."),
-         "InstallmentDueDate": V(f.date(5), "It was due on acceptance; paid.")},
+         "InstallmentDueDate": kit.due_date(f, 5, "6-xb", "It was due on acceptance; paid.")},
         {**terms, "ID": V("BALANCE", "The balance, the second instalment."),
          "PaymentPercent": V(str(round(balance * 100 / total, 2)), "Its share of the invoice total."),
          "Amount": amount(balance, "XBL", "The balance."),
          "ReferenceEventCode": V("81", "Counted from the shipment on board."),
-         "InstallmentDueDate": V(f.date(55), "45 days after the goods were shipped."),
+         "InstallmentDueDate": kit.due_date(f, 55, "24-xb", "45 days after the goods were "
+                                                                                     "shipped."),
          "PenaltyAmount": amount(balance * Decimal("1.5") / 100, "XBL", "The surcharge for the first month late, on "
                                                                          "the balance."),
          "InvoicingPartyReference": V(out["PaymentMeans"]["PaymentID"].value, "The reference to quote with the "
@@ -2225,7 +2226,7 @@ def sea_order_response(f, n, doc):
         "PaymentTerms": {"ID": V("DEPOSIT", "The deposit."),
                          "Note": V("Deposit due on acceptance.", "The first instalment."),
                          "Amount": amount(DEPOSIT, "XBL", "The deposit asked."),
-                         "PaymentDueDate": V(f.date(5), "Within a day.")},
+                         "PaymentDueDate": kit.due_date(f, 5, seller, "Within a day.")},
         "TransactionConditions": {"ID": V("LD-TC-01", "The distributor's conditions of sale."),
                                   "Description": V("Sold to trade customers only.", "The condition.")},
         "DestinationCountry": {"IdentificationCode": V("XL", "The goods go to the island.")},
@@ -2555,7 +2556,7 @@ def sea(n, doc):
                 "BuyerCustomerParty": {"Party": party("1-xl", short=True)},
                 "SellerSupplierParty": {"Party": party("6-xb", short=True)},
                 "PaymentTerms": {"Note": V("Pay the balance by the due date of the invoice.", "The terms."),
-                                 "PaymentDueDate": V(f.date(55), "The due date.")},
+                                 "PaymentDueDate": kit.due_date(f, 55, "24-xb", "The due date.")},
                 "Signature": {"ID": V("HF-SIG-26-0040", "The factor's seal on the statement."),
                               "SignatoryParty": party("24-xb", short=True)},
                 "StatementPeriod": {"StartDate": V(f.date(10), "From the invoice."),
@@ -2569,7 +2570,8 @@ def sea(n, doc):
                                   "DebitLineAmount": amount(total, cur, "The amount of the invoice, owed to the factor."),
                                   "BalanceAmount": amount(total, cur, "Still open: nothing paid yet."),
                                   "PaymentPurposeCode": V("GDDS", "ISO 20022 purpose code GDDS: purchase of goods."),
-                                  "PaymentTerms": {"PaymentDueDate": V(f.date(55), "The due date of the balance.")},
+                                  "PaymentTerms": {"PaymentDueDate": kit.due_date(f, 55, "24-xb", "The due date of the "
+                                                                                     "balance.")},
                                   "BuyerCustomerParty": {"Party": party("1-xl", short=True)},
                                   "SellerSupplierParty": {"Party": party("6-xb", short=True)},
                                   "DocumentReference": {"ID": V("HF-ASSIGN-26-0091", "The notice of assignment of "
@@ -3159,7 +3161,7 @@ def cotton(n, doc):
                                 "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement: it "
                                                                                          "sets the price per "
                                                                                          "grade.")},
-                                "DueDate": V(f.date(14), "Set off on the day of payment."),
+                                "DueDate": kit.due_date(f, 14, "39-xl", "Set off on the day of payment."),
                                 "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off.")},
                                 "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The delivery "
                                                                                                  "classed.")},
@@ -4835,7 +4837,7 @@ def utilities(n, doc):
             out["PaymentMeans"] = {
                 "ID": V("1", "The only way to pay."),
                 "PaymentMeansCode": V("49", "UN/EDIFACT 4461 code 49: direct debit.", listID="UN/EDIFACT EDED 4461"),
-                "PaymentDueDate": V(f.date(22), "The day the amount will be collected."),
+                "PaymentDueDate": kit.due_date(f, 22, "34-xb", "The day the amount will be collected."),
                 "PaymentID": V(kit.rf_reference(f.numbers[f"invoice-{key}"]), "The reference on the household's bank "
                                                                               "statement."),
                 "PaymentMandate": {
@@ -4908,7 +4910,7 @@ def utilities(n, doc):
                                            "Trade Accord's utility term says nothing on late payment, so "
                                            "Bayvarra's statutory interest applies (D22, O148), beside the bank's "
                                            "fee for the returned debit (utilities/10#F9)."),
-                                 "PaymentDueDate": V(f.date(40), "Ten days after the reminder."),
+                                 "PaymentDueDate": kit.due_date(f, 40, "34-xb", "Ten days after the reminder."),
                                  "PenaltyInterestRate": {"InterestRatePercent": V(rate_["percent"], "Bayvarra's "
                                                                                   "statutory interest on late "
                                                                                   "payment, one federal rate."),
@@ -5410,8 +5412,8 @@ def furniture(n, doc):
                                "OrderReference": {"ID": V(f.numbers["order"], "The order of the pieces.")},
                                "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for "
                                                                                              "returns.")},
-                               "DueDate": V(f.date(116), "The furniture maker pays the credit back within ten "
-                                                        "days."),
+                               "DueDate": kit.due_date(f, 116, "26-xb", "The furniture maker pays the credit back within "
+                                                                      "ten days."),
                                "PaymentTerms": {"Note": V("Refunded by credit transfer to the store's account by 26 June.", "How the credit is "
                                                           "settled: a refund, as the note and the payment means say "
                                                           "(furniture/13#F3).")},
@@ -7064,7 +7066,7 @@ def _(f, n, doc, out):
                                       "30 days. Benches of Accord origin owe no duty (D18).",
                                       "The claim that would follow (D40)."),
                              "Amount": amount(claim, "XLC", "The tax and surcharge at stake."),
-                             "PaymentDueDate": V(f.date(CARNET_DAYS["reminder"] + 30), "The day they fall due: "
+                             "PaymentDueDate": kit.due_date(f, CARNET_DAYS["reminder"] + 30, doc["from"], "The day they fall due: "
                                                                                         "30 days after the "
                                                                                         "reminder.")},
             "AdditionalDocumentReference": {"ID": V("XL-CUS-ATA-26-0071", "The customs' notice.")},
@@ -8363,7 +8365,7 @@ def sea_with_debit(n, doc):
     out = {"ID": V(no, "The buyer's debit note number."), "IssueDate": V(f.date(18), "After customs charged the "
                                                                                      "inspection."),
            "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
-           "DueDate": V(f.date(48), "Thirty days."),
+           "DueDate": kit.due_date(f, 48, "1-xl", "Thirty days."),
            "Note": V("The illegible mark is the packer's responsibility under the agreement.", "Why the seller "
                                                                                                "pays."),
            "TaxPointDate": V(f.date(16), "The day the fee was charged."),
@@ -10516,7 +10518,7 @@ def tender_complete(n, doc):
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account.")},
                 "PaymentTerms": {"Note": V("Please pay within seven days.", "What is asked."),
-                                 "PaymentDueDate": V(f.date(120), "A week after the reminder.")},
+                                 "PaymentDueDate": kit.due_date(f, 120, "5-xu", "A week after the reminder.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
                                     "AllowanceChargeReasonCode": V("48", "UN/EDIFACT 7161 has no code for interest, so the code is from UN/EDIFACT 5189, with that list's listID."),
                                     "AllowanceChargeReason": V("Statutory interest", "Urvania's interest on late "
@@ -11394,17 +11396,21 @@ def energy(n, doc):
         # the debt is in ferra by contract, so the reminder is too: the invoice and the surcharge in ferra, as the
         # payer pays them (energy/08#F1); Bayvarra's statutory surcharge applies, the seller's rule (D22, D44)
         inv = f.numbers["gas-invoice-amount"]
-        due = f.date(32)
+        due_day = f.numbers["gas-invoice-terms"]["due"]   # the invoice's due day, a business day (O180)
+        due = f.date(due_day)
+        d0 = datetime.date.fromisoformat(due)
+        rem = due_day + (d0.replace(month=d0.month + 1) - d0).days       # a month after the due date
+        f.numbers["reminder-day"] = rem
         pct = Decimal(WORLD["countries"]["XB"]["payment"]["penalty_surcharge"]["percent"])
         sur = money(inv * pct / 100, "XUF")
         f.numbers["surcharge"] = sur
-        late = {"StartDate": V(f.date(33), "Overdue from the day after the due date"),
-                "EndDate": V(f.date(63), "to the reminder: one month.")}
+        late = {"StartDate": V(f.date(due_day + 1), "Overdue from the day after the due date"),
+                "EndDate": V(f.date(rem), "to the reminder: one month.")}
         invoice_ref = {"InvoiceDocumentReference": {
             "ID": V(f.numbers["gas-invoice"], "The invoice not paid."),
             "IssueDate": V(f.numbers["gas-invoice-date"], "Its issue date.")}}
         return {"ID": V(f.number("reminder", doc["from"], "Reminder"), "The reminder number."),
-                "IssueDate": V(f.date(63), "A month after the due date."),
+                "IssueDate": V(f.date(rem), "A month after the due date."),
                 "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
                 "Note": V("The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month "
@@ -11415,7 +11421,7 @@ def energy(n, doc):
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account("42-xb", "The gas producer's account.")},
                 "PaymentTerms": {"Note": V("Please pay the invoice and the surcharge together.", "What is asked."),
-                                 "PaymentDueDate": V(f.date(70), "A week after the reminder.")},
+                                 "PaymentDueDate": kit.due_date(f, rem + 7, "42-xb", "A week after the reminder.")},
                 "TaxTotal": {"TaxAmount": amount(0, "XUF", "No tax on a surcharge for late payment."),
                              "TaxSubtotal": {"TaxableAmount": amount(sur, "XUF", "The surcharge."),
                                              "TaxAmount": amount(0, "XUF", "No tax: the surcharge is compensation, "
@@ -11434,7 +11440,7 @@ def energy(n, doc):
                      "Note": V(f"Invoice due {due}.", "What it is."),
                      "DebitLineAmount": amount(inv, "XUF", "The invoice's amount payable."),
                      "PaymentPurposeCode": V("SUPP", "ISO 20022 purpose code SUPP: payment to a supplier."),
-                     "ReminderPeriod": {"StartDate": V(f.date(33), "Overdue since.")},
+                     "ReminderPeriod": {"StartDate": V(f.date(due_day + 1), "Overdue since.")},
                      "BillingReference": invoice_ref},
                     {"ID": V("2", "The surcharge."), "UUID": line_uuid(f, "reminder", 2),
                      "Note": V("One month late at 1.5 %.", "What it is."),
@@ -11445,7 +11451,7 @@ def energy(n, doc):
     if d == "RemittanceAdvice":
         inv, sur = f.numbers["gas-invoice-amount"], f.numbers["surcharge"]
         return {"ID": V(f.number("remittance", doc["from"], "RemittanceAdvice"), "The power station's number."),
-                "IssueDate": V(f.date(66), "Paid three days after the reminder."),
+                "IssueDate": V(f.date(f.numbers["reminder-day"] + 3), "Paid three days after the reminder."),
                 "Note": V("The March gas invoice, with the surcharge of the reminder.", "What it settles."),
                 "DocumentCurrencyCode": kit.currency_line("XUF", "the currency of the invoice paid"),
                 "TotalDebitAmount": amount(inv + sur, "XUF", "The invoice and the surcharge."),
