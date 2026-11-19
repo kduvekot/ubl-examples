@@ -671,7 +671,10 @@ def road(n, doc):
                                 "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume."),
                                 "Date": V(f.date(8), "The invoice date.")}})
     if doc["doc"] == "RemittanceAdvice":
-        out = kit.remittance(f, n, doc, 37, "The day the payment is made across the border, before the due date.")
+        # Lumeway pays within the ten days of Valdara's standard terms and takes the 2 % (O218): Thursday 2 April,
+        # a working day in both countries, the last before the discount period ends on 3 April
+        out = kit.remittance(f, n, doc, 17, "The day the payment is made across the border, within the ten days "
+                                            "of the invoice's discount period (O218).", discount="2")
         # the alias "receivables" names the account as Lumeway's payee account; paying from it, the name is given
         # and stands for itself (road/17#F8)
         out["PaymentMeans"]["PayerFinancialAccount"].pop("AliasName", None)
