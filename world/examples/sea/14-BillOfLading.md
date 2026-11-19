@@ -194,13 +194,13 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+  The party's export desk: the desk for its role in this document (it handles the transport of goods between the countries); identity of Bayforth Forwarding (world/parties.json).
 - `Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  

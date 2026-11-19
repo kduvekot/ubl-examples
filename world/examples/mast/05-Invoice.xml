@@ -8,7 +8,7 @@
   <cbc:UUID>40aff29f-0459-5985-901d-8a4a505d1f5d</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>17:34:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-07-04</cbc:DueDate>
+  <cbc:DueDate>2026-07-06</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -171,7 +171,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-06</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF78SEINV260719</cbc:InstructionNote>
@@ -222,9 +222,9 @@
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">219.41</cbc:PenaltyAmount>
-    <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-06</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-07-05</cbc:StartDate>
+      <cbc:StartDate>2026-07-07</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

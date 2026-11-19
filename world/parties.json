@@ -2019,12 +2019,12 @@
     "registry_id": "20411644",
     "endpoint": "XB:20411644",
     "contact": {
-     "name": "Export desk",
-     "email": "export@bayforth.example",
+     "name": "Transport desk",
+     "email": "transport@bayforth.example",
      "telephone": "+999 2 38 5155 2404",
-     "department": "Export",
+     "department": "Transport",
      "hours": "Weekdays 08:00–17:00",
-     "job_title": "Export coordinator"
+     "job_title": "Transport planner"
     },
     "tax_id": "CO-1234932",
     "address": {
@@ -2062,6 +2062,12 @@
       "job_title": "Customs specialist",
       "department": "Logistics",
       "email": "customs@bayforth.example"
+     },
+     "export": {
+      "name": "Export desk",
+      "job_title": "Export coordinator",
+      "department": "Export",
+      "email": "export@bayforth.example"
      },
      "receivables": {
       "name": "Accounts receivable",

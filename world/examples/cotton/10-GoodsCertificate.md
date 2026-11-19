@@ -90,7 +90,7 @@ Inside `ExporterParty`:
 - `PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Selanu Cotton Ginnery (world/parties.json).
+  The party's customs desk: the desk for its role in this document (it deals with customs); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Department` = **Logistics**  

@@ -118,7 +118,8 @@ DESK_ROLE = {"sales": "it sells", "purchasing": "it buys", "receivables": "it is
              "logistics": "it books or uses the transport", "customs": "it deals with customs",
              "tenders": "it bids", "operations": "it carries or handles the goods", "procurement": "it buys",
              "customs_export": "an export", "customs_import": "an import", "customs_transit": "a transit",
-             "carnet": "a carnet", "certificates": "a certificate"}
+             "carnet": "a carnet", "certificates": "a certificate",
+             "export": "it handles the transport of goods between the countries"}
 CHAMBER_DOCS = {"GoodsItemPassport": "carnet", "ProofOfReexportation": "carnet",
                 "ProofOfReexportationRequest": "carnet", "ProofOfReexportationReminder": "carnet",
                 "CertificateOfOrigin": "certificates", "GoodsCertificate": "certificates"}
@@ -142,7 +143,22 @@ SELLS, CARRIERS = _role_index()
 
 
 def desk_for(doc, path, pid):
-    """The function of the desk that speaks for party pid in its role at path of document doc."""
+    """The function of the desk that speaks for party pid in its role at path of document doc. A party with an
+    export desk names it for its transport work on goods that cross a border: a document whose parties, or the
+    flow's transport legs those parties run, send or receive, are in more than one country; at home its main
+    contact or its operations desk speaks (O224)."""
+    fn = _desk_for(doc, path, pid)
+    if fn in (None, "operations", "logistics") and "export" in PARTY[pid]["identity"].get("desks", {}):
+        pids = {doc.get("from"), doc.get("to")} | {v for v in doc.get("parties", {}).values() if isinstance(v, str)}
+        legs = [leg for fl in WORLD["flows"] if fl["id"] == doc["flow"] for leg in fl.get("legs", [])]
+        pids |= {x for leg in legs if pids & {leg.get("from"), leg.get("to"), leg.get("carrier")}
+                 for x in (leg.get("from"), leg.get("to"))}
+        if len({PARTY[x]["c"] for x in pids if x in PARTY}) > 1:
+            return "export"
+    return fn
+
+
+def _desk_for(doc, path, pid):
     role = path.split("/")[-1]
     kind = doc["doc"]
     if kind in CUSTOMS_DOCS and PARTY[pid]["kind"] == "customs":
@@ -289,7 +305,8 @@ def party(pid, short=False, desk=None, lang=None):
         own = idn.get("desks", {}).get(desk)
         if own:
             ct = {**{k: v for k, v in ct.items() if k not in ("id", "mobile", "telefax")}, **own}
-            why = (f"The party's {own['name'].lower()} desk: the desk for its role in this document "
+            desk_name = own["name"].lower().removesuffix(" desk")
+            why = (f"The party's {desk_name} desk: the desk for its role in this document "
                    f"({DESK_ROLE[desk]}); {src}.")
         else:
             why = f"The party's main desk, which handles this document; {src}."
@@ -3173,9 +3190,10 @@ def check_air_uld_ids(flow_id, roots):
 DUE_DATE_WAITS = {"sea/22-Invoice.xml": "O72"}   # due dates settled with a later decision
 
 
-def check_payment_terms(root, where):
+def check_payment_terms(root, where, payee_country=None):
     """O70: one terms ID means one text and one period everywhere (D23); the due dates of a document agree with each
-    other, and where it cites standard or Accord terms, with the period those terms give from the issue date."""
+    other, and where it cites standard or Accord terms, with the period those terms give from the issue date,
+    moved to the next business day of the payee's country where it ends on none (O180)."""
     import datetime as _dt
     short = "/".join(where.split("/")[-2:])
     q = lambda e, p: [x.text for x in e.iterfind(p, {"cac": NS_CAC, "cbc": NS_CBC})]
@@ -3198,6 +3216,8 @@ def check_payment_terms(root, where):
         due = t.findtext(f"{{{NS_CBC}}}PaymentDueDate")
         if due and issue and short not in DUE_DATE_WAITS and t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None:
             want = (_dt.date.fromisoformat(issue) + _dt.timedelta(days=days)).isoformat()
+            while payee_country and not business_day(payee_country, want):
+                want = (_dt.date.fromisoformat(want) + _dt.timedelta(days=1)).isoformat()
             if due != want:
                 raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due} (O70)")
 
@@ -3220,6 +3240,44 @@ def working_day(pid, day):
     days.update(hol.get("states", {}).get(addr.get("CountrySubentity"), {}))
     days.update(hol.get("towns", {}).get(addr.get("CityName"), {}))
     return day not in days
+
+
+def business_day(country, day):
+    """Whether `day` (an ISO date) is a business day in the calendar of a country: Monday to Friday and no public
+    holiday of the country (world/countries.json holidays). A payment falls due on one (O180)."""
+    import datetime as _dt
+    d = _dt.date.fromisoformat(day)
+    return d.weekday() < 5 and day not in WORLD["countries"][country].get("holidays", {}).get(str(d.year), {})
+
+
+def payee_of(root, doc):
+    """The party a document's amount is paid to (O180): its payee where it names one; for a credit note the
+    customer, who gets the credit back; for an invoice, a self-billed invoice, an order response or a reminder
+    the supplier or seller; for any other document its issuer."""
+    p = doc.get("parties", {})
+    kind = etree.QName(root).localname
+    if "PayeeParty" in p:
+        return p["PayeeParty"]
+    if kind in ("CreditNote", "SelfBilledCreditNote"):
+        return p.get("AccountingCustomerParty")
+    if kind in ("Invoice", "SelfBilledInvoice", "OrderResponse", "Reminder"):
+        return p.get("AccountingSupplierParty") or p.get("SellerSupplierParty")
+    return doc["from"]
+
+
+def check_due_dates(root, doc, where):
+    """O180: no stated due date falls on a weekend or a holiday of the payee's country."""
+    dues = [e for e in root.iter(f"{{{NS_CBC}}}DueDate", f"{{{NS_CBC}}}PaymentDueDate",
+                                 f"{{{NS_CBC}}}InstallmentDueDate") if e.text]
+    payee = payee_of(root, doc) if dues else None
+    if dues and payee not in PARTY:
+        raise SystemExit(f"{where}: states a due date but its payee is unknown (O180)")
+    for e in dues:
+        country = PARTY[payee]["c"]
+        if not business_day(country, e.text):
+            raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
+                             f"{e.text} is no business day in {WORLD['countries'][country]['name']}, the payee's "
+                             "country (O180)")
 
 
 CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
@@ -3639,7 +3697,9 @@ def main(flow_id, check=False):
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
-        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}",
+                            PARTY.get(payee_of(root, doc), {}).get("c"))
+        check_due_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():

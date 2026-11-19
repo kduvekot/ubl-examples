@@ -80,7 +80,7 @@ Inside `ExporterParty`:
 - `PartyLegalEntity/CompanyID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Marrowdale Sawmill (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Marrowdale Sawmill (world/parties.json).
+  The party's customs desk: the desk for its role in this document (it deals with customs); identity of Marrowdale Sawmill (world/parties.json).
 - `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Marrowdale Sawmill (world/parties.json).
 - `Contact/Department` = **Logistics**  

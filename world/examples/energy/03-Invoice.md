@@ -26,8 +26,8 @@ The power station invoices the electricity it fed in for the retail company in M
   The month's electricity.
 - `IssueTime` = **16:42:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-03**  
-  As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
+- `DueDate` = **2026-05-04**  
+  As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days. The count ends on Sunday 3 May, no business day in Urvania, the payee's country, so the payment is due on the next one, Monday 4 May (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `TaxPointDate` = **2026-04-03**  
@@ -232,7 +232,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-03**  
+- `PaymentDueDate` = **2026-05-04**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -307,8 +307,8 @@ Inside `PaymentTerms`:
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.montebrio.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-03**  
-  The day the amount is due, as the terms count it.
+- `PaymentDueDate` = **2026-05-04**  
+  The day the amount is due, as the terms count it. The count ends on Sunday 3 May, no business day in Urvania, the payee's country, so the payment is due on the next one, Monday 4 May (O180).
 - `SettlementPeriod/StartDate` = **2026-04-03**  
   From the invoice date.
 - `SettlementPeriod/EndDate` = **2026-04-13**  
@@ -396,7 +396,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>f2bffa54-247a-500b-9993-16f7d9a166d9</cbc:UUID>
   <cbc:IssueDate>2026-04-03</cbc:IssueDate>
   <cbc:IssueTime>16:42:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-03</cbc:DueDate>
+  <cbc:DueDate>2026-05-04</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-03</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -561,7 +561,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF32MPINV260151</cbc:InstructionNote>
@@ -614,7 +614,7 @@ Inside `InvoiceLine`:
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">4327680</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.montebrio.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
       <cbc:StartDate>2026-04-03</cbc:StartDate>
       <cbc:EndDate>2026-04-13</cbc:EndDate>

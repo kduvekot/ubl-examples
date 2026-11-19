@@ -26,7 +26,7 @@ Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes t
   The day after the carrier's debit note.
 - `IssueTime` = **09:26:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-24**  
+- `DueDate` = **2026-05-25**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `Note` = **Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.**  
   Why more is due: the contract's rule, applied after the invoice was issued (D9, D37).
@@ -250,7 +250,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-24**  
+- `PaymentDueDate` = **2026-05-25**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
@@ -327,8 +327,8 @@ Inside `PaymentTerms`:
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-24**  
-  The day the amount is due, as the terms count it.
+- `PaymentDueDate` = **2026-05-25**  
+  The day the amount is due, as the terms count it. The count ends on Sunday 24 May, no business day in Urvania, the payee's country, so the payment is due on the next one, Monday 25 May (O180).
 - `SettlementPeriod/StartDate` = **2026-04-24**  
   From the invoice date.
 - `SettlementPeriod/EndDate` = **2026-05-04**  
@@ -422,7 +422,7 @@ Inside `DebitNoteLine`:
   <cbc:UUID>6b1333eb-a95b-5a28-9c76-1522ab34fd75</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>09:26:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-24</cbc:DueDate>
+  <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:Note>Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-04-24</cbc:TaxPointDate>
@@ -589,7 +589,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF09VIDOC260339</cbc:InstructionNote>
@@ -643,7 +643,7 @@ Inside `DebitNoteLine`:
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">300</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
       <cbc:StartDate>2026-04-24</cbc:StartDate>
       <cbc:EndDate>2026-05-04</cbc:EndDate>

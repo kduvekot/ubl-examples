@@ -8,7 +8,7 @@
   <cbc:UUID>6b1333eb-a95b-5a28-9c76-1522ab34fd75</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>09:26:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-24</cbc:DueDate>
+  <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:Note>Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-04-24</cbc:TaxPointDate>
@@ -175,7 +175,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF09VIDOC260339</cbc:InstructionNote>
@@ -229,7 +229,7 @@
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">300</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
       <cbc:StartDate>2026-04-24</cbc:StartDate>
       <cbc:EndDate>2026-05-04</cbc:EndDate>
