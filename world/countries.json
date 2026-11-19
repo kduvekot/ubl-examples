@@ -327,7 +327,7 @@
      "Sale to a public body": "PUBLIC",
      "Service to a business": "SVCB2B",
      "Sale for resale or manufacture": "RESALE",
-     "Levy collected for a public body": "LEVY"
+     "Collected for a public body, outside the scope of the state sales tax": "LEVY"
     },
     "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (world/codelists/lists.json, XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
     "withholding": {

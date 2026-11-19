@@ -230,8 +230,8 @@
      "The buyer resells the goods or uses them in its products and charges the tax on its own retail sale."
     ],
     "LEVY": [
-     "Levy collected for a public body",
-     "An amount the seller collects on behalf of a public body, such as the city's sewage levy."
+     "Collected for a public body, outside the scope of the state sales tax",
+     "Not an exemption: an amount the seller collects on behalf of a public body, such as the city's sewage levy, is no supply of the seller's, so it is outside the scope of the state sales tax (category O, without a rate). UBL has an element for the reason a supply is exempt but none for the reason it is outside the tax, so the reason is given here (D31, a point for the UBL TC)."
     ],
     "FOOD": [
      "Basic food",

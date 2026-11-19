@@ -84,10 +84,10 @@ def tax_rule(seller, buyer, iid):
     s, b, it = PARTY[seller], PARTY[buyer], ITEM[iid]
     c = WORLD["countries"][s["c"]]
     scheme = c["tax"]["schemes"][0]
-    if it.get("levy"):
+    if it.get("levy"):      # the reason a supply is outside the tax, in the exemption reason (D31 point 3, O107)
         return ("O", 0, scheme, f"A public levy the seller collects for {PARTY[it['levy']]['identity']['name']}: not a "
-                                "supply, so outside the scope of the sales tax (category O).", "Levy collected for a "
-                                                                                               "public body")
+                                "supply, so outside the scope of the sales tax (category O, without a rate).",
+                "Collected for a public body, outside the scope of the state sales tax")
     if s["c"] == "XU":
         if it.get("export_carriage"):       # the carriage of exported goods (D41)
             return ("E", 0, scheme, "The carriage of goods directly linked to their export from Urvania is exempt "
