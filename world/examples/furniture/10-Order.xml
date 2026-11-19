@@ -12,7 +12,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderDocumentReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderDocumentReference>
@@ -132,7 +132,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">11834.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">5917.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -146,98 +146,95 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">11834.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">11834.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">5917.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">5917.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
-    <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>The store's own line: bench and two chairs per set.</cbc:Note>
-      <cbc:Quantity unitCode="SET">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">11834.00</cbc:LineExtensionAmount>
-      <cbc:MinimumQuantity unitCode="SET">10</cbc:MinimumQuantity>
-      <cbc:MaximumQuantity unitCode="SET">20</cbc:MaximumQuantity>
-      <cbc:MinimumBackorderQuantity unitCode="SET">5</cbc:MinimumBackorderQuantity>
-      <cbc:MaximumBackorderQuantity unitCode="SET">10</cbc:MaximumBackorderQuantity>
-      <cbc:InspectionMethodCode listID="urn:ubl-examples:world:codelist:InspectionMethodCode">VISUAL</cbc:InspectionMethodCode>
-      <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
-      <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-      <cbc:AccountingCost>Garden department</cbc:AccountingCost>
-      <cac:PricingReference>
-        <cac:OriginalItemLocationQuantity>
-          <cac:Price>
-            <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
-          </cac:Price>
-        </cac:OriginalItemLocationQuantity>
-      </cac:PricingReference>
+      <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">3686.00</cbc:LineExtensionAmount>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
-        <cbc:Amount currencyID="XBL">366.00</cbc:Amount>
-        <cbc:BaseAmount currencyID="XBL">12200.00</cbc:BaseAmount>
+        <cbc:Amount currencyID="XBL">114.00</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">3800.00</cbc:BaseAmount>
       </cac:AllowanceCharge>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-        <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>BM-551004</cbc:ID>
+          <cbc:ID>BM-551005</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01</cbc:ID>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
-      <cac:SubLineItem>
-        <cbc:ID>1.1</cbc:ID>
-        <cbc:Quantity unitCode="EA">20</cbc:Quantity>
-        <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
-        </cac:Price>
-        <cac:Item>
-          <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
-          <cac:SellersItemIdentification>
-            <cbc:ID>BF-GS-01-B</cbc:ID>
-          </cac:SellersItemIdentification>
-        </cac:Item>
-      </cac:SubLineItem>
-      <cac:SubLineItem>
-        <cbc:ID>1.2</cbc:ID>
-        <cbc:Quantity unitCode="EA">40</cbc:Quantity>
-        <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
-        </cac:Price>
-        <cac:Item>
-          <cbc:Name>Garden chair Marrow</cbc:Name>
-          <cac:SellersItemIdentification>
-            <cbc:ID>BF-GS-01-C</cbc:ID>
-          </cac:SellersItemIdentification>
-        </cac:Item>
-      </cac:SubLineItem>
-      <cac:WarrantyValidityPeriod>
-        <cbc:DurationMeasure unitCode="ANN">2</cbc:DurationMeasure>
-      </cac:WarrantyValidityPeriod>
-      <cac:WarrantyParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brackenmere Furniture</cbc:Name>
-        </cac:PartyName>
-      </cac:WarrantyParty>
     </cac:LineItem>
-    <cac:QuotationLineReference>
-      <cbc:LineID>1</cbc:LineID>
-    </cac:QuotationLineReference>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="EA">20</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">2231.00</cbc:LineExtensionAmount>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Repeat order</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>0.03</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="XBL">69.00</cbc:Amount>
+        <cbc:BaseAmount currencyID="XBL">2300.00</cbc:BaseAmount>
+      </cac:AllowanceCharge>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>BM-551006</cbc:ID>
+        </cac:BuyersItemIdentification>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
+        <cbc:Name>Elderwick care kit</cbc:Name>
+        <cac:BuyersItemIdentification>
+          <cbc:ID>BM-551007</cbc:ID>
+        </cac:BuyersItemIdentification>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-K</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
   </cac:OrderLine>
 </Order>

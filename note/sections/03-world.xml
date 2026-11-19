@@ -1881,46 +1881,58 @@
       <listitem>
         <para>
           <emphasis role="strong">A kit of different items</emphasis>,
-          wrapped in one package and sold as one: the care kit for the
-          garden furniture, or the ground anchor set of the park bench.
-          A kit is one item with its own number and a stated content; on
-          the GS1 side it has a GTIN of its own, because it is
-          physically combined.
+          wrapped in one package and sold as one: the Elderwick care kit
+          for the Marrow dining furniture (a 250 ml tin of hard-wax oil
+          and a lint-free cloth), or the ground anchor set of the park
+          bench. A kit is one item with its own number and a stated
+          content; on the GS1 side it has a GTIN of its own, because it
+          is physically combined.
         </para>
       </listitem>
       <listitem>
         <para>
           <emphasis role="strong">An offer</emphasis>, items bought
           together for less but never one package: the Marrow set of a
-          bench and two chairs. It has no number of its own; each piece
-          keeps its own. GS1 calls this a virtual bundle and treats it
-          as a selling arrangement, not a trade item.
+          bench and two chairs, 899 lume in the shop instead of 947. It
+          has no number of its own; each piece keeps its own, and a
+          document that shows the sale carries a line per piece and a
+          &quot;Marrow set&quot; allowance. GS1 calls this a virtual
+          bundle and treats it as a selling arrangement, not a trade
+          item.
         </para>
       </listitem>
     </itemizedlist>
     <para>
-      The content of each pack and kit is not yet settled. A cotton bale
-      is not a pack: its nominal weight of about 227 kg belongs to the
-      item's description, the number of bales to the shipment, and each
-      bale's real weight to the weight statement.
+      The content of the slat bundle and the anchor set is settled with
+      their flows; the care kit's is given above. A cotton bale is not a
+      pack: its nominal weight of about 227 kg belongs to the item's
+      description, the number of bales to the shipment, and each bale's
+      real weight to the weight statement.
     </para>
     <para>
       <emphasis role="strong">Brands.</emphasis> Elderwick is
       Brightmarket Stores' own label for home and garden, built to stand
       as a brand of its own, as most retailers' private labels are. The
-      Elderwick Marrow bench (1400 mm, hardwood) and the Elderwick
-      Marrow chair are made by Brackenmere Furniture to the store's
-      specification: the shopper sees the store's label, and the maker's
-      name is on no label. It is the world's case of an item whose brand
-      owner and manufacturer are different parties. The shirts the store
-      sells are the other way round: they carry the textile mill's own
-      brand, Lumeport, so the mill numbers them from its own GS1 prefix.
-      Under GS1's rules the brand owner numbers the item, so the bench
-      and the chair each have a GTIN from Brightmarket's prefix; the
-      set, being an offer, has none. Brackenmere sells its own office
-      and outdoor furniture under its own name: the office desk, the
-      park bench PB-2 it tenders with, and the furnishing of public
-      offices with installation.
+      Elderwick Marrow bench (1400 mm) and the Elderwick Marrow chair
+      are dining furniture for indoors, in solid kiln-dried oak or ash
+      with a hard-wax oil finish, a closed seat, glued joints, felt pads
+      under the legs and a seat height of about 45 cm. Brackenmere
+      Furniture makes them to the store's specification and sells them
+      to the store at 380 and 115 lume; the store sells them in its home
+      department at 549 and 199, and gives a care kit free with each
+      bench. Many shoppers buy the chairs alone, because the 1400 mm
+      bench is too long for many apartment kitchens. The shopper sees
+      the store's label, and the maker's name is on no label: Elderwick
+      is the world's case of an item whose brand owner and manufacturer
+      are different parties. The shirts the store sells are the other
+      way round: they carry the textile mill's own brand, Lumeport, so
+      the mill numbers them from its own GS1 prefix. Under GS1's rules
+      the brand owner numbers the item, so the bench, the chair and the
+      care kit each have a GTIN from Brightmarket's prefix, whoever
+      sells them; the set, being an offer, has none. Brackenmere sells
+      its own office and outdoor furniture under its own name: the
+      office desk, the park bench PB-2 it tenders with, and the
+      furnishing of public offices with installation.
     </para>
   </section>
   <section id="S-03-world-the-park-bench">

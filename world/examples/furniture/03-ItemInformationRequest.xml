@@ -146,15 +146,28 @@
       <cbc:EndDate>2026-05-11</cbc:EndDate>
     </cac:Period>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="SET">20</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">20</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-        <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01</cbc:ID>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:SalesItem>
+    <cac:SalesItem>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:SalesItem>

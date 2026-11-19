@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0571</cbc:ID>
   <cbc:UUID>1e9835ca-6098-5efa-a740-4d690200ec9c</cbc:UUID>
-  <cbc:IssueDate>2026-03-14</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cbc:IssueTime>09:21:00-01:00</cbc:IssueTime>
   <cbc:Note>Both sides are told when a criterion is met.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
@@ -19,7 +19,7 @@
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TradeItemLocationProfile</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-26-0314C</cbc:ID>
+    <cbc:ID>BM-SIG-26-0313C</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -141,7 +141,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Slow sales.</cbc:Note>
     <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">LT</cbc:ThresholdValueComparisonCode>
-    <cbc:ThresholdQuantity unitCode="SET">5</cbc:ThresholdQuantity>
+    <cbc:ThresholdQuantity unitCode="EA">5</cbc:ThresholdQuantity>
     <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">ACTIVE</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ExceptionResolutionCode listID="urn:ubl-examples:world:codelist:ExceptionResolutionCode">REVIEW</cbc:ExceptionResolutionCode>
@@ -152,13 +152,13 @@
       <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:SupplyItem>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:SupplyItem>
   </cac:ExceptionCriteriaLine>
@@ -168,10 +168,24 @@
     <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">GT</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="P1">30</cbc:ThresholdQuantity>
     <cac:SupplyItem>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:SupplyItem>
+    <cac:SupplyItem>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
     </cac:SupplyItem>
     <cac:ForecastExceptionCriterionLine>
       <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>

@@ -22,11 +22,11 @@ Furniture sold for resale: exempt from the state sales tax, which the store char
   The seller's invoice number.
 - `UUID` = **a4b6b0fa-d2df-5444-8c02-41ff99bd3bac**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-22**  
-  Issued on delivery.
+- `IssueDate` = **2026-03-23**  
+  Issued on the day of delivery.
 - `IssueTime` = **12:42:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-04-21**  
+- `DueDate` = **2026-04-22**  
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
@@ -36,8 +36,8 @@ Furniture sold for resale: exempt from the state sales tax, which the store char
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Home and garden department**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
-  The number of lines, the free line included.
+- `LineCountNumeric` = **3**  
+  The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
 
@@ -52,7 +52,7 @@ Inside `OrderReference`:
 
 Inside `DeliveryNoteDocumentReference`:
 
-- `ID` = **BF-DN-26-0320**  
+- `ID` = **BF-DN-26-0323**  
   The delivery note the store signed when the van unloaded.
 
 ### Accounting Supplier Party
@@ -256,7 +256,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-04-21**  
+- `PaymentDueDate` = **2026-04-22**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -327,9 +327,9 @@ Inside `PaymentTerms`:
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.brackenmere.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-04-21**  
+- `PaymentDueDate` = **2026-04-22**  
   The day the amount is due, as the terms count it.
-- `PenaltyPeriod/StartDate` = **2026-04-22**  
+- `PenaltyPeriod/StartDate` = **2026-04-23**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
@@ -372,18 +372,18 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **20** (unitCode `SET`)  
-  The sets delivered.
-- `LineExtensionAmount` = **12200.00** (currencyID `XBL`)  
-  20 × 610.0, rounded to the minor unit of the currency.
-- `Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
-  The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/SellersItemIdentification/ID` = **BF-GS-01**  
-  The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `InvoicedQuantity` = **20** (unitCode `EA`)  
+  The benches delivered.
+- `LineExtensionAmount` = **7600.00** (currencyID `XBL`)  
+  20 × 380.0, rounded to the minor unit of the currency.
+- `Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -396,46 +396,24 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **610** (currencyID `XBL`)  
+- `Price/PriceAmount` = **380** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `SET`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `SubInvoiceLine/ID` = **1.1**  
-  A part of the set.
-- `SubInvoiceLine/InvoicedQuantity` = **20** (unitCode `EA`)  
-  1 per set.
-- `SubInvoiceLine/LineExtensionAmount` = **7600.00** (currencyID `XBL`)  
-  20 at 380.00 lume: the parts add up to the set's price.
-- `SubInvoiceLine/Item/Name` = **Garden bench Marrow, 1400 mm**  
-  The part.
-- `SubInvoiceLine/Item/SellersItemIdentification/ID` = **BF-GS-01-B**  
-  The maker's number for the part.
-- `SubInvoiceLine/Price/PriceAmount` = **380** (currencyID `XBL`)  
-  The part's share of the set price.
-- `SubInvoiceLine/ID` = **1.2**  
-  A part of the set.
-- `SubInvoiceLine/InvoicedQuantity` = **40** (unitCode `EA`)  
-  2 per set.
-- `SubInvoiceLine/LineExtensionAmount` = **4600.00** (currencyID `XBL`)  
-  40 at 115.00 lume: the parts add up to the set's price.
-- `SubInvoiceLine/Item/Name` = **Garden chair Marrow**  
-  The part.
-- `SubInvoiceLine/Item/SellersItemIdentification/ID` = **BF-GS-01-C**  
-  The maker's number for the part.
-- `SubInvoiceLine/Price/PriceAmount` = **115** (currencyID `XBL`)  
-  The part's share of the set price.
 - `ID` = **2**  
-  A line without charge.
-- `Note` = **Wood oil and a cloth, for the store to hand to its customers.**  
-  What they are.
-- `InvoicedQuantity` = **20** (unitCode `EA`)  
-  One care kit with each set.
-- `LineExtensionAmount` = **0.00** (currencyID `XBL`)  
-  Free of charge.
-- `FreeOfChargeIndicator` = **true**  
-  The care kits are given with the sets.
-- `Item/Name` = **Care kit for the garden bench set**  
-  The item.
+  The line number.
+- `InvoicedQuantity` = **40** (unitCode `EA`)  
+  The chairs delivered.
+- `LineExtensionAmount` = **4600.00** (currencyID `XBL`)  
+  40 × 115.0, rounded to the minor unit of the currency.
+- `Item/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow chair**  
+  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -444,10 +422,48 @@ Inside `InvoiceLine`:
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
   The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **115** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `ID` = **3**  
+  The line number.
+- `Note` = **Hard-wax oil and a cloth, one with each bench, for the store to hand on with the bench it sells.**  
+  What the line is.
+- `InvoicedQuantity` = **20** (unitCode `EA`)  
+  One care kit with each bench.
+- `LineExtensionAmount` = **0.00** (currencyID `XBL`)  
+  20 × 0.0, rounded to the minor unit of the currency.
+- `FreeOfChargeIndicator` = **true**  
+  The care kits come free with the benches.
+- `Item/Description` = **Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.**  
+  The seller's description; item marrow-care-kit of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick care kit**  
+  The item's short name; item marrow-care-kit of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-K**  
+  The seller's own item number; item marrow-care-kit of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000030** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  Supplied free with goods for resale: the Elderwick care kit goes with each bench, and the buyer hands it on with the goods it resells, so it is exempt from the state sales tax as they are; the tax is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **0** (currencyID `XBL`)  
-  No price: free.
+  No price: the item comes free with each Elderwick Marrow bench (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
 
 ## The document
 
@@ -460,20 +476,20 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-INV-26-0575</cbc:ID>
   <cbc:UUID>a4b6b0fa-d2df-5444-8c02-41ff99bd3bac</cbc:UUID>
-  <cbc:IssueDate>2026-03-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>12:42:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-04-21</cbc:DueDate>
+  <cbc:DueDate>2026-04-22</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>BF-DN-26-0320</cbc:ID>
+    <cbc:ID>BF-DN-26-0323</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -652,7 +668,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-22</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF74BFINV260575</cbc:InstructionNote>
@@ -703,9 +719,9 @@ Inside `InvoiceLine`:
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">183.00</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.brackenmere.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-22</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-22</cbc:StartDate>
+      <cbc:StartDate>2026-04-23</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
@@ -732,16 +748,16 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="SET">20</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -755,51 +771,60 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+      <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
-    <cac:SubInvoiceLine>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
-      <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
-      <cac:Item>
-        <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01-B</cbc:ID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-      <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
-      </cac:Price>
-    </cac:SubInvoiceLine>
-    <cac:SubInvoiceLine>
-      <cbc:ID>1.2</cbc:ID>
-      <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
-      <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
-      <cac:Item>
-        <cbc:Name>Garden chair Marrow</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01-C</cbc:ID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-      <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
-      </cac:Price>
-    </cac:SubInvoiceLine>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Wood oil and a cloth, for the store to hand to its customers.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
-    <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
+    <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Name>Care kit for the garden bench set</cbc:Name>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>Hard-wax oil and a cloth, one with each bench, for the store to hand on with the bench it sells.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+    <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
+    <cac:Item>
+      <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
+      <cbc:Name>Elderwick care kit</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-K</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -807,6 +832,7 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

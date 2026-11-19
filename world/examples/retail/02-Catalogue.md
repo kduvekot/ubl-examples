@@ -336,12 +336,6 @@ Inside `CatalogueLine`:
   Supplied with each bench.
 - `AccessoryRelatedItem/Description` = **Four ground anchors and bolts.**  
   In words.
-- `ComplementaryRelatedItem/ID` = **BM-551004**  
-  The related item: Garden bench set Marrow.
-- `ComplementaryRelatedItem/Quantity` = **1** (unitCode `SET`)  
-  The store's garden set sells alongside.
-- `ComplementaryRelatedItem/Description` = **Garden bench set Marrow**  
-  In words.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **3** (unitCode `DAY`)  
   The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **4** (unitCode `EA`)  
@@ -1022,11 +1016,6 @@ Inside `CatalogueLine`:
       <cbc:Quantity unitCode="SET">1</cbc:Quantity>
       <cbc:Description>Four ground anchors and bolts.</cbc:Description>
     </cac:AccessoryRelatedItem>
-    <cac:ComplementaryRelatedItem>
-      <cbc:ID>BM-551004</cbc:ID>
-      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
-      <cbc:Description>Garden bench set Marrow</cbc:Description>
-    </cac:ComplementaryRelatedItem>
     <cac:RequiredItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">3</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>

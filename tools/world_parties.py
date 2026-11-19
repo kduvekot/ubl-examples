@@ -353,9 +353,11 @@ def party_identifiers(world, p):
     out.append(("codana", "codana_cin", conv.get("codana_cin")))
     out += [("gs1", "company_prefix", conv.get("company_prefix")), ("gs1", "gln", conv.get("gln"))]
     out += [("gs1", f"gln {k}", x["gln"]) for k, x in conv.get("locations", {}).items()]
-    for it in world["items"]:
+    for it in world["items"]:      # a private label's GTIN is the brand owner's, under its prefix (D7)
         if it["seller"] == p["id"]:
-            out += [("codana", f"item {it['id']}", it.get("standard_id")), ("gs1", f"item {it['id']}", it.get("gtin"))]
+            out.append(("codana", f"item {it['id']}", it.get("standard_id")))
+        if it.get("brand_owner", it["seller"]) == p["id"]:
+            out.append(("gs1", f"item {it['id']}", it.get("gtin")))
     return [x for x in out if x[2]]
 
 

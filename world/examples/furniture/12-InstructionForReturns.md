@@ -2,7 +2,7 @@
 
 *Example 12 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Instruction For Returns in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-RETURNS-SCHEMA)*
 
-The bench set does not sell; the furniture maker asks for the remaining stock back to free shelf space.
+At the end of the sale-or-return trial the furniture maker asks for the stock above the target back, at its own cost.
 
 [The XML file](12-InstructionForReturns.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,20 +23,20 @@ The bench set does not sell; the furniture maker asks for the remaining stock ba
 - `UUID` = **1e930432-0fbd-5872-a8b6-1646ccb09ff0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-27**  
-  The furniture maker takes back the sets that do not sell.
+  The last day of the sale-or-return trial.
 - `IssueTime` = **14:21:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The maker takes back six sets to free the store's shelf.**  
-  Why.
+- `Note` = **The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery of 23 March: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.**  
+  Why the goods go back, and at whose cost.
 
 ### Document Reference
 
 Inside `DocumentReference`:
 
-- `ID` = **BF-DOC-26-0573**  
-  The exception that led to the return.
-- `DocumentTypeCode` = **ExceptionNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-DOC-26-0573 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
+- `ID` = **BM-OWN-BRAND-2026**  
+  The own-label agreement, whose sale-or-return terms the return follows.
+- `DocumentType` = **Own-label agreement**  
+  The kind of document referred to, the own-label agreement between Brightmarket Stores and Brackenmere Furniture for the Elderwick Marrow line: the store's specification, the sale-or-return trial and the returns, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -178,8 +178,8 @@ Inside `Shipment`:
 
 - `ID` = **BM-RET-26-0427**  
   The return shipment.
-- `GrossWeightMeasure` = **282** (unitCode `KGM`)  
-  Six sets of 47 kg.
+- `GrossWeightMeasure` = **285.45** (unitCode `KGM`)  
+  Seven benches of 24 kg, ten chairs of 11.5 kg and seven care kits of 0.35 kg, packed.
 - `Delivery/RequestedDeliveryPeriod/StartDate` = **2026-04-29**  
   The store's van brings them.
 - `Delivery/RequestedDeliveryPeriod/EndDate` = **2026-05-02**  
@@ -190,19 +190,47 @@ Inside `Shipment`:
 Inside `InstructionForReturnsLine`:
 
 - `ID` = **1**  
-  The only line.
+  A line per piece.
 - `Note` = **In their original cartons.**  
   How they are to be returned.
-- `Quantity` = **6** (unitCode `SET`)  
-  Six of the remaining sets, to free shelf space.
-- `Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
-  The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/SellersItemIdentification/ID` = **BF-GS-01**  
-  The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `Quantity` = **7** (unitCode `EA`)  
+  Seven benches: the stock above the target of ten.
+- `Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `ID` = **2**  
+  A line per piece.
+- `Note` = **In their original cartons.**  
+  How they are to be returned.
+- `Quantity` = **10** (unitCode `EA`)  
+  Ten chairs: the stock above the target of twenty.
+- `Item/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow chair**  
+  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `ID` = **3**  
+  A line per piece.
+- `Note` = **In their original cartons.**  
+  How they are to be returned.
+- `Quantity` = **7** (unitCode `EA`)  
+  The care kits of the seven benches.
+- `Item/Description` = **Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.**  
+  The seller's description; item marrow-care-kit of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick care kit**  
+  The item's short name; item marrow-care-kit of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-K**  
+  The seller's own item number; item marrow-care-kit of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000030** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 
 ## The document
 
@@ -217,10 +245,10 @@ Inside `InstructionForReturnsLine`:
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>14:21:00-01:00</cbc:IssueTime>
-  <cbc:Note>The maker takes back six sets to free the store's shelf.</cbc:Note>
+  <cbc:Note>The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery of 23 March: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.</cbc:Note>
   <cac:DocumentReference>
-    <cbc:ID>BF-DOC-26-0573</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
+    <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
+    <cbc:DocumentType>Own-label agreement</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0427</cbc:ID>
@@ -335,7 +363,7 @@ Inside `InstructionForReturnsLine`:
   </cac:ManufacturerParty>
   <cac:Shipment>
     <cbc:ID>BM-RET-26-0427</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">282</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:RequestedDeliveryPeriod>
         <cbc:StartDate>2026-04-29</cbc:StartDate>
@@ -346,15 +374,45 @@ Inside `InstructionForReturnsLine`:
   <cac:InstructionForReturnsLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>In their original cartons.</cbc:Note>
-    <cbc:Quantity unitCode="SET">6</cbc:Quantity>
+    <cbc:Quantity unitCode="EA">7</cbc:Quantity>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:InstructionForReturnsLine>
+  <cac:InstructionForReturnsLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
+    <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:InstructionForReturnsLine>
+  <cac:InstructionForReturnsLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>In their original cartons.</cbc:Note>
+    <cbc:Quantity unitCode="EA">7</cbc:Quantity>
+    <cac:Item>
+      <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
+      <cbc:Name>Elderwick care kit</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-K</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
   </cac:InstructionForReturnsLine>

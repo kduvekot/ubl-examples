@@ -22,7 +22,7 @@ Both agree when a deviation is worth a message: thresholds for forecast variance
   The sender's number for its exception criteria.
 - `UUID` = **1e9835ca-6098-5efa-a740-4d690200ec9c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-14**  
+- `IssueDate` = **2026-03-13**  
   Agreed together with the replenishment policy.
 - `IssueTime` = **09:21:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -53,7 +53,7 @@ Inside `DocumentReference`:
 
 Inside `Signature`:
 
-- `ID` = **BM-SIG-26-0314C**  
+- `ID` = **BM-SIG-26-0313C**  
   The sender's electronic seal.
 - `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -197,13 +197,13 @@ Inside `SellerSupplierParty`:
 Inside `ExceptionCriteriaLine`:
 
 - `ID` = **1**  
-  The only criterion.
+  The sales criterion, on the bench, the piece the line is planned around.
 - `Note` = **Slow sales.**  
   What the criterion catches.
 - `ThresholdValueComparisonCode` = **LT** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
   An exception is raised when actual sales fall below the threshold. The code is from the Trade Accord's threshold value comparison list: LT = Less than.
-- `ThresholdQuantity` = **5** (unitCode `SET`)  
-  Fewer than five sets sold in four weeks is worth a message.
+- `ThresholdQuantity` = **5** (unitCode `EA`)  
+  Fewer than five benches sold in the first four weeks is worth a message.
 - `ExceptionStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ExceptionStatusCode`)  
   In force. The code is from the Trade Accord's exception status list: ACTIVE = Criterion in force.
 - `CollaborationPriorityCode` = **HIGH** (listID `urn:ubl-examples:world:codelist:CollaborationPriorityCode`)  
@@ -213,19 +213,19 @@ Inside `ExceptionCriteriaLine`:
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
   Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  In sets. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
 - `EffectivePeriod/StartDate` = **2026-03-23**  
   From the first four weeks on the shelf.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
   To the end of the season.
-- `SupplyItem/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
-  The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
-- `SupplyItem/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `SupplyItem/SellersItemIdentification/ID` = **BF-GS-01**  
-  The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `SupplyItem/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **2**  
   The forecast criterion.
 - `Note` = **Forecast far from the store's own plan.**  
@@ -234,10 +234,22 @@ Inside `ExceptionCriteriaLine`:
   When the difference is larger. The code is from the Trade Accord's threshold value comparison list: GT = Greater than.
 - `ThresholdQuantity` = **30** (unitCode `P1`)  
   More than 30 % difference.
-- `SupplyItem/Name` = **Garden bench set Marrow**  
-  The store's own line.
-- `SupplyItem/SellersItemIdentification/ID` = **BF-GS-01**  
-  The maker's number.
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `SupplyItem/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow chair**  
+  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ForecastExceptionCriterionLine/ForecastPurposeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:ForecastPurposeCode`)  
   A sales forecast. The code is from the Trade Accord's forecast purpose list: SALES = Sales forecast.
 - `ForecastExceptionCriterionLine/ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
@@ -260,7 +272,7 @@ Inside `ExceptionCriteriaLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0571</cbc:ID>
   <cbc:UUID>1e9835ca-6098-5efa-a740-4d690200ec9c</cbc:UUID>
-  <cbc:IssueDate>2026-03-14</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cbc:IssueTime>09:21:00-01:00</cbc:IssueTime>
   <cbc:Note>Both sides are told when a criterion is met.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
@@ -273,7 +285,7 @@ Inside `ExceptionCriteriaLine`:
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TradeItemLocationProfile</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-26-0314C</cbc:ID>
+    <cbc:ID>BM-SIG-26-0313C</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -395,7 +407,7 @@ Inside `ExceptionCriteriaLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Slow sales.</cbc:Note>
     <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">LT</cbc:ThresholdValueComparisonCode>
-    <cbc:ThresholdQuantity unitCode="SET">5</cbc:ThresholdQuantity>
+    <cbc:ThresholdQuantity unitCode="EA">5</cbc:ThresholdQuantity>
     <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">ACTIVE</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ExceptionResolutionCode listID="urn:ubl-examples:world:codelist:ExceptionResolutionCode">REVIEW</cbc:ExceptionResolutionCode>
@@ -406,13 +418,13 @@ Inside `ExceptionCriteriaLine`:
       <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:SupplyItem>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:SupplyItem>
   </cac:ExceptionCriteriaLine>
@@ -422,10 +434,24 @@ Inside `ExceptionCriteriaLine`:
     <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">GT</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="P1">30</cbc:ThresholdQuantity>
     <cac:SupplyItem>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:SupplyItem>
+    <cac:SupplyItem>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
     </cac:SupplyItem>
     <cac:ForecastExceptionCriterionLine>
       <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>

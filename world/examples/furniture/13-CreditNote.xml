@@ -6,15 +6,15 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-CN-26-0579</cbc:ID>
   <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
-  <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-13</cbc:DueDate>
+  <cbc:DueDate>2026-05-15</cbc:DueDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
-  <cbc:Note>The store paid the invoice; the credit is refunded.</cbc:Note>
+  <cbc:Note>The store paid the invoice; the credit is refunded in full: the return ends the sale-or-return trial of the own-label agreement, so there is no restocking deduction. The free care kits came back with the benches and are not credited.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -22,7 +22,7 @@
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>BF-INV-26-0575</cbc:ID>
-      <cbc:IssueDate>2026-03-22</cbc:IssueDate>
+      <cbc:IssueDate>2026-03-23</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -200,7 +200,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-13</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-15</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF63BFCN260579</cbc:InstructionNote>
@@ -250,7 +250,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">3477.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">3810.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -264,31 +264,23 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">3477.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">3477.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">3477.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3810.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">3810.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">3810.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">3810.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:CreditedQuantity unitCode="SET">6</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
-      <cbc:BaseAmount currencyID="XBL">3660.00</cbc:BaseAmount>
-    </cac:AllowanceCharge>
+    <cbc:CreditedQuantity unitCode="EA">7</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">2660.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -302,11 +294,37 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+      <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
-    <cac:ItemPriceExtension>
-      <cbc:Amount currencyID="XBL">3660.00</cbc:Amount>
-    </cac:ItemPriceExtension>
+  </cac:CreditNoteLine>
+  <cac:CreditNoteLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:CreditedQuantity unitCode="EA">10</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">1150.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
   </cac:CreditNoteLine>
 </CreditNote>

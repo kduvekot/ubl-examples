@@ -6,20 +6,20 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-INV-26-0575</cbc:ID>
   <cbc:UUID>a4b6b0fa-d2df-5444-8c02-41ff99bd3bac</cbc:UUID>
-  <cbc:IssueDate>2026-03-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>12:42:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-04-21</cbc:DueDate>
+  <cbc:DueDate>2026-04-22</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>BF-DN-26-0320</cbc:ID>
+    <cbc:ID>BF-DN-26-0323</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -198,7 +198,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-22</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF74BFINV260575</cbc:InstructionNote>
@@ -249,9 +249,9 @@
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">183.00</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.brackenmere.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-04-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-22</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-22</cbc:StartDate>
+      <cbc:StartDate>2026-04-23</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
@@ -278,16 +278,16 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="SET">20</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -301,51 +301,60 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+      <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
-    <cac:SubInvoiceLine>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
-      <cbc:LineExtensionAmount currencyID="XBL">7600.00</cbc:LineExtensionAmount>
-      <cac:Item>
-        <cbc:Name>Garden bench Marrow, 1400 mm</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01-B</cbc:ID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-      <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
-      </cac:Price>
-    </cac:SubInvoiceLine>
-    <cac:SubInvoiceLine>
-      <cbc:ID>1.2</cbc:ID>
-      <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
-      <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
-      <cac:Item>
-        <cbc:Name>Garden chair Marrow</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01-C</cbc:ID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-      <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
-      </cac:Price>
-    </cac:SubInvoiceLine>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Wood oil and a cloth, for the store to hand to its customers.</cbc:Note>
-    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
-    <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
+    <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">4600.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Name>Care kit for the garden bench set</cbc:Name>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>Hard-wax oil and a cloth, one with each bench, for the store to hand on with the bench it sells.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="EA">20</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+    <cbc:FreeOfChargeIndicator>true</cbc:FreeOfChargeIndicator>
+    <cac:Item>
+      <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
+      <cbc:Name>Elderwick care kit</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-K</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -353,6 +362,7 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

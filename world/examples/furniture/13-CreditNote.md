@@ -2,7 +2,7 @@
 
 *Example 13 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
 
-The returned bench sets are credited.
+The returned benches and chairs are credited in full, without a restocking deduction.
 
 [The XML file](13-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,23 +22,23 @@ The returned bench sets are credited.
   The seller's credit note number.
 - `UUID` = **3eb03476-6b48-5174-b997-aaed7a5b8b5b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-03**  
-  Issued when the returned sets arrived back.
+- `IssueDate` = **2026-05-05**  
+  Issued on the Tuesday after the returned pieces arrived back: Monday 4 May is Bayvarra's Labour Day.
 - `IssueTime` = **11:55:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-13**  
+- `DueDate` = **2026-05-15**  
   The furniture maker pays the credit back within ten days.
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 381: credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 381 = Credit note.
-- `Note` = **The store paid the invoice; the credit is refunded.**  
-  Why money goes back.
+- `Note` = **The store paid the invoice; the credit is refunded in full: the return ends the sale-or-return trial of the own-label agreement, so there is no restocking deduction. The free care kits came back with the benches and are not credited.**  
+  Why money goes back, and how much.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
   The buyer's cost centre, as on the invoice credited.
 - `AccountingCost` = **Home and garden department**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of lines.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
@@ -48,15 +48,15 @@ The returned bench sets are credited.
 Inside `OrderReference`:
 
 - `ID` = **BS-PO-26-0574**  
-  The order of the sets.
+  The order of the pieces.
 
 ### Billing Reference
 
 Inside `BillingReference`:
 
 - `InvoiceDocumentReference/ID` = **BF-INV-26-0575**  
-  The invoice of the returned sets.
-- `InvoiceDocumentReference/IssueDate` = **2026-03-22**  
+  The invoice of the returned pieces.
+- `InvoiceDocumentReference/IssueDate` = **2026-03-23**  
   Its issue date.
 
 ### Additional Document Reference
@@ -260,7 +260,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-13**  
+- `PaymentDueDate` = **2026-05-15**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -328,7 +328,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **3477.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **3810.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -347,13 +347,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **3477.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **3810.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **3477.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **3810.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **3477.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **3810.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **3477.00** (currencyID `XBL`)  
+- `PayableAmount` = **3810.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Credit Note Line
@@ -362,30 +362,18 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
-- `CreditedQuantity` = **6** (unitCode `SET`)  
-  The sets returned.
-- `LineExtensionAmount` = **3477.00** (currencyID `XBL`)  
-  6 × the price = 3660.00, less the 5 % restocking deduction.
-- `AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance on the line.
-- `AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189: the deduction is agreed in the instruction for returns. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
-- `AllowanceCharge/AllowanceChargeReason` = **Restocking deduction**  
-  The instruction for returns lets the furniture maker keep 5 % for restocking the sets.
-- `AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  The rate.
-- `AllowanceCharge/Amount` = **183.00** (currencyID `XBL`)  
-  The deduction on the line.
-- `AllowanceCharge/BaseAmount` = **3660.00** (currencyID `XBL`)  
-  The line at the full price.
-- `Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
-  The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/SellersItemIdentification/ID` = **BF-GS-01**  
-  The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `CreditedQuantity` = **7** (unitCode `EA`)  
+  Seven benches: the stock above the target of ten.
+- `LineExtensionAmount` = **2660.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -398,12 +386,40 @@ Inside `CreditNoteLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **610** (currencyID `XBL`)  
+- `Price/PriceAmount` = **380** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `Price/BaseQuantity` = **1** (unitCode `SET`)  
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `ItemPriceExtension/Amount` = **3660.00** (currencyID `XBL`)  
-  Price times quantity, before the allowance.
+- `ID` = **2**  
+  The line number.
+- `CreditedQuantity` = **10** (unitCode `EA`)  
+  Ten chairs: the stock above the target of twenty.
+- `LineExtensionAmount` = **1150.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `Item/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow chair**  
+  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **115** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
 
 ## The document
 
@@ -416,15 +432,15 @@ Inside `CreditNoteLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-CN-26-0579</cbc:ID>
   <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
-  <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-13</cbc:DueDate>
+  <cbc:DueDate>2026-05-15</cbc:DueDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
-  <cbc:Note>The store paid the invoice; the credit is refunded.</cbc:Note>
+  <cbc:Note>The store paid the invoice; the credit is refunded in full: the return ends the sale-or-return trial of the own-label agreement, so there is no restocking deduction. The free care kits came back with the benches and are not credited.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -432,7 +448,7 @@ Inside `CreditNoteLine`:
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>BF-INV-26-0575</cbc:ID>
-      <cbc:IssueDate>2026-03-22</cbc:IssueDate>
+      <cbc:IssueDate>2026-03-23</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -610,7 +626,7 @@ Inside `CreditNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-13</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-15</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF63BFCN260579</cbc:InstructionNote>
@@ -660,7 +676,7 @@ Inside `CreditNoteLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">3477.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">3810.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -674,31 +690,23 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">3477.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">3477.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">3477.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3810.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">3810.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">3810.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">3810.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:CreditedQuantity unitCode="SET">6</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">3477.00</cbc:LineExtensionAmount>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-      <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
-      <cbc:BaseAmount currencyID="XBL">3660.00</cbc:BaseAmount>
-    </cac:AllowanceCharge>
+    <cbc:CreditedQuantity unitCode="EA">7</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">2660.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -712,12 +720,38 @@ Inside `CreditNoteLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">610</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+      <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
-    <cac:ItemPriceExtension>
-      <cbc:Amount currencyID="XBL">3660.00</cbc:Amount>
-    </cac:ItemPriceExtension>
+  </cac:CreditNoteLine>
+  <cac:CreditNoteLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:CreditedQuantity unitCode="EA">10</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">1150.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
   </cac:CreditNoteLine>
 </CreditNote>
 ```

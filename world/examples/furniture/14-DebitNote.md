@@ -2,7 +2,7 @@
 
 *Example 14 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Debit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA)*
 
-The store charges the furniture maker for transporting the returned sets back.
+The store charges the furniture maker for transporting the returned pieces back.
 
 [The XML file](14-DebitNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,20 +22,20 @@ The store charges the furniture maker for transporting the returned sets back.
   The sender's number for this document.
 - `UUID` = **0875ae2f-3059-5ccf-bbe9-44ac5e023a67**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-04**  
-  After the returned sets were collected.
+- `IssueDate` = **2026-05-05**  
+  After the returned pieces were collected, with the credit note.
 - `IssueTime` = **11:12:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-03**  
+- `DueDate` = **2026-06-04**  
   Thirty days, the store's terms.
-- `Note` = **The furniture maker asked for the sets back; the store charges the transport.**  
+- `Note` = **The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.**  
   Why.
 - `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 383: debit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 383 = Debit note.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the trade; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
-  The store books the income on its garden department.
+  The store books the income on its home and garden department.
 - `AccountingCost` = **Home and garden department**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
@@ -49,7 +49,7 @@ Inside `DiscrepancyResponse`:
 
 - `ResponseCode` = **35** (listID `UN/EDIFACT EDED 4465`)  
   Why the store debits: the cost of a return the furniture maker asked for. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 35 = Goods returned.
-- `Description` = **Return transport of six unsold garden sets.**  
+- `Description` = **Return transport of seven benches, ten chairs and their care kits.**  
   In words.
 
 ### Order Reference
@@ -57,28 +57,28 @@ Inside `DiscrepancyResponse`:
 Inside `OrderReference`:
 
 - `ID` = **BS-PO-26-0574**  
-  The order of the sets that went back.
+  The order of the pieces that went back.
 
 ### Billing Reference
 
 Inside `BillingReference`:
 
 - `CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
-  The credit note of the returned sets.
+  The credit note of the returned pieces.
 
 ### Contract Document Reference
 
 Inside `ContractDocumentReference`:
 
-- `ID` = **BF-DOC-26-0568**  
-  The quotation the line was bought under; it puts returns at the maker's cost.
+- `ID` = **BM-OWN-BRAND-2026**  
+  The own-label agreement the line was bought under; it puts returns at the maker's cost.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **BF-DOC-26-0578**  
-  The instruction for returns that asked for the sets.
+  The instruction for returns that asked for the pieces.
 - `DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BF-DOC-26-0578 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
 
@@ -278,7 +278,7 @@ Inside `SellerSupplierParty`:
 Inside `Delivery`:
 
 - `ActualDeliveryDate` = **2026-05-02**  
-  The sets were delivered back.
+  The pieces were delivered back.
 - `DeliveryLocation/ID` = **9523710900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, factory and goods-in, marrowdale: Brackenmere Furniture identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Name` = **Brackenmere Furniture, Marrowdale**  
@@ -294,7 +294,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-03**  
+- `PaymentDueDate` = **2026-06-04**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -355,7 +355,7 @@ Inside `PaymentTerms`:
 
 - `Note` = **30 days net.**  
   The store's terms.
-- `PaymentDueDate` = **2026-06-03**  
+- `PaymentDueDate` = **2026-06-04**  
   The due date.
 
 ### Tax Total
@@ -395,7 +395,7 @@ Inside `DebitNoteLine`:
 - `ID` = **1**  
   The return transport.
 - `Note` = **Collected with the store's van.**  
-  How the sets went back.
+  How the pieces went back.
 - `DebitedQuantity` = **1** (unitCode `E48`)  
   One return delivery.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
@@ -413,23 +413,15 @@ Inside `DebitNoteLine`:
 - `BillingReference/CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
   The credit note.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
-  Its line of the returned sets.
-- `BillingReference/BillingReferenceLine/Amount` = **3477.00** (currencyID `XBL`)  
-  The amount of the credit note line the transport belongs to.
-- `BillingReference/BillingReferenceLine/AllowanceCharge/ChargeIndicator` = **false**  
-  The allowance on that line.
-- `BillingReference/BillingReferenceLine/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
-- `BillingReference/BillingReferenceLine/AllowanceCharge/AllowanceChargeReason` = **Restocking deduction**  
-  As on the credit note.
-- `BillingReference/BillingReferenceLine/AllowanceCharge/Amount` = **183.00** (currencyID `XBL`)  
-  5 % of the sets returned.
+  Its first line, the returned benches.
+- `BillingReference/BillingReferenceLine/Amount` = **2660.00** (currencyID `XBL`)  
+  The amount of the credit note's first line, the benches returned.
 - `DocumentReference/ID` = **BF-DOC-26-0578**  
   The instruction for returns.
 - `DocumentReference/DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BF-DOC-26-0578 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
 - `Delivery/ActualDeliveryDate` = **2026-05-02**  
-  The day the sets were delivered back to the furniture maker.
+  The day the pieces were delivered back to the furniture maker.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   The tax of the line.
 - `Item/Description` = **Transport of returned goods back to the supplier, per delivery.**  
@@ -464,10 +456,10 @@ Inside `DebitNoteLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
-  <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>11:12:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-03</cbc:DueDate>
-  <cbc:Note>The furniture maker asked for the sets back; the store charges the transport.</cbc:Note>
+  <cbc:DueDate>2026-06-04</cbc:DueDate>
+  <cbc:Note>The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
@@ -476,7 +468,7 @@ Inside `DebitNoteLine`:
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
     <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>
-    <cbc:Description>Return transport of six unsold garden sets.</cbc:Description>
+    <cbc:Description>Return transport of seven benches, ten chairs and their care kits.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -487,7 +479,7 @@ Inside `DebitNoteLine`:
     </cac:CreditNoteDocumentReference>
   </cac:BillingReference>
   <cac:ContractDocumentReference>
-    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-DOC-26-0578</cbc:ID>
@@ -679,7 +671,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
@@ -725,7 +717,7 @@ Inside `DebitNoteLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>30 days net.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -765,13 +757,7 @@ Inside `DebitNoteLine`:
       </cac:CreditNoteDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:Amount currencyID="XBL">3477.00</cbc:Amount>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
-        </cac:AllowanceCharge>
+        <cbc:Amount currencyID="XBL">2660.00</cbc:Amount>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>

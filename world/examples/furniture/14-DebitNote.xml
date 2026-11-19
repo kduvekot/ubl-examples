@@ -6,10 +6,10 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
-  <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>11:12:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-03</cbc:DueDate>
-  <cbc:Note>The furniture maker asked for the sets back; the store charges the transport.</cbc:Note>
+  <cbc:DueDate>2026-06-04</cbc:DueDate>
+  <cbc:Note>The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
@@ -18,7 +18,7 @@
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
     <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>
-    <cbc:Description>Return transport of six unsold garden sets.</cbc:Description>
+    <cbc:Description>Return transport of seven benches, ten chairs and their care kits.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -29,7 +29,7 @@
     </cac:CreditNoteDocumentReference>
   </cac:BillingReference>
   <cac:ContractDocumentReference>
-    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BF-DOC-26-0578</cbc:ID>
@@ -221,7 +221,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
@@ -267,7 +267,7 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>30 days net.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -307,13 +307,7 @@
       </cac:CreditNoteDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:Amount currencyID="XBL">3477.00</cbc:Amount>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Restocking deduction</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">183.00</cbc:Amount>
-        </cac:AllowanceCharge>
+        <cbc:Amount currencyID="XBL">2660.00</cbc:Amount>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>

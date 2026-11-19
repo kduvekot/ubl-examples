@@ -26,7 +26,7 @@ Weekly sales and stock movements of the line.
   The store's report of the first four weeks.
 - `IssueTime` = **16:35:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Sales were slow after the promotion ended.**  
+- `Note` = **The chairs sell better than the set: the bench is too long for many apartment kitchens.**  
   The store's remark.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the store's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
@@ -182,42 +182,54 @@ Inside `SupplyChainActivityDataLine`:
   The only line.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
   The activity reported: sales to consumers. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `BuyerCustomerParty/Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `BuyerCustomerParty/Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SellerSupplierParty/Party/PartyName/Name` = **Brackenmere Furniture**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `ActivityPeriod/StartDate` = **2026-03-23**  
   The four weeks.
 - `ActivityPeriod/EndDate` = **2026-04-20**  
   Their end.
-- `ActivityOriginLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
-  The Global Location Number of the place, garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
-- `ActivityOriginLocation/Name` = **Brightmarket Stores, garden department, Lumeport**  
+- `ActivityOriginLocation/ID` = **9522610900033** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, home department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `ActivityOriginLocation/Name` = **Brightmarket Stores, home department, Lumeport**  
   Where the sales took place.
-- `ActivityFinalLocation/Name` = **Customers' gardens in Lumeport**  
-  Where the sets end up.
-- `SalesItem/Quantity` = **3** (unitCode `SET`)  
-  Three sets sold in four weeks.
-- `SalesItem/ActivityProperty/Name` = **Weather**  
-  What the store notes.
-- `SalesItem/ActivityProperty/Value` = **Rain three weeks out of four.**  
-  Why sales were slow.
-- `SalesItem/TaxExclusivePrice/PriceAmount` = **899** (currencyID `XBL`)  
-  The shelf price, before sales tax.
-- `SalesItem/TaxInclusivePrice/PriceAmount` = **957.44** (currencyID `XBL`)  
+- `SalesItem/Quantity` = **3** (unitCode `EA`)  
+  Three benches sold in four weeks, all in the Marrow set.
+- `SalesItem/TaxExclusivePrice/PriceAmount` = **549** (currencyID `XBL`)  
+  The shelf price of the bench, before sales tax.
+- `SalesItem/TaxExclusivePrice/AllowanceCharge/ChargeIndicator` = **false**  
+  An allowance on the price.
+- `SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
+  The reason for the allowance as a code of UN/EDIFACT 5189: a discount; the text names the offer. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
+- `SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReason` = **Marrow set**  
+  The shop's offer: a bench and two chairs for 899 lume instead of 947.
+- `SalesItem/TaxExclusivePrice/AllowanceCharge/Amount` = **48.00** (currencyID `XBL`)  
+  The set allowance, given once with each bench sold in a set: 549 + 2 × 199 − 48 = 899.
+- `SalesItem/TaxInclusivePrice/PriceAmount` = **584.69** (currencyID `XBL`)  
   With Coastal State's 6.5 % sales tax.
-- `SalesItem/Item/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
-  The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
-- `SalesItem/Item/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `SalesItem/Item/SellersItemIdentification/ID` = **BF-GS-01**  
-  The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `SalesItem/Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `SalesItem/Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `SalesItem/Quantity` = **10** (unitCode `EA`)  
+  Ten chairs sold: six in the three sets and four alone.
+- `SalesItem/ActivityProperty/Name` = **Sold alone**  
+  What the store notes.
+- `SalesItem/ActivityProperty/Value` = **4 of 10: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.**  
+  Why the chairs sell better than the set.
+- `SalesItem/TaxExclusivePrice/PriceAmount` = **199** (currencyID `XBL`)  
+  The shelf price of the chair, before sales tax.
+- `SalesItem/TaxInclusivePrice/PriceAmount` = **211.94** (currencyID `XBL`)  
+  With Coastal State's 6.5 % sales tax.
+- `SalesItem/Item/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/Name` = **Elderwick Marrow chair**  
+  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SalesItem/Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 
 ## The document
 
@@ -232,7 +244,7 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>16:35:00-01:00</cbc:IssueTime>
-  <cbc:Note>Sales were slow after the promotion ended.</cbc:Note>
+  <cbc:Note>The chairs sell better than the set: the bench is too long for many apartment kitchens.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ActivityPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
@@ -344,57 +356,59 @@ Inside `SupplyChainActivityDataLine`:
   <cac:SupplyChainActivityDataLine>
     <cbc:ID>1</cbc:ID>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cac:BuyerCustomerParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brightmarket Stores</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:BuyerCustomerParty>
-    <cac:SellerSupplierParty>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Brackenmere Furniture</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-    </cac:SellerSupplierParty>
     <cac:ActivityPeriod>
       <cbc:StartDate>2026-03-23</cbc:StartDate>
       <cbc:EndDate>2026-04-20</cbc:EndDate>
     </cac:ActivityPeriod>
     <cac:ActivityOriginLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
-      <cbc:Name>Brightmarket Stores, garden department, Lumeport</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
+      <cbc:Name>Brightmarket Stores, home department, Lumeport</cbc:Name>
     </cac:ActivityOriginLocation>
-    <cac:ActivityFinalLocation>
-      <cbc:Name>Customers' gardens in Lumeport</cbc:Name>
-    </cac:ActivityFinalLocation>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="SET">3</cbc:Quantity>
-      <cac:ActivityProperty>
-        <cbc:Name>Weather</cbc:Name>
-        <cbc:Value>Rain three weeks out of four.</cbc:Value>
-      </cac:ActivityProperty>
+      <cbc:Quantity unitCode="EA">3</cbc:Quantity>
       <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">899</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">549</cbc:PriceAmount>
+        <cac:AllowanceCharge>
+          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+          <cbc:AllowanceChargeReason>Marrow set</cbc:AllowanceChargeReason>
+          <cbc:Amount currencyID="XBL">48.00</cbc:Amount>
+        </cac:AllowanceCharge>
       </cac:TaxExclusivePrice>
       <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">957.44</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">584.69</cbc:PriceAmount>
       </cac:TaxInclusivePrice>
       <cac:Item>
-        <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-        <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-GS-01</cbc:ID>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:SalesItem>
+    <cac:SalesItem>
+      <cbc:Quantity unitCode="EA">10</cbc:Quantity>
+      <cac:ActivityProperty>
+        <cbc:Name>Sold alone</cbc:Name>
+        <cbc:Value>4 of 10: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.</cbc:Value>
+      </cac:ActivityProperty>
+      <cac:TaxExclusivePrice>
+        <cbc:PriceAmount currencyID="XBL">199</cbc:PriceAmount>
+      </cac:TaxExclusivePrice>
+      <cac:TaxInclusivePrice>
+        <cbc:PriceAmount currencyID="XBL">211.94</cbc:PriceAmount>
+      </cac:TaxInclusivePrice>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:SalesItem>

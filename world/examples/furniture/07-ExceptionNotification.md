@@ -2,7 +2,7 @@
 
 *Example 7 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Exception Notification in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXCEPTION-NOTIFICATION-SCHEMA)*
 
-Sales of the bench set run far below forecast: past the agreed threshold, so the furniture maker notifies the store.
+Sales of the Marrow bench run below the agreed threshold, so the furniture maker notifies the store.
 
 [The XML file](07-ExceptionNotification.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -196,7 +196,7 @@ Inside `ExceptionNotificationLine`:
 
 - `ID` = **1**  
   The only exception.
-- `Note` = **Three sets sold against five expected.**  
+- `Note` = **Three benches sold against a threshold of five.**  
   The exception.
 - `Description` = **Sales below the agreed threshold.**  
   In words.
@@ -206,16 +206,16 @@ Inside `ExceptionNotificationLine`:
   As agreed. The code is from the Trade Accord's collaboration priority list: HIGH = High.
 - `ResolutionCode` = **REVIEW** (listID `urn:ubl-examples:world:codelist:ResolutionCode`)  
   A review of the line. The code is from the Trade Accord's resolution list: REVIEW = Joint review.
-- `ComparedValueMeasure` = **5** (unitCode `SET`)  
-  The agreed threshold: five sets in four weeks.
-- `SourceValueMeasure` = **3** (unitCode `SET`)  
-  The sales the store reported: three sets.
-- `VarianceQuantity` = **-2** (unitCode `SET`)  
-  Two sets fewer than the threshold.
+- `ComparedValueMeasure` = **3** (unitCode `EA`)  
+  The value compared: the benches the store reported sold.
+- `SourceValueMeasure` = **5** (unitCode `EA`)  
+  The value it is compared with: the agreed threshold of five benches in four weeks.
+- `VarianceQuantity` = **-2** (unitCode `EA`)  
+  Two benches fewer than the threshold.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
   Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  In sets. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
 - `ExceptionObservationPeriod/StartDate` = **2026-03-23**  
   The four weeks.
 - `ExceptionObservationPeriod/EndDate` = **2026-04-20**  
@@ -240,14 +240,14 @@ Inside `ExceptionNotificationLine`:
   Their time.
 - `ForecastException/ComparisonForecastIssueDate` = **2026-04-20**  
   The figures of day 49.
-- `SupplyItem/Description` = **Garden bench and two chairs in hardwood, made for the department store's own line.**  
-  The seller's description; item garden-set of Brackenmere Furniture (world/items.json).
-- `SupplyItem/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set of Brackenmere Furniture (world/items.json).
-- `SupplyItem/SellersItemIdentification/ID` = **BF-GS-01**  
-  The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
-- `SupplyItem/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 
 ## The document
 
@@ -392,14 +392,14 @@ Inside `ExceptionNotificationLine`:
   </cac:SellerSupplierParty>
   <cac:ExceptionNotificationLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Three sets sold against five expected.</cbc:Note>
+    <cbc:Note>Three benches sold against a threshold of five.</cbc:Note>
     <cbc:Description>Sales below the agreed threshold.</cbc:Description>
     <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">OPEN</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ResolutionCode listID="urn:ubl-examples:world:codelist:ResolutionCode">REVIEW</cbc:ResolutionCode>
-    <cbc:ComparedValueMeasure unitCode="SET">5</cbc:ComparedValueMeasure>
-    <cbc:SourceValueMeasure unitCode="SET">3</cbc:SourceValueMeasure>
-    <cbc:VarianceQuantity unitCode="SET">-2</cbc:VarianceQuantity>
+    <cbc:ComparedValueMeasure unitCode="EA">3</cbc:ComparedValueMeasure>
+    <cbc:SourceValueMeasure unitCode="EA">5</cbc:SourceValueMeasure>
+    <cbc:VarianceQuantity unitCode="EA">-2</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
@@ -421,13 +421,13 @@ Inside `ExceptionNotificationLine`:
       <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
     </cac:ForecastException>
     <cac:SupplyItem>
-      <cbc:Description>Garden bench and two chairs in hardwood, made for the department store's own line.</cbc:Description>
-      <cbc:Name>Garden bench set Marrow</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-GS-01</cbc:ID>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:SupplyItem>
   </cac:ExceptionNotificationLine>

@@ -1004,7 +1004,12 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         out["Keyword"] = V(", ".join(maker["keywords"]), "The search string buyers find the item by, the maker's "
                                                           f"keywords in one element; {msrc}. A second Keyword would "
                                                           "have to be in another language (UBL rule IND7).")
-    if maker.get("brand"):
+    bowner = PARTY[maker["brand_owner"]]["identity"]["name"] if maker.get("brand_owner") else None
+    if maker.get("brand") and bowner:      # a private label: the brand is the owner's, the maker makes it (D7)
+        out["BrandName"] = V(maker["brand"], f"The brand the item is sold under: {maker['brand']}, the own label of "
+                                             f"{bowner}, which {PARTY[maker['seller']]['identity']['name']} makes "
+                                             f"for it; {msrc}.")
+    elif maker.get("brand"):
         out["BrandName"] = V(maker["brand"], f"The brand the maker sells the item under; {msrc}.")
     if maker.get("model"):
         out["ModelName"] = V(maker["model"], f"The model; {msrc}.")
@@ -1051,13 +1056,17 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                       schemeID="ISO 15459-6")} \
         if maker.get("standard_id") else None
     if gtin:
-        owner = PARTY[gtin["seller"]]["identity"]["name"]
+        owner = PARTY[gtin.get("brand_owner", gtin["seller"])]["identity"]["name"]
+        poss = "'" if owner.endswith("s") else "'s"
         out["StandardItemIdentification"] = {"ID": V(gtin["gtin"], (
             f"The GTIN {owner} gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves "
             "that prefix for demonstrations and examples, so the number belongs to no real product"
-            + (f"; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate "
+            + (f"; the item is {owner}{poss} own label {gtin['brand']}, made for it by {mname}: under GS1 rules "
+               f"the brand owner numbers the item, not the manufacturer, so the number is {owner}{poss}, whoever "
+               "sells the item" if gtin.get("brand_owner") else
+               f"; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate "
                "the GTIN where the brand owner has none" if gtin is not maker else
-               f"; under GS1 rules the brand owner numbers the item, and the brand {maker['brand']} is {owner}'s"
+               f"; under GS1 rules the brand owner numbers the item, and the brand {maker['brand']} is {owner}{poss}"
                if maker.get("brand") else "")
             + f" (world/items.json)."), schemeID="GS1 GTIN")}
         if codana:
@@ -1111,7 +1120,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                       "ValueQuantity": V(value, f"Its measured value; {msrc}.", unitCode=unit)})
     if props:
         out["AdditionalItemProperty"] = props
-    if it.get("resale_of"):
+    if it.get("resale_of") or maker.get("brand_owner"):    # a resold item, or a private label: who makes it
         out["ManufacturerParty"] = party(maker["seller"], short=True)
         if catalogue:
             out["InformationContentProviderParty"] = party(maker["seller"], short=True)

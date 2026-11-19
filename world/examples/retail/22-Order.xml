@@ -9,9 +9,9 @@
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>11:25:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Click and collect: ready in the garden department from Tuesday; bring the card used for the order.</cbc:Note>
+  <cbc:Note>Click and collect: ready in the home department from Tuesday; bring the card used for the order.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyName>
@@ -87,8 +87,8 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
-      <cbc:Name>Garden department, Lumeport store</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
+      <cbc:Name>Home department, Lumeport store</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-06-01</cbc:StartDate>
@@ -103,8 +103,8 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">EXW</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
-      <cbc:Description>Garden department of the Lumeport store</cbc:Description>
+      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
+      <cbc:Description>Home department of the Lumeport store</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:PaymentMeans>
@@ -121,6 +121,19 @@
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:CardAccountRoleCode">HOLDER</cbc:RoleCode>
     </cac:CardAccount>
   </cac:PaymentMeans>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Marrow set</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">48.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>6.5</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">58.44</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -136,29 +149,78 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">899.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">947.00</cbc:LineExtensionAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">48.00</cbc:AllowanceTotalAmount>
     <cbc:PayableAmount currencyID="XBL">957.44</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">899.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">549.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">899</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+        <cbc:PriceAmount currencyID="XBL">549</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>The store's own garden bench set.</cbc:Description>
-        <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BM-551004</cbc:ID>
+          <cbc:ID>BM-551005</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
-          <cbc:ID>BF-GS-01</cbc:ID>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">398.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">199</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BM-551006</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:ManufacturersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+        </cac:ManufacturersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench.</cbc:Description>
+        <cbc:Name>Elderwick care kit</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BM-551007</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:ManufacturersItemIdentification>
+          <cbc:ID>BF-MRW-K</cbc:ID>
+        </cac:ManufacturersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>

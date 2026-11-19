@@ -3422,47 +3422,61 @@ def wood(n, doc):
 
 
 # ---------------------------------------------------------------- the furniture flow (Bayvarra)
-SET_PARTS = [("BF-GS-01-B", "Garden bench Marrow, 1400 mm", 1, "380.00"),
-             ("BF-GS-01-C", "Garden chair Marrow", 2, "115.00")]
+# The Elderwick Marrow line (D7, D32): the store's own label, made by Brackenmere. Bench and chair are items of their
+# own, ordered, delivered, invoiced and credited one by one at 380 and 115 lume; the care kit comes free with each
+# bench; the Marrow set (a bench and two chairs) is only the shop's offer, so no document between maker and store
+# knows it. Stock, thresholds and sales are counted in pieces.
+MARROW_ASK = [{"item": "marrow-bench", "ordered": 20, "why": "Twenty benches, as the store plans the opening stock."},
+              {"item": "marrow-chair", "ordered": 40, "why": "Forty chairs: two for each bench."}]
+MARROW_QUOTE = MARROW_ASK + [{"item": "marrow-care-kit", "ordered": 20, "why": "One care kit free with each bench."}]
 
 
-def set_parts(sets, kind):
-    """The parts of the garden set, as sub-lines: a bench and two chairs per set; their prices add up to the set's."""
+def marrow_line(per_bench, why):
+    """What the store's opening order says on the line of a piece (bench or chair: per_bench 1 or 2)."""
+    q = lambda n, w: qty(n * per_bench, "EA", w)
+    return {"Note": V(why, "What the line is."),
+            "MinimumQuantity": q(10, "The store accepts a first part of at least half the line."),
+            "MaximumQuantity": q(20, "And no more than ordered."),
+            "BackOrderAllowedIndicator": V("true", "What cannot be delivered now may follow."),
+            "MinimumBackorderQuantity": q(5, "But only in lots of at least a quarter of the line."),
+            "MaximumBackorderQuantity": q(10, "And at most half the line on back order."),
+            "InspectionMethodCode": V("VISUAL", "The goods-in checks each piece by eye."),
+            "AccountingCostCode": V("6120", "The cost centre of the home and garden department, which sells the "
+                                            "line."),
+            "AccountingCost": V("Home and garden department", "In words."),
+            "WarrantyValidityPeriod": {"DurationMeasure": V("2", "Two years on the joints.", unitCode="ANN")},
+            "WarrantyParty": party("37-xb", short=True)}
+
+
+def marrow_order():
     out = []
-    for k, (sid, name, per, price_) in enumerate(SET_PARTS, 1):
-        q = sets * per
-        x = {"ID": V(f"1.{k}", "A part of the set."),
-             "LineExtensionAmount": amount(Decimal(price_) * q, "XBL", f"{q} at {price_} lume: the parts add up to "
-                                                                      "the set's price."),
-             "Price": {"PriceAmount": price(price_, "XBL", "The part's share of the set price.")},
-             "Item": {"Name": V(name, "The part."), "SellersItemIdentification": {"ID": V(sid, "The maker's number "
-                                                                                              "for the part.")}}}
-        x["Quantity" if kind == "order" else "InvoicedQuantity"] = qty(q, "EA", f"{per} per set.")
+    for k, (d, why) in enumerate(zip(MARROW_QUOTE, ["Twice the target of ten benches: the shelf and the launch "
+                                                    "display in the home department.",
+                                                    "Twice the target of twenty chairs, two with each bench.",
+                                                    "Free: one care kit with each bench."]), 1):
+        price_ = Decimal(str(ITEM[d["item"]]["price"]["amount"]))
+        x = {**d, "line_extra": marrow_line(1 if k == 1 else 2, why) if k < 3 else {"Note": V(why, "What the line "
+                                                                                                    "is.")},
+             "orderline_extra": {"Note": V("Price as quoted.", "Why no price question."),
+                                 "QuotationLineReference": {"LineID": V(str(k), "The quotation line accepted.")}}}
+        if k < 3:
+            x["line_extra"]["PricingReference"] = {"OriginalItemLocationQuantity": {"Price": {
+                "PriceAmount": price(price_, "XBL", "The price of the quotation, which the order accepts.")}}}
         out.append(x)
     return out
 
 
-SETS = [{"item": "garden-set", "ordered": 20, "why": "The first delivery of the store's own garden furniture line.",
-         "line_extra": {
-             "Note": V("The store's own line: bench and two chairs per set.", "What the line is."),
-             "MinimumQuantity": qty(10, "SET", "The store accepts a first part of at least ten sets."),
-             "MaximumQuantity": qty(20, "SET", "And no more than ordered."),
-             "BackOrderAllowedIndicator": V("true", "What cannot be delivered now may follow."),
-             "MinimumBackorderQuantity": qty(5, "SET", "But only in lots of at least five."),
-             "MaximumBackorderQuantity": qty(10, "SET", "And at most ten on back order."),
-             "InspectionMethodCode": V("VISUAL", "The goods-in checks each set by eye."),
-             "AccountingCostCode": V("6120", "The garden department's cost centre."),
-             "AccountingCost": V("Garden department", "In words."),
-             "WarrantyValidityPeriod": {"DurationMeasure": V("2", "Two years on the joints.", unitCode="ANN")},
-             "WarrantyParty": party("37-xb", short=True),
-             "PricingReference": {"OriginalItemLocationQuantity": {"Price": {
-                 "PriceAmount": price("610.00", "XBL", "The price of the quotation, which the order accepts.")}}},
-             "SubLineItem": set_parts(20, "order")},
-         "orderline_extra": {"Note": V("Price as quoted.", "Why no price question."),
-                             "QuotationLineReference": {"LineID": V("1", "The quotation line accepted.")}}}]
+MARROW_ORDER = marrow_order()
+MARROW_REPEAT = [{"item": "marrow-bench", "ordered": 10, "why": "Ten benches for the winter: one target's worth."},
+                 {"item": "marrow-chair", "ordered": 20, "why": "Twenty chairs, two with each bench."},
+                 {"item": "marrow-care-kit", "ordered": 10, "why": "One care kit free with each bench."}]
+MARROW_BACK = [("marrow-bench", 7, "Seven benches: the stock above the target of ten."),
+               ("marrow-chair", 10, "Ten chairs: the stock above the target of twenty."),
+               ("marrow-care-kit", 7, "The care kits of the seven benches.")]
 DESKS = [{"item": "office-desk", "ordered": 6, "why": "Six desks for the new planning office."},
          {"item": "installation", "ordered": 14, "why": "Two installers for seven hours."}]
-FURNITURE = kit.Flow("furniture", "2026-03-02", SETS)
+FURNITURE = kit.Flow("furniture", "2026-03-02", MARROW_ORDER)
+OWN_LABEL = "BM-OWN-BRAND-2026"    # the own-label agreement: specification, sale-or-return trial, returns (D32)
 
 
 def collab(f, doc, key, day, why):
@@ -3470,92 +3484,145 @@ def collab(f, doc, key, day, why):
             "IssueDate": V(f.date(day), why)}
 
 
+def marrow_profile(f, iid, target, minimum, multiple, why_multiple, smallest):
+    """The store's replenishment policy for one piece of the line, in pieces (D32)."""
+    return {"EffectivePeriod": period(f, 21, 180, "From the first delivery.", "To the end of the season."),
+            "MinimumInventoryQuantity": qty(minimum, "EA", f"Never fewer than {minimum} in the shop."),
+            "MultipleOrderQuantity": qty(multiple, "EA", why_multiple),
+            "OrderIntervalDaysNumeric": V("14", "An order every two weeks."),
+            "ReplenishmentOwnerDescription": V("The store orders; the maker proposes.", "Who replenishes."),
+            "TargetServicePercent": V("95", "On the shelf on 95 % of the days."),
+            "TargetInventoryQuantity": qty(target, "EA", f"The stock the store aims at: {target}."),
+            "ItemLocationQuantity": {"LeadTimeMeasure": V("5", "Five days from order to shelf.", unitCode="DAY"),
+                                     "MinimumQuantity": qty(smallest, "EA", "The smallest order.")},
+            "Item": item(iid)}
+
+
 def furniture(n, doc):
     f = FURNITURE
-    sets = item("garden-set")
+    bench, chair = item("marrow-bench"), item("marrow-chair")
     if doc["doc"] == "RequestForQuotation":
-        return rfq(f, doc, 0, "The store wants its own garden furniture line.", SETS)
+        return rfq(f, doc, 0, "The store wants its own label's dining furniture for the autumn and winter home "
+                              "range.", MARROW_ASK)
     if doc["doc"] == "Quotation":
-        return quotation(f, doc, 4, "The furniture maker quotes the line.", SETS, 60)
+        return quotation(f, doc, 4, "The furniture maker quotes the line.", MARROW_QUOTE, 60)
     if doc["doc"] == "ItemInformationRequest":
         return {**collab(f, doc, "info-request", 10, "Asked before the first production run."),
                 "Period": period(f, 14, 70, "The season the information is wanted for.", "Its end."),
                 "ItemInformationRequestLine": {
                     "Period": period(f, 14, 70, "Sales data for the season.", "Its end."),
-                    "SalesItem": {"Quantity": qty(20, "SET", "The quantity of the first delivery, to compare sales "
-                                                             "against."), "Item": sets}}}
+                    "SalesItem": [{"Quantity": qty(20, "EA", "The benches of the first delivery, to compare sales "
+                                                             "against."), "Item": bench},
+                                  {"Quantity": qty(40, "EA", "The chairs of the first delivery."), "Item": chair}]}}
     if doc["doc"] == "TradeItemLocationProfile":
-        return {**collab(f, doc, "location-profile", 12, "The store sets its replenishment policy for the line."),
+        return {**collab(f, doc, "location-profile", 11, "The store sets its replenishment policy for the line, on "
+                                                         "the Friday before the order."),
                 "Period": period(f, 14, 180, "The policy holds for the season.", "Its end."),
-                "ItemManagementProfile": {"EffectivePeriod": period(f, 14, 180, "From the first delivery.", "To the end of "
-                                                                                                         "the season."),
-                                          "Item": sets}}
+                "ItemManagementProfile": [
+                    marrow_profile(f, "marrow-bench", 10, 4, 2, "Benches in pairs: one row of the maker's van.", 2),
+                    marrow_profile(f, "marrow-chair", 20, 8, 4, "Chairs in fours: two for each of a pair of "
+                                                                "benches.", 4)]}
     if doc["doc"] == "ExceptionCriteria":
-        return {**collab(f, doc, "exception-criteria", 12, "Agreed together with the replenishment policy."),
+        return {**collab(f, doc, "exception-criteria", 11, "Agreed together with the replenishment policy."),
                 "ValidityPeriod": period(f, 14, 180, "Valid for the season.", "Its end."),
                 "ExceptionCriteriaLine": {
-                    "ID": V("1", "The only criterion."),
+                    "ID": V("1", "The sales criterion, on the bench, the piece the line is planned around."),
                     "ThresholdValueComparisonCode": V("LT", "An exception is raised when actual sales fall "
                                                                   "below the threshold."),
-                    "ThresholdQuantity": qty(5, "SET", "Fewer than five sets sold in four weeks is worth a message."),
-                    "SupplyItem": sets}}
+                    "ThresholdQuantity": qty(5, "EA", "Fewer than five benches sold in the first four weeks is worth "
+                                                      "a message."),
+                    "SupplyItem": bench}}
     if doc["doc"] == "ProductActivity":
         return {**collab(f, doc, "activity", 49, "The store's report of the first four weeks."),
                 "ActivityPeriod": period(f, 21, 49, "The four weeks reported.", "Their end."),
                 "SupplyChainActivityDataLine": {
                     "ID": V("1", "The only line."),
                     "SupplyChainActivityTypeCode": V("SALES", "The activity reported: sales to consumers."),
-                    "ActivityOriginLocation": {**kit.gln_location("26-xb", "garden"),
-                                               "Name": V("Brightmarket Stores, garden department, Lumeport",
+                    "ActivityOriginLocation": {**kit.gln_location("26-xb", "home"),
+                                               "Name": V("Brightmarket Stores, home department, Lumeport",
                                                          "Where the sales took place.")},
-                    "SalesItem": {"Quantity": qty(3, "SET", "Three sets sold in four weeks."), "Item": sets}}}
+                    "SalesItem": [
+                        {"Quantity": qty(3, "EA", "Three benches sold in four weeks, all in the Marrow set."),
+                         "TaxExclusivePrice": {
+                             "PriceAmount": price("549.00", "XBL", "The shelf price of the bench, before sales tax."),
+                             "AllowanceCharge": {
+                                 "ChargeIndicator": V("false", "An allowance on the price."),
+                                 "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of "
+                                                                      "UN/EDIFACT 5189: a discount; the text names "
+                                                                      "the offer."),
+                                 "AllowanceChargeReason": V("Marrow set", "The shop's offer: a bench and two chairs "
+                                                                          "for 899 lume instead of 947."),
+                                 "Amount": amount(48, "XBL", "The set allowance, given once with each bench sold "
+                                                             "in a set: 549 + 2 × 199 − 48 = 899.")}},
+                         "TaxInclusivePrice": {"PriceAmount": price("584.69", "XBL", "With Coastal State's 6.5 % "
+                                                                                     "sales tax.")},
+                         "Item": bench},
+                        {"Quantity": qty(10, "EA", "Ten chairs sold: six in the three sets and four alone."),
+                         "ActivityProperty": {"Name": V("Sold alone", "What the store notes."),
+                                              "Value": V("4 of 10: the 1400 mm bench is too long for many "
+                                                         "apartment kitchens, so shoppers buy the chairs.",
+                                                         "Why the chairs sell better than the set.")},
+                         "TaxExclusivePrice": {"PriceAmount": price("199.00", "XBL", "The shelf price of the chair, "
+                                                                                    "before sales tax.")},
+                         "TaxInclusivePrice": {"PriceAmount": price("211.94", "XBL", "With Coastal State's 6.5 % "
+                                                                                    "sales tax.")},
+                         "Item": chair}]}}
     if doc["doc"] == "ExceptionNotification":
         return {**collab(f, doc, "exception", 50, "The furniture maker sees the sales below the agreed threshold."),
                 "ExceptionObservationPeriod": period(f, 21, 49, "The four weeks observed.", "Their end."),
                 "ExceptionNotificationLine": {
                     "ID": V("1", "The only exception."),
-                    "ComparedValueMeasure": V("5", "The agreed threshold: five sets in four weeks.", unitCode="SET"),
-                    "SourceValueMeasure": V("3", "The sales the store reported: three sets.", unitCode="SET"),
-                    "SupplyItem": sets}}
+                    "ComparedValueMeasure": V("3", "The value compared: the benches the store reported sold.",
+                                              unitCode="EA"),
+                    "SourceValueMeasure": V("5", "The value it is compared with: the agreed threshold of five "
+                                                 "benches in four weeks.", unitCode="EA"),
+                    "SupplyItem": bench}}
     if doc["doc"] == "Order" and doc["from"] == "26-xb":
-        return kit.order(f, n, doc, 14, "The store orders the first delivery of its line.",
+        return kit.order(f, n, doc, 14, "The store orders the opening stock of its line.",
                          "Delivered at place, the store: the furniture maker delivers with its own van.",
                          "Brightmarket Stores, goods-in, Lumeport",
-                         {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
+                         {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted."),
+                          "Note": V("Opening stock of the Elderwick Marrow line: twice the target, to fill the launch "
+                                    "display in the home department as well as the shelf.", "Why the order is "
+                                                                                           "larger than the stock "
+                                                                                           "policy's target.")})
     if doc["doc"] == "Invoice" and doc["to"] == "26-xb":
-        return kit.invoice(f, n, doc, 20, "Issued on delivery.", {"OrderReference": ref(f, "order", "The store's "
-                                                                                                       "order."),
-                                                                      "DeliveryNoteDocumentReference": {
-                                                                          "ID": V("BF-DN-26-0320", "The delivery "
-                                                                                  "note the store signed when the "
-                                                                                  "van unloaded.")}},
-                           [{"item": "garden-set", "qty": 20, "invoice_why": "The sets delivered.",
-                             "line_extra": {"SubInvoiceLine": set_parts(20, "invoice")}}])
+        return kit.invoice(f, n, doc, 21, "Issued on the day of delivery.",
+                           {"OrderReference": ref(f, "order", "The store's order."),
+                            "DeliveryNoteDocumentReference": {"ID": V("BF-DN-26-0323", "The delivery note the store "
+                                                                                       "signed when the van "
+                                                                                       "unloaded.")}},
+                           [{"item": "marrow-bench", "qty": 20, "invoice_why": "The benches delivered."},
+                            {"item": "marrow-chair", "qty": 40, "invoice_why": "The chairs delivered."},
+                            {"item": "marrow-care-kit", "qty": 20, "invoice_why": "One care kit with each bench.",
+                             "line_extra": {
+                                 "Note": V("Hard-wax oil and a cloth, one with each bench, for the store to hand on "
+                                           "with the bench it sells.", "What the line is."),
+                                 "FreeOfChargeIndicator": V("true", "The care kits come free with the benches.")}}])
     if doc["doc"] == "InstructionForReturns":
-        return {**collab(f, doc, "returns", 56, "The furniture maker takes back the sets that do not sell."),
-                "InstructionForReturnsLine": {"ID": V("1", "The only line."),
-                                              "Quantity": qty(6, "SET", "Six of the remaining sets, to free shelf "
-                                                                        "space."),
-                                              "Item": sets}}
+        return {**collab(f, doc, "returns", 56, "The last day of the sale-or-return trial."),
+                "InstructionForReturnsLine": [
+                    {"ID": V(str(k), "A line per piece."), "Quantity": qty(q, "EA", why),
+                     "Note": V("In their original cartons.", "How they are to be returned."),
+                     "ManufacturerParty": party("37-xb", short=True), "Item": item(iid)}
+                    for k, (iid, q, why) in enumerate(MARROW_BACK, 1)]}
     if doc["doc"] == "CreditNote":
-        out = kit.credit_note(f, n, doc, 62, "Issued when the returned sets arrived back.",
-                              [{"item": "garden-set", "qty": 6, "why": "The sets returned.",
-                                "line_allowance": {"percent": "5", "code": "64",
-                                                   "code_why": "The reason for the allowance as a code of UN/EDIFACT 5189: the deduction is agreed in the instruction for returns.",
-                                                   "reason": "Restocking deduction",
-                                                   "why": "The instruction for returns lets the furniture maker "
-                                                          "keep 5 % for restocking the sets."}}],
+        out = kit.credit_note(f, n, doc, 64, "Issued on the Tuesday after the returned pieces arrived back: Monday "
+                                             "4 May is Bayvarra's Labour Day.",
+                              [{"item": iid, "qty": q, "why": why} for iid, q, why in MARROW_BACK[:2]],
                               {"BillingReference": {"InvoiceDocumentReference": {
-                                  "ID": V(f.numbers["invoice"], "The invoice of the returned sets."),
+                                  "ID": V(f.numbers["invoice"], "The invoice of the returned pieces."),
                                   "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
-                               "OrderReference": {"ID": V(f.numbers["order"], "The order of the sets.")},
+                               "OrderReference": {"ID": V(f.numbers["order"], "The order of the pieces.")},
                                "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for "
                                                                                              "returns.")},
-                               "DueDate": V(f.date(72), "The furniture maker pays the credit back within ten "
+                               "DueDate": V(f.date(74), "The furniture maker pays the credit back within ten "
                                                         "days."),
-                               "Note": V("The store paid the invoice; the credit is refunded.", "Why money "
-                                                                                                "goes back.")})
-        out["PaymentMeans"] = kit.payment_means(f, "26-xb", "37-xb", "26-xb", 62, 10, out["ID"].value,
+                               "Note": V("The store paid the invoice; the credit is refunded in full: the return "
+                                         "ends the sale-or-return trial of the own-label agreement, so there is no "
+                                         "restocking deduction. The free care kits came back with the benches and "
+                                         "are not credited.", "Why money goes back, and how much.")})
+        out["PaymentMeans"] = kit.payment_means(f, "26-xb", "37-xb", "26-xb", 64, 10, out["ID"].value,
                                                 "The store's account, where the refund goes.")
         return out
     if doc["doc"] == "Order":
@@ -3905,9 +3972,10 @@ def road(n, doc):
 def furniture(n, doc):
     f, d = FURNITURE, doc["doc"]
     if d == "Order" and doc["from"] == "26-xb" and nth("furniture", n, doc) == 2:
-        return kit.order(f, n, doc, 45, "A second delivery, before the slow sales were clear.",
+        return kit.order(f, n, doc, 45, "A repeat order for the winter, before the slow sales were clear.",
                          "Delivered at place, the store, as the first delivery.", "Brightmarket Stores, goods-in, "
-                                                                                 "Lumeport", key="order-2")
+                                                                                 "Lumeport", key="order-2",
+                         deal=MARROW_REPEAT)
     if d == "OrderCancellation":
         return {**head(f, "order-cancellation", doc, 51, "Cancelled the day after the exception notification."),
                 "CancellationNote": V("Sales of the line are below the agreed threshold; the second delivery is not "
@@ -3917,27 +3985,27 @@ def furniture(n, doc):
         rows = kit.spec_rows([{"item": "return-transport", "qty": 1}], "26-xb", "37-xb", "XBL")
         tax, total = kit.tax_total(rows, "XBL")
         amt = rows[0][2]
-        out = {**head(f, "debit-note", doc, 63, "After the returned sets were collected."),
+        out = {**head(f, "debit-note", doc, 64, "After the returned pieces were collected, with the credit note."),
                 "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
                 "DefaultLanguageCode": V("en", "The language of the texts."),
                 "LineCountNumeric": V("1", "One line."),
-                "OrderReference": {"ID": V(f.numbers["order"], "The order of the sets that went back.")},
+                "OrderReference": {"ID": V(f.numbers["order"], "The order of the pieces that went back.")},
                 "PaymentTerms": {"Note": V("30 days net.", "The store's terms."),
-                                 "PaymentDueDate": V(f.date(93), "The due date.")},
-                "DueDate": V(f.date(93), "Thirty days, the store's terms."),
-                "Note": V("The furniture maker asked for the sets back; the store charges the transport.", "Why."),
+                                 "PaymentDueDate": V(f.date(94), "The due date.")},
+                "DueDate": V(f.date(94), "Thirty days, the store's terms."),
+                "Note": V("The pieces went back at the maker's cost, as the own-label agreement says; the store "
+                          "charges the transport.", "Why."),
                 "DocumentCurrencyCode": kit.currency_line("XBL", "the currency of the trade"),
-                **kit.cost_centre("26-xb", "The store books the income on its garden department."),
+                **kit.cost_centre("26-xb", "The store books the income on its home and garden department."),
                 "AdditionalDocumentReference": {"ID": V(f.numbers["returns"], "The instruction for returns that "
-                                                                              "asked for the sets.")},
+                                                                              "asked for the pieces.")},
                 "DiscrepancyResponse": {"ResponseCode": V("35", "Why the store debits: the cost of a return "
                                                                         "the furniture maker asked for."),
-                                        "Description": V("Return transport of six unsold garden sets.", "In "
-                                                                                                       "words.")},
-                "ContractDocumentReference": {"ID": V(f.numbers["quotation"], "The quotation the line was bought "
-                                                                              "under; it puts returns at the "
-                                                                              "maker's cost.")},
-                "Delivery": {"ActualDeliveryDate": V(f.date(61), "The sets were delivered back."),
+                                        "Description": V("Return transport of seven benches, ten chairs and their "
+                                                         "care kits.", "In words.")},
+                "ContractDocumentReference": {"ID": V(OWN_LABEL, "The own-label agreement the line was bought under; "
+                                                                 "it puts returns at the maker's cost.")},
+                "Delivery": {"ActualDeliveryDate": V(f.date(61), "The pieces were delivered back."),
                              "DeliveryLocation": {**kit.gln_location("37-xb", "factory"),
                                                   "Name": V("Brackenmere Furniture, Marrowdale", "Where.")}},
                 "PayeeParty": party("26-xb", short=True),
@@ -3946,7 +4014,7 @@ def furniture(n, doc):
                 "BillingReference": {"CreditNoteDocumentReference": {"ID": V(next(v for k, v in f.numbers.items()
                                                                           if k.startswith("credit-")), "The credit note "
                                                                                                      "of the returned "
-                                                                                                     "sets.")}},
+                                                                                                     "pieces.")}},
                 "TaxTotal": total,
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(amt, "XBL", "The sum of the lines."),
                                            "PayableAmount": amount(amt + tax, "XBL", "What the furniture maker owes "
@@ -3954,7 +4022,7 @@ def furniture(n, doc):
                 "DebitNoteLine": {"ID": V("1", "The return transport."),
                                   "DebitedQuantity": qty(1, "E48", "One return delivery."),
                                   "LineExtensionAmount": amount(amt, "XBL", "The store's charge for one return delivery."),
-                                  "Note": V("Collected with the store's van.", "How the sets went back."),
+                                  "Note": V("Collected with the store's van.", "How the pieces went back."),
                                   "DiscrepancyResponse": {"ResponseCode": V("35", "The return transport.")},
                                   **kit.cost_centre("26-xb", "The store's cost centre the income is booked on."),
                                   "PaymentPurposeCode": V("SCVE", "What the payment is for, as an ISO 20022 purpose: a service, the transport back."),
@@ -3966,13 +4034,14 @@ def furniture(n, doc):
                                   "BillingReference": {"CreditNoteDocumentReference": {"ID": V(next(
                                       v for k, v in f.numbers.items() if k.startswith("credit-")), "The credit "
                                                                                                   "note.")},
-                                                       "BillingReferenceLine": {"ID": V("1", "Its line of the "
-                                                                                             "returned sets.")}},
-                                  "Delivery": {"ActualDeliveryDate": V(f.date(61), "The day the sets were delivered "
-                                                                                   "back to the furniture maker.")},
+                                                       "BillingReferenceLine": {"ID": V("1", "Its first line, the "
+                                                                                             "returned benches.")}},
+                                  "Delivery": {"ActualDeliveryDate": V(f.date(61), "The day the pieces were "
+                                                                                   "delivered back to the furniture "
+                                                                                   "maker.")},
                                   "Item": item("return-transport", kit.tax_category(rows[0][3])),
                                   "Price": kit.price_block("return-transport")}}
-        out["PaymentMeans"] = kit.payment_means(f, "26-xb", "37-xb", "26-xb", 63, 30, out["ID"].value,
+        out["PaymentMeans"] = kit.payment_means(f, "26-xb", "37-xb", "26-xb", 64, 30, out["ID"].value,
                                                 "The store's account.")
         return out
     return _furniture(n, doc)
@@ -4093,8 +4162,6 @@ def _(f, n, doc, out):
                            "AccessoryRelatedItem": {"ID": V("VI-ANCHOR-4", "The ground anchor set."),
                                                     "Quantity": qty(1, "SET", "Supplied with each bench."),
                                                     "Description": V("Four ground anchors and bolts.", "In words.")},
-                           "ComplementaryRelatedItem": related("garden-set-r", 1, "The store's garden set sells "
-                                                                                  "alongside."),
                            "DocumentReference": {"ID": V("VI-DS-B180", "The maker's datasheet.")},
                            "KeywordItemProperty": {"Name": V("Keyword", "A search word of the catalogue."),
                                                    "Value": V("park bench", "The word.")}})
@@ -4302,10 +4369,6 @@ def seal(pid, no, why="The sender's electronic seal."):
     return {"ID": V(no, why), "SignatoryParty": party(pid, short=True)}
 
 
-SETS_ITEM = {"Name": V("Garden bench set Marrow", "The store's own line."),
-             "SellersItemIdentification": {"ID": V("BF-GS-01", "The maker's number.")}}
-
-
 @enrich("furniture", "ItemInformationRequest")
 def _(f, n, doc, out):
     return {"Note": V("Weekly figures, please, for the whole season.", "What the maker asks."),
@@ -4314,7 +4377,7 @@ def _(f, n, doc, out):
             "ItemInformationRequestLine": {"TimeFrequencyCode": V("WEEKLY", "Figures per week."),
                                            "SupplyChainActivityTypeCode": V("SALES", "Sales to consumers."),
                                            "ForecastTypeCode": V("TOTAL", "Total quantities."),
-                                           "PerformanceMetricTypeCode": V("SALESUNITS", "Measured in sets sold.")}}
+                                           "PerformanceMetricTypeCode": V("SALESUNITS", "Measured in pieces sold.")}}
 
 
 @enrich("furniture", "TradeItemLocationProfile")
@@ -4322,17 +4385,7 @@ def _(f, n, doc, out):
     return {"Note": V("The store holds stock; the maker replenishes.", "Who does what."),
             "ProfileStatusCode": V("ACTIVE", "In force."),
             "DocumentReference": {"ID": V(f.numbers["quotation"], "The quotation the line is bought under.")},
-            "Signature": seal(doc["from"], "BM-SIG-26-0314"),
-            "ItemManagementProfile": {
-                "FrozenPeriodDaysNumeric": V("7", "Orders for the coming week no longer change."),
-                "MinimumInventoryQuantity": qty(4, "SET", "Never fewer than four sets in the shop."),
-                "MultipleOrderQuantity": qty(2, "SET", "Ordered in multiples of two: one van row."),
-                "OrderIntervalDaysNumeric": V("14", "An order every two weeks."),
-                "ReplenishmentOwnerDescription": V("The store orders; the maker proposes.", "Who replenishes."),
-                "TargetServicePercent": V("95", "Sets on the shelf on 95 % of the days."),
-                "TargetInventoryQuantity": qty(10, "SET", "The stock the store aims at."),
-                "ItemLocationQuantity": {"LeadTimeMeasure": V("5", "Five days from order to shelf.", unitCode="DAY"),
-                                         "MinimumQuantity": qty(2, "SET", "The smallest order.")}}}
+            "Signature": seal(doc["from"], "BM-SIG-26-0313")}
 
 
 @enrich("furniture", "ExceptionCriteria")
@@ -4341,7 +4394,7 @@ def _(f, n, doc, out):
             "VersionID": V("1", "The first version."),
             "DocumentReference": {"ID": V(f.numbers["location-profile"], "The replenishment policy they go "
                                                                          "with.")},
-            "Signature": seal(doc["from"], "BM-SIG-26-0314C"),
+            "Signature": seal(doc["from"], "BM-SIG-26-0313C"),
             "ExceptionCriteriaLine": [
                 {**out["ExceptionCriteriaLine"],
                  "Note": V("Slow sales.", "What the criterion catches."),
@@ -4349,14 +4402,14 @@ def _(f, n, doc, out):
                  "CollaborationPriorityCode": V("HIGH", "Answered within two days."),
                  "ExceptionResolutionCode": V("REVIEW", "The partners review the line together."),
                  "SupplyChainActivityTypeCode": V("SALES", "Measured on sales."),
-                 "PerformanceMetricTypeCode": V("SALESUNITS", "In sets."),
+                 "PerformanceMetricTypeCode": V("SALESUNITS", "In benches sold."),
                  "EffectivePeriod": {"StartDate": V(f.date(21), "From the first four weeks on the shelf."),
                                      "EndDate": V(f.date(180), "To the end of the season.")}},
                 {"ID": V("2", "The forecast criterion."),
                  "Note": V("Forecast far from the store's own plan.", "What it catches."),
                  "ThresholdValueComparisonCode": V("GT", "When the difference is larger."),
                  "ThresholdQuantity": qty(30, "P1", "More than 30 % difference."),
-                 "SupplyItem": SETS_ITEM,
+                 "SupplyItem": [item("marrow-bench"), item("marrow-chair")],
                  "ForecastExceptionCriterionLine": {"ForecastPurposeCode": V("SALES", "A sales forecast."),
                                                     "ForecastTypeCode": V("TOTAL", "In total."),
                                                     "ComparisonDataSourceCode": V("BUYER", "Compared with the "
@@ -4367,23 +4420,14 @@ def _(f, n, doc, out):
 
 @enrich("furniture", "ProductActivity")
 def _(f, n, doc, out):
-    return {"Note": V("Sales were slow after the promotion ended.", "The store's remark."),
+    return {"Note": V("The chairs sell better than the set: the bench is too long for many apartment kitchens.",
+                      "The store's remark."),
             "DocumentCurrencyCode": kit.currency_line("XBL", "the store's currency"),
             "DocumentReference": {"ID": V(f.numbers["info-request"], "The request the figures answer.")},
             "Signature": seal(doc["from"], "BM-SIG-26-0420A"),
             "SupplyChainActivityDataLine": {
-                "BuyerCustomerParty": {"Party": party("26-xb", short=True)},
-                "SellerSupplierParty": {"Party": party("37-xb", short=True)},
                 "ActivityPeriod": {"StartDate": V(f.date(21), "The four weeks."), "EndDate": V(f.date(49), "Their "
-                                                                                                          "end.")},
-                "ActivityFinalLocation": {"Name": V("Customers' gardens in Lumeport", "Where the sets end up.")},
-                "SalesItem": {"ActivityProperty": {"Name": V("Weather", "What the store notes."),
-                                                   "Value": V("Rain three weeks out of four.", "Why sales were "
-                                                                                               "slow.")},
-                              "TaxExclusivePrice": {"PriceAmount": price("899.00", "XBL", "The shelf price, "
-                                                                                          "before sales tax.")},
-                              "TaxInclusivePrice": {"PriceAmount": price("957.44", "XBL", "With Coastal State's "
-                                                                                          "6.5 % sales tax.")}}}}
+                                                                                                          "end.")}}}
 
 
 @enrich("furniture", "ExceptionNotification")
@@ -4392,14 +4436,14 @@ def _(f, n, doc, out):
             "DocumentReference": {"ID": V(f.numbers["exception-criteria"], "The criteria that were met.")},
             "Signature": seal(doc["from"], "BF-SIG-26-0421"),
             "ExceptionNotificationLine": {
-                "Note": V("Three sets sold against five expected.", "The exception."),
+                "Note": V("Three benches sold against a threshold of five.", "The exception."),
                 "Description": V("Sales below the agreed threshold.", "In words."),
                 "ExceptionStatusCode": V("OPEN", "Not yet resolved."),
                 "CollaborationPriorityCode": V("HIGH", "As agreed."),
                 "ResolutionCode": V("REVIEW", "A review of the line."),
-                "VarianceQuantity": qty(-2, "SET", "Two sets fewer than the threshold."),
+                "VarianceQuantity": qty(-2, "EA", "Two benches fewer than the threshold."),
                 "SupplyChainActivityTypeCode": V("SALES", "Measured on sales."),
-                "PerformanceMetricTypeCode": V("SALESUNITS", "In sets."),
+                "PerformanceMetricTypeCode": V("SALESUNITS", "In benches sold."),
                 "DocumentReference": {"ID": V(f.numbers["activity"], "The product activity reported.")},
                 "ForecastException": {"ForecastPurposeCode": V("SALES", "The sales forecast compared."),
                                       "ForecastTypeCode": V("TOTAL", "In total."),
@@ -4436,16 +4480,19 @@ def _(f, n, doc, out):
 
 @enrich("furniture", "InstructionForReturns")
 def _(f, n, doc, out):
-    return {"Note": V("The maker takes back six sets to free the store's shelf.", "Why."),
-            "DocumentReference": {"ID": V(f.numbers["exception"], "The exception that led to the return.")},
+    gross = sum(Decimal(str(ITEM[iid]["gross_kg"])) * q for iid, q, _ in MARROW_BACK)
+    return {"Note": V("The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery "
+                      "of 23 March: the stock above the target goes back at the maker's cost. The store's van brings "
+                      "it; the maker pays the transport.", "Why the goods go back, and at whose cost."),
+            "DocumentReference": {"ID": V(OWN_LABEL, "The own-label agreement, whose sale-or-return terms the return "
+                                                     "follows.")},
             "Signature": seal(doc["from"], "BF-SIG-26-0427"),
             "Shipment": {"ID": V("BM-RET-26-0427", "The return shipment."),
-                         "GrossWeightMeasure": qty(282, "KGM", "Six sets of 47 kg."),
+                         "GrossWeightMeasure": qty(gross, "KGM", "Seven benches of 24 kg, ten chairs of 11.5 kg and "
+                                                                 "seven care kits of 0.35 kg, packed."),
                          "Delivery": {"RequestedDeliveryPeriod": {"StartDate": V(f.date(58), "The store's van "
                                                                                              "brings them."),
-                                                                  "EndDate": V(f.date(61), "Within the week.")}}},
-            "InstructionForReturnsLine": {"Note": V("In their original cartons.", "How they are to be returned."),
-                                          "ManufacturerParty": party("37-xb", short=True)}}
+                                                                  "EndDate": V(f.date(61), "Within the week.")}}}}
 
 
 @enrich("furniture", "ExceptionNotification")
@@ -5481,8 +5528,10 @@ def _(f, n, doc, out):
 @enrich("furniture", "RequestForQuotation")
 def _(f, n, doc, out):
     return {"SubmissionDueDate": V(f.date(5), "Quotations within five days."),
-            "Note": V("For the store's own garden line.", "What is asked."),
-            "PricingCurrencyCode": V("XBL", "In lume."), "LineCountNumeric": V("1", "One line."),
+            "Note": V("For the store's own label Elderwick: the Marrow dining bench and chair, for the autumn and "
+                      "winter home range.", "What is asked."),
+            "PricingCurrencyCode": V("XBL", "In lume."),
+            "LineCountNumeric": V(str(len(out["RequestForQuotationLine"])), "A line per piece."),
             "RequestedValidityPeriod": {"DurationMeasure": V("60", "Prices for 60 days.", unitCode="DAY")},
             "CatalogueDocumentReference": {"ID": V("BM-RANGE-26", "The store's range plan the line belongs to.")},
             "Signature": seal(doc["from"], "BM-SIG-26-RFQ"),
@@ -5491,17 +5540,26 @@ def _(f, n, doc, out):
                                               "Name": V("Brightmarket Stores, goods-in", "Where.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the store.", schemeID="INCOTERMS")},
             "DestinationCountry": {"IdentificationCode": V("XB", "Bayvarra.")},
-            "Contract": {"ID": V("BM-OWN-BRAND-2026", "The store's own-brand terms.")},
-            "RequestForQuotationLine": [{**out["RequestForQuotationLine"][0],
-                                         "Note": V("Optional: seat cushions to match.", "An option."),
-                                        "OptionalLineItemIndicator": V("false", "The set itself is required."),
-                                        "PrivacyCode": V("CONFIDENTIAL", "The store's own design.")}]}
+            "Contract": {"ID": V(OWN_LABEL, "The own-label agreement: the store's specification, the sale-or-return "
+                                            "trial and the returns.")},
+            "RequestForQuotationLine": [{**ln,
+                                         **({"Note": V("Optional: seat cushions to match.", "An option the store "
+                                                                                           "asks about.")}
+                                            if k == 1 else {}),
+                                         "OptionalLineItemIndicator": V("false", "The piece itself is required."),
+                                         "PrivacyCode": V("CONFIDENTIAL", "The store's own design.")}
+                                        for k, ln in enumerate(out["RequestForQuotationLine"])]}
 
 
 @enrich("furniture", "Quotation")
 def _(f, n, doc, out):
-    return {"Note": V("Including the store's own label.", "What is quoted."),
-            "PricingCurrencyCode": V("XBL", "In lume."), "LineCountNumeric": V("1", "One line."),
+    return {"Note": V("The Elderwick Marrow bench and chair, made to the store's specification under its own label; a "
+                      "care kit free with each bench.", "What is quoted."),
+            "PricingCurrencyCode": V("XBL", "In lume."),
+            "LineCountNumeric": V(str(len(out["QuotationLine"])), "A line per piece, and the free care kit."),
+            "QuotationLine": [{**ln, "Note": V("Free: one care kit with each bench.", "Why the line has no price.")}
+                              if ITEM[d["item"]].get("free_with") else ln
+                              for ln, d in zip(out["QuotationLine"], MARROW_QUOTE)],
             "Signature": seal(doc["from"], "BF-SIG-26-QT"),
             "OriginatorCustomerParty": {"Party": party("26-xb", short=True)},
             "BeneficiaryParty": party("26-xb", short=True)}
@@ -5561,8 +5619,8 @@ def _(f, n, doc, out):
             "OriginatorDocumentReference": {"ID": V(f.numbers["exception"], "The exception notification that led "
                                                                             "to it.")},
             "AdditionalDocumentReference": {"ID": V(f.numbers["activity"], "The sales figures.")},
-            "Contract": {"ID": V(f.numbers["quotation"], "The quotation the line runs under; it allows "
-                                                         "cancellation before production.")},
+            "Contract": {"ID": V(OWN_LABEL, "The own-label agreement the line runs under; it allows "
+                                            "cancellation before production.")},
             "Signature": seal(doc["from"], "BM-SIG-26-OC")}
 
 
@@ -7645,11 +7703,13 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     if n != 8:
         return {}
-    li = out["OrderLine"][0]["LineItem"]
-    ext = Decimal(li["LineExtensionAmount"].value)
-    li["UUID"] = line_uuid(f, "order", 1)
-    li["ItemPriceExtension"] = {"Amount": amount(ext, "XBL", "The price times the quantity, before any allowance.")}
-    li["TaxTotal"] = {"TaxAmount": amount(0, "XBL", "No sales tax: the store buys for resale.")}
+    for k, ol in enumerate(out["OrderLine"], 1):
+        li = ol["LineItem"]
+        ext = Decimal(li["LineExtensionAmount"].value)
+        li["UUID"] = line_uuid(f, "order", k)
+        li["ItemPriceExtension"] = {"Amount": amount(ext, "XBL", "The price times the quantity, before any "
+                                                                 "allowance.")}
+        li["TaxTotal"] = {"TaxAmount": amount(0, "XBL", "No sales tax: the store buys for resale.")}
     return {}      # the quotation line is referenced once, by the order line (furniture/08#F11)
 
 
@@ -8558,24 +8618,29 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     if n != 10:
         return {}
-    li = out["OrderLine"][0]["LineItem"] if isinstance(out["OrderLine"], list) else out["OrderLine"]["LineItem"]
-    gross = Decimal(li["LineExtensionAmount"].value)
-    disc = money(gross * Decimal("0.03"), "XBL")
-    li["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
-                             "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
-                             "AllowanceChargeReason": V("Repeat order", "The quotation gives 3 % on a repeat "
-                                                                        "order of the line."),
-                             "MultiplierFactorNumeric": V("0.03", "3 %."),
-                             "Amount": amount(disc, "XBL", "3 % of the line."),
-                             "BaseAmount": amount(gross, "XBL", "The line at the quoted price.")}
-    li["LineExtensionAmount"] = amount(gross - disc, "XBL", "The line less the repeat-order discount.")
+    net = Decimal(0)
+    for ol in out["OrderLine"]:
+        li = ol["LineItem"]
+        gross = Decimal(li["LineExtensionAmount"].value)
+        if gross:                         # the free care kits have nothing to discount
+            disc = money(gross * Decimal("0.03"), "XBL")
+            li["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
+                                     "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of "
+                                                                          "UN/EDIFACT 5189, as EN 16931 uses it."),
+                                     "AllowanceChargeReason": V("Repeat order", "The quotation gives 3 % on a repeat "
+                                                                                "order of the line."),
+                                     "MultiplierFactorNumeric": V("0.03", "3 %."),
+                                     "Amount": amount(disc, "XBL", "3 % of the line."),
+                                     "BaseAmount": amount(gross, "XBL", "The line at the quoted price.")}
+            li["LineExtensionAmount"] = amount(gross - disc, "XBL", "The line less the repeat-order discount.")
+            gross -= disc
+        net += gross
     amt = out["AnticipatedMonetaryTotal"]
     for k in ("LineExtensionAmount", "TaxExclusiveAmount", "TaxInclusiveAmount", "PayableAmount"):
         if k in amt:
-            amt[k] = amount(gross - disc, "XBL", "Net of the repeat-order discount; no sales tax on goods bought "
-                                                 "for resale.")
+            amt[k] = amount(net, "XBL", "Net of the repeat-order discount; no sales tax on goods bought for resale.")
     return {"OrderDocumentReference": {"ID": V(f.numbers["order"], "The first order of the line: this one is a "
-                                                                   "second delivery of the same sets.")}}
+                                                                   "second delivery of the same pieces.")}}
 
 
 @enrich("furniture", "WorkReport")
@@ -8597,31 +8662,9 @@ def _(f, n, doc, out):
 @enrich("furniture", "DebitNote")
 def _(f, n, doc, out):
     br = out["DebitNoteLine"]["BillingReference"]["BillingReferenceLine"]
-    gross = Decimal(6) * Decimal(str(ITEM["garden-set"]["price"]["amount"]))
-    ded = money(gross * Decimal("0.05"), "XBL")
-    br["Amount"] = amount(gross - ded, "XBL", "The amount of the credit note line the transport belongs to.")
-    br["AllowanceCharge"] = {"ChargeIndicator": V("false", "The allowance on that line."),
-                             "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
-                             "AllowanceChargeReason": V("Restocking deduction", "As on the credit note."),
-                             "Amount": amount(ded, "XBL", "5 % of the sets returned.")}
-    return {}
-
-
-@enrich("furniture", "Invoice")
-def _(f, n, doc, out):
-    if n != 9:
-        return {}
-    lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
-    lines.append({"ID": V(str(len(lines) + 1), "A line without charge."),
-                  "InvoicedQuantity": qty(20, "EA", "One care kit with each set."),
-                  "LineExtensionAmount": amount(0, "XBL", "Free of charge."),
-                  "FreeOfChargeIndicator": V("true", "The care kits are given with the sets."),
-                  "Note": V("Wood oil and a cloth, for the store to hand to its customers.", "What they are."),
-                  "Item": {"Name": V("Care kit for the garden bench set", "The item."),
-                           "ClassifiedTaxCategory": kit.tax_category(kit.tax_rule("37-xb", "26-xb", "garden-set"))},
-                  "Price": {"PriceAmount": price("0", "XBL", "No price: free.")}})
-    out["InvoiceLine"] = lines
-    out["LineCountNumeric"] = V(str(len(lines)), "The number of lines, the free line included.")
+    iid, q, _ = MARROW_BACK[0]
+    br["Amount"] = amount(Decimal(q) * Decimal(str(ITEM[iid]["price"]["amount"])), "XBL",
+                          "The amount of the credit note's first line, the benches returned.")
     return {}
 
 
@@ -9550,9 +9593,16 @@ def sea_complete(n, doc):
 SCENARIOS["sea"] = _with_enrichment("sea", sea_complete)
 
 
+WEBSHOP_SET = [{"item": "marrow-bench-r", "ordered": 1, "why": "The bench of the Marrow set."},
+               {"item": "marrow-chair-r", "ordered": 2, "why": "The two chairs of the Marrow set."},
+               {"item": "marrow-care-kit-r", "ordered": 1, "why": "The care kit that comes free with the bench."}]
+SET_ALLOWANCE = Decimal("48.00")
+
+
 def webshop_order(n, doc):
-    """The consumer orders a garden bench set in the store's webshop, to collect in the store, and pays by credit
-    card. A card payment that is not made at a till is authorised before the goods are reserved: the order carries
+    """The consumer orders a Marrow set (an Elderwick Marrow bench and two chairs, with the bench's free care kit) in
+    the store's webshop, to collect in the store, and pays by credit card. The set is an offer, not an item: one line
+    per piece and the "Marrow set" allowance of 48 lume, 947 less 48 = 899 (D32). A card payment that is not made at a till is authorised before the goods are reserved: the order carries
     the full card number, its dates and its security code, which PCI DSS allows a merchant to hold until the
     authorisation and never after; no receipt shows them."""
     f = RETAIL
@@ -9563,13 +9613,13 @@ def webshop_order(n, doc):
     end = (datetime.date(y + m // 12, m % 12 + 1, 1) - datetime.timedelta(days=1)).isoformat()
     out = kit.order(f, n, doc, 40, "Placed in the webshop on a Sunday evening.",
                     "Ex works the store: the customer collects the set; there is no transport to arrange.",
-                    "Garden department of the Lumeport store",
-                    {"Note": V("Click and collect: ready in the garden department from Tuesday; bring the card used "
+                    "Home department of the Lumeport store",
+                    {"Note": V("Click and collect: ready in the home department from Tuesday; bring the card used "
                                "for the order.", "What the webshop tells the customer."),
-                     "Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "garden"),
-                                                       "Name": V("Garden department, Lumeport store", "Where the "
-                                                                                                      "set is "
-                                                                                                      "collected.")},
+                     "Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "home"),
+                                                       "Name": V("Home department, Lumeport store", "Where the "
+                                                                                                    "set is "
+                                                                                                    "collected.")},
                                   "RequestedDeliveryPeriod": {"StartDate": V(f.date(42), "From Tuesday."),
                                                               "EndDate": V(f.date(49), "The store keeps it a week.")}},
                      "PaymentMeans": {
@@ -9599,10 +9649,32 @@ def webshop_order(n, doc):
                                                      "authorisation; it is deleted then and printed nowhere."),
                              "HolderName": V(card["holder"], "The name on the card, as typed in."),
                              "RoleCode": V("HOLDER", "The customer pays with its own card.")}}},
-                    deal=[{"item": "garden-set-r", "ordered": 1, "why": "One garden bench set."}],
-                    key="webshop-order")
+                    deal=WEBSHOP_SET, key="webshop-order")
     out["ID"] = V(f.number("webshop-order", "26-xb", "Order"), "The webshop's order number: the store's site writes "
                                                                "the order for the customer and numbers it.")
+    rows = kit.lines(f, "26-xb", "c-xb", "XBL", deal=WEBSHOP_SET)
+    base = sum(r[2] for r in rows)
+    rule = kit.tax_rule("26-xb", "c-xb", "marrow-bench-r")
+    tax, total = kit.tax_total(rows + [({"item": "marrow-bench-r"}, None, -SET_ALLOWANCE, rule)], "XBL")
+    total["TaxSubtotal"][0]["TaxableAmount"] = amount(base - SET_ALLOWANCE, "XBL", "The line amounts less the set "
+                                                                                  "allowance.")
+    out["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance: it lowers the amount."),
+                              "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of "
+                                                                   "UN/EDIFACT 5189: a discount; the text names the "
+                                                                   "offer."),
+                              "AllowanceChargeReason": V("Marrow set", "The shop's offer: a bench and two chairs "
+                                                                       "bought together cost 899 lume instead of "
+                                                                       "947. The set is no item of its own, so the "
+                                                                       "pieces are on their lines and the offer is "
+                                                                       "this allowance."),
+                              "Amount": amount(SET_ALLOWANCE, "XBL", "549 + 2 × 199 = 947, less 48 = 899."),
+                              "TaxCategory": kit.tax_category(rule)}
+    out["TaxTotal"] = total
+    out["AnticipatedMonetaryTotal"] = {
+        "LineExtensionAmount": amount(base, "XBL", "The sum of the line amounts: the pieces at their shelf prices."),
+        "AllowanceTotalAmount": amount(SET_ALLOWANCE, "XBL", "The set allowance."),
+        "PayableAmount": amount(base - SET_ALLOWANCE + tax, "XBL", "What the customer pays: the set at 899 lume and "
+                                                                    "Coastal State's 6.5 % sales tax.")}
     return out
 
 

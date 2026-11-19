@@ -558,36 +558,103 @@
    "origin_criterion": "P"
   },
   {
-   "id": "garden-set",
+   "id": "marrow-bench",
    "seller": "37-xb",
-   "name": "Garden bench set Marrow",
+   "name": "Elderwick Marrow bench",
    "kind": "goods",
-   "unit": "SET",
+   "unit": "EA",
    "price": {
-    "amount": 610.0,
+    "amount": 380.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-GS-01",
+   "sellers_id": "BF-MRW-B14",
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
-   "description": "Garden bench and two chairs in hardwood, made for the department store's own line.",
-   "net_kg": 42.0,
-   "gross_kg": 47.0,
+   "description": "Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
+   "net_kg": 21.0,
+   "gross_kg": 24.0,
    "package": {
     "type": "CT",
     "per_package": 1
    },
-   "brand": "Brackenmere",
+   "brand": "Elderwick",
+   "brand_owner": "26-xb",
    "model": "Marrow",
    "dimensions": [
     [
      "BENCHLENGTH",
      "1400",
      "MMT"
+    ],
+    [
+     "SEATHEIGHT",
+     "450",
+     "MMT"
     ]
    ],
-   "gtin": "9523710000012",
+   "gtin": "9522610000016",
+   "origin_criterion": "S"
+  },
+  {
+   "id": "marrow-chair",
+   "seller": "37-xb",
+   "name": "Elderwick Marrow chair",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 115.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-MRW-C",
+   "hs": "940169",
+   "cpc": "38112",
+   "origin": "XB",
+   "description": "Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
+   "net_kg": 10.5,
+   "gross_kg": 11.5,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   },
+   "brand": "Elderwick",
+   "brand_owner": "26-xb",
+   "model": "Marrow",
+   "dimensions": [
+    [
+     "SEATHEIGHT",
+     "450",
+     "MMT"
+    ]
+   ],
+   "gtin": "9522610000023",
+   "origin_criterion": "S"
+  },
+  {
+   "id": "marrow-care-kit",
+   "seller": "37-xb",
+   "name": "Elderwick care kit",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 0.0,
+    "currency": "XBL"
+   },
+   "free_with": "marrow-bench",
+   "sellers_id": "BF-MRW-K",
+   "hs": "321000",
+   "cpc": "35110",
+   "origin": "XB",
+   "description": "Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.",
+   "net_kg": 0.3,
+   "gross_kg": 0.35,
+   "package": {
+    "type": "BX",
+    "per_package": 1
+   },
+   "brand": "Elderwick",
+   "brand_owner": "26-xb",
+   "gtin": "9522610000030",
    "origin_criterion": "S"
   },
   {
@@ -901,18 +968,47 @@
    "description": "Men's cotton shirt; the state sales tax is added at the till."
   },
   {
-   "id": "garden-set-r",
+   "id": "marrow-bench-r",
    "seller": "26-xb",
-   "name": "Garden bench set Marrow",
+   "name": "Elderwick Marrow bench",
    "kind": "goods",
-   "unit": "SET",
+   "unit": "EA",
    "price": {
-    "amount": 899.0,
+    "amount": 549.0,
     "currency": "XBL"
    },
-   "sellers_id": "BM-551004",
-   "resale_of": "garden-set",
-   "description": "The store's own garden bench set."
+   "sellers_id": "BM-551005",
+   "resale_of": "marrow-bench",
+   "description": "Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till."
+  },
+  {
+   "id": "marrow-chair-r",
+   "seller": "26-xb",
+   "name": "Elderwick Marrow chair",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 199.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-551006",
+   "resale_of": "marrow-chair",
+   "description": "Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till."
+  },
+  {
+   "id": "marrow-care-kit-r",
+   "seller": "26-xb",
+   "name": "Elderwick care kit",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 0.0,
+    "currency": "XBL"
+   },
+   "free_with": "marrow-bench-r",
+   "sellers_id": "BM-551007",
+   "resale_of": "marrow-care-kit",
+   "description": "Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench."
   },
   {
    "id": "seed-cotton",

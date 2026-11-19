@@ -60,8 +60,8 @@ Inside `AdditionalDocumentReference`:
 
 Inside `Contract`:
 
-- `ID` = **BF-DOC-26-0568**  
-  The quotation the line runs under; it allows cancellation before production.
+- `ID` = **BM-OWN-BRAND-2026**  
+  The own-label agreement the line runs under; it allows cancellation before production.
 
 ### Signature
 
@@ -215,7 +215,7 @@ Inside `SellerSupplierParty`:
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
-    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:Contract>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-OC</cbc:ID>

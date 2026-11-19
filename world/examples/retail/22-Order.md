@@ -2,7 +2,7 @@
 
 *Example 22 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-The consumer orders a garden bench set in the store's webshop, to collect it in the store, and pays by credit card: the order carries the full card data, security code included, so that the store can have the payment authorised before it reserves the set.
+The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, in the store's webshop, to collect it in the store, and pays by credit card: the order carries the full card data, security code included, so that the store can have the payment authorised before it reserves the pieces.
 
 [The XML file](22-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,11 +28,11 @@ The consumer orders a garden bench set in the store's webshop, to collect it in 
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `Note` = **Click and collect: ready in the garden department from Tuesday; bring the card used for the order.**  
+- `Note` = **Click and collect: ready in the home department from Tuesday; bring the card used for the order.**  
   What the webshop tells the customer.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **3**  
   The number of order lines.
 
 ### Buyer Customer Party
@@ -131,9 +131,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `DeliveryLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
-  The Global Location Number of the place, garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
-- `DeliveryLocation/Name` = **Garden department, Lumeport store**  
+- `DeliveryLocation/ID` = **9522610900033** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, home department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `DeliveryLocation/Name` = **Home department, Lumeport store**  
   Where the set is collected.
 - `RequestedDeliveryPeriod/StartDate` = **2026-06-01**  
   From Tuesday.
@@ -148,9 +148,9 @@ Inside `DeliveryTerms`:
 
 - `ID` = **EXW** (schemeID `INCOTERMS`)  
   Ex works the store: the customer collects the set; there is no transport to arrange. The code is from the world's copy of Incoterms 2020: EXW = Ex Works. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
+- `DeliveryLocation/ID` = **9522610900033** (schemeID `GS1 GLN`)  
   The place's identifier, as the world gives it wherever the place appears (a GLN; worklist C23).
-- `DeliveryLocation/Description` = **Garden department of the Lumeport store**  
+- `DeliveryLocation/Description` = **Home department of the Lumeport store**  
   Where the delivery terms place the handover of the goods.
 
 ### Payment Means
@@ -178,6 +178,25 @@ Inside `PaymentMeans`:
 - `CardAccount/RoleCode` = **HOLDER** (listID `urn:ubl-examples:world:codelist:CardAccountRoleCode`)  
   The customer pays with its own card. The code is from the Trade Accord's card account role list: HOLDER = Card holder.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **false**  
+  An allowance: it lowers the amount.
+- `AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
+  The reason for the allowance as a code of UN/EDIFACT 5189: a discount; the text names the offer. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
+- `AllowanceChargeReason` = **Marrow set**  
+  The shop's offer: a bench and two chairs bought together cost 899 lume instead of 947. The set is no item of its own, so the pieces are on their lines and the offer is this allowance.
+- `Amount` = **48.00** (currencyID `XBL`)  
+  549 + 2 × 199 = 947, less 48 = 899.
+- `TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **6.5**  
+  The rate for this category.
+- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -185,7 +204,7 @@ Inside `TaxTotal`:
 - `TaxAmount` = **58.44** (currencyID `XBL`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **899.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+  The line amounts less the set allowance.
 - `TaxSubtotal/TaxAmount` = **58.44** (currencyID `XBL`)  
   6.5 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -199,10 +218,12 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **899.00** (currencyID `XBL`)  
-  The sum of the line amounts.
+- `LineExtensionAmount` = **947.00** (currencyID `XBL`)  
+  The sum of the line amounts: the pieces at their shelf prices.
+- `AllowanceTotalAmount` = **48.00** (currencyID `XBL`)  
+  The set allowance.
 - `PayableAmount` = **957.44** (currencyID `XBL`)  
-  What the buyer expects to pay, tax included.
+  What the customer pays: the set at 899 lume and Coastal State's 6.5 % sales tax.
 
 ### Order Line
 
@@ -210,24 +231,64 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **1** (unitCode `SET`)  
-  One garden bench set.
-- `LineItem/LineExtensionAmount` = **899.00** (currencyID `XBL`)  
+- `LineItem/Quantity` = **1** (unitCode `EA`)  
+  The bench of the Marrow set.
+- `LineItem/LineExtensionAmount` = **549.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **899** (currencyID `XBL`)  
+- `LineItem/Price/PriceAmount` = **549** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
-- `LineItem/Price/BaseQuantity` = **1** (unitCode `SET`)  
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **The store's own garden bench set.**  
-  The seller's description; item garden-set-r of Brightmarket Stores (world/items.json).
-- `LineItem/Item/Name` = **Garden bench set Marrow**  
-  The item's short name; item garden-set-r of Brightmarket Stores (world/items.json).
-- `LineItem/Item/SellersItemIdentification/ID` = **BM-551004**  
-  The seller's own item number; item garden-set-r of Brightmarket Stores (world/items.json).
-- `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-GS-01**  
-  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item garden-set.
-- `LineItem/Item/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `LineItem/Item/Description` = **Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.**  
+  The seller's description; item marrow-bench-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/Name` = **Elderwick Marrow bench**  
+  The item's short name; item marrow-bench-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **BM-551005**  
+  The seller's own item number; item marrow-bench-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-MRW-B14**  
+  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item marrow-bench.
+- `LineItem/Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `LineItem/ID` = **2**  
+  The line number: a line added by a change keeps a number of its own (worklist C34).
+- `LineItem/Quantity` = **2** (unitCode `EA`)  
+  The two chairs of the Marrow set.
+- `LineItem/LineExtensionAmount` = **398.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `LineItem/Price/PriceAmount` = **199** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `LineItem/Item/Description` = **Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.**  
+  The seller's description; item marrow-chair-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/Name` = **Elderwick Marrow chair**  
+  The item's short name; item marrow-chair-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **BM-551006**  
+  The seller's own item number; item marrow-chair-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-MRW-C**  
+  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item marrow-chair.
+- `LineItem/Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `LineItem/ID` = **3**  
+  The line number: a line added by a change keeps a number of its own (worklist C34).
+- `LineItem/Quantity` = **1** (unitCode `EA`)  
+  The care kit that comes free with the bench.
+- `LineItem/LineExtensionAmount` = **0.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `LineItem/Price/PriceAmount` = **0** (currencyID `XBL`)  
+  No price: the item comes free with each Elderwick Marrow bench (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `LineItem/Item/Description` = **Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench.**  
+  The seller's description; item marrow-care-kit-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/Name` = **Elderwick care kit**  
+  The item's short name; item marrow-care-kit-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **BM-551007**  
+  The seller's own item number; item marrow-care-kit-r of Brightmarket Stores (world/items.json).
+- `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-MRW-K**  
+  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item marrow-care-kit.
+- `LineItem/Item/StandardItemIdentification/ID` = **9522610000030** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 
 ## The document
 
@@ -243,9 +304,9 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>11:25:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Click and collect: ready in the garden department from Tuesday; bring the card used for the order.</cbc:Note>
+  <cbc:Note>Click and collect: ready in the home department from Tuesday; bring the card used for the order.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyName>
@@ -321,8 +382,8 @@ Inside `OrderLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
-      <cbc:Name>Garden department, Lumeport store</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
+      <cbc:Name>Home department, Lumeport store</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-06-01</cbc:StartDate>
@@ -337,8 +398,8 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">EXW</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
-      <cbc:Description>Garden department of the Lumeport store</cbc:Description>
+      <cbc:ID schemeID="GS1 GLN">9522610900033</cbc:ID>
+      <cbc:Description>Home department of the Lumeport store</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:PaymentMeans>
@@ -355,6 +416,19 @@ Inside `OrderLine`:
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:CardAccountRoleCode">HOLDER</cbc:RoleCode>
     </cac:CardAccount>
   </cac:PaymentMeans>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Marrow set</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">48.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>6.5</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">58.44</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -370,29 +444,78 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">899.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">947.00</cbc:LineExtensionAmount>
+    <cbc:AllowanceTotalAmount currencyID="XBL">48.00</cbc:AllowanceTotalAmount>
     <cbc:PayableAmount currencyID="XBL">957.44</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="SET">1</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">899.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">549.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">899</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="SET">1</cbc:BaseQuantity>
+        <cbc:PriceAmount currencyID="XBL">549</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>The store's own garden bench set.</cbc:Description>
-        <cbc:Name>Garden bench set Marrow</cbc:Name>
+        <cbc:Description>Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
+        <cbc:Name>Elderwick Marrow bench</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BM-551004</cbc:ID>
+          <cbc:ID>BM-551005</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
-          <cbc:ID>BF-GS-01</cbc:ID>
+          <cbc:ID>BF-MRW-B14</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="GS1 GTIN">9523710000012</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">398.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">199</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till.</cbc:Description>
+        <cbc:Name>Elderwick Marrow chair</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BM-551006</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:ManufacturersItemIdentification>
+          <cbc:ID>BF-MRW-C</cbc:ID>
+        </cac:ManufacturersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+        </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">0</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench.</cbc:Description>
+        <cbc:Name>Elderwick care kit</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BM-551007</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:ManufacturersItemIdentification>
+          <cbc:ID>BF-MRW-K</cbc:ID>
+        </cac:ManufacturersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>

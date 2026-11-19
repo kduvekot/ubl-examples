@@ -18,8 +18,13 @@ Checks:
     characters, no check character); or only the seller's own number. A GS1
     wholesaler or retailer may give its own GTIN to an item it resells whose
     maker has none (D5), but not to one that already has a GTIN, because the
-    brand owner numbers the item (D7); every number is unique;
-  * prices are positive and in the seller's currency; a unit price may have
+    brand owner numbers the item (D7); every number is unique. A store's own
+    label made by another party (brand_owner, the private-label case: the
+    Elderwick pieces Brackenmere makes for Brightmarket) carries a GTIN under
+    the brand owner's prefix, whoever sells it;
+  * prices are positive, except for an item given free with another of the
+    same seller (free_with: the care kit with each Marrow bench), whose price
+    is zero and in the seller's currency; a unit price may have
     more decimals than the currency (up to 4), because only amounts to pay
     are rounded to the currency's minor unit; gross weight is at least net
     weight;
@@ -132,13 +137,26 @@ def check(world):
         pr = it["price"]
         if pr["currency"] != cur["code"]:
             problems.append(f"{where}: price in {pr['currency']}, but the seller's currency is {cur['code']}")
-        if pr["amount"] <= 0:
+        if it.get("free_with"):
+            if pr["amount"] != 0:
+                problems.append(f"{where}: given free with {it['free_with']}, so its price is zero")
+            if items.get(it["free_with"], {}).get("seller") != it["seller"]:
+                problems.append(f"{where}: given free with {it['free_with']}, which is not an item of the same seller")
+        elif pr["amount"] <= 0:
             problems.append(f"{where}: price must be positive")
         # a unit price may be finer than the currency (29.80 yen per kWh is normal); amounts to pay are
         # rounded to the currency's minor units, which the amounts layer checks
         if round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
             problems.append(f"{where}: unit price {pr['amount']} has more than {UNIT_PRICE_DECIMALS} decimals")
         conv = seller["identity"].get("identification", {})
+        if it.get("brand_owner"):        # a private label: the brand owner numbers the item, not the maker (D7)
+            owner = parties.get(it["brand_owner"])
+            if not owner:
+                problems.append(f"{where}: unknown brand owner {it['brand_owner']}")
+            else:
+                conv = owner["identity"].get("identification", {})
+                if it.get("resale_of") or not it.get("brand"):
+                    problems.append(f"{where}: a brand owner only on the maker's item, with its brand")
         if it.get("gtin") and it.get("resale_of"):    # the brand owner numbers the item (D7)
             up = items.get(it["resale_of"])
             while up and not up.get("gtin"):
@@ -148,7 +166,8 @@ def check(world):
                                 f"{up['gtin']} of {up['seller']}: under GS1 rules the brand owner numbers the item")
         if it.get("gtin"):                # a GTIN under the GS1 company prefix of the party that allocates it
             if conv.get("convention") != "GS1":
-                problems.append(f"{where}: a GTIN, but {it['seller']} does not identify its items the GS1 way")
+                problems.append(f"{where}: a GTIN, but {it.get('brand_owner', it['seller'])} does not identify its "
+                                "items the GS1 way")
             elif not (re.fullmatch(r"\d{13}", it["gtin"]) and it["gtin"].startswith(conv["company_prefix"])
                       and item_number(it["gtin"][:-1]) == it["gtin"]):
                 problems.append(f"{where}: GTIN {it['gtin']} is not a GTIN-13 under the company prefix "

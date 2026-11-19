@@ -106,6 +106,12 @@ def tax_rule(seller, buyer, iid):
         if it["kind"] == "service":
             return ("E", 0, scheme, "Bayvarra's sales tax is charged only on sales to final consumers; a service to a "
                                     "business is exempt (category E).", "Service to a business")
+        if it.get("free_with"):         # given with goods for resale, and handed on with them (furniture/09#F3)
+            return ("E", 0, scheme, f"Supplied free with goods for resale: the {it['name']} goes with each "
+                                    f"{ITEM[it['free_with']]['name'].split()[-1].lower()}, and the buyer hands it on "
+                                    "with the goods it resells, so it is exempt from the state sales tax as they are; "
+                                    "the tax is charged only on the sale to the final consumer (category E).",
+                    "Sale for resale or manufacture")
         return ("E", 0, scheme, "A sale to a business that resells or processes the goods is exempt from the state sales "
                                 "tax, which is charged only on the sale to the final consumer (category E).",
                 "Sale for resale or manufacture")
@@ -399,8 +405,10 @@ def price_block(iid, currency=None):
                     "MathematicOperatorCode": V("Multiply", "The seller's price times the rate gives the order price."),
                     "Date": V("2026-01-02", "The reference rate of the first working day of the year, fixed in the "
                                             "contract.")}}
-    out = {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"], "The seller's price per unit "
-                                                                                "(world/items.json)."),
+    out = {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"],
+                                f"No price: the item comes free with each {ITEM[it['free_with']]['name']} "
+                                "(world/items.json)." if it.get("free_with") else
+                                "The seller's price per unit (world/items.json)."),
            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
     if it.get("pack") and it["unit"] == "EA":
         out["OrderableUnitFactorRate"] = V(it["pack"]["size"], f"The item is priced per piece and ordered in packs: "

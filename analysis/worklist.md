@@ -1158,6 +1158,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: ready to fix now for the brand (all 12 findings); the split into bench and chair waits for D32 (O9).
 - Findings: furniture: 01#F11, 02#F2, 03#F7, 04#F8, 05#F9, 06#F9, 07#F12, 08#F9, 09#F4, 10#F7, 12#F5, 13#F6
 
+- **Fixed (2026-11-19):** the Elderwick Marrow bench and chair (and the free care kit) are items of their own under Brightmarket's GTINs (9522610000016, …023, …030), brand owner Brightmarket, made by Brackenmere; the set is a shop offer (899 with a "Marrow set" allowance of 48); indoor dining furniture (D32); one line per piece in `EA` between maker and store; D32's dates, figures, contract and return without deduction applied. Remaining D32 work: furniture/14 removed and the transport invoice 18 added (O6, O111), the quotation's seat pad and repeat-order discount, C104's encodings, the goods balance, C105, O112, O113.
+
 ### C63 · Lisavu Cotton Farm: address lines that repeat the structured address, and a yearly expiring registration
 - Kind: master data · Findings: 11 (High 0, Medium 0, Low 11) in 6 files, 2 flows · Needs decision: decided (D4, 2026-11-15)
 - Decided: the farm's registration keeps its yearly expiry, as a rule of Lisavu's farm register: a grower's registration is renewed each season; the story says so.
