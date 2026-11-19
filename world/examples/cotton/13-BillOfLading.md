@@ -252,10 +252,72 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Lumeport Textile Mill (world/parties.json).
-- `Consignment/MortgageHolderParty/PartyIdentification/ID` = **IC41996** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/MortgageHolderParty/PartyName/Name` = **Bank of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/CollectPaymentTerms/Note` = **Ocean freight collect at Lumeport, paid by the consignee's forwarder.**  
+  Who pays the freight and where: the buyer's side, as free on board asks.
+- `Consignment/FreightAllowanceCharge/ChargeIndicator` = **true**  
+  A charge: the carrier's freight.
+- `Consignment/FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
+  UN/EDIFACT 7161 code FC: freight charges. The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
+- `Consignment/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight, 40-foot container, collect**  
+  In words.
+- `Consignment/FreightAllowanceCharge/Amount` = **2950.00** (currencyID `XBL`)  
+  The carrier's freight for the container from Selanu to Lumeport, in lume, the carrier's currency.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  By sea from Selanu to Lumeport.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **TR-26-19W**  
+  The voyage that carries the container to Lumeport, the one the pre-arrival report names.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **WB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
+  The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: WB = Westbound.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: tidewell Reef; the fleet of Tidewell Ocean Lines (world/parties.json). The line's second feeder, bought second-hand in December 2025 and moved to Bayvarra's flag on 15 January 2026. Until the flag state verifies its security system, it sails with an interim International Ship Security Certificate (ISPS Code A/19.4). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20231** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Reef**  
+  The vessel's name; the fleet of Tidewell Ocean Lines (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTR4**  
+  The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702231**  
+  The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
+  What the ship needs in port.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **7480** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **3910** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **1900** (unitCode `TNE`)  
+  The capacity of the tanks for ballast water only.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
+  The kind of vessel, for about 700 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20231**  
+  The ship's certificate of registry.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
+  The port the vessel is registered in.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Port of Selanu**  
+  The port of loading, where free on board delivers.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Port of Lumeport**  
+  The port of discharge.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/FreightChargeLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Name` = **Port of Lumeport**  
+  The freight is collect: payable in Lumeport.
+- `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Cotton lint, compressed bale**  
@@ -289,17 +351,17 @@ Inside `DocumentDistribution`:
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this bill of lading. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
 - `DistributionTypeCode` = **ORIGINALCOURIER** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  The originals go by courier to the Bank of Selanu, which holds a mortgage on the bales and releases the bills when the mill has paid. The code is from the Trade Accord's distribution type list: ORIGINALCOURIER = Original, sent by courier.
-- `Party/PartyIdentification/ID` = **IC41996** (schemeID `urn:ubl-examples:world:XL:register`)  
+  The originals go by courier to the mill's forwarder, as the forwarding instructions ask: it pays the collect freight and takes delivery of the container at Lumeport for the mill. The code is from the Trade Accord's distribution type list: ORIGINALCOURIER = Original, sent by courier.
+- `Party/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Bank of Selanu**  
+- `Party/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The consignee's copy.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this bill of lading. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
 - `DistributionTypeCode` = **SCANNEDCOPY** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  A scanned copy for the mill, so it can plan the collection of the bales. The code is from the Trade Accord's distribution type list: SCANNEDCOPY = Scanned copy.
+  A scanned copy for the mill, the consignee, which declares the bales for import on it. The code is from the Trade Accord's distribution type list: SCANNEDCOPY = Scanned copy.
 - `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Lumeport Textile Mill**  
@@ -496,14 +558,71 @@ Inside `Signature`:
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
-      <cac:MortgageHolderParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41996</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Bank of Selanu</cbc:Name>
-        </cac:PartyName>
-      </cac:MortgageHolderParty>
+      <cac:CollectPaymentTerms>
+        <cbc:Note>Ocean freight collect at Lumeport, paid by the consignee's forwarder.</cbc:Note>
+      </cac:CollectPaymentTerms>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Ocean freight, 40-foot container, collect</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TR-26-19W</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20231</cbc:VesselID>
+            <cbc:VesselName>Tidewell Reef</cbc:VesselName>
+            <cbc:RadioCallSignID>QBTR4</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702231</cbc:MMSIRegistrationID>
+            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
+            <cbc:GrossTonnageMeasure unitCode="C62">7480</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">3910</cbc:NetTonnageMeasure>
+            <cbc:SegregatedBallastMeasure unitCode="TNE">1900</cbc:SegregatedBallastMeasure>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20231</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:FreightChargeLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:FreightChargeLocation>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -531,10 +650,10 @@ Inside `Signature`:
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALCOURIER</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41996</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Bank of Selanu</cbc:Name>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

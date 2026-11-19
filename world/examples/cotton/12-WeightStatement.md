@@ -34,7 +34,7 @@ Before loading, the shipper declares the verified gross mass of the container by
 Inside `Signature`:
 
 - `ID` = **SCG-SIG-VGM**  
-  The shipper's signature, as SOLAS requires.
+  The shipper's signature, as SOLAS requires: the ginnery signs its own declaration, so no one signs for it (cotton/12#F2).
 - `SignatoryParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SignatoryParty/PartyName/Name` = **Selanu Cotton Ginnery**  
@@ -164,15 +164,6 @@ Inside `ShipperParty`:
 - `PartyName/Name` = **Selanu Cotton Ginnery**  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 
-### Responsible Party
-
-Inside `ResponsibleParty`:
-
-- `PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Selanu Cotton Ginnery**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -183,10 +174,22 @@ Inside `Shipment`:
   The 27 bales in the container, each listed below with its weight.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4123110** (schemeID `ISO6346`)  
   The container, with its ISO 6346 check digit.
-- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9940.29** (unitCode `KGM`)  
-  The verified gross mass by SOLAS method 2: the 27 bales as the ginnery weighed them (6190.29 kg) and the container's own weight.
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDate` = **2026-05-06**  
+  The day the container was packed at the ginnery and its mass established.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **14:30:00**  
+  When the doors were closed on the 27th bale.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
+  SOLAS method 2: every bale weighed, the weights added to the container's tare. The code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS verification method 2.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Bale scale at the press**  
+  Each bale weighed as it left the press, to 10 g (O26).
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/GrossMassMeasure` = **9940.29** (unitCode `KGM`)  
+  The verified gross mass: the 27 bales as the ginnery weighed them (6190.29 kg) and the container's own weight.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/ID` = **SCG-PR-26-L017**  
+  The documentary evidence of method 2: the ginnery's pressing record of lot SCG-L26-017, with each bale's weight from the bale scale.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/DocumentType` = **Pressing record**  
+  The kind of document referred to, the ginnery's pressing record of lot SCG-L26-017, with each bale's weight from the bale scale, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TransportHandlingUnit/Package/ID` = **SCG-26-00412**  
   The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
 - `TransportHandlingUnit/Package/Quantity` = **227.5** (unitCode `KGM`)  
@@ -579,22 +582,24 @@ Inside `Shipment`:
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
   </cac:ShipperParty>
-  <cac:ResponsibleParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
-    </cac:PartyName>
-  </cac:ResponsibleParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
     <cac:TransportHandlingUnit>
       <cbc:TotalPackageQuantity unitCode="EA">27</cbc:TotalPackageQuantity>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">9940.29</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+        <cac:VerifiedGrossMass>
+          <cbc:WeighingDate>2026-05-06</cbc:WeighingDate>
+          <cbc:WeighingTime>14:30:00</cbc:WeighingTime>
+          <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
+          <cbc:WeighingDeviceType>Bale scale at the press</cbc:WeighingDeviceType>
+          <cbc:GrossMassMeasure unitCode="KGM">9940.29</cbc:GrossMassMeasure>
+          <cac:DocumentReference>
+            <cbc:ID>SCG-PR-26-L017</cbc:ID>
+            <cbc:DocumentType>Pressing record</cbc:DocumentType>
+          </cac:DocumentReference>
+        </cac:VerifiedGrossMass>
       </cac:TransportEquipment>
       <cac:Package>
         <cbc:ID>SCG-26-00412</cbc:ID>

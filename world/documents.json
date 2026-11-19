@@ -4376,6 +4376,10 @@
    "what": "the ginnery's weighbridge ticket",
    "type": "Weighbridge ticket"
   },
+  "SCG-PR-26-L017": {
+   "what": "the ginnery's pressing record of lot SCG-L26-017, with each bale's weight from the bale scale",
+   "type": "Pressing record"
+  },
   "SM-ASSAY-26-11": {
    "what": "Serravona Mining's assay of the ore lot",
    "type_code": "1"

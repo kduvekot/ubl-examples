@@ -53,6 +53,13 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `GoodsCertificate/OriginalDocumentReference` | 0..1 | cotton/10-GoodsCertificate |  |  | open |
 | `ISPSRequirements/ISSCAbsenceReason` | 0..n | cotton/14-CommonTransportationReport |  |  | open |
 
+> C108, D33: open account, no documentary collection: the Bank of Selanu holds no mortgage on the bales (cotton/13#F3); the ginnery signs its own verified gross mass, so no one signs it on its behalf (12#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/MortgageHolderParty` | 0..1 | cotton/13-BillOfLading |  |  | open |
+| `WeightStatement/ResponsibleParty` | 0..1 | cotton/12-WeightStatement |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

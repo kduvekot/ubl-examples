@@ -3172,12 +3172,27 @@ def cotton(n, doc):
                                  "TransportEquipment": {
                                      "ID": V(kit.container_number("TWL", 412311), "The container, with its ISO 6346 "
                                                                                   "check digit.", schemeID="ISO6346"),
-                                     "GrossWeightMeasure": qty(w + 3750, "KGM", "The verified gross mass by SOLAS "
-                                                               f"method 2: the {len(bales)} bales as the ginnery "
-                                                               f"weighed them ({kit.kg(w)} kg) and the container's own "
-                                                               "weight."),
                                      "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as "
-                                                                           "marked on its door.")},
+                                                                           "marked on its door."),
+                                     # the VGM in its own aggregate, by method 2 and the ginnery's bale scale
+                                     # (cotton/12#F1, F4; O26)
+                                     "VerifiedGrossMass": {
+                                         "WeighingDate": V(f.date(COTTON_DAY["vgm"]), "The day the container was "
+                                                           "packed at the ginnery and its mass established."),
+                                         "WeighingTime": V("14:30:00", "When the doors were closed on the 27th "
+                                                                       "bale."),
+                                         "WeighingMethodCode": V("SM2", "SOLAS method 2: every bale weighed, the "
+                                                                        "weights added to the container's tare.",
+                                                                 listID="IMO SOLAS"),
+                                         "WeighingDeviceType": V("Bale scale at the press", "Each bale weighed as it "
+                                                                 "left the press, to 10 g (O26)."),
+                                         "GrossMassMeasure": qty(w + 3750, "KGM", f"The verified gross mass: the "
+                                                                 f"{len(bales)} bales as the ginnery weighed them "
+                                                                 f"({kit.kg(w)} kg) and the container's own weight."),
+                                         "DocumentReference": {"ID": V("SCG-PR-26-L017", "The documentary evidence of "
+                                                                       "method 2: the ginnery's pressing record of lot "
+                                                                       "SCG-L26-017, with each bale's weight from the "
+                                                                       "bale scale.")}}},
                                  "Package": [
                                      {"ID": V(b, "The bale's number on its tag, which the ginnery gives every bale it "
                                                  "presses; a package's own number, without a scheme."),
@@ -3208,10 +3223,21 @@ def cotton(n, doc):
                            "forwarder has paid the collect freight at Lumeport.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
                            [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container, booked for the "
-                                                                             "mill under FOB."}],
+                                                                             "mill under FOB.",
+                             "line_extra": {"Note": V("Ocean freight collect under the bill of lading, paid to the "
+                                                      "carrier at Lumeport for the mill on arrival and recharged at "
+                                                      "cost.", "How the freight reaches the mill: the forwarder paid "
+                                                      "the carrier the collect freight and passes it on, so the mill "
+                                                      "pays it once (D33 point 2, cotton/17#F2).")}}],
                            key="forwarder-invoice",
-                           extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
-                                                                                   "The consignment shipped.")}}}})
+                           extra={"Delivery": {"Shipment": {
+                               "ID": V(f.numbers["shipment"], "The shipment carried."),
+                               "Consignment": {"ID": V(f.numbers["consignment"], "The consignment shipped.")},
+                               "TransportHandlingUnit": {"TransportEquipment": {
+                                   "ID": V(kit.container_number("TWL", 412311), "The container the freight is "
+                                           "charged for (cotton/17#F5).", schemeID="ISO6346"),
+                                   "SizeTypeCode": V("42G1", "ISO 6346 size and type: 40 feet, 8 ft 6 in high, "
+                                                             "general purpose.")}}}}})
     if doc["doc"] == "Invoice":
         out = kit.invoice(f, n, doc, COTTON_DAY["on-board"], "Issued when the bales are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")},
@@ -6074,14 +6100,17 @@ def bl_distribution(f, doc):
                  "DistributionTypeCode": V("SCANNEDCOPY", "A scanned copy for the notify party, which arranges the "
                                                           "on-carriage at Selanu; a copy gives no title to the goods."),
                  "Party": party("9-xl", short=True)}]
+    # open account on the season agreement's 45 days, no documentary collection: the originals go to the mill's
+    # forwarder, as its forwarding instructions ask (D33 point 2; cotton/09#F1, 13#F1, 13#F3)
     return [{"ID": V("1", "The full set of three originals."), **bl,
-             "DistributionTypeCode": V("ORIGINALCOURIER", "The originals go by courier to the Bank of Selanu, which "
-                                                          "holds a mortgage on the bales and releases the bills when "
-                                                          "the mill has paid."),
-             "Party": party("22-xl", short=True)},
+             "DistributionTypeCode": V("ORIGINALCOURIER", "The originals go by courier to the mill's forwarder, as "
+                                                          "the forwarding instructions ask: it pays the collect "
+                                                          "freight and takes delivery of the container at Lumeport "
+                                                          "for the mill."),
+             "Party": party(doc["to"], short=True)},
             {"ID": V("2", "The consignee's copy."), **bl,
-             "DistributionTypeCode": V("SCANNEDCOPY", "A scanned copy for the mill, so it can plan the collection "
-                                                      "of the bales."),
+             "DistributionTypeCode": V("SCANNEDCOPY", "A scanned copy for the mill, the consignee, which declares "
+                                                      "the bales for import on it."),
              "Party": party("40-xb", short=True)}]
 
 
@@ -6165,8 +6194,9 @@ for _doc in ("ForwardingInstructions", "GoodsCertificate", "ExportCustomsDeclara
 @enrich("cotton", "WeightStatement")
 def _(f, n, doc, out):
     return {"WeightStatementTypeCode": V("VGM", "A statement of the verified gross mass."),
-            "Signature": seal(doc["from"], "SCG-SIG-VGM", "The shipper's signature, as SOLAS requires."),
-            "ResponsibleParty": party("39-xl", short=True)}
+            "Signature": seal(doc["from"], "SCG-SIG-VGM", "The shipper's signature, as SOLAS requires: the ginnery "
+                                                         "signs its own declaration, so no one signs for it "
+                                                         "(cotton/12#F2).")}
 
 
 @enrich("retail", "ReceiptAdvice")
@@ -9599,9 +9629,33 @@ def _(f, n, doc, out):
 
 @enrich("cotton", "BillOfLading")
 def _(f, n, doc, out):
+    """Under FOB the sea freight is the buyer's: the bill states it as the consignment's freight, collect at
+    Lumeport, where the mill's forwarder pays it and recharges it (D33 point 2; cotton/13#F7). The main carriage
+    names the ship and the voyage that carry the container (cotton/14#F4). No mortgage holder: nobody finances the
+    bales (13#F3)."""
+    freight = Decimal(str(ITEM["sea-freight"]["price"]["amount"]))
     for d in find_dicts(out, "Consignment"):
         for c in lines_of(d, "Consignment"):
-            c["MortgageHolderParty"] = party("22-xl", short=True)
+            c.update({
+                "CollectPaymentTerms": {"Note": V("Ocean freight collect at Lumeport, paid by the consignee's "
+                                                  "forwarder.", "Who pays the freight and where: the buyer's side, "
+                                                                "as free on board asks.")},
+                "FreightAllowanceCharge": {
+                    "ChargeIndicator": V("true", "A charge: the carrier's freight."),
+                    "AllowanceChargeReasonCode": V("FC", "UN/EDIFACT 7161 code FC: freight charges.",
+                                                   listID="UN/EDIFACT EDED 7161"),
+                    "AllowanceChargeReason": V("Ocean freight, 40-foot container, collect", "In words."),
+                    "Amount": amount(freight, "XBL", "The carrier's freight for the container from Selanu to "
+                                                     "Lumeport, in lume, the carrier's currency.")},
+                "MainCarriageShipmentStage": {
+                    "ID": V("1", "By sea from Selanu to Lumeport."),
+                    "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for "
+                                                                         "Modes of Transport"),
+                    "TransportMeans": kit.means("11-xb", "TR", COTTON_VOYAGE, "The voyage that carries the container "
+                                                "to Lumeport, the one the pre-arrival report names.", "WB"),
+                    "LoadingPortLocation": kit.place("XLSEL", "The port of loading, where free on board delivers."),
+                    "UnloadingPortLocation": kit.place("XBLMP", "The port of discharge."),
+                    "FreightChargeLocation": kit.place("XBLMP", "The freight is collect: payable in Lumeport.")}})
         break
     return {}
 

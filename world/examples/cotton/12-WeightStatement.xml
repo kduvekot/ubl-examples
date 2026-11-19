@@ -116,22 +116,24 @@
       <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
   </cac:ShipperParty>
-  <cac:ResponsibleParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
-    </cac:PartyName>
-  </cac:ResponsibleParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
     <cac:TransportHandlingUnit>
       <cbc:TotalPackageQuantity unitCode="EA">27</cbc:TotalPackageQuantity>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">9940.29</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+        <cac:VerifiedGrossMass>
+          <cbc:WeighingDate>2026-05-06</cbc:WeighingDate>
+          <cbc:WeighingTime>14:30:00</cbc:WeighingTime>
+          <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
+          <cbc:WeighingDeviceType>Bale scale at the press</cbc:WeighingDeviceType>
+          <cbc:GrossMassMeasure unitCode="KGM">9940.29</cbc:GrossMassMeasure>
+          <cac:DocumentReference>
+            <cbc:ID>SCG-PR-26-L017</cbc:ID>
+            <cbc:DocumentType>Pressing record</cbc:DocumentType>
+          </cac:DocumentReference>
+        </cac:VerifiedGrossMass>
       </cac:TransportEquipment>
       <cac:Package>
         <cbc:ID>SCG-26-00412</cbc:ID>

@@ -183,6 +183,7 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:Shipment>
+      <cbc:ID>SCG-SH-26-0200</cbc:ID>
       <cac:Consignment>
         <cbc:ID>LTM-CS-26-0201</cbc:ID>
         <cac:CarrierParty>
@@ -209,6 +210,12 @@
           </cac:PartyTaxScheme>
         </cac:CarrierParty>
       </cac:Consignment>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
+          <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>
@@ -295,6 +302,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Ocean freight collect under the bill of lading, paid to the carrier at Lumeport for the mill on arrival and recharged at cost.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">2950.00</cbc:LineExtensionAmount>
     <cac:Item>

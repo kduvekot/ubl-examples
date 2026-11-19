@@ -234,6 +234,8 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `Shipment/ID` = **SCG-SH-26-0200**  
+  The shipment carried.
 - `Shipment/Consignment/ID` = **LTM-CS-26-0201**  
   The consignment shipped.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -254,6 +256,10 @@ Inside `Delivery`:
   The state or territory whose sales tax the party is registered for.
 - `Shipment/Consignment/CarrierParty/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Shipment/TransportHandlingUnit/TransportEquipment/ID` = **TWLU4123110** (schemeID `ISO6346`)  
+  The container the freight is charged for (cotton/17#F5).
+- `Shipment/TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
+  ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
 
 ### Payment Means
 
@@ -381,6 +387,8 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
+- `Note` = **Ocean freight collect under the bill of lading, paid to the carrier at Lumeport for the mill on arrival and recharged at cost.**  
+  How the freight reaches the mill: the forwarder paid the carrier the collect freight and passes it on, so the mill pays it once (D33 point 2, cotton/17#F2).
 - `InvoicedQuantity` = **1** (unitCode `E48`)  
   One 40-foot container, booked for the mill under FOB.
 - `LineExtensionAmount` = **2950.00** (currencyID `XBL`)  
@@ -596,6 +604,7 @@ Inside `InvoiceLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:Shipment>
+      <cbc:ID>SCG-SH-26-0200</cbc:ID>
       <cac:Consignment>
         <cbc:ID>LTM-CS-26-0201</cbc:ID>
         <cac:CarrierParty>
@@ -622,6 +631,12 @@ Inside `InvoiceLine`:
           </cac:PartyTaxScheme>
         </cac:CarrierParty>
       </cac:Consignment>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
+          <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>
@@ -708,6 +723,7 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>Ocean freight collect under the bill of lading, paid to the carrier at Lumeport for the mill on arrival and recharged at cost.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">2950.00</cbc:LineExtensionAmount>
     <cac:Item>
