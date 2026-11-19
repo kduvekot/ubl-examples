@@ -1027,7 +1027,7 @@
    "doc": "CertificateOfOrigin",
    "from": "5-xu",
    "to": "20-xu",
-   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin.",
+   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin. The application is Valdara's own document, with its own number; the chamber's e-certificate system gives it a job number when it is lodged (decision D35).",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
@@ -1039,7 +1039,7 @@
    "doc": "CertificateOfOrigin",
    "from": "20-xu",
    "to": "6-xb",
-   "why": "The chamber endorses the certificate and makes it available to the importer, who needs it for the import declaration.",
+   "why": "The chamber, the body Urvania authorises under the Trade Accord to issue proofs of preferential origin, checks the application, issues the certificate under its own number and is its only endorser: a certificate between Accord members needs no legalisation. It makes the certificate available to the importer, who needs it for the import declaration (decision D35).",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",

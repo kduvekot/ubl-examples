@@ -120,6 +120,7 @@ def goods_items(f, currency, value_why, convert=None):
 
 HARBOUR_PROJECT = "VT-PRJ-26-07"   # the buyer's number for its project "Harbour parks Selanu"
 ROAD_JOB = "TH-26-04471"          # the carrier's job number for the truck
+ROAD_CO_JOB = "FCC-JOB-26-0418"   # the chamber's job number for Valdara's application for a certificate of origin
 
 
 def road_stage(f, actual):
@@ -391,31 +392,49 @@ def road(n, doc):
                                                                      "ferra."),
                                  "Consignment": {"ID": V(f.numbers["consignment"], "The consignment of the truck.")}}}}
     if doc["doc"] == "CertificateOfOrigin":
+        # D35 point 2: Valdara's application (06) and the chamber's certificate (07) are two documents with their own
+        # numbers; the chamber, the body Urvania authorises under the Accord to issue proofs of preferential origin,
+        # is the only endorser; its e-certificate system gives the application a job number when it is lodged
         chamber, exporter = "20-xu", "5-xu"
         endorsed = doc["from"] == chamber
-        signer = {"RoleCode": V("CHAMBER", "The endorser is the chamber of commerce of the exporting country."),
-                  "SequenceNumeric": V("1", "The first and only endorsement."),
+        certificate = f.number("certificate", chamber, "CertificateOfOrigin")
+        application = f.number("certificate-application", exporter, "Application")
+        signer = {"RoleCode": V("CHAMBER", "The endorser is the chamber of commerce of the exporting country, the "
+                                           "body Urvania authorises under the Accord to issue proofs of preferential "
+                                           "origin (D35)."),
+                  "SequenceNumeric": V("1", "The first and only endorsement: a certificate between Accord members "
+                                            "needs no legalisation."),
                   "Party": party(chamber),
                   "SignatoryContact": {"Name": V("Certificates office", "The office of the chamber that signs "
-                                                 "certificates of origin.")}}
+                                                 "certificates of origin. UBL defines this contact as the exporter's "
+                                                 "signer of the application; the element is mandatory in an "
+                                                 "endorser party, so it names the endorser's signer, a finding for "
+                                                 "the UBL TC (road/06#F15, O121)."),
+                                       "JobTitle": V("Certificates officer", "The signing function: the officer who "
+                                                                             "signs certificates for the chamber "
+                                                                             "(road/06#F16).")}}
         return {
             "EndorserParty": {k: v for k, v in signer.items() if k != "Party"},
-            "ID": V(f.number("certificate", chamber, "CertificateOfOrigin"), "The number of the certificate, given by "
-                                                                            "the chamber."),
-            "IssueDate": V(f.date(7 if endorsed else 4), "The day the chamber endorsed the certificate: Monday "
-                           "morning, before the export declaration (road/07#F11)." if endorsed
+            "ID": V(certificate, "The number of the certificate, given by the chamber.") if endorsed else
+                  V(application, "The exporter's number for its application (road/06#F1)."),
+            "VersionID": V("1", "The first version of the certificate." if endorsed else
+                                "The first version of the application."),
+            "IssueDate": V(f.date(7 if endorsed else 4), "The day the chamber issued the certificate: Monday "
+                           "morning, before the export declaration (road/07#F11, D27)." if endorsed
                            else "The day the exporter applies, before the goods leave."),
-            "Description": V("Certificate of origin for park benches and castings made in Urvania.",
-                             "What the certificate is for."),
+            "Description": V("Certificate of origin for park benches and castings made in Urvania." if endorsed else
+                             "Application for a certificate of origin for park benches and castings made in "
+                             "Urvania.", "What the document is for."),
             "CertificateOfOriginApplication": {
-                "ReferenceID": V(f.number("certificate-application", exporter, "Application"),
-                                 "The exporter's reference for its application."),
+                "ReferenceID": V(application, "The exporter's reference for its application."),
                 "CertificateType": V("Preferential", "The goods qualify for the preferential duty rate in Bayvarra; "
                                                      "the importer needs this certificate to claim it."),
                 "ApplicationStatusCode": V("APPROVED" if endorsed else "SUBMITTED",
                                            "The chamber has approved the application." if endorsed
                                            else "The exporter submits the application."),
-                "OriginalJobID": V(f.numbers["order"], "The order the goods are for."),
+                "OriginalJobID": V(ROAD_CO_JOB, "The job number the chamber's e-certificate system gave the "
+                                                "application when it was lodged, by which it tracks amendments; "
+                                                "not the buyer's order (road/06#F7, D35)."),
                 "Shipment": {"ID": V(f.number("shipment", "8-xu", "Shipment"), "The shipment the certificate covers."),
                              "GoodsItem": goods_items(f, "XUF", "The value of the goods, in ferra.")},
                 "EndorserParty": signer,
@@ -424,7 +443,8 @@ def road(n, doc):
                 "IssuingCountry": {"IdentificationCode": V("XU", "The goods were made in Urvania, and the certificate is "
                                                                  "issued there.")}},
             "IssuerEndorsement": {
-                "DocumentID": V(f.numbers["certificate"], "The certificate this endorsement belongs to."),
+                "DocumentID": V(f"{ROAD_CO_JOB}-E1", "The identifier of this endorsement: the first of the chamber's "
+                                                      "job."),
                 "ApprovalStatus": V("Approved" if endorsed else "Pending", "The chamber has endorsed the certificate."
                                     if endorsed else "Not yet endorsed: the application is with the chamber."),
                 "EndorserParty": signer}}
@@ -5732,13 +5752,14 @@ def _(f, n, doc, out):
 
 @enrich("road", "CertificateOfOrigin")
 def _(f, n, doc, out):
+    # no previous job: a first application (road/06#F17, 07#F18); no embassy and no insurance endorsement: the chamber
+    # is the only endorser and a certificate between Accord members needs no legalisation (road/07#F10, 06#F3, D35)
     x = {"Note": V("Preferential origin under the trade accord.", "What the certificate is for."),
-         "VersionID": V("1", "The first version."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-CO-{n:02d}"),
          "CertificateOfOriginApplication": {
-             "PreviousJobID": V("VI-CO-25-0412", "The exporter's application of last year for the same goods."),
-             "Remarks": V("Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives "
-                          "origin.", "Why the goods are of Urvanian origin."),
+             "Remarks": V("Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, "
+                          "finishing and making of the benches in Urvania give origin.", "Why the goods are of "
+                                                                                       "Urvanian origin."),
              "ExporterParty": party("5-xu", short=True),
              "ImporterParty": party("6-xb", short=True),
              "DocumentDistribution": {"ID": V("1", "The importer's copy."),
@@ -5753,16 +5774,6 @@ def _(f, n, doc, out):
                                                                          "goods.")},
              "Signature": seal("5-xu", "VI-SIG-COA")}}
     if doc["from"] == "20-xu":
-        x["EmbassyEndorsement"] = {"DocumentID": V(out["ID"].value, "The certificate legalised."),
-                                   "ApprovalStatus": V("Legalised", "The trade accord council confirms the "
-                                                                    "chamber's signature."),
-                                   "Remarks": V("Signature of the Ferrano chamber confirmed.", "What was checked."),
-                                   "EndorserParty": {"RoleCode": V("LEGALISATION", "The council legalises."),
-                                                     "SequenceNumeric": V("2", "After the chamber."),
-                                                     "Party": party("32-xb", short=True),
-                                                     "SignatoryContact": {"Name": V("Legalisation desk", "The "
-                                                                                    "council's desk that signs.")}},
-                                   "Signature": seal("32-xb", "LTAC-SIG-26-0311")}
         x["IssuerEndorsement"] = {"Remarks": V("Origin verified against the exporter's production records.",
                                                "What the chamber checked."),
                                   "Signature": seal("20-xu", "FCC-SIG-26-0309")}
@@ -8427,17 +8438,7 @@ def _(f, n, doc, out):
     return {}
 
 
-@enrich("road", "CertificateOfOrigin")
-def _(f, n, doc, out):
-    return {"InsuranceEndorsement": {
-        "DocumentID": V("WS-CP-26-4471-E1", "The insurer's endorsement of the cargo policy for this consignment."),
-        "ApprovalStatus": V("Endorsed", "The insurer confirms the cover."),
-        "Remarks": V("The goods described in this certificate are insured door to door.", "What it confirms."),
-        "EndorserParty": {"RoleCode": V("INSURER", "It endorses as insurer."),
-                          "SequenceNumeric": V("2", "After the chamber; the embassy legalises separately."),
-                          "Party": party("29-xb", short=True),
-                          "SignatoryContact": {"Name": V("Cargo claims desk", "Who signs for the insurer.")}},
-        "Signature": seal("29-xb", "WS-SIG-26-E1", "The insurer's seal on the endorsement.")}}
+# road: no insurance endorsement on the certificate of origin; the chamber is its only endorser (road/06#F3, D35)
 
 
 @enrich("tender", "Order")

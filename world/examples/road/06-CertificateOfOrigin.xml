@@ -4,11 +4,11 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:certificate-of-origin:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FCC-CO-26-0157</cbc:ID>
+  <cbc:ID>VI-AP-26-0158</cbc:ID>
   <cbc:UUID>a46337e2-176c-5866-9871-158007b21756</cbc:UUID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>12:39:00-01:00</cbc:IssueTime>
-  <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
+  <cbc:Description>Application for a certificate of origin for park benches and castings made in Urvania.</cbc:Description>
   <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
   <cbc:Note languageID="en-XU">Preferential origin under the trade accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
@@ -152,15 +152,15 @@
     </cac:Party>
     <cac:SignatoryContact>
       <cbc:Name>Certificates office</cbc:Name>
+      <cbc:JobTitle>Certificates officer</cbc:JobTitle>
     </cac:SignatoryContact>
   </cac:EndorserParty>
   <cac:CertificateOfOriginApplication>
     <cbc:ReferenceID>VI-AP-26-0158</cbc:ReferenceID>
     <cbc:CertificateType>Preferential</cbc:CertificateType>
     <cbc:ApplicationStatusCode listID="urn:ubl-examples:world:codelist:ApplicationStatusCode">SUBMITTED</cbc:ApplicationStatusCode>
-    <cbc:OriginalJobID>LD-PO-26-0149</cbc:OriginalJobID>
-    <cbc:PreviousJobID>VI-CO-25-0412</cbc:PreviousJobID>
-    <cbc:Remarks>Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.</cbc:Remarks>
+    <cbc:OriginalJobID>FCC-JOB-26-0418</cbc:OriginalJobID>
+    <cbc:Remarks>Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.</cbc:Remarks>
     <cac:Shipment>
       <cbc:ID>CL-SH-26-0154</cbc:ID>
       <cac:GoodsItem>
@@ -312,6 +312,7 @@
       </cac:Party>
       <cac:SignatoryContact>
         <cbc:Name>Certificates office</cbc:Name>
+        <cbc:JobTitle>Certificates officer</cbc:JobTitle>
       </cac:SignatoryContact>
     </cac:EndorserParty>
     <cac:PreparationParty>
@@ -379,7 +380,7 @@
     </cac:Signature>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>FCC-CO-26-0157</cbc:DocumentID>
+    <cbc:DocumentID>FCC-JOB-26-0418-E1</cbc:DocumentID>
     <cbc:ApprovalStatus>Pending</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">CHAMBER</cbc:RoleCode>
@@ -394,38 +395,8 @@
       </cac:Party>
       <cac:SignatoryContact>
         <cbc:Name>Certificates office</cbc:Name>
+        <cbc:JobTitle>Certificates officer</cbc:JobTitle>
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>
-  <cac:InsuranceEndorsement>
-    <cbc:DocumentID>WS-CP-26-4471-E1</cbc:DocumentID>
-    <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
-    <cbc:Remarks>The goods described in this certificate are insured door to door.</cbc:Remarks>
-    <cac:EndorserParty>
-      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">INSURER</cbc:RoleCode>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SignatoryContact>
-        <cbc:Name>Cargo claims desk</cbc:Name>
-      </cac:SignatoryContact>
-    </cac:EndorserParty>
-    <cac:Signature>
-      <cbc:ID>WS-SIG-26-E1</cbc:ID>
-      <cac:SignatoryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
-        </cac:PartyName>
-      </cac:SignatoryParty>
-    </cac:Signature>
-  </cac:InsuranceEndorsement>
 </CertificateOfOrigin>
