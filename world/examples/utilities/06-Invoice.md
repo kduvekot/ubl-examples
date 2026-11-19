@@ -37,7 +37,7 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
 - `AccountingCost` = **Store energy and water**  
   The cost centre in words.
 - `LineCountNumeric` = **2**  
-  The number of lines: one invoice line for the water and one collection line for the city's levy; the totals include both.
+  The number of lines: 1 invoice line(s) and one collection line for the city's levy; the totals include both.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
 

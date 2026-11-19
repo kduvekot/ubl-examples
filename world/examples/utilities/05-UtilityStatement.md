@@ -2,7 +2,7 @@
 
 *Example 5 of the flow "Electricity, water and telecom (one utility in each country)" · [Utility Statement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA)*
 
-The shop's water consumption, read from its meter.
+The shop's water consumption, read from its meter, with the water company's water and the city's sewage levy as the two parts of the bill.
 
 [The XML file](05-UtilityStatement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

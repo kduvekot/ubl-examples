@@ -1183,6 +1183,18 @@ kilowatt hour is 21.1 for the energy and 6.2 for the network), and in
 Bayvarra the city's sewage levy, which the water company collects for the
 city. The island's telephone company bills its own service only.
 
+A business with a meter read monthly is billed every month on its reading.
+A household pays on account: each April the utility estimates the year, and
+a twelfth of it, rounded up to a whole lume, is collected every month by
+direct debit. The meters are read once a year, at the end of March; the
+annual statement and the settlement bill charge the actual year less what
+was paid, and the new estimate sets the next year's monthly amount. In
+Lumeport the water company also runs the district heating, so a household
+on the network has one annual account for water, the city's levy and heat,
+with a cooling correction per megawatt hour when the return water comes
+back too warm. Water is exempt from the sales tax, the levy is outside it,
+and the heat carries the state's sales tax like any sale to a consumer.
+
 Bayvarra rounds cash payments to 5 cents, its smallest coin. A transfer
 quotes a creditor reference in the structure of ISO 11649, made from the
 invoice number, so the payee can match it, and runs over the domestic

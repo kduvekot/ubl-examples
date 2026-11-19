@@ -5160,7 +5160,8 @@
     "GASB",
     "WTER",
     "PHON",
-    "TAXS"
+    "TAXS",
+    "UBIL"
    ]
   },
   "ISO20022SequenceType": {
@@ -8013,7 +8014,8 @@
     "MON",
     "MET",
     "SUB",
-    "EST"
+    "EST",
+    "YEAR"
    ]
   },
   "ChargeType": {

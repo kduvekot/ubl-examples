@@ -2,7 +2,7 @@
 
 *Example 10 of the flow "Electricity, water and telecom (one utility in each country)" · [Reminder in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA)*
 
-The household has not paid by the due date; the utility reminds it of the amount past due, referring to the invoice.
+The direct debit for the settlement bill's balance is returned unpaid; the utility reminds the household of the amount past due, referring to the invoice.
 
 [The XML file](10-Reminder.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -201,48 +201,6 @@ Inside `AccountingCustomerParty`:
   The consumer's first name; identity of Robin Ashdale (world/parties.json).
 - `Party/Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
-- `Party/Person/FinancialAccount/ID` = **XB64BLUM38010007251840** (schemeID `urn:ubl-examples:world:account`)  
-  The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `Party/Person/FinancialAccount/Name` = **Robin Ashdale**  
-  The account holder, as the bank knows it.
-- `Party/Person/FinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
-  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
-- `Party/Person/FinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
-  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `Party/Person/FinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
-  The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch, Exchange Street**  
-  The branch's name.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BLUM, the country XB and the location LX; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
-  The bank; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
-  The town the branch is in.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Person/FinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Payee Party
 
@@ -259,6 +217,8 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer, how the household is asked to pay. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
+- `PaymentID` = **RF46CSWCINV260319** (schemeID `ISO 11649`)  
+  The reference to quote: the settlement bill's, so the transfer is matched to it (utilities/10#F7). The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB21BLUM38010004189160** (schemeID `urn:ubl-examples:world:account`)  
   The utility's account, where the overdue amount is to be paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Coastal State Water Company Ltd**  
@@ -322,9 +282,9 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax: the fee is outside the scope of the sales tax.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A reminder fee is compensation, not a supply: outside the scope of the sales tax. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Compensation for late payment**  
-  Why no tax.
+  A fee for a returned direct debit is compensation, not a supply: outside the scope of the sales tax. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Fee for a returned direct debit, outside the scope of the sales tax**  
+  Why no tax: the same charge as the fee line (utilities/10#F8).
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -332,9 +292,9 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **43.78** (currencyID `XBL`)  
+- `LineExtensionAmount` = **146.20** (currencyID `XBL`)  
   The bill and the reminder fee.
-- `PayableAmount` = **43.78** (currencyID `XBL`)  
+- `PayableAmount` = **146.20** (currencyID `XBL`)  
   The amount now due: the whole bill and the fee.
 
 ### Reminder Line
@@ -349,7 +309,7 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `BalanceBroughtForwardIndicator` = **false**  
   Not a balance carried over: one bill.
-- `DebitLineAmount` = **38.78** (currencyID `XBL`)  
+- `DebitLineAmount` = **141.20** (currencyID `XBL`)  
   The amount of the unpaid invoice.
 - `PaymentPurposeCode` = **WTER** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code WTER: water bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: WTER = WaterBill.
@@ -367,8 +327,6 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **5.00** (currencyID `XBL`)  
   The fee for a returned direct debit, as the terms set.
-- `Amount` = **5.00** (currencyID `XBL`)  
-  The fee charged.
 
 ## The document
 
@@ -523,43 +481,6 @@ Inside `ReminderLine`:
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
-        <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB64BLUM38010007251840</cbc:ID>
-          <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:FinancialInstitutionBranch>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
-            <cbc:Name>Main branch, Exchange Street</cbc:Name>
-            <cac:FinancialInstitution>
-              <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-              <cbc:Name>Bank of Lumeport</cbc:Name>
-              <cac:Address>
-                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-                <cbc:StreetName>Exchange Street</cbc:StreetName>
-                <cbc:BuildingNumber>48</cbc:BuildingNumber>
-                <cbc:CityName>Lumeport</cbc:CityName>
-                <cbc:PostalZone>38523</cbc:PostalZone>
-                <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-                <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                  <cbc:Name>Bayvarra</cbc:Name>
-                </cac:Country>
-              </cac:Address>
-            </cac:FinancialInstitution>
-            <cac:Address>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitutionBranch>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
@@ -573,6 +494,7 @@ Inside `ReminderLine`:
   </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentID schemeID="ISO 11649">RF46CSWCINV260319</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM38010004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>
@@ -622,7 +544,7 @@ Inside `ReminderLine`:
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Fee for a returned direct debit, outside the scope of the sales tax</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -630,15 +552,15 @@ Inside `ReminderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">43.78</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">43.78</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">146.20</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">146.20</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The direct debit of 23 April was returned.</cbc:Note>
     <cbc:UUID>4551969c-5ba6-519a-a531-cc362de15d58</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">38.78</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">141.20</cbc:DebitLineAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">WTER</cbc:PaymentPurposeCode>
     <cac:ReminderPeriod>
       <cbc:StartDate>2026-04-23</cbc:StartDate>
@@ -655,7 +577,6 @@ Inside `ReminderLine`:
     <cbc:Note>The fee for the returned direct debit.</cbc:Note>
     <cbc:UUID>d00e70a0-d7c3-5fb5-ac47-8f037a876e63</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
-    <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>
 ```

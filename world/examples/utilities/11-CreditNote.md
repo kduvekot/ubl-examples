@@ -2,7 +2,7 @@
 
 *Example 11 of the flow "Electricity, water and telecom (one utility in each country)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
 
-After the reminder the household had its meter tested: it over-read by two cubic metres in March. The utility credits the water and the city's levy on them.
+After the reminder the household had its water meter tested: it over-read by two cubic metres at the annual reading. The utility credits the water and the city's levy on them, which reduces the balance still open.
 
 [The XML file](11-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,14 +28,23 @@ After the reminder the household had its meter tested: it over-read by two cubic
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 381: credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 381 = Credit note.
-- `Note` = **The meter test found the meter over-reading by two cubic metres.**  
-  Why.
+- `Note` = **The test of water meter CSW-W-71844 found it over-reading by two cubic metres at the annual reading of 31 March: the year used 168 m³, not 170.**  
+  Why (utilities/11#F3).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **2**  
   The water and the collection line of the levy; the totals include both.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
+
+### Invoice Period
+
+Inside `InvoicePeriod`:
+
+- `StartDate` = **2025-04-01**  
+  The account year the settlement bill billed.
+- `EndDate` = **2026-03-31**  
+  Its end, the annual reading.
 
 ### Billing Reference
 
@@ -171,55 +180,13 @@ Inside `AccountingCustomerParty`:
   The consumer's first name; identity of Robin Ashdale (world/parties.json).
 - `Party/Person/FamilyName` = **Ashdale**  
   The consumer's family name; identity of Robin Ashdale (world/parties.json).
-- `Party/Person/FinancialAccount/ID` = **XB64BLUM38010007251840** (schemeID `urn:ubl-examples:world:account`)  
-  The consumer's own account, from which the bills are paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `Party/Person/FinancialAccount/Name` = **Robin Ashdale**  
-  The account holder, as the bank knows it.
-- `Party/Person/FinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
-  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
-- `Party/Person/FinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
-  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `Party/Person/FinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
-  The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Name` = **Main branch, Exchange Street**  
-  The branch's name.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BLUM, the country XB and the location LX; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
-  The bank; identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
-  The town the branch is in.
-- `Party/Person/FinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Person/FinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Payment Terms
 
 Inside `PaymentTerms`:
 
-- `Note` = **Settled against the next payment to the seller, unless refunded.**  
-  How a credit note is settled in the world.
+- `Note` = **Set off against the balance of the settlement bill CSWC-INV-26-0319, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.**  
+  How the credit is settled (utilities/11#F5).
 
 ### Tax Total
 
@@ -279,6 +246,10 @@ Inside `CollectionCreditNoteLine`:
   The city's levy on them.
 - `LineExtensionAmount` = **0.84** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
+  The settlement bill.
+- `BillingReference/BillingReferenceLine/ID` = **2**  
+  The line credited.
 - `CollectedForParty/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CollectedForParty/PartyName/Name` = **Lumeport Public Works Department**  
@@ -309,9 +280,13 @@ Inside `CreditNoteLine`:
 - `ID` = **1**  
   The line number.
 - `CreditedQuantity` = **2** (unitCode `MTQ`)  
-  Two cubic metres the meter over-read in March.
+  Two cubic metres the water meter CSW-W-71844 over-read at the annual reading of 31 March.
 - `LineExtensionAmount` = **4.70** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
+  The settlement bill.
+- `BillingReference/BillingReferenceLine/ID` = **1**  
+  The line credited.
 - `Item/Description` = **Drinking water supply, per cubic metre.**  
   The seller's description; item water of Coastal State Water Company (world/items.json).
 - `Item/Name` = **Drinking water**  
@@ -349,10 +324,14 @@ Inside `CreditNoteLine`:
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
-  <cbc:Note>The meter test found the meter over-reading by two cubic metres.</cbc:Note>
+  <cbc:Note>The test of water meter CSW-W-71844 found it over-reading by two cubic metres at the annual reading of 31 March: the year used 168 m³, not 170.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2025-04-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+  </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>CSWC-INV-26-0319</cbc:ID>
@@ -464,48 +443,11 @@ Inside `CreditNoteLine`:
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
-        <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB64BLUM38010007251840</cbc:ID>
-          <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:FinancialInstitutionBranch>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
-            <cbc:Name>Main branch, Exchange Street</cbc:Name>
-            <cac:FinancialInstitution>
-              <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-              <cbc:Name>Bank of Lumeport</cbc:Name>
-              <cac:Address>
-                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-                <cbc:StreetName>Exchange Street</cbc:StreetName>
-                <cbc:BuildingNumber>48</cbc:BuildingNumber>
-                <cbc:CityName>Lumeport</cbc:CityName>
-                <cbc:PostalZone>38523</cbc:PostalZone>
-                <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-                <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                  <cbc:Name>Bayvarra</cbc:Name>
-                </cac:Country>
-              </cac:Address>
-            </cac:FinancialInstitution>
-            <cac:Address>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitutionBranch>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:Note>Set off against the balance of the settlement bill CSWC-INV-26-0319, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -546,6 +488,14 @@ Inside `CreditNoteLine`:
     <cbc:Note>The city's levy, credited for the city.</cbc:Note>
     <cbc:CreditedQuantity unitCode="MTQ">2</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">0.84</cbc:LineExtensionAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>2</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
@@ -578,6 +528,14 @@ Inside `CreditNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="MTQ">2</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">4.70</cbc:LineExtensionAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
       <cbc:Name>Drinking water</cbc:Name>

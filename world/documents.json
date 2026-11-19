@@ -2594,7 +2594,7 @@
    "doc": "UtilityStatement",
    "from": "33-xu",
    "to": "5-xu",
-   "why": "The factory's monthly electricity consumption: meter readings and consumption per connection, in the energy and water supply structure.",
+   "why": "The factory's monthly electricity consumption: meter readings and consumption at its main connection, with Ferrano Energy's energy and Ferrano Grid's network charges as the two suppliers of the bill's tariff.",
    "parties": {
     "SenderParty": "33-xu",
     "ReceiverParty": "5-xu",
@@ -2646,7 +2646,7 @@
    "doc": "UtilityStatement",
    "from": "34-xb",
    "to": "26-xb",
-   "why": "The shop's water consumption, read from its meter.",
+   "why": "The shop's water consumption, read from its meter, with the water company's water and the city's sewage levy as the two parts of the bill.",
    "parties": {
     "SenderParty": "34-xb",
     "ReceiverParty": "26-xb",
@@ -2685,7 +2685,7 @@
    "doc": "UtilityStatement",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household's water consumption.",
+   "why": "The household's annual statement for water and district heat, April 2025 to March 2026: the annual readings, the year's water with the city's levy, the heat with its cooling correction, and the new payments on account from April (D31).",
    "parties": {
     "SenderParty": "34-xb",
     "ReceiverParty": "c-xb",
@@ -2697,7 +2697,7 @@
    "doc": "Invoice",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household's water bill, exempt from sales tax like every water bill.",
+   "why": "The household's settlement bill for the account year: water (exempt), the city's levy (outside the tax), district heat and its cooling correction (with the state's sales tax), less the twelve payments on account; the balance is collected by direct debit 21 days later (D31, D23).",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb",
@@ -2709,7 +2709,7 @@
    "doc": "Reminder",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household has not paid by the due date; the utility reminds it of the amount past due, referring to the invoice.",
+   "why": "The direct debit for the settlement bill's balance is returned unpaid; the utility reminds the household of the amount past due, referring to the invoice.",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb",
@@ -2721,7 +2721,7 @@
    "doc": "CreditNote",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "After the reminder the household had its meter tested: it over-read by two cubic metres in March. The utility credits the water and the city's levy on them.",
+   "why": "After the reminder the household had its water meter tested: it over-read by two cubic metres at the annual reading. The utility credits the water and the city's levy on them, which reduces the balance still open.",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb"

@@ -1422,8 +1422,10 @@ def party_profile(top, path, pid, content):
         blocks = set(own) - {"tax"} if pid != top.get("from") else blocks   # the parties the tender relies on
     if cls == "presentation" and role == "BusinessParty":
         blocks = set(own)                     # the business the document presents
-    if cls == "invoice" and pid != top.get("from") and PARTY.get(pid, {}).get("identity", {}).get("person"):
-        blocks.add("account")                 # the consumer's account the bills are collected from
+    if cls == "invoice" and pid != top.get("from") and PARTY.get(pid, {}).get("identity", {}).get("person") and \
+            kind == "Invoice" and "PaymentMandate" not in str(content.get("PaymentMeans", "")):
+        blocks.add("account")                 # the consumer's account the bills are collected from, unless the
+        # mandate already names it or nothing is collected (utilities/09#F7, 11#F5)
     if "customs" in blocks and cls == "transport" and not _cross_border(top):
         blocks.discard("customs")
     if cls == "invoice" and pid != top.get("from") and set(_codes(content, "TaxExemptionReasonCode")) & CUSTOMER_TAX_CODES:

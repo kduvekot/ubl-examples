@@ -1619,6 +1619,36 @@
    "purchase": "energy"
   },
   {
+   "id": "district-heat",
+   "seller": "34-xb",
+   "name": "District heat",
+   "kind": "service",
+   "unit": "MWH",
+   "price": {
+    "amount": 92.5,
+    "currency": "XBL"
+   },
+   "sellers_id": "CSW-HEAT",
+   "description": "Heat from Lumeport's district heating network, per megawatt hour at the flat's heat meter.",
+   "supply": "goods",
+   "purchase": "energy"
+  },
+  {
+   "id": "heat-cooling-correction",
+   "seller": "34-xb",
+   "name": "District heating cooling correction",
+   "kind": "service",
+   "unit": "MWH",
+   "price": {
+    "amount": 1.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "CSW-COOL",
+   "description": "The charge for return water that comes back warmer than the network's standard, per megawatt hour of heat and degree short of the standard cooling.",
+   "supply": "goods",
+   "purchase": "energy"
+  },
+  {
    "id": "bench-installation",
    "seller": "5-xu",
    "name": "Installation of a park bench",

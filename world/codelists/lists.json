@@ -509,6 +509,10 @@
     "TAXS": [
      "TaxPayment",
      "Transaction is the payment of taxes."
+    ],
+    "UBIL": [
+     "Utilities",
+     "Transaction is for the payment to common utility provider that provide gas, water and/or electricity."
     ]
    }
   },
@@ -6186,6 +6190,10 @@
     "EST": [
      "Estimated",
      "An estimate of the consumption."
+    ],
+    "YEAR": [
+     "Yearly consumption",
+     "The consumption of an account year, between two annual readings."
     ]
    }
   },

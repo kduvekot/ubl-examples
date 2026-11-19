@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>15:10:00-01:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
-  <cbc:Note>This statement explains the consumption behind your bill.</cbc:Note>
+  <cbc:Note>This annual statement explains the year's water and heat behind your settlement bill, and sets the payments on account for the next year.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
     <cbc:ID>CSWC-INV-26-0319</cbc:ID>
@@ -104,24 +104,29 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:MainOnAccountPayment>
-    <cbc:EstimatedConsumedQuantity unitCode="MTQ">14</cbc:EstimatedConsumedQuantity>
-    <cbc:Note>The basis of the direct debit limit.</cbc:Note>
+    <cbc:EstimatedConsumedQuantity unitCode="MTQ">170</cbc:EstimatedConsumedQuantity>
+    <cbc:Note>The one monthly direct debit for water, levy and heat from April 2026: 91 lume, a twelfth of the year's estimate rounded up to a whole lume; it was 84 lume.</cbc:Note>
     <cac:PaymentTerms>
-      <cbc:Note>Collected by direct debit; the mandate's limit is set well above this estimate.</cbc:Note>
+      <cbc:Note>Collected by direct debit on the first working day of each month.</cbc:Note>
+      <cbc:Amount currencyID="XBL">91.00</cbc:Amount>
+      <cac:ValidityPeriod>
+        <cbc:StartDate>2026-04-01</cbc:StartDate>
+        <cbc:EndDate>2027-03-31</cbc:EndDate>
+      </cac:ValidityPeriod>
     </cac:PaymentTerms>
   </cac:MainOnAccountPayment>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>CSW-CP-38516-57-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>CSW-CP-38516-57-2526</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
-    <cbc:Note>Gull Lane 57, Lumeport</cbc:Note>
-    <cbc:TotalMeteredQuantity unitCode="MTQ">14</cbc:TotalMeteredQuantity>
+    <cbc:Note>Water</cbc:Note>
+    <cbc:TotalMeteredQuantity unitCode="MTQ">170</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
       <cbc:ID>CSW-CP-38516-57</cbc:ID>
       <cbc:Description>Gull Lane 57, Lumeport</cbc:Description>
       <cbc:SubscriberID>CSW-CU-097315</cbc:SubscriberID>
       <cbc:SubscriberType>Household</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">HH</cbc:SubscriberTypeCode>
-      <cbc:TotalDeliveredQuantity unitCode="MTQ">14</cbc:TotalDeliveredQuantity>
+      <cbc:TotalDeliveredQuantity unitCode="MTQ">170</cbc:TotalDeliveredQuantity>
       <cac:Address>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
@@ -138,30 +143,25 @@
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:Address>
-      <cac:WebSiteAccess>
-        <cbc:URI>https://www.coastalwater.example/reading</cbc:URI>
-        <cbc:Password>RD-4K7-918</cbc:Password>
-        <cbc:Login>CSW-CP-38516-57</cbc:Login>
-      </cac:WebSiteAccess>
       <cac:UtilityMeter>
         <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
         <cbc:MeterName>Water meter, flat</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
-        <cbc:TotalDeliveredQuantity unitCode="MTQ">14</cbc:TotalDeliveredQuantity>
+        <cbc:TotalDeliveredQuantity unitCode="MTQ">170</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
           <cbc:ID>CSW-W-71844-2603</cbc:ID>
-          <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
-          <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
-          <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
-          <cbc:PreviousMeterQuantity unitCode="MTQ">1830</cbc:PreviousMeterQuantity>
+          <cbc:MeterReadingType>Yearly reading</cbc:MeterReadingType>
+          <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">Y</cbc:MeterReadingTypeCode>
+          <cbc:PreviousMeterReadingDate>2025-03-31</cbc:PreviousMeterReadingDate>
+          <cbc:PreviousMeterQuantity unitCode="MTQ">1674</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
           <cbc:LatestMeterQuantity unitCode="MTQ">1844</cbc:LatestMeterQuantity>
-          <cbc:PreviousMeterReadingMethod>Read by the customer: the household sent the reading</cbc:PreviousMeterReadingMethod>
-          <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">CUSTOMER</cbc:PreviousMeterReadingMethodCode>
-          <cbc:LatestMeterReadingMethod>Read by the customer: the household sent the reading</cbc:LatestMeterReadingMethod>
-          <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">CUSTOMER</cbc:LatestMeterReadingMethodCode>
-          <cbc:DeliveredQuantity unitCode="MTQ">14</cbc:DeliveredQuantity>
+          <cbc:PreviousMeterReadingMethod>Read by the meter reader</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">MANUAL</cbc:PreviousMeterReadingMethodCode>
+          <cbc:LatestMeterReadingMethod>Read by the meter reader</cbc:LatestMeterReadingMethod>
+          <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">MANUAL</cbc:LatestMeterReadingMethodCode>
+          <cbc:DeliveredQuantity unitCode="MTQ">170</cbc:DeliveredQuantity>
         </cac:MeterReading>
         <cac:MeterProperty>
           <cbc:Name>Accuracy class</cbc:Name>
@@ -176,10 +176,14 @@
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
     <cac:OnAccountPayment>
-      <cbc:EstimatedConsumedQuantity unitCode="MTQ">14</cbc:EstimatedConsumedQuantity>
-      <cbc:Note>Paid on account each month for the estimated use; the next bill settles it against the reading.</cbc:Note>
+      <cbc:EstimatedConsumedQuantity unitCode="MTQ">170</cbc:EstimatedConsumedQuantity>
+      <cbc:Note>The payments on account planned for water and the city's levy in the next account year.</cbc:Note>
       <cac:PaymentTerms>
-        <cbc:Note>By direct debit on the first working day of each month.</cbc:Note>
+        <cbc:Amount currencyID="XBL">39.24</cbc:Amount>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2026-04-01</cbc:StartDate>
+          <cbc:EndDate>2027-03-31</cbc:EndDate>
+        </cac:ValidityPeriod>
       </cac:PaymentTerms>
     </cac:OnAccountPayment>
     <cac:SupplierConsumption>
@@ -200,13 +204,13 @@
       <cac:Consumption>
         <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
         <cac:MainPeriod>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:StartDate>2025-04-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:MainPeriod>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
           <cac:TaxSubtotal>
-            <cbc:TaxableAmount currencyID="XBL">32.90</cbc:TaxableAmount>
+            <cbc:TaxableAmount currencyID="XBL">399.50</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
             <cac:TaxCategory>
               <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -221,21 +225,18 @@
         </cac:TaxTotal>
         <cac:EnergyWaterSupply>
           <cac:ConsumptionReport>
-            <cbc:ID>CSW-CP-38516-57-2603</cbc:ID>
-            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-            <cbc:Description>March consumption of Gull Lane 57, Lumeport.</cbc:Description>
-            <cbc:TotalConsumedQuantity unitCode="MTQ">14</cbc:TotalConsumedQuantity>
-            <cbc:BasicConsumedQuantity unitCode="MTQ">14</cbc:BasicConsumedQuantity>
+            <cbc:ID>CSW-CP-38516-57-2526</cbc:ID>
+            <cbc:ConsumptionType>Yearly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">YEAR</cbc:ConsumptionTypeCode>
+            <cbc:TotalConsumedQuantity unitCode="MTQ">170</cbc:TotalConsumedQuantity>
+            <cbc:BasicConsumedQuantity unitCode="MTQ">170</cbc:BasicConsumedQuantity>
             <cbc:ResidentOccupantsNumeric>2</cbc:ResidentOccupantsNumeric>
-            <cbc:ConsumersEnergyLevelCode listID="urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode">LOW</cbc:ConsumersEnergyLevelCode>
-            <cbc:ConsumersEnergyLevel>Low consumer</cbc:ConsumersEnergyLevel>
             <cbc:ResidenceType>Apartment</cbc:ResidenceType>
             <cbc:ResidenceTypeCode listID="urn:ubl-examples:world:codelist:ResidenceTypeCode">APT</cbc:ResidenceTypeCode>
             <cbc:HeatingType>District heating</cbc:HeatingType>
             <cbc:HeatingTypeCode listID="urn:ubl-examples:world:codelist:HeatingTypeCode">DH</cbc:HeatingTypeCode>
             <cac:Period>
-              <cbc:StartDate>2026-03-01</cbc:StartDate>
+              <cbc:StartDate>2025-04-01</cbc:StartDate>
               <cbc:EndDate>2026-03-31</cbc:EndDate>
             </cac:Period>
             <cac:GuidanceDocumentReference>
@@ -246,75 +247,52 @@
               <cbc:DocumentType>Water quality report</cbc:DocumentType>
             </cac:DocumentReference>
             <cac:ConsumptionReportReference>
-              <cbc:ConsumptionReportID>CSW-CP-38516-57-2602</cbc:ConsumptionReportID>
-              <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-              <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-              <cbc:TotalConsumedQuantity unitCode="MTQ">13</cbc:TotalConsumedQuantity>
+              <cbc:ConsumptionReportID>CSW-CP-38516-57-2425</cbc:ConsumptionReportID>
+              <cbc:ConsumptionType>Yearly consumption</cbc:ConsumptionType>
+              <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">YEAR</cbc:ConsumptionTypeCode>
+              <cbc:TotalConsumedQuantity unitCode="MTQ">158</cbc:TotalConsumedQuantity>
               <cac:Period>
-                <cbc:StartDate>2026-02-01</cbc:StartDate>
-                <cbc:EndDate>2026-02-28</cbc:EndDate>
+                <cbc:StartDate>2024-04-01</cbc:StartDate>
+                <cbc:EndDate>2025-03-31</cbc:EndDate>
               </cac:Period>
             </cac:ConsumptionReportReference>
             <cac:ConsumptionHistory>
               <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
-              <cbc:Quantity unitCode="MTQ">15</cbc:Quantity>
-              <cbc:Amount currencyID="XBL">35.25</cbc:Amount>
+              <cbc:Quantity unitCode="MTQ">158</cbc:Quantity>
+              <cbc:Amount currencyID="XBL">371.30</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
               <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
               <cac:Period>
-                <cbc:StartDate>2026-01-01</cbc:StartDate>
-                <cbc:EndDate>2026-01-31</cbc:EndDate>
-              </cac:Period>
-            </cac:ConsumptionHistory>
-            <cac:ConsumptionHistory>
-              <cbc:MeterNumber>CSW-W-71844</cbc:MeterNumber>
-              <cbc:Quantity unitCode="MTQ">13</cbc:Quantity>
-              <cbc:Amount currencyID="XBL">30.55</cbc:Amount>
-              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-              <cac:Period>
-                <cbc:StartDate>2026-02-01</cbc:StartDate>
-                <cbc:EndDate>2026-02-28</cbc:EndDate>
+                <cbc:StartDate>2024-04-01</cbc:StartDate>
+                <cbc:EndDate>2025-03-31</cbc:EndDate>
               </cac:Period>
             </cac:ConsumptionHistory>
           </cac:ConsumptionReport>
           <cac:ConsumptionAverage>
-            <cbc:AverageAmount currencyID="XBL">32.90</cbc:AverageAmount>
-            <cbc:Description>The average over the last three months is 14 m³.</cbc:Description>
+            <cbc:AverageAmount currencyID="XBL">385.40</cbc:AverageAmount>
+            <cbc:Description>The average of the last two years is 164 m³.</cbc:Description>
           </cac:ConsumptionAverage>
-          <cac:EnergyWaterConsumptionCorrection>
-            <cbc:CorrectionType>District heating cooling correction</cbc:CorrectionType>
-            <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">COOL</cbc:CorrectionTypeCode>
-            <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
-            <cbc:ActualTemperatureReductionQuantity unitCode="CEL">31</cbc:ActualTemperatureReductionQuantity>
-            <cbc:NormalTemperatureReductionQuantity unitCode="CEL">35</cbc:NormalTemperatureReductionQuantity>
-            <cbc:DifferenceTemperatureReductionQuantity unitCode="CEL">-4</cbc:DifferenceTemperatureReductionQuantity>
-            <cbc:Description>Poor cooling makes the network pump more water; the shortfall is charged on the annual account.</cbc:Description>
-            <cbc:CorrectionUnitAmount currencyID="XBL">0.80</cbc:CorrectionUnitAmount>
-            <cbc:ConsumptionWaterQuantity unitCode="MTQ">6.2</cbc:ConsumptionWaterQuantity>
-            <cbc:CorrectionAmount currencyID="XBL">19.84</cbc:CorrectionAmount>
-          </cac:EnergyWaterConsumptionCorrection>
         </cac:EnergyWaterSupply>
         <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XBL">32.90</cbc:PayableAmount>
+          <cbc:LineExtensionAmount currencyID="XBL">399.50</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XBL">399.50</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:Contract>
         <cbc:ID>CSW-C-311790</cbc:ID>
-        <cbc:ContractType>Water supply</cbc:ContractType>
+        <cbc:ContractType>Water and district heat supply</cbc:ContractType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2024-01-01</cbc:StartDate>
+          <cbc:StartDate>2024-09-01</cbc:StartDate>
         </cac:ValidityPeriod>
       </cac:Contract>
       <cac:ConsumptionLine>
         <cbc:ID>1</cbc:ID>
         <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XBL">32.90</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">32.90</cbc:TaxInclusiveLineExtensionAmount>
+        <cbc:InvoicedQuantity unitCode="MTQ">170</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XBL">399.50</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">399.50</cbc:TaxInclusiveLineExtensionAmount>
         <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:StartDate>2025-04-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
         <cac:TaxTotal>
@@ -367,21 +345,21 @@
       <cac:Consumption>
         <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
         <cac:MainPeriod>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:StartDate>2025-04-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:MainPeriod>
         <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XBL">5.88</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XBL">5.88</cbc:PayableAmount>
+          <cbc:LineExtensionAmount currencyID="XBL">71.40</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XBL">71.40</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:ConsumptionLine>
         <cbc:ID>2</cbc:ID>
         <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="MTQ">14</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XBL">5.88</cbc:LineExtensionAmount>
+        <cbc:InvoicedQuantity unitCode="MTQ">170</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XBL">71.40</cbc:LineExtensionAmount>
         <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:StartDate>2025-04-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
         <cac:UtilityItem>
@@ -408,5 +386,129 @@
         </cac:Price>
       </cac:ConsumptionLine>
     </cac:SupplierConsumption>
+  </cac:SubscriberConsumption>
+  <cac:SubscriberConsumption>
+    <cbc:ConsumptionID>CSW-CP-38516-57-H-2526</cbc:ConsumptionID>
+    <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
+    <cbc:Note>District heat</cbc:Note>
+    <cbc:TotalMeteredQuantity unitCode="MWH">6.6</cbc:TotalMeteredQuantity>
+    <cac:UtilityConsumptionPoint>
+      <cbc:ID>CSW-CP-38516-57-H</cbc:ID>
+      <cbc:Description>Gull Lane 57, Lumeport, district heating</cbc:Description>
+      <cbc:SubscriberID>CSW-CU-097315</cbc:SubscriberID>
+      <cbc:SubscriberType>Household</cbc:SubscriberType>
+      <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">HH</cbc:SubscriberTypeCode>
+      <cbc:TotalDeliveredQuantity unitCode="MWH">6.6</cbc:TotalDeliveredQuantity>
+      <cac:Address>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">RESIDENTIAL</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Gull Lane</cbc:StreetName>
+        <cbc:BuildingNumber>57</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Riverside</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38516</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:Address>
+      <cac:UtilityMeter>
+        <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
+        <cbc:MeterName>Heat meter, flat</cbc:MeterName>
+        <cbc:MeterConstant>1</cbc:MeterConstant>
+        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
+        <cbc:TotalDeliveredQuantity unitCode="MWH">6.6</cbc:TotalDeliveredQuantity>
+        <cac:MeterReading>
+          <cbc:ID>CSW-H-71844-2603</cbc:ID>
+          <cbc:MeterReadingType>Yearly reading</cbc:MeterReadingType>
+          <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">Y</cbc:MeterReadingTypeCode>
+          <cbc:PreviousMeterReadingDate>2025-03-31</cbc:PreviousMeterReadingDate>
+          <cbc:PreviousMeterQuantity unitCode="MWH">41.2</cbc:PreviousMeterQuantity>
+          <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
+          <cbc:LatestMeterQuantity unitCode="MWH">47.8</cbc:LatestMeterQuantity>
+          <cbc:PreviousMeterReadingMethod>Read by the meter reader</cbc:PreviousMeterReadingMethod>
+          <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">MANUAL</cbc:PreviousMeterReadingMethodCode>
+          <cbc:LatestMeterReadingMethod>Read by the meter reader</cbc:LatestMeterReadingMethod>
+          <cbc:LatestMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">MANUAL</cbc:LatestMeterReadingMethodCode>
+          <cbc:DeliveredQuantity unitCode="MWH">6.6</cbc:DeliveredQuantity>
+        </cac:MeterReading>
+      </cac:UtilityMeter>
+    </cac:UtilityConsumptionPoint>
+    <cac:OnAccountPayment>
+      <cbc:EstimatedConsumedQuantity unitCode="MWH">6.6</cbc:EstimatedConsumedQuantity>
+      <cbc:Note>The payments on account planned for district heat in the next account year.</cbc:Note>
+      <cac:PaymentTerms>
+        <cbc:Amount currencyID="XBL">50.88</cbc:Amount>
+        <cac:ValidityPeriod>
+          <cbc:StartDate>2026-04-01</cbc:StartDate>
+          <cbc:EndDate>2027-03-31</cbc:EndDate>
+        </cac:ValidityPeriod>
+      </cac:PaymentTerms>
+    </cac:OnAccountPayment>
+    <cac:Consumption>
+      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">HEAT</cbc:UtilityStatementTypeCode>
+      <cac:MainPeriod>
+        <cbc:StartDate>2025-04-01</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:MainPeriod>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XBL">41.40</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+          <cbc:TaxableAmount currencyID="XBL">636.90</cbc:TaxableAmount>
+          <cbc:TaxAmount currencyID="XBL">41.40</cbc:TaxAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Percent>6.5</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
+      </cac:TaxTotal>
+      <cac:EnergyWaterSupply>
+        <cac:ConsumptionReport>
+          <cbc:ID>CSW-CP-38516-57-H-2526</cbc:ID>
+          <cbc:ConsumptionType>Yearly consumption</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">YEAR</cbc:ConsumptionTypeCode>
+          <cbc:TotalConsumedQuantity unitCode="MWH">6.6</cbc:TotalConsumedQuantity>
+          <cbc:ResidentOccupantsNumeric>2</cbc:ResidentOccupantsNumeric>
+          <cbc:ConsumersEnergyLevelCode listID="urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode">LOW</cbc:ConsumersEnergyLevelCode>
+          <cbc:ConsumersEnergyLevel>Low consumer</cbc:ConsumersEnergyLevel>
+          <cac:Period>
+            <cbc:StartDate>2025-04-01</cbc:StartDate>
+            <cbc:EndDate>2026-03-31</cbc:EndDate>
+          </cac:Period>
+          <cac:ConsumptionHistory>
+            <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
+            <cbc:Quantity unitCode="MWH">6.3</cbc:Quantity>
+            <cbc:Amount currencyID="XBL">582.75</cbc:Amount>
+            <cac:Period>
+              <cbc:StartDate>2024-04-01</cbc:StartDate>
+              <cbc:EndDate>2025-03-31</cbc:EndDate>
+            </cac:Period>
+          </cac:ConsumptionHistory>
+        </cac:ConsumptionReport>
+        <cac:EnergyWaterConsumptionCorrection>
+          <cbc:CorrectionType>District heating cooling correction</cbc:CorrectionType>
+          <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">COOL</cbc:CorrectionTypeCode>
+          <cbc:MeterNumber>CSW-H-71844</cbc:MeterNumber>
+          <cbc:ActualTemperatureReductionQuantity unitCode="CEL">31</cbc:ActualTemperatureReductionQuantity>
+          <cbc:NormalTemperatureReductionQuantity unitCode="CEL">35</cbc:NormalTemperatureReductionQuantity>
+          <cbc:DifferenceTemperatureReductionQuantity unitCode="CEL">-4</cbc:DifferenceTemperatureReductionQuantity>
+          <cbc:Description>Poor cooling makes the network pump more water: 1.00 per MWh for each degree short of the standard.</cbc:Description>
+          <cbc:CorrectionUnitAmount currencyID="XBL">4.00</cbc:CorrectionUnitAmount>
+          <cbc:ConsumptionEnergyQuantity unitCode="MWH">6.6</cbc:ConsumptionEnergyQuantity>
+          <cbc:ConsumptionWaterQuantity unitCode="MTQ">183</cbc:ConsumptionWaterQuantity>
+          <cbc:CorrectionAmount currencyID="XBL">26.40</cbc:CorrectionAmount>
+        </cac:EnergyWaterConsumptionCorrection>
+      </cac:EnergyWaterSupply>
+      <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="XBL">636.90</cbc:LineExtensionAmount>
+        <cbc:PayableAmount currencyID="XBL">678.30</cbc:PayableAmount>
+      </cac:LegalMonetaryTotal>
+    </cac:Consumption>
   </cac:SubscriberConsumption>
 </UtilityStatement>

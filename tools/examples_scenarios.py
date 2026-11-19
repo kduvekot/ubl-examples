@@ -3162,12 +3162,303 @@ MARCH = {"InvoicePeriod": {"StartDate": V("2026-03-01", "The month billed: March
                            "Description": V("March 2026", "The period in words.")}}
 
 
-def levy(m3, who):
+def levy(m3, who, period=None):
     return {"item": "sewage-levy", "qty": m3, "invoice_why": f"The {who}'s water use, on which the city charges its "
                                                             "levy.",
-            "line_extra": {**MARCH, "CollectedForParty": party("2-xb", short=True),
+            "line_extra": {**(period or MARCH), "CollectedForParty": party("2-xb", short=True),
                            "Note": V("Collected for the city of Lumeport and paid on to it.", "Why the water company "
                                                                                               "bills it.")}}
+
+
+# ---- the household's annual account for water and district heat (D31 point 1, C93)
+# Each April the water company, which also runs Lumeport's district heating, estimates the household's year; a twelfth
+# of it, rounded up to a whole lume, is collected each month by direct debit. The meters are read once a year, at the
+# end of March; the annual statement (08) and the settlement invoice (09) bill the actual year less the twelve
+# payments on account, and the new estimate sets the next year's monthly amount.
+ACCOUNT_YEAR = {"InvoicePeriod": {"StartDate": V("2025-04-01", "The household's account year: from April."),
+                                  "EndDate": V("2026-03-31", "To the annual reading at the end of March."),
+                                  "Description": V("Account year April 2025 to March 2026", "The period in "
+                                                                                            "words.")}}
+HOUSEHOLD = {"water": 170, "heat": Decimal("6.6"),            # the actual year, from the annual readings
+             "estimate": {"water": 160, "heat": Decimal("6.0")},   # last April's estimate of this year
+             "previous": {"water": 158, "heat": Decimal("6.3")},   # the year before, for comparison
+             "cooling": {"actual": 31, "normal": 35, "per_degree": Decimal("1.00"), "water_m3": 183}}
+HEAT_CORRECTION = HOUSEHOLD["cooling"]["per_degree"] * (HOUSEHOLD["cooling"]["normal"] - HOUSEHOLD["cooling"]["actual"])
+
+
+def year_cost(water, heat):
+    """The cost of a year's water, levy and heat at the tariffs (world/items.json), without tax: the basis of the
+    payments on account."""
+    p = {i: Decimal(str(ITEM[i]["price"]["amount"])) for i in ("water", "sewage-levy", "district-heat")}
+    return money(water * (p["water"] + p["sewage-levy"]) + heat * p["district-heat"], "XBL")
+
+
+def monthly(water, heat):
+    """The monthly payment on account: a twelfth of the year's estimate, rounded up to a whole lume."""
+    return (year_cost(water, heat) / 12).to_integral_value(rounding="ROUND_CEILING")
+
+
+ON_ACCOUNT = monthly(HOUSEHOLD["estimate"]["water"], HOUSEHOLD["estimate"]["heat"])         # 84 a month
+NEW_ON_ACCOUNT = monthly(HOUSEHOLD["water"], HOUSEHOLD["heat"])                             # 91 from April
+PAID_ON_ACCOUNT = 12 * ON_ACCOUNT
+
+
+def household_rows():
+    year = ACCOUNT_YEAR
+    return [{"item": "water", "qty": HOUSEHOLD["water"], "invoice_why": "The household's water in the account year, "
+                                                                       "from the annual readings.",
+             "line_extra": year},
+            levy(HOUSEHOLD["water"], "household", year),
+            {"item": "district-heat", "qty": HOUSEHOLD["heat"], "invoice_why": "The flat's district heat in the "
+                                                                              "account year, from the heat meter.",
+             "line_extra": year},
+            {"item": "heat-cooling-correction", "qty": HOUSEHOLD["heat"], "unit_price": HEAT_CORRECTION,
+             "unit_price_why": f"{HOUSEHOLD['cooling']['normal'] - HOUSEHOLD['cooling']['actual']} degrees short of "
+                               f"the network's standard cooling at {HOUSEHOLD['cooling']['per_degree']} per MWh and "
+                               "degree.",
+             "invoice_why": "The cooling correction on the year's heat, per MWh as its definition says.",
+             "line_extra": year}]
+
+
+def annual_reading(meter, unit, prev, last, why):
+    return {"ID": V(f"{meter}-2603", "The annual reading."),
+            "MeterReadingType": V("Yearly reading", "The meter is read once a year, at the end of March."),
+            "MeterReadingTypeCode": V("Y", "As a code."),
+            "PreviousMeterReadingDate": V("2025-03-31", "Last year's annual reading."),
+            "PreviousMeterQuantity": qty(prev, unit, "The register then."),
+            "LatestMeterReadingDate": V("2026-03-31", "This year's annual reading."),
+            "LatestMeterQuantity": qty(last, unit, "The register now."),
+            "PreviousMeterReadingMethod": V("Read by the meter reader", "How last year's reading was taken."),
+            "PreviousMeterReadingMethodCode": V("MANUAL", "As a code."),
+            "LatestMeterReadingMethod": V("Read by the meter reader", "How this reading was taken."),
+            "LatestMeterReadingMethodCode": V("MANUAL", "As a code."),
+            "DeliveredQuantity": qty(Decimal(str(last)) - Decimal(str(prev)), unit, why)}
+
+
+def year_period(why):
+    return {"StartDate": V("2025-04-01", why), "EndDate": V("2026-03-31", "The account year's end, the annual "
+                                                                         "reading.")}
+
+
+def on_account(q, unit, iids, what):
+    share = money(q * sum(Decimal(str(ITEM[i]["price"]["amount"])) for i in iids) / 12, "XBL")
+    return {"EstimatedConsumedQuantity": qty(q, unit, f"The estimate of {what} for April 2026 to March 2027: this "
+                                                      "year's use."),
+            "Note": V(f"The payments on account planned for {what} in the next account year.", "What the schedule "
+                                                                                                "is."),
+            "PaymentTerms": {"Amount": amount(share, "XBL", f"A twelfth of the estimate's cost of {what}, part of the "
+                                                            "monthly direct debit."),
+                             "ValidityPeriod": {"StartDate": V("2026-04-01", "From April."),
+                                                "EndDate": V("2027-03-31", "To the next annual reading.")}}}
+
+
+def annual_statement(f, doc, key, out):
+    """The household's annual statement (08): water with the city's levy, and the district heat with its cooling
+    correction, for the account year; the payments on account of the next year."""
+    sup, hh = doc["from"], doc["to"]
+    cur = "XBL"
+    pt = POINTS[(sup, hh)]
+    rows = BILLS[key]
+    w, h = HOUSEHOLD["water"], HOUSEHOLD["heat"]
+    out["Note"] = V("This annual statement explains the year's water and heat behind your settlement bill, and sets "
+                    "the payments on account for the next year.", "What the statement is.")
+    water_price = Decimal(str(ITEM["water"]["price"]["amount"]))
+    prev_w = HOUSEHOLD["previous"]["water"]
+    report = {"ID": V(f"{pt['id']}-2526", "The water report of the account year."),
+              "ConsumptionType": V("Yearly consumption", "What is reported."),
+              "ConsumptionTypeCode": V("YEAR", "As a code."),
+              "TotalConsumedQuantity": qty(w, "MTQ", "Used in the account year."),
+              "BasicConsumedQuantity": qty(w, "MTQ", "All at the one water tariff."),
+              "ResidentOccupantsNumeric": V("2", "People living in the flat."),
+              "ResidenceType": V("Apartment", "The kind of home."),
+              "ResidenceTypeCode": V("APT", "As a code."),
+              "HeatingType": V("District heating", "How the home is heated: by the district heat on this "
+                                                   "statement."),
+              "HeatingTypeCode": V("DH", "As a code."),
+              "Period": year_period("The account year."),
+              "GuidanceDocumentReference": {"ID": V("CSW-SAVE-WATER", "The company's leaflet on saving water.")},
+              "DocumentReference": {"ID": V("CSW-QUALITY-2026-Q1", "The quarterly water quality report.")},
+              "ConsumptionReportReference": {
+                  "ConsumptionReportID": V(f"{pt['id']}-2425", "Last year's water report."),
+                  "ConsumptionType": V("Yearly consumption", "Of the same kind."),
+                  "ConsumptionTypeCode": V("YEAR", "As a code."),
+                  "TotalConsumedQuantity": qty(prev_w, "MTQ", "What last year's report said."),
+                  "Period": {"StartDate": V("2024-04-01", "Last year's account year."),
+                             "EndDate": V("2025-03-31", "Its end.")}},
+              "ConsumptionHistory": {"MeterNumber": V(pt["meter"][0], "The water meter."),
+                                     "Quantity": qty(prev_w, "MTQ", "Last year's water."),
+                                     "Amount": amount(prev_w * water_price, cur, "What it cost at the tariff, "
+                                                                                 "without the levy."),
+                                     "ConsumptionLevelCode": V("NORMAL", "Within the usual range."),
+                                     "ConsumptionLevel": V("Normal", "In words."),
+                                     "Period": {"StartDate": V("2024-04-01", "Last year's account year."),
+                                                "EndDate": V("2025-03-31", "Its end.")}}}
+    avg = Decimal(w + prev_w) / 2
+    water_supply = {"ConsumptionReport": report,
+                    "ConsumptionAverage": {"AverageAmount": amount(money(avg * water_price, cur), cur, "The average "
+                                                                   "of the last two years' water at the tariff, "
+                                                                   "without tax."),
+                                           "Description": V(f"The average of the last two years is {avg:f} m³.",
+                                                            "For comparison.")}}
+    parts, number = [], 0
+    for psup, items, what in SUPPLIERS[sup]:
+        lines = []
+        for k, row in enumerate(rows):
+            if row["item"] not in items:
+                continue
+            number += 1
+            ln, a_, t_ = consumption_line(f, key, k, row, row["invoice_why"], pt["type"], iid=items[row["item"]],
+                                          number=number, customer_no=CUSTOMER_NO[key] if psup == sup else None)
+            ln["Period"] = year_period("The account year.")
+            lines.append((ln, a_, t_))
+        amt = sum(a_ for _, a_, _ in lines)
+        rule = kit.tax_rule(sup, hh, next(iter(items.values())))
+        cons = {"UtilityStatementTypeCode": V("WATER", "The kind of supply."),
+                "MainPeriod": year_period("The account year.")}
+        if rule[0] != "O":
+            cons["TaxTotal"] = {"TaxAmount": amount(0, cur, "Drinking water is exempt."),
+                                "TaxSubtotal": {"TaxableAmount": amount(amt, cur, "The water."),
+                                                "TaxAmount": amount(0, cur, "Exempt."),
+                                                "TaxCategory": kit.tax_category(rule)}}
+            cons["EnergyWaterSupply"] = water_supply
+        cons["LegalMonetaryTotal"] = {"LineExtensionAmount": amount(amt, cur, "The lines of this part."),
+                                      "PayableAmount": amount(amt, cur, "Nothing added: exempt, or outside the "
+                                                                        "tax.")}
+        part = {"Description": V(what, "Whose supply this part is, and how it is billed."),
+                "UtilitySupplierParty": party(psup, short=True), "UtilityCustomerParty": party(hh, short=True),
+                "Consumption": cons}
+        if psup == sup:
+            part["Contract"] = {"ID": V(METERS[key][0], "The supply contract for water and heat: one account."),
+                                "ContractType": V("Water and district heat supply", "Its kind."),
+                                "ValidityPeriod": {"StartDate": V("2024-09-01", "In force since the household "
+                                                                                "moved in.")}}
+        part["ConsumptionLine"] = lines[0][0]
+        parts.append(part)
+    water = {"ConsumptionID": V(f"{pt['id']}-2526", "The water of the account year."),
+             "SpecificationTypeCode": V("DETAILED", "A detailed specification."),
+             "Note": V("Water", "The subscription."),
+             "TotalMeteredQuantity": qty(w, "MTQ", "Metered in the account year."),
+             "UtilityConsumptionPoint": {
+                 "ID": V(pt["id"], "The water connection's number."),
+                 "Description": V(pt["desc"], "Where."),
+                 "SubscriberID": V(CUSTOMER_NO[key], "The subscriber's customer number with the utility (D31 point "
+                                                     "5)."),
+                 "SubscriberType": V(pt["type"][0], "The kind of customer."),
+                 "SubscriberTypeCode": V(pt["type"][1], "As a code."),
+                 "TotalDeliveredQuantity": qty(w, "MTQ", "Delivered in the account year."),
+                 "Address": address(hh),
+                 "UtilityMeter": {"MeterNumber": V(pt["meter"][0], "The water meter."),
+                                  "MeterName": V(pt["meter"][1], "Its name."),
+                                  "MeterConstant": V("1", "The register is read as it is."),
+                                  "MeterConstantCode": V("DIRECT", "Why: direct connection."),
+                                  "TotalDeliveredQuantity": qty(w, "MTQ", "Delivered in the account year."),
+                                  "MeterReading": annual_reading(pt["meter"][0], "MTQ", 1674, 1674 + w,
+                                                                 "The difference of the readings."),
+                                  "MeterProperty": [{"Name": V("Accuracy class", "A property of the meter."),
+                                                     "NameCode": V("ACC", "As a code."),
+                                                     "Value": V("1", "Class 1."),
+                                                     "ValueQualifier": V("Calibrated 2024", "When it was checked.")},
+                                                    {"Name": V("Permanent flow rate (Q3)", "A rating of the meter: "
+                                                               "the flow it measures continuously within its "
+                                                               "accuracy class (utilities/08#F14)."),
+                                                     "ValueQuantity": qty("2.5", "MQH", "Its value.")}]}},
+             "OnAccountPayment": on_account(w, "MTQ", ("water", "sewage-levy"), "water and the city's levy"),
+             "SupplierConsumption": parts}
+    # the heat: one supplier, the water company, which runs the district heating
+    heat_rows = [(k, r) for k, r in enumerate(rows) if r["item"] in ("district-heat", "heat-cooling-correction")]
+    rule = kit.tax_rule(sup, hh, "district-heat")
+    heat_amt = sum(money(Decimal(str(r["qty"])) * Decimal(str(r.get("unit_price", ITEM[r["item"]]["price"]
+                                                                    ["amount"]))), cur) for _, r in heat_rows)
+    heat_tax = money(heat_amt * Decimal(str(rule[1])) / 100, cur)
+    c = HOUSEHOLD["cooling"]
+    corr_amt = money(h * HEAT_CORRECTION, cur)
+    heat_price = Decimal(str(ITEM["district-heat"]["price"]["amount"]))
+    heat_report = {"ID": V(f"{pt['id']}-H-2526", "The heat report of the account year."),
+                   "ConsumptionType": V("Yearly consumption", "What is reported."),
+                   "ConsumptionTypeCode": V("YEAR", "As a code."),
+                   "TotalConsumedQuantity": qty(h, "MWH", "Heat used in the account year."),
+                   "ResidentOccupantsNumeric": V("2", "People living in the flat."),
+                   "ConsumersEnergyLevelCode": V("LOW", "Below the average heat use of a flat of its size on the "
+                                                        "network (utilities/08#F4)."),
+                   "ConsumersEnergyLevel": V("Low consumer", "In words."),
+                   "Period": year_period("The account year."),
+                   "ConsumptionHistory": {"MeterNumber": V("CSW-H-71844", "The heat meter."),
+                                          "Quantity": qty(HOUSEHOLD["previous"]["heat"], "MWH", "Last year's heat."),
+                                          "Amount": amount(HOUSEHOLD["previous"]["heat"] * heat_price, cur, "What it "
+                                                           "cost at the tariff, without tax."),
+                                          "Period": {"StartDate": V("2024-04-01", "Last year's account year."),
+                                                     "EndDate": V("2025-03-31", "Its end.")}}}
+    heat = {"ConsumptionID": V(f"{pt['id']}-H-2526", "The district heat of the account year."),
+            "SpecificationTypeCode": V("DETAILED", "A detailed specification."),
+            "Note": V("District heat", "The subscription."),
+            "TotalMeteredQuantity": qty(h, "MWH", "Metered in the account year."),
+            "UtilityConsumptionPoint": {
+                "ID": V(f"{pt['id']}-H", "The flat's connection to the district heating."),
+                "Description": V(f"{pt['desc']}, district heating", "Where."),
+                "SubscriberID": V(CUSTOMER_NO[key], "The subscriber's customer number with the utility."),
+                "SubscriberType": V(pt["type"][0], "The kind of customer."),
+                "SubscriberTypeCode": V(pt["type"][1], "As a code."),
+                "TotalDeliveredQuantity": qty(h, "MWH", "Delivered in the account year."),
+                "Address": address(hh),
+                "UtilityMeter": {"MeterNumber": V("CSW-H-71844", "The flat's heat meter."),
+                                 "MeterName": V("Heat meter, flat", "Its name."),
+                                 "MeterConstant": V("1", "The register is read as it is."),
+                                 "MeterConstantCode": V("DIRECT", "Why: direct connection."),
+                                 "TotalDeliveredQuantity": qty(h, "MWH", "Delivered in the account year."),
+                                 "MeterReading": annual_reading("CSW-H-71844", "MWH", "41.2", f"{Decimal('41.2') + h}",
+                                                                "The difference of the readings.")}},
+            "OnAccountPayment": on_account(h, "MWH", ("district-heat",), "district heat"),
+            # one supplier: consumption only, so no consumption lines (O107); the heat and its correction are the
+            # invoice's lines 3 and 4
+            "Consumption": {
+                "UtilityStatementTypeCode": V("HEAT", "The kind of supply."),
+                "MainPeriod": year_period("The account year."),
+                "TaxTotal": {"TaxAmount": amount(heat_tax, cur, f"{rule[1]} % sales tax on the heat."),
+                             "TaxSubtotal": {"TaxableAmount": amount(heat_amt, cur, "The heat and its correction."),
+                                             "TaxAmount": amount(heat_tax, cur, f"{rule[1]} % of it."),
+                                             "TaxCategory": kit.tax_category(rule)}},
+                "EnergyWaterSupply": {
+                    "ConsumptionReport": heat_report,
+                    "EnergyWaterConsumptionCorrection": {
+                        "CorrectionType": V("District heating cooling correction", "The return water came back too "
+                                                                                   "warm: the network pumped more "
+                                                                                   "water for the heat."),
+                        "CorrectionTypeCode": V("COOL", "As a code."),
+                        "MeterNumber": V("CSW-H-71844", "The heat meter, which also measures the temperatures."),
+                        "ActualTemperatureReductionQuantity": qty(c["actual"], "CEL", "The water cooled by this much "
+                                                                                    "in the flat, on average."),
+                        "NormalTemperatureReductionQuantity": qty(c["normal"], "CEL", "The network's standard "
+                                                                                    "cooling."),
+                        "DifferenceTemperatureReductionQuantity": qty(c["actual"] - c["normal"], "CEL", "Degrees "
+                                                                                                     "short."),
+                        "Description": V(f"Poor cooling makes the network pump more water: {c['per_degree']} per MWh "
+                                         "for each degree short of the standard.", "Why and how."),
+                        "CorrectionUnitAmount": amount(HEAT_CORRECTION, cur, "Per MWh: the rate per degree times the "
+                                                                             "degrees short."),
+                        "ConsumptionEnergyQuantity": qty(h, "MWH", "The year's heat the correction applies to "
+                                                                   "(the district-heating element, D31 point 1)."),
+                        "ConsumptionWaterQuantity": qty(c["water_m3"], "MTQ", "The network water that passed the flat "
+                                                                             "in the year."),
+                        "CorrectionAmount": amount(corr_amt, cur, "The unit amount times the year's heat: line 4 "
+                                                                  "of the settlement bill.")}},
+                "LegalMonetaryTotal": {"LineExtensionAmount": amount(heat_amt, cur, "The heat and its correction."),
+                                       "PayableAmount": amount(heat_amt + heat_tax, cur, "With the sales tax.")}}}
+    out["MainOnAccountPayment"] = {
+        "EstimatedConsumedQuantity": qty(w, "MTQ", "The year's estimate of water; the heat's estimate is with its "
+                                                   "subscription: UBL gives an on-account payment one quantity "
+                                                   "(O107)."),
+        "Note": V(f"The one monthly direct debit for water, levy and heat from April 2026: {NEW_ON_ACCOUNT} lume, a "
+                  "twelfth of the year's estimate rounded up to a whole lume; it was "
+                  f"{ON_ACCOUNT} lume.", "What the household pays from now on."),
+        "PaymentTerms": {"Note": V("Collected by direct debit on the first working day of each month.",
+                                   "How it is paid."),
+                         "Amount": amount(NEW_ON_ACCOUNT, cur, "The monthly payment on account."),
+                         "ValidityPeriod": {"StartDate": V("2026-04-01", "From April."),
+                                            "EndDate": V("2027-03-31", "To the next annual reading.")}}}
+    out["Signature"] = {"ID": V("CSW-SIG-26-0401", "The water company's seal."), "SignatoryParty": party(sup,
+                                                                                                       short=True)}
+    out["SubscriberConsumption"] = [water, heat]
+    return out
 
 
 FEBRUARY = {"InvoicePeriod": {"StartDate": V("2026-02-01", "The month corrected: February."),
@@ -3196,8 +3487,7 @@ BILLS = {"33-xu": [{"item": "electricity", "qty": 412800, "invoice_why": "The fa
                     "line_extra": {**FEBRUARY, **WAREHOUSE_LINE}}],
          "34-xb:26-xb": [{"item": "water", "qty": 86, "invoice_why": "The shop's metered consumption in March.",
                           "line_extra": MARCH}, levy(86, "shop")],
-         "34-xb:c-xb": [{"item": "water", "qty": 14, "invoice_why": "The household's metered consumption in March.",
-                         "line_extra": MARCH}, levy(14, "household")],
+         "34-xb:c-xb": household_rows(),
          "35-xl": [{"item": "telecom-line", "qty": 6, "invoice_why": "Six business lines for the month."},
                    {"item": "telecom-data", "qty": 31, "invoice_why": "Mobile data of the data pool beyond the "
                                                                        "subscriptions, used on the island."},
@@ -3210,7 +3500,8 @@ METERS = {"33-xu": ["FE-C-0047120", ("FG-E-20388", "Factory, main connection"),
                                                                                        "line"),
                     ("FG-E-20523", "Warehouse of Castrano Logistics")],
           "34-xb:26-xb": ["CSW-C-260118", ("CSW-W-55102", "Shop, Lumeport"), None],
-          "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57"), None],
+          "34-xb:c-xb": ["CSW-C-311790", ("CSW-W-71844", "Gull Lane 57, water"), None,
+                         ("CSW-H-71844", "Gull Lane 57, district heat"), ("CSW-H-71844", "Gull Lane 57, district heat")],
           "35-xl": ["ST-C-1077", ("ST-L-BUS6", "Six business lines"), ("ST-D-0042", "Mobile data pool"),
                     ("ST-D-0042", "Mobile data pool, roaming in Bayvarra")]}
 
@@ -3450,6 +3741,8 @@ def utility_statement(f, n, doc, key, invoice_no):
                                            "DocumentDescription": V("Prices per unit and the terms of supply.",
                                                                     "What it holds.")},
            "CustomerParty": {"Party": party(customer, short=True)}}
+    if key == "34-xb:c-xb":                        # the household's annual account (D31 point 1)
+        return annual_statement(f, doc, key, out)
     if (sup, subscriber) not in POINTS:            # the telecom company: lines, calls and data
         out["SubscriberConsumption"] = telecom_consumption(f, sup, key, customer)
         return out
@@ -3881,8 +4174,11 @@ def utilities(n, doc):
                 **utility_statement(f, n, doc, key, invoice_no)}
     if doc["doc"] == "Invoice":
         key = bill_key(doc)
-        out = kit.invoice(f, n, doc, 1, "The monthly bill, issued on the first day of the next month.", {},
-                          BILLS[key], key=f"invoice-{key}", extra=MARCH, terms="utility")
+        annual = key == "34-xb:c-xb"
+        out = kit.invoice(f, n, doc, 1, "The settlement bill of the household's account year, issued with the annual "
+                                        "statement." if annual else "The monthly bill, issued on the first day of the "
+                                                                    "next month.", {},
+                          BILLS[key], key=f"invoice-{key}", extra=ACCOUNT_YEAR if annual else MARCH, terms="utility")
         purpose = {"33-xu": ("ELEC", "an electricity bill"), "35-xl": ("PHON", "a telephone bill")}.get(
             key, ("WTER", "a water bill"))
         meters = METERS[key]
@@ -3890,7 +4186,7 @@ def utilities(n, doc):
                                     "Description": V("Supply contract", "What the number is.")}
         for line, meter, bill in zip(out["InvoiceLine"], meters[1:], BILLS[key]):
             code, what = ("GASB", "a gas bill") if ITEM[bill["item"]].get("utility") == "gas" or "gas" in bill["item"] \
-                else purpose
+                else ("UBIL", "a utility bill, the district heat") if "heat" in bill["item"] else purpose
             line["PaymentPurposeCode"] = V(code, f"What the payment of this line is for, as an ISO 20022 purpose: "
                                                  f"{what}.")
             if meter:
@@ -3918,7 +4214,6 @@ def utilities(n, doc):
                     "MandateTypeCode": V("RCUR", "A mandate for repeated collections."),
                     "MaximumPaidAmount": amount(m["max"], "XBL", "The most the company may collect at a time."),
                     "SignatureID": V(f"SIG-{m['id']}", "The reference of the signature on the mandate."),
-                    "PayerParty": party("c-xb", short=True),
                     "PayerFinancialAccount": kit.account("c-xb", "The household's account the bill is collected "
                                                                  "from."),
                     "ValidityPeriod": {"StartDate": V(m["signed"], "Signed when the household moved in.")},
@@ -3931,6 +4226,20 @@ def utilities(n, doc):
             out["PaymentTerms"]["Note"] = V("21 days net from the bill. Collected by direct debit on that day.",
                                             "The Trade Accord's utility term, and how the household pays: by the "
                                             "direct debit of its mandate.")
+            # the year billed, less the twelve payments on account; the balance is collected (D31 point 1)
+            lmt = out["LegalMonetaryTotal"]
+            gross = Decimal(lmt["TaxInclusiveAmount"].value)
+            balance = gross - PAID_ON_ACCOUNT
+            assert balance > 0, "a year that cost less than was paid is refunded, not collected"
+            lmt["PrepaidAmount"] = amount(PAID_ON_ACCOUNT, "XBL", f"The twelve payments on account of {ON_ACCOUNT} "
+                                                                  "lume collected from April 2025 to March 2026.")
+            lmt["PayableAmount"] = amount(balance, "XBL", "The balance of the year, collected by direct debit.")
+            out["PrepaidPayment"] = {"ID": V(f"CSW-OA-{CUSTOMER_NO[key][-6:]}-2526", "The household's payments on "
+                                                                                   "account of the account year."),
+                                     "PaidAmount": amount(PAID_ON_ACCOUNT, "XBL", f"12 × {ON_ACCOUNT}."),
+                                     "PaidDate": V("2026-03-02", "The last of them, on the first working day of "
+                                                                 "March.")}
+            f.numbers[f"invoice-{key}-amount"] = balance
         return out
     if doc["doc"] == "RemittanceAdvice":
         purpose = {"33-xu": ("ELEC", "an electricity bill, the larger part of the bill paid"),
@@ -3968,15 +4277,21 @@ def utilities(n, doc):
                              "TaxSubtotal": {"TaxableAmount": amount(Decimal("5.00"), cur, "The fee."),
                                              "TaxAmount": amount(0, cur, "No tax: the fee is outside the scope "
                                                                          "of the sales tax."),
-                                             "TaxCategory": {"ID": V("O", "A reminder fee is compensation, not a "
-                                                                          "supply: outside the scope of the sales "
-                                                                          "tax."),
-                                                             "TaxExemptionReason": V("Compensation for late payment",
-                                                                                     "Why no tax."),
+                                             "TaxCategory": {"ID": V("O", "A fee for a returned direct debit is "
+                                                                          "compensation, not a supply: outside the "
+                                                                          "scope of the sales tax."),
+                                                             "TaxExemptionReason": V("Fee for a returned direct debit, "
+                                                                                     "outside the scope of the sales "
+                                                                                     "tax", "Why no tax: the same "
+                                                                                     "charge as the fee line "
+                                                                                     "(utilities/10#F8)."),
                                                              "TaxScheme": {"ID": V("STT", "UN/EDIFACT 5153 code of "
                                                                                          "the state sales tax.")}}}},
                 "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer, how the household "
                                                              "is asked to pay.", listID="UN/EDIFACT EDED 4461"),
+                                 "PaymentID": V(kit.rf_reference(f.numbers[f"invoice-{key}"]), "The reference to quote: "
+                                                "the settlement bill's, so the transfer is matched to it "
+                                                "(utilities/10#F7)."),
                                  "PayeeFinancialAccount": kit.account(doc["from"], "The utility's account, where the "
                                                                                    "overdue amount is to be paid.")},
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(due + Decimal("5.00"), cur, "The bill and the "
@@ -3995,9 +4310,7 @@ def utilities(n, doc):
                                      "IssueDate": V(f.numbers[f"invoice-{key}-date"], "Its issue date.")}}},
                                  {"ID": V("2", "The reminder fee."),
                                   "DebitLineAmount": amount(Decimal("5.00"), cur, "The fee for a returned direct "
-                                                                                  "debit, as the terms set."),
-                                  "Amount": amount(Decimal("5.00"), cur, "The fee charged."),
-                                  }]}
+                                                                                  "debit, as the terms set.")}]}
     raise SystemExit(f"utilities scenario: no document {n} {doc['doc']}")
 
 
@@ -8527,7 +8840,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     pm = out.get("PaymentMeans")
     if isinstance(pm, dict) and isinstance(pm.get("PaymentMandate"), dict):
-        pm["PaymentMandate"]["MaximumPaymentInstructionsNumeric"] = V("12", "At most one collection a month.")
+        pass        # an open-ended recurring mandate has no limit of instructions (utilities/09#F3)
     return {}
 
 
@@ -9047,7 +9360,7 @@ def _(f, n, doc, out):
         levy_line["BeneficiaryParty"] = party("2-xb", short=True)
         out["InvoiceLine"] = lines
         out["CollectionInvoiceLine"] = levy_line
-        out["LineCountNumeric"] = V("2", "The number of lines: one invoice line for the water and one collection line "
+        out["LineCountNumeric"] = V(str(len(lines) + 1), f"The number of lines: {len(lines)} invoice line(s) and one collection line "
                                          "for the city's levy; the totals include both.")
     if key == "33-xu":
         total = out["TaxTotal"]
@@ -9097,25 +9410,6 @@ def _(f, n, doc, out):
         it["OneTimeChargeType"] = V("Connection to the 10 kV grid, paid once in 2024", "The one-time charge of the "
                                                                                      "contract.")
         it["OneTimeChargeTypeCode"] = V("CONN", "As a code: a connection charge.")
-    if sup == "34-xb" and doc["to"] == "c-xb":
-        sc["SupplierConsumption"][0]["Consumption"]["EnergyWaterSupply"]["EnergyWaterConsumptionCorrection"] = {
-            "CorrectionType": V("District heating cooling correction", "The water company also runs the city's "
-                                                                       "district heating; the heat of the flat is "
-                                                                       "settled once a year, and the statement shows "
-                                                                       "the month's cooling correction."),
-            "CorrectionTypeCode": V("COOL", "As a code."),
-            "MeterNumber": V("CSW-H-71844", "The heat meter of the flat."),
-            "ConsumptionWaterQuantity": qty(Decimal("6.2"), "MTQ", "District heating water that passed the flat "
-                                                                   "in March."),
-            "ActualTemperatureReductionQuantity": qty(31, "CEL", "The water cooled by 31 degrees in the flat."),
-            "NormalTemperatureReductionQuantity": qty(35, "CEL", "The network's standard cooling."),
-            "DifferenceTemperatureReductionQuantity": qty(-4, "CEL", "Four degrees less than the standard."),
-            "CorrectionUnitAmount": amount(Decimal("0.80"), "XBL", "The surcharge per cubic metre per degree "
-                                                                   "short."),
-            "CorrectionAmount": amount(Decimal("19.84"), "XBL", "6.2 m³ × 4 degrees × 0.80: added to the annual "
-                                                                "heating account, not to this bill."),
-            "Description": V("Poor cooling makes the network pump more water; the shortfall is charged on the "
-                             "annual account.", "Why.")}
     if sup == "35-xl":
         disc = bundle_discount()
         cons = sc["Consumption"]
@@ -9780,13 +10074,29 @@ def _(f, n, doc, out):
 def utilities_complete(n, doc):
     f = UTILITIES
     if doc["doc"] == "CreditNote":
-        rows = [{"item": "water", "qty": 2, "why": "Two cubic metres the meter over-read in March."},
+        rows = [{"item": "water", "qty": 2, "why": "Two cubic metres the water meter CSW-W-71844 over-read at the "
+                                                   "annual reading of 31 March."},
                 {"item": "sewage-levy", "qty": 2, "why": "The city's levy on them."}]
         out = kit.credit_note(f, n, doc, 34, "Issued when the meter test was in.", rows,
                               {"BillingReference": {"InvoiceDocumentReference": {
                                   "ID": V(f.numbers["invoice-34-xb:c-xb"], "The March bill corrected."),
                                   "IssueDate": V(f.numbers["invoice-34-xb:c-xb-date"], "Its issue date.")}},
-                               "Note": V("The meter test found the meter over-reading by two cubic metres.", "Why.")})
+                               "InvoicePeriod": {"StartDate": V("2025-04-01", "The account year the settlement "
+                                                                              "bill billed."),
+                                                 "EndDate": V("2026-03-31", "Its end, the annual reading.")},
+                               "Note": V("The test of water meter CSW-W-71844 found it over-reading by two cubic "
+                                         "metres at the annual reading of 31 March: the year used 168 m³, not 170.",
+                                         "Why (utilities/11#F3).")})
+        bill = f.numbers["invoice-34-xb:c-xb"]
+        credit = Decimal(out["LegalMonetaryTotal"]["PayableAmount"].value)
+        open_ = f.numbers["invoice-34-xb:c-xb-amount"]
+        out["PaymentTerms"] = {"Note": V(f"Set off against the balance of the settlement bill {bill}, still open after "
+                                         f"the returned direct debit: {open_} less {credit} leaves {open_ - credit} "
+                                         "due, with the reminder's fee.", "How the credit is settled "
+                                                                          "(utilities/11#F5).")}
+        for ln, k in zip(out["CreditNoteLine"], ("1", "2")):
+            ln["BillingReference"] = {"InvoiceDocumentReference": {"ID": V(bill, "The settlement bill.")},
+                                      "BillingReferenceLine": {"ID": V(k, "The line credited.")}}
         levy = out["CreditNoteLine"].pop(1)
         levy["CollectedForParty"] = party("2-xb", short=True)
         levy["Note"] = V("The city's levy, credited for the city.", "Why it is a collection line.")
@@ -10016,9 +10326,9 @@ def energy(n, doc):
                                                                                  "corrected for the pressure."),
                                 "Description": V(f"{g['m3']} m³ at line pressure × {g['factor']} (pressure) = {vn} "
                                                  f"m³ at standard conditions, × {g['cv']} kWh/m³ (calorific value "
-                                                 f"of March) = {g['kwh']} kWh.", "The conversion."),
-                                "ConsumptionEnergyQuantity": qty(g["kwh"], "KWH", "The energy, which the retail "
-                                                                                  "company bills.")}},
+                                                 f"of March) = {g['kwh']} kWh.", "The conversion, whose result "
+                                                                                     "is the consumption report's "
+                                                                                     "energy.")}},
                         "LegalMonetaryTotal": network_gas_total(doc)}}}
     if d == "Invoice" and doc["from"] == "44-xu":
         out = kit.invoice(f, n, doc, 1, "The month's network charges, billed the morning after the meters were read, "

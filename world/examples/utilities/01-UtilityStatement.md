@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Electricity, water and telecom (one utility in each country)" · [Utility Statement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA)*
 
-The factory's monthly electricity consumption: meter readings and consumption per connection, in the energy and water supply structure.
+The factory's monthly electricity consumption: meter readings and consumption at its main connection, with Ferrano Energy's energy and Ferrano Grid's network charges as the two suppliers of the bill's tariff.
 
 [The XML file](01-UtilityStatement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

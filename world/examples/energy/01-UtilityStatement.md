@@ -262,9 +262,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/GasPressureQuantity` = **4** (unitCode `BAR`)  
   The meter runs at 4 bar above the atmosphere: the gas is compressed, so the volume is corrected for the pressure.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/Description` = **1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.**  
-  The conversion.
-- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity` = **61200** (unitCode `KWH`)  
-  The energy, which the retail company bills.
+  The conversion, whose result is the consumption report's energy.
 - `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **116280** (currencyID `XUF`)  
   61200 kWh at the gas network tariff of 1.9 ferra: line 3 of the network invoice.
 - `Consumption/LegalMonetaryTotal/TaxExclusiveAmount` = **116280** (currencyID `XUF`)  
@@ -455,7 +453,6 @@ Inside `SubscriberConsumption`:
           <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
           <cbc:GasPressureQuantity unitCode="BAR">4</cbc:GasPressureQuantity>
           <cbc:Description>1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.</cbc:Description>
-          <cbc:ConsumptionEnergyQuantity unitCode="KWH">61200</cbc:ConsumptionEnergyQuantity>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>

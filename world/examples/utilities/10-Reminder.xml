@@ -148,43 +148,6 @@
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
-        <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB64BLUM38010007251840</cbc:ID>
-          <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:FinancialInstitutionBranch>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
-            <cbc:Name>Main branch, Exchange Street</cbc:Name>
-            <cac:FinancialInstitution>
-              <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-              <cbc:Name>Bank of Lumeport</cbc:Name>
-              <cac:Address>
-                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-                <cbc:StreetName>Exchange Street</cbc:StreetName>
-                <cbc:BuildingNumber>48</cbc:BuildingNumber>
-                <cbc:CityName>Lumeport</cbc:CityName>
-                <cbc:PostalZone>38523</cbc:PostalZone>
-                <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-                <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                  <cbc:Name>Bayvarra</cbc:Name>
-                </cac:Country>
-              </cac:Address>
-            </cac:FinancialInstitution>
-            <cac:Address>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitutionBranch>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
@@ -198,6 +161,7 @@
   </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentID schemeID="ISO 11649">RF46CSWCINV260319</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM38010004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>
@@ -247,7 +211,7 @@
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReason>Compensation for late payment</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Fee for a returned direct debit, outside the scope of the sales tax</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -255,15 +219,15 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">43.78</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">43.78</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">146.20</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">146.20</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The direct debit of 23 April was returned.</cbc:Note>
     <cbc:UUID>4551969c-5ba6-519a-a531-cc362de15d58</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">38.78</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">141.20</cbc:DebitLineAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">WTER</cbc:PaymentPurposeCode>
     <cac:ReminderPeriod>
       <cbc:StartDate>2026-04-23</cbc:StartDate>
@@ -280,6 +244,5 @@
     <cbc:Note>The fee for the returned direct debit.</cbc:Note>
     <cbc:UUID>d00e70a0-d7c3-5fb5-ac47-8f037a876e63</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XBL">5.00</cbc:DebitLineAmount>
-    <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
   </cac:ReminderLine>
 </Reminder>

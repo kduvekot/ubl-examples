@@ -522,6 +522,16 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 |---|---|---|---|---|---|
 | `TelecommunicationsSupplyLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
 
+> C93, D31 points 1 and 7: the household's annual account. The meter reader reads the meters once a year, so the reading website and its password go (D31 point 7); the open-ended recurring mandate has no limit of instructions (09#F3) and names no payer besides the debtor (09#F4); the household's account appears only in the mandate that collects from it, not again in its party block, nor in the credit note, which is set off (09#F7, 11#F5); the reminder's fee line states its amount once (10#F10).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionPoint/WebSiteAccess` | 0..1 | utilities/08-UtilityStatement | | | open |
+| `PaymentMandate/MaximumPaymentInstructionsNumeric` | 0..1 | utilities/09-Invoice | | | open |
+| `PaymentMandate/PayerParty` | 0..1 | utilities/09-Invoice | | | open |
+| `Person/FinancialAccount` | 0..1 | utilities/09-Invoice, utilities/11-CreditNote | | | open |
+| `ReminderLine/Amount` | 0..1 | utilities/10-Reminder | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
