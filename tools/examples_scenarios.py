@@ -7891,6 +7891,9 @@ SCENARIOS["tender"] = _with_enrichment("tender", tender_with_credit)
 PWD, BOARD, INFO = "2-xb", "28-xb", "21-xb"
 EST_BENCHES = Decimal(TENDER_QTY) * Decimal("499.00")
 EST_INSTALL = Decimal(TENDER_QTY) * Decimal("18.00")
+TENDER_ESTIMATE = Decimal("124800")     # the department's own estimate for the two years (D28 point 2)
+TURNOVER_MIN = 2 * TENDER_ESTIMATE / 2  # twice the yearly estimate of 62,400 (D28 point 2)
+BRACKENMERE_TURNOVER_2024 = Decimal("6410000.00")   # its accounts for 2024 (D29 point 6)
 
 
 def lot_ref(lot):
@@ -8438,9 +8441,114 @@ def _(f, n, doc, out):
 
 @enrich("tender", "QualificationApplicationRequest")
 def _(f, n, doc, out):
-    prop = lambda pid, name, kind, **x: {"ID": V(pid, "The property."), "Name": V(name, "Its name."),
-                                         "Description": V(f"Answer: {name.lower()}.", "What is asked."),
-                                         "TypeCode": V(kind, "Question or requirement."), **x}
+    """The self-declaration asks exactly what the notices and the call announce, each limit once and in the element
+    of its data type (D29 point 11; tender/06#F4 to F8, F13 to F16): the exclusion grounds, enrolment in a register,
+    years in business, the yearly turnover, staff, three similar supplies, certified timber, and a group's shares."""
+    def prop(pid, name, what, dtype, **x):
+        return {"ID": V(pid, "The question."), "Name": V(name, "Its name."), "Description": V(what, "What to answer."),
+                "TypeCode": V("QUESTION", "A question the tenderer answers (tender/06#F15)."),
+                "ValueDataTypeCode": V(dtype, "The kind of answer it takes."), **x}
+
+    def crit(cid, kind, name, what, props, **x):
+        return {"ID": V(cid, "The criterion."), "CriterionTypeCode": V(kind, "Its kind."),
+                "Name": V(name, "The criterion."), "Description": V(what, "What it asks."),
+                "EvaluationMethodTypeCode": V("PASSFAIL", "Met or not; the request states no fulfilment, since "
+                                                          "nobody has answered yet (tender/06#F5)."),
+                **x,
+                "TenderingCriterionPropertyGroup": {
+                    "ID": V(f"PG-{cid[3:]}", "The questions of the criterion."),
+                    "PropertyGroupTypeCode": V("ON", "Always answered: no indicator comes before it (tender/06#F14)."),
+                    "Description": V(f"The questions on {name[0].lower() + name[1:]}.", "What the group asks."),
+                    **({"FulfilmentIndicatorTypeCode": V("ALL", "Both questions must be answered and met.")}
+                       if isinstance(props, list) else {}),
+                    "TenderingCriterionProperty": props}}
+    act = lambda art, what: {"ID": V("XB-PPA-2019", "Bayvarra's Public Procurement Act."),
+                             "Title": V("Public Procurement Act", "Its title."), "Description": V(what, "What."),
+                             "Article": V(art, "The article.")}
+    convictions = contest_exclusion_criteria()[0]
+    taxes = crit("CR-TAXES", "EXCLUSION", "Payment of taxes and social security contributions",
+                 "A tenderer that has not paid its taxes or social security contributions is excluded, unless only "
+                 "minor amounts are unpaid.",
+                 prop("P-TAXES-1", "Unpaid taxes and contributions", "The amount of taxes and social security "
+                      "contributions due and unpaid.", "AMOUNT", ValueCurrencyCode=V("XBL", "In lume."),
+                      MaximumAmount=amount(Decimal("1000"), "XBL", "Arrears up to 1,000 lume count as minor amounts "
+                                                                  "and do not exclude the tenderer.")),
+                 Legislation=act("Art. 57", "Exclusion grounds; the exception for minor amounts."))
+    register = crit("CR-REGISTER", "SUITABILITY", "Enrolment in a business register",
+                    "The tenderer is entered in the business register of the country where it is established.",
+                    prop("P-REGISTER-1", "Registered in a business register", "Whether the tenderer is entered in "
+                         "a business register.", "INDICATOR",
+                         ExpectedIndicator=V("true", "Only one answer meets the criterion: yes."),
+                         ExpectedDescription=V("Entered in the national business register of the tenderer's "
+                                               "country.", "What a yes means; the register's address goes to the "
+                                               "evidence, not to an expected identifier (tender/06#F7)."),
+                         TranslationTypeCode=V("NONE", "An extract in another language is accepted as it is."),
+                         CertificationLevelDescription=V("A plain extract will do.", "The level."),
+                         CopyQualityTypeCode=V("COPY", "A copy is enough.")),
+                    Legislation=act("Art. 58", "Selection criteria: suitability to pursue the activity."))
+    years = crit("CR-YEARS", "ECONOMIC", "Years in business",
+                 "At least three full years in business, as the notices ask.",
+                 prop("P-YEARS-1", "Years in business", "The full years since the tenderer was founded.",
+                      "QUANTITY", ValueUnitCode=V("ANN", "Years."),
+                      MinimumQuantity=qty(3, "ANN", "At least three years, stated once, as a quantity "
+                                                    "(tender/06#F16).")))
+    turnover = crit("CR-TURNOVER", "ECONOMIC", "Yearly turnover",
+                    f"A yearly turnover of at least {TURNOVER_MIN:,} lume, twice the yearly estimate of "
+                    f"{TENDER_ESTIMATE / 2:,.0f} lume, in the last financial year for which accounts are filed.",
+                    prop("P-TURNOVER-1", "Yearly turnover", "The turnover of the last financial year for which "
+                         "accounts are filed.", "AMOUNT", ValueCurrencyCode=V("XBL", "In lume."),
+                         MinimumAmount=amount(TURNOVER_MIN, "XBL", "At least, as in the notices: greater than or "
+                                                                   "equal (D28 point 2, tender/06#F13)."),
+                         ApplicablePeriod={"StartDate": V("2024-01-01", "The last financial year whose accounts "
+                                                                        "are filed by the tender deadline"),
+                                           "EndDate": V("2024-12-31", "(accounts for 2025 are filed from April).")},
+                         TemplateEvidence={"ID": V("EV-ACC", "The evidence asked."),
+                                           "Name": V("Annual accounts", "Evidence.")}),
+                    ProcurementProjectLotReference=lot_ref("LOT-1"),
+                    CommodityClassification={"ItemClassificationCode": V("38111", "The benches, as a subclass of "
+                                                                                  "the UN Central Product "
+                                                                                  "Classification: seats with metal "
+                                                                                  "frames.")},
+                    Legislation={**act("Art. 58", "Selection criteria: economic and financial standing."),
+                                 "JurisdictionLevel": V("National", "The level."),
+                                 "URI": V("https://law.bayvarra.example/ppa", "Where."),
+                                 "Language": {"ID": V("en", "English.")},
+                                 "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V("XB",
+                                                                                                    "Bayvarra.")}}})
+    staff = crit("CR-STAFF", "TECHNICAL", "Staff", "At least ten employees, as the notices ask.",
+                 prop("P-STAFF-1", "Employees", "The number of persons employed.", "QUANTITY",
+                      ValueUnitCode=V("IE", "Persons."), MinimumQuantity=qty(10, "IE", "At least ten.")))
+    references = crit("CR-REFERENCES", "TECHNICAL", "Similar supplies",
+                      "Three supplies of park benches or similar street furniture in the last five years, as the "
+                      "notices ask.",
+                      [prop("P-REFERENCES-1", "The supplies", "Each supply: the customer, the year, what was "
+                            "supplied and its value.", "DESCRIPTION"),
+                       prop("P-REFERENCES-2", "Number of supplies", "How many such supplies.", "QUANTITY",
+                            ValueUnitCode=V("EA", "Supplies."), MinimumQuantity=qty(3, "EA", "At least three."))])
+    timber = crit("CR-TIMBER", "TECHNICAL", "Certified timber",
+                  "The slats come from forests managed for regrowth, with a forestry certificate valid for the "
+                  "contract, as the call asks.",
+                  prop("P-TIMBER-1", "Forestry certificate", "Whether the timber of the slats is covered by a "
+                       "forestry certificate valid for the two years of the contract.", "INDICATOR",
+                       ExpectedIndicator=V("true", "Only one answer meets the criterion: yes.")),
+                  Legislation=act("Art. 70", "Environmental requirements of the specification (XB-ENV-2021 "
+                                             "art. 12)."))
+    group = {"ID": V("CR-GROUP", "The criterion on the tenderer's composition."),
+             "CriterionTypeCode": V("SUITABILITY", "Who tenders."),
+             "Name": V("Tendering as a group", "The criterion."),
+             "Description": V("A group of tenderers names its members and the share of each (tender/06#F4).", "What."),
+             "EvaluationMethodTypeCode": V("PASSFAIL", "Answered or not."),
+             "TenderingCriterionPropertyGroup": {
+                 "ID": V("PG-GROUP", "The question whether a group tenders."),
+                 "PropertyGroupTypeCode": V("ON", "Always answered."),
+                 "TenderingCriterionProperty": prop("P-GROUP-1", "A group", "Whether the tenderer tenders as a "
+                                                    "member of a group.", "INDICATOR"),
+                 "SubsidiaryTenderingCriterionPropertyGroup": {
+                     "ID": V("PG-GROUP-1", "The questions for a group."), "Name": V("Group", "Name."),
+                     "PropertyGroupTypeCode": V("ONTRUE", "Answered only when the indicator before it is yes: a "
+                                                          "group tenders (tender/06#F14)."),
+                     "TenderingCriterionProperty": prop("P-GROUP-2", "Share in the group", "The share of the "
+                                                        "work of each member, in per cent.", "PERCENT")}}}
     return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
             "VersionID": V("1", "The first version."),
             "ProcedureCode": V("OPEN", "An open procedure."),
@@ -8453,91 +8561,7 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders, sent with this "
                                                                       "request (tender/06#F1).")},
             "Signature": seal(PWD, "PWD-SIG-QAR"),
-            "TenderingCriterion": [{
-                "ID": V("CR-TURNOVER", "The turnover criterion."), "CriterionTypeCode": V("ECONOMIC", "Its kind."),
-                "Name": V("General yearly turnover", "The criterion."),
-                "Description": V("Turnover of the last three years.", "What."),
-                "FulfilmentIndicator": V("true", "Must be met."),
-                "FulfilmentIndicatorTypeCode": V("ALL", "All its properties."),
-                "EvaluationMethodTypeCode": V("PASSFAIL", "Pass or fail."),
-                "ProcurementProjectLotReference": lot_ref("LOT-1"),
-                "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a subclass of the UN Central Product Classification: seats with metal frames.")},
-                "SubTenderingCriterion": {"ID": V("CR-TURNOVER-A", "The average."), "Name": V("Average turnover",
-                                                                                             "Name.")},
-                "Legislation": {"ID": V("XB-PPA-2019", "The act."), "Title": V("Public Procurement Act", "Title."),
-                                "Description": V("Selection criteria.", "What."),
-                                "JurisdictionLevel": V("National", "The level."), "Article": V("Art. 58", "The "
-                                                                                                         "article."),
-                                "URI": V("https://law.bayvarra.example/ppa", "Where."),
-                                "Language": {"ID": V("en", "English.")},
-                                "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
-                "TenderingCriterionPropertyGroup": {
-                    "ID": V("PG-1", "The group."), "Name": V("Turnover", "Name."), "Description": V("The figures.",
-                                                                                                  "What."),
-                    "PropertyGroupTypeCode": V("ONTRUE", "Answered when the criterion applies."),
-                    "FulfilmentIndicator": V("true", "Must be met."),
-                    "FulfilmentIndicatorTypeCode": V("ALL", "All properties."),
-                    "TenderingCriterionProperty": [
-                        prop("P-1", "Yearly turnover", "REQUIREMENT", ValueDataTypeCode=V("AMOUNT", "An amount."),
-                             ValueCurrencyCode=V("XBL", "In lume."),
-                             ExpectedAmount=amount(Decimal("250000"), "XBL", "At least."),
-                             MinimumAmount=amount(Decimal("250000"), "XBL", "The minimum."),
-                             ApplicablePeriod={"StartDate": V("2023-01-01", "The three years"),
-                                               "EndDate": V("2025-12-31", "before the tender.")},
-                             TemplateEvidence={"ID": V("EV-ACC", "Annual accounts."), "Name": V("Accounts",
-                                                                                               "Evidence.")}),
-                        prop("P-2", "Years in business", "QUESTION", ValueDataTypeCode=V("QUANTITY", "A number."),
-                             ValueUnitCode=V("ANN", "Years."), MinimumQuantity=qty(3, "ANN", "At least three."),
-                             ExpectedValueNumeric=V("3", "At least."), MinimumValueNumeric=V("3", "Minimum.")),
-                        prop("P-3", "Registered in a business register", "QUESTION",
-                             ValueDataTypeCode=V("INDICATOR", "Yes or no."), ExpectedIndicator=V("true", "Yes."),
-                             ExpectedID=V("REG", "The register."), ExpectedCode=V("REGISTERED", "The status."),
-                             ExpectedDescription=V("Entered in a national register.", "Expected."),
-                             ExpectedURI=V("https://register.bayvarra.example", "A register."),
-                             TranslationTypeCode=V("NONE", "No translation needed."),
-                             CertificationLevelDescription=V("A plain extract will do.", "The level."),
-                             CopyQualityTypeCode=V("COPY", "A copy is enough."))],
-                    "SubsidiaryTenderingCriterionPropertyGroup": {
-                        "ID": V("PG-1.1", "If a consortium."), "Name": V("Consortium", "Name."),
-                        "TenderingCriterionProperty": prop("P-4", "Share in the consortium", "QUESTION",
-                                                           ValueDataTypeCode=V("PERCENT", "A percentage."))}}},
-                                   *qualification_limits(prop)]}
-
-
-def qualification_limits(prop):
-    """Two criteria of the self-declaration with a real upper limit: the debt ratio a tenderer may have, and the
-    minor tax arrears that do not exclude it."""
-    ratio = {"ID": V("CR-DEBT", "The debt ratio criterion."), "CriterionTypeCode": V("ECONOMIC", "Its kind."),
-             "Name": V("Debt ratio", "The criterion."),
-             "Description": V("Total liabilities as a share of total assets, from the last annual accounts.", "What."),
-             "EvaluationMethodTypeCode": V("PASSFAIL", "Pass or fail."),
-             "TenderingCriterionPropertyGroup": {
-                 "ID": V("PG-2", "The group."), "PropertyGroupTypeCode": V("ONTRUE", "Answered when the criterion "
-                                                                                     "applies."),
-                 "TenderingCriterionProperty": prop(
-                     "P-5", "Liabilities as a share of total assets", "REQUIREMENT",
-                     ValueDataTypeCode=V("PERCENT", "A percentage."),
-                     MaximumQuantity=qty(80, "P1", "At most 80 %: a tenderer with more debt than that is not "
-                                                   "considered able to carry a two-year framework."),
-                     MaximumValueNumeric=V("80", "The same limit as a number, for automatic checking."),
-                     ApplicablePeriod={"StartDate": V("2025-01-01", "The last"),
-                                       "EndDate": V("2025-12-31", "financial year.")})}}
-    taxes = {"ID": V("CR-TAXES", "The exclusion ground on taxes."), "CriterionTypeCode": V("EXCLUSION", "Its kind."),
-             "Name": V("Payment of taxes and social security contributions", "The criterion."),
-             "Description": V("A tenderer that has not paid its taxes or social security contributions is excluded, "
-                              "unless only minor amounts are unpaid.", "What."),
-             "Legislation": {"ID": V("XB-PPA-2019", "The act."), "Title": V("Public Procurement Act", "Title."),
-                             "Description": V("Exclusion grounds; the exception for minor amounts.", "What."),
-                             "Article": V("Art. 57", "The article.")},
-             "TenderingCriterionPropertyGroup": {
-                 "ID": V("PG-3", "The group."), "PropertyGroupTypeCode": V("ONTRUE", "Answered when the criterion "
-                                                                                     "applies."),
-                 "TenderingCriterionProperty": prop(
-                     "P-6", "Unpaid taxes and contributions", "QUESTION",
-                     ValueDataTypeCode=V("AMOUNT", "An amount."), ValueCurrencyCode=V("XBL", "In lume."),
-                     MaximumAmount=amount(Decimal("1000"), "XBL", "Arrears up to 1,000 lume count as minor amounts "
-                                                                  "and do not exclude the tenderer."))}}
-    return [ratio, taxes]
+            "TenderingCriterion": [convictions, taxes, register, years, turnover, staff, references, timber, group]}
 
 
 def company_years(pid, on):
@@ -8558,52 +8582,95 @@ def company_turnover_lume(pid):
     return Decimal(t["amount"]) / per
 
 
+# Brackenmere's references for similar supplies (tender/07): the two of the design contest (O195) and a third.
+BRACKENMERE_SUPPLIES = [
+    "Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024: benches and "
+    "planter seats, about 38,000 lume.",
+    "Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023: 60 benches, about 41,000 lume.",
+    "Park benches for Marrowdale's town park, for Marrowdale town council, 2022: 45 benches, about 27,000 lume."]
+
+
 @enrich("tender", "QualificationApplicationResponse")
 def _(f, n, doc, out):
-    rv = {"ID": V("RV-1", "The answer."), "Description": V("Turnover 2025.", "What."),
-          "Response": V("As in the accounts.", "The answer in words."),
-          "ResponseAmount": amount(company_turnover_lume(RUNNER_UP), "XBL", "The turnover of 2025, from the "
-                                                                           "company's accounts (world/parties.json)."),
-          "ResponseBinaryObject": V(_b64.b64encode(b"Annual accounts 2025, extract.").decode(), "The extract, "
-                                                                                                "embedded.",
-                                    mimeCode="text/plain"),
-          "ResponseCode": V("MET", "The criterion is met."), "ResponseDate": V("2025-12-31", "The year's end."),
-          "ResponseID": V("BF-ACC-2025", "The accounts."), "ResponseIndicator": V("true", "Yes."),
-          "ResponseMeasure": V("12", "Months covered.", unitCode="MON"),
-          "ResponseNumeric": V(str(company_years(RUNNER_UP, out["IssueDate"].value)), "Full years in business since "
-                               f"the company was founded on {PARTY[RUNNER_UP]['identity']['legal']['founded']}."),
-          "ResponseQuantity": qty(company_years(RUNNER_UP, out["IssueDate"].value), "ANN", "Years."), "ResponseTime": V("12:00:00", "When signed."),
-          "ResponseURI": V("https://www.brackenmere.example/accounts-2025.pdf", "Where.")}
+    """Brackenmere answers every question of the request, each in the element of its kind (tender/07#F1, F4 to F7)."""
+    founded = PARTY[RUNNER_UP]["identity"]["legal"]["founded"]
+
+    def resp(cid, pid, values, **x):
+        return {"ID": V(f"CRR-{cid}", "The response."), "ValidatedCriterionPropertyID": V(pid, "The question "
+                                                                                                 "answered."),
+                **x, "ResponseValue": values}
+
+    def rv(rid, why, **x):
+        return {"ID": V(rid, "The answer."), **{k: v if isinstance(v, V) else v for k, v in x.items()}}
     return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
-            "EconomicOperatorGroupName": V("Brackenmere Furniture", "Tendering alone."),
             "VersionID": V("1", "The first version."),
             "ProcedureCode": V("OPEN", "The procedure."),
             "QualificationApplicationTypeCode": V("REGULATED", "The regulated form."),
             "WeightScoringMethodologyNote": V("Pass or fail.", "As asked."),
-            "WeightingTypeCode": V("NONE", "No weighting."), "Note": V("All criteria answered.", "The answer."),
+            "WeightingTypeCode": V("NONE", "No weighting."),
+            "Note": V("All criteria answered.", "Every question of the request has its response below."),
             "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
             "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
-            "TenderingCriterion": {"ID": V("CR-TURNOVER", "The criterion answered.")},
-            "TenderingCriterionResponse": {"ID": V("CRR-1", "The response."), "Name": V("Turnover", "Name."),
-                                           "Description": V(f"Yearly turnover of {company_turnover_lume(RUNNER_UP):,.0f} "
-                                                            "lume.", "What."),
-                                           "ValidatedCriterionPropertyID": V("P-1", "The property answered."),
-                                           "ConfidentialityLevelCode": V("CONFIDENTIAL", "Not to be published."),
-                                           "ResponseValue": rv,
-                                           "ApplicablePeriod": {"StartDate": V("2025-01-01", "The year."),
-                                                                "EndDate": V("2025-12-31", "Its end.")},
-                                           "SuppliedEvidence": {"ID": V("EV-ACC-BF", "The accounts.")},
-                                           "ProcurementProjectLotReference": lot_ref("LOT-1"),
-                                           "CommodityClassification": {"ItemClassificationCode": V("38111", "The benches, as a "
-                                                                                                   "UN CPC subclass.")}},
-            "AdditionalDocumentReference": {"ID": V("BF-ESPD-26", "The self-declaration.")},
-            "Evidence": {"ID": V("EV-ACC-BF", "The annual accounts."), "EvidenceTypeCode": V("ACCOUNTS", "Kind."),
-                         "Name": V("Annual accounts 2025", "Name."), "Description": V("Audited.", "What."),
-                         "CandidateStatement": V("True and complete.", "The statement."),
-                         "ConfidentialityLevelCode": V("CONFIDENTIAL", "Not published."),
-                         "EvidenceIssuingParty": party("37-xb", short=True),
-                         "DocumentReference": {"ID": V("BF-ACC-2025", "The accounts.")},
-                         "Language": {"ID": V("en", "English.")}},
+            "TenderingCriterion": [{"ID": V(c, "A criterion of the request, answered below.")} for c in
+                                   ("CR-CONVICTIONS", "CR-TAXES", "CR-REGISTER", "CR-YEARS", "CR-TURNOVER",
+                                    "CR-STAFF", "CR-REFERENCES", "CR-TIMBER", "CR-GROUP")],
+            "TenderingCriterionResponse": [
+                resp("CONVICTIONS", "P-CONVICTIONS-1", rv("RV-CONVICTIONS", "", ResponseIndicator=V(
+                    "false", "No conviction of the company or of its management."))),
+                resp("TAXES", "P-TAXES-1", rv("RV-TAXES", "", ResponseAmount=amount(Decimal("0"), "XBL", "Nothing "
+                                                                                    "due is unpaid."))),
+                resp("REGISTER", "P-REGISTER-1", rv(
+                    "RV-REGISTER", "", Response=V("Entered in the federal business register of Bayvarra.", "The "
+                                                  "answer in words: which register."),
+                    ResponseID=V(PARTY[RUNNER_UP]["identity"]["registry_id"], "Its number in that register, so "
+                                 "that the department can look the entry up."),
+                    ResponseIndicator=V("true", "Yes: registered."),
+                    ResponseURI=V("https://register.bayvarra.example", "Where the entry is kept and can be looked "
+                                  "up: the register the notices name as the economic operator registry."))),
+                resp("YEARS", "P-YEARS-1", rv("RV-YEARS", "", ResponseQuantity=qty(
+                    company_years(RUNNER_UP, out["IssueDate"].value), "ANN", f"Full years since the company was "
+                    f"founded on {founded} (world/parties.json)."))),
+                resp("TURNOVER", "P-TURNOVER-1",
+                     rv("RV-TURNOVER", "", ResponseAmount=amount(BRACKENMERE_TURNOVER_2024, "XBL", "The turnover of "
+                        "2024, from the accounts filed for that year (as the registry's extract of the design "
+                        "contest states it, contest/13).")),
+                     Name=V("Turnover", "What the response is about."),
+                     Description=V(f"The turnover of 2024, {BRACKENMERE_TURNOVER_2024:,.0f} lume, is above the "
+                                   f"minimum of {TURNOVER_MIN:,} lume.", "The response in short: the figure itself "
+                                   "is the value below."),
+                     ConfidentialityLevelCode=V("CONFIDENTIAL", "Not to be published."),
+                     CommodityClassification={"ItemClassificationCode": V("38111", "The benches of lot 1, which the "
+                                                                                   "turnover criterion applies to, "
+                                                                                   "as a UN CPC subclass.")},
+                     ApplicablePeriod={"StartDate": V("2024-01-01", "The year asked for"),
+                                       "EndDate": V("2024-12-31", "and answered (tender/07#F5).")},
+                     SuppliedEvidence={"ID": V("EV-ACC-BF", "The accounts.")},
+                     ProcurementProjectLotReference=lot_ref("LOT-1")),
+                resp("STAFF", "P-STAFF-1", rv("RV-STAFF", "", ResponseQuantity=qty(
+                    company_headcount(RUNNER_UP), "IE", "Its staff, in persons (world/parties.json)."))),
+                resp("REFERENCES", "P-REFERENCES-1",
+                     [rv(f"RV-REFERENCES-{i}", "", Description=V(s, "One supply: customer, year, what and value."))
+                      for i, s in enumerate(BRACKENMERE_SUPPLIES, 1)]),
+                resp("REFERENCES-COUNT", "P-REFERENCES-2", rv("RV-REFERENCES-COUNT", "", ResponseQuantity=qty(
+                    len(BRACKENMERE_SUPPLIES), "EA", "The supplies listed."))),
+                resp("TIMBER", "P-TIMBER-1", rv("RV-TIMBER", "", ResponseIndicator=V(
+                    "true", "Its hardwood comes from certified forests.")), SuppliedEvidence={"ID": V("EV-FOR-BF",
+                                                                                                "The certificate.")}),
+                resp("GROUP", "P-GROUP-1", rv("RV-GROUP", "", ResponseIndicator=V(
+                    "false", "Brackenmere tenders alone, so the questions for a group are not answered.")))],
+            "AdditionalDocumentReference": {"ID": V(f.numbers["qar"], "The request this self-declaration answers "
+                                                                     "(tender/07#F6).")},
+            "Evidence": [{"ID": V("EV-ACC-BF", "The annual accounts."), "EvidenceTypeCode": V("ACCOUNTS", "Kind."),
+                          "Name": V("Annual accounts 2024", "Name."), "Description": V("Audited.", "What."),
+                          "CandidateStatement": V("True and complete.", "The statement."),
+                          "ConfidentialityLevelCode": V("CONFIDENTIAL", "Not published."),
+                          "EvidenceIssuingParty": party("37-xb", short=True),
+                          "DocumentReference": {"ID": V("BF-ACC-2024", "The accounts.")},
+                          "Language": {"ID": V("en", "English.")}},
+                         {"ID": V("EV-FOR-BF", "The forestry certificate."), "EvidenceTypeCode": V(
+                             "CERTIFICATE", "Kind."), "Name": V("Forestry certificate of the hardwood", "Name."),
+                          "Description": V("Chain-of-custody certificate for the hardwood of Brackenmere's slats, valid "
+                                           "until 30 June 2028.", "What.")}],
             "Signature": seal("37-xb", "BF-SIG-QAR")}
 
 
@@ -10924,7 +10991,12 @@ def contest_qualification(k):
 
 def contest_selection_criteria():
     """The two weighted criteria the jury selects the participants of the restricted contest by."""
-    def crit(cid, name, what, weight, why):
+    def crit(cid, name, what, weight, why, site=False):
+        ask = contest_question(f"P-{cid[3:]}-1", "The reference", "The project, the client, the year and what the "
+                               "team designed.", "DESCRIPTION")
+        if site:                        # the coastal criterion scores the site, so it asks for it (contest/05#F12)
+            ask = [ask, contest_question(f"P-{cid[3:]}-2", "The site", "Where the reference stands and how far it "
+                                         "is from the sea.", "DESCRIPTION")]
         return {"ID": V(cid, "The criterion."),
                 "CriterionTypeCode": V("TECHNICAL", "Technical and professional ability."),
                 "Name": V(name, "The criterion."), "Description": V(what, "What the jury scores."),
@@ -10934,12 +11006,7 @@ def contest_selection_criteria():
                 "TenderingCriterionPropertyGroup": {
                     "ID": V(f"PG-{cid[3:]}", "The questions on the reference."),
                     "PropertyGroupTypeCode": V("ON", "Always answered."),
-                    "TenderingCriterionProperty": {
-                        "ID": V(f"P-{cid[3:]}-1", "The question."), "Name": V("The reference", "Its name."),
-                        "Description": V("The project, the client, the year and what the team designed.",
-                                         "What to answer."),
-                        "TypeCode": V("QUESTION", "A question."),
-                        "ValueDataTypeCode": V("DESCRIPTION", "Answered in words.")}}}
+                    "TenderingCriterionProperty": ask}}
     return [crit("CR-REF-PUBLIC", "Reference for furniture in public spaces",
                  "The two completed designs of furniture or fittings for public spaces in the last five years that the "
                  "contest notice asks for.", 60,
@@ -10947,8 +11014,71 @@ def contest_selection_criteria():
             crit("CR-REF-COAST", "Reference for a coastal site",
                  "Whether one of the two references stands within one kilometre of the sea.", 40,
                  "Salt air is the hardest condition of the promenade, but fewer designers have built for it, so it "
-                 "weighs less than the first reference.")]
+                 "weighs less than the first reference.", site=True)]
 
+
+
+# The design team's two references (D29 point 3, O195): both Brackenmere's designs, completed within the five years
+# the contest notice asks for; the second stands on a seafront and answers the coastal criterion.
+CONTEST_REFERENCES = [
+    {"what": "Seating for the reading garden of Lumeport's central library", "client": "the City of Lumeport",
+     "year": 2024, "start": "2024-03-01", "end": "2024-09-30", "coast": False,
+     "designed": "the benches and the planter seats, made in Brackenmere's workshop"},
+    {"what": "Promenade benches for Larkmouth's seafront", "client": "Larkmouth town council", "year": 2023,
+     "start": "2023-02-01", "end": "2023-06-30", "coast": True,
+     "designed": "the benches of the seafront promenade, bolted to the sea wall's walkway",
+     "site": "On the seafront promenade of Larkmouth, Bayvarra's harbour town at the mouth of the east river: the "
+             "benches stand on the sea wall's walkway, within 20 metres of the sea."}]
+
+
+def contest_reference_value(r, rid):
+    """One reference as the answer to a question on references: project, client, year and what the team designed."""
+    return {"ID": V(rid, "The answer."),
+            "Description": V(f"{r['what']}, {r['year']}: client {r['client']}; Brackenmere designed {r['designed']}.",
+                             "The project, the client, the year and what the team designed, as the question asks "
+                             "(D29 point 3, O195).")}
+
+
+def contest_completed_task(r):
+    return {"Description": V(f"{r['what']}, for {r['client']}, {r['year']}.", "A reference: one of the two the "
+                             "contest notice asks for (contest/07#F1, O195)."),
+            "Period": {"StartDate": V(r["start"], "From."), "EndDate": V(r["end"], "To: completed within the "
+                                                                                    "five years asked.")}}
+
+
+def contest_question(pid, name, what, dtype):
+    return {"ID": V(pid, "The question."), "Name": V(name, "Its name."), "Description": V(what, "What to answer."),
+            "TypeCode": V("QUESTION", "A question the participant answers."),
+            "ValueDataTypeCode": V(dtype, "The kind of answer it takes.")}
+
+
+def contest_exclusion_criteria():
+    """The exclusion grounds the contest asks about (D29 point 6): convictions; unpaid taxes and social security
+    contributions. Each member of a group answers them."""
+    def crit(cid, name, what, q, qwhat):
+        return {"ID": V(cid, "The exclusion ground."),
+                "CriterionTypeCode": V("EXCLUSION", "An exclusion ground: a participant to which it applies is not "
+                                                    "selected."),
+                "Name": V(name, "The ground."), "Description": V(what, "What excludes a participant."),
+                "EvaluationMethodTypeCode": V("PASSFAIL", "It applies or not."),
+                "Legislation": {"ID": V("XB-PPA-2019", "Bayvarra's Public Procurement Act."),
+                                "Title": V("Public Procurement Act", "Its title."),
+                                "Article": V("Art. 57", "The article on the exclusion grounds.")},
+                "TenderingCriterionPropertyGroup": {
+                    "ID": V(f"PG-{cid[3:]}", "The question on the ground."),
+                    "PropertyGroupTypeCode": V("ON", "Always answered."),
+                    "TenderingCriterionProperty": contest_question(f"P-{cid[3:]}-1", q, qwhat, "INDICATOR")}}
+    return [crit("CR-CONVICTIONS", "Convictions",
+                 "A participant is excluded if it, or a member of its management, has been convicted by final "
+                 "judgment in the last five years of participation in a criminal organisation, corruption, fraud or "
+                 "money laundering.", "Convictions",
+                 "Whether the participant, or a member of its management, has been so convicted; in a group, each "
+                 "member answers."),
+            crit("CR-TAXES", "Payment of taxes and social security contributions",
+                 "A participant is excluded if it owes taxes or social security contributions that are due and "
+                 "unpaid.", "Unpaid taxes and contributions",
+                 "Whether the participant owes taxes or social security contributions that are due and unpaid; in a "
+                 "group, each member answers.")]
 
 def contest_process(f, k):
     requests_by = 89 if k == 2 else 75
@@ -11067,34 +11197,48 @@ def contest(n, doc):
                 "QualificationApplicationTypeCode": V("REGULATED", "The regulated form of self-declaration."),
                 "WeightingTypeCode": V("WEIGHTED", "The selection criteria carry weights: the jury scores the "
                                                    "references to choose three to five participants."),
-                "WeightScoringMethodologyNote": V("The qualification of the design lead is pass or fail; the two "
-                                                  "references are scored 0 to 10 and weighted 60 and 40.",
-                                                  "How the answers count."),
-                "TenderingCriterion": [{
-                    "ID": V("CR-PROF", "The criterion on the design lead."),
-                    "CriterionTypeCode": V("SUITABILITY", "A criterion of professional suitability."),
-                    "Name": V("Professional qualification of the design lead", "The criterion."),
-                    "Description": V(f"The design lead is a {crit}.", "What is asked" +
-                                     (", as widened by the corrigendum." if k == 2 else ".")),
-                    "FulfilmentIndicator": V("true", "Must be met."),
-                    "EvaluationMethodTypeCode": V("PASSFAIL", "Met or not."),
-                    "TenderingCriterionPropertyGroup": {
-                        "ID": V("PG-PROF", "The questions on the design lead."),
-                        "PropertyGroupTypeCode": V("ON", "Always answered."),
-                        "TenderingCriterionProperty": {
-                            "ID": V("P-PROF-1", "The question."), "Name": V("Registration of the design lead", "Its "
-                                                                                                           "name."),
-                            "Description": V("The register and the registration number of the design lead.", "What "
-                                                                                                             "to "
-                                                                                                             "answer."),
-                            "TypeCode": V("QUESTION", "A question."),
-                            "ValueDataTypeCode": V("DESCRIPTION", "Answered in words.")}}},
+                "WeightScoringMethodologyNote": V("The exclusion grounds and the qualification of the design lead "
+                                                  "are pass or fail; the two references are scored 0 to 10 and "
+                                                  "weighted 60 and 40.", "How the answers count."),
+                "TenderingCriterion": [
+                    *contest_exclusion_criteria(),
+                    {"ID": V("CR-PROF", "The criterion on the design lead."),
+                     "CriterionTypeCode": V("SUITABILITY", "A criterion of professional suitability."),
+                     "Name": V("Professional qualification of the design lead", "The criterion."),
+                     "Description": V(f"The design lead is a {crit}.", "What is asked" +
+                                      (", as widened by the corrigendum." if k == 2 else ".")),
+                     "EvaluationMethodTypeCode": V("PASSFAIL", "Met or not: a participant whose design lead does "
+                                                               "not meet it is not selected. The request states no "
+                                                               "fulfilment: nobody has answered yet (contest/05#F3)."),
+                     "TenderingCriterionPropertyGroup": {
+                         "ID": V("PG-PROF", "The questions on the design lead."),
+                         "PropertyGroupTypeCode": V("ON", "Always answered."),
+                         "TenderingCriterionProperty": contest_question(
+                             "P-PROF-1", "Registration of the design lead",
+                             "The design lead's name, the member of the group it belongs to, the register and the "
+                             "registration number.", "DESCRIPTION")}},
                     *contest_selection_criteria()]}
     if d == "QualificationApplicationResponse":
-        answer = ("The design lead, Ivo Harlan, is registered as an industrial designer, no. ID-2208, in the register "
-                  "of the Bayvarran Design Council." if k == 2 else
-                  "The design lead, Edda Corwin of Saltmere Engineering, is a registered architect, no. AR-4417, in "
-                  "the register of the Bayvarran Chamber of Architects.")
+        lead = ("Ivo Harlan, Brackenmere Furniture's own industrial designer, is registered as an industrial "
+                "designer, no. ID-2208, in the register of the Bayvarran Design Council." if k == 2 else
+                "Edda Corwin, the registered architect on Saltmere Engineering's staff, is a registered architect, "
+                "no. AR-4417, in the register of the Bayvarran Chamber of Architects.")
+        cert = (("EV-REG-ID-2208", "Certificate of registration of the design lead, Ivo Harlan",
+                 "Registration no. ID-2208 in the register of industrial designers that the Bayvarran Design Council "
+                 "keeps; the council issues the certificate.") if k == 2 else
+                ("EV-REG-AR-4417", "Certificate of registration of the design lead, Edda Corwin",
+                 "Registration no. AR-4417 in the register of architects that the Bayvarran Chamber of Architects "
+                 "keeps; the chamber issues the certificate."))
+        members = [(TEAM_LEAD, "Brackenmere Furniture"), (TEAM_MEMBER, "Saltmere Engineering")]
+
+        def each_member(rid, says, why):
+            return [{"ID": V(f"{rid}-{i}", f"The answer for {name}: each member of the group answers the "
+                                           "exclusion grounds."),
+                     "Description": V(f"{name}: {says}", "The answer, for this member."),
+                     "ResponseIndicator": V("false", why)} for i, (_, name) in enumerate(members, 1)]
+
+        refs = [contest_reference_value(r, f"RV-REF-PUBLIC-{i}") for i, r in enumerate(CONTEST_REFERENCES, 1)]
+        coast = next(r for r in CONTEST_REFERENCES if r["coast"])
         return {**folder, "ID": V(f.number("contest-qar-response", doc["from"], d), "The team's number for its "
                                                                                      "self-declaration."),
                 "IssueDate": V(f.date(58 if k == 1 else 70), "With the request to participate." if k == 1 else
@@ -11105,43 +11249,118 @@ def contest(n, doc):
                 "ContractName": V("Design of the harbour promenade bench", "The contest."),
                 "EconomicOperatorGroupName": V("Brackenmere and Saltmere design team", "The group that enters."),
                 "ProcedureCode": V("DESIGNCONTEST", "The contest."),
-                "TenderingCriterion": {"ID": V("CR-PROF", "The criterion answered.")},
-                "TenderingCriterionResponse": {
-                    "ID": V("CRR-PROF", "The response."),
-                    "ValidatedCriterionPropertyID": V("P-PROF-1", "The question answered."),
-                    "Description": V(answer, "The answer."),
-                    "ResponseValue": {"ID": V("RV-PROF", "The answer."),
-                                      "Description": V(answer, "In words, as the question asks."),
-                                      "ResponseCode": V("MET", "The criterion is met.")}},
-                "Evidence": {"ID": V("EV-REG-LEAD", "The registration of the design lead."),
+                "EconomicOperatorParty": [
+                    {"EconomicOperatorRole": {"RoleCode": V("LEAD", "Brackenmere answers as the lead member of "
+                                                                    "the group (contest/06#F5)."),
+                                              "RoleDescription": V("Represents the group towards the department.",
+                                                                   "The role in words.")}},
+                    {"EconomicOperatorRole": {"RoleCode": V("MEMBER", "Saltmere Engineering is the group's other "
+                                                                      "member, for the structure and the anchoring."),
+                                              "RoleDescription": V("Designs the structure and the anchoring.",
+                                                                   "The role in words.")}}],
+                "TenderingCriterion": [{"ID": V(c, "A criterion of the request, answered below: the response "
+                                                   "answers every criterion it asks (contest/06#F3).")}
+                                       for c in ("CR-CONVICTIONS", "CR-TAXES", "CR-PROF", "CR-REF-PUBLIC",
+                                                 "CR-REF-COAST")],
+                "TenderingCriterionResponse": [
+                    {"ID": V("CRR-CONVICTIONS", "The response on convictions."),
+                     "ValidatedCriterionPropertyID": V("P-CONVICTIONS-1", "The question answered."),
+                     "ResponseValue": each_member("RV-CONVICTIONS", "no conviction of the member or of its "
+                                                  "management.", "No: not convicted.")},
+                    {"ID": V("CRR-TAXES", "The response on taxes and contributions."),
+                     "ValidatedCriterionPropertyID": V("P-TAXES-1", "The question answered."),
+                     "ResponseValue": each_member("RV-TAXES", "no taxes or social security contributions due and "
+                                                  "unpaid.", "No: nothing due is unpaid.")},
+                    {"ID": V("CRR-PROF", "The response on the design lead."),
+                     "ValidatedCriterionPropertyID": V("P-PROF-1", "The question answered."),
+                     "ResponseValue": {"ID": V("RV-PROF", "The answer."),
+                                       "Description": V(lead, "The answer, in words, as the question asks: the "
+                                                              "response itself repeats nothing (contest/06#F12)."),
+                                       "ResponseCode": V("MET", "The criterion is met.")},
+                     "SuppliedEvidence": {"ID": V(cert[0], "The certificate that proves the registration "
+                                                           "(contest/06#F13).")}},
+                    {"ID": V("CRR-REF-PUBLIC", "The response on the references."),
+                     "ValidatedCriterionPropertyID": V("P-REF-PUBLIC-1", "The question answered: one value for "
+                                                                         "each of the two references."),
+                     "ResponseValue": refs},
+                    {"ID": V("CRR-REF-COAST", "The response on the coastal site: which reference it is."),
+                     "ValidatedCriterionPropertyID": V("P-REF-COAST-1", "The question answered."),
+                     "ResponseValue": contest_reference_value(coast, "RV-REF-COAST-1")},
+                    {"ID": V("CRR-REF-COAST-SITE", "The response on the site of the coastal reference."),
+                     "ValidatedCriterionPropertyID": V("P-REF-COAST-2", "The question answered."),
+                     "ResponseValue": {"ID": V("RV-REF-COAST-2", "The answer."),
+                                       "Description": V(coast["site"], "Where it stands and how far from the sea.")}}],
+                "AdditionalDocumentReference": {"ID": V(f.numbers["contest-qar"], "The request this self-"
+                                                        "declaration answers (contest/06#F4)."),
+                                                "VersionID": V(str(k), "The version of the request answered.")},
+                "Evidence": {"ID": V(cert[0], "The certificate of the design lead's registration."),
                              "EvidenceTypeCode": V("CERTIFICATE", "A certificate of registration."),
-                             "Name": V("Certificate of registration of the design lead", "What it is.")}}
+                             "Name": V(cert[1], "What it is."),
+                             "Description": V(cert[2], "Which register, and who issues the certificate.")}}
     if d == "TendererQualification":
         share = ("70", "30") if k == 2 else ("60", "40")
+        lead = ("Brackenmere's own industrial designer, Ivo Harlan, leads the design" if k == 2 else
+                "Saltmere's registered architect, Edda Corwin, leads the design")
         return {"ID": V(f.number("contest-qualification", doc["from"], d), "The team's number for its "
                                                                             "qualification."),
                 **folder,
                 "IssueDate": V(f.date(58 if k == 1 else 70), "With the request to participate." if k == 1 else
                                "With the revised self-declaration."),
                 **contest_version(k, "the furniture maker now leads the design, so the shares of the work change."),
-                "Note": V("The furniture maker leads the team; the engineering firm does the structure and the "
-                          "anchoring.", "Who does what."),
+                "Note": V(f"Brackenmere Furniture leads the team; {lead}; Saltmere Engineering does the structure "
+                          "and the anchoring.", "Who does what, and who provides the design lead (D29 point 2, "
+                                                "contest/07#F4)."),
                 "TendererPartyQualification": {
                     "MainQualifyingParty": {
                         "ParticipationPercent": V(share[0], "The furniture maker's share of the work."),
-                        "BusinessIdentityEvidenceID": V(PARTY[TEAM_LEAD]["identity"]["registry_id"], "Its "
-                                                                                                     "registration."),
                         "TendererRoleCode": V("LEAD", "The lead member of the group."),
-                        "CompletedTask": {"Description": V("Seating for the Lumeport central library's reading "
-                                                           "garden, 2024.", "A reference."),
-                                          "Period": {"StartDate": V("2024-03-01", "From."),
-                                                     "EndDate": V("2024-09-30", "To.")}}},
+                        "CompletedTask": [contest_completed_task(r) for r in CONTEST_REFERENCES]},
                     "AdditionalQualifyingParty": {
                         "ParticipationPercent": V(share[1], "The engineering firm's share."),
                         "TendererRoleCode": V("MEMBER", "A member of the group.")}}}
+    if d == "BusinessInformation" and doc["parties"]["BusinessParty"] == TEAM_MEMBER:
+        legal = PARTY[TEAM_MEMBER]["identity"]["legal"]
+        return {"ID": V(f.number("contest-business-info-member", doc["from"], d), "The registry's extract number."),
+                "IssueDate": V(f.date(92), "The same day as the lead member's extract: the department checks every "
+                                           "member of the team before the jury selects the participants (D29 "
+                                           "point 6, contest/13#F4)."),
+                "Note": V("Extract from the register of economic operators.", "What it is."),
+                "BriefDescription": V("Saltmere Engineering: registered, no exclusion grounds recorded.", "In short."),
+                "NoticeTypeCode": V("BUSREG", "Registration information."),
+                "BusinessCapability": {
+                    "CapabilityTypeCode": V("PRODUCTION", "What the firm produces: its services."),
+                    "Description": V("Design and permits of telecom mast sites; installation of back-up power, "
+                                     "safety equipment and ground foundations, with its own crews.", "What."),
+                    "ValueAmount": amount(Decimal(legal["turnover"]["amount"]), "XBL",
+                                          f"The yearly turnover of {legal['turnover']['year']}, from the accounts "
+                                          "filed (world/parties.json).")},
+                "NoticeSubType": {"SubTypeCode": V("EXTRACT", "An extract on request.")}}
+    if d == "TendererQualificationResponse":
+        due = Decimal("3860.00")
+        return {"ID": V(f.number("contest-exclusion", doc["from"], d), "The department's number for its decision."),
+                **folder,
+                "ContractName": V("Design of the harbour promenade bench", "The contest."),
+                "IssueDate": V(f.date(99), "After the extended deadline for requests (30 April) and the checks of "
+                                           "the candidates, when the jury selects the participants."),
+                "Note": V("Your request to participate in the design contest cannot be admitted.", "What the "
+                                                                                                  "decision is."),
+                "QualificationResolution": {
+                    "AdmissionCode": V("REJECTED", "The studio is excluded: it is not among the candidates the jury "
+                                                   "selects from."),
+                    "ExclusionReason": V(f"The certificate of the social security fund shows contributions of "
+                                         f"{due:,} lume due since 31 January 2026 and unpaid; amounts above 1,000 lume "
+                                         "are not minor and exclude a candidate (Public Procurement Act, art. 57).",
+                                         "Why it is excluded: the exclusion ground on unpaid taxes and social security "
+                                         "contributions that the contest asks about (D29 point 6, O102)."),
+                    "Resolution": V("Excluded at the selection of the participants.", "The decision in words."),
+                    "ResolutionDate": V(f.date(99), "The day the department decided.")},
+                "AppealTerms": {"Description": V("An appeal against the exclusion goes to the review board within "
+                                                 "ten days of this notice.", "How to appeal, as the contest notice "
+                                                                             "says."),
+                                "PresentationPeriod": {"DurationMeasure": V("10", "Ten days.", unitCode="DAY")}}}
     if d == "BusinessInformation":
         turnover = (Decimal(PARTY[TEAM_LEAD]["identity"]["legal"]["turnover"]["amount"]) if k == 2
-                    else Decimal("6410000.00"))
+                    else BRACKENMERE_TURNOVER_2024)
         return {"ID": V(f.number("contest-business-info", doc["from"], d), "The registry's extract number, the same "
                                                                            "in both versions."),
                 "IssueDate": V(f.date(92 if k == 1 else 96), "The department checks the lead member when the jury "

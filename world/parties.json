@@ -1593,8 +1593,8 @@
    "h": 2,
    "kind": "office",
    "proposed": true,
-   "what": "Tenders together with the manufacturer as consortium partner or subcontractor; supplies back-up power and safety equipment for telecom masts, dangerous goods included.",
-   "how": "A consortium partner tenders together with a main tenderer. UBL tenders and qualification documents name each partner and its qualifications separately, so the authority can see who contributes what.",
+   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast village it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits (a registered architect, Edda Corwin, is on its staff), and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring (D28 point 3, D29 point 2, O97, O222).",
+   "how": "A subcontractor or a member of a group of tenderers is named with its own role. UBL tenders and qualification documents name each member and its qualifications separately, so the authority can see who contributes what and check each one in the register.",
    "identity": {
     "name": "Saltmere Engineering",
     "kind": "company",
@@ -1625,6 +1625,17 @@
     },
     "industry": "4290",
     "language": "en",
+    "legal": {
+     "form": "LTD",
+     "founded": "1994-10-03",
+     "headcount": 36,
+     "turnover": {
+      "amount": "5400000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
+     "business": "services"
+    },
     "identification": {
      "convention": "own"
     },
@@ -4315,6 +4326,63 @@
     "industry": "5221",
     "language": "en",
     "week": "always"
+   }
+  },
+  {
+   "id": "48-xb",
+   "n": "48",
+   "name": "Design Studio",
+   "cat": "procurement",
+   "c": "XB",
+   "at": [
+    141,
+    125
+   ],
+   "h": 1,
+   "kind": "office",
+   "proposed": true,
+   "what": "A small industrial design studio in Lumeport, founded in 2019 by two designers. It asked to take part in the design contest for the harbour promenade bench and was excluded at the selection: the certificate of the social security fund showed contributions due and unpaid, above the minor amounts the procurement act tolerates (O102).",
+   "how": "A candidate that is excluded is told why. UBL's Tenderer Qualification Response carries the decision on each candidate, with the reason for an exclusion, so the candidate knows where it stands and can appeal.",
+   "identity": {
+    "name": "Fernhollow Studio",
+    "kind": "company",
+    "registry_id": "20413014",
+    "endpoint": "XB:20413014",
+    "contact": {
+     "name": "Studio office",
+     "email": "studio@fernhollow.example",
+     "telephone": "+999 2 38 6420 1957",
+     "department": "Studio",
+     "hours": "Weekdays 09:00–17:00",
+     "job_title": "Managing designer"
+    },
+    "tax_id": "CO-1239042",
+    "address": {
+     "StreetName": "Ropewalk Lane",
+     "BuildingNumber": "9",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38524",
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-416208"
+    },
+    "industry": "7410",
+    "language": "en",
+    "legal": {
+     "form": "LTD",
+     "founded": "2019-04-01",
+     "headcount": 4,
+     "turnover": {
+      "amount": "420000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
+     "business": "services"
+    },
+    "identification": {
+     "convention": "own"
+    },
+    "week": "office"
    }
   }
  ],

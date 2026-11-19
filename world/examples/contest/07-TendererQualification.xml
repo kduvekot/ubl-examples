@@ -9,18 +9,24 @@
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
   <cbc:IssueTime>16:10:00-01:00</cbc:IssueTime>
-  <cbc:Note>The furniture maker leads the team; the engineering firm does the structure and the anchoring.</cbc:Note>
+  <cbc:Note>Brackenmere Furniture leads the team; Saltmere's registered architect, Edda Corwin, leads the design; Saltmere Engineering does the structure and the anchoring.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:TendererPartyQualification>
     <cac:MainQualifyingParty>
       <cbc:ParticipationPercent>60</cbc:ParticipationPercent>
-      <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
       <cac:CompletedTask>
-        <cbc:Description>Seating for the Lumeport central library's reading garden, 2024.</cbc:Description>
+        <cbc:Description>Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024.</cbc:Description>
         <cac:Period>
           <cbc:StartDate>2024-03-01</cbc:StartDate>
           <cbc:EndDate>2024-09-30</cbc:EndDate>
+        </cac:Period>
+      </cac:CompletedTask>
+      <cac:CompletedTask>
+        <cbc:Description>Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023.</cbc:Description>
+        <cac:Period>
+          <cbc:StartDate>2023-02-01</cbc:StartDate>
+          <cbc:EndDate>2023-06-30</cbc:EndDate>
         </cac:Period>
       </cac:CompletedTask>
       <cac:Party>
@@ -143,8 +149,12 @@
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
+          <cbc:RegistrationName>Saltmere Engineering Ltd</cbc:RegistrationName>
           <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
+          <cbc:RegistrationDate>1994-10-03</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Marrowdale</cbc:CityName>

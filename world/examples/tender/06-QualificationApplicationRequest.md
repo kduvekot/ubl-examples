@@ -179,33 +179,167 @@ Inside `ProcurementProjectLot`:
 
 Inside `TenderingCriterion`:
 
-- `ID` = **CR-TURNOVER**  
-  The turnover criterion.
+- `ID` = **CR-CONVICTIONS**  
+  The exclusion ground.
+- `CriterionTypeCode` = **EXCLUSION** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  An exclusion ground: a participant to which it applies is not selected. The code is from the Trade Accord's criterion type list: EXCLUSION = Exclusion ground.
+- `Name` = **Convictions**  
+  The ground.
+- `Description` = **A participant is excluded if it, or a member of its management, has been convicted by final judgment in the last five years of participation in a criminal organisation, corruption, fraud or money laundering.**  
+  What excludes a participant.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  It applies or not. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `Legislation/ID` = **XB-PPA-2019**  
+  Bayvarra's Public Procurement Act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Its title.
+- `Legislation/Article` = **Art. 57**  
+  The article on the exclusion grounds.
+- `TenderingCriterionPropertyGroup/ID` = **PG-CONVICTIONS**  
+  The question on the ground.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered. The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-CONVICTIONS-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Convictions**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Whether the participant, or a member of its management, has been so convicted; in a group, each member answers.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
+- `ID` = **CR-TAXES**  
+  The criterion.
+- `CriterionTypeCode` = **EXCLUSION** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: EXCLUSION = Exclusion ground.
+- `Name` = **Payment of taxes and social security contributions**  
+  The criterion.
+- `Description` = **A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.**  
+  What it asks.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `Legislation/ID` = **XB-PPA-2019**  
+  Bayvarra's Public Procurement Act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Its title.
+- `Legislation/Description` = **Exclusion grounds; the exception for minor amounts.**  
+  What.
+- `Legislation/Article` = **Art. 57**  
+  The article.
+- `TenderingCriterionPropertyGroup/ID` = **PG-TAXES**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on payment of taxes and social security contributions.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-TAXES-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Unpaid taxes and contributions**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The amount of taxes and social security contributions due and unpaid.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **AMOUNT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: AMOUNT = Amount.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount` = **1000.00** (currencyID `XBL`)  
+  Arrears up to 1,000 lume count as minor amounts and do not exclude the tenderer.
+- `ID` = **CR-REGISTER**  
+  The criterion.
+- `CriterionTypeCode` = **SUITABILITY** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: SUITABILITY = Suitability.
+- `Name` = **Enrolment in a business register**  
+  The criterion.
+- `Description` = **The tenderer is entered in the business register of the country where it is established.**  
+  What it asks.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `Legislation/ID` = **XB-PPA-2019**  
+  Bayvarra's Public Procurement Act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Its title.
+- `Legislation/Description` = **Selection criteria: suitability to pursue the activity.**  
+  What.
+- `Legislation/Article` = **Art. 58**  
+  The article.
+- `TenderingCriterionPropertyGroup/ID` = **PG-REGISTER**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on enrolment in a business register.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-REGISTER-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Registered in a business register**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Whether the tenderer is entered in a business register.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedIndicator` = **true**  
+  Only one answer meets the criterion: yes.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedDescription` = **Entered in the national business register of the tenderer's country.**  
+  What a yes means; the register's address goes to the evidence, not to an expected identifier (tender/06#F7).
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TranslationTypeCode` = **NONE** (listID `urn:ubl-examples:world:codelist:TranslationTypeCode`)  
+  An extract in another language is accepted as it is. The code is from the Trade Accord's translation type list: NONE = No translation.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/CertificationLevelDescription` = **A plain extract will do.**  
+  The level.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/CopyQualityTypeCode` = **COPY** (listID `urn:ubl-examples:world:codelist:CopyQualityCode`)  
+  A copy is enough. The code is from the Trade Accord's copy quality list: COPY = A copy is enough.
+- `ID` = **CR-YEARS**  
+  The criterion.
 - `CriterionTypeCode` = **ECONOMIC** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
   Its kind. The code is from the Trade Accord's criterion type list: ECONOMIC = Economic and financial standing.
-- `Name` = **General yearly turnover**  
+- `Name` = **Years in business**  
   The criterion.
-- `Description` = **Turnover of the last three years.**  
-  What.
-- `FulfilmentIndicator` = **true**  
-  Must be met.
-- `FulfilmentIndicatorTypeCode` = **ALL** (listID `urn:ubl-examples:world:codelist:FulfilmentIndicatorCode`)  
-  All its properties. The code is from the Trade Accord's fulfilment indicator list: ALL = All properties.
+- `Description` = **At least three full years in business, as the notices ask.**  
+  What it asks.
 - `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
-  Pass or fail. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `TenderingCriterionPropertyGroup/ID` = **PG-YEARS**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on years in business.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-YEARS-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Years in business**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The full years since the tenderer was founded.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **QUANTITY** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: QUANTITY = Quantity.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueUnitCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  Years. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity` = **3** (unitCode `ANN`)  
+  At least three years, stated once, as a quantity (tender/06#F16).
+- `ID` = **CR-TURNOVER**  
+  The criterion.
+- `CriterionTypeCode` = **ECONOMIC** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: ECONOMIC = Economic and financial standing.
+- `Name` = **Yearly turnover**  
+  The criterion.
+- `Description` = **A yearly turnover of at least 124,800 lume, twice the yearly estimate of 62,400 lume, in the last financial year for which accounts are filed.**  
+  What it asks.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
 - `ProcurementProjectLotReference/ID` = **LOT-1**  
   Lot 1 of the procedure.
 - `CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   The benches, as a subclass of the UN Central Product Classification: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `SubTenderingCriterion/ID` = **CR-TURNOVER-A**  
-  The average.
-- `SubTenderingCriterion/Name` = **Average turnover**  
-  Name.
 - `Legislation/ID` = **XB-PPA-2019**  
-  The act.
+  Bayvarra's Public Procurement Act.
 - `Legislation/Title` = **Public Procurement Act**  
-  Title.
-- `Legislation/Description` = **Selection criteria.**  
+  Its title.
+- `Legislation/Description` = **Selection criteria: economic and financial standing.**  
   What.
 - `Legislation/JurisdictionLevel` = **National**  
   The level.
@@ -217,166 +351,182 @@ Inside `TenderingCriterion`:
   English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Legislation/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `TenderingCriterionPropertyGroup/ID` = **PG-1**  
-  The group.
-- `TenderingCriterionPropertyGroup/Name` = **Turnover**  
-  Name.
-- `TenderingCriterionPropertyGroup/Description` = **The figures.**  
-  What.
-- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ONTRUE** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
-  Answered when the criterion applies. The code is from the Trade Accord's property group type list: ONTRUE = When the indicator is true.
-- `TenderingCriterionPropertyGroup/FulfilmentIndicator` = **true**  
-  Must be met.
-- `TenderingCriterionPropertyGroup/FulfilmentIndicatorTypeCode` = **ALL** (listID `urn:ubl-examples:world:codelist:FulfilmentIndicatorCode`)  
-  All properties. The code is from the Trade Accord's fulfilment indicator list: ALL = All properties.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-1**  
-  The property.
+- `TenderingCriterionPropertyGroup/ID` = **PG-TURNOVER**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on yearly turnover.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-TURNOVER-1**  
+  The question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Yearly turnover**  
   Its name.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: yearly turnover.**  
-  What is asked.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **REQUIREMENT** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  Question or requirement. The code is from the Trade Accord's criterion property type list: REQUIREMENT = Requirement.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The turnover of the last financial year for which accounts are filed.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **AMOUNT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  An amount. The code is from the Trade Accord's response data type list: AMOUNT = Amount.
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: AMOUNT = Amount.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedAmount` = **250000.00** (currencyID `XBL`)  
-  At least.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumAmount` = **250000.00** (currencyID `XBL`)  
-  The minimum.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate` = **2023-01-01**  
-  The three years
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/EndDate` = **2025-12-31**  
-  before the tender.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumAmount` = **124800.00** (currencyID `XBL`)  
+  At least, as in the notices: greater than or equal (D28 point 2, tender/06#F13).
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate` = **2024-01-01**  
+  The last financial year whose accounts are filed by the tender deadline
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/EndDate` = **2024-12-31**  
+  (accounts for 2025 are filed from April).
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TemplateEvidence/ID` = **EV-ACC**  
-  Annual accounts.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TemplateEvidence/Name` = **Accounts**  
+  The evidence asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TemplateEvidence/Name` = **Annual accounts**  
   Evidence.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-2**  
-  The property.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Years in business**  
-  Its name.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: years in business.**  
-  What is asked.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  Question or requirement. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **QUANTITY** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  A number. The code is from the Trade Accord's response data type list: QUANTITY = Quantity.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueUnitCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
-  Years. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedValueNumeric` = **3**  
-  At least.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumValueNumeric` = **3**  
-  Minimum.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity` = **3** (unitCode `ANN`)  
-  At least three.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-3**  
-  The property.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Registered in a business register**  
-  Its name.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: registered in a business register.**  
-  What is asked.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  Question or requirement. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  Yes or no. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedID` = **REG**  
-  The register.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedIndicator` = **true**  
-  Yes.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedCode` = **REGISTERED** (listID `urn:ubl-examples:world:codelist:ExpectedResponseCode`)  
-  The status. The code is from the Trade Accord's expected response list: REGISTERED = Registered.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedDescription` = **Entered in a national register.**  
-  Expected.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedURI` = **https://register.bayvarra.example**  
-  A register.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TranslationTypeCode` = **NONE** (listID `urn:ubl-examples:world:codelist:TranslationTypeCode`)  
-  No translation needed. The code is from the Trade Accord's translation type list: NONE = No translation.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/CertificationLevelDescription` = **A plain extract will do.**  
-  The level.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/CopyQualityTypeCode` = **COPY** (listID `urn:ubl-examples:world:codelist:CopyQualityCode`)  
-  A copy is enough. The code is from the Trade Accord's copy quality list: COPY = A copy is enough.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/ID` = **PG-1.1**  
-  If a consortium.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/Name` = **Consortium**  
-  Name.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-4**  
-  The property.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Share in the consortium**  
-  Its name.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: share in the consortium.**  
-  What is asked.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  Question or requirement. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
-- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **PERCENT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  A percentage. The code is from the Trade Accord's response data type list: PERCENT = Percentage.
-- `ID` = **CR-DEBT**  
-  The debt ratio criterion.
-- `CriterionTypeCode` = **ECONOMIC** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
-  Its kind. The code is from the Trade Accord's criterion type list: ECONOMIC = Economic and financial standing.
-- `Name` = **Debt ratio**  
+- `ID` = **CR-STAFF**  
   The criterion.
-- `Description` = **Total liabilities as a share of total assets, from the last annual accounts.**  
+- `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: TECHNICAL = Technical and professional ability.
+- `Name` = **Staff**  
+  The criterion.
+- `Description` = **At least ten employees, as the notices ask.**  
+  What it asks.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `TenderingCriterionPropertyGroup/ID` = **PG-STAFF**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on staff.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-STAFF-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Employees**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The number of persons employed.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **QUANTITY** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: QUANTITY = Quantity.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueUnitCode` = **IE** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  Persons. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: IE = person.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity` = **10** (unitCode `IE`)  
+  At least ten.
+- `ID` = **CR-REFERENCES**  
+  The criterion.
+- `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: TECHNICAL = Technical and professional ability.
+- `Name` = **Similar supplies**  
+  The criterion.
+- `Description` = **Three supplies of park benches or similar street furniture in the last five years, as the notices ask.**  
+  What it asks.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `TenderingCriterionPropertyGroup/ID` = **PG-REFERENCES**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on similar supplies.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/FulfilmentIndicatorTypeCode` = **ALL** (listID `urn:ubl-examples:world:codelist:FulfilmentIndicatorCode`)  
+  Both questions must be answered and met. The code is from the Trade Accord's fulfilment indicator list: ALL = All properties.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-REFERENCES-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **The supplies**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Each supply: the customer, the year, what was supplied and its value.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-REFERENCES-2**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Number of supplies**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **How many such supplies.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **QUANTITY** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: QUANTITY = Quantity.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueUnitCode` = **EA** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  Supplies. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: EA = each.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MinimumQuantity` = **3** (unitCode `EA`)  
+  At least three.
+- `ID` = **CR-TIMBER**  
+  The criterion.
+- `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Its kind. The code is from the Trade Accord's criterion type list: TECHNICAL = Technical and professional ability.
+- `Name` = **Certified timber**  
+  The criterion.
+- `Description` = **The slats come from forests managed for regrowth, with a forestry certificate valid for the contract, as the call asks.**  
+  What it asks.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  Met or not; the request states no fulfilment, since nobody has answered yet (tender/06#F5). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `Legislation/ID` = **XB-PPA-2019**  
+  Bayvarra's Public Procurement Act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Its title.
+- `Legislation/Description` = **Environmental requirements of the specification (XB-ENV-2021 art. 12).**  
+  What.
+- `Legislation/Article` = **Art. 70**  
+  The article.
+- `TenderingCriterionPropertyGroup/ID` = **PG-TIMBER**  
+  The questions of the criterion.
+- `TenderingCriterionPropertyGroup/Description` = **The questions on certified timber.**  
+  What the group asks.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered: no indicator comes before it (tender/06#F14). The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-TIMBER-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Forestry certificate**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Whether the timber of the slats is covered by a forestry certificate valid for the two years of the contract.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ExpectedIndicator` = **true**  
+  Only one answer meets the criterion: yes.
+- `ID` = **CR-GROUP**  
+  The criterion on the tenderer's composition.
+- `CriterionTypeCode` = **SUITABILITY** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  Who tenders. The code is from the Trade Accord's criterion type list: SUITABILITY = Suitability.
+- `Name` = **Tendering as a group**  
+  The criterion.
+- `Description` = **A group of tenderers names its members and the share of each (tender/06#F4).**  
   What.
 - `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
-  Pass or fail. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
-- `TenderingCriterionPropertyGroup/ID` = **PG-2**  
-  The group.
-- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ONTRUE** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
-  Answered when the criterion applies. The code is from the Trade Accord's property group type list: ONTRUE = When the indicator is true.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-5**  
-  The property.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Liabilities as a share of total assets**  
+  Answered or not. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `TenderingCriterionPropertyGroup/ID` = **PG-GROUP**  
+  The question whether a group tenders.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered. The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-GROUP-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **A group**  
   Its name.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: liabilities as a share of total assets.**  
-  What is asked.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **REQUIREMENT** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  Question or requirement. The code is from the Trade Accord's criterion property type list: REQUIREMENT = Requirement.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **PERCENT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  A percentage. The code is from the Trade Accord's response data type list: PERCENT = Percentage.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumValueNumeric` = **80**  
-  The same limit as a number, for automatic checking.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumQuantity` = **80** (unitCode `P1`)  
-  At most 80 %: a tenderer with more debt than that is not considered able to carry a two-year framework.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/StartDate` = **2025-01-01**  
-  The last
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ApplicablePeriod/EndDate` = **2025-12-31**  
-  financial year.
-- `ID` = **CR-TAXES**  
-  The exclusion ground on taxes.
-- `CriterionTypeCode` = **EXCLUSION** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
-  Its kind. The code is from the Trade Accord's criterion type list: EXCLUSION = Exclusion ground.
-- `Name` = **Payment of taxes and social security contributions**  
-  The criterion.
-- `Description` = **A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.**  
-  What.
-- `Legislation/ID` = **XB-PPA-2019**  
-  The act.
-- `Legislation/Title` = **Public Procurement Act**  
-  Title.
-- `Legislation/Description` = **Exclusion grounds; the exception for minor amounts.**  
-  What.
-- `Legislation/Article` = **Art. 57**  
-  The article.
-- `TenderingCriterionPropertyGroup/ID` = **PG-3**  
-  The group.
-- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ONTRUE** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
-  Answered when the criterion applies. The code is from the Trade Accord's property group type list: ONTRUE = When the indicator is true.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-6**  
-  The property.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Unpaid taxes and contributions**  
-  Its name.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Answer: unpaid taxes and contributions.**  
-  What is asked.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Whether the tenderer tenders as a member of a group.**  
+  What to answer.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  Question or requirement. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **AMOUNT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  An amount. The code is from the Trade Accord's response data type list: AMOUNT = Amount.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/MaximumAmount` = **1000.00** (currencyID `XBL`)  
-  Arrears up to 1,000 lume count as minor amounts and do not exclude the tenderer.
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/ID` = **PG-GROUP-1**  
+  The questions for a group.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/Name` = **Group**  
+  Name.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ONTRUE** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Answered only when the indicator before it is yes: a group tenders (tender/06#F14). The code is from the Trade Accord's property group type list: ONTRUE = When the indicator is true.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-GROUP-2**  
+  The question.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Share in the group**  
+  Its name.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The share of the work of each member, in per cent.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the tenderer answers (tender/06#F15). The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/SubsidiaryTenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **PERCENT** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: PERCENT = Percentage.
 
 ### Additional Document Reference
 
@@ -518,12 +668,111 @@ Inside `Signature`:
     <cbc:ID>LOT-1</cbc:ID>
   </cac:ProcurementProjectLot>
   <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Convictions</cbc:Name>
+    <cbc:Description>A participant is excluded if it, or a member of its management, has been convicted by final judgment in the last five years of participation in a criminal organisation, corruption, fraud or money laundering.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-CONVICTIONS</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-CONVICTIONS-1</cbc:ID>
+        <cbc:Name>Convictions</cbc:Name>
+        <cbc:Description>Whether the participant, or a member of its management, has been so convicted; in a group, each member answers.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
+    <cbc:Description>A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Exclusion grounds; the exception for minor amounts.</cbc:Description>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-TAXES</cbc:ID>
+      <cbc:Description>The questions on payment of taxes and social security contributions.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-TAXES-1</cbc:ID>
+        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
+        <cbc:Description>The amount of taxes and social security contributions due and unpaid.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
+        <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
+        <cbc:MaximumAmount currencyID="XBL">1000.00</cbc:MaximumAmount>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REGISTER</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
+    <cbc:Name>Enrolment in a business register</cbc:Name>
+    <cbc:Description>The tenderer is entered in the business register of the country where it is established.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Selection criteria: suitability to pursue the activity.</cbc:Description>
+      <cbc:Article>Art. 58</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REGISTER</cbc:ID>
+      <cbc:Description>The questions on enrolment in a business register.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REGISTER-1</cbc:ID>
+        <cbc:Name>Registered in a business register</cbc:Name>
+        <cbc:Description>Whether the tenderer is entered in a business register.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+        <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
+        <cbc:ExpectedDescription>Entered in the national business register of the tenderer's country.</cbc:ExpectedDescription>
+        <cbc:TranslationTypeCode listID="urn:ubl-examples:world:codelist:TranslationTypeCode">NONE</cbc:TranslationTypeCode>
+        <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
+        <cbc:CopyQualityTypeCode listID="urn:ubl-examples:world:codelist:CopyQualityCode">COPY</cbc:CopyQualityTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-YEARS</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
+    <cbc:Name>Years in business</cbc:Name>
+    <cbc:Description>At least three full years in business, as the notices ask.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-YEARS</cbc:ID>
+      <cbc:Description>The questions on years in business.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-YEARS-1</cbc:ID>
+        <cbc:Name>Years in business</cbc:Name>
+        <cbc:Description>The full years since the tenderer was founded.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:ValueUnitCode>
+        <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
     <cbc:ID>CR-TURNOVER</cbc:ID>
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
-    <cbc:Name>General yearly turnover</cbc:Name>
-    <cbc:Description>Turnover of the last three years.</cbc:Description>
-    <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
-    <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+    <cbc:Name>Yearly turnover</cbc:Name>
+    <cbc:Description>A yearly turnover of at least 124,800 lume, twice the yearly estimate of 62,400 lume, in the last financial year for which accounts are filed.</cbc:Description>
     <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
     <cac:ProcurementProjectLotReference>
       <cbc:ID>LOT-1</cbc:ID>
@@ -531,14 +780,10 @@ Inside `Signature`:
     <cac:CommodityClassification>
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
-    <cac:SubTenderingCriterion>
-      <cbc:ID>CR-TURNOVER-A</cbc:ID>
-      <cbc:Name>Average turnover</cbc:Name>
-    </cac:SubTenderingCriterion>
     <cac:Legislation>
       <cbc:ID>XB-PPA-2019</cbc:ID>
       <cbc:Title>Public Procurement Act</cbc:Title>
-      <cbc:Description>Selection criteria.</cbc:Description>
+      <cbc:Description>Selection criteria: economic and financial standing.</cbc:Description>
       <cbc:JurisdictionLevel>National</cbc:JurisdictionLevel>
       <cbc:Article>Art. 58</cbc:Article>
       <cbc:URI>https://law.bayvarra.example/ppa</cbc:URI>
@@ -552,116 +797,132 @@ Inside `Signature`:
       </cac:JurisdictionRegionAddress>
     </cac:Legislation>
     <cac:TenderingCriterionPropertyGroup>
-      <cbc:ID>PG-1</cbc:ID>
-      <cbc:Name>Turnover</cbc:Name>
-      <cbc:Description>The figures.</cbc:Description>
-      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
-      <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
-      <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+      <cbc:ID>PG-TURNOVER</cbc:ID>
+      <cbc:Description>The questions on yearly turnover.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>P-1</cbc:ID>
+        <cbc:ID>P-TURNOVER-1</cbc:ID>
         <cbc:Name>Yearly turnover</cbc:Name>
-        <cbc:Description>Answer: yearly turnover.</cbc:Description>
-        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">REQUIREMENT</cbc:TypeCode>
+        <cbc:Description>The turnover of the last financial year for which accounts are filed.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
         <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
-        <cbc:ExpectedAmount currencyID="XBL">250000.00</cbc:ExpectedAmount>
-        <cbc:MinimumAmount currencyID="XBL">250000.00</cbc:MinimumAmount>
+        <cbc:MinimumAmount currencyID="XBL">124800.00</cbc:MinimumAmount>
         <cac:ApplicablePeriod>
-          <cbc:StartDate>2023-01-01</cbc:StartDate>
-          <cbc:EndDate>2025-12-31</cbc:EndDate>
+          <cbc:StartDate>2024-01-01</cbc:StartDate>
+          <cbc:EndDate>2024-12-31</cbc:EndDate>
         </cac:ApplicablePeriod>
         <cac:TemplateEvidence>
           <cbc:ID>EV-ACC</cbc:ID>
-          <cbc:Name>Accounts</cbc:Name>
+          <cbc:Name>Annual accounts</cbc:Name>
         </cac:TemplateEvidence>
       </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-STAFF</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Staff</cbc:Name>
+    <cbc:Description>At least ten employees, as the notices ask.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-STAFF</cbc:ID>
+      <cbc:Description>The questions on staff.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>P-2</cbc:ID>
-        <cbc:Name>Years in business</cbc:Name>
-        <cbc:Description>Answer: years in business.</cbc:Description>
+        <cbc:ID>P-STAFF-1</cbc:ID>
+        <cbc:Name>Employees</cbc:Name>
+        <cbc:Description>The number of persons employed.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
-        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:ValueUnitCode>
-        <cbc:ExpectedValueNumeric>3</cbc:ExpectedValueNumeric>
-        <cbc:MinimumValueNumeric>3</cbc:MinimumValueNumeric>
-        <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">IE</cbc:ValueUnitCode>
+        <cbc:MinimumQuantity unitCode="IE">10</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REFERENCES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Similar supplies</cbc:Name>
+    <cbc:Description>Three supplies of park benches or similar street furniture in the last five years, as the notices ask.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REFERENCES</cbc:ID>
+      <cbc:Description>The questions on similar supplies.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REFERENCES-1</cbc:ID>
+        <cbc:Name>The supplies</cbc:Name>
+        <cbc:Description>Each supply: the customer, the year, what was supplied and its value.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>P-3</cbc:ID>
-        <cbc:Name>Registered in a business register</cbc:Name>
-        <cbc:Description>Answer: registered in a business register.</cbc:Description>
+        <cbc:ID>P-REFERENCES-2</cbc:ID>
+        <cbc:Name>Number of supplies</cbc:Name>
+        <cbc:Description>How many such supplies.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">EA</cbc:ValueUnitCode>
+        <cbc:MinimumQuantity unitCode="EA">3</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TIMBER</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Certified timber</cbc:Name>
+    <cbc:Description>The slats come from forests managed for regrowth, with a forestry certificate valid for the contract, as the call asks.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Environmental requirements of the specification (XB-ENV-2021 art. 12).</cbc:Description>
+      <cbc:Article>Art. 70</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-TIMBER</cbc:ID>
+      <cbc:Description>The questions on certified timber.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-TIMBER-1</cbc:ID>
+        <cbc:Name>Forestry certificate</cbc:Name>
+        <cbc:Description>Whether the timber of the slats is covered by a forestry certificate valid for the two years of the contract.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
-        <cbc:ExpectedID>REG</cbc:ExpectedID>
         <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
-        <cbc:ExpectedCode listID="urn:ubl-examples:world:codelist:ExpectedResponseCode">REGISTERED</cbc:ExpectedCode>
-        <cbc:ExpectedDescription>Entered in a national register.</cbc:ExpectedDescription>
-        <cbc:ExpectedURI>https://register.bayvarra.example</cbc:ExpectedURI>
-        <cbc:TranslationTypeCode listID="urn:ubl-examples:world:codelist:TranslationTypeCode">NONE</cbc:TranslationTypeCode>
-        <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
-        <cbc:CopyQualityTypeCode listID="urn:ubl-examples:world:codelist:CopyQualityCode">COPY</cbc:CopyQualityTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-GROUP</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
+    <cbc:Name>Tendering as a group</cbc:Name>
+    <cbc:Description>A group of tenderers names its members and the share of each (tender/06#F4).</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-GROUP</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-GROUP-1</cbc:ID>
+        <cbc:Name>A group</cbc:Name>
+        <cbc:Description>Whether the tenderer tenders as a member of a group.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>
       <cac:SubsidiaryTenderingCriterionPropertyGroup>
-        <cbc:ID>PG-1.1</cbc:ID>
-        <cbc:Name>Consortium</cbc:Name>
+        <cbc:ID>PG-GROUP-1</cbc:ID>
+        <cbc:Name>Group</cbc:Name>
+        <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
         <cac:TenderingCriterionProperty>
-          <cbc:ID>P-4</cbc:ID>
-          <cbc:Name>Share in the consortium</cbc:Name>
-          <cbc:Description>Answer: share in the consortium.</cbc:Description>
+          <cbc:ID>P-GROUP-2</cbc:ID>
+          <cbc:Name>Share in the group</cbc:Name>
+          <cbc:Description>The share of the work of each member, in per cent.</cbc:Description>
           <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
           <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
         </cac:TenderingCriterionProperty>
       </cac:SubsidiaryTenderingCriterionPropertyGroup>
-    </cac:TenderingCriterionPropertyGroup>
-  </cac:TenderingCriterion>
-  <cac:TenderingCriterion>
-    <cbc:ID>CR-DEBT</cbc:ID>
-    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
-    <cbc:Name>Debt ratio</cbc:Name>
-    <cbc:Description>Total liabilities as a share of total assets, from the last annual accounts.</cbc:Description>
-    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
-    <cac:TenderingCriterionPropertyGroup>
-      <cbc:ID>PG-2</cbc:ID>
-      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
-      <cac:TenderingCriterionProperty>
-        <cbc:ID>P-5</cbc:ID>
-        <cbc:Name>Liabilities as a share of total assets</cbc:Name>
-        <cbc:Description>Answer: liabilities as a share of total assets.</cbc:Description>
-        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">REQUIREMENT</cbc:TypeCode>
-        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
-        <cbc:MaximumValueNumeric>80</cbc:MaximumValueNumeric>
-        <cbc:MaximumQuantity unitCode="P1">80</cbc:MaximumQuantity>
-        <cac:ApplicablePeriod>
-          <cbc:StartDate>2025-01-01</cbc:StartDate>
-          <cbc:EndDate>2025-12-31</cbc:EndDate>
-        </cac:ApplicablePeriod>
-      </cac:TenderingCriterionProperty>
-    </cac:TenderingCriterionPropertyGroup>
-  </cac:TenderingCriterion>
-  <cac:TenderingCriterion>
-    <cbc:ID>CR-TAXES</cbc:ID>
-    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
-    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
-    <cbc:Description>A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.</cbc:Description>
-    <cac:Legislation>
-      <cbc:ID>XB-PPA-2019</cbc:ID>
-      <cbc:Title>Public Procurement Act</cbc:Title>
-      <cbc:Description>Exclusion grounds; the exception for minor amounts.</cbc:Description>
-      <cbc:Article>Art. 57</cbc:Article>
-    </cac:Legislation>
-    <cac:TenderingCriterionPropertyGroup>
-      <cbc:ID>PG-3</cbc:ID>
-      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
-      <cac:TenderingCriterionProperty>
-        <cbc:ID>P-6</cbc:ID>
-        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
-        <cbc:Description>Answer: unpaid taxes and contributions.</cbc:Description>
-        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
-        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
-        <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
-        <cbc:MaximumAmount currencyID="XBL">1000.00</cbc:MaximumAmount>
-      </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>

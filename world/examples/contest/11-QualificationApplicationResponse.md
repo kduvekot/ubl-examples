@@ -110,6 +110,10 @@ Inside `ContractingParty`:
 
 Inside `EconomicOperatorParty`:
 
+- `EconomicOperatorRole/RoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
+  Brackenmere answers as the lead member of the group (contest/06#F5). The code is from the Trade Accord's economic operator role list: LEAD = Consortium lead.
+- `EconomicOperatorRole/RoleDescription` = **Represents the group towards the department.**  
+  The role in words.
 - `Party/WebsiteURI` = **https://www.brackenmere.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brackenmere Furniture (world/parties.json).
 - `Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
@@ -206,41 +210,130 @@ Inside `EconomicOperatorParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `EconomicOperatorRole/RoleCode` = **MEMBER** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
+  Saltmere Engineering is the group's other member, for the structure and the anchoring. The code is from the Trade Accord's economic operator role list: MEMBER = Consortium member.
+- `EconomicOperatorRole/RoleDescription` = **Designs the structure and the anchoring.**  
+  The role in words.
+- `Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/PartyName/Name` = **Saltmere Engineering**  
+  The trading name; identity of Saltmere Engineering (world/parties.json).
 
 ### Tendering Criterion
 
 Inside `TenderingCriterion`:
 
+- `ID` = **CR-CONVICTIONS**  
+  A criterion of the request, answered below: the response answers every criterion it asks (contest/06#F3).
+- `ID` = **CR-TAXES**  
+  A criterion of the request, answered below: the response answers every criterion it asks (contest/06#F3).
 - `ID` = **CR-PROF**  
-  The criterion answered.
+  A criterion of the request, answered below: the response answers every criterion it asks (contest/06#F3).
+- `ID` = **CR-REF-PUBLIC**  
+  A criterion of the request, answered below: the response answers every criterion it asks (contest/06#F3).
+- `ID` = **CR-REF-COAST**  
+  A criterion of the request, answered below: the response answers every criterion it asks (contest/06#F3).
 
 ### Tendering Criterion Response
 
 Inside `TenderingCriterionResponse`:
 
+- `ID` = **CRR-CONVICTIONS**  
+  The response on convictions.
+- `ValidatedCriterionPropertyID` = **P-CONVICTIONS-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-CONVICTIONS-1**  
+  The answer for Brackenmere Furniture: each member of the group answers the exclusion grounds.
+- `ResponseValue/Description` = **Brackenmere Furniture: no conviction of the member or of its management.**  
+  The answer, for this member.
+- `ResponseValue/ResponseIndicator` = **false**  
+  No: not convicted.
+- `ResponseValue/ID` = **RV-CONVICTIONS-2**  
+  The answer for Saltmere Engineering: each member of the group answers the exclusion grounds.
+- `ResponseValue/Description` = **Saltmere Engineering: no conviction of the member or of its management.**  
+  The answer, for this member.
+- `ResponseValue/ResponseIndicator` = **false**  
+  No: not convicted.
+- `ID` = **CRR-TAXES**  
+  The response on taxes and contributions.
+- `ValidatedCriterionPropertyID` = **P-TAXES-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-TAXES-1**  
+  The answer for Brackenmere Furniture: each member of the group answers the exclusion grounds.
+- `ResponseValue/Description` = **Brackenmere Furniture: no taxes or social security contributions due and unpaid.**  
+  The answer, for this member.
+- `ResponseValue/ResponseIndicator` = **false**  
+  No: nothing due is unpaid.
+- `ResponseValue/ID` = **RV-TAXES-2**  
+  The answer for Saltmere Engineering: each member of the group answers the exclusion grounds.
+- `ResponseValue/Description` = **Saltmere Engineering: no taxes or social security contributions due and unpaid.**  
+  The answer, for this member.
+- `ResponseValue/ResponseIndicator` = **false**  
+  No: nothing due is unpaid.
 - `ID` = **CRR-PROF**  
-  The response.
-- `Description` = **The design lead, Ivo Harlan, is registered as an industrial designer, no. ID-2208, in the register of the Bayvarran Design Council.**  
-  The answer.
+  The response on the design lead.
 - `ValidatedCriterionPropertyID` = **P-PROF-1**  
   The question answered.
 - `ResponseValue/ID` = **RV-PROF**  
   The answer.
-- `ResponseValue/Description` = **The design lead, Ivo Harlan, is registered as an industrial designer, no. ID-2208, in the register of the Bayvarran Design Council.**  
-  In words, as the question asks.
+- `ResponseValue/Description` = **Ivo Harlan, Brackenmere Furniture's own industrial designer, is registered as an industrial designer, no. ID-2208, in the register of the Bayvarran Design Council.**  
+  The answer, in words, as the question asks: the response itself repeats nothing (contest/06#F12).
 - `ResponseValue/ResponseCode` = **MET** (listID `urn:ubl-examples:world:codelist:CriterionResponseCode`)  
   The criterion is met. The code is from the Trade Accord's criterion response list: MET = Criterion met.
+- `SuppliedEvidence/ID` = **EV-REG-ID-2208**  
+  The certificate that proves the registration (contest/06#F13).
+- `ID` = **CRR-REF-PUBLIC**  
+  The response on the references.
+- `ValidatedCriterionPropertyID` = **P-REF-PUBLIC-1**  
+  The question answered: one value for each of the two references.
+- `ResponseValue/ID` = **RV-REF-PUBLIC-1**  
+  The answer.
+- `ResponseValue/Description` = **Seating for the reading garden of Lumeport's central library, 2024: client the City of Lumeport; Brackenmere designed the benches and the planter seats, made in Brackenmere's workshop.**  
+  The project, the client, the year and what the team designed, as the question asks (D29 point 3, O195).
+- `ResponseValue/ID` = **RV-REF-PUBLIC-2**  
+  The answer.
+- `ResponseValue/Description` = **Promenade benches for Larkmouth's seafront, 2023: client Larkmouth town council; Brackenmere designed the benches of the seafront promenade, bolted to the sea wall's walkway.**  
+  The project, the client, the year and what the team designed, as the question asks (D29 point 3, O195).
+- `ID` = **CRR-REF-COAST**  
+  The response on the coastal site: which reference it is.
+- `ValidatedCriterionPropertyID` = **P-REF-COAST-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-REF-COAST-1**  
+  The answer.
+- `ResponseValue/Description` = **Promenade benches for Larkmouth's seafront, 2023: client Larkmouth town council; Brackenmere designed the benches of the seafront promenade, bolted to the sea wall's walkway.**  
+  The project, the client, the year and what the team designed, as the question asks (D29 point 3, O195).
+- `ID` = **CRR-REF-COAST-SITE**  
+  The response on the site of the coastal reference.
+- `ValidatedCriterionPropertyID` = **P-REF-COAST-2**  
+  The question answered.
+- `ResponseValue/ID` = **RV-REF-COAST-2**  
+  The answer.
+- `ResponseValue/Description` = **On the seafront promenade of Larkmouth, Bayvarra's harbour town at the mouth of the east river: the benches stand on the sea wall's walkway, within 20 metres of the sea.**  
+  Where it stands and how far from the sea.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **LPWD-DOC-26-0636**  
+  The request this self-declaration answers (contest/06#F4).
+- `DocumentTypeCode` = **QualificationApplicationRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0636 is the example contest/05, a QualificationApplicationRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: QualificationApplicationRequest = Qualification Application Request.
+- `VersionID` = **2**  
+  The version of the request answered.
 
 ### Evidence
 
 Inside `Evidence`:
 
-- `ID` = **EV-REG-LEAD**  
-  The registration of the design lead.
+- `ID` = **EV-REG-ID-2208**  
+  The certificate of the design lead's registration.
 - `EvidenceTypeCode` = **CERTIFICATE** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
   A certificate of registration. The code is from the Trade Accord's evidence type list: CERTIFICATE = Certificate.
-- `Name` = **Certificate of registration of the design lead**  
+- `Name` = **Certificate of registration of the design lead, Ivo Harlan**  
   What it is.
+- `Description` = **Registration no. ID-2208 in the register of industrial designers that the Bayvarran Design Council keeps; the council issues the certificate.**  
+  Which register, and who issues the certificate.
 
 ## The document
 
@@ -313,6 +406,10 @@ Inside `Evidence`:
     </cac:Party>
   </cac:ContractingParty>
   <cac:EconomicOperatorParty>
+    <cac:EconomicOperatorRole>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
+      <cbc:RoleDescription>Represents the group towards the department.</cbc:RoleDescription>
+    </cac:EconomicOperatorRole>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -400,23 +497,113 @@ Inside `Evidence`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:EconomicOperatorParty>
+    <cac:EconomicOperatorRole>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">MEMBER</cbc:RoleCode>
+      <cbc:RoleDescription>Designs the structure and the anchoring.</cbc:RoleDescription>
+    </cac:EconomicOperatorRole>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Saltmere Engineering</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:EconomicOperatorParty>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterion>
     <cbc:ID>CR-PROF</cbc:ID>
   </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-PUBLIC</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-COAST</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-CONVICTIONS</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-CONVICTIONS-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-CONVICTIONS-1</cbc:ID>
+      <cbc:Description>Brackenmere Furniture: no conviction of the member or of its management.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-CONVICTIONS-2</cbc:ID>
+      <cbc:Description>Saltmere Engineering: no conviction of the member or of its management.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TAXES</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-TAXES-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TAXES-1</cbc:ID>
+      <cbc:Description>Brackenmere Furniture: no taxes or social security contributions due and unpaid.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TAXES-2</cbc:ID>
+      <cbc:Description>Saltmere Engineering: no taxes or social security contributions due and unpaid.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
   <cac:TenderingCriterionResponse>
     <cbc:ID>CRR-PROF</cbc:ID>
-    <cbc:Description>The design lead, Ivo Harlan, is registered as an industrial designer, no. ID-2208, in the register of the Bayvarran Design Council.</cbc:Description>
     <cbc:ValidatedCriterionPropertyID>P-PROF-1</cbc:ValidatedCriterionPropertyID>
     <cac:ResponseValue>
       <cbc:ID>RV-PROF</cbc:ID>
-      <cbc:Description>The design lead, Ivo Harlan, is registered as an industrial designer, no. ID-2208, in the register of the Bayvarran Design Council.</cbc:Description>
+      <cbc:Description>Ivo Harlan, Brackenmere Furniture's own industrial designer, is registered as an industrial designer, no. ID-2208, in the register of the Bayvarran Design Council.</cbc:Description>
       <cbc:ResponseCode listID="urn:ubl-examples:world:codelist:CriterionResponseCode">MET</cbc:ResponseCode>
     </cac:ResponseValue>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-REG-ID-2208</cbc:ID>
+    </cac:SuppliedEvidence>
   </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REF-PUBLIC</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REF-PUBLIC-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-PUBLIC-1</cbc:ID>
+      <cbc:Description>Seating for the reading garden of Lumeport's central library, 2024: client the City of Lumeport; Brackenmere designed the benches and the planter seats, made in Brackenmere's workshop.</cbc:Description>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-PUBLIC-2</cbc:ID>
+      <cbc:Description>Promenade benches for Larkmouth's seafront, 2023: client Larkmouth town council; Brackenmere designed the benches of the seafront promenade, bolted to the sea wall's walkway.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REF-COAST</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REF-COAST-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-COAST-1</cbc:ID>
+      <cbc:Description>Promenade benches for Larkmouth's seafront, 2023: client Larkmouth town council; Brackenmere designed the benches of the seafront promenade, bolted to the sea wall's walkway.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REF-COAST-SITE</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REF-COAST-2</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-COAST-2</cbc:ID>
+      <cbc:Description>On the seafront promenade of Larkmouth, Bayvarra's harbour town at the mouth of the east river: the benches stand on the sea wall's walkway, within 20 metres of the sea.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LPWD-DOC-26-0636</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
+    <cbc:VersionID>2</cbc:VersionID>
+  </cac:AdditionalDocumentReference>
   <cac:Evidence>
-    <cbc:ID>EV-REG-LEAD</cbc:ID>
+    <cbc:ID>EV-REG-ID-2208</cbc:ID>
     <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">CERTIFICATE</cbc:EvidenceTypeCode>
-    <cbc:Name>Certificate of registration of the design lead</cbc:Name>
+    <cbc:Name>Certificate of registration of the design lead, Ivo Harlan</cbc:Name>
+    <cbc:Description>Registration no. ID-2208 in the register of industrial designers that the Bayvarran Design Council keeps; the council issues the certificate.</cbc:Description>
   </cac:Evidence>
 </QualificationApplicationResponse>
 ```

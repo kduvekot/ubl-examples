@@ -28,8 +28,8 @@ Version 2 of the request to participate: the shares of the team members change w
   With the revised self-declaration.
 - `IssueTime` = **09:52:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The furniture maker leads the team; the engineering firm does the structure and the anchoring.**  
-  Who does what.
+- `Note` = **Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring.**  
+  Who does what, and who provides the design lead (D29 point 2, contest/07#F4).
 - `VersionID` = **2**  
   The second version, which supersedes the first: the furniture maker now leads the design, so the shares of the work change.
 - `PreviousVersionID` = **1**  
@@ -41,16 +41,20 @@ Inside `TendererPartyQualification`:
 
 - `MainQualifyingParty/ParticipationPercent` = **70**  
   The furniture maker's share of the work.
-- `MainQualifyingParty/BusinessIdentityEvidenceID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Its registration. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `MainQualifyingParty/TendererRoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
   The lead member of the group. The code is from the Trade Accord's tenderer role list: LEAD = Consortium lead.
-- `MainQualifyingParty/CompletedTask/Description` = **Seating for the Lumeport central library's reading garden, 2024.**  
-  A reference.
+- `MainQualifyingParty/CompletedTask/Description` = **Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024.**  
+  A reference: one of the two the contest notice asks for (contest/07#F1, O195).
 - `MainQualifyingParty/CompletedTask/Period/StartDate` = **2024-03-01**  
   From.
 - `MainQualifyingParty/CompletedTask/Period/EndDate` = **2024-09-30**  
-  To.
+  To: completed within the five years asked.
+- `MainQualifyingParty/CompletedTask/Description` = **Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023.**  
+  A reference: one of the two the contest notice asks for (contest/07#F1, O195).
+- `MainQualifyingParty/CompletedTask/Period/StartDate` = **2023-02-01**  
+  From.
+- `MainQualifyingParty/CompletedTask/Period/EndDate` = **2023-06-30**  
+  To: completed within the five years asked.
 - `MainQualifyingParty/Party/WebsiteURI` = **https://www.brackenmere.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Brackenmere Furniture (world/parties.json).
 - `MainQualifyingParty/Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
@@ -187,10 +191,18 @@ Inside `TendererPartyQualification`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AdditionalQualifyingParty/Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationName` = **Saltmere Engineering**  
+- `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationName` = **Saltmere Engineering Ltd**  
   The name under which the party is registered, with its legal form; identity of Saltmere Engineering (world/parties.json).
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+- `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationDate` = **1994-10-03**  
+  The day the company was entered in the register; identity of Saltmere Engineering (world/parties.json).
+- `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
+- `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
+  The name of code LTD in Bayvarra's national company legal form list.
+- `AdditionalQualifyingParty/Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
+  The size class follows from the company's 36 persons and its turnover of 5400000.00 XBL in 2025, by the Trade Accord's limits; identity of Saltmere Engineering (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -297,19 +309,25 @@ Inside `ContractingParty`:
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
   <cbc:IssueTime>09:52:00-01:00</cbc:IssueTime>
-  <cbc:Note>The furniture maker leads the team; the engineering firm does the structure and the anchoring.</cbc:Note>
+  <cbc:Note>Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cac:TendererPartyQualification>
     <cac:MainQualifyingParty>
       <cbc:ParticipationPercent>70</cbc:ParticipationPercent>
-      <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
       <cac:CompletedTask>
-        <cbc:Description>Seating for the Lumeport central library's reading garden, 2024.</cbc:Description>
+        <cbc:Description>Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024.</cbc:Description>
         <cac:Period>
           <cbc:StartDate>2024-03-01</cbc:StartDate>
           <cbc:EndDate>2024-09-30</cbc:EndDate>
+        </cac:Period>
+      </cac:CompletedTask>
+      <cac:CompletedTask>
+        <cbc:Description>Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023.</cbc:Description>
+        <cac:Period>
+          <cbc:StartDate>2023-02-01</cbc:StartDate>
+          <cbc:EndDate>2023-06-30</cbc:EndDate>
         </cac:Period>
       </cac:CompletedTask>
       <cac:Party>
@@ -432,8 +450,12 @@ Inside `ContractingParty`:
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
+          <cbc:RegistrationName>Saltmere Engineering Ltd</cbc:RegistrationName>
           <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
+          <cbc:RegistrationDate>1994-10-03</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Marrowdale</cbc:CityName>

@@ -213,8 +213,12 @@
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
+          <cbc:RegistrationName>Saltmere Engineering Ltd</cbc:RegistrationName>
           <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
+          <cbc:RegistrationDate>1994-10-03</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Marrowdale</cbc:CityName>

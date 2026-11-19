@@ -14,7 +14,7 @@
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
-  <cbc:WeightScoringMethodologyNote>The qualification of the design lead is pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightScoringMethodologyNote>The exclusion grounds and the qualification of the design lead are pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
   <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
   <cac:ContractingParty>
     <cac:Party>
@@ -109,11 +109,56 @@
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Convictions</cbc:Name>
+    <cbc:Description>A participant is excluded if it, or a member of its management, has been convicted by final judgment in the last five years of participation in a criminal organisation, corruption, fraud or money laundering.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-CONVICTIONS</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-CONVICTIONS-1</cbc:ID>
+        <cbc:Name>Convictions</cbc:Name>
+        <cbc:Description>Whether the participant, or a member of its management, has been so convicted; in a group, each member answers.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
+    <cbc:Description>A participant is excluded if it owes taxes or social security contributions that are due and unpaid.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-TAXES</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-TAXES-1</cbc:ID>
+        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
+        <cbc:Description>Whether the participant owes taxes or social security contributions that are due and unpaid; in a group, each member answers.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
     <cbc:ID>CR-PROF</cbc:ID>
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
     <cbc:Name>Professional qualification of the design lead</cbc:Name>
     <cbc:Description>The design lead is a registered architect or registered industrial designer.</cbc:Description>
-    <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
     <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
     <cac:TenderingCriterionPropertyGroup>
       <cbc:ID>PG-PROF</cbc:ID>
@@ -121,7 +166,7 @@
       <cac:TenderingCriterionProperty>
         <cbc:ID>P-PROF-1</cbc:ID>
         <cbc:Name>Registration of the design lead</cbc:Name>
-        <cbc:Description>The register and the registration number of the design lead.</cbc:Description>
+        <cbc:Description>The design lead's name, the member of the group it belongs to, the register and the registration number.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>
@@ -162,6 +207,13 @@
         <cbc:ID>P-REF-COAST-1</cbc:ID>
         <cbc:Name>The reference</cbc:Name>
         <cbc:Description>The project, the client, the year and what the team designed.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REF-COAST-2</cbc:ID>
+        <cbc:Name>The site</cbc:Name>
+        <cbc:Description>Where the reference stands and how far it is from the sea.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>

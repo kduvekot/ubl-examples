@@ -36,7 +36,7 @@ The authority asks for the self-declaration on the design lead's professional qu
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
 - `QualificationApplicationTypeCode` = **REGULATED** (listID `urn:ubl-examples:world:codelist:QualificationApplicationTypeCode`)  
   The regulated form of self-declaration. The code is from the Trade Accord's qualification application type list: REGULATED = Regulated.
-- `WeightScoringMethodologyNote` = **The qualification of the design lead is pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.**  
+- `WeightScoringMethodologyNote` = **The exclusion grounds and the qualification of the design lead are pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.**  
   How the answers count.
 - `WeightingTypeCode` = **WEIGHTED** (listID `urn:ubl-examples:world:codelist:WeightingTypeCode`)  
   The selection criteria carry weights: the jury scores the references to choose three to five participants. The code is from the Trade Accord's weighting type list: WEIGHTED = Weighted.
@@ -163,6 +163,66 @@ Inside `EconomicOperatorParty`:
 
 Inside `TenderingCriterion`:
 
+- `ID` = **CR-CONVICTIONS**  
+  The exclusion ground.
+- `CriterionTypeCode` = **EXCLUSION** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  An exclusion ground: a participant to which it applies is not selected. The code is from the Trade Accord's criterion type list: EXCLUSION = Exclusion ground.
+- `Name` = **Convictions**  
+  The ground.
+- `Description` = **A participant is excluded if it, or a member of its management, has been convicted by final judgment in the last five years of participation in a criminal organisation, corruption, fraud or money laundering.**  
+  What excludes a participant.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  It applies or not. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `Legislation/ID` = **XB-PPA-2019**  
+  Bayvarra's Public Procurement Act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Its title.
+- `Legislation/Article` = **Art. 57**  
+  The article on the exclusion grounds.
+- `TenderingCriterionPropertyGroup/ID` = **PG-CONVICTIONS**  
+  The question on the ground.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered. The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-CONVICTIONS-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Convictions**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Whether the participant, or a member of its management, has been so convicted; in a group, each member answers.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
+- `ID` = **CR-TAXES**  
+  The exclusion ground.
+- `CriterionTypeCode` = **EXCLUSION** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
+  An exclusion ground: a participant to which it applies is not selected. The code is from the Trade Accord's criterion type list: EXCLUSION = Exclusion ground.
+- `Name` = **Payment of taxes and social security contributions**  
+  The ground.
+- `Description` = **A participant is excluded if it owes taxes or social security contributions that are due and unpaid.**  
+  What excludes a participant.
+- `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
+  It applies or not. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+- `Legislation/ID` = **XB-PPA-2019**  
+  Bayvarra's Public Procurement Act.
+- `Legislation/Title` = **Public Procurement Act**  
+  Its title.
+- `Legislation/Article` = **Art. 57**  
+  The article on the exclusion grounds.
+- `TenderingCriterionPropertyGroup/ID` = **PG-TAXES**  
+  The question on the ground.
+- `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
+  Always answered. The code is from the Trade Accord's property group type list: ON = Always.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-TAXES-1**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Unpaid taxes and contributions**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Whether the participant owes taxes or social security contributions that are due and unpaid; in a group, each member answers.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **INDICATOR** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: INDICATOR = Indicator.
 - `ID` = **CR-PROF**  
   The criterion on the design lead.
 - `CriterionTypeCode` = **SUITABILITY** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
@@ -171,10 +231,8 @@ Inside `TenderingCriterion`:
   The criterion.
 - `Description` = **The design lead is a registered architect.**  
   What is asked.
-- `FulfilmentIndicator` = **true**  
-  Must be met.
 - `EvaluationMethodTypeCode` = **PASSFAIL** (listID `urn:ubl-examples:world:codelist:EvaluationMethodCode`)  
-  Met or not. The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
+  Met or not: a participant whose design lead does not meet it is not selected. The request states no fulfilment: nobody has answered yet (contest/05#F3). The code is from the Trade Accord's evaluation method list: PASSFAIL = Pass or fail.
 - `TenderingCriterionPropertyGroup/ID` = **PG-PROF**  
   The questions on the design lead.
 - `TenderingCriterionPropertyGroup/PropertyGroupTypeCode` = **ON** (listID `urn:ubl-examples:world:codelist:PropertyGroupTypeCode`)  
@@ -183,12 +241,12 @@ Inside `TenderingCriterion`:
   The question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **Registration of the design lead**  
   Its name.
-- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The register and the registration number of the design lead.**  
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The design lead's name, the member of the group it belongs to, the register and the registration number.**  
   What to answer.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  A question. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  Answered in words. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
 - `ID` = **CR-REF-PUBLIC**  
   The criterion.
 - `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
@@ -214,9 +272,9 @@ Inside `TenderingCriterion`:
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The project, the client, the year and what the team designed.**  
   What to answer.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  A question. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  Answered in words. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
 - `ID` = **CR-REF-COAST**  
   The criterion.
 - `CriterionTypeCode` = **TECHNICAL** (listID `urn:ubl-examples:world:codelist:CriterionTypeCode`)  
@@ -242,9 +300,19 @@ Inside `TenderingCriterion`:
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **The project, the client, the year and what the team designed.**  
   What to answer.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
-  A question. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
-  Answered in words. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ID` = **P-REF-COAST-2**  
+  The question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Name` = **The site**  
+  Its name.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/Description` = **Where the reference stands and how far it is from the sea.**  
+  What to answer.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/TypeCode` = **QUESTION** (listID `urn:ubl-examples:world:codelist:CriterionPropertyTypeCode`)  
+  A question the participant answers. The code is from the Trade Accord's criterion property type list: QUESTION = Question.
+- `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
+  The kind of answer it takes. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
 
 ## The document
 
@@ -264,7 +332,7 @@ Inside `TenderingCriterion`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
-  <cbc:WeightScoringMethodologyNote>The qualification of the design lead is pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
+  <cbc:WeightScoringMethodologyNote>The exclusion grounds and the qualification of the design lead are pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
   <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
   <cac:ContractingParty>
     <cac:Party>
@@ -359,11 +427,56 @@ Inside `TenderingCriterion`:
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Convictions</cbc:Name>
+    <cbc:Description>A participant is excluded if it, or a member of its management, has been convicted by final judgment in the last five years of participation in a criminal organisation, corruption, fraud or money laundering.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-CONVICTIONS</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-CONVICTIONS-1</cbc:ID>
+        <cbc:Name>Convictions</cbc:Name>
+        <cbc:Description>Whether the participant, or a member of its management, has been so convicted; in a group, each member answers.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
+    <cbc:Description>A participant is excluded if it owes taxes or social security contributions that are due and unpaid.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-TAXES</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-TAXES-1</cbc:ID>
+        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
+        <cbc:Description>Whether the participant owes taxes or social security contributions that are due and unpaid; in a group, each member answers.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
     <cbc:ID>CR-PROF</cbc:ID>
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
     <cbc:Name>Professional qualification of the design lead</cbc:Name>
     <cbc:Description>The design lead is a registered architect.</cbc:Description>
-    <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
     <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
     <cac:TenderingCriterionPropertyGroup>
       <cbc:ID>PG-PROF</cbc:ID>
@@ -371,7 +484,7 @@ Inside `TenderingCriterion`:
       <cac:TenderingCriterionProperty>
         <cbc:ID>P-PROF-1</cbc:ID>
         <cbc:Name>Registration of the design lead</cbc:Name>
-        <cbc:Description>The register and the registration number of the design lead.</cbc:Description>
+        <cbc:Description>The design lead's name, the member of the group it belongs to, the register and the registration number.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>
@@ -412,6 +525,13 @@ Inside `TenderingCriterion`:
         <cbc:ID>P-REF-COAST-1</cbc:ID>
         <cbc:Name>The reference</cbc:Name>
         <cbc:Description>The project, the client, the year and what the team designed.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REF-COAST-2</cbc:ID>
+        <cbc:Name>The site</cbc:Name>
+        <cbc:Description>Where the reference stands and how far it is from the sea.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>

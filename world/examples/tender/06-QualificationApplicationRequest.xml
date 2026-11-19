@@ -115,12 +115,111 @@
     <cbc:ID>LOT-1</cbc:ID>
   </cac:ProcurementProjectLot>
   <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Convictions</cbc:Name>
+    <cbc:Description>A participant is excluded if it, or a member of its management, has been convicted by final judgment in the last five years of participation in a criminal organisation, corruption, fraud or money laundering.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-CONVICTIONS</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-CONVICTIONS-1</cbc:ID>
+        <cbc:Name>Convictions</cbc:Name>
+        <cbc:Description>Whether the participant, or a member of its management, has been so convicted; in a group, each member answers.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
+    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
+    <cbc:Description>A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Exclusion grounds; the exception for minor amounts.</cbc:Description>
+      <cbc:Article>Art. 57</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-TAXES</cbc:ID>
+      <cbc:Description>The questions on payment of taxes and social security contributions.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-TAXES-1</cbc:ID>
+        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
+        <cbc:Description>The amount of taxes and social security contributions due and unpaid.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
+        <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
+        <cbc:MaximumAmount currencyID="XBL">1000.00</cbc:MaximumAmount>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REGISTER</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
+    <cbc:Name>Enrolment in a business register</cbc:Name>
+    <cbc:Description>The tenderer is entered in the business register of the country where it is established.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Selection criteria: suitability to pursue the activity.</cbc:Description>
+      <cbc:Article>Art. 58</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REGISTER</cbc:ID>
+      <cbc:Description>The questions on enrolment in a business register.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REGISTER-1</cbc:ID>
+        <cbc:Name>Registered in a business register</cbc:Name>
+        <cbc:Description>Whether the tenderer is entered in a business register.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
+        <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
+        <cbc:ExpectedDescription>Entered in the national business register of the tenderer's country.</cbc:ExpectedDescription>
+        <cbc:TranslationTypeCode listID="urn:ubl-examples:world:codelist:TranslationTypeCode">NONE</cbc:TranslationTypeCode>
+        <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
+        <cbc:CopyQualityTypeCode listID="urn:ubl-examples:world:codelist:CopyQualityCode">COPY</cbc:CopyQualityTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-YEARS</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
+    <cbc:Name>Years in business</cbc:Name>
+    <cbc:Description>At least three full years in business, as the notices ask.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-YEARS</cbc:ID>
+      <cbc:Description>The questions on years in business.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-YEARS-1</cbc:ID>
+        <cbc:Name>Years in business</cbc:Name>
+        <cbc:Description>The full years since the tenderer was founded.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:ValueUnitCode>
+        <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
     <cbc:ID>CR-TURNOVER</cbc:ID>
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
-    <cbc:Name>General yearly turnover</cbc:Name>
-    <cbc:Description>Turnover of the last three years.</cbc:Description>
-    <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
-    <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+    <cbc:Name>Yearly turnover</cbc:Name>
+    <cbc:Description>A yearly turnover of at least 124,800 lume, twice the yearly estimate of 62,400 lume, in the last financial year for which accounts are filed.</cbc:Description>
     <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
     <cac:ProcurementProjectLotReference>
       <cbc:ID>LOT-1</cbc:ID>
@@ -128,14 +227,10 @@
     <cac:CommodityClassification>
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
-    <cac:SubTenderingCriterion>
-      <cbc:ID>CR-TURNOVER-A</cbc:ID>
-      <cbc:Name>Average turnover</cbc:Name>
-    </cac:SubTenderingCriterion>
     <cac:Legislation>
       <cbc:ID>XB-PPA-2019</cbc:ID>
       <cbc:Title>Public Procurement Act</cbc:Title>
-      <cbc:Description>Selection criteria.</cbc:Description>
+      <cbc:Description>Selection criteria: economic and financial standing.</cbc:Description>
       <cbc:JurisdictionLevel>National</cbc:JurisdictionLevel>
       <cbc:Article>Art. 58</cbc:Article>
       <cbc:URI>https://law.bayvarra.example/ppa</cbc:URI>
@@ -149,116 +244,132 @@
       </cac:JurisdictionRegionAddress>
     </cac:Legislation>
     <cac:TenderingCriterionPropertyGroup>
-      <cbc:ID>PG-1</cbc:ID>
-      <cbc:Name>Turnover</cbc:Name>
-      <cbc:Description>The figures.</cbc:Description>
-      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
-      <cbc:FulfilmentIndicator>true</cbc:FulfilmentIndicator>
-      <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+      <cbc:ID>PG-TURNOVER</cbc:ID>
+      <cbc:Description>The questions on yearly turnover.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>P-1</cbc:ID>
+        <cbc:ID>P-TURNOVER-1</cbc:ID>
         <cbc:Name>Yearly turnover</cbc:Name>
-        <cbc:Description>Answer: yearly turnover.</cbc:Description>
-        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">REQUIREMENT</cbc:TypeCode>
+        <cbc:Description>The turnover of the last financial year for which accounts are filed.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
         <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
-        <cbc:ExpectedAmount currencyID="XBL">250000.00</cbc:ExpectedAmount>
-        <cbc:MinimumAmount currencyID="XBL">250000.00</cbc:MinimumAmount>
+        <cbc:MinimumAmount currencyID="XBL">124800.00</cbc:MinimumAmount>
         <cac:ApplicablePeriod>
-          <cbc:StartDate>2023-01-01</cbc:StartDate>
-          <cbc:EndDate>2025-12-31</cbc:EndDate>
+          <cbc:StartDate>2024-01-01</cbc:StartDate>
+          <cbc:EndDate>2024-12-31</cbc:EndDate>
         </cac:ApplicablePeriod>
         <cac:TemplateEvidence>
           <cbc:ID>EV-ACC</cbc:ID>
-          <cbc:Name>Accounts</cbc:Name>
+          <cbc:Name>Annual accounts</cbc:Name>
         </cac:TemplateEvidence>
       </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-STAFF</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Staff</cbc:Name>
+    <cbc:Description>At least ten employees, as the notices ask.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-STAFF</cbc:ID>
+      <cbc:Description>The questions on staff.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>P-2</cbc:ID>
-        <cbc:Name>Years in business</cbc:Name>
-        <cbc:Description>Answer: years in business.</cbc:Description>
+        <cbc:ID>P-STAFF-1</cbc:ID>
+        <cbc:Name>Employees</cbc:Name>
+        <cbc:Description>The number of persons employed.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
-        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:ValueUnitCode>
-        <cbc:ExpectedValueNumeric>3</cbc:ExpectedValueNumeric>
-        <cbc:MinimumValueNumeric>3</cbc:MinimumValueNumeric>
-        <cbc:MinimumQuantity unitCode="ANN">3</cbc:MinimumQuantity>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">IE</cbc:ValueUnitCode>
+        <cbc:MinimumQuantity unitCode="IE">10</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REFERENCES</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Similar supplies</cbc:Name>
+    <cbc:Description>Three supplies of park benches or similar street furniture in the last five years, as the notices ask.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-REFERENCES</cbc:ID>
+      <cbc:Description>The questions on similar supplies.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cbc:FulfilmentIndicatorTypeCode listID="urn:ubl-examples:world:codelist:FulfilmentIndicatorCode">ALL</cbc:FulfilmentIndicatorTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-REFERENCES-1</cbc:ID>
+        <cbc:Name>The supplies</cbc:Name>
+        <cbc:Description>Each supply: the customer, the year, what was supplied and its value.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">DESCRIPTION</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>
       <cac:TenderingCriterionProperty>
-        <cbc:ID>P-3</cbc:ID>
-        <cbc:Name>Registered in a business register</cbc:Name>
-        <cbc:Description>Answer: registered in a business register.</cbc:Description>
+        <cbc:ID>P-REFERENCES-2</cbc:ID>
+        <cbc:Name>Number of supplies</cbc:Name>
+        <cbc:Description>How many such supplies.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">QUANTITY</cbc:ValueDataTypeCode>
+        <cbc:ValueUnitCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">EA</cbc:ValueUnitCode>
+        <cbc:MinimumQuantity unitCode="EA">3</cbc:MinimumQuantity>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TIMBER</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">TECHNICAL</cbc:CriterionTypeCode>
+    <cbc:Name>Certified timber</cbc:Name>
+    <cbc:Description>The slats come from forests managed for regrowth, with a forestry certificate valid for the contract, as the call asks.</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:Legislation>
+      <cbc:ID>XB-PPA-2019</cbc:ID>
+      <cbc:Title>Public Procurement Act</cbc:Title>
+      <cbc:Description>Environmental requirements of the specification (XB-ENV-2021 art. 12).</cbc:Description>
+      <cbc:Article>Art. 70</cbc:Article>
+    </cac:Legislation>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-TIMBER</cbc:ID>
+      <cbc:Description>The questions on certified timber.</cbc:Description>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-TIMBER-1</cbc:ID>
+        <cbc:Name>Forestry certificate</cbc:Name>
+        <cbc:Description>Whether the timber of the slats is covered by a forestry certificate valid for the two years of the contract.</cbc:Description>
         <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
         <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
-        <cbc:ExpectedID>REG</cbc:ExpectedID>
         <cbc:ExpectedIndicator>true</cbc:ExpectedIndicator>
-        <cbc:ExpectedCode listID="urn:ubl-examples:world:codelist:ExpectedResponseCode">REGISTERED</cbc:ExpectedCode>
-        <cbc:ExpectedDescription>Entered in a national register.</cbc:ExpectedDescription>
-        <cbc:ExpectedURI>https://register.bayvarra.example</cbc:ExpectedURI>
-        <cbc:TranslationTypeCode listID="urn:ubl-examples:world:codelist:TranslationTypeCode">NONE</cbc:TranslationTypeCode>
-        <cbc:CertificationLevelDescription>A plain extract will do.</cbc:CertificationLevelDescription>
-        <cbc:CopyQualityTypeCode listID="urn:ubl-examples:world:codelist:CopyQualityCode">COPY</cbc:CopyQualityTypeCode>
+      </cac:TenderingCriterionProperty>
+    </cac:TenderingCriterionPropertyGroup>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-GROUP</cbc:ID>
+    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
+    <cbc:Name>Tendering as a group</cbc:Name>
+    <cbc:Description>A group of tenderers names its members and the share of each (tender/06#F4).</cbc:Description>
+    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
+    <cac:TenderingCriterionPropertyGroup>
+      <cbc:ID>PG-GROUP</cbc:ID>
+      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ON</cbc:PropertyGroupTypeCode>
+      <cac:TenderingCriterionProperty>
+        <cbc:ID>P-GROUP-1</cbc:ID>
+        <cbc:Name>A group</cbc:Name>
+        <cbc:Description>Whether the tenderer tenders as a member of a group.</cbc:Description>
+        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
+        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">INDICATOR</cbc:ValueDataTypeCode>
       </cac:TenderingCriterionProperty>
       <cac:SubsidiaryTenderingCriterionPropertyGroup>
-        <cbc:ID>PG-1.1</cbc:ID>
-        <cbc:Name>Consortium</cbc:Name>
+        <cbc:ID>PG-GROUP-1</cbc:ID>
+        <cbc:Name>Group</cbc:Name>
+        <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
         <cac:TenderingCriterionProperty>
-          <cbc:ID>P-4</cbc:ID>
-          <cbc:Name>Share in the consortium</cbc:Name>
-          <cbc:Description>Answer: share in the consortium.</cbc:Description>
+          <cbc:ID>P-GROUP-2</cbc:ID>
+          <cbc:Name>Share in the group</cbc:Name>
+          <cbc:Description>The share of the work of each member, in per cent.</cbc:Description>
           <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
           <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
         </cac:TenderingCriterionProperty>
       </cac:SubsidiaryTenderingCriterionPropertyGroup>
-    </cac:TenderingCriterionPropertyGroup>
-  </cac:TenderingCriterion>
-  <cac:TenderingCriterion>
-    <cbc:ID>CR-DEBT</cbc:ID>
-    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">ECONOMIC</cbc:CriterionTypeCode>
-    <cbc:Name>Debt ratio</cbc:Name>
-    <cbc:Description>Total liabilities as a share of total assets, from the last annual accounts.</cbc:Description>
-    <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
-    <cac:TenderingCriterionPropertyGroup>
-      <cbc:ID>PG-2</cbc:ID>
-      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
-      <cac:TenderingCriterionProperty>
-        <cbc:ID>P-5</cbc:ID>
-        <cbc:Name>Liabilities as a share of total assets</cbc:Name>
-        <cbc:Description>Answer: liabilities as a share of total assets.</cbc:Description>
-        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">REQUIREMENT</cbc:TypeCode>
-        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">PERCENT</cbc:ValueDataTypeCode>
-        <cbc:MaximumValueNumeric>80</cbc:MaximumValueNumeric>
-        <cbc:MaximumQuantity unitCode="P1">80</cbc:MaximumQuantity>
-        <cac:ApplicablePeriod>
-          <cbc:StartDate>2025-01-01</cbc:StartDate>
-          <cbc:EndDate>2025-12-31</cbc:EndDate>
-        </cac:ApplicablePeriod>
-      </cac:TenderingCriterionProperty>
-    </cac:TenderingCriterionPropertyGroup>
-  </cac:TenderingCriterion>
-  <cac:TenderingCriterion>
-    <cbc:ID>CR-TAXES</cbc:ID>
-    <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>
-    <cbc:Name>Payment of taxes and social security contributions</cbc:Name>
-    <cbc:Description>A tenderer that has not paid its taxes or social security contributions is excluded, unless only minor amounts are unpaid.</cbc:Description>
-    <cac:Legislation>
-      <cbc:ID>XB-PPA-2019</cbc:ID>
-      <cbc:Title>Public Procurement Act</cbc:Title>
-      <cbc:Description>Exclusion grounds; the exception for minor amounts.</cbc:Description>
-      <cbc:Article>Art. 57</cbc:Article>
-    </cac:Legislation>
-    <cac:TenderingCriterionPropertyGroup>
-      <cbc:ID>PG-3</cbc:ID>
-      <cbc:PropertyGroupTypeCode listID="urn:ubl-examples:world:codelist:PropertyGroupTypeCode">ONTRUE</cbc:PropertyGroupTypeCode>
-      <cac:TenderingCriterionProperty>
-        <cbc:ID>P-6</cbc:ID>
-        <cbc:Name>Unpaid taxes and contributions</cbc:Name>
-        <cbc:Description>Answer: unpaid taxes and contributions.</cbc:Description>
-        <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CriterionPropertyTypeCode">QUESTION</cbc:TypeCode>
-        <cbc:ValueDataTypeCode listID="urn:ubl-examples:world:codelist:ResponseDataTypeCode">AMOUNT</cbc:ValueDataTypeCode>
-        <cbc:ValueCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:ValueCurrencyCode>
-        <cbc:MaximumAmount currencyID="XBL">1000.00</cbc:MaximumAmount>
-      </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>

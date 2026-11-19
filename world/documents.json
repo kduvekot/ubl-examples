@@ -3909,10 +3909,13 @@
    "doc": "QualificationApplicationResponse",
    "from": "37-xb",
    "to": "2-xb",
-   "why": "The design team led by the furniture maker declares its design lead, the engineering firm's architect.",
+   "why": "The design team led by the furniture maker, with the engineering firm as its other member, answers the exclusion grounds and declares its design lead, the engineering firm's architect, and its references.",
    "parties": {
     "ContractingParty": "2-xb",
-    "EconomicOperatorParty": "37-xb"
+    "EconomicOperatorParty": [
+     "37-xb",
+     "27-xb"
+    ]
    }
   },
   {
@@ -3970,7 +3973,10 @@
    "why": "Version 2 of the team's self-declaration: the furniture maker's own industrial designer now leads the design.",
    "parties": {
     "ContractingParty": "2-xb",
-    "EconomicOperatorParty": "37-xb"
+    "EconomicOperatorParty": [
+     "37-xb",
+     "27-xb"
+    ]
    }
   },
   {
@@ -4037,6 +4043,30 @@
      "37-xb",
      "5-xu"
     ]
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "BusinessInformation",
+   "from": "21-xb",
+   "to": "2-xb",
+   "why": "The authority checks the team's other member, the engineering firm, in the register too: every member of a group is checked before the jury selects the participants (D29 point 6).",
+   "parties": {
+    "SenderParty": "21-xb",
+    "ReceiverParty": "2-xb",
+    "BusinessParty": "27-xb"
+   }
+  },
+  {
+   "flow": "contest",
+   "doc": "TendererQualificationResponse",
+   "from": "2-xb",
+   "to": "48-xb",
+   "why": "A small design studio that asked to take part is excluded at the selection for unpaid social security contributions, and is told why and how to appeal (O102).",
+   "parties": {
+    "SenderParty": "2-xb",
+    "ReceiverParty": "48-xb",
+    "AppealTerms/AppealReceiverParty": "28-xb"
    }
   },
   {
@@ -4154,8 +4184,8 @@
   }
  ],
  "cited": {
-  "BF-ACC-2025": {
-   "what": "Brackenmere's accounts for 2025",
+  "BF-ACC-2024": {
+   "what": "Brackenmere's accounts for 2024, the last filed when it tendered",
    "type": "Annual accounts"
   },
   "BF-CHECK-26-0408": {

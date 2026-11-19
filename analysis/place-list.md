@@ -139,6 +139,7 @@ Every party on the map with its place (the town of its address), the district of
 | Ferrano Grid (44-xu) | Via della Rete, Ferrano | Ferrano | Borgo Nord (suburb, 16.0 km) | 22.4 km NW | outside | 72/112 | 30.5676 S 15.7079 W (30° 34.05′ S, 15° 42.48′ W) | 273 m |
 | Environment Agency of Urvania (46-xu) | Via delle Acque, Ferrano | Ferrano | Borgo Nord (suburb, 6.5 km) | 11.1 km W | edge | 74/115 | 30.6622 S 15.6353 W (30° 39.73′ S, 15° 38.12′ W) | 205 m (3D map 151 m) |
 | Rail Infrastructure Agency of Urvania (47-xu) | Via della Stazione, Ferrano | Ferrano | Borgo Nord (suburb, 6.8 km) | 10.5 km N | edge | 77/113 | 30.5991 S 15.5264 W (30° 35.95′ S, 15° 31.59′ W) | 265 m |
+| Fernhollow Studio (48-xb) | Ropewalk Lane, Lumeport | Lumeport | Northshore (suburb, 8.2 km) | 11.1 km E | outside | 141/125 | 30.9775 S 13.2029 W (30° 58.65′ S, 13° 12.17′ W) | 20 m |
 
 ## 3. Distances along the routes
 
@@ -288,6 +289,7 @@ Found by the generator (each from the data above):
 - Kelpstone Gas (42-xb) lies outside Gullhaven's built-up area (10.5 km from the centre; the town is about 1 km across).
 - Montebrio Power (43-xu) lies outside Serravona's built-up area (17.8 km from the centre; the town is about 1 km across).
 - Ferrano Grid (44-xu) lies outside Ferrano's built-up area (22.4 km from the centre; the town is about 15 km across).
+- Fernhollow Studio (48-xb) lies outside Lumeport's built-up area (11.1 km from the centre; the town is about 12 km across).
 - Customs Administration of Urvania (19-xu) stands 3.5 km from where the road `road` crosses the border (97/120).
 - Customs and Border Service of Bayvarra (19-xb) stands 0.0 km from where the road `road` crosses the border (97/120).
 - Gullhaven (Kelpstone Gas) is reached by road only from Larkmouth (`road-north`): Ferrano – Gullhaven is 714 km by road against 270 km in a straight line. The lpg flow (D48, a road tanker from the gas plant) needs this settled.

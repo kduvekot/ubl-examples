@@ -30,8 +30,6 @@ The furniture maker declares it meets the selection criteria.
   Returned before the tender deadline.
 - `IssueTime` = **10:47:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `EconomicOperatorGroupName` = **Brackenmere Furniture**  
-  Tendering alone.
 - `VersionID` = **1**  
   The first version.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
@@ -43,7 +41,7 @@ The furniture maker declares it meets the selection criteria.
 - `WeightingTypeCode` = **NONE** (listID `urn:ubl-examples:world:codelist:WeightingTypeCode`)  
   No weighting. The code is from the Trade Accord's weighting type list: NONE = No weighting.
 - `Note` = **All criteria answered.**  
-  The answer.
+  Every question of the request has its response below.
 
 ### Contracting Party
 
@@ -231,70 +229,150 @@ Inside `ProcurementProjectLot`:
 
 Inside `TenderingCriterion`:
 
+- `ID` = **CR-CONVICTIONS**  
+  A criterion of the request, answered below.
+- `ID` = **CR-TAXES**  
+  A criterion of the request, answered below.
+- `ID` = **CR-REGISTER**  
+  A criterion of the request, answered below.
+- `ID` = **CR-YEARS**  
+  A criterion of the request, answered below.
 - `ID` = **CR-TURNOVER**  
-  The criterion answered.
+  A criterion of the request, answered below.
+- `ID` = **CR-STAFF**  
+  A criterion of the request, answered below.
+- `ID` = **CR-REFERENCES**  
+  A criterion of the request, answered below.
+- `ID` = **CR-TIMBER**  
+  A criterion of the request, answered below.
+- `ID` = **CR-GROUP**  
+  A criterion of the request, answered below.
 
 ### Tendering Criterion Response
 
 Inside `TenderingCriterionResponse`:
 
-- `ID` = **CRR-1**  
+- `ID` = **CRR-CONVICTIONS**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-CONVICTIONS-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-CONVICTIONS**  
+  The answer.
+- `ResponseValue/ResponseIndicator` = **false**  
+  No conviction of the company or of its management.
+- `ID` = **CRR-TAXES**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-TAXES-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-TAXES**  
+  The answer.
+- `ResponseValue/ResponseAmount` = **0.00** (currencyID `XBL`)  
+  Nothing due is unpaid.
+- `ID` = **CRR-REGISTER**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-REGISTER-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-REGISTER**  
+  The answer.
+- `ResponseValue/Response` = **Entered in the federal business register of Bayvarra.**  
+  The answer in words: which register.
+- `ResponseValue/ResponseID` = **20412466**  
+  Its number in that register, so that the department can look the entry up.
+- `ResponseValue/ResponseIndicator` = **true**  
+  Yes: registered.
+- `ResponseValue/ResponseURI` = **https://register.bayvarra.example**  
+  Where the entry is kept and can be looked up: the register the notices name as the economic operator registry.
+- `ID` = **CRR-YEARS**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-YEARS-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-YEARS**  
+  The answer.
+- `ResponseValue/ResponseQuantity` = **26** (unitCode `ANN`)  
+  Full years since the company was founded on 2000-01-12 (world/parties.json).
+- `ID` = **CRR-TURNOVER**  
   The response.
 - `Name` = **Turnover**  
-  Name.
-- `Description` = **Yearly turnover of 6,830,000 lume.**  
-  What.
-- `ValidatedCriterionPropertyID` = **P-1**  
-  The property answered.
+  What the response is about.
+- `Description` = **The turnover of 2024, 6,410,000 lume, is above the minimum of 124,800 lume.**  
+  The response in short: the figure itself is the value below.
+- `ValidatedCriterionPropertyID` = **P-TURNOVER-1**  
+  The question answered.
 - `ConfidentialityLevelCode` = **CONFIDENTIAL** (listID `urn:ubl-examples:world:codelist:ConfidentialityLevelCode`)  
   Not to be published. The code is from the Trade Accord's confidentiality level list: CONFIDENTIAL = Confidential.
-- `ResponseValue/ID` = **RV-1**  
+- `ResponseValue/ID` = **RV-TURNOVER**  
   The answer.
-- `ResponseValue/Description` = **Turnover 2025.**  
-  What.
-- `ResponseValue/Response` = **As in the accounts.**  
-  The answer in words.
-- `ResponseValue/ResponseAmount` = **6830000.00** (currencyID `XBL`)  
-  The turnover of 2025, from the company's accounts (world/parties.json).
-- `ResponseValue/ResponseBinaryObject` = **QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu** (mimeCode `text/plain`)  
-  The extract, embedded.
-- `ResponseValue/ResponseCode` = **MET** (listID `urn:ubl-examples:world:codelist:CriterionResponseCode`)  
-  The criterion is met. The code is from the Trade Accord's criterion response list: MET = Criterion met.
-- `ResponseValue/ResponseDate` = **2025-12-31**  
-  The year's end.
-- `ResponseValue/ResponseID` = **BF-ACC-2025**  
-  The accounts.
-- `ResponseValue/ResponseIndicator` = **true**  
-  Yes.
-- `ResponseValue/ResponseMeasure` = **12** (unitCode `MON`)  
-  Months covered.
-- `ResponseValue/ResponseNumeric` = **26**  
-  Full years in business since the company was founded on 2000-01-12.
-- `ResponseValue/ResponseQuantity` = **26** (unitCode `ANN`)  
-  Years.
-- `ResponseValue/ResponseTime` = **12:00:00**  
-  When signed.
-- `ResponseValue/ResponseURI` = **https://www.brackenmere.example/accounts-2025.pdf**  
-  Where.
-- `ApplicablePeriod/StartDate` = **2025-01-01**  
-  The year.
-- `ApplicablePeriod/EndDate` = **2025-12-31**  
-  Its end.
+- `ResponseValue/ResponseAmount` = **6410000.00** (currencyID `XBL`)  
+  The turnover of 2024, from the accounts filed for that year (as the registry's extract of the design contest states it, contest/13).
+- `ApplicablePeriod/StartDate` = **2024-01-01**  
+  The year asked for
+- `ApplicablePeriod/EndDate` = **2024-12-31**  
+  and answered (tender/07#F5).
 - `SuppliedEvidence/ID` = **EV-ACC-BF**  
   The accounts.
 - `ProcurementProjectLotReference/ID` = **LOT-1**  
   Lot 1 of the procedure.
 - `CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
-  The benches, as a UN CPC subclass. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+  The benches of lot 1, which the turnover criterion applies to, as a UN CPC subclass. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+- `ID` = **CRR-STAFF**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-STAFF-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-STAFF**  
+  The answer.
+- `ResponseValue/ResponseQuantity` = **45** (unitCode `IE`)  
+  Its staff, in persons (world/parties.json).
+- `ID` = **CRR-REFERENCES**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-REFERENCES-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-REFERENCES-1**  
+  The answer.
+- `ResponseValue/Description` = **Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024: benches and planter seats, about 38,000 lume.**  
+  One supply: customer, year, what and value.
+- `ResponseValue/ID` = **RV-REFERENCES-2**  
+  The answer.
+- `ResponseValue/Description` = **Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023: 60 benches, about 41,000 lume.**  
+  One supply: customer, year, what and value.
+- `ResponseValue/ID` = **RV-REFERENCES-3**  
+  The answer.
+- `ResponseValue/Description` = **Park benches for Marrowdale's town park, for Marrowdale town council, 2022: 45 benches, about 27,000 lume.**  
+  One supply: customer, year, what and value.
+- `ID` = **CRR-REFERENCES-COUNT**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-REFERENCES-2**  
+  The question answered.
+- `ResponseValue/ID` = **RV-REFERENCES-COUNT**  
+  The answer.
+- `ResponseValue/ResponseQuantity` = **3** (unitCode `EA`)  
+  The supplies listed.
+- `ID` = **CRR-TIMBER**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-TIMBER-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-TIMBER**  
+  The answer.
+- `ResponseValue/ResponseIndicator` = **true**  
+  Its hardwood comes from certified forests.
+- `SuppliedEvidence/ID` = **EV-FOR-BF**  
+  The certificate.
+- `ID` = **CRR-GROUP**  
+  The response.
+- `ValidatedCriterionPropertyID` = **P-GROUP-1**  
+  The question answered.
+- `ResponseValue/ID` = **RV-GROUP**  
+  The answer.
+- `ResponseValue/ResponseIndicator` = **false**  
+  Brackenmere tenders alone, so the questions for a group are not answered.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BF-ESPD-26**  
-  The self-declaration.
-- `DocumentType` = **Tenderer self-declaration**  
-  The kind of document referred to, Brackenmere's self-declaration for the tender, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+- `ID` = **LPWD-DOC-26-0192**  
+  The request this self-declaration answers (tender/07#F6).
+- `DocumentTypeCode` = **QualificationApplicationRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0192 is the example tender/06, a QualificationApplicationRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: QualificationApplicationRequest = Qualification Application Request.
 
 ### Evidence
 
@@ -304,7 +382,7 @@ Inside `Evidence`:
   The annual accounts.
 - `EvidenceTypeCode` = **ACCOUNTS** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
   Kind. The code is from the Trade Accord's evidence type list: ACCOUNTS = Annual accounts.
-- `Name` = **Annual accounts 2025**  
+- `Name` = **Annual accounts 2024**  
   Name.
 - `Description` = **Audited.**  
   What.
@@ -316,12 +394,20 @@ Inside `Evidence`:
   A party referred to from another party's details: its identifier and name are enough.
 - `EvidenceIssuingParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
-- `DocumentReference/ID` = **BF-ACC-2025**  
+- `DocumentReference/ID` = **BF-ACC-2024**  
   The accounts.
 - `DocumentReference/DocumentType` = **Annual accounts**  
-  The kind of document referred to, Brackenmere's accounts for 2025, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+  The kind of document referred to, Brackenmere's accounts for 2024, the last filed when it tendered, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
+- `ID` = **EV-FOR-BF**  
+  The forestry certificate.
+- `EvidenceTypeCode` = **CERTIFICATE** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
+  Kind. The code is from the Trade Accord's evidence type list: CERTIFICATE = Certificate.
+- `Name` = **Forestry certificate of the hardwood**  
+  Name.
+- `Description` = **Chain-of-custody certificate for the hardwood of Brackenmere's slats, valid until 30 June 2028.**  
+  What.
 
 ### Signature
 
@@ -349,7 +435,6 @@ Inside `Signature`:
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>10:47:00-01:00</cbc:IssueTime>
-  <cbc:EconomicOperatorGroupName>Brackenmere Furniture</cbc:EconomicOperatorGroupName>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
@@ -502,33 +587,80 @@ Inside `Signature`:
     <cbc:ID>LOT-1</cbc:ID>
   </cac:ProcurementProjectLot>
   <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REGISTER</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-YEARS</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
     <cbc:ID>CR-TURNOVER</cbc:ID>
   </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-STAFF</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REFERENCES</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TIMBER</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-GROUP</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterionResponse>
-    <cbc:ID>CRR-1</cbc:ID>
+    <cbc:ID>CRR-CONVICTIONS</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-CONVICTIONS-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-CONVICTIONS</cbc:ID>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TAXES</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-TAXES-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TAXES</cbc:ID>
+      <cbc:ResponseAmount currencyID="XBL">0.00</cbc:ResponseAmount>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REGISTER</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REGISTER-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REGISTER</cbc:ID>
+      <cbc:Response>Entered in the federal business register of Bayvarra.</cbc:Response>
+      <cbc:ResponseID>20412466</cbc:ResponseID>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
+      <cbc:ResponseURI>https://register.bayvarra.example</cbc:ResponseURI>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-YEARS</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-YEARS-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-YEARS</cbc:ID>
+      <cbc:ResponseQuantity unitCode="ANN">26</cbc:ResponseQuantity>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TURNOVER</cbc:ID>
     <cbc:Name>Turnover</cbc:Name>
-    <cbc:Description>Yearly turnover of 6,830,000 lume.</cbc:Description>
-    <cbc:ValidatedCriterionPropertyID>P-1</cbc:ValidatedCriterionPropertyID>
+    <cbc:Description>The turnover of 2024, 6,410,000 lume, is above the minimum of 124,800 lume.</cbc:Description>
+    <cbc:ValidatedCriterionPropertyID>P-TURNOVER-1</cbc:ValidatedCriterionPropertyID>
     <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
     <cac:ResponseValue>
-      <cbc:ID>RV-1</cbc:ID>
-      <cbc:Description>Turnover 2025.</cbc:Description>
-      <cbc:Response>As in the accounts.</cbc:Response>
-      <cbc:ResponseAmount currencyID="XBL">6830000.00</cbc:ResponseAmount>
-      <cbc:ResponseBinaryObject mimeCode="text/plain">QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu</cbc:ResponseBinaryObject>
-      <cbc:ResponseCode listID="urn:ubl-examples:world:codelist:CriterionResponseCode">MET</cbc:ResponseCode>
-      <cbc:ResponseDate>2025-12-31</cbc:ResponseDate>
-      <cbc:ResponseID>BF-ACC-2025</cbc:ResponseID>
-      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
-      <cbc:ResponseMeasure unitCode="MON">12</cbc:ResponseMeasure>
-      <cbc:ResponseNumeric>26</cbc:ResponseNumeric>
-      <cbc:ResponseQuantity unitCode="ANN">26</cbc:ResponseQuantity>
-      <cbc:ResponseTime>12:00:00</cbc:ResponseTime>
-      <cbc:ResponseURI>https://www.brackenmere.example/accounts-2025.pdf</cbc:ResponseURI>
+      <cbc:ID>RV-TURNOVER</cbc:ID>
+      <cbc:ResponseAmount currencyID="XBL">6410000.00</cbc:ResponseAmount>
     </cac:ResponseValue>
     <cac:ApplicablePeriod>
-      <cbc:StartDate>2025-01-01</cbc:StartDate>
-      <cbc:EndDate>2025-12-31</cbc:EndDate>
+      <cbc:StartDate>2024-01-01</cbc:StartDate>
+      <cbc:EndDate>2024-12-31</cbc:EndDate>
     </cac:ApplicablePeriod>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-BF</cbc:ID>
@@ -540,14 +672,65 @@ Inside `Signature`:
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
   </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-STAFF</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-STAFF-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-STAFF</cbc:ID>
+      <cbc:ResponseQuantity unitCode="IE">45</cbc:ResponseQuantity>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REFERENCES</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REFERENCES-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-1</cbc:ID>
+      <cbc:Description>Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024: benches and planter seats, about 38,000 lume.</cbc:Description>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-2</cbc:ID>
+      <cbc:Description>Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023: 60 benches, about 41,000 lume.</cbc:Description>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-3</cbc:ID>
+      <cbc:Description>Park benches for Marrowdale's town park, for Marrowdale town council, 2022: 45 benches, about 27,000 lume.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REFERENCES-COUNT</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REFERENCES-2</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-COUNT</cbc:ID>
+      <cbc:ResponseQuantity unitCode="EA">3</cbc:ResponseQuantity>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TIMBER</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-TIMBER-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TIMBER</cbc:ID>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-FOR-BF</cbc:ID>
+    </cac:SuppliedEvidence>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-GROUP</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-GROUP-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-GROUP</cbc:ID>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-ESPD-26</cbc:ID>
-    <cbc:DocumentType>Tenderer self-declaration</cbc:DocumentType>
+    <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Evidence>
     <cbc:ID>EV-ACC-BF</cbc:ID>
     <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">ACCOUNTS</cbc:EvidenceTypeCode>
-    <cbc:Name>Annual accounts 2025</cbc:Name>
+    <cbc:Name>Annual accounts 2024</cbc:Name>
     <cbc:Description>Audited.</cbc:Description>
     <cbc:CandidateStatement>True and complete.</cbc:CandidateStatement>
     <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
@@ -560,12 +743,18 @@ Inside `Signature`:
       </cac:PartyName>
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
-      <cbc:ID>BF-ACC-2025</cbc:ID>
+      <cbc:ID>BF-ACC-2024</cbc:ID>
       <cbc:DocumentType>Annual accounts</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
     </cac:Language>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-FOR-BF</cbc:ID>
+    <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">CERTIFICATE</cbc:EvidenceTypeCode>
+    <cbc:Name>Forestry certificate of the hardwood</cbc:Name>
+    <cbc:Description>Chain-of-custody certificate for the hardwood of Brackenmere's slats, valid until 30 June 2028.</cbc:Description>
   </cac:Evidence>
   <cac:Signature>
     <cbc:ID>BF-SIG-QAR</cbc:ID>

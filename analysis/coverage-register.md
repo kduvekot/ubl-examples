@@ -614,6 +614,32 @@ Stage 6, building group G5 (C100, C101, C102; D35).
 |---|---|---|---|---|---|
 | `OrderLine/SellerProposedSubstituteLineItem` | 0..n | road/02-OrderResponse | | | open |
 
+### G6: contest, tender (2026-11-19)
+
+Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
+
+> C96, D29 points 6 and 11: the tender's self-declaration asks what the notices announce (exclusion grounds, register, years, turnover, staff, three similar supplies, certified timber, a group's shares), each limit once in the element of its data type and as a question; the request states no fulfilment, and no expected values that are only thresholds (tender/06#F4 to F8, F13 to F16). Brackenmere's response answers each question in its own criterion response, each value in the element of the property's kind (tender/07#F1, F4, F5). The debt ratio, which no notice announced, goes, and with it the only upper limits; a validity date of the timber certificate was not asked as a date, because a response date in the future reads as a fact reported after the issue (C72).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ResponseValue/ResponseBinaryObject` | 0..1 | tender/07-QualificationApplicationResponse | | | open |
+| `ResponseValue/ResponseDate` | 0..1 | tender/07-QualificationApplicationResponse | | | open |
+| `ResponseValue/ResponseMeasure` | 0..1 | tender/07-QualificationApplicationResponse | | | open |
+| `ResponseValue/ResponseNumeric` | 0..1 | tender/07-QualificationApplicationResponse | | | open |
+| `ResponseValue/ResponseTime` | 0..1 | tender/07-QualificationApplicationResponse | | | open |
+| `TenderingCriterion/FulfilmentIndicatorTypeCode` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterion/FulfilmentIndicator` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterion/SubTenderingCriterion` | 0..n | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/ExpectedAmount` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/ExpectedCode` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/ExpectedID` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/ExpectedURI` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/ExpectedValueNumeric` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/MaximumQuantity` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/MaximumValueNumeric` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionProperty/MinimumValueNumeric` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+| `TenderingCriterionPropertyGroup/FulfilmentIndicator` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
@@ -622,7 +648,6 @@ Never covered; added only through a real business situation in the world (`CLAUD
 |---|---|---|---|---|---|
 | `ContractExtension/MinimumNumberNumeric` | 0..1 | never covered |  |  | left out |
 | `Manifest/DeclaredCarriageValueAmount` | 0..1 | never covered |  |  | left out |
-| `QualificationResolution/ExclusionReason` | 0..n | never covered | an excluded contest candidate (O102) | contest | agreed |
 | `RadioactiveMaterial/FissileCriticalitySafetyIndexNumeric` | 0..1 | never covered |  |  | left out |
 | `RadioactiveMaterial/TransportIndexNumeric` | 0..1 | never covered | the technetium generator of the medicines flow (D47) | medicines | agreed |
 | `ShipmentStage/TransshipPortLocation` | 0..1 | never covered |  |  | left out |
@@ -634,6 +659,7 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `QualificationResolution/ExclusionReason` | contest/18-TendererQualificationResponse | Fernhollow Studio, a small design studio of Lumeport, asks to take part in the design contest and is excluded at the selection for social security contributions of 3,860 lume due and unpaid, above the minor amounts; the department tells it why and how to appeal (O102, D29 point 6) | 2026-11-19 |
 | `RemittanceAdviceLine/Note` | road/17-RemittanceAdvice | Lumeway pays Valdara's road invoice on Thursday 2 April, within the ten days of `XU-STD`, and takes the 2 % discount, 77,748 ferra on 3,887,400; the line states the short payment (O218) | 2026-11-19 |
 | `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
 | `Address/Region` | rail/06-TransitCustomsDeclaration | the jurisdiction of the transit declaration: the Lumeport Trade Accord, a group of countries, because the Accord's common transit runs from Urvania's office of departure to Bayvarra's office of destination (D37 point 2, rail/06#F18; O140's candidate, a territory that covers the Accord area) | 2026-11-19 |
