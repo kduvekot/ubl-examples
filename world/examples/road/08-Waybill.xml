@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>08:16:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:55:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>

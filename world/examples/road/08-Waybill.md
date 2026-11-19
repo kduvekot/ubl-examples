@@ -30,8 +30,8 @@ The road consignment note goes to the party that booked the truck, the distribut
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-03-23**  
   Issued when the carrier collects the goods at the warehouse.
-- `IssueTime` = **08:16:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **16:55:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports or cites, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Consignment note under the road convention, the CMR**  
   The kind of transport document.
 - `Description` = **The truck the distributor booked, from the 3PL's warehouse across the border.**  
@@ -3420,7 +3420,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>08:16:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:55:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
