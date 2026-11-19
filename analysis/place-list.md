@@ -137,6 +137,7 @@ Every party on the map with its place (the town of its address), the district of
 | Kelpstone Gas (42-xb) | Shoreline Road, Gullhaven | Gullhaven | - | 10.5 km E | outside | 76/39 | 28.2658 S 15.5627 W (28° 15.95′ S, 15° 33.76′ W) | 20 m |
 | Montebrio Power (43-xu) | Via della Centrale, Serravona | Serravona | - | 17.8 km N | outside | 57/82 | 29.6216 S 16.2525 W (29° 37.30′ S, 16° 15.15′ W) | 561 m |
 | Ferrano Grid (44-xu) | Via della Rete, Ferrano | Ferrano | Borgo Nord (suburb, 16.0 km) | 22.4 km NW | outside | 72/112 | 30.5676 S 15.7079 W (30° 34.05′ S, 15° 42.48′ W) | 273 m |
+| Environment Agency of Urvania (46-xu) | Via delle Acque, Ferrano | Ferrano | Borgo Nord (suburb, 6.5 km) | 11.1 km W | edge | 74/115 | 30.6622 S 15.6353 W (30° 39.73′ S, 15° 38.12′ W) | 205 m (3D map 151 m) |
 
 ## 3. Distances along the routes
 
@@ -190,7 +191,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | road | road | Castrano Logistics (8-xu) → Lumeway Distribution (6-xb) | **179.2 km** | 179.2 km | `road` | 147.2 km | 1.22 | 2 h 34 – 2 h 59 | 2 |
 | rail | road | Castrano Logistics (8-xu) → Ferrano Intermodal Hub (18-xu) | **45.7 km** | 45.7 km | `road`, `waste`, `road-farm` | 14.8 km | 3.08 | 0 h 39 – 0 h 46 | - |
 | rail | rail | Ferrano Intermodal Hub (18-xu) → Lumeway Distribution (6-xb) | **172.8 km** | - | `rail-x` | 158.5 km | 1.09 | 2 h 53 – 4 h 19 | - |
-| plastics | river | Rinova Recovery (7-xu) → Rivermouth Packaging (41-xb) | **253.4 km** | - | the river's course and the estuary | 197.5 km | 1.28 | 21 h 07 – 25 h 21 | - |
+| plastics | river | Rinova Recovery (7-xu) → Rivermouth Packaging (41-xb) | **253.4 km** | - | the river's course and the estuary | 197.5 km | 1.28 | 21 h 07 – 25 h 21 | 3 |
 | retail | road | Lumeway Distribution (6-xb) → Brightmarket Stores (26-xb) | **77.5 km** | 77.5 km | `road-b`, `road-lark` | 61.9 km | 1.25 | 1 h 06 – 1 h 17 | - |
 | retail | road | Brightmarket Stores (26-xb) → Robin Ashdale (c-xb) | **14.0 km** | 14.0 km | `road-port` | 11.1 km | 1.26 | 0 h 12 – 0 h 14 | - |
 | sea | road | Lumeway Distribution (6-xb) → Port of Lumeport (16-xb) | **82.4 km** | 82.4 km | `road-b`, `road-port` | 70.0 km | 1.18 | 1 h 11 – 1 h 22 | - |

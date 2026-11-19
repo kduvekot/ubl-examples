@@ -66,6 +66,20 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>EXPTRANSPORT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Transport of goods exported from Urvania</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drutraz skul valnir gazvan mir Urvania</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The carriage of goods directly linked to their export from Urvania (or their import into it) is exempt, with the right to deduct the tax on its costs, as in most VAT systems (in the EU, Article 146(1)(e) of Directive 2006/112/EC; decision D41).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>HEALTH</SimpleValue>
          </Value>
          <Value ColumnRef="name">

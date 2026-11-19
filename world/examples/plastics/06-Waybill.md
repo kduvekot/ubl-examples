@@ -28,7 +28,7 @@ The inland waterway consignment note, issued to the shipper.
   The original, not a corrected version.
 - `StatusCode` = **ISSUED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
-- `IssueDate` = **2026-04-19**  
+- `IssueDate` = **2026-04-20**  
   Issued when the barge is loaded.
 - `IssueTime` = **15:26:00-01:00**  
   Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
@@ -202,6 +202,8 @@ Inside `Shipment`:
   The barge operator's number: the second lot of the voyage.
 - `Consignment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight on board.
+- `Consignment/TotalPackagesQuantity` = **120**  
+  The 120 jumbo bags of a tonne each (D41).
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:15128** (schemeID `ISO 6523`)  
@@ -254,8 +256,8 @@ Inside `Shipment`:
   What it is for.
 - `Consignment/FreightAllowanceCharge/Amount` = **179400** (currencyID `XUF`)  
   120 tonnes at 1,495 ferra.
-- `Consignment/FreightAllowanceCharge/BaseAmount` = **1495** (currencyID `XUF`)  
-  The rate per tonne.
+- `Consignment/FreightAllowanceCharge/PerUnitAmount` = **1495** (currencyID `XUF`)  
+  The rate per tonne, times the 120 chargeable tonnes of the goods item (D41).
 - `Consignment/MainCarriageShipmentStage/ID` = **1**  
   Down the river, from the recovery plant's quay to the river quay in Lumeport.
 - `Consignment/MainCarriageShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -292,7 +294,7 @@ Inside `Shipment`:
   Where the bags are loaded.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **River quay, Lumeport**  
   The place named in the CPT terms.
-- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-19**  
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-20**  
   Loading finished: 120 bags in the hold.
 - `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00**  
   The local time.
@@ -302,13 +304,13 @@ Inside `Shipment`:
   At the recovery plant's own quay on the river.
 - `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-20**  
+- `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-21**  
   The barge leaves Urvania at the river border, 105 km below the quay: sailing from the afternoon of loading and through the next day from first light.
 - `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **13:45:00**  
   The local time.
 - `Consignment/MainCarriageShipmentStage/ExportationTransportEvent/Location/Name` = **River border Urvania–Bayvarra**  
   Where the barge leaves Urvania.
-- `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-22**  
+- `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-23**  
   Planned unloading at the Lumeport quay, with the consignee's morning shift: the barge arrives about 16:15 the day before and moors at the quay overnight.
 - `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
   The local time.
@@ -316,7 +318,7 @@ Inside `Shipment`:
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/MainCarriageShipmentStage/DischargeTransportEvent/Location/Name` = **River quay, Lumeport**  
   The quay named in the CPT terms, where the bags are unloaded.
-- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-19**  
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-20**  
   The barge operator takes over the bags at the quay.
 - `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00**  
   The local time.
@@ -342,8 +344,6 @@ Inside `Shipment`:
   What the goods are.
 - `GoodsItem/DeclaredForCarriageValueAmount` = **9984000** (currencyID `XUF`)  
   Declared to the barge operator, which raises its liability to this value.
-- `GoodsItem/ValueAmount` = **9984000** (currencyID `XUF`)  
-  The value of the goods, the sales price under CPT.
 - `GoodsItem/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   With the bags.
 - `GoodsItem/NetWeightMeasure` = **120000** (unitCode `KGM`)  
@@ -354,16 +354,14 @@ Inside `Shipment`:
   The freight is charged per tonne of granulate.
 - `GoodsItem/GrossVolumeMeasure` = **204** (unitCode `MTQ`)  
   The 120 bags take 1.7 m³ each.
-- `GoodsItem/NetVolumeMeasure` = **130** (unitCode `MTQ`)  
-  The granulate's own volume, at 0.92 tonne per m³.
+- `GoodsItem/NetVolumeMeasure` = **200** (unitCode `MTQ`)  
+  The granulate as it lies in the bags, at a bulk density of about 0.6 tonne per m³; the bags' fabric and loops make up the rest of the gross volume (D41).
 - `GoodsItem/Quantity` = **120** (unitCode `TNE`)  
   120 tonnes.
 - `GoodsItem/ChargeableQuantity` = **120** (unitCode `TNE`)  
   The tonnes charged.
-- `GoodsItem/ReturnableQuantity` = **120** (unitCode `EA`)  
-  The 120 jumbo bags go back to the recovery plant.
-- `GoodsItem/TraceID` = **RR-PE-LOT-26-0416**  
-  The lot on the bags' labels.
+- `GoodsItem/TraceID` = **RR-PE-0417**  
+  The lot on the bags' labels, the seller's lot number, as in its despatch advice (D41).
 - `GoodsItem/OrderLineReference/LineID` = **1**  
   The order line.
 - `GoodsItem/OrderLineReference/OrderReference/ID` = **RP-PO-26-0882**  
@@ -392,36 +390,34 @@ Inside `Shipment`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `GoodsItem/OriginAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `GoodsItem/Delivery/LatestDeliveryDate` = **2026-04-23**  
-  The packaging maker's production starts the day after.
-- `GoodsItem/Pickup/EarliestPickupDate` = **2026-04-19**  
+- `GoodsItem/Delivery/LatestDeliveryDate` = **2026-04-24**  
+  The last day of the delivery window the buyer's order asks for (D41).
+- `GoodsItem/Pickup/EarliestPickupDate` = **2026-04-20**  
   The bags are ready on the quay.
 - `GoodsItem/Pickup/EarliestPickupTime` = **08:00:00**  
   From eight.
-- `GoodsItem/Pickup/LatestPickupDate` = **2026-04-19**  
+- `GoodsItem/Pickup/LatestPickupDate` = **2026-04-20**  
   They must go the same day.
 - `GoodsItem/Pickup/LatestPickupTime` = **16:00:00**  
   Before the quay closes.
-- `GoodsItem/Despatch/ActualDespatchDate` = **2026-04-19**  
+- `GoodsItem/Despatch/ActualDespatchDate` = **2026-04-20**  
   The barge cast off.
 - `GoodsItem/Despatch/ActualDespatchTime` = **15:10:00**  
   In the afternoon.
-- `GoodsItem/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  The height of one filled bag. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/MeasurementDimension/Measure` = **1300** (unitCode `MMT`)  
-  In millimetres.
-- `GoodsItem/ContainingPackage/ID` = **RR-JB-0416**  
-  The 120 bags of the lot as one package entry, with their number: the plant numbers its bags by lot.
-- `GoodsItem/ContainingPackage/Quantity` = **120** (unitCode `EA`)  
-  120 bags.
+- `GoodsItem/ContainingPackage/Quantity` = **1** (unitCode `TNE`)  
+  What one bag holds: a tonne of granulate; the consignment counts the 120 bags (D41).
 - `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
-  The bags go back for reuse.
+  The bags go back to the recovery plant for reuse.
 - `GoodsItem/ContainingPackage/PackagingTypeCode` = **JB** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code JB: bag, jumbo. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: JB = Bag, jumbo.
 - `GoodsItem/ContainingPackage/PackagingType` = **Jumbo bag of one tonne with four lifting loops**  
   In words.
 - `GoodsItem/ContainingPackage/PackingMaterial` = **Woven polypropylene**  
   What the bags are made of.
+- `GoodsItem/ContainingPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The height of one filled bag. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/ContainingPackage/MeasurementDimension/Measure` = **1300** (unitCode `MMT`)  
+  In millimetres.
 - `GoodsItem/ShipmentDocumentReference/ID` = **FB-TEP-26-0886**  
   The transport plan of the sailing.
 - `GoodsItem/ShipmentDocumentReference/DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -432,8 +428,8 @@ Inside `Shipment`:
   The goods' share of the voyage's energy, as fuel energy.
 - `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
   Greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
-- `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/ValueMeasure` = **14.3** (unitCode `KGM`)  
-  2.65 kg per litre of the diesel allocated.
+- `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/ValueMeasure` = **1447** (unitCode `KGM`)  
+  Tank to wheel: the 5,400 kWh of diesel allocated to the goods times 0.268 kg CO2e per kWh, about 2.67 kg per litre of diesel of about 10 kWh, the order of the default factor for diesel in EN 16258 (D41).
 
 ### Document Reference
 
@@ -488,7 +484,7 @@ Inside `Signature`:
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>15:26:00-01:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
@@ -616,6 +612,7 @@ Inside `Signature`:
       <cbc:ID>RR-CS-26-0885</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
@@ -659,7 +656,7 @@ Inside `Signature`:
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>River freight</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="XUF">179400</cbc:Amount>
-        <cbc:BaseAmount currencyID="XUF">1495</cbc:BaseAmount>
+        <cbc:PerUnitAmount currencyID="XUF">1495</cbc:PerUnitAmount>
       </cac:FreightAllowanceCharge>
       <cac:MainCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
@@ -691,7 +688,7 @@ Inside `Signature`:
           <cbc:Name>River quay, Lumeport</cbc:Name>
         </cac:UnloadingPortLocation>
         <cac:LoadingTransportEvent>
-          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -704,14 +701,14 @@ Inside `Signature`:
           </cac:Location>
         </cac:LoadingTransportEvent>
         <cac:ExportationTransportEvent>
-          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-21</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:ExportationTransportEvent>
         <cac:DischargeTransportEvent>
-          <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
@@ -719,7 +716,7 @@ Inside `Signature`:
           </cac:Location>
         </cac:DischargeTransportEvent>
         <cac:TakeoverTransportEvent>
-          <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+          <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -746,17 +743,15 @@ Inside `Signature`:
       <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
       <cbc:DeclaredForCarriageValueAmount currencyID="XUF">9984000</cbc:DeclaredForCarriageValueAmount>
-      <cbc:ValueAmount currencyID="XUF">9984000</cbc:ValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:NetWeightMeasure unitCode="KGM">120000</cbc:NetWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">120000</cbc:NetNetWeightMeasure>
       <cbc:ChargeableWeightMeasure unitCode="KGM">120000</cbc:ChargeableWeightMeasure>
       <cbc:GrossVolumeMeasure unitCode="MTQ">204</cbc:GrossVolumeMeasure>
-      <cbc:NetVolumeMeasure unitCode="MTQ">130</cbc:NetVolumeMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">200</cbc:NetVolumeMeasure>
       <cbc:Quantity unitCode="TNE">120</cbc:Quantity>
       <cbc:ChargeableQuantity unitCode="TNE">120</cbc:ChargeableQuantity>
-      <cbc:ReturnableQuantity unitCode="EA">120</cbc:ReturnableQuantity>
-      <cbc:TraceID>RR-PE-LOT-26-0416</cbc:TraceID>
+      <cbc:TraceID>RR-PE-0417</cbc:TraceID>
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cac:OrderReference>
@@ -780,29 +775,28 @@ Inside `Signature`:
         </cac:Country>
       </cac:OriginAddress>
       <cac:Delivery>
-        <cbc:LatestDeliveryDate>2026-04-23</cbc:LatestDeliveryDate>
+        <cbc:LatestDeliveryDate>2026-04-24</cbc:LatestDeliveryDate>
       </cac:Delivery>
       <cac:Pickup>
-        <cbc:EarliestPickupDate>2026-04-19</cbc:EarliestPickupDate>
+        <cbc:EarliestPickupDate>2026-04-20</cbc:EarliestPickupDate>
         <cbc:EarliestPickupTime>08:00:00</cbc:EarliestPickupTime>
-        <cbc:LatestPickupDate>2026-04-19</cbc:LatestPickupDate>
+        <cbc:LatestPickupDate>2026-04-20</cbc:LatestPickupDate>
         <cbc:LatestPickupTime>16:00:00</cbc:LatestPickupTime>
       </cac:Pickup>
       <cac:Despatch>
-        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
         <cbc:ActualDespatchTime>15:10:00</cbc:ActualDespatchTime>
       </cac:Despatch>
-      <cac:MeasurementDimension>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1300</cbc:Measure>
-      </cac:MeasurementDimension>
       <cac:ContainingPackage>
-        <cbc:ID>RR-JB-0416</cbc:ID>
-        <cbc:Quantity unitCode="EA">120</cbc:Quantity>
+        <cbc:Quantity unitCode="TNE">1</cbc:Quantity>
         <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">JB</cbc:PackagingTypeCode>
         <cbc:PackagingType>Jumbo bag of one tonne with four lifting loops</cbc:PackagingType>
         <cbc:PackingMaterial>Woven polypropylene</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1300</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ContainingPackage>
       <cac:ShipmentDocumentReference>
         <cbc:ID>FB-TEP-26-0886</cbc:ID>
@@ -813,7 +807,7 @@ Inside `Signature`:
         <cbc:AllocatedEnergyMeasure unitCode="KWH">5400</cbc:AllocatedEnergyMeasure>
         <cac:EnvironmentalEmission>
           <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
-          <cbc:ValueMeasure unitCode="KGM">14.3</cbc:ValueMeasure>
+          <cbc:ValueMeasure unitCode="KGM">1447</cbc:ValueMeasure>
         </cac:EnvironmentalEmission>
       </cac:EnergyConsumptionAllocation>
     </cac:GoodsItem>

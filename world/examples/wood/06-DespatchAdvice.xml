@@ -123,7 +123,7 @@
     <cbc:ID>MS-SH-26-0632</cbc:ID>
     <cac:Consignment>
       <cbc:ID>MS-CS-26-0629</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -167,24 +167,693 @@
         <cbc:ActualDespatchDate>2026-02-26</cbc:ActualDespatchDate>
       </cac:Despatch>
     </cac:Delivery>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-001</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-002</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-003</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-004</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-005</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-006</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-007</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-008</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-009</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-010</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-011</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-012</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-013</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-014</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-015</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-016</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-017</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-018</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-019</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-020</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-021</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-022</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-023</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cbc:ID>MS-26-024</cbc:ID>
+      <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:MeasurementDimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+      </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+    </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Slats for 960 benches: five per bench, 96 bundles of 50.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">4800</cbc:DeliveredQuantity>
+    <cbc:Note>96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+      <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
       <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
-      <cbc:Name>Hardwood bench slat 1800</cbc:Name>
-      <cac:BuyersItemIdentification>
-        <cbc:ID>VI-R-SL1800</cbc:ID>
-      </cac:BuyersItemIdentification>
+      <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800</cbc:ID>
+        <cbc:ID>MS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-02-23</cbc:ManufactureDate>

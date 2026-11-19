@@ -301,6 +301,7 @@
       <ValueList xml:id="EntitySize" uri="gc/EntitySizeCode.gc" />
       <ValueList xml:id="CPC21" uri="gc/CPC21Code.gc" />
       <ValueList xml:id="WCOHS2022" uri="gc/WCOHS2022Code.gc" />
+      <ValueList xml:id="XU-Waste" uri="gc/XU-WasteCode.gc" />
       <ValueList xml:id="XU-CustomsTariff" uri="gc/XU-CustomsTariffCode.gc" />
       <ValueList xml:id="HSSections" uri="gc/HSSectionsCode.gc" />
       <ValueList xml:id="EPSG" uri="gc/EPSGCode.gc" />
@@ -658,7 +659,7 @@
       <Context address="cbc:CountrySubentityCode" values="XB-CountrySubentity" metadata="code" />
       <Context address="cbc:CompanyLegalFormCode" values="XU-CompanyLegalForm XB-CompanyLegalForm XL-CompanyLegalForm" metadata="code" />
       <Context address="cbc:EntitySizeCode" values="EntitySize" metadata="code" />
-      <Context address="cbc:ItemClassificationCode" values="CPC21" metadata="code" />
+      <Context address="cbc:ItemClassificationCode" values="CPC21 XU-Waste" metadata="code" />
       <Context address="cbc:CommodityCode" values="WCOHS2022 XU-CustomsTariff" metadata="code" />
       <Context address="cbc:NatureCode" values="HSSections" metadata="code" />
       <Context address="cbc:CoordinateSystemCode" values="EPSG" metadata="code" />

@@ -260,6 +260,10 @@
      "Service supplied outside Urvania",
      "A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax (decision D17, which widened \"a service to a business established outside Urvania\")."
     ],
+    "EXPTRANSPORT": [
+     "Transport of goods exported from Urvania",
+     "The carriage of goods directly linked to their export from Urvania (or their import into it) is exempt, with the right to deduct the tax on its costs, as in most VAT systems (in the EU, Article 146(1)(e) of Directive 2006/112/EC; decision D41)."
+    ],
     "HEALTH": [
      "Medical care",
      "Care by a licensed doctor, dentist or hospital."
@@ -2919,6 +2923,10 @@
     "TEST": [
      "Test certificate",
      "The results of a test of a product."
+    ],
+    "WASTECARRIER": [
+     "Waste carrier registration",
+     "A carrier's registration with the environmental authority, which allows it to transport waste."
     ]
    }
   },
@@ -3097,7 +3105,7 @@
   "WasteNotificationType": {
    "scope": "regional",
    "name": "Waste notification type",
-   "description": "Whether a notification of a transboundary movement of waste is for recovery or for disposal (Basel Convention, Annex V A).",
+   "description": "What a waste notification notifies: a transboundary movement of waste for recovery or for disposal (Basel Convention, Annex V A), or a waste stream moved within one country under its national waste law (decision D42).",
    "codes": {
     "RECOVERY": [
      "Recovery",
@@ -3110,6 +3118,10 @@
     "GENERAL": [
      "General notification",
      "Several shipments of the same waste over up to a year."
+    ],
+    "DOMESTIC": [
+     "Domestic waste stream",
+     "A waste stream moved within one country for a stated period: the producer notifies it to the national authority, and the facility that receives the waste reports each load."
     ]
    }
   },
@@ -6082,6 +6094,10 @@
      "General public administration activities",
      ""
     ],
+    "8412": [
+     "Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security",
+     ""
+    ],
     "8413": [
      "Regulation of and contribution to more efficient operation of businesses",
      ""
@@ -7119,6 +7135,50 @@
     ]
    }
   },
+  "XU:Waste": {
+   "scope": "XU",
+   "name": "Waste list",
+   "description": "Urvania's national list of waste, under its waste law: it takes over the entries and the six-digit numbers of the European List of Waste (Commission Decision 2000/532/EC, as amended by Decision 2014/955/EU), whose rules for choosing an entry it also follows: first the chapter of the activity that produces the waste (01 to 12, 17 to 20), then chapters 13 to 15, then 16. The world holds the entries for packaging waste (15 01); a code is written without the spaces of the printed list.",
+   "source": {
+    "format": "eurlex-low",
+    "file": "eurlex-low/CELEX_02000D0532-20150601_EN.html",
+    "version": "Decision 2000/532/EC, consolidated text of 1 June 2015"
+   },
+   "codes": {
+    "150101": [
+     "Paper and cardboard packaging",
+     "15 01 01 of the European List of Waste."
+    ],
+    "150102": [
+     "Plastic packaging",
+     "15 01 02 of the European List of Waste."
+    ],
+    "150103": [
+     "Wooden packaging",
+     "15 01 03 of the European List of Waste."
+    ],
+    "150104": [
+     "Metallic packaging",
+     "15 01 04 of the European List of Waste."
+    ],
+    "150105": [
+     "Composite packaging",
+     "15 01 05 of the European List of Waste."
+    ],
+    "150106": [
+     "Mixed packaging",
+     "15 01 06 of the European List of Waste."
+    ],
+    "150107": [
+     "Glass packaging",
+     "15 01 07 of the European List of Waste."
+    ],
+    "150109": [
+     "Textile packaging",
+     "15 01 09 of the European List of Waste."
+    ]
+   }
+  },
   "XU:CustomsTariff": {
    "scope": "XU",
    "name": "Customs tariff",
@@ -7429,7 +7489,11 @@
     ],
     "GROSSWEIGHT": [
      "Gross weight",
-     "The weight of a thing with its packaging, such as a bale with its cover and ties. UN/EDIFACT 6313: AAB (goods item gross weight)."
+     "The weight of a thing with its packaging, such as a bale with its cover and ties, or of a vehicle with its load. UN/EDIFACT 6313: AAB (goods item gross weight)."
+    ],
+    "TAREWEIGHT": [
+     "Tare weight",
+     "The weight of a vehicle, container or package when empty. UN/EDIFACT 6313: T (tare weight)."
     ],
     "SEATHEIGHT": [
      "Seat height",
@@ -9116,7 +9180,10 @@
   },
   {
    "element": "ItemClassificationCode",
-   "list": "CPC21"
+   "list": [
+    "CPC21",
+    "XU:Waste"
+   ]
   },
   {
    "element": "CommodityCode",

@@ -88,7 +88,7 @@
   {
    "id": "plastics",
    "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
-   "text": "The waste processor recovers plastic from production waste and sells it as granulate to the packaging maker on the coast of Bayvarra, carriage paid to (CPT) the river quay: the seller books the barge and pays the freight, the buyer takes the risk once the barge is loaded. The packaging maker turns it into packaging for the benches and the clothing.",
+   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. Before the order Rinova sends its product information for the quarter, with the recycled-content certificate of an accredited certification body (plastics/12). The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow) (decision D41).",
    "legs": [
     {
      "mode": "river",
@@ -96,6 +96,7 @@
      "to": "41-xb",
      "carrier": "15-xu",
      "why": "The barge from the quay next to the recovery plant down the river to the packaging maker.",
+     "transit_days": 3,
      "from_place": {
       "name": "Quay of Rinova Recovery, Ferrano",
       "locode": "XUFER"
@@ -390,7 +391,7 @@
   {
    "id": "waste",
    "title": "Production waste to recovery (domestic, Urvania)",
-   "text": "The factory's hazardous production waste may only move with a notification. In Urvania one administration acts as customs and as competent authority for waste permits. The waste processor recovers the material and invoices the service.",
+   "text": "Valdara bales the polyethylene film its factory throws out, the stretch film of the pallets it receives and the offcuts of its own wrapping, about 275 t a year, and sends it to Rinova Recovery across Ferrano, which recycles it into granulate. The waste is not hazardous and does not leave Urvania, so Urvania's waste law applies, not the Basel procedure: the producer notifies the waste stream for the year to the environment agency, which acknowledges it with a waste-stream number, and the recovery facility reports each load it receives. Trasvia, registered with the agency as a waste carrier, brings about 54 bales a load; Rinova's weighbridge weighs the truck full and empty, about 38.2 t and 15.3 t, and Rinova invoices the 22.9 t of waste (decision D42).",
    "legs": [
     {
      "mode": "road",
@@ -417,7 +418,7 @@
   {
    "id": "wood",
    "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
-   "text": "The sawmill in Upland State saws timber to size. The manufacturer in Urvania asks for a quotation for bench slats to its own dimensions and orders them delivered at its factory (DAP), so the sawmill arranges the truck across the border. The furniture maker buys timber at home; selling for manufacture, the sawmill charges no sales tax and says why.",
+   "text": "Marrowdale Sawmill in Upland State saws Valdara's bench slats to Valdara's drawing, 1800 × 95 × 38 mm, kiln dried, and sells them by the bundle of 50. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for oak with ash as a priced alternative, and orders 96 bundles delivered at its factory (DAP), so the sawmill books the truck across the border: 4,800 slats on 24 heat-treated pallets, about 22.2 t, a quarter's supply for 960 benches. This delivery is oak; from May the sawmill saws ash, as its felling in the managed forest moves to an ash stand. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why (decision D43).",
    "legs": [
     {
      "mode": "road",
@@ -2538,15 +2539,15 @@
    "flow": "waste",
    "doc": "WasteNotification",
    "from": "5-xu",
-   "to": "19-xu",
-   "why": "The manufacturer, as producer and notifier, notifies the planned movements to the competent authority.",
+   "to": "46-xu",
+   "why": "Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery (decision D42). UBL requires a CustomsParty in a waste notification, \"the competent authority granting a permit to export or import the waste\"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.",
    "parties": {
     "SenderParty": "5-xu",
-    "ReceiverParty": "19-xu",
+    "ReceiverParty": "46-xu",
     "NotifierParty": "5-xu",
     "WasteProducerParty": "5-xu",
     "RecoveryFacilityParty": "7-xu",
-    "CustomsParty": "19-xu",
+    "CustomsParty": "46-xu",
     "Shipment/Consignment/CarrierParty": "13-xu"
    }
   },
@@ -2554,11 +2555,11 @@
    "flow": "waste",
    "doc": "WasteMovement",
    "from": "7-xu",
-   "to": "19-xu",
-   "why": "The recovery facility reports each movement received to the competent authority.",
+   "to": "46-xu",
+   "why": "The recovery facility reports to the environment agency the first load it has received under the notified stream: 54 bales, 22.9 tonnes net as its weighbridge found them, under the waste-stream number.",
    "parties": {
     "SenderParty": "7-xu",
-    "ReceiverParty": "19-xu",
+    "ReceiverParty": "46-xu",
     "NotifierParty": "5-xu",
     "WasteProducerParty": "5-xu",
     "RecoveryFacilityParty": "7-xu",
@@ -2570,10 +2571,22 @@
    "doc": "Invoice",
    "from": "7-xu",
    "to": "5-xu",
-   "why": "The waste processor invoices collection and recovery.",
+   "why": "The recovery facility invoices the collection and recovery of the load by its net weight, as its weighbridge found it.",
    "parties": {
     "AccountingSupplierParty": "7-xu",
     "AccountingCustomerParty": "5-xu"
+   }
+  },
+  {
+   "flow": "waste",
+   "doc": "WeightStatement",
+   "from": "7-xu",
+   "to": "5-xu",
+   "why": "Rinova's weighbridge ticket of the load: the truck weighed full on arrival and empty after unloading, so that the difference is the waste received. Rinova gives it to the producer, who pays by the net tonne, and cites it in its movement report and its invoice (decisions D38, D42).",
+   "parties": {
+    "SenderParty": "7-xu",
+    "ReceiverParty": "5-xu",
+    "WeighingParty": "7-xu"
    }
   },
   {
@@ -2904,6 +2917,18 @@
    }
   },
   {
+   "flow": "plastics",
+   "doc": "Catalogue",
+   "from": "7-xu",
+   "to": "41-xb",
+   "why": "Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 % (decisions D41, O193). It is numbered after the flow's other documents although it comes first in time (D28).",
+   "parties": {
+    "ProviderParty": "7-xu",
+    "ReceiverParty": "41-xb",
+    "SellerSupplierParty": "7-xu"
+   }
+  },
+  {
    "flow": "wood",
    "doc": "RequestForQuotation",
    "from": "5-xu",
@@ -2919,7 +2944,7 @@
    "doc": "Quotation",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "The sawmill quotes per thousand slats, delivered at the factory.",
+   "why": "The sawmill quotes per bundle of 50 slats, in oak with ash as an alternative, delivered at the factory, under the buyer's purchasing terms.",
    "parties": {
     "SellerSupplierParty": "36-xb",
     "BuyerCustomerParty": "5-xu"
@@ -2973,7 +2998,7 @@
    "doc": "DespatchAdvice",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "The sawmill announces the slats per lot, so the factory can trace the wood of every bench.",
+   "why": "The sawmill announces the 96 bundles on their 24 pallets, with the lot, so the factory can trace the wood of every bench.",
    "parties": {
     "DespatchSupplierParty": "36-xb",
     "DeliveryCustomerParty": "5-xu",

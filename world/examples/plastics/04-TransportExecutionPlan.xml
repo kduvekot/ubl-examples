@@ -14,7 +14,6 @@
   <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek bikrek mir drek nir nan krir drek balman halkan zir drek gakzaz krir drek zulskir nerzhek.</cbc:Note>
   <cbc:Note languageID="en-XU">The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
-  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -151,7 +150,7 @@
   </cac:TransportUserResponseRequiredPeriod>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-15</cbc:StartDate>
-    <cbc:EndDate>2026-04-22</cbc:EndDate>
+    <cbc:EndDate>2026-04-23</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:MainTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RIVERBARGE</cbc:TransportServiceCode>
@@ -162,10 +161,10 @@
     <cbc:Name>Notice two hours before arrival</cbc:Name>
   </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
-    <cbc:StartDate>2026-04-19</cbc:StartDate>
+    <cbc:StartDate>2026-04-20</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-04-22</cbc:EndDate>
+    <cbc:EndDate>2026-04-23</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -278,7 +277,7 @@
         <cbc:Name>River quay, Lumeport</cbc:Name>
       </cac:UnloadingPortLocation>
       <cac:LoadingTransportEvent>
-        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -291,14 +290,14 @@
         </cac:Location>
       </cac:LoadingTransportEvent>
       <cac:ExportationTransportEvent>
-        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-21</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
         </cac:Location>
       </cac:ExportationTransportEvent>
       <cac:DischargeTransportEvent>
-        <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
         <cac:Location>
@@ -306,7 +305,7 @@
         </cac:Location>
       </cac:DischargeTransportEvent>
       <cac:TakeoverTransportEvent>
-        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>

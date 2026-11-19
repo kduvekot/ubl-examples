@@ -22,15 +22,15 @@ Under CPT the seller pays the carriage: the barge operator invoices the river fr
   The seller's invoice number.
 - `UUID` = **948156f2-1939-56f7-915d-221e02660acd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-22**  
-  Issued after the sailing.
+- `IssueDate` = **2026-04-23**  
+  Issued when the bags have been unloaded.
 - `IssueTime` = **14:20:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-19**  
+- `DueDate` = **2026-05-20**  
   As the payment terms below count it: 30 days net from the consignment note.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `TaxPointDate` = **2026-04-22**  
+- `TaxPointDate` = **2026-04-23**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
@@ -228,7 +228,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-19**  
+- `PaymentDueDate` = **2026-05-20**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -295,7 +295,7 @@ Inside `PaymentTerms`:
   The payment means these terms apply to: the credit transfer below.
 - `Note` = **30 days net from the consignment note.**  
   The payment term of the transport plan this freight is carried under: the contract wins over the carrier's standard terms (D22).
-- `PaymentDueDate` = **2026-05-19**  
+- `PaymentDueDate` = **2026-05-20**  
   The day the amount is due, as the terms count it.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
   The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
@@ -308,16 +308,22 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **35880** (currencyID `XUF`)  
+- `TaxAmount` = **0** (currencyID `XUF`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **179400** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **35880** (currencyID `XUF`)  
-  20 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
-  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **20**  
-  The rate for this category.
+- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  The carriage of goods directly linked to their export from Urvania is exempt from its value added tax, as in most VAT systems (category E, D41). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXPTRANSPORT** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXPTRANSPORT = Transport of goods exported from Urvania.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Drutraz skul valnir gazvan mir Urvania** (languageID `qau`)  
+  The name of code EXPTRANSPORT in Urvania's national value added tax exemption reason list. In Urvanian, the sender's language.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Transport of goods exported from Urvania** (languageID `en-XU`)  
+  The name of code EXPTRANSPORT in Urvania's national value added tax exemption reason list. In English.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -329,9 +335,9 @@ Inside `LegalMonetaryTotal`:
   The sum of the line amounts.
 - `TaxExclusiveAmount` = **179400** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **215280** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **179400** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **215280** (currencyID `XUF`)  
+- `PayableAmount` = **179400** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -354,10 +360,16 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item barge-freight of Fiumella Barges (world/items.json).
 - `Item/SellersItemIdentification/ID` = **FB-BULK**  
   The seller's own item number; item barge-freight of Fiumella Barges (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
-  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/Percent` = **20**  
-  The rate for this category.
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  The carriage of goods directly linked to their export from Urvania is exempt from its value added tax, as in most VAT systems (category E, D41). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **EXPTRANSPORT** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXPTRANSPORT = Transport of goods exported from Urvania.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Drutraz skul valnir gazvan mir Urvania** (languageID `qau`)  
+  The name of code EXPTRANSPORT in Urvania's national value added tax exemption reason list. In Urvanian, the sender's language.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Transport of goods exported from Urvania** (languageID `en-XU`)  
+  The name of code EXPTRANSPORT in Urvania's national value added tax exemption reason list. In English.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -378,11 +390,11 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FB-INV-26-0891</cbc:ID>
   <cbc:UUID>948156f2-1939-56f7-915d-221e02660acd</cbc:UUID>
-  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-19</cbc:DueDate>
+  <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:TaxPointDate>2026-04-22</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-23</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Freight</cbc:AccountingCost>
@@ -543,7 +555,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF45FBINV260891</cbc:InstructionNote>
@@ -592,7 +604,7 @@ Inside `InvoiceLine`:
   <cac:PaymentTerms>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net from the consignment note.</cbc:Note>
-    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
@@ -600,13 +612,16 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">35880</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">179400</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">35880</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>20</cbc:Percent>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXPTRANSPORT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason languageID="qau">Drutraz skul valnir gazvan mir Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason languageID="en-XU">Transport of goods exported from Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -616,8 +631,8 @@ Inside `InvoiceLine`:
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XUF">179400</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">215280</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">215280</cbc:PayableAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">179400</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">179400</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -632,8 +647,11 @@ Inside `InvoiceLine`:
         <cbc:ID>FB-BULK</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>20</cbc:Percent>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXPTRANSPORT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason languageID="qau">Drutraz skul valnir gazvan mir Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason languageID="en-XU">Transport of goods exported from Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>

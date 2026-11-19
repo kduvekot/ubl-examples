@@ -159,5 +159,22 @@
             <SimpleValue>The results of a test of a product.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WASTECARRIER</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Waste carrier registration</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drunvir sundraz dradrek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nameve topatu kaletamu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A carrier's registration with the environmental authority, which allows it to transport waste.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

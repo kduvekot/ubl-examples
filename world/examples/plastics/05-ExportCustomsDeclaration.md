@@ -22,7 +22,7 @@ The granulate leaves Urvania; the waste processor declares the export.
   The exporter's reference.
 - `UUID` = **9d7cd654-55a1-5b6b-af72-1c8f54670605**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-19**  
+- `IssueDate` = **2026-04-20**  
   Declared the day the barge is loaded.
 - `IssueTime` = **12:40:00-01:00**  
   Before the bags are loaded, so that customs releases them before the barge leaves (timelines#F6); in the issuer's local time, with its offset from UTC (D27).
@@ -108,7 +108,7 @@ Inside `CustomsDeclaration`:
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
-- `ValidityPeriod/StartDate` = **2026-04-19**  
+- `ValidityPeriod/StartDate` = **2026-04-20**  
   From the declaration.
 - `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
   The goods must leave within 90 days.
@@ -297,7 +297,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-EX-26-0887</cbc:ID>
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>12:40:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
@@ -359,7 +359,7 @@ Inside `Signature`:
     <cbc:ID>RR-CD-26-0888</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-04-19</cbc:StartDate>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
       <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
     </cac:ValidityPeriod>
     <cac:ApplicableTerritoryAddress>

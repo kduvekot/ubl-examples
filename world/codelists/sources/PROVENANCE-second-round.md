@@ -237,3 +237,19 @@ What `world/codelists/lists.json` says now for each difference found above:
 - **UNModelRegsUN / UNModelRegsClass**: cite the **23rd revised edition**, the edition the codes were confirmed against (BAM DGG-Info, "Detailinfo UN Rec. 23rd rev. ed."); the 24th could not be read. The UN number list's listID is now `UN Model Regulations Dangerous Goods List` (decision P2), and it records the class and subsidiary hazard of each entry, which the build checks against every dangerous goods item.
 - **ERG2024**: no guide added: UN 3090 (guide 138) and UN 1950 (guide 126) carry no guide number in any example.
 - BAM's IMDG detail page for UN 3480 is now …/detailinfo/imdg/2jk48rcn (the old URL redirects); …/imdg/cgxnlqz9 (UN 2920) still resolves. `analysis/source-verification.md` is updated, as is its pointer to the ERG guides (`erg2024/`, not `noaa-cameo-erg/`).
+
+---
+
+## Added 2026-11-19: the European List of Waste (O191)
+
+For Urvania's national waste list `XU:Waste` (`world/codelists/lists.json`), which takes over the numbers of the European List of Waste (decision O191, stage 6 group G1). Accessed on **2026-11-19**. EU legal text, reusable under Commission Decision 2011/833/EU, so the file is kept.
+
+| Directory | Source | Version |
+|---|---|---|
+| eurlex-low/ | http://publications.europa.eu/resource/celex/02000D0532-20150601 (Publications Office of the EU, Cellar; requested with `Accept: application/xhtml+xml` and `Accept-Language: eng`, it redirects to http://publications.europa.eu/resource/cellar/b62e3805-09ca-41cd-828a-b89d08d6989f.0020.02/DOC_1): the consolidated text of Commission Decision 2000/532/EC establishing the list of waste, as amended (M1 Decision 2001/118/EC, M2 2001/119/EC, M3 Council Decision 2001/573/EC, M4 Commission Decision 2014/955/EU), saved as `CELEX_02000D0532-20150601_EN.html`. EUR-Lex itself (https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02000D0532-20150601) answers automated requests with an empty HTTP 202 (a bot check), so the Publications Office's copy of the same text was used. | Title "Consolidated TEXT: 32000D0532 — EN — 01.06.2015" (the latest consolidation; HTTP Last-Modified 25 Apr 2020) |
+
+```
+f57d777ee2a0c604c60686a11a7897f2144b35568f4c13c13bd3f248ac46ead3  ./eurlex-low/CELEX_02000D0532-20150601_EN.html
+```
+
+What was read: the entries 15 01 01 to 15 01 09 (chapter 15 01, packaging), with their names, and the list's rules for choosing an entry (the section "List of waste" before the index: first the chapters 01 to 12 or 17 to 20 for the source of the waste, then 13 to 15, then 16, then the 99 code). `tools/codelists.py` reads the list's table from the file (format `eurlex-low`) and stops the build when an entry of `XU:Waste` differs from it. The waste flow's code 150102 "plastic packaging" was chosen by those rules: Valdara's polyethylene film is the stretch film of the deliveries it receives and of its own pallets; the chapters of its activity (08 coatings, 11 coating of metals, 12 shaping of metals and plastics) have no entry for packaging film (12 01 05 "plastics shavings and turnings" is waste of machining plastics), so the rules send it to chapter 15.

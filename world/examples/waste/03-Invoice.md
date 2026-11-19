@@ -2,7 +2,7 @@
 
 *Example 3 of the flow "Production waste to recovery (domestic, Urvania)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The waste processor invoices collection and recovery.
+The recovery facility invoices the collection and recovery of the load by its net weight, as its weighbridge found it.
 
 [The XML file](03-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,19 +18,19 @@ The waste processor invoices collection and recovery.
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **WASTE-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **RR-INV-26-0208**  
+- `ID` = **RR-INV-26-0211**  
   The seller's invoice number.
 - `UUID` = **24a1c5fe-6940-5f16-8f48-486333315def**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-04**  
-  Issued after the waste was collected and recovered.
+- `IssueDate` = **2026-04-06**  
+  Issued on the next working day after the load (D27).
 - `IssueTime` = **12:44:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-04**  
+- `DueDate` = **2026-05-06**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `TaxPointDate` = **2026-04-04**  
+- `TaxPointDate` = **2026-04-06**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
@@ -48,9 +48,17 @@ The waste processor invoices collection and recovery.
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **RR-DOC-26-0207**  
-  The waste movement document.
+  The movement report of the load billed.
+- `IssueDate` = **2026-04-02**  
+  Its date.
 - `DocumentTypeCode` = **WasteMovement** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: RR-DOC-26-0207 is the example waste/02, a WasteMovement; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: WasteMovement = Waste Movement.
+- `ID` = **RR-WS-26-0210**  
+  The weighbridge ticket whose net weight is billed.
+- `IssueDate` = **2026-04-02**  
+  Its date.
+- `DocumentTypeCode` = **WeightStatement** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: RR-WS-26-0210 is the example waste/04, a WeightStatement; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: WeightStatement = Weight Statement.
 
 ### Accounting Supplier Party
 
@@ -202,6 +210,19 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `ActualDeliveryDate` = **2026-04-02**  
+  The day of the service: the load collected and received.
+- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Rinova Recovery plant, Ferrano**  
+  Where the waste was received for recovery.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+
 ### Payment Means
 
 Inside `PaymentMeans`:
@@ -212,15 +233,15 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-04**  
+- `PaymentDueDate` = **2026-05-06**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **FERRA-RTGS**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF84RRINV260208**  
+- `InstructionNote` = **Quote RF03RRINV260211**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF84RRINV260208** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF03RRINV260211** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XU700351041620000000418916** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -232,7 +253,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice RR-INV-26-0208**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice RR-INV-26-0211**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41620** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -283,15 +304,15 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **11322** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **6788** (currencyID `XUF`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.rinova.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-04**  
+- `PaymentDueDate` = **2026-05-06**  
   The day the amount is due, as the terms count it.
-- `SettlementPeriod/StartDate` = **2026-04-04**  
+- `SettlementPeriod/StartDate` = **2026-04-06**  
   From the invoice date.
-- `SettlementPeriod/EndDate` = **2026-04-14**  
+- `SettlementPeriod/EndDate` = **2026-04-16**  
   For 10 days.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
   The interest on late payment.
@@ -304,11 +325,11 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **94354** (currencyID `XUF`)  
+- `TaxAmount` = **56563** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **471770** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **282815** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **94354** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **56563** (currencyID `XUF`)  
   20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -321,13 +342,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **471770** (currencyID `XUF`)  
+- `LineExtensionAmount` = **282815** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **471770** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **282815** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **566124** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **339378** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **566124** (currencyID `XUF`)  
+- `PayableAmount` = **339378** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -336,13 +357,13 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **38.2** (unitCode `TNE`)  
-  The tonnes received, from the waste movement document.
-- `LineExtensionAmount` = **471770** (currencyID `XUF`)  
-  38.2 × 12350, rounded to the minor unit of the currency.
-- `Item/Description` = **Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.** (languageID `qau`)  
+- `InvoicedQuantity` = **22.9** (unitCode `TNE`)  
+  The net tonnes received, from the weighbridge ticket.
+- `LineExtensionAmount` = **282815** (currencyID `XUF`)  
+  22.9 × 12350, rounded to the minor unit of the currency.
+- `Item/Description` = **Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz skul drunvir dek drek balman halkan ranskir skukstek.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
-- `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne collected.** (languageID `en-XU`)  
+- `Item/Description` = **Collection at the factory and recovery of sorted production waste, per tonne of waste as the recovery plant weighs it.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item waste-recovery of Rinova Recovery (world/items.json).
 - `Item/Name` = **Tuzskaz stan balman skul huntaz drunvir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item waste-recovery of Rinova Recovery (world/items.json).
@@ -372,13 +393,13 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-INV-26-0208</cbc:ID>
+  <cbc:ID>RR-INV-26-0211</cbc:ID>
   <cbc:UUID>24a1c5fe-6940-5f16-8f48-486333315def</cbc:UUID>
-  <cbc:IssueDate>2026-04-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-04</cbc:DueDate>
+  <cbc:DueDate>2026-05-06</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-06</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6400</cbc:AccountingCostCode>
   <cbc:AccountingCost>Waste disposal and other services</cbc:AccountingCost>
@@ -386,7 +407,13 @@ Inside `InvoiceLine`:
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>RR-DOC-26-0207</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>RR-WS-26-0210</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WeightStatement</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -518,22 +545,34 @@ Inside `InvoiceLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-04-02</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Rinova Recovery plant, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-06</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF84RRINV260208</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF84RRINV260208</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF03RRINV260211</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF03RRINV260211</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU700351041620000000418916</cbc:ID>
       <cbc:Name>Rinova Recovery SRU</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice RR-INV-26-0208</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice RR-INV-26-0211</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41620</cbc:ID>
         <cbc:Name>Ferrano Porta Nord</cbc:Name>
@@ -573,12 +612,12 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">11322</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">6788</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.rinova.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-06</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-04</cbc:StartDate>
-      <cbc:EndDate>2026-04-14</cbc:EndDate>
+      <cbc:StartDate>2026-04-06</cbc:StartDate>
+      <cbc:EndDate>2026-04-16</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
@@ -587,10 +626,10 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">94354</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">56563</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">471770</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">94354</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">282815</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">56563</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -601,18 +640,18 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">471770</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">566124</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">566124</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">282815</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">282815</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">339378</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">339378</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="TNE">38.2</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="TNE">22.9</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">282815</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qau">Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.</cbc:Description>
-      <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
+      <cbc:Description languageID="qau">Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz skul drunvir dek drek balman halkan ranskir skukstek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne of waste as the recovery plant weighs it.</cbc:Description>
       <cbc:Name languageID="qau">Tuzskaz stan balman skul huntaz drunvir</cbc:Name>
       <cbc:Name languageID="en-XU">Collection and recovery of production waste</cbc:Name>
       <cac:SellersItemIdentification>

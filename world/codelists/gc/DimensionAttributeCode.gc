@@ -156,7 +156,24 @@
             <SimpleValue>Kapafe tisaki</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The weight of a thing with its packaging, such as a bale with its cover and ties. UN/EDIFACT 6313: AAB (goods item gross weight).</SimpleValue>
+            <SimpleValue>The weight of a thing with its packaging, such as a bale with its cover and ties, or of a vehicle with its load. UN/EDIFACT 6313: AAB (goods item gross weight).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TAREWEIGHT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tare weight</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Miskir gargek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Nimeme tisaki</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The weight of a vehicle, container or package when empty. UN/EDIFACT 6313: T (tare weight).</SimpleValue>
          </Value>
       </Row>
       <Row>

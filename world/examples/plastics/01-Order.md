@@ -206,7 +206,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **120** (unitCode `TNE`)  
-  One barge load of recycled granulate in jumbo bags.
+  120 tonnes of recycled granulate, in jumbo bags of one tonne.
 - `LineItem/LineExtensionAmount` = **9984000** (currencyID `XUF`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **83200** (currencyID `XUF`)  

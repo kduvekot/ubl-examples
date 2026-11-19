@@ -139,10 +139,10 @@ Coverage 5110 → 5106 (commit 6fe6444b), 4 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `DependentPriceReference/DependentLineReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | | | open |
-| `DependentPriceReference/LocationAddress` | 0..1 | retail/02-Catalogue | | | open |
-| `DependentPriceReference/Percent` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | | | open |
-| `ItemLocationQuantity/DependentPriceReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | | | open |
+| `DependentPriceReference/DependentLineReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
+| `DependentPriceReference/LocationAddress` | 0..1 | retail/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
+| `DependentPriceReference/Percent` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
+| `ItemLocationQuantity/DependentPriceReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
 
 ### Stage 1 step 1e, part 6: currencies with something to convert (C11)
 
@@ -254,7 +254,7 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `CreditNoteLine/OriginatorParty` | 0..1 | tender/33-CreditNote | | | open |
 | `FulfilmentCancellation/BeneficiaryParty` | 0..n | air/07-FulfilmentCancellation | | | open |
 | `FulfilmentCancellation/OriginatorCustomerParty` | 0..1 | air/07-FulfilmentCancellation | | | open |
-| `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | | | open |
+| `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | the wholesaler\'s instruction for returns of the spent Mo-99/Tc-99m generator to its maker (a fictional maker abroad, named in the document, not a world party), with the return shipment; owner, 2026-11-19 (O202 choice 7) | medicines | candidate |
 | `ItemIdentification/MeasurementDimension` | 0..n | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `ItemProperty/UsabilityPeriod` | 0..1 | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `OrderCancellation/BeneficiaryParty` | 0..n | furniture/11-OrderCancellation | | | open |
@@ -337,15 +337,12 @@ Coverage 4982 → 4971 (commit 11566a00), 11 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `CircularityProfile/CircularityTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `CircularityProfile/EndOfLifeTreatment` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `CircularityProfile/RecyclabilityPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `CircularityProfile/RecycledContentPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/ImpactCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `Item/EnvironmentalCertificate` | 0..n | plastics/01-Order, plastics/05-ExportCustomsDeclaration, plastics/08-DespatchAdvice … | | | open |
+| `CircularityProfile/EndOfLifeTreatment` | 0..1 | packaging/01-Order, packaging/02-Invoice | the stretch film's product information from Rivermouth (a catalogue of the film to Valdara, packaging flow): recyclable in full, back to Rinova for recycling (the film's data in world/items.json) | packaging | candidate |
+| `CircularityProfile/RecyclabilityPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | the stretch film's product information from Rivermouth (a catalogue of the film to Valdara, packaging flow): recyclable in full, back to Rinova for recycling (the film's data in world/items.json) | packaging | candidate |
+| `EndOfLifeTreatment/ImpactCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
+| `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
+| `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
+| `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
 | `Item/LifecycleStageCode` | 0..1 | waste/03-Invoice | | | open |
 | `Item/LifecycleStageDescription` | 0..n | waste/03-Invoice | | | open |
 
@@ -473,6 +470,35 @@ Coverage 4937 → 4930, 9 elements lost and 2 won back (`LineItem/OriginatorPart
 | `OrderResponse/BeneficiaryParty` | 0..n | sea/06-OrderResponse | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
 | `OrderResponse/OriginatorCustomerParty` | 0..1 | sea/06-OrderResponse | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
 
+### G1: waste, plastics, wood (2026-11-19)
+
+Stage 6, building group G1 (C77, C87, C88, C89).
+
+> C77, D42, O190: the waste movement is domestic, under Urvania's environment agency. Rinova recovers the film and disposes of nothing, so it is no longer named a disposal facility (waste/01#F2, 02#F5). The customs administration no longer receives the notification and the movement, and with its border office's contact the world's only fax number went. `CustomsParty` stays: the schema requires it in a waste notification (1..n), and it names the environment agency, the competent authority (see the question in the G1 report).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Contact/Telefax` | 0..1 | waste/01-WasteNotification, waste/02-WasteMovement | | | open |
+| `WasteMovement/DisposalFacilityParty` | 0..1 | waste/02-WasteMovement | a waste whose operation is disposal (a D code of Basel Annex IV), such as Rinova's sorting residue (labels, contaminated film) sent to an incinerator under its own notification and movement reports (O190) | waste | candidate |
+| `WasteNotification/DisposalFacilityParty` | 0..1 | waste/01-WasteNotification | the same: the residue's own notification, with the incinerator as disposal facility (O190) | waste | candidate |
+
+> C87, D41: the barge's consignment note no longer gives a value for duties (06#F11), nor the bags as a returnable quantity of the goods (06#F9; the bag stays returnable on its package), and the bag's height moves to the bag (06#F13). The granulate's despatch advice gives no best-before or expiry date: polymer granulate has none (08#F6).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `GoodsItem/MeasurementDimension` | 0..n | plastics/06-Waybill | | | open |
+| `GoodsItem/ReturnableQuantity` | 0..1 | plastics/06-Waybill | | | open |
+| `GoodsItem/ValueAmount` | 0..1 | plastics/06-Waybill | the amount the island's import consumption tax of 10 % is assessed on, the landed value of a goods item in an import declaration into Lisavu (D18; "the amount on which a duty, tax, or fee will be assessed") | sea | candidate |
+| `ItemInstance/BestBeforeDate` | 0..1 | plastics/08-DespatchAdvice | fresh food with a best-before date, such as the reefer's apples (O137, still to design) | reefer | open |
+| `LotIdentification/ExpiryDate` | 0..1 | plastics/08-DespatchAdvice | a lot of vaccines or medicines with its expiry date in the medicines flow's despatch advice (D47) | medicines | candidate |
+
+> C89, D43: the sawmill sells the bundle of 50 slats as its item, so quotation, order and invoice are in bundles and no price converts a piece price into a pack (02#F13, 03#F10, 08#F14); the quotation's main line is oak with ash as the priced alternative, and the 35 mm substitute goes (02#F16).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Price/OrderableUnitFactorRate` | 0..1 | wood/02-Quotation, wood/03-Order, wood/08-Invoice | | | open |
+| `QuotationLine/SellerProposedSubstituteLineItem` | 0..1 | wood/02-Quotation | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
@@ -495,3 +521,6 @@ Elements that were in this register and are covered again, with the example that
 |---|---|---|---|
 | `LineItem/BeneficiaryParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `LineItem/OriginatorParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
+| `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
+| `CircularityProfile/RecycledContentPercent` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
+| `Item/EnvironmentalCertificate` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |

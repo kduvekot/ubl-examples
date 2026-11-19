@@ -22,11 +22,11 @@ Timber sold for manufacture: exempt from the state sales tax, and the invoice sa
   The seller's invoice number.
 - `UUID` = **6aa25014-301c-5e58-b842-6b77c0387ed1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-09**  
+- `IssueDate` = **2026-03-10**  
   Issued when the timber was collected.
 - `IssueTime` = **09:54:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-04-08**  
+- `DueDate` = **2026-04-09**  
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
@@ -47,6 +47,17 @@ Inside `OrderReference`:
 
 - `ID` = **BF-PO-26-0637**  
   The furniture maker's order.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **UL-STT-EX-2024-0377**  
+  The number of Brackenmere's exemption certificate, as Upland State's revenue office issued it.
+- `IssueDate` = **2024-01-15**  
+  The day it was issued.
+- `DocumentType` = **Sales tax exemption certificate: purchase for manufacture (Upland State)**  
+  The certificate the exemption of the sale rests on (D43).
 
 ### Accounting Supplier Party
 
@@ -228,7 +239,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-03-09**  
+- `ActualDeliveryDate` = **2026-03-10**  
   Ex works: delivered when the furniture maker collected the timber (wood/11#F4).
 - `DeliveryLocation/Name` = **Marrowdale Sawmill, timber yard**  
   Where the timber was collected.
@@ -243,7 +254,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-04-08**  
+- `PaymentDueDate` = **2026-04-09**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -314,9 +325,9 @@ Inside `PaymentTerms`:
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.marrowdalesawmill.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-04-08**  
+- `PaymentDueDate` = **2026-04-09**  
   The day the amount is due, as the terms count it.
-- `PenaltyPeriod/StartDate` = **2026-04-09**  
+- `PenaltyPeriod/StartDate` = **2026-04-10**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
@@ -397,9 +408,9 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-INV-26-0638</cbc:ID>
   <cbc:UUID>6aa25014-301c-5e58-b842-6b77c0387ed1</cbc:UUID>
-  <cbc:IssueDate>2026-03-09</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>09:54:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-04-08</cbc:DueDate>
+  <cbc:DueDate>2026-04-09</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
@@ -409,6 +420,11 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>BF-PO-26-0637</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
+    <cbc:IssueDate>2024-01-15</cbc:IssueDate>
+    <cbc:DocumentType>Sales tax exemption certificate: purchase for manufacture (Upland State)</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -570,7 +586,7 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-03-09</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Marrowdale Sawmill, timber yard</cbc:Name>
     </cac:DeliveryLocation>
@@ -579,7 +595,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-04-08</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-09</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF02MSINV260638</cbc:InstructionNote>
@@ -630,9 +646,9 @@ Inside `InvoiceLine`:
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">97.20</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-04-08</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-09</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-09</cbc:StartDate>
+      <cbc:StartDate>2026-04-10</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

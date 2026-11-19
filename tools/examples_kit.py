@@ -89,8 +89,12 @@ def tax_rule(seller, buyer, iid):
                                 "supply, so outside the scope of the sales tax (category O).", "Levy collected for a "
                                                                                                "public body")
     if s["c"] == "XU":
+        if it.get("export_carriage"):       # the carriage of exported goods (D41)
+            return ("E", 0, scheme, "The carriage of goods directly linked to their export from Urvania is exempt "
+                                    "from its value added tax, as in most VAT systems (category E, D41).",
+                    "Transport of goods exported from Urvania")
         if b["c"] == "XU":
-            return ("S", c["tax"]["schemes"][0]["rates"]["standard"], scheme,
+            return ("S",c["tax"]["schemes"][0]["rates"]["standard"], scheme,
                     "A domestic supply in Urvania: its value added tax applies at the standard rate (category S).", None)
         if it["kind"] == "goods":
             return ("G", 0, scheme, "Goods exported from Urvania: no value added tax is charged on an export "
@@ -442,9 +446,6 @@ def price_block(iid, currency=None, buyer=None):
                                 pr["why"] if pr.get("why") else
                                 "The seller's price per unit (world/items.json)."),
            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
-    if it.get("pack") and it["unit"] == "EA":
-        out["OrderableUnitFactorRate"] = V(it["pack"]["size"], f"The item is priced per piece and ordered in packs: "
-                                                               f"one pack holds {it['pack']['size']} pieces.")
     return out
 
 
@@ -1792,7 +1793,7 @@ def event(flow, day, time, why, location=None, type_code=None, ident=None, descr
 # the flows whose goods travel on pallets (D20, O61): the bench in three parcels, four benches to a pallet, and the
 # spare frames in their cartons on a pallet of their own; the carnet's two samples and the air flow's eight frames
 # travel as loose parcels (the air frames on a skid, D39)
-PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender"}
+PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender", "wood"}
 
 
 def pallets(flow, deal):

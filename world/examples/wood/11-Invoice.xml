@@ -6,9 +6,9 @@
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MS-INV-26-0638</cbc:ID>
   <cbc:UUID>6aa25014-301c-5e58-b842-6b77c0387ed1</cbc:UUID>
-  <cbc:IssueDate>2026-03-09</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>09:54:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-04-08</cbc:DueDate>
+  <cbc:DueDate>2026-04-09</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
@@ -18,6 +18,11 @@
   <cac:OrderReference>
     <cbc:ID>BF-PO-26-0637</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
+    <cbc:IssueDate>2024-01-15</cbc:IssueDate>
+    <cbc:DocumentType>Sales tax exemption certificate: purchase for manufacture (Upland State)</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -179,7 +184,7 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-03-09</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Marrowdale Sawmill, timber yard</cbc:Name>
     </cac:DeliveryLocation>
@@ -188,7 +193,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-04-08</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-09</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF02MSINV260638</cbc:InstructionNote>
@@ -239,9 +244,9 @@
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">97.20</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-04-08</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-04-09</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-09</cbc:StartDate>
+      <cbc:StartDate>2026-04-10</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

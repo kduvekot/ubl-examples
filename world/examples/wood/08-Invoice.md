@@ -331,9 +331,9 @@ Inside `AllowanceCharge`:
 - `AllowanceChargeReasonCode` = **ACH** (listID `UN/EDIFACT EDED 7161`)  
   The reason for the charge as a code of UN/EDIFACT 7161: the pallets are heat-treated. The code is from the world's copy of UN/EDIFACT 7161 Special service description: ACH = Heat treatment.
 - `AllowanceChargeReason` = **Heat-treated export pallets**  
-  96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.
+  The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM 15, as the quotation offered for the export.
 - `Amount` = **240.00** (currencyID `XBL`)  
-  96 pallets at 2.50 lume.
+  24 pallets at 10.00 lume.
 - `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
@@ -387,16 +387,16 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **4800** (unitCode `EA`)  
-  The slats despatched.
+- `InvoicedQuantity` = **96** (unitCode `EA`)  
+  The bundles despatched, 4,800 slats.
 - `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
-  4800 × 7.2, rounded to the minor unit of the currency.
-- `Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
-  The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `Item/Name` = **Hardwood bench slat 1800**  
-  The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `Item/SellersItemIdentification/ID` = **MS-SL-1800**  
-  The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
+  96 × 360.0, rounded to the minor unit of the currency.
+- `Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+  The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
+- `Item/Name` = **Bench slat 1800, bundle of 50**  
+  The item's short name; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
+- `Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+  The seller's own item number; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -409,12 +409,10 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **7.2** (currencyID `XBL`)  
+- `Price/PriceAmount` = **360** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `Price/OrderableUnitFactorRate` = **50**  
-  The item is priced per piece and ordered in packs: one pack holds 50 pieces.
 
 ## The document
 
@@ -702,13 +700,13 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">4800</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-      <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+      <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+      <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800</cbc:ID>
+        <cbc:ID>MS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -722,9 +720,8 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">7.2</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-      <cbc:OrderableUnitFactorRate>50</cbc:OrderableUnitFactorRate>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

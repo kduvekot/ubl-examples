@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WeightStatement xmlns="urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:weight-statement:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>RR-WS-26-0210</cbc:ID>
+  <cbc:UUID>389662b4-907e-55fc-9944-1cf97ccc36c8</cbc:UUID>
+  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueTime>10:50:00-01:00</cbc:IssueTime>
+  <cbc:WeightStatementTypeCode listID="urn:ubl-examples:world:codelist:WeightStatementTypeCode">WEIGHBRIDGE</cbc:WeightStatementTypeCode>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="ISO 6523">0990:13362</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">qau</cbc:ID>
+      <cbc:Name>Urvanian</cbc:Name>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160202983340277</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qau">Bek Han Zugaz</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via del Riciclo</cbc:StreetName>
+      <cbc:BuildingNumber>31</cbc:BuildingNumber>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+      <cbc:PostalZone>4140</cbc:PostalZone>
+      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Transport planning</cbc:Name>
+      <cbc:JobTitle>Logistics planner</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
+      <cbc:Telephone>+999 1 041 697 6856</cbc:Telephone>
+      <cbc:ElectronicMail>logistics@rinova.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104548</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Valdara Industries</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
+      <cbc:BuildingNumber>17</cbc:BuildingNumber>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+      <cbc:PostalZone>4120</cbc:PostalZone>
+      <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        <cbc:Name>Urvania</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Transport planning</cbc:Name>
+      <cbc:JobTitle>Logistics planner</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
+      <cbc:ElectronicMail>logistics@valdara.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:WeighingParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Rinova Recovery</cbc:Name>
+    </cac:PartyName>
+  </cac:WeighingParty>
+  <cac:Shipment>
+    <cbc:ID>VI-SH-26-0208</cbc:ID>
+    <cbc:NetWeightMeasure unitCode="KGM">22900</cbc:NetWeightMeasure>
+    <cac:Consignment>
+      <cbc:ID>VI-CS-26-0209</cbc:ID>
+      <cbc:TotalPackagesQuantity>54</cbc:TotalPackagesQuantity>
+    </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Used polyethylene stretch film and film offcuts, baled</cbc:Description>
+      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cac:Item>
+        <cbc:Description>Used polyethylene stretch film and film offcuts, baled</cbc:Description>
+        <cac:CommodityClassification>
+          <cbc:ItemClassificationCode listID="urn:ubl-examples:world:XU:codelist:WasteCode">150102</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel baling wire</cbc:PackingMaterial>
+      </cac:ContainingPackage>
+    </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 KT</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 TR</cbc:TrailerLicensePlateID>
+        </cac:RoadTransport>
+        <cac:OwnerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Trasvia Haulage</cbc:Name>
+          </cac:PartyName>
+        </cac:OwnerParty>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">38200</cbc:Measure>
+          <cbc:Description>Loaded, at 10:07</cbc:Description>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">TAREWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">15300</cbc:Measure>
+          <cbc:Description>Empty, at 10:46</cbc:Description>
+        </cac:MeasurementDimension>
+      </cac:TransportMeans>
+      <cac:DriverPerson>
+        <cbc:ID>XU-DL-0417722</cbc:ID>
+        <cbc:FirstName>Ilario</cbc:FirstName>
+        <cbc:FamilyName>Bencetti</cbc:FamilyName>
+      </cac:DriverPerson>
+    </cac:ShipmentStage>
+  </cac:Shipment>
+</WeightStatement>

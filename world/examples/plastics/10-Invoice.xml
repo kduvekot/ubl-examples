@@ -6,12 +6,12 @@
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-INV-26-0894</cbc:ID>
   <cbc:UUID>462dcfae-0a9f-5692-9219-92c1bf595e5d</cbc:UUID>
-  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-20</cbc:DueDate>
+  <cbc:DueDate>2026-05-21</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to: the price includes the barge to the river quay. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion P).</cbc:Note>
-  <cbc:TaxPointDate>2026-04-20</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-21</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials</cbc:AccountingCost>
@@ -178,14 +178,14 @@
       <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
     </cac:DeliveryLocation>
     <cac:Despatch>
-      <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+      <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
     </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-21</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF89RRINV260894</cbc:InstructionNote>
@@ -239,10 +239,10 @@
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">199680</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.rinova.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-21</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-20</cbc:StartDate>
-      <cbc:EndDate>2026-04-30</cbc:EndDate>
+      <cbc:StartDate>2026-04-21</cbc:StartDate>
+      <cbc:EndDate>2026-05-01</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
