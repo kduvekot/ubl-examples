@@ -18,8 +18,9 @@ public offices (Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA">Order
 in the UBL 2.5 specification</a></em></p>
 <p>The store orders the opening stock of the line, piece by piece and
-wood by wood. Delivery terms DAP store: the furniture maker delivers
-with its own van.</p>
+wood by wood, to hold for the reopening of its home and garden
+department on 11 May. Delivery terms DAP store: the furniture maker
+delivers with its own van.</p>
 <p><a href="examples/furniture/08-Order.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -62,8 +63,8 @@ UN/EDIFACT 1001 code 220: order. The code is from the world's copy of
 UN/EDIFACT 1001 Document name: 220 = Order.</li>
 <li><code>Note</code> = <strong>Opening stock of the Elderwick Marrow
 line, in oak and in ash: twice the target of each item, to fill the
-launch display in the home and garden department as well as the
-shelf.</strong><br />
+display in the home and garden department when it reopens on 11 May as
+well as the shelf; the store holds the stock until then.</strong><br />
 Why the order is larger than the stock policy's target.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
@@ -375,8 +376,9 @@ UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 <ul>
 <li><code>RequestedDeliveryPeriod/StartDate</code> =
 <strong>2026-03-23</strong><br />
-The opening stock is wanted on 23 March, for the launch of the
-range.</li>
+The opening stock is wanted on 23 March: the maker makes the line in one
+run, and the store holds it for the reopening of its home and garden
+department on 11 May.</li>
 <li><code>RequestedDeliveryPeriod/EndDate</code> =
 <strong>2026-03-23</strong><br />
 The last day it is wanted.</li>
@@ -470,8 +472,8 @@ The line number: a line added by a change keeps a number of its own
 A universally unique identifier of the line, derived from the document
 and the line number.</li>
 <li><code>LineItem/Note</code> = <strong>Twice the target of six oak
-benches: the shelf and the launch display in the home and garden
-department.</strong><br />
+benches: the shelf and the display in the home and garden department
+when it reopens.</strong><br />
 What the line is.</li>
 <li><code>LineItem/Quantity</code> = <strong>12</strong> (unitCode
 <code>EA</code>)<br />
@@ -1010,7 +1012,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-16&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:16:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OrderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;220&lt;/<span class="kw">cbc:OrderTypeCode</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the launch display in the home and garden department as well as the shelf.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the display in the home and garden department when it reopens on 11 May as well as the shelf; the store holds the stock until then.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;6120&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Home and garden department&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
@@ -1156,7 +1158,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UUID</span>&gt;4278e92c-6141-5575-b08f-555e19cf4b75&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Twice the target of six oak benches: the shelf and the launch display in the home and garden department.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Twice the target of six oak benches: the shelf and the display in the home and garden department when it reopens.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
@@ -1462,6 +1464,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3ab705d095f69e49c4edfc1567461103d919cc78"><code>3ab705d</code></a> of 2026-11-19 10:57 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/f7b3a2c00772809732f2484f7f699bcfe38e5c99"><code>f7b3a2c</code></a> of 2026-11-19 11:16 UTC</p></div></footer>
 </body>
 </html>

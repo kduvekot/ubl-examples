@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
   <cbc:IssueTime>11:16:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the launch display in the home and garden department as well as the shelf.</cbc:Note>
+  <cbc:Note>Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the display in the home and garden department when it reopens on 11 May as well as the shelf; the store holds the stock until then.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
@@ -155,7 +155,7 @@
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>4278e92c-6141-5575-b08f-555e19cf4b75</cbc:UUID>
-      <cbc:Note>Twice the target of six oak benches: the shelf and the launch display in the home and garden department.</cbc:Note>
+      <cbc:Note>Twice the target of six oak benches: the shelf and the display in the home and garden department when it reopens.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">4560.00</cbc:LineExtensionAmount>
       <cbc:MinimumQuantity unitCode="EA">6</cbc:MinimumQuantity>

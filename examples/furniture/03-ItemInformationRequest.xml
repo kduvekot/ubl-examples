@@ -10,8 +10,8 @@
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
   <cbc:Note>Weekly figures, please, for the whole season.</cbc:Note>
   <cac:Period>
-    <cbc:StartDate>2026-03-16</cbc:StartDate>
-    <cbc:EndDate>2026-05-11</cbc:EndDate>
+    <cbc:StartDate>2026-05-11</cbc:StartDate>
+    <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:Period>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0568</cbc:ID>
@@ -142,8 +142,8 @@
     <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:Period>
-      <cbc:StartDate>2026-03-16</cbc:StartDate>
-      <cbc:EndDate>2026-05-11</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:Period>
     <cac:SalesItem>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>

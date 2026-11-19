@@ -64,10 +64,11 @@ What the maker asks.</li>
 <h3 id="period">Period</h3>
 <p>Inside <code>Period</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-03-16</strong><br />
-The season the information is wanted for.</li>
-<li><code>EndDate</code> = <strong>2026-05-11</strong><br />
-Its end.</li>
+<li><code>StartDate</code> = <strong>2026-05-11</strong><br />
+The season the information is wanted for: from the reopening of the home
+and garden department on 11 May, when the line goes on sale.</li>
+<li><code>EndDate</code> = <strong>2026-08-29</strong><br />
+Its end, as the store's replenishment policy.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
@@ -424,10 +425,10 @@ list: TOTAL = Total.</li>
 <code>urn:ubl-examples:world:codelist:PerformanceMetricCode</code>)<br />
 Measured in pieces sold. The code is from the Trade Accord's performance
 metric list: SALESUNITS = Sales in units.</li>
-<li><code>Period/StartDate</code> = <strong>2026-03-16</strong><br />
-Sales data for the season.</li>
-<li><code>Period/EndDate</code> = <strong>2026-05-11</strong><br />
-Its end.</li>
+<li><code>Period/StartDate</code> = <strong>2026-05-11</strong><br />
+Sales data from the first day of sales.</li>
+<li><code>Period/EndDate</code> = <strong>2026-08-29</strong><br />
+To the end of the season.</li>
 <li><code>SalesItem/Quantity</code> = <strong>12</strong> (unitCode
 <code>EA</code>)<br />
 The oak benches of the first delivery, to compare sales against.</li>
@@ -613,8 +614,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;12:44:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Weekly figures, please, for the whole season.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-16&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-08-29&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-DOC-26-0568&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -745,8 +746,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ForecastTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastTypeCode&quot;</span>&gt;TOTAL&lt;/<span class="kw">cbc:ForecastTypeCode</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PerformanceMetricTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PerformanceMetricCode&quot;</span>&gt;SALESUNITS&lt;/<span class="kw">cbc:PerformanceMetricTypeCode</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-16&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-08-29&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SalesItem</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
@@ -828,6 +829,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ItemInformationRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3ab705d095f69e49c4edfc1567461103d919cc78"><code>3ab705d</code></a> of 2026-11-19 10:57 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/f7b3a2c00772809732f2484f7f699bcfe38e5c99"><code>f7b3a2c</code></a> of 2026-11-19 11:16 UTC</p></div></footer>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-PO-26-0576</cbc:ID>
   <cbc:UUID>723b8ed1-619b-5c36-b65d-2cac4a35d4c0</cbc:UUID>
-  <cbc:IssueDate>2026-04-16</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>12:09:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -110,8 +110,8 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-05-25</cbc:StartDate>
-      <cbc:EndDate>2026-05-29</cbc:EndDate>
+      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:EndDate>2026-07-03</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>

@@ -6,9 +6,9 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
-  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-17</cbc:IssueDate>
   <cbc:IssueTime>11:12:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-04</cbc:DueDate>
+  <cbc:DueDate>2026-07-17</cbc:DueDate>
   <cbc:Note>The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -211,7 +211,7 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9523710900015</cbc:ID>
       <cbc:Name>Brackenmere Furniture, Marrowdale</cbc:Name>
@@ -221,7 +221,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
@@ -267,7 +267,7 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>30 days net.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -315,7 +315,7 @@
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Delivery>
-      <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
     </cac:Delivery>
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>

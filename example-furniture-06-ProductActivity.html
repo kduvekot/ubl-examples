@@ -18,7 +18,8 @@ Activity: Brightmarket Stores to Brackenmere Furniture</h1>
 public offices (Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRODUCT-ACTIVITY-SCHEMA">Product
 Activity in the UBL 2.5 specification</a></em></p>
-<p>Weekly sales and stock movements of the line.</p>
+<p>The sales of the line in its first four weeks, from the reopening of
+the home and garden department on 11 May, per piece and wood.</p>
 <p><a href="examples/furniture/06-ProductActivity.xml">The XML file</a>
 is valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -50,8 +51,9 @@ The sender's number for its activity.</li>
 <strong>35444c15-3be6-5365-a08f-55521605590a</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
-The store's report of the first four weeks.</li>
+<li><code>IssueDate</code> = <strong>2026-06-08</strong><br />
+The store's report of the first four weeks of sales, on the Monday after
+them.</li>
 <li><code>IssueTime</code> = <strong>16:35:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -62,10 +64,11 @@ The store's remark.</li>
 <h3 id="activity-period">Activity Period</h3>
 <p>Inside <code>ActivityPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-03-23</strong><br />
-The four weeks reported.</li>
-<li><code>EndDate</code> = <strong>2026-04-20</strong><br />
-Their end.</li>
+<li><code>StartDate</code> = <strong>2026-05-11</strong><br />
+The four weeks reported: from the reopening of the home and garden
+department on Monday 11 May, the first day of sales.</li>
+<li><code>EndDate</code> = <strong>2026-06-07</strong><br />
+Their end: Sunday 7 June.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
@@ -84,7 +87,7 @@ Request.</li>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>BM-SIG-26-0420A</strong><br />
+<li><code>ID</code> = <strong>BM-SIG-26-0608A</strong><br />
 The sender's electronic seal.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
 <strong>20410411</strong> (schemeID
@@ -388,10 +391,10 @@ The only line.</li>
 The activity reported: sales to consumers. The code is from the Trade
 Accord's supply chain activity list: SALES = Sales.</li>
 <li><code>ActivityPeriod/StartDate</code> =
-<strong>2026-03-23</strong><br />
-The four weeks.</li>
+<strong>2026-05-11</strong><br />
+The four weeks since the reopening.</li>
 <li><code>ActivityPeriod/EndDate</code> =
-<strong>2026-04-20</strong><br />
+<strong>2026-06-07</strong><br />
 Their end.</li>
 <li><code>ActivityOriginLocation/ID</code> =
 <strong>9522610900026</strong> (schemeID <code>GS1 GLN</code>)<br />
@@ -404,7 +407,8 @@ Stores, home and garden department, Lumeport</strong><br />
 Where the sales took place.</li>
 <li><code>SalesItem/Quantity</code> = <strong>2</strong> (unitCode
 <code>EA</code>)<br />
-Two oak benches sold in four weeks, both in Marrow sets.</li>
+Two oak benches sold in the four weeks since the reopening, both in
+Marrow sets.</li>
 <li><code>SalesItem/ActivityProperty/Name</code> = <strong>Sold in a
 Marrow set</strong><br />
 What the store notes.</li>
@@ -453,12 +457,14 @@ not the manufacturer, so the number is Brightmarket Stores', whoever
 sells the item (world/items.json).</li>
 <li><code>SalesItem/Quantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
-One ash bench sold in four weeks, in a Marrow set.</li>
+One ash bench sold in the four weeks since the reopening, in a Marrow
+set.</li>
 <li><code>SalesItem/ActivityProperty/Name</code> = <strong>Sold in a
 Marrow set</strong><br />
 What the store notes.</li>
 <li><code>SalesItem/ActivityProperty/Value</code> = <strong>1 of 1, with
-two ash chairs.</strong><br />
+two ash chairs: the webshop order of 30 May, for collection in the
+department.</strong><br />
 How the benches sold.</li>
 <li><code>SalesItem/Item/Description</code> = <strong>Dining bench, 1400
 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat,
@@ -502,7 +508,8 @@ not the manufacturer, so the number is Brightmarket Stores', whoever
 sells the item (world/items.json).</li>
 <li><code>SalesItem/Quantity</code> = <strong>7</strong> (unitCode
 <code>EA</code>)<br />
-Seven oak chairs sold in four weeks: 4 in the oak sets and 3 alone.</li>
+Seven oak chairs sold in the four weeks since the reopening: 4 in the
+oak sets and 3 alone.</li>
 <li><code>SalesItem/ActivityProperty/Name</code> = <strong>Sold
 alone</strong><br />
 What the store notes.</li>
@@ -551,7 +558,8 @@ not the manufacturer, so the number is Brightmarket Stores', whoever
 sells the item (world/items.json).</li>
 <li><code>SalesItem/Quantity</code> = <strong>3</strong> (unitCode
 <code>EA</code>)<br />
-Three ash chairs sold in four weeks: 2 in the ash set and 1 alone.</li>
+Three ash chairs sold in the four weeks since the reopening: 2 in the
+ash set and 1 alone.</li>
 <li><code>SalesItem/ActivityProperty/Name</code> = <strong>Sold
 alone</strong><br />
 What the store notes.</li>
@@ -609,19 +617,19 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;FURNITURE-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0572&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;35444c15-3be6-5365-a08f-55521605590a&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-08&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:35:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The chairs sell better than the set: the bench is too long for many apartment kitchens.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ActivityPeriod</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-07&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ActivityPeriod</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-DOC-26-0569&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ItemInformationRequest&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BM-SIG-26-0420A&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BM-SIG-26-0608A&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -723,8 +731,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SupplyChainActivityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyChainActivityCode&quot;</span>&gt;SALES&lt;/<span class="kw">cbc:SupplyChainActivityTypeCode</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityPeriod</span>&gt;</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-07&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActivityPeriod</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActivityOriginLocation</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -757,7 +765,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActivityProperty</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sold in a Marrow set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;1 of 1, with two ash chairs.&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Value</span>&gt;1 of 1, with two ash chairs: the webshop order of 30 May, for collection in the department.&lt;/<span class="kw">cbc:Value</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ActivityProperty</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -826,6 +834,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProductActivity</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3ab705d095f69e49c4edfc1567461103d919cc78"><code>3ab705d</code></a> of 2026-11-19 10:57 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/f7b3a2c00772809732f2484f7f699bcfe38e5c99"><code>f7b3a2c</code></a> of 2026-11-19 11:16 UTC</p></div></footer>
 </body>
 </html>

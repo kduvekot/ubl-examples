@@ -52,8 +52,9 @@ The sender's number for its exception.</li>
 <strong>54a44709-e8a8-5aed-918e-7a7a369c2ad5</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-21</strong><br />
-The furniture maker sees the sales below the agreed threshold.</li>
+<li><code>IssueDate</code> = <strong>2026-06-09</strong><br />
+The furniture maker sees the sales below the agreed threshold, the day
+after the store's report.</li>
 <li><code>IssueTime</code> = <strong>17:49:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -64,9 +65,10 @@ What the maker proposes.</li>
 <h3 id="exception-observation-period">Exception Observation Period</h3>
 <p>Inside <code>ExceptionObservationPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-03-23</strong><br />
-The four weeks observed.</li>
-<li><code>EndDate</code> = <strong>2026-04-20</strong><br />
+<li><code>StartDate</code> = <strong>2026-05-11</strong><br />
+The four weeks observed: the first four weeks of sales, from the
+reopening.</li>
+<li><code>EndDate</code> = <strong>2026-06-07</strong><br />
 Their end.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
@@ -85,7 +87,7 @@ document type list: ExceptionCriteria = Exception Criteria.</li>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>BF-SIG-26-0421</strong><br />
+<li><code>ID</code> = <strong>BF-SIG-26-0609</strong><br />
 The sender's electronic seal.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
 <strong>20412466</strong> (schemeID
@@ -448,10 +450,10 @@ activity list: SALES = Sales.</li>
 In benches sold. The code is from the Trade Accord's performance metric
 list: SALESUNITS = Sales in units.</li>
 <li><code>ExceptionObservationPeriod/StartDate</code> =
-<strong>2026-03-23</strong><br />
-The four weeks.</li>
+<strong>2026-05-11</strong><br />
+The four weeks since the reopening.</li>
 <li><code>ExceptionObservationPeriod/EndDate</code> =
-<strong>2026-04-20</strong><br />
+<strong>2026-06-07</strong><br />
 Their end.</li>
 <li><code>DocumentReference/ID</code> =
 <strong>BS-DOC-26-0572</strong><br />
@@ -493,8 +495,8 @@ comparison data list: ACTUAL = Actual sales.</li>
 <strong>18:00:00</strong><br />
 Their time.</li>
 <li><code>ForecastException/ComparisonForecastIssueDate</code> =
-<strong>2026-04-20</strong><br />
-The figures of day 49.</li>
+<strong>2026-06-08</strong><br />
+The store's figures of 8 June.</li>
 <li><code>SupplyItem/Description</code> = <strong>Dining bench, 1400 mm,
 in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued
 joints, felt pads under the legs, seat height 45 cm.</strong><br />
@@ -576,10 +578,10 @@ activity list: SALES = Sales.</li>
 In benches sold. The code is from the Trade Accord's performance metric
 list: SALESUNITS = Sales in units.</li>
 <li><code>ExceptionObservationPeriod/StartDate</code> =
-<strong>2026-03-23</strong><br />
-The four weeks.</li>
+<strong>2026-05-11</strong><br />
+The four weeks since the reopening.</li>
 <li><code>ExceptionObservationPeriod/EndDate</code> =
-<strong>2026-04-20</strong><br />
+<strong>2026-06-07</strong><br />
 Their end.</li>
 <li><code>DocumentReference/ID</code> =
 <strong>BS-DOC-26-0572</strong><br />
@@ -621,8 +623,8 @@ comparison data list: ACTUAL = Actual sales.</li>
 <strong>18:00:00</strong><br />
 Their time.</li>
 <li><code>ForecastException/ComparisonForecastIssueDate</code> =
-<strong>2026-04-20</strong><br />
-The figures of day 49.</li>
+<strong>2026-06-08</strong><br />
+The store's figures of 8 June.</li>
 <li><code>SupplyItem/Description</code> = <strong>Dining bench, 1400 mm,
 in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued
 joints, felt pads under the legs, seat height 45 cm.</strong><br />
@@ -673,19 +675,19 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;FURNITURE-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BF-DOC-26-0573&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;54a44709-e8a8-5aed-918e-7a7a369c2ad5&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-21&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-09&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:49:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please review the line with us.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ExceptionObservationPeriod</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-07&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ExceptionObservationPeriod</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0571&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExceptionCriteria&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-26-0421&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-26-0609&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412466&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -816,8 +818,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SupplyChainActivityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyChainActivityCode&quot;</span>&gt;SALES&lt;/<span class="kw">cbc:SupplyChainActivityTypeCode</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PerformanceMetricTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PerformanceMetricCode&quot;</span>&gt;SALESUNITS&lt;/<span class="kw">cbc:PerformanceMetricTypeCode</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExceptionObservationPeriod</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-07&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExceptionObservationPeriod</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0572&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -831,7 +833,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DataSourceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DataSourceCode&quot;</span>&gt;SELLER&lt;/<span class="kw">cbc:DataSourceCode</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonDataCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ComparisonDataCode&quot;</span>&gt;ACTUAL&lt;/<span class="kw">cbc:ComparisonDataCode</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonForecastIssueTime</span>&gt;18:00:00&lt;/<span class="kw">cbc:ComparisonForecastIssueTime</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;2026-06-08&lt;/<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ForecastException</span>&gt;</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupplyItem</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -863,8 +865,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SupplyChainActivityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyChainActivityCode&quot;</span>&gt;SALES&lt;/<span class="kw">cbc:SupplyChainActivityTypeCode</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PerformanceMetricTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PerformanceMetricCode&quot;</span>&gt;SALESUNITS&lt;/<span class="kw">cbc:PerformanceMetricTypeCode</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ExceptionObservationPeriod</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-07&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ExceptionObservationPeriod</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0572&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -878,7 +880,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DataSourceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DataSourceCode&quot;</span>&gt;SELLER&lt;/<span class="kw">cbc:DataSourceCode</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonDataCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ComparisonDataCode&quot;</span>&gt;ACTUAL&lt;/<span class="kw">cbc:ComparisonDataCode</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonForecastIssueTime</span>&gt;18:00:00&lt;/<span class="kw">cbc:ComparisonForecastIssueTime</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;2026-06-08&lt;/<span class="kw">cbc:ComparisonForecastIssueDate</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ForecastException</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupplyItem</span>&gt;</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -900,6 +902,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExceptionNotification</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3ab705d095f69e49c4edfc1567461103d919cc78"><code>3ab705d</code></a> of 2026-11-19 10:57 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/f7b3a2c00772809732f2484f7f699bcfe38e5c99"><code>f7b3a2c</code></a> of 2026-11-19 11:16 UTC</p></div></footer>
 </body>
 </html>
