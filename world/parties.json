@@ -1577,7 +1577,12 @@
       }
      }
     },
-    "week": "office"
+    "week": "office",
+    "address_desks": [
+     "purchasing",
+     "procurement"
+    ],
+    "address_desks_note": "The address's department, attention and in-house mail lines are the procurement office's: they go with the roles it answers for, and are left out where another office of the department is addressed."
    }
   },
   {
@@ -3103,6 +3108,12 @@
      "convention": "own"
     },
     "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Gas trading",
+      "email": "customs@ferranoenergy.example"
+     },
      "payables": {
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",
@@ -3128,7 +3139,8 @@
       "email": "sales@ferranoenergy.example"
      }
     },
-    "week": "always"
+    "week": "always",
+    "customs_id": "XU-TR-105781"
    }
   },
   {

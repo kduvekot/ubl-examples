@@ -403,7 +403,11 @@
     730,
     620,
     70
-   ]
+   ],
+   "version": {
+    "extended": "2026",
+    "why": "The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on (D35 point 3, O216): Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it."
+   }
   },
   {
    "id": "granulate-pe",
@@ -545,6 +549,22 @@
    "description": "Electricity supply, per kilowatt hour, network charges included.",
    "supply": "goods",
    "purchase": "energy"
+  },
+  {
+   "id": "electricity-energy",
+   "seller": "33-xu",
+   "name": "Electricity, energy",
+   "kind": "service",
+   "unit": "KWH",
+   "price": {
+    "amount": 21.1,
+    "currency": "XUF"
+   },
+   "sellers_id": "FE-KWH-E",
+   "description": "The energy of the electricity supply, per kilowatt hour: the tariff FE-KWH without the network charge of the grid.",
+   "supply": "goods",
+   "purchase": "energy",
+   "note": "Shown only on the utility statements, which split the tariff FE-KWH (27.3) into the energy (21.1) and Ferrano Grid's network charge (6.2) that Ferrano Energy collects with its bill (D31 point 2, O194)."
   },
   {
    "id": "slat-1800",
@@ -1565,13 +1585,13 @@
    "seller": "35-xl",
    "name": "Business telephone line",
    "kind": "service",
-   "unit": "MON",
+   "unit": "EA",
    "price": {
     "amount": 21.18,
     "currency": "XLC"
    },
    "sellers_id": "ST-BL",
-   "description": "Business telephone and data line, monthly subscription.",
+   "description": "Business telephone and data line, subscription per line and month.",
    "purchase": "telecom"
   },
   {
@@ -1589,6 +1609,20 @@
    "purchase": "telecom"
   },
   {
+   "id": "telecom-roaming",
+   "seller": "35-xl",
+   "name": "Mobile data roaming",
+   "kind": "service",
+   "unit": "E34",
+   "price": {
+    "amount": 1.5,
+    "currency": "XLC"
+   },
+   "sellers_id": "ST-GB-RX",
+   "description": "Mobile data used on a partner's network abroad, per gigabyte; the Trade Accord has no roaming rule.",
+   "purchase": "telecom"
+  },
+  {
    "id": "bench-serra-r",
    "seller": "26-xb",
    "name": "Park bench Serra 180",
@@ -1600,7 +1634,7 @@
    },
    "sellers_id": "BM-551210",
    "resale_of": "bench-serra-b",
-   "description": "The Serra park bench in the store's garden department; the state sales tax is added at the till."
+   "description": "The Serra park bench in the store's home and garden department; the state sales tax is added at the till."
   },
   {
    "id": "return-transport",
@@ -1644,6 +1678,36 @@
    "levy": "2-xb",
    "description": "The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.",
    "supply": "none",
+   "purchase": "energy"
+  },
+  {
+   "id": "district-heat",
+   "seller": "34-xb",
+   "name": "District heat",
+   "kind": "service",
+   "unit": "MWH",
+   "price": {
+    "amount": 92.5,
+    "currency": "XBL"
+   },
+   "sellers_id": "CSW-HEAT",
+   "description": "Heat from Lumeport's district heating network, per megawatt hour at the flat's heat meter.",
+   "supply": "goods",
+   "purchase": "energy"
+  },
+  {
+   "id": "heat-cooling-correction",
+   "seller": "34-xb",
+   "name": "District heating cooling correction",
+   "kind": "service",
+   "unit": "MWH",
+   "price": {
+    "amount": 1.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "CSW-COOL",
+   "description": "The charge for return water that comes back warmer than the network's standard, per megawatt hour of heat and degree short of the standard cooling.",
+   "supply": "goods",
    "purchase": "energy"
   },
   {

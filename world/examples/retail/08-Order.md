@@ -49,7 +49,7 @@ Inside `ValidityPeriod`:
 Inside `CatalogueReference`:
 
 - `ID` = **LD-CAT-26-0218**  
-  The spring catalogue ordered from.
+  The catalogue ordered from.
 
 ### Additional Document Reference
 
@@ -79,8 +79,6 @@ Inside `BuyerCustomerParty`:
   The store's own number for its garden department.
 - `SupplierAssignedAccountID` = **LD-C-0418**  
   The distributor's customer number for the store.
-- `AdditionalAccountID` = **BM-LUM-01**  
-  The store's branch number.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
@@ -139,7 +137,7 @@ Inside `BuyerCustomerParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `DeliveryContact/Name` = **Goods-in, garden department**  
+- `DeliveryContact/Name` = **Goods-in, home and garden department**  
   Whom the driver reports to.
 - `DeliveryContact/Telephone` = **+999 2 38 4609 7100**  
   The number.
@@ -147,7 +145,7 @@ Inside `BuyerCustomerParty`:
   Where invoices go.
 - `AccountingContact/ElectronicMail` = **invoices@brightmarket.example**  
   The address, under the reserved .example domain.
-- `BuyerContact/Name` = **Garden department buyer**  
+- `BuyerContact/Name` = **Home and garden department buyer**  
   Who placed the order.
 - `BuyerContact/Telephone` = **+999 2 38 4609 7100**  
   The number.
@@ -160,8 +158,6 @@ Inside `SellerSupplierParty`:
   The store's supplier number for the distributor.
 - `AdditionalAccountID` = **LD-XB-01**  
   The distributor's sales office.
-- `DataSendingCapability` = **UBL 2.5 over the trade accord network**  
-  How the distributor sends documents.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
@@ -231,7 +227,7 @@ Inside `Delivery`:
 
 - `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
-- `DeliveryLocation/Description` = **Goods-in, garden department**  
+- `DeliveryLocation/Description` = **Goods-in, home and garden department**  
   Where the truck unloads.
 - `RequestedDeliveryPeriod/StartDate` = **2026-04-30**  
   The benches are wanted on 30 April, in a delivery slot.
@@ -342,7 +338,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **24** (unitCode `EA`)  
-  Six pallets for the garden department's spring promotion.
+  Six pallets for the reopening of the home and garden department.
 - `LineItem/LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
@@ -377,16 +373,6 @@ Inside `OrderLine`:
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0218**  
   The catalogue the item was ordered from.
-- `BuyerProposedSubstituteLineItem/ID` = **1.1**  
-  The store's fall-back if the Serra 180 is out of stock: an ID of its own (retail/08#F9).
-- `BuyerProposedSubstituteLineItem/Quantity` = **24** (unitCode `EA`)  
-  The same quantity.
-- `BuyerProposedSubstituteLineItem/Item/Name` = **Park bench Serra 180, moss green**  
-  The other frame colour: the store would take it.
-- `BuyerProposedSubstituteLineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
-  The distributor's number.
-- `BuyerProposedSubstituteLineItem/Item/SellersItemIdentification/ExtendedID` = **GRN**  
-  The green variant.
 - `CatalogueLineReference/LineID` = **1**  
   The catalogue line ordered from.
 
@@ -432,7 +418,6 @@ Inside `OrderLine`:
   <cac:BuyerCustomerParty>
     <cbc:CustomerAssignedAccountID>BM-6120</cbc:CustomerAssignedAccountID>
     <cbc:SupplierAssignedAccountID>LD-C-0418</cbc:SupplierAssignedAccountID>
-    <cbc:AdditionalAccountID>BM-LUM-01</cbc:AdditionalAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -483,7 +468,7 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:DeliveryContact>
-      <cbc:Name>Goods-in, garden department</cbc:Name>
+      <cbc:Name>Goods-in, home and garden department</cbc:Name>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:DeliveryContact>
     <cac:AccountingContact>
@@ -491,14 +476,13 @@ Inside `OrderLine`:
       <cbc:ElectronicMail>invoices@brightmarket.example</cbc:ElectronicMail>
     </cac:AccountingContact>
     <cac:BuyerContact>
-      <cbc:Name>Garden department buyer</cbc:Name>
+      <cbc:Name>Home and garden department buyer</cbc:Name>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:BuyerContact>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cbc:CustomerAssignedAccountID>BM-S-0071</cbc:CustomerAssignedAccountID>
     <cbc:AdditionalAccountID>LD-XB-01</cbc:AdditionalAccountID>
-    <cbc:DataSendingCapability>UBL 2.5 over the trade accord network</cbc:DataSendingCapability>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -556,7 +540,7 @@ Inside `OrderLine`:
   <cac:Delivery>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
-      <cbc:Description>Goods-in, garden department</cbc:Description>
+      <cbc:Description>Goods-in, home and garden department</cbc:Description>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-04-30</cbc:StartDate>
@@ -666,17 +650,6 @@ Inside `OrderLine`:
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>
-    <cac:BuyerProposedSubstituteLineItem>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Park bench Serra 180, moss green</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
-          <cbc:ExtendedID>GRN</cbc:ExtendedID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-    </cac:BuyerProposedSubstituteLineItem>
     <cac:CatalogueLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:CatalogueLineReference>

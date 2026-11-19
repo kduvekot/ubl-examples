@@ -22,8 +22,8 @@ The distributor announces the cross-border payment and which invoices it settles
   The payer's remittance number.
 - `UUID` = **079daaa2-67ec-5103-9652-83ba2c17dabd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-22**  
-  The day the payment is made across the border, before the due date.
+- `IssueDate` = **2026-04-02**  
+  The day the payment is made across the border, within the ten days of the invoice's discount period (O218).
 - `IssueTime` = **15:05:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Payment of the invoice below.**  
@@ -32,10 +32,10 @@ The distributor announces the cross-border payment and which invoices it settles
   The ferra, the currency of the invoice paid; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `TotalDebitAmount` = **3887400** (currencyID `XUF`)  
   The invoices paid.
-- `TotalCreditAmount` = **0** (currencyID `XUF`)  
-  No credits taken.
-- `TotalPaymentAmount` = **3887400** (currencyID `XUF`)  
-  The amount transferred: the payable amount of the invoice.
+- `TotalCreditAmount` = **77748** (currencyID `XUF`)  
+  Credits taken: the settlement discount.
+- `TotalPaymentAmount` = **3809652** (currencyID `XUF`)  
+  The amount transferred: the payable amount less the 2 % discount for payment within the discount period.
 - `PaymentOrderReference` = **LD-PAY-26-0149**  
   The payment order the payer gave its bank.
 - `InvoicingPartyReference` = **RF78VIINV260166**  
@@ -171,8 +171,6 @@ Inside `PaymentMeans`:
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Lumeway Distribution Ltd**  
   The account holder, as the bank knows it.
-- `PayerFinancialAccount/AliasName` = **Lumeway receivables**  
-  The short name the holder gave the account, shown in its bank's app.
 - `PayerFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
   A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
 - `PayerFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
@@ -264,8 +262,12 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
+- `Note` = **2 % discount taken: paid within the discount period of the invoice's terms.**  
+  Why less is paid than invoiced.
 - `DebitLineAmount` = **3887400** (currencyID `XUF`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+- `CreditLineAmount` = **77748** (currencyID `XUF`)  
+  The settlement discount taken, a credit against the invoice.
 - `BalanceAmount` = **0** (currencyID `XUF`)  
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
@@ -288,13 +290,13 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-RM-26-0168</cbc:ID>
   <cbc:UUID>079daaa2-67ec-5103-9652-83ba2c17dabd</cbc:UUID>
-  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XUF">3887400</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XUF">3887400</cbc:TotalPaymentAmount>
+  <cbc:TotalCreditAmount currencyID="XUF">77748</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XUF">3809652</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -395,7 +397,6 @@ Inside `RemittanceAdviceLine`:
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
-      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
@@ -472,7 +473,9 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:Note>2 % discount taken: paid within the discount period of the invoice's terms.</cbc:Note>
     <cbc:DebitLineAmount currencyID="XUF">3887400</cbc:DebitLineAmount>
+    <cbc:CreditLineAmount currencyID="XUF">77748</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>

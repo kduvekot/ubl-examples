@@ -26,8 +26,8 @@ The retailer forecasts its sales for the coming weeks.
   Sent after the catalogue arrived.
 - `IssueTime` = **11:55:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Includes the spring garden promotion.**  
-  What the figure includes.
+- `Note` = **Includes the reopening promotion of the home and garden department, 11 to 24 May.**  
+  What the figure includes (D34).
 - `VersionID` = **1**  
   The first forecast of the season.
 - `BasedOnConsensusIndicator` = **false**  
@@ -48,10 +48,10 @@ Inside `ForecastPeriod`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BM-RE-26**  
-  The promotion it counts on.
+- `ID` = **BS-RE-26-0222**  
+  The store's retail event of the reopening, the promotion the figure counts on (retail/05#F1).
 - `DocumentTypeCode` = **RetailEvent** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, the store's retail event for the reopening (retail/06), cited before its number is known; its ID is put right with the retail flow (D34), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: RetailEvent = Retail Event.
+  The kind of document referred to: BS-RE-26-0222 is the example retail/06, a RetailEvent; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: RetailEvent = Retail Event.
 
 ### Signature
 
@@ -208,8 +208,8 @@ Inside `ForecastLine`:
   The first and only line.
 - `Note` = **Week-by-week figures follow in the store's portal.**  
   Where the detail is.
-- `FrozenDocumentIndicator` = **false**  
-  The figure may still change.
+- `FrozenDocumentIndicator` = **true**  
+  The figure may still change: by its UBL definition the indicator is true when the document can be changed, which its name contradicts; recorded for the TC (retail/05#F10, D34).
 - `ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
   The total expected sales of the item in the period. The code is from the Trade Accord's forecast type list: TOTAL = Total.
 - `ForecastPeriod/StartDate` = **2026-05-04**  
@@ -254,7 +254,7 @@ Inside `ForecastLine`:
   <cbc:UUID>60706c39-36eb-5254-aefe-265082af3657</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
-  <cbc:Note>Includes the spring garden promotion.</cbc:Note>
+  <cbc:Note>Includes the reopening promotion of the home and garden department, 11 to 24 May.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:BasedOnConsensusIndicator>false</cbc:BasedOnConsensusIndicator>
   <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
@@ -263,7 +263,7 @@ Inside `ForecastLine`:
     <cbc:EndDate>2026-06-15</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BM-RE-26</cbc:ID>
+    <cbc:ID>BS-RE-26-0222</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">RetailEvent</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
@@ -390,7 +390,7 @@ Inside `ForecastLine`:
   <cac:ForecastLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Week-by-week figures follow in the store's portal.</cbc:Note>
-    <cbc:FrozenDocumentIndicator>false</cbc:FrozenDocumentIndicator>
+    <cbc:FrozenDocumentIndicator>true</cbc:FrozenDocumentIndicator>
     <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
     <cac:ForecastPeriod>
       <cbc:StartDate>2026-05-04</cbc:StartDate>

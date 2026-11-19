@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MP-IM-26-0156</cbc:ID>
+  <cbc:ID>MP-IM-26-0157</cbc:ID>
   <cbc:UUID>588c4166-cc9d-5604-8074-7a2b5bb9884a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:55:00-01:00</cbc:IssueTime>
@@ -157,6 +157,10 @@
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>KG-SH-26-0154</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>KG-CS-26-0155</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
+    </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Natural gas</cbc:Description>
@@ -172,7 +176,6 @@
         </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:NatureCode listID="WCO HS 2022 Sections">V</cbc:NatureCode>
-          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">BULK</cbc:CargoTypeCode>
           <cbc:CommodityCode listID="WCO HS 2022">271121</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">12020</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
@@ -188,9 +191,31 @@
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">7</cbc:TransportModeCode>
+      <cac:TransitPeriod>
+        <cbc:StartDate>2026-03-01</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:TransitPeriod>
       <cac:TransportMeans>
         <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">71</cbc:TransportMeansTypeCode>
       </cac:TransportMeans>
     </cac:ShipmentStage>
+    <cac:FirstArrivalPortLocation>
+      <cbc:Description>On Bayvarra's side of the border with Urvania, in the Northern Territory.</cbc:Description>
+      <cbc:Name>Border metering station of the Kelpstone gas pipeline</cbc:Name>
+      <cac:LocationCoordinate>
+        <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+        <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>
+        <cbc:LatitudeMinutesMeasure unitCode="D61">40.54</cbc:LatitudeMinutesMeasure>
+        <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+        <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+        <cbc:LongitudeMinutesMeasure unitCode="D61">42.48</cbc:LongitudeMinutesMeasure>
+        <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+      </cac:LocationCoordinate>
+    </cac:FirstArrivalPortLocation>
   </cac:Shipment>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>KG-EX-26-0152</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

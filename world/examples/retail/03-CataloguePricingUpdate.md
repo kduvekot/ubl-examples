@@ -32,10 +32,10 @@ The distributor lowers the price of the spare side frame.
   The day of the change.
 - `RevisionTime` = **13:00:00**  
   When the change was made, before the update was sent.
-- `Note` = **Applies to the spring catalogue.**  
+- `Note` = **A revision of Lumeway's catalogue for the Lumeport store.**  
   Which catalogue.
-- `Description` = **Price change of the side frame**  
-  In words.
+- `Description` = **The new price list LD-PL-2026-2 revises the whole range: the side frame goes from 64.00 to 58.00; the bench keeps its price.**  
+  What changes, and that the new list covers the whole range (retail/03#F12).
 - `VersionID` = **1.1**  
   The catalogue version after the update.
 - `LineCountNumeric` = **1**  
@@ -66,14 +66,12 @@ Inside `RelatedCatalogueReference`:
   Not revised yet: its issue.
 - `RevisionTime` = **09:00:00**  
   At that time.
-- `Note` = **Spring catalogue 2026.**  
-  Which catalogue.
+- `Note` = **Lumeway's catalogue for the Lumeport store, 2026.**  
+  Which catalogue: one Lumeway issued for the store's reopened home and garden department (D34).
 - `Description` = **Benches and spare parts for resale.**  
   What it holds.
 - `VersionID` = **1.0**  
   The version referred to: the one current when this document is issued.
-- `PreviousVersionID` = **0.9**  
-  The draft the store saw at the fair.
 
 ### Referenced Contract
 
@@ -253,13 +251,6 @@ Inside `ContractorCustomerParty`:
 - `Party/PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
 
-### Trading Terms
-
-Inside `TradingTerms`:
-
-- `Information` = **Unchanged.**  
-  The terms stay as in the catalogue.
-
 ### Default Language
 
 Inside `DefaultLanguage`:
@@ -273,8 +264,8 @@ Inside `DefaultLanguage`:
 
 Inside `CataloguePricingUpdateLine`:
 
-- `ID` = **1**  
-  The line of the side frame.
+- `ID` = **2**  
+  The catalogue's line of the side frame (retail/03#F3).
 - `RequiredItemLocationQuantity/Price/PriceAmount` = **58** (currencyID `XBL`)  
   The new price of the side frame, down from 64.00.
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -288,9 +279,9 @@ Inside `CataloguePricingUpdateLine`:
 - `RequiredItemLocationQuantity/Price/PriceList/ValidityPeriod/EndDate` = **2026-07-19**  
   Until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/ID` = **LD-PL-2026**  
-  The price list of the spring catalogue it replaces.
+  The price list it revises: the new list is a revision of the whole range, in which only the side frame's price changes (retail/03#F12).
 - `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/StatusCode` = **REPLACED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  No longer in force. The code is from the Trade Accord's record status list: REPLACED = Replaced.
+  Replaced by the revision as a whole; the bench keeps its price in the new list. The code is from the Trade Accord's record status list: REPLACED = Replaced.
 
 ## The document
 
@@ -308,8 +299,8 @@ Inside `CataloguePricingUpdateLine`:
   <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
   <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
-  <cbc:Note>Applies to the spring catalogue.</cbc:Note>
-  <cbc:Description>Price change of the side frame</cbc:Description>
+  <cbc:Note>A revision of Lumeway's catalogue for the Lumeport store.</cbc:Note>
+  <cbc:Description>The new price list LD-PL-2026-2 revises the whole range: the side frame goes from 64.00 to 58.00; the bench keeps its price.</cbc:Description>
   <cbc:VersionID>1.1</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
@@ -323,10 +314,9 @@ Inside `CataloguePricingUpdateLine`:
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
     <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
-    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.0</cbc:VersionID>
-    <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   </cac:RelatedCatalogueReference>
   <cac:ReferencedContract>
     <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
@@ -476,15 +466,12 @@ Inside `CataloguePricingUpdateLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:ContractorCustomerParty>
-  <cac:TradingTerms>
-    <cbc:Information>Unchanged.</cbc:Information>
-  </cac:TradingTerms>
   <cac:DefaultLanguage>
     <cbc:ID schemeID="ISO 639">en</cbc:ID>
     <cbc:Name>English</cbc:Name>
   </cac:DefaultLanguage>
   <cac:CataloguePricingUpdateLine>
-    <cbc:ID>1</cbc:ID>
+    <cbc:ID>2</cbc:ID>
     <cac:RequiredItemLocationQuantity>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">58</cbc:PriceAmount>

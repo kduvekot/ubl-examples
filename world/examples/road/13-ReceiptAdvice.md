@@ -2,7 +2,7 @@
 
 *Example 13 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Receipt Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA)*
 
-The corrected receipt advice: all 96 benches received, and one box of side frames more than despatched.
+The corrected receipt advice: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; it names the receipt advice it replaces (decision D35).
 
 [The XML file](13-ReceiptAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -32,8 +32,8 @@ The corrected receipt advice: all 96 benches received, and one box of side frame
   UBL's receipt advice type code: the goods actually received. The code is from the world's copy of UBL's Receipt advice type list, with a listID: Actual = An arrival that has passed goods inspection and is accepted (or not)..
 - `DeliveryAcceptanceCode` = **ACCEPTED** (listID `urn:ubl-examples:world:codelist:DeliveryAcceptanceCode`)  
   All goods accepted. The code is from the Trade Accord's delivery acceptance list: ACCEPTED = All accepted.
-- `Note` = **Recounted: all benches received; one box of side frames over.**  
-  The result.
+- `Note` = **Recounted: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; the 300 parcels agree with the carrier's count.**  
+  The result (road/13#F15).
 - `LineCountNumeric` = **2**  
   The number of lines.
 
@@ -59,6 +59,10 @@ Inside `AdditionalDocumentReference`:
   The consignment note signed on delivery, the consignee's proof of receipt: a transport document, not a delivery note (road/11#F2).
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: TH-WB-26-0159 is the example road/08, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
+- `ID` = **LD-RA-26-0162**  
+  The receipt advice this one replaces, cancelled by the fulfilment cancellation of the same morning (road/13#F8).
+- `DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-RA-26-0162 is the example road/11, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
 
 ### Delivery Customer Party
 
@@ -261,7 +265,7 @@ Inside `ReceiptLine`:
   The line number.
 - `UUID` = **afd193d4-be23-5ad3-a6ff-ef6bced12366**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **All 96 benches, after the recount.**  
+- `Note` = **All 96 benches, after the recount: the 13th carton on the pallet of side frames is this line's, parcel 2 of 3 of the bench reported short.**  
   The line.
 - `ReceivedQuantity` = **96** (unitCode `EA`)  
   Counted at the goods-in and found as announced.
@@ -307,12 +311,10 @@ Inside `ReceiptLine`:
   The line number.
 - `UUID` = **6a91536d-d850-5bf2-94a7-500493ffb33a**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **One box more than despatched: picked twice at the 3PL.**  
-  What was found.
-- `ReceivedQuantity` = **13** (unitCode `EA`)  
-  One box more than despatched.
-- `OversupplyQuantity` = **1** (unitCode `EA`)  
-  The extra box, held for collection by the next truck.
+- `Note` = **12 spare frames, as despatched: the 13th carton on their pallet was a bench's parcel.**  
+  The line.
+- `ReceivedQuantity` = **12** (unitCode `EA`)  
+  Counted at the goods-in and found as announced.
 - `ReceivedDate` = **2026-03-25**  
   Unloaded.
 - `OrderLineReference/LineID` = **2**  
@@ -335,6 +337,8 @@ Inside `ReceiptLine`:
   The buyer's own item number: it resells this item as its item bench-casting-b.
 - `Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; item bench-casting of Valdara Industries (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **2026**  
+  The 2026 casting with the reinforced foot, which the order response substituted for the casting ordered.
 - `Item/StandardItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-casting of Valdara Industries (world/items.json).
 
@@ -354,7 +358,7 @@ Inside `ReceiptLine`:
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Revised</cbc:DocumentStatusCode>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Recounted: all benches received; one box of side frames over.</cbc:Note>
+  <cbc:Note>Recounted: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; the 300 parcels agree with the carrier's count.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>LD-PO-26-0149</cbc:ID>
@@ -365,6 +369,10 @@ Inside `ReceiptLine`:
   <cac:AdditionalDocumentReference>
     <cbc:ID>TH-WB-26-0159</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-RA-26-0162</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
@@ -523,7 +531,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>afd193d4-be23-5ad3-a6ff-ef6bced12366</cbc:UUID>
-    <cbc:Note>All 96 benches, after the recount.</cbc:Note>
+    <cbc:Note>All 96 benches, after the recount: the 13th carton on the pallet of side frames is this line's, parcel 2 of 3 of the bench reported short.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
@@ -564,9 +572,8 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>6a91536d-d850-5bf2-94a7-500493ffb33a</cbc:UUID>
-    <cbc:Note>One box more than despatched: picked twice at the 3PL.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">13</cbc:ReceivedQuantity>
-    <cbc:OversupplyQuantity unitCode="EA">1</cbc:OversupplyQuantity>
+    <cbc:Note>12 spare frames, as despatched: the 13th carton on their pallet was a bench's parcel.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="EA">12</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-03-25</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -588,6 +595,7 @@ Inside `ReceiptLine`:
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
+        <cbc:ExtendedID>2026</cbc:ExtendedID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

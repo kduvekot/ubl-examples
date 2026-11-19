@@ -9,10 +9,7 @@
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:Note>A corrected receipt advice follows.</cbc:Note>
-  <cbc:CancellationNote>The recount found the bench reported short; the shortage did not exist.</cbc:CancellationNote>
-  <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0153</cbc:ID>
-  </cac:DespatchDocumentReference>
+  <cbc:CancellationNote>The recount read the label of the 13th carton on the pallet of side frames: "Serra 180, parcel 2 of 3", the bench reported short. Neither the shortage nor the carton over existed.</cbc:CancellationNote>
   <cac:ReceiptDocumentReference>
     <cbc:ID>LD-RA-26-0162</cbc:ID>
   </cac:ReceiptDocumentReference>

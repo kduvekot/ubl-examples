@@ -8,7 +8,7 @@
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
   <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cbc:IssueTime>08:23:00-01:00</cbc:IssueTime>
-  <cbc:Note>The store holds stock; the maker replenishes.</cbc:Note>
+  <cbc:Note>The store holds the stock of the line in its Lumeport store, for the home and garden department, its only stock point for the line, and orders on the maker's proposals.</cbc:Note>
   <cbc:ProfileStatusCode listID="urn:ubl-examples:world:codelist:ProfileStatusCode">ACTIVE</cbc:ProfileStatusCode>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
@@ -140,7 +140,7 @@
     <cbc:MinimumInventoryQuantity unitCode="EA">2</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">2</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">6</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -165,14 +165,13 @@
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">2</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
   <cac:ItemManagementProfile>
     <cbc:MinimumInventoryQuantity unitCode="EA">2</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">2</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">4</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -197,14 +196,13 @@
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">2</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
   <cac:ItemManagementProfile>
     <cbc:MinimumInventoryQuantity unitCode="EA">4</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">4</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">12</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -229,14 +227,13 @@
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
   <cac:ItemManagementProfile>
     <cbc:MinimumInventoryQuantity unitCode="EA">4</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">4</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">8</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -261,7 +258,6 @@
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
 </TradeItemLocationProfile>

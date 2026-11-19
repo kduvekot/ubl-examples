@@ -9,7 +9,6 @@
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>14:16:00-01:00</cbc:IssueTime>
-  <cbc:Note>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -154,9 +153,11 @@
     <cbc:ID>LD-CS-26-0152</cbc:ID>
     <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+    <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>
     <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
     <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
     <cbc:CarrierServiceInstructions>Curtain-side trailer; the goods are loaded from the side by forklift.</cbc:CarrierServiceInstructions>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>

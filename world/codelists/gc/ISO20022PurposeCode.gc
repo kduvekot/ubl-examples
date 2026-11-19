@@ -120,5 +120,16 @@
             <SimpleValue>Transaction is the payment of taxes.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UBIL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Utilities</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Transaction is for the payment to common utility provider that provide gas, water and/or electricity.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

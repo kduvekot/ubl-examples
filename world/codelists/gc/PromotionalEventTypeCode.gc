@@ -82,5 +82,22 @@
             <SimpleValue>Lafafa lahaka</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OPENING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Opening promotion</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Drizul dradran</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Keusa titihuho</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A promotion for the opening or reopening of a store or of a department of one.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

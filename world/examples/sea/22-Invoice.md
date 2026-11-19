@@ -405,6 +405,12 @@ Inside `PaymentTerms`:
   The reference to quote with the payment.
 - `PenaltyPeriod/StartDate` = **2026-06-29**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
+- `PenaltyInterestRate/InterestRatePercent` = **7**  
+  The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
+- `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
+- `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
+  Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 - `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -608,6 +614,8 @@ Inside `InvoiceLine`:
   The seller's own item number; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting.
+- `Item/ManufacturersItemIdentification/ExtendedID` = **2026**  
+  The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on (D35 point 3, O216): Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it. item bench-casting of Valdara Industries (world/items.json).
 - `Item/StandardItemIdentification/ID` = **9520610000029** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
@@ -957,6 +965,11 @@ Inside `InvoiceLine`:
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-29</cbc:StartDate>
     </cac:PenaltyPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
@@ -1128,6 +1141,7 @@ Inside `InvoiceLine`:
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
+        <cbc:ExtendedID>2026</cbc:ExtendedID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>

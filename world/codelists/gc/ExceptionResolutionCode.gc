@@ -54,7 +54,7 @@
             <SimpleValue>Kaapa netita</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The partners review the exception together.</SimpleValue>
+            <SimpleValue>The partners review the exception together. A world extension: the values UBL's definition of ExceptionResolutionCode lists all default to a value.</SimpleValue>
          </Value>
       </Row>
       <Row>

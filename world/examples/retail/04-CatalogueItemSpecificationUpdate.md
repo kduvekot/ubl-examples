@@ -32,7 +32,7 @@ Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's re
   The day of the change.
 - `RevisionTime` = **08:30:00**  
   When the change was made, before the update was sent.
-- `Note` = **Applies to the spring catalogue.**  
+- `Note` = **A revision of Lumeway's catalogue for the Lumeport store.**  
   Which catalogue.
 - `Description` = **Revised datasheet of the Serra 180: slat finish and maintenance**  
   In words.
@@ -66,8 +66,8 @@ Inside `RelatedCatalogueReference`:
   Revised by the price update of the side frame.
 - `RevisionTime` = **13:00:00**  
   At that time.
-- `Note` = **Spring catalogue 2026.**  
-  Which catalogue.
+- `Note` = **Lumeway's catalogue for the Lumeport store, 2026.**  
+  Which catalogue: one Lumeway issued for the store's reopened home and garden department (D34).
 - `Description` = **Benches and spare parts for resale.**  
   What it holds.
 - `VersionID` = **1.1**  
@@ -252,13 +252,6 @@ Inside `ContractorCustomerParty`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
-
-### Trading Terms
-
-Inside `TradingTerms`:
-
-- `Information` = **Unchanged.**  
-  The terms stay as in the catalogue.
 
 ### Default Language
 
@@ -520,7 +513,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:IssueTime>09:01:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
   <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
-  <cbc:Note>Applies to the spring catalogue.</cbc:Note>
+  <cbc:Note>A revision of Lumeway's catalogue for the Lumeport store.</cbc:Note>
   <cbc:Description>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Description>
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -535,7 +528,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
     <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
-    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.1</cbc:VersionID>
     <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
@@ -688,9 +681,6 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:ContractorCustomerParty>
-  <cac:TradingTerms>
-    <cbc:Information>Unchanged.</cbc:Information>
-  </cac:TradingTerms>
   <cac:DefaultLanguage>
     <cbc:ID schemeID="ISO 639">en</cbc:ID>
     <cbc:Name>English</cbc:Name>

@@ -323,6 +323,11 @@
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-29</cbc:StartDate>
     </cac:PenaltyPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
@@ -494,6 +499,7 @@
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
+        <cbc:ExtendedID>2026</cbc:ExtendedID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>

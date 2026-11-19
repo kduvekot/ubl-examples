@@ -2,7 +2,7 @@
 
 *Example 5 of the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
-The power station declares the gas it received in March into Urvania.
+The power station declares its consignment of March's gas into Urvania, under the shipment of the export declaration.
 
 [The XML file](05-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,7 +18,7 @@ The power station declares the gas it received in March into Urvania.
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **ENERGY-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **MP-IM-26-0156**  
+- `ID` = **MP-IM-26-0157**  
   The importer's declaration number.
 - `UUID` = **588c4166-cc9d-5604-8074-7a2b5bb9884a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -214,7 +214,11 @@ Inside `CustomsParty`:
 Inside `Shipment`:
 
 - `ID` = **KG-SH-26-0154**  
-  The shipment declared.
+  The shipment of the export declaration: March's gas through the pipeline, of which this declaration covers one consignment.
+- `Consignment/ID` = **KG-CS-26-0155**  
+  The importer's consignment, as the export declaration names it.
+- `Consignment/GrossWeightMeasure` = **2760000** (unitCode `KGM`)  
+  The weight of the gas declared.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Natural gas**  
@@ -235,8 +239,6 @@ Inside `Shipment`:
   Where the item was produced; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/Item/CommodityClassification/NatureCode` = **V** (listID `WCO HS 2022 Sections`)  
   The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: V = Mineral products.
-- `GoodsItem/Item/CommodityClassification/CargoTypeCode` = **BULK** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
-  The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: BULK = Dry bulk.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **271121** (listID `WCO HS 2022`)  
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item natural-gas of Kelpstone Gas (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 271121 = Natural gas, in gaseous state.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **12020** (listID `UN CPC Ver.2.1`)  
@@ -251,8 +253,41 @@ Inside `Shipment`:
   The only stage.
 - `ShipmentStage/TransportModeCode` = **7** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   UN/ECE Recommendation 19 code 7: fixed transport installation, a pipeline. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 7 = Fixed transport installations.
+- `ShipmentStage/TransitPeriod/StartDate` = **2026-03-01**  
+  The gas declared flowed through the pipeline in March: a monthly declaration of a continuous flow (energy/04#F5).
+- `ShipmentStage/TransitPeriod/EndDate` = **2026-03-31**  
+  The month's last day.
 - `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **71** (listID `UNECE Recommendation 28`)  
   The gas arrives by pipeline. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 71 = Pipeline.
+- `FirstArrivalPortLocation/Description` = **On Bayvarra's side of the border with Urvania, in the Northern Territory.**  
+  Where it stands.
+- `FirstArrivalPortLocation/Name` = **Border metering station of the Kelpstone gas pipeline**  
+  Where the gas comes into Urvania: the border metering station, just before the border, measures it.
+- `FirstArrivalPortLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
+  The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
+- `FirstArrivalPortLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `FirstArrivalPortLocation/LocationCoordinate/LatitudeMinutesMeasure` = **40.54** (unitCode `D61`)  
+  The minutes of the latitude.
+- `FirstArrivalPortLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
+  South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
+- `FirstArrivalPortLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+- `FirstArrivalPortLocation/LocationCoordinate/LongitudeMinutesMeasure` = **42.48** (unitCode `D61`)  
+  The minutes of the longitude.
+- `FirstArrivalPortLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
+  West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **KG-EX-26-0152**  
+  The export declaration of the shipment, which names this consignment.
+- `IssueDate` = **2026-04-02**  
+  Lodged the same day in Bayvarra.
+- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  An export declaration: the other country's, so not a previous declaration of this customs (O145). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 
 ## The document
 
@@ -263,7 +298,7 @@ Inside `Shipment`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MP-IM-26-0156</cbc:ID>
+  <cbc:ID>MP-IM-26-0157</cbc:ID>
   <cbc:UUID>588c4166-cc9d-5604-8074-7a2b5bb9884a</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:55:00-01:00</cbc:IssueTime>
@@ -416,6 +451,10 @@ Inside `Shipment`:
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>KG-SH-26-0154</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>KG-CS-26-0155</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
+    </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Natural gas</cbc:Description>
@@ -431,7 +470,6 @@ Inside `Shipment`:
         </cac:OriginCountry>
         <cac:CommodityClassification>
           <cbc:NatureCode listID="WCO HS 2022 Sections">V</cbc:NatureCode>
-          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">BULK</cbc:CargoTypeCode>
           <cbc:CommodityCode listID="WCO HS 2022">271121</cbc:CommodityCode>
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">12020</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
@@ -447,10 +485,32 @@ Inside `Shipment`:
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">7</cbc:TransportModeCode>
+      <cac:TransitPeriod>
+        <cbc:StartDate>2026-03-01</cbc:StartDate>
+        <cbc:EndDate>2026-03-31</cbc:EndDate>
+      </cac:TransitPeriod>
       <cac:TransportMeans>
         <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">71</cbc:TransportMeansTypeCode>
       </cac:TransportMeans>
     </cac:ShipmentStage>
+    <cac:FirstArrivalPortLocation>
+      <cbc:Description>On Bayvarra's side of the border with Urvania, in the Northern Territory.</cbc:Description>
+      <cbc:Name>Border metering station of the Kelpstone gas pipeline</cbc:Name>
+      <cac:LocationCoordinate>
+        <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+        <cbc:LatitudeDegreesMeasure unitCode="DD">28</cbc:LatitudeDegreesMeasure>
+        <cbc:LatitudeMinutesMeasure unitCode="D61">40.54</cbc:LatitudeMinutesMeasure>
+        <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+        <cbc:LongitudeDegreesMeasure unitCode="DD">15</cbc:LongitudeDegreesMeasure>
+        <cbc:LongitudeMinutesMeasure unitCode="D61">42.48</cbc:LongitudeMinutesMeasure>
+        <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+      </cac:LocationCoordinate>
+    </cac:FirstArrivalPortLocation>
   </cac:Shipment>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>KG-EX-26-0152</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>
 ```

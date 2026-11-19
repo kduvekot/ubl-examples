@@ -29,9 +29,9 @@ The outgoing consignment note goes to the distributor, who contracted the carria
 - `StatusCode` = **ISSUED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-04-29**  
-  Issued when the carrier collects at the distribution centre.
-- `IssueTime` = **08:56:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Issued when the carrier took over the goods: loaded at the distribution centre on the afternoon of 29 April, for the delivery the next morning.
+- `IssueTime` = **15:05:00-01:00**  
+  At the takeover, when the truck was loaded; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Consignment note under the national road carriage law**  
   The kind of transport document.
 - `Description` = **The forwarder's truck from the distribution centre to the store.**  
@@ -302,7 +302,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>08:56:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the national road carriage law</cbc:Name>
   <cbc:Description>The forwarder's truck from the distribution centre to the store.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>

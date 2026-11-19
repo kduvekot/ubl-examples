@@ -136,7 +136,6 @@
     <cbc:Note>Below the minimum of 6 before the promotion.</cbc:Note>
     <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:InventoryValueAmount currencyID="XBL">1560.00</cbc:InventoryValueAmount>
-    <cbc:AvailabilityDate>2026-04-23</cbc:AvailabilityDate>
     <cbc:AvailabilityStatusCode listID="urn:ubl-examples:world:codelist:AvailabilityStatusCode">AVAILABLE</cbc:AvailabilityStatusCode>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -162,7 +161,8 @@
       </cac:AdditionalItemIdentification>
     </cac:Item>
     <cac:InventoryLocation>
-      <cbc:Name>Garden department, ground floor</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
+      <cbc:Name>Home and garden department of the Lumeport store, ground floor</cbc:Name>
     </cac:InventoryLocation>
   </cac:InventoryReportLine>
 </InventoryReport>

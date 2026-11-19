@@ -252,9 +252,6 @@
       <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
       <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
     </cac:MinimumDeliveryUnit>
-    <cac:MaximumDeliveryUnit>
-      <cbc:BatchQuantity unitCode="EA">100</cbc:BatchQuantity>
-    </cac:MaximumDeliveryUnit>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>

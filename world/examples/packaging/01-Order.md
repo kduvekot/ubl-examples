@@ -248,7 +248,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **480** (unitCode `KGM`)  
-  Thirty rolls of 16 kg: wrapping for a month of bench pallets.
+  Thirty rolls of 16 kg: a year's supply of wrapping for the bench pallets, about 1,000 pallets a year at about 0.4 kg each (O168).
 - `LineItem/LineExtensionAmount` = **1488.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **3.1** (currencyID `XBL`)  

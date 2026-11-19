@@ -7,10 +7,10 @@
   <cbc:ID>LD-TR-26-0227</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>3486a63d-1d8e-580d-902a-948d6ff352c9</cbc:UUID>
-  <cbc:IssueDate>2026-04-25</cbc:IssueDate>
-  <cbc:IssueTime>10:28:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
   <cbc:Note>The forwarder's truck from the distribution centre to the store.</cbc:Note>
-  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
+  <cbc:TransportUserRemarks>Delivery slot at the store's goods-in: Thursday 30 April, 10:00 to 10:30. Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -122,7 +122,7 @@
     <cbc:ID>LD-BF-FW-2026</cbc:ID>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseDeadlinePeriod>
-    <cbc:EndDate>2026-04-26</cbc:EndDate>
+    <cbc:EndDate>2026-04-28</cbc:EndDate>
   </cac:TransportServiceProviderResponseDeadlinePeriod>
   <cac:MainTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">FTL</cbc:TransportServiceCode>
@@ -132,7 +132,10 @@
     <cbc:StartDate>2026-04-29</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-05-02</cbc:EndDate>
+    <cbc:StartDate>2026-04-30</cbc:StartDate>
+    <cbc:StartTime>10:00:00</cbc:StartTime>
+    <cbc:EndDate>2026-04-30</cbc:EndDate>
+    <cbc:EndTime>10:30:00</cbc:EndTime>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>

@@ -26,8 +26,8 @@ To plan production, the furniture maker asks the store for sales and stock data 
   Asked before the first production run.
 - `IssueTime` = **12:44:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Weekly figures, please, for the whole season.**  
-  What the maker asks.
+- `Note` = **Sales figures every four weeks, please, per piece and wood, for the whole season: the first for the first four weeks of sales, which the sale-or-return trial measures.**  
+  What the maker asks (furniture/06#F6: the report gives one figure for four weeks).
 
 ### Period
 
@@ -192,14 +192,10 @@ Inside `SellerSupplierParty`:
 
 Inside `ItemInformationRequestLine`:
 
-- `TimeFrequencyCode` = **WEEKLY** (listID `urn:ubl-examples:world:codelist:TimeFrequencyCode`)  
-  Figures per week. The code is from the Trade Accord's time frequency list: WEEKLY = Weekly.
+- `TimeFrequencyCode` = **FOURWEEKLY** (listID `urn:ubl-examples:world:codelist:TimeFrequencyCode`)  
+  Figures every four weeks, the rhythm of the trial and of the exception criteria. The code is from the Trade Accord's time frequency list: FOURWEEKLY = Every four weeks.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
-  Sales to consumers. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
-  Total quantities. The code is from the Trade Accord's forecast type list: TOTAL = Total.
-- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  Measured in pieces sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  The one kind of data asked: sales to consumers (furniture/03#F1). The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `Period/StartDate` = **2026-05-11**  
   Sales data from the first day of sales.
 - `Period/EndDate` = **2026-08-29**  
@@ -290,7 +286,7 @@ Inside `ItemInformationRequestLine`:
   <cbc:UUID>4b68042b-1268-52c4-acf1-bb66f788d32b</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
-  <cbc:Note>Weekly figures, please, for the whole season.</cbc:Note>
+  <cbc:Note>Sales figures every four weeks, please, per piece and wood, for the whole season: the first for the first four weeks of sales, which the sale-or-return trial measures.</cbc:Note>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -418,10 +414,8 @@ Inside `ItemInformationRequestLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemInformationRequestLine>
-    <cbc:TimeFrequencyCode listID="urn:ubl-examples:world:codelist:TimeFrequencyCode">WEEKLY</cbc:TimeFrequencyCode>
+    <cbc:TimeFrequencyCode listID="urn:ubl-examples:world:codelist:TimeFrequencyCode">FOURWEEKLY</cbc:TimeFrequencyCode>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:Period>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>

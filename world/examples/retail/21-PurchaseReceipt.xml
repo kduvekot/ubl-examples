@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PR-26-0239</cbc:ID>
+  <cbc:ID>BS-PR-26-0240</cbc:ID>
   <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
@@ -19,7 +19,8 @@
     <cbc:Description>Loyalty card</cbc:Description>
   </cac:PurchaseReference>
   <cac:SalesDocumentReference>
-    <cbc:ID>BM-DEL-26-0518-07</cbc:ID>
+    <cbc:ID>BM-DEL-26-0515-07</cbc:ID>
+    <cbc:DocumentType>Home delivery order</cbc:DocumentType>
   </cac:SalesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-WARRANTY-B180</cbc:ID>
@@ -196,7 +197,7 @@
     <cbc:SerialNumberID>BM-POS-G2-2219</cbc:SerialNumberID>
   </cac:CashRegister>
   <cac:PointOfSaleLocation>
-    <cbc:Description>Garden department, ground floor</cbc:Description>
+    <cbc:Description>Home and garden department, ground floor</cbc:Description>
     <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
   </cac:PointOfSaleLocation>
   <cac:PointOfSaleContact>
@@ -235,13 +236,13 @@
     </cac:CarrierParty>
   </cac:Delivery>
   <cac:Payment>
-    <cbc:ID>BM-G2-26-0518-0047</cbc:ID>
+    <cbc:ID>BM-G2-26-0515-0047</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">744.54</cbc:PaidAmount>
     <cbc:PaidDate>2026-05-15</cbc:PaidDate>
     <cbc:PaidTime>11:42:00</cbc:PaidTime>
     <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
     <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
-    <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
+    <cbc:TransactionID>TX-26-0515-773104</cbc:TransactionID>
     <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
     <cbc:StatusCode listID="urn:ubl-examples:world:codelist:PaymentStatusCode">APPROVED</cbc:StatusCode>
   </cac:Payment>
@@ -300,10 +301,6 @@
     <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
-    <cac:PurchaseLinePeriod>
-      <cbc:StartDate>2026-05-15</cbc:StartDate>
-      <cbc:EndDate>2031-05-15</cbc:EndDate>
-    </cac:PurchaseLinePeriod>
     <cac:PurchaseReference>
       <cbc:ID>VI-SF-01298</cbc:ID>
       <cbc:Description>Frame serial number</cbc:Description>
@@ -312,7 +309,7 @@
       <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
     </cac:TaxTotal>
     <cac:Item>
-      <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>The Serra park bench in the store's home and garden department; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -348,15 +345,15 @@
       <cbc:PriceAmount currencyID="XBL">674.1</cbc:PriceAmount>
       <cbc:TaxInclusivePriceAmount currencyID="XBL">717.92</cbc:TaxInclusivePriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-      <cbc:PriceChangeReason>Spring garden promotion</cbc:PriceChangeReason>
+      <cbc:PriceChangeReason>Reopening of the home and garden department</cbc:PriceChangeReason>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-05-12</cbc:StartDate>
-        <cbc:EndDate>2026-05-18</cbc:EndDate>
+        <cbc:StartDate>2026-05-11</cbc:StartDate>
+        <cbc:EndDate>2026-05-24</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Spring garden promotion</cbc:AllowanceChargeReason>
+        <cbc:AllowanceChargeReason>Reopening of the home and garden department</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
         <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
         <cbc:BaseAmount currencyID="XBL">749.00</cbc:BaseAmount>

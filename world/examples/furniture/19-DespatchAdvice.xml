@@ -124,7 +124,6 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Twelve benches in oak, as the store plans the opening stock: three oak pieces for every two in ash.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -151,7 +150,6 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Eight benches in ash.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -178,7 +176,6 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>Twenty-four chairs in oak: two for each oak bench.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">24</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
@@ -205,7 +202,6 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>4</cbc:ID>
-    <cbc:Note>Sixteen chairs in ash: two for each ash bench.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">16</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>4</cbc:LineID>
@@ -232,7 +228,6 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>5</cbc:ID>
-    <cbc:Note>One care kit free with each bench, oak or ash.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">20</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>5</cbc:LineID>

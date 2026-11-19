@@ -454,6 +454,8 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; item bench-casting of Valdara Industries (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **2026**  
+  The 2026 casting with the reinforced foot, which the order response substituted for the casting ordered.
 - `Item/StandardItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-casting of Valdara Industries (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -819,6 +821,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
+        <cbc:ExtendedID>2026</cbc:ExtendedID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

@@ -22,10 +22,10 @@ The store asks where its order stands.
   The sender's number for this document.
 - `UUID` = **44994824-762c-5e0e-a7c5-0010d1f4141f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-26**  
-  Asked two days after ordering.
-- `IssueTime` = **11:52:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-04-27**  
+  Asked on Monday 27 April, the first working day after the order of Friday 24 April (D27, D34).
+- `IssueTime` = **11:00:00-01:00**  
+  In the late morning; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Has the order been accepted?**  
   The question.
 - `TrackingID` = **BS-PO-26-0224**  
@@ -114,8 +114,8 @@ Inside `ReceiverParty`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0225</cbc:ID>
   <cbc:UUID>44994824-762c-5e0e-a7c5-0010d1f4141f</cbc:UUID>
-  <cbc:IssueDate>2026-04-26</cbc:IssueDate>
-  <cbc:IssueTime>11:52:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>11:00:00-01:00</cbc:IssueTime>
   <cbc:Note>Has the order been accepted?</cbc:Note>
   <cbc:TrackingID>BS-PO-26-0224</cbc:TrackingID>
   <cac:RequestedDocumentReference>

@@ -20,20 +20,20 @@ The distributor, as transport user, asks the carrier for the truck's arrival tim
   This run of the process: the same in every document of the flow.
 - `ID` = **LD-DOC-26-0232**  
   The sender's number for this document.
-- `CarrierAssignedID` = **BF-WB-26-0231**  
-  The carrier's consignment note.
+- `CarrierAssignedID` = **BF-NATROAD-26-0217**  
+  The carrier's own number for the carriage, as its consignment note gives it (retail/14#F2).
 - `UUID` = **05570b50-9875-5f68-94e9-eb597fa0f1b7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-29**  
-  The store asks when to expect the delivery.
-- `IssueTime` = **10:59:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-04-30**  
+  Lumeway asks the carrier, on the morning of the delivery, when the truck will be at the store.
+- `IssueTime` = **09:20:00-01:00**  
+  Twenty minutes after the truck left Marrowdale; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Status request**  
   What it is.
 - `Description` = **When will the benches arrive?**  
   The question.
-- `Note` = **The promotion starts soon.**  
-  Why the store asks.
+- `Note` = **The store's slot is 10:00 to 10:30.**  
+  Why Lumeway asks.
 - `OtherInstruction` = **Answer with the expected delivery time.**  
   What the answer should hold.
 - `TransportationStatusTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
@@ -155,8 +155,8 @@ Inside `ReceiverParty`:
 
 Inside `TransportExecutionPlanDocumentReference`:
 
-- `ID` = **BF-TEP-26-0262**  
-  The forwarder's confirmation of the booking requested by the distributor: its transport execution plan (not shown in this flow), numbered in the forwarder's own series.
+- `ID` = **BF-TEP-26-0233**  
+  The forwarder's confirmation of the booking: its transport execution plan, retail/23 (retail/14#F1, D38).
 
 ### Consignment
 
@@ -164,15 +164,6 @@ Inside `Consignment`:
 
 - `ID` = **LD-CS-26-0228**  
   The consignment asked about.
-
-### Document Reference
-
-Inside `DocumentReference`:
-
-- `ID` = **BS-PO-26-0224**  
-  The store's order.
-- `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-PO-26-0224 is the example retail/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -198,10 +189,10 @@ Inside `RequestedStatusLocation`:
 
 Inside `RequestedStatusPeriod`:
 
-- `StartDate` = **2026-04-29**  
-  For today.
+- `StartDate` = **2026-04-30**  
+  For today, the day of the delivery.
 - `EndDate` = **2026-04-30**  
-  And tomorrow.
+  Today.
 
 ## The document
 
@@ -213,13 +204,13 @@ Inside `RequestedStatusPeriod`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0232</cbc:ID>
-  <cbc:CarrierAssignedID>BF-WB-26-0231</cbc:CarrierAssignedID>
+  <cbc:CarrierAssignedID>BF-NATROAD-26-0217</cbc:CarrierAssignedID>
   <cbc:UUID>05570b50-9875-5f68-94e9-eb597fa0f1b7</cbc:UUID>
-  <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>10:59:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
   <cbc:Name>Status request</cbc:Name>
   <cbc:Description>When will the benches arrive?</cbc:Description>
-  <cbc:Note>The promotion starts soon.</cbc:Note>
+  <cbc:Note>The store's slot is 10:00 to 10:30.</cbc:Note>
   <cbc:OtherInstruction>Answer with the expected delivery time.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">DELIVERY</cbc:TransportationStatusTypeCode>
   <cac:SenderParty>
@@ -306,15 +297,11 @@ Inside `RequestedStatusPeriod`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportExecutionPlanDocumentReference>
-    <cbc:ID>BF-TEP-26-0262</cbc:ID>
+    <cbc:ID>BF-TEP-26-0233</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
   </cac:Consignment>
-  <cac:DocumentReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
-  </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-TSR</cbc:ID>
     <cac:SignatoryParty>
@@ -331,7 +318,7 @@ Inside `RequestedStatusPeriod`:
     <cbc:Name>Brightmarket Stores, goods-in</cbc:Name>
   </cac:RequestedStatusLocation>
   <cac:RequestedStatusPeriod>
-    <cbc:StartDate>2026-04-29</cbc:StartDate>
+    <cbc:StartDate>2026-04-30</cbc:StartDate>
     <cbc:EndDate>2026-04-30</cbc:EndDate>
   </cac:RequestedStatusPeriod>
 </TransportationStatusRequest>

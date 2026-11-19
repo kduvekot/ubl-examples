@@ -6,10 +6,10 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0217</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
-  <cbc:Name>Spring catalogue 2026</cbc:Name>
+  <cbc:Name>Request for Lumeway's catalogue for the home and garden department</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>08:42:00-01:00</cbc:IssueTime>
-  <cbc:Note>For the garden department.</cbc:Note>
+  <cbc:Note>To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.</cbc:Note>
   <cbc:Description>Benches and spare parts.</cbc:Description>
   <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>
   <cbc:ItemUpdateRequestIndicator>true</cbc:ItemUpdateRequestIndicator>
@@ -195,10 +195,8 @@
   </cac:RequestedLanguage>
   <cac:RequestedClassificationScheme>
     <cbc:ID>HS</cbc:ID>
-    <cbc:UUID>1afc0bc8-8a3e-5d36-b5be-437211032bac</cbc:UUID>
     <cbc:LastRevisionDate>2022-01-01</cbc:LastRevisionDate>
-    <cbc:LastRevisionTime>00:00:00</cbc:LastRevisionTime>
-    <cbc:Note>Six-digit subheadings.</cbc:Note>
+    <cbc:Note>The heading and its six-digit subheadings.</cbc:Note>
     <cbc:Name>Harmonized System</cbc:Name>
     <cbc:Description>The international goods classification.</cbc:Description>
     <cbc:AgencyID>WCO</cbc:AgencyID>
@@ -210,10 +208,10 @@
     <cac:ClassificationCategory>
       <cbc:Name>Seats</cbc:Name>
       <cbc:CodeValue>9401</cbc:CodeValue>
-      <cbc:Description>Outdoor furniture and its spare parts.</cbc:Description>
+      <cbc:Description>Seats and their parts: the bench and its spare side frame.</cbc:Description>
       <cac:CategorizesClassificationCategory>
-        <cbc:Name>Spare parts</cbc:Name>
-        <cbc:CodeValue>FUR-OUT-SP</cbc:CodeValue>
+        <cbc:Name>Parts of seats, other than of wood</cbc:Name>
+        <cbc:CodeValue>940199</cbc:CodeValue>
       </cac:CategorizesClassificationCategory>
     </cac:ClassificationCategory>
   </cac:RequestedClassificationScheme>

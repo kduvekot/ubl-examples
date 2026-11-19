@@ -177,8 +177,6 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Twelve benches in oak, as the store plans the opening stock: three oak pieces for every two in ash.**  
-  The line as the order put it.
 - `DeliveredQuantity` = **12** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
@@ -203,8 +201,6 @@ Inside `DespatchLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **2**  
   The line number.
-- `Note` = **Eight benches in ash.**  
-  The line as the order put it.
 - `DeliveredQuantity` = **8** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
@@ -229,8 +225,6 @@ Inside `DespatchLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **3**  
   The line number.
-- `Note` = **Twenty-four chairs in oak: two for each oak bench.**  
-  The line as the order put it.
 - `DeliveredQuantity` = **24** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **3**  
@@ -255,8 +249,6 @@ Inside `DespatchLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **4**  
   The line number.
-- `Note` = **Sixteen chairs in ash: two for each ash bench.**  
-  The line as the order put it.
 - `DeliveredQuantity` = **16** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **4**  
@@ -281,8 +273,6 @@ Inside `DespatchLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **5**  
   The line number.
-- `Note` = **One care kit free with each bench, oak or ash.**  
-  The line as the order put it.
 - `DeliveredQuantity` = **20** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **5**  
@@ -427,7 +417,6 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Twelve benches in oak, as the store plans the opening stock: three oak pieces for every two in ash.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -454,7 +443,6 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Eight benches in ash.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -481,7 +469,6 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>Twenty-four chairs in oak: two for each oak bench.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">24</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
@@ -508,7 +495,6 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>4</cbc:ID>
-    <cbc:Note>Sixteen chairs in ash: two for each ash bench.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">16</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>4</cbc:LineID>
@@ -535,7 +521,6 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>5</cbc:ID>
-    <cbc:Note>One care kit free with each bench, oak or ash.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">20</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>5</cbc:LineID>
