@@ -713,6 +713,52 @@ function house(g, x, y, level, n) { const pick = Math.floor(n * 3), wall = ["#e6
   const G = geo(x + (n - .5) * 4, y + 2, level === 2 ? .52 : .42, level === 2 ? .5 : .42, level === 2 ? 12 : 7);
   walls(g, G, wall); windows(g, G, "L", 2, level, "rgba(60,80,110,.85)"); door(g, G, "R", .4, .2, 4, "#5a4030"); gableRoof(g, G, 4, roof, wall); }
 
+// A building drawn in its own directions (owner, 2026-11-19, MO006): its "front" is the side it is reached from (the
+// road that leads into it), and its parts are placed in its own frame, u along the front (0 left, 1 right, seen from
+// the front), v from the front (0) to the back (1), z up in pixels; the map's rotation then shows it from each side.
+function frontOf(p) { const fp = footprint(p), inFp = (i, j) => fp.some(q => q[0] === i && q[1] === j);
+  for (const [i, j] of fp) for (const [di, dj] of DIRS) { const nb = tiles[i + di]?.[j + dj];
+    if (!inFp(i + di, j + dj) && nb?.links?.road?.has([-di, -dj].join())) return [di, dj]; }
+  return [0, 1]; }
+function buildingFrame(p, inset) { const fp = footprint(p), f = frontOf(p), A = [-f[1], f[0]];   // A: along the front, to the right
+  const xs = fp.map(q => q[0]), ys = fp.map(q => q[1]), ci = (Math.min(...xs) + Math.max(...xs)) / 2, cj = (Math.min(...ys) + Math.max(...ys)) / 2;
+  const ext = d => (d[0] ? Math.max(...xs) - Math.min(...xs) : Math.max(...ys) - Math.min(...ys)) + 1 - 2 * inset;
+  const LA = ext(A), LF = ext(f);
+  const F = (u, v, z = 0) => { const i = ci + A[0] * (u - .5) * LA + f[0] * (.5 - v) * LF, j = cj + A[1] * (u - .5) * LA + f[1] * (.5 - v) * LF;
+    const [x, y] = tileWorld(i, j); return [x, y - z]; };
+  F.LA = LA; F.LF = LF; return F; }
+// a box in a building's frame: the two side faces turned to the viewer (lit and shaded) and its top; returns its faces
+function box3(g, F, u0, v0, u1, v1, z0, z1, wall, top) {
+  const base = [[u0, v0], [u1, v0], [u1, v1], [u0, v1]], c = F((u0 + u1) / 2, (v0 + v1) / 2, z0), faces = [];
+  for (let k = 0; k < 4; k++) { const a = base[k], b = base[(k + 1) % 4], A = F(a[0], a[1], z0), B = F(b[0], b[1], z0);
+    if ((A[1] + B[1]) / 2 <= c[1]) continue;                          // a face at the back of the box
+    const pts = [A, B, F(b[0], b[1], z1), F(a[0], a[1], z1)], lit = B[0] > A[0] === (B[1] > A[1]);
+    poly(g, pts, shade(wall, lit ? -.05 : -.28)); faces.push({ k, a, b, lit }); }
+  if (top) poly(g, base.map(([u, v]) => F(u, v, z1)), top);
+  return faces; }
+// a window or a door on a face of a box: s0..s1 along the face, z0..z1 up
+function onFace(g, F, a, b, s0, s1, z0, z1, color) { const P = s => [a[0] + (b[0] - a[0]) * s, a[1] + (b[1] - a[1]) * s];
+  poly(g, [F(...P(s0), z0), F(...P(s1), z0), F(...P(s1), z1), F(...P(s0), z1)], color); }
+function factory3(g, p, col, glass) {
+  const F = buildingFrame(p, .05), H = 15;
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#9a9282");                     // the yard
+  const parts = [                                                             // drawn back to front
+    { v: .85, draw: () => { for (const [u, v, h] of [[.84, .8, 34], [.9, .62, 28]]) { box3(g, F, u - .025, v - .04, u + .025, v + .04, H - 2, h, "#7a6f66", "#4a4a4a");
+        const [x, y] = F(u, v, h); smoke(g, x, y + 2); } } },
+    { v: .5, draw: () => {
+      const faces = box3(g, F, .06, .12, .94, .88, 0, H, "#b9a487", shade(col, -.2));
+      for (const fc of faces) { const len = Math.hypot((fc.b[0] - fc.a[0]) * F.LA, (fc.b[1] - fc.a[1]) * F.LF), n = Math.max(2, Math.round(len * 3.2));
+        for (let w = 0; w < n; w++) onFace(g, F, fc.a, fc.b, .08 + w * .84 / n, .08 + (w + .55) * .84 / n, 5, 10, glass);   // windows
+        if (fc.k === 0) onFace(g, F, fc.a, fc.b, .42, .58, 0, 9, "#4a4a4a"); }          // the gate, in the front, to the road
+      const long = F.LA >= F.LF, teeth = [];                                         // the saw-tooth roof: rows across the
+      for (let t = 0; t < 4; t++) { const s0 = .12 + t * .2, s1 = s0 + .16;           // hall's length, each a sloping roof
+        const P = (a2, b2, z) => long ? F(a2, b2, z) : F(b2, a2, z);                  // and a glass face
+        teeth.push({ d: P((s0 + s1) / 2, .5)[1], draw: () => {
+          poly(g, [P(s0, .16, H), P(s0, .84, H), P(s1, .84, H + 5), P(s1, .16, H + 5)], t % 2 ? shade(col, -.05) : col);
+          poly(g, [P(s1, .16, H), P(s1, .84, H), P(s1, .84, H + 5), P(s1, .16, H + 5)], "rgba(150,175,200,.9)"); } }); }
+      teeth.sort((x, y) => x.d - y.d).forEach(q => q.draw()); } } ];
+  const depth = q => F(.5, q.v)[1];
+  parts.sort((a, b) => depth(a) - depth(b)).forEach(q => q.draw()); }
 // Buildings that cover several tiles: drawn to fill their footprint
 function multiTile(g, p, k, col, glass) {
   const base = footGeo(p, .05, 0), q = G => [[G.B[0], G.B[1]], [G.Rr[0], G.Rr[1]], [G.F[0], G.F[1]], [G.L[0], G.L[1]]];
@@ -744,13 +790,7 @@ function multiTile(g, p, k, col, glass) {
     const [x0, y0] = [G.L[0], G.L[1]], [x1, y1] = [G.Rr[0], G.Rr[1]];
     g.strokeStyle = col; g.lineWidth = 2.5; g.lineCap = "butt"; g.beginPath(); g.moveTo(x0 + 6, y0 + 2); g.lineTo(x0 + 6, y0 - 22); g.moveTo(x1 - 6, y1 + 2); g.lineTo(x1 - 6, y1 - 22);
     g.moveTo(x0 + 4, y0 - 22); g.lineTo(x1 - 4, y1 - 22); g.stroke(); return true; }
-  if (k === "factory") {                                // large hall with saw-tooth roof, office wing, chimneys
-    poly(g, q(base), "#9a9282"); const G = footGeo(p, .12, 15); walls(g, G, "#b9a487"); windows(g, G, "L", 6, 1, glass); windows(g, G, "R", 5, 1, glass); door(g, G, "R", .6, .2, 9, "#4a4a4a");
-    flatRoof(g, G, shade(col, -.2));
-    for (let s2 = 0; s2 < 5; s2++) { const a0 = lerp([G.L[0], G.L[1] - 15], [G.F[0], G.F[1] - 15], .1 + s2 * .19), b0 = lerp([G.B[0], G.B[1] - 15], [G.Rr[0], G.Rr[1] - 15], .1 + s2 * .19);
-      poly(g, [a0, b0, [b0[0] + 2, b0[1] - 6], [a0[0] + 2, a0[1] - 6]], s2 % 2 ? shade(col, -.05) : col); }
-    for (const [dx, dy, hh] of [[10, -14, 34], [17, -10, 28]]) { block(g, G.x + dx, G.y + dy, .14, .14, hh - 12, "#7a6f66", "#4a4a4a"); smoke(g, G.x + dx, G.y + dy - hh + 10); }
-    return true; }
+  if (k === "factory") { factory3(g, p, col, glass); return true; }   // large hall, drawn in its own directions (MO006)
   if (k === "warehouse") {                              // long hall with loading docks along the front
     poly(g, q(base), "#a8a294"); const G = footGeo(p, .1, 11 + (p.h > 2 ? 3 : 0)); walls(g, G, "#cfc4ad");
     for (let u = .06; u < .94; u += .15) door(g, G, "L", u, .09, 7, "#5d6670"); windows(g, G, "R", 3, 1, glass, { top: .9, bottom: .65 });
