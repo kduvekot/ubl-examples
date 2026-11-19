@@ -246,6 +246,8 @@ def check(world):
             problems.append(f"items {', '.join(i['id'] for i in its)}: one item number {number} of {seller}, but "
                             "not told apart by a variant of their own (variant.extended)")
     for it in world["items"]:
+        if it.get("variant_numbers") and not (it.get("resale_of") and items.get(it["resale_of"], {}).get("variant")):
+            problems.append(f"item {it['id']}: numbers a variant of its own (variant_numbers), but resells no variant")
         if it.get("variant") and not it["variant"].get("what"):
             problems.append(f"item {it['id']}: a variant needs what it differs in (variant.what)")
     # cross-layer: who bills or offers has items, who has items bills or offers

@@ -1891,7 +1891,9 @@
     "tannery": "zhildir",
     "terrace": "skazhaz",
     "vineyard": "hulbir",
-    "willow": "stagir"
+    "willow": "stagir",
+    "ash": "darhir",
+    "oak": "kenkrir"
    }
   },
   "qal": {
@@ -3007,7 +3009,9 @@
     "landing": "pakesa",
     "landslide": "felulaka",
     "rivermouth": "linukaha",
-    "waterfall": "nihekemo"
+    "waterfall": "nihekemo",
+    "ash": "lalaki",
+    "oak": "fofasu"
    }
   },
   "en": {

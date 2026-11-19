@@ -1117,7 +1117,8 @@
    },
    "sellers_id": "BM-551005",
    "resale_of": "marrow-bench-oak",
-   "description": "Dining bench, 1400 mm, in solid oak, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
+   "description": "Dining bench, 1400 mm, in solid oak, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.",
+   "variant_numbers": true
   },
   {
    "id": "marrow-bench-ash-r",
@@ -1131,7 +1132,8 @@
    },
    "sellers_id": "BM-551008",
    "resale_of": "marrow-bench-ash",
-   "description": "Dining bench, 1400 mm, in solid ash, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
+   "description": "Dining bench, 1400 mm, in solid ash, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.",
+   "variant_numbers": true
   },
   {
    "id": "marrow-chair-oak-r",
@@ -1145,7 +1147,8 @@
    },
    "sellers_id": "BM-551006",
    "resale_of": "marrow-chair-oak",
-   "description": "Dining chair in solid oak, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
+   "description": "Dining chair in solid oak, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.",
+   "variant_numbers": true
   },
   {
    "id": "marrow-chair-ash-r",
@@ -1159,7 +1162,8 @@
    },
    "sellers_id": "BM-551009",
    "resale_of": "marrow-chair-ash",
-   "description": "Dining chair in solid ash, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
+   "description": "Dining chair in solid ash, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.",
+   "variant_numbers": true
   },
   {
    "id": "marrow-care-kit-r",

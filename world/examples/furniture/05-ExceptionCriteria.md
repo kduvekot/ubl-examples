@@ -197,13 +197,13 @@ Inside `SellerSupplierParty`:
 Inside `ExceptionCriteriaLine`:
 
 - `ID` = **1**  
-  The sales criterion, on the bench, the piece the line is planned around.
+  A sales criterion on the oak bench: the line is planned around the bench, and a criterion is set per item, so each wood has its own.
 - `Note` = **Slow sales.**  
   What the criterion catches.
 - `ThresholdValueComparisonCode` = **LT** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
   An exception is raised when actual sales fall below the threshold. The code is from the Trade Accord's threshold value comparison list: LT = Less than.
-- `ThresholdQuantity` = **5** (unitCode `EA`)  
-  Fewer than five benches sold in the first four weeks is worth a message.
+- `ThresholdQuantity` = **3** (unitCode `EA`)  
+  Fewer than three oak benches sold in the first four weeks is worth a message: five benches in all, shared by the woods as the stock targets are.
 - `ExceptionStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ExceptionStatusCode`)  
   In force. The code is from the Trade Accord's exception status list: ACTIVE = Criterion in force.
 - `CollaborationPriorityCode` = **HIGH** (listID `urn:ubl-examples:world:codelist:CollaborationPriorityCode`)  
@@ -218,15 +218,61 @@ Inside `ExceptionCriteriaLine`:
   From the first four weeks on the shelf.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
   To the end of the season.
-- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
-  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
-- `SupplyItem/Name` = **Elderwick Marrow bench**  
-  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench, oak**  
+  The item's short name; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
 - `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
-  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+  The seller's own item number; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ExtendedID` = **OAK**  
+  The variant of the item: the wood, added to the item number.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
+  The variant in words.
 - `SupplyItem/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **2**  
+  A sales criterion on the ash bench: the line is planned around the bench, and a criterion is set per item, so each wood has its own.
+- `Note` = **Slow sales.**  
+  What the criterion catches.
+- `ThresholdValueComparisonCode` = **LT** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
+  An exception is raised when actual sales fall below the threshold. The code is from the Trade Accord's threshold value comparison list: LT = Less than.
+- `ThresholdQuantity` = **2** (unitCode `EA`)  
+  Fewer than two ash benches sold in the first four weeks is worth a message: five benches in all, shared by the woods as the stock targets are.
+- `ExceptionStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ExceptionStatusCode`)  
+  In force. The code is from the Trade Accord's exception status list: ACTIVE = Criterion in force.
+- `CollaborationPriorityCode` = **HIGH** (listID `urn:ubl-examples:world:codelist:CollaborationPriorityCode`)  
+  Answered within two days. The code is from the Trade Accord's collaboration priority list: HIGH = High.
+- `ExceptionResolutionCode` = **REVIEW** (listID `urn:ubl-examples:world:codelist:ExceptionResolutionCode`)  
+  The partners review the line together. The code is from the Trade Accord's exception resolution list: REVIEW = Joint review.
+- `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
+  Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
+- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
+  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+- `EffectivePeriod/StartDate` = **2026-03-23**  
+  From the first four weeks on the shelf.
+- `EffectivePeriod/EndDate` = **2026-08-29**  
+  To the end of the season.
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench, ash**  
+  The item's short name; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ExtendedID` = **ASH**  
+  The variant of the item: the wood, added to the item number.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
+  The variant in words.
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `ID` = **3**  
   The forecast criterion.
 - `Note` = **Forecast far from the store's own plan.**  
   What it catches.
@@ -234,21 +280,69 @@ Inside `ExceptionCriteriaLine`:
   When the difference is larger. The code is from the Trade Accord's threshold value comparison list: GT = Greater than.
 - `ThresholdQuantity` = **30** (unitCode `P1`)  
   More than 30 % difference.
-- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
-  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
-- `SupplyItem/Name` = **Elderwick Marrow bench**  
-  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench, oak**  
+  The item's short name; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
 - `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
-  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+  The seller's own item number; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ExtendedID` = **OAK**  
+  The variant of the item: the wood, added to the item number.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
+  The variant in words.
 - `SupplyItem/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
-- `SupplyItem/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
-  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
-- `SupplyItem/Name` = **Elderwick Marrow chair**  
-  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow bench, ash**  
+  The item's short name; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ExtendedID` = **ASH**  
+  The variant of the item: the wood, added to the item number.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
+  The variant in words.
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `SupplyItem/Description` = **Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow chair, oak**  
+  The item's short name; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
 - `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-C**  
-  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+  The seller's own item number; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ExtendedID` = **OAK**  
+  The variant of the item: the wood, added to the item number.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
+  The variant in words.
 - `SupplyItem/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `SupplyItem/Description` = **Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/Name` = **Elderwick Marrow chair, ash**  
+  The item's short name; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
+- `SupplyItem/SellersItemIdentification/ExtendedID` = **ASH**  
+  The variant of the item: the wood, added to the item number.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `SupplyItem/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
+  The variant in words.
+- `SupplyItem/StandardItemIdentification/ID` = **9522610000054** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ForecastExceptionCriterionLine/ForecastPurposeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:ForecastPurposeCode`)  
   A sales forecast. The code is from the Trade Accord's forecast purpose list: SALES = Sales forecast.
@@ -407,7 +501,7 @@ Inside `ExceptionCriteriaLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Slow sales.</cbc:Note>
     <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">LT</cbc:ThresholdValueComparisonCode>
-    <cbc:ThresholdQuantity unitCode="EA">5</cbc:ThresholdQuantity>
+    <cbc:ThresholdQuantity unitCode="EA">3</cbc:ThresholdQuantity>
     <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">ACTIVE</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ExceptionResolutionCode listID="urn:ubl-examples:world:codelist:ExceptionResolutionCode">REVIEW</cbc:ExceptionResolutionCode>
@@ -418,10 +512,16 @@ Inside `ExceptionCriteriaLine`:
       <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:SupplyItem>
-      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow bench</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
@@ -430,27 +530,102 @@ Inside `ExceptionCriteriaLine`:
   </cac:ExceptionCriteriaLine>
   <cac:ExceptionCriteriaLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Slow sales.</cbc:Note>
+    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">LT</cbc:ThresholdValueComparisonCode>
+    <cbc:ThresholdQuantity unitCode="EA">2</cbc:ThresholdQuantity>
+    <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">ACTIVE</cbc:ExceptionStatusCode>
+    <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
+    <cbc:ExceptionResolutionCode listID="urn:ubl-examples:world:codelist:ExceptionResolutionCode">REVIEW</cbc:ExceptionResolutionCode>
+    <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
+    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
+    <cac:EffectivePeriod>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-08-29</cbc:EndDate>
+    </cac:EffectivePeriod>
+    <cac:SupplyItem>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:SupplyItem>
+  </cac:ExceptionCriteriaLine>
+  <cac:ExceptionCriteriaLine>
+    <cbc:ID>3</cbc:ID>
     <cbc:Note>Forecast far from the store's own plan.</cbc:Note>
     <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">GT</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="P1">30</cbc:ThresholdQuantity>
     <cac:SupplyItem>
-      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow bench</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:SupplyItem>
     <cac:SupplyItem>
-      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:SupplyItem>
+    <cac:SupplyItem>
+      <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:SupplyItem>
+    <cac:SupplyItem>
+      <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:SupplyItem>
     <cac:ForecastExceptionCriterionLine>

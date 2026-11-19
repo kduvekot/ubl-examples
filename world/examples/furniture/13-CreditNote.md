@@ -38,7 +38,7 @@ The returned benches and chairs are credited in full, without a restocking deduc
   The buyer's cost centre, as on the invoice credited.
 - `AccountingCost` = **Home and garden department**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **4**  
   The number of lines.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
@@ -362,16 +362,24 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
-- `CreditedQuantity` = **7** (unitCode `EA`)  
-  Seven benches: the stock above the target of ten.
-- `LineExtensionAmount` = **2660.00** (currencyID `XBL`)  
+- `CreditedQuantity` = **4** (unitCode `EA`)  
+  Four oak benches: the stock above the target of six.
+- `LineExtensionAmount` = **1520.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
-  The seller's description; item marrow-bench of Brackenmere Furniture (world/items.json).
-- `Item/Name` = **Elderwick Marrow bench**  
-  The item's short name; item marrow-bench of Brackenmere Furniture (world/items.json).
+- `Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow bench, oak**  
+  The item's short name; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
 - `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
-  The seller's own item number; item marrow-bench of Brackenmere Furniture (world/items.json).
+  The seller's own item number; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **OAK**  
+  The variant of the item: the wood, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
+  The variant in words.
 - `Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -392,17 +400,101 @@ Inside `CreditNoteLine`:
   The price is per one unit.
 - `ID` = **2**  
   The line number.
-- `CreditedQuantity` = **10** (unitCode `EA`)  
-  Ten chairs: the stock above the target of twenty.
-- `LineExtensionAmount` = **1150.00** (currencyID `XBL`)  
+- `CreditedQuantity` = **3** (unitCode `EA`)  
+  Three ash benches: the stock above the target of four.
+- `LineExtensionAmount` = **1140.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `Item/Description` = **Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
-  The seller's description; item marrow-chair of Brackenmere Furniture (world/items.json).
-- `Item/Name` = **Elderwick Marrow chair**  
-  The item's short name; item marrow-chair of Brackenmere Furniture (world/items.json).
+- `Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow bench, ash**  
+  The item's short name; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+  The seller's own item number; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **ASH**  
+  The variant of the item: the wood, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
+  The variant in words.
+- `Item/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **380** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `ID` = **3**  
+  The line number.
+- `CreditedQuantity` = **5** (unitCode `EA`)  
+  Five oak chairs: the stock above the target of twelve.
+- `LineExtensionAmount` = **575.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `Item/Description` = **Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow chair, oak**  
+  The item's short name; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
 - `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
-  The seller's own item number; item marrow-chair of Brackenmere Furniture (world/items.json).
+  The seller's own item number; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **OAK**  
+  The variant of the item: the wood, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
+  The variant in words.
 - `Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **115** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `ID` = **4**  
+  The line number.
+- `CreditedQuantity` = **5** (unitCode `EA`)  
+  Five ash chairs: the stock above the target of eight.
+- `LineExtensionAmount` = **575.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `Item/Description` = **Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
+  The seller's description; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
+- `Item/Name` = **Elderwick Marrow chair, ash**  
+  The item's short name; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+  The seller's own item number; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **ASH**  
+  The variant of the item: the wood, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
+  The variant in words.
+- `Item/StandardItemIdentification/ID` = **9522610000054** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -440,7 +532,7 @@ Inside `CreditNoteLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
@@ -697,13 +789,19 @@ Inside `CreditNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:CreditedQuantity unitCode="EA">7</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">2660.00</cbc:LineExtensionAmount>
+    <cbc:CreditedQuantity unitCode="EA">4</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">1520.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow bench</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
@@ -726,16 +824,92 @@ Inside `CreditNoteLine`:
   </cac:CreditNoteLine>
   <cac:CreditNoteLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:CreditedQuantity unitCode="EA">10</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">1150.00</cbc:LineExtensionAmount>
+    <cbc:CreditedQuantity unitCode="EA">3</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">1140.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
-      <cbc:Name>Elderwick Marrow chair</cbc:Name>
+      <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000047</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:CreditNoteLine>
+  <cac:CreditNoteLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:CreditedQuantity unitCode="EA">5</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">575.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ExtendedID>OAK</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:Description>Solid oak</cbc:Description>
+        </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000023</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:CreditNoteLine>
+  <cac:CreditNoteLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:CreditedQuantity unitCode="EA">5</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">575.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
+      <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ExtendedID>ASH</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:Description>Solid ash</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

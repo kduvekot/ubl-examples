@@ -917,14 +917,18 @@ origin; a shopper's receipt the name, the brand and the warranty.
 The colours an item comes in are facts of its type, listed in the catalogue
 as variants; an order names the variant it wants by its identifier and
 states nothing new about the item. Only a colour the catalogue does not
-offer is specified in the order, as something made to order. A product's
+offer is specified in the order, as something made to order. Where the
+shopper sees and chooses the variant, as the wood of the Marrow bench and
+chair, each variant is a trade item of its own with a GTIN of its own, as
+GS1 asks: the maker keeps one item number for the model and adds the
+variant to it, and the store gives each variant a number of its own. A product's
 carbon footprint is stated per lifecycle stage, the supply of raw materials
 and the making of the product, as two figures that add up to the total.
 
 Items are combined in four ways, each shown by a case the world already has:
 
 - **A single item**, ordered and sold alone, with its own number: the
-  Elderwick Marrow bench, or the chair.
+  Elderwick Marrow bench in oak, or the chair in ash.
 - **A pack of the same item**, n times the same packed as one unit: the
   sawmill's bundle of 50 hardwood bench slats. The item and the pack are two
   levels, each with its own number.
@@ -934,7 +938,8 @@ Items are combined in four ways, each shown by a case the world already has:
   bench. A kit is one item with its own number and a stated content; on the
   GS1 side it has a GTIN of its own, because it is physically combined.
 - **An offer**, items bought together for less but never one package: the
-  Marrow set of a bench and two chairs, 899 lume in the shop instead of 947.
+  Marrow set of a bench and two chairs in one wood, 899 lume in the shop
+  instead of 947.
   It has no number of its own; each piece keeps its own, and a document
   that shows the sale carries a line per piece and a "Marrow set"
   allowance. GS1 calls this a virtual bundle and treats it as a selling
@@ -951,18 +956,20 @@ built to stand as a brand of its own, as most retailers' private labels are.
 The Elderwick Marrow bench (1400 mm) and the Elderwick Marrow chair are
 dining furniture for indoors, in solid kiln-dried oak or ash with a hard-wax
 oil finish, a closed seat, glued joints, felt pads under the legs and a seat
-height of about 45 cm. Brackenmere Furniture makes them to the store's
-specification and sells them to the store at 380 and 115 lume; the store
-sells them in its home department at 549 and 199, and gives a care kit free
-with each bench. Many shoppers buy the chairs alone, because the 1400 mm
+height of about 45 cm. Each comes in oak and in ash, and the shopper
+chooses; the store plans three oak pieces for every two in ash. Brackenmere
+Furniture makes them to the store's specification and sells them to the
+store at 380 and 115 lume, the same in both woods; the store sells them in
+its home and garden department at 549 and 199, and gives a care kit free with
+each bench. Many shoppers buy the chairs alone, because the 1400 mm
 bench is too long for many apartment kitchens. The shopper sees the store's
 label, and the maker's name is on no label: Elderwick is the world's case of
 an item whose brand owner and manufacturer are different parties. The shirts
 the store sells are the other way round: they carry the textile mill's own
 brand, Lumeport, so the mill numbers them from its own GS1 prefix. Under
-GS1's rules the brand owner numbers the item, so the bench, the chair and the
-care kit each have a GTIN from Brightmarket's prefix, whoever sells them; the
-set, being an offer, has none. Brackenmere sells its own office and outdoor
+GS1's rules the brand owner numbers the item, so the bench and the chair in
+each wood and the care kit each have a GTIN from Brightmarket's prefix,
+whoever sells them: five GTINs; the set, being an offer, has none. Brackenmere sells its own office and outdoor
 furniture under its own name: the office desk, the park bench PB-2 it
 tenders with, and the furnishing of public offices with installation.
 

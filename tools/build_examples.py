@@ -1021,25 +1021,6 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if bid:
         out["BuyersItemIdentification"] = {"ID": V(bid, bwhy)}
     out["SellersItemIdentification"] = {"ID": V(it["sellers_id"], f"The seller's own item number; {src}.")}
-    variant = maker.get("variant", {})     # a variant of the maker's item: its number, with the variant added
-    if variant.get("extended"):
-        out["SellersItemIdentification"]["ExtendedID"] = V(variant["extended"], "The variant of the item: the "
-                                                                                f"{variant['what']}, added to the "
-                                                                                "item number.")
-    if variant.get("attribute"):
-        a_, code, desc = variant["attribute"]
-        pa = {"AttributeID": V(a_, "The attribute the variant differs in.")}
-        if variant.get("position"):
-            pa["PositionCode"] = V(variant["position"], "The part of the item the attribute is on: the "
-                                                        f"{variant['what'].split()[0]}.")
-        out["SellersItemIdentification"]["PhysicalAttribute"] = {
-            **pa, "DescriptionCode": V(code, "The variant's code for it."),
-            "Description": V(desc, "The variant in words.")}
-    if variant.get("measure"):
-        a_, v, u = variant["measure"]
-        out["SellersItemIdentification"]["MeasurementDimension"] = {
-            "AttributeID": V(a_, "The seller numbers its slats by length: this number is for one length."),
-            "Measure": V(v, "The length the number stands for.", unitCode=u)}
     if catalogue:
         out["CatalogueItemIdentification"] = {"ID": V(f"{catalogue[0]}-{catalogue[1]}", "The item's place in the "
                                                       "catalogue: the catalogue number and the line.")}
@@ -1047,6 +1028,29 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         out["ManufacturersItemIdentification"] = {"ID": V(maker["sellers_id"], f"The item number of the maker, "
                                                           f"{PARTY[maker['seller']]['identity']['name']}: the "
                                                           f"reseller's item is resale of item {maker['id']}.")}
+    # a variant of the maker's item: its item number, with the variant added. A reseller that numbers the model
+    # once (Lumeway's LD-10442 for the bench in any colour) adds the variant to its own number; one that gives each
+    # variant a number of its own (variant_numbers: the store's BM-551005 for the oak bench, O155) needs no
+    # variant on it, and the variant goes with the maker's number
+    variant = maker.get("variant", {})
+    vid = out["ManufacturersItemIdentification"] if it.get("variant_numbers") else out["SellersItemIdentification"]
+    if variant.get("extended"):
+        vid["ExtendedID"] = V(variant["extended"], f"The variant of the item: the {variant['what']}, added to the "
+                                                   "item number.")
+    if variant.get("attribute"):
+        a_, code, desc = variant["attribute"]
+        pa = {"AttributeID": V(a_, "The attribute the variant differs in.")}
+        if variant.get("position"):
+            pa["PositionCode"] = V(variant["position"], "The part of the item the attribute is on: the "
+                                                        f"{variant['what'].split()[0]}.")
+        vid["PhysicalAttribute"] = {
+            **pa, "DescriptionCode": V(code, "The variant's code for it."),
+            "Description": V(desc, "The variant in words.")}
+    if variant.get("measure"):
+        a_, v, u = variant["measure"]
+        vid["MeasurementDimension"] = {
+            "AttributeID": V(a_, "The seller numbers its slats by length: this number is for one length."),
+            "Measure": V(v, "The length the number stands for.", unitCode=u)}
     gtin = it                          # the GTIN: the item's own, or one allocated further up the resale chain
     while gtin and not gtin.get("gtin"):
         gtin = ITEM.get(gtin.get("resale_of"))

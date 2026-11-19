@@ -452,7 +452,7 @@
   {
    "id": "furniture",
    "title": "Furniture for the department store and for public offices (Bayvarra)",
-   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, and supplies it piece by piece. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms, and what is above the target at the end of the trial goes back. For the public works department the furniture maker also installs, and documents the work for approval.",
+   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms, and what is above the target at the end of the trial goes back. For the public works department the furniture maker also installs, and documents the work for approval.",
    "legs": [
     {
      "mode": "road",
@@ -1476,7 +1476,7 @@
    "doc": "Order",
    "from": "c-xb",
    "to": "26-xb",
-   "why": "The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, in the store's webshop, to collect it in the store, and pays by credit card: the order carries the full card data, security code included, so that the store can have the payment authorised before it reserves the pieces.",
+   "why": "The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all in ash, in the store's webshop, to collect it in the store, and pays by credit card: the order carries the full card data, security code included, so that the store can have the payment authorised before it reserves the pieces.",
    "parties": {
     "BuyerCustomerParty": "c-xb",
     "SellerSupplierParty": "26-xb",
@@ -2960,7 +2960,7 @@
    "doc": "TradeItemLocationProfile",
    "from": "26-xb",
    "to": "37-xb",
-   "why": "The store sets the replenishment policy per item and store.",
+   "why": "The store sets the replenishment policy per item and store: each piece in each wood.",
    "parties": {
     "SenderParty": "26-xb",
     "ReceiverParty": "37-xb",
@@ -3010,7 +3010,7 @@
    "doc": "Order",
    "from": "26-xb",
    "to": "37-xb",
-   "why": "The store orders the opening stock of the line, piece by piece. Delivery terms DAP store: the furniture maker delivers with its own van.",
+   "why": "The store orders the opening stock of the line, piece by piece and wood by wood. Delivery terms DAP store: the furniture maker delivers with its own van.",
    "parties": {
     "BuyerCustomerParty": "26-xb",
     "SellerSupplierParty": "37-xb",

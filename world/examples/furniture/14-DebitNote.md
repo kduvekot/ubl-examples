@@ -413,9 +413,9 @@ Inside `DebitNoteLine`:
 - `BillingReference/CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
   The credit note.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
-  Its first line, the returned benches.
-- `BillingReference/BillingReferenceLine/Amount` = **2660.00** (currencyID `XBL`)  
-  The amount of the credit note's first line, the benches returned.
+  Its first line, the returned oak benches.
+- `BillingReference/BillingReferenceLine/Amount` = **1520.00** (currencyID `XBL`)  
+  The amount of the credit note's first line, the oak benches returned.
 - `DocumentReference/ID` = **BF-DOC-26-0578**  
   The instruction for returns.
 - `DocumentReference/DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -757,7 +757,7 @@ Inside `DebitNoteLine`:
       </cac:CreditNoteDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:Amount currencyID="XBL">2660.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">1520.00</cbc:Amount>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>

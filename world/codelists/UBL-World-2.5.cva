@@ -50,6 +50,7 @@
       <ValueList xml:id="PeriodDescription" uri="gc/PeriodDescriptionCode.gc" />
       <ValueList xml:id="Market" uri="gc/MarketCode.gc" />
       <ValueList xml:id="Colour" uri="gc/ColourCode.gc" />
+      <ValueList xml:id="Wood" uri="gc/WoodCode.gc" />
       <ValueList xml:id="EmissionCalculationMethod" uri="gc/EmissionCalculationMethodCode.gc" />
       <ValueList xml:id="ContractType" uri="gc/ContractTypeCode.gc" />
       <ValueList xml:id="RecordStatus" uri="gc/RecordStatusCode.gc" />
@@ -332,7 +333,7 @@
       <Context address="*[local-name()='ForeignExchangeContract']/cbc:ContractTypeCode" values="FXContractType" metadata="code" />
       <Context address="*[local-name()='Payment']/cbc:StatusCode" values="PaymentStatus" metadata="code" />
       <Context address="*[local-name()='InvoicePeriod']/cbc:DescriptionCode" values="PeriodDescription" metadata="code" />
-      <Context address="*[local-name()='PhysicalAttribute']/cbc:DescriptionCode" values="Colour" metadata="code" />
+      <Context address="*[local-name()='PhysicalAttribute']/cbc:DescriptionCode" values="Colour Wood" metadata="code" />
       <Context address="*[local-name()='EmissionCalculationMethod']/cbc:CalculationMethodCode" values="EmissionCalculationMethod" metadata="code" />
       <Context address="*[local-name()='Contract']/cbc:ContractTypeCode | *[local-name()='TransportContract']/cbc:ContractTypeCode" values="ContractType" metadata="code" />
       <Context address="*[local-name()='GoodsItemPassport']/cbc:StatusCode | *[local-name()='PreviousPriceList']/cbc:StatusCode | *[local-name()='PriceList']/cbc:StatusCode | *[local-name()='Waybill']/cbc:StatusCode" values="RecordStatus" metadata="code" />

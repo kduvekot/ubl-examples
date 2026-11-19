@@ -89,7 +89,8 @@
    "element": "DescriptionCode",
    "address": "*[local-name()='PhysicalAttribute']/cbc:DescriptionCode",
    "lists": [
-    "Colour"
+    "Colour",
+    "Wood"
    ],
    "parents": [
     "PhysicalAttribute"
@@ -5329,6 +5330,16 @@
     "BLU"
    ]
   },
+  "Wood": {
+   "listID": "urn:ubl-examples:world:codelist:WoodCode",
+   "scope": "regional",
+   "name": "Wood",
+   "location": "world/codelists/gc/WoodCode.gc",
+   "codes": [
+    "OAK",
+    "ASH"
+   ]
+  },
   "EmissionCalculationMethod": {
    "listID": "urn:ubl-examples:world:codelist:EmissionCalculationMethodCode",
    "scope": "regional",
@@ -8762,7 +8773,8 @@
     "PALLETPLACES",
     "TEU",
     "SEAL",
-    "WEIGHT"
+    "WEIGHT",
+    "WOOD"
    ]
   },
   "CardScheme": {

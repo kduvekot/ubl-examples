@@ -307,7 +307,7 @@
       </cac:CreditNoteDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:Amount currencyID="XBL">2660.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">1520.00</cbc:Amount>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>

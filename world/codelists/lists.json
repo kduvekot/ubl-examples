@@ -789,6 +789,21 @@
     ]
    }
   },
+  "Wood": {
+   "scope": "regional",
+   "name": "Wood",
+   "description": "The wood an item is made of, as a code: the variants of furniture made in more than one wood.",
+   "codes": {
+    "OAK": [
+     "Oak",
+     "Oak, as the Marrow bench and chair in solid kiln-dried oak."
+    ],
+    "ASH": [
+     "Ash",
+     "Ash, as the Marrow bench and chair in solid kiln-dried ash."
+    ]
+   }
+  },
   "EmissionCalculationMethod": {
    "scope": "regional",
    "name": "Emission calculation method",
@@ -7475,7 +7490,7 @@
   "OtherAttribute": {
    "scope": "regional",
    "name": "Attribute",
-   "description": "Other attributes measured or described: space, capacity, colour and conditions.",
+   "description": "Other attributes measured or described: space, capacity, colour, wood and conditions.",
    "codes": {
     "COLOUR": [
      "Colour",
@@ -7500,6 +7515,10 @@
     "WEIGHT": [
      "Weight",
      "The weight of a thing."
+    ],
+    "WOOD": [
+     "Wood",
+     "The wood an item is made of."
     ]
    }
   },
@@ -7815,7 +7834,10 @@
   },
   {
    "element": "DescriptionCode",
-   "list": "Colour",
+   "list": [
+    "Colour",
+    "Wood"
+   ],
    "parents": [
     "PhysicalAttribute"
    ]
