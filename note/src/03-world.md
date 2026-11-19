@@ -655,7 +655,12 @@ warehouses, names the register in `schemeID`, and with it the authority that
 keeps it, so no issuer party is needed. A certificate whose number is unique
 only with its issuer, such as an environmental, medical or sanitation
 certificate or the X.509 certificate of an access point, has no `schemeID`
-and names its issuer in `IssuerParty`.
+and names its issuer in `IssuerParty`. Rinova's granulate, for example, is
+certified for its recycled content by Certovira Certification, an accredited
+certification body in Ferrano that audits the plant every year under a
+recycled-content scheme following EN 15343:2007, as industry schemes such as
+RecyClass do; the certificate travels in the product information Rinova sends
+its buyer, not in the order, the invoice or the customs declaration.
 
 Payment cards follow ISO/IEC 7812 in a range real cards cannot use: the
 major industry identifier 9, which is for national use, followed by the

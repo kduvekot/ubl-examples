@@ -1474,6 +1474,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: none of D1 to D27.
 - State: D41 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D41).
 - Findings: plastics: 01#F11, 05#F12, 08#F8, 09#F18, 10#F7
+- **Fixed (2026-11-19, stage 6 G1):** O193 (D41 point 1, revised by O197). The five findings were already moot: the item table (C48) had taken the certificate out of the order, the despatch advice, the invoice and the declarations, so no document named the Ferrano Chamber of Commerce as its issuer any more. The certificate now has its place in a new document, plastics/12 (next free number, D28): Rinova's catalogue (product information) of its granulate to Rivermouth for the second quarter, issued on 1 April, before the order. Its item carries the recycled-content certificate `CVC-RC-26-0118` of a new private party, the accredited certification body Certovira Certification (`cb-xu`, `XU-R-106192`, a referenced party in `world/parties.json`), whose remark states the recycled content and the scheme (following EN 15343:2007, O132), and the `CircularityProfile` with the recycled content of 100 %; the duplicate item property "Recycled content" goes. Coverage 4922 → 4925: `Item/EnvironmentalCertificate`, `CircularityProfile/CircularityTypeCode` and `/RecycledContentPercent` won back.
 
 ### C89 · Wood flow: slat units and isolated slips
 - Kind: flow story · Findings: 10 (High 1, Medium 0, Low 9) in 5 files, 1 flow · Needs decision: owner: D43

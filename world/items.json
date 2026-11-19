@@ -432,19 +432,19 @@
      "Density",
      "0.92",
      "23"
-    ],
-    [
-     "Recycled content",
-     "100",
-     "P1"
     ]
    ],
    "env_certificate": {
-    "id": "XU-RC-2026-007",
+    "id": "CVC-RC-26-0118",
     "code": "RECYCLED",
     "type": "Recycled content",
-    "remarks": "Made entirely from sorted production waste recovered in Urvania.",
-    "issuer": "20-xu"
+    "remarks": "100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the certification body's recycled-content scheme, which follows EN 15343:2007.",
+    "issuer": "cb-xu"
+   },
+   "circularity": {
+    "type": "RECYCLED",
+    "recycled": "100",
+    "recycled_why": "The share of recycled material: all of it, polyethylene recovered from production waste, as the certificate states."
    },
    "lot_prefix": "RR-PE-",
    "lot_props": [

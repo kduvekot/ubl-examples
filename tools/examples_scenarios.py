@@ -995,6 +995,12 @@ def barge_consignment(f, view):
 def plastics(n, doc):
     f = PLASTICS
     w = kit.gross_weight(f, "ordered")
+    if doc["doc"] == "Catalogue":          # plastics/12, first in time (D28, O193)
+        out = kit.catalogue(f, n, doc, -12, "Rinova's product information for the quarter, sent before the "
+                                             "packaging maker plans its next production run.", ["granulate-pe"], 90)
+        out["Name"] = V("Recycled PE granulate, second quarter 2026", "The catalogue's title: one product, for the "
+                                                                       "quarter.")
+        return out
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 0, "The packaging maker orders for the next production run.",
                          "Carriage paid to the river quay: the seller books and pays the barge, the buyer bears the "

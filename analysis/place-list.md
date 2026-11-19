@@ -191,7 +191,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | road | road | Castrano Logistics (8-xu) → Lumeway Distribution (6-xb) | **179.2 km** | 179.2 km | `road` | 147.2 km | 1.22 | 2 h 34 – 2 h 59 | 2 |
 | rail | road | Castrano Logistics (8-xu) → Ferrano Intermodal Hub (18-xu) | **45.7 km** | 45.7 km | `road`, `waste`, `road-farm` | 14.8 km | 3.08 | 0 h 39 – 0 h 46 | - |
 | rail | rail | Ferrano Intermodal Hub (18-xu) → Lumeway Distribution (6-xb) | **172.8 km** | - | `rail-x` | 158.5 km | 1.09 | 2 h 53 – 4 h 19 | - |
-| plastics | river | Rinova Recovery (7-xu) → Rivermouth Packaging (41-xb) | **253.4 km** | - | the river's course and the estuary | 197.5 km | 1.28 | 21 h 07 – 25 h 21 | - |
+| plastics | river | Rinova Recovery (7-xu) → Rivermouth Packaging (41-xb) | **253.4 km** | - | the river's course and the estuary | 197.5 km | 1.28 | 21 h 07 – 25 h 21 | 3 |
 | retail | road | Lumeway Distribution (6-xb) → Brightmarket Stores (26-xb) | **77.5 km** | 77.5 km | `road-b`, `road-lark` | 61.9 km | 1.25 | 1 h 06 – 1 h 17 | - |
 | retail | road | Brightmarket Stores (26-xb) → Robin Ashdale (c-xb) | **14.0 km** | 14.0 km | `road-port` | 11.1 km | 1.26 | 0 h 12 – 0 h 14 | - |
 | sea | road | Lumeway Distribution (6-xb) → Port of Lumeport (16-xb) | **82.4 km** | 82.4 km | `road-b`, `road-port` | 70.0 km | 1.18 | 1 h 11 – 1 h 22 | - |

@@ -1225,8 +1225,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         if ci.get("type"):
             circ["CircularityTypeCode"] = V(ci["type"], "The circular strategy behind the item.")
         if ci.get("recycled"):
-            circ["RecycledContentPercent"] = V(ci["recycled"], "The share of recycled material: the film is made from "
-                                                               "the recycled granulate.")
+            circ["RecycledContentPercent"] = V(ci["recycled"], ci.get("recycled_why", "The share of recycled material: "
+                                                               "the film is made from the recycled granulate."))
         if ci.get("recyclable"):
             circ["RecyclabilityPercent"] = V(ci["recyclable"], "The share that can be recycled again.")
         if ci.get("maintenance"):

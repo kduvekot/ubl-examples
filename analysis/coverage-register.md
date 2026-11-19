@@ -337,15 +337,12 @@ Coverage 4982 → 4971 (commit 11566a00), 11 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `CircularityProfile/CircularityTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `CircularityProfile/EndOfLifeTreatment` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `CircularityProfile/RecyclabilityPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `CircularityProfile/RecycledContentPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
+| `CircularityProfile/EndOfLifeTreatment` | 0..1 | packaging/01-Order, packaging/02-Invoice | the stretch film's product information from Rivermouth (a catalogue of the film to Valdara, packaging flow): recyclable in full, back to Rinova for recycling (the film's data in world/items.json) | packaging | candidate |
+| `CircularityProfile/RecyclabilityPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | the stretch film's product information from Rivermouth (a catalogue of the film to Valdara, packaging flow): recyclable in full, back to Rinova for recycling (the film's data in world/items.json) | packaging | candidate |
 | `EndOfLifeTreatment/ImpactCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
 | `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
 | `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
 | `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `Item/EnvironmentalCertificate` | 0..n | plastics/01-Order, plastics/05-ExportCustomsDeclaration, plastics/08-DespatchAdvice … | | | open |
 | `Item/LifecycleStageCode` | 0..1 | waste/03-Invoice | | | open |
 | `Item/LifecycleStageDescription` | 0..n | waste/03-Invoice | | | open |
 
@@ -517,3 +514,6 @@ Elements that were in this register and are covered again, with the example that
 |---|---|---|---|
 | `LineItem/BeneficiaryParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `LineItem/OriginatorParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
+| `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
+| `CircularityProfile/RecycledContentPercent` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
+| `Item/EnvironmentalCertificate` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |

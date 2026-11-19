@@ -88,7 +88,7 @@
   {
    "id": "plastics",
    "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
-   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow) (decision D41).",
+   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. Before the order Rinova sends its product information for the quarter, with the recycled-content certificate of an accredited certification body (plastics/12). The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow) (decision D41).",
    "legs": [
     {
      "mode": "river",
@@ -2914,6 +2914,18 @@
     "AccountingSupplierParty": "7-xu",
     "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "plastics",
+   "doc": "Catalogue",
+   "from": "7-xu",
+   "to": "41-xb",
+   "why": "Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 % (decisions D41, O193). It is numbered after the flow's other documents although it comes first in time (D28).",
+   "parties": {
+    "ProviderParty": "7-xu",
+    "ReceiverParty": "41-xb",
+    "SellerSupplierParty": "7-xu"
    }
   },
   {

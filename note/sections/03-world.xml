@@ -1267,7 +1267,13 @@
       unique only with its issuer, such as an environmental, medical or
       sanitation certificate or the X.509 certificate of an access
       point, has no <literal>schemeID</literal> and names its issuer in
-      <literal>IssuerParty</literal>.
+      <literal>IssuerParty</literal>. Rinova's granulate, for example,
+      is certified for its recycled content by Certovira Certification,
+      an accredited certification body in Ferrano that audits the plant
+      every year under a recycled-content scheme following EN
+      15343:2007, as industry schemes such as RecyClass do; the
+      certificate travels in the product information Rinova sends its
+      buyer, not in the order, the invoice or the customs declaration.
     </para>
     <para>
       Payment cards follow ISO/IEC 7812 in a range real cards cannot
