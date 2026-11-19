@@ -296,7 +296,8 @@ function coastCorners(g, i, j, onLand) {
       if (Math.max(V[ci][cj], V[ai][aj], V[bi][bj]) > LOW_SHORE) continue; }   // only on a low shore: no water or beach up a slope
     const c = [d1[0] * .5 + d2[0] * .5, d1[1] * .5 + d2[1] * .5], a = [d1[0] * .5 - d2[0] * .5, d1[1] * .5 - d2[1] * .5], b = [d2[0] * .5 - d1[0] * .5, d2[1] * .5 - d1[1] * .5];
     poly(g, [tp(i, j, ...a), tp(i, j, ...c), tp(i, j, ...b)], onLand ? COLORS.sea2 : COLORS.grass);
-    band(g, i, j, [a[0] * .92, a[1] * .92], [b[0] * .92, b[1] * .92], .09, COLORS.sand);
+    if (onLand) band(g, i, j, [a[0] * .92, a[1] * .92], [b[0] * .92, b[1] * .92], .09, COLORS.sand);   // a land triangle in a
+    // water square has no beach line: on a coast stepping diagonally its beaches stood up on the screen as posts (MO008)
     covered.add(d1.join()); covered.add(d2.join()); }
   return covered; }
 // a cliff: where a land square's edge along open water stands above the water, a face from the edge down to the water,
@@ -431,11 +432,16 @@ function paintWorld(g, box, level) { const detail = level === 2;
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
     const cut = coastCorners(g, i, j, true);
     const steepCoast = Math.max(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1]) > 60;   // a cliff, not a beach
-    const lowEdge = (di, dj) => { const pv = [-dj, di]; return Math.max(heightAt(i + di * .22 + pv[0] * .5, j + dj * .22 + pv[1] * .5),
-      heightAt(i + di * .22 - pv[0] * .5, j + dj * .22 - pv[1] * .5)) <= LOW_SHORE; };
+    const lowEdge = (di, dj) => { const pv = [-dj, di]; return Math.max(heightAt(i + di * .38 + pv[0] * .5, j + dj * .38 + pv[1] * .5),
+      heightAt(i + di * .38 - pv[0] * .5, j + dj * .38 - pv[1] * .5)) <= LOW_SHORE; };
+    // the shore strip along open water (owner, 2026-11-19, MO008): narrow, so that on a coast stepping diagonally
+    // across the grid it reads as a shore line, not as posts; on a built or town square a stone quay, not a beach
+    const built = !!(t.building || t.house || t.urban || t.yard || t.links);
     DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || stream(nb) || cut.has(di + "," + dj)) return; const pv = [-dj, di];
+      const w = nb.water ? .28 : built ? .06 : .12, e = .5 - w;
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
-        tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : steepCoast || !lowEdge(di, dj) ? "#8a8272" : COLORS.sand); });
+        tp(i, j, di * e - pv[0] * .5, dj * e - pv[1] * .5), tp(i, j, di * e + pv[0] * .5, dj * e + pv[1] * .5)],
+        nb.water ? "#7f8f52" : built ? "#9a958a" : steepCoast || !lowEdge(di, dj) ? "#8a8272" : COLORS.sand); });
     cliffFaces(g, i, j);
     if (t.urban && (level || !t.village)) urbanGround(g, i, j, t);
     // hedges around fields, fences around industry yards
