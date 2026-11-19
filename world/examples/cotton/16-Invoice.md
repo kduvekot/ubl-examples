@@ -353,8 +353,6 @@ Inside `InvoiceLine`:
   The kind of certificate, as a code. The code is from the Trade Accord's certificate type list: COTTONCLASS = Cotton classing.
 - `Item/Certificate/CertificateType` = **Cotton classing**  
   The name of code COTTONCLASS in the Trade Accord's certificate type list.
-- `Item/Certificate/Remarks` = **Grade Middling, staple 1-1/8 inch, micronaire 4.2.**  
-  What the certificate states about the goods.
 - `Item/Certificate/IssuerParty/PartyIdentification/ID` = **IC42133** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Item/Certificate/IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
@@ -632,7 +630,6 @@ Inside `InvoiceLine`:
         <cbc:ID>XL-CLS-2026-0042</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">COTTONCLASS</cbc:CertificateTypeCode>
         <cbc:CertificateType>Cotton classing</cbc:CertificateType>
-        <cbc:Remarks>Grade Middling, staple 1-1/8 inch, micronaire 4.2.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42133</cbc:ID>

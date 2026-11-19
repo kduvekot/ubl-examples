@@ -1234,7 +1234,6 @@
     "id": "XL-CLS-2026-0042",
     "code": "COTTONCLASS",
     "type": "Cotton classing",
-    "remarks": "Grade Middling, staple 1-1/8 inch, micronaire 4.2.",
     "issuer": "20-xl",
     "signature": {
      "id": "SCC-SIG-2026-0042",
@@ -1248,7 +1247,13 @@
     [
      "Grade",
      "Middling"
-    ]
+    ],
+    {
+     "name": "Micronaire",
+     "why": "A classing result of the lot, from the chamber's classing certificate: the fineness and maturity of the fibre, which spinners ask for beside grade and staple.",
+     "value": "4.2",
+     "test": "Airflow measurement on the classer's high-volume instrument"
+    }
    ],
    "quantity_properties": [
     [

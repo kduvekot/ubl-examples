@@ -1152,8 +1152,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                     "ID-Q10)." if reg else ", unique only with its issuer, who is named below (decision ID-Q10)."),
                     **({"schemeID": reg} if reg else {})),
                 "CertificateTypeCode": V(ce["code"], "The kind of certificate, as a code."),
-                "CertificateType": V(ce["type"], "The kind of certificate, in words."),
-                "Remarks": V(ce["remarks"], "What the certificate states about the goods.")}
+                "CertificateType": V(ce["type"], "The kind of certificate, in words.")}
+        if ce.get("remarks"):       # a certificate's results are no applicant's remarks (C109): only real remarks
+            cert["Remarks"] = V(ce["remarks"], "What the certificate states about the goods.")
         if ce.get("issuer"):
             cert["IssuerParty"] = party(ce["issuer"], short=True)
         if ce.get("valid_until"):
