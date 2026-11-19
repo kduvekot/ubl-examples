@@ -163,7 +163,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **14770.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **14627.50** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -182,9 +182,9 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **14770.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **14627.50** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **14770.00** (currencyID `XBL`)  
+- `PayableAmount` = **14627.50** (currencyID `XBL`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -193,26 +193,26 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **6** (unitCode `EA`)  
-  Six packs: four hours of back-up power for the mast.
+- `LineItem/Quantity` = **12** (unitCode `EA`)  
+  Twelve modules of 2.4 kWh: four hours of back-up power for the mast.
 - `LineItem/LineExtensionAmount` = **14400.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **2400** (currencyID `XBL`)  
+- `LineItem/Price/PriceAmount` = **1200** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.**  
+- `LineItem/Item/Description` = **Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.**  
   The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
-- `LineItem/Item/Name` = **Lithium-ion battery pack 48 V 100 Ah**  
+- `LineItem/Item/Name` = **Lithium-ion battery module 48 V 50 Ah**  
   The item's short name; item battery-pack of Saltmere Engineering (world/items.json).
 - `LineItem/Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `LineItem/Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
+- `LineItem/Item/SellersItemIdentification/ID` = **SE-BAT-4850**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **1** (unitCode `SET`)  
-  One set of ten for the equipment room.
+  One pack of ten for the equipment room.
 - `LineItem/LineExtensionAmount` = **180.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **180** (currencyID `XBL`)  
@@ -229,21 +229,21 @@ Inside `OrderLine`:
   The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **20** (unitCode `LTR`)  
-  Four cans of five litres for the circuit boards.
-- `LineItem/LineExtensionAmount` = **190.00** (currencyID `XBL`)  
+- `LineItem/Quantity` = **5** (unitCode `LTR`)  
+  Five litres for the circuit boards, in 1-litre tins.
+- `LineItem/LineExtensionAmount` = **47.50** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **9.5** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `LTR`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Remover for the protective coating of circuit boards, in 5-litre cans.**  
+- `LineItem/Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `LineItem/Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
 - `LineItem/Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `LineItem/Item/SellersItemIdentification/ID` = **SE-CS-05**  
+- `LineItem/Item/SellersItemIdentification/ID` = **SE-CS-01**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
 
 ## The document
@@ -365,7 +365,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">14770.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">14627.50</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -379,24 +379,24 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">14770.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">14770.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">14627.50</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">14627.50</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">1200</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
-        <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+        <cbc:Description>Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.</cbc:Description>
+        <cbc:Name>Lithium-ion battery module 48 V 50 Ah</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>
-          <cbc:ID>SE-BAT-48100</cbc:ID>
+          <cbc:ID>SE-BAT-4850</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -423,18 +423,18 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
-      <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">190.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="LTR">5</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">47.50</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">9.5</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="LTR">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
+        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, each tin in a box of its own.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>
-          <cbc:ID>SE-CS-05</cbc:ID>
+          <cbc:ID>SE-CS-01</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

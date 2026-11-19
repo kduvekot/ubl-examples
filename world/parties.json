@@ -1646,6 +1646,14 @@
       "job_title": "Sales coordinator",
       "department": "Sales",
       "email": "sales@saltmere.example"
+     },
+     "emergency": {
+      "name": "Dangerous goods emergency line",
+      "job_title": "Duty engineer",
+      "department": "Safety",
+      "email": "emergency@saltmere.example",
+      "telephone": "+999 2 7121 930 486",
+      "hours": "Every day, around the clock"
      }
     },
     "week": "office"

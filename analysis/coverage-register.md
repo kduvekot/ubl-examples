@@ -513,6 +513,24 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `Person/NameSuffix` | 0..1 | carnet/01-GoodsItemPassport | | | open |
 | `Person/OtherName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
 
+> C79, D36, O182: the mast flow, the world's only dangerous-goods flow so far, keeps only the data its carriage uses. It goes by road and air, not by sea, so no emergency schedules for ships (EmS) and no marine pollutant code; not by road alone, so no tunnel code; packages by air carry no orange plates, and a truck with packages shows blank ones (mast/02#F6, 03#F7); no placard endorsement that repeats the class or the label model (02#F21, F23); no emergency temperature (D36 point 5); americium-241 is not fissile, so the pack's nuclide and activity are in the radioactive material's name, not in `ApplicableRadioactiveIsotope` (02#F9, O127); no pricing reference in the invoice that only repeats the dangerous-goods indicator (05#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `DeliveryUnit/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
+| `HazardousItem/EmergencyProceduresCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the Trade Accord's emergency card for the propane's class (TEC2), the instructions in writing the road tanker carries, as the secondary hazard already uses it (D48) | lpg | candidate |
+| `HazardousItem/EmergencyTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a self-reactive substance or organic peroxide whose control and emergency temperatures the rules set; the world has none (O126) | | open |
+| `HazardousItem/LowerOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
+| `HazardousItem/MaritimePollutantCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | | | open |
+| `HazardousItem/PlacardEndorsement` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | an endorsement a rule asks for on the papers; none in the world so far (O126) | | open |
+| `HazardousItem/TunnelRestrictionCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the propane road tanker's tunnel restriction code, a carriage by road alone (D48) | lpg | candidate |
+| `HazardousItem/UpperOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
+| `ItemLocationQuantity/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
+| `RadioactiveIsotope/ActivityLevelMeasure` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | only under `ApplicableRadioactiveIsotope`, for fissile contents, which the world does not have (O126, O127) | | open |
+| `RadioactiveIsotope/Name` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | as above (O127) | | open |
+| `RadioactiveMaterial/ApplicableRadioactiveIsotope` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | fissile contents only; the world has none (O126, O127) | | open |
+| `SecondaryHazard/PlacardEndorsement` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | as for the hazardous item (O126) | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

@@ -2562,6 +2562,10 @@
    "name": "Air packing instruction",
    "description": "The packing instruction dangerous goods are packed under for carriage by air, following the IATA Dangerous Goods Regulations.",
    "codes": {
+    "PI851": [
+     "Packing instruction 851",
+     "Corrosive liquids of packing group II, in quantities passenger aircraft may carry."
+    ],
     "PI965IA": [
      "Packing instruction 965, section IA",
      "Lithium ion batteries, packed alone, above the limits of section IB."
