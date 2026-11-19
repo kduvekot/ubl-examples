@@ -3545,11 +3545,10 @@ def marrow_profile(f, iid, target, minimum, multiple, why_multiple, smallest):
             "Item": item(iid)}
 
 
-SHELF = {"bench": ("549.00", "584.69"), "chair": ("199.00", "211.94")}    # before and with Coastal State's 6.5 %
-
-
 def marrow_sales(p, w):
-    """A line of the store's sales report: one item, in pieces; a bench sold in a Marrow set has the set allowance."""
+    """A line of the store's sales report, for the maker's replenishment: one item in pieces, and how many were sold
+    in a Marrow set or alone. The shop's prices and its set allowance are the store's own business under its own
+    label: the maker does not fund the set price, so the report does not give them (O155)."""
     n, sets = MARROW_SOLD[p][w], MARROW_SETS[w]
     words = {1: "One", 2: "Two", 3: "Three", 4: "Four", 6: "Six", 7: "Seven"}
     out = {"Quantity": qty(n, "EA", f"{words[n]} {pieces(f'marrow-{p}-{w}') if n > 1 else w + ' ' + p} sold in four "
@@ -3557,23 +3556,15 @@ def marrow_sales(p, w):
                                                if p == "bench" else
                                                f": {2 * sets} in the {w} set{'s' if sets > 1 else ''} and "
                                                f"{n - 2 * sets} alone."))}
-    if p == "chair":
+    if p == "bench":
+        out["ActivityProperty"] = {"Name": V("Sold in a Marrow set", "What the store notes."),
+                                   "Value": V(f"{sets} of {n}, " + ("each " if sets > 1 else "") + f"with two {w} chairs.",
+                                              "How the benches sold.")}
+    else:
         out["ActivityProperty"] = {"Name": V("Sold alone", "What the store notes."),
                                    "Value": V(f"{n - 2 * sets} of {n}: the 1400 mm bench is too long for many "
                                               "apartment kitchens, so shoppers buy the chairs.",
                                               "Why the chairs sell better than the set.")}
-    out["TaxExclusivePrice"] = {"PriceAmount": price(SHELF[p][0], "XBL", f"The shelf price of the {p}, the same in "
-                                                                         "both woods, before sales tax.")}
-    if p == "bench":
-        out["TaxExclusivePrice"]["AllowanceCharge"] = {
-            "ChargeIndicator": V("false", "An allowance on the price."),
-            "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189: a "
-                                                 "discount; the text names the offer."),
-            "AllowanceChargeReason": V("Marrow set", "The shop's offer: a bench and two chairs in the same wood for "
-                                                     "899 lume instead of 947."),
-            "Amount": amount(48, "XBL", "The set allowance, given once with each bench sold in a set: "
-                                        "549 + 2 × 199 − 48 = 899.")}
-    out["TaxInclusivePrice"] = {"PriceAmount": price(SHELF[p][1], "XBL", "With Coastal State's 6.5 % sales tax.")}
     out["Item"] = item(f"marrow-{p}-{w}")
     return out
 
@@ -4484,7 +4475,6 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"Note": V("The chairs sell better than the set: the bench is too long for many apartment kitchens.",
                       "The store's remark."),
-            "DocumentCurrencyCode": kit.currency_line("XBL", "the store's currency"),
             "DocumentReference": {"ID": V(f.numbers["info-request"], "The request the figures answer.")},
             "Signature": seal(doc["from"], "BM-SIG-26-0420A"),
             "SupplyChainActivityDataLine": {

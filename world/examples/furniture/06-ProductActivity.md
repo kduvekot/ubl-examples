@@ -28,8 +28,6 @@ Weekly sales and stock movements of the line.
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **The chairs sell better than the set: the bench is too long for many apartment kitchens.**  
   The store's remark.
-- `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The lume, the store's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 
 ### Activity Period
 
@@ -192,18 +190,10 @@ Inside `SupplyChainActivityDataLine`:
   Where the sales took place.
 - `SalesItem/Quantity` = **2** (unitCode `EA`)  
   Two oak benches sold in four weeks, both in Marrow sets.
-- `SalesItem/TaxExclusivePrice/PriceAmount` = **549** (currencyID `XBL`)  
-  The shelf price of the bench, the same in both woods, before sales tax.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance on the price.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189: a discount; the text names the offer. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReason` = **Marrow set**  
-  The shop's offer: a bench and two chairs in the same wood for 899 lume instead of 947.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/Amount` = **48.00** (currencyID `XBL`)  
-  The set allowance, given once with each bench sold in a set: 549 + 2 × 199 − 48 = 899.
-- `SalesItem/TaxInclusivePrice/PriceAmount` = **584.69** (currencyID `XBL`)  
-  With Coastal State's 6.5 % sales tax.
+- `SalesItem/ActivityProperty/Name` = **Sold in a Marrow set**  
+  What the store notes.
+- `SalesItem/ActivityProperty/Value` = **2 of 2, each with two oak chairs.**  
+  How the benches sold.
 - `SalesItem/Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Elderwick Marrow bench, oak**  
@@ -222,18 +212,10 @@ Inside `SupplyChainActivityDataLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `SalesItem/Quantity` = **1** (unitCode `EA`)  
   One ash bench sold in four weeks, in a Marrow set.
-- `SalesItem/TaxExclusivePrice/PriceAmount` = **549** (currencyID `XBL`)  
-  The shelf price of the bench, the same in both woods, before sales tax.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance on the price.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189: a discount; the text names the offer. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/AllowanceChargeReason` = **Marrow set**  
-  The shop's offer: a bench and two chairs in the same wood for 899 lume instead of 947.
-- `SalesItem/TaxExclusivePrice/AllowanceCharge/Amount` = **48.00** (currencyID `XBL`)  
-  The set allowance, given once with each bench sold in a set: 549 + 2 × 199 − 48 = 899.
-- `SalesItem/TaxInclusivePrice/PriceAmount` = **584.69** (currencyID `XBL`)  
-  With Coastal State's 6.5 % sales tax.
+- `SalesItem/ActivityProperty/Name` = **Sold in a Marrow set**  
+  What the store notes.
+- `SalesItem/ActivityProperty/Value` = **1 of 1, with two ash chairs.**  
+  How the benches sold.
 - `SalesItem/Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Elderwick Marrow bench, ash**  
@@ -256,10 +238,6 @@ Inside `SupplyChainActivityDataLine`:
   What the store notes.
 - `SalesItem/ActivityProperty/Value` = **3 of 7: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.**  
   Why the chairs sell better than the set.
-- `SalesItem/TaxExclusivePrice/PriceAmount` = **199** (currencyID `XBL`)  
-  The shelf price of the chair, the same in both woods, before sales tax.
-- `SalesItem/TaxInclusivePrice/PriceAmount` = **211.94** (currencyID `XBL`)  
-  With Coastal State's 6.5 % sales tax.
 - `SalesItem/Item/Description` = **Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-chair-oak of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Elderwick Marrow chair, oak**  
@@ -282,10 +260,6 @@ Inside `SupplyChainActivityDataLine`:
   What the store notes.
 - `SalesItem/ActivityProperty/Value` = **1 of 3: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.**  
   Why the chairs sell better than the set.
-- `SalesItem/TaxExclusivePrice/PriceAmount` = **199** (currencyID `XBL`)  
-  The shelf price of the chair, the same in both woods, before sales tax.
-- `SalesItem/TaxInclusivePrice/PriceAmount` = **211.94** (currencyID `XBL`)  
-  With Coastal State's 6.5 % sales tax.
 - `SalesItem/Item/Description` = **Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-chair-ash of Brackenmere Furniture (world/items.json).
 - `SalesItem/Item/Name` = **Elderwick Marrow chair, ash**  
@@ -317,7 +291,6 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>16:35:00-01:00</cbc:IssueTime>
   <cbc:Note>The chairs sell better than the set: the bench is too long for many apartment kitchens.</cbc:Note>
-  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:ActivityPeriod>
     <cbc:StartDate>2026-03-23</cbc:StartDate>
     <cbc:EndDate>2026-04-20</cbc:EndDate>
@@ -438,18 +411,10 @@ Inside `SupplyChainActivityDataLine`:
     </cac:ActivityOriginLocation>
     <cac:SalesItem>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
-      <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">549</cbc:PriceAmount>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Marrow set</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">48.00</cbc:Amount>
-        </cac:AllowanceCharge>
-      </cac:TaxExclusivePrice>
-      <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">584.69</cbc:PriceAmount>
-      </cac:TaxInclusivePrice>
+      <cac:ActivityProperty>
+        <cbc:Name>Sold in a Marrow set</cbc:Name>
+        <cbc:Value>2 of 2, each with two oak chairs.</cbc:Value>
+      </cac:ActivityProperty>
       <cac:Item>
         <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
@@ -469,18 +434,10 @@ Inside `SupplyChainActivityDataLine`:
     </cac:SalesItem>
     <cac:SalesItem>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-      <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">549</cbc:PriceAmount>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Marrow set</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">48.00</cbc:Amount>
-        </cac:AllowanceCharge>
-      </cac:TaxExclusivePrice>
-      <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">584.69</cbc:PriceAmount>
-      </cac:TaxInclusivePrice>
+      <cac:ActivityProperty>
+        <cbc:Name>Sold in a Marrow set</cbc:Name>
+        <cbc:Value>1 of 1, with two ash chairs.</cbc:Value>
+      </cac:ActivityProperty>
       <cac:Item>
         <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
@@ -504,12 +461,6 @@ Inside `SupplyChainActivityDataLine`:
         <cbc:Name>Sold alone</cbc:Name>
         <cbc:Value>3 of 7: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.</cbc:Value>
       </cac:ActivityProperty>
-      <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">199</cbc:PriceAmount>
-      </cac:TaxExclusivePrice>
-      <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">211.94</cbc:PriceAmount>
-      </cac:TaxInclusivePrice>
       <cac:Item>
         <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
@@ -533,12 +484,6 @@ Inside `SupplyChainActivityDataLine`:
         <cbc:Name>Sold alone</cbc:Name>
         <cbc:Value>1 of 3: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.</cbc:Value>
       </cac:ActivityProperty>
-      <cac:TaxExclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">199</cbc:PriceAmount>
-      </cac:TaxExclusivePrice>
-      <cac:TaxInclusivePrice>
-        <cbc:PriceAmount currencyID="XBL">211.94</cbc:PriceAmount>
-      </cac:TaxInclusivePrice>
       <cac:Item>
         <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
