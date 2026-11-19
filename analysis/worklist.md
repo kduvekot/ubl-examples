@@ -1440,6 +1440,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: ready to fix now.
 - Findings: packaging: 05#F7, 06#F3, 06#F8, 08#F4, 09#F6
 - **Fixed (2026-11-19):** the carrier's consignment note BF-NATROAD-26-0521 (06#F3); 20 cartons of 30 shirts in the despatch advice, the carton recorded in items.json within the shirt's 0.28 kg (06#F8); no tax text in the shirt's description (08#F4); the pair offer "Friday 22 May only" (09#F6, D46). 05#F7 was already resolved.
+- **Fixed (2026-11-19, stage 6 G7, the packaging leftovers):** O168: the 480 kg of film (thirty rolls of 16 kg) are "a year's supply" of wrapping for the bench pallets, about 1,000 pallets a year at about 0.4 kg each (the bench's 0.1 kg of film, `world/items.json`); amounts unchanged; the plastics goods balance (120 t of granulate to Rivermouth) does not depend on this film's quantity. packaging/06: the shirts are "the store's order of shirts for its winter range", no spring (D34; O115: of last season's lint).
 
 ### C85 · Air flow: the missed-flight story and the CPT order change
 - Kind: flow story · Findings: 13 (High 2, Medium 0, Low 11) in 8 files, 1 flow · Needs decision: owner: D39

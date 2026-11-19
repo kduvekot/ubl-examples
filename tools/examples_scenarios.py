@@ -5487,9 +5487,9 @@ def furniture(n, doc):
 
 
 # ---------------------------------------------------------------- the packaging flow (Bayvarra -> Urvania, and at home)
-FILM = [{"item": "film-pe", "ordered": 480, "why": "Thirty rolls of 16 kg: wrapping for a month of bench pallets."}]
+FILM = [{"item": "film-pe", "ordered": 480, "why": "Thirty rolls of 16 kg: a year's supply of wrapping for the bench pallets, about 1,000 pallets a year at about 0.4 kg each (O168)."}]
 BAGS = [{"item": "garment-bag", "ordered": 20000, "why": "Forty boxes of 500 bags."}]
-SHIRTS = [{"item": "shirt", "ordered": 600, "why": "The store's spring order of shirts."}]
+SHIRTS = [{"item": "shirt", "ordered": 600, "why": "The store's order of shirts for its winter range."}]
 PACKAGING = kit.Flow("packaging", "2026-04-27", FILM)
 
 
