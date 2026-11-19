@@ -894,6 +894,47 @@ function quay3(g, p, col, glass) {
   const [cx, cy] = tileWorld(i + wd[0] * .35, j + wd[1] * .35); g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx, cy - 20); g.lineTo(cx - 9, cy - 15); g.stroke();
   g.strokeStyle = "#333"; g.lineWidth = .6; g.beginPath(); g.moveTo(cx - 9, cy - 15); g.lineTo(cx - 9, cy - 6); g.stroke();
   box3(g, F, .1, .1, .3, .3, 0, 5, "#b8a48a", shade(col, -.1)); }
+// ---- batch 3: town buildings ----
+function office3(g, p, col, glass) {
+  const F = buildingFrame(p, .1), floors = 1 + (p.h || 1), H = 6 + floors * 5, official = p.cat === "government" || p.cat === "procurement";
+  const fc = box3(g, F, .2, .22, .8, .82, 0, H, official ? "#e9e2d0" : "#d6dbe0", col);
+  windowsOn(g, F, fc, 4, 2, H - 2, official ? glass : "rgba(60,110,160,.9)", floors);
+  for (const f2 of fc) if (f2.k === 0) { onFace(g, F, f2.a, f2.b, .4, .6, 0, 4.5, "#4a3a2c"); poly(g, [F(.36, .22, 5), F(.64, .22, 5), F(.64, .12, 5), F(.36, .12, 5)], shade(col, -.2)); }
+  if (official) { const [x, y] = F(.72, .72, H); flag(g, x, y, col); } else box3(g, F, .4, .45, .6, .62, H, H + 3, "#9aa3ab", "#7d868e"); }
+function bank3(g, p, col, glass) {
+  const F = buildingFrame(p, .1), H = 10 + (p.h || 1) * 3;
+  const fc = box3(g, F, .16, .2, .84, .82, 0, H, "#e8e1cf", col);
+  for (const f2 of fc) if (f2.k === 0) { for (let c = 0; c < 6; c++) onFace(g, F, f2.a, f2.b, .1 + c * .16, .1 + c * .16 + .05, 0, H - 2, "#f8f4ea");
+      onFace(g, F, f2.a, f2.b, .43, .57, 0, 5, "#4a3a2c"); poly(g, [F(.16, .2, H), F(.84, .2, H), F(.5, .2, H + 5)], shade(hexOf(col), -.2)); }
+    else windowsOn(g, F, [f2], 3, 3, H - 2, glass, 2); }
+function shop3(g, p, col, glass) {
+  const F = buildingFrame(p, .1);
+  const fc = box3(g, F, .14, .26, .86, .86, 0, 12, "#efe7d5", null);
+  for (const f2 of fc) if (f2.k === 0) { onFace(g, F, f2.a, f2.b, .1, .9, .8, 5, glass); windowsOn(g, F, [f2], 4, 7.5, 11, glass);
+      for (let s2 = 0; s2 < 8; s2++) { const u0 = .14 + s2 * .09, u1 = u0 + .09; poly(g, [F(u0, .26, 7), F(u1, .26, 7), F(u1, .14, 5.5), F(u0, .14, 5.5)], s2 % 2 ? "#ffffff" : col); } }
+    else windowsOn(g, F, [f2], 3, 2, 11, glass, 2);
+  gable3(g, F, .14, .26, .86, .86, 12, 4, "#a84a36", "#efe7d5"); }
+function townhall3(g, p, col, glass) {
+  const F = buildingFrame(p, .06);
+  inOrder(F, [
+    { u: .5, v: .55, draw: () => { const fc = box3(g, F, .08, .3, .92, .88, 0, 13, "#ece4cf", null); windowsOn(g, F, fc, 4, 2, 12, glass, 2);
+        gable3(g, F, .08, .3, .92, .88, 13, 5, shade(hexOf(col), -.15), "#ece4cf"); } },
+    { u: .5, v: .2, draw: () => { const fc = box3(g, F, .42, .12, .58, .3, 0, 26, "#e2d8bf", null);
+        for (const f2 of fc) { onFace(g, F, f2.a, f2.b, .3, .7, 18, 22, "#f8f4e8"); if (f2.k === 0) onFace(g, F, f2.a, f2.b, .3, .7, 0, 7, "#5a4030"); }
+        raised(g, 26, () => heap3(g, F, .5, .21, .09, 8, hexOf(col))); const [x, y] = F(.5, .21, 34); flag(g, x, y, col); } } ]); }
+function customs3(g, p, col, glass) {        // a customs post on the road: a canopy over it, a booth beside it, a barrier across it
+  const F = buildingFrame(p, .05);           // its frame runs along the road (v) and across it (u)
+  inOrder(F, [
+    { u: .86, v: .5, draw: () => { const fc = box3(g, F, .78, .38, .96, .62, 0, 7, "#e2dccd", col); windowsOn(g, F, fc, 6, 3, 5.5, glass); } },
+    { u: .5, v: .25, draw: () => { const a = F(.3, .24, 3), b = F(.72, .24, 3); g.lineWidth = 2; g.strokeStyle = "#e9e9e9"; g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.stroke();
+        g.strokeStyle = "#c0392b"; g.setLineDash([2, 2]); g.stroke(); g.setLineDash([]); box3(g, F, .26, .22, .3, .26, 0, 4, "#888", "#666"); } },
+    { u: .5, v: .5, draw: () => { g.strokeStyle = "#dddddd"; g.lineWidth = 1.4; for (const [u, v] of [[.22, .36], [.78, .36], [.22, .64], [.78, .64]]) { g.beginPath(); g.moveTo(...F(u, v, 0)); g.lineTo(...F(u, v, 10)); g.stroke(); }
+        poly(g, [F(.18, .32, 10), F(.82, .32, 10), F(.82, .68, 10), F(.18, .68, 10)], shade(hexOf(col), -.1)); } } ]); }
+function house3(g, p, col, glass) {
+  const F = buildingFrame(p, .25);
+  const fc = box3(g, F, .2, .3, .8, .8, 0, 7, "#efe6d2", null); windowsOn(g, F, fc, 5, 2.5, 5.5, glass);
+  for (const f2 of fc) if (f2.k === 0) onFace(g, F, f2.a, f2.b, .42, .58, 0, 4.5, "#5a4030");
+  gable3(g, F, .2, .3, .8, .8, 7, 4, "#a84a36", "#efe6d2"); }
 function factory3(g, p, col, glass) {
   const F = buildingFrame(p, .04), H = 13, long = F.LA >= F.LF, small = F.LA * F.LF < 1.5;   // one square: no office wing
   const front = (a, b) => F(a, b)[1];                                        // how near the viewer a point is
@@ -1012,7 +1053,8 @@ function drawBuilding(g, x, y, p) {
   ({ x, y } = footGeo(p, 0, 0));                        // draw at the centre of the footprint
   if (big && multiTile(g, p, k, col, glass)) return;
   const own = { factory: factory3, warehouse: warehouse3, depot: depot3, waste: waste3, waterworks: waterworks3, grid: grid3,
-    telecom: telecom3, ginnery: ginnery3, farm: farm3, quay: quay3 }[k];        // drawn in their own directions (MO006)
+    telecom: telecom3, ginnery: ginnery3, farm: farm3, quay: quay3, office: office3, bank: bank3, shop: shop3, townhall: townhall3,
+    customs: customs3, house: house3 }[k];        // drawn in their own directions (MO006)
   if (own) { own(g, p, col, glass); return; }
   if (k === "mine") { mine(g, p, col); return; }
   if (k === "factory") {                                // hall with saw-tooth roof, two chimneys with smoke
