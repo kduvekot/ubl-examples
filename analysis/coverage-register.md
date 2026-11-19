@@ -103,7 +103,6 @@ Coverage 5120 → 5117 (commit 5e00c80d), 3 elements.
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `NotificationRequirement/PostEventNotificationDurationMeasure` | 0..1 | ore/03-TransportExecutionPlan, plastics/04-TransportExecutionPlan, rail/03-TransportExecutionPlan | | | open |
-| `TransportExecutionPlan/AtLocation` | 0..1 | ore/03-TransportExecutionPlan, plastics/04-TransportExecutionPlan, rail/03-TransportExecutionPlan | | | open |
 | `TransportExecutionTerms/CommissionPaymentTerms` | 0..1 | plastics/04-TransportExecutionPlan | | | open |
 
 ### Stage 1 step 1e, part 3: remittance advices (C17)
@@ -499,6 +498,17 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `Price/OrderableUnitFactorRate` | 0..1 | wood/02-Quotation, wood/03-Order, wood/08-Invoice | | | open |
 | `QuotationLine/SellerProposedSubstituteLineItem` | 0..1 | wood/02-Quotation | | | open |
 
+### G3: ore, rail (2026-11-19)
+
+Stage 6, building group G3 (C81, C90).
+
+> C81, D45: the ore train's transport request has no status, so it gives no status reason; how it updates the standing plan is said next to its reference to the plan (ore/02#F4, F5).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TransportExecutionPlanRequest/DocumentStatusReasonCode` | 0..1 | ore/02-TransportExecutionPlanRequest | | | open |
+| `TransportExecutionPlanRequest/DocumentStatusReasonDescription` | 0..1 | ore/02-TransportExecutionPlanRequest | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
@@ -519,6 +529,7 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
 | `LineItem/BeneficiaryParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `LineItem/OriginatorParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |

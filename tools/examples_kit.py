@@ -925,9 +925,9 @@ def address_of(pid):
 
 
 # Bonus and commission terms of a transport plan, only where the flow has them (a plan without them says nothing).
-TEP_BONUS = {"ore": ("2 % of the freight when the train is delivered on the first day of the window, so that the "
-                     "factory can start the blend a day early.", "The bonus the factory pays for an early train: "
-                                                                 "its stockyard can use the ore at once.")}
+TEP_BONUS = {"ore": ("2 % of the freight when the train is delivered on the first day of the service window, "
+                     "so that the factory can start the blend a day early.", "The bonus the factory pays for an "
+                     "early train: its stockyard can use the ore at once.")}
 TEP_COMMISSION = {}      # the barge is booked directly under the framework terms: no broker (plastics/04#F15)
 WAITING_LUME = 40        # the waiting-time rate of the framework terms, in lume an hour
 

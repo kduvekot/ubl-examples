@@ -25,16 +25,36 @@ def rate(a, b):
 
 
 # ---------------------------------------------------------------- the ore flow (Urvania, domestic)
+# The yearly supply agreement behind the monthly call-off (D45): the price basis, one train a month and the moisture
+# clause; the mine's number for it, in the style of the flow's other contract (VI-FRC-FW-2026).
+ORE_AGREEMENT = "SM-VI-SA-2026"
+ORE_MOISTURE = ("7.5", "6")       # measured at loading, and the limit of the agreement's moisture clause, in %
+ORE_ASSAY = "SM-ASSAY-26-12"      # the assay certificate of the sample taken at loading (world/documents.json, cited)
 ORE = kit.Flow("ore", "2026-03-02", [
     {"item": "ore-lump", "ordered": 1800, "delivered": "1788.4",
      "why": "One train: 30 wagons of about 60 tonnes.",
      "invoice_why": "The weighed quantity from the despatch advice, not the ordered quantity.",
      "line_allowance": {"percent": "1.5", "code": "64", "code_why": "The reason for the allowance as a code of "
-                        "UN/EDIFACT 5189: the moisture deduction is agreed in the contract.",
-                        "reason": "Moisture deduction",
-                        "why": "The sample at loading showed 7.5 % moisture, above the 6 % of the contract: the "
-                               "contract deducts 1.5 % of the value."},
+                        "UN/EDIFACT 5189: special agreement, the moisture clause of the supply agreement.",
+                        "reason": f"Moisture deduction under the moisture clause of supply agreement {ORE_AGREEMENT}: "
+                                  f"{ORE_MOISTURE[0]} % moisture measured at loading, above the {ORE_MOISTURE[1]} % "
+                                  "agreed",
+                        "why": f"The sample at loading showed {ORE_MOISTURE[0]} % moisture (assay {ORE_ASSAY}), above "
+                               f"the {ORE_MOISTURE[1]} % of the supply agreement, whose moisture clause deducts 1.5 % "
+                               "of the value (D45, ore/07#F2)."},
      "line_tax": True}])
+# the ore train on the map (O152, O197): the leg from the mine siding to the factory's siding, on the continuous line
+# past Ferrano; a loaded ore train averages about 40 km/h on the line's gradients (D45: it leaves in the morning and
+# arrives the same afternoon, on the first day of the window, and earns the plan's bonus)
+ORE_KM = wmap.leg_km("ore", "4-xu", "5-xu", "rail")
+ORE_TRAIN_KMH = 40
+ORE_DEPARTS = "10:05"            # once the 30 wagons are loaded, weighed and sheeted and the note is made out
+ORE_ARRIVES = wmap.after(wmap.at("2026-03-10", ORE_DEPARTS), ORE_KM / ORE_TRAIN_KMH + 0.25)   # with the shunt in
+ORE_BONUS = Decimal("2")         # % of the freight, for a train delivered on the first day of the window (plan)
+if ORE_ARRIVES.date().isoformat() != "2026-03-10" or ORE_ARRIVES.hour >= 17:
+    raise SystemExit("ore: the train no longer arrives on the afternoon of 10 March (D45, O152)")
+ORE_SIDING = kit.place("XUFER", "The factory's siding, where the train is placed for unloading.",
+                       name="Valdara Industries works siding, Ferrano")
 
 
 def ore(n, doc):
@@ -45,10 +65,21 @@ def ore(n, doc):
                          "Free carrier at the mine: the buyer arranges and pays the main transport, so the order names "
                          "the carrier the buyer has booked. Stated, because leaving it out would carry no meaning "
                          "(UBL rule IND6).", "Fucinalta mine siding",
-                         {"Note": V("Monthly call-off, one train.", "Says in words what the order is for."),
+                         {"OrderTypeCode": V("226", "UN/EDIFACT 1001 code 226, call off order: the month's train "
+                                                    "called off under the yearly supply agreement, which sets the "
+                                                    "price basis, one train a month and the moisture clause "
+                                                    "(D45, ore/01#F4)."),
+                          "Note": V("The call-off for March under the supply agreement for 2026: one train.",
+                                    "Says in words what the order is for."),
+                          "Contract": {"ID": V(ORE_AGREEMENT, "The supply agreement the order calls off."),
+                                       "ContractTypeCode": V("SUPPLY", "Recurring supplies at agreed quantities: one "
+                                                                       "train a month."),
+                                       "ValidityPeriod": {"StartDate": V("2026-01-01", "A yearly agreement, for 2026."),
+                                                          "EndDate": V("2026-12-31", "To the end of the year.")}},
                           "Delivery": {"RequestedDeliveryPeriod": {
-                              "StartDate": V(f.date(7), "The week in which the factory wants the ore."),
-                              "EndDate": V(f.date(11), "The end of that week.")}}})
+                              "StartDate": V(f.date(8), "The loading window for March's train, from Tuesday 10 "
+                                                        "March: the window the buyer then books the train in."),
+                              "EndDate": V(f.date(11), "To Friday 13 March.")}}})
     if doc["doc"] == "TransportExecutionPlanRequest":
         return kit.tep_request(f, n, doc, 1, "The day after the order: the buyer books the train it named in its order.",
                                8, 1800000, "The expected weight: the ordered quantity.")
@@ -57,24 +88,64 @@ def ore(n, doc):
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 8, "The day the train was loaded and weighed.",
                                    "Weighed on the weighbridge at loading: 30 wagons.",
-                                   {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                                   {"IssueTime": V("10:20:00", f"Sent once the train has left the siding at "
+                                                               f"{ORE_DEPARTS}, so that the factory can plan the "
+                                                               "unloading before it arrives."),
+                                    "Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                          "The buyer's consignment, quoted back.")}}})
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the loaded train.", weighed_kg,
-                           "The weight the carrier takes over, from the weighbridge.")
+        return kit.waybill(f, n, doc, 8, "Made out at the mine siding when the carrier took over the loaded train, "
+                                         "and completed at delivery: this is the receiver's electronic copy, sent "
+                                         "once the consignee has signed for the train in its siding, so it records "
+                                         "the arrival (D45, ore/06#F4).", weighed_kg,
+                           "The weight the carrier takes over, from the weighbridge.",
+                           {"Shipment": {"Delivery": {
+                               "ActualDeliveryDate": V(f.date(8), "The train arrived the same day, the first day of "
+                                                                  "the window."),
+                               "ActualDeliveryTime": V(wmap.hm(ORE_ARRIVES), f"It left the mine siding at "
+                                                       f"{ORE_DEPARTS} and ran {wmap.whole(ORE_KM)} km on the line past "
+                                                       "Ferrano at about 40 km/h, then shunted into the factory's "
+                                                       "siding."),
+                               "DeliveryLocation": ORE_SIDING}}})
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
+        freight = build_examples.money(Decimal("1788.4") * Decimal(str(ITEM["rail-ore"]["price"]["amount"])), "XUF")
         return kit.invoice(f, n, doc, 10, "Issued after the carriage was performed.",
                            {"AdditionalDocumentReference": [
-                               {"ID": V(f.numbers["tep"], "The transport plan with the agreed price.")},
-                               {"ID": V(f.numbers["waybill"], "The consignment note of the carriage invoiced.")}]},
+                               {"ID": V(f.numbers["tep"], "The transport plan with the agreed price and the bonus.")},
+                               {"ID": V(f.numbers["waybill"], "The consignment note of the carriage invoiced, with "
+                                                              "its arrival.")}],
+                            "ContractDocumentReference": {"ID": V("VI-FRC-FW-2026", "The framework transport "
+                                                                  "agreement the freight and its terms rest on "
+                                                                  "(ore/06#F5).")}},
                            [{"item": "rail-ore", "qty": "1788.4",
                              "invoice_why": "The weight carried, from the consignment note: the freight is per tonne."}],
-                           key="freight-invoice", terms="plan")
+                           key="freight-invoice", terms="plan",
+                           charges=[{"like": "rail-ore", "amount": build_examples.money(freight * ORE_BONUS / 100, "XUF"),
+                                     "code": "ZZZ", "code_why": "UN/EDIFACT 7161 has no code for a bonus: mutually "
+                                                                "defined, the plan's bonus term.",
+                                     "reason": "Bonus: train delivered on the first day of the window, 10 March",
+                                     "why": "The plan's bonus term, earned: the factory could start the blend a day "
+                                            "early (D45).",
+                                     "amount_why": f"{ORE_BONUS} % of the freight of {freight:,}."}],
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(8), "The day the train was delivered "
+                                                                                  "in the factory's siding, the first "
+                                                                                  "day of the window: why the bonus "
+                                                                                  "is due."),
+                                               "ActualDeliveryTime": V(wmap.hm(ORE_ARRIVES), "As the consignment note "
+                                                                                             "records it."),
+                                               "DeliveryLocation": ORE_SIDING}})
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 9, "Issued the day after the goods were despatched and weighed.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"],
-                                                                  "The despatch advice of the goods invoiced.")}})
+                                                                  "The despatch advice of the goods invoiced.")},
+                            "AdditionalDocumentReference": {"ID": V(ORE_ASSAY, "The assay certificate of the sample "
+                                                                               "taken at loading, which measured the "
+                                                                               "moisture the deduction rests on "
+                                                                               "(ore/07#F2).")},
+                            "ContractDocumentReference": {"ID": V(ORE_AGREEMENT, "The supply agreement whose price "
+                                                                                 "basis and moisture clause the "
+                                                                                 "invoice applies.")}})
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 38, "The day the payment is made, one day before the due date.")
     raise SystemExit(f"ore scenario: no document {n} {doc['doc']}")
@@ -8442,6 +8513,13 @@ def _(f, n, doc, out):
             ext["TaxInclusiveAmount"] = amount(base + tax, "XUF", "The price extension with 20 % value added tax.")
             ext["TaxTotal"] = {"TaxAmount": amount(tax, "XUF", "The tax on the price extension, before the line's "
                                                               "allowance.")}
+        if doc["from"] == "4-xu":       # the moisture of this train's ore, measured at loading (D45, ore/07#F2)
+            props = ln["Item"].setdefault("AdditionalItemProperty", [])
+            props.append({"Name": V("Moisture content", "A measured property of the ore delivered, not of the "
+                                                         "item in general: the moisture of this train's lot."),
+                          "ValueQuantity": V(ORE_MOISTURE[0], f"Measured on the sample taken at loading (assay "
+                                                              f"{ORE_ASSAY}); the supply agreement allows "
+                                                              f"{ORE_MOISTURE[1]} %.", unitCode="P1")})
     return {}
 
 
@@ -8664,12 +8742,17 @@ def _(f, n, doc, out):
 
 @enrich("ore", "TransportExecutionPlanRequest")
 def _(f, n, doc, out):
-    return {"DocumentStatusReasonCode": V("UPDATE", "The request updates the season's standing plan."),
-            "DocumentStatusReasonDescription": V("This week's quantity of ore differs from the standing plan.",
-                                                 "Why it is sent."),
-            "TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan for the ore "
-                                                                                   "season, agreed in January "
-                                                                                   "(not shown).")},
+    # no status reason: the request has no status, and its relation to the standing plan is said next to the
+    # reference (D45, ore/02#F5); the quantity is this month's, the standing plan's train (ore/02#F4)
+    out["Consignment"]["SummaryDescription"] = V("One train of 30 wagons, about 1,800 t of lump iron ore.",
+                                                 "What is to be carried, before the wagons are loaded and weighed.")
+    out["Consignment"]["TotalGoodsItemQuantity"] = qty(1, "EA", "The number of goods items: the ore.")
+    return {"TransportExecutionPlanDocumentReference": {
+                "ID": V("FRC-TEP-26-0001", "The standing plan for the ore season, agreed in January (not shown)."),
+                "DocumentDescription": V("The standing plan for 2026 provides one train a month of 30 wagons, about "
+                                         "1,800 t; this request books March's train, for this month's call-off of "
+                                         "1,800 t, in the loading window of 10 to 13 March.",
+                                         "How this request updates the standing plan (ore/02#F4, F5).")},
             "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The rail carrier's published "
                                                                                    "service description (not "
                                                                                    "shown).")},
@@ -8689,6 +8772,27 @@ def _(f, n, doc, out):
         for nr in lines_of(d, "NotificationRequirement"):
             nr["NotificationPeriod"] = {"StartDate": V(f.date(8), "The notice is given on the day of the train"),
                                         "EndDate": V(f.date(8), "before it arrives (ore/03#F2).")}
+    # confirmed as requested, so the plan carries what the request asked: the weighing at the mine siding with its
+    # tariff class, the place of that service and the user's sheeting term; the pre-arrival notice and the slot and
+    # unloading terms are the carrier's own (D45, ore/03#F3)
+    out["DocumentStatusReasonDescription"] = V("Capacity available in the requested window, 10 to 13 March: the "
+                                               "train is planned for its first day.", "Why it is confirmed as "
+                                                                                      "requested.")
+    out["AdditionalTransportationService"] = {
+        "TransportServiceCode": V("WEIGH", "The wagons are weighed at the mine siding, as requested: the weighed "
+                                           "tonnes are what the freight and the ore are billed by."),
+        "TariffClassCode": V("B", "The carrier's tariff class, as requested.")}
+    out["AtLocation"] = kit.place("XUFNT", "Where the weighing, a service without movement, is done.",
+                                  name="Fucinalta mine siding")
+    terms = out["TransportExecutionTerms"]
+    terms["TransportUserSpecialTerms"] = V("Wagons sheeted against dust.", "The user's term, as the request asked "
+                                                                            "it.")
+    terms["TransportServiceProviderSpecialTerms"] = V("Delivery within the agreed slot; the consignee unloads. "
+                                                      "Waiting time beyond two hours is charged.", "The carrier's "
+                                                      "terms.")
+    out["Consignment"]["SummaryDescription"] = V("One train of 30 wagons, about 1,800 t of lump iron ore.",
+                                                 "What is to be carried, before the wagons are loaded and weighed.")
+    out["Consignment"]["TotalGoodsItemQuantity"] = qty(1, "EA", "The number of goods items: the ore.")
     return {"TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan this plan "
                                                                                    "updates (not shown).")},
             "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The service description it "
