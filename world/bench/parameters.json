@@ -238,16 +238,38 @@
         "zinc_um_typ": 200,
         "zinc_density": 7140,
         "mould": "green sand, two frames per mould, parting at the web mid-plane",
-        "melt": "blast-furnace hot metal from Serravona ore, desulphurised, adjusted in an induction furnace with returns and steel scrap",
+        "melt": "65 % blast-furnace hot metal from Serravona ore, desulphurised, and 35 % steel and iron scrap, melted with the returns in an induction furnace (owner, O225)",
         "treatment": "magnesium treatment with FeSiMg (about 5-6 % Mg) in a tundish-cover ladle, about 1.3 % addition, residual Mg 0.035-0.05 %; stream inoculation with FeSi75 about 0.2 %",
         "heat_treatment": "as-cast ferritic; ferritising anneal if the thin walls show carbides",
         "melt_loss_pct": 2.0,
+        "scrap_share_pct": 35,
         "raw_per_t_liquid": {
           "iron_ore_kg": 1450,
           "reductant_kg": 500,
           "limestone_kg": 270,
           "FeSiMg_kg": 13,
           "inoculant_kg": 2
+        },
+        "footprint": {
+          "_note": "Factors for the bench's footprint per stage (O225, owner 2026-11-19): the published figures of the all-ore iron (A1-A2 26 kg, A3 43 kg CO2e a bench) are split with these factors and the iron's part scaled to the scrap share. Cut-off approach as in EN 15804: scrap enters free of the burden of its first life, carrying only its collection, sorting and haulage. Every factor is stated (an own estimate of the right order of size), not taken from a source, unless a source is named.",
+          "published_all_ore": {
+            "A1_A2": 26,
+            "A3": 43
+          },
+          "ore_sourcing_kg_per_kg_ore": 0.02,
+          "ore_sourcing_why": "Mining, screening and the rail haul of the lump ore from Serravona, about 0.02 kg CO2e per kg ore (stated, not sourced)",
+          "reductant_sourcing_kg_per_kg": 0.25,
+          "reductant_sourcing_why": "Coal mining and the supply of coke and injection coal, about 0.25 kg CO2e per kg (stated, not sourced)",
+          "limestone_sourcing_kg_per_kg": 0.01,
+          "limestone_sourcing_why": "Quarrying and haulage of the flux, about 0.01 kg CO2e per kg (stated, not sourced)",
+          "scrap_sourcing_kg_per_kg": 0.05,
+          "scrap_sourcing_why": "Collection, sorting, shredding and haulage of steel and iron scrap, about 0.05 kg CO2e per kg; no burden of its first life (cut-off, EN 15804) (stated, not sourced)",
+          "hot_metal_kg_per_kg": 1.6,
+          "hot_metal_why": "The works' blast furnace with its sinter and coke making, about 1.6 kg CO2e per kg hot metal (stated, of the order of the blast-furnace route's share of worldsteel's BF-BOF average; not checked against a source)",
+          "scrap_melt_kwh_per_kg": 0.55,
+          "scrap_melt_why": "Melting cold scrap in the induction furnace, about 550 kWh a tonne (stated, not sourced)",
+          "grid_kg_per_kwh": 0.4,
+          "grid_why": "Urvania's electricity, largely from gas-fired stations such as Montebrio, about 0.4 kg CO2e per kWh (stated, not sourced)"
         }
       },
       "aluminium": {

@@ -383,12 +383,12 @@ Inside `TenderingTerms`:
   The algorithm.
 - `TenderPreparation/TenderEncryptionData/EncryptionSymmetricAlgorithm/OID` = **2.16.840.1.101.3.4.1.46**  
   Its OID.
-- `ContractExecutionRequirement/Name` = **Recycled steel**  
+- `ContractExecutionRequirement/Name` = **Recycled metal**  
   A condition of execution.
 - `ContractExecutionRequirement/ExecutionRequirementCode` = **ENVIRONMENTAL** (listID `urn:ubl-examples:world:codelist:ExecutionRequirementCode`)  
   Its kind. The code is from the Trade Accord's execution requirement list: ENVIRONMENTAL = Environmental requirement.
-- `ContractExecutionRequirement/Description` = **At least 30 % recycled steel in the frames.**  
-  What.
+- `ContractExecutionRequirement/Description` = **At least 30 % recycled metal in the frames.**  
+  What: the frames are cast iron, not steel; Valdara's carry 35 % steel and iron scrap (O225).
 - `AwardingTerms/WeightingAlgorithmCode` = **WSUM** (listID `urn:ubl-examples:world:codelist:WeightingAlgorithmCode`)  
   A weighted sum. The code is from the Trade Accord's weighting algorithm list: WSUM = Weighted sum.
 - `AwardingTerms/Description` = **Price 60 %, quality 40 %.**  
@@ -1264,9 +1264,9 @@ Inside `ProcurementProjectLot`:
       </cac:TenderEncryptionData>
     </cac:TenderPreparation>
     <cac:ContractExecutionRequirement>
-      <cbc:Name>Recycled steel</cbc:Name>
+      <cbc:Name>Recycled metal</cbc:Name>
       <cbc:ExecutionRequirementCode listID="urn:ubl-examples:world:codelist:ExecutionRequirementCode">ENVIRONMENTAL</cbc:ExecutionRequirementCode>
-      <cbc:Description>At least 30 % recycled steel in the frames.</cbc:Description>
+      <cbc:Description>At least 30 % recycled metal in the frames.</cbc:Description>
     </cac:ContractExecutionRequirement>
     <cac:AwardingTerms>
       <cbc:WeightingAlgorithmCode listID="urn:ubl-examples:world:codelist:WeightingAlgorithmCode">WSUM</cbc:WeightingAlgorithmCode>

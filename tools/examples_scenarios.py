@@ -8719,10 +8719,11 @@ def tendering_terms(f, call=False):
                                       "EncryptionSymmetricAlgorithm": {"ID": V("AES-256-GCM", "The algorithm."),
                                                                        "OID": V("2.16.840.1.101.3.4.1.46", "Its "
                                                                                                            "OID.")}}},
-            "ContractExecutionRequirement": {"Name": V("Recycled steel", "A condition of execution."),
+            "ContractExecutionRequirement": {"Name": V("Recycled metal", "A condition of execution."),
                                              "ExecutionRequirementCode": V("ENVIRONMENTAL", "Its kind."),
-                                             "Description": V("At least 30 % recycled steel in the frames.",
-                                                              "What.")},
+                                             "Description": V("At least 30 % recycled metal in the frames.",
+                                                              "What: the frames are cast iron, not steel; Valdara's "
+                                                              "carry 35 % steel and iron scrap (O225).")},
             "AwardingTerms": {
                 "WeightingAlgorithmCode": V("WSUM", "A weighted sum."),
                 "Description": V("Price 60 %, quality 40 %.", "The award."),

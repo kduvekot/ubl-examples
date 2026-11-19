@@ -20,6 +20,23 @@ def n(x, nd=1):
     return f"{x:,.{nd}f}" if isinstance(x, (int, float)) else str(x)
 
 
+def footprint(FM, net_liquid):
+    """The bench's footprint per stage with the scrap share (O225): the iron's part of the published all-ore figures,
+    from the stated factors, scaled to the hot metal, plus the scrap's sourcing and melting."""
+    F, raw = FM["footprint"], FM["raw_per_t_liquid"]
+    sh = FM["scrap_share_pct"] / 100
+    per_kg_hot = (raw["iron_ore_kg"] * F["ore_sourcing_kg_per_kg_ore"] + raw["reductant_kg"] * F["reductant_sourcing_kg_per_kg"]
+                  + raw["limestone_kg"] * F["limestone_sourcing_kg_per_kg"]) / 1000
+    pub = F["published_all_ore"]
+    iron_a12_old = net_liquid * per_kg_hot
+    iron_a3_old = net_liquid * F["hot_metal_kg_per_kg"]
+    hot, scrap = net_liquid * (1 - sh), net_liquid * sh
+    a12 = pub["A1_A2"] - iron_a12_old + hot * per_kg_hot + scrap * F["scrap_sourcing_kg_per_kg"]
+    a3 = pub["A3"] - iron_a3_old + hot * F["hot_metal_kg_per_kg"] + scrap * F["scrap_melt_kwh_per_kg"] * F["grid_kg_per_kwh"]
+    return dict(F=F, pub=pub, iron_a12_old=iron_a12_old, iron_a3_old=iron_a3_old, a12=a12, a3=a3,
+                a12_r=round(a12), a3_r=round(a3), hot=hot, scrap=scrap)
+
+
 def write(r, here):
     here = Path(here)
     r = json.loads(json.dumps(r))          # same key types as results.json
@@ -137,7 +154,7 @@ def write(r, here):
     A("| items.json, bench `description` | 'Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.' | 'Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.' |")
     A("| items.json, property 'Frame material' | 'Cast steel, hot-dip galvanised' | 'Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated' |")
     A("| items.json, property 'Slat wood' | 'Kiln-dried hardwood' | 'Thermally modified ash' |")
-    A(f"| items.json, circularity resource | 'STEEL 34 KGM, Steel made from Serravona ore in Urvania' | an iron line (e.g. 'IRON {n(net_liquid, 0)} KGM, ductile iron made from Serravona ore in Urvania', the net liquid iron), and a stainless line ({n(m['stainless_fixings'], 2)} kg A4) if wanted |")
+    A(f"| items.json, circularity resource | 'STEEL 34 KGM, Steel made from Serravona ore in Urvania' | two iron lines (O225): 'IRON {n(net_liquid * (1 - FM['scrap_share_pct'] / 100), 1)} KGM' ore-based and 'IRON {n(net_liquid * FM['scrap_share_pct'] / 100, 1)} KGM' recycled, {FM['scrap_share_pct']} % of the frames' iron, the net liquid iron; and a stainless line ({n(m['stainless_fixings'], 2)} kg A4) if wanted |")
     A(f"| items.json, circularity resource | 'HARDWOOD 22.5 KGM, slats from Upland State, Bayvarra' | about {n(m['wood_bench'], 1)} kg of thermally modified ash (or the {n(5 * blank_l * wa['untreated_density'] / 1000, 0)} kg of ash before modification, as O25 decides) |")
     A(f"| items.json, weights | bench 38.0 / 41.5 kg; spare frame 9.5 / 10.2 kg | bench {n(m['net'], 1)} / {n(pa['gross'], 1)} kg; spare frame {n(m['frame'], 1)} / {n(pa['carton1'], 1)} kg |")
     A("| items.json, slat item (slat-1800) | 1,800 x 95 x 38 mm hardwood, kiln-dried 12 %, 4.5 kg | 1,800 x 95 x 45 mm thermally modified ash, about 5 % moisture, " + n(m['slat'], 2) + " kg, made by Marrowdale |")
@@ -284,16 +301,32 @@ def write(r, here):
     A("")
     A("**Raw materials for the iron** (per tonne of liquid iron, then per bench for the net liquid iron):")
     A("")
+    sh = FM["scrap_share_pct"] / 100
+    hot = net_liquid * (1 - sh)
+    scrap = net_liquid * sh
+    A(f"The iron is {n(100 * (1 - sh), 0)} % blast-furnace hot metal from Serravona ore and {n(100 * sh, 0)} % steel and iron scrap "
+      "(owner, O225), melted together with the returns in the induction furnace; the ore, the reductant and the limestone go only into the hot metal. "
+      f"Per bench: {n(hot, 1)} kg ore-based iron and {n(scrap, 1)} kg recycled iron, {n(net_liquid, 1)} kg in all.")
+    A("")
     A("| Input | per t liquid iron | per bench | Basis |")
     A("|---|---|---|---|")
-    A(f"| Iron ore (about 62–65 % Fe) | {raw['iron_ore_kg']} kg | {n(raw['iron_ore_kg'] * net_liquid / 1000, 1)} kg | worldsteel gives 1,370 kg of ore per t of crude steel by the blast furnace route (with 125 kg scrap); per t of iron at about 93 % Fe from 63 % ore about 1,450 kg (own estimate) |")
-    A(f"| Reductant (coke and injected coal) | about {raw['reductant_kg']} kg | {n(raw['reductant_kg'] * net_liquid / 1000, 1)} kg | general knowledge (300–350 kg coke + 150–200 kg coal per t hot metal); worldsteel: 780 kg metallurgical coal per t crude steel |")
-    A(f"| Limestone | {raw['limestone_kg']} kg | {n(raw['limestone_kg'] * net_liquid / 1000, 1)} kg | worldsteel, per t crude steel (taken as the same) |")
+    A(f"| Iron ore (about 62–65 % Fe) | {n(raw['iron_ore_kg'] * (1 - sh), 0)} kg | {n(raw['iron_ore_kg'] * hot / 1000, 1)} kg | {raw['iron_ore_kg']} kg per t hot metal: worldsteel gives 1,370 kg of ore per t of crude steel by the blast furnace route (with 125 kg scrap); per t of iron at about 93 % Fe from 63 % ore about 1,450 kg (own estimate) |")
+    A(f"| Steel and iron scrap | {n(1000 * sh, 0)} kg | {n(scrap, 1)} kg | the scrap share of the charge (O225); its melt loss is in the net liquid iron |")
+    A(f"| Reductant (coke and injected coal) | about {n(raw['reductant_kg'] * (1 - sh), 0)} kg | {n(raw['reductant_kg'] * hot / 1000, 1)} kg | {raw['reductant_kg']} kg per t hot metal: general knowledge (300–350 kg coke + 150–200 kg coal per t hot metal); worldsteel: 780 kg metallurgical coal per t crude steel |")
+    A(f"| Limestone | {n(raw['limestone_kg'] * (1 - sh), 0)} kg | {n(raw['limestone_kg'] * hot / 1000, 1)} kg | {raw['limestone_kg']} kg per t hot metal: worldsteel, per t crude steel (taken as the same) |")
     A(f"| FeSiMg (treatment of all poured iron) | {raw['FeSiMg_kg']} kg | {n(raw['FeSiMg_kg'] * c['poured'] / 1000, 2)} kg | about 1.3 % addition (general knowledge) |")
     A(f"| Inoculant FeSi | {raw['inoculant_kg']} kg | {n(raw['inoculant_kg'] * c['poured'] / 1000, 2)} kg | about 0.2 % (general knowledge) |")
     A("")
-    A("The world's integrated works also melts its returns (gates) and may add steel scrap in the induction furnace; the table assumes all new iron comes "
-      "from ore. The carbon footprint itself is not computed here.")
+    fp = footprint(FM, net_liquid)
+    A("**The footprint with the scrap share** (O225; kg CO2e a bench). The published figures of the all-ore iron are split with the factors below; "
+      "the iron's part is scaled to the hot metal, and the scrap adds its own sourcing and melting. Cut-off approach as in EN 15804: scrap carries no burden "
+      "of its first life. The factors are stated, not sourced (`parameters.json`, `footprint`).")
+    A("")
+    A("| Stage | All ore | Of it the iron | With 35 % scrap | Factors |")
+    A("|---|---|---|---|---|")
+    A(f"| Sourcing, A1–A2 | {fp['pub']['A1_A2']} | {n(fp['iron_a12_old'], 1)} | {n(fp['a12'], 1)} → **{fp['a12_r']}** | ore {fp['F']['ore_sourcing_kg_per_kg_ore']}, reductant {fp['F']['reductant_sourcing_kg_per_kg']}, limestone {fp['F']['limestone_sourcing_kg_per_kg']} kg CO2e/kg on the hot metal's inputs; scrap {fp['F']['scrap_sourcing_kg_per_kg']} kg CO2e/kg |")
+    A(f"| Manufacturing, A3 | {fp['pub']['A3']} | {n(fp['iron_a3_old'], 1)} | {n(fp['a3'], 1)} → **{fp['a3_r']}** | hot metal {fp['F']['hot_metal_kg_per_kg']} kg CO2e/kg; scrap melting {fp['F']['scrap_melt_kwh_per_kg']} kWh/kg at {fp['F']['grid_kg_per_kwh']} kg CO2e/kWh |")
+    A(f"| From the mine to the gate | {fp['pub']['A1_A2'] + fp['pub']['A3']} | | **{fp['a12_r'] + fp['a3_r']}** | |")
     A("")
     A("## 6. Derived figures")
     A("")
@@ -366,7 +399,9 @@ def write(r, here):
         ("Metal in the product", "about 21 kg steel", f"{n(m['metal_in_product'], 1)} kg cast iron + {n(m['stainless_fixings'], 2)} kg stainless", "O25"),
         ("Hardwood consumption", "22.5 kg", f"{n(m['wood_bench'], 1)} kg in the product", "O25"),
         ("Sawmill truck", "21.6 t of slats", f"{n(trk['total_kg'] / 1000, 1)} t with pallets", "O66 text"),
-        ("Carbon footprint", "96 kg CO2e", "not computed", "O25"),
+        ("Carbon footprint, mine to gate", "69 kg CO2e (26 + 43, all ore)",
+         f"{footprint(FM, net_liquid)['a12_r']} + {footprint(FM, net_liquid)['a3_r']} kg CO2e with {FM['scrap_share_pct']} % scrap "
+         "(stated factors)", "O225"),
     ]
     for row in rows:
         A("| " + " | ".join(row) + " |")

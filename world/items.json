@@ -190,9 +190,15 @@
     "resources": [
      [
       "IRON",
-      "22",
+      "14.0",
       "KGM",
-      "Ductile iron made from Serravona ore in Urvania, as poured for the two side frames less the gates remelted"
+      "Ore-based ductile iron, 65 % of the frames' iron: blast-furnace iron from Serravona ore in Urvania, as poured for the two side frames less the gates remelted"
+     ],
+     [
+      "IRON",
+      "7.6",
+      "KGM",
+      "Recycled ductile iron, 35 % of the frames' iron: steel and iron scrap melted in Valdara's induction furnace, as poured for the two side frames less the gates remelted"
      ],
      [
       "HARDWOOD",
@@ -314,39 +320,39 @@
    "emissions": [
     {
      "type": "CO2E",
-     "value": "26",
+     "value": "25",
      "unit": "KGM",
      "standard": "Greenhouse Gas Protocol Product Standard",
      "stage": "SOURCING",
-     "stage_desc": "Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.",
+     "stage_desc": "Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine for the 65 % of the iron made from ore, the steel and iron scrap for the other 35 %, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.",
      "method": {
       "code": "CALCULATED",
-      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)",
       "doc": "VI-LCA-2025"
      },
      "period": [
       "2025-01-01",
       "2025-12-31"
      ],
-     "description": "The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+     "description": "The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works; the scrap carries none of the burden of its first life (cut-off, EN 15804), only its collection, sorting and haulage. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     },
     {
      "type": "CO2E",
-     "value": "43",
+     "value": "33",
      "unit": "KGM",
      "standard": "Greenhouse Gas Protocol Product Standard",
      "stage": "MANUFACTURING",
-     "stage_desc": "Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace, casting in its foundry, galvanising, powder coating and packing.",
+     "stage_desc": "Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace for 65 % of the frames' iron, melting it with 35 % steel and iron scrap in the induction furnace, casting in its foundry, galvanising, powder coating and packing.",
      "method": {
       "code": "CALCULATED",
-      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)",
       "doc": "VI-LCA-2025"
      },
      "period": [
       "2025-01-01",
       "2025-12-31"
      ],
-     "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+     "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the blast furnace's iron; the 35 % of scrap needs no blast furnace, only melting; the pallet is left out as transport packaging that goes back. With the sourcing figure, 58 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     }
    ]
   },
@@ -493,9 +499,15 @@
     "resources": [
      [
       "IRON",
-      "22",
+      "14.0",
       "KGM",
-      "Ductile iron made from Serravona ore in Urvania, as poured for the two side frames less the gates remelted"
+      "Ore-based ductile iron, 65 % of the frames' iron: blast-furnace iron from Serravona ore in Urvania, as poured for the two side frames less the gates remelted"
+     ],
+     [
+      "IRON",
+      "7.6",
+      "KGM",
+      "Recycled ductile iron, 35 % of the frames' iron: steel and iron scrap melted in Valdara's induction furnace, as poured for the two side frames less the gates remelted"
      ],
      [
       "HARDWOOD",
@@ -618,39 +630,39 @@
    "emissions": [
     {
      "type": "CO2E",
-     "value": "26",
+     "value": "25",
      "unit": "KGM",
      "standard": "Greenhouse Gas Protocol Product Standard",
      "stage": "SOURCING",
-     "stage_desc": "Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.",
+     "stage_desc": "Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine for the 65 % of the iron made from ore, the steel and iron scrap for the other 35 %, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.",
      "method": {
       "code": "CALCULATED",
-      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)",
       "doc": "VI-LCA-2025"
      },
      "period": [
       "2025-01-01",
       "2025-12-31"
      ],
-     "description": "The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+     "description": "The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works; the scrap carries none of the burden of its first life (cut-off, EN 15804), only its collection, sorting and haulage. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     },
     {
      "type": "CO2E",
-     "value": "43",
+     "value": "33",
      "unit": "KGM",
      "standard": "Greenhouse Gas Protocol Product Standard",
      "stage": "MANUFACTURING",
-     "stage_desc": "Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace, casting in its foundry, galvanising, powder coating and packing.",
+     "stage_desc": "Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace for 65 % of the frames' iron, melting it with 35 % steel and iron scrap in the induction furnace, casting in its foundry, galvanising, powder coating and packing.",
      "method": {
       "code": "CALCULATED",
-      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)",
       "doc": "VI-LCA-2025"
      },
      "period": [
       "2025-01-01",
       "2025-12-31"
      ],
-     "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+     "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the blast furnace's iron; the 35 % of scrap needs no blast furnace, only melting; the pallet is left out as transport packaging that goes back. With the sourcing figure, 58 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     }
    ],
    "buyer_prices": {

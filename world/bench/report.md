@@ -48,7 +48,7 @@ The sawmill truck is unchanged: 21.02 t against 24.7 t; 14 floor positions, two 
 | items.json, bench `description` | 'Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.' | 'Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.' |
 | items.json, property 'Frame material' | 'Cast steel, hot-dip galvanised' | 'Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated' |
 | items.json, property 'Slat wood' | 'Kiln-dried hardwood' | 'Thermally modified ash' |
-| items.json, circularity resource | 'STEEL 34 KGM, Steel made from Serravona ore in Urvania' | an iron line (e.g. 'IRON 22 KGM, ductile iron made from Serravona ore in Urvania', the net liquid iron), and a stainless line (0.75 kg A4) if wanted |
+| items.json, circularity resource | 'STEEL 34 KGM, Steel made from Serravona ore in Urvania' | two iron lines (O225): 'IRON 14.0 KGM' ore-based and 'IRON 7.6 KGM' recycled, 35 % of the frames' iron, the net liquid iron; and a stainless line (0.75 kg A4) if wanted |
 | items.json, circularity resource | 'HARDWOOD 22.5 KGM, slats from Upland State, Bayvarra' | about 21.2 kg of thermally modified ash (or the 29 kg of ash before modification, as O25 decides) |
 | items.json, weights | bench 38.0 / 41.5 kg; spare frame 9.5 / 10.2 kg | bench 44.1 / 47.0 kg; spare frame 11.1 / 12.2 kg |
 | items.json, slat item (slat-1800) | 1,800 x 95 x 38 mm hardwood, kiln-dried 12 %, 4.5 kg | 1,800 x 95 x 45 mm thermally modified ash, about 5 % moisture, 4.24 kg, made by Marrowdale |
@@ -122,7 +122,7 @@ Render colours are approximations: Ferro grey as RAL 7011 (about #555D61), Moss 
 
 ### 4.5 Casting process (ductile iron)
 
-- **Melting:** blast-furnace hot metal from Serravona ore, desulphurised, adjusted in an induction furnace with returns and steel scrap. Ductile iron needs a low-sulphur base iron; blast-furnace hot metal is a usual base after desulphurisation (general knowledge).
+- **Melting:** 65 % blast-furnace hot metal from Serravona ore, desulphurised, and 35 % steel and iron scrap, melted with the returns in an induction furnace (owner, O225). Ductile iron needs a low-sulphur base iron; blast-furnace hot metal is a usual base after desulphurisation (general knowledge).
 - **Treatment:** magnesium treatment with FeSiMg (about 5-6 % Mg) in a tundish-cover ladle, about 1.3 % addition, residual Mg 0.035-0.05 %; stream inoculation with FeSi75 about 0.2 % (general knowledge; typical practice, not from a source checked here).
 - **Mould:** green sand, two frames per mould, parting at the web mid-plane. **Pouring temperature 1400–1440 °C**, held within ±14 °C, as directly applied risering requires (QIT/Karsay notes: pouring temperature for DAR depends on the modulus; thin sections need it high).
 - **Risering:** graphite expansion during solidification compensates the shrinkage, so ductile iron needs much smaller risers than steel. The QIT/Karsay rules: in a weak (green sand) mould, a casting whose significant modulus is at most 4 mm is made by **directly applied risering**, the gating or sprue feeding only the liquid contraction; above 4 mm, pressure-control risers; riserless only in rigid moulds above 25 mm. Here the significant modulus is 3.5 mm (bars 3.5 mm, feet 3.4 mm), so **no risers**. Gates of 4 MN x 4 MN = 10 x 10 mm with the contact modulus MN = 2.5 mm (0.7 MS, read from the QIT chart's trend; an assumption), at least 5 times as long as thick (49 mm). Sprue Ø19 mm, runner 26 x 22 mm, pour 23 kg in about 7 s.
@@ -149,15 +149,24 @@ Render colours are approximations: Ferro grey as RAL 7011 (about #555D61), Moss 
 
 **Raw materials for the iron** (per tonne of liquid iron, then per bench for the net liquid iron):
 
+The iron is 65 % blast-furnace hot metal from Serravona ore and 35 % steel and iron scrap (owner, O225), melted together with the returns in the induction furnace; the ore, the reductant and the limestone go only into the hot metal. Per bench: 14.0 kg ore-based iron and 7.6 kg recycled iron, 21.6 kg in all.
+
 | Input | per t liquid iron | per bench | Basis |
 |---|---|---|---|
-| Iron ore (about 62–65 % Fe) | 1450 kg | 31.3 kg | worldsteel gives 1,370 kg of ore per t of crude steel by the blast furnace route (with 125 kg scrap); per t of iron at about 93 % Fe from 63 % ore about 1,450 kg (own estimate) |
-| Reductant (coke and injected coal) | about 500 kg | 10.8 kg | general knowledge (300–350 kg coke + 150–200 kg coal per t hot metal); worldsteel: 780 kg metallurgical coal per t crude steel |
-| Limestone | 270 kg | 5.8 kg | worldsteel, per t crude steel (taken as the same) |
+| Iron ore (about 62–65 % Fe) | 942 kg | 20.3 kg | 1450 kg per t hot metal: worldsteel gives 1,370 kg of ore per t of crude steel by the blast furnace route (with 125 kg scrap); per t of iron at about 93 % Fe from 63 % ore about 1,450 kg (own estimate) |
+| Steel and iron scrap | 350 kg | 7.6 kg | the scrap share of the charge (O225); its melt loss is in the net liquid iron |
+| Reductant (coke and injected coal) | about 325 kg | 7.0 kg | 500 kg per t hot metal: general knowledge (300–350 kg coke + 150–200 kg coal per t hot metal); worldsteel: 780 kg metallurgical coal per t crude steel |
+| Limestone | 176 kg | 3.8 kg | 270 kg per t hot metal: worldsteel, per t crude steel (taken as the same) |
 | FeSiMg (treatment of all poured iron) | 13 kg | 0.31 kg | about 1.3 % addition (general knowledge) |
 | Inoculant FeSi | 2 kg | 0.05 kg | about 0.2 % (general knowledge) |
 
-The world's integrated works also melts its returns (gates) and may add steel scrap in the induction furnace; the table assumes all new iron comes from ore. The carbon footprint itself is not computed here.
+**The footprint with the scrap share** (O225; kg CO2e a bench). The published figures of the all-ore iron are split with the factors below; the iron's part is scaled to the hot metal, and the scrap adds its own sourcing and melting. Cut-off approach as in EN 15804: scrap carries no burden of its first life. The factors are stated, not sourced (`parameters.json`, `footprint`).
+
+| Stage | All ore | Of it the iron | With 35 % scrap | Factors |
+|---|---|---|---|---|
+| Sourcing, A1–A2 | 26 | 3.4 | 25.2 → **25** | ore 0.02, reductant 0.25, limestone 0.01 kg CO2e/kg on the hot metal's inputs; scrap 0.05 kg CO2e/kg |
+| Manufacturing, A3 | 43 | 34.5 | 32.6 → **33** | hot metal 1.6 kg CO2e/kg; scrap melting 0.55 kWh/kg at 0.4 kg CO2e/kWh |
+| From the mine to the gate | 69 | | **58** | |
 
 ## 6. Derived figures
 
@@ -231,7 +240,7 @@ The world's integrated works also melts its returns (gates) and may add steel sc
 | Metal in the product | about 21 kg steel | 20.8 kg cast iron + 0.75 kg stainless | O25 |
 | Hardwood consumption | 22.5 kg | 21.2 kg in the product | O25 |
 | Sawmill truck | 21.6 t of slats | 21.0 t with pallets | O66 text |
-| Carbon footprint | 96 kg CO2e | not computed | O25 |
+| Carbon footprint, mine to gate | 69 kg CO2e (26 + 43, all ore) | 25 + 33 kg CO2e with 35 % scrap (stated factors) | O225 |
 
 ## 8. Inconsistencies found
 

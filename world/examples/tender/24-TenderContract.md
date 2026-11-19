@@ -267,12 +267,12 @@ Inside `TenderingTerms`:
   As a code. The code is from the Trade Accord's subcontracting conditions list: ALLOWED = Allowed.
 - `AllowedSubcontractTerms/MaximumPercent` = **30**  
   At most.
-- `ContractExecutionRequirement/Name` = **Recycled steel**  
+- `ContractExecutionRequirement/Name` = **Recycled metal**  
   A condition of execution.
 - `ContractExecutionRequirement/ExecutionRequirementCode` = **ENVIRONMENTAL** (listID `urn:ubl-examples:world:codelist:ExecutionRequirementCode`)  
   Its kind. The code is from the Trade Accord's execution requirement list: ENVIRONMENTAL = Environmental requirement.
-- `ContractExecutionRequirement/Description` = **At least 30 % recycled steel in the frames.**  
-  What.
+- `ContractExecutionRequirement/Description` = **At least 30 % recycled metal in the frames.**  
+  What: the frames are cast iron, not steel; Valdara's carry 35 % steel and iron scrap (O225).
 - `PostAwardProcess/ElectronicCatalogueUsageIndicator` = **true**  
   A catalogue of the benches.
 - `PostAwardProcess/ElectronicInvoiceAcceptedIndicator` = **true**  
@@ -606,9 +606,9 @@ Inside `TenderResult`:
       <cbc:MaximumPercent>30</cbc:MaximumPercent>
     </cac:AllowedSubcontractTerms>
     <cac:ContractExecutionRequirement>
-      <cbc:Name>Recycled steel</cbc:Name>
+      <cbc:Name>Recycled metal</cbc:Name>
       <cbc:ExecutionRequirementCode listID="urn:ubl-examples:world:codelist:ExecutionRequirementCode">ENVIRONMENTAL</cbc:ExecutionRequirementCode>
-      <cbc:Description>At least 30 % recycled steel in the frames.</cbc:Description>
+      <cbc:Description>At least 30 % recycled metal in the frames.</cbc:Description>
     </cac:ContractExecutionRequirement>
     <cac:PostAwardProcess>
       <cbc:ElectronicCatalogueUsageIndicator>true</cbc:ElectronicCatalogueUsageIndicator>
