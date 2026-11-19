@@ -173,7 +173,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.hb) t.harbour = 1;
   if (m.rd) t.links = { road: new Set(DIRS8.filter((d, bit) => m.rd & (1 << bit)).map(d => d.join())) };
   if (m.rm) t.main = new Set(DIRS8.filter((d, bit) => m.rm & (1 << bit)).map(d => d.join()));   // the main roads' part of "rd"
-  if (m.vg) t.village = 1;                             // a village's built-up area (not a town's)
+  if (m.vg) { t.village = 1; t.vp = m.vp || 300; }                             // a village's built-up area (not a town's)
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
 const TOWNS = WORLD.towns.map(tw => ({ ...tw }));
@@ -648,13 +648,14 @@ function townBlocks(g, i, j, t, detail) {
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; if (onRoad(u, v) || onRail(u, v) || (t.bridge)) continue;
     const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a), u, v]); }
   out.sort((p, q) => p[1] - q[1] || p[0] - q[0]);
-  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail); }
+  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail, t.village ? villageHouses(t.vp) : 0); }
 // a village at the middle level: a small cluster of red roofs, one house to each built-up sub-square, that reads
 // as a dot when zoomed out
 function villageCluster(g, i, j, t) { const out = [];
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) { const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; out.push([...tp(i, j, u, v), u, v]); }
   out.sort((p, q) => p[1] - q[1]);
-  for (const [x, y, u, v] of out) cityBox(g, x, y - foundation(g, i, j, u, v, .11), .2, .18, 5, "#ece4d6", "#b5533c"); }
+  const k = villageHouses(t.vp), w = .12 + .025 * k;                 // larger for more people (MO009)
+  for (const [x, y, u, v] of out) cityBox(g, x, y - foundation(g, i, j, u, v, .11), w, w * .9, 3 + .5 * k, "#ece4d6", "#b5533c"); }
 // a house on sloping ground is dug into the slope (owner, 2026-11-19, MO004): it stands on ground cut down to the
 // lowest point under it (natural ground, not fill, as builders do), with the cut face of earth and stone behind it on
 // the uphill side; the village square keeps the land's own shape. r: half its size in squares. Returns how many
@@ -687,16 +688,22 @@ function cityBox(g, x, y, w, d, h, wall, roof, gable) { const G = geo(x, y, w, d
   if (!gable) { poly(g, [tb, tr, tf, tl], roof); return G; }
   const a = [(tl[0] + tb[0]) / 2, (tl[1] + tb[1]) / 2 - gable], c = [(tf[0] + tr[0]) / 2, (tf[1] + tr[1]) / 2 - gable];
   poly(g, [tb, tr, c, a], shade(roof, .12)); poly(g, [tl, tf, c, a], roof); poly(g, [tf, tr, c], shade(wall, -.3)); return G; }
-function cityBlock(g, x, y, level, n, m, detail) {
+// how many houses a village draws on a built sub-square (owner, 2026-11-19, MO009): by the people living on it, from
+// one for a hamlet to nine for a large village, so that a village of 2,500 reads larger than a hamlet of 100
+const villageHouses = vp => Math.max(1, Math.min(9, Math.round(vp / 160) + 1));
+// spread over the sub-square on a grid of 3 x 3 plots (centre first, then the sides, then the corners), in pixels
+const HOUSE_SPOTS = [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [-1, -1], [1, -1], [-1, 1]].map(([a, b]) => [(a - b) * .1 * TW / 2, (a + b) * .1 * TH / 2]);
+function cityBlock(g, x, y, level, n, m, detail, houses) {
   const pick = Math.floor(n * 3);
   if (n > .93 && level < 4) {                           // a park
     g.fillStyle = PARK; g.beginPath(); g.moveTo(x, y - TH / 10); g.lineTo(x + TW / 10, y); g.lineTo(x, y + TH / 10); g.lineTo(x - TW / 10, y); g.fill();
     if (detail) { tree(g, x - 2, y, m * .5); tree(g, x + 2, y + 1, .2 + m * .3); } return; }
   if (level === 1) {                                     // detached houses in their gardens: a few to a block (a village's
     g.fillStyle = "#8fb46a"; g.beginPath(); g.moveTo(x, y - TH / 9); g.lineTo(x + TW / 9, y); g.lineTo(x, y + TH / 9); g.lineTo(x - TW / 9, y); g.fill();
-    const spots = detail ? [[-2.2, -.6], [2.2, -.4], [(m - .5) * 2, 1.4]] : [[(m - .5) * 2, 0]];   // houses round its street)
+    const spots = houses ? HOUSE_SPOTS.slice(0, detail ? houses : Math.ceil(houses / 2)).sort((p, q) => p[1] - q[1])   // a village's
+      : detail ? [[-2.2, -.6], [2.2, -.4], [(m - .5) * 2, 1.4]] : [[(m - .5) * 2, 0]];   // houses round its street)
     spots.forEach(([dx, dy], k) => { const q = (pick + k) % 3;
-      cityBox(g, x + dx, y + dy, detail ? .08 : .12, detail ? .075 : .11, 3 + m * 1.5, ["#efe7d8", "#e6dccb", "#f1ebe0"][q], ["#c9745c", "#bd8a72", "#9a90ae"][q], detail ? 1.5 : 0); });
+      cityBox(g, x + dx, y + dy, houses ? .065 : detail ? .08 : .12, houses ? .06 : detail ? .075 : .11, 3 + m * 1.5, ["#efe7d8", "#e6dccb", "#f1ebe0"][q], ["#c9745c", "#bd8a72", "#9a90ae"][q], detail ? 1.5 : 0); });
     return; }
   if (level === 2)                                       // terraces: a row of houses
     { cityBox(g, x, y, .18, .14, 6 + m * 3, ["#e9dfcd", "#e0d3bc", "#efe6d6"][pick], ["#c7826b", "#b98f7a", "#a7a09a"][pick], detail ? 1.5 : 0); return; }

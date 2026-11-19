@@ -34,6 +34,7 @@ For every tile the model records:
   um  the built-up area of a town or village on this square: a mask of its SUB x SUB sub-squares of 875 m
       (bit a * SUB + b for the sub-square a along i, b along j), on every kind of square it covers (houses,
       parties, roads, rails)
+  vp  on a village's square: its people per built sub-square, for the number of houses the map draws (MO009)
   vg  1 where the built-up area is a village's (map "villages"), not a town's or a locality's: the map shows it
       only when zoomed in (O152)
   ul  the density of the built-up area on this square: 1 houses, 2 terraces, 3 blocks of flats, 4 towers (the
@@ -795,6 +796,7 @@ def build(world):
             built[q] = tw
             if id(tw) in villages:
                 t["vg"] = 1
+                t["vp"] = max(1, round(tw.get("people", 0) / len(cells)))   # people per built sub-square (MO009)
             if dists:                                  # the district of each built sub-square (model "ud")
                 x, y = q[0] - .5 + (a2 + .5) / SUB, q[1] - .5 + (b2 + .5) / SUB
                 k = district(x, y)[0]
