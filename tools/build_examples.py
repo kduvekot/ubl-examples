@@ -1267,26 +1267,35 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("hazard"):
         out["HazardousRiskIndicator"] = V("true", "The item is dangerous goods.")
         out["HazardousItem"] = hazardous_item(maker)
-    if maker.get("emission"):
-        em = maker["emission"]
-        out["EnvironmentalEmission"] = {
-            "EnvironmentalEmissionTypeCode": V(em["type"], "The emission reported: greenhouse gases as CO2 equivalent."),
-            "ValueMeasure": V(em["value"], "The emission of one item.", unitCode=em["unit"]),
-            "ValueFactorNumeric": V(em["factor"], "The share of the footprint the steel frame accounts for."),
-            "ValueBaseMeasure": V(em["base"][0], "The emission is per one bench.", unitCode=em["base"][1]),
-            "Description": V(em["description"], "What the figure includes."),
-            "EmissionStandardReference": V(em["standard"], "The standard the footprint is calculated by."),
-            "LifecycleStageCode": V(em["stage"], "The part of the bench's life the figure covers."),
-            "LifecycleStageDescription": V(em["stage_desc"], "That part in words."),
-            "EmissionCalculationMethod": {"CalculationMethodCode": V(em["method"]["code"], "Calculated, not measured."),
-                                          "FullnessIndicationCode": V(em["method"]["fullness"], "How much of the "
-                                                                      "chain is included."),
-                                          "EmissionFactorSource": V(em["method"]["source"], "Where the factors come "
-                                                                                            "from."),
-                                          "EmissionFactorDocumentReference": {"ID": V(em["method"]["doc"], "The "
-                                                                              "report with the emission factors.")}},
-            "MeasurementPeriod": {"StartDate": V(em["period"][0], "The year the figures are from."),
-                                  "EndDate": V(em["period"][1], "Its last day.")}}
+    if maker.get("emissions"):
+        def emission(em):
+            out_ = {"EnvironmentalEmissionTypeCode": V(em["type"], "The emission reported: greenhouse gases as CO2 "
+                                                                   "equivalent."),
+                    "ValueMeasure": V(em["value"], "The emission of one item in this stage of its life: a figure "
+                                                   "from the maker's footprint study, not an activity times a "
+                                                   "factor, so no factor and base (worklist C09).",
+                                      unitCode=em["unit"])}
+            if em.get("factor"):      # only where the figure is an activity times a factor (C09)
+                out_["ValueFactorNumeric"] = V(em["factor"], em["factor_why"])
+                out_["ValueBaseMeasure"] = V(em["base"][0], em["base_why"], unitCode=em["base"][1])
+            out_.update({
+                "Description": V(em["description"], "What the figure includes, and what it leaves out."),
+                "EmissionStandardReference": V(em["standard"], "The standard the footprint is calculated by."),
+                "LifecycleStageCode": V(em["stage"], "The stage of the bench's life the figure covers (D10): the "
+                                                     "footprint is stated stage by stage."),
+                "LifecycleStageDescription": V(em["stage_desc"], "That stage in words, with the modules of EN 15804 "
+                                                                 "it covers."),
+                "EmissionCalculationMethod": {"CalculationMethodCode": V(em["method"]["code"], "Calculated, not "
+                                                                                               "measured."),
+                                              "EmissionFactorSource": V(em["method"]["source"], "Where the factors "
+                                                                                                "come from."),
+                                              "EmissionFactorDocumentReference": {"ID": V(em["method"]["doc"], "The "
+                                                                                  "report with the emission "
+                                                                                  "factors.")}},
+                "MeasurementPeriod": {"StartDate": V(em["period"][0], "The year the figures are from."),
+                                      "EndDate": V(em["period"][1], "Its last day.")}})
+            return out_
+        out["EnvironmentalEmission"] = [emission(em) for em in maker["emissions"]]
     if it.get("origin") or maker.get("origin"):
         out["OriginCountry"] = {"IdentificationCode": V(maker["origin"], f"Where the item was produced; {msrc}.")}
     out["_master"] = {k: id(v) for k, v in out.items()}     # the item's master data, for the item table (O20)

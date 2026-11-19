@@ -181,16 +181,16 @@
     "maintenance_description": "Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.",
     "resources": [
      [
-      "STEEL",
-      "34",
+      "IRON",
+      "22",
       "KGM",
-      "Steel made from Serravona ore in Urvania"
+      "Ductile iron made from Serravona ore in Urvania, as poured for the two side frames less the gates remelted"
      ],
      [
       "HARDWOOD",
-      "22.5",
+      "21.2",
       "KGM",
-      "Slats from Upland State, Bayvarra"
+      "Thermally modified ash slats from Upland State, Bayvarra"
      ]
     ],
     "product_doc": "VI-RM-B180",
@@ -213,30 +213,6 @@
     "position": "FRM"
    },
    "barcode": "Code128",
-   "emission": {
-    "type": "CO2E",
-    "value": "96",
-    "unit": "KGM",
-    "base": [
-     "1",
-     "EA"
-    ],
-    "standard": "Greenhouse Gas Protocol Product Standard",
-    "stage": "MANUFACTURING",
-    "stage_desc": "From the ore at the mine to the bench leaving the factory gate.",
-    "method": {
-     "code": "CALCULATED",
-     "fullness": "CRADLETOGATE",
-     "source": "The steelworks' and sawmill's measured energy use of 2025",
-     "doc": "VI-LCA-2025"
-    },
-    "period": [
-     "2025-01-01",
-     "2025-12-31"
-    ],
-    "factor": "0.82",
-    "description": "Mining, steel making, casting, galvanising, sawing and the transport between them."
-   },
    "lot_props": [
     [
      "Coating batch",
@@ -331,6 +307,44 @@
     {
      "item": "bench-casting",
      "why": "A spare side frame is one frame carton, parcel 1 of the bench (D20)."
+    }
+   ],
+   "emissions": [
+    {
+     "type": "CO2E",
+     "value": "26",
+     "unit": "KGM",
+     "standard": "Greenhouse Gas Protocol Product Standard",
+     "stage": "SOURCING",
+     "stage_desc": "Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.",
+     "method": {
+      "code": "CALCULATED",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "doc": "VI-LCA-2025"
+     },
+     "period": [
+      "2025-01-01",
+      "2025-12-31"
+     ],
+     "description": "The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+    },
+    {
+     "type": "CO2E",
+     "value": "43",
+     "unit": "KGM",
+     "standard": "Greenhouse Gas Protocol Product Standard",
+     "stage": "MANUFACTURING",
+     "stage_desc": "Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace, casting in its foundry, galvanising, powder coating and packing.",
+     "method": {
+      "code": "CALCULATED",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "doc": "VI-LCA-2025"
+     },
+     "period": [
+      "2025-01-01",
+      "2025-12-31"
+     ],
+     "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     }
    ]
   },

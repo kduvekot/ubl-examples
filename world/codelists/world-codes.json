@@ -545,16 +545,6 @@
    ]
   },
   {
-   "element": "FullnessIndicationCode",
-   "address": "*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode",
-   "lists": [
-    "EmissionBoundary"
-   ],
-   "parents": [
-    "EmissionCalculationMethod"
-   ]
-  },
-  {
    "element": "WasteTypeCode",
    "address": "*[local-name()='WasteGenerated']/cbc:WasteTypeCode",
    "lists": [
@@ -8255,18 +8245,6 @@
     "RECOVERY"
    ]
   },
-  "EmissionBoundary": {
-   "listID": "urn:ubl-examples:world:codelist:EmissionBoundaryCode",
-   "scope": "regional",
-   "name": "Emission boundary",
-   "location": "world/codelists/gc/EmissionBoundaryCode.gc",
-   "codes": [
-    "CRADLETOGATE",
-    "CRADLETOGRAVE",
-    "CRADLETOCRADLE",
-    "GATETOGATE"
-   ]
-  },
   "CircularityType": {
    "listID": "urn:ubl-examples:world:codelist:CircularityTypeCode",
    "scope": "regional",
@@ -8302,7 +8280,8 @@
     "SOFTWOOD",
     "PE",
     "COTTON",
-    "ALUMINIUM"
+    "ALUMINIUM",
+    "IRON"
    ]
   },
   "ScoringSystem": {

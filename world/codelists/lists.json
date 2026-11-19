@@ -6586,29 +6586,6 @@
     ]
    }
   },
-  "EmissionBoundary": {
-   "scope": "regional",
-   "name": "Emission boundary",
-   "description": "How much of a product's life an emission figure includes.",
-   "codes": {
-    "CRADLETOGATE": [
-     "Cradle to gate",
-     "From the raw materials to the product leaving the factory (EN 15804 A1 to A3)."
-    ],
-    "CRADLETOGRAVE": [
-     "Cradle to grave",
-     "The whole life, to disposal (EN 15804 A to C)."
-    ],
-    "CRADLETOCRADLE": [
-     "Cradle to cradle",
-     "The whole life, with recovery (EN 15804 A to D)."
-    ],
-    "GATETOGATE": [
-     "Gate to gate",
-     "One process only."
-    ]
-   }
-  },
   "CircularityType": {
    "scope": "regional",
    "name": "Circularity type",
@@ -6683,6 +6660,10 @@
     "ALUMINIUM": [
      "Aluminium",
      ""
+    ],
+    "IRON": [
+     "Iron",
+     "Iron and cast iron, such as the ductile cast iron of a casting."
     ]
    }
   },
@@ -9033,13 +9014,6 @@
   {
    "element": "LifecycleStageCode",
    "list": "LifecycleStage"
-  },
-  {
-   "element": "FullnessIndicationCode",
-   "list": "EmissionBoundary",
-   "parents": [
-    "EmissionCalculationMethod"
-   ]
   },
   {
    "element": "CircularityTypeCode",

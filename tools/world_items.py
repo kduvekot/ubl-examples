@@ -299,7 +299,30 @@ def check(world):
     problems += buyer_price_problems(world)
     problems += resale_problems(world)
     problems += physics_problems(items)
+    problems += emission_problems(items)
     return problems
+
+
+def emission_problems(items):
+    """An item's footprint (D10, worklist C09): stated stage by stage, each stage once, with no system boundary in
+    FullnessIndicationCode; where a figure gives a factor and a base, the value is their product."""
+    from decimal import Decimal
+    out = []
+    for iid, it in items.items():
+        if it.get("emission"):
+            out.append(f"item {iid}: a footprint is a list of emissions by stage (emissions), not one figure (D10)")
+        stages = [em.get("stage") for em in it.get("emissions", [])]
+        if len(set(stages)) != len(stages) or None in stages:
+            out.append(f"item {iid}: each emission states its own life cycle stage, once (D10)")
+        for em in it.get("emissions", []):
+            if em.get("method", {}).get("fullness"):
+                out.append(f"item {iid}: FullnessIndicationCode is about transport equipment, not a footprint (D10)")
+            if ("factor" in em) != ("base" in em):
+                out.append(f"item {iid}: an emission factor needs its base, and a base its factor (C09)")
+            elif "factor" in em and Decimal(em["factor"]) * Decimal(em["base"][0]) != Decimal(em["value"]):
+                out.append(f"item {iid}: emission {em['value']} is not factor {em['factor']} x base {em['base'][0]} "
+                           "(C09)")
+    return out
 
 
 # the world's rule for manual handling (D20): ISO 11228-1, 25 kg for one person, about two thirds of the combined

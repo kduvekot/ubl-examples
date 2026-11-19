@@ -281,7 +281,6 @@
       <ValueList xml:id="SecurityClassification" uri="gc/SecurityClassificationCode.gc" />
       <ValueList xml:id="EmissionType" uri="gc/EmissionTypeCode.gc" />
       <ValueList xml:id="LifecycleStage" uri="gc/LifecycleStageCode.gc" />
-      <ValueList xml:id="EmissionBoundary" uri="gc/EmissionBoundaryCode.gc" />
       <ValueList xml:id="CircularityType" uri="gc/CircularityTypeCode.gc" />
       <ValueList xml:id="MaintenanceFrequency" uri="gc/MaintenanceFrequencyCode.gc" />
       <ValueList xml:id="MaterialResource" uri="gc/MaterialResourceCode.gc" />
@@ -375,7 +374,6 @@
       <Context address="*[local-name()='DiscrepancyResponse']/cbc:ResponseCode" values="UNCL4465" metadata="code" />
       <Context address="*[local-name()='UtilityItem']/cbc:SubscriberTypeCode" values="UtilityType" metadata="code" />
       <Context address="*[local-name()='UtilityConsumptionPoint']/cbc:SubscriberTypeCode" values="SubscriberType" metadata="code" />
-      <Context address="*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode" values="EmissionBoundary" metadata="code" />
       <Context address="*[local-name()='WasteGenerated']/cbc:WasteTypeCode" values="WasteType" metadata="code" />
       <Context address="*[local-name()='TaxCategory']/cbc:ID | *[local-name()='ClassifiedTaxCategory']/cbc:ID | *[local-name()='ApplicableTaxCategory']/cbc:ID" values="UNCL5305" metadata="scheme" />
       <Context address="*[local-name()='TaxScheme']/cbc:ID" values="UNCL5153" metadata="scheme" />
