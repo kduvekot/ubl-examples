@@ -103,12 +103,11 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>

@@ -1013,7 +1013,12 @@ store at 380 and 115 lume, the same in both woods; the store sells them in
 its home and garden department at 549 and 199, from the day the department
 reopens after its renovation, Monday 11 May, and gives a care kit free with
 each bench. The stock comes in March and waits for the reopening; the line is
-taken on sale-or-return terms for its first four weeks of sales. Many shoppers buy the chairs alone, because the 1400 mm
+taken on sale-or-return terms for its first four weeks of sales; at the end of
+the trial the stock above the target goes back to Brackenmere in the store's van,
+at Brackenmere's cost: Brackenmere credits it in full, and the store invoices the
+transport. The store asked for seat pads as an option; Brackenmere quoted a
+pad of its own brand for the chair, made for it by a textile workshop, and the
+store did not take it, because it sells seat pads from its own textile range. Many shoppers buy the chairs alone, because the 1400 mm
 bench is too long for many apartment kitchens. The shopper sees the store's
 label, and the maker's name is on no label: Elderwick is the world's case of
 an item whose brand owner and manufacturer are different parties. The shirts

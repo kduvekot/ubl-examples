@@ -18,7 +18,7 @@ With sales below the threshold, the store cancels the second delivery.
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **FURNITURE-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BS-DOC-26-0577**  
+- `ID` = **BS-DOC-26-0578**  
   The sender's number for this document.
 - `UUID` = **4e4382b0-483c-570a-9560-c9d39c4a7902**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -35,22 +35,17 @@ With sales below the threshold, the store cancels the second delivery.
 
 Inside `OrderReference`:
 
-- `ID` = **BS-PO-26-0576**  
+- `ID` = **BS-PO-26-0577**  
   The order cancelled.
-
-### Originator Document Reference
-
-Inside `OriginatorDocumentReference`:
-
-- `ID` = **BF-DOC-26-0573**  
-  The exception notification that led to it.
-- `DocumentTypeCode` = **ExceptionNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-DOC-26-0573 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
+- `ID` = **BF-DOC-26-0573**  
+  The maker's exception notification that led to it: a document that bears on the cancellation, not one of the originator's (furniture/11#F4, D32).
+- `DocumentTypeCode` = **ExceptionNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-DOC-26-0573 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
 - `ID` = **BS-DOC-26-0572**  
   The sales figures.
 - `DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -197,19 +192,19 @@ Inside `SellerSupplierParty`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-cancellation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0577</cbc:ID>
+  <cbc:ID>BS-DOC-26-0578</cbc:ID>
   <cbc:UUID>4e4382b0-483c-570a-9560-c9d39c4a7902</cbc:UUID>
   <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>11:51:00-01:00</cbc:IssueTime>
   <cbc:Note>No cost: cancelled before production.</cbc:Note>
   <cbc:CancellationNote>Sales of the line are below the agreed threshold; the second delivery is not needed.</cbc:CancellationNote>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0576</cbc:ID>
+    <cbc:ID>BS-PO-26-0577</cbc:ID>
   </cac:OrderReference>
-  <cac:OriginatorDocumentReference>
+  <cac:AdditionalDocumentReference>
     <cbc:ID>BF-DOC-26-0573</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
-  </cac:OriginatorDocumentReference>
+  </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BS-DOC-26-0572</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>

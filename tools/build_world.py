@@ -175,8 +175,7 @@ def others(d, pid):
 
 def example_of(d):
     """The page of the example document for a document of the world, if it has one."""
-    same = [x for x in world["documents"] if x["flow"] == d["flow"]]
-    n = next(i for i, x in enumerate(same, 1) if x is d)
+    n = d["nn"]
     md = os.path.join(root, "world", "examples", d["flow"], f"{n:02d}-{d['doc']}.md")
     return f"example-{d['flow']}-{n:02d}-{d['doc']}.html" if os.path.exists(md) else None
 
@@ -260,7 +259,7 @@ ex_lines = ["# Example documents", "",
             "[the world's specifications](world-specifications.html).", ""]
 for f in world["flows"]:
     same = [x for x in world["documents"] if x["flow"] == f["id"]]
-    rows = [(n, x) for n, x in enumerate(same, 1) if example_of(x)]
+    rows = [(x["nn"], x) for x in same if example_of(x)]
     if not rows:
         continue
     ex_lines += [f"## {f['title']}", "", f["text"], "", "| | Document | From | To |", "|---|---|---|---|"]
