@@ -9594,7 +9594,14 @@ def energy(n, doc):
                             {"item": "network-electricity", "qty": BILLS["33-xu"][1]["qty"], "invoice_why": "The warehouse's electricity "
                                                                                          "connection, March."},
                             {"item": "network-gas", "qty": FACTORY_GAS["kwh"], "invoice_why": "The factory's gas "
-                                                                                              "connection, March."}],
+                                                                                              "connection, March."},
+                            # O169: the grid operator made February's estimate and corrects its own invoice too,
+                            # as the retail company does on its bill (utilities/02, O159)
+                            {"item": "network-electricity", "qty": BILLS["33-xu"][3]["qty"],
+                             "invoice_why": "February's estimate corrected: February's network invoice charged the "
+                                            f"warehouse's connection {-BILLS['33-xu'][3]['qty']:,} kWh it did not "
+                                            "use, which are credited at the network tariff.",
+                             "line_extra": FEBRUARY}],
                            key="network-invoice", extra=MARCH)
         if not isinstance(out["InvoiceLine"], list):
             out["InvoiceLine"] = [out["InvoiceLine"]]
@@ -9603,7 +9610,8 @@ def energy(n, doc):
         for ln, (pid, desc) in zip(out["InvoiceLine"], [
                 (POINTS[("33-xu", "5-xu")]["id"], POINTS[("33-xu", "5-xu")]["desc"]),
                 (POINTS[("33-xu", "8-xu")]["id"], POINTS[("33-xu", "8-xu")]["desc"]),
-                ("FG-CP-4120-G1", "Valdara Industries, gas connection of the coating line")]):
+                ("FG-CP-4120-G1", "Valdara Industries, gas connection of the coating line"),
+                (POINTS[("33-xu", "8-xu")]["id"], POINTS[("33-xu", "8-xu")]["desc"])]):
             ln["Delivery"] = {"DeliveryLocation": {"ID": V(pid, "The consumption point whose network use the line "
                                                                 "bills."),
                                                    "Description": V(desc, "The connection in words.")}}

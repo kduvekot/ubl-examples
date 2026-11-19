@@ -3975,7 +3975,7 @@
    "doc": "Invoice",
    "from": "44-xu",
    "to": "33-xu",
-   "why": "The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections.",
+   "why": "The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections, and credits the 750 kWh its February estimate charged the warehouse too much.",
    "parties": {
     "AccountingSupplierParty": "44-xu",
     "AccountingCustomerParty": "33-xu",
