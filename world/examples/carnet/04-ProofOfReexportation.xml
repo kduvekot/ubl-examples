@@ -8,7 +8,7 @@
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cbc:IssueTime>13:19:00-01:00</cbc:IssueTime>
-  <cbc:Note>The samples came home on the date stamped.</cbc:Note>
+  <cbc:Note>The samples left Selanu airport on 9 June and were re-imported into Urvania on 10 June, as the stamped counterfoils show.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExportingCustomsParty>
     <cac:PartyIdentification>
@@ -122,22 +122,128 @@
     </cac:ElectronicAddress>
   </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
+    <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ImportationDocumentReference>
+      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:IssueDate>2026-06-02</cbc:IssueDate>
+      <cbc:DocumentType>Importation registration</cbc:DocumentType>
+    </cac:ImportationDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REEXP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped at Selanu airport on 9 June; its voucher did not reach the importation office's records.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ImportationDocumentReference>
+      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:IssueDate>2026-06-02</cbc:IssueDate>
+      <cbc:DocumentType>Importation registration</cbc:DocumentType>
+    </cac:ImportationDocumentReference>
+    <cac:ReexportationDocumentReference>
+      <cbc:ID>XL-CUS-ATA-26-0053</cbc:ID>
+      <cbc:IssueDate>2026-06-09</cbc:IssueDate>
+      <cbc:DocumentType>Re-exportation registration</cbc:DocumentType>
+    </cac:ReexportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-REEXP-1</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>Stamped at Valico Euridice on 10 June.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ExportationDocumentReference>
+      <cbc:ID>XU-CUS-EXP-26-0031</cbc:ID>
+      <cbc:IssueDate>2026-06-01</cbc:IssueDate>
+      <cbc:DocumentType>Exportation registration</cbc:DocumentType>
+    </cac:ExportationDocumentReference>
+    <cac:ReimportationDocumentReference>
+      <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+      <cbc:IssueDate>2026-06-10</cbc:IssueDate>
+      <cbc:DocumentType>Re-importation record</cbc:DocumentType>
+    </cac:ReimportationDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:ReexportationEvidence>
-    <cbc:ID>REIMP-1</cbc:ID>
-    <cbc:Description>Re-importation counterfoil of the carnet, stamped by Urvania's customs: the samples left the island and came home.</cbc:Description>
+    <cbc:ID>EV-1</cbc:ID>
+    <cbc:Description>The re-exportation counterfoil REEXP-1 of the carnet, stamped by the Island Customs Service at Selanu airport on 9 June: the samples left the island. Its voucher never reached the importation office's records.</cbc:Description>
+    <cac:EvidenceIssuingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Island Customs Service</cbc:Name>
+      </cac:PartyName>
+    </cac:EvidenceIssuingParty>
+  </cac:ReexportationEvidence>
+  <cac:ReexportationEvidence>
+    <cbc:ID>EV-2</cbc:ID>
+    <cbc:Description>Urvania's customs re-imported the samples at Valico Euridice on 10 June.</cbc:Description>
+    <cac:EvidenceIssuingParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_k4r7</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Customs Administration of Urvania</cbc:Name>
+      </cac:PartyName>
+    </cac:EvidenceIssuingParty>
+    <cac:DocumentReference>
+      <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+      <cbc:IssueDate>2026-06-10</cbc:IssueDate>
+      <cbc:DocumentType>Re-importation record</cbc:DocumentType>
+    </cac:DocumentReference>
   </cac:ReexportationEvidence>
   <cac:GoodsItemPassportAttachment>
-    <cbc:EmbeddedDocument>Re-exportation counterfoil of carnet FCC-DOC-26-0724, stamped by the Island Customs Service: all items re-exported.</cbc:EmbeddedDocument>
     <cac:ExternalReference>
-      <cbc:URI>https://www.ferrano-chamber.example/ata/carnet-scan.pdf</cbc:URI>
+      <cbc:URI>https://www.camera-ferrano.example/ata/carnet-scan.pdf</cbc:URI>
       <cbc:MimeCode listID="IANA Media Types">application/pdf</cbc:MimeCode>
+      <cbc:Description>Scan of the stamped re-exportation and re-importation counterfoils of the carnet</cbc:Description>
     </cac:ExternalReference>
   </cac:GoodsItemPassportAttachment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
-    <cbc:DocumentType>Re-importation record</cbc:DocumentType>
+    <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProofOfReexportationRequest</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SCC-DOC-26-0727</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProofOfReexportationReminder</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>FCC-SIG-26-POR</cbc:ID>

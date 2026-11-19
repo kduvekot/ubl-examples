@@ -33,7 +33,7 @@ The carrier reports that the truck has cleared the border and gives the expected
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do.
+  What the receiver should do, with the slot it is about.
 - `TransportationStatusTypeCode` = **PROGRESS** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
   A report on the progress of the carriage. The code is from the Trade Accord's transportation status type list: PROGRESS = Progress report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  

@@ -22,13 +22,13 @@ No answer after a month: a reminder.
   The sender's number for this document.
 - `UUID` = **e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-08-23**  
-  No answer after a month.
+- `IssueDate` = **2026-08-24**  
+  Monday 24 August, a month after the request: no answer yet (D40; the Sunday a month later is no working day, D27).
 - `IssueTime` = **12:04:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ProcedureCode` = **2000** (listID `urn:ubl-examples:world:codelist:CustomsProcedureCode`)  
   The procedure the samples were under on the island. The code is from the Trade Accord's customs procedure list: 2000 = Temporary admission, no previous procedure.
-- `Note` = **Without proof, the import duties will be claimed from the guarantee.**  
+- `Note` = **Without proof within 30 days, the island's import consumption tax on the samples and the carnet surcharge will be claimed from the guarantee.**  
   What happens otherwise.
 - `VersionID` = **1**  
   The first reminder.
@@ -189,10 +189,10 @@ Inside `ImportingCustomsParty`:
 
 Inside `IssuerEndorsement`:
 
-- `DocumentID` = **SCC-DOC-26-0726**  
-  The request repeated.
-- `ApprovalStatus` = **Open**  
-  Still unanswered.
+- `DocumentID` = **SCC-DOC-26-0727**  
+  The reminder the chamber endorses, as the guaranteeing association whose guarantee is at stake.
+- `ApprovalStatus` = **Endorsed**  
+  The status of the endorsement itself; the request's open state is in the note (carnet/03#F8).
 - `EndorserParty/RoleCode` = **GUARANTOR** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
   The importing guarantor. The code is from the Trade Accord's endorser role list: GUARANTOR = Guaranteeing association.
 - `EndorserParty/SequenceNumeric` = **1**  
@@ -201,26 +201,50 @@ Inside `IssuerEndorsement`:
   A party referred to from another party's details: its identifier and name are enough.
 - `EndorserParty/Party/PartyName/Name` = **Selanu Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
-- `EndorserParty/SignatoryContact/Name` = **Carnet desk**  
-  The chamber's desk.
+- `EndorserParty/SignatoryContact/Name` = **Carnet office**  
+  The chamber's carnet office.
 
 ### Payment Terms
 
 Inside `PaymentTerms`:
 
-- `Note` = **Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.**  
-  The claim that would follow.
-- `Amount` = **1300.000** (currencyID `XLC`)  
-  The duties at stake.
-- `PaymentDueDate` = **2026-09-22**  
-  The day they fall due.
+- `Note` = **Import consumption tax of 10 % on the declared value of 399.20 coral, 39.920, and the carnet surcharge of 10 % of the tax, 3.992: 43.912 coral fall due if no proof arrives within 30 days. Benches of Accord origin owe no duty (D18).**  
+  The claim that would follow (D40).
+- `Amount` = **43.912** (currencyID `XLC`)  
+  The tax and surcharge at stake.
+- `PaymentDueDate` = **2026-09-23**  
+  The day they fall due: 30 days after the reminder.
 
 ### Goods Item Passport Counterfoil
 
 Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **IMP-1**  
-  The importation counterfoil without a re-export stamp.
+  The importation counterfoil (white sheet) of the carnet.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `FinalReexportationDate` = **2026-06-30**  
+  The limit the island's customs set on the importation counterfoil, shorter than the carnet's year: a short fair admission (D40, carnet/01#F22).
+- `Note` = **Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.**  
+  The counterfoil the claim rests on.
+- `CustomsOfficeLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
+- `CustomsOfficeLocation/Name` = **Island Customs Service, Selanu airport**  
+  The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `EA`)  
+  Two.
+- `ImportationDocumentReference/ID` = **XL-CUS-ATA-26-0049**  
+  The island's customs' registration of the importation, noted with the stamp.
+- `ImportationDocumentReference/IssueDate` = **2026-06-02**  
+  The day customs stamped the counterfoil.
+- `ImportationDocumentReference/DocumentType` = **Importation registration**  
+  The kind of customs record, in words.
 
 ### Additional Document Reference
 
@@ -253,10 +277,10 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCC-DOC-26-0727</cbc:ID>
   <cbc:UUID>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</cbc:UUID>
-  <cbc:IssueDate>2026-08-23</cbc:IssueDate>
+  <cbc:IssueDate>2026-08-24</cbc:IssueDate>
   <cbc:IssueTime>12:04:00+00:00</cbc:IssueTime>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:CustomsProcedureCode">2000</cbc:ProcedureCode>
-  <cbc:Note>Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
+  <cbc:Note>Without proof within 30 days, the island's import consumption tax on the samples and the carnet surcharge will be claimed from the guarantee.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>
@@ -371,8 +395,8 @@ Inside `Signature`:
     </cac:PostalAddress>
   </cac:ImportingCustomsParty>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>SCC-DOC-26-0726</cbc:DocumentID>
-    <cbc:ApprovalStatus>Open</cbc:ApprovalStatus>
+    <cbc:DocumentID>SCC-DOC-26-0727</cbc:DocumentID>
+    <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">GUARANTOR</cbc:RoleCode>
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
@@ -385,17 +409,39 @@ Inside `Signature`:
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
-        <cbc:Name>Carnet desk</cbc:Name>
+        <cbc:Name>Carnet office</cbc:Name>
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>
   <cac:PaymentTerms>
-    <cbc:Note>Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.</cbc:Note>
-    <cbc:Amount currencyID="XLC">1300.000</cbc:Amount>
-    <cbc:PaymentDueDate>2026-09-22</cbc:PaymentDueDate>
+    <cbc:Note>Import consumption tax of 10 % on the declared value of 399.20 coral, 39.920, and the carnet surcharge of 10 % of the tax, 3.992: 43.912 coral fall due if no proof arrives within 30 days. Benches of Accord origin owe no duty (D18).</cbc:Note>
+    <cbc:Amount currencyID="XLC">43.912</cbc:Amount>
+    <cbc:PaymentDueDate>2026-09-23</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
+    <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ImportationDocumentReference>
+      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:IssueDate>2026-06-02</cbc:IssueDate>
+      <cbc:DocumentType>Importation registration</cbc:DocumentType>
+    </cac:ImportationDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>

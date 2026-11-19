@@ -102,7 +102,7 @@
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
@@ -154,7 +154,7 @@
       </cac:FreightForwarderParty>
       <cac:TransportEvent>
         <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>19:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>12:00:00-01:00</cbc:OccurrenceTime>
         <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
         <cac:Location>
@@ -198,13 +198,13 @@
           </cac:DeliveryUnit>
           <cac:Delivery>
             <cac:RequestedDeliveryPeriod>
-              <cbc:StartDate>2026-05-14</cbc:StartDate>
+              <cbc:StartDate>2026-05-13</cbc:StartDate>
               <cbc:EndDate>2026-05-14</cbc:EndDate>
             </cac:RequestedDeliveryPeriod>
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ID>BF-PU-26-0611</cbc:ID>
-            <cbc:EarliestPickupDate>2026-05-12</cbc:EarliestPickupDate>
+            <cbc:EarliestPickupDate>2026-05-13</cbc:EarliestPickupDate>
             <cac:PickupParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -218,8 +218,8 @@
             <cbc:RequestedDespatchDate>2026-05-13</cbc:RequestedDespatchDate>
           </cac:Despatch>
           <cac:Status>
-            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">READY</cbc:ConditionCode>
-            <cbc:Description>Waiting at the distributor's dispatch area.</cbc:Description>
+            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">SCHEDULED</cbc:ConditionCode>
+            <cbc:Description>Cast at Valdara on 12 May, galvanised and packed on 13 May, then trucked to the dispatch area under transit.</cbc:Description>
           </cac:Status>
         </cac:Package>
       </cac:TransportHandlingUnit>

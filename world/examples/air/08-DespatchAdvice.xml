@@ -6,8 +6,8 @@
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DA-26-0329</cbc:ID>
   <cbc:UUID>bb530823-20b2-5c84-9178-9f8f4d49f81f</cbc:UUID>
-  <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>10:48:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>20:05:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -19,6 +19,11 @@
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-DA-26-0327</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Replaced: the frames missed KXL209 of 13 May and fly on KXL207 of 14 May.</cbc:DocumentDescription>
+  </cac:AdditionalDocumentReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -151,7 +156,7 @@
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -183,14 +188,28 @@
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KXL207</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="IATA SSIM Aircraft Types">ATF</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KXA</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-05-14</cbc:StartDate>
+        <cbc:StartTime>10:45:00+00:00</cbc:StartTime>
         <cbc:EndDate>2026-05-14</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
-        <cbc:ActualDespatchDate>2026-05-14</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchDate>2026-05-13</cbc:ActualDespatchDate>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>

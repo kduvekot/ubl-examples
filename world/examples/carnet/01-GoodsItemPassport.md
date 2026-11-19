@@ -30,9 +30,9 @@ The chamber issues the carnet to the manufacturer, who holds it while the sample
   The carnet is valid. The code is from the Trade Accord's record status list: VALID = Valid.
 - `Status` = **Issued**  
   In words.
-- `Note` = **Barhek gan drek Selanu rizir tran; krir traz naz zhizhek sek mannan.** (languageID `qau`)  
+- `Note` = **Barhek gan drek Selanu rizir tran trek geskek June; kildrek traz hek skuskan drek tran.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What it is for.
-- `Note` = **Samples for the Selanu trade fair; to come back within six months.** (languageID `en-XU`)  
+- `Note` = **Samples for the Selanu trade fair in early June; they come home after the fair.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What it is for.
 - `VersionID` = **1**  
   The first version.
@@ -184,12 +184,6 @@ Inside `RepresentativeParty`:
   Their family name; identity of Valdara Industries (world/parties.json).
 - `Person/Title` = **Ing.**  
   The professional title, as on the travel documents.
-- `Person/MiddleName` = **Ilse**  
-  The middle name, as in the passport.
-- `Person/OtherName` = **Mara**  
-  The name the employee goes by.
-- `Person/NameSuffix` = **Jr**  
-  As in the passport.
 - `Person/JobTitle` = **Sales engineer**  
   Their job; identity of Valdara Industries (world/parties.json).
 - `Person/NationalID` = **XU-NID-55102311**  
@@ -212,8 +206,8 @@ Inside `RepresentativeParty`:
   The employee is a citizen of Urvania. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Person/Contact/Name` = **Mobile on the road**  
   How to reach the employee at the fair.
-- `Person/Contact/Telephone` = **+999 1 041 386 4551**  
-  The number.
+- `Person/Contact/Telephone` = **+999 1 347 612 0893**  
+  The employee's own mobile, not the holder's order desk (carnet/01#F2).
 - `Person/IdentityDocumentReference/ID` = **XU-P-2210931**  
   The passport the employee travels on.
 - `Person/IdentityDocumentReference/DocumentType` = **Passport**  
@@ -346,9 +340,7 @@ Inside `Shipment`:
 - `Consignment/TransportAdvisorParty/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransitCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The samples cross Bayvarra by road to Lumeport airport: a transit country between Urvania and the island. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/OfficeOfSubSequentiallyEntryLocation/Name` = **Island Customs Service, Selanu airport**  
-  Where the goods enter next, on the island.
+  The samples cross Bayvarra by road to Lumeport airport: a transit country between Urvania and the island, on the carnet's transit counterfoils (D40). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -481,71 +473,117 @@ Inside `Shipment`:
 Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **EXP-1**  
-  The exportation counterfoil, stamped by Urvania's customs when the samples leave.
+  The exportation counterfoil (yellow sheet) of the carnet.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
-  The carnet.
-- `FinalReexportationDate` = **2026-11-21**  
-  The samples must be back by then.
-- `Note` = **Stamped by customs.**  
-  How it is used.
-- `CustomsOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
-  The customs office that stamps it.
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `Note` = **To be stamped by customs when the samples leave Urvania.**  
+  What the counterfoil is for: at issue no counterfoil is stamped yet (D40).
+- `CustomsOfficeLocation/LocationTypeCode` = **BORDERPOST** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs post at the road border crossing. The code is from the Trade Accord's customs location type list: BORDERPOST = Border crossing point.
+- `CustomsOfficeLocation/Name` = **Customs Administration of Urvania, Valico Euridice**  
+  The customs office where the counterfoil is presented.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ExportationDocumentReference/ID` = **EXP-1-STAMP**  
-  The export stamp.
 - `VoucherDocumentReference/ID` = **V-EXP-1**  
-  The voucher that customs keeps.
+  The voucher customs detach and keep.
+- `ID` = **TRA-1**  
+  The transit counterfoil (blue sheet), outbound of the carnet.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `Note` = **To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.**  
+  What the counterfoil is for: at issue no counterfoil is stamped yet (D40).
+- `CustomsOfficeLocation/LocationTypeCode` = **BORDERPOST** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs post at the road border crossing. The code is from the Trade Accord's customs location type list: BORDERPOST = Border crossing point.
+- `CustomsOfficeLocation/Name` = **Customs and Border Service of Bayvarra, Euridice Crossing**  
+  The customs office where the counterfoil is presented.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `EA`)  
+  Two.
+- `VoucherDocumentReference/ID` = **V-TRA-1-IN**  
+  The transit voucher Bayvarra's customs keep on entry.
+- `VoucherDocumentReference/ID` = **V-TRA-1-OUT**  
+  The transit voucher they keep on exit.
 - `ID` = **IMP-1**  
-  The importation counterfoil, stamped by Lisavu's customs when they arrive.
+  The importation counterfoil (white sheet) of the carnet.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
-  The carnet.
-- `Note` = **Stamped by customs.**  
-  How it is used.
-- `CustomsOfficeLocation/Name` = **Customs office, Selanu airport**  
-  The customs office that stamps it.
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `Note` = **To be stamped by customs when the samples arrive on the island.**  
+  What the counterfoil is for: at issue no counterfoil is stamped yet (D40).
+- `CustomsOfficeLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
+- `CustomsOfficeLocation/Name` = **Island Customs Service, Selanu airport**  
+  The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ImportationDocumentReference/ID` = **IMP-1-STAMP**  
-  The import stamp on the island.
 - `VoucherDocumentReference/ID` = **V-IMP-1**  
-  The voucher that customs keeps.
+  The voucher customs detach and keep.
 - `ID` = **REEXP-1**  
-  The re-exportation counterfoil, to be stamped when they leave the island.
+  The re-exportation counterfoil (white sheet) of the carnet.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
-  The carnet.
-- `Note` = **Stamped by customs.**  
-  How it is used.
-- `CustomsOfficeLocation/Name` = **Customs office, Selanu airport**  
-  The customs office that stamps it.
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `Note` = **To be stamped by customs when the samples leave the island.**  
+  What the counterfoil is for: at issue no counterfoil is stamped yet (D40).
+- `CustomsOfficeLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
+- `CustomsOfficeLocation/Name` = **Island Customs Service, Selanu airport**  
+  The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ReexportationDocumentReference/ID` = **REEXP-1-STAMP**  
-  The re-export stamp.
 - `VoucherDocumentReference/ID` = **V-REEXP-1**  
-  The voucher that customs keeps.
-- `ID` = **REIMP-1**  
-  The re-importation counterfoil, stamped when they come home.
+  The voucher customs detach and keep.
+- `ID` = **TRA-2**  
+  The transit counterfoil (blue sheet), homeward of the carnet.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
-  The carnet.
-- `Note` = **Stamped by customs.**  
-  How it is used.
-- `CustomsOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
-  The customs office that stamps it.
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `Note` = **To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.**  
+  What the counterfoil is for: at issue no counterfoil is stamped yet (D40).
+- `CustomsOfficeLocation/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
+- `CustomsOfficeLocation/Name` = **Customs and Border Service of Bayvarra, Lumeport airport**  
+  The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ReimportationDocumentReference/ID` = **REIMP-1-STAMP**  
-  The re-import stamp.
+- `VoucherDocumentReference/ID` = **V-TRA-2-IN**  
+  The transit voucher Bayvarra's customs keep on entry.
+- `VoucherDocumentReference/ID` = **V-TRA-2-OUT**  
+  The transit voucher they keep on exit.
+- `ID` = **REIMP-1**  
+  The re-importation counterfoil (yellow sheet) of the carnet.
+- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+  The carnet the counterfoil belongs to (carnet/04#F4).
+- `Note` = **To be stamped by customs when the samples come home to Urvania.**  
+  What the counterfoil is for: at issue no counterfoil is stamped yet (D40).
+- `CustomsOfficeLocation/LocationTypeCode` = **BORDERPOST** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
+  A customs post at the road border crossing. The code is from the Trade Accord's customs location type list: BORDERPOST = Border crossing point.
+- `CustomsOfficeLocation/Name` = **Customs Administration of Urvania, Valico Euridice**  
+  The customs office where the counterfoil is presented.
+- `GoodsItem/ID` = **1**  
+  The two sample benches.
+- `GoodsItem/Quantity` = **2** (unitCode `EA`)  
+  Two.
 - `VoucherDocumentReference/ID` = **V-REIMP-1**  
-  The voucher that customs keeps.
+  The voucher customs detach and keep.
 
 ### Issuer Endorsement
 
@@ -563,8 +601,8 @@ Inside `IssuerEndorsement`:
   A party referred to from another party's details: its identifier and name are enough.
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   A party referred to from another party's details: its identifier and name are enough.
-- `EndorserParty/SignatoryContact/Name` = **Carnet desk**  
-  The chamber's desk.
+- `EndorserParty/SignatoryContact/Name` = **Carnet office**  
+  The chamber's carnet office, the name its contact has (carnet/01#F12).
 
 ### Additional Document Reference
 
@@ -584,7 +622,7 @@ Inside `DocumentDistribution`:
 - `DocumentTypeCode` = **GoodsItemPassport** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this carnet. The code is from the Trade Accord's UBL document type list: GoodsItemPassport = Goods Item Passport.
 - `DistributionTypeCode` = **COLLECT** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  The holder collects the paper carnet at the chamber's carnet desk: customs stamp its counterfoils at each border. The code is from the Trade Accord's distribution type list: COLLECT = Collect.
+  The holder collects the paper carnet at the chamber's carnet office: customs stamp its counterfoils as the samples travel. The code is from the Trade Accord's distribution type list: COLLECT = Collect.
 - `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Party/PartyName/Name` = **Valdara Industries**  
@@ -616,8 +654,8 @@ Inside `Signature`:
   <cbc:IssueTime>15:04:00-01:00</cbc:IssueTime>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">VALID</cbc:StatusCode>
   <cbc:Status>Issued</cbc:Status>
-  <cbc:Note languageID="qau">Barhek gan drek Selanu rizir tran; krir traz naz zhizhek sek mannan.</cbc:Note>
-  <cbc:Note languageID="en-XU">Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
+  <cbc:Note languageID="qau">Barhek gan drek Selanu rizir tran trek geskek June; kildrek traz hek skuskan drek tran.</cbc:Note>
+  <cbc:Note languageID="en-XU">Samples for the Selanu trade fair in early June; they come home after the fair.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">EXHIBITION</cbc:ExportReasonCode>
   <cbc:ExportReason>Exhibition at the Selanu trade fair</cbc:ExportReason>
@@ -729,9 +767,6 @@ Inside `Signature`:
       <cbc:FirstName>Davide</cbc:FirstName>
       <cbc:FamilyName>Orsenna</cbc:FamilyName>
       <cbc:Title>Ing.</cbc:Title>
-      <cbc:MiddleName>Ilse</cbc:MiddleName>
-      <cbc:OtherName>Mara</cbc:OtherName>
-      <cbc:NameSuffix>Jr</cbc:NameSuffix>
       <cbc:JobTitle>Sales engineer</cbc:JobTitle>
       <cbc:NationalID>XU-NID-55102311</cbc:NationalID>
       <cbc:NationalityCode listID="ISO 3166">XU</cbc:NationalityCode>
@@ -752,7 +787,7 @@ Inside `Signature`:
       </cac:CitizenshipCountry>
       <cac:Contact>
         <cbc:Name>Mobile on the road</cbc:Name>
-        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
+        <cbc:Telephone>+999 1 347 612 0893</cbc:Telephone>
       </cac:Contact>
       <cac:IdentityDocumentReference>
         <cbc:ID>XU-P-2210931</cbc:ID>
@@ -862,9 +897,6 @@ Inside `Signature`:
       <cac:TransitCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:TransitCountry>
-      <cac:OfficeOfSubSequentiallyEntryLocation>
-        <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
-      </cac:OfficeOfSubSequentiallyEntryLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -979,36 +1011,56 @@ Inside `Signature`:
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>EXP-1</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:FinalReexportationDate>2026-11-21</cbc:FinalReexportationDate>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples leave Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ExportationDocumentReference>
-      <cbc:ID>EXP-1-STAMP</cbc:ID>
-    </cac:ExportationDocumentReference>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-EXP-1</cbc:ID>
     </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
-    <cbc:ID>IMP-1</cbc:ID>
+    <cbc:ID>TRA-1</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs and Border Service of Bayvarra, Euridice Crossing</cbc:Name>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ImportationDocumentReference>
-      <cbc:ID>IMP-1-STAMP</cbc:ID>
-    </cac:ImportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-1-IN</cbc:ID>
+    </cac:VoucherDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-1-OUT</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>To be stamped by customs when the samples arrive on the island.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-IMP-1</cbc:ID>
     </cac:VoucherDocumentReference>
@@ -1016,35 +1068,62 @@ Inside `Signature`:
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REEXP-1</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples leave the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ReexportationDocumentReference>
-      <cbc:ID>REEXP-1-STAMP</cbc:ID>
-    </cac:ReexportationDocumentReference>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-REEXP-1</cbc:ID>
     </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
-    <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:ID>TRA-2</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Customs and Border Service of Bayvarra, Lumeport airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ReimportationDocumentReference>
-      <cbc:ID>REIMP-1-STAMP</cbc:ID>
-    </cac:ReimportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-2-IN</cbc:ID>
+    </cac:VoucherDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-2-OUT</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>To be stamped by customs when the samples come home to Urvania.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-REIMP-1</cbc:ID>
     </cac:VoucherDocumentReference>
@@ -1064,7 +1143,7 @@ Inside `Signature`:
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
-        <cbc:Name>Carnet desk</cbc:Name>
+        <cbc:Name>Carnet office</cbc:Name>
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>

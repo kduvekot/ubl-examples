@@ -1,6 +1,6 @@
 # Transportation Status: Selanu Airport Cargo to Bayforth Forwarding
 
-*Example 9 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
+*Example 9 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
 
 The island's air cargo terminal reports the cargo arrived and ready for customs clearance.
 
@@ -23,19 +23,19 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
 - `UUID` = **699cd30a-3784-5a9d-8770-15e1898e75ec**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
-  Reported when the cargo has landed.
-- `IssueTime` = **17:58:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Reported when the cargo had landed and been unloaded.
+- `IssueTime` = **10:55:00+00:00**  
+  After unloading; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Transportation status**  
   The kind of report.
-- `Description` = **Cargo arrived and ready for customs clearance.**  
+- `Description` = **Cargo arrived on KXL207 and ready for customs clearance.**  
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
 - `ShippingOrderID` = **LD-FI-26-0322**  
   The forwarding instructions of the shipment it reports on.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do.
+- `OtherInstruction` = **The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs clearance; reply only if that slot must change.**  
+  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -180,9 +180,11 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-05-14**  
   The day the event took place.
+- `OccurrenceTime` = **10:30:00+00:00**  
+  KXL207 landed at about 10:30, a quarter of an hour ahead of its timetable (O123).
 - `TransportEventTypeCode` = **ARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ARRIVAL = Arrival.
-- `Description` = **Cargo arrived and ready for customs clearance.**  
+- `Description` = **Cargo arrived on KXL207 and ready for customs clearance.**  
   What happened, in words.
 - `Location/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
@@ -305,12 +307,12 @@ Inside `StatusPeriod`:
   <cbc:ID>SAC-TS-26-0330</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>17:58:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>10:55:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
-  <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
+  <cbc:Description>Cargo arrived on KXL207 and ready for customs clearance.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs clearance; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0324</cbc:ID>
@@ -425,8 +427,9 @@ Inside `StatusPeriod`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>10:30:00+00:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TransportEventTypeCode>
-    <cbc:Description>Cargo arrived and ready for customs clearance.</cbc:Description>
+    <cbc:Description>Cargo arrived on KXL207 and ready for customs clearance.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
       <cbc:Name>Selanu airport, cargo terminal</cbc:Name>

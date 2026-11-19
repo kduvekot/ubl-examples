@@ -35,7 +35,7 @@ The port of loading reports the container loaded on board.
 - `ShippingOrderID` = **BF-FI-26-0137**  
   The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do.
+  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 

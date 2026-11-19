@@ -1,8 +1,8 @@
 # Despatch Advice: Lumeway Distribution to Nalevi Warehousing
 
-*Example 8 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
+*Example 8 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
 
-The new despatch advice, for the next day's flight.
+The distributor announces the frames to the buyer's 3PL with the flight they are booked on: first the afternoon flight of 13 May, then, replacing it, the morning flight of 14 May.
 
 [The XML file](08-DespatchAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,10 +22,10 @@ The new despatch advice, for the next day's flight.
   A new number: the first despatch advice was cancelled.
 - `UUID` = **bb530823-20b2-5c84-9178-9f8f4d49f81f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-14**  
-  Sent for the next day's flight.
-- `IssueTime` = **10:48:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-05-13**  
+  Sent the same evening for the next morning's flight.
+- `IssueTime` = **20:05:00-01:00**  
+  Right after the cancellation; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the air waybill.**  
@@ -45,6 +45,17 @@ Inside `OrderReference`:
   The sea order the change extends.
 - `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **LD-DA-26-0327**  
+  The despatch advice this one replaces (air/08#F8).
+- `DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LD-DA-26-0327 is the example air/06, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+- `DocumentDescription` = **Replaced: the frames missed KXL209 of 13 May and fly on KXL207 of 14 May.**  
+  What changed.
 
 ### Despatch Supplier Party
 
@@ -214,8 +225,8 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the frame cartons.
+- `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
+  The eight frame cartons and their skid.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
@@ -254,12 +265,28 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; identity of Kelaro Air Cargo (world/parties.json).
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  The flight.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **4** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Air transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 4 = Air transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **KXL207**  
+  The flight the frames are booked on.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XL** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Lisavu**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **ATF** (listID `IATA SSIM Aircraft Types`)  
+  The kind of means of transport: ATR 72-600F freighter of Kelaro Air Cargo; the fleet of Kelaro Air Cargo (world/parties.json). An ATR 72-600F, the new-built freighter of the ATR 72-600 series (IATA aircraft type code ATF, ICAO type designator AT72): seven LD3 positions on the main deck (one of them for the active temperature-controlled RKN container), about 9,200 kg payload and 75 m³, a large cargo door of 2.94 × 1.80 m. A freighter, so it can carry the lithium batteries that are for cargo aircraft only. The code is from the world's copy of IATA SSIM aircraft type codes: ATF = ATR 72 Freighter.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/AirTransport/AircraftID` = **QL-KXA** (schemeID `urn:ubl-examples:world:XL:aircraft-register`)  
+  The aircraft's registration: the nationality mark QL of Lisavu, a mark no real state uses, and three letters; the fleet of Kelaro Air Cargo (world/parties.json). The schemeID names the scheme it is from: the civil aircraft register of Lisavu (the nationality mark QL, a hyphen and three letters).
 - `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-05-14**  
-  Expected after the usual transit by air.
+  Expected at Selanu airport with KXL207.
+- `Delivery/EstimatedDeliveryPeriod/StartTime` = **10:45:00+00:00**  
+  The flight's timetabled arrival, in island time.
 - `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-05-14**  
   The same day.
-- `Delivery/Despatch/ActualDespatchDate` = **2026-05-14**  
-  The goods left on the day of this advice.
+- `Delivery/Despatch/ActualDespatchDate` = **2026-05-13**  
+  The frames left the dispatch area on 13 May.
 
 ### Despatch Line
 
@@ -393,8 +420,8 @@ Inside `DespatchLine`:
   <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DA-26-0329</cbc:ID>
   <cbc:UUID>bb530823-20b2-5c84-9178-9f8f4d49f81f</cbc:UUID>
-  <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>10:48:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-05-13</cbc:IssueDate>
+  <cbc:IssueTime>20:05:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -406,6 +433,11 @@ Inside `DespatchLine`:
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LD-DA-26-0327</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Replaced: the frames missed KXL209 of 13 May and fly on KXL207 of 14 May.</cbc:DocumentDescription>
+  </cac:AdditionalDocumentReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -538,7 +570,7 @@ Inside `DespatchLine`:
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -570,14 +602,28 @@ Inside `DespatchLine`:
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KXL207</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="IATA SSIM Aircraft Types">ATF</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KXA</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-05-14</cbc:StartDate>
+        <cbc:StartTime>10:45:00+00:00</cbc:StartTime>
         <cbc:EndDate>2026-05-14</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
-        <cbc:ActualDespatchDate>2026-05-14</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchDate>2026-05-13</cbc:ActualDespatchDate>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>

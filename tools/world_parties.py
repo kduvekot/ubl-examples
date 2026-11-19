@@ -62,10 +62,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 import world_data  # noqa: E402
 
 
-# the functions a party's desk can have (world/parties.json identity.desks; tools/build_examples.py desk_for)
+# the functions a party's desk can have (world/parties.json identity.desks; tools/build_examples.py desk_for);
+# "emergency" is a shipper's 24-hour line for its dangerous goods in transit, named as their contact (D36)
 DESK_FUNCTIONS = {"sales", "purchasing", "receivables", "payables", "goods_in", "despatch", "logistics", "customs",
                   "tenders", "operations", "procurement", "customs_export", "customs_import", "customs_transit",
-                  "carnet", "certificates"}
+                  "carnet", "certificates", "emergency"}
 
 
 def mod11(digits):
