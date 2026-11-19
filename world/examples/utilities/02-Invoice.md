@@ -528,14 +528,14 @@ Inside `InvoiceLine`:
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Warehouse of Castrano Logistics**  
   Where it is.
-- `OriginatorParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `OriginatorParty/PartyName/Name` = **Castrano Logistics**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  
   Where the power was used.
+- `Delivery/DeliveryParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Delivery/DeliveryParty/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
@@ -630,6 +630,10 @@ Inside `InvoiceLine`:
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Delivery/DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  
   Where the power was used.
+- `Delivery/DeliveryParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Delivery/DeliveryParty/PartyName/Name` = **Castrano Logistics**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item electricity of Ferrano Energy (world/items.json).
 - `Item/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
@@ -1050,19 +1054,19 @@ Inside `InvoiceLine`:
       <cbc:ID>FG-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
-    <cac:OriginatorParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Castrano Logistics</cbc:Name>
-      </cac:PartyName>
-    </cac:OriginatorParty>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Description>Castrano Logistics warehouse, Conciaro</cbc:Description>
       </cac:DeliveryLocation>
+      <cac:DeliveryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Castrano Logistics</cbc:Name>
+        </cac:PartyName>
+      </cac:DeliveryParty>
     </cac:Delivery>
     <cac:Item>
       <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
@@ -1146,6 +1150,14 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Description>Castrano Logistics warehouse, Conciaro</cbc:Description>
       </cac:DeliveryLocation>
+      <cac:DeliveryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Castrano Logistics</cbc:Name>
+        </cac:PartyName>
+      </cac:DeliveryParty>
     </cac:Delivery>
     <cac:Item>
       <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>

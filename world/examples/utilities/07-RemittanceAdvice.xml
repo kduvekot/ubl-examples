@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>3fcf184b-537e-5b27-9779-6c4b95b64a32</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:11:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>

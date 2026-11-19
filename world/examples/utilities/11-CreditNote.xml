@@ -9,10 +9,14 @@
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
-  <cbc:Note>The meter test found the meter over-reading by two cubic metres.</cbc:Note>
+  <cbc:Note>The test of water meter CSW-W-71844 found it over-reading by two cubic metres at the annual reading of 31 March: the year used 168 m³, not 170.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2025-04-01</cbc:StartDate>
+    <cbc:EndDate>2026-03-31</cbc:EndDate>
+  </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>CSWC-INV-26-0319</cbc:ID>
@@ -124,48 +128,11 @@
       <cac:Person>
         <cbc:FirstName>Robin</cbc:FirstName>
         <cbc:FamilyName>Ashdale</cbc:FamilyName>
-        <cac:FinancialAccount>
-          <cbc:ID schemeID="urn:ubl-examples:world:account">XB64BLUM38010007251840</cbc:ID>
-          <cbc:Name>Robin Ashdale</cbc:Name>
-          <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-          <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:FinancialInstitutionBranch>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
-            <cbc:Name>Main branch, Exchange Street</cbc:Name>
-            <cac:FinancialInstitution>
-              <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-              <cbc:Name>Bank of Lumeport</cbc:Name>
-              <cac:Address>
-                <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-                <cbc:StreetName>Exchange Street</cbc:StreetName>
-                <cbc:BuildingNumber>48</cbc:BuildingNumber>
-                <cbc:CityName>Lumeport</cbc:CityName>
-                <cbc:PostalZone>38523</cbc:PostalZone>
-                <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-                <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-                <cac:Country>
-                  <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                  <cbc:Name>Bayvarra</cbc:Name>
-                </cac:Country>
-              </cac:Address>
-            </cac:FinancialInstitution>
-            <cac:Address>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitutionBranch>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:FinancialAccount>
       </cac:Person>
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:Note>Set off against the balance of the settlement bill CSWC-INV-26-0319, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -188,7 +155,7 @@
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Collected for a public body, outside the scope of the state sales tax</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -206,6 +173,14 @@
     <cbc:Note>The city's levy, credited for the city.</cbc:Note>
     <cbc:CreditedQuantity unitCode="MTQ">2</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">0.84</cbc:LineExtensionAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>2</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:CollectedForParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
@@ -223,7 +198,7 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Levy collected for a public body</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Collected for a public body, outside the scope of the state sales tax</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -238,6 +213,14 @@
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="MTQ">2</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">4.70</cbc:LineExtensionAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
       <cbc:Name>Drinking water</cbc:Name>

@@ -614,6 +614,48 @@ Stage 6, building group G5 (C100, C101, C102; D35).
 |---|---|---|---|---|---|
 | `OrderLine/SellerProposedSubstituteLineItem` | 0..n | road/02-OrderResponse | | | open |
 
+### G4: energy, utilities (2026-11-19)
+
+Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
+
+> C91, D31 points 2 and 5: a statement shows a second supplier only where one really bills part of the consumption (Ferrano Grid's network charges on Ferrano Energy's bill, the city's sewage levy on the water bill); the island's telephone statement has one supplier, so `Consumption` only, and with the supplier branch its consumption lines go (utilities/12#F9; UBL reaches consumption lines only under `SupplierConsumption`, a point for the TC, O107): the bundle discount on the subscription line, the subscription's price "per month" and the data pack of 5 GB (which D31 point 6 drops anyway). The consumption lines' delivery location only pointed back to the statement's consumption point (utilities/01#F14, 03#F15, 05#F13, 08#F16, 12#F21).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+| `ConsumptionLine/Delivery` | 0..n | utilities/01-UtilityStatement, utilities/03-UtilityStatement, utilities/05-UtilityStatement, utilities/08-UtilityStatement | | | open |
+| `ConsumptionLine/UnstructuredPrice` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/PriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TaxInclusivePriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TimeAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackQuantity` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackSizeNumeric` | 0..1 | utilities/12-UtilityStatement | | | open |
+
+> C92, D31 point 6: the bundle discount of the telephone statement is given once, on the whole supply, as on the invoice (utilities/12#F6); the six business lines no longer repeat their share of it.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TelecommunicationsSupplyLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+
+> C93, D31 points 1 and 7: the household's annual account. The meter reader reads the meters once a year, so the reading website and its password go (D31 point 7); the open-ended recurring mandate has no limit of instructions (09#F3) and names no payer besides the debtor (09#F4); the household's account appears only in the mandate that collects from it, not again in its party block, nor in the credit note, which is set off (09#F7, 11#F5; the element stays covered by the purchase receipts); the reminder's fee line states its amount once (10#F10).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionPoint/WebSiteAccess` | 0..1 | utilities/08-UtilityStatement | | | open |
+| `PaymentMandate/MaximumPaymentInstructionsNumeric` | 0..1 | utilities/09-Invoice | | | open |
+| `PaymentMandate/PayerParty` | 0..1 | utilities/09-Invoice | | | open |
+| `ReminderLine/Amount` | 0..1 | utilities/10-Reminder | | | open |
+
+> C95, D31 points 4 and 7: Valdara, which owns the warehouse, holds its subscription, so the warehouse statement's consumption names no subscriber of its own (03#F6); a monthly tariff carries no one-time charge (01#F6); a remittance advice of one bill carries no tax total (04#F2); a reminder without tax no tax point date (10#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Reminder/TaxPointDate` | 0..1 | utilities/10-Reminder | | | open |
+| `RemittanceAdvice/TaxTotal` | 0..n | utilities/04-RemittanceAdvice | | | open |
+| `SubscriberConsumption/SubscriberParty` | 0..1 | utilities/03-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeType` | 0..n | utilities/01-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeTypeCode` | 0..1 | utilities/01-UtilityStatement | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

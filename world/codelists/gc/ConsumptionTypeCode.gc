@@ -108,5 +108,22 @@
             <SimpleValue>An estimate of the consumption.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>YEAR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Yearly consumption</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Munsir binmaz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kikapu mofilufo</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The consumption of an account year, between two annual readings.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

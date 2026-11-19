@@ -116,7 +116,7 @@
     <cac:UtilityConsumptionPoint>
       <cbc:ID>FG-CP-4120-G1</cbc:ID>
       <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
-      <cbc:SubscriberID>FE-C-0047121</cbc:SubscriberID>
+      <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="KWH">61200</cbc:TotalDeliveredQuantity>
@@ -176,7 +176,6 @@
           <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
           <cbc:GasPressureQuantity unitCode="BAR">4</cbc:GasPressureQuantity>
           <cbc:Description>1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.</cbc:Description>
-          <cbc:ConsumptionEnergyQuantity unitCode="KWH">61200</cbc:ConsumptionEnergyQuantity>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>

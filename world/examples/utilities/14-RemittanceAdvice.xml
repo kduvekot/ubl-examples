@@ -6,14 +6,14 @@
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Mamohe mutaki tohala titutu.</cbc:Note>
   <cbc:Note languageID="en-XL">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XLC">139.870</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">139.870</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -201,7 +201,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">139.870</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>

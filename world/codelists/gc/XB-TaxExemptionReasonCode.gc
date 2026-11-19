@@ -92,10 +92,10 @@
             <SimpleValue>LEVY</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Levy collected for a public body</SimpleValue>
+            <SimpleValue>Collected for a public body, outside the scope of the state sales tax</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>An amount the seller collects on behalf of a public body, such as the city's sewage levy.</SimpleValue>
+            <SimpleValue>Not an exemption: an amount the seller collects on behalf of a public body, such as the city's sewage levy, is no supply of the seller's, so it is outside the scope of the state sales tax (category O, without a rate). UBL has an element for the reason a supply is exempt but none for the reason it is outside the tax, so the reason is given here (D31, a point for the UBL TC).</SimpleValue>
          </Value>
       </Row>
       <Row>

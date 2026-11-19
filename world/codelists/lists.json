@@ -230,8 +230,8 @@
      "The buyer resells the goods or uses them in its products and charges the tax on its own retail sale."
     ],
     "LEVY": [
-     "Levy collected for a public body",
-     "An amount the seller collects on behalf of a public body, such as the city's sewage levy."
+     "Collected for a public body, outside the scope of the state sales tax",
+     "Not an exemption: an amount the seller collects on behalf of a public body, such as the city's sewage levy, is no supply of the seller's, so it is outside the scope of the state sales tax (category O, without a rate). UBL has an element for the reason a supply is exempt but none for the reason it is outside the tax, so the reason is given here (D31, a point for the UBL TC)."
     ],
     "FOOD": [
      "Basic food",
@@ -509,6 +509,10 @@
     "TAXS": [
      "TaxPayment",
      "Transaction is the payment of taxes."
+    ],
+    "UBIL": [
+     "Utilities",
+     "Transaction is for the payment to common utility provider that provide gas, water and/or electricity."
     ]
    }
   },
@@ -6120,7 +6124,7 @@
   "UtilityType": {
    "scope": "regional",
    "name": "Utility type",
-   "description": "The kind of utility supply. Also the meaning of SubscriberTypeCode in a utility item, which names the supply.",
+   "description": "The kind of utility supply.",
    "codes": {
     "ELEC": [
      "Electricity",
@@ -6191,6 +6195,10 @@
     "EST": [
      "Estimated",
      "An estimate of the consumption."
+    ],
+    "YEAR": [
+     "Yearly consumption",
+     "The consumption of an account year, between two annual readings."
     ]
    }
   },
@@ -6306,6 +6314,10 @@
     "CTRATIO": [
      "Transformer ratio",
      "The meter is connected through current transformers: the constant is their ratio."
+    ],
+    "CTVT": [
+     "Current and voltage transformers",
+     "The meter is connected through current and voltage transformers, as at a medium-voltage connection: the constant is the product of their ratios."
     ]
    }
   },
@@ -8969,18 +8981,7 @@
   },
   {
    "element": "SubscriberTypeCode",
-   "list": "UtilityType",
-   "parents": [
-    "UtilityItem"
-   ],
-   "text": "SubscriberType"
-  },
-  {
-   "element": "SubscriberTypeCode",
    "list": "SubscriberType",
-   "parents": [
-    "UtilityConsumptionPoint"
-   ],
    "text": "SubscriberType"
   },
   {

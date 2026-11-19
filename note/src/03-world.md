@@ -116,7 +116,12 @@ whether it becomes a company of its own is each country's choice, and an
 isolated system is exempt. Urvania chose the full split in 2007. Bayvarra
 keeps one energy company with a separately run network division, and the
 island, connected to no one, has one company that does everything, so the
-three countries show three arrangements.
+three countries show three arrangements. The gas is measured at a border
+metering station on Bayvarra's side. The producer declares each month's
+export in one declaration, with a consignment for each buyer (the power
+station and the retail company), and each buyer declares its own import.
+Montebrio Power is one of Urvania's power stations, a gas-fired station of
+about 40 MW; the retail company also buys electricity from the others.
 
 The supply of electricity, gas, water and telephone to end customers is a
 national matter under the Accord: each country keeps its own utilities,
@@ -1206,7 +1211,9 @@ standard terms, which follow its country's practice: Urvania gives 2 %
 discount for payment within ten days of 30 days net; Bayvarra charges a
 surcharge per month late on 30 days net; the island gives 45 days. Where
 neither says anything about late payment, the statutory interest of the
-seller's country applies (in Urvania 8 % a year). Across a border the
+seller's country applies: in Urvania 8 % a year, in Bayvarra 7 %, one
+federal rate under its federal commercial law, and on the island 6 %; so a
+utility bill, whose Accord term says nothing on late payment, carries it. Across a border the
 seller's country's rule applies, unless the contract chooses another. So
 Valdara's framework agreement with its rail carrier sets 30 days net from
 the consignment note, and the carrier's invoices fall due from the
@@ -1220,6 +1227,27 @@ countries, by a rule of the Accord, part of the common minimum it sets for
 the customers of the national utilities. They carry terms of their own, an
 Accord code, `TA-UTIL`, not a country's standard terms; a bill collected by direct
 debit says so and is collected on the due date.
+
+A utility gives each customer a customer number of its own; the supply
+contract keeps its own number. The statement behind a bill shows, beside
+the utility's own supply, the part of the bill another party really
+supplies: in Urvania Ferrano Grid's network charges, which Ferrano Energy
+collects with its bill and pays to the grid (its tariff of 27.3 ferra a
+kilowatt hour is 21.1 for the energy and 6.2 for the network), and in
+Bayvarra the city's sewage levy, which the water company collects for the
+city. The island's telephone company bills its own service only.
+
+A business with a meter read monthly is billed every month on its reading.
+A household pays on account: each April the utility estimates the year, and
+a twelfth of it, rounded up to a whole lume, is collected every month by
+direct debit. The meters are read once a year, at the end of March; the
+annual statement and the settlement bill charge the actual year less what
+was paid, and the new estimate sets the next year's monthly amount. In
+Lumeport the water company also runs the district heating, so a household
+on the network has one annual account for water, the city's levy and heat,
+with a cooling correction per megawatt hour when the return water comes
+back too warm. Water is exempt from the sales tax, the levy is outside it,
+and the heat carries the state's sales tax like any sale to a consumer.
 
 Bayvarra rounds cash payments to 5 cents, its smallest coin. A transfer
 quotes a creditor reference in the structure of ISO 11649, made from the
