@@ -188,12 +188,14 @@
    },
    "additional_info": "Supplied with four ground anchors and the bolts to fix them.",
    "variant": {
+    "what": "frame colour",
     "extended": "GRY",
     "attribute": [
      "COLOUR",
      "GRY",
      "Frame in Ferro grey"
-    ]
+    ],
+    "position": "FRM"
    },
    "barcode": "Code128",
    "emission": {
@@ -558,9 +560,9 @@
    "origin_criterion": "P"
   },
   {
-   "id": "marrow-bench",
+   "id": "marrow-bench-oak",
    "seller": "37-xb",
-   "name": "Elderwick Marrow bench",
+   "name": "Elderwick Marrow bench, oak",
    "kind": "goods",
    "unit": "EA",
    "price": {
@@ -571,7 +573,7 @@
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
-   "description": "Dining bench, 1400 mm, in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
+   "description": "Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
    "net_kg": 21.0,
    "gross_kg": 24.0,
    "package": {
@@ -594,12 +596,81 @@
     ]
    ],
    "gtin": "9522610000016",
-   "origin_criterion": "S"
+   "origin_criterion": "S",
+   "properties": [
+    [
+     "Wood",
+     "Oak"
+    ]
+   ],
+   "variant": {
+    "what": "wood",
+    "extended": "OAK",
+    "attribute": [
+     "WOOD",
+     "OAK",
+     "Solid oak"
+    ]
+   }
   },
   {
-   "id": "marrow-chair",
+   "id": "marrow-bench-ash",
    "seller": "37-xb",
-   "name": "Elderwick Marrow chair",
+   "name": "Elderwick Marrow bench, ash",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 380.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-MRW-B14",
+   "hs": "940169",
+   "cpc": "38112",
+   "origin": "XB",
+   "description": "Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
+   "net_kg": 21.0,
+   "gross_kg": 24.0,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   },
+   "brand": "Elderwick",
+   "brand_owner": "26-xb",
+   "model": "Marrow",
+   "dimensions": [
+    [
+     "BENCHLENGTH",
+     "1400",
+     "MMT"
+    ],
+    [
+     "SEATHEIGHT",
+     "450",
+     "MMT"
+    ]
+   ],
+   "gtin": "9522610000047",
+   "origin_criterion": "S",
+   "properties": [
+    [
+     "Wood",
+     "Ash"
+    ]
+   ],
+   "variant": {
+    "what": "wood",
+    "extended": "ASH",
+    "attribute": [
+     "WOOD",
+     "ASH",
+     "Solid ash"
+    ]
+   }
+  },
+  {
+   "id": "marrow-chair-oak",
+   "seller": "37-xb",
+   "name": "Elderwick Marrow chair, oak",
    "kind": "goods",
    "unit": "EA",
    "price": {
@@ -610,7 +681,7 @@
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
-   "description": "Dining chair in solid kiln-dried oak or ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
+   "description": "Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
    "net_kg": 10.5,
    "gross_kg": 11.5,
    "package": {
@@ -628,7 +699,71 @@
     ]
    ],
    "gtin": "9522610000023",
-   "origin_criterion": "S"
+   "origin_criterion": "S",
+   "properties": [
+    [
+     "Wood",
+     "Oak"
+    ]
+   ],
+   "variant": {
+    "what": "wood",
+    "extended": "OAK",
+    "attribute": [
+     "WOOD",
+     "OAK",
+     "Solid oak"
+    ]
+   }
+  },
+  {
+   "id": "marrow-chair-ash",
+   "seller": "37-xb",
+   "name": "Elderwick Marrow chair, ash",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 115.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-MRW-C",
+   "hs": "940169",
+   "cpc": "38112",
+   "origin": "XB",
+   "description": "Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
+   "net_kg": 10.5,
+   "gross_kg": 11.5,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   },
+   "brand": "Elderwick",
+   "brand_owner": "26-xb",
+   "model": "Marrow",
+   "dimensions": [
+    [
+     "SEATHEIGHT",
+     "450",
+     "MMT"
+    ]
+   ],
+   "gtin": "9522610000054",
+   "origin_criterion": "S",
+   "properties": [
+    [
+     "Wood",
+     "Ash"
+    ]
+   ],
+   "variant": {
+    "what": "wood",
+    "extended": "ASH",
+    "attribute": [
+     "WOOD",
+     "ASH",
+     "Solid ash"
+    ]
+   }
   },
   {
    "id": "marrow-care-kit",
@@ -640,7 +775,10 @@
     "amount": 0.0,
     "currency": "XBL"
    },
-   "free_with": "marrow-bench",
+   "free_with": [
+    "marrow-bench-oak",
+    "marrow-bench-ash"
+   ],
    "sellers_id": "BF-MRW-K",
    "hs": "321000",
    "cpc": "35110",
@@ -968,9 +1106,9 @@
    "description": "Men's cotton shirt; the state sales tax is added at the till."
   },
   {
-   "id": "marrow-bench-r",
+   "id": "marrow-bench-oak-r",
    "seller": "26-xb",
-   "name": "Elderwick Marrow bench",
+   "name": "Elderwick Marrow bench, oak",
    "kind": "goods",
    "unit": "EA",
    "price": {
@@ -978,13 +1116,27 @@
     "currency": "XBL"
    },
    "sellers_id": "BM-551005",
-   "resale_of": "marrow-bench",
-   "description": "Dining bench, 1400 mm, in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till."
+   "resale_of": "marrow-bench-oak",
+   "description": "Dining bench, 1400 mm, in solid oak, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
   },
   {
-   "id": "marrow-chair-r",
+   "id": "marrow-bench-ash-r",
    "seller": "26-xb",
-   "name": "Elderwick Marrow chair",
+   "name": "Elderwick Marrow bench, ash",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 549.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-551008",
+   "resale_of": "marrow-bench-ash",
+   "description": "Dining bench, 1400 mm, in solid ash, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
+  },
+  {
+   "id": "marrow-chair-oak-r",
+   "seller": "26-xb",
+   "name": "Elderwick Marrow chair, oak",
    "kind": "goods",
    "unit": "EA",
    "price": {
@@ -992,8 +1144,22 @@
     "currency": "XBL"
    },
    "sellers_id": "BM-551006",
-   "resale_of": "marrow-chair",
-   "description": "Dining chair in solid oak or ash, from the home department; also sold in the Marrow set of a bench and two chairs, 899 lume instead of 947; the state sales tax is added at the till."
+   "resale_of": "marrow-chair-oak",
+   "description": "Dining chair in solid oak, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
+  },
+  {
+   "id": "marrow-chair-ash-r",
+   "seller": "26-xb",
+   "name": "Elderwick Marrow chair, ash",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 199.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BM-551009",
+   "resale_of": "marrow-chair-ash",
+   "description": "Dining chair in solid ash, from the home department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till."
   },
   {
    "id": "marrow-care-kit-r",
@@ -1005,7 +1171,10 @@
     "amount": 0.0,
     "currency": "XBL"
    },
-   "free_with": "marrow-bench-r",
+   "free_with": [
+    "marrow-bench-oak-r",
+    "marrow-bench-ash-r"
+   ],
    "sellers_id": "BM-551007",
    "resale_of": "marrow-care-kit",
    "description": "Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench."

@@ -69,6 +69,12 @@ def is_public(pid):
     return PARTY[pid]["cat"] in ("government", "procurement")
 
 
+def free_with_name(it):
+    """The name of the item another comes free with: the model's name where it comes with each of its variants
+    (the care kit with the Marrow bench in oak and in ash), the part of the variants' names before the comma."""
+    return ITEM[it["free_with"][0]]["name"].split(",")[0]
+
+
 def tax_rule(seller, buyer, iid):
     """The tax category of a supply: (code, percent, scheme, reason, exemption reason or None).
 
@@ -108,7 +114,7 @@ def tax_rule(seller, buyer, iid):
                                     "business is exempt (category E).", "Service to a business")
         if it.get("free_with"):         # given with goods for resale, and handed on with them (furniture/09#F3)
             return ("E", 0, scheme, f"Supplied free with goods for resale: the {it['name']} goes with each "
-                                    f"{ITEM[it['free_with']]['name'].split()[-1].lower()}, and the buyer hands it on "
+                                    f"{free_with_name(it).split()[-1].lower()}, and the buyer hands it on "
                                     "with the goods it resells, so it is exempt from the state sales tax as they are; "
                                     "the tax is charged only on the sale to the final consumer (category E).",
                     "Sale for resale or manufacture")
@@ -406,7 +412,7 @@ def price_block(iid, currency=None):
                     "Date": V("2026-01-02", "The reference rate of the first working day of the year, fixed in the "
                                             "contract.")}}
     out = {"PriceAmount": price(it["price"]["amount"], it["price"]["currency"],
-                                f"No price: the item comes free with each {ITEM[it['free_with']]['name']} "
+                                f"No price: the item comes free with each {free_with_name(it)} "
                                 "(world/items.json)." if it.get("free_with") else
                                 "The seller's price per unit (world/items.json)."),
            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}

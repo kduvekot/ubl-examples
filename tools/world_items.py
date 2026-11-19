@@ -23,11 +23,15 @@ Checks:
     Elderwick pieces Brackenmere makes for Brightmarket) carries a GTIN under
     the brand owner's prefix, whoever sells it;
   * prices are positive, except for an item given free with another of the
-    same seller (free_with: the care kit with each Marrow bench), whose price
+    same seller (free_with: the care kit with each Marrow bench, in oak or in
+    ash), whose price
     is zero and in the seller's currency; a unit price may have
     more decimals than the currency (up to 4), because only amounts to pay
     are rounded to the currency's minor unit; gross weight is at least net
     weight;
+  * items of one seller that share an item number are variants of one model,
+    each with a variant code of its own (ExtendedID); on the GS1 side each
+    variant has its own GTIN (O155: the Marrow bench and chair in oak and ash);
   * customs tariff codes have the form of an HS subheading (6 digits);
   * the CPC Ver.2.1 subclass of goods is the one the UN Statistics Division's correspondence HS 2017 -> CPC
     Ver.2.1 gives for its HS subheading (world/codelists/sources/cpc/CPC21-HS2017.csv; decision P5); the world
@@ -140,8 +144,9 @@ def check(world):
         if it.get("free_with"):
             if pr["amount"] != 0:
                 problems.append(f"{where}: given free with {it['free_with']}, so its price is zero")
-            if items.get(it["free_with"], {}).get("seller") != it["seller"]:
-                problems.append(f"{where}: given free with {it['free_with']}, which is not an item of the same seller")
+            for w in it["free_with"]:      # each piece it comes with: a model's variants are items of their own
+                if items.get(w, {}).get("seller") != it["seller"]:
+                    problems.append(f"{where}: given free with {w}, which is not an item of the same seller")
         elif pr["amount"] <= 0:
             problems.append(f"{where}: price must be positive")
         # a unit price may be finer than the currency (29.80 yen per kWh is normal); amounts to pay are
@@ -228,6 +233,21 @@ def check(world):
         for comp in it.get("components", []):
             if comp["item"] not in items:
                 problems.append(f"{where}: component {comp['item']} is not an item of the world")
+    # variants: items of one seller under one item number differ by their variant (ExtendedID), and a GS1 item's
+    # variants each carry a GTIN of their own, because the shopper sees and chooses them (O155)
+    by_number = {}
+    for it in world["items"]:
+        by_number.setdefault((it["seller"], it["sellers_id"]), []).append(it)
+    for (seller, number), its in sorted(by_number.items()):
+        if len(its) < 2:
+            continue
+        ext = [i.get("variant", {}).get("extended") for i in its]
+        if None in ext or len(set(ext)) != len(ext):
+            problems.append(f"items {', '.join(i['id'] for i in its)}: one item number {number} of {seller}, but "
+                            "not told apart by a variant of their own (variant.extended)")
+    for it in world["items"]:
+        if it.get("variant") and not it["variant"].get("what"):
+            problems.append(f"item {it['id']}: a variant needs what it differs in (variant.what)")
     # cross-layer: who bills or offers has items, who has items bills or offers
     sellers = {i["seller"] for i in world["items"]}
     billing = set()

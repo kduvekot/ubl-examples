@@ -1021,16 +1021,19 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if bid:
         out["BuyersItemIdentification"] = {"ID": V(bid, bwhy)}
     out["SellersItemIdentification"] = {"ID": V(it["sellers_id"], f"The seller's own item number; {src}.")}
-    variant = maker.get("variant", {})
+    variant = maker.get("variant", {})     # a variant of the maker's item: its number, with the variant added
     if variant.get("extended"):
         out["SellersItemIdentification"]["ExtendedID"] = V(variant["extended"], "The variant of the item: the "
-                                                                                "frame colour, added to the item number.")
+                                                                                f"{variant['what']}, added to the "
+                                                                                "item number.")
     if variant.get("attribute"):
         a_, code, desc = variant["attribute"]
+        pa = {"AttributeID": V(a_, "The attribute the variant differs in.")}
+        if variant.get("position"):
+            pa["PositionCode"] = V(variant["position"], "The part of the item the attribute is on: the "
+                                                        f"{variant['what'].split()[0]}.")
         out["SellersItemIdentification"]["PhysicalAttribute"] = {
-            "AttributeID": V(a_, "The attribute the variant differs in."),
-            "PositionCode": V("FRM", "The part of the item the attribute is on: the frame."),
-            "DescriptionCode": V(code, "The variant's code for it."),
+            **pa, "DescriptionCode": V(code, "The variant's code for it."),
             "Description": V(desc, "The variant in words.")}
     if variant.get("measure"):
         a_, v, u = variant["measure"]
