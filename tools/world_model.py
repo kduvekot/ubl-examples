@@ -915,7 +915,8 @@ def build(world):
     #    ramp level across, a road ramp within twice its lean across (corner_groups); a road square that keeps to
     #    its rules on the land as it is is left as it is (road_fits).
     V = [[float(E[vi][vj]) for vj in range(H + 1)] for vi in range(W + 1)]
-    at_sea = {p["id"] for p in world["parties"] if p["kind"] in ("port", "quay") or p.get("water")}
+    at_sea = {p["id"] for p in world["parties"] if p["kind"] in ("port", "quay") or p.get("water")} \
+        | {x for f in world.get("flows", []) for leg in f.get("legs", []) if leg["mode"] == "river" for x in (leg["from"], leg["to"])}
     fixed = [[False] * (H + 1) for _ in range(W + 1)]        # corners at the water keep their height
     touches = lambda vi, vj: [tile(vi - a2, vj - b2) for a2 in (0, 1) for b2 in (0, 1) if tile(vi - a2, vj - b2)]
     for vi in range(W + 1):
@@ -929,7 +930,10 @@ def build(world):
                 if any(t.get("b") in at_sea or "hb" in t for t in ts):
                     V[vi][vj] = 0.0                           # but a port's, a quay's or a harbour's is at the water
             elif wet:
-                V[vi][vj], fixed[vi][vj] = float(max(wet)), True
+                if any(t.get("b") in at_sea for t in ts):
+                    V[vi][vj], fixed[vi][vj] = float(max(wet)), True   # a quay, or a party barges load at, stands at the water
+                else:                                       # a bank keeps the land's height, never below the water (MO004)
+                    V[vi][vj] = max(float(E[vi][vj]), float(max(wet)))   # not fixed: what is built may fit it
     # the banks: no corner beside the river lies below its water (a lower bound, kept when fitting below)
     # (a corner beside the river is held at or above the lowest water it is next to)
     floor = {}
@@ -1508,6 +1512,7 @@ def build(world):
     model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
              "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs, "structures": structures,
              "rapids": [list(q) for q in rapids], "access": access,
+             "river_level": [[i, j, round(lv, 1)] for (i, j), lv in river_level.items()],
              # the border on the water (the river below the crossing, the estuary's axis), in tile coordinates (a
              # square's centre at its index)
              "border_water": [[round(x - .5, 2), round(y - .5, 2)] for x, y in terrain.get("border_water", [])]}
