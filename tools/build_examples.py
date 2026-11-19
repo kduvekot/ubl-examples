@@ -2157,7 +2157,7 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
                                                      "distinguished from the price (179,400 ferra)")],
     "sea": [("XL", Decimal("2950.00"), "XBL", "the sea freight to the island"),
-            ("XL", Decimal("140.00"), "XBL", "the cargo insurance")],
+            ("XL", lambda: __import__("examples_scenarios").INSURANCE, "XBL", "the cargo insurance")],   # O173
 }
 
 
@@ -2181,7 +2181,8 @@ def customs_values(content, doc):
     cur = goods[0]["DeclaredCustomsValueAmount"].attrs["currencyID"]
     minor = {"XUF": 0, "XBL": 2, "XLC": 3}[cur]
     q = Decimal(1).scaleb(-minor)
-    adds = [(a * world_rate(c, cur), why) for scope, a, c, why in rules if scope in ("all", country)]
+    adds = [((a() if callable(a) else a) * world_rate(c, cur), why) for scope, a, c, why in rules
+            if scope in ("all", country)]
     if not adds:
         return
     extra = sum(a for a, _ in adds)

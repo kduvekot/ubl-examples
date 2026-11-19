@@ -170,7 +170,7 @@ def check(world):
             problems.append(f"{where}: price must be positive")
         # a unit price may be finer than the currency (29.80 yen per kWh is normal); amounts to pay are
         # rounded to the currency's minor units, which the amounts layer checks
-        if round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
+        if "amount" in pr and round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
             problems.append(f"{where}: unit price {pr['amount']} has more than {UNIT_PRICE_DECIMALS} decimals")
         conv = seller["identity"].get("identification", {})
         if it.get("brand_owner"):        # a private label: the brand owner numbers the item, not the maker (D7)

@@ -447,6 +447,8 @@ Inside `InvoiceLine`:
   1 × 140.30, rounded to the minor unit of the currency.
 - `DocumentReference/ID` = **WS-CERT-26-0884**  
   The insurance certificate of the shipment, which states the insured value.
+- `DocumentReference/DocumentType` = **Insurance certificate**  
+  The kind of document referred to, Wavesure's insurance certificate of the sea shipment, with its insured value, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Item/Description` = **Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.**  
   The seller's description; item cargo-insurance of Bayforth Forwarding (world/items.json).
 - `Item/Name` = **Cargo insurance**  
@@ -828,6 +830,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XBL">140.30</cbc:LineExtensionAmount>
     <cac:DocumentReference>
       <cbc:ID>WS-CERT-26-0884</cbc:ID>
+      <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.</cbc:Description>

@@ -1182,7 +1182,9 @@ island's shop price is not yet settled. The spare side frame goes from
 Valdara to Lumeway at 47.50; Lumeway's trade price for it is 64.00, and
 58.00 on its revised list of 20 May. To the island Lumeway sells it at 67.00, CIF Selanu: a price
 with the frame's share of the sea freight, export clearance and insurance in
-it, which leaves Lumeway about 16 %. The eight urgent frames that fly to the
+it, which leaves Lumeway about 16 %. The cargo insurance that CIF obliges
+Lumeway to take out costs a premium of 0.22 % of the insured value, the CIF
+value plus 10 %, so it follows the value of each shipment. The eight urgent frames that fly to the
 island go at the trade price, carriage paid to Selanu airport, and Lumeway
 recharges the air freight at cost, a surcharge the island's buyer accepted
 when it asked for them. In the

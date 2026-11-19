@@ -353,6 +353,7 @@
     <cbc:LineExtensionAmount currencyID="XBL">140.30</cbc:LineExtensionAmount>
     <cac:DocumentReference>
       <cbc:ID>WS-CERT-26-0884</cbc:ID>
+      <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.</cbc:Description>
