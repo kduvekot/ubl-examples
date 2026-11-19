@@ -3947,6 +3947,10 @@
     "CERTIFICATE": [
      "Certificate",
      "A certificate."
+    ],
+    "STOCKCOUNT": [
+     "Stock count",
+     "The holder's own count of the goods it has in stock, on a stated day."
     ]
    }
   },

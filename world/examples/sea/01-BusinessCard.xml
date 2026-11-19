@@ -23,6 +23,37 @@
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Velumi Trading</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+      <cbc:BuildingNumber>16</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:ReceiverParty>
+  <cac:BusinessParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -94,37 +125,6 @@
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
-  </cac:SenderParty>
-  <cac:ReceiverParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Velumi Trading</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
-      <cbc:BuildingNumber>16</cbc:BuildingNumber>
-      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        <cbc:Name>Lisavu</cbc:Name>
-      </cac:Country>
-    </cac:PostalAddress>
-  </cac:ReceiverParty>
-  <cac:BusinessParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeway Distribution</cbc:Name>
-    </cac:PartyName>
   </cac:BusinessParty>
   <cac:BrochureDocumentReference>
     <cbc:ID>LD-BROCHURE-2026</cbc:ID>
@@ -142,15 +142,14 @@
   <cac:BusinessCapability>
     <cbc:ID>CAP-STOCK</cbc:ID>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">WAREHOUSING</cbc:CapabilityTypeCode>
-    <cbc:Description>Stock of 2,000 benches in Marrowdale.</cbc:Description>
-    <cbc:ValueAmount currencyID="XBL">1040000.00</cbc:ValueAmount>
-    <cbc:ValueQuantity unitCode="EA">2000</cbc:ValueQuantity>
+    <cbc:Description>Stock of 264 park benches in Marrowdale, as counted on 30 April.</cbc:Description>
+    <cbc:ValueAmount currencyID="XBL">105336.00</cbc:ValueAmount>
+    <cbc:ValueQuantity unitCode="EA">264</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
-      <cbc:ID>LD-AUDIT-2025</cbc:ID>
-      <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">AUDIT</cbc:EvidenceTypeCode>
-      <cbc:Name>Stock count 2025</cbc:Name>
-      <cbc:Description>Year-end count by the auditor.</cbc:Description>
-      <cbc:CandidateStatement>The stock is counted every year.</cbc:CandidateStatement>
+      <cbc:ID>LD-COUNT-26-04</cbc:ID>
+      <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">STOCKCOUNT</cbc:EvidenceTypeCode>
+      <cbc:Name>Stock count of 30 April 2026</cbc:Name>
+      <cbc:Description>The distributor's own count of its warehouse at the end of April; it counts its stock at the end of every month.</cbc:Description>
       <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">PUBLIC</cbc:ConfidentialityLevelCode>
       <cac:EvidenceIssuingParty>
         <cac:PartyIdentification>
@@ -160,12 +159,10 @@
           <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:EvidenceIssuingParty>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      </cac:Language>
     </cac:SuppliedEvidence>
     <cac:ValidityPeriod>
-      <cbc:EndDate>2026-12-30</cbc:EndDate>
+      <cbc:StartDate>2026-04-30</cbc:StartDate>
+      <cbc:EndDate>2026-05-31</cbc:EndDate>
     </cac:ValidityPeriod>
     <cac:WebSite>
       <cbc:ID>WEB-1</cbc:ID>

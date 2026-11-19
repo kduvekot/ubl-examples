@@ -6941,7 +6941,8 @@
     "AUDIT",
     "ACCOUNTS",
     "REFERENCE",
-    "CERTIFICATE"
+    "CERTIFICATE",
+    "STOCKCOUNT"
    ]
   },
   "ConfidentialityLevel": {

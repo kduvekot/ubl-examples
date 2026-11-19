@@ -8,7 +8,7 @@
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:59:00-01:00</cbc:IssueTime>
-  <cbc:AgreementTypeCode listID="urn:ubl-examples:world:codelist:AgreementTypeCode">BILATERAL</cbc:AgreementTypeCode>
+  <cbc:AgreementTypeCode listID="urn:ubl-examples:world:codelist:AgreementTypeCode">MULTILATERAL</cbc:AgreementTypeCode>
   <cbc:VersionID>1.0</cbc:VersionID>
   <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   <cbc:RequiredResponseMessageLevelCode listID="urn:ubl-examples:world:codelist:ResponseMessageLevelCode">BUSINESS</cbc:RequiredResponseMessageLevelCode>
@@ -208,36 +208,38 @@
     </cac:CommercialContact>
   </cac:ParticipantParty>
   <cac:AgreementCountry>
+    <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:AgreementCountry>
     <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
   </cac:AgreementCountry>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+  </cac:AgreementCountry>
   <cac:RequiredCertificationDocumentReference>
-    <cbc:ID>LD-EDI-TERMS-1.0</cbc:ID>
-    <cbc:UUID>ed76dcbb-efca-5239-9195-cf2d240a09d4</cbc:UUID>
-    <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+    <cbc:ID>LTAC-AP-REQ-2.0</cbc:ID>
+    <cbc:UUID>dc787c2a-3f1a-547c-a3f0-172d3721bfb5</cbc:UUID>
+    <cbc:IssueDate>2026-01-02</cbc:IssueDate>
     <cbc:IssueTime>12:00:00</cbc:IssueTime>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
-    <cbc:XPath>/DigitalAgreement/DigitalAgreementTerms</cbc:XPath>
     <cbc:ReferencedDocumentInternalAddress>section-2</cbc:ReferencedDocumentInternalAddress>
     <cbc:LanguageID>en</cbc:LanguageID>
     <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
-    <cbc:VersionID>1.0</cbc:VersionID>
+    <cbc:VersionID>2.0</cbc:VersionID>
     <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-    <cbc:DocumentDescription>The terms of the digital trade agreement.</cbc:DocumentDescription>
+    <cbc:DocumentDescription>The Trade Accord Council's requirements for the certification of access points on the trade accord's network.</cbc:DocumentDescription>
     <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject mimeCode="text/plain">VGVybXMgb2YgdGhlIGRpZ2l0YWwgdHJhZGUgYWdyZWVtZW50IG9mIHRoZSB3b3JsZCwgdmVyc2lvbiAxLjAu</cbc:EmbeddedDocumentBinaryObject>
-      <cbc:FileName>terms.txt</cbc:FileName>
       <cac:ExternalReference>
-        <cbc:URI>https://www.lumeway.example/edi/terms-1.0.pdf</cbc:URI>
+        <cbc:URI>https://www.tradeaccord.example/network/ap-requirements-2.0.pdf</cbc:URI>
         <cbc:DocumentHash>9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e</cbc:DocumentHash>
         <cbc:HashAlgorithmMethod>http://www.w3.org/2001/04/xmlenc#sha256</cbc:HashAlgorithmMethod>
-        <cbc:ExpiryDate>2027-05-04</cbc:ExpiryDate>
+        <cbc:ExpiryDate>2027-05-05</cbc:ExpiryDate>
         <cbc:ExpiryTime>23:59:00</cbc:ExpiryTime>
         <cbc:MimeCode listID="IANA Media Types">application/pdf</cbc:MimeCode>
         <cbc:FormatCode listID="PRONOM">fmt/480</cbc:FormatCode>
         <cbc:EncodingCode listID="RFC 2045 Content-Transfer-Encoding">binary</cbc:EncodingCode>
-        <cbc:CharacterSetCode listID="IANA Character Sets">UTF-8</cbc:CharacterSetCode>
-        <cbc:FileName>terms-1.0.pdf</cbc:FileName>
-        <cbc:Description>The full terms.</cbc:Description>
+        <cbc:FileName>ap-requirements-2.0.pdf</cbc:FileName>
+        <cbc:Description>The full requirements.</cbc:Description>
       </cac:ExternalReference>
     </cac:Attachment>
     <cac:ValidityPeriod>
@@ -263,7 +265,7 @@
     </cac:ResultOfVerification>
   </cac:RequiredCertificationDocumentReference>
   <cac:DigitalAgreementTerms>
-    <cbc:Description>Documents are exchanged over the trade accord's network.</cbc:Description>
+    <cbc:Description>The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the trade accord's network.</cbc:Description>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-05</cbc:StartDate>
       <cbc:EndDate>2027-05-05</cbc:EndDate>
@@ -375,13 +377,85 @@
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>
     </cac:DigitalCollaboration>
+    <cac:DigitalCollaboration>
+      <cbc:ID>ordering-2</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>LD-OrderResponse-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>OrderResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>VT-OrderResponse-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>OrderResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
     <cac:CertificationDocumentReference>
       <cbc:ID>ACCORD-CERT-PROC-ordering</cbc:ID>
     </cac:CertificationDocumentReference>
   </cac:DigitalProcess>
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
-    <cbc:Description>Invoice, credit note, statement and remittance advice.</cbc:Description>
+    <cbc:Description>Invoice and credit note from the distributor, its invoice status request and the buyer's response: the billing between the two participants; the factor's statement and the remittance to the factor are no part of it (sea/03#F18).</cbc:Description>
     <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>
@@ -451,6 +525,78 @@
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
             <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+    <cac:DigitalCollaboration>
+      <cbc:ID>billing-2</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>VT-InvoiceStatusResponse-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>InvoiceStatusResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InvoiceStatusResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>LD-InvoiceStatusResponse-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>InvoiceStatusResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InvoiceStatusResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>

@@ -149,6 +149,14 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `WHOAffectedAreaVisit/VisitDate` | 1 | sea/16-CommonTransportationReport |  |  | open |
 | `WHOAffectedAreaVisit/WHOAffectedAreaPortLocation` | 1 | sea/16-CommonTransportationReport |  |  | open |
 
+> C117, D30 point 7: the digital agreement is the Trade Accord's multilateral agreement; the certification it requires is the council's for access points, published as a PDF with its hash, no embedded text with a file name of its own, no character set for a PDF and no XPath into a document that is not XML (sea/03#F6, F13, F14).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Attachment/FileName` | 0..1 | sea/03-DigitalAgreement |  |  | open |
+| `DocumentReference/XPath` | 0..n | sea/03-DigitalAgreement |  |  | open |
+| `ExternalReference/CharacterSetCode` | 0..1 | sea/03-DigitalAgreement |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

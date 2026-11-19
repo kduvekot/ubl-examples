@@ -1535,6 +1535,12 @@ def place_parties(doc, content, top=None):
                 break
             if last:
                 desk = desk_for(top, path, pid) if pid in PARTY else None
+                if target == "Party" and step == "SenderParty" and DOC_CLASS.get(top["doc"]) == "presentation" \
+                        and top["parties"].get("BusinessParty") == pid:
+                    # the business presents itself: its full description goes under BusinessParty, the sender is
+                    # only identified (sea/01#F5)
+                    node[step] = party(pid, short=True)
+                    break
                 if target == "Party":
                     block = profiled(top, path, pid)
                 elif target == "FinancialInstitution":

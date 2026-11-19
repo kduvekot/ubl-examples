@@ -2165,7 +2165,11 @@ def sea(n, doc):
                 "DigitalProcess": [{"ID": V(p, "A process the parties agree to exchange electronically."),
                                     "Description": V(d, "What the process covers.")}
                                    for p, d in (("ordering", "Order, order response and order change."),
-                                                ("billing", "Invoice, credit note, statement and remittance advice."))]}
+                                                ("billing", "Invoice and credit note from the distributor, its "
+                                                            "invoice status request and the buyer's response: the "
+                                                            "billing between the two participants; the factor's "
+                                                            "statement and the remittance to the factor are no part "
+                                                            "of it (sea/03#F18)."))]}
     if doc["doc"] == "DigitalCapability":
         return {"ID": V(f.number("capability", doc["from"], "DigitalCapability"), "The governor's number."),
                 "IssueDate": V(f.date(1), "Sent when the buyer joins the agreement."),
@@ -2173,8 +2177,8 @@ def sea(n, doc):
                                     "Description": V(d, "What it covers.")}
                                    for p, d in (("ordering", "Receives orders and order changes, sends order "
                                                              "responses."),
-                                                ("billing", "Sends invoices and statements, receives remittance "
-                                                            "advices."))]}
+                                                ("billing", "Sends invoices, credit notes and invoice status "
+                                                            "requests, receives the status responses (sea/04#F10)."))]}
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 3, "The island buyer orders benches for its city's parks.",
                          "Cost, insurance and freight to the port of Selanu: the seller pays the sea freight and insures "
@@ -6601,35 +6605,33 @@ def full_signature(pid, no, f, day, why):
 
 def full_reference(f, rid, why, day):
     """A document reference with everything UBL can say about it."""
-    text = _b64.b64encode(b"Terms of the digital trade agreement of the world, version 1.0.").decode()
     return {"ID": V(rid, why),
             "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:ubl-examples:world:doc:{rid}")), "Its UUID."),
-            "IssueDate": V(f.date(day), "Its issue date."), "IssueTime": V("12:00:00", "And time."),
+            "IssueDate": V("2026-01-02", "The council published version 2.0 at the start of the year."),
+            "IssueTime": V("12:00:00", "And time."),
             "DocumentTypeCode": V("774", "The kind of document."),
-            "DocumentDescription": V("The terms of the digital trade agreement.", "What it is."),
-            "XPath": V("/DigitalAgreement/DigitalAgreementTerms", "The part of this document the reference "
-                                                                  "explains."),
-            "ReferencedDocumentInternalAddress": V("section-2", "The section of the referenced document meant."),
+            "DocumentDescription": V("The Trade Accord Council's requirements for the certification of access "
+                                     "points on the trade accord's network.", "What it is."),
+            "ReferencedDocumentInternalAddress": V("section-2", "The section of the referenced document meant: the "
+                                                   "requirements for a participant's own access point."),
             "LanguageID": V("en", "In English."),
-            "LocaleCode": V("en-XB", "The terms are written in Bayvarran English, by the distributor."),
-            "VersionID": V("1.0", "The version referred to."),
-            "DocumentStatusCode": V("Confirmed", "The version both sides confirmed."),
-            "Attachment": {"EmbeddedDocumentBinaryObject": V(text, "A short text, Base64-encoded.",
-                                                             mimeCode="text/plain"),
-                           "FileName": V("terms.txt", "The file's name."),
-                           "ExternalReference": {
-                               "URI": V("https://www.lumeway.example/edi/terms-1.0.pdf", "The full text."),
+            "LocaleCode": V("en-XB", "Written in Bayvarran English, by the council in Lumeport."),
+            "VersionID": V("2.0", "The version referred to."),
+            "DocumentStatusCode": V("Confirmed", "The version in force."),
+            "Attachment": {"ExternalReference": {
+                               "URI": V("https://www.tradeaccord.example/network/ap-requirements-2.0.pdf",
+                                        "The full text, on the council's site."),
                                "DocumentHash": V("9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e",
                                                  "The SHA-256 hash of the full text, to check it is unchanged."),
                                "HashAlgorithmMethod": V("http://www.w3.org/2001/04/xmlenc#sha256", "SHA-256."),
-                               "ExpiryDate": V(f.date(365), "The link works for a year."),
+                               "ExpiryDate": V(f.date(day + 365), "The link works as long as the reference is "
+                                                                   "valid (sea/03#F15)."),
                                "ExpiryTime": V("23:59:00", "Until the end of that day."),
                                "MimeCode": V("application/pdf", "A PDF."),
                                "FormatCode": V("fmt/480", "An archivable PDF."),
                                "EncodingCode": V("binary", "Not encoded."),
-                               "CharacterSetCode": V("UTF-8", "The character set of its text."),
-                               "FileName": V("terms-1.0.pdf", "The file's name."),
-                               "Description": V("The full terms.", "What it holds.")}},
+                               "FileName": V("ap-requirements-2.0.pdf", "The file's name."),
+                               "Description": V("The full requirements.", "What it holds.")}},
             "ValidityPeriod": {"StartDate": V(f.date(day), "In force from signing."),
                                "EndDate": V(f.date(day + 365), "For a year.")},
             "ResultOfVerification": {"ValidatorID": V("LTAC-VALIDATOR", "The council's validation service."),
@@ -6687,26 +6689,40 @@ def digital_service(pid, doc_type, sending):
 @enrich("sea", "DigitalAgreement")
 def _(f, n, doc, out):
     procs = out["DigitalProcess"]
-    for p, (doc_type, send, recv) in zip(procs, (("Order", "1-xl", "6-xb"), ("Invoice", "6-xb", "1-xl"))):
+    for p, exchanges in zip(procs, AGREED_EXCHANGES):
         p["ProfileID"] = V(f"urn:ubl-examples:world:profile:{p['ID'].value}:1.0", "The Trade Accord's process "
                            "profile the agreement covers.")
-        p["DigitalCollaboration"] = {"ID": V(f"{p['ID'].value}-1", "The main exchange of the process."),
-                                     "SendingDigitalService": digital_service(send, doc_type, True),
-                                     "ReceivingDigitalService": digital_service(recv, doc_type, False)}
+        p["DigitalCollaboration"] = [{"ID": V(f"{p['ID'].value}-{k}", "An exchange of the process: the main one "
+                                              "first, then the other way (sea/03#F18)." if k > 1 else
+                                              "The main exchange of the process."),
+                                      "SendingDigitalService": digital_service(send, doc_type, True),
+                                      "ReceivingDigitalService": digital_service(recv, doc_type, False)}
+                                     for k, (doc_type, send, recv) in enumerate(exchanges, 1)]
         p["CertificationDocumentReference"] = {"ID": V(f"ACCORD-CERT-PROC-{p['ID'].value}", "The council's "
                                                                                              "certification of "
                                                                                              "the process.")}
-    return {"AgreementTypeCode": V("BILATERAL", "An agreement between two parties."),
+    return {"AgreementTypeCode": V("MULTILATERAL", "The Trade Accord's multilateral digital agreement, which the "
+                                                   "Trade Accord Council governs and to which the distributor and "
+                                                   "the island buyer accede (D30 point 7, sea/03#F7)."),
             "PreviousVersionID": V("0.9", "The draft both sides commented on."),
             "RequiredResponseMessageLevelCode": V("BUSINESS", "A business response is required for every "
                                                               "document."),
-            "Signature": full_signature("6-xb", "LD-SIG-26-DA-1", f, 1, "The distributor's signature as "
-                                                                        "governor."),
-            "AgreementCountry": {"IdentificationCode": V("XB", "Governed by Bayvarra's law.")},
-            "RequiredCertificationDocumentReference": full_reference(f, "LD-EDI-TERMS-1.0", "The terms both sides "
-                                                                                            "must certify.", 1),
+            "Signature": full_signature("6-xb", "LD-SIG-26-DA-1", f, 1, "The distributor's signature of its "
+                                                                        "accession; the buyer signs its own "
+                                                                        "accession (what a signature carries waits "
+                                                                        "for the signatures stage, D6)."),
+            "AgreementCountry": [{"IdentificationCode": V(c, f"The agreement applies in the Trade Accord's member "
+                                                             f"countries: {WORLD['countries'][c]['name']} "
+                                                             "(sea/03#F12).")} for c in ("XU", "XB", "XL")],
+            "RequiredCertificationDocumentReference": full_reference(f, "LTAC-AP-REQ-2.0", "The certification the "
+                                                                     "participants' access points must hold, by the "
+                                                                     "Trade Accord Council's requirements "
+                                                                     "(sea/03#F6).", 1),
             "DigitalAgreementTerms": {
-                "Description": V("Documents are exchanged over the trade accord's network.", "The terms."),
+                "Description": V("The terms of the Trade Accord's multilateral digital agreement, version 1.0, "
+                                 "published by the Trade Accord Council: documents are exchanged over the trade "
+                                 "accord's network.", "The terms: the Accord's own, which the participants accept "
+                                 "by acceding, not the distributor's (sea/03#F16)."),
                 "ValidityPeriod": {"StartDate": V(f.date(1), "From signing."), "EndDate": V(f.date(366), "For a "
                                                                                                          "year.")},
                 "AdoptionPeriod": {"StartDate": V(f.date(1), "The buyer adopts it"), "EndDate": V(f.date(15),
@@ -6735,11 +6751,27 @@ def _(f, n, doc, out):
                                                  "EndTime": V("04:00:00", "Until four.")}}}}
 
 
+# the exchanges of the two processes between the participants: (document type, sender, receiver)
+AGREED_EXCHANGES = ((("Order", "1-xl", "6-xb"), ("OrderResponse", "6-xb", "1-xl")),
+                    (("Invoice", "6-xb", "1-xl"), ("InvoiceStatusResponse", "1-xl", "6-xb")))
+
+
 @enrich("sea", "DigitalCapability")
 def _(f, n, doc, out):
+    for p, exchanges in zip(out["DigitalProcess"], AGREED_EXCHANGES):     # the distributor's side (sea/04#F4)
+        p["ProfileID"] = V(f"urn:ubl-examples:world:profile:{p['ID'].value}:1.0", "The Trade Accord's process "
+                           "profile, as in the agreement.")
+        p["DigitalCollaboration"] = [
+            {"ID": V(f"{p['ID'].value}-{k}", "The exchange as the agreement numbers it."),
+             ("SendingDigitalService" if send == "6-xb" else "ReceivingDigitalService"):
+                 digital_service("6-xb", doc_type, send == "6-xb")}
+            for k, (doc_type, send, recv) in enumerate(exchanges, 1)]
     return {"VersionID": V("1.0", "The first statement of capability."),
             "PreviousVersionID": V("0.9", "The draft."),
             "Signature": seal(doc["from"], "LD-SIG-26-DC")}
+
+
+LUMEWAY_COUNT = 264      # Lumeway's benches for sale on 30 April: 96 by road and 192 by rail, less the store's 24
 
 
 @enrich("sea", "BusinessCard")
@@ -6759,20 +6791,29 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V("LD-REG-XB", "The distributor's registration extract.")},
             "BusinessCapability": {"ID": V("CAP-STOCK", "A capability."),
                                    "CapabilityTypeCode": V("WAREHOUSING", "What it can do."),
-                                   "Description": V("Stock of 2,000 benches in Marrowdale.", "In words."),
-                                   "ValueAmount": amount(Decimal("1040000.00"), "XBL", "The stock's value."),
-                                   "ValueQuantity": qty(2000, "EA", "Benches in stock."),
-                                   "SuppliedEvidence": {"ID": V("LD-AUDIT-2025", "The evidence."),
-                                                        "EvidenceTypeCode": V("AUDIT", "An audit report."),
-                                                        "Name": V("Stock count 2025", "Its name."),
-                                                        "Description": V("Year-end count by the auditor.", "What "
-                                                                                                           "it is."),
-                                                        "CandidateStatement": V("The stock is counted every year.",
-                                                                                "The company's statement."),
+                                   "Description": V(f"Stock of {LUMEWAY_COUNT} park benches in Marrowdale, as "
+                                                    "counted on 30 April.", "In words: the benches for sale in "
+                                                    "Lumeway's warehouse at its month-end count, from the March road "
+                                                    "lot and the April rail lots (the goods chain's ledger, D21)."),
+                                   "ValueAmount": amount(LUMEWAY_COUNT * Decimal("399.00"), "XBL", "The stock's value "
+                                                         "at cost, 399.00 lume a bench, the price Lumeway paid "
+                                                         "Valdara (D14)."),
+                                   "ValueQuantity": qty(LUMEWAY_COUNT, "EA", "Benches in stock, for sale."),
+                                   "SuppliedEvidence": {"ID": V("LD-COUNT-26-04", "The evidence."),
+                                                        "EvidenceTypeCode": V("STOCKCOUNT", "Lumeway's own count of "
+                                                                              "its stock, not an audit (D30 point 7, "
+                                                                              "sea/01#F3)."),
+                                                        "Name": V("Stock count of 30 April 2026", "Its name."),
+                                                        "Description": V("The distributor's own count of its "
+                                                                         "warehouse at the end of April; it counts "
+                                                                         "its stock at the end of every month.",
+                                                                         "What it is, and how often it is made "
+                                                                         "(sea/01#F4)."),
                                                         "ConfidentialityLevelCode": V("PUBLIC", "May be shared."),
-                                                        "EvidenceIssuingParty": party("6-xb", short=True),
-                                                        "Language": {"ID": V("en", "English.")}},
-                                   "ValidityPeriod": {"EndDate": V(f.date(240), "Until the next count.")},
+                                                        "EvidenceIssuingParty": party("6-xb", short=True)},
+                                   "ValidityPeriod": {"StartDate": V(f.date(-4), "From the count of 30 April"),
+                                                      "EndDate": V(f.date(27), "to the next, at the end of May "
+                                                                               "(sea/01#F12).")},
                                    "WebSite": {"ID": V("WEB-1", "The stock page."), "Name": V("Stock", "Its name."),
                                                "Description": V("Live stock levels.", "What it shows."),
                                                "WebSiteTypeCode": V("EXTRANET", "For trade customers."),
