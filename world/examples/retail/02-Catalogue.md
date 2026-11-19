@@ -23,9 +23,9 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
 - `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ActionCode` = **NEW** (listID `urn:ubl-examples:world:codelist:CatalogueActionCode`)  
-  A new catalogue. The code is from the Trade Accord's catalogue action list: NEW = New catalogue.
-- `Name` = **Lumeway Distribution catalogue**  
-  The catalogue's title.
+  A new catalogue, issued for the store on its request. The code is from the Trade Accord's catalogue action list: NEW = New catalogue.
+- `Name` = **Lumeway's catalogue for the Lumeport store, 2026**  
+  Its name: for the range of the store's reopened home and garden department.
 - `IssueDate` = **2026-04-20**  
   The spring catalogue for the store.
 - `IssueTime` = **09:00:00-01:00**  
@@ -39,9 +39,7 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
 - `Description` = **Benches and spare parts for resale.**  
   What the catalogue holds.
 - `VersionID` = **1.0**  
-  The first version.
-- `PreviousVersionID` = **0.9**  
-  The draft the store saw at the fair.
+  The first version: a new catalogue for the store, with no version before it (retail/02#F2, D34).
 - `LineCountNumeric` = **2**  
   Two lines.
 
@@ -314,10 +312,6 @@ Inside `CatalogueLine`:
   From the issue.
 - `LineValidityPeriod/EndDate` = **2026-07-19**  
   With the catalogue.
-- `ItemComparison/PriceAmount` = **520** (currencyID `XBL`)  
-  The price per bench.
-- `ItemComparison/Quantity` = **1** (unitCode `EA`)  
-  For comparing per bench.
 - `ComponentRelatedItem/ID` = **MS-SL-1800**  
   The related item: Hardwood bench slat 1800.
 - `ComponentRelatedItem/Quantity` = **5** (unitCode `EA`)  
@@ -801,7 +795,7 @@ Inside `CatalogueLine`:
   <cbc:ID>LD-CAT-26-0218</cbc:ID>
   <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
   <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueActionCode">NEW</cbc:ActionCode>
-  <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
+  <cbc:Name>Lumeway's catalogue for the Lumeport store, 2026</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
@@ -809,7 +803,6 @@ Inside `CatalogueLine`:
   <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>
   <cbc:Description>Benches and spare parts for resale.</cbc:Description>
   <cbc:VersionID>1.0</cbc:VersionID>
-  <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-20</cbc:StartDate>
@@ -1019,10 +1012,6 @@ Inside `CatalogueLine`:
       <cbc:StartDate>2026-04-20</cbc:StartDate>
       <cbc:EndDate>2026-07-19</cbc:EndDate>
     </cac:LineValidityPeriod>
-    <cac:ItemComparison>
-      <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
-      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-    </cac:ItemComparison>
     <cac:ComponentRelatedItem>
       <cbc:ID>MS-SL-1800</cbc:ID>
       <cbc:Quantity unitCode="EA">5</cbc:Quantity>

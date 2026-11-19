@@ -6,17 +6,14 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0238</cbc:ID>
   <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
-  <cbc:Name>Withdrawal of the spring catalogue</cbc:Name>
+  <cbc:Name>Withdrawal of the catalogue for the Lumeport store</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cbc:IssueTime>17:05:00-01:00</cbc:IssueTime>
   <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
   <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
-  <cbc:Note>Replaced by the summer catalogue.</cbc:Note>
+  <cbc:Note>Lumeway's winter catalogue 2026 takes over on 20 June.</cbc:Note>
   <cbc:VersionID>1.2</cbc:VersionID>
-  <cbc:Description>The spring catalogue is no longer valid.</cbc:Description>
-  <cac:ValidityPeriod>
-    <cbc:EndDate>2026-06-19</cbc:EndDate>
-  </cac:ValidityPeriod>
+  <cbc:Description>The catalogue for the Lumeport store is no longer valid from 20 June.</cbc:Description>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
@@ -24,7 +21,7 @@
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
     <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
-    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.2</cbc:VersionID>
     <cbc:PreviousVersionID>1.1</cbc:PreviousVersionID>

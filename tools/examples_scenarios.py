@@ -5226,12 +5226,14 @@ def retail(n, doc):
     f, d = RETAIL, doc["doc"]
     cat = {"ID": V(f.numbers.get("catalogue", ""), "The catalogue concerned.")} if "catalogue" in f.numbers else None
     if d == "CatalogueRequest":
-        return head(f, "catalogue-request", doc, 0, "The store asks for the spring catalogue. As UBL defines it, the "
-                                                     "party that sends a catalogue request is its ProviderParty.")
+        return head(f, "catalogue-request", doc, 0, "The store asks Lumeway for its catalogue, to set up the range "
+                                                     "of the reopened department. As UBL defines it, the party that "
+                                                     "sends a catalogue request is its ProviderParty.")
     if d == "CataloguePricingUpdate":
         return {**head(f, "pricing-update", doc, 30, "The distributor lowers a price during the season."),
                 "RelatedCatalogueReference": cat,
-                "CataloguePricingUpdateLine": {"ID": V("1", "The line of the side frame."),
+                "CataloguePricingUpdateLine": {"ID": V("2", "The catalogue's line of the side frame "
+                                                            "(retail/03#F3)."),
                                                "RequiredItemLocationQuantity": {"Price": {
                                                    "PriceAmount": price("58.00", "XBL", "The new price of the side "
                                                                                         "frame, down from 64.00."),
@@ -5244,9 +5246,14 @@ def retail(n, doc):
                                                                           "EndDate": V(f.date(90), "Until the "
                                                                                        "catalogue ends.")},
                                                        "PreviousPriceList": {
-                                                           "ID": V("LD-PL-2026", "The price list of the spring "
-                                                                                   "catalogue it replaces."),
-                                                           "StatusCode": V("REPLACED", "No longer in force.")}}}}}}
+                                                           "ID": V("LD-PL-2026", "The price list it revises: the new "
+                                                                                 "list is a revision of the whole "
+                                                                                 "range, in which only the side "
+                                                                                 "frame's price changes "
+                                                                                 "(retail/03#F12)."),
+                                                           "StatusCode": V("REPLACED", "Replaced by the revision as a "
+                                                                                       "whole; the bench keeps its "
+                                                                                       "price in the new list.")}}}}}}
     if d == "CatalogueItemSpecificationUpdate":
         it = item("bench-serra-b")     # the product, its GTIN and its price stay; the maker's datasheet is revised
         it["ItemSpecificationDocumentReference"] = {
@@ -5267,7 +5274,8 @@ def retail(n, doc):
                 "RelatedCatalogueReference": cat,
                 "CatalogueItemSpecificationUpdateLine": {"ID": V("1", "The line of the bench."), "Item": it}}
     if d == "CatalogueDeletion":
-        return {**head(f, "catalogue-deletion", doc, 60, "The spring catalogue is withdrawn before the summer one."),
+        return {**head(f, "catalogue-deletion", doc, 60, "Lumeway withdraws the store's catalogue the day before its "
+                                                          "winter catalogue takes over."),
                 "DeletedCatalogueReference": cat}
     if d == "DocumentStatusRequest":
         return {**head(f, "status-request", doc, 6, "Asked two days after ordering."),
@@ -5442,7 +5450,7 @@ def _with_enrichment(flow_id, fn):
 # The store's catalogue and its revisions (retail/02 to 04): version -> (day, time of the revision, what made it,
 # the version before). A reference to the catalogue describes it as it stood when the referring document was issued:
 # the version then current and its last revision, never a later one (retail/04#F1, #F8, O175, C72).
-CATALOGUE_REVISIONS = {"1.0": (0, "09:00:00", "Not revised yet: its issue.", "0.9"),
+CATALOGUE_REVISIONS = {"1.0": (0, "09:00:00", "Not revised yet: its issue.", None),
                        "1.1": (30, "13:00:00", "Revised by the price update of the side frame.", "1.0"),
                        "1.2": (31, "08:30:00", "Revised by the specification update of the bench.", "1.1")}
 
@@ -5455,11 +5463,12 @@ def catalogue_ref(f, why, key="catalogue", version="1.0"):
             "IssueTime": V(CATALOGUE_REVISIONS["1.0"][1], "And time, as the catalogue states it."),
             "RevisionDate": V(f.date(day), revised),
             "RevisionTime": V(time, "At that time."),
-            "Note": V("Spring catalogue 2026.", "Which catalogue."),
+            "Note": V("Lumeway's catalogue for the Lumeport store, 2026.", "Which catalogue: one Lumeway issued for "
+                                                                         "the store's reopened home and garden "
+                                                                         "department (D34)."),
             "Description": V("Benches and spare parts for resale.", "What it holds."),
             "VersionID": V(version, "The version referred to: the one current when this document is issued."),
-            "PreviousVersionID": V(previous, "The version before it." if previous != "0.9" else
-                                   "The draft the store saw at the fair.")}
+            **({"PreviousVersionID": V(previous, "The version before it.")} if previous else {})}   # 1.0 is new
 
 
 def related(iid, q, why):
@@ -5490,8 +5499,6 @@ def _(f, n, doc, out):
                            "PackLevelCode": V("PALLET", "The pack level the line is for."),
                            "WarrantyParty": party("5-xu", short=True),
                            "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
-                           "ItemComparison": {"PriceAmount": price("520.00", "XBL", "The price per bench."),
-                                              "Quantity": qty(1, "EA", "For comparing per bench.")},
                            "ComponentRelatedItem": [related("slat-1800", 5, "Five slats per bench."),
                                                     related("bench-casting", 2, "Two side frames per bench.")],
                            "AccessoryRelatedItem": {"ID": V("VI-ANCHOR-4", "The ground anchor set."),
@@ -5512,15 +5519,17 @@ def _(f, n, doc, out):
                                                    "Description": V("Side frame, 2025 casting", "Which version: the "
                                                                     "2025 casting, which the 2026 casting with "
                                                                     "the reinforced foot replaced.")}})
-    return {"ActionCode": V("NEW", "A new catalogue."),
+    return {"ActionCode": V("NEW", "A new catalogue, issued for the store on its request."),
+            "Name": V("Lumeway's catalogue for the Lumeport store, 2026", "Its name: for the range of the store's "
+                                                                          "reopened home and garden department."),
             "IssueTime": V(CATALOGUE_REVISIONS["1.0"][1], "Issued in the morning, for the store to set up the "
                                                           "range."),
             "RevisionDate": V(f.date(0), "Not revised yet: the issue date."),
             "RevisionTime": V(CATALOGUE_REVISIONS["1.0"][1], "The issue time."),
             "Note": V("Prices for trade customers, before sales tax.", "What the prices are."),
             "Description": V("Benches and spare parts for resale.", "What the catalogue holds."),
-            "VersionID": V("1.0", "The first version."),
-            "PreviousVersionID": V("0.9", "The draft the store saw at the fair."),
+            "VersionID": V("1.0", "The first version: a new catalogue for the store, with no version before it "
+                                  "(retail/02#F2, D34)."),
             "LineCountNumeric": V("2", "Two lines."),
             "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement with the store."),
                                    "ContractType": V("Supply agreement", "Its kind.")},
@@ -5537,8 +5546,11 @@ def _(f, n, doc, out):
 
 @enrich("retail", "CatalogueRequest")
 def _(f, n, doc, out):
-    return {"Name": V("Spring catalogue 2026", "The catalogue asked for."),
-            "Note": V("For the garden department.", "Who it is for."),
+    return {"Name": V("Request for Lumeway's catalogue for the home and garden department", "What the document is: "
+                                                                                           "a request, named as one "
+                                                                                           "(retail/01#F10)."),
+            "Note": V("To set up the range of the home and garden department, which reopens on Monday 11 May after "
+                      "its renovation.", "Who it is for, and why now (D34)."),
             "Description": V("Benches and spare parts.", "What the store wants to see."),
             "PricingUpdateRequestIndicator": V("true", "The store wants price updates during the season."),
             "ItemUpdateRequestIndicator": V("true", "And changes to the items."),
@@ -5579,7 +5591,7 @@ def catalogue_update_head(f, name, version):
     return {"Name": V(name, "What the update is."),
             "RevisionDate": V(f.date(day), "The day of the change."),
             "RevisionTime": V(time, "When the change was made, before the update was sent."),
-            "Note": V("Applies to the spring catalogue.", "Which catalogue."),
+            "Note": V("A revision of Lumeway's catalogue for the Lumeport store.", "Which catalogue."),
             "Description": V(name, "In words."),
             "VersionID": V(version, "The catalogue version after the update."),
             "LineCountNumeric": V("1", "One line."),
@@ -5589,7 +5601,6 @@ def catalogue_update_head(f, name, version):
             "Signature": {"ID": V(f"LD-SIG-26-{version}", "The distributor's seal."),
                           "SignatoryParty": party("6-xb", short=True)},
             "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
-            "TradingTerms": {"Information": V("Unchanged.", "The terms stay as in the catalogue.")},
             "DefaultLanguage": {"ID": V("en", "English."), "Name": V("English", "In words.")},
             "RelatedCatalogueReference": catalogue_ref(f, "The catalogue updated.", version=previous)}
 
@@ -5597,6 +5608,9 @@ def catalogue_update_head(f, name, version):
 @enrich("retail", "CataloguePricingUpdate")
 def _(f, n, doc, out):
     return {**catalogue_update_head(f, "Price change of the side frame", "1.1"),
+            "Description": V("The new price list LD-PL-2026-2 revises the whole range: the side frame goes from 64.00 "
+                             "to 58.00; the bench keeps its price.", "What changes, and that the new list covers the "
+                                                                     "whole range (retail/03#F12)."),
             "CataloguePricingUpdateLine": {"ContractorCustomerParty": {"Party": party("26-xb", short=True)},
                                            "SellerSupplierParty": {"Party": party("6-xb", short=True)}}}
 
@@ -5611,11 +5625,13 @@ def _(f, n, doc, out):
 
 @enrich("retail", "CatalogueDeletion")
 def _(f, n, doc, out):
-    return {"Name": V("Withdrawal of the spring catalogue", "What it is."),
-            "EffectiveDate": V(f.date(61), "From the next day."), "EffectiveTime": V("00:00:00", "From midnight."),
-            "Note": V("Replaced by the summer catalogue.", "Why."), "VersionID": V("1.2", "The last version."),
-            "Description": V("The spring catalogue is no longer valid.", "In words."),
-            "ValidityPeriod": {"EndDate": V(f.date(60), "The last day it was valid.")},
+    return {"Name": V("Withdrawal of the catalogue for the Lumeport store", "What it is."),
+            "EffectiveDate": V(f.date(61), "From Saturday 20 June, the first day of winter in the south."),
+            "EffectiveTime": V("00:00:00", "From midnight: the one statement of when the deletion takes effect "
+                                           "(retail/20#F4)."),
+            "Note": V("Lumeway's winter catalogue 2026 takes over on 20 June.", "Why (D34, O117)."),
+            "VersionID": V("1.2", "The last version."),
+            "Description": V("The catalogue for the Lumeport store is no longer valid from 20 June.", "In words."),
             "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement.")},
             "Signature": {"ID": V("LD-SIG-26-0619", "The distributor's seal."),
                           "SignatoryParty": party("6-xb", short=True)},
@@ -7203,11 +7219,14 @@ def _(f, n, doc, out):
 
 @enrich("retail", "CatalogueRequest")
 def _(f, n, doc, out):
-    return {"RequestedClassificationScheme": {"UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:"
-                                                                                           "HS2022")), "Its UUID."),
-                                              "LastRevisionDate": V("2022-01-01", "The edition in force."),
-                                              "LastRevisionTime": V("00:00:00", "From midnight."),
-                                              "Note": V("Six-digit subheadings.", "The level wanted."),
+    return {"RequestedClassificationScheme": {"LastRevisionDate": V("2022-01-01", "The edition in force: HS 2022 "
+                                                                                   "entered into force on 1 January "
+                                                                                   "2022."),
+                                              "Note": V("The heading and its six-digit subheadings.", "The levels "
+                                                                                                      "wanted, as the "
+                                                                                                      "categories give "
+                                                                                                      "them "
+                                                                                                      "(retail/01#F3)."),
                                               "Description": V("The international goods classification.", "What "
                                                                                                           "it is."),
                                               "SchemeURI": V("https://www.wcoomd.org/hs", "Where the scheme is.")}}
@@ -9402,10 +9421,12 @@ def _(f, n, doc, out):
     for d in find_dicts(out, "ClassificationCategory"):
         cc = d["ClassificationCategory"]
         if isinstance(cc, dict):
-            cc["Description"] = V("Outdoor furniture and its spare parts.", "What the category holds.")
-            cc["CategorizesClassificationCategory"] = {"Name": V("Spare parts", "A subcategory the store wants "
-                                                                                 "too."),
-                                                        "CodeValue": V("FUR-OUT-SP", "Its code.")}
+            cc["Description"] = V("Seats and their parts: the bench and its spare side frame.", "What the "
+                                                                                                 "category holds.")
+            cc["CategorizesClassificationCategory"] = {"Name": V("Parts of seats, other than of wood", "The "
+                                                                 "subheading of the spare side frame (D13)."),
+                                                        "CodeValue": V("940199", "HS subheading 9401.99 "
+                                                                                 "(retail/01#F3).")}
     return {}
 
 

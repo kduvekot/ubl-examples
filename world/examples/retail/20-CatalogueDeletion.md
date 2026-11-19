@@ -22,29 +22,22 @@ The spring catalogue ends; the distributor deletes it before the summer catalogu
   The sender's number for this document.
 - `UUID` = **f9877c55-f962-5da6-86c9-7b721989951a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `Name` = **Withdrawal of the spring catalogue**  
+- `Name` = **Withdrawal of the catalogue for the Lumeport store**  
   What it is.
 - `IssueDate` = **2026-06-19**  
-  The spring catalogue is withdrawn before the summer one.
+  Lumeway withdraws the store's catalogue the day before its winter catalogue takes over.
 - `IssueTime` = **17:05:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `EffectiveDate` = **2026-06-20**  
-  From the next day.
+  From Saturday 20 June, the first day of winter in the south.
 - `EffectiveTime` = **00:00:00**  
-  From midnight.
-- `Note` = **Replaced by the summer catalogue.**  
-  Why.
+  From midnight: the one statement of when the deletion takes effect (retail/20#F4).
+- `Note` = **Lumeway's winter catalogue 2026 takes over on 20 June.**  
+  Why (D34, O117).
 - `VersionID` = **1.2**  
   The last version.
-- `Description` = **The spring catalogue is no longer valid.**  
+- `Description` = **The catalogue for the Lumeport store is no longer valid from 20 June.**  
   In words.
-
-### Validity Period
-
-Inside `ValidityPeriod`:
-
-- `EndDate` = **2026-06-19**  
-  The last day it was valid.
 
 ### Deleted Catalogue Reference
 
@@ -62,8 +55,8 @@ Inside `DeletedCatalogueReference`:
   Revised by the specification update of the bench.
 - `RevisionTime` = **08:30:00**  
   At that time.
-- `Note` = **Spring catalogue 2026.**  
-  Which catalogue.
+- `Note` = **Lumeway's catalogue for the Lumeport store, 2026.**  
+  Which catalogue: one Lumeway issued for the store's reopened home and garden department (D34).
 - `Description` = **Benches and spare parts for resale.**  
   What it holds.
 - `VersionID` = **1.2**  
@@ -260,17 +253,14 @@ Inside `ContractorCustomerParty`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0238</cbc:ID>
   <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
-  <cbc:Name>Withdrawal of the spring catalogue</cbc:Name>
+  <cbc:Name>Withdrawal of the catalogue for the Lumeport store</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cbc:IssueTime>17:05:00-01:00</cbc:IssueTime>
   <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
   <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
-  <cbc:Note>Replaced by the summer catalogue.</cbc:Note>
+  <cbc:Note>Lumeway's winter catalogue 2026 takes over on 20 June.</cbc:Note>
   <cbc:VersionID>1.2</cbc:VersionID>
-  <cbc:Description>The spring catalogue is no longer valid.</cbc:Description>
-  <cac:ValidityPeriod>
-    <cbc:EndDate>2026-06-19</cbc:EndDate>
-  </cac:ValidityPeriod>
+  <cbc:Description>The catalogue for the Lumeport store is no longer valid from 20 June.</cbc:Description>
   <cac:DeletedCatalogueReference>
     <cbc:ID>LD-CAT-26-0218</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
@@ -278,7 +268,7 @@ Inside `ContractorCustomerParty`:
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
     <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
-    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.2</cbc:VersionID>
     <cbc:PreviousVersionID>1.1</cbc:PreviousVersionID>

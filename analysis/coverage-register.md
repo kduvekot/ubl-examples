@@ -621,6 +621,20 @@ Stage 6, building group G7 (C103 to C105, C110 to C113, the packaging leftovers)
 | `ItemInformationRequestLine/ForecastTypeCode` | 0..1 | furniture/03-ItemInformationRequest |  |  | open |
 | `ItemInformationRequestLine/PerformanceMetricTypeCode` | 0..1 | furniture/03-ItemInformationRequest |  |  | open |
 
+> C110, D34: Lumeway's catalogue for the store is new, version 1.0 with no version before it (02#F2); its bench line carries no comparison that repeats the unit price (02#F13); the request names the real Harmonized System without an invented UUID or a midnight revision time (01#F7); the updates repeat no trading terms they do not change (03#F9, 04#F12); the deletion states only when it takes effect (20#F4).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Catalogue/PreviousVersionID` | 0..1 | retail/02-Catalogue |  |  | open |
+| `CatalogueDeletion/ValidityPeriod` | 0..n | retail/20-CatalogueDeletion |  |  | open |
+| `CatalogueItemSpecificationUpdate/TradingTerms` | 0..n | retail/04-CatalogueItemSpecificationUpdate |  |  | open |
+| `CatalogueLine/ItemComparison` | 0..n | retail/02-Catalogue |  |  | open |
+| `CataloguePricingUpdate/TradingTerms` | 0..n | retail/03-CataloguePricingUpdate |  |  | open |
+| `ClassificationScheme/LastRevisionTime` | 0..1 | retail/01-CatalogueRequest |  |  | open |
+| `ClassificationScheme/UUID` | 0..1 | retail/01-CatalogueRequest |  |  | open |
+| `ItemComparison/PriceAmount` | 0..1 | retail/02-Catalogue |  |  | open |
+| `ItemComparison/Quantity` | 0..1 | retail/02-Catalogue |  |  | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
