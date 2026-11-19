@@ -3329,7 +3329,7 @@ def utility_statement(f, n, doc, key, invoice_no):
                                  "could not be reached; the readings of 31 January and 31 March, split by the "
                                  f"warehouse's load profile, put it at {pt['prev'][1]:,} kWh. February used {pt['history'][-1][2]:,} kWh, not the "
                                  f"{corr['billed']:,} kWh billed: the {corr['billed'] - pt['history'][-1][2]:,} "
-                                 f"kWh are credited on line {corr['row'] + 1} of this bill.", "Why and how.")}
+                                 f"kWh are credited on line {corr['row'] + 1} of the bill.", "Why and how.")}
         consumption = {"UtilityStatementTypeCode": V(UTILITY[KIND[sup]], "The kind of supply."),
                        "MainPeriod": {"StartDate": V("2026-03-01", "March."),
                                       "EndDate": V("2026-03-31", "Its last day.")},

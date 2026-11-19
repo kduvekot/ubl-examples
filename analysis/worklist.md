@@ -1502,6 +1502,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D23 (utility bills are due 21 days after the bill under one Accord code, O73), D15 (O16).
 - State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: energy: 01#F4; utilities: 01#F3, 01#F5, 01#F9, 01#F12, 01#F13, 01#F14, 03#F3, 03#F7, 03#F8, 03#F10, 03#F11, 03#F15, 05#F1, 05#F3, 05#F9, 05#F10, 05#F12, 05#F13, 08#F4, 08#F5, 08#F7, 08#F12, 08#F14, 08#F16, 08#F17, 12#F9, 12#F14, 12#F20, 12#F21
+- **Partly fixed (2026-11-19):** 03#F7 with O159: the estimate correction in statement 03 keeps only its type, meter and description; its quantity and amount are a consumption line of their own, as the district-heating elements CorrectionUnitAmount, ConsumptionEnergyQuantity and CorrectionAmount do not fit an electricity estimate. The other findings of the cause remain.
 
 ### C92 · Utilities: the telecom statement and invoice
 - Kind: flow story · Findings: 15 (High 4, Medium 5, Low 6) in 3 files, 1 flow · Needs decision: owner: D31
@@ -1536,7 +1537,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
 - Findings: utilities: 01#F1, 01#F2, 02#F1, 02#F3, 03#F1, 03#F2, 03#F5
-- **Fixed (2026-11-19):** the excise tiers at their real rates 1.2 and 0.6, each naming its electricity, no TaxableAmount on the per-kWh excise (02#F1, F3); each statement reports its share of the excise (factory 277,680, warehouse 11,160: the tiers apply to the customer's month, the lower tier on the main connection, recorded in countries.json) and carries excise and VAT as two tax totals, so the statements add up to the bill (01#F1, F2, 03#F5); the correction's unit amount 27.3 (03#F2); a build check `check_utility_statements`. **Not done: 03#F1** (the estimate correction), see O159.
+- **Fixed (2026-11-19):** the excise tiers at their real rates 1.2 and 0.6, each naming its electricity, no TaxableAmount on the per-kWh excise (02#F1, F3); each statement reports its share of the excise (factory 277,680, warehouse 11,160: the tiers apply to the customer's month, the lower tier on the main connection, recorded in countries.json) and carries excise and VAT as two tax totals, so the statements add up to the bill (01#F1, F2, 03#F5); the correction's unit amount 27.3 (03#F2); a build check `check_utility_statements`. 03#F1 (the estimate correction) followed on 2026-11-19 under O159 (D31 point 7): February's estimated reading of 117,250 kWh is replaced by 116,500 kWh (derived from the load profile between the readings of 31 January and 31 March), so March measures 19,350 kWh; February's 750 kWh billed too much are credited on a line of their own (invoice 02 line 4, statement 03's second consumption line: −750 kWh, −20,475, energy tax −450 at the upper rate February charged, VAT recomputed), the history shows February's 16,450 kWh; the bill's total is unchanged; `check_utility_statements` now compares the excise tiers with the quantity the statements bill on their consumption lines.
 
 ### C95 · Utilities: isolated slips
 - Kind: flow story · Findings: 7 (High 1, Medium 2, Low 4) in 6 files, 1 flow · Needs decision: owner: D31
@@ -1548,6 +1549,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D23 (O73).
 - State: D31 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D31).
 - Findings: utilities: 01#F6, 02#F5, 02#F7, 03#F6, 04#F2, 08#F13, 10#F3
+- **Partly fixed (2026-11-19):** 02#F7 with O159 (D31 point 7): the billing reference to line 2 of February's bill FE-INV-26-0211 has its purpose, line 4 crediting the 750 kWh February's estimate charged too much, and says so. The other findings of the cause remain.
 
 ### C96 · Qualification requests and responses (ESPD-like) in contest and tender
 - Kind: flow story · Findings: 32 (High 1, Medium 11, Low 20) in 8 files, 2 flows · Needs decision: owner: D29

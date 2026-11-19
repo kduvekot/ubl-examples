@@ -411,7 +411,7 @@ Inside `SubscriberConsumption`:
   As a code. The code is from the Trade Accord's consumption correction type list: EST = Estimate correction.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/MeterNumber` = **FG-E-20523**  
   The meter.
-- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/Description` = **February's reading was estimated at 117,250 kWh, as the meter could not be reached; March's reading puts it at 116,500 kWh. February used 16,450 kWh, not the 17,200 kWh billed: the 750 kWh are credited on line 4 of this bill.**  
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/Description` = **February's reading was estimated at 117,250 kWh, as the meter could not be reached; the readings of 31 January and 31 March, split by the warehouse's load profile, put it at 116,500 kWh. February used 16,450 kWh, not the 17,200 kWh billed: the 750 kWh are credited on line 4 of the bill.**  
   Why and how.
 - `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **507780** (currencyID `XUF`)  
   The consumption, less February's correction.
@@ -854,7 +854,7 @@ Inside `SubscriberConsumption`:
           <cbc:CorrectionType>Estimate correction</cbc:CorrectionType>
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">EST</cbc:CorrectionTypeCode>
           <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
-          <cbc:Description>February's reading was estimated at 117,250 kWh, as the meter could not be reached; March's reading puts it at 116,500 kWh. February used 16,450 kWh, not the 17,200 kWh billed: the 750 kWh are credited on line 4 of this bill.</cbc:Description>
+          <cbc:Description>February's reading was estimated at 117,250 kWh, as the meter could not be reached; the readings of 31 January and 31 March, split by the warehouse's load profile, put it at 116,500 kWh. February used 16,450 kWh, not the 17,200 kWh billed: the 750 kWh are credited on line 4 of the bill.</cbc:Description>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
