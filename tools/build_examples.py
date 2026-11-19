@@ -997,9 +997,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     msrc = f"item {maker['id']} of {PARTY[maker['seller']]['identity']['name']} (world/items.json)"
     if maker.get("pack"):
         out["PackQuantity"] = V(maker["pack"]["quantity"], "One pack of this item.", unitCode="EA")
-        out["PackSizeNumeric"] = V(maker["pack"]["size"], f"The units in one pack: {maker['pack']['size']} "
-                                                          f"{'kg in a bale' if maker['unit'] == 'KGM' else 'in a bundle'}; "
-                                                          f"{msrc}.")
+        out["PackSizeNumeric"] = V(maker["pack"]["size"], f"The units in one pack: {maker['pack']['size']} in a "
+                                                          f"bundle; {msrc}.")
     if maker.get("keywords"):
         out["Keyword"] = V(", ".join(maker["keywords"]), "The search string buyers find the item by, the maker's "
                                                           f"keywords in one element; {msrc}. A second Keyword would "

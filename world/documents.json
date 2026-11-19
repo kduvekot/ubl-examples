@@ -500,7 +500,7 @@
   {
    "id": "cotton",
    "title": "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)",
-   "text": "The island's export. The farm delivers seed cotton to the ginnery, which weighs and grades it and pays by self-billing: it writes the invoice for the farm. The ginnery sells the bales free on board (FOB) the island port: the textile mill arranges the sea freight through its forwarder. The ginnery declares the export, weighs the container for its verified gross mass and gets a goods certificate.",
+   "text": "The island's export. The farm delivers seed cotton to the ginnery, which weighs and grades it and pays by self-billing: it writes the invoice for the farm. The ginnery sells the bales free on board (FOB) the island port: the textile mill arranges the sea freight through its forwarder. The ginnery declares the export, weighs every bale for the container's verified gross mass and gets a goods certificate.",
    "legs": [
     {
      "mode": "road",
@@ -558,7 +558,125 @@
       "name": "Lumeport Textile Mill, goods-in"
      }
     }
-   ]
+   ],
+   "packages": {
+    "item": "cotton-bale",
+    "type": "BL",
+    "why": "The shipment is 27 compressed bales of lint (D12, O26): their number is the shipment's package count, each bale's real weight is in the ginnery's weight statement (12). The container is made up from the ginnery's stock of Middling lint from several farms (D33), so the bale numbers come from three pressing runs.",
+    "weighed": "on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g",
+    "tare_kg": 2.27,
+    "tare_what": "the bale's woven cotton cover and its steel ties, the standard tare the ginnery and the mill agree in their season agreement",
+    "pieces": [
+     {
+      "id": "SCG-26-00412",
+      "net_kg": 227.5
+     },
+     {
+      "id": "SCG-26-00413",
+      "net_kg": 223.5
+     },
+     {
+      "id": "SCG-26-00414",
+      "net_kg": 224.0
+     },
+     {
+      "id": "SCG-26-00415",
+      "net_kg": 226.0
+     },
+     {
+      "id": "SCG-26-00416",
+      "net_kg": 222.0
+     },
+     {
+      "id": "SCG-26-00417",
+      "net_kg": 230.0
+     },
+     {
+      "id": "SCG-26-00418",
+      "net_kg": 228.0
+     },
+     {
+      "id": "SCG-26-00419",
+      "net_kg": 222.0
+     },
+     {
+      "id": "SCG-26-00420",
+      "net_kg": 229.0
+     },
+     {
+      "id": "SCG-26-00517",
+      "net_kg": 225.0
+     },
+     {
+      "id": "SCG-26-00518",
+      "net_kg": 228.5
+     },
+     {
+      "id": "SCG-26-00519",
+      "net_kg": 232.0
+     },
+     {
+      "id": "SCG-26-00520",
+      "net_kg": 230.5
+     },
+     {
+      "id": "SCG-26-00521",
+      "net_kg": 226.0
+     },
+     {
+      "id": "SCG-26-00522",
+      "net_kg": 231.0
+     },
+     {
+      "id": "SCG-26-00523",
+      "net_kg": 228.0
+     },
+     {
+      "id": "SCG-26-00524",
+      "net_kg": 232.0
+     },
+     {
+      "id": "SCG-26-00525",
+      "net_kg": 222.0
+     },
+     {
+      "id": "SCG-26-00603",
+      "net_kg": 230.0
+     },
+     {
+      "id": "SCG-26-00604",
+      "net_kg": 224.0
+     },
+     {
+      "id": "SCG-26-00605",
+      "net_kg": 223.0
+     },
+     {
+      "id": "SCG-26-00606",
+      "net_kg": 226.0
+     },
+     {
+      "id": "SCG-26-00607",
+      "net_kg": 230.5
+     },
+     {
+      "id": "SCG-26-00608",
+      "net_kg": 232.0
+     },
+     {
+      "id": "SCG-26-00609",
+      "net_kg": 224.0
+     },
+     {
+      "id": "SCG-26-00610",
+      "net_kg": 230.5
+     },
+     {
+      "id": "SCG-26-00611",
+      "net_kg": 222.0
+     }
+    ]
+   }
   },
   {
    "id": "packaging",
@@ -3287,12 +3405,12 @@
    "doc": "WeightStatement",
    "from": "39-xl",
    "to": "11-xb",
-   "why": "Before loading, the shipper declares the verified gross mass of the container, weighed on the port's weighbridge.",
+   "why": "Before loading, the shipper declares the verified gross mass of the container by SOLAS method 2: the ginnery has weighed every bale on its bale scale and adds the container's own weight.",
    "parties": {
     "SenderParty": "39-xl",
     "ReceiverParty": "11-xb",
     "ShipperParty": "39-xl",
-    "WeighingParty": "16-xl"
+    "WeighingParty": "39-xl"
    }
   },
   {

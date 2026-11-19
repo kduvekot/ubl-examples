@@ -2429,17 +2429,37 @@ def cotton(n, doc):
         return kit.export_declaration(f, n, doc, 27, "The island's export: declared before loading.",
                                       "The value of the bales, in coral.")
     if doc["doc"] == "WeightStatement":
+        pk = kit.flow_packages(f, "cotton-bale")
+        bales = kit.package_weights(pk)
         return {"ID": V(f.number("vgm", doc["from"], "WeightStatement"), "The shipper's weight statement number."),
                 "IssueDate": V(f.date(27), "Declared before the container is loaded, as required for every packed "
                                            "container."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment weighed."),
-                             "TransportHandlingUnit": {"TransportEquipment": {
-                                 "ID": V(kit.container_number("TWL", 412311), "The container, with its ISO 6346 check "
-                                                                              "digit.", schemeID="ISO6346"),
-                                 "GrossWeightMeasure": qty(w + 3750, "KGM", "The verified gross mass: the bales and the "
-                                                                            "container's own weight, weighed on the "
-                                                                            "port's weighbridge."),
-                                 "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight.")}}}}
+                             "TransportHandlingUnit": {
+                                 "TotalPackageQuantity": qty(len(bales), "EA", f"The {len(bales)} bales in the "
+                                                             "container, each listed below with its weight."),
+                                 "TransportEquipment": {
+                                     "ID": V(kit.container_number("TWL", 412311), "The container, with its ISO 6346 "
+                                                                                  "check digit.", schemeID="ISO6346"),
+                                     "GrossWeightMeasure": qty(w + 3750, "KGM", "The verified gross mass by SOLAS "
+                                                               f"method 2: the {len(bales)} bales as the ginnery "
+                                                               f"weighed them ({kit.kg(w)} kg) and the container's own "
+                                                               "weight."),
+                                     "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as "
+                                                                           "marked on its door.")},
+                                 "Package": [
+                                     {"ID": V(b, "The bale's number on its tag, which the ginnery gives every bale it "
+                                                 "presses; a package's own number, without a scheme."),
+                                      "Quantity": qty(kit.kg(net), "KGM", f"The lint in the bale: its gross weight less "
+                                                                      f"the standard tare of {kit.kg(pk['tare_kg'])} kg, "
+                                                                      f"{pk['tare_what']}."),
+                                      "PackagingTypeCode": V(pk["type"], f"UN/ECE Recommendation 21 code "
+                                                                         f"{pk['type']}: "
+                                                                         f"{kit.PACKAGING_NAMES[pk['type']]}."),
+                                      "MeasurementDimension": {
+                                          "AttributeID": V("GROSSWEIGHT", "The bale's weight with its cover and ties."),
+                                          "Measure": V(kit.kg(gross), f"Weighed {pk['weighed']}.", unitCode="KGM")}}
+                                     for b, net, gross in bales]}}}
     if doc["doc"] == "BillOfLading":
         return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
                 "IssueDate": V(f.date(28), "Issued when the bales are on board."),
@@ -5033,7 +5053,8 @@ def _(f, n, doc, out):
             "Attestation": {"ID": V("SCC-ATT-26-0042", "The inspector's attestation."),
                             "Name": V("Freedom from pests", "What is attested."),
                             "Description": V("Sampled and found free of boll weevil and pink bollworm.", "In words."),
-                            "Note": V("10 bales sampled out of 80.", "The sample."),
+                            "Note": V(f"10 bales sampled out of {len(kit.flow_packages(f)['pieces'])}.",
+                                      "The sample, out of the bales of the shipment."),
                             "AcceptanceIndicator": V("true", "Accepted."),
                             "ValidityPeriod": {"EndDate": V(f.date(40), "As the certificate.")},
                             "IssuerParty": party("20-xl", short=True),

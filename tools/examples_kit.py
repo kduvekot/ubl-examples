@@ -1058,6 +1058,47 @@ def customs_item(iid):
     return out
 
 
+def flow_packages(flow, iid=None):
+    """The packages a flow's goods travel in, piece by piece, where the world lists them (world/documents.json,
+    the flow's "packages"): the cotton's 27 bales (D12, O26). None where the flow lists none, or lists them for
+    another item."""
+    pk = next((f.get("packages") for f in WORLD["flows"] if f["id"] == flow.id), None)
+    return pk if pk and (iid is None or pk["item"] == iid) else None
+
+
+PACKAGING_NAMES = {"BL": "bale, compressed"}     # UN/ECE Recommendation 21, as the world's list holds them
+
+
+def package_weights(pk):
+    """Each listed package as (id, net, gross) in kg: the net weight of the goods in it and, with the package's
+    standard tare, its gross weight."""
+    tare = Decimal(str(pk["tare_kg"]))
+    return [(p["id"], Decimal(str(p["net_kg"])), Decimal(str(p["net_kg"])) + tare) for p in pk["pieces"]]
+
+
+def kg(x):
+    """A weight in kg as a document writes it: no trailing zeros."""
+    return f"{Decimal(str(x)).normalize():f}"
+
+
+def containing_package(flow, iid):
+    """The kind of package a goods item travels in, where the flow lists its packages: the packaging type only; the
+    number of packages is the consignment's package count, and one entry for all of them identifies none (D12)."""
+    pk = flow_packages(flow, iid)
+    if not pk:
+        return {}
+    return {"ContainingPackage": {"PackagingTypeCode": V(pk["type"], f"UN/ECE Recommendation 21 code {pk['type']}: "
+                                                         f"{PACKAGING_NAMES[pk['type']]}. The goods travel in "
+                                                         f"{len(pk['pieces'])} of them, the consignment's package "
+                                                         "count.")}}
+
+
+def package_count(flow, why):
+    """The number of packages of a flow's goods, for a consignment's TotalPackagesQuantity (D12)."""
+    pk = flow_packages(flow)
+    return qty(len(pk["pieces"]), "EA", why) if pk else None
+
+
 def goods_items(flow, currency, value_why, deal=None):
     """GoodsItem per line of the deal: customs value (converted to `currency` at the reference rate if needed),
     gross weight, quantity and the item with its customs tariff code and origin."""
@@ -1074,6 +1115,7 @@ def goods_items(flow, currency, value_why, deal=None):
                     "GrossWeightMeasure": qty(q * Decimal(str(maker(d["item"]).get("gross_kg", 0))), "KGM",
                                               "The gross weight of the goods of this item."),
                     "Quantity": qty(q, it["unit"], "The quantity declared."),
+                    **containing_package(flow, d["item"]),
                     "Item": customs_item(d["item"])})
     return out
 
@@ -1095,6 +1137,7 @@ def transport_goods(flow, deal=None):
                     "GrossWeightMeasure": qty(q * Decimal(str(maker(d["item"]).get("gross_kg", 0))), "KGM",
                                               "The gross weight of the goods of this item, with their packaging."),
                     "Quantity": qty(q, it["unit"], "How much is carried."),
+                    **containing_package(flow, d["item"]),
                     **({"Item": {"Name": V(it["name"], "The goods."),
                                  "CommodityClassification": {"CommodityCode": V(hs, "Its Harmonized System "
                                                                                     "subheading, which carriers use "
