@@ -1139,7 +1139,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if tax:
         out["ClassifiedTaxCategory"] = tax
     props = []
-    for pr in maker.get("properties", []):
+    for pr in (ITEM[maker["content"]["item"]] if maker.get("content") else maker).get("properties", []):
         props.append(item_property(pr, msrc))
     for name, value, unit in maker.get("quantity_properties", []):
         props.append({"Name": V(name, "A measured property of the item."),
@@ -1162,8 +1162,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                 "Country": {"IdentificationCode": V(maker["origin"], "The country of origin.")}}
     if instance:
         out["ItemInstance"] = instance
-    if maker.get("certificate"):
-        ce = maker["certificate"]
+    facts = ITEM[maker["content"]["item"]] if maker.get("content") else maker   # a pack: the facts of its content
+    if facts.get("certificate"):
+        ce = facts["certificate"]
         reg = ce.get("register") and world_ids.national_scheme(maker["origin"], ce["register"])
         cert = {"ID": V(ce["id"], "The number of the certificate" + (
                     f", in the {SCHEMES[reg]['name']}, which keeps the certificates issued under each registration; "
@@ -3205,8 +3206,6 @@ CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the documen
     ('utilities', '14-RemittanceAdvice.xml'): 'D31',
     ('plastics', '05-ExportCustomsDeclaration.xml'): 'D41',
     ('plastics', '08-DespatchAdvice.xml'): 'D41',
-    ('wood', '03-Order.xml'): 'D43',
-    ('wood', '10-Order.xml'): 'D43',
     ('cotton', '04-SelfBilledInvoice.xml'): 'D33',
     ('cotton', '05-SelfBilledCreditNote.xml'): 'D33',
     ('cotton', '07-ForecastRevision.xml'): 'D33',

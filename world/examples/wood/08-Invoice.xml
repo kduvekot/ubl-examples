@@ -281,13 +281,13 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">4800</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-      <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+      <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+      <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800</cbc:ID>
+        <cbc:ID>MS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -301,9 +301,8 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">7.2</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-      <cbc:OrderableUnitFactorRate>50</cbc:OrderableUnitFactorRate>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

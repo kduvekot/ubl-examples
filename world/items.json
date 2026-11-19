@@ -572,10 +572,6 @@
     "per_package": 50
    },
    "lot_prefix": "MS-L26-",
-   "pack": {
-    "quantity": "1",
-    "size": "50"
-   },
    "certificate": {
     "id": "XB-FOR-2025-0118",
     "code": "SUSTFOREST",
@@ -666,6 +662,80 @@
    "buyer_ids": {
     "5-xu": "VI-R-SL1800"
    },
+   "lot_props": [
+    [
+     "Kiln charge",
+     "K-07"
+    ]
+   ],
+   "origin_criterion": "P"
+  },
+  {
+   "id": "slat-bundle-1800",
+   "seller": "36-xb",
+   "name": "Bench slat 1800, bundle of 50",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 360.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "MS-SL-1800-50",
+   "hs": "440799",
+   "cpc": "31102",
+   "origin": "XB",
+   "description": "Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.",
+   "content": {
+    "item": "slat-1800",
+    "count": 50
+   },
+   "dimensions_mm": [
+    1800,
+    475,
+    380
+   ],
+   "dimensions": [
+    [
+     "LENGTH",
+     "1800",
+     "MMT",
+     "The bundle: the slats' length"
+    ],
+    [
+     "WIDTH",
+     "475",
+     "MMT",
+     "The bundle: five slats of 95 mm side by side"
+    ],
+    [
+     "HEIGHT",
+     "380",
+     "MMT",
+     "The bundle: ten slats of 38 mm stacked"
+    ]
+   ],
+   "net_kg": 225,
+   "gross_kg": 225,
+   "package": {
+    "type": "BE",
+    "per_package": 1
+   },
+   "pack": {
+    "quantity": "1",
+    "size": "50"
+   },
+   "pallet": {
+    "per": 4,
+    "mm": [
+     1800,
+     1000,
+     880
+    ],
+    "tare_kg": 25,
+    "stack": 2,
+    "what": "Heat-treated softwood pallet to ISPM 15, 1800 x 1000 mm, with four bundles two by two"
+   },
+   "lot_prefix": "MS-L26-",
    "lot_props": [
     [
      "Kiln charge",

@@ -22,8 +22,8 @@ The manufacturer accepts the quotation and orders. Delivery terms DAP factory: t
   The buyer's order number.
 - `UUID` = **0a8bf098-56ca-53c4-9d5d-05c0010de461**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-22**  
-  The manufacturer accepts the quotation and orders.
+- `IssueDate` = **2026-02-23**  
+  The manufacturer accepts the quotation and orders, on the Monday after it (D27).
 - `IssueTime` = **14:40:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -185,9 +185,9 @@ Inside `AllowanceCharge`:
 - `AllowanceChargeReasonCode` = **ACH** (listID `UN/EDIFACT EDED 7161`)  
   The reason for the charge as a code of UN/EDIFACT 7161: the pallets are heat-treated. The code is from the world's copy of UN/EDIFACT 7161 Special service description: ACH = Heat treatment.
 - `AllowanceChargeReason` = **Heat-treated export pallets**  
-  96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.
+  The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM 15, as the quotation offered for the export.
 - `Amount` = **240.00** (currencyID `XBL`)  
-  96 pallets at 2.50 lume.
+  24 pallets at 10.00 lume.
 - `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
@@ -237,28 +237,24 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **4800** (unitCode `EA`)  
-  Slats for 960 benches: five per bench, 96 bundles of 50.
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
+  96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).
 - `LineItem/LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **7.2** (currencyID `XBL`)  
+- `LineItem/Price/PriceAmount` = **360** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Price/OrderableUnitFactorRate` = **50**  
-  The item is priced per piece and ordered in packs: one pack holds 50 pieces.
-- `LineItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
-  The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+  The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `LineItem/Item/PackSizeNumeric` = **50**  
-  The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/Name` = **Hardwood bench slat 1800**  
-  The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/BuyersItemIdentification/ID` = **VI-R-SL1800**  
-  The number the buyer keeps for this item in its own system (world/items.json).
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-SL-1800**  
-  The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
+  The units in one pack: 50 in a bundle; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/Name` = **Bench slat 1800, bundle of 50**  
+  The item's short name; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+  The seller's own item number; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 
 ## The document
 
@@ -271,7 +267,7 @@ Inside `OrderLine`:
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-PO-26-0627</cbc:ID>
   <cbc:UUID>0a8bf098-56ca-53c4-9d5d-05c0010de461</cbc:UUID>
-  <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>14:40:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -426,23 +422,19 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">7.2</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-        <cbc:OrderableUnitFactorRate>50</cbc:OrderableUnitFactorRate>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
-        <cbc:Name>Hardwood bench slat 1800</cbc:Name>
-        <cac:BuyersItemIdentification>
-          <cbc:ID>VI-R-SL1800</cbc:ID>
-        </cac:BuyersItemIdentification>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800</cbc:ID>
+          <cbc:ID>MS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

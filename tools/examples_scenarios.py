@@ -3896,13 +3896,55 @@ def utilities(n, doc):
 
 
 # ---------------------------------------------------------------- the wood flow (Bayvarra -> Urvania, and at home)
-PALLETS_CHARGE = {"like": "slat-1800", "amount": "240.00", "reason": "Heat-treated export pallets", "code": "ACH",
+PALLETS_CHARGE = {"like": "slat-bundle-1800", "amount": "240.00", "reason": "Heat-treated export pallets",
+                  "code": "ACH",
                   "code_why": "The reason for the charge as a code of UN/EDIFACT 7161: the pallets are heat-treated.",
-                  "why": "96 bundles on pallets treated to ISPM 15, as the quotation offered for the export.",
-                  "amount_why": "96 pallets at 2.50 lume."}
-SLATS = [{"item": "slat-1800", "ordered": 4800, "why": "Slats for 960 benches: five per bench, 96 bundles of 50."}]
+                  "why": "The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM 15, as the quotation "
+                         "offered for the export.",
+                  "amount_why": "24 pallets at 10.00 lume."}
+# D43: the sawmill sells the bundle of 50 slats as its item; this quarter's delivery is oak, 96 bundles (4,800 slats,
+# enough for 960 benches) on 24 pallets of four, one truck
+SLATS = [{"item": "slat-bundle-1800", "ordered": 96, "why": "96 bundles of 50 oak slats, 4,800 slats: enough for 960 "
+                                                            "benches at five a bench, a quarter's supply (D43)."}]
+WOOD_PALLETS = 24
+ASH_BUNDLE = Decimal("330.00")       # the priced alternative of the quotation: the same bundle in ash (D43)
+# the furniture maker's certificate that it buys timber for manufacture, which frees the sale from Upland State's sales
+# tax (wood/11#F5): issued by the state's revenue office, quoted in its order and in the sawmill's invoice
+EXEMPTION_CERT = {"ID": V("UL-STT-EX-2024-0377", "The number of Brackenmere's exemption certificate, as Upland State's "
+                                                 "revenue office issued it."),
+                  "IssueDate": V("2024-01-15", "The day it was issued."),
+                  "DocumentType": V("Sales tax exemption certificate: purchase for manufacture (Upland State)",
+                                    "The certificate the exemption of the sale rests on (D43).")}
 TIMBER = [{"item": "timber-beam", "ordered": 12, "why": "Hardwood for a month of furniture production."}]
 WOOD = kit.Flow("wood", "2026-02-16", SLATS)
+
+
+def wood_pallets(f):
+    """The 24 pallets of the slat delivery as transport handling units, each with its four bundles as packages (D43,
+    wood/06#F12, 08#F10): what the pallet charge is for."""
+    it = ITEM["slat-bundle-1800"]
+    pal = it["pallet"]
+    per = pal["per"]
+    out = {"TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+           "HandlingCode": V("STACK2", "The carrier's handling code: two high."),
+           "HandlingInstructions": V("Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by "
+                                     "machine, never by hand.", "The handling, in words, with the world's rule for "
+                                                                "manual handling (D20)."),
+           "TotalPackageQuantity": qty(per, "EA", f"{per} bundles on each pallet, two by two."),
+           "Package": {"Quantity": qty(it["pack"]["size"], "EA", f"{it['pack']['size']} slats in a bundle."),
+                       "PackagingTypeCode": V("BE", "UN/ECE Recommendation 21 code BE: bundle."),
+                       "PackingMaterial": V("Steel straps", "What holds a bundle together.")},
+           "MeasurementDimension": [
+               {"AttributeID": V("LENGTH", "The loaded pallet's footprint."),
+                "Measure": V(str(pal["mm"][0]), "Its length: the slats' length.", unitCode="MMT")},
+               {"AttributeID": V("WIDTH", "The loaded pallet's footprint."),
+                "Measure": V(str(pal["mm"][1]), "Its width: two bundles of 475 mm side by side.", unitCode="MMT")},
+               {"AttributeID": V("HEIGHT", "The height of the loaded pallet."),
+                "Measure": V(str(pal["mm"][2]), "Two bundles of 380 mm on the pallet.", unitCode="MMT")},
+               {"AttributeID": V("GROSSWEIGHT", "The loaded pallet's weight."),
+                "Measure": V(kit.kg(per * it["gross_kg"] + pal["tare_kg"]), f"Four bundles of {it['gross_kg']} kg "
+                             f"and the pallet's own {pal['tare_kg']} kg.", unitCode="KGM")}]}
+    return [{"ID": kit.unit_id("36-xb", f, k), **out} for k in range(1, WOOD_PALLETS + 1)]
 
 
 def quotation_lines(f, deal, cur, with_price):
@@ -3945,13 +3987,24 @@ def wood(n, doc):
     if doc["doc"] == "Quotation":
         return quotation(f, doc, 3, "The sawmill quotes for the slats.", SLATS, 30)
     if doc["doc"] == "Order" and doc["from"] == "5-xu":
-        return kit.order(f, n, doc, 6, "The manufacturer accepts the quotation and orders.",
+        return kit.order(f, n, doc, 7, "The manufacturer accepts the quotation and orders, on the Monday after it "
+                                       "(D27).",
                          "Delivered at place, the factory: the sawmill delivers; the manufacturer clears the import.",
                          "Valdara Industries, goods-in, Ferrano",
                          {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
     if doc["doc"] == "TransportExecutionPlanRequest":
-        return kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck across the border.", 10,
-                               kit.gross_weight(f, "ordered"), "96 bundles of slats.")
+        w = kit.gross_weight(f, "ordered")
+        truck = kit.fleet("13-xu", "T-07")
+        tare = sum(truck["tare_kg"].values())
+        if w > WORLD["road_rules_accord"]["max_combination_kg"] - tare:
+            raise SystemExit(f"wood: {w} kg of slats exceed the payload of Trasvia's truck (O134)")
+        out = kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck across the border.", 10, w,
+                              "96 bundles of slats on 24 pallets, with the pallets.")
+        kit.deep_merge(out["Consignment"], {
+            "TotalTransportHandlingUnitQuantity": V(str(WOOD_PALLETS), "The pallets to be carried, four bundles on "
+                                                                       "each (D43)."),
+            "TotalPackagesQuantity": V(str(WOOD_PALLETS * 4), "The bundles on them.")})
+        return out
     if doc["doc"] == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, 10, "Declared the morning the truck leaves for the border.",
                                      "The value of the slats, in lume.")
@@ -3960,7 +4013,8 @@ def wood(n, doc):
         return out
     if doc["doc"] == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, 10, "The day the truck was loaded at the sawmill.",
-                                  "The gross weight of the bundles.")
+                                  "The gross weight of the bundles with their pallets.")
+        out["Shipment"]["TransportHandlingUnit"] = wood_pallets(f)
         out["IssueTime"] = V("08:10:00", "When the truck is loaded, before it leaves once customs has released "
                                          "the export.")
         return out
@@ -3971,20 +4025,25 @@ def wood(n, doc):
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
         return kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
-                           [{"item": "slat-1800", "qty": 4800, "invoice_why": "The slats despatched."}],
+                           [{"item": "slat-bundle-1800", "qty": 96, "invoice_why": "The bundles despatched, "
+                                                                                   "4,800 slats."}],
                            charges=[PALLETS_CHARGE])
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 38, "The manufacturer pays across the border.")
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 20, "The furniture maker orders timber, collected with its own van.",
+        return kit.order(f, n, doc, 21, "The furniture maker orders timber, collected with its own van; ordered on "
+                                        "the Monday (D27).",
                          "Ex works the sawmill: the buyer collects the timber and bears every cost from the sawmill's "
-                         "yard.", "Marrowdale Sawmill, timber yard", deal=TIMBER, key="order-timber")
+                         "yard.", "Marrowdale Sawmill, timber yard", {"AdditionalDocumentReference": EXEMPTION_CERT},
+                         deal=TIMBER,
+                         key="order-timber")
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 21, "Issued when the timber was collected.",
-                           {"OrderReference": ref(f, "order-timber", "The furniture maker's order.")},
+        return kit.invoice(f, n, doc, 22, "Issued when the timber was collected.",
+                           {"OrderReference": ref(f, "order-timber", "The furniture maker's order."),
+                            "AdditionalDocumentReference": EXEMPTION_CERT},
                            [{"item": "timber-beam", "qty": 12, "invoice_why": "The cubic metres collected."}],
                            key="invoice-timber",
-                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(21), "Ex works: delivered when the "
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(22), "Ex works: delivered when the "
                                                                                   "furniture maker collected the "
                                                                                   "timber (wood/11#F4)."),
                                                "DeliveryLocation": {"Name": V("Marrowdale Sawmill, timber yard",
@@ -6212,38 +6271,47 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     base = Decimal(out["QuotedMonetaryTotal"]["LineExtensionAmount"].value)
     line = out["QuotationLine"][0] if isinstance(out["QuotationLine"], list) else out["QuotationLine"]
-    line.update({"ID": V("1", "The quotation line."), "Note": V("As drawn; ash or oak.", "What is quoted."),
-                 "Quantity": qty(4800, "EA", "The quantity quoted."),
+    line.update({"ID": V("1", "The quotation line."), "Note": V("Oak, as drawn, in bundles of 50; the same "
+                                                                 "bundle in ash is offered below.", "What is quoted."),
+                 "Quantity": qty(96, "EA", "The bundles quoted: 4,800 slats, one truck."),
                  "LineExtensionAmount": amount(base, "XBL", "The quoted amount."),
                  "TaxInclusiveLineExtensionAmount": amount(base, "XBL", "No tax on an export."),
                  "TotalTaxAmount": amount(0, "XBL", "No tax on an export."),
                  "RequestForQuotationLineID": V("1", "The line of the request."),
-                 "DocumentReference": {"ID": V("MS-SPEC-SL1800", "The sawmill's specification.")},
+                 "DocumentReference": [{"ID": V("VI-DS-SL1800", "The buyer's drawing the slat is quoted to "
+                                                                 "(D43).")},
+                                       {"ID": V("MS-SPEC-SL1800", "The sawmill's own specification of the slat, "
+                                                                  "derived from the buyer's drawing (D43).")}],
                  "RequestLineReference": {"LineID": V("1", "The request line answered.")},
-                 "SellerProposedSubstituteLineItem": {"ID": V("1-S", "A substitute the sawmill proposes."),
-                                                      "Quantity": qty(4800, "EA", "The same quantity."),
-                                                      "Item": {"Name": V("Hardwood bench slat 1800 × 95 × 35",
-                                                                         "Three millimetres thinner: less waste, "
-                                                                         "five per cent cheaper.")}},
-                 "AlternativeLineItem": {"ID": V("1-A", "An alternative species."),
-                                         "Quantity": qty(4800, "EA", "The same quantity."),
-                                         "Item": {"Name": V("Oak bench slat 1800", "Oak instead of ash, at a higher "
-                                                                                   "price.")}}})
+                 "AlternativeLineItem": {"ID": V("1-A", "The other species the request allowed (D43)."),
+                                         "Quantity": qty(96, "EA", "The same quantity."),
+                                         "Price": {"PriceAmount": price(ASH_BUNDLE, "XBL", "The price of a bundle "
+                                                                        "in ash, below oak's."),
+                                                   "BaseQuantity": qty(1, "EA", "Per bundle.")},
+                                         "Item": {"Name": V("Bench slat 1800, bundle of 50, ash", "The same bundle "
+                                                            "in ash, which the sawmill can saw from its next "
+                                                            "felling.")}}})
     return {"Note": V("Valid for 30 days.", "The validity."),
             "PricingCurrencyCode": V("XBL", "Prices in lume."), "LineCountNumeric": V("1", "One line."),
-            "AdditionalDocumentReference": {"ID": V("MS-GTC-2026", "The sawmill's terms of sale.")},
-            "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, accepted.")},
+            "AdditionalDocumentReference": {"ID": V("MS-GTC-2026", "The sawmill's general terms of sale, "
+                                                                  "subsidiary to the buyer's terms (D43)."),
+                                            "DocumentDescription": V("The sawmill's general terms of sale apply only "
+                                                                     "where the buyer's purchasing terms "
+                                                                     "VI-PUR-TERMS-2026, which govern, say nothing.",
+                                                                     "Which terms govern.")},
+            "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, which govern the quotation "
+                                                      "(D43).")},
             "Signature": seal(doc["from"], "MS-SIG-26-QT"),
             "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(10), "From the end of the second week, "
                                                                               "as asked."),
                                                     "EndDate": V(f.date(18), "Within about a week.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory, as asked.", schemeID="INCOTERMS")},
             "PaymentMeans": {"PaymentMeansCode": V("30", "By credit transfer.", listID="UN/EDIFACT EDED 4461")},
-            "TransactionConditions": {"Description": V("Quoted per thousand slats; minimum one truck.", "The "
-                                                                                                       "conditions.")},
+            "TransactionConditions": {"Description": V("Priced per bundle of 50 slats; the smallest order is one "
+                                                       "truck: 96 bundles on 24 pallets.", "The conditions (D43).")},
             "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
-            "TaxTotal": kit.tax_total([({"item": "slat-1800"}, None, Decimal("34800.00"),
-                                        kit.tax_rule("36-xb", "5-xu", "slat-1800"))], "XBL")[1]}
+            "TaxTotal": kit.tax_total([({"item": "slat-bundle-1800"}, None, Decimal("34800.00"),
+                                        kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800"))], "XBL")[1]}
 
 
 @enrich("furniture", "RequestForQuotation")

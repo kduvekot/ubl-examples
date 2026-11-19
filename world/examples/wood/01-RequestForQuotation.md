@@ -224,18 +224,18 @@ Inside `RequestForQuotationLine`:
   The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Quantity` = **4800** (unitCode `EA`)  
-  Slats for 960 benches: five per bench, 96 bundles of 50.
-- `LineItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  
-  The seller's description; item slat-1800 of Marrowdale Sawmill (world/items.json).
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
+  96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).
+- `LineItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+  The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
 - `LineItem/Item/PackSizeNumeric` = **50**  
-  The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/Name` = **Hardwood bench slat 1800**  
-  The item's short name; item slat-1800 of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-SL-1800**  
-  The seller's own item number; item slat-1800 of Marrowdale Sawmill (world/items.json).
+  The units in one pack: 50 in a bundle; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/Name` = **Bench slat 1800, bundle of 50**  
+  The item's short name; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+  The seller's own item number; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 
 ## The document
 
@@ -388,14 +388,14 @@ Inside `RequestForQuotationLine`:
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
-        <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800</cbc:ID>
+          <cbc:ID>MS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
