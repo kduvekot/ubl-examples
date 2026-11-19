@@ -7,12 +7,12 @@
   <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
   <cbc:UUID>f07df174-cb95-54b5-a27e-7135aa91aec3</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-11</cbc:IssueDate>
+  <cbc:IssueDate>2026-01-26</cbc:IssueDate>
   <cbc:IssueTime>08:32:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="en-XB">Open procedure in two lots.</cbc:Note>
   <cbc:Note languageID="qau">Huktrir trelhek trek kan dran.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:RequestedPublicationDate>2026-01-27</cbc:RequestedPublicationDate>
+  <cbc:RequestedPublicationDate>2026-01-26</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
@@ -169,7 +169,7 @@
       <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
       <cbc:AmountRate>2</cbc:AmountRate>
       <cac:ConstitutionPeriod>
-        <cbc:EndDate>2026-02-26</cbc:EndDate>
+        <cbc:EndDate>2026-02-25</cbc:EndDate>
       </cac:ConstitutionPeriod>
     </cac:RequiredFinancialGuarantee>
     <cac:ProcurementLegislationDocumentReference>
@@ -420,26 +420,15 @@
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
     <cac:DocumentAvailabilityPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-25</cbc:EndDate>
+      <cbc:StartDate>2026-01-27</cbc:StartDate>
+      <cbc:EndDate>2026-02-24</cbc:EndDate>
     </cac:DocumentAvailabilityPeriod>
     <cac:TenderSubmissionDeadlinePeriod>
-      <cbc:EndDate>2026-02-26</cbc:EndDate>
+      <cbc:EndDate>2026-02-25</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
-    <cac:InvitationSubmissionPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-01</cbc:EndDate>
-    </cac:InvitationSubmissionPeriod>
-    <cac:ParticipationInvitationPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationInvitationPeriod>
-    <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationRequestReceptionPeriod>
     <cac:AdditionalInformationRequestPeriod>
-      <cbc:EndDate>2026-02-19</cbc:EndDate>
+      <cbc:EndDate>2026-02-18</cbc:EndDate>
     </cac:AdditionalInformationRequestPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
@@ -455,7 +444,7 @@
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>

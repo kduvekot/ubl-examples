@@ -24,8 +24,8 @@ The sawmill registers its interest, to receive the documents of the procedure.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-14**  
-  Sent after the contract notice was published.
+- `IssueDate` = **2026-01-30**  
+  Sent after the contract notice was published: Friday 30 January.
 - `IssueTime` = **14:05:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
@@ -39,7 +39,7 @@ The sawmill registers its interest, to receive the documents of the procedure.
 
 Inside `ValidityPeriod`:
 
-- `EndDate` = **2026-02-26**  
+- `EndDate` = **2026-02-25**  
   Its interest lasts until the tender deadline.
 
 ### Document Reference
@@ -222,13 +222,13 @@ Inside `ProcurementProjectLotReference`:
   <cbc:ID>MS-DOC-26-0190</cbc:ID>
   <cbc:UUID>54bd8806-86b1-56b6-9c9a-10e7f28203ee</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-14</cbc:IssueDate>
+  <cbc:IssueDate>2026-01-30</cbc:IssueDate>
   <cbc:IssueTime>14:05:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:PreferredLanguageLocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:PreferredLanguageLocaleCode>
   <cbc:Note>The sawmill considers a tender for lot 1 with a bench maker and asks to follow the procedure.</cbc:Note>
   <cac:ValidityPeriod>
-    <cbc:EndDate>2026-02-26</cbc:EndDate>
+    <cbc:EndDate>2026-02-25</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:DocumentReference>
     <cbc:ID>LPWD-DOC-26-0188</cbc:ID>

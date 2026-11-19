@@ -25,7 +25,7 @@ The authority confirms the sawmill no longer receives the procedure's documents.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-23**  
-  The authority confirms the next day.
+  The authority confirms on the next working day.
 - `IssueTime` = **14:48:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **The sawmill no longer receives the procedure's messages.**  

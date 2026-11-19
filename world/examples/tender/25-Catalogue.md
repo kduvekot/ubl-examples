@@ -24,8 +24,8 @@ The framework contract is ordered from a catalogue: the manufacturer publishes t
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `Name` = **Valdara Industries catalogue**  
   The catalogue's title.
-- `IssueDate` = **2026-03-21**  
-  Published when the contract was signed.
+- `IssueDate` = **2026-03-23**  
+  Published on Monday 23 March, the first working day after the contract was signed (D28 point 1).
 - `IssueTime` = **10:18:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 
@@ -33,9 +33,9 @@ The framework contract is ordered from a catalogue: the manufacturer publishes t
 
 Inside `ValidityPeriod`:
 
-- `StartDate` = **2026-03-21**  
+- `StartDate` = **2026-03-23**  
   The prices apply from the issue date.
-- `EndDate` = **2028-03-20**  
+- `EndDate` = **2028-03-22**  
   Until the next catalogue.
 
 ### Referenced Contract
@@ -239,9 +239,9 @@ Inside `CatalogueLine`:
   The kind of price, which buyer and seller both understand: the price agreed in the framework contract. The code is from the Trade Accord's price type list: CON = Contract price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Contract price**  
   The name of code CON in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-21**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-23**  
   The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2028-03-20**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2028-03-22**  
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **VI-PL-2026**  
   The seller's price list this price is taken from.
@@ -499,9 +499,9 @@ Inside `CatalogueLine`:
   The kind of price, which buyer and seller both understand: the price agreed in the framework contract. The code is from the Trade Accord's price type list: CON = Contract price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Contract price**  
   The name of code CON in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-21**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-23**  
   The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2028-03-20**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2028-03-22**  
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **VI-PL-2026**  
   The seller's price list this price is taken from.
@@ -544,11 +544,11 @@ Inside `CatalogueLine`:
   <cbc:ID>VI-CAT-26-0211</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
-  <cbc:IssueDate>2026-03-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>10:18:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-21</cbc:StartDate>
-    <cbc:EndDate>2028-03-20</cbc:EndDate>
+    <cbc:StartDate>2026-03-23</cbc:StartDate>
+    <cbc:EndDate>2028-03-22</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ReferencedContract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
@@ -710,8 +710,8 @@ Inside `CatalogueLine`:
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-21</cbc:StartDate>
-          <cbc:EndDate>2028-03-20</cbc:EndDate>
+          <cbc:StartDate>2026-03-23</cbc:StartDate>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>
@@ -946,8 +946,8 @@ Inside `CatalogueLine`:
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-21</cbc:StartDate>
-          <cbc:EndDate>2028-03-20</cbc:EndDate>
+          <cbc:StartDate>2026-03-23</cbc:StartDate>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>

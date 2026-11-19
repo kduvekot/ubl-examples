@@ -24,8 +24,8 @@ The sawmill decides not to tender: a bench with cast-iron frames is not its trad
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-22**  
-  The sawmill decides before the deadline.
+- `IssueDate` = **2026-02-20**  
+  The sawmill decides before the deadline, on a Friday (tender/10#F4).
 - `IssueTime` = **14:30:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **No bench maker joined the sawmill; it will not tender.**  
@@ -186,7 +186,7 @@ Inside `ProcurementProjectLotReference`:
   <cbc:ID>MS-DOC-26-0196</cbc:ID>
   <cbc:UUID>7aedd539-7df2-5757-a3aa-86840573505f</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
   <cbc:Note>No bench maker joined the sawmill; it will not tender.</cbc:Note>
   <cac:Signature>

@@ -7,11 +7,11 @@
   <cbc:ID>VI-CAT-26-0211</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
-  <cbc:IssueDate>2026-03-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>10:18:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-21</cbc:StartDate>
-    <cbc:EndDate>2028-03-20</cbc:EndDate>
+    <cbc:StartDate>2026-03-23</cbc:StartDate>
+    <cbc:EndDate>2028-03-22</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ReferencedContract>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
@@ -173,8 +173,8 @@
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-21</cbc:StartDate>
-          <cbc:EndDate>2028-03-20</cbc:EndDate>
+          <cbc:StartDate>2026-03-23</cbc:StartDate>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>
@@ -409,8 +409,8 @@
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-21</cbc:StartDate>
-          <cbc:EndDate>2028-03-20</cbc:EndDate>
+          <cbc:StartDate>2026-03-23</cbc:StartDate>
+          <cbc:EndDate>2028-03-22</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>VI-PL-2026</cbc:ID>

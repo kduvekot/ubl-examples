@@ -18,7 +18,7 @@ The furniture maker is told that the contract went to another tenderer.
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0209**  
+- `ID` = **LPWD-DOC-26-0208**  
   The sender's number for this document.
 - `UUID` = **e1de7889-b36e-5db6-b38b-dcbd566f2280**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -196,8 +196,8 @@ Inside `TenderResult`:
   The framework contract.
 - `Contract/ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
   A framework contract. The code is from the Trade Accord's contract type list: FRAMEWORK = Framework agreement.
-- `Contract/ValidityPeriod/StartDate` = **2026-03-23**  
-  From the first call-off.
+- `Contract/ValidityPeriod/StartDate` = **2026-03-20**  
+  From its signature.
 - `Contract/ValidityPeriod/DurationMeasure` = **24** (unitCode `MON`)  
   Two years.
 - `AwardedTenderedProject/VariantID` = **V0**  
@@ -208,9 +208,9 @@ Inside `TenderResult`:
   Lot 2 of the procedure.
 - `AwardedTenderedProject/LegalMonetaryTotal/PayableAmount` = **124080.00** (currencyID `XBL`)  
   240 benches at 499 lume and their installation at 18 lume each.
-- `ContractFormalizationPeriod/StartDate` = **2026-03-19**  
-  After the standstill period.
-- `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
+- `ContractFormalizationPeriod/StartDate` = **2026-03-20**  
+  The day after the standstill period ended (tender/22#F5).
+- `ContractFormalizationPeriod/EndDate` = **2026-03-23**  
   Before the first call-off.
 - `SubcontractTerms/Rate` = **3.5**  
   The installation's share of the contract value: 4,320 of 124,080.00 lume, rounded.
@@ -233,10 +233,10 @@ Inside `AppealTerms`:
 
 - `Description` = **An appeal against the decision goes to the review board within ten days.**  
   How to appeal.
-- `PresentationPeriod/StartDate` = **2026-03-09**  
-  From the decision.
+- `PresentationPeriod/StartDate` = **2026-03-10**  
+  From the day after the award decision was sent, Tuesday 10 March (D28 point 1).
 - `PresentationPeriod/EndDate` = **2026-03-19**  
-  Ten days later, the end of the standstill period.
+  Ten days, to Thursday 19 March, the end of the standstill period.
 - `AppealInformationParty/PartyIdentification/ID` = **4718260539** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `AppealInformationParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
@@ -259,7 +259,7 @@ Inside `AppealTerms`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:award-notification:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0209</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
   <cbc:UUID>e1de7889-b36e-5db6-b38b-dcbd566f2280</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
@@ -382,7 +382,7 @@ Inside `AppealTerms`:
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
       </cac:ValidityPeriod>
     </cac:Contract>
@@ -399,8 +399,8 @@ Inside `AppealTerms`:
       </cac:LegalMonetaryTotal>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
-      <cbc:StartDate>2026-03-19</cbc:StartDate>
-      <cbc:EndDate>2026-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
       <cbc:Rate>3.5</cbc:Rate>
@@ -423,7 +423,7 @@ Inside `AppealTerms`:
   <cac:AppealTerms>
     <cbc:Description>An appeal against the decision goes to the review board within ten days.</cbc:Description>
     <cac:PresentationPeriod>
-      <cbc:StartDate>2026-03-09</cbc:StartDate>
+      <cbc:StartDate>2026-03-10</cbc:StartDate>
       <cbc:EndDate>2026-03-19</cbc:EndDate>
     </cac:PresentationPeriod>
     <cac:AppealInformationParty>

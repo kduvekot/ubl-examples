@@ -651,6 +651,15 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `TenderingProcess/TerminatedIndicator` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice … | | | open |
 | `TenderingProcess/UrgencyCode` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice … | | | open |
 
+> C125, D28 point 1: an open procedure has no invitation period and no period for requests to participate, so the notices, the call, the award notice and the procurement status no longer state them (tender/02#F1, 03#F1, 21#F2); the contest's request period stays.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ProcurementStatus/InvitationSubmissionPeriod` | 0..1 | tender/09-ProcurementStatus | | | open |
+| `ProcurementStatus/ParticipationRequestReceptionPeriod` | 0..1 | tender/09-ProcurementStatus | | | open |
+| `TenderingProcess/InvitationSubmissionPeriod` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice | | | open |
+| `TenderingProcess/ParticipationInvitationPeriod` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

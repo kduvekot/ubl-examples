@@ -26,8 +26,8 @@ The authority sends the furniture maker the self-declaration it must fill in: ex
   The authority's file number for this procurement, the same on every document of the procedure.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The contract.
-- `IssueDate` = **2026-02-13**  
-  Sent with the procurement documents.
+- `IssueDate` = **2026-01-29**  
+  Sent with the procurement documents the furniture maker obtained, two days after the call.
 - `IssueTime` = **08:25:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `VersionID` = **1**  
@@ -561,7 +561,7 @@ Inside `Signature`:
   <cbc:UUID>3c06617e-8a80-509a-b64c-e7ad1ca81e2a</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:IssueDate>2026-02-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-01-29</cbc:IssueDate>
   <cbc:IssueTime>08:25:00-01:00</cbc:IssueTime>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>

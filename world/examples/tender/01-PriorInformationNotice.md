@@ -34,7 +34,7 @@ The authority announces the planned purchase early, through the publication serv
   The same in Urvanian, the notice's additional language: What.
 - `VersionID` = **1**  
   The first version.
-- `RequestedPublicationDate` = **2026-01-13**  
+- `RequestedPublicationDate` = **2026-01-12**  
   When to publish.
 - `PlannedDate` = **2026-01-26**  
   The contract notice is planned for then.
@@ -268,8 +268,8 @@ Inside `TenderingTerms`:
   Its amount.
 - `RequiredFinancialGuarantee/AmountRate` = **2**  
   2 % of the estimated value of 120,000 lume.
-- `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-26**  
-  With the tender.
+- `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-25**  
+  With the tender, by the deadline.
 - `ProcurementLegislationDocumentReference/ID` = **XB-PPA-2019**  
   Bayvarra's public procurement act.
 - `FiscalLegislationDocumentReference/ID` = **XB-STT-ACT**  
@@ -677,7 +677,7 @@ Inside `ProcurementProjectLot`:
   <cbc:Note languageID="en-XB">Advance notice of the bench procedure.</cbc:Note>
   <cbc:Note languageID="qau">Skusek mudek skul drek nanskir trelhek.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:RequestedPublicationDate>2026-01-13</cbc:RequestedPublicationDate>
+  <cbc:RequestedPublicationDate>2026-01-12</cbc:RequestedPublicationDate>
   <cbc:PlannedDate>2026-01-26</cbc:PlannedDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">PIN</cbc:NoticeTypeCode>
@@ -836,7 +836,7 @@ Inside `ProcurementProjectLot`:
       <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
       <cbc:AmountRate>2</cbc:AmountRate>
       <cac:ConstitutionPeriod>
-        <cbc:EndDate>2026-02-26</cbc:EndDate>
+        <cbc:EndDate>2026-02-25</cbc:EndDate>
       </cac:ConstitutionPeriod>
     </cac:RequiredFinancialGuarantee>
     <cac:ProcurementLegislationDocumentReference>

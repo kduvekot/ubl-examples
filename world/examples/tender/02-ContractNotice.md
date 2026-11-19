@@ -24,8 +24,8 @@ The call for competition is published; it names the review body for appeals and 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-11**  
-  The call for competition, a month after the prior information notice.
+- `IssueDate` = **2026-01-26**  
+  Monday 26 January, the date the prior information notice planned for the call for competition (D28 point 1, C125).
 - `IssueTime` = **08:32:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Open procedure in two lots.** (languageID `en-XB`)  
@@ -34,7 +34,7 @@ The call for competition is published; it names the review body for appeals and 
   The same in Urvanian, the notice's additional language: What.
 - `VersionID` = **1**  
   The first version.
-- `RequestedPublicationDate` = **2026-01-27**  
+- `RequestedPublicationDate` = **2026-01-26**  
   When to publish.
 - `RegulatoryDomain` = **Bayvarra public procurement**  
   The rules the notice follows.
@@ -264,8 +264,8 @@ Inside `TenderingTerms`:
   Its amount.
 - `RequiredFinancialGuarantee/AmountRate` = **2**  
   2 % of the estimated value of 120,000 lume.
-- `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-26**  
-  With the tender.
+- `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-25**  
+  With the tender, by the deadline.
 - `ProcurementLegislationDocumentReference/ID` = **XB-PPA-2019**  
   Bayvarra's public procurement act.
 - `FiscalLegislationDocumentReference/ID` = **XB-STT-ACT**  
@@ -533,26 +533,16 @@ Inside `TenderingProcess`:
   Covered by the trade accord's procurement chapter.
 - `AccessToolsURI` = **https://tenders.lumeport.example/PWD-2026-PARKS**  
   Where the documents are.
-- `DocumentAvailabilityPeriod/StartDate` = **2026-01-26**  
-  From the notice.
-- `DocumentAvailabilityPeriod/EndDate` = **2026-02-25**  
+- `DocumentAvailabilityPeriod/StartDate` = **2026-01-27**  
+  From the call for tenders, the day after the notice (D28 point 1).
+- `DocumentAvailabilityPeriod/EndDate` = **2026-02-24**  
   Until the day before the deadline.
-- `TenderSubmissionDeadlinePeriod/EndDate` = **2026-02-26**  
-  The deadline.
+- `TenderSubmissionDeadlinePeriod/EndDate` = **2026-02-25**  
+  Wednesday 25 February (D28 point 1).
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
   At noon.
-- `InvitationSubmissionPeriod/StartDate` = **2026-01-26**  
-  Invitations from.
-- `InvitationSubmissionPeriod/EndDate` = **2026-02-01**  
-  To.
-- `ParticipationInvitationPeriod/StartDate` = **2026-01-26**  
-  Participation invited from.
-- `ParticipationInvitationPeriod/EndDate` = **2026-02-11**  
-  To.
-- `ParticipationRequestReceptionPeriod/EndDate` = **2026-02-11**  
-  Requests to participate by then.
-- `AdditionalInformationRequestPeriod/EndDate` = **2026-02-19**  
-  Questions by then.
+- `AdditionalInformationRequestPeriod/EndDate` = **2026-02-18**  
+  Questions by then, a week before the deadline.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0187**  
   The prior information notice.
 - `AdditionalDocumentReference/ID` = **PWD-SPEC-BENCH-26**  
@@ -566,9 +556,9 @@ Inside `TenderingProcess`:
 - `OpenTenderEvent/IdentificationID` = **OPEN-1**  
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
-  The deadline day.
-- `OpenTenderEvent/OccurrenceTime` = **14:00:00**  
-  Two hours after the deadline.
+  Thursday 26 February, the day after the deadline (D28 point 1).
+- `OpenTenderEvent/OccurrenceTime` = **10:00:00**  
+  In the morning.
 - `OpenTenderEvent/TypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:TenderEventTypeCode`)  
   A tender opening. The code is from the Trade Accord's tender event type list: OPENING = Opening of tenders.
 - `OpenTenderEvent/Description` = **Electronic opening; tenderers may follow it online.**  
@@ -1010,12 +1000,12 @@ Inside `ProcurementProjectLot`:
   <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
   <cbc:UUID>f07df174-cb95-54b5-a27e-7135aa91aec3</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-11</cbc:IssueDate>
+  <cbc:IssueDate>2026-01-26</cbc:IssueDate>
   <cbc:IssueTime>08:32:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="en-XB">Open procedure in two lots.</cbc:Note>
   <cbc:Note languageID="qau">Huktrir trelhek trek kan dran.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:RequestedPublicationDate>2026-01-27</cbc:RequestedPublicationDate>
+  <cbc:RequestedPublicationDate>2026-01-26</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
@@ -1172,7 +1162,7 @@ Inside `ProcurementProjectLot`:
       <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
       <cbc:AmountRate>2</cbc:AmountRate>
       <cac:ConstitutionPeriod>
-        <cbc:EndDate>2026-02-26</cbc:EndDate>
+        <cbc:EndDate>2026-02-25</cbc:EndDate>
       </cac:ConstitutionPeriod>
     </cac:RequiredFinancialGuarantee>
     <cac:ProcurementLegislationDocumentReference>
@@ -1423,26 +1413,15 @@ Inside `ProcurementProjectLot`:
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
     <cac:DocumentAvailabilityPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-25</cbc:EndDate>
+      <cbc:StartDate>2026-01-27</cbc:StartDate>
+      <cbc:EndDate>2026-02-24</cbc:EndDate>
     </cac:DocumentAvailabilityPeriod>
     <cac:TenderSubmissionDeadlinePeriod>
-      <cbc:EndDate>2026-02-26</cbc:EndDate>
+      <cbc:EndDate>2026-02-25</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
-    <cac:InvitationSubmissionPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-01</cbc:EndDate>
-    </cac:InvitationSubmissionPeriod>
-    <cac:ParticipationInvitationPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationInvitationPeriod>
-    <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationRequestReceptionPeriod>
     <cac:AdditionalInformationRequestPeriod>
-      <cbc:EndDate>2026-02-19</cbc:EndDate>
+      <cbc:EndDate>2026-02-18</cbc:EndDate>
     </cac:AdditionalInformationRequestPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
@@ -1458,7 +1437,7 @@ Inside `ProcurementProjectLot`:
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>

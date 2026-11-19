@@ -24,8 +24,8 @@ The authority confirms the procedure and its deadline.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-21**  
-  Answered the next day.
+- `IssueDate` = **2026-02-19**  
+  Answered the next day, a Thursday (tender/09#F4).
 - `IssueTime` = **11:44:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
@@ -33,32 +33,16 @@ The authority confirms the procedure and its deadline.
 - `Note` = **The deadline stands; the answers did not change the documents.**  
   The status.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
-  Still an open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
+  Still an open procedure: it has no invitation or participation periods (D28 point 1). The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
 
 ### Tender Submission Deadline Period
 
 Inside `TenderSubmissionDeadlinePeriod`:
 
-- `EndDate` = **2026-02-26**  
+- `EndDate` = **2026-02-25**  
   The deadline for tenders stands.
 - `EndTime` = **12:00:00**  
   At noon, as the notice says.
-
-### Invitation Submission Period
-
-Inside `InvitationSubmissionPeriod`:
-
-- `StartDate` = **2026-01-26**  
-  From.
-- `EndDate` = **2026-02-01**  
-  To.
-
-### Participation Request Reception Period
-
-Inside `ParticipationRequestReceptionPeriod`:
-
-- `EndDate` = **2026-02-11**  
-  Closed: requests to participate were due then.
 
 ### Procurement Legislation Document Reference
 
@@ -260,22 +244,15 @@ Inside `ProcurementProjectLot`:
   <cbc:ID>LPWD-DOC-26-0195</cbc:ID>
   <cbc:UUID>5d2822e5-9730-5d4e-b4a6-9fee16a390e6</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>11:44:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The deadline stands; the answers did not change the documents.</cbc:Note>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   <cac:TenderSubmissionDeadlinePeriod>
-    <cbc:EndDate>2026-02-26</cbc:EndDate>
+    <cbc:EndDate>2026-02-25</cbc:EndDate>
     <cbc:EndTime>12:00:00</cbc:EndTime>
   </cac:TenderSubmissionDeadlinePeriod>
-  <cac:InvitationSubmissionPeriod>
-    <cbc:StartDate>2026-01-26</cbc:StartDate>
-    <cbc:EndDate>2026-02-01</cbc:EndDate>
-  </cac:InvitationSubmissionPeriod>
-  <cac:ParticipationRequestReceptionPeriod>
-    <cbc:EndDate>2026-02-11</cbc:EndDate>
-  </cac:ParticipationRequestReceptionPeriod>
   <cac:ProcurementLegislationDocumentReference>
     <cbc:ID>XB-PPA-2019</cbc:ID>
   </cac:ProcurementLegislationDocumentReference>

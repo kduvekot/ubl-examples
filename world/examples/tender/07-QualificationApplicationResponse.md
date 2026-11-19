@@ -26,8 +26,8 @@ The furniture maker declares it meets the selection criteria.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The contract.
-- `IssueDate` = **2026-02-19**  
-  Returned before the tender deadline.
+- `IssueDate` = **2026-02-12**  
+  Returned well before the tender deadline.
 - `IssueTime` = **10:47:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `VersionID` = **1**  
@@ -433,7 +433,7 @@ Inside `Signature`:
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:IssueDate>2026-02-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-12</cbc:IssueDate>
   <cbc:IssueTime>10:47:00-01:00</cbc:IssueTime>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>

@@ -26,8 +26,8 @@ The manufacturer and its consortium partner are admitted to the evaluation.
   The authority's file number for this procurement, the same on every document of the procedure.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The name of the contract the procedure is for.
-- `IssueDate` = **2026-03-03**  
-  After the check of the qualifications.
+- `IssueDate` = **2026-03-02**  
+  After the check of the qualifications, before the auction: Monday 2 March.
 - `IssueTime` = **15:09:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Qualified for both lots.**  
@@ -178,7 +178,7 @@ Inside `QualificationResolution`:
   The tenderer meets the selection criteria and its tender is evaluated. The code is from the Trade Accord's qualification admission list: ADMITTED = Admitted.
 - `Resolution` = **Admitted to the evaluation of lot 1.**  
   The decision.
-- `ResolutionDate` = **2026-03-03**  
+- `ResolutionDate` = **2026-03-02**  
   The day of the decision.
 - `ResolutionTime` = **10:00:00**  
   The time of the decision.
@@ -188,35 +188,12 @@ Inside `QualificationResolution`:
   The tenderer meets the selection criteria and its tender is evaluated. The code is from the Trade Accord's qualification admission list: ADMITTED = Admitted.
 - `Resolution` = **Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.**  
   The decision.
-- `ResolutionDate` = **2026-03-03**  
+- `ResolutionDate` = **2026-03-02**  
   The day of the decision.
 - `ResolutionTime` = **10:00:00**  
   The time.
 - `ProcurementProjectLot/ID` = **LOT-2**  
   Lot 2.
-
-### Appeal Terms
-
-Inside `AppealTerms`:
-
-- `Description` = **An appeal against the decision goes to the review board within ten days.**  
-  How to appeal.
-- `PresentationPeriod/StartDate` = **2026-03-09**  
-  From the decision.
-- `PresentationPeriod/EndDate` = **2026-03-19**  
-  Ten days later, the end of the standstill period.
-- `AppealInformationParty/PartyIdentification/ID` = **4718260539** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AppealInformationParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AppealReceiverParty/PartyIdentification/ID` = **4718260539** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `AppealReceiverParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `MediationParty/PartyIdentification/ID` = **4718260539** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `MediationParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
 
@@ -242,7 +219,7 @@ Inside `Signature`:
   <cbc:UUID>e88bee18-0123-544d-a805-b3c5573d165c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:IssueDate>2026-03-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>15:09:00-01:00</cbc:IssueTime>
   <cbc:Note>Qualified for both lots.</cbc:Note>
   <cac:SenderParty>
@@ -349,7 +326,7 @@ Inside `Signature`:
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
     <cbc:Resolution>Admitted to the evaluation of lot 1.</cbc:Resolution>
-    <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
+    <cbc:ResolutionDate>2026-03-02</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>
@@ -358,43 +335,12 @@ Inside `Signature`:
   <cac:QualificationResolution>
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
     <cbc:Resolution>Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.</cbc:Resolution>
-    <cbc:ResolutionDate>2026-03-03</cbc:ResolutionDate>
+    <cbc:ResolutionDate>2026-03-02</cbc:ResolutionDate>
     <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-2</cbc:ID>
     </cac:ProcurementProjectLot>
   </cac:QualificationResolution>
-  <cac:AppealTerms>
-    <cbc:Description>An appeal against the decision goes to the review board within ten days.</cbc:Description>
-    <cac:PresentationPeriod>
-      <cbc:StartDate>2026-03-09</cbc:StartDate>
-      <cbc:EndDate>2026-03-19</cbc:EndDate>
-    </cac:PresentationPeriod>
-    <cac:AppealInformationParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">4718260539</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
-      </cac:PartyName>
-    </cac:AppealInformationParty>
-    <cac:AppealReceiverParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">4718260539</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
-      </cac:PartyName>
-    </cac:AppealReceiverParty>
-    <cac:MediationParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">4718260539</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
-      </cac:PartyName>
-    </cac:MediationParty>
-  </cac:AppealTerms>
   <cac:Signature>
     <cbc:ID>PWD-SIG-TQR</cbc:ID>
     <cac:SignatoryParty>

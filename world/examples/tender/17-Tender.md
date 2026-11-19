@@ -26,8 +26,8 @@ The furniture maker tenders wooden benches.
   Technical and financial in one. The code is from the Trade Accord's tender type list: COMBINED = Technical and financial together.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-23**  
-  Submitted before the deadline.
+- `IssueDate` = **2026-02-20**  
+  Submitted before the deadline, on Friday 20 February.
 - `IssueTime` = **16:37:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
@@ -370,7 +370,7 @@ Inside `TenderedProject`:
   <cbc:UUID>21770882-3c11-5392-aed3-5bd95b4c3cc7</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-23</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>16:37:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>Tender for both lots, with a bench of the furniture maker's own make.</cbc:Note>

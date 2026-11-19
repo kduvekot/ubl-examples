@@ -3366,11 +3366,13 @@ def tender(n, doc):
                 **folder, **project}
     if doc["doc"] == "ContractNotice":
         return {"ID": V(f.number("notice", doc["from"], "ContractNotice"), "The notice number."),
-                "IssueDate": V(f.date(30), "The call for competition, a month after the prior information notice."),
+                "IssueDate": V(f.date(14), "Monday 26 January, the date the prior information notice planned for "
+                                           "the call for competition (D28 point 1, C125)."),
                 **folder, **project}
     if doc["doc"] == "CallForTenders":
         return {"ID": V(f.number("call", doc["from"], "CallForTenders"), "The number of the procurement documents."),
-                "IssueDate": V(f.date(31), "Retrieved by the manufacturer after the notice was published."),
+                "IssueDate": V(f.date(15), "Tuesday 27 January, the day after the contract notice: the documents "
+                                           "are available from then (D28 point 1)."),
                 **folder, **project}
     if doc["doc"] == "BusinessInformation":
         return {"ID": V(f.number("business-info", doc["from"], "BusinessInformation"), "The registry's extract number."),
@@ -3378,22 +3380,27 @@ def tender(n, doc):
     if doc["doc"] == "TendererQualification":
         return {"ID": V(f.number("qualification", doc["from"], "TendererQualification"), "The tenderer's number for "
                                                                                        "its declaration."),
-                "IssueDate": V(f.date(44), "Submitted with the tender."), **folder}
+                "IssueDate": V(f.date(43), "Submitted with the tender, the day before the deadline."), **folder}
     if doc["doc"] == "GuaranteeCertificate":
         return {"ID": V(f.number("guarantee", doc["from"], "GuaranteeCertificate"), "The guarantee's number."),
-                "IssueDate": V(f.date(43), "Issued before the tender deadline."), **folder,
+                "IssueDate": V(f.date(42), "Issued the day before the tender, which it secures."), **folder,
                 "LiabilityAmount": amount(2400, "XBL", "The bid bond: 2 % of the estimated contract value, as the "
                                                        "procurement documents ask.")}
     if doc["doc"] == "Tender":
         unit = kit.unit_price("bench-serra", "XBL")
         return {"ID": V(f.number("tender", doc["from"], "Tender"), "The tenderer's number for its tender."),
-                "IssueDate": V(f.date(44), "Submitted before the deadline."), **folder,
+                "IssueDate": V(f.date(43), "Submitted the day before the deadline of Wednesday 25 February."),
+                **folder,
                 "TenderedProject": {"LegalMonetaryTotal": {
                     "PayableAmount": amount(unit * TENDER_QTY, "XBL", f"{TENDER_QTY} benches at {unit} lume: the bench "
                                                                       "price converted at the reference rate.")}}}
     if doc["doc"] == "ContractAwardNotice":
+        for key, kind in (("awarded", "AwardedNotification"), ("unawarded", "UnawardedNotification"),
+                          ("contract", "TenderContract")):     # issued before the notice: numbered before it (21#F12)
+            f.number(key, doc["from"], kind)
         return {"ID": V(f.number("award-notice", doc["from"], "ContractAwardNotice"), "The notice number."),
-                "IssueDate": V(f.date(60), "Published four days after the award decision, while the standstill period runs."), **folder,
+                "IssueDate": V(f.date(70), "Monday 23 March, published after the contract was signed (D28 point 1, "
+                                           "tender/21#F12)."), **folder,
                 "TenderResult": {"AwardDate": V(f.date(56), "The day the authority decided the award.")}}
     if doc["doc"] == "AwardedNotification":
         return {"ID": V(f.number("awarded", doc["from"], "AwardedNotification"), "The notification number."),
@@ -5041,30 +5048,32 @@ def tender(n, doc):
     folder = {"ContractFolderID": V(FOLDER, "The authority's file number for this procurement, the same on every "
                                             "document of the procedure.")}
     if d == "ExpressionOfInterestRequest":
-        return {**head(f, "eoi", doc, 33, "Sent after the contract notice was published."), **folder}
+        return {**head(f, "eoi", doc, 18, "Sent after the contract notice was published: Friday 30 January."), **folder}
     if d == "ExpressionOfInterestResponse":
-        return {**head(f, "eoi-response", doc, 34, "The authority confirms the registration the next day."), **folder}
+        return {**head(f, "eoi-response", doc, 21, "The authority confirms the registration on the next working day, "
+                                                       "Monday 2 February (tender/05#F5)."), **folder}
     if d == "QualificationApplicationRequest":
-        return {**head(f, "qar", doc, 32, "Sent with the procurement documents."), **folder}
+        return {**head(f, "qar", doc, 17, "Sent with the procurement documents the furniture maker obtained, two days "
+                                             "after the call."), **folder}
     if d == "QualificationApplicationResponse":
-        return {**head(f, "qar-response", doc, 38, "Returned before the tender deadline."), **folder,
+        return {**head(f, "qar-response", doc, 31, "Returned well before the tender deadline."), **folder,
                 "TenderingCriterionResponse": {
                     "ID": V("SEL-1", "The response to the authority's first selection criterion."),
                     "Description": V("Annual turnover in furniture above 500,000 lume in each of the last three "
                                      "years.", "What the furniture maker declares for this criterion.")}}
     if d == "ProcurementStatusRequest":
-        return {**head(f, "status-request", doc, 39, "The furniture maker asks a week before the deadline."), **folder}
+        return {**head(f, "status-request", doc, 37, "The furniture maker asks a week before the deadline."), **folder}
     if d == "ProcurementStatus":
-        return {**head(f, "procurement-status", doc, 40, "Answered the next day."), **folder,
-                "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(45), "The deadline for tenders stands."),
+        return {**head(f, "procurement-status", doc, 38, "Answered the next day, a Thursday (tender/09#F4)."), **folder,
+                "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(44), "The deadline for tenders stands."),
                                                    "EndTime": V("12:00:00", "At noon, as the notice says.")}}
     if d == "UnsubscribeFromProcedureRequest":
-        return {**head(f, "unsubscribe", doc, 41, "The sawmill decides before the deadline."), **folder}
+        return {**head(f, "unsubscribe", doc, 39, "The sawmill decides before the deadline, on a Friday (tender/10#F4)."), **folder}
     if d == "UnsubscribeFromProcedureResponse":
-        return {**head(f, "unsubscribe-response", doc, 42, "The authority confirms the next day."), **folder}
+        return {**head(f, "unsubscribe-response", doc, 42, "The authority confirms on the next working day."), **folder}
     if d == "TenderReceipt":
-        return {**head(f, "tender-receipt", doc, 44, "Sent on receipt of the tender."), **folder,
-                "RegisteredDate": V(f.date(44), "The day the tender was registered, before the deadline."),
+        return {**head(f, "tender-receipt", doc, 43, "Sent on receipt of the tender."), **folder,
+                "RegisteredDate": V(f.date(43), "The day the tender was registered, before the deadline."),
                 "RegisteredTime": V("11:42:00", "The time it was registered, which proves it was on time."),
                 "TenderDocumentReference": {"ID": V(f.numbers["tender"], "The tender received.")}}
     if d == "Tender" and doc["from"] == "37-xb":
@@ -5072,7 +5081,8 @@ def tender(n, doc):
         price = Decimal("470.00") if k == 1 else Decimal("480.00")
         return {"ID": V(f.number(f"tender-37-{k}", doc["from"], "Tender"), "The furniture maker's number for this "
                                                                            "tender."),
-                "IssueDate": V(f.date(42 if k == 1 else 43), "Submitted before the deadline." if k == 1 else
+                "IssueDate": V(f.date(39 if k == 1 else 42), "Submitted before the deadline, on Friday 20 "
+                                                             "February." if k == 1 else
                                "The corrected tender, submitted after the withdrawal the same day (tender/19#F1)."),
                 **folder,
                 "TenderedProject": {"LegalMonetaryTotal": {
@@ -5081,22 +5091,25 @@ def tender(n, doc):
                                             (": the price per bench was entered wrongly." if k == 1 else
                                              ", the corrected price."))}}}
     if d == "TenderWithdrawal":
-        return {**head(f, "withdrawal", doc, 43, "Withdrawn before the deadline, which the procedure allows."),
+        return {**head(f, "withdrawal", doc, 42, "Withdrawn before the deadline, which the procedure allows: Monday 23 "
+                                                     "February."),
                 "IssueTime": V("11:20:00", "In the morning, when the furniture maker noticed the wrong price, before "
                                            "it submitted the corrected tender (tender/18#F1)."),
                 **folder,
                 "WithdrawOfferIndicator": V("true", "The whole tender is withdrawn."),
                 "TenderDocumentReference": {"ID": V(f.numbers["tender-37-1"], "The tender withdrawn.")}}
     if d == "TendererQualificationResponse":
-        return {**head(f, "qualification-response", doc, 50, "After the check of the qualifications."), **folder,
+        return {**head(f, "qualification-response", doc, 49, "After the check of the qualifications, before the "
+                                                                 "auction: Monday 2 March."), **folder,
                 "QualificationResolution": {"AdmissionCode": V("ADMITTED", "The tenderer meets the selection criteria "
                                                                            "and its tender is evaluated."),
-                                            "ResolutionDate": V(f.date(50), "The day of the decision.")}}
+                                            "ResolutionDate": V(f.date(49), "The day of the decision.")}}
     if d == "UnawardedNotification":
         return {**head(f, "unawarded", doc, 56, "Told on the day of the award decision, as the winner is."), **folder,
                 "TenderResult": {"AwardDate": V(f.date(56), "The day the contract was awarded to another tenderer.")}}
     if d == "TenderContract":
-        return {**head(f, "contract", doc, 66, "Concluded after the ten-day standstill period."), **folder,
+        return {**head(f, "contract", doc, 67, "Concluded on Friday 20 March, the day after the standstill period "
+                                                   "ended (D28 point 1, tender/24#F13)."), **folder,
                 "TenderResult": {"AwardDate": V(f.date(56), "The day of the award decision.")}}
     return _tender(n, doc)
 
@@ -7987,7 +8000,7 @@ def auction_terms(f, held=False):
             "price score changes with the new prices.")
     why = "The terms of the auction for the tenderers."
     if held:
-        day = datetime.date.fromisoformat(f.date(53))
+        day = datetime.date.fromisoformat(f.date(51))
         text += (f" The auction was held on {day.day} {day:%B %Y} with both admissible tenderers and closed after "
                  "its first "
                  "round without a new bid, so the prices of the tenders stand.")
@@ -8022,24 +8035,22 @@ def tendering_process(f, held=False):
             "SubmissionMethodCode": V("ELECTRONIC", "Tenders are submitted electronically."),
             "GovernmentAgreementConstraintIndicator": V("true", "Covered by the trade accord's procurement chapter."),
             "AccessToolsURI": V("https://tenders.lumeport.example/PWD-2026-PARKS", "Where the documents are."),
-            "DocumentAvailabilityPeriod": {"StartDate": V(f.date(14), "From the notice."),
-                                           "EndDate": V(f.date(44), "Until the day before the deadline.")},
-            "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(45), "The deadline."),
+            "DocumentAvailabilityPeriod": {"StartDate": V(f.date(15), "From the call for tenders, the day after "
+                                                                      "the notice (D28 point 1)."),
+                                           "EndDate": V(f.date(43), "Until the day before the deadline.")},
+            "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(44), "Wednesday 25 February (D28 point 1)."),
                                                "EndTime": V("12:00:00", "At noon.")},
-            "InvitationSubmissionPeriod": {"StartDate": V(f.date(14), "Invitations from."),
-                                           "EndDate": V(f.date(20), "To.")},
-            "ParticipationInvitationPeriod": {"StartDate": V(f.date(14), "Participation invited from."),
-                                              "EndDate": V(f.date(30), "To.")},
-            "ParticipationRequestReceptionPeriod": {"EndDate": V(f.date(30), "Requests to participate by then.")},
-            "AdditionalInformationRequestPeriod": {"EndDate": V(f.date(38), "Questions by then.")},
+            "AdditionalInformationRequestPeriod": {"EndDate": V(f.date(37), "Questions by then, a week before the "
+                                                                            "deadline.")},
             "NoticeDocumentReference": {"ID": V(f.numbers.get("pin", f"{FOLDER}-PIN"), "The prior information "
                                                                                        "notice.")},
             "AdditionalDocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The specification.")},
             "ProcessJustification": {"ProcessReasonCode": V("STANDARD", "The open procedure is the rule."),
                                      "ProcessReason": V("Value above the threshold for open procedures.", "Why.")},
             "OpenTenderEvent": {"IdentificationID": V("OPEN-1", "The opening of the tenders."),
-                                "OccurrenceDate": V(f.date(45), "The deadline day."),
-                                "OccurrenceTime": V("14:00:00", "Two hours after the deadline."),
+                                "OccurrenceDate": V(f.date(45), "Thursday 26 February, the day after the "
+                                                                "deadline (D28 point 1)."),
+                                "OccurrenceTime": V("10:00:00", "In the morning."),
                                 "TypeCode": V("OPENING", "A tender opening."),
                                 "Description": V("Electronic opening; tenderers may follow it online.", "How."),
                                 "CompletionIndicator": V("false", "To come."),
@@ -8110,7 +8121,8 @@ def tendering_terms(f, call=False):
                                            "Description": V("A bank guarantee for the tender.", "What."),
                                            "LiabilityAmount": amount(Decimal("2400.00"), "XBL", "Its amount."),
                                            "AmountRate": V("2", "2 % of the estimated value of 120,000 lume."),
-                                           "ConstitutionPeriod": {"EndDate": V(f.date(45), "With the tender.")}},
+                                           "ConstitutionPeriod": {"EndDate": V(f.date(44), "With the tender, by the "
+                                                                                          "deadline.")}},
             "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "Bayvarra's public procurement "
                                                                                "act.")},
             "FiscalLegislationDocumentReference": {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
@@ -8296,7 +8308,7 @@ def with_urvanian(block, *keys):
 
 
 def out_day(f, kind):
-    return f.date({"PIN": 1, "CN": 15, "CAN": 61}[kind])
+    return f.date({"PIN": 0, "CN": 14, "CAN": 70}[kind])     # published on the day of issue (tender/02#F1)
 
 
 def contracting_party_details():
@@ -8343,7 +8355,7 @@ def _(f, n, doc, out):
 
 @enrich("tender", "CallForTenders")
 def _(f, n, doc, out):
-    return {"ApprovalDate": V(f.date(13), "Approved by the department's head."),
+    return {"ApprovalDate": V(f.date(14), "Approved by the department's head on the day of the contract notice."),
             "Note": V("The documents of the procedure.", "What."), "VersionID": V("1", "The first version."),
             "LegalDocumentReference": {"ID": V("PWD-LEGAL-26", "The legal conditions.")},
             "TechnicalDocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The specification.")},
@@ -8794,8 +8806,10 @@ def project_brief(lot=None):
 def appeal_terms():
     return {"Description": V("An appeal against the decision goes to the review board within ten days.", "How to "
                                                                                                          "appeal."),
-            "PresentationPeriod": {"StartDate": V(TENDER.date(56), "From the decision."),
-                                   "EndDate": V(TENDER.date(66), "Ten days later, the end of the standstill period.")},
+            "PresentationPeriod": {"StartDate": V(TENDER.date(57), "From the day after the award decision was "
+                                                                   "sent, Tuesday 10 March (D28 point 1)."),
+                                   "EndDate": V(TENDER.date(66), "Ten days, to Thursday 19 March, the end of the "
+                                                                 "standstill period.")},
             "AppealInformationParty": party(BOARD, short=True),
             "AppealReceiverParty": party(BOARD, short=True),
             "MediationParty": party(BOARD, short=True)}
@@ -8816,21 +8830,22 @@ def tender_result(f, full=True):
                                                     "replaced."),
             "LowerTenderAmount": amount(RUNNER_UP_TOTAL, "XBL", "The lowest tender, the furniture maker's."),
             "HigherTenderAmount": amount(WIN_TOTAL, "XBL", "The highest, the manufacturer's."),
-            "StartDate": V(f.date(70), "The contract starts with the first call-off."),
+            "StartDate": V(f.date(67), "The contract starts when it is signed, on Friday 20 March."),
             "ReceivedElectronicTenderQuantity": qty(2, "EA", "Both through the platform."),
             "ReceivedForeignTenderQuantity": qty(1, "EA", "The manufacturer is established in Urvania.")})
     out.update({
         "Contract": {"ID": V(FOLDER, "The framework contract."), "ContractTypeCode": V("FRAMEWORK", "A framework "
                                                                                                     "contract."),
-                     "ValidityPeriod": {"StartDate": V(f.date(70), "From the first call-off."),
+                     "ValidityPeriod": {"StartDate": V(f.date(67), "From its signature."),
                                         "DurationMeasure": V("24", "Two years.", unitCode="MON")}},
         "AwardedTenderedProject": {
             "VariantID": V("V0", "The main offer."),
             "ProcurementProjectLot": [lot_ref("LOT-1"), lot_ref("LOT-2")],
             "LegalMonetaryTotal": {"PayableAmount": amount(WIN_TOTAL, "XBL", f"{TENDER_QTY} benches at 499 lume and "
                                                                              "their installation at 18 lume each.")}},
-        "ContractFormalizationPeriod": {"StartDate": V(f.date(66), "After the standstill period."),
-                                        "EndDate": V(f.date(69), "Before the first call-off.")},
+        "ContractFormalizationPeriod": {"StartDate": V(f.date(67), "The day after the standstill period ended "
+                                                                   "(tender/22#F5)."),
+                                        "EndDate": V(f.date(70), "Before the first call-off.")},
         "SubcontractTerms": {"Rate": V("3.5", "The installation's share of the contract value: "
                                               f"{TENDER_QTY * 18:,} of {WIN_TOTAL:,} lume, rounded."),
                              "UnknownPriceIndicator": V("false", "The price of the subcontracted part is known: the "
@@ -8851,7 +8866,7 @@ def _(f, n, doc, out):
                                                                                        "city writes it."),
             "Note": V("The sawmill considers a tender for lot 1 with a bench maker and asks to follow the "
                       "procedure.", "Why it registers."),
-            "ValidityPeriod": {"EndDate": V(f.date(45), "Its interest lasts until the tender deadline.")},
+            "ValidityPeriod": {"EndDate": V(f.date(44), "Its interest lasts until the tender deadline.")},
             "DocumentReference": {"ID": V(f.numbers.get("notice", f"{FOLDER}-CN"), "The contract notice it "
                                                                                    "answers.")},
             "Signature": seal(SAWMILL, "HS-SIG-EOI"),
@@ -8895,10 +8910,8 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"ContractName": contract_name(), "Note": V("The deadline stands; the answers did not change the "
                                                        "documents.", "The status."),
-            "ProcedureCode": V("OPEN", "Still an open procedure."),
-            "InvitationSubmissionPeriod": {"StartDate": V(f.date(14), "From."), "EndDate": V(f.date(20), "To.")},
-            "ParticipationRequestReceptionPeriod": {"EndDate": V(f.date(30), "Closed: requests to participate "
-                                                                             "were due then.")},
+            "ProcedureCode": V("OPEN", "Still an open procedure: it has no invitation or participation periods "
+                                       "(D28 point 1)."),
             "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "The procurement act.")},
             "FiscalLegislationDocumentReference": {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
             "EnvironmentalLegislationDocumentReference": {"ID": V("XB-ENV-2021", "The environmental act.")},
@@ -8986,7 +8999,6 @@ def _(f, n, doc, out):
     res = out["QualificationResolution"]
     return {"ContractName": contract_name(), "Note": V("Qualified for both lots.", "The outcome."),
             "ResolutionDocumentReference": {"ID": V("PWD-MIN-QUAL-26", "The minutes of the qualification check.")},
-            "AppealTerms": appeal_terms(),
             "Signature": seal(PWD, "PWD-SIG-TQR"),
             "QualificationResolution": [
                 {**res,
@@ -9905,7 +9917,8 @@ def tender_complete(n, doc):
     f, d = TENDER, doc["doc"]
     cur = "XBL"
     if d == "Catalogue":
-        out = kit.catalogue(f, n, doc, 68, "Published when the contract was signed.", ["bench-serra",
+        out = kit.catalogue(f, n, doc, 70, "Published on Monday 23 March, the first working day after the "
+                                           "contract was signed (D28 point 1).", ["bench-serra",
                                                                                       "bench-installation"], 730)
         for i, cl in enumerate(out["CatalogueLine"], 1):
             cl["CallForTendersDocumentReference"] = {"ID": V(f.numbers["call"], "The call for tenders the line was "

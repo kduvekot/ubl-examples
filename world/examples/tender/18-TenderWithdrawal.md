@@ -24,8 +24,8 @@ The furniture maker finds a price error in its tender and withdraws it before th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-24**  
-  Withdrawn before the deadline, which the procedure allows.
+- `IssueDate` = **2026-02-23**  
+  Withdrawn before the deadline, which the procedure allows: Monday 23 February.
 - `IssueTime` = **11:20:00-01:00**  
   In the morning, when the furniture maker noticed the wrong price, before it submitted the corrected tender (tender/18#F1); in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
@@ -190,7 +190,7 @@ Inside `TendererParty`:
   <cbc:ID>BF-DOC-26-0204</cbc:ID>
   <cbc:UUID>ed2964ac-5041-583f-8e50-507bdb320f91</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The price per bench was entered wrongly; a corrected tender follows.</cbc:Note>

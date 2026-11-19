@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:award-notification:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0209</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
   <cbc:UUID>e1de7889-b36e-5db6-b38b-dcbd566f2280</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
@@ -127,7 +127,7 @@
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
       </cac:ValidityPeriod>
     </cac:Contract>
@@ -144,8 +144,8 @@
       </cac:LegalMonetaryTotal>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
-      <cbc:StartDate>2026-03-19</cbc:StartDate>
-      <cbc:EndDate>2026-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
       <cbc:Rate>3.5</cbc:Rate>
@@ -168,7 +168,7 @@
   <cac:AppealTerms>
     <cbc:Description>An appeal against the decision goes to the review board within ten days.</cbc:Description>
     <cac:PresentationPeriod>
-      <cbc:StartDate>2026-03-09</cbc:StartDate>
+      <cbc:StartDate>2026-03-10</cbc:StartDate>
       <cbc:EndDate>2026-03-19</cbc:EndDate>
     </cac:PresentationPeriod>
     <cac:AppealInformationParty>

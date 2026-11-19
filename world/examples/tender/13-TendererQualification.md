@@ -24,8 +24,8 @@ The manufacturer declares its qualifications and those of its consortium partner
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-25**  
-  Submitted with the tender.
+- `IssueDate` = **2026-02-24**  
+  Submitted with the tender, the day before the deadline.
 - `IssueTime` = **08:52:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **The manufacturer with Saltmere as subcontractor for the installation.**  
@@ -396,7 +396,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:ID>VI-DOC-26-0199</cbc:ID>
   <cbc:UUID>544dae4e-ce5c-5e98-a9b3-2b79b00edc95</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>08:52:00-01:00</cbc:IssueTime>
   <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>

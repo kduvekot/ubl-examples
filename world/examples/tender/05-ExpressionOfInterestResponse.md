@@ -24,8 +24,8 @@ The authority confirms the sawmill is registered as an interested party.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-02-15**  
-  The authority confirms the registration the next day.
+- `IssueDate` = **2026-02-02**  
+  The authority confirms the registration on the next working day, Monday 2 February (tender/05#F5).
 - `IssueTime` = **08:35:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
@@ -203,7 +203,7 @@ Inside `ProcurementProjectLotReference`:
   <cbc:ID>LPWD-DOC-26-0191</cbc:ID>
   <cbc:UUID>3ad290e2-059a-5871-b575-922bf8b45c86</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-15</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-02</cbc:IssueDate>
   <cbc:IssueTime>08:35:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:TenderLanguageLocaleCode listID="ISO 639">en</cbc:TenderLanguageLocaleCode>

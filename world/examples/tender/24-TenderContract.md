@@ -18,14 +18,14 @@ After the standstill period the authority and the manufacturer conclude the cont
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0210**  
+- `ID` = **LPWD-DOC-26-0209**  
   The sender's number for this document.
 - `UUID` = **14fc43bd-7919-515f-82c7-a02bb3605891**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-03-19**  
-  Concluded after the ten-day standstill period.
+- `IssueDate` = **2026-03-20**  
+  Concluded on Friday 20 March, the day after the standstill period ended (D28 point 1, tender/24#F13).
 - `IssueTime` = **17:24:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
@@ -39,10 +39,10 @@ After the standstill period the authority and the manufacturer conclude the cont
 
 Inside `PreviousDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0208**  
+- `ID` = **LPWD-DOC-26-0207**  
   The award notification.
 - `DocumentTypeCode` = **AwardedNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0208 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
+  The kind of document referred to: LPWD-DOC-26-0207 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
 
 ### Contract Document Reference
 
@@ -295,8 +295,8 @@ Inside `TenderingTerms`:
   Its amount.
 - `RequiredFinancialGuarantee/AmountRate` = **2**  
   2 % of the estimated value of 120,000 lume.
-- `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-26**  
-  With the tender.
+- `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-25**  
+  With the tender, by the deadline.
 - `ProcurementLegislationDocumentReference/ID` = **XB-PPA-2019**  
   Bayvarra's public procurement act.
 - `FiscalLegislationDocumentReference/ID` = **XB-STT-ACT**  
@@ -583,8 +583,8 @@ Inside `TenderResult`:
   The lowest tender, the furniture maker's.
 - `HigherTenderAmount` = **124080.00** (currencyID `XBL`)  
   The highest, the manufacturer's.
-- `StartDate` = **2026-03-23**  
-  The contract starts with the first call-off.
+- `StartDate` = **2026-03-20**  
+  The contract starts when it is signed, on Friday 20 March.
 - `ReceivedElectronicTenderQuantity` = **2** (unitCode `EA`)  
   Both through the platform.
 - `ReceivedForeignTenderQuantity` = **1** (unitCode `EA`)  
@@ -593,8 +593,8 @@ Inside `TenderResult`:
   The framework contract.
 - `Contract/ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
   A framework contract. The code is from the Trade Accord's contract type list: FRAMEWORK = Framework agreement.
-- `Contract/ValidityPeriod/StartDate` = **2026-03-23**  
-  From the first call-off.
+- `Contract/ValidityPeriod/StartDate` = **2026-03-20**  
+  From its signature.
 - `Contract/ValidityPeriod/DurationMeasure` = **24** (unitCode `MON`)  
   Two years.
 - `AwardedTenderedProject/VariantID` = **V0**  
@@ -605,9 +605,9 @@ Inside `TenderResult`:
   Lot 2 of the procedure.
 - `AwardedTenderedProject/LegalMonetaryTotal/PayableAmount` = **124080.00** (currencyID `XBL`)  
   240 benches at 499 lume and their installation at 18 lume each.
-- `ContractFormalizationPeriod/StartDate` = **2026-03-19**  
-  After the standstill period.
-- `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
+- `ContractFormalizationPeriod/StartDate` = **2026-03-20**  
+  The day after the standstill period ended (tender/22#F5).
+- `ContractFormalizationPeriod/EndDate` = **2026-03-23**  
   Before the first call-off.
 - `SubcontractTerms/Rate` = **3.5**  
   The installation's share of the contract value: 4,320 of 124,080.00 lume, rounded.
@@ -633,16 +633,16 @@ Inside `TenderResult`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0210</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0209</cbc:ID>
   <cbc:UUID>14fc43bd-7919-515f-82c7-a02bb3605891</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-03-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>17:24:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The framework contract, signed by both parties.</cbc:Note>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cac:PreviousDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0207</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractDocumentReference>
@@ -845,7 +845,7 @@ Inside `TenderResult`:
       <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
       <cbc:AmountRate>2</cbc:AmountRate>
       <cac:ConstitutionPeriod>
-        <cbc:EndDate>2026-02-26</cbc:EndDate>
+        <cbc:EndDate>2026-02-25</cbc:EndDate>
       </cac:ConstitutionPeriod>
     </cac:RequiredFinancialGuarantee>
     <cac:ProcurementLegislationDocumentReference>
@@ -1095,14 +1095,14 @@ Inside `TenderResult`:
     <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">119040.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
+    <cbc:StartDate>2026-03-20</cbc:StartDate>
     <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
       </cac:ValidityPeriod>
     </cac:Contract>
@@ -1119,8 +1119,8 @@ Inside `TenderResult`:
       </cac:LegalMonetaryTotal>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
-      <cbc:StartDate>2026-03-19</cbc:StartDate>
-      <cbc:EndDate>2026-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
       <cbc:Rate>3.5</cbc:Rate>

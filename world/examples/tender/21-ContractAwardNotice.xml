@@ -4,14 +4,14 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:contract-award-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0207</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0210</cbc:ID>
   <cbc:UUID>12583d9b-2491-50ee-89c4-489940d246f5</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-03-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>13:55:00-01:00</cbc:IssueTime>
   <cbc:Note>Award of the framework contract for park benches.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
+  <cbc:RequestedPublicationDate>2026-03-23</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
@@ -145,26 +145,15 @@
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
     <cac:DocumentAvailabilityPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-25</cbc:EndDate>
+      <cbc:StartDate>2026-01-27</cbc:StartDate>
+      <cbc:EndDate>2026-02-24</cbc:EndDate>
     </cac:DocumentAvailabilityPeriod>
     <cac:TenderSubmissionDeadlinePeriod>
-      <cbc:EndDate>2026-02-26</cbc:EndDate>
+      <cbc:EndDate>2026-02-25</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
-    <cac:InvitationSubmissionPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-01</cbc:EndDate>
-    </cac:InvitationSubmissionPeriod>
-    <cac:ParticipationInvitationPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationInvitationPeriod>
-    <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationRequestReceptionPeriod>
     <cac:AdditionalInformationRequestPeriod>
-      <cbc:EndDate>2026-02-19</cbc:EndDate>
+      <cbc:EndDate>2026-02-18</cbc:EndDate>
     </cac:AdditionalInformationRequestPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
@@ -180,7 +169,7 @@
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
@@ -197,7 +186,7 @@
     <cac:AuctionTerms>
       <cbc:AuctionConstraintIndicator>true</cbc:AuctionConstraintIndicator>
       <cbc:JustificationDescription>The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.</cbc:JustificationDescription>
-      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 6 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.</cbc:Description>
+      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 4 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.</cbc:Description>
       <cbc:ProcessDescription>One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.</cbc:ProcessDescription>
       <cbc:ConditionsDescription>A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.</cbc:ConditionsDescription>
       <cbc:ElectronicDeviceDescription>The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.</cbc:ElectronicDeviceDescription>
@@ -570,14 +559,14 @@
     <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">119040.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
+    <cbc:StartDate>2026-03-20</cbc:StartDate>
     <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
       </cac:ValidityPeriod>
     </cac:Contract>
@@ -594,8 +583,8 @@
       </cac:LegalMonetaryTotal>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
-      <cbc:StartDate>2026-03-19</cbc:StartDate>
-      <cbc:EndDate>2026-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
       <cbc:Rate>3.5</cbc:Rate>

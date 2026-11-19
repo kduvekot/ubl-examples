@@ -18,21 +18,21 @@ The award is published; the review body is named for appeals.
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0207**  
+- `ID` = **LPWD-DOC-26-0210**  
   The notice number.
 - `UUID` = **12583d9b-2491-50ee-89c4-489940d246f5**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
-- `IssueDate` = **2026-03-13**  
-  Published four days after the award decision, while the standstill period runs.
+- `IssueDate` = **2026-03-23**  
+  Monday 23 March, published after the contract was signed (D28 point 1, tender/21#F12).
 - `IssueTime` = **13:55:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Award of the framework contract for park benches.**  
   What.
 - `VersionID` = **1**  
   The first version.
-- `RequestedPublicationDate` = **2026-03-14**  
+- `RequestedPublicationDate` = **2026-03-23**  
   When to publish.
 - `RegulatoryDomain` = **Bayvarra public procurement**  
   The rules the notice follows.
@@ -219,26 +219,16 @@ Inside `TenderingProcess`:
   Covered by the trade accord's procurement chapter.
 - `AccessToolsURI` = **https://tenders.lumeport.example/PWD-2026-PARKS**  
   Where the documents are.
-- `DocumentAvailabilityPeriod/StartDate` = **2026-01-26**  
-  From the notice.
-- `DocumentAvailabilityPeriod/EndDate` = **2026-02-25**  
+- `DocumentAvailabilityPeriod/StartDate` = **2026-01-27**  
+  From the call for tenders, the day after the notice (D28 point 1).
+- `DocumentAvailabilityPeriod/EndDate` = **2026-02-24**  
   Until the day before the deadline.
-- `TenderSubmissionDeadlinePeriod/EndDate` = **2026-02-26**  
-  The deadline.
+- `TenderSubmissionDeadlinePeriod/EndDate` = **2026-02-25**  
+  Wednesday 25 February (D28 point 1).
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
   At noon.
-- `InvitationSubmissionPeriod/StartDate` = **2026-01-26**  
-  Invitations from.
-- `InvitationSubmissionPeriod/EndDate` = **2026-02-01**  
-  To.
-- `ParticipationInvitationPeriod/StartDate` = **2026-01-26**  
-  Participation invited from.
-- `ParticipationInvitationPeriod/EndDate` = **2026-02-11**  
-  To.
-- `ParticipationRequestReceptionPeriod/EndDate` = **2026-02-11**  
-  Requests to participate by then.
-- `AdditionalInformationRequestPeriod/EndDate` = **2026-02-19**  
-  Questions by then.
+- `AdditionalInformationRequestPeriod/EndDate` = **2026-02-18**  
+  Questions by then, a week before the deadline.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0187**  
   The prior information notice.
 - `AdditionalDocumentReference/ID` = **PWD-SPEC-BENCH-26**  
@@ -252,9 +242,9 @@ Inside `TenderingProcess`:
 - `OpenTenderEvent/IdentificationID` = **OPEN-1**  
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
-  The deadline day.
-- `OpenTenderEvent/OccurrenceTime` = **14:00:00**  
-  Two hours after the deadline.
+  Thursday 26 February, the day after the deadline (D28 point 1).
+- `OpenTenderEvent/OccurrenceTime` = **10:00:00**  
+  In the morning.
 - `OpenTenderEvent/TypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:TenderEventTypeCode`)  
   A tender opening. The code is from the Trade Accord's tender event type list: OPENING = Opening of tenders.
 - `OpenTenderEvent/Description` = **Electronic opening; tenderers may follow it online.**  
@@ -271,7 +261,7 @@ Inside `TenderingProcess`:
   An electronic auction is held before the award.
 - `AuctionTerms/JustificationDescription` = **The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.**  
   Why the department uses an auction.
-- `AuctionTerms/Description` = **After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 6 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.**  
+- `AuctionTerms/Description` = **After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 4 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.**  
   The terms of the auction for the tenderers. The award notice adds what happened: neither tenderer lowered its price.
 - `AuctionTerms/ProcessDescription` = **One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.**  
   How the auction runs.
@@ -702,8 +692,8 @@ Inside `TenderResult`:
   The lowest tender, the furniture maker's.
 - `HigherTenderAmount` = **124080.00** (currencyID `XBL`)  
   The highest, the manufacturer's.
-- `StartDate` = **2026-03-23**  
-  The contract starts with the first call-off.
+- `StartDate` = **2026-03-20**  
+  The contract starts when it is signed, on Friday 20 March.
 - `ReceivedElectronicTenderQuantity` = **2** (unitCode `EA`)  
   Both through the platform.
 - `ReceivedForeignTenderQuantity` = **1** (unitCode `EA`)  
@@ -712,8 +702,8 @@ Inside `TenderResult`:
   The framework contract.
 - `Contract/ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
   A framework contract. The code is from the Trade Accord's contract type list: FRAMEWORK = Framework agreement.
-- `Contract/ValidityPeriod/StartDate` = **2026-03-23**  
-  From the first call-off.
+- `Contract/ValidityPeriod/StartDate` = **2026-03-20**  
+  From its signature.
 - `Contract/ValidityPeriod/DurationMeasure` = **24** (unitCode `MON`)  
   Two years.
 - `AwardedTenderedProject/VariantID` = **V0**  
@@ -724,9 +714,9 @@ Inside `TenderResult`:
   Lot 2 of the procedure.
 - `AwardedTenderedProject/LegalMonetaryTotal/PayableAmount` = **124080.00** (currencyID `XBL`)  
   240 benches at 499 lume and their installation at 18 lume each.
-- `ContractFormalizationPeriod/StartDate` = **2026-03-19**  
-  After the standstill period.
-- `ContractFormalizationPeriod/EndDate` = **2026-03-22**  
+- `ContractFormalizationPeriod/StartDate` = **2026-03-20**  
+  The day after the standstill period ended (tender/22#F5).
+- `ContractFormalizationPeriod/EndDate` = **2026-03-23**  
   Before the first call-off.
 - `SubcontractTerms/Rate` = **3.5**  
   The installation's share of the contract value: 4,320 of 124,080.00 lume, rounded.
@@ -754,14 +744,14 @@ Inside `TenderResult`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:contract-award-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0207</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0210</cbc:ID>
   <cbc:UUID>12583d9b-2491-50ee-89c4-489940d246f5</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-03-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>13:55:00-01:00</cbc:IssueTime>
   <cbc:Note>Award of the framework contract for park benches.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
+  <cbc:RequestedPublicationDate>2026-03-23</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
@@ -895,26 +885,15 @@ Inside `TenderResult`:
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
     <cac:DocumentAvailabilityPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-25</cbc:EndDate>
+      <cbc:StartDate>2026-01-27</cbc:StartDate>
+      <cbc:EndDate>2026-02-24</cbc:EndDate>
     </cac:DocumentAvailabilityPeriod>
     <cac:TenderSubmissionDeadlinePeriod>
-      <cbc:EndDate>2026-02-26</cbc:EndDate>
+      <cbc:EndDate>2026-02-25</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
-    <cac:InvitationSubmissionPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-01</cbc:EndDate>
-    </cac:InvitationSubmissionPeriod>
-    <cac:ParticipationInvitationPeriod>
-      <cbc:StartDate>2026-01-26</cbc:StartDate>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationInvitationPeriod>
-    <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-02-11</cbc:EndDate>
-    </cac:ParticipationRequestReceptionPeriod>
     <cac:AdditionalInformationRequestPeriod>
-      <cbc:EndDate>2026-02-19</cbc:EndDate>
+      <cbc:EndDate>2026-02-18</cbc:EndDate>
     </cac:AdditionalInformationRequestPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
@@ -930,7 +909,7 @@ Inside `TenderResult`:
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
@@ -947,7 +926,7 @@ Inside `TenderResult`:
     <cac:AuctionTerms>
       <cbc:AuctionConstraintIndicator>true</cbc:AuctionConstraintIndicator>
       <cbc:JustificationDescription>The benches are a standard product whose quality is fully scored before the auction; the price can then be improved in open competition.</cbc:JustificationDescription>
-      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 6 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.</cbc:Description>
+      <cbc:Description>After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 4 March 2026 with both admissible tenderers and closed after its first round without a new bid, so the prices of the tenders stand.</cbc:Description>
       <cbc:ProcessDescription>One round, opened by an invitation sent two working days ahead. After each bid every tenderer sees its current rank. The round closes when ten minutes pass without a new bid.</cbc:ProcessDescription>
       <cbc:ConditionsDescription>A bid may only lower the unit prices of the tender, by at least the minimum step of the price criterion; all other terms of the tender stay binding.</cbc:ConditionsDescription>
       <cbc:ElectronicDeviceDescription>The auction module of the department's tender platform, in a current web browser over HTTPS; tenderers log in with the platform account they submitted their tender with.</cbc:ElectronicDeviceDescription>
@@ -1320,14 +1299,14 @@ Inside `TenderResult`:
     <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">119040.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
+    <cbc:StartDate>2026-03-20</cbc:StartDate>
     <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
       <cbc:ID>PWD-2026-PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
       </cac:ValidityPeriod>
     </cac:Contract>
@@ -1344,8 +1323,8 @@ Inside `TenderResult`:
       </cac:LegalMonetaryTotal>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
-      <cbc:StartDate>2026-03-19</cbc:StartDate>
-      <cbc:EndDate>2026-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2026-03-23</cbc:EndDate>
     </cac:ContractFormalizationPeriod>
     <cac:SubcontractTerms>
       <cbc:Rate>3.5</cbc:Rate>
