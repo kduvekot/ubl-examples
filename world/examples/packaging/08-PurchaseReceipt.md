@@ -121,7 +121,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2511 0411**  
+- `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
@@ -240,7 +240,7 @@ Inside `PointOfSaleLocation`:
 
 Inside `PointOfSaleContact`:
 
-- `Telephone` = **+999 2 38 2511 0411**  
+- `Telephone` = **+999 2 38 4609 7100**  
   The shop's number, for questions about the purchase.
 
 ### Payment
@@ -327,10 +327,8 @@ Inside `PurchaseReceiptLine`:
   The seller's own item number; item shirt-r of Brightmarket Stores (world/items.json).
 - `Item/ManufacturersItemIdentification/ID` = **LT-SH-01**  
   The item number of the maker, Lumeport Textile Mill: the reseller's item is resale of item shirt.
-- `Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
-  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `Item/AdditionalItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
-  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item shirt of Lumeport Textile Mill (world/items.json).
+- `Item/StandardItemIdentification/ID` = **9524010000016** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeport Textile Mill gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Lumeport is Lumeport Textile Mill's (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a consumer: the sales tax of Coastal State, where the sale takes place, applies (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **6.5**  
@@ -441,7 +439,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
         <cbc:ElectronicMail>receivables@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -528,7 +526,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
   </cac:PointOfSaleLocation>
   <cac:PointOfSaleContact>
-    <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+    <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
   </cac:PointOfSaleContact>
   <cac:Payment>
     <cbc:PaidAmount currencyID="XBL">58.45</cbc:PaidAmount>
@@ -583,11 +581,8 @@ Inside `PurchaseReceiptLine`:
         <cbc:ID>LT-SH-01</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="GS1 GTIN">9522610000016</cbc:ID>
+        <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>
       </cac:StandardItemIdentification>
-      <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">772030000090</cbc:ID>
-      </cac:AdditionalItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>6.5</cbc:Percent>

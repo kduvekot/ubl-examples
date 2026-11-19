@@ -116,6 +116,25 @@ def bank_problems(world, d):
     return out
 
 
+def item_parties(world, parties):
+    """The parties the item master names apart from the seller, such as the issuer of a property standard or of an
+    environmental certificate: they appear in every document that carries the item (tools/build_examples.py item)."""
+    out = set()
+
+    def walk_values(x):
+        if isinstance(x, dict):
+            for v in x.values():
+                walk_values(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk_values(v)
+        elif isinstance(x, str) and x in parties:
+            out.add(x)
+    for it in world.get("items", []):
+        walk_values({k: v for k, v in it.items() if k != "seller"})
+    return out
+
+
 def check(world, model):
     problems = []
     parties = {p["id"] for p in world["parties"]}
@@ -170,6 +189,7 @@ def check(world, model):
     for f in world["flows"]:
         if not any(d["flow"] == f["id"] for d in world["documents"]):
             problems.append(f"flow {f['id']}: has no documents")
+    used |= item_parties(world, parties)
     for p in sorted(parties - used):
         problems.append(f"party {p}: takes part in no document")
     return problems

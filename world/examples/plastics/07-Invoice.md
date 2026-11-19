@@ -132,7 +132,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Fiumella Barges (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Fiumella Barges (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 041 513 4959**  
+- `Party/Contact/Telephone` = **+999 1 041 672 6403**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Fiumella Barges (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@fiumella.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Fiumella Barges (world/parties.json).
@@ -149,6 +149,8 @@ Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **0990:13362** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
 - `Party/PostalAddress/ID` = **4160202983340277** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -187,7 +189,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 041 836 4548**  
+- `Party/Contact/Telephone` = **+999 1 041 697 6856**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@rinova.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
@@ -461,7 +463,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 041 513 4959</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 672 6403</cbc:Telephone>
         <cbc:ElectronicMail>receivables@fiumella.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
@@ -476,6 +478,9 @@ Inside `InvoiceLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:13362</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
@@ -504,7 +509,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 041 836 4548</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 697 6856</cbc:Telephone>
         <cbc:ElectronicMail>payables@rinova.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

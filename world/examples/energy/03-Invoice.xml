@@ -26,7 +26,7 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10591</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10087</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Montebrio Power</cbc:Name>
@@ -96,7 +96,7 @@
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 46716</cbc:Telephone>
         <cbc:ElectronicMail>receivables@montebrio.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
@@ -139,7 +139,7 @@
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
         <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

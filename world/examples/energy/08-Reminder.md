@@ -11,7 +11,7 @@ The power station has not paid by the due date. The gas producer reminds it in l
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:reminder:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Reminder". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
@@ -50,6 +50,8 @@ Inside `AccountingSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **0990:19676** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Kelpstone Gas (world/parties.json).
 - `Party/PartyName/Name` = **Kelpstone Gas**  
   The trading name; identity of Kelpstone Gas (world/parties.json).
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
@@ -140,7 +142,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Kelpstone Gas (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38522 12877**  
+- `Party/Contact/Telephone` = **+999 2 38522 68330**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Kelpstone Gas (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@kelpstone.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelpstone Gas (world/parties.json).
@@ -157,7 +159,7 @@ Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **0990:10591** (schemeID `ISO 6523`)  
+- `Party/AdditionalPartyIdentification/ID` = **0990:10087** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Montebrio Power (world/parties.json).
 - `Party/PartyName/Name` = **Montebrio Power**  
   The trading name; identity of Montebrio Power (world/parties.json).
@@ -197,7 +199,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Montebrio Power (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Montebrio Power (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 0413 55918**  
+- `Party/Contact/Telephone` = **+999 1 0413 46716**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Montebrio Power (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@montebrio.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Montebrio Power (world/parties.json).
@@ -361,6 +363,9 @@ Inside `ReminderLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:19676</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Kelpstone Gas</cbc:Name>
       </cac:PartyName>
@@ -439,7 +444,7 @@ Inside `ReminderLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 38522 12877</cbc:Telephone>
+        <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
         <cbc:ElectronicMail>receivables@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
@@ -455,7 +460,7 @@ Inside `ReminderLine`:
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10591</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10087</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Montebrio Power</cbc:Name>
@@ -485,7 +490,7 @@ Inside `ReminderLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 46716</cbc:Telephone>
         <cbc:ElectronicMail>payables@montebrio.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

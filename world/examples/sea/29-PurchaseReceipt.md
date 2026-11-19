@@ -101,7 +101,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 729 1859**  
+- `Party/Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
@@ -176,7 +176,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Contact/Department` = **Management**  
   The department the desk belongs to; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 724 2544**  
+- `Party/Contact/Telephone` = **+999 3 724 6676**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Contact/ElectronicMail` = **farm@lisavufarm.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lisavu Cotton Farm (world/parties.json).
@@ -298,8 +298,8 @@ Inside `PurchaseReceiptLine`:
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
 - `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `Price/PriceAmount` = **289** (currencyID `XLC`)  
   The seller's price per unit (world/items.json).
 - `Price/TaxInclusivePriceAmount` = **289** (currencyID `XLC`)  
@@ -380,7 +380,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>receivables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -443,7 +443,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:Name>Farm office</cbc:Name>
         <cbc:JobTitle>Farm manager</cbc:JobTitle>
         <cbc:Department>Management</cbc:Department>
-        <cbc:Telephone>+999 3 724 2544</cbc:Telephone>
+        <cbc:Telephone>+999 3 724 6676</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -517,7 +517,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
     </cac:Item>
     <cac:Price>

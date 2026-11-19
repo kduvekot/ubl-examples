@@ -653,8 +653,9 @@ Each party identifies what it makes, ships and runs in one convention, as
 real companies do, chosen by whom it trades with.
 
 **GS1** is the system of Bayvarra's retail and distribution chain: the
-distributor Lumeway Distribution, the department store Brightmarket Stores
-and the furniture maker Brackenmere Furniture. They use a GTIN for their
+distributor Lumeway Distribution, the department store Brightmarket Stores,
+the furniture maker Brackenmere Furniture and the textile mill, which makes
+the shirts the store sells. They use a GTIN for their
 items, a GLN for themselves and their places (the distribution centre's rail
 siding, the store's goods-in), an SSCC for every pallet or skid they make
 up, and a GRAI for the distributor's own returnable pallets, which go back
@@ -675,13 +676,25 @@ agency under ISO/IEC 15459 with the issuing agency code `KXU` (`K` is the
 range for national public administrations, and XU is a user-assigned
 country code, so no real agency can hold it), and it keeps the organisation
 register behind the ISO/IEC 6523 code designator `0990`, which no real
-scheme has. The bench maker, its warehouse, the packaging maker,
-the power station and the grid operator work this way. Codana registers any
-company that asks, foreign ones too: Rivermouth Packaging is Bayvarran, but
-its customer is Valdara, so it uses its customer's system. Codana gives each
-company a five-digit number, in order of registration since 1999, unrelated
-to the company's business register number; a large early member has a low
-one.
+scheme has. The bench maker, its warehouse, the mine, the recycler, the
+packaging maker, the gas producer, the power station and the grid operator
+work this way. Codana registers any company that asks, foreign ones too:
+Rivermouth Packaging and Kelpstone Gas are Bayvarran, but their customers
+are Valdara and the power station, so they use their customers' system.
+Codana gives each company a five-digit number, in order of registration
+since 1999, unrelated to the company's business register number; a large
+early member has a low one:
+
+| Company | Registered | Company number |
+|---|---|---|
+| Valdara Industries | November 1999 | `10014` |
+| Montebrio Power | December 1999 | `10087` |
+| Serravona Mining | January 2000 | `10252` |
+| Castrano Logistics | March 2000 | `10519` |
+| Rinova Recovery | September 2003 | `13362` |
+| Rivermouth Packaging | February 2006 | `15128` |
+| Ferrano Grid | January 2007 | `16043` |
+| Kelpstone Gas | October 2012 | `19676` |
 
 | | Codana | GS1 Bayvarra |
 |---|---|---|
@@ -710,17 +723,23 @@ number 0177 and `OD`, and GS1 itself is 0088 (the GLN) and the agency codes
 - Codana does not hand out item numbers. It gives a company its number, and
   the company numbers its own items, lots, pallets and places.
 
-What each thing looks like, with *nnnnn* for the company's Codana number:
+What each thing looks like, for Valdara Industries, company number `10014`:
 
 | Thing | The company's own number | Globally unique form (Codana) | GS1 side |
 |---|---|---|---|
-| Item (the bench) | `VI-B180` | `KXU`*nnnnn*`B180` | GTIN |
-| One serialised item (a casting) | `VI-SF-01230` | `KXU`*nnnnn*`SF01230` | serialised GTIN |
-| Production lot | `VI-LOT-260510` | `KXU`*nnnnn*`LOT260510` | GTIN and lot |
+| Item (the bench) | `VI-B180` | `KXU10014B180` | GTIN |
+| One serialised item (a casting) | `VI-SF-01230` | `KXU10014SF01230` | serialised GTIN |
+| Production lot | `VI-LOT-260510` | `KXU10014LOT260510` | GTIN and lot |
 | Transport unit (a pallet) | none | prefix and serial | SSCC |
 | Returnable transport item | none | prefix, type and serial | GRAI |
 | Site | none | prefix and site code | GLN |
-| Company | register number | `0990:`*nnnnn* | GLN |
+| Company | register number | `0990:10014` | GLN |
+
+The company's own reference in the globally unique form is its item number
+without its initials and hyphens: the mine's `SM-ORE-L` is `KXU10252OREL`,
+the packaging maker's `RP-SF-23` is `KXU15128SF23`. In a document the
+company prefix `KXU10014` is the scope within which the company gives its
+numbers.
 
 The data identifier that a bar code puts in front of such a value (`25P`
 for an item, `J` for a transport unit) is not part of the value in a UBL
@@ -733,7 +752,10 @@ items in this form is not yet settled; none is numbered without a case.
 
 The two systems meet in the park bench. Valdara ships it under its Codana
 form; Lumeway, as an importer may, gives it a GTIN from its own GS1 prefix
-for the shops, as its own number, and carries the maker's number alongside.
+for the shops, as its own number, and carries the maker's number alongside;
+where a document names the GTIN's issuer, it is Lumeway, not Codana. A
+reseller gives no GTIN of its own to an item that already has one: the
+store sells the mill's shirts under the mill's GTIN.
 A pallet needs no relabelling on the way: GS1 is itself an ISO/IEC 15459
 issuing agency, so Lumeway's warehouse reads Castrano's licence plates and
 its own SSCCs alike. The engineering company, the sawmill, the island's
@@ -922,7 +944,9 @@ The Elderwick Marrow bench (1400 mm, hardwood) and the Elderwick Marrow
 chair are made by Brackenmere Furniture to the store's specification: the
 shopper sees the store's label, and the maker's name is on no label. It is
 the world's case of an item whose brand owner and manufacturer are different
-parties. Under GS1's rules the brand owner numbers the item, so the bench
+parties. The shirts the store sells are the other way round: they carry the
+textile mill's own brand, Lumeport, so the mill numbers them from its own GS1
+prefix. Under GS1's rules the brand owner numbers the item, so the bench
 and the chair each have a GTIN from Brightmarket's prefix; the set, being an
 offer, has none. Brackenmere sells its own office and outdoor furniture under
 its own name: the office desk, the park bench PB-2 it tenders with, and the

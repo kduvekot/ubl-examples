@@ -117,7 +117,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 729 1859**  
+- `Party/Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
@@ -192,7 +192,7 @@ Inside `PayeeParty`:
   The job of the person who answers at the desk; identity of Harbourline Factoring (world/parties.json).
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Harbourline Factoring (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2533 1233**  
+- `Contact/Telephone` = **+999 2 38 2478 9865**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Harbourline Factoring (world/parties.json).
 - `Contact/ElectronicMail` = **receivables@harbourline.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Harbourline Factoring (world/parties.json).
@@ -454,7 +454,7 @@ Inside `StatementLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -517,7 +517,7 @@ Inside `StatementLine`:
       <cbc:Name>Accounts receivable</cbc:Name>
       <cbc:JobTitle>Credit controller</cbc:JobTitle>
       <cbc:Department>Finance</cbc:Department>
-      <cbc:Telephone>+999 2 38 2533 1233</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2478 9865</cbc:Telephone>
       <cbc:ElectronicMail>receivables@harbourline.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

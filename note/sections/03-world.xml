@@ -1181,14 +1181,15 @@
     <para>
       <emphasis role="strong">GS1</emphasis> is the system of Bayvarra's
       retail and distribution chain: the distributor Lumeway
-      Distribution, the department store Brightmarket Stores and the
-      furniture maker Brackenmere Furniture. They use a GTIN for their
-      items, a GLN for themselves and their places (the distribution
-      centre's rail siding, the store's goods-in), an SSCC for every
-      pallet or skid they make up, and a GRAI for the distributor's own
-      returnable pallets, which go back to it after each delivery to the
-      store. Their company prefixes start with 952, which GS1 reserves
-      for demonstrations and examples. The prefixes are licensed by GS1
+      Distribution, the department store Brightmarket Stores, the
+      furniture maker Brackenmere Furniture and the textile mill, which
+      makes the shirts the store sells. They use a GTIN for their items,
+      a GLN for themselves and their places (the distribution centre's
+      rail siding, the store's goods-in), an SSCC for every pallet or
+      skid they make up, and a GRAI for the distributor's own returnable
+      pallets, which go back to it after each delivery to the store.
+      Their company prefixes start with 952, which GS1 reserves for
+      demonstrations and examples. The prefixes are licensed by GS1
       Bayvarra, a not-for-profit association owned by its member
       companies. It began around 1981 as an article numbering
       association, when Brightmarket and other retailers wanted bar
@@ -1209,14 +1210,126 @@
       code, so no real agency can hold it), and it keeps the
       organisation register behind the ISO/IEC 6523 code designator
       <literal>0990</literal>, which no real scheme has. The bench
-      maker, its warehouse, the packaging maker, the power station and
-      the grid operator work this way. Codana registers any company that
-      asks, foreign ones too: Rivermouth Packaging is Bayvarran, but its
-      customer is Valdara, so it uses its customer's system. Codana
-      gives each company a five-digit number, in order of registration
-      since 1999, unrelated to the company's business register number; a
-      large early member has a low one.
+      maker, its warehouse, the mine, the recycler, the packaging maker,
+      the gas producer, the power station and the grid operator work
+      this way. Codana registers any company that asks, foreign ones
+      too: Rivermouth Packaging and Kelpstone Gas are Bayvarran, but
+      their customers are Valdara and the power station, so they use
+      their customers' system. Codana gives each company a five-digit
+      number, in order of registration since 1999, unrelated to the
+      company's business register number; a large early member has a low
+      one:
     </para>
+    <informaltable>
+      <tgroup cols="3">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Company
+            </entry>
+            <entry>
+              Registered
+            </entry>
+            <entry>
+              Company number
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              Valdara Industries
+            </entry>
+            <entry>
+              November 1999
+            </entry>
+            <entry>
+              <literal>10014</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Montebrio Power
+            </entry>
+            <entry>
+              December 1999
+            </entry>
+            <entry>
+              <literal>10087</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Serravona Mining
+            </entry>
+            <entry>
+              January 2000
+            </entry>
+            <entry>
+              <literal>10252</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Castrano Logistics
+            </entry>
+            <entry>
+              March 2000
+            </entry>
+            <entry>
+              <literal>10519</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Rinova Recovery
+            </entry>
+            <entry>
+              September 2003
+            </entry>
+            <entry>
+              <literal>13362</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Rivermouth Packaging
+            </entry>
+            <entry>
+              February 2006
+            </entry>
+            <entry>
+              <literal>15128</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Ferrano Grid
+            </entry>
+            <entry>
+              January 2007
+            </entry>
+            <entry>
+              <literal>16043</literal>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Kelpstone Gas
+            </entry>
+            <entry>
+              October 2012
+            </entry>
+            <entry>
+              <literal>19676</literal>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
     <informaltable>
       <tgroup cols="3">
         <colspec align="left" />
@@ -1339,8 +1452,8 @@
       </listitem>
     </itemizedlist>
     <para>
-      What each thing looks like, with <emphasis>nnnnn</emphasis> for
-      the company's Codana number:
+      What each thing looks like, for Valdara Industries, company number
+      <literal>10014</literal>:
     </para>
     <informaltable>
       <tgroup cols="4">
@@ -1373,7 +1486,7 @@
               <literal>VI-B180</literal>
             </entry>
             <entry>
-              <literal>KXU</literal><emphasis>nnnnn</emphasis><literal>B180</literal>
+              <literal>KXU10014B180</literal>
             </entry>
             <entry>
               GTIN
@@ -1387,7 +1500,7 @@
               <literal>VI-SF-01230</literal>
             </entry>
             <entry>
-              <literal>KXU</literal><emphasis>nnnnn</emphasis><literal>SF01230</literal>
+              <literal>KXU10014SF01230</literal>
             </entry>
             <entry>
               serialised GTIN
@@ -1401,7 +1514,7 @@
               <literal>VI-LOT-260510</literal>
             </entry>
             <entry>
-              <literal>KXU</literal><emphasis>nnnnn</emphasis><literal>LOT260510</literal>
+              <literal>KXU10014LOT260510</literal>
             </entry>
             <entry>
               GTIN and lot
@@ -1457,7 +1570,7 @@
               register number
             </entry>
             <entry>
-              <literal>0990:</literal><emphasis>nnnnn</emphasis>
+              <literal>0990:10014</literal>
             </entry>
             <entry>
               GLN
@@ -1466,6 +1579,15 @@
         </tbody>
       </tgroup>
     </informaltable>
+    <para>
+      The company's own reference in the globally unique form is its
+      item number without its initials and hyphens: the mine's
+      <literal>SM-ORE-L</literal> is <literal>KXU10252OREL</literal>,
+      the packaging maker's <literal>RP-SF-23</literal> is
+      <literal>KXU15128SF23</literal>. In a document the company prefix
+      <literal>KXU10014</literal> is the scope within which the company
+      gives its numbers.
+    </para>
     <para>
       The data identifier that a bar code puts in front of such a value
       (<literal>25P</literal> for an item, <literal>J</literal> for a
@@ -1482,7 +1604,10 @@
       The two systems meet in the park bench. Valdara ships it under its
       Codana form; Lumeway, as an importer may, gives it a GTIN from its
       own GS1 prefix for the shops, as its own number, and carries the
-      maker's number alongside. A pallet needs no relabelling on the
+      maker's number alongside; where a document names the GTIN's
+      issuer, it is Lumeway, not Codana. A reseller gives no GTIN of its
+      own to an item that already has one: the store sells the mill's
+      shirts under the mill's GTIN. A pallet needs no relabelling on the
       way: GS1 is itself an ISO/IEC 15459 issuing agency, so Lumeway's
       warehouse reads Castrano's licence plates and its own SSCCs alike.
       The engineering company, the sawmill, the island's cotton farm and
@@ -1781,13 +1906,15 @@
       Marrow chair are made by Brackenmere Furniture to the store's
       specification: the shopper sees the store's label, and the maker's
       name is on no label. It is the world's case of an item whose brand
-      owner and manufacturer are different parties. Under GS1's rules
-      the brand owner numbers the item, so the bench and the chair each
-      have a GTIN from Brightmarket's prefix; the set, being an offer,
-      has none. Brackenmere sells its own office and outdoor furniture
-      under its own name: the office desk, the park bench PB-2 it
-      tenders with, and the furnishing of public offices with
-      installation.
+      owner and manufacturer are different parties. The shirts the store
+      sells are the other way round: they carry the textile mill's own
+      brand, Lumeport, so the mill numbers them from its own GS1 prefix.
+      Under GS1's rules the brand owner numbers the item, so the bench
+      and the chair each have a GTIN from Brightmarket's prefix; the
+      set, being an offer, has none. Brackenmere sells its own office
+      and outdoor furniture under its own name: the office desk, the
+      park bench PB-2 it tenders with, and the furnishing of public
+      offices with installation.
     </para>
   </section>
   <section id="S-03-world-the-park-bench">

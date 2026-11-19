@@ -73,7 +73,7 @@
       <cbc:Name>Buying office</cbc:Name>
       <cbc:JobTitle>Buyer</cbc:JobTitle>
       <cbc:Department>Purchasing</cbc:Department>
-      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
@@ -114,7 +114,7 @@
       <cbc:Name>Sales office</cbc:Name>
       <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>sales@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

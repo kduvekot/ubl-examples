@@ -92,7 +92,7 @@ def sells(p):
             while maker.get("resale_of"):        # follow the resale chain to the maker
                 maker = ITEMS[maker["resale_of"]]
             via = f", bought from {link(o['seller'])}" if o is not maker else ""
-            ids = f"Codana item number `{maker['standard_id']}`, " if maker.get("standard_id") else ""
+            ids = f"item number `{maker['standard_id']}` (ISO/IEC 15459), " if maker.get("standard_id") else ""
             ids += f"GTIN `{maker['gtin']}`, " if maker.get("gtin") else ""
             rows.append(("Resale of", f"{maker['name']} made by {link(maker['seller'])}{via}: {ids}maker's ID "
                                       f"`{maker['sellers_id']}`"))
@@ -100,7 +100,10 @@ def sells(p):
             rows.append(("GTIN", f"`{i['gtin']}` (GS1, under the company prefix "
                                  f"`{PARTIES[i['seller']]['identity']['identification']['company_prefix']}`)"))
         if i.get("standard_id"):
-            rows.append(("Codana item number", f"`{i['standard_id']}` (issued by {link(world_items.ISSUER)})"))
+            rows.append(("Standard item number", f"`{i['standard_id']}` (ISO/IEC 15459: the issuing agency code KXU of "
+                                                 f"{link(world_items.ISSUER)}, the company number "
+                                                 f"`{PARTIES[i['seller']]['identity']['identification']['codana_cin']}` "
+                                                 "and the company's own reference)"))
         if i.get("hs"):
             rows.append(("Customs tariff (HS)", f"`{i['hs']}`; origin {world['countries'][i['origin']]['name']}"))
             rows.append(("Product classification (UN CPC Ver.2.1)", f"`{i['cpc']}`"))

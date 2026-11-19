@@ -12,7 +12,7 @@
     "currency": "XUF"
    },
    "sellers_id": "SM-ORE-L",
-   "standard_id": "771010000013",
+   "standard_id": "KXU10252OREL",
    "hs": "260111",
    "cpc": "14100",
    "origin": "XU",
@@ -42,7 +42,7 @@
     "currency": "XUF"
    },
    "sellers_id": "VI-B180",
-   "standard_id": "771020000027",
+   "standard_id": "KXU10014B180",
    "hs": "940179",
    "cpc": "38111",
    "origin": "XU",
@@ -239,7 +239,7 @@
     "currency": "XUF"
    },
    "sellers_id": "VI-C180",
-   "standard_id": "771020000034",
+   "standard_id": "KXU10014C180",
    "hs": "732599",
    "cpc": "42999",
    "origin": "XU",
@@ -276,7 +276,7 @@
     "currency": "XUF"
    },
    "sellers_id": "RR-PE-R1",
-   "standard_id": "771030000048",
+   "standard_id": "KXU13362PER1",
    "hs": "390110",
    "cpc": "34710",
    "origin": "XU",
@@ -662,7 +662,7 @@
     "currency": "XBL"
    },
    "sellers_id": "LT-SH-01",
-   "standard_id": "772030000090",
+   "gtin": "9524010000016",
    "hs": "620520",
    "cpc": "28232",
    "origin": "XB",
@@ -703,7 +703,7 @@
     "currency": "XBL"
    },
    "sellers_id": "RP-SF-23",
-   "standard_id": "772040000103",
+   "standard_id": "KXU15128SF23",
    "hs": "392010",
    "cpc": "36330",
    "origin": "XB",
@@ -748,7 +748,7 @@
     "currency": "XBL"
    },
    "sellers_id": "RP-GB-60",
-   "standard_id": "772040000110",
+   "standard_id": "KXU15128GB60",
    "hs": "392321",
    "cpc": "36410",
    "origin": "XB",
@@ -898,8 +898,7 @@
    },
    "sellers_id": "BM-778120",
    "resale_of": "shirt",
-   "description": "Men's cotton shirt; the state sales tax is added at the till.",
-   "gtin": "9522610000016"
+   "description": "Men's cotton shirt; the state sales tax is added at the till."
   },
   {
    "id": "garden-set-r",
@@ -1213,7 +1212,7 @@
     "currency": "XBL"
    },
    "sellers_id": "KG-NG",
-   "standard_id": "772060000015",
+   "standard_id": "KXU19676NG",
    "hs": "271121",
    "cpc": "12020",
    "origin": "XB",

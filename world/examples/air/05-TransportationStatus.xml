@@ -47,7 +47,7 @@
         <cbc:Name>Cargo operations</cbc:Name>
         <cbc:JobTitle>Load controller</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 1044</cbc:Telephone>
         <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
@@ -105,7 +105,7 @@
           <cbc:Name>Cargo acceptance</cbc:Name>
           <cbc:JobTitle>Cargo acceptance agent</cbc:JobTitle>
           <cbc:Department>Cargo handling</cbc:Department>
-          <cbc:Telephone>+999 2 38 2555 2055</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 3457 2767</cbc:Telephone>
           <cbc:ElectronicMail>cargo@lumeport-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>

@@ -11,7 +11,7 @@ The mill pays the island's ginnery: money flows to the island for once.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
@@ -49,6 +49,8 @@ Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Textile Mill (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9524010900002** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PartyName/Name` = **Lumeport Textile Mill**  
   The trading name; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
@@ -89,7 +91,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2303 2603**  
+- `Party/Contact/Telephone` = **+999 2 38 2837 6029**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@lumeporttextile.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
@@ -136,7 +138,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 721 2681**  
+- `Party/Contact/Telephone` = **+999 3 721 0486**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@selanuginnery.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
@@ -287,6 +289,9 @@ Inside `RemittanceAdviceLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9524010900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Textile Mill</cbc:Name>
       </cac:PartyName>
@@ -316,7 +321,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2837 6029</cbc:Telephone>
         <cbc:ElectronicMail>payables@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -353,7 +358,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
         <cbc:ElectronicMail>receivables@selanuginnery.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

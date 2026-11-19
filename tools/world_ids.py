@@ -152,6 +152,22 @@ def country_of(world, kind, value):
     return hits[0] if len(hits) == 1 else None
 
 
+def shared_run(a, b, n):
+    """The longest run of at least n digits that two identifiers share (their digits only, separators dropped),
+    or None: the test that no number repeats the digits of another (D5, O22). A run of one repeated digit
+    (0000) is a filler of the format, not a repeat."""
+    da, db = re.sub(r"\D", "", a), re.sub(r"\D", "", b)
+    best = None
+    for i in range(len(da) - n + 1):
+        k = n
+        while i + k <= len(da) and da[i:i + k] in db:
+            k += 1
+        run = da[i:i + k - 1]
+        if len(run) >= n and len(set(run)) > 1 and (best is None or len(run) > len(best)):
+            best = run
+    return best
+
+
 # ---------------------------------------------------------------- making identifiers (decision ID-Q7)
 def gs1_number(prefix, ref, length):
     """A GS1 key of `length` digits: the company prefix, the reference padded to fill, and the check digit."""

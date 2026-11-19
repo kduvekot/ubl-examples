@@ -10,11 +10,15 @@ that the manufacturer's identifiers travel along the chain.
 Checks:
   * units of measure and packaging types are codes of the UBL 2.5 default
     lists (UN/ECE Recommendations 20 and 21);
-  * goods are identified in their maker's convention (decision ID-Q7): a GTIN
-    under the company prefix of a GS1 party (GS1 prefix 952, reserved for
-    examples), a Codana item number with a valid check digit, or only the
-    seller's own number; a GS1 wholesaler or retailer may give its own GTIN to
-    an item it resells; every number is unique;
+  * goods are identified in their maker's convention (decision ID-Q7, D5): a
+    GTIN under the company prefix of a GS1 party (GS1 prefix 952, reserved for
+    examples); on the Codana side the globally unique form of ISO/IEC 15459
+    (KXU, the maker's Codana company number and its own reference, the
+    seller's item number without its initials and hyphens: at most 20
+    characters, no check character); or only the seller's own number. A GS1
+    wholesaler or retailer may give its own GTIN to an item it resells whose
+    maker has none (D5), but not to one that already has a GTIN, because the
+    brand owner numbers the item (D7); every number is unique;
   * prices are positive and in the seller's currency; a unit price may have
     more decimals than the currency (up to 4), because only amounts to pay
     are rounded to the currency's minor unit; gross weight is at least net
@@ -51,13 +55,18 @@ SELLING = {"Invoice": "AccountingSupplierParty", "CreditNote": "AccountingSuppli
 
 
 def item_number(body):
-    """A world item number: 12 digits, the last a check digit (weights 3 and 1 from the right, modulus 10)."""
+    """A GS1 key from its body: the check digit (weights 3 and 1 from the right, modulus 10) appended."""
     s = sum(int(d) * (3 if i % 2 == 0 else 1) for i, d in enumerate(reversed(body)))
     return body + str((10 - s % 10) % 10)
 
 
-def valid_item_number(n):
-    return bool(re.fullmatch(r"\d{12}", n)) and item_number(n[:-1]) == n
+CODANA_MAX = 20     # Codana's rule book: no identifier longer than 20 characters (ISO/IEC 15459, one-line bar code)
+
+
+def codana_item_number(cin, sellers_id):
+    """The globally unique form of an item number on the Codana side (D5): KXU, the company's Codana number and
+    its own reference, the seller's item number without its initials and hyphens (VI-B180 -> KXU<cin>B180)."""
+    return f"KXU{cin}{''.join(sellers_id.split('-')[1:])}"
 
 
 CPC_HS = os.path.join(world_data.ROOT, "world", "codelists", "sources", "cpc", "CPC21-HS2017.csv")
@@ -130,6 +139,13 @@ def check(world):
         if round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
             problems.append(f"{where}: unit price {pr['amount']} has more than {UNIT_PRICE_DECIMALS} decimals")
         conv = seller["identity"].get("identification", {})
+        if it.get("gtin") and it.get("resale_of"):    # the brand owner numbers the item (D7)
+            up = items.get(it["resale_of"])
+            while up and not up.get("gtin"):
+                up = items.get(up.get("resale_of"))
+            if up:
+                problems.append(f"{where}: a GTIN of its own, but the item it resells already has the GTIN "
+                                f"{up['gtin']} of {up['seller']}: under GS1 rules the brand owner numbers the item")
         if it.get("gtin"):                # a GTIN under the GS1 company prefix of the party that allocates it
             if conv.get("convention") != "GS1":
                 problems.append(f"{where}: a GTIN, but {it['seller']} does not identify its items the GS1 way")
@@ -149,10 +165,18 @@ def check(world):
                 if n:
                     problems.append(f"{where}: {it['seller']} identifies its goods by its own item numbers only, "
                                     "not by a Codana item number")
-            elif not n or not valid_item_number(n):
-                problems.append(f"{where}: goods need a Codana item number with a valid check digit")
+            elif conv.get("convention") != "ISO":
+                problems.append(f"{where}: {it['seller']} has no identification convention (world/parties.json, "
+                                "identification: GS1, ISO or own)")
+            elif not n or n != codana_item_number(conv["codana_cin"], it["sellers_id"]):
+                problems.append(f"{where}: goods of a Codana party need the item number "
+                                f"{codana_item_number(conv['codana_cin'], it['sellers_id'])}: KXU, the maker's "
+                                "company number and its own reference, the item's issuer being the maker (O32)")
+            elif len(n) > CODANA_MAX or not re.fullmatch(r"KXU\d{5}[A-Z0-9]+", n):
+                problems.append(f"{where}: Codana item number {n} is longer than {CODANA_MAX} characters or not "
+                                "upper-case letters and digits")
             elif n in seen:
-                problems.append(f"{where}: same Codana item number as {seen[n]}")
+                problems.append(f"{where}: same item number as {seen[n]}")
             else:
                 seen[n] = it["id"]
             hs = it.get("hs", "")
@@ -174,6 +198,8 @@ def check(world):
                                 "(origin_criterion P, S or V, D18)")
             if it.get("gross_kg", 0) < it.get("net_kg", 0):
                 problems.append(f"{where}: gross weight below net weight")
+        if it.get("resale_of") and it.get("standard_id"):
+            problems.append(f"{where}: a resold item carries its maker's number, not one of its own")
         if it.get("resale_of"):
             orig = items.get(it["resale_of"])
             if not orig:

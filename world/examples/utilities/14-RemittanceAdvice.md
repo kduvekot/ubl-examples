@@ -121,7 +121,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 729 1859**  
+- `Party/Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
@@ -168,7 +168,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Department` = **Business sales**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 727 2407**  
+- `Party/Contact/Telephone` = **+999 3 727 3193**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/ElectronicMail` = **billing@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
@@ -376,7 +376,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -413,7 +413,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Billing</cbc:Name>
         <cbc:JobTitle>Billing officer</cbc:JobTitle>
         <cbc:Department>Business sales</cbc:Department>
-        <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
+        <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
         <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

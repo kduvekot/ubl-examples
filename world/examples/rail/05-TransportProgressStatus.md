@@ -88,7 +88,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Intermodal Hub (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 672 5096**  
+- `Contact/Telephone` = **+999 1 041 371 6482**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Intermodal Hub (world/parties.json).
 - `Contact/ElectronicMail` = **terminal@ferranohub.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Intermodal Hub (world/parties.json).
@@ -143,7 +143,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
-- `Contact/Telephone` = **+999 1 0413 44685**  
+- `Contact/Telephone` = **+999 1 0413 67100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/ElectronicMail` = **freight@ferranorail.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
@@ -302,7 +302,7 @@ Inside `TransportSchedule`:
       <cbc:Name>Terminal control</cbc:Name>
       <cbc:JobTitle>Terminal controller</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 672 5096</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 371 6482</cbc:Telephone>
       <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -343,7 +343,7 @@ Inside `TransportSchedule`:
       <cbc:Name>Freight desk</cbc:Name>
       <cbc:JobTitle>Freight planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
+      <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>

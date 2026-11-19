@@ -102,7 +102,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 354 4822**  
+- `Contact/Telephone` = **+999 1 041 266 7643**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Trasvia Haulage (world/parties.json).
 - `Contact/ElectronicMail` = **planning@trasvia.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
@@ -165,7 +165,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 474 274**  
+- `Contact/Telephone` = **+999 2 7121 955 964**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Contact/ElectronicMail` = **logistics@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
@@ -182,7 +182,7 @@ Inside `ConsignorParty`:
 
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
@@ -220,7 +220,7 @@ Inside `ConsignorParty`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 518 4274**  
+- `Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `Contact/ElectronicMail` = **dispatch@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
@@ -402,7 +402,7 @@ Inside `Shipment`:
   The driver of the truck.
 - `Consignment/MainCarriageShipmentStage/DriverPerson/FamilyName` = **Bencetti**  
   The family name.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506012** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506012** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -416,9 +416,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 001 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506012**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506012**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506012** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506012** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -460,7 +460,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506029** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506029** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -474,9 +474,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 002 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506029**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506029**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506029** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506029** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -518,7 +518,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506036** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506036** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -532,9 +532,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 003 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506036**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506036**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506036** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506036** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -576,7 +576,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506043** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506043** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -590,9 +590,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 004 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506043**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506043**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506043** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506043** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -634,7 +634,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506050** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506050** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -648,9 +648,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 005 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506050**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506050**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506050** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506050** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -692,7 +692,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506067** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506067** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -706,9 +706,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 006 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506067**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506067**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506067** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506067** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -750,7 +750,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506074** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506074** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -764,9 +764,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 007 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506074**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506074**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506074** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506074** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -808,7 +808,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506081** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506081** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -822,9 +822,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 008 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506081**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506081**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506081** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506081** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -866,7 +866,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506098** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506098** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -880,9 +880,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 009 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506098**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506098**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506098** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506098** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -924,7 +924,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506104** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506104** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -938,9 +938,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 010 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506104**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506104**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506104** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506104** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -982,7 +982,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506111** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506111** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -996,9 +996,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 011 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506111**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506111**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506111** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506111** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1040,7 +1040,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506128** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506128** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1054,9 +1054,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 012 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506128**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506128**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506128** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506128** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1098,7 +1098,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506135** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506135** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1112,9 +1112,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 013 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506135**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506135**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506135** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506135** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1156,7 +1156,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506142** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506142** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1170,9 +1170,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 014 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506142**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506142**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506142** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506142** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1214,7 +1214,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506159** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506159** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1228,9 +1228,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 015 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506159**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506159**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506159** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506159** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1272,7 +1272,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506166** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506166** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1286,9 +1286,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 016 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506166**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506166**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506166** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506166** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1330,7 +1330,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506173** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506173** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1344,9 +1344,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 017 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506173**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506173**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506173** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506173** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1388,7 +1388,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506180** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506180** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1402,9 +1402,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 018 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506180**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506180**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506180** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506180** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1446,7 +1446,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506197** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506197** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1460,9 +1460,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 019 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506197**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506197**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506197** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506197** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1504,7 +1504,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506203** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506203** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1518,9 +1518,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 020 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506203**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506203**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506203** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506203** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1562,7 +1562,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506210** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506210** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1576,9 +1576,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 021 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506210**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506210**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506210** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506210** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1620,7 +1620,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506227** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506227** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1634,9 +1634,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 022 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506227**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506227**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506227** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506227** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1678,7 +1678,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506234** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506234** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1692,9 +1692,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 023 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506234**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506234**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506234** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506234** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1736,7 +1736,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506241** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506241** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1750,9 +1750,9 @@ Inside `Shipment`:
   4 benches on the pallet, each wrapped in film.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 024 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506241**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506241**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506241** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506241** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -1794,7 +1794,7 @@ Inside `Shipment`:
   The packaging in words.
 - `Consignment/TransportHandlingUnit/Package/PackingMaterial` = **Recycled PE stretch film**  
   What the packaging is made of.
-- `Consignment/TransportHandlingUnit/ID` = **KXU104410004506258** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ID` = **KXU105190004506258** (schemeID `ISO 15459`)  
   The number on the pallet label: the unit's licence plate in the structure of ISO/IEC 15459, which Castrano Logistics gives every unit it makes up: the Codana Identification Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar code on the label adds the data identifier J, which the document leaves out.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
@@ -1808,9 +1808,9 @@ Inside `Shipment`:
   12 boxed side frames on the pallet.
 - `Consignment/TransportHandlingUnit/ShippingMarks` = **LD MARROWDALE / 025 of 025**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
-- `Consignment/TransportHandlingUnit/TraceID` = **KXU104410004506258**  
+- `Consignment/TransportHandlingUnit/TraceID` = **KXU105190004506258**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU104410004506258** (schemeID `ISO 15459`)  
+- `Consignment/TransportHandlingUnit/ActualPackage/ID` = **KXU105190004506258** (schemeID `ISO 15459`)  
   The pallet itself, as packed: the same unit, so the same number.
 - `Consignment/TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
   One pallet.
@@ -2035,7 +2035,7 @@ Inside `Signature`:
       <cbc:Name>Planning desk</cbc:Name>
       <cbc:JobTitle>Transport planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 266 7643</cbc:Telephone>
       <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -2084,7 +2084,7 @@ Inside `Signature`:
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>logistics@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -2098,7 +2098,7 @@ Inside `Signature`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -2127,7 +2127,7 @@ Inside `Signature`:
       <cbc:Name>Dispatch office</cbc:Name>
       <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -2296,16 +2296,16 @@ Inside `Signature`:
         </cac:DriverPerson>
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506012</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506012</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 001 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506012</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506012</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506012</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506012</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2341,16 +2341,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506029</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506029</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 002 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506029</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506029</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506029</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506029</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2386,16 +2386,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506036</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506036</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 003 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506036</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506036</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506036</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506036</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2431,16 +2431,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506043</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506043</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 004 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506043</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506043</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506043</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506043</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2476,16 +2476,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506050</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506050</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 005 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506050</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506050</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506050</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506050</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2521,16 +2521,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506067</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506067</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 006 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506067</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506067</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506067</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506067</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2566,16 +2566,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506074</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506074</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 007 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506074</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506074</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506074</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506074</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2611,16 +2611,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506081</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506081</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 008 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506081</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506081</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506081</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506081</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2656,16 +2656,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506098</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506098</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 009 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506098</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506098</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506098</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506098</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2701,16 +2701,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506104</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506104</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 010 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506104</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506104</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506104</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506104</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2746,16 +2746,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506111</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506111</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 011 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506111</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506111</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506111</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506111</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2791,16 +2791,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506128</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506128</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 012 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506128</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506128</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506128</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506128</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2836,16 +2836,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506135</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506135</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 013 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506135</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506135</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506135</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506135</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2881,16 +2881,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506142</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506142</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 014 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506142</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506142</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506142</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506142</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2926,16 +2926,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506159</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506159</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 015 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506159</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506159</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506159</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506159</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -2971,16 +2971,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506166</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506166</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 016 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506166</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506166</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506166</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506166</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3016,16 +3016,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506173</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506173</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 017 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506173</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506173</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506173</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506173</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3061,16 +3061,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506180</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506180</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 018 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506180</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506180</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506180</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506180</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3106,16 +3106,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506197</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506197</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 019 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506197</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506197</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506197</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506197</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3151,16 +3151,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506203</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506203</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 020 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506203</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506203</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506203</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506203</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3196,16 +3196,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506210</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506210</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 021 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506210</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506210</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506210</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506210</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3241,16 +3241,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506227</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506227</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 022 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506227</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506227</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506227</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506227</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3286,16 +3286,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506234</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506234</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 023 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506234</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506234</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506234</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506234</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3331,16 +3331,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506241</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506241</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 024 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506241</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506241</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506241</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506241</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -3376,16 +3376,16 @@ Inside `Signature`:
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506258</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506258</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">NOSTACK</cbc:HandlingCode>
         <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 025 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506258</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506258</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506258</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506258</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>

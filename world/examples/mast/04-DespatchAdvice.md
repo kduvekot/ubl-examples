@@ -84,7 +84,7 @@ Inside `DespatchSupplierParty`:
   The job of the person who answers at the desk; identity of Saltmere Engineering (world/parties.json).
 - `Party/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Saltmere Engineering (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7121 885 685**  
+- `Party/Contact/Telephone` = **+999 2 7121 930 729**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Saltmere Engineering (world/parties.json).
 - `Party/Contact/ElectronicMail` = **dispatch@saltmere.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Saltmere Engineering (world/parties.json).
@@ -131,7 +131,7 @@ Inside `DeliveryCustomerParty`:
   The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/Department` = **Network operations**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 727 2407**  
+- `Party/Contact/Telephone` = **+999 3 727 3193**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
 - `Party/Contact/ElectronicMail` = **stores@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
@@ -202,7 +202,7 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Kelaro Air Cargo (world/parties.json).
-- `Consignment/CarrierParty/Contact/Telephone` = **+999 3 721 1311**  
+- `Consignment/CarrierParty/Contact/Telephone` = **+999 3 721 1044**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Kelaro Air Cargo (world/parties.json).
 - `Consignment/CarrierParty/Contact/ElectronicMail` = **cargoops@kelaro.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
@@ -426,7 +426,7 @@ Inside `DespatchLine`:
         <cbc:Name>Dispatch office</cbc:Name>
         <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 930 729</cbc:Telephone>
         <cbc:ElectronicMail>dispatch@saltmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -463,7 +463,7 @@ Inside `DespatchLine`:
         <cbc:Name>Network stores</cbc:Name>
         <cbc:JobTitle>Stores supervisor</cbc:JobTitle>
         <cbc:Department>Network operations</cbc:Department>
-        <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
+        <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
         <cbc:ElectronicMail>stores@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
@@ -524,7 +524,7 @@ Inside `DespatchLine`:
           <cbc:Name>Cargo operations</cbc:Name>
           <cbc:JobTitle>Load controller</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
+          <cbc:Telephone>+999 3 721 1044</cbc:Telephone>
           <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>

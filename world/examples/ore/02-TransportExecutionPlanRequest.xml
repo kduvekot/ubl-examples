@@ -19,7 +19,7 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
@@ -49,7 +49,7 @@
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>logistics@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -86,7 +86,7 @@
       <cbc:Name>Freight desk</cbc:Name>
       <cbc:JobTitle>Freight planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
+      <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -202,6 +202,9 @@
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104137</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:10252</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Serravona Mining</cbc:Name>
       </cac:PartyName>
@@ -226,7 +229,7 @@
         <cbc:Name>Rail loading office</cbc:Name>
         <cbc:JobTitle>Loading supervisor</cbc:JobTitle>
         <cbc:Department>Logistics</cbc:Department>
-        <cbc:Telephone>+999 1 0413 24137</cbc:Telephone>
+        <cbc:Telephone>+999 1 0413 84813</cbc:Telephone>
         <cbc:ElectronicMail>loading@serravona.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

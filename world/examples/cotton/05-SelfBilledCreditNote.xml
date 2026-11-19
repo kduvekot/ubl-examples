@@ -134,7 +134,7 @@
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
         <cbc:ElectronicMail>payables@selanuginnery.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -236,7 +236,7 @@
         <cbc:Name>Farm office</cbc:Name>
         <cbc:JobTitle>Farm manager</cbc:JobTitle>
         <cbc:Department>Management</cbc:Department>
-        <cbc:Telephone>+999 3 724 2544</cbc:Telephone>
+        <cbc:Telephone>+999 3 724 6676</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

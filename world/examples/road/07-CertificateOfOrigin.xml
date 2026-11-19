@@ -27,7 +27,7 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -92,7 +92,7 @@
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>customs@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -140,7 +140,7 @@
         <cbc:Name>Certificates office</cbc:Name>
         <cbc:JobTitle>Certificates officer</cbc:JobTitle>
         <cbc:Department>Certificates</cbc:Department>
-        <cbc:Telephone>+999 1 041 990 5370</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 714 2503</cbc:Telephone>
         <cbc:ElectronicMail>certificates@camera-ferrano.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

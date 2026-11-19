@@ -65,6 +65,8 @@ Inside `AccountingSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **0990:13362** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rinova Recovery (world/parties.json).
 - `Party/PartyName/Name` = **Rinova Recovery**  
   The trading name; identity of Rinova Recovery (world/parties.json).
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
@@ -141,7 +143,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
-- `Party/Contact/Telephone` = **+999 1 041 836 4548**  
+- `Party/Contact/Telephone` = **+999 1 041 697 6856**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rinova Recovery (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@rinova.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
@@ -158,7 +160,7 @@ Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **0990:20274** (schemeID `ISO 6523`)  
+- `Party/AdditionalPartyIdentification/ID` = **0990:15128** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rivermouth Packaging (world/parties.json).
 - `Party/PartyName/Name` = **Rivermouth Packaging**  
   The trading name; identity of Rivermouth Packaging (world/parties.json).
@@ -196,7 +198,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Rivermouth Packaging (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2440 2740**  
+- `Party/Contact/Telephone` = **+999 2 38 7320 9007**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Rivermouth Packaging (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@rivermouth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
@@ -390,8 +392,8 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/SellersItemIdentification/ID` = **RR-PE-R1**  
   The seller's own item number; item granulate-pe of Rinova Recovery (world/items.json).
-- `Item/StandardItemIdentification/ID` = **771030000048** (schemeID `urn:ubl-examples:world:item`)  
-  The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item granulate-pe of Rinova Recovery (world/items.json).
+- `Item/StandardItemIdentification/ID` = **KXU13362PER1** (schemeID `ISO 15459-6`)  
+  The item's number in its globally unique form under ISO/IEC 15459, which Rinova Recovery gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Rinova Recovery and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item granulate-pe of Rinova Recovery (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -442,6 +444,9 @@ Inside `InvoiceLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:13362</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Rinova Recovery</cbc:Name>
       </cac:PartyName>
@@ -509,7 +514,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 041 836 4548</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 697 6856</cbc:Telephone>
         <cbc:ElectronicMail>receivables@rinova.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -525,7 +530,7 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:20274</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:15128</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Rivermouth Packaging</cbc:Name>
@@ -554,7 +559,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 38 2440 2740</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 7320 9007</cbc:Telephone>
         <cbc:ElectronicMail>payables@rivermouth.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -699,7 +704,7 @@ Inside `InvoiceLine`:
         <cbc:ID>RR-PE-R1</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771030000048</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU13362PER1</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

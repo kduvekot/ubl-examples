@@ -102,7 +102,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
-- `Contact/Telephone` = **+999 1 0413 44685**  
+- `Contact/Telephone` = **+999 1 0413 67100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Rail Cargo (world/parties.json).
 - `Contact/ElectronicMail` = **freight@ferranorail.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
@@ -119,7 +119,7 @@ Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
@@ -159,7 +159,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 518 4274**  
+- `Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `Contact/ElectronicMail` = **logistics@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
@@ -176,6 +176,8 @@ Inside `ConsignorParty`:
 
 - `PartyIdentification/ID` = **XU-R-104137** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Serravona Mining (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `AdditionalPartyIdentification/ID` = **0990:10252** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Serravona Mining (world/parties.json).
 - `PartyName/Name` = **Serravona Mining**  
   The trading name; identity of Serravona Mining (world/parties.json).
 - `PostalAddress/ID` = **4170202741471003** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -210,7 +212,7 @@ Inside `ConsignorParty`:
   The job of the person who answers at the desk; identity of Serravona Mining (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Serravona Mining (world/parties.json).
-- `Contact/Telephone` = **+999 1 0413 24137**  
+- `Contact/Telephone` = **+999 1 0413 84813**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Serravona Mining (world/parties.json).
 - `Contact/ElectronicMail` = **loading@serravona.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Serravona Mining (world/parties.json).
@@ -352,7 +354,7 @@ Inside `Signature`:
       <cbc:Name>Freight desk</cbc:Name>
       <cbc:JobTitle>Freight planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 0413 44685</cbc:Telephone>
+      <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -366,7 +368,7 @@ Inside `Signature`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
@@ -396,7 +398,7 @@ Inside `Signature`:
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>logistics@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -409,6 +411,9 @@ Inside `Signature`:
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104137</cbc:ID>
     </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="ISO 6523">0990:10252</cbc:ID>
+    </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Serravona Mining</cbc:Name>
     </cac:PartyName>
@@ -433,7 +438,7 @@ Inside `Signature`:
       <cbc:Name>Rail loading office</cbc:Name>
       <cbc:JobTitle>Loading supervisor</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 0413 24137</cbc:Telephone>
+      <cbc:Telephone>+999 1 0413 84813</cbc:Telephone>
       <cbc:ElectronicMail>loading@serravona.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

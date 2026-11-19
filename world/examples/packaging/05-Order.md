@@ -89,7 +89,7 @@ Inside `BuyerCustomerParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2511 0411**  
+- `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
@@ -106,6 +106,8 @@ Inside `SellerSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Textile Mill (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9524010900002** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PartyName/Name` = **Lumeport Textile Mill**  
   The trading name; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/PostalAddress/ID` = **LUM-ADR-933254** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
@@ -140,7 +142,7 @@ Inside `SellerSupplierParty`:
   The job of the person who answers at the desk; identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeport Textile Mill (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2303 2603**  
+- `Party/Contact/Telephone` = **+999 2 38 2837 6029**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Textile Mill (world/parties.json).
 - `Party/Contact/ElectronicMail` = **sales@lumeporttextile.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Textile Mill (world/parties.json).
@@ -227,8 +229,8 @@ Inside `OrderLine`:
   The buyer's own item number: it resells this item as its item shirt-r.
 - `LineItem/Item/SellersItemIdentification/ID` = **LT-SH-01**  
   The seller's own item number; item shirt of Lumeport Textile Mill (world/items.json).
-- `LineItem/Item/StandardItemIdentification/ID` = **772030000090** (schemeID `urn:ubl-examples:world:item`)  
-  The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item shirt of Lumeport Textile Mill (world/items.json).
+- `LineItem/Item/StandardItemIdentification/ID` = **9524010000016** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeport Textile Mill gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Lumeport is Lumeport Textile Mill's (world/items.json).
 
 ## The document
 
@@ -289,7 +291,7 @@ Inside `OrderLine`:
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Buyer</cbc:JobTitle>
         <cbc:Department>Purchasing</cbc:Department>
-        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -304,6 +306,9 @@ Inside `OrderLine`:
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9524010900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Textile Mill</cbc:Name>
       </cac:PartyName>
@@ -328,7 +333,7 @@ Inside `OrderLine`:
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2837 6029</cbc:Telephone>
         <cbc:ElectronicMail>sales@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -398,7 +403,7 @@ Inside `OrderLine`:
           <cbc:ID>LT-SH-01</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">772030000090</cbc:ID>
+          <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>
         </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>

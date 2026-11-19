@@ -46,7 +46,7 @@
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
       <cbc:ElectronicMail>logistics@marrowdalesawmill.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -83,7 +83,7 @@
       <cbc:Name>Planning desk</cbc:Name>
       <cbc:JobTitle>Transport planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 266 7643</cbc:Telephone>
       <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -154,7 +154,7 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -183,7 +183,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

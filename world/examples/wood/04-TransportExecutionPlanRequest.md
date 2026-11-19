@@ -79,7 +79,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Marrowdale Sawmill (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Marrowdale Sawmill (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 929 329**  
+- `Contact/Telephone` = **+999 2 7121 338 173**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Marrowdale Sawmill (world/parties.json).
 - `Contact/ElectronicMail` = **logistics@marrowdalesawmill.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Marrowdale Sawmill (world/parties.json).
@@ -130,7 +130,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 354 4822**  
+- `Contact/Telephone` = **+999 1 041 266 7643**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Trasvia Haulage (world/parties.json).
 - `Contact/ElectronicMail` = **planning@trasvia.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
@@ -237,7 +237,7 @@ Inside `Consignment`:
   The number of goods items.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
@@ -275,7 +275,7 @@ Inside `Consignment`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `ConsigneeParty/Contact/Telephone` = **+999 1 041 518 4274**  
+- `ConsigneeParty/Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `ConsigneeParty/Contact/ElectronicMail` = **goodsin@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
@@ -337,7 +337,7 @@ Inside `Consignment`:
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
       <cbc:ElectronicMail>logistics@marrowdalesawmill.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -374,7 +374,7 @@ Inside `Consignment`:
       <cbc:Name>Planning desk</cbc:Name>
       <cbc:JobTitle>Transport planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 266 7643</cbc:Telephone>
       <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -445,7 +445,7 @@ Inside `Consignment`:
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -474,7 +474,7 @@ Inside `Consignment`:
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

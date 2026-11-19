@@ -115,7 +115,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Department` = **Publications**  
   The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2259 0959**  
+- `Contact/Telephone` = **+999 2 38 5339 4832**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayvarra Information Service (world/parties.json).
 - `Contact/ElectronicMail` = **publications@info-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayvarra Information Service (world/parties.json).
@@ -177,7 +177,7 @@ Inside `BusinessParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
@@ -255,7 +255,7 @@ Inside `BusinessParty`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 518 4274**  
+- `Contact/Telephone` = **+999 1 041 386 4551**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `Contact/ElectronicMail` = **order@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
@@ -263,7 +263,7 @@ Inside `BusinessParty`:
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
 - `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
-- `Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
+- `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
   The sales desk's mobile number, also under the reserved +999.
 - `ServiceProviderParty/ID` = **VI-SP-2026-01**  
   The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
@@ -438,7 +438,7 @@ Inside `NoticeSubType`:
       <cbc:Name>Publications and register</cbc:Name>
       <cbc:JobTitle>Publications officer</cbc:JobTitle>
       <cbc:Department>Publications</cbc:Department>
-      <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5339 4832</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -482,7 +482,7 @@ Inside `NoticeSubType`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
@@ -545,12 +545,12 @@ Inside `NoticeSubType`:
       <cbc:Name>Order desk</cbc:Name>
       <cbc:JobTitle>Order administrator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       <cac:OtherCommunication>
         <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-        <cbc:Value>+999 1 344 474 4274</cbc:Value>
+        <cbc:Value>+999 1 351 400 5258</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ServiceProviderParty>

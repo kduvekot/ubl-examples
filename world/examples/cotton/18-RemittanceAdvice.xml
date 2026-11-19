@@ -21,6 +21,9 @@
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9524010900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Lumeport Textile Mill</cbc:Name>
       </cac:PartyName>
@@ -50,7 +53,7 @@
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2837 6029</cbc:Telephone>
         <cbc:ElectronicMail>payables@lumeporttextile.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -87,7 +90,7 @@
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
         <cbc:ElectronicMail>receivables@selanuginnery.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

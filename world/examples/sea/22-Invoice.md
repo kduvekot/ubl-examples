@@ -136,7 +136,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7121 474 274**  
+- `Party/Contact/Telephone` = **+999 2 7121 955 964**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/ElectronicMail` = **receivables@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
@@ -187,7 +187,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 729 1859**  
+- `Party/Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
@@ -616,8 +616,8 @@ Inside `InvoiceLine`:
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
 - `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -652,8 +652,8 @@ Inside `InvoiceLine`:
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting.
 - `Item/StandardItemIdentification/ID` = **9520610000029** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `Item/AdditionalItemIdentification/ID` = **771020000034** (schemeID `urn:ubl-examples:world:item`)  
-  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-casting of Valdara Industries (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-casting of Valdara Industries (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -771,7 +771,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>receivables@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -812,7 +812,7 @@ Inside `InvoiceLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -1159,7 +1159,7 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -1197,7 +1197,7 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

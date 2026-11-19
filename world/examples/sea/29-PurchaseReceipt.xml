@@ -68,7 +68,7 @@
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>receivables@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -131,7 +131,7 @@
         <cbc:Name>Farm office</cbc:Name>
         <cbc:JobTitle>Farm manager</cbc:JobTitle>
         <cbc:Department>Management</cbc:Department>
-        <cbc:Telephone>+999 3 724 2544</cbc:Telephone>
+        <cbc:Telephone>+999 3 724 6676</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -205,7 +205,7 @@
         <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
     </cac:Item>
     <cac:Price>

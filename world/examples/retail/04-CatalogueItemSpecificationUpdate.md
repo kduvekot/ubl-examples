@@ -167,7 +167,7 @@ Inside `ProviderParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 474 274**  
+- `Contact/Telephone` = **+999 2 7121 955 964**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Contact/ElectronicMail` = **sales@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
@@ -224,7 +224,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2511 0411**  
+- `Contact/Telephone` = **+999 2 38 4609 7100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
@@ -305,8 +305,8 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
 - `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
 - `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -587,7 +587,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       <cbc:Name>Sales office</cbc:Name>
       <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>sales@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -631,7 +631,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       <cbc:Name>Buying office</cbc:Name>
       <cbc:JobTitle>Buyer</cbc:JobTitle>
       <cbc:Department>Purchasing</cbc:Department>
-      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
@@ -694,7 +694,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
         <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>

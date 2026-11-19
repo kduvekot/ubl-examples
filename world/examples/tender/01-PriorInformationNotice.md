@@ -140,7 +140,7 @@ Inside `ContractingParty`:
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2648 0548**  
+- `Party/Contact/Telephone` = **+999 2 38 8235 3927**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
@@ -191,7 +191,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Bayvarra Information Service (world/parties.json).
 - `Contact/Department` = **Publications**  
   The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2259 0959**  
+- `Contact/Telephone` = **+999 2 38 5339 4832**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayvarra Information Service (world/parties.json).
 - `Contact/ElectronicMail` = **publications@info-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayvarra Information Service (world/parties.json).
@@ -749,7 +749,7 @@ Inside `ProcurementProjectLot`:
         <cbc:Name>Procurement office</cbc:Name>
         <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
-        <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -787,7 +787,7 @@ Inside `ProcurementProjectLot`:
       <cbc:Name>Publications and register</cbc:Name>
       <cbc:JobTitle>Publications officer</cbc:JobTitle>
       <cbc:Department>Publications</cbc:Department>
-      <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5339 4832</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

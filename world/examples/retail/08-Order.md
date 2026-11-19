@@ -129,7 +129,7 @@ Inside `BuyerCustomerParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2511 0411**  
+- `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
@@ -141,7 +141,7 @@ Inside `BuyerCustomerParty`:
   The party's electronic address in that network: its country code and registry number; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `DeliveryContact/Name` = **Goods-in, garden department**  
   Whom the driver reports to.
-- `DeliveryContact/Telephone` = **+999 2 38 2511 0411**  
+- `DeliveryContact/Telephone` = **+999 2 38 4609 7100**  
   The number.
 - `AccountingContact/Name` = **Accounts payable**  
   Where invoices go.
@@ -149,7 +149,7 @@ Inside `BuyerCustomerParty`:
   The address, under the reserved .example domain.
 - `BuyerContact/Name` = **Garden department buyer**  
   Who placed the order.
-- `BuyerContact/Telephone` = **+999 2 38 2511 0411**  
+- `BuyerContact/Telephone` = **+999 2 38 4609 7100**  
   The number.
 
 ### Seller Supplier Party
@@ -202,7 +202,7 @@ Inside `SellerSupplierParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7121 474 274**  
+- `Party/Contact/Telephone` = **+999 2 7121 955 964**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Party/Contact/ElectronicMail` = **sales@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
@@ -214,7 +214,7 @@ Inside `SellerSupplierParty`:
   The party's electronic address in that network: its country code and registry number; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `DespatchContact/Name` = **Dispatch office**  
   Who despatches.
-- `DespatchContact/Telephone` = **+999 2 7121 474 274**  
+- `DespatchContact/Telephone` = **+999 2 7121 955 964**  
   The number.
 - `AccountingContact/Name` = **Accounts receivable**  
   For payment questions.
@@ -222,7 +222,7 @@ Inside `SellerSupplierParty`:
   The address, under the reserved .example domain.
 - `SellerContact/Name` = **Key account manager, retail**  
   The store's contact at the distributor.
-- `SellerContact/Telephone` = **+999 2 7121 474 274**  
+- `SellerContact/Telephone` = **+999 2 7121 955 964**  
   The number.
 
 ### Delivery
@@ -373,8 +373,8 @@ Inside `OrderLine`:
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
 - `LineItem/Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
-- `LineItem/Item/AdditionalItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The maker's own number for the item, its Codana item number, which travels along with the GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0218**  
   The catalogue the item was ordered from.
 - `BuyerProposedSubstituteLineItem/ID` = **1.1**  
@@ -473,7 +473,7 @@ Inside `OrderLine`:
         <cbc:Name>Buying office</cbc:Name>
         <cbc:JobTitle>Buyer</cbc:JobTitle>
         <cbc:Department>Purchasing</cbc:Department>
-        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
         <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -484,7 +484,7 @@ Inside `OrderLine`:
     </cac:Party>
     <cac:DeliveryContact>
       <cbc:Name>Goods-in, garden department</cbc:Name>
-      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:DeliveryContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts payable</cbc:Name>
@@ -492,7 +492,7 @@ Inside `OrderLine`:
     </cac:AccountingContact>
     <cac:BuyerContact>
       <cbc:Name>Garden department buyer</cbc:Name>
-      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:BuyerContact>
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
@@ -531,7 +531,7 @@ Inside `OrderLine`:
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>sales@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -542,7 +542,7 @@ Inside `OrderLine`:
     </cac:Party>
     <cac:DespatchContact>
       <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
     </cac:DespatchContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts receivable</cbc:Name>
@@ -550,7 +550,7 @@ Inside `OrderLine`:
     </cac:AccountingContact>
     <cac:SellerContact>
       <cbc:Name>Key account manager, retail</cbc:Name>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
     </cac:SellerContact>
   </cac:SellerSupplierParty>
   <cac:Delivery>
@@ -659,7 +659,7 @@ Inside `OrderLine`:
           <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
         </cac:StandardItemIdentification>
         <cac:AdditionalItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+          <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
         </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>LD-CAT-26-0218</cbc:ID>

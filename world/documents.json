@@ -1221,12 +1221,12 @@
    "doc": "Catalogue",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The distributor's catalogue of items and prices; items carry the identifiers of the identifier issuing agency.",
+   "why": "The distributor's catalogue of items and prices; each item carries the GTIN the distributor gives it, with the distributor named as the GTIN's issuer.",
    "parties": {
     "ProviderParty": "6-xb",
     "ReceiverParty": "26-xb",
     "SellerSupplierParty": "6-xb",
-    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xu"
+    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "6-xb"
    }
   },
   {
@@ -1508,7 +1508,7 @@
     "ProviderParty": "6-xb",
     "ReceiverParty": "1-xl",
     "SellerSupplierParty": "6-xb",
-    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "31-xu"
+    "CatalogueLine/Item/StandardItemIdentification/IssuerParty": "6-xb"
    }
   },
   {

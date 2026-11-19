@@ -42,7 +42,7 @@
       <cbc:Name>Dispatch office</cbc:Name>
       <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+      <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -75,7 +75,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Export coordinator</cbc:JobTitle>
       <cbc:Department>Export</cbc:Department>
-      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -93,6 +93,9 @@
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
         </cac:PartyIdentification>
+        <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="GS1 GLN">9524010900002</cbc:ID>
+        </cac:AdditionalPartyIdentification>
         <cac:AdditionalPartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412603</cbc:ID>
         </cac:AdditionalPartyIdentification>
@@ -125,7 +128,7 @@
           <cbc:Name>Goods-in</cbc:Name>
           <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
           <cbc:Department>Warehouse</cbc:Department>
-          <cbc:Telephone>+999 2 38 2303 2603</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 2837 6029</cbc:Telephone>
           <cbc:ElectronicMail>goodsin@lumeporttextile.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

@@ -57,7 +57,7 @@ Inside `ProviderParty`:
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Valdara Industries (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
@@ -123,7 +123,7 @@ Inside `ProviderParty`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 518 4274**  
+- `Contact/Telephone` = **+999 1 041 386 4551**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `Contact/ElectronicMail` = **order@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
@@ -131,7 +131,7 @@ Inside `ProviderParty`:
   When the desk can be reached; identity of Valdara Industries (world/parties.json).
 - `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
-- `Contact/OtherCommunication/Value` = **+999 1 344 474 4274**  
+- `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
   The sales desk's mobile number, also under the reserved +999.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -190,7 +190,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2648 0548**  
+- `Contact/Telephone` = **+999 2 38 8235 3927**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
@@ -291,12 +291,12 @@ Inside `CatalogueLine`:
   The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
   The variant in words.
-- `Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `Item/StandardItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra of Valdara Industries (world/items.json).
 - `Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
-  The barcode the number is printed in on the label.
-- `Item/StandardItemIdentification/IssuerScopeID` = **771**  
-  The range of item numbers the agency gives out in the maker's country.
+  The barcode the number is printed in on the label: Code 128 carries letters and digits.
+- `Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
+  The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
 - `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0211-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
@@ -539,7 +539,7 @@ Inside `CatalogueLine`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
@@ -594,12 +594,12 @@ Inside `CatalogueLine`:
       <cbc:Name>Order desk</cbc:Name>
       <cbc:JobTitle>Order administrator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       <cac:OtherCommunication>
         <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-        <cbc:Value>+999 1 344 474 4274</cbc:Value>
+        <cbc:Value>+999 1 351 400 5258</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -643,7 +643,7 @@ Inside `CatalogueLine`:
       <cbc:Name>Procurement office</cbc:Name>
       <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
-      <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
       <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -729,9 +729,9 @@ Inside `CatalogueLine`:
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
         <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-        <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+        <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
         <cbc:ID>VI-CAT-26-0211-1</cbc:ID>

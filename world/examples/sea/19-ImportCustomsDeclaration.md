@@ -228,7 +228,7 @@ Inside `CustomsParty`:
   The job of the person who answers at the desk; identity of Island Customs Service (world/parties.json).
 - `Contact/Department` = **Customs**  
   The department the desk belongs to; identity of Island Customs Service (world/parties.json).
-- `Contact/Telephone` = **+999 3 728 1448**  
+- `Contact/Telephone` = **+999 3 728 6449**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Island Customs Service (world/parties.json).
 - `Contact/ElectronicMail` = **import@customs-xl.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Island Customs Service (world/parties.json).
@@ -380,7 +380,7 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Tevaro Customs Brokers (world/parties.json).
 - `ShipmentStage/CustomsAgentParty/Contact/Department` = **Customs**  
   The department the desk belongs to; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Contact/Telephone` = **+999 3 725 1585**  
+- `ShipmentStage/CustomsAgentParty/Contact/Telephone` = **+999 3 725 3563**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Tevaro Customs Brokers (world/parties.json).
 - `ShipmentStage/CustomsAgentParty/Contact/ElectronicMail` = **declarations@tevaro.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tevaro Customs Brokers (world/parties.json).
@@ -604,7 +604,7 @@ Inside `Signature`:
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Customs officer</cbc:JobTitle>
       <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
+      <cbc:Telephone>+999 3 728 6449</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -733,7 +733,7 @@ Inside `Signature`:
           <cbc:Name>Declarations</cbc:Name>
           <cbc:JobTitle>Customs declarant</cbc:JobTitle>
           <cbc:Department>Customs</cbc:Department>
-          <cbc:Telephone>+999 3 725 1585</cbc:Telephone>
+          <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
           <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

@@ -52,7 +52,7 @@
         <cbc:Name>Dispatch office</cbc:Name>
         <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>dispatch@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -89,7 +89,7 @@
         <cbc:Name>Goods inwards</cbc:Name>
         <cbc:JobTitle>Warehouse supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 3 722 1722</cbc:Telephone>
+        <cbc:Telephone>+999 3 722 1882</cbc:Telephone>
         <cbc:ElectronicMail>goods@nalevi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 07:00–18:00</cbc:Note>
       </cac:Contact>
@@ -126,7 +126,7 @@
         <cbc:Name>Purchasing</cbc:Name>
         <cbc:JobTitle>Buyer</cbc:JobTitle>
         <cbc:Department>Purchasing</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -173,7 +173,7 @@
           <cbc:Name>Cargo operations</cbc:Name>
           <cbc:JobTitle>Load controller</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
+          <cbc:Telephone>+999 3 721 1044</cbc:Telephone>
           <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
@@ -209,7 +209,7 @@
         <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000034</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03190</cbc:ProductTraceID>

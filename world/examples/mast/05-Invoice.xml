@@ -88,7 +88,7 @@
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 930 729</cbc:Telephone>
         <cbc:ElectronicMail>receivables@saltmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -129,7 +129,7 @@
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
+        <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
         <cbc:ElectronicMail>payables@selanutelecom.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

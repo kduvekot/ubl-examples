@@ -129,7 +129,7 @@ Inside `AccountingCustomerParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2511 0411**  
+- `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/ElectronicMail` = **payables@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
@@ -178,7 +178,7 @@ Inside `AccountingSupplierParty`:
   The job of the person who answers at the desk; identity of Coastal State Water Company (world/parties.json).
 - `Party/Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Coastal State Water Company (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 38 2692 2192**  
+- `Party/Contact/Telephone` = **+999 2 38 9310 7518**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Coastal State Water Company (world/parties.json).
 - `Party/Contact/ElectronicMail` = **billing@coastalwater.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Coastal State Water Company (world/parties.json).
@@ -392,7 +392,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
         <cbc:ElectronicMail>payables@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -430,7 +430,7 @@ Inside `RemittanceAdviceLine`:
         <cbc:Name>Billing</cbc:Name>
         <cbc:JobTitle>Billing officer</cbc:JobTitle>
         <cbc:Department>Customer service</cbc:Department>
-        <cbc:Telephone>+999 2 38 2692 2192</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
         <cbc:ElectronicMail>billing@coastalwater.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

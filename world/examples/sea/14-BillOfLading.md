@@ -89,7 +89,7 @@ Inside `ConsignorParty`:
   The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
 - `Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 474 274**  
+- `Contact/Telephone` = **+999 2 7121 955 964**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
 - `Contact/ElectronicMail` = **dispatch@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
@@ -142,7 +142,7 @@ Inside `CarrierParty`:
   The job of the person who answers at the desk; identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/Department` = **Bookings**  
   The department the desk belongs to; identity of Tidewell Ocean Lines (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2418 1918**  
+- `Contact/Telephone` = **+999 2 38 2058 7929**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Tidewell Ocean Lines (world/parties.json).
 - `Contact/ElectronicMail` = **bookings@tidewell.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
@@ -199,7 +199,7 @@ Inside `FreightForwarderParty`:
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2144 1644**  
+- `Contact/Telephone` = **+999 2 38 5155 2404**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
@@ -290,7 +290,7 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Consignment/ConsigneeParty/Contact/Telephone` = **+999 3 729 1859**  
+- `Consignment/ConsigneeParty/Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **goodsin@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
@@ -328,7 +328,7 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/NotifyParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/NotifyParty/Contact/Telephone` = **+999 3 722 1722**  
+- `Consignment/NotifyParty/Contact/Telephone` = **+999 3 722 1882**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/NotifyParty/Contact/ElectronicMail` = **goods@nalevi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Nalevi Warehousing (world/parties.json).
@@ -1056,7 +1056,7 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/Contact/Department` = **Claims**  
   The department the desk belongs to; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Contact/Telephone` = **+999 2 38 2807 1507**  
+- `InsurancePolicy/InsurerParty/Contact/Telephone` = **+999 2 38 2115 9838**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Wavesure Cargo Insurance (world/parties.json).
 - `InsurancePolicy/InsurerParty/Contact/ElectronicMail` = **cargo@wavesure.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Wavesure Cargo Insurance (world/parties.json).
@@ -1168,7 +1168,7 @@ Inside `Signature`:
       <cbc:Name>Dispatch office</cbc:Name>
       <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -1206,7 +1206,7 @@ Inside `Signature`:
       <cbc:Name>Bookings</cbc:Name>
       <cbc:JobTitle>Booking agent</cbc:JobTitle>
       <cbc:Department>Bookings</cbc:Department>
-      <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2058 7929</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -1248,7 +1248,7 @@ Inside `Signature`:
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Export coordinator</cbc:JobTitle>
       <cbc:Department>Export</cbc:Department>
-      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -1309,7 +1309,7 @@ Inside `Signature`:
           <cbc:Name>Goods-in</cbc:Name>
           <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
           <cbc:Department>Warehouse</cbc:Department>
-          <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+          <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
           <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
           <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
@@ -1340,7 +1340,7 @@ Inside `Signature`:
           <cbc:Name>Goods inwards</cbc:Name>
           <cbc:JobTitle>Warehouse supervisor</cbc:JobTitle>
           <cbc:Department>Warehouse</cbc:Department>
-          <cbc:Telephone>+999 3 722 1722</cbc:Telephone>
+          <cbc:Telephone>+999 3 722 1882</cbc:Telephone>
           <cbc:ElectronicMail>goods@nalevi.example</cbc:ElectronicMail>
           <cbc:Note>Monday to Saturday 07:00–18:00</cbc:Note>
         </cac:Contact>
@@ -2012,7 +2012,7 @@ Inside `Signature`:
           <cbc:Name>Cargo claims</cbc:Name>
           <cbc:JobTitle>Claims handler</cbc:JobTitle>
           <cbc:Department>Claims</cbc:Department>
-          <cbc:Telephone>+999 2 38 2807 1507</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 2115 9838</cbc:Telephone>
           <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

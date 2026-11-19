@@ -112,7 +112,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Department` = **Purchasing**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2511 0411**  
+- `Contact/Telephone` = **+999 2 38 4609 7100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
 - `Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
@@ -163,7 +163,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
-- `Contact/Telephone` = **+999 2 7121 266 466**  
+- `Contact/Telephone` = **+999 2 7121 602 606**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brackenmere Furniture (world/parties.json).
 - `Contact/ElectronicMail` = **trade@brackenmere.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
@@ -225,7 +225,7 @@ Inside `ExceptionCriteriaLine`:
 - `SupplyItem/SellersItemIdentification/ID` = **BF-GS-01**  
   The seller's own item number; item garden-set of Brackenmere Furniture (world/items.json).
 - `SupplyItem/StandardItemIdentification/ID` = **9523710000012** (schemeID `GS1 GTIN`)  
-  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product (world/items.json).
+  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
 - `ID` = **2**  
   The forecast criterion.
 - `Note` = **Forecast far from the store's own plan.**  
@@ -323,7 +323,7 @@ Inside `ExceptionCriteriaLine`:
       <cbc:Name>Buying office</cbc:Name>
       <cbc:JobTitle>Buyer</cbc:JobTitle>
       <cbc:Department>Purchasing</cbc:Department>
-      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
       <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
@@ -362,7 +362,7 @@ Inside `ExceptionCriteriaLine`:
       <cbc:Name>Trade sales</cbc:Name>
       <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7121 266 466</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
       <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

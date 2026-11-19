@@ -3029,13 +3029,6 @@
    "check": "iso13616",
    "format": "in the structure of ISO 13616: the country code, two check digits (ISO 7064 mod 97-10) and the national account number, which holds the bank and branch codes: in Bayvarra the bank code, the six-digit sort code and 8 digits; in Urvania the ABI and CAB codes (5 + 5 digits) and 12 digits; on the island the bank code, the three-digit branch number and 10 digits"
   },
-  "urn:ubl-examples:world:item": {
-   "name": "Codana item number",
-   "issuer": "31-xu",
-   "pattern": "^77[123]\\d{9}$",
-   "check": "gs1",
-   "format": "twelve digits issued by the Codana Identification Agency, Urvania's public numbering body: 771, 772 or 773 for the maker's country, eight digits and a check digit"
-  },
   "urn:ubl-examples:world:vessel": {
    "name": "national register of ships",
    "pattern": "^(XB-S|XU-IW|XL-S)-\\d{5}$",
@@ -3096,13 +3089,19 @@
   "ISO 6523": {
    "name": "ISO/IEC 6523 organisation identifier",
    "pattern": "^0990:\\d{5}$",
-   "format": "the international code designator 0990 of the Codana Identification Agency, a colon and the organisation's five-digit Codana company number"
+   "format": "the international code designator 0990 of the Codana Identification Agency, a colon and the organisation's five-digit Codana company number, which Codana gives in order of registration since 1999",
+   "issued_since": 1999
   },
   "ISO 15459": {
    "name": "ISO/IEC 15459 licence plate of a transport unit",
    "pattern": "^KXU\\d{15}$",
    "check": "iso15459",
    "format": "the issuing agency code KXU of the Codana Identification Agency, the five-digit company number, a nine-digit serial number and a check digit (mod 10 with weights 3 and 1 from the right); the data identifier J of the bar code is not part of it"
+  },
+  "ISO 15459-6": {
+   "name": "ISO/IEC 15459 identifier of an item",
+   "pattern": "^KXU\\d{5}[A-Z0-9]{1,12}$",
+   "format": "the issuing agency code KXU of the Codana Identification Agency, the five-digit Codana company number of the company that numbers the item and the company's own reference for it, in upper-case letters and digits; at most 20 characters and no check character; the data identifier 25P of the bar code is not part of it"
   },
   "urn:ubl-examples:world:bank-identifier": {
    "name": "bank identifier code of the Trade Accord's payment link",

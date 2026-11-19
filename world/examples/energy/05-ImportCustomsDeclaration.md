@@ -37,7 +37,7 @@ Inside `ImporterParty`:
 
 - `PartyIdentification/ID` = **XU-R-105918** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Montebrio Power (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10591** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10087** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Montebrio Power (world/parties.json).
 - `AdditionalPartyIdentification/ID` = **XU-TR-105918** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Montebrio Power (world/parties.json).
@@ -95,7 +95,7 @@ Inside `ImporterParty`:
   The job of the person who answers at the desk; identity of Montebrio Power (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Montebrio Power (world/parties.json).
-- `Contact/Telephone` = **+999 1 0413 55918**  
+- `Contact/Telephone` = **+999 1 0413 46716**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Montebrio Power (world/parties.json).
 - `Contact/ElectronicMail` = **customs@montebrio.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Montebrio Power (world/parties.json).
@@ -112,6 +112,8 @@ Inside `ConsignorParty`:
 
 - `PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `AdditionalPartyIdentification/ID` = **0990:19676** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Kelpstone Gas (world/parties.json).
 - `AdditionalPartyIdentification/ID` = **XB-TR-412877** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Kelpstone Gas (world/parties.json).
 - `PartyName/Name` = **Kelpstone Gas**  
@@ -194,7 +196,7 @@ Inside `CustomsParty`:
   The job of the person who answers at the desk; identity of Customs Administration of Urvania (world/parties.json).
 - `Contact/Department` = **Customs**  
   The department the desk belongs to; identity of Customs Administration of Urvania (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 349 5507**  
+- `Contact/Telephone` = **+999 1 041 850 3855**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Customs Administration of Urvania (world/parties.json).
 - `Contact/ElectronicMail` = **import@customs-xu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Customs Administration of Urvania (world/parties.json).
@@ -270,7 +272,7 @@ Inside `Shipment`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105918</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10591</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10087</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-105918</cbc:ID>
@@ -321,7 +323,7 @@ Inside `Shipment`:
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 0413 55918</cbc:Telephone>
+      <cbc:Telephone>+999 1 0413 46716</cbc:Telephone>
       <cbc:ElectronicMail>customs@montebrio.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -334,6 +336,9 @@ Inside `Shipment`:
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
     </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="ISO 6523">0990:19676</cbc:ID>
+    </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412877</cbc:ID>
     </cac:AdditionalPartyIdentification>
@@ -397,7 +402,7 @@ Inside `Shipment`:
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Customs officer</cbc:JobTitle>
       <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 850 3855</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xu.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>

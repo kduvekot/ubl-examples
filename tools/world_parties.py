@@ -28,7 +28,22 @@ something to put in it, and these checks keep it consistent:
     turnover per person falls in the band for its kind of business
     (parties.json turnover_per_person; decisions D14, D46, open point O30);
   * the ISIN of a listed security has the structure and check digit of
-    ISO 6166 (Luhn over the digits with each letter expanded to 10..35).
+    ISO 6166 (Luhn over the digits with each letter expanded to 10..35);
+  * identification (D5, open points O22 and O32): a party identifies itself
+    and its items in one convention, GS1, ISO (Codana) or its own numbers; a
+    Codana company number has five digits, is held by one party, and Codana
+    gives the numbers in order of registration since it began (the party
+    registered after its founding, and a later registration has a higher
+    number); a GS1 company prefix is 952 and four digits, held by one party,
+    and its GLNs are under it; every Codana identifier of the party starts
+    with its own company number (the items' KXU numbers in world_items.py);
+  * every register issues its own numbers (D5, O22): no identifier of a party
+    repeats a run of five digits of another of its identifiers, apart from
+    the stated reuse of the business register number in the electronic
+    address and the customs trader number and the keys one numbering system
+    builds from its own company number or prefix; no telephone number repeats
+    a run of four digits of an identifier of its party, and no two parties
+    share a telephone number.
 
 Usage: python3 tools/world_parties.py      (prints the problems, exit 1 if any)
 """
@@ -271,7 +286,109 @@ def check(world):
                 problems.append(f"{where}: account number {acc['number']} does not hold the codes of bank "
                                 f"{acc['bank']} and its branch {acc.get('branch')} (decision ID-Q9)")
         problems += identifier_problems(world, p)
+    problems += identification_problems(world) + repeat_problems(world)
     return problems
+
+
+REPEAT_IDENTIFIER, REPEAT_TELEPHONE = 5, 4   # the shortest digit run that counts as a repeat (D5, O22)
+
+
+def identification_problems(world):
+    """Each party's identification convention (D5, O22, O32): Codana company numbers in order of registration,
+    GS1 company prefixes with their GLNs, each number held by one party."""
+    import world_ids
+    out, cins, prefixes = [], {}, {}
+    since = world["identifier_schemes"]["ISO 6523"]["issued_since"]
+    for p in world["parties"]:
+        where, idn = f"party {p['id']}", p.get("identity", {})
+        conv = idn.get("identification")
+        if not conv:
+            continue
+        kind = conv.get("convention")
+        if kind not in ("GS1", "ISO", "own"):
+            out.append(f"{where}: identification convention {kind} is not GS1, ISO or own")
+        if kind == "ISO":
+            cin, reg = conv.get("codana_cin", ""), conv.get("codana_registered", "")
+            if not re.fullmatch(r"\d{5}", cin):
+                out.append(f"{where}: Codana company number {cin!r} is not five digits")
+                continue
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", reg) or int(reg[:4]) < since:
+                out.append(f"{where}: Codana registration {reg!r} is not a date from {since}, when Codana began")
+            founded = idn.get("legal", {}).get("founded")
+            if founded and reg < founded:
+                out.append(f"{where}: registered with Codana on {reg}, before it was founded on {founded}")
+            if cin in cins:
+                out.append(f"{where}: Codana company number {cin} is also {cins[cin][0]}'s")
+            cins[cin] = (p["id"], reg)
+        if kind == "GS1":
+            pre = conv.get("company_prefix", "")
+            if not re.fullmatch(r"952\d{4}", pre):
+                out.append(f"{where}: GS1 company prefix {pre!r} is not 952 and four digits (952 is GS1's prefix "
+                           "for examples)")
+            if pre in prefixes:
+                out.append(f"{where}: GS1 company prefix {pre} is also {prefixes[pre]}'s")
+            prefixes[pre] = p["id"]
+            glns = [conv.get("gln")] + [x["gln"] for x in conv.get("locations", {}).values()]
+            for g in glns:
+                if not (g and re.fullmatch(r"\d{13}", g) and g.startswith(pre) and world_ids.gs1(g)):
+                    out.append(f"{where}: GLN {g} is not a GS1 key of 13 digits under its prefix {pre}")
+    order = sorted(cins.items(), key=lambda kv: (kv[1][1], kv[0]))
+    for (c1, (p1, r1)), (c2, (p2, r2)) in zip(order, order[1:]):
+        if c2 <= c1:
+            out.append(f"party {p2}: Codana company number {c2}, registered {r2}, is not higher than {p1}'s {c1}, "
+                       f"registered {r1}: Codana gives its numbers in order of registration (O22)")
+    return out
+
+
+def party_identifiers(world, p):
+    """The identifiers of a party, as (family, label, value): the family groups the stated reuse (the register
+    number in the electronic address and the customs trader number) and the keys a numbering system builds from
+    its own company number or prefix (a Codana number in the party's 0990 identifier and its KXU numbers, a GS1
+    prefix in its GLNs and GTINs); between families no digits may repeat."""
+    idn = p.get("identity", {})
+    out = [("register", k, idn.get(k)) for k in ("registry_id", "endpoint", "customs_id")]
+    out.append(("tax", "tax_id", idn.get("tax_id")))
+    out.append(("isin", "listing", idn.get("legal", {}).get("listing", {}).get("id")))
+    conv = idn.get("identification") or {}
+    out.append(("codana", "codana_cin", conv.get("codana_cin")))
+    out += [("gs1", "company_prefix", conv.get("company_prefix")), ("gs1", "gln", conv.get("gln"))]
+    out += [("gs1", f"gln {k}", x["gln"]) for k, x in conv.get("locations", {}).items()]
+    for it in world["items"]:
+        if it["seller"] == p["id"]:
+            out += [("codana", f"item {it['id']}", it.get("standard_id")), ("gs1", f"item {it['id']}", it.get("gtin"))]
+    return [x for x in out if x[2]]
+
+
+def subscriber(number):
+    """The digits of a telephone number after the country digit and its first group (an area code, a mobile
+    prefix, the island's exchange): the part a party is given."""
+    return re.sub(r"\D", "", number.split(" ", 3)[3] if number.count(" ") >= 3 else "")
+
+
+def repeat_problems(world):
+    """No identifier of a party repeats the digits of another, and no telephone number an identifier's (D5, O22)."""
+    import itertools
+    import world_ids
+    out, phones = [], {}
+    for p in world["parties"]:
+        where, ids = f"party {p['id']}", party_identifiers(world, p)
+        for (f1, l1, v1), (f2, l2, v2) in itertools.combinations(ids, 2):
+            run = world_ids.shared_run(v1, v2, REPEAT_IDENTIFIER)
+            if f1 != f2 and run:
+                out.append(f"{where}: {l1} {v1} and {l2} {v2} share the digits {run}: every register issues its "
+                           "own numbers (D5)")
+        for kind, number in sorted(p.get("identity", {}).get("contact", {}).items()):
+            if kind not in ("telephone", "mobile", "telefax") or not number:
+                continue
+            if number in phones:
+                out.append(f"{where}: {kind} {number} is also {phones[number]}'s")
+            phones[number] = p["id"]
+            for _, label, value in ids:
+                run = world_ids.shared_run(subscriber(number), value, REPEAT_TELEPHONE)
+                if run:
+                    out.append(f"{where}: {kind} {number} repeats the digits {run} of its {label} {value}: a "
+                               "telephone number has no relation to an identifier (O22)")
+    return out
 
 
 def in_lume(world, amount, currency):

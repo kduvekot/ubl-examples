@@ -180,7 +180,7 @@
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Customs officer</cbc:JobTitle>
       <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
+      <cbc:Telephone>+999 3 728 6449</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -309,7 +309,7 @@
           <cbc:Name>Declarations</cbc:Name>
           <cbc:JobTitle>Customs declarant</cbc:JobTitle>
           <cbc:Department>Customs</cbc:Department>
-          <cbc:Telephone>+999 3 725 1585</cbc:Telephone>
+          <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
           <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

@@ -31,7 +31,7 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -68,7 +68,7 @@
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>customs@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -149,7 +149,7 @@
       <cbc:Name>Transit office</cbc:Name>
       <cbc:JobTitle>Customs officer</cbc:JobTitle>
       <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 1 041 349 5507</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 850 3855</cbc:Telephone>
       <cbc:ElectronicMail>transit@customs-xu.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>

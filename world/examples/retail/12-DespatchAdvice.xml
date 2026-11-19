@@ -52,7 +52,7 @@
         <cbc:Name>Dispatch office</cbc:Name>
         <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>dispatch@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -97,7 +97,7 @@
         <cbc:Name>Goods-in, Lumeport store</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Store operations</cbc:Department>
-        <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -160,7 +160,7 @@
           <cbc:Name>Export desk</cbc:Name>
           <cbc:JobTitle>Export coordinator</cbc:JobTitle>
           <cbc:Department>Export</cbc:Department>
-          <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
           <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
@@ -388,7 +388,7 @@
         <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:AdditionalItemIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-26</cbc:ManufactureDate>

@@ -154,7 +154,7 @@ Inside `GuarantorParty`:
   The job of the person who answers at the desk; identity of Bank of Lumeport (world/parties.json).
 - `Contact/Department` = **Trade services**  
   The department the desk belongs to; identity of Bank of Lumeport (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2670 1370**  
+- `Contact/Telephone` = **+999 2 38 5011 8923**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bank of Lumeport (world/parties.json).
 - `Contact/ElectronicMail` = **trade@bankoflumeport.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bank of Lumeport (world/parties.json).
@@ -171,7 +171,7 @@ Inside `InterestedParty`:
 
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
@@ -222,7 +222,7 @@ Inside `BeneficiaryParty`:
   The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/Department` = **Procurement**  
   The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
-- `Contact/Telephone` = **+999 2 38 2648 0548**  
+- `Contact/Telephone` = **+999 2 38 8235 3927**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
 - `Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
@@ -331,7 +331,7 @@ Inside `BeneficiaryParty`:
       <cbc:Name>Trade services</cbc:Name>
       <cbc:JobTitle>Trade services officer</cbc:JobTitle>
       <cbc:Department>Trade services</cbc:Department>
-      <cbc:Telephone>+999 2 38 2670 1370</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5011 8923</cbc:Telephone>
       <cbc:ElectronicMail>trade@bankoflumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -345,7 +345,7 @@ Inside `BeneficiaryParty`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
@@ -382,7 +382,7 @@ Inside `BeneficiaryParty`:
       <cbc:Name>Procurement office</cbc:Name>
       <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
-      <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
       <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

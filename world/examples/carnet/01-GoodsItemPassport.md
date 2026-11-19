@@ -96,7 +96,7 @@ Inside `IssuerParty`:
   The job of the person who answers at the desk; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/Department` = **Carnets**  
   The department the desk belongs to; identity of Ferrano Chamber of Commerce (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 990 5370**  
+- `Contact/Telephone` = **+999 1 041 714 2503**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Contact/ElectronicMail` = **carnets@camera-ferrano.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Chamber of Commerce (world/parties.json).
@@ -113,7 +113,7 @@ Inside `HolderParty`:
 
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Valdara Industries (world/parties.json).
@@ -155,7 +155,7 @@ Inside `HolderParty`:
   The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Valdara Industries (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 518 4274**  
+- `Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
 - `Contact/ElectronicMail` = **customs@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
@@ -210,7 +210,7 @@ Inside `RepresentativeParty`:
   The employee is a citizen of Urvania. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Person/Contact/Name` = **Mobile on the road**  
   How to reach the employee at the fair.
-- `Person/Contact/Telephone` = **+999 1 041 518 4274**  
+- `Person/Contact/Telephone` = **+999 1 041 386 4551**  
   The number.
 - `Person/IdentityDocumentReference/ID` = **XU-P-2210931**  
   The passport the employee travels on.
@@ -377,12 +377,12 @@ Inside `Shipment`:
   The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
 - `GoodsItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
   The variant in words.
-- `GoodsItem/Item/StandardItemIdentification/ID` = **771020000027** (schemeID `urn:ubl-examples:world:item`)  
-  The Codana item number of the maker, issued by the Codana Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a number of the world, not a GTIN; item bench-serra of Valdara Industries (world/items.json).
+- `GoodsItem/Item/StandardItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
-  The barcode the number is printed in on the label.
-- `GoodsItem/Item/StandardItemIdentification/IssuerScopeID` = **771**  
-  The range of item numbers the agency gives out in the maker's country.
+  The barcode the number is printed in on the label: Code 128 carries letters and digits.
+- `GoodsItem/Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
+  The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Where the item was produced; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
@@ -580,7 +580,7 @@ Inside `Signature`:
       <cbc:Name>Carnet office</cbc:Name>
       <cbc:JobTitle>Carnet officer</cbc:JobTitle>
       <cbc:Department>Carnets</cbc:Department>
-      <cbc:Telephone>+999 1 041 990 5370</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 714 2503</cbc:Telephone>
       <cbc:ElectronicMail>carnets@camera-ferrano.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -594,7 +594,7 @@ Inside `Signature`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -627,7 +627,7 @@ Inside `Signature`:
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>customs@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -671,7 +671,7 @@ Inside `Signature`:
       </cac:CitizenshipCountry>
       <cac:Contact>
         <cbc:Name>Mobile on the road</cbc:Name>
-        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       </cac:Contact>
       <cac:IdentityDocumentReference>
         <cbc:ID>XU-P-2210931</cbc:ID>
@@ -807,9 +807,9 @@ Inside `Signature`:
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+          <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
           <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-          <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+          <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

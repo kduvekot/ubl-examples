@@ -23,7 +23,7 @@
     "contact": {
      "name": "Sales office",
      "email": "sales@serravona.example",
-     "telephone": "+999 1 0413 24137",
+     "telephone": "+999 1 0413 84813",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Sales coordinator"
@@ -76,7 +76,12 @@
       "email": "receivables@serravona.example"
      }
     },
-    "week": "office"
+    "week": "office",
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "10252",
+     "codana_registered": "2000-01-17"
+    }
    }
   },
   {
@@ -105,11 +110,11 @@
     "contact": {
      "name": "Order desk",
      "email": "order@valdara.example",
-     "telephone": "+999 1 041 518 4274",
+     "telephone": "+999 1 041 386 4551",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Order administrator",
-     "mobile": "+999 1 344 474 4274"
+     "mobile": "+999 1 351 400 5258"
     },
     "tax_id": "XU007299291",
     "address": {
@@ -169,7 +174,8 @@
     },
     "identification": {
      "convention": "ISO",
-     "codana_cin": "10427"
+     "codana_cin": "10014",
+     "codana_registered": "1999-11-08"
     },
     "desks": {
      "customs": {
@@ -264,7 +270,7 @@
     "contact": {
      "name": "Warehouse office",
      "email": "warehouse@castrano.example",
-     "telephone": "+999 1 041 677 4411",
+     "telephone": "+999 1 041 909 1454",
      "department": "Operations",
      "hours": "Every day 06:00–22:00",
      "job_title": "Warehouse administrator"
@@ -307,7 +313,8 @@
     },
     "identification": {
      "convention": "ISO",
-     "codana_cin": "10441"
+     "codana_cin": "10519",
+     "codana_registered": "2000-03-06"
     },
     "desks": {
      "despatch": {
@@ -368,7 +375,7 @@
     "contact": {
      "name": "Customer service",
      "email": "customer@rinova.example",
-     "telephone": "+999 1 041 836 4548",
+     "telephone": "+999 1 041 697 6856",
      "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
@@ -457,7 +464,12 @@
       "email": "sales@rinova.example"
      }
     },
-    "week": "office"
+    "week": "office",
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "13362",
+     "codana_registered": "2003-09-22"
+    }
    }
   },
   {
@@ -482,7 +494,7 @@
     "contact": {
      "name": "Freight desk",
      "email": "freight@ferranorail.example",
-     "telephone": "+999 1 0413 44685",
+     "telephone": "+999 1 0413 67100",
      "department": "Operations",
      "hours": "Every day 06:00–22:00",
      "job_title": "Freight planner"
@@ -581,7 +593,7 @@
     "contact": {
      "name": "Planning desk",
      "email": "planning@trasvia.example",
-     "telephone": "+999 1 041 354 4822",
+     "telephone": "+999 1 041 266 7643",
      "department": "Operations",
      "hours": "Every day 06:00–22:00",
      "job_title": "Transport planner"
@@ -677,7 +689,7 @@
     "contact": {
      "name": "Chartering desk",
      "email": "chartering@fiumella.example",
-     "telephone": "+999 1 041 513 4959",
+     "telephone": "+999 1 041 672 6403",
      "department": "Operations",
      "hours": "Every day 06:00–22:00",
      "job_title": "Chartering manager"
@@ -769,7 +781,7 @@
     "contact": {
      "name": "Terminal control",
      "email": "terminal@ferranohub.example",
-     "telephone": "+999 1 041 672 5096",
+     "telephone": "+999 1 041 371 6482",
      "department": "Operations",
      "hours": "Every day, around the clock",
      "job_title": "Terminal controller"
@@ -822,7 +834,7 @@
     "contact": {
      "name": "Trade services",
      "email": "trade@crevalto.example",
-     "telephone": "+999 1 041 831 5233",
+     "telephone": "+999 1 041 846 1103",
      "department": "Trade services",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Trade services officer"
@@ -904,7 +916,7 @@
     "contact": {
      "name": "Certificates office",
      "email": "certificates@camera-ferrano.example",
-     "telephone": "+999 1 041 990 5370",
+     "telephone": "+999 1 041 714 2503",
      "department": "Certificates",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Certificates officer"
@@ -960,10 +972,10 @@
     "contact": {
      "name": "Border office",
      "email": "border@customs-xu.example",
-     "telephone": "+999 1 041 349 5507",
+     "telephone": "+999 1 041 850 3855",
      "department": "Customs",
      "hours": "Every day, around the clock",
-     "telefax": "+999 1 041 326 0018",
+     "telefax": "+999 1 041 545 1432",
      "job_title": "Customs officer"
     },
     "tax_id": "XU007385602",
@@ -1024,7 +1036,7 @@
     "contact": {
      "name": "Member services",
      "email": "member@codana.example",
-     "telephone": "+999 1 041 508 5644",
+     "telephone": "+999 1 041 330 7605",
      "department": "Member services",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Member services officer"
@@ -1066,7 +1078,7 @@
     "contact": {
      "name": "Border office",
      "email": "border@customs-xb.example",
-     "telephone": "+999 2 7121 337 137",
+     "telephone": "+999 2 7121 503 398",
      "department": "Customs",
      "hours": "Every day, around the clock",
      "job_title": "Customs officer"
@@ -1125,7 +1137,7 @@
     "contact": {
      "name": "Customer service",
      "email": "customer@lumeway.example",
-     "telephone": "+999 2 7121 474 274",
+     "telephone": "+999 2 7121 955 964",
      "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
@@ -1273,7 +1285,7 @@
     "contact": {
      "name": "Buying office",
      "email": "buying@brightmarket.example",
-     "telephone": "+999 2 38 2511 0411",
+     "telephone": "+999 2 38 4609 7100",
      "department": "Purchasing",
      "hours": "Monday to Saturday 09:00–18:00",
      "job_title": "Buyer",
@@ -1491,7 +1503,7 @@
     "contact": {
      "name": "Procurement office",
      "email": "procurement@publicworks-lumeport.example",
-     "telephone": "+999 2 38 2648 0548",
+     "telephone": "+999 2 38 8235 3927",
      "department": "Procurement",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Procurement officer"
@@ -1577,7 +1589,7 @@
     "contact": {
      "name": "Bids office",
      "email": "bids@saltmere.example",
-     "telephone": "+999 2 7121 885 685",
+     "telephone": "+999 2 7121 930 729",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Bid manager"
@@ -1648,7 +1660,7 @@
     "contact": {
      "name": "Registry",
      "email": "registry@review-xb.example",
-     "telephone": "+999 2 38 2122 0822",
+     "telephone": "+999 2 38 4119 7873",
      "department": "Registry",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Registrar"
@@ -1690,7 +1702,7 @@
     "contact": {
      "name": "Publications and register",
      "email": "publications@info-xb.example",
-     "telephone": "+999 2 38 2259 0959",
+     "telephone": "+999 2 38 5339 4832",
      "department": "Publications",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Publications officer"
@@ -1733,7 +1745,7 @@
     "contact": {
      "name": "Secretariat",
      "email": "secretariat@tradeaccord.example",
-     "telephone": "+999 2 38 2396 1096",
+     "telephone": "+999 2 38 3068 3960",
      "department": "Secretariat",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Secretariat officer"
@@ -1775,7 +1787,7 @@
     "contact": {
      "name": "Client accounts",
      "email": "client@harbourline.example",
-     "telephone": "+999 2 38 2533 1233",
+     "telephone": "+999 2 38 2478 9865",
      "department": "Client services",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Client account manager"
@@ -1843,7 +1855,7 @@
     "contact": {
      "name": "Trade services",
      "email": "trade@bankoflumeport.example",
-     "telephone": "+999 2 38 2670 1370",
+     "telephone": "+999 2 38 5011 8923",
      "department": "Trade services",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Trade services officer"
@@ -1927,7 +1939,7 @@
     "contact": {
      "name": "Cargo claims",
      "email": "cargo@wavesure.example",
-     "telephone": "+999 2 38 2807 1507",
+     "telephone": "+999 2 38 2115 9838",
      "department": "Claims",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Claims handler"
@@ -1982,7 +1994,7 @@
     "contact": {
      "name": "Export desk",
      "email": "export@bayforth.example",
-     "telephone": "+999 2 38 2144 1644",
+     "telephone": "+999 2 38 5155 2404",
      "department": "Export",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Export coordinator"
@@ -2090,7 +2102,7 @@
     "contact": {
      "name": "Port control",
      "email": "port@port-lumeport.example",
-     "telephone": "+999 2 38 2281 1781",
+     "telephone": "+999 2 38 8964 6053",
      "department": "Port operations",
      "hours": "Every day, around the clock",
      "job_title": "Duty port controller"
@@ -2149,7 +2161,7 @@
     "contact": {
      "name": "Bookings",
      "email": "bookings@tidewell.example",
-     "telephone": "+999 2 38 2418 1918",
+     "telephone": "+999 2 38 2058 7929",
      "department": "Bookings",
      "hours": "Every day 06:00–22:00",
      "job_title": "Booking agent"
@@ -2254,7 +2266,7 @@
     "contact": {
      "name": "Cargo acceptance",
      "email": "cargo@lumeport-cargo.example",
-     "telephone": "+999 2 38 2555 2055",
+     "telephone": "+999 2 38 3457 2767",
      "department": "Cargo handling",
      "hours": "Every day, around the clock",
      "job_title": "Cargo acceptance agent"
@@ -2321,7 +2333,7 @@
     "contact": {
      "name": "Port control",
      "email": "port@port-selanu.example",
-     "telephone": "+999 3 727 1037",
+     "telephone": "+999 3 727 7653",
      "department": "Port operations",
      "hours": "Every day, around the clock",
      "job_title": "Duty port controller"
@@ -2379,7 +2391,7 @@
     "contact": {
      "name": "Import desk",
      "email": "import@selanu-cargo.example",
-     "telephone": "+999 3 724 1174",
+     "telephone": "+999 3 724 5671",
      "department": "Cargo handling",
      "hours": "Every day, around the clock",
      "job_title": "Cargo handling agent"
@@ -2430,7 +2442,7 @@
     "contact": {
      "name": "Cargo sales",
      "email": "cargo@kelaro.example",
-     "telephone": "+999 3 721 1311",
+     "telephone": "+999 3 721 1044",
      "department": "Sales",
      "hours": "Every day 06:00–22:00",
      "job_title": "Cargo sales agent"
@@ -2538,7 +2550,7 @@
     "contact": {
      "name": "Import office",
      "email": "import@customs-xl.example",
-     "telephone": "+999 3 728 1448",
+     "telephone": "+999 3 728 6449",
      "department": "Customs",
      "hours": "Every day, around the clock",
      "job_title": "Customs officer"
@@ -2590,7 +2602,7 @@
     "contact": {
      "name": "Declarations",
      "email": "declarations@tevaro.example",
-     "telephone": "+999 3 725 1585",
+     "telephone": "+999 3 725 3563",
      "department": "Customs",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customs declarant"
@@ -2645,7 +2657,7 @@
     "contact": {
      "name": "Goods inwards",
      "email": "goods@nalevi.example",
-     "telephone": "+999 3 722 1722",
+     "telephone": "+999 3 722 1882",
      "department": "Warehouse",
      "hours": "Monday to Saturday 07:00–18:00",
      "job_title": "Warehouse supervisor"
@@ -2717,7 +2729,7 @@
     "contact": {
      "name": "Purchasing",
      "email": "purchasing@velumi.example",
-     "telephone": "+999 3 729 1859",
+     "telephone": "+999 3 729 5794",
      "department": "Purchasing",
      "hours": "Monday to Saturday 09:00–18:00",
      "job_title": "Buyer"
@@ -2829,7 +2841,7 @@
     "contact": {
      "name": "Payments",
      "email": "payments@bankofselanu.example",
-     "telephone": "+999 3 726 1996",
+     "telephone": "+999 3 726 5372",
      "department": "Payments",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Payments officer"
@@ -2898,7 +2910,7 @@
     "contact": {
      "name": "Members’ office",
      "email": "carnet@chamber-selanu.example",
-     "telephone": "+999 3 723 2133",
+     "telephone": "+999 3 723 0513",
      "department": "Member services",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Members’ officer"
@@ -2951,7 +2963,7 @@
     "contact": {
      "name": "Ship registry",
      "email": "ship@maritime-xl.example",
-     "telephone": "+999 3 720 2270",
+     "telephone": "+999 3 720 7988",
      "department": "Ship registry",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Registrar of ships"
@@ -2990,7 +3002,7 @@
     "contact": {
      "name": "Customer service",
      "email": "customer@ferranoenergy.example",
-     "telephone": "+999 1 041 667 5781",
+     "telephone": "+999 1 041 474 7922",
      "department": "Customer service",
      "hours": "Every day, around the clock",
      "job_title": "Customer service officer"
@@ -3079,7 +3091,7 @@
     "contact": {
      "name": "Customer service",
      "email": "customer@coastalwater.example",
-     "telephone": "+999 2 38 2692 2192",
+     "telephone": "+999 2 38 9310 7518",
      "department": "Customer service",
      "hours": "Every day, around the clock",
      "job_title": "Customer service officer"
@@ -3156,7 +3168,7 @@
     "contact": {
      "name": "Business accounts",
      "email": "business@selanutelecom.example",
-     "telephone": "+999 3 727 2407",
+     "telephone": "+999 3 727 3193",
      "department": "Business sales",
      "hours": "Every day, around the clock",
      "job_title": "Account manager"
@@ -3252,7 +3264,7 @@
     "contact": {
      "name": "Sales office",
      "email": "sales@marrowdalesawmill.example",
-     "telephone": "+999 2 7121 929 329",
+     "telephone": "+999 2 7121 338 173",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Sales coordinator"
@@ -3357,7 +3369,7 @@
     "contact": {
      "name": "Trade sales",
      "email": "trade@brackenmere.example",
-     "telephone": "+999 2 7121 266 466",
+     "telephone": "+999 2 7121 602 606",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Trade sales manager"
@@ -3467,7 +3479,7 @@
     "contact": {
      "name": "Purchasing",
      "email": "purchasing@lumeporttextile.example",
-     "telephone": "+999 2 38 2303 2603",
+     "telephone": "+999 2 38 2837 6029",
      "department": "Purchasing",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Buyer"
@@ -3555,7 +3567,12 @@
       "name": "Freight and forwarding"
      }
     },
-    "week": "office"
+    "week": "office",
+    "identification": {
+     "convention": "GS1",
+     "company_prefix": "9524010",
+     "gln": "9524010900002"
+    }
    }
   },
   {
@@ -3581,7 +3598,7 @@
     "contact": {
      "name": "Order desk",
      "email": "order@rivermouth.example",
-     "telephone": "+999 2 38 2440 2740",
+     "telephone": "+999 2 38 7320 9007",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Order administrator"
@@ -3623,7 +3640,8 @@
     "party_account_shown": true,
     "identification": {
      "convention": "ISO",
-     "codana_cin": "20274"
+     "codana_cin": "15128",
+     "codana_registered": "2006-02-13"
     },
     "desks": {
      "customs": {
@@ -3695,7 +3713,7 @@
     "contact": {
      "name": "Farm office",
      "email": "farm@lisavufarm.example",
-     "telephone": "+999 3 724 2544",
+     "telephone": "+999 3 724 6676",
      "department": "Management",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Farm manager"
@@ -3778,7 +3796,7 @@
     "contact": {
      "name": "Cotton sales",
      "email": "cotton@selanuginnery.example",
-     "telephone": "+999 3 721 2681",
+     "telephone": "+999 3 721 0486",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Cotton sales manager"
@@ -3899,7 +3917,7 @@
     "contact": {
      "name": "Gas sales",
      "email": "gas@kelpstone.example",
-     "telephone": "+999 2 38522 12877",
+     "telephone": "+999 2 38522 68330",
      "department": "Commercial",
      "hours": "Every day, around the clock",
      "job_title": "Gas sales manager"
@@ -3968,7 +3986,12 @@
       "email": "receivables@kelpstone.example"
      }
     },
-    "week": "always"
+    "week": "always",
+    "identification": {
+     "convention": "ISO",
+     "codana_cin": "19676",
+     "codana_registered": "2012-10-08"
+    }
    }
   },
   {
@@ -3998,7 +4021,7 @@
     "contact": {
      "name": "Energy trading",
      "email": "trading@montebrio.example",
-     "telephone": "+999 1 0413 55918",
+     "telephone": "+999 1 0413 46716",
      "department": "Trading",
      "hours": "Every day, around the clock",
      "job_title": "Energy trader"
@@ -4035,7 +4058,8 @@
     "customs_id": "XU-TR-105918",
     "identification": {
      "convention": "ISO",
-     "codana_cin": "10591"
+     "codana_cin": "10087",
+     "codana_registered": "1999-12-06"
     },
     "desks": {
      "customs": {
@@ -4095,7 +4119,7 @@
     "contact": {
      "name": "Metering office",
      "email": "metering@ferranogrid.example",
-     "telephone": "+999 1 041 985 6055",
+     "telephone": "+999 1 041 938 7117",
      "department": "Metering",
      "hours": "Every day, around the clock",
      "job_title": "Metering officer"
@@ -4131,7 +4155,8 @@
     },
     "identification": {
      "convention": "ISO",
-     "codana_cin": "10605"
+     "codana_cin": "16043",
+     "codana_registered": "2007-01-15"
     },
     "desks": {
      "receivables": {

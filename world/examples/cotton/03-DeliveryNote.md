@@ -149,7 +149,7 @@ Inside `DespatchSupplierParty`:
   The job of the person who answers at the desk; identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Contact/Department` = **Management**  
   The department the desk belongs to; identity of Lisavu Cotton Farm (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 724 2544**  
+- `Party/Contact/Telephone` = **+999 3 724 6676**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/Contact/ElectronicMail` = **farm@lisavufarm.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lisavu Cotton Farm (world/parties.json).
@@ -196,7 +196,7 @@ Inside `DeliveryCustomerParty`:
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/Department` = **Ginning**  
   The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
-- `Party/Contact/Telephone` = **+999 3 721 2681**  
+- `Party/Contact/Telephone` = **+999 3 721 0486**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
 - `Party/Contact/ElectronicMail` = **yard@selanuginnery.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
@@ -378,7 +378,7 @@ Inside `DespatchLine`:
         <cbc:Name>Farm office</cbc:Name>
         <cbc:JobTitle>Farm manager</cbc:JobTitle>
         <cbc:Department>Management</cbc:Department>
-        <cbc:Telephone>+999 3 724 2544</cbc:Telephone>
+        <cbc:Telephone>+999 3 724 6676</cbc:Telephone>
         <cbc:ElectronicMail>farm@lisavufarm.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -415,7 +415,7 @@ Inside `DespatchLine`:
         <cbc:Name>Gin yard</cbc:Name>
         <cbc:JobTitle>Yard foreman</cbc:JobTitle>
         <cbc:Department>Ginning</cbc:Department>
-        <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
         <cbc:ElectronicMail>yard@selanuginnery.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

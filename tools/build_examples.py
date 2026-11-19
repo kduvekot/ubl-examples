@@ -1042,9 +1042,13 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     gtin = it                          # the GTIN: the item's own, or one allocated further up the resale chain
     while gtin and not gtin.get("gtin"):
         gtin = ITEM.get(gtin.get("resale_of"))
-    codana = {"ID": V(maker["standard_id"], "The Codana item number of the maker, issued by the Codana "
-                      "Identification Agency, Urvania's public numbering body: twelve digits with a check digit, a "
-                      f"number of the world, not a GTIN; {msrc}.", schemeID="urn:ubl-examples:world:item")} \
+    mname = PARTY[maker["seller"]]["identity"]["name"]
+    codana = {"ID": V(maker["standard_id"], "The item's number in its globally unique form under ISO/IEC 15459, "
+                      f"which {mname} gives it: the issuing agency code KXU of the Codana Identification Agency, the "
+                      f"company number Codana gave {mname} and the company's own reference for the item, without a "
+                      "check character. Codana gives a company its number; the company numbers its own items; "
+                      f"{msrc}.",
+                      schemeID="ISO 15459-6")} \
         if maker.get("standard_id") else None
     if gtin:
         owner = PARTY[gtin["seller"]]["identity"]["name"]
@@ -1052,20 +1056,29 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
             f"The GTIN {owner} gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves "
             "that prefix for demonstrations and examples, so the number belongs to no real product"
             + (f"; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate "
-               "the GTIN where the brand owner has none" if gtin is not maker else "")
+               "the GTIN where the brand owner has none" if gtin is not maker else
+               f"; under GS1 rules the brand owner numbers the item, and the brand {maker['brand']} is {owner}'s"
+               if maker.get("brand") else "")
             + f" (world/items.json)."), schemeID="GS1 GTIN")}
         if codana:
-            out["AdditionalItemIdentification"] = {"ID": V(maker["standard_id"], "The maker's own number for the "
-                                                           "item, its Codana item number, which travels along with "
-                                                           f"the GTIN; {msrc}.", schemeID="urn:ubl-examples:world:item")}
+            out["AdditionalItemIdentification"] = {"ID": V(maker["standard_id"], "The maker's number for the item "
+                                                           "in its globally unique form under ISO/IEC 15459 (KXU and "
+                                                           f"the company number Codana gave {mname}), which travels "
+                                                           "along with the GTIN, as an importer may carry it; "
+                                                           f"{msrc}.",
+                                                           schemeID="ISO 15459-6")}
     elif codana:
         out["StandardItemIdentification"] = codana
         if maker.get("barcode"):
             out["StandardItemIdentification"]["BarcodeSymbologyID"] = V(maker["barcode"], "The barcode the number "
-                                                                        "is printed in on the label.")
-            out["StandardItemIdentification"]["IssuerScopeID"] = V(maker["standard_id"][:3], "The range of item "
-                                                                   "numbers the agency gives out in the maker's "
-                                                                   "country.")
+                                                                        "is printed in on the label: Code 128 "
+                                                                        "carries letters and digits.")
+            prefix = "KXU" + PARTY[maker["seller"]]["identity"]["identification"]["codana_cin"]
+            out["StandardItemIdentification"]["IssuerScopeID"] = V(prefix, f"The scope within which {mname} "
+                                                                   "gives its item numbers: its company prefix, the "
+                                                                   "issuing agency code KXU and its Codana company "
+                                                                   "number; what follows is the company's own "
+                                                                   "reference.")
     if catalogue_ref:
         out["CatalogueDocumentReference"] = {"ID": V(catalogue_ref, "The catalogue the item was ordered from.")}
     if maker.get("spec_doc"):
@@ -1696,6 +1709,39 @@ def check_schemes(root, where):
         why = world_ids.problem(SCHEMES[sid], e.text)
         if why:
             raise SystemExit(f"{where}: {root.getroottree().getpath(e)}: {why}")
+    check_codana(root, where)
+
+
+CODANA_SCHEMES = {"ISO 6523": r"0990:(\d{5})", "ISO 15459": r"KXU(\d{5})", "ISO 15459-6": r"KXU(\d{5})"}
+CODANA_PARTY = {p["identity"]["identification"]["codana_cin"]: pid for pid, p in PARTY.items()
+                if (p["identity"].get("identification") or {}).get("convention") == "ISO"}
+
+
+def check_codana(root, where):
+    """O32: the prefix of every Codana identifier is the company number of the party that issued it. Every
+    0990 organisation identifier, licence plate and KXU item number starts with the number of a party Codana has
+    registered; an organisation identifier stands in the party it identifies (its register number beside it), and
+    an item number in an item whose maker, where the document names one, is that party."""
+    for e in root.iter(f"{{{NS_CBC}}}ID"):
+        rx = CODANA_SCHEMES.get(e.get("schemeID"))
+        if not rx:
+            continue
+        cin = re.match(rx, e.text).group(1)
+        owner = CODANA_PARTY.get(cin)
+        if not owner:
+            raise SystemExit(f"{where}: {root.getroottree().getpath(e)} = {e.text}: {cin} is no party's Codana "
+                             "company number (O32)")
+        holder = e.getparent().getparent()
+        if e.get("schemeID") == "ISO 6523":
+            reg = holder.findtext(f"{{{NS_CAC}}}PartyIdentification/{{{NS_CBC}}}ID")
+            if reg is not None and reg != PARTY[owner]["identity"]["registry_id"]:
+                raise SystemExit(f"{where}: {root.getroottree().getpath(e)} = {e.text} is {owner}'s, but the party "
+                                 f"is {reg} (O32)")
+        elif e.get("schemeID") == "ISO 15459-6":
+            maker = holder.findtext(f"{{{NS_CAC}}}ManufacturerParty/{{{NS_CAC}}}PartyIdentification/{{{NS_CBC}}}ID")
+            if maker is not None and maker != PARTY[owner]["identity"]["registry_id"]:
+                raise SystemExit(f"{where}: {root.getroottree().getpath(e)} = {e.text} is under {owner}'s prefix, "
+                                 f"but the maker is {maker} (O32)")
 
 
 # ---------------------------------------------------------------- the reason pages

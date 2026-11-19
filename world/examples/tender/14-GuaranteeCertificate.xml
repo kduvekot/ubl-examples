@@ -93,7 +93,7 @@
       <cbc:Name>Trade services</cbc:Name>
       <cbc:JobTitle>Trade services officer</cbc:JobTitle>
       <cbc:Department>Trade services</cbc:Department>
-      <cbc:Telephone>+999 2 38 2670 1370</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5011 8923</cbc:Telephone>
       <cbc:ElectronicMail>trade@bankoflumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -107,7 +107,7 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Valdara Industries</cbc:Name>
@@ -144,7 +144,7 @@
       <cbc:Name>Procurement office</cbc:Name>
       <cbc:JobTitle>Procurement officer</cbc:JobTitle>
       <cbc:Department>Procurement</cbc:Department>
-      <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
       <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

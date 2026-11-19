@@ -99,7 +99,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
 - `Contact/Department` = **Business sales**  
   The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
-- `Contact/Telephone` = **+999 3 727 2407**  
+- `Contact/Telephone` = **+999 3 727 3193**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
 - `Contact/ElectronicMail` = **billing@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
@@ -146,7 +146,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Velumi Trading (world/parties.json).
-- `Contact/Telephone` = **+999 3 729 1859**  
+- `Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
 - `Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
@@ -272,7 +272,7 @@ Inside `SubscriberConsumption`:
   The day.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00**  
   The time.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 474 274**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 955 964**  
   The distributor in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International: a call to Bayvarra**  
   The name of code INT in the Trade Accord's telecommunications service category list, followed by the detail of this case: the call went to the distributor in Bayvarra.
@@ -721,7 +721,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Billing</cbc:Name>
       <cbc:JobTitle>Billing officer</cbc:JobTitle>
       <cbc:Department>Business sales</cbc:Department>
-      <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
+      <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
       <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -756,7 +756,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Accounts payable</cbc:Name>
       <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
       <cbc:Department>Finance</cbc:Department>
-      <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+      <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
       <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
@@ -843,7 +843,7 @@ Inside `SubscriberConsumption`:
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 474 274</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 7121 955 964</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>

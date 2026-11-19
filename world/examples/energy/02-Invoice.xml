@@ -26,7 +26,7 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10605</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:16043</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Grid</cbc:Name>
@@ -96,7 +96,7 @@
         <cbc:Name>Network billing</cbc:Name>
         <cbc:JobTitle>Billing officer</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 041 985 6055</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 938 7117</cbc:Telephone>
         <cbc:ElectronicMail>billing@ferranogrid.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
@@ -139,7 +139,7 @@
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
         <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

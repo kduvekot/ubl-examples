@@ -57,11 +57,20 @@ the party's own country and state; every account is held at a bank of the
 world in the same country; and a bank named in a document is the bank where
 that party keeps its account. The ISIN of a listed company has the
 structure and check digit of ISO 6166 and starts with its country's code.
+Codana gives its company numbers in order of registration, each to one
+party, and every Codana identifier in a document starts with the number of
+the party that issued it. No identifier of a party repeats five digits of
+another, apart from the business register number in the electronic address
+and the customs trader number, and no telephone number repeats four digits
+of an identifier of its party.
 
 ## The items
 
-Units and packaging types must be codes of the UBL default lists; world
-item numbers carry a valid check digit and are unique; prices are positive
+Units and packaging types must be codes of the UBL default lists; goods
+are identified in their maker's system: a GTIN under the prefix of the
+company that numbers them, which for a branded item is the brand owner, or
+on the Codana side `KXU`, the maker's company number and its own reference,
+at most 20 characters; every number is unique; prices are positive
 and in the seller's currency; gross
 weight is at least net weight. Every party that bills or offers in a
 document has items to put on its lines, and every party with items bills

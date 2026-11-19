@@ -102,7 +102,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Fiumella Barges (world/parties.json).
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; identity of Fiumella Barges (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 513 4959**  
+- `Contact/Telephone` = **+999 1 041 672 6403**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Fiumella Barges (world/parties.json).
 - `Contact/ElectronicMail` = **chartering@fiumella.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Fiumella Barges (world/parties.json).
@@ -119,6 +119,8 @@ Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `AdditionalPartyIdentification/ID` = **0990:13362** (schemeID `ISO 6523`)  
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rinova Recovery (world/parties.json).
 - `AdditionalPartyIdentification/ID` = **XU-TR-104548** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery (world/parties.json).
 - `PartyName/Name` = **Rinova Recovery**  
@@ -159,7 +161,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 836 4548**  
+- `Contact/Telephone` = **+999 1 041 697 6856**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rinova Recovery (world/parties.json).
 - `Contact/ElectronicMail` = **logistics@rinova.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
@@ -202,7 +204,7 @@ Inside `Shipment`:
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight on board.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412740** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Rivermouth Packaging (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:20274** (schemeID `ISO 6523`)  
+- `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:15128** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XB-TR-412740** (schemeID `urn:ubl-examples:world:XB:customs-trader`)  
   A further identifier: the party's customs trader number, because it imports or exports (XB-TR- and 6 digits); identity of Rivermouth Packaging (world/parties.json).
@@ -238,7 +240,7 @@ Inside `Shipment`:
   The job of the person who answers at the desk; identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Rivermouth Packaging (world/parties.json).
-- `Consignment/ConsigneeParty/Contact/Telephone` = **+999 2 38 2440 2740**  
+- `Consignment/ConsigneeParty/Contact/Telephone` = **+999 2 38 7320 9007**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Rivermouth Packaging (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **goodsin@rivermouth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rivermouth Packaging (world/parties.json).
@@ -536,7 +538,7 @@ Inside `Signature`:
       <cbc:Name>Chartering desk</cbc:Name>
       <cbc:JobTitle>Chartering manager</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 513 4959</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 672 6403</cbc:Telephone>
       <cbc:ElectronicMail>chartering@fiumella.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -549,6 +551,9 @@ Inside `Signature`:
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
     </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="ISO 6523">0990:13362</cbc:ID>
+    </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104548</cbc:ID>
     </cac:AdditionalPartyIdentification>
@@ -580,7 +585,7 @@ Inside `Signature`:
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 1 041 836 4548</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 697 6856</cbc:Telephone>
       <cbc:ElectronicMail>logistics@rinova.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -616,7 +621,7 @@ Inside `Signature`:
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412740</cbc:ID>
         </cac:PartyIdentification>
         <cac:AdditionalPartyIdentification>
-          <cbc:ID schemeID="ISO 6523">0990:20274</cbc:ID>
+          <cbc:ID schemeID="ISO 6523">0990:15128</cbc:ID>
         </cac:AdditionalPartyIdentification>
         <cac:AdditionalPartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412740</cbc:ID>
@@ -644,7 +649,7 @@ Inside `Signature`:
           <cbc:Name>Goods-in</cbc:Name>
           <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
           <cbc:Department>Warehouse</cbc:Department>
-          <cbc:Telephone>+999 2 38 2440 2740</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 7320 9007</cbc:Telephone>
           <cbc:ElectronicMail>goodsin@rivermouth.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

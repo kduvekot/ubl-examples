@@ -103,7 +103,7 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; identity of Ferrano Energy (world/parties.json).
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Ferrano Energy (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 667 5781**  
+- `Contact/Telephone` = **+999 1 041 474 7922**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Energy (world/parties.json).
 - `Contact/ElectronicMail` = **payables@ferranoenergy.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Energy (world/parties.json).
@@ -120,7 +120,7 @@ Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Castrano Logistics (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `AdditionalPartyIdentification/ID` = **0990:10441** (schemeID `ISO 6523`)  
+- `AdditionalPartyIdentification/ID` = **0990:10519** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Castrano Logistics (world/parties.json).
 - `PartyName/Name` = **Castrano Logistics**  
   The trading name; identity of Castrano Logistics (world/parties.json).
@@ -156,7 +156,7 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; identity of Castrano Logistics (world/parties.json).
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Castrano Logistics (world/parties.json).
-- `Contact/Telephone` = **+999 1 041 677 4411**  
+- `Contact/Telephone` = **+999 1 041 909 1454**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Castrano Logistics (world/parties.json).
 - `Contact/ElectronicMail` = **payables@castrano.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Castrano Logistics (world/parties.json).
@@ -173,7 +173,7 @@ Inside `CustomerParty`:
 
 - `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **0990:10427** (schemeID `ISO 6523`)  
+- `Party/AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
   A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
 - `Party/PartyName/Name` = **Valdara Industries**  
   The trading name; identity of Valdara Industries (world/parties.json).
@@ -514,7 +514,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Accounts payable</cbc:Name>
       <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
       <cbc:Department>Finance</cbc:Department>
-      <cbc:Telephone>+999 1 041 667 5781</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
       <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -528,7 +528,7 @@ Inside `SubscriberConsumption`:
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10441</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10519</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:PartyName>
       <cbc:Name>Castrano Logistics</cbc:Name>
@@ -554,7 +554,7 @@ Inside `SubscriberConsumption`:
       <cbc:Name>Accounts payable</cbc:Name>
       <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
       <cbc:Department>Finance</cbc:Department>
-      <cbc:Telephone>+999 1 041 677 4411</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 909 1454</cbc:Telephone>
       <cbc:ElectronicMail>payables@castrano.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -569,7 +569,7 @@ Inside `SubscriberConsumption`:
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Valdara Industries</cbc:Name>
