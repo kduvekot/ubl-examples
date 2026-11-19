@@ -111,7 +111,7 @@
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -135,6 +135,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Certificates office</cbc:Name>
@@ -146,7 +147,7 @@
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_m2vd</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:SignatoryContact>
@@ -165,7 +166,7 @@
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XUF">4790400</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XUF">3830400</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">96</cbc:Quantity>
         <cac:Item>
@@ -188,7 +189,7 @@
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XUF">71760</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XUF">57000</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:Item>
@@ -214,7 +215,7 @@
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -234,7 +235,7 @@
     </cac:PreparationParty>
     <cac:IssuerParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -296,7 +297,7 @@
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>

@@ -91,10 +91,10 @@ exact code for it (world/documents.json, cited; decision Q29).</li>
 <p>Inside <code>AccountingCustomerParty</code>:</p>
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
-<strong>20410548</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeport Public Works Department
+<strong>6250397184</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+The party's preferred identifier: its number in the Federal list of
+public bodies of Bayvarra; identity of Lumeport Public Works Department
 (world/parties.json). Later mentions of the same party in this document
 repeat only this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lumeport Public Works
@@ -241,12 +241,12 @@ Department (world/parties.json).</li>
 The network in which the address is registered: the world's own exchange
 network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
-<strong>XB:20410548</strong> (schemeID
+<strong>XB:6250397184</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Lumeport Public Works Department
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Federal list of public bodies of Bayvarra; identity of
+Lumeport Public Works Department (world/parties.json). UBL 2.5 carries
+it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
 <p>Inside <code>AccountingSupplierParty</code>:</p>
@@ -385,9 +385,10 @@ network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
 <strong>XU:XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Valdara Industries (world/parties.json).
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Commercial register of Urvania; identity of Valdara
+Industries (world/parties.json). UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
 <p>Inside <code>PaymentMeans</code>:</p>
@@ -710,7 +711,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;6250397184&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -750,7 +751,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410548&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:6250397184&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
@@ -920,6 +921,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
 </body>
 </html>

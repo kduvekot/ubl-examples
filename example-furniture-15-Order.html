@@ -89,10 +89,10 @@ it (world/documents.json, cited; decision Q29).</li>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
-<strong>20410548</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeport Public Works Department
+<strong>6250397184</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+The party's preferred identifier: its number in the Federal list of
+public bodies of Bayvarra; identity of Lumeport Public Works Department
 (world/parties.json). Later mentions of the same party in this document
 repeat only this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lumeport Public Works
@@ -237,12 +237,12 @@ Department (world/parties.json).</li>
 The network in which the address is registered: the world's own exchange
 network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
-<strong>XB:20410548</strong> (schemeID
+<strong>XB:6250397184</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Lumeport Public Works Department
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Federal list of public bodies of Bayvarra; identity of
+Lumeport Public Works Department (world/parties.json). UBL 2.5 carries
+it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="seller-supplier-party">Seller Supplier Party</h3>
 <p>Inside <code>SellerSupplierParty</code>:</p>
@@ -370,9 +370,10 @@ network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
 <strong>XB:20412466</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Brackenmere Furniture (world/parties.json).
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Federal business register of Bayvarra; identity of
+Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="delivery">Delivery</h3>
 <p>Inside <code>Delivery</code>:</p>
@@ -384,8 +385,8 @@ The desks are wanted on 8 April, when the installers come.</li>
 <strong>2026-04-08</strong><br />
 The last day it is wanted.</li>
 <li><code>DeliveryParty/PartyIdentification/ID</code> =
-<strong>20410548</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
+<strong>6250397184</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 The same party as at BuyerCustomerParty/Party, where its full details
 are given; only its identifier and name are repeated.</li>
 <li><code>DeliveryParty/PartyName/Name</code> = <strong>Lumeport Public
@@ -543,7 +544,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;6250397184&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -583,7 +584,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410548&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:6250397184&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
@@ -635,7 +636,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryParty</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;6250397184&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -710,6 +711,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
 </body>
 </html>

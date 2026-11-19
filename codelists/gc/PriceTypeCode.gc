@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: price type. The kind of a price, as both buyer and seller understand it. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: price type. The kind of a price, as both buyer and seller understand it, and whether it includes tax (tax_included, O28). Every price type of the world is a price before tax: the seller's tax is added on the invoice, and a consumer's tax at the sale (Bayvarra's sales tax at the till; D14, "Consumer prices and tax"). Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>PriceTypeCode</ShortName>
@@ -34,6 +34,10 @@
          <ShortName>Description</ShortName>
          <Data Type="string" Lang="en" />
       </Column>
+      <Column Id="tax-included" Use="required">
+         <ShortName>TaxIncluded</ShortName>
+         <Data Type="boolean" />
+      </Column>
       <Key Id="codeKey">
          <ShortName>CodeKey</ShortName>
          <ColumnRef Ref="code" />
@@ -54,7 +58,30 @@
             <SimpleValue>Tipiki lanasu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>A price for resellers, before sales tax.</SimpleValue>
+            <SimpleValue>A price for resellers, before tax.</SimpleValue>
+         </Value>
+         <Value ColumnRef="tax-included">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DST</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Distributor price</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Guldran mustek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kelokifi lanasu</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The maker's price for its appointed distributor under a distribution agreement, below its list price; before tax.</SimpleValue>
+         </Value>
+         <Value ColumnRef="tax-included">
+            <SimpleValue>false</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -71,7 +98,10 @@
             <SimpleValue>Mianaki pamasa lanasu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The price the maker recommends for consumers.</SimpleValue>
+            <SimpleValue>The price the maker recommends for consumers, before tax; the shop adds the tax its country levies on a sale to a consumer.</SimpleValue>
+         </Value>
+         <Value ColumnRef="tax-included">
+            <SimpleValue>false</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -88,7 +118,10 @@
             <SimpleValue>Katetaku lanasu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The price in the seller's general catalogue.</SimpleValue>
+            <SimpleValue>The price in the seller's general catalogue: its list price, before tax.</SimpleValue>
+         </Value>
+         <Value ColumnRef="tax-included">
+            <SimpleValue>false</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -105,7 +138,10 @@
             <SimpleValue>Hupeme lanasu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The price agreed in a contract, such as a framework contract.</SimpleValue>
+            <SimpleValue>The price agreed in a contract, such as a framework contract, before tax.</SimpleValue>
+         </Value>
+         <Value ColumnRef="tax-included">
+            <SimpleValue>false</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -122,7 +158,10 @@
             <SimpleValue>Leelii lanasu</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>A price for a limited time.</SimpleValue>
+            <SimpleValue>A price for a limited time, before tax.</SimpleValue>
+         </Value>
+         <Value ColumnRef="tax-included">
+            <SimpleValue>false</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

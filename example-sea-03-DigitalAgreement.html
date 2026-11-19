@@ -115,10 +115,11 @@ The document as signed.</li>
 <h3 id="governor-party">Governor Party</h3>
 <p>Inside <code>GovernorParty</code>:</p>
 <ul>
-<li><code>PartyIdentification/ID</code> = <strong>20411096</strong>
-(schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
-The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeport Trade Accord Council
+<li><code>PartyIdentification/ID</code> = <strong>8423019675</strong>
+(schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+The party's preferred identifier: its number in the Federal list of
+public bodies of Bayvarra; identity of Lumeport Trade Accord Council
 (world/parties.json). Later mentions of the same party in this document
 repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Lumeport Trade Accord
@@ -329,9 +330,10 @@ network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
 <strong>XB:20410274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Lumeway Distribution (world/parties.json).
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Federal business register of Bayvarra; identity of Lumeway
+Distribution (world/parties.json). UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 <li><code>LegalContact/Name</code> = <strong>Legal
 department</strong><br />
 For legal notices under the agreement.</li>
@@ -515,9 +517,10 @@ network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
 <strong>XL:IC41859</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Velumi Trading (world/parties.json). UBL
-2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Island companies register; identity of Velumi Trading
+(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 <li><code>LegalContact/Name</code> = <strong>Legal
 department</strong><br />
 For legal notices under the agreement.</li>
@@ -655,8 +658,8 @@ The tool.</li>
 <strong>3.2</strong><br />
 Its version.</li>
 <li><code>ResultOfVerification/SignatoryParty/PartyIdentification/ID</code>
-= <strong>20411096</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>ResultOfVerification/SignatoryParty/PartyName/Name</code> =
@@ -792,8 +795,10 @@ The trade accord's document network.</li>
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's address on it. The schemeID names the scheme it is from: the
 electronic address in the Trade Accord's exchange network (the country
-code, a colon and the party's number in its country's companies
-register).</li>
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
 <li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
 = <strong>false</strong><br />
 In production.</li>
@@ -806,8 +811,8 @@ of the network (decision ID-Q10).</li>
 = <strong>Access point</strong><br />
 Its kind.</li>
 <li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
-= <strong>20411096</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
@@ -863,8 +868,10 @@ The trade accord's document network.</li>
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's address on it. The schemeID names the scheme it is from: the
 electronic address in the Trade Accord's exchange network (the country
-code, a colon and the party's number in its country's companies
-register).</li>
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
 <li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
 = <strong>false</strong><br />
 In production.</li>
@@ -877,8 +884,8 @@ of the network (decision ID-Q10).</li>
 = <strong>Access point</strong><br />
 Its kind.</li>
 <li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
-= <strong>20411096</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
@@ -944,8 +951,10 @@ The trade accord's document network.</li>
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's address on it. The schemeID names the scheme it is from: the
 electronic address in the Trade Accord's exchange network (the country
-code, a colon and the party's number in its country's companies
-register).</li>
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
 <li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
 = <strong>false</strong><br />
 In production.</li>
@@ -958,8 +967,8 @@ of the network (decision ID-Q10).</li>
 = <strong>Access point</strong><br />
 Its kind.</li>
 <li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
-= <strong>20411096</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
@@ -1015,8 +1024,10 @@ The trade accord's document network.</li>
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's address on it. The schemeID names the scheme it is from: the
 electronic address in the Trade Accord's exchange network (the country
-code, a colon and the party's number in its country's companies
-register).</li>
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
 <li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
 = <strong>false</strong><br />
 In production.</li>
@@ -1029,8 +1040,8 @@ of the network (decision ID-Q10).</li>
 = <strong>Access point</strong><br />
 Its kind.</li>
 <li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
-= <strong>20411096</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
@@ -1095,7 +1106,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:GovernorParty</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1311,7 +1322,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidateToolVersion</span>&gt;3.2&lt;/<span class="kw">cbc:ValidateToolVersion</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1381,7 +1392,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1417,7 +1428,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
 <span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1461,7 +1472,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1497,7 +1508,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
 <span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1519,6 +1530,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DigitalAgreement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
 </body>
 </html>

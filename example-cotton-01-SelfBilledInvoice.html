@@ -301,17 +301,19 @@ network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
 <strong>XL:IC42681</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Selanu Cotton Ginnery (world/parties.json).
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Island companies register; identity of Selanu Cotton
+Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
+is deprecated.</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
 <p>Inside <code>AccountingSupplierParty</code>:</p>
 <ul>
-<li><code>Party/PartyIdentification/ID</code> = <strong>IC42544</strong>
-(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
-The party's preferred identifier: its number in the Island companies
-register; identity of Lisavu Cotton Farm (world/parties.json). Later
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>LFR-0412</strong> (schemeID
+<code>urn:ubl-examples:world:XL:farm-register</code>)<br />
+The party's preferred identifier: its number in the Farm register of
+Lisavu; identity of Lisavu Cotton Farm (world/parties.json). Later
 mentions of the same party in this document repeat only this identifier
 and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lisavu Cotton
@@ -471,11 +473,12 @@ UBL's Longitude direction list, with a listID: West.</li>
 The name under which the party is registered, with its legal form;
 identity of Lisavu Cotton Farm (world/parties.json).</li>
 <li><code>Party/PartyLegalEntity/CompanyID</code> =
-<strong>IC42544</strong> (schemeID
-<code>urn:ubl-examples:world:XL:register</code>)<br />
+<strong>LFR-0412</strong> (schemeID
+<code>urn:ubl-examples:world:XL:farm-register</code>)<br />
 Number in the Farm register of Lisavu; identity of Lisavu Cotton Farm
-(world/parties.json). The schemeID names the scheme it is from: the
-Island companies register (IC and 5 digits).</li>
+(world/parties.json). The schemeID names the scheme it is from: the farm
+register of Lisavu (LFR- and 4 digits, kept from season to season while
+the registration is renewed).</li>
 <li><code>Party/PartyLegalEntity/RegistrationExpirationDate</code> =
 <strong>2026-12-31</strong><br />
 The island renews a farm's registration every year: it runs until this
@@ -518,7 +521,9 @@ The identifier of the register in the world (world/countries.json).</li>
 = <strong>Farm register of Lisavu</strong><br />
 The register the farm is entered in: Growers are entered in the island's
 farm register, not in the companies register; a grower's registration is
-renewed each season, so the entry carries an expiry date (D4, D46).</li>
+renewed each season, so the entry carries an expiry date (D4, D46). The
+register gives a grower a number of its own, derived from no other
+register (O142).</li>
 <li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode</code>
 = <strong>FARM</strong> (listID
 <code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code>)<br />
@@ -560,11 +565,12 @@ When the desk can be reached; identity of Lisavu Cotton Farm
 The network in which the address is registered: the world's own exchange
 network.</li>
 <li><code>Party/ElectronicAddress/ElectronicAddressID</code> =
-<strong>XL:IC42544</strong> (schemeID
+<strong>XL:LFR-0412</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Lisavu Cotton Farm (world/parties.json).
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Farm register of Lisavu; identity of Lisavu Cotton Farm
+(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
@@ -581,8 +587,9 @@ details are given; only its identifier and name are repeated.</li>
 <h3 id="seller-supplier-party">Seller Supplier Party</h3>
 <p>Inside <code>SellerSupplierParty</code>:</p>
 <ul>
-<li><code>Party/PartyIdentification/ID</code> = <strong>IC42544</strong>
-(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>LFR-0412</strong> (schemeID
+<code>urn:ubl-examples:world:XL:farm-register</code>)<br />
 The same party as at AccountingSupplierParty/Party, where its full
 details are given; only its identifier and name are repeated.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lisavu Cotton
@@ -593,8 +600,8 @@ details are given; only its identifier and name are repeated.</li>
 <h3 id="payee-party">Payee Party</h3>
 <p>Inside <code>PayeeParty</code>:</p>
 <ul>
-<li><code>PartyIdentification/ID</code> = <strong>IC42544</strong>
-(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+<li><code>PartyIdentification/ID</code> = <strong>LFR-0412</strong>
+(schemeID <code>urn:ubl-examples:world:XL:farm-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>PartyName/Name</code> = <strong>Lisavu Cotton
@@ -929,7 +936,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC42544&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:farm-register&quot;</span>&gt;LFR-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lisavu Cotton Farm&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -978,7 +985,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PhysicalLocation</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Lisavu Cotton Farm&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC42544&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:farm-register&quot;</span>&gt;LFR-0412&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationExpirationDate</span>&gt;2026-12-31&lt;/<span class="kw">cbc:RegistrationExpirationDate</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode&quot;</span>&gt;SP&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalForm</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Fomofa nisakihi&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
@@ -1012,7 +1019,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:IC42544&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:LFR-0412&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
@@ -1029,7 +1036,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC42544&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:farm-register&quot;</span>&gt;LFR-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lisavu Cotton Farm&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1038,7 +1045,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PayeeParty</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC42544&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:farm-register&quot;</span>&gt;LFR-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lisavu Cotton Farm&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1122,6 +1129,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">SelfBilledInvoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
 </body>
 </html>

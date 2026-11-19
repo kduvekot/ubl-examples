@@ -341,7 +341,7 @@
           <cbc:IssuerScopeID>SF</cbc:IssuerScopeID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105644</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_t6hq</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
               <cbc:Name>Codana Identification Agency</cbc:Name>

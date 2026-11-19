@@ -204,19 +204,21 @@ network.</li>
 <li><code>ElectronicAddress/ElectronicAddressID</code> =
 <strong>XB:20411918</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Tidewell Ocean Lines (world/parties.json).
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Federal business register of Bayvarra; identity of
+Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="authority-party">Authority Party</h3>
 <p>Inside <code>AuthorityParty</code>:</p>
 <ul>
-<li><code>PartyIdentification/ID</code> = <strong>IC41448</strong>
-(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
-The party's preferred identifier: its number in the Island companies
-register; identity of Island Customs Service (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+<li><code>PartyIdentification/ID</code> = <strong>GOV-118</strong>
+(schemeID
+<code>urn:ubl-examples:world:XL:public-body-register</code>)<br />
+The party's preferred identifier: its number in the Government list of
+public bodies of Lisavu; identity of Island Customs Service
+(world/parties.json). Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Island Customs
 Service</strong><br />
 The trading name; identity of Island Customs Service
@@ -318,12 +320,12 @@ When the desk can be reached; identity of Island Customs Service
 The network in which the address is registered: the world's own exchange
 network.</li>
 <li><code>ElectronicAddress/ElectronicAddressID</code> =
-<strong>XL:IC41448</strong> (schemeID
+<strong>XL:GOV-118</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and
-registry number; identity of Island Customs Service
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+The party's electronic address in that network: its country code and its
+number in the Government list of public bodies of Lisavu; identity of
+Island Customs Service (world/parties.json). UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="consignor-party">Consignor Party</h3>
 <p>Inside <code>ConsignorParty</code>:</p>
@@ -819,8 +821,9 @@ Accord's UBL document type list: Manifest.</li>
 <code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
 By message. The code is from the Trade Accord's distribution type list:
 ELECTRONIC = Electronic.</li>
-<li><code>Party/PartyIdentification/ID</code> = <strong>IC41448</strong>
-(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+<li><code>Party/PartyIdentification/ID</code> = <strong>GOV-118</strong>
+(schemeID
+<code>urn:ubl-examples:world:XL:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Island Customs
@@ -904,7 +907,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SendingLogisticsOperatorParty</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AuthorityParty</span>&gt;</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41448&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-118&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -934,7 +937,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:IC41448&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:GOV-118&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AuthorityParty</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
@@ -1133,7 +1136,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41448&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-118&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1154,6 +1157,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Manifest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6622cdaa2c19264730c278d1d0cd86d56c7ddc3a"><code>6622cda</code></a> of 2026-11-19 11:44 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/33dc2c3a4ec8f54b857080944a20ced12b22708c"><code>33dc2c3</code></a> of 2026-11-19 12:29 UTC</p></div></footer>
 </body>
 </html>

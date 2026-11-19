@@ -131,7 +131,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">9580800</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">7660800</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -145,16 +145,16 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">9580800</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XUF">9580800</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">7660800</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XUF">7660800</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">192</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XUF">9580800</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XUF">7660800</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XUF">39900</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
