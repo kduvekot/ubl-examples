@@ -138,6 +138,7 @@ Every party on the map with its place (the town of its address), the district of
 | Montebrio Power (43-xu) | Via della Centrale, Serravona | Serravona | - | 17.8 km N | outside | 57/82 | 29.6216 S 16.2525 W (29° 37.30′ S, 16° 15.15′ W) | 561 m |
 | Ferrano Grid (44-xu) | Via della Rete, Ferrano | Ferrano | Borgo Nord (suburb, 16.0 km) | 22.4 km NW | outside | 72/112 | 30.5676 S 15.7079 W (30° 34.05′ S, 15° 42.48′ W) | 273 m |
 | Environment Agency of Urvania (46-xu) | Via delle Acque, Ferrano | Ferrano | Borgo Nord (suburb, 6.5 km) | 11.1 km W | edge | 74/115 | 30.6622 S 15.6353 W (30° 39.73′ S, 15° 38.12′ W) | 205 m (3D map 151 m) |
+| Rail Infrastructure Agency of Urvania (47-xu) | Via della Stazione, Ferrano | Ferrano | Borgo Nord (suburb, 9.4 km) | 11.1 km N | edge | 78/113 | 30.5991 S 15.4901 W (30° 35.95′ S, 15° 29.41′ W) | 270 m |
 
 ## 3. Distances along the routes
 

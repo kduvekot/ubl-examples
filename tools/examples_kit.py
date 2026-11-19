@@ -962,7 +962,7 @@ def tep_terms(flow, user, provider, days):
             "NotificationRequirement": {"NotificationTypeCode": V("PREARRIVAL", "Notice before arrival."),
                                         "PreEventNotificationDurationMeasure": V("2", "Two hours before.",
                                                                                  unitCode="HUR"),
-                                        "NotifyParty": party_short(leg["to"]),
+                                        "NotifyParty": party_short(main_leg(flow, provider)["to"]),
                                         "NotificationLocation": leg_location(main_leg(flow, provider), "to",
                                                                              "The place the notice is for: where "
                                                                              "the goods arrive.")}}
@@ -1033,7 +1033,8 @@ def tep(flow, n, doc, day, why, start_day, weight):
 
 
 WAYBILL_KIND = {"road": ("CMR", "Consignment note under the road convention, the CMR"),
-                "rail": ("CIM", "Rail consignment note under the CIM uniform rules"),
+                "rail": ("CIM", "Rail consignment note under the Accord's uniform rules for international carriage "
+                                "by rail, modelled on the CIM"),       # D37 point 5
                 "river": ("CMNI", "Inland waterway consignment note under the CMNI"),
                 "air": ("AWB", "Air waybill under the Montreal Convention")}
 

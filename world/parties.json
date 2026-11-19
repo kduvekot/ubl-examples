@@ -484,7 +484,7 @@
    ],
    "h": 2,
    "kind": "depot",
-   "what": "Runs the ore trains from the mine to the factory and container trains to the border.",
+   "what": "Runs the ore trains from the mine to the factory and the container trains from the Ferrano hub to Lumeway's siding in Marrowdale, on train paths of the rail infrastructure manager; its tractor brings the containers to the hub (decisions D37, D45).",
    "how": "A rail carrier plans capacity on a fixed timetable. UBL transport documents let its customers request and confirm transport plans and receive status updates per train and wagon, with the same consignment references the forwarder and the receiving terminal use.",
    "identity": {
     "name": "Ferrano Rail Cargo",
@@ -779,7 +779,7 @@
    ],
    "h": 2,
    "kind": "terminal",
-   "what": "Transfers containers between rail and road at the border; manages tracks and slots.",
+   "what": "The intermodal terminal of Ferrano, on the container line that runs on past the border to Marrowdale: it takes the containers in by road, stacks them and lifts them onto the container trains, and reports to the rail carrier what it has loaded; the tracks and the train paths are the rail infrastructure manager's (decision D37).",
    "how": "An intermodal terminal is where rail and road meet. UBL status messages and transport reports let it tell carriers and forwarders when a container arrived, was transferred or left, using the same equipment and consignment identifiers on both sides of the transfer.",
    "size": [
     2,
@@ -4266,6 +4266,46 @@
     "industry": "8412",
     "language": "en",
     "week": "office"
+   }
+  },
+  {
+   "id": "47-xu",
+   "n": "47",
+   "name": "Rail Infrastructure Manager (XU)",
+   "cat": "government",
+   "c": "XU",
+   "at": [
+    78,
+    113
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Urvania's rail infrastructure manager, a public body: it owns and maintains the country's tracks, allocates the train paths and runs the traffic control that dispatches every train on them, from the ore line to the border station. Urvania separated its rail infrastructure from the train operators, as it separated its electricity grid from supply, so Ferrano Rail Cargo runs its trains on paths it is given here (decision D37).",
+   "how": "A transport service provider asks the manager of the network where its train is. UBL's Transport Progress Status Request goes from the carrier to the transportation network manager, and the Transport Progress Status answers with the train's position and its timetable at each point the manager controls, so the carrier can tell its customers when the goods will arrive.",
+   "identity": {
+    "name": "Rail Infrastructure Agency of Urvania",
+    "kind": "public",
+    "registry_id": "xu_t8rn",
+    "endpoint": "XU:xu_t8rn",
+    "contact": {
+     "name": "Traffic control",
+     "email": "traffic@railinfra-xu.example",
+     "telephone": "+999 1 041 816 2047",
+     "department": "Traffic management",
+     "hours": "Every day, around the clock",
+     "job_title": "Train controller"
+    },
+    "address": {
+     "StreetName": "Via della Stazione",
+     "BuildingNumber": "2",
+     "CityName": "Ferrano",
+     "PostalZone": "4150",
+     "CountrySubentity": "Province of Ferrano",
+     "ID": "4160207305518243"
+    },
+    "industry": "5221",
+    "language": "en",
+    "week": "always"
    }
   }
  ],

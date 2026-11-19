@@ -352,6 +352,23 @@ Marrowdale, a line to the Port of Lumeport, and the wool line from Marrowdale
 down to Larkmouth's harbour. No main road runs south of the main river: the farmland there is served by
 minor roads, which reach the rest of the country over Ferrano's bridge.
 
+Urvania separated its rail infrastructure from its train operators, as it
+separated its electricity grid from supply. A public body, the Rail
+Infrastructure Agency of Urvania, owns and maintains the tracks, allocates
+the train paths and runs the traffic control that dispatches every train,
+up to the border station; Ferrano Rail Cargo runs its trains on the paths
+it is given, and the intermodal hub at Ferrano only loads and unloads them.
+The European Union went part of that way: Directive 91/440/EEC required
+separate accounts and left the organisational separation optional, and an
+infrastructure manager must be a legally distinct body only since Directive
+2012/34/EU as amended by Directive (EU) 2016/2370; full separation, as in
+Urvania, is one model a state may choose. Carriage by rail between the
+Accord's members follows the Accord's uniform rules for international
+carriage by rail, modelled on the CIM (COTIF Appendix B). Like the CIM they
+also cover a carriage by road within one member state that supplements the
+rail carriage under the same contract, so the rail carrier's haulage of a
+container to the hub is a stage of the rail contract.
+
 Some places of the examples:
 
 - **The mine.** Serravona Mining works an underground mine on the massif's
@@ -1074,6 +1091,18 @@ had to bear, a contract penalty), the world uses an invoice from the buyer,
 a credit note from the supplier, or a deduction shown in the remittance
 advice, as the flow's story requires.
 
+The world's debit notes come from the rail delivery to Lumeway. Its
+framework contract gives a container five free days at the consignee's
+siding, counted from the day after it is placed, and then charges 7,500
+ferra per container day. The second container waits two days beyond that,
+because Lumeway's fork-lift is in repair: the freight invoice was right when
+it was issued, and more became due afterwards by a rule of the contract. So
+Ferrano Rail Cargo adds the demurrage to its freight invoice with a debit
+note to Valdara, the transport user, and Valdara, whose buyer bears a delay
+in unloading under DAP, adds it to its goods invoice with a debit note to
+Lumeway. A bonus that is known before the invoice, such as the ore train's
+for arriving on the first day of its window, is a charge on the invoice.
+
 ## Tax and customs
 
 A seller states its own country's tax. An Urvanian seller's invoice shows
@@ -1117,6 +1146,19 @@ charged once, at the final retail sale. In Lisavu the import consumption
 tax of 10 % on the landed value, whatever the goods' origin, so imported
 goods cost more on the island than on the mainland: freight, and 10 % on
 top.
+
+Goods may also cross a land border under the Accord's common transit
+procedure, modelled on the convention on a common transit procedure of
+20 May 1987, which the EEC and the EFTA countries concluded and which today
+joins the European Union and eleven other common transit countries. The
+holder of the procedure lodges one transit declaration at the office of
+departure; the goods travel under seal past the offices of exit and of
+transit, and the procedure ends at the office of destination, where the
+importer declares them for import, citing the transit declaration as the
+previous one. The declaration's jurisdiction is the Accord, not the country
+of departure alone. Valdara's containers by rail travel so, from the
+customs office at the Ferrano hub to Bayvarra customs' inland office at
+Marrowdale.
 
 Valuation is national too, within the WTO's rules on customs valuation. In
 all three countries the value starts from the price actually paid, and

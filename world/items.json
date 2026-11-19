@@ -512,7 +512,8 @@
     "currency": "XUF"
    },
    "sellers_id": "FRC-CTR",
-   "description": "One container slot on the container train to the distributor's siding.",
+   "export_carriage": true,
+   "description": "One container slot on the container train to the distributor's siding, with the carrier's haulage of the box from the warehouse to the hub.",
    "purchase": "freight"
   },
   {
@@ -2232,7 +2233,7 @@
        "rail",
        "ImportCustomsDeclaration"
       ],
-      "why": "Under the Accord's common transit to Marrowdale, where Lumeway declares the import (D37; the rail flow's import declaration is still to be added)."
+      "why": "Under the Accord's common transit to Marrowdale, where Lumeway declares the import (D37, rail/14): the boxes are placed on Lumeway's siding on 15 April; the first is emptied on 16 April, the second on 22 April."
      },
      {
       "date": "2026-04-29",

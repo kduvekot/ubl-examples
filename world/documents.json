@@ -50,8 +50,8 @@
   },
   {
    "id": "rail",
-   "title": "Containers by rail under transit (Urvania → Bayvarra)",
-   "text": "For full container loads the manufacturer sells delivered at place (DAP) the distributor's rail siding. Now the seller arranges and pays the transport: it books the container train and moves the goods under a transit declaration, so that import formalities happen at the destination. The intermodal hub loads the containers on the train.",
+   "title": "Containers by rail under the Accord's common transit (Urvania → Bayvarra)",
+   "text": "For full container loads Valdara sells Lumeway 192 benches delivered at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges and pays the transport: it books Ferrano Rail Cargo under their framework contract for container slots. The carrier's tractor brings the two packed 40-foot containers from Castrano's warehouse to the intermodal hub at Ferrano, a pre-carriage by road of the same contract, and the hub lifts them onto the container train FRC 4417; the consignment note follows the Accord's uniform rules for international carriage by rail, modelled on the CIM. Urvania's rail infrastructure manager, which runs the tracks and the train paths since the state separated them from the train operators, reports the train's progress to the carrier. The goods travel under the Accord's common transit, which Valdara lodges the evening before departure, to Bayvarra customs' inland office at Marrowdale, where Lumeway declares the import on 15 April and claims the Accord preference. Lumeway empties the first container the next day; the second waits until 22 April, because the siding's fork-lift is in repair, and runs two days past the five days' free time. Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to its freight invoice, and Valdara passes it on to Lumeway, which bears a delay in unloading under DAP, in a debit note to its goods invoice: the world's debit notes (decision D37).",
    "legs": [
     {
      "mode": "road",
@@ -1211,7 +1211,7 @@
    "doc": "TransportExecutionPlan",
    "from": "14-xu",
    "to": "5-xu",
-   "why": "The rail carrier confirms the train and the slot at the intermodal hub.",
+   "why": "The rail carrier confirms the haulage to the hub and the slots on the container train to the distributor's siding.",
    "parties": {
     "SenderParty": "14-xu",
     "ReceiverParty": "5-xu",
@@ -1224,21 +1224,21 @@
    "flow": "rail",
    "doc": "TransportProgressStatusRequest",
    "from": "14-xu",
-   "to": "18-xu",
-   "why": "The rail carrier asks the hub, which manages the tracks and slots, where the container train stands.",
+   "to": "47-xu",
+   "why": "The rail carrier asks Urvania's rail infrastructure manager, the transportation network manager that runs the tracks and the train paths, to report the container train's departure (D37).",
    "parties": {
     "SenderParty": "14-xu",
-    "ReceiverParty": "18-xu"
+    "ReceiverParty": "47-xu"
    }
   },
   {
    "flow": "rail",
    "doc": "TransportProgressStatus",
-   "from": "18-xu",
+   "from": "47-xu",
    "to": "14-xu",
-   "why": "The hub, as network manager, reports the train's position and timetable.",
+   "why": "The rail infrastructure manager reports the train's position and timetable on its network, from the hub to the border station (D37).",
    "parties": {
-    "SenderParty": "18-xu",
+    "SenderParty": "47-xu",
     "ReceiverParty": "14-xu"
    }
   },
@@ -1247,7 +1247,7 @@
    "doc": "TransitCustomsDeclaration",
    "from": "5-xu",
    "to": "19-xu",
-   "why": "The goods travel under customs transit from Urvania to the destination in Bayvarra; the manufacturer, as holder of the procedure, lodges the declaration at the office of departure.",
+   "why": "The goods travel under the Accord's common transit from Urvania's office of departure at the hub to Bayvarra customs' inland office at Marrowdale, the office of destination; the manufacturer, as holder of the procedure, lodges the declaration the evening before the train leaves (D37).",
    "parties": {
     "TransitExporterParty": "5-xu",
     "ConsignorParty": "5-xu",
@@ -1274,7 +1274,7 @@
    "doc": "Waybill",
    "from": "14-xu",
    "to": "5-xu",
-   "why": "The rail consignment note goes to the transport user, now the seller.",
+   "why": "The rail consignment note under the Accord's uniform rules, modelled on the CIM, goes to the transport user, the seller; the road haulage to the hub is a pre-carriage stage of the same contract (D37).",
    "parties": {
     "SenderParty": "14-xu",
     "ReceiverParty": "5-xu",
@@ -1291,8 +1291,7 @@
    "why": "The carrier tells the transport user the route and timing of the containers.",
    "parties": {
     "SenderParty": "14-xu",
-    "ReceiverParty": "5-xu",
-    "TransportationSegment/TransportServiceProviderParty": "14-xu"
+    "ReceiverParty": "5-xu"
    }
   },
   {
@@ -1314,13 +1313,50 @@
    "doc": "Invoice",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "Under DAP the price includes the transport, so the invoice covers goods and freight.",
+   "why": "Under DAP the price includes the transport, so the invoice covers goods and freight; Valdara invoices on despatch, so the importer has it when it declares the goods.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "DebitNote",
+   "from": "14-xu",
+   "to": "5-xu",
+   "why": "The carrier charges Valdara, the transport user under DAP, the demurrage on the second container, which stood at Lumeway's siding two days beyond the free time, as a debit note to its freight invoice under the framework contract: the world's real debit note (D37, D9).",
+   "parties": {
+    "AccountingSupplierParty": "14-xu",
+    "AccountingCustomerParty": "5-xu",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "DebitNote",
+   "from": "5-xu",
+   "to": "6-xb",
+   "why": "Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes the carrier's demurrage on to Lumeway as a debit note to its goods invoice (D37, D9).",
+   "parties": {
+    "AccountingSupplierParty": "5-xu",
+    "AccountingCustomerParty": "6-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "rail",
+   "doc": "ImportCustomsDeclaration",
+   "from": "6-xb",
+   "to": "19-xb",
+   "why": "At Bayvarra customs' inland office in Marrowdale, the office of destination of the Accord's common transit, the distributor, as importer under DAP, declares the benches for import and claims the Accord preference with the statement on origin on Valdara's invoice (D37, D18).",
+   "parties": {
+    "ImporterParty": "6-xb",
+    "ConsignorParty": "5-xu",
+    "ConsigneeParty": "6-xb",
+    "CustomsParty": "19-xb"
    }
   },
   {

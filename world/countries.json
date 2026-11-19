@@ -1967,7 +1967,15 @@
     "textile": "trilbaz",
     "wooden": "zhendul",
     "weighs": "ranskir",
-    "exported": "gazvan"
+    "exported": "gazvan",
+    "days": "drirgir",
+    "demurrage": "gunnek",
+    "minutes": "krizstek",
+    "placed": "dagan",
+    "then": "vabul",
+    "timetable": "santul",
+    "was": "kagaz",
+    "rules": "trilhek"
    }
   },
   "qal": {
@@ -3089,7 +3097,8 @@
     "distributor": "kelokifi",
     "bodies": "senatu",
     "stream": "tamohi",
-    "tare": "nimeme"
+    "tare": "nimeme",
+    "rules": "lelahe"
    }
   },
   "en": {

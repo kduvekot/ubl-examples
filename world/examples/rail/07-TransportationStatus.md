@@ -1,6 +1,6 @@
 # Transportation Status: Ferrano Intermodal Hub to Ferrano Rail Cargo
 
-*Example 7 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
+*Example 7 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
 
 The intermodal terminal reports to the rail carrier that the containers are loaded on the train.
 
@@ -24,8 +24,8 @@ The intermodal terminal reports to the rail carrier that the containers are load
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
   Reported when the containers are on the train.
-- `IssueTime` = **13:11:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **06:05:00-01:00**  
+  Sent by the terminal's system once both boxes were on their wagons; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Transportation status**  
   The kind of report.
 - `Description` = **Two containers loaded on the container train.**  
@@ -95,10 +95,12 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `MainCarriageShipmentStage/ID` = **1**  
+- `MainCarriageShipmentStage/ID` = **2**  
   The main carriage, by rail.
+- `MainCarriageShipmentStage/TransportMeans/RailTransport/TrainID` = **FRC 4417**  
+  The train the boxes were loaded on (rail/07#F8).
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceDate` = **2026-04-14**  
-  If the morning train is full, the boxes go on the evening train.
+  If the morning train cannot leave, the boxes go on the evening train.
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceTime` = **17:00:00**  
   The local time.
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/CompletionIndicator` = **false**  
@@ -108,16 +110,6 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
   At the intermodal hub, where the boxes go on the train.
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `MainCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
-  The boxes were collected from the warehouse.
-- `MainCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceTime` = **15:00:00**  
-  The local time.
-- `MainCarriageShipmentStage/ActualPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
-- `MainCarriageShipmentStage/ActualPickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
-  At the 3PL's warehouse in Conciaro, where the boxes are packed.
-- `MainCarriageShipmentStage/ActualPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/DeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
   Planned placement at the siding.
@@ -180,7 +172,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105096** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/TransportEvent/OccurrenceDate` = **2026-04-14**  
-  Both boxes lifted onto the train.
+  Both boxes lifted onto the train, the second at 05:55.
 - `MainCarriageShipmentStage/TransportEvent/OccurrenceTime` = **05:40:00**  
   The local time.
 - `MainCarriageShipmentStage/TransportEvent/TransportEventTypeCode` = **LOADING** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
@@ -193,6 +185,54 @@ Inside `Consignment`:
   At the intermodal hub, where the boxes go on the train.
 - `MainCarriageShipmentStage/TransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/ID` = **1**  
+  The pre-carriage: the carrier's tractor brings the packed boxes to the hub.
+- `PreCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
+- `PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **37** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: container tractor for carrier haulage; the fleet of Ferrano Rail Cargo (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 37 = Truck, container.
+- `PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 RC** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
+  The registration plate of the truck; the fleet of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
+- `PreCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/LoadingPortLocation/Name` = **Castrano Logistics warehouse, Conciaro**  
+  Where the boxes are collected.
+- `PreCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/UnloadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/UnloadingPortLocation/Name` = **Ferrano Intermodal Hub**  
+  Where they are handed to the terminal.
+- `PreCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The carrier's tractor collected the first box at the warehouse; the second followed at 15:00.
+- `PreCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceTime` = **13:00:00**  
+  The local time.
+- `PreCarriageShipmentStage/ActualPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/ActualPickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
+  At the 3PL's warehouse in Conciaro, where the boxes are packed.
+- `PreCarriageShipmentStage/ActualPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PreCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-04-13**  
+  The second box came in at the hub's gate, the end of the haulage.
+- `PreCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **15:50:00**  
+  The local time.
+- `PreCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `PreCarriageShipmentStage/ActualArrivalTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
+  At the intermodal hub, where the boxes go on the train.
+- `PreCarriageShipmentStage/ActualArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
+  A box the report is about (rail/07#F8).
+- `TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044180** (schemeID `ISO6346`)  
+  A box the report is about (rail/07#F8).
 
 ### Transport Event
 
@@ -275,7 +315,7 @@ Inside `StatusPeriod`:
   <cbc:ID>FIH-TS-26-0333</cbc:ID>
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>13:11:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>06:05:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
@@ -326,7 +366,12 @@ Inside `StatusPeriod`:
       </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
+      <cac:TransportMeans>
+        <cac:RailTransport>
+          <cbc:TrainID>FRC 4417</cbc:TrainID>
+        </cac:RailTransport>
+      </cac:TransportMeans>
       <cac:OptionalTakeoverTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>17:00:00</cbc:OccurrenceTime>
@@ -341,19 +386,6 @@ Inside `StatusPeriod`:
           </cac:Address>
         </cac:Location>
       </cac:OptionalTakeoverTransportEvent>
-      <cac:ActualPickupTransportEvent>
-        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
-        <cac:Location>
-          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
-          <cac:Address>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:Location>
-      </cac:ActualPickupTransportEvent>
       <cac:DeliveryTransportEvent>
         <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
@@ -420,6 +452,72 @@ Inside `StatusPeriod`:
         </cac:Location>
       </cac:TransportEvent>
     </cac:MainCarriageShipmentStage>
+    <cac:PreCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">37</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 RC</cbc:LicensePlateID>
+        </cac:RoadTransport>
+      </cac:TransportMeans>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+      <cac:ActualPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualPickupTransportEvent>
+      <cac:ActualArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:50:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualArrivalTransportEvent>
+    </cac:PreCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
