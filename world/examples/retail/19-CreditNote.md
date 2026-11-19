@@ -376,8 +376,8 @@ Inside `CreditNoteLine`:
 - `TaxInclusiveLineExtensionAmount` = **520.00** (currencyID `XBL`)  
   The line with its tax.
 - `AccountingCostCode` = **6120**  
-  The store's garden department.
-- `AccountingCost` = **Garden department**  
+  The store's home and garden department.
+- `AccountingCost` = **Home and garden department**  
   In words.
 - `OrderLineReference/LineID` = **1**  
   The order line.
@@ -728,7 +728,7 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">520.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Garden department</cbc:AccountingCost>
+    <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

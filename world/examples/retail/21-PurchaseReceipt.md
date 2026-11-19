@@ -52,8 +52,10 @@ Inside `PurchaseReference`:
 
 Inside `SalesDocumentReference`:
 
-- `ID` = **BM-DEL-26-0518-07**  
-  The home delivery order.
+- `ID` = **BM-DEL-26-0515-07**  
+  The store's home delivery order, booked with the sale on 15 May (retail/21#F7).
+- `DocumentType` = **Home delivery order**  
+  What the document is: the store's own delivery booking, outside the examples.
 
 ### Additional Document Reference
 
@@ -269,7 +271,7 @@ Inside `CashRegister`:
 
 Inside `PointOfSaleLocation`:
 
-- `Description` = **Garden department, ground floor**  
+- `Description` = **Home and garden department, ground floor**  
   Where in the shop.
 - `Name` = **Brightmarket Stores, Lumeport**  
   The shop.
@@ -326,8 +328,8 @@ Inside `Delivery`:
 
 Inside `Payment`:
 
-- `ID` = **BM-G2-26-0518-0047**  
-  The till's number for the payment.
+- `ID` = **BM-G2-26-0515-0047**  
+  The till's number for the payment, with the day of the sale (retail/21#F7).
 - `PaidAmount` = **744.54** (currencyID `XBL`)  
   Paid by card.
 - `PaidDate` = **2026-05-15**  
@@ -338,8 +340,8 @@ Inside `Payment`:
   The store's merchant number with the card scheme.
 - `AuthorizationID` = **A71520**  
   The approval code of the card issuer.
-- `TransactionID` = **TX-26-0518-773104**  
-  The card transaction.
+- `TransactionID` = **TX-26-0515-773104**  
+  The card transaction, with its day.
 - `PaymentTerminalID` = **PT-G2**  
   The card terminal at the till.
 - `StatusCode` = **APPROVED** (listID `urn:ubl-examples:world:codelist:PaymentStatusCode`)  
@@ -437,17 +439,13 @@ Inside `PurchaseReceiptLine`:
   Quantity times the price paid, before the sales tax.
 - `TaxInclusiveLineExtensionAmount` = **717.92** (currencyID `XBL`)  
   With the 6.5 % sales tax.
-- `PurchaseLinePeriod/StartDate` = **2026-05-15**  
-  The warranty runs from the purchase
-- `PurchaseLinePeriod/EndDate` = **2031-05-15**  
-  for five years.
 - `PurchaseReference/ID` = **VI-SF-01298**  
   The serial number of the bench's frame, for the warranty: the bench is one of the store's delivery from the March lot, whose frames were cast with it (the production record, D21).
 - `PurchaseReference/Description` = **Frame serial number**  
   What the number is.
 - `TaxTotal/TaxAmount` = **43.82** (currencyID `XBL`)  
   The sales tax of the line.
-- `Item/Description` = **The Serra park bench in the store's garden department; the state sales tax is added at the till.**  
+- `Item/Description` = **The Serra park bench in the store's home and garden department; the state sales tax is added at the till.**  
   The seller's description; item bench-serra-r of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name; item bench-serra-r of Brightmarket Stores (world/items.json).
@@ -487,17 +485,17 @@ Inside `PurchaseReceiptLine`:
   The price the customer pays, with the 6.5 % sales tax.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `Price/PriceChangeReason` = **Spring garden promotion**  
+- `Price/PriceChangeReason` = **Reopening of the home and garden department**  
   Why the price differs from the shelf price.
-- `Price/ValidityPeriod/StartDate` = **2026-05-12**  
+- `Price/ValidityPeriod/StartDate` = **2026-05-11**  
   The first day of the promotion.
-- `Price/ValidityPeriod/EndDate` = **2026-05-18**  
+- `Price/ValidityPeriod/EndDate` = **2026-05-24**  
   The last day of the promotion.
 - `Price/AllowanceCharge/ChargeIndicator` = **false**  
   A discount, not a charge.
 - `Price/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
   The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it: the promotion is a discount on the price. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `Price/AllowanceCharge/AllowanceChargeReason` = **Spring garden promotion**  
+- `Price/AllowanceCharge/AllowanceChargeReason` = **Reopening of the home and garden department**  
   The promotion, as the till prints it.
 - `Price/AllowanceCharge/MultiplierFactorNumeric` = **0.1**  
   The discount rate.
@@ -530,7 +528,8 @@ Inside `PurchaseReceiptLine`:
     <cbc:Description>Loyalty card</cbc:Description>
   </cac:PurchaseReference>
   <cac:SalesDocumentReference>
-    <cbc:ID>BM-DEL-26-0518-07</cbc:ID>
+    <cbc:ID>BM-DEL-26-0515-07</cbc:ID>
+    <cbc:DocumentType>Home delivery order</cbc:DocumentType>
   </cac:SalesDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-WARRANTY-B180</cbc:ID>
@@ -707,7 +706,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:SerialNumberID>BM-POS-G2-2219</cbc:SerialNumberID>
   </cac:CashRegister>
   <cac:PointOfSaleLocation>
-    <cbc:Description>Garden department, ground floor</cbc:Description>
+    <cbc:Description>Home and garden department, ground floor</cbc:Description>
     <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
   </cac:PointOfSaleLocation>
   <cac:PointOfSaleContact>
@@ -746,13 +745,13 @@ Inside `PurchaseReceiptLine`:
     </cac:CarrierParty>
   </cac:Delivery>
   <cac:Payment>
-    <cbc:ID>BM-G2-26-0518-0047</cbc:ID>
+    <cbc:ID>BM-G2-26-0515-0047</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">744.54</cbc:PaidAmount>
     <cbc:PaidDate>2026-05-15</cbc:PaidDate>
     <cbc:PaidTime>11:42:00</cbc:PaidTime>
     <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
     <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
-    <cbc:TransactionID>TX-26-0518-773104</cbc:TransactionID>
+    <cbc:TransactionID>TX-26-0515-773104</cbc:TransactionID>
     <cbc:PaymentTerminalID>PT-G2</cbc:PaymentTerminalID>
     <cbc:StatusCode listID="urn:ubl-examples:world:codelist:PaymentStatusCode">APPROVED</cbc:StatusCode>
   </cac:Payment>
@@ -811,10 +810,6 @@ Inside `PurchaseReceiptLine`:
     <cbc:Quantity unitCode="EA">1</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">674.10</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">717.92</cbc:TaxInclusiveLineExtensionAmount>
-    <cac:PurchaseLinePeriod>
-      <cbc:StartDate>2026-05-15</cbc:StartDate>
-      <cbc:EndDate>2031-05-15</cbc:EndDate>
-    </cac:PurchaseLinePeriod>
     <cac:PurchaseReference>
       <cbc:ID>VI-SF-01298</cbc:ID>
       <cbc:Description>Frame serial number</cbc:Description>
@@ -823,7 +818,7 @@ Inside `PurchaseReceiptLine`:
       <cbc:TaxAmount currencyID="XBL">43.82</cbc:TaxAmount>
     </cac:TaxTotal>
     <cac:Item>
-      <cbc:Description>The Serra park bench in the store's garden department; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>The Serra park bench in the store's home and garden department; the state sales tax is added at the till.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
@@ -859,15 +854,15 @@ Inside `PurchaseReceiptLine`:
       <cbc:PriceAmount currencyID="XBL">674.1</cbc:PriceAmount>
       <cbc:TaxInclusivePriceAmount currencyID="XBL">717.92</cbc:TaxInclusivePriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-      <cbc:PriceChangeReason>Spring garden promotion</cbc:PriceChangeReason>
+      <cbc:PriceChangeReason>Reopening of the home and garden department</cbc:PriceChangeReason>
       <cac:ValidityPeriod>
-        <cbc:StartDate>2026-05-12</cbc:StartDate>
-        <cbc:EndDate>2026-05-18</cbc:EndDate>
+        <cbc:StartDate>2026-05-11</cbc:StartDate>
+        <cbc:EndDate>2026-05-24</cbc:EndDate>
       </cac:ValidityPeriod>
       <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Spring garden promotion</cbc:AllowanceChargeReason>
+        <cbc:AllowanceChargeReason>Reopening of the home and garden department</cbc:AllowanceChargeReason>
         <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
         <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
         <cbc:BaseAmount currencyID="XBL">749.00</cbc:BaseAmount>

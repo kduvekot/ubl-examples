@@ -895,7 +895,7 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Six pallets for the garden department's spring promotion.**  
+- `Note` = **Six pallets for the reopening of the home and garden department.**  
   The line as the order put it.
 - `DeliveredQuantity` = **24** (unitCode `EA`)  
   What was despatched.
@@ -1707,7 +1707,7 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Six pallets for the garden department's spring promotion.</cbc:Note>
+    <cbc:Note>Six pallets for the reopening of the home and garden department.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">24</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

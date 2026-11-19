@@ -196,13 +196,11 @@ Inside `InventoryReportLine`:
 - `Note` = **Below the minimum of 6 before the promotion.**  
   Why it matters.
 - `Quantity` = **3** (unitCode `EA`)  
-  Three benches left in the garden department.
+  Three benches left in the home and garden department.
 - `InventoryValueAmount` = **1560.00** (currencyID `XBL`)  
   Three at the purchase price.
-- `AvailabilityDate` = **2026-04-23**  
-  Available now.
 - `AvailabilityStatusCode` = **AVAILABLE** (listID `urn:ubl-examples:world:codelist:AvailabilityStatusCode`)  
-  On the shelf. The code is from the Trade Accord's availability status list: AVAILABLE = Available.
+  On the shelf: available now, so no date (retail/07#F10). The code is from the Trade Accord's availability status list: AVAILABLE = Available.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -225,8 +223,10 @@ Inside `InventoryReportLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
-- `InventoryLocation/Name` = **Garden department, ground floor**  
-  Where they stand.
+- `InventoryLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, home and garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `InventoryLocation/Name` = **Home and garden department of the Lumeport store, ground floor**  
+  Where they stand, in the store (retail/07#F14).
 
 ## The document
 
@@ -369,7 +369,6 @@ Inside `InventoryReportLine`:
     <cbc:Note>Below the minimum of 6 before the promotion.</cbc:Note>
     <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:InventoryValueAmount currencyID="XBL">1560.00</cbc:InventoryValueAmount>
-    <cbc:AvailabilityDate>2026-04-23</cbc:AvailabilityDate>
     <cbc:AvailabilityStatusCode listID="urn:ubl-examples:world:codelist:AvailabilityStatusCode">AVAILABLE</cbc:AvailabilityStatusCode>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
@@ -395,7 +394,8 @@ Inside `InventoryReportLine`:
       </cac:AdditionalItemIdentification>
     </cac:Item>
     <cac:InventoryLocation>
-      <cbc:Name>Garden department, ground floor</cbc:Name>
+      <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
+      <cbc:Name>Home and garden department of the Lumeport store, ground floor</cbc:Name>
     </cac:InventoryLocation>
   </cac:InventoryReportLine>
 </InventoryReport>

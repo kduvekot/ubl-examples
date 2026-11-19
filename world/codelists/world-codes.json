@@ -7376,7 +7376,8 @@
    "codes": [
     "TPR",
     "SEASONAL",
-    "LAUNCH"
+    "LAUNCH",
+    "OPENING"
    ]
   },
   "PackingLabelingType": {

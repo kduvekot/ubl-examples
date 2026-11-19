@@ -49,7 +49,7 @@ Inside `ValidityPeriod`:
 Inside `CatalogueReference`:
 
 - `ID` = **LD-CAT-26-0218**  
-  The spring catalogue ordered from.
+  The catalogue ordered from.
 
 ### Additional Document Reference
 
@@ -139,7 +139,7 @@ Inside `BuyerCustomerParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `DeliveryContact/Name` = **Goods-in, garden department**  
+- `DeliveryContact/Name` = **Goods-in, home and garden department**  
   Whom the driver reports to.
 - `DeliveryContact/Telephone` = **+999 2 38 4609 7100**  
   The number.
@@ -147,7 +147,7 @@ Inside `BuyerCustomerParty`:
   Where invoices go.
 - `AccountingContact/ElectronicMail` = **invoices@brightmarket.example**  
   The address, under the reserved .example domain.
-- `BuyerContact/Name` = **Garden department buyer**  
+- `BuyerContact/Name` = **Home and garden department buyer**  
   Who placed the order.
 - `BuyerContact/Telephone` = **+999 2 38 4609 7100**  
   The number.
@@ -231,7 +231,7 @@ Inside `Delivery`:
 
 - `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
-- `DeliveryLocation/Description` = **Goods-in, garden department**  
+- `DeliveryLocation/Description` = **Goods-in, home and garden department**  
   Where the truck unloads.
 - `RequestedDeliveryPeriod/StartDate` = **2026-04-30**  
   The benches are wanted on 30 April, in a delivery slot.
@@ -342,7 +342,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **24** (unitCode `EA`)  
-  Six pallets for the garden department's spring promotion.
+  Six pallets for the reopening of the home and garden department.
 - `LineItem/LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
@@ -483,7 +483,7 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:DeliveryContact>
-      <cbc:Name>Goods-in, garden department</cbc:Name>
+      <cbc:Name>Goods-in, home and garden department</cbc:Name>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:DeliveryContact>
     <cac:AccountingContact>
@@ -491,7 +491,7 @@ Inside `OrderLine`:
       <cbc:ElectronicMail>invoices@brightmarket.example</cbc:ElectronicMail>
     </cac:AccountingContact>
     <cac:BuyerContact>
-      <cbc:Name>Garden department buyer</cbc:Name>
+      <cbc:Name>Home and garden department buyer</cbc:Name>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:BuyerContact>
   </cac:BuyerCustomerParty>
@@ -556,7 +556,7 @@ Inside `OrderLine`:
   <cac:Delivery>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
-      <cbc:Description>Goods-in, garden department</cbc:Description>
+      <cbc:Description>Goods-in, home and garden department</cbc:Description>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-04-30</cbc:StartDate>

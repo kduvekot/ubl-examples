@@ -27,7 +27,7 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
 - `Name` = **Lumeway's catalogue for the Lumeport store, 2026**  
   Its name: for the range of the store's reopened home and garden department.
 - `IssueDate` = **2026-04-20**  
-  The spring catalogue for the store.
+  Lumeway's catalogue for the store's reopened department.
 - `IssueTime` = **09:00:00-01:00**  
   Issued in the morning, for the store to set up the range; in the issuer's local time, with its offset from UTC (D27).
 - `RevisionDate` = **2026-04-20**  

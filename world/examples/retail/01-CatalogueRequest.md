@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Catalogue Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-REQUEST-SCHEMA)*
 
-The store asks the distributor for its spring catalogue.
+To set up the range of its home and garden department, which reopens on 11 May after a renovation, the store asks the distributor for its catalogue.
 
 [The XML file](01-CatalogueRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

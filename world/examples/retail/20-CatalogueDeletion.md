@@ -2,7 +2,7 @@
 
 *Example 20 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Catalogue Deletion in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-DELETION-SCHEMA)*
 
-The spring catalogue ends; the distributor deletes it before the summer catalogue.
+The distributor's winter catalogue takes over on 20 June, the start of winter in the south; the distributor deletes the store's catalogue the day before.
 
 [The XML file](20-CatalogueDeletion.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

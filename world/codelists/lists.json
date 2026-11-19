@@ -4719,7 +4719,7 @@
    "codes": {
     "STOREOPEN": [
      "Store opening",
-     ""
+     "The opening or reopening of a store, or of a department of one."
     ],
     "REFIT": [
      "Store refit",
@@ -4747,6 +4747,10 @@
     "LAUNCH": [
      "Product launch",
      ""
+    ],
+    "OPENING": [
+     "Opening promotion",
+     "A promotion for the opening or reopening of a store or of a department of one."
     ]
    }
   },

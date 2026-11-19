@@ -2,7 +2,7 @@
 
 *Example 6 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Retail Event in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RETAIL-EVENT-SCHEMA)*
 
-A promotion next month will lift demand; the distributor needs to know before it orders from the manufacturer.
+The reopening of the home and garden department on 11 May, with two weeks at 10 % off, will lift demand; the distributor needs to know before it orders from the manufacturer.
 
 [The XML file](06-RetailEvent.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,16 +28,16 @@ A promotion next month will lift demand; the distributor needs to know before it
   Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Agreed with the distributor's sales team.**  
   Status of the agreement.
-- `RetailEventName` = **Spring garden promotion**  
-  The name of the promotion.
+- `RetailEventName` = **Reopening of the home and garden department**  
+  The name of the event: the department reopens after its renovation (D34).
 - `RetailEventStatusCode` = **CONFIRMED** (listID `urn:ubl-examples:world:codelist:RetailEventStatusCode`)  
-  The promotion is decided, not only planned. The code is from the Trade Accord's retail event status list: CONFIRMED = Confirmed.
+  The reopening and its promotion are decided, not only planned. The code is from the Trade Accord's retail event status list: CONFIRMED = Confirmed.
 - `SellerEventID` = **LD-PROMO-26-03**  
   The distributor's number for the promotion.
-- `BuyerEventID` = **BM-SPRING-GARDEN-26**  
-  The store's number.
-- `Description` = **Ten per cent off garden furniture for two weeks.**  
-  What the promotion is.
+- `BuyerEventID` = **BM-REOPEN-HG-26**  
+  The store's number for the reopening.
+- `Description` = **After its renovation the home and garden department of the Lumeport store reopens on Monday 11 May: ten per cent off the department's range for two weeks, the Elderwick Marrow line excepted.**  
+  What the event is (D34, O117, O155: the promotion does not apply to the Marrow line).
 
 ### Period
 
@@ -199,8 +199,8 @@ Inside `SellerSupplierParty`:
 
 Inside `EventComment`:
 
-- `Comment` = **Shelf space for 12 benches at the entrance.**  
-  What the store prepares.
+- `Comment` = **Floor space for 12 benches at the entrance of the renovated department.**  
+  What the store prepares (retail/06#F14).
 - `IssueDate` = **2026-04-22**  
   Written with the announcement.
 - `IssueTime` = **11:00:00**  
@@ -210,24 +210,22 @@ Inside `EventComment`:
 
 Inside `PromotionalEvent`:
 
-- `PromotionalEventTypeCode` = **TPR** (listID `urn:ubl-examples:world:codelist:PromotionalEventTypeCode`)  
-  A temporary price reduction. The code is from the Trade Accord's promotional event type list: TPR = Temporary price reduction.
+- `PromotionalEventTypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:PromotionalEventTypeCode`)  
+  An opening promotion: the reopening of the department (retail/06#F11 read under D34). The code is from the Trade Accord's promotional event type list: OPENING = Opening promotion.
 - `SubmissionDate` = **2026-04-22**  
-  Proposed now.
+  Submitted now; the distributor has agreed it, so no acceptance deadline follows (retail/06#F7).
 - `FirstShipmentAvailabilityDate` = **2026-04-29**  
   Stock can arrive from day 9.
-- `LatestProposalAcceptanceDate` = **2026-04-26**  
-  The distributor answers by day 6.
-- `PromotionalSpecification/SpecificationID` = **BM-SPRING-GARDEN-26/1**  
+- `PromotionalSpecification/SpecificationID` = **BM-REOPEN-HG-26/1**  
   The first part of the promotion.
-- `PromotionalSpecification/PromotionalEventLineItem/Amount` = **74.90** (currencyID `XBL`)  
-  The price reduction per bench: 10 % of 749.
+- `PromotionalSpecification/PromotionalEventLineItem/Amount` = **674.10** (currencyID `XBL`)  
+  The promotional price per bench: 749.00 less 10 % (retail/06#F5).
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/LineNumberNumeric` = **1**  
   The line.
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/ParticipatingLocationsLocation/Name` = **Brightmarket Stores, Lumeport**  
   The shop.
-- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/Amount` = **17976.00** (currencyID `XBL`)  
-  24 benches more at 749.00.
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/Amount` = **16178.40** (currencyID `XBL`)  
+  24 benches more at the promotional price of 674.10 (retail/06#F13).
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/ForecastPurposeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:ForecastPurposeCode`)  
   Planned extra sales. The code is from the Trade Accord's forecast purpose list: SALES = Sales forecast.
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/RetailPlannedImpact/ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
@@ -240,14 +238,14 @@ Inside `PromotionalEvent`:
   The item promoted.
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LD-10442**  
   The distributor's number.
-- `PromotionalSpecification/EventTactic/Comment` = **Benches at the entrance, with a price board.**  
+- `PromotionalSpecification/EventTactic/Comment` = **Benches on a floor stand at the entrance, with a price board.**  
   What the store does.
 - `PromotionalSpecification/EventTactic/Quantity` = **12** (unitCode `EA`)  
   Twelve benches on display.
 - `PromotionalSpecification/EventTactic/EventTacticEnumeration/ConsumerIncentiveTacticTypeCode` = **TPR** (listID `urn:ubl-examples:world:codelist:ConsumerIncentiveTacticCode`)  
   A temporary price reduction. The code is from the Trade Accord's consumer incentive tactic list: TPR = Temporary price reduction.
-- `PromotionalSpecification/EventTactic/EventTacticEnumeration/DisplayTacticTypeCode` = **ENDCAP** (listID `urn:ubl-examples:world:codelist:DisplayTacticCode`)  
-  A display at the entrance. The code is from the Trade Accord's display tactic list: ENDCAP = End-cap display.
+- `PromotionalSpecification/EventTactic/EventTacticEnumeration/DisplayTacticTypeCode` = **FLOORSTAND** (listID `urn:ubl-examples:world:codelist:DisplayTacticCode`)  
+  A floor stand at the entrance (retail/06#F14). The code is from the Trade Accord's display tactic list: FLOORSTAND = Floor stand.
 - `PromotionalSpecification/EventTactic/EventTacticEnumeration/FeatureTacticTypeCode` = **FLYER** (listID `urn:ubl-examples:world:codelist:FeatureTacticCode`)  
   In the store's flyer. The code is from the Trade Accord's feature tactic list: FLYER = Store flyer.
 - `PromotionalSpecification/EventTactic/EventTacticEnumeration/TradeItemPackingLabelingTypeCode` = **STICKER** (listID `urn:ubl-examples:world:codelist:PackingLabelingTypeCode`)  
@@ -262,7 +260,7 @@ Inside `PromotionalEvent`:
 Inside `MiscellaneousEvent`:
 
 - `MiscellaneousEventTypeCode` = **STOREOPEN** (listID `urn:ubl-examples:world:codelist:MiscellaneousEventTypeCode`)  
-  Late opening on the first Saturday. The code is from the Trade Accord's miscellaneous retail event list: STOREOPEN = Store opening.
+  The department's reopening on Monday 11 May, after its renovation: the event the promotion is for (retail/06#F6, D34). The code is from the Trade Accord's miscellaneous retail event list: STOREOPEN = Store opening.
 - `EventLineItem/LineNumberNumeric` = **1**  
   The line.
 - `EventLineItem/SupplyItem/Name` = **Park bench Serra 180**  
@@ -284,11 +282,11 @@ Inside `MiscellaneousEvent`:
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>11:13:00-01:00</cbc:IssueTime>
   <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
-  <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
+  <cbc:RetailEventName>Reopening of the home and garden department</cbc:RetailEventName>
   <cbc:RetailEventStatusCode listID="urn:ubl-examples:world:codelist:RetailEventStatusCode">CONFIRMED</cbc:RetailEventStatusCode>
   <cbc:SellerEventID>LD-PROMO-26-03</cbc:SellerEventID>
-  <cbc:BuyerEventID>BM-SPRING-GARDEN-26</cbc:BuyerEventID>
-  <cbc:Description>Ten per cent off garden furniture for two weeks.</cbc:Description>
+  <cbc:BuyerEventID>BM-REOPEN-HG-26</cbc:BuyerEventID>
+  <cbc:Description>After its renovation the home and garden department of the Lumeport store reopens on Monday 11 May: ten per cent off the department's range for two weeks, the Elderwick Marrow line excepted.</cbc:Description>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-05-24</cbc:EndDate>
@@ -415,26 +413,25 @@ Inside `MiscellaneousEvent`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:EventComment>
-    <cbc:Comment>Shelf space for 12 benches at the entrance.</cbc:Comment>
+    <cbc:Comment>Floor space for 12 benches at the entrance of the renovated department.</cbc:Comment>
     <cbc:IssueDate>2026-04-22</cbc:IssueDate>
     <cbc:IssueTime>11:00:00</cbc:IssueTime>
   </cac:EventComment>
   <cac:PromotionalEvent>
-    <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">TPR</cbc:PromotionalEventTypeCode>
+    <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">OPENING</cbc:PromotionalEventTypeCode>
     <cbc:SubmissionDate>2026-04-22</cbc:SubmissionDate>
     <cbc:FirstShipmentAvailabilityDate>2026-04-29</cbc:FirstShipmentAvailabilityDate>
-    <cbc:LatestProposalAcceptanceDate>2026-04-26</cbc:LatestProposalAcceptanceDate>
     <cac:PromotionalSpecification>
-      <cbc:SpecificationID>BM-SPRING-GARDEN-26/1</cbc:SpecificationID>
+      <cbc:SpecificationID>BM-REOPEN-HG-26/1</cbc:SpecificationID>
       <cac:PromotionalEventLineItem>
-        <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
+        <cbc:Amount currencyID="XBL">674.10</cbc:Amount>
         <cac:EventLineItem>
           <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
           <cac:ParticipatingLocationsLocation>
             <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
           </cac:ParticipatingLocationsLocation>
           <cac:RetailPlannedImpact>
-            <cbc:Amount currencyID="XBL">17976.00</cbc:Amount>
+            <cbc:Amount currencyID="XBL">16178.40</cbc:Amount>
             <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
             <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
             <cac:Period>
@@ -451,11 +448,11 @@ Inside `MiscellaneousEvent`:
         </cac:EventLineItem>
       </cac:PromotionalEventLineItem>
       <cac:EventTactic>
-        <cbc:Comment>Benches at the entrance, with a price board.</cbc:Comment>
+        <cbc:Comment>Benches on a floor stand at the entrance, with a price board.</cbc:Comment>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:EventTacticEnumeration>
           <cbc:ConsumerIncentiveTacticTypeCode listID="urn:ubl-examples:world:codelist:ConsumerIncentiveTacticCode">TPR</cbc:ConsumerIncentiveTacticTypeCode>
-          <cbc:DisplayTacticTypeCode listID="urn:ubl-examples:world:codelist:DisplayTacticCode">ENDCAP</cbc:DisplayTacticTypeCode>
+          <cbc:DisplayTacticTypeCode listID="urn:ubl-examples:world:codelist:DisplayTacticCode">FLOORSTAND</cbc:DisplayTacticTypeCode>
           <cbc:FeatureTacticTypeCode listID="urn:ubl-examples:world:codelist:FeatureTacticCode">FLYER</cbc:FeatureTacticTypeCode>
           <cbc:TradeItemPackingLabelingTypeCode listID="urn:ubl-examples:world:codelist:PackingLabelingTypeCode">STICKER</cbc:TradeItemPackingLabelingTypeCode>
         </cac:EventTacticEnumeration>

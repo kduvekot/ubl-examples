@@ -706,6 +706,14 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `UtilityItem/OneTimeChargeType` | 0..n | utilities/01-UtilityStatement | | | open |
 | `UtilityItem/OneTimeChargeTypeCode` | 0..1 | utilities/01-UtilityStatement | | | open |
 
+> C111, D34: the retail event of the reopening is confirmed and agreed, so it gives no acceptance deadline (06#F7); stock on the shelf has no availability date (07#F10); the shop sale's line has no period of its own, the warranty being the maker's card (21#F12).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `InventoryReportLine/AvailabilityDate` | 0..1 | retail/07-InventoryReport |  |  | open |
+| `PromotionalEvent/LatestProposalAcceptanceDate` | 0..1 | retail/06-RetailEvent |  |  | open |
+| `PurchaseReceiptLine/PurchaseLinePeriod` | 0..1 | retail/21-PurchaseReceipt |  |  | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

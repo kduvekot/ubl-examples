@@ -110,7 +110,7 @@
   {
    "id": "retail",
    "title": "Distributor to retailer, delivered duty paid (domestic, Bayvarra)",
-   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment.",
+   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment. In 2026 the store renovates the home and garden department of its Lumeport store and reopens it on Monday 11 May, with two weeks at 10 % off; to set up the range it asks the distributor for a catalogue, which the distributor deletes when its winter catalogue takes over on 20 June.",
    "legs": [
     {
      "mode": "road",
@@ -1388,7 +1388,7 @@
    "doc": "CatalogueRequest",
    "from": "26-xb",
    "to": "6-xb",
-   "why": "The store asks the distributor for its spring catalogue.",
+   "why": "To set up the range of its home and garden department, which reopens on 11 May after a renovation, the store asks the distributor for its catalogue.",
    "parties": {
     "ProviderParty": "26-xb",
     "ReceiverParty": "6-xb",
@@ -1450,7 +1450,7 @@
    "doc": "RetailEvent",
    "from": "26-xb",
    "to": "6-xb",
-   "why": "A promotion next month will lift demand; the distributor needs to know before it orders from the manufacturer.",
+   "why": "The reopening of the home and garden department on 11 May, with two weeks at 10 % off, will lift demand; the distributor needs to know before it orders from the manufacturer.",
    "parties": {
     "SenderParty": "26-xb",
     "ReceiverParty": "6-xb",
@@ -1632,7 +1632,7 @@
    "doc": "CatalogueDeletion",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The spring catalogue ends; the distributor deletes it before the summer catalogue.",
+   "why": "The distributor's winter catalogue takes over on 20 June, the start of winter in the south; the distributor deletes the store's catalogue the day before.",
    "parties": {
     "ProviderParty": "6-xb",
     "ReceiverParty": "26-xb",

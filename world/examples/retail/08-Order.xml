@@ -88,7 +88,7 @@
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:DeliveryContact>
-      <cbc:Name>Goods-in, garden department</cbc:Name>
+      <cbc:Name>Goods-in, home and garden department</cbc:Name>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:DeliveryContact>
     <cac:AccountingContact>
@@ -96,7 +96,7 @@
       <cbc:ElectronicMail>invoices@brightmarket.example</cbc:ElectronicMail>
     </cac:AccountingContact>
     <cac:BuyerContact>
-      <cbc:Name>Garden department buyer</cbc:Name>
+      <cbc:Name>Home and garden department buyer</cbc:Name>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
     </cac:BuyerContact>
   </cac:BuyerCustomerParty>
@@ -161,7 +161,7 @@
   <cac:Delivery>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
-      <cbc:Description>Goods-in, garden department</cbc:Description>
+      <cbc:Description>Goods-in, home and garden department</cbc:Description>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-04-30</cbc:StartDate>

@@ -1489,7 +1489,7 @@ def plastics(n, doc):
 
 # ---------------------------------------------------------------- the retail flow (Bayvarra, DDP)
 RETAIL = kit.Flow("retail", "2026-04-20", [
-    {"item": "bench-serra-b", "ordered": 24, "why": "Six pallets for the garden department's spring promotion.",
+    {"item": "bench-serra-b", "ordered": 24, "why": "Six pallets for the reopening of the home and garden department.",
      "received": 23, "received_why": "One bench refused: its frame carton arrived torn and the side frame's armrest bent.",
      "orderline_extra": {
          "CatalogueLineReference": {"LineID": V("1", "The catalogue line ordered from.")},
@@ -1504,6 +1504,8 @@ RETAIL = kit.Flow("retail", "2026-04-20", [
 
 RESALE = {r["id"]: r for r in WORLD["resales"]["sales"]}      # the resales of the world (items.json, D14, O30)
 PROMO = Decimal(str(RESALE["lumeway-bench-store"]["less_percent"])) / 100   # the distributor's support on the order
+REOPEN_OFF = Decimal(str(RESALE["store-bench-reopening"]["less_percent"])) / 100   # the reopening's 10 % (D34)
+STORE_BENCH = Decimal("749.00")    # the store's shop price of the Serra bench, before sales tax (D14)
 
 
 def promo_allowance(base, why):
@@ -1553,9 +1555,10 @@ def returnable_pallet(k):
 def retail(n, doc):
     f = RETAIL
     w = kit.gross_weight(f, "ordered")
-    store = {"Name": V("Garden department", "The department of the store that sells the benches.")}
+    store = {"Name": V("Home and garden department", "The department of the store that sells the benches.")}
     if doc["doc"] == "Catalogue":
-        return kit.catalogue(f, n, doc, 0, "The spring catalogue for the store.", ["bench-serra-b", "bench-casting-b"], 90)
+        return kit.catalogue(f, n, doc, 0, "Lumeway's catalogue for the store's reopened department.",
+                             ["bench-serra-b", "bench-casting-b"], 90)
     if doc["doc"] == "Forecast":
         return {"ID": V(f.number("forecast", doc["from"], "Forecast"), "The store's forecast number."),
                 "IssueDate": V(f.date(2), "Sent after the catalogue arrived."),
@@ -1571,29 +1574,35 @@ def retail(n, doc):
     if doc["doc"] == "RetailEvent":
         return {"ID": V(f.number("event", doc["from"], "RetailEvent"), "The store's event number."),
                 "IssueDate": V(f.date(2), "Announced with the forecast."),
-                "RetailEventName": V("Spring garden promotion", "The name of the promotion."),
-                "RetailEventStatusCode": V("CONFIRMED", "The promotion is decided, not only planned."),
-                "Description": V("Ten per cent off garden furniture for two weeks.", "What the promotion is."),
+                "RetailEventName": V("Reopening of the home and garden department", "The name of the event: the department reopens after its "
+                                                  "renovation (D34)."),
+                "RetailEventStatusCode": V("CONFIRMED", "The reopening and its promotion are decided, not only "
+                                                        "planned."),
+                "Description": V("After its renovation the home and garden department of the Lumeport store reopens "
+                                 "on Monday 11 May: ten per cent off the department's range for two weeks, the "
+                                 "Elderwick Marrow line excepted.", "What the event is (D34, O117, O155: the "
+                                                                    "promotion does not apply to the Marrow "
+                                                                    "line)."),
                 "Period": {"StartDate": V(f.date(21), "The promotion starts in three weeks."),
                            "EndDate": V(f.date(34), "It lasts two weeks.")}}
     if doc["doc"] == "InventoryReport":
         return {"ID": V(f.number("inventory", doc["from"], "InventoryReport"), "The store's inventory report number."),
                 "IssueDate": V(f.date(3), "The weekly stock report."),
                 "InventoryReportLine": {"ID": V("1", "The first and only line."),
-                                        "Quantity": qty(3, "EA", "Three benches left in the garden department."),
+                                        "Quantity": qty(3, "EA", "Three benches left in the home and garden "
+                                                                 "department."),
                                         "Item": item("bench-serra-b")}}
     if doc["doc"] == "Order":
         out = kit.order(f, n, doc, 4, "The store replenishes before the promotion.",
                          "Delivered duty paid at the store: the distributor arranges and pays the transport and every "
                          "cost, so the order names only where to deliver.", "Brightmarket Stores, goods-in, Lumeport",
                          {"Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "goods-in"),
-                                                           "Description": V("Goods-in, garden department",
+                                                           "Description": V("Goods-in, home and garden department",
                                                                              "Where the truck unloads.")}},
                           "IssueTime": V("08:15:00", "Sent from the store's replenishment system each morning."),
                           "ValidityPeriod": {"EndDate": V(f.date(6), "The order lapses if not confirmed within two "
                                                                      "days: the promotion cannot wait.")},
-                          "CatalogueReference": {"ID": V(f.numbers["catalogue"], "The spring catalogue ordered "
-                                                                                 "from.")},
+                          "CatalogueReference": {"ID": V(f.numbers["catalogue"], "The catalogue ordered from.")},
                           "AdditionalDocumentReference": {"ID": V(f.numbers["event"], "The promotion the "
                                                                   "benches are ordered for.")},
                           "PaymentMeans": {"PaymentMeansCode": V("30", "The store pays by credit transfer.",
@@ -1695,8 +1704,9 @@ def retail(n, doc):
                                [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery.",
                                  "line_tax": True,
                                  "line_extra": {
-                                     "AccountingCostCode": V("6120", "The store's garden department."),
-                                     "AccountingCost": V("Garden department", "In words."),
+                                     "AccountingCostCode": V("6120", "The store's home and garden "
+                                                                     "department."),
+                                     "AccountingCost": V("Home and garden department", "In words."),
                                      "Delivery": {"ActualDeliveryDate": V(f.date(10), "The delivery the bench "
                                                                                       "was refused at.")},
                                      "DespatchLineReference": {"LineID": V("1", "The despatch line."),
@@ -1735,9 +1745,9 @@ def retail(n, doc):
     if doc["doc"] == "PurchaseReceipt":
         out = kit.purchase_receipt(f, n, doc, 25, "A consumer buys a bench during the promotion week.",
                                     [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=False,
-                                    promotion={"name": "Spring garden promotion",
+                                    promotion={"name": "Reopening of the home and garden department",
                                                "percent": RESALE["store-bench-reopening"]["less_percent"],
-                                               "from": 22, "to": 28})
+                                               "from": 21, "to": 34})      # 11 to 24 May (retail/21#F3)
         till(out, f, 25, "11:42:00", "G2", "Mira")
         card_payment(out, f, 25, "11:42:00")
         out["Note"] = V("Home delivery booked for Saturday.", "Printed on the receipt.")
@@ -2105,7 +2115,8 @@ def till(out, f, day, time, register, cashier):
                                                                                 "tax rules require on a receipt.")},
                 "CashierContact": {"Name": V(cashier, "The cashier, by first name, as printed.")},
                 "PointOfSaleLocation": {"Name": V("Brightmarket Stores, Lumeport", "The shop."),
-                                        "Description": V("Garden department, ground floor" if register == "G2" else
+                                        "Description": V("Home and garden department, ground floor"
+                                                         if register == "G2" else
                                                          "Clothing, first floor", "Where in the shop.")},
                 "PointOfSaleContact": {"Telephone": V(PARTY["26-xb"]["identity"]["contact"]["telephone"],
                                                       "The shop's number, for questions about the purchase.")}})
@@ -2118,12 +2129,16 @@ def card_payment(out, f, day, time):
         "PaymentMeansCode": V("55", "UN/EDIFACT 4461 code 55: debit card.", listID="UN/EDIFACT EDED 4461"),
         "CardAccount": {**kit.card_account("c-xb", "26-xb"),
                         "RoleCode": V("HOLDER", "Paid by the card holder.")}}
-    out["Payment"] = {"ID": V("BM-G2-26-0518-0047", "The till's number for the payment."),
+    out["Payment"] = {"ID": V(f"BM-G2-26-{f.date(day)[5:7]}{f.date(day)[8:]}-0047", "The till's number for the "
+                                                                                  "payment, with the day of the sale "
+                                                                                  "(retail/21#F7)."),
                       "PaidAmount": total, "PaidDate": V(f.date(day), "Paid at the till."),
                       "PaidTime": V(time, "At the time of the sale."),
                       "MerchantID": V("LUMECARD-M-0026118", "The store's merchant number with the card scheme."),
                       "AuthorizationID": V("A71520", "The approval code of the card issuer."),
-                      "TransactionID": V("TX-26-0518-773104", "The card transaction."),
+                      "TransactionID": V(f"TX-26-{f.date(day)[5:7]}{f.date(day)[8:]}-773104", "The card "
+                                                                                             "transaction, with its "
+                                                                                             "day."),
                       "PaymentTerminalID": V("PT-G2", "The card terminal at the till."),
                       "StatusCode": V("APPROVED", "The payment was approved.")}
     return out
@@ -6153,15 +6168,24 @@ def _(f, n, doc, out):
 
 @enrich("retail", "Forecast")
 def _(f, n, doc, out):
-    return {"Note": V("Includes the spring garden promotion.", "What the figure includes."),
+    return {"Note": V("Includes the reopening promotion of the home and garden department, 11 to 24 May.",
+                      "What the figure includes (D34)."),
             "VersionID": V("1", "The first forecast of the season."),
             "BasedOnConsensusIndicator": V("false", "The store's own figure, not yet agreed with the distributor."),
-            "AdditionalDocumentReference": {"ID": V(f.numbers.get("event", "BM-RE-26"), "The promotion it counts "
-                                                                                       "on.")},
+            "AdditionalDocumentReference": {"ID": V(f.number("event", "26-xb", "RetailEvent"), "The store's retail "
+                                                                                              "event of the "
+                                                                                              "reopening, the "
+                                                                                              "promotion the figure "
+                                                                                              "counts on "
+                                                                                              "(retail/05#F1).")},
             "Signature": {"ID": V("BM-SIG-26-0422", "The store's seal."),
                           "SignatoryParty": party("26-xb", short=True)},
             "ForecastLine": {"Note": V("Week-by-week figures follow in the store's portal.", "Where the detail is."),
-                             "FrozenDocumentIndicator": V("false", "The figure may still change."),
+                             "FrozenDocumentIndicator": V("true", "The figure may still change: by its UBL "
+                                                                  "definition the indicator is true when the "
+                                                                  "document can be changed, which its name "
+                                                                  "contradicts; recorded for the TC "
+                                                                  "(retail/05#F10, D34)."),
                              "ForecastPeriod": {"StartDate": V(f.date(14), "The six weeks."),
                                                 "EndDate": V(f.date(56), "Their end.")}}}
 
@@ -6172,36 +6196,42 @@ def _(f, n, doc, out):
              "SellersItemIdentification": {"ID": V("LD-10442", "The distributor's number.")}}
     return {"Note": V("Agreed with the distributor's sales team.", "Status of the agreement."),
             "SellerEventID": V("LD-PROMO-26-03", "The distributor's number for the promotion."),
-            "BuyerEventID": V("BM-SPRING-GARDEN-26", "The store's number."),
+            "BuyerEventID": V("BM-REOPEN-HG-26", "The store's number for the reopening."),
             # no "original" forecast: the event comes first and the forecast follows it (retail/06#F2, C73)
             "Signature": {"ID": V("BM-SIG-26-0422E", "The store's seal."),
                           "SignatoryParty": party("26-xb", short=True)},
-            "EventComment": {"Comment": V("Shelf space for 12 benches at the entrance.", "What the store "
-                                                                                          "prepares."),
+            "EventComment": {"Comment": V("Floor space for 12 benches at the entrance of the renovated "
+                                          "department.", "What the store prepares (retail/06#F14)."),
                              "IssueDate": V(f.date(2), "Written with the announcement."),
                              "IssueTime": V("11:00:00", "At that time.")},
             "PromotionalEvent": {
-                "PromotionalEventTypeCode": V("TPR", "A temporary price reduction."),
-                "SubmissionDate": V(f.date(2), "Proposed now."),
+                "PromotionalEventTypeCode": V("OPENING", "An opening promotion: the reopening of the department "
+                                                         "(retail/06#F11 read under D34)."),
+                "SubmissionDate": V(f.date(2), "Submitted now; the distributor has agreed it, so no acceptance "
+                                               "deadline follows (retail/06#F7)."),
                 "FirstShipmentAvailabilityDate": V(f.date(9), "Stock can arrive from day 9."),
-                "LatestProposalAcceptanceDate": V(f.date(6), "The distributor answers by day 6."),
                 "PromotionalSpecification": {
-                    "SpecificationID": V("BM-SPRING-GARDEN-26/1", "The first part of the promotion."),
+                    "SpecificationID": V("BM-REOPEN-HG-26/1", "The first part of the promotion."),
                     "PromotionalEventLineItem": {
-                        "Amount": amount(Decimal("74.90"), "XBL", "The price reduction per bench: 10 % of 749."),
+                        "Amount": amount(STORE_BENCH * (1 - REOPEN_OFF), "XBL", "The promotional price per bench: "
+                                                                                "749.00 less 10 % (retail/06#F5)."),
                         "EventLineItem": {
                             "LineNumberNumeric": V("1", "The line."),
                             "ParticipatingLocationsLocation": {"Name": V("Brightmarket Stores, Lumeport", "The "
                                                                                                            "shop.")},
-                            "RetailPlannedImpact": {"Amount": amount(Decimal("17976.00"), "XBL", "24 benches more "
-                                                                     "at 749.00."),
+                            "RetailPlannedImpact": {"Amount": amount(24 * STORE_BENCH * (1 - REOPEN_OFF), "XBL",
+                                                                     "24 benches more at the promotional price of "
+                                                                     "674.10 (retail/06#F13)."),
                                                     "ForecastPurposeCode": V("SALES", "Planned extra sales."),
                                                     "ForecastTypeCode": V("TOTAL", "In total."),
                                                     "Period": {"StartDate": V(f.date(21), "The promotion."),
                                                                "EndDate": V(f.date(34), "Its end.")}},
                             "SupplyItem": bench}}}},
-            "MiscellaneousEvent": {"MiscellaneousEventTypeCode": V("STOREOPEN", "Late opening on the first "
-                                                                                   "Saturday."),
+            "MiscellaneousEvent": {"MiscellaneousEventTypeCode": V("STOREOPEN", "The department's reopening on "
+                                                                                   "Monday 11 May, after its "
+                                                                                   "renovation: the event the "
+                                                                                   "promotion is for (retail/06#F6, "
+                                                                                   "D34)."),
                                    "EventLineItem": {"LineNumberNumeric": V("1", "The line."),
                                                      "SupplyItem": bench}}}
 
@@ -6219,10 +6249,12 @@ def _(f, n, doc, out):
             "InventoryReportLine": {"Note": V("Below the minimum of 6 before the promotion.", "Why it matters."),
                                     "InventoryValueAmount": amount(Decimal("1560.00"), "XBL", "Three at the "
                                                                                               "purchase price."),
-                                    "AvailabilityDate": V(f.date(3), "Available now."),
-                                    "AvailabilityStatusCode": V("AVAILABLE", "On the shelf."),
-                                    "InventoryLocation": {"Name": V("Garden department, ground floor",
-                                                                    "Where they stand.")}}}
+                                    "AvailabilityStatusCode": V("AVAILABLE", "On the shelf: available now, so no "
+                                                                             "date (retail/07#F10)."),
+                                    "InventoryLocation": {**kit.gln_location("26-xb", "garden"),
+                                                          "Name": V("Home and garden department of the Lumeport "
+                                                                    "store, ground floor", "Where they stand, in the "
+                                                                                           "store (retail/07#F14).")}}}
 
 
 FLOWS = {"ore": ORE, "road": ROAD, "rail": RAIL, "plastics": PLASTICS, "retail": RETAIL, "sea": SEA, "air": AIR,
@@ -7307,11 +7339,11 @@ def _(f, n, doc, out):
                                    "SupplierAssignedAccountID": V("LD-C-0418", "The distributor's customer number "
                                                                                "for the store."),
                                    "AdditionalAccountID": V("BM-LUM-01", "The store's branch number."),
-                                   "DeliveryContact": contact("Goods-in, garden department", "Whom the driver "
+                                   "DeliveryContact": contact("Goods-in, home and garden department", "Whom the driver "
                                                               "reports to.", "26-xb"),
                                    "AccountingContact": contact("Accounts payable", "Where invoices go.",
                                                                 email="invoices@brightmarket.example"),
-                                   "BuyerContact": contact("Garden department buyer", "Who placed the order.",
+                                   "BuyerContact": contact("Home and garden department buyer", "Who placed the order.",
                                                            "26-xb")},
             "SellerSupplierParty": {"CustomerAssignedAccountID": V("BM-S-0071", "The store's supplier number for "
                                                                                 "the distributor."),
@@ -7695,12 +7727,14 @@ def _(f, n, doc, out):
 @enrich("retail", "RetailEvent")
 def _(f, n, doc, out):
     spec = out["PromotionalEvent"]["PromotionalSpecification"]
-    spec["EventTactic"] = {"Comment": V("Benches at the entrance, with a price board.", "What the store does."),
+    spec["EventTactic"] = {"Comment": V("Benches on a floor stand at the entrance, with a price board.", "What the "
+                                                                                                 "store does."),
                            "Quantity": qty(12, "EA", "Twelve benches on display."),
                            "EventTacticEnumeration": {"ConsumerIncentiveTacticTypeCode": V("TPR", "A temporary price "
                                                                                                   "reduction."),
-                                                      "DisplayTacticTypeCode": V("ENDCAP", "A display at the "
-                                                                                           "entrance."),
+                                                      "DisplayTacticTypeCode": V("FLOORSTAND", "A floor stand at "
+                                                                                               "the entrance "
+                                                                                               "(retail/06#F14)."),
                                                       "FeatureTacticTypeCode": V("FLYER", "In the store's flyer."),
                                                       "TradeItemPackingLabelingTypeCode": V("STICKER", "A price "
                                                                                                        "sticker on "
@@ -7763,8 +7797,6 @@ def _(f, n, doc, out):
     line.update({"Note": V("Promotion price.", "As printed."),
                  "TaxInclusiveLineExtensionAmount": amount(Decimal("717.92"), "XBL", "With the 6.5 % sales tax."),
                  "TaxTotal": {"TaxAmount": amount(Decimal("43.82"), "XBL", "The sales tax of the line.")},
-                 "PurchaseLinePeriod": {"StartDate": V(f.date(25), "The warranty runs from the purchase"),
-                                        "EndDate": V("2031-05-15", "for five years.")},
                  "PurchaseReference": {"ID": V(bench_frame_serial("VI-LOT-260320"), "The serial number of the bench's frame, "
                                                                              "for the warranty: the bench is one of "
                                                                              "the store's delivery from the March "
@@ -7773,7 +7805,11 @@ def _(f, n, doc, out):
                                        "Description": V("Frame serial number", "What the number is.")}})
     return {"PurchaseReference": {"ID": V("BM-LOYAL-0088127", "The customer's loyalty card."),
                                   "Description": V("Loyalty card", "What the number is.")},
-            "SalesDocumentReference": {"ID": V("BM-DEL-26-0518-07", "The home delivery order.")},
+            "SalesDocumentReference": {"ID": V("BM-DEL-26-0515-07", "The store's home delivery order, booked with "
+                                                                "the sale on 15 May (retail/21#F7)."),
+                                       "DocumentType": V("Home delivery order", "What the document is: the "
+                                                                                "store's own delivery booking, "
+                                                                                "outside the examples.")},
             "AdditionalDocumentReference": {"ID": V("VI-WARRANTY-B180", "The maker's warranty card.")},
             "Signature": seal("26-xb", "BM-SIG-POS-G2")}
 
