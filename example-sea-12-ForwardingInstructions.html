@@ -54,19 +54,21 @@ The booking number the carrier gave.</li>
 <strong>a28c5575-3d16-5217-93bf-9cf7fe81d417</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-05-10</strong><br />
-The forwarder books the container.</li>
+<li><code>IssueDate</code> = <strong>2026-05-11</strong><br />
+The forwarder books the container the same morning (D27, D30 point
+6).</li>
 <li><code>IssueTime</code> = <strong>09:15:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+After the distributor's instructions; in the issuer's local time, with
+its offset from UTC (D27).</li>
 <li><code>Name</code> = <strong>Forwarding instructions</strong><br />
 What they are.</li>
 <li><code>Description</code> = <strong>Instructions for the shipment to
 the island.</strong><br />
 In words.</li>
-<li><code>Note</code> = <strong>Please confirm the
-booking.</strong><br />
-What the sender expects.</li>
+<li><code>Note</code> = <strong>Please confirm the shipping instructions
+for booking TWL-BK-26-55710.</strong><br />
+What the sender expects: from the carrier, the instructions for the
+booking it already gave (sea/12#F6).</li>
 <li><code>ToOrderIndicator</code> = <strong>true</strong><br />
 A bill of lading to order, so the buyer can transfer it.</li>
 <li><code>OtherInstruction</code> = <strong>Send the bill of lading to
@@ -707,11 +709,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BF-FI-26-0137&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;TWL-BK-26-55710&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;a28c5575-3d16-5217-93bf-9cf7fe81d417&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:15:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Forwarding instructions&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Instructions for the shipment to the island.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please confirm the booking.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please confirm the shipping instructions for booking TWL-BK-26-55710.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ToOrderIndicator</span>&gt;true&lt;/<span class="kw">cbc:ToOrderIndicator</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OtherInstruction</span>&gt;Send the bill of lading to the forwarder.&lt;/<span class="kw">cbc:OtherInstruction</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
@@ -929,6 +931,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForwardingInstructions</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

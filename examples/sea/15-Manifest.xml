@@ -164,21 +164,6 @@
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
   </cac:ConsigneeParty>
-  <cac:CrewPerson>
-    <cbc:FirstName>Corin</cbc:FirstName>
-    <cbc:FamilyName>Halvard</cbc:FamilyName>
-    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
-  </cac:CrewPerson>
-  <cac:CrewPerson>
-    <cbc:FirstName>Elsbeth</cbc:FirstName>
-    <cbc:FamilyName>Marrin</cbc:FamilyName>
-    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
-  </cac:CrewPerson>
-  <cac:PassengerPerson>
-    <cbc:FirstName>Ines</cbc:FirstName>
-    <cbc:FamilyName>Tavari</cbc:FamilyName>
-    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
-  </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
@@ -197,10 +182,8 @@
           <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
           <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
           <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
-          <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
           <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
           <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
-          <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
           <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
           <cac:RegistryCertificateDocumentReference>
             <cbc:ID>REG-XB-S-20117</cbc:ID>

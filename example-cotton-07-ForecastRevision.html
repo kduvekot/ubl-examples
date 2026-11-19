@@ -50,8 +50,9 @@ The revision's number.</li>
 <strong>1680348b-7683-52e2-b21d-f88ff92b0f43</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-02-22</strong><br />
-Demand for clothing has risen.</li>
+<li><code>IssueDate</code> = <strong>2026-04-21</strong><br />
+Late April, when the store's clothing orders for the winter are in and
+demand has risen.</li>
 <li><code>IssueTime</code> = <strong>11:08:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -72,9 +73,9 @@ forecast purpose list: ORDER = Order forecast.</li>
 <h3 id="forecast-period">Forecast Period</h3>
 <p>Inside <code>ForecastPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-02-16</strong><br />
-The same period.</li>
-<li><code>EndDate</code> = <strong>2026-06-02</strong><br />
+<li><code>StartDate</code> = <strong>2026-04-01</strong><br />
+The same period as the forecast.</li>
+<li><code>EndDate</code> = <strong>2026-07-31</strong><br />
 Its end.</li>
 </ul>
 <h3 id="original-document-reference">Original Document Reference</h3>
@@ -399,10 +400,11 @@ only its identifier and name are repeated.</li>
 <li><code>ID</code> = <strong>1</strong><br />
 The only line.</li>
 <li><code>Note</code> = <strong>Twenty per cent more.</strong><br />
-The change.</li>
-<li><code>Description</code> = <strong>More bales from the second half
-of the season.</strong><br />
-In words.</li>
+The change: 28,800 kg against 24,000 kg.</li>
+<li><code>Description</code> = <strong>More bales over the
+season.</strong><br />
+In words: the season's total, for the whole period of the forecast
+(cotton/07#F8).</li>
 <li><code>RevisedForecastLineID</code> = <strong>1</strong><br />
 The forecast line revised.</li>
 <li><code>SourceForecastIssueDate</code> =
@@ -416,14 +418,15 @@ Its issue time.</li>
 Higher demand. The code is from the Trade Accord's forecast adjustment
 reason list: DEMAND = Demand change.</li>
 <li><code>ForecastPeriod/StartDate</code> =
-<strong>2026-04-03</strong><br />
-From mid-season.</li>
+<strong>2026-04-01</strong><br />
+The whole period of the forecast: the new total is the season's.</li>
 <li><code>ForecastPeriod/EndDate</code> =
-<strong>2026-06-02</strong><br />
-To the end.</li>
-<li><code>SalesItem/Quantity</code> = <strong>30000</strong> (unitCode
+<strong>2026-07-31</strong><br />
+To its end.</li>
+<li><code>SalesItem/Quantity</code> = <strong>28800</strong> (unitCode
 <code>KGM</code>)<br />
-Raised to five containers.</li>
+The season's total raised by twenty per cent: 24,000 kg × 1.20
+(cotton/07#F1).</li>
 <li><code>SalesItem/Item/Description</code> = <strong>Nipupe tekapa
 suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki
 katani 227 kg.</strong> (languageID <code>qal</code>)<br />
@@ -458,15 +461,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;COTTON-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LTM-FR-26-0197&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;1680348b-7683-52e2-b21d-f88ff92b0f43&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-21&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:08:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Demand for clothing has risen.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SequenceNumberID</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumberID</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RevisionStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RevisionStatusCode&quot;</span>&gt;REVISED&lt;/<span class="kw">cbc:RevisionStatusCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastPurposeCode&quot;</span>&gt;ORDER&lt;/<span class="kw">cbc:PurposeCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ForecastPeriod</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-16&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-02&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ForecastPeriod</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OriginalDocumentReference</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-FC-26-0192&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -586,17 +589,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ForecastRevisionLine</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Twenty per cent more.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;More bales from the second half of the season.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;More bales over the season.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisedForecastLineID</span>&gt;1&lt;/<span class="kw">cbc:RevisedForecastLineID</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceForecastIssueDate</span>&gt;2026-02-02&lt;/<span class="kw">cbc:SourceForecastIssueDate</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceForecastIssueTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:SourceForecastIssueTime</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdjustmentReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode&quot;</span>&gt;DEMAND&lt;/<span class="kw">cbc:AdjustmentReasonCode</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ForecastPeriod</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-03&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-02&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ForecastPeriod</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SalesItem</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;30000&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;28800&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -611,6 +614,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ForecastRevision</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

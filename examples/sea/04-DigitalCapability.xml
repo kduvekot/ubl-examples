@@ -183,9 +183,155 @@
   <cac:DigitalProcess>
     <cbc:ID>ordering</cbc:ID>
     <cbc:Description>Receives orders and order changes, sends order responses.</cbc:Description>
+    <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
+    <cac:DigitalCollaboration>
+      <cbc:ID>ordering-1</cbc:ID>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>LD-Order-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>Order</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+    <cac:DigitalCollaboration>
+      <cbc:ID>ordering-2</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>LD-OrderResponse-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>OrderResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:SendingDigitalService>
+    </cac:DigitalCollaboration>
   </cac:DigitalProcess>
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
-    <cbc:Description>Sends invoices and statements, receives remittance advices.</cbc:Description>
+    <cbc:Description>Sends invoices, credit notes and invoice status requests, receives the status responses (sea/04#F10).</cbc:Description>
+    <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
+    <cac:DigitalCollaboration>
+      <cbc:ID>billing-1</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>LD-Invoice-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>Invoice</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:SendingDigitalService>
+    </cac:DigitalCollaboration>
+    <cac:DigitalCollaboration>
+      <cbc:ID>billing-2</cbc:ID>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>LD-InvoiceStatusResponse-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>InvoiceStatusResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InvoiceStatusResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
   </cac:DigitalProcess>
 </DigitalCapability>

@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-PR-26-0154</cbc:ID>
+  <cbc:ID>VT-PR-26-0153</cbc:ID>
   <cbc:UUID>464955fd-c2fe-5d30-a020-fe67a7fc3e92</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>
@@ -137,7 +137,7 @@
   </cac:PointOfSaleLocation>
   <cac:Payment>
     <cbc:ID>VT-T1-26-0613-0012</cbc:ID>
-    <cbc:PaidAmount currencyID="XLC">578.000</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XLC">750.000</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-13</cbc:PaidDate>
     <cbc:PaidTime>10:25:00</cbc:PaidTime>
     <cbc:MerchantID>CORALCARD-M-0001859</cbc:MerchantID>
@@ -159,15 +159,15 @@
     </cac:CardAccount>
   </cac:PaymentMeans>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">578.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">578.000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">578.000</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">750.000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">750.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">750.000</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">750.000</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">750.000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
       <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
@@ -197,8 +197,8 @@
       </cac:AdditionalItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">289</cbc:PriceAmount>
-      <cbc:TaxInclusivePriceAmount currencyID="XLC">289</cbc:TaxInclusivePriceAmount>
+      <cbc:PriceAmount currencyID="XLC">375</cbc:PriceAmount>
+      <cbc:TaxInclusivePriceAmount currencyID="XLC">375</cbc:TaxInclusivePriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>

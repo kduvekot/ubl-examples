@@ -6,9 +6,9 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBI-26-0194</cbc:ID>
   <cbc:UUID>6d8069bb-fe8b-5c9f-bd12-45c38c2363b6</cbc:UUID>
-  <cbc:IssueDate>2026-02-07</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>15:50:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-03-24</cbc:DueDate>
+  <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">389</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
@@ -18,8 +18,8 @@
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
-    <cbc:StartDate>2026-02-03</cbc:StartDate>
-    <cbc:EndDate>2026-02-05</cbc:EndDate>
+    <cbc:StartDate>2026-04-06</cbc:StartDate>
+    <cbc:EndDate>2026-04-08</cbc:EndDate>
   </cac:InvoicePeriod>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
@@ -33,19 +33,9 @@
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
-  <cac:WorkReportDocumentReference>
-    <cbc:ID>SCG-OUT-26-0311</cbc:ID>
-  </cac:WorkReportDocumentReference>
   <cac:DeliveryNoteDocumentReference>
     <cbc:ID>LCF-DN-26-0193</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
-  <cac:StatementDocumentReference>
-    <cbc:ID>SCG-ACC-LCF-26-02</cbc:ID>
-  </cac:StatementDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>LTM-SEASON-2026</cbc:ID>
-    <cbc:DocumentType>Season agreement</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
     <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
@@ -54,9 +44,6 @@
     <cbc:ID>LFR-0412</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
-  <cac:ProjectReference>
-    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
-  </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>SCG-AP-FARMS</cbc:BuyerReferenceCode>
     <cbc:BuyerReference>Farm payments</cbc:BuyerReference>
@@ -64,9 +51,6 @@
   <cac:PurchaseReference>
     <cbc:ID>LCF-FIELD-07</cbc:ID>
   </cac:PurchaseReference>
-  <cac:Annotation>
-    <cbc:AnnotationContent>Written by the gin on the farm's behalf under the self-billing agreement.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>SCG-SIG-SB-02</cbc:ID>
     <cac:SignatoryParty>
@@ -252,24 +236,6 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Textile Mill</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Textile Mill</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:PayeeParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
@@ -278,28 +244,20 @@
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
     </cac:PartyName>
   </cac:PayeeParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
-    </cac:PartyName>
-  </cac:TaxRepresentativeParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-04-08</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Selanu Cotton Ginnery, weighbridge</cbc:Name>
     </cac:DeliveryLocation>
   </cac:Delivery>
   <cac:DeliveryTerms>
-    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+    <cbc:SpecialTerms>Delivered at the gin's weighbridge by the farm's own tractor; the ginnery pays the farm a haulage allowance of 0.010 coral a kilogram, as the season agreement provides.</cbc:SpecialTerms>
   </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF77SCGSBI260194</cbc:InstructionNote>
@@ -348,7 +306,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>45 days net.</cbc:Note>
     <cbc:PaymentTermsDetailsURI>https://www.lisavufarm.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
@@ -357,28 +315,22 @@
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
     <cbc:ID>SCG-ADV-26-0012</cbc:ID>
-    <cbc:PaidAmount currencyID="XLC">1017.000</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XLC">1485.000</cbc:PaidAmount>
     <cbc:PaidDate>2026-01-13</cbc:PaidDate>
   </cac:PrepaidPayment>
   <cac:AllowanceCharge>
     <cbc:ID>1</cbc:ID>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAB</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Haulage allowance</cbc:AllowanceChargeReason>
-    <cbc:PrepaidIndicator>false</cbc:PrepaidIndicator>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:AllowanceChargeReason>Haulage to the gin, paid to the farm</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">180.000</cbc:Amount>
     <cbc:TaxInclusiveAmount currencyID="XLC">180.000</cbc:TaxInclusiveAmount>
-    <cbc:BaseAmount currencyID="XLC">4068.000</cbc:BaseAmount>
     <cbc:AccountingCostCode>210</cbc:AccountingCostCode>
     <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
     <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
-    <cac:PaymentMeans>
-      <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    </cac:PaymentMeans>
   </cac:AllowanceCharge>
   <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XLC">61.360</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XLC">98.800</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XLC">2000.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">20.000</cbc:TaxAmount>
@@ -397,8 +349,8 @@
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">2068.000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">41.360</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XLC">3940.000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XLC">78.800</cbc:TaxAmount>
       <cbc:Percent>2</cbc:Percent>
       <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
       <cbc:TierRatePercent>2</cbc:TierRatePercent>
@@ -415,21 +367,21 @@
     </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">4248.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">4248.000</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">5940.000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">6120.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">6120.000</cbc:TaxInclusiveAmount>
     <cbc:AllowanceTotalTaxInclusiveAmount currencyID="XLC">0.000</cbc:AllowanceTotalTaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XLC">180.000</cbc:ChargeTotalAmount>
     <cbc:ChargeTotalTaxInclusiveAmount currencyID="XLC">180.000</cbc:ChargeTotalTaxInclusiveAmount>
-    <cbc:WithholdingTaxTotalAmount currencyID="XLC">61.360</cbc:WithholdingTaxTotalAmount>
-    <cbc:PrepaidAmount currencyID="XLC">1017.000</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XLC">3210.320</cbc:PayableAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XLC">98.800</cbc:WithholdingTaxTotalAmount>
+    <cbc:PrepaidAmount currencyID="XLC">1485.000</cbc:PrepaidAmount>
+    <cbc:PayableAmount currencyID="XLC">4595.600</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CollectionInvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">40.680</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">59.400</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
@@ -445,7 +397,7 @@
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">18000</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">5940.000</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryNoteLineReference>
         <cbc:LineID>1</cbc:LineID>
@@ -466,7 +418,7 @@
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XLC">0.33</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

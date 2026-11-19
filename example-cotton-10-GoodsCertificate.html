@@ -54,8 +54,9 @@ The Plant Protection Service's certificate number.</li>
 <strong>78516adf-5718-5e78-bd9d-8e44536e335b</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-02-28</strong><br />
-Issued before shipment, at the ginnery's application.</li>
+<li><code>IssueDate</code> = <strong>2026-05-05</strong><br />
+Issued after the inspection at the ginnery, before shipment, at the
+ginnery's application.</li>
 <li><code>IssueTime</code> = <strong>14:43:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -81,9 +82,9 @@ The first version.</li>
 <h3 id="validity-period">Validity Period</h3>
 <p>Inside <code>ValidityPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-02-28</strong><br />
+<li><code>StartDate</code> = <strong>2026-05-05</strong><br />
 From the inspection.</li>
-<li><code>EndDate</code> = <strong>2026-03-14</strong><br />
+<li><code>EndDate</code> = <strong>2026-05-19</strong><br />
 For two weeks: the bales must ship by then.</li>
 </ul>
 <h3 id="applicable-territory-address">Applicable Territory Address</h3>
@@ -626,7 +627,7 @@ The sample, out of the bales of the shipment.</li>
 <li><code>AcceptanceIndicator</code> = <strong>true</strong><br />
 Accepted.</li>
 <li><code>ValidityPeriod/EndDate</code> =
-<strong>2026-03-14</strong><br />
+<strong>2026-05-19</strong><br />
 As the certificate.</li>
 <li><code>IssuerParty/PartyIdentification/ID</code> =
 <strong>GOV-206</strong> (schemeID
@@ -678,10 +679,12 @@ In words.</li>
 <li><code>Note</code> = <strong>At the Selanu cotton
 ginnery.</strong><br />
 Where.</li>
-<li><code>Period/StartDate</code> = <strong>2026-02-07</strong><br />
-The ginning.</li>
-<li><code>Period/EndDate</code> = <strong>2026-02-22</strong><br />
-Its end.</li>
+<li><code>Period/StartDate</code> = <strong>2026-03-23</strong><br />
+The ginning and pressing of the 27 bales, in three pressing runs of the
+harvest, from 23 March.</li>
+<li><code>Period/EndDate</code> = <strong>2026-04-17</strong><br />
+The last run, on 17 April, before the chamber classed the lot on 20
+April.</li>
 <li><code>ProcessingParty/PartyIdentification/ID</code> =
 <strong>IC42681</strong> (schemeID
 <code>urn:ubl-examples:world:XL:register</code>)<br />
@@ -691,11 +694,6 @@ name are enough.</li>
 Ginnery</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>CriterionItem/TypeCode</code> = <strong>PROCESSING</strong>
-(listID
-<code>urn:ubl-examples:world:codelist:GoodsProcessingTypeCode</code>)<br />
-A criterion on how the goods were processed. The code is from the Trade
-Accord's goods processing type list: PROCESSING = Processing.</li>
 <li><code>CriterionItem/CriterionDescription</code> = <strong>Seed
 removed; lint only.</strong><br />
 What processing the rule requires.</li>
@@ -710,17 +708,6 @@ type list: PRESSING = Pressing.</li>
 <li><code>SubGoodsProcessing/Description</code> = <strong>Bales of about
 227 kg.</strong><br />
 In words.</li>
-</ul>
-<h3 id="original-document-reference">Original Document Reference</h3>
-<p>Inside <code>OriginalDocumentReference</code>:</p>
-<ul>
-<li><code>ID</code> = <strong>XL-CLS-2026-0042</strong><br />
-The classing certificate of the cotton.</li>
-<li><code>DocumentType</code> = <strong>Classing
-certificate</strong><br />
-The kind of document referred to, the classing certificate of the
-cotton, a document outside the examples, in words: no list has an exact
-code for it (world/documents.json, cited; decision Q29).</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -760,7 +747,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;COTTON-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;DAL-GC-26-0202&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;78516adf-5718-5e78-bd9d-8e44536e335b&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:43:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:GoodsCertificateTypeCode&quot;</span>&gt;PHYTO&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;The ginned cotton is free of the pests named by Bayvarra&#39;s plant health rules.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -768,8 +755,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Inspected at the ginnery&#39;s warehouse.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-14&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ApplicableTerritoryAddress</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Country</span>&gt;</span>
@@ -968,7 +955,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;10 bales sampled out of 27.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AcceptanceIndicator</span>&gt;true&lt;/<span class="kw">cbc:AcceptanceIndicator</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-14&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1001,8 +988,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Ginned, cleaned and pressed into bales.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;At the Selanu cotton ginnery.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-07&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-22&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-17&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcessingParty</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1013,39 +1000,34 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcessingParty</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CriterionItem</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:GoodsProcessingTypeCode&quot;</span>&gt;PROCESSING&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CriterionDescription</span>&gt;Seed removed; lint only.&lt;/<span class="kw">cbc:CriterionDescription</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeclaredPropertyItem</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Cotton lint&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeclaredPropertyItem</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CriterionItem</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubGoodsProcessing</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:GoodsProcessingTypeCode&quot;</span>&gt;PRESSING&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bales of about 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubGoodsProcessing</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsProcessing</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OriginalDocumentReference</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XL-CLS-2026-0042&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Classing certificate&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OriginalDocumentReference</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-PO-26-0198&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;DAL-SIG-26-PH&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-206&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Department of Agriculture of Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">GoodsCertificate</span>&gt;</span></code></pre></div>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CriterionDescription</span>&gt;Seed removed; lint only.&lt;/<span class="kw">cbc:CriterionDescription</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeclaredPropertyItem</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Cotton lint&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeclaredPropertyItem</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CriterionItem</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubGoodsProcessing</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:GoodsProcessingTypeCode&quot;</span>&gt;PRESSING&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bales of about 227 kg.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubGoodsProcessing</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:GoodsProcessing</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-PO-26-0198&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;DAL-SIG-26-PH&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:public-body-register&quot;</span>&gt;GOV-206&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Department of Agriculture of Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">GoodsCertificate</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

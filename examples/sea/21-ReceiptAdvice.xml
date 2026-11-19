@@ -13,7 +13,7 @@
   <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note>Counted and checked at goods-in. The container was collected from the port on 19 May, the day after customs released it; one frame is refused as damaged, and we pass on Velumi Trading's request for its credit.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -250,7 +250,7 @@
   <cac:ReceiptLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>One frame carton crushed at the port; the frame inside is cracked.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">12</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
     <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
     <cbc:RejectReason>One frame carton crushed at the port; the frame inside is cracked.</cbc:RejectReason>
@@ -283,6 +283,9 @@
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>
       </cac:AdditionalItemIdentification>
+      <cac:ItemInstance>
+        <cbc:SerialID>VI-SF-01501</cbc:SerialID>
+      </cac:ItemInstance>
     </cac:Item>
   </cac:ReceiptLine>
 </ReceiptAdvice>

@@ -49,8 +49,9 @@ The factor's statement number.</li>
 <strong>16a04e73-7f53-554f-be69-453ee6e81d9c</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-06-13</strong><br />
-The monthly statement of account.</li>
+<li><code>IssueDate</code> = <strong>2026-06-12</strong><br />
+The monthly statement of account, on Friday 12 June, the factor's last
+working day of the week (D27, D30 point 6).</li>
 <li><code>IssueTime</code> = <strong>08:43:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -63,13 +64,13 @@ Who the statement is for.</li>
 The lume, the currency of the invoices; it has two decimals. The code is
 from the world's copy of UBL's Currency (ISO 4217) list: XBL =
 Lume.</li>
-<li><code>TotalDebitAmount</code> = <strong>57974.30</strong>
+<li><code>TotalDebitAmount</code> = <strong>54896.00</strong>
 (currencyID <code>XBL</code>)<br />
 The invoice in full.</li>
 <li><code>TotalCreditAmount</code> = <strong>10000.00</strong>
 (currencyID <code>XBL</code>)<br />
 The deposit the buyer paid on the order.</li>
-<li><code>TotalBalanceAmount</code> = <strong>47974.30</strong>
+<li><code>TotalBalanceAmount</code> = <strong>44896.00</strong>
 (currencyID <code>XBL</code>)<br />
 What is owed.</li>
 <li><code>LineCountNumeric</code> = <strong>2</strong><br />
@@ -82,8 +83,9 @@ statement type list: ACCOUNT = Statement of account.</li>
 <h3 id="statement-period">Statement Period</h3>
 <p>Inside <code>StatementPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-05-14</strong><br />
-From the invoice.</li>
+<li><code>StartDate</code> = <strong>2026-05-08</strong><br />
+From the account's first movement, the deposit paid on the order's
+acceptance (sea/25#F6).</li>
 <li><code>EndDate</code> = <strong>2026-06-13</strong><br />
 To the statement date.</li>
 </ul>
@@ -594,23 +596,6 @@ The due date. The count ends on Sunday 28 June, no business day in
 Bayvarra, the payee's country, so the payment is due on the next one,
 Monday 29 June (O180).</li>
 </ul>
-<h3 id="allowance-charge">Allowance Charge</h3>
-<p>Inside <code>AllowanceCharge</code>:</p>
-<ul>
-<li><code>ChargeIndicator</code> = <strong>true</strong><br />
-The charges in the account, summed.</li>
-<li><code>AllowanceChargeReasonCode</code> = <strong>FC</strong> (listID
-<code>UN/EDIFACT EDED 7161</code>)<br />
-The sum is mostly freight; one code covers the charge (UN/EDIFACT 7161).
-The code is from the world's copy of UN/EDIFACT 7161 Special service
-description: FC = Freight service.</li>
-<li><code>AllowanceChargeReason</code> = <strong>Freight and insurance
-of the CIF invoice</strong><br />
-Why.</li>
-<li><code>Amount</code> = <strong>3090.30</strong> (currencyID
-<code>XBL</code>)<br />
-Included in the balance.</li>
-</ul>
 <h3 id="statement-line">Statement Line</h3>
 <p>Inside <code>StatementLine</code>:</p>
 <ul>
@@ -626,10 +611,10 @@ and the line number.</li>
 <li><code>BalanceBroughtForwardIndicator</code> =
 <strong>false</strong><br />
 A new item, not a balance carried over.</li>
-<li><code>DebitLineAmount</code> = <strong>57974.30</strong> (currencyID
+<li><code>DebitLineAmount</code> = <strong>54896.00</strong> (currencyID
 <code>XBL</code>)<br />
 The invoice in full.</li>
-<li><code>BalanceAmount</code> = <strong>57974.30</strong> (currencyID
+<li><code>BalanceAmount</code> = <strong>54896.00</strong> (currencyID
 <code>XBL</code>)<br />
 Before the deposit.</li>
 <li><code>PaymentPurposeCode</code> = <strong>GDDS</strong> (listID
@@ -692,35 +677,6 @@ assignment</strong><br />
 The kind of document referred to, Harbourline's notice of the assigned
 receivable, a document outside the examples, in words: no list has an
 exact code for it (world/documents.json, cited; decision Q29).</li>
-<li><code>AllowanceCharge/ChargeIndicator</code> =
-<strong>true</strong><br />
-A charge in the invoice of the line.</li>
-<li><code>AllowanceCharge/AllowanceChargeReasonCode</code> =
-<strong>FC</strong> (listID <code>UN/EDIFACT EDED 7161</code>)<br />
-The reason for the charge as a code: for a charge UN/EDIFACT 7161
-(special services). The code is from the world's copy of UN/EDIFACT 7161
-Special service description: FC = Freight service.</li>
-<li><code>AllowanceCharge/AllowanceChargeReason</code> = <strong>Sea
-freight</strong><br />
-As on the invoice: CIF.</li>
-<li><code>AllowanceCharge/Amount</code> = <strong>2950.00</strong>
-(currencyID <code>XBL</code>)<br />
-The freight.</li>
-<li><code>AllowanceCharge/ChargeIndicator</code> =
-<strong>true</strong><br />
-A charge.</li>
-<li><code>AllowanceCharge/AllowanceChargeReasonCode</code> =
-<strong>96</strong> (listID <code>UN/EDIFACT EDED 5189</code>)<br />
-UN/EDIFACT 7161 has no code for insurance, so the code is from
-UN/EDIFACT 5189, with that list's listID. The code is from the world's
-copy of UN/EDIFACT 5189 Allowance or charge identification: 96 =
-Insurance.</li>
-<li><code>AllowanceCharge/AllowanceChargeReason</code> = <strong>Cargo
-insurance</strong><br />
-As on the invoice.</li>
-<li><code>AllowanceCharge/Amount</code> = <strong>140.30</strong>
-(currencyID <code>XBL</code>)<br />
-The premium.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The deposit.</li>
 <li><code>Note</code> = <strong>Paid to the distributor before the
@@ -733,19 +689,13 @@ and the line number.</li>
 <li><code>CreditLineAmount</code> = <strong>10000.00</strong>
 (currencyID <code>XBL</code>)<br />
 The deposit.</li>
-<li><code>BalanceAmount</code> = <strong>47974.30</strong> (currencyID
+<li><code>BalanceAmount</code> = <strong>44896.00</strong> (currencyID
 <code>XBL</code>)<br />
 Open after the deposit: what the buyer still owes.</li>
 <li><code>PaymentMeans/PaymentMeansCode</code> = <strong>30</strong>
 (listID <code>UN/EDIFACT EDED 4461</code>)<br />
 Paid by credit transfer. The code is from UBL's default Payment means
 (UN/EDIFACT 4461) list: 30 = Credit transfer.</li>
-<li><code>InvoicePeriod/StartDate</code> =
-<strong>2026-05-08</strong><br />
-The order's deposit period.</li>
-<li><code>InvoicePeriod/EndDate</code> =
-<strong>2026-05-09</strong><br />
-Paid and received.</li>
 <li><code>CollectedPayment/ID</code> =
 <strong>VT-DEP-26-0412</strong><br />
 The deposit payment.</li>
@@ -755,6 +705,10 @@ Paid.</li>
 <li><code>CollectedPayment/ReceivedDate</code> =
 <strong>2026-05-09</strong><br />
 Received by the distributor.</li>
+<li><code>CollectedPayment/PaidDate</code> =
+<strong>2026-05-08</strong><br />
+Paid by the buyer the day the order was accepted: the payment's dates,
+not an invoice period (sea/25#F3).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -766,17 +720,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;SEA-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;HF-ST-26-0150&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;16a04e73-7f53-554f-be69-453ee6e81d9c&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-12&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:43:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.30&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54896.00&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalBalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;47974.30&lt;/<span class="kw">cbc:TotalBalanceAmount</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalBalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;44896.00&lt;/<span class="kw">cbc:TotalBalanceAmount</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;2&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:StatementTypeCode&quot;</span>&gt;ACCOUNT&lt;/<span class="kw">cbc:StatementTypeCode</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementPeriod</span>&gt;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-08&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-13&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatementPeriod</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
@@ -959,106 +913,85 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Pay the balance by the due date of the invoice.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-29&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7161&quot;</span>&gt;FC&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Freight and insurance of the CIF invoice&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;3090.30&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementLine</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The invoice, bought by the factor.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;56439119-78e3-59ec-bc7d-84c3d3a46f09&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceBroughtForwardIndicator</span>&gt;false&lt;/<span class="kw">cbc:BalanceBroughtForwardIndicator</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.30&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.30&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;GDDS&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-29&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeParty</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411233&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Harbourline Factoring&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeParty</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-INV-26-0147&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;HF-ASSIGN-26-0091&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Notice of assignment&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7161&quot;</span>&gt;FC&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Sea freight&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2950.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 5189&quot;</span>&gt;96&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Cargo insurance&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;140.30&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatementLine</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementLine</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Paid to the distributor before the invoice was assigned.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;16aec267-0a53-5561-ad4f-79c534c1d918&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;47974.30&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-08&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:InvoicePeriod</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CollectedPayment</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VT-DEP-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ReceivedDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:ReceivedDate</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CollectedPayment</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatementLine</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Statement</span>&gt;</span></code></pre></div>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementLine</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The invoice, bought by the factor.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;56439119-78e3-59ec-bc7d-84c3d3a46f09&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceBroughtForwardIndicator</span>&gt;false&lt;/<span class="kw">cbc:BalanceBroughtForwardIndicator</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54896.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54896.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;GDDS&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-29&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeParty</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411233&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Harbourline Factoring&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeParty</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-INV-26-0147&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;HF-ASSIGN-26-0091&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Notice of assignment&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatementLine</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementLine</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Paid to the distributor before the invoice was assigned.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;16aec267-0a53-5561-ad4f-79c534c1d918&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;44896.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CollectedPayment</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VT-DEP-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ReceivedDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:ReceivedDate</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaidDate</span>&gt;2026-05-08&lt;/<span class="kw">cbc:PaidDate</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CollectedPayment</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatementLine</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Statement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

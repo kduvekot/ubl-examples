@@ -76,9 +76,13 @@ In words.</li>
 <code>urn:ubl-examples:world:codelist:RejectActionCode</code>)<br />
 A credit is asked for the refused goods. The code is from the Trade
 Accord's reject action list: CREDIT = Credit requested.</li>
-<li><code>Note</code> = <strong>Counted and checked at
-goods-in.</strong><br />
-How the goods were received.</li>
+<li><code>Note</code> = <strong>Counted and checked at goods-in. The
+container was collected from the port on 19 May, the day after customs
+released it; one frame is refused as damaged, and we pass on Velumi
+Trading's request for its credit.</strong><br />
+What the receipt says: when the on-carriage took place (timelines#F7),
+and that the 3PL relays the buyer's request for a credit, not its own
+(sea/21#F7, D30 point 9).</li>
 <li><code>LineCountNumeric</code> = <strong>3</strong><br />
 The number of lines.</li>
 </ul>
@@ -686,9 +690,10 @@ The line number.</li>
 <li><code>Note</code> = <strong>One frame carton crushed at the port;
 the frame inside is cracked.</strong><br />
 The line in words.</li>
-<li><code>ReceivedQuantity</code> = <strong>11</strong> (unitCode
+<li><code>ReceivedQuantity</code> = <strong>12</strong> (unitCode
 <code>EA</code>)<br />
-One frame carton crushed at the port; the frame inside is cracked.</li>
+All twelve frames arrived; one of them is refused, so eleven go into the
+buyer's stock (sea/21#F8).</li>
 <li><code>RejectedQuantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
 Refused at goods-in.</li>
@@ -761,6 +766,10 @@ The maker's number for the item in its globally unique form under
 ISO/IEC 15459 (KXU and the company number Codana gave Valdara
 Industries), which travels along with the GTIN, as an importer may carry
 it; item bench-casting of Valdara Industries (world/items.json).</li>
+<li><code>Item/ItemInstance/SerialID</code> =
+<strong>VI-SF-01501</strong><br />
+The serial of the cracked frame, as the despatch advice lists it
+(sea/21#F9).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -779,7 +788,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RejectReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RejectReasonCode&quot;</span>&gt;DAMAGED&lt;/<span class="kw">cbc:RejectReasonCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RejectReason</span>&gt;Damaged in transit.&lt;/<span class="kw">cbc:RejectReason</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RejectActionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RejectActionCode&quot;</span>&gt;CREDIT&lt;/<span class="kw">cbc:RejectActionCode</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Counted and checked at goods-in.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Counted and checked at goods-in. The container was collected from the port on 19 May, the day after customs released it; one frame is refused as damaged, and we pass on Velumi Trading&#39;s request for its credit.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;3&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VT-PO-26-0127&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1016,7 +1025,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiptLine</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;One frame carton crushed at the port; the frame inside is cracked.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;11&lt;/<span class="kw">cbc:ReceivedQuantity</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:ReceivedQuantity</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RejectedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:RejectedQuantity</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RejectReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RejectReasonCode&quot;</span>&gt;DAMAGED&lt;/<span class="kw">cbc:RejectReasonCode</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RejectReason</span>&gt;One frame carton crushed at the port; the frame inside is cracked.&lt;/<span class="kw">cbc:RejectReason</span>&gt;</span>
@@ -1049,11 +1058,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiptLine</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ReceiptAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SerialID</span>&gt;VI-SF-01501&lt;/<span class="kw">cbc:SerialID</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiptLine</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ReceiptAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

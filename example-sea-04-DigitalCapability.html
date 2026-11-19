@@ -573,11 +573,307 @@ A process the distributor supports.</li>
 <li><code>Description</code> = <strong>Receives orders and order
 changes, sends order responses.</strong><br />
 What it covers.</li>
+<li><code>ProfileID</code> =
+<strong>urn:ubl-examples:world:profile:ordering:1.0</strong><br />
+The Trade Accord's process profile, as in the agreement.</li>
+<li><code>DigitalCollaboration/ID</code> =
+<strong>ordering-1</strong><br />
+The exchange as the agreement numbers it.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/ID</code> =
+<strong>LD-Order-IN</strong><br />
+The party's service for this document.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/CustomizationID</code>
+= <strong>urn:ubl-examples:world:trns:order:1.0</strong><br />
+The specification the documents of this service follow: the
+CustomizationID those documents carry in this flow.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID</code>
+= <strong>Order</strong><br />
+The document type.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID</code>
+= <strong>UBL</strong><br />
+The format.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/VersionID</code>
+= <strong>2.5</strong><br />
+Its version.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/SchemaURI</code>
+= <strong><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd">https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd</a></strong><br />
+The schema.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode</code>
+= <strong>Order</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document type, as a code. The code is from the Trade Accord's UBL
+document type list: Order.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID</code>
+= <strong>ACCORD-NET</strong><br />
+The trade accord's document network.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID</code>
+= <strong>XB:20410274</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's address on it. The schemeID names the scheme it is from: the
+electronic address in the Trade Accord's exchange network (the country
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
+= <strong>false</strong><br />
+In production.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID</code>
+= <strong>LTAC-AP-20410274</strong><br />
+The serial number of the access point's X.509 certificate, unique only
+with its issuer: the Trade Accord Council, the certification authority
+of the network (decision ID-Q10).</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType</code>
+= <strong>Access point</strong><br />
+Its kind.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
+= <strong>Lumeport Trade Accord Council</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID</code>
+= <strong>AS4</strong><br />
+The transport protocol.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode</code>
+= <strong>SBDH</strong> (listID
+<code>urn:ubl-examples:world:codelist:EnvelopeTypeCode</code>)<br />
+The business envelope. The code is from the Trade Accord's envelope type
+list: SBDH = Standard Business Document Header.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI</code>
+= <strong><a
+href="https://ap.lumeway.example/as4">https://ap.lumeway.example/as4</a></strong><br />
+The access point, under the party's own domain.</li>
+<li><code>DigitalCollaboration/ID</code> =
+<strong>ordering-2</strong><br />
+The exchange as the agreement numbers it.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/ID</code> =
+<strong>LD-OrderResponse-OUT</strong><br />
+The party's service for this document.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/CustomizationID</code>
+= <strong>urn:ubl-examples:world:trns:order-response:1.0</strong><br />
+The specification the documents of this service follow: the
+CustomizationID those documents carry in this flow.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID</code>
+= <strong>OrderResponse</strong><br />
+The document type.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID</code>
+= <strong>UBL</strong><br />
+The format.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/VersionID</code>
+= <strong>2.5</strong><br />
+Its version.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/SchemaURI</code>
+= <strong><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd">https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd</a></strong><br />
+The schema.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode</code>
+= <strong>OrderResponse</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document type, as a code. The code is from the Trade Accord's UBL
+document type list: OrderResponse = Order Response.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID</code>
+= <strong>ACCORD-NET</strong><br />
+The trade accord's document network.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID</code>
+= <strong>XB:20410274</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's address on it. The schemeID names the scheme it is from: the
+electronic address in the Trade Accord's exchange network (the country
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
+= <strong>false</strong><br />
+In production.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID</code>
+= <strong>LTAC-AP-20410274</strong><br />
+The serial number of the access point's X.509 certificate, unique only
+with its issuer: the Trade Accord Council, the certification authority
+of the network (decision ID-Q10).</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType</code>
+= <strong>Access point</strong><br />
+Its kind.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
+= <strong>Lumeport Trade Accord Council</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID</code>
+= <strong>AS4</strong><br />
+The transport protocol.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode</code>
+= <strong>SBDH</strong> (listID
+<code>urn:ubl-examples:world:codelist:EnvelopeTypeCode</code>)<br />
+The business envelope. The code is from the Trade Accord's envelope type
+list: SBDH = Standard Business Document Header.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI</code>
+= <strong><a
+href="https://ap.lumeway.example/as4">https://ap.lumeway.example/as4</a></strong><br />
+The access point, under the party's own domain.</li>
 <li><code>ID</code> = <strong>billing</strong><br />
 A process the distributor supports.</li>
-<li><code>Description</code> = <strong>Sends invoices and statements,
-receives remittance advices.</strong><br />
+<li><code>Description</code> = <strong>Sends invoices, credit notes and
+invoice status requests, receives the status responses
+(sea/04#F10).</strong><br />
 What it covers.</li>
+<li><code>ProfileID</code> =
+<strong>urn:ubl-examples:world:profile:billing:1.0</strong><br />
+The Trade Accord's process profile, as in the agreement.</li>
+<li><code>DigitalCollaboration/ID</code> =
+<strong>billing-1</strong><br />
+The exchange as the agreement numbers it.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/ID</code> =
+<strong>LD-Invoice-OUT</strong><br />
+The party's service for this document.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/CustomizationID</code>
+= <strong>urn:ubl-examples:world:trns:billing:1.0</strong><br />
+The specification the documents of this service follow: the
+CustomizationID those documents carry in this flow.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID</code>
+= <strong>Invoice</strong><br />
+The document type.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID</code>
+= <strong>UBL</strong><br />
+The format.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/VersionID</code>
+= <strong>2.5</strong><br />
+Its version.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/SchemaURI</code>
+= <strong><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd">https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd</a></strong><br />
+The schema.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode</code>
+= <strong>Invoice</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document type, as a code. The code is from the Trade Accord's UBL
+document type list: Invoice.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID</code>
+= <strong>ACCORD-NET</strong><br />
+The trade accord's document network.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID</code>
+= <strong>XB:20410274</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's address on it. The schemeID names the scheme it is from: the
+electronic address in the Trade Accord's exchange network (the country
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
+= <strong>false</strong><br />
+In production.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID</code>
+= <strong>LTAC-AP-20410274</strong><br />
+The serial number of the access point's X.509 certificate, unique only
+with its issuer: the Trade Accord Council, the certification authority
+of the network (decision ID-Q10).</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType</code>
+= <strong>Access point</strong><br />
+Its kind.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
+= <strong>Lumeport Trade Accord Council</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID</code>
+= <strong>AS4</strong><br />
+The transport protocol.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode</code>
+= <strong>SBDH</strong> (listID
+<code>urn:ubl-examples:world:codelist:EnvelopeTypeCode</code>)<br />
+The business envelope. The code is from the Trade Accord's envelope type
+list: SBDH = Standard Business Document Header.</li>
+<li><code>DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI</code>
+= <strong><a
+href="https://ap.lumeway.example/as4">https://ap.lumeway.example/as4</a></strong><br />
+The access point, under the party's own domain.</li>
+<li><code>DigitalCollaboration/ID</code> =
+<strong>billing-2</strong><br />
+The exchange as the agreement numbers it.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/ID</code> =
+<strong>LD-InvoiceStatusResponse-IN</strong><br />
+The party's service for this document.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/CustomizationID</code>
+= <strong>urn:ubl-examples:world:trns:invoice-status:1.0</strong><br />
+The specification the documents of this service follow: the
+CustomizationID those documents carry in this flow.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID</code>
+= <strong>InvoiceStatusResponse</strong><br />
+The document type.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID</code>
+= <strong>UBL</strong><br />
+The format.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/VersionID</code>
+= <strong>2.5</strong><br />
+Its version.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/SchemaURI</code>
+= <strong><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd">https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd</a></strong><br />
+The schema.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode</code>
+= <strong>InvoiceStatusResponse</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document type, as a code. The code is from the Trade Accord's UBL
+document type list: InvoiceStatusResponse = Invoice Status
+Response.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID</code>
+= <strong>ACCORD-NET</strong><br />
+The trade accord's document network.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID</code>
+= <strong>XB:20410274</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's address on it. The schemeID names the scheme it is from: the
+electronic address in the Trade Accord's exchange network (the country
+code, a colon and the party's number in the register it is entered in:
+its country's companies register, for a public body its country's
+register of public bodies, for a grower Lisavu's farm register (D5,
+O142)).</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator</code>
+= <strong>false</strong><br />
+In production.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID</code>
+= <strong>LTAC-AP-20410274</strong><br />
+The serial number of the access point's X.509 certificate, unique only
+with its issuer: the Trade Accord Council, the certification authority
+of the network (decision ID-Q10).</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType</code>
+= <strong>Access point</strong><br />
+Its kind.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID</code>
+= <strong>8423019675</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name</code>
+= <strong>Lumeport Trade Accord Council</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID</code>
+= <strong>AS4</strong><br />
+The transport protocol.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode</code>
+= <strong>SBDH</strong> (listID
+<code>urn:ubl-examples:world:codelist:EnvelopeTypeCode</code>)<br />
+The business envelope. The code is from the Trade Accord's envelope type
+list: SBDH = Standard Business Document Header.</li>
+<li><code>DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI</code>
+= <strong><a
+href="https://ap.lumeway.example/as4">https://ap.lumeway.example/as4</a></strong><br />
+The access point, under the party's own domain.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -766,14 +1062,160 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DigitalProcess</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;ordering&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Receives orders and order changes, sends order responses.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DigitalProcess</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DigitalProcess</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;billing&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Sends invoices and statements, receives remittance advices.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DigitalProcess</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DigitalCapability</span>&gt;</span></code></pre></div>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:ordering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ordering-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ReceivingDigitalService</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-Order-IN&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:order:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;Order&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FormatID</span>&gt;UBL&lt;/<span class="kw">cbc:FormatID</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VersionID</span>&gt;2.5&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SchemaURI</span>&gt;https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Order-2.5.xsd&lt;/<span class="kw">cbc:SchemaURI</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NetworkID</span>&gt;ACCORD-NET&lt;/<span class="kw">cbc:NetworkID</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ParticipantID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410274&lt;/<span class="kw">cbc:ParticipantID</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TestIndicator</span>&gt;false&lt;/<span class="kw">cbc:TestIndicator</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;LTAC-AP-20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ProtocolID</span>&gt;AS4&lt;/<span class="kw">cbc:ProtocolID</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EnvelopeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EnvelopeTypeCode&quot;</span>&gt;SBDH&lt;/<span class="kw">cbc:EnvelopeTypeCode</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndpointURI</span>&gt;https://ap.lumeway.example/as4&lt;/<span class="kw">cbc:EndpointURI</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ReceivingDigitalService</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ordering-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SendingDigitalService</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-OrderResponse-OUT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:order-response:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;OrderResponse&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FormatID</span>&gt;UBL&lt;/<span class="kw">cbc:FormatID</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VersionID</span>&gt;2.5&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SchemaURI</span>&gt;https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd&lt;/<span class="kw">cbc:SchemaURI</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;OrderResponse&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NetworkID</span>&gt;ACCORD-NET&lt;/<span class="kw">cbc:NetworkID</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ParticipantID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410274&lt;/<span class="kw">cbc:ParticipantID</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TestIndicator</span>&gt;false&lt;/<span class="kw">cbc:TestIndicator</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;LTAC-AP-20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ProtocolID</span>&gt;AS4&lt;/<span class="kw">cbc:ProtocolID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EnvelopeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EnvelopeTypeCode&quot;</span>&gt;SBDH&lt;/<span class="kw">cbc:EnvelopeTypeCode</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndpointURI</span>&gt;https://ap.lumeway.example/as4&lt;/<span class="kw">cbc:EndpointURI</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SendingDigitalService</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DigitalProcess</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DigitalProcess</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;billing&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Sends invoices, credit notes and invoice status requests, receives the status responses (sea/04#F10).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;billing-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SendingDigitalService</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-Invoice-OUT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:billing:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;Invoice&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FormatID</span>&gt;UBL&lt;/<span class="kw">cbc:FormatID</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VersionID</span>&gt;2.5&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SchemaURI</span>&gt;https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-Invoice-2.5.xsd&lt;/<span class="kw">cbc:SchemaURI</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NetworkID</span>&gt;ACCORD-NET&lt;/<span class="kw">cbc:NetworkID</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ParticipantID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410274&lt;/<span class="kw">cbc:ParticipantID</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TestIndicator</span>&gt;false&lt;/<span class="kw">cbc:TestIndicator</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;LTAC-AP-20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ProtocolID</span>&gt;AS4&lt;/<span class="kw">cbc:ProtocolID</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EnvelopeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EnvelopeTypeCode&quot;</span>&gt;SBDH&lt;/<span class="kw">cbc:EnvelopeTypeCode</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndpointURI</span>&gt;https://ap.lumeway.example/as4&lt;/<span class="kw">cbc:EndpointURI</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SendingDigitalService</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;billing-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ReceivingDigitalService</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-InvoiceStatusResponse-IN&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:invoice-status:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;InvoiceStatusResponse&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:FormatID</span>&gt;UBL&lt;/<span class="kw">cbc:FormatID</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:VersionID</span>&gt;2.5&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SchemaURI</span>&gt;https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd&lt;/<span class="kw">cbc:SchemaURI</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;InvoiceStatusResponse&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDocumentMetadata</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NetworkID</span>&gt;ACCORD-NET&lt;/<span class="kw">cbc:NetworkID</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ParticipantID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20410274&lt;/<span class="kw">cbc:ParticipantID</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TestIndicator</span>&gt;false&lt;/<span class="kw">cbc:TestIndicator</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;LTAC-AP-20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CertificateType</span>&gt;Access point&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;8423019675&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Trade Accord Council&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalCertificate</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ProtocolID</span>&gt;AS4&lt;/<span class="kw">cbc:ProtocolID</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EnvelopeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EnvelopeTypeCode&quot;</span>&gt;SBDH&lt;/<span class="kw">cbc:EnvelopeTypeCode</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndpointURI</span>&gt;https://ap.lumeway.example/as4&lt;/<span class="kw">cbc:EndpointURI</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DigitalMessageDelivery</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DigitalDeliveryChannel</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ReceivingDigitalService</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DigitalCollaboration</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DigitalProcess</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DigitalCapability</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

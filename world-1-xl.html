@@ -68,7 +68,7 @@ Bayvarra, for island customers.</p>
 </tr>
 <tr>
 <td>Price</td>
-<td>289.000 XLC per <code>EA</code> (each)</td>
+<td>375.000 XLC per <code>EA</code> (each)</td>
 </tr>
 <tr>
 <td>Resale of</td>
@@ -84,7 +84,7 @@ maker's ID <code>VI-B180</code></td>
 lets it order from the distributor's catalogue, follow the goods through
 despatch and transport, match the invoice to the order and the receipt,
 and send a remittance advice with its payment.</p>
-<p>In this world it sends 7 and receives 15 documents, and is named in
+<p>In this world it sends 6 and receives 15 documents, and is named in
 15 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
@@ -94,10 +94,16 @@ Lisavu)</h2>
 and freight (CIF) to the port of discharge: 96 for the Port of Selanu's
 harbour parks and two more pallets of four for its own stock, since it
 buys by the pallet and two pallets add little to the freight of a
-container already booked. The distributor therefore pays the sea freight
-and the cargo insurance; it hands both to its freight forwarder. The
-buyer takes over at the port of discharge: its customs broker clears the
-goods and its 3PL receives them.</p>
+container already booked. The prices, 520 lume a bench and 68 a frame,
+are CIF prices: they hold the sea freight and the cargo insurance, which
+the distributor pays to its freight forwarder together with the
+forwarder's truck to the port, and the invoice bills the goods alone.
+CIF stays as common practice and as the flow's theme, although the ICC's
+guidance note to CIF says that where goods are handed over to a carrier
+at a container terminal, the appropriate rule is CIP rather than CIF
+(Incoterms 2020; D30, O105). The buyer takes over at the port of
+discharge: its customs broker clears the goods and its 3PL receives
+them.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -131,14 +137,6 @@ document</a>.</p>
 <code>AccountingSupplierParty</code>; <a href="world-22-xl.html">Bank of
 Selanu</a> as
 <code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA"><strong>Debit
-Note</strong></a> to <a href="world-6-xb.html">Lumeway Distribution</a>:
-One pallet's heat-treatment mark was illegible, so customs inspected the
-container; the buyer debits the distributor in coral for the inspection
-and storage, a packaging fault on the seller's side. <a
-href="example-sea-28-DebitNote.html">See the example document</a>.</p>
-<p>In it as <code>AccountingCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA"><strong>Purchase
 Receipt</strong></a> to <a href="world-38-xl.html">Lisavu Cotton
@@ -194,10 +192,10 @@ example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-6-xb.html">Lumeway Distribution</a>: Goods, sea
-freight and insurance (CIF) in one invoice; the receivable is sold to
-the factor, who is the payee. <a href="example-sea-22-Invoice.html">See
-the example document</a>.</p>
+from <a href="world-6-xb.html">Lumeway Distribution</a>: The goods at
+their CIF prices, which hold the sea freight and the insurance; the
+receivable is sold to the factor, who is the payee. <a
+href="example-sea-22-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
@@ -223,10 +221,12 @@ example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> from <a href="world-6-xb.html">Lumeway
-Distribution</a>: One side frame arrived in a crushed carton, cracked;
-the distributor credits it, and the buyer deducts the credit from what
-it pays the factor. <a href="example-sea-26-CreditNote.html">See the
-example document</a>.</p>
+Distribution</a>: One side frame arrived in a crushed carton, cracked,
+and a pallet's illegible heat-treatment mark made customs inspect the
+container: the distributor credits the frame as goodwill and the
+inspection and the day of storage the buyer paid, and the buyer deducts
+the credit from what it pays the factor. <a
+href="example-sea-26-CreditNote.html">See the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
@@ -291,7 +291,7 @@ who receives the goods).</p>
 <code>ConsignorParty</code>; <a href="world-9-xl.html">Nalevi
 Warehousing</a> as <code>Shipment/Consignment/NotifyParty</code>; <a
 href="world-29-xb.html">Wavesure Cargo Insurance</a> as
-<code>Shipment/InsurancePolicy/InsurerParty</code>.</p></li>
+<code>Shipment/Consignment/InsurancePolicy/InsurerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-MANIFEST-SCHEMA"><strong>Manifest</strong></a>
 from <a href="world-11-xb.html">Tidewell Ocean Lines</a> to <a
@@ -567,6 +567,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

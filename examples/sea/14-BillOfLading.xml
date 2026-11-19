@@ -148,21 +148,20 @@
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
-      <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
-      <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
+      <cbc:FreightForwarderAssignedID>BF-SH-26-0418</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
-      <cbc:TotalInvoiceAmount currencyID="XBL">54884.00</cbc:TotalInvoiceAmount>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">57974.30</cbc:DeclaredCustomsValueAmount>
+      <cbc:TotalInvoiceAmount currencyID="XBL">54896.00</cbc:TotalInvoiceAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">54896.00</cbc:DeclaredCustomsValueAmount>
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
-      <cbc:InsurancePremiumAmount currencyID="XBL">140.30</cbc:InsurancePremiumAmount>
+      <cbc:InsurancePremiumAmount currencyID="XBL">132.85</cbc:InsurancePremiumAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
       <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">60385.60</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">51813.15</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -238,10 +237,10 @@
       </cac:OriginalDespatchParty>
       <cac:FinalDeliveryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
       </cac:FinalDeliveryParty>
       <cac:LogisticsOperatorParty>
@@ -270,7 +269,7 @@
         <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
-        <cbc:Amount currencyID="XBL">57974.30</cbc:Amount>
+        <cbc:Amount currencyID="XBL">54896.00</cbc:Amount>
         <cac:DeliveryLocation>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -334,10 +333,8 @@
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
             <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
             <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
-            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
-            <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20117</cbc:ID>
@@ -453,12 +450,6 @@
             </cac:Address>
           </cac:Location>
         </cac:DropoffTransportEvent>
-        <cac:FreightAllowanceCharge>
-          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Pre-carriage by road</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">310.00</cbc:Amount>
-        </cac:FreightAllowanceCharge>
       </cac:PreCarriageShipmentStage>
       <cac:OnCarriageShipmentStage>
         <cbc:ID>3</cbc:ID>
@@ -728,28 +719,9 @@
             <cbc:ShippingMarks>VELUMI SELANU / 027 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729330</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
-          <cac:AttachedTransportEquipment>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
-            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
-          </cac:AttachedTransportEquipment>
-          <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
-            <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
-            <cac:ContainingTransportEquipment>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-            </cac:ContainingTransportEquipment>
-          </cac:Package>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
-            <cac:GoodsItemContainer>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="EA">27</cbc:Quantity>
-              <cac:TransportEquipment>
-                <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              </cac:TransportEquipment>
-            </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
               <cbc:ID>1.1</cbc:ID>
               <cbc:Description>Park benches</cbc:Description>
@@ -823,10 +795,42 @@
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
-        <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
-        <cbc:InsurancePremiumAmount currencyID="XBL">140.30</cbc:InsurancePremiumAmount>
+        <cbc:InsurancePremiumAmount currencyID="XBL">132.85</cbc:InsurancePremiumAmount>
+        <cac:InsurerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-308716</cbc:ID>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Beacon Avenue</cbc:StreetName>
+            <cbc:BuildingNumber>55</cbc:BuildingNumber>
+            <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38524</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:Contact>
+            <cbc:Name>Cargo claims</cbc:Name>
+            <cbc:JobTitle>Claims handler</cbc:JobTitle>
+            <cbc:Department>Claims</cbc:Department>
+            <cbc:Telephone>+999 2 38 2115 9838</cbc:Telephone>
+            <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
+            <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          </cac:Contact>
+        </cac:InsurerParty>
         <cac:BrokerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -853,6 +857,7 @@
         </cac:BeneficiaryParty>
         <cac:PolicyDocumentReference>
           <cbc:ID>WS-CERT-26-0884</cbc:ID>
+          <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
         </cac:PolicyDocumentReference>
       </cac:InsurancePolicy>
     </cac:Consignment>
@@ -880,51 +885,6 @@
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
-    <cac:InsurancePolicy>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
-      <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
-      <cac:InsurerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
-        </cac:PartyName>
-        <cac:PostalAddress>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-308716</cbc:ID>
-          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-          <cbc:StreetName>Beacon Avenue</cbc:StreetName>
-          <cbc:BuildingNumber>55</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cbc:PostalZone>38524</cbc:PostalZone>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            <cbc:Name>Bayvarra</cbc:Name>
-          </cac:Country>
-        </cac:PostalAddress>
-        <cac:Contact>
-          <cbc:Name>Cargo claims</cbc:Name>
-          <cbc:JobTitle>Claims handler</cbc:JobTitle>
-          <cbc:Department>Claims</cbc:Department>
-          <cbc:Telephone>+999 2 38 2115 9838</cbc:Telephone>
-          <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        </cac:Contact>
-      </cac:InsurerParty>
-      <cac:BrokerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Bayforth Forwarding</cbc:Name>
-        </cac:PartyName>
-      </cac:BrokerParty>
-    </cac:InsurancePolicy>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>BF-FI-26-0137</cbc:ID>

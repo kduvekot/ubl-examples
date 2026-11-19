@@ -6,9 +6,9 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBC-26-0195</cbc:ID>
   <cbc:UUID>4ce8ce40-98a9-5b24-97ee-9a8cbf98f3f1</cbc:UUID>
-  <cbc:IssueDate>2026-02-14</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-16</cbc:IssueDate>
   <cbc:IssueTime>13:28:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-02-16</cbc:DueDate>
+  <cbc:DueDate>2026-04-17</cbc:DueDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">261</cbc:CreditNoteTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tetela tamasu tilala kimii mitavema.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed credit note under the season agreement.</cbc:Note>
@@ -18,13 +18,13 @@
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
-    <cbc:StartDate>2026-02-03</cbc:StartDate>
-    <cbc:EndDate>2026-02-05</cbc:EndDate>
+    <cbc:StartDate>2026-04-06</cbc:StartDate>
+    <cbc:EndDate>2026-04-08</cbc:EndDate>
   </cac:InvoicePeriod>
   <cac:DiscrepancyResponse>
     <cbc:ReferenceID>1</cbc:ReferenceID>
     <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">2</cbc:ResponseCode>
-    <cbc:Description>2,500 kg classed Strict Low Middling instead of Middling.</cbc:Description>
+    <cbc:Description>Lint ginned from 2,500 kg of seed cotton classed Strict Low Middling instead of Middling.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
@@ -32,7 +32,7 @@
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0194</cbc:ID>
-      <cbc:IssueDate>2026-02-07</cbc:IssueDate>
+      <cbc:IssueDate>2026-04-09</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
   <cac:DeliveryNoteDocumentReference>
@@ -44,20 +44,6 @@
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
-  <cac:StatementDocumentReference>
-    <cbc:ID>SCG-ACC-LCF-26-02</cbc:ID>
-  </cac:StatementDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>LTM-SEASON-2026</cbc:ID>
-    <cbc:DocumentType>Season agreement</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
-  <cac:AdditionalDocumentReference>
-    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
-  </cac:AdditionalDocumentReference>
-  <cac:ProjectReference>
-    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
-  </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>SCG-AP-FARMS</cbc:BuyerReferenceCode>
     <cbc:BuyerReference>Farm payments</cbc:BuyerReference>
@@ -65,9 +51,6 @@
   <cac:PurchaseReference>
     <cbc:ID>LCF-FIELD-07</cbc:ID>
   </cac:PurchaseReference>
-  <cac:Annotation>
-    <cbc:AnnotationContent>Written by the gin on the farm's behalf under the self-billing agreement.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>SCG-SIG-SB-02</cbc:ID>
     <cac:SignatoryParty>
@@ -233,14 +216,6 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
-  <cac:PayeeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lisavu Cotton Farm</cbc:Name>
-    </cac:PartyName>
-  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -261,20 +236,9 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
-    </cac:PartyName>
-  </cac:TaxRepresentativeParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-04-08</cbc:ActualDeliveryDate>
   </cac:Delivery>
-  <cac:DeliveryTerms>
-    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
-  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">97</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
@@ -284,25 +248,42 @@
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
+    <cbc:AllowanceChargeReason>Classing fee borne by the ginnery</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XLC">1.500</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XLC">0.850</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XLC">42.500</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XLC">0.850</cbc:TaxAmount>
+      <cbc:Percent>2</cbc:Percent>
+      <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
+      <cbc:TierRatePercent>2</cbc:TierRatePercent>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>2</cbc:Percent>
+        <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
+        <cbc:TierRatePercent>2</cbc:TierRatePercent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+          <cbc:Name>Presumptive tax on farm produce</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">75.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">70.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">70.000</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">42.500</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">37.500</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">37.500</cbc:TaxInclusiveAmount>
     <cbc:AllowanceTotalAmount currencyID="XLC">5.000</cbc:AllowanceTotalAmount>
-    <cbc:WithholdingTaxTotalAmount currencyID="XLC">1.500</cbc:WithholdingTaxTotalAmount>
-    <cbc:PayableAmount currencyID="XLC">69.250</cbc:PayableAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XLC">0.850</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XLC">37.075</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CollectionCreditNoteLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">0.750</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">0.425</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
@@ -318,7 +299,7 @@
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="KGM">2500</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">75.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">42.500</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
       <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
@@ -329,7 +310,7 @@
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">0.03</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XLC">0.017</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>

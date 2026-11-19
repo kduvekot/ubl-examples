@@ -52,7 +52,8 @@ The mill's forecast number.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-02-02</strong><br />
-Sent at the start of the ginning season.</li>
+Sent before the harvest, when the crop's size can be judged, so the
+ginnery can plan its buying.</li>
 <li><code>IssueTime</code> = <strong>09:00:00-01:00</strong><br />
 The time is stated, because a revision refers to the forecast by its
 issue date and time; in the issuer's local time, with its offset from
@@ -73,20 +74,22 @@ forecast.</li>
 <h3 id="forecast-period">Forecast Period</h3>
 <p>Inside <code>ForecastPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-02-16</strong><br />
-The season's shipping period.</li>
-<li><code>EndDate</code> = <strong>2026-06-02</strong><br />
-Its end.</li>
+<li><code>StartDate</code> = <strong>2026-04-01</strong><br />
+The season's buying period, from April, when the harvest's first lint is
+ginned (D33).</li>
+<li><code>EndDate</code> = <strong>2026-07-31</strong><br />
+To the end of July.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>SCG-SEASON-2026</strong><br />
-The season agreement.</li>
+<li><code>ID</code> = <strong>LTM-SEASON-2026</strong><br />
+The season agreement between the mill and the ginnery, under which the
+mill forecasts and buys the season's lint.</li>
 <li><code>DocumentType</code> = <strong>Season agreement</strong><br />
-The kind of document referred to, the season agreement between the farm
-and the ginnery, a document outside the examples, in words: no list has
+The kind of document referred to, the textile mill's season agreement
+with the ginnery, a document outside the examples, in words: no list has
 an exact code for it (world/documents.json, cited; decision Q29).</li>
 </ul>
 <h3 id="signature">Signature</h3>
@@ -446,11 +449,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:BasedOnConsensusIndicator</span>&gt;true&lt;/<span class="kw">cbc:BasedOnConsensusIndicator</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ForecastPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastPurposeCode&quot;</span>&gt;ORDER&lt;/<span class="kw">cbc:ForecastPurposeCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ForecastPeriod</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-16&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-02&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ForecastPeriod</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-SEASON-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTM-SEASON-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Season agreement&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
@@ -583,6 +586,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Forecast</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

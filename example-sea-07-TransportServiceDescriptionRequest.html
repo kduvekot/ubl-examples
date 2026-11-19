@@ -378,12 +378,15 @@ name are enough.</li>
 <h3 id="transportation-service">Transportation Service</h3>
 <p>Inside <code>TransportationService</code>:</p>
 <ul>
-<li><code>TransportServiceCode</code> = <strong>OCEANCONT</strong>
+<li><code>TransportServiceCode</code> = <strong>PORTTOPORT</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:TransportServiceCode</code>)<br />
-The service asked about: a container liner service. The code is from the
-Trade Accord's transport service list: OCEANCONT = Container liner
-service.</li>
+The extent of the service asked about: port to port, the forwarder
+bringing the container to the quay itself (sea/07#F3). The code is from
+the Trade Accord's transport service list: PORTTOPORT = Port to
+port.</li>
+<li><code>Name</code> = <strong>Container liner service</strong><br />
+The kind of service asked about.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -502,11 +505,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportServiceProviderParty</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportationService</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportServiceCode&quot;</span>&gt;OCEANCONT&lt;/<span class="kw">cbc:TransportServiceCode</span>&gt;</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportationService</span>&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportServiceDescriptionRequest</span>&gt;</span></code></pre></div>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportServiceCode&quot;</span>&gt;PORTTOPORT&lt;/<span class="kw">cbc:TransportServiceCode</span>&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Container liner service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportationService</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportServiceDescriptionRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

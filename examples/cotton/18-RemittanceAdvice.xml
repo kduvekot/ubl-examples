@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-RM-26-0212</cbc:ID>
   <cbc:UUID>4dead5a1-d2ba-5e05-a95b-17805f866743</cbc:UUID>
-  <cbc:IssueDate>2026-03-29</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-22</cbc:IssueDate>
   <cbc:IssueTime>15:45:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -188,7 +188,7 @@
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>SCG-INV-26-0210</cbc:ID>
-        <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+        <cbc:IssueDate>2026-05-07</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

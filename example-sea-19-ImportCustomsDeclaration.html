@@ -75,12 +75,12 @@ The goods were bought. The code is from the Trade Accord's nature of
 transaction list: PURCHASE = Outright purchase or sale.</li>
 <li><code>Note</code> = <strong>Lelaha namafe: liape mutaki Accord
 lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki
-23,189.720 venamo, 2,318.972 venamo.</strong> (languageID
+21,958.400 venamo, 2,195.840 venamo.</strong> (languageID
 <code>qal</code>)<br />
 The note in Lisavan, the sender's language (world/countries.json): What
 is due at import, by the importing country's rule (D18).</li>
 <li><code>Note</code> = <strong>No duty: goods of Accord origin. Import
-consumption tax: 10 % of the landed value of 23,189.720 coral, 2,318.972
+consumption tax: 10 % of the landed value of 21,958.400 coral, 2,195.840
 coral.</strong> (languageID <code>en-XL</code>)<br />
 The same note in English, the working language between the countries:
 What is due at import, by the importing country's rule (D18).</li>
@@ -572,12 +572,135 @@ Party/EndpointID is deprecated.</li>
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>IC41585</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
+The party's preferred identifier: its number in the Island companies
+register; identity of Tevaro Customs Brokers (world/parties.json). Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Tevaro Customs
 Brokers</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
+The trading name; identity of Tevaro Customs Brokers
+(world/parties.json).</li>
+<li><code>Language/ID</code> = <strong>qal</strong> (schemeID
+<code>ISO 639</code>)<br />
+Lisavan, the language of Lisavu and of the party; the code is from the
+range ISO 639 reserves for local use (qaa–qtz), as the world's languages
+are invented (world/countries.json). The code is from the world's copy
+of ISO 639 Language: qal = Lisavan. An identifier that holds a code
+names the code's list in its schemeID.</li>
+<li><code>Language/Name</code> = <strong>Lisavan</strong><br />
+The language's name in English; in the language itself: Lisavuana.</li>
+<li><code>PostalAddress/ID</code> = <strong>24307810</strong> (schemeID
+<code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
+The address's number in the delivery point number of the Lisavu Post
+Office (eight digits: the island has no postal codes, and the post
+office numbers every address it delivers to); identity of Tevaro Customs
+Brokers (world/parties.json).</li>
+<li><code>PostalAddress/AddressTypeCode</code> =
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
+The address follows Lisavu's address format (world/countries.json), one
+line after the other, a line left out when the address has none of its
+fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
+Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; Description; District;
+CityName. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines. The code is from the Trade Accord's address format list: XL =
+Address format of Lisavu.</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Vosapi
+Natii</strong> (languageID <code>qal</code>)<br />
+The street's name in Lisavan: Lisavu is officially bilingual, and street
+names are given in both languages (world/countries.json); identity of
+Tevaro Customs Brokers (world/parties.json).</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Wharf Road</strong>
+(languageID <code>en-XL</code>)<br />
+The street's name in English, the country's other official language;
+identity of Tevaro Customs Brokers (world/parties.json).</li>
+<li><code>PostalAddress/BuildingNumber</code> =
+<strong>60</strong><br />
+Building number of the postal address. identity of Tevaro Customs
+Brokers (world/parties.json).</li>
+<li><code>PostalAddress/CityName</code> = <strong>Selanu</strong>
+(languageID <code>qal</code>)<br />
+The town's Lisavan name, its name on the island. The town or locality
+nearest to the party's place on the map, in its own country and state.
+identity of Tevaro Customs Brokers (world/parties.json).</li>
+<li><code>PostalAddress/CityName</code> = <strong>Port
+Wrenfield</strong> (languageID <code>en-XL</code>)<br />
+The town's English name, which its English-speaking settlers gave it,
+official beside the Lisavan one (world/countries.json). The town or
+locality nearest to the party's place on the map, in its own country and
+state. identity of Tevaro Customs Brokers (world/parties.json).</li>
+<li><code>PostalAddress/TimezoneOffset</code> =
+<strong>+00:00</strong><br />
+The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
+is no summer time (D27, world/countries.json).</li>
+<li><code>PostalAddress/Country/IdentificationCode</code> =
+<strong>XL</strong> (listID <code>ISO 3166</code>)<br />
+Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XL = Lisavu.</li>
+<li><code>PostalAddress/Country/Name</code> =
+<strong>Lisavu</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>PartyLegalEntity/RegistrationName</code> = <strong>Tevaro
+Customs Brokers Ltd</strong><br />
+The name under which the party is registered, with its legal form;
+identity of Tevaro Customs Brokers (world/parties.json).</li>
+<li><code>PartyLegalEntity/CompanyID</code> = <strong>IC41585</strong>
+(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+Number in the Island companies register; identity of Tevaro Customs
+Brokers (world/parties.json). The schemeID names the scheme it is from:
+the Island companies register (IC and 5 digits).</li>
+<li><code>Contact/Name</code> = <strong>Declarations</strong><br />
+The party's main desk, which handles this document; identity of Tevaro
+Customs Brokers (world/parties.json).</li>
+<li><code>Contact/JobTitle</code> = <strong>Customs
+declarant</strong><br />
+The job of the person who answers at the desk; identity of Tevaro
+Customs Brokers (world/parties.json).</li>
+<li><code>Contact/Department</code> = <strong>Customs</strong><br />
+The department the desk belongs to; identity of Tevaro Customs Brokers
+(world/parties.json).</li>
+<li><code>Contact/Telephone</code> = <strong>+999 3 725
+3563</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Lisavu's own plan: A small island: 7-digit
+numbers without area codes; fixed lines start with 72, mobiles with 77,
+ships with 79. identity of Tevaro Customs Brokers
+(world/parties.json).</li>
+<li><code>Contact/ElectronicMail</code> = <strong><a
+href="mailto:declarations@tevaro.example">declarations@tevaro.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone; identity of Tevaro Customs Brokers (world/parties.json).</li>
+<li><code>Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
+When the desk can be reached; identity of Tevaro Customs Brokers
+(world/parties.json).</li>
+<li><code>ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>ElectronicAddress/ElectronicAddressID</code> =
+<strong>XL:IC41585</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and its
+number in the Island companies register; identity of Tevaro Customs
+Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
+is deprecated.</li>
 </ul>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
@@ -593,11 +716,9 @@ The goods item number.</li>
 180</strong><br />
 What the goods are, in words.</li>
 <li><code>GoodsItem/DeclaredCustomsValueAmount</code> =
-<strong>22850.012</strong> (currencyID <code>XLC</code>)<br />
-Lisavu values the goods with freight and insurance to the island (D16):
-the goods at 21,632.000 XLC, with the sea freight to the island
-(1,180.000 XLC); the cargo insurance (56.120 XLC), shared over the goods
-items by their value.</li>
+<strong>21632.000</strong> (currencyID <code>XLC</code>)<br />
+The customs value in coral: the goods' value in lume at the world's
+reference rate (1 lume = 0.4 coral).</li>
 <li><code>GoodsItem/GrossWeightMeasure</code> = <strong>5621.2</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods of this item, in their parcels and with
@@ -669,21 +790,6 @@ in its schemeID.</li>
 <code>urn:ubl-examples:world:codelist:TaxTypeCode</code>)<br />
 A tax on consumption, charged at import. The code is from the Trade
 Accord's tax type list: CONSUMPTION = Tax on consumption.</li>
-<li><code>GoodsItem/FreightAllowanceCharge/ChargeIndicator</code> =
-<strong>true</strong><br />
-The share of the sea freight in the customs value.</li>
-<li><code>GoodsItem/FreightAllowanceCharge/AllowanceChargeReasonCode</code>
-= <strong>FC</strong> (listID <code>UN/EDIFACT EDED 7161</code>)<br />
-The reason for the charge as a code: for a charge UN/EDIFACT 7161
-(special services). The code is from the world's copy of UN/EDIFACT 7161
-Special service description: FC = Freight service.</li>
-<li><code>GoodsItem/FreightAllowanceCharge/AllowanceChargeReason</code>
-= <strong>Ocean freight, share of the benches</strong><br />
-Part of the CIF value.</li>
-<li><code>GoodsItem/FreightAllowanceCharge/Amount</code> =
-<strong>1162.714</strong> (currencyID <code>XLC</code>)<br />
-The benches' share of the 2,950 lume freight by value (54,080 of 54,884
-lume), in coral at 0.4.</li>
 <li><code>GoodsItem/InvoiceLine/ID</code> = <strong>1</strong><br />
 A line of the seller's invoice for these goods: the benches are on two
 lines, the port's and the buyer's own stock (O172).</li>
@@ -897,23 +1003,15 @@ code names the code's list in its schemeID.</li>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
 world's handling rule, D20).</li>
-<li><code>GoodsItem/InsurancePolicy/ID</code> =
-<strong>WS-CP-26-4471</strong><br />
-The cargo policy covering the goods.</li>
-<li><code>GoodsItem/InsurancePolicy/InsuredValueAmount</code> =
-<strong>63771.73</strong> (currencyID <code>XBL</code>)<br />
-As on the insurance certificate.</li>
 <li><code>GoodsItem/ID</code> = <strong>2</strong><br />
 The goods item number.</li>
 <li><code>GoodsItem/Description</code> = <strong>Bench side frame
 casting</strong><br />
 What the goods are, in words.</li>
 <li><code>GoodsItem/DeclaredCustomsValueAmount</code> =
-<strong>339.708</strong> (currencyID <code>XLC</code>)<br />
-Lisavu values the goods with freight and insurance to the island (D16):
-the goods at 321.600 XLC, with the sea freight to the island (1,180.000
-XLC); the cargo insurance (56.120 XLC), shared over the goods items by
-their value.</li>
+<strong>326.400</strong> (currencyID <code>XLC</code>)<br />
+The customs value in coral: the goods' value in lume at the world's
+reference rate (1 lume = 0.4 coral).</li>
 <li><code>GoodsItem/GrossWeightMeasure</code> = <strong>174.6</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods of this item, in their parcels and with
@@ -1026,144 +1124,12 @@ carton.</li>
 <li><code>GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial</code>
 = <strong>Corrugated cardboard, tray and lid</strong><br />
 What the packaging is made of.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PartyIdentification/ID</code>
-= <strong>IC41585</strong> (schemeID
-<code>urn:ubl-examples:world:XL:register</code>)<br />
-The party's preferred identifier: its number in the Island companies
-register; identity of Tevaro Customs Brokers (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PartyName/Name</code> =
-<strong>Tevaro Customs Brokers</strong><br />
-The trading name; identity of Tevaro Customs Brokers
-(world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Language/ID</code> =
-<strong>qal</strong> (schemeID <code>ISO 639</code>)<br />
-Lisavan, the language of Lisavu and of the party; the code is from the
-range ISO 639 reserves for local use (qaa–qtz), as the world's languages
-are invented (world/countries.json). The code is from the world's copy
-of ISO 639 Language: qal = Lisavan. An identifier that holds a code
-names the code's list in its schemeID.</li>
-<li><code>ShipmentStage/CustomsAgentParty/Language/Name</code> =
-<strong>Lisavan</strong><br />
-The language's name in English; in the language itself: Lisavuana.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/ID</code> =
-<strong>24307810</strong> (schemeID
-<code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
-The address's number in the delivery point number of the Lisavu Post
-Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Tevaro Customs
-Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/AddressTypeCode</code>
-= <strong>BUSINESS</strong> (listID
-<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
-The kind of address. The code is from the Trade Accord's address type
-list: BUSINESS = Business address.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/AddressFormatCode</code>
-= <strong>XL</strong> (listID
-<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; Description; District;
-CityName. A line is made of the fields named in it, in that order,
-separated by a space; a field the address does not have is left out, and
-a line without any field is left out. A field with two language versions
-(street and town names in a bilingual country) gives both on the line,
-the national language first, then ' / ', then English: the building
-number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XL =
-Address format of Lisavu.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/StreetName</code>
-= <strong>Vosapi Natii</strong> (languageID <code>qal</code>)<br />
-The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Tevaro Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/StreetName</code>
-= <strong>Wharf Road</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Tevaro Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/BuildingNumber</code>
-= <strong>60</strong><br />
-Building number of the postal address. identity of Tevaro Customs
-Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/CityName</code>
-= <strong>Selanu</strong> (languageID <code>qal</code>)<br />
-The town's Lisavan name, its name on the island. The town or locality
-nearest to the party's place on the map, in its own country and state.
-identity of Tevaro Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/CityName</code>
-= <strong>Port Wrenfield</strong> (languageID <code>en-XL</code>)<br />
-The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Tevaro Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/TimezoneOffset</code>
-= <strong>+00:00</strong><br />
-The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/Country/IdentificationCode</code>
-= <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
-Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PostalAddress/Country/Name</code>
-= <strong>Lisavu</strong><br />
-The country's name, for readers of the address.</li>
-<li><code>ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationName</code>
-= <strong>Tevaro Customs Brokers Ltd</strong><br />
-The name under which the party is registered, with its legal form;
-identity of Tevaro Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyID</code>
-= <strong>IC41585</strong> (schemeID
-<code>urn:ubl-examples:world:XL:register</code>)<br />
-Number in the Island companies register; identity of Tevaro Customs
-Brokers (world/parties.json). The schemeID names the scheme it is from:
-the Island companies register (IC and 5 digits).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Contact/Name</code> =
-<strong>Declarations</strong><br />
-The party's main desk, which handles this document; identity of Tevaro
-Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Contact/JobTitle</code> =
-<strong>Customs declarant</strong><br />
-The job of the person who answers at the desk; identity of Tevaro
-Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Contact/Department</code> =
-<strong>Customs</strong><br />
-The department the desk belongs to; identity of Tevaro Customs Brokers
-(world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Contact/Telephone</code> =
-<strong>+999 3 725 3563</strong><br />
-Telephone under +999, a country code the ITU reserves for a future
-global service (ITU-T E.164), so the number reaches no one; then the
-country digit and a number in Lisavu's own plan: A small island: 7-digit
-numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Tevaro Customs Brokers
-(world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Contact/ElectronicMail</code>
-= <strong><a
-href="mailto:declarations@tevaro.example">declarations@tevaro.example</a></strong><br />
-E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Tevaro Customs Brokers (world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/Contact/Note</code> =
-<strong>Weekdays 08:00–17:00</strong><br />
-When the desk can be reached; identity of Tevaro Customs Brokers
-(world/parties.json).</li>
-<li><code>ShipmentStage/CustomsAgentParty/ElectronicAddress/ExchangeNetworkID</code>
-= <strong>urn:ubl-examples:world:network</strong><br />
-The network in which the address is registered: the world's own exchange
-network.</li>
-<li><code>ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID</code>
-= <strong>XL:IC41585</strong> (schemeID
-<code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and its
-number in the Island companies register; identity of Tevaro Customs
-Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+<li><code>ShipmentStage/TransportModeCode</code> = <strong>1</strong>
+(listID
+<code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
+The goods cross the border by sea (worklist C12). The code is from UBL's
+default Transport mode (UNECE Recommendation 19) list: 1 = Maritime
+transport.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -1229,8 +1195,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SubTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode&quot;</span>&gt;FREECIRC&lt;/<span class="kw">cbc:SubTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NatureOfTransactionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NatureOfTransactionCode&quot;</span>&gt;PURCHASE&lt;/<span class="kw">cbc:NatureOfTransactionCode</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 23,189.720 venamo, 2,318.972 venamo.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 23,189.720 coral, 2,318.972 coral.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,958.400 venamo, 2,195.840 venamo.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,958.400 coral, 2,195.840 coral.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Country</span>&gt;</span>
@@ -1415,253 +1381,236 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Tevaro Customs Brokers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:NotifierParty</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SH-26-0132&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;27&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;22850.012&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;5621.2&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;104&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;S&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The manufacturer&#39;s Serra bench, from the distributor&#39;s stock.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XX&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;940179&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38111&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;10&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;IMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxTypeCode&quot;</span>&gt;CONSUMPTION&lt;/<span class="kw">cbc:TaxTypeCode</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FreightAllowanceCharge</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7161&quot;</span>&gt;FC&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Ocean freight, share of the benches&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;1162.714&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FreightAllowanceCharge</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;3&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CT&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Frame carton, parcel 1 of 3 of each bench: one side frame&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Corrugated cardboard, tray and lid&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;LENGTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;790&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;WIDTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;680&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;100&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;12.2&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CT&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Corrugated cardboard, tray and lid&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;LENGTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;790&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;WIDTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;680&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;100&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;13&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;BE&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Polyester straps, cardboard edge protectors and end caps, PE film&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;LENGTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;1810&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;WIDTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;295&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;100&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21.8&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainingPackage</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InsurancePolicy</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;WS-CP-26-4471&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InsuredValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;63771.73&lt;/<span class="kw">cbc:InsuredValueAmount</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InsurancePolicy</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;339.708&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;174.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;S&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Spare side frame for the Serra bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XV&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;732599&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;42999&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;10&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;IMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxTypeCode&quot;</span>&gt;CONSUMPTION&lt;/<span class="kw">cbc:TaxTypeCode</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;3&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CT&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Frame carton, one side frame&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Corrugated cardboard, tray and lid&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainingPackage</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CustomsAgentParty</span>&gt;</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41585&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Tevaro Customs Brokers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;qal&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lisavan&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:delivery-point&quot;</span>&gt;24307810&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Vosapi Natii&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Wharf Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;60&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Port Wrenfield&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;+00:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:RegistrationName</span>&gt;Tevaro Customs Brokers Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41585&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Declarations&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Customs declarant&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Customs&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 725 3563&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;declarations@tevaro.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:IC41585&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CustomsAgentParty</span>&gt;</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-BL-26-0139&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;BillOfLading&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-EX-26-0135&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-INV-26-0147&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TCB-SIG-IM-sea&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41585&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Tevaro Customs Brokers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ImportCustomsDeclaration</span>&gt;</span></code></pre></div>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;qal&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lisavan&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:delivery-point&quot;</span>&gt;24307810&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Vosapi Natii&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Wharf Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;60&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Port Wrenfield&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;+00:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Tevaro Customs Brokers Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41585&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Declarations&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Customs declarant&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Customs&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 725 3563&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;declarations@tevaro.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XL:IC41585&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:NotifierParty</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SH-26-0132&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;27&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21632.000&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;5621.2&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;104&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;S&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The manufacturer&#39;s Serra bench, from the distributor&#39;s stock.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XX&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;940179&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38111&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;10&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;IMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxTypeCode&quot;</span>&gt;CONSUMPTION&lt;/<span class="kw">cbc:TaxTypeCode</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;8&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;3&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CT&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Frame carton, parcel 1 of 3 of each bench: one side frame&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Corrugated cardboard, tray and lid&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;LENGTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;790&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;WIDTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;680&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;100&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;12.2&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CT&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Corrugated cardboard, tray and lid&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;LENGTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;790&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;WIDTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;680&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;100&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;13&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;BE&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Polyester straps, cardboard edge protectors and end caps, PE film&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;LENGTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;1810&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;WIDTH&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;295&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;100&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21.8&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;326.400&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;174.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;S&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Spare side frame for the Serra bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XV&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;732599&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;42999&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;10&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;IMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxTypeCode&quot;</span>&gt;CONSUMPTION&lt;/<span class="kw">cbc:TaxTypeCode</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;12&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;true&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;3&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;PX&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;false&lt;/<span class="kw">cbc:ReturnableMaterialIndicator</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackageLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7075&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackageLevelCode</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;CT&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackagingType</span>&gt;Frame carton, one side frame&lt;/<span class="kw">cbc:PackagingType</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Corrugated cardboard, tray and lid&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ContainedPackage</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;1&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TOL-BL-26-0139&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;BillOfLading&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-EX-26-0135&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-INV-26-0147&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TCB-SIG-IM-sea&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41585&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Tevaro Customs Brokers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ImportCustomsDeclaration</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

@@ -7,11 +7,11 @@
   <cbc:ID>LD-CAT-26-0124</cbc:ID>
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
-  <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>09:17:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-05-04</cbc:StartDate>
-    <cbc:EndDate>2026-10-31</cbc:EndDate>
+    <cbc:StartDate>2026-05-05</cbc:StartDate>
+    <cbc:EndDate>2026-11-01</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ProviderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -151,8 +151,8 @@
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-05-04</cbc:StartDate>
-          <cbc:EndDate>2026-10-31</cbc:EndDate>
+          <cbc:StartDate>2026-05-05</cbc:StartDate>
+          <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
@@ -182,8 +182,8 @@
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
       </cac:Package>
       <cac:ApplicableDeliveryPeriod>
-        <cbc:StartDate>2026-05-11</cbc:StartDate>
-        <cbc:EndDate>2026-10-31</cbc:EndDate>
+        <cbc:StartDate>2026-05-12</cbc:StartDate>
+        <cbc:EndDate>2026-11-01</cbc:EndDate>
       </cac:ApplicableDeliveryPeriod>
     </cac:RequiredItemLocationQuantity>
     <cac:RequiredItemLocationQuantity>
@@ -201,8 +201,8 @@
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-05-04</cbc:StartDate>
-          <cbc:EndDate>2026-10-31</cbc:EndDate>
+          <cbc:StartDate>2026-05-05</cbc:StartDate>
+          <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
@@ -240,8 +240,8 @@
         <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
       </cac:AllowanceCharge>
       <cac:ApplicableDeliveryPeriod>
-        <cbc:StartDate>2026-05-11</cbc:StartDate>
-        <cbc:EndDate>2026-10-31</cbc:EndDate>
+        <cbc:StartDate>2026-05-12</cbc:StartDate>
+        <cbc:EndDate>2026-11-01</cbc:EndDate>
       </cac:ApplicableDeliveryPeriod>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
@@ -480,20 +480,20 @@
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-05-04</cbc:StartDate>
-          <cbc:EndDate>2026-10-31</cbc:EndDate>
+          <cbc:StartDate>2026-05-05</cbc:StartDate>
+          <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
-          <cbc:PriceAmount currencyID="XLC">26.8</cbc:PriceAmount>
+          <cbc:PriceAmount currencyID="XLC">27.2</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         </cac:AlternativeCurrencyPrice>
       </cac:Price>

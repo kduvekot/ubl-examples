@@ -45,7 +45,7 @@ a generic, versioned profile, not the flow; the run of the process is
 the ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> = <strong>SEA-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>VT-PR-26-0154</strong><br />
+<li><code>ID</code> = <strong>VT-PR-26-0153</strong><br />
 The till's receipt number.</li>
 <li><code>UUID</code> =
 <strong>464955fd-c2fe-5d30-a020-fe67a7fc3e92</strong><br />
@@ -440,7 +440,7 @@ The shop.</li>
 <ul>
 <li><code>ID</code> = <strong>VT-T1-26-0613-0012</strong><br />
 The till's number for the payment.</li>
-<li><code>PaidAmount</code> = <strong>578.000</strong> (currencyID
+<li><code>PaidAmount</code> = <strong>750.000</strong> (currencyID
 <code>XLC</code>)<br />
 What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 2.2.2 Manifest Values).</li>
@@ -508,18 +508,18 @@ account role list: HOLDER = Card holder.</li>
 <h3 id="legal-monetary-total">Legal Monetary Total</h3>
 <p>Inside <code>LegalMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>578.000</strong>
+<li><code>LineExtensionAmount</code> = <strong>750.000</strong>
 (currencyID <code>XLC</code>)<br />
 The sum of the line amounts.</li>
-<li><code>TaxExclusiveAmount</code> = <strong>578.000</strong>
+<li><code>TaxExclusiveAmount</code> = <strong>750.000</strong>
 (currencyID <code>XLC</code>)<br />
 The total without tax: the line amounts, no allowances or charges.</li>
-<li><code>TaxInclusiveAmount</code> = <strong>578.000</strong>
+<li><code>TaxInclusiveAmount</code> = <strong>750.000</strong>
 (currencyID <code>XLC</code>)<br />
 The same as the total without tax: Lisavu has no sales tax or value
 added tax, so no tax is due and the document has no tax section
 (D15).</li>
-<li><code>PayableAmount</code> = <strong>578.000</strong> (currencyID
+<li><code>PayableAmount</code> = <strong>750.000</strong> (currencyID
 <code>XLC</code>)<br />
 What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 2.2.2 Manifest Values).</li>
@@ -533,7 +533,7 @@ The line number.</li>
 <code>EA</code>)<br />
 Two benches for the pickers' rest place under the trees by the weighing
 shed.</li>
-<li><code>LineExtensionAmount</code> = <strong>578.000</strong>
+<li><code>LineExtensionAmount</code> = <strong>750.000</strong>
 (currencyID <code>XLC</code>)<br />
 Quantity times the price paid, before the sales tax.</li>
 <li><code>Item/Description</code> = <strong>Serra hiapi vusase lesama
@@ -611,10 +611,13 @@ The maker's number for the item in its globally unique form under
 ISO/IEC 15459 (KXU and the company number Codana gave Valdara
 Industries), which travels along with the GTIN, as an importer may carry
 it; item bench-serra of Valdara Industries (world/items.json).</li>
-<li><code>Price/PriceAmount</code> = <strong>289</strong> (currencyID
+<li><code>Price/PriceAmount</code> = <strong>375</strong> (currencyID
 <code>XLC</code>)<br />
-The seller's price per unit (world/items.json).</li>
-<li><code>Price/TaxInclusivePriceAmount</code> = <strong>289</strong>
+Velumi's shop price on the island: its cost is the CIF price of 520
+lume, the import consumption tax of 10 % and its clearance and port
+costs, about 577 lume, and 375 coral (937.50 lume) leaves it a
+retailer's margin of about 38 % (D30 point 2, O48).</li>
+<li><code>Price/TaxInclusivePriceAmount</code> = <strong>375</strong>
 (currencyID <code>XLC</code>)<br />
 The price the customer pays, with the 0 % sales tax.</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
@@ -629,7 +632,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:purchase-receipt:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:retail-sale:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;SEA-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VT-PR-26-0154&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VT-PR-26-0153&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;464955fd-c2fe-5d30-a020-fe67a7fc3e92&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;10:25:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -762,7 +765,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PointOfSaleLocation</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Payment</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VT-T1-26-0613-0012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;578.000&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;750.000&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidDate</span>&gt;2026-06-13&lt;/<span class="kw">cbc:PaidDate</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidTime</span>&gt;10:25:00&lt;/<span class="kw">cbc:PaidTime</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MerchantID</span>&gt;CORALCARD-M-0001859&lt;/<span class="kw">cbc:MerchantID</span>&gt;</span>
@@ -784,15 +787,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CardAccount</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;578.000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;578.000&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;578.000&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;578.000&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;750.000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;750.000&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;750.000&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;750.000&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PurchaseReceiptLine</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;578.000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;750.000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Serra hiapi vusase lesama Velumi Trading&#39;s keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;The Serra park bench from Velumi Trading&#39;s stock, imported from Bayvarra, for island customers.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -822,14 +825,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;289&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxInclusivePriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;289&lt;/<span class="kw">cbc:TaxInclusivePriceAmount</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;375&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxInclusivePriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;375&lt;/<span class="kw">cbc:TaxInclusivePriceAmount</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PurchaseReceiptLine</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PurchaseReceipt</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
 </body>
 </html>

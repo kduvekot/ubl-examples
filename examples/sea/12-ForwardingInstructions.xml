@@ -7,11 +7,11 @@
   <cbc:ID>BF-FI-26-0137</cbc:ID>
   <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
-  <cbc:IssueDate>2026-05-10</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
-  <cbc:Note>Please confirm the booking.</cbc:Note>
+  <cbc:Note>Please confirm the shipping instructions for booking TWL-BK-26-55710.</cbc:Note>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
