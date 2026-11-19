@@ -261,15 +261,25 @@
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>
-      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Six years on the frame and the slats.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      <cbc:AwardingCriterionID>AC-1</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>The lowest total of unit prices.</cbc:AwardingCriterionDescription>
+      <cbc:Description>470.00 lume a bench and 16.00 lume an installation.</cbc:Description>
       <cbc:Amount currencyID="XBL">116640.00</cbc:Amount>
+    </cac:AwardingCriterionResponse>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-2</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
-        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
         <cbc:Description>Oiled hardwood, painted steel.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.2</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
+        <cbc:Description>Six years on the frame and the slats.</cbc:Description>
+        <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

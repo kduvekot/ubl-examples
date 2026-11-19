@@ -234,9 +234,7 @@ Inside `TenderingTerms`:
 - `PriceEvaluationCode` = **UNITPRICE** (listID `urn:ubl-examples:world:codelist:PriceEvaluationCode`)  
   Evaluated on the unit prices. The code is from the Trade Accord's price evaluation list: UNITPRICE = Unit prices.
 - `MaximumVariantQuantity` = **1**  
-  One variant allowed.
-- `VariantConstraintIndicator` = **true**  
-  Variants are allowed.
+  One variant allowed; that variants are allowed is said by the code (tender/01#F7).
 - `AcceptedVariantsDescription` = **A bench of recycled plastic slats.**  
   The variant allowed.
 - `VariantConstraintCode` = **ALLOWED** (listID `urn:ubl-examples:world:codelist:VariantConstraintCode`)  
@@ -248,17 +246,13 @@ Inside `TenderingTerms`:
 - `FundingProgram` = **Parks renewal programme 2026**  
   In words.
 - `MaximumAdvertisementAmount` = **500.00** (currencyID `XBL`)  
-  The most the winner pays for publication.
-- `Note` = **Questions through the platform only.**  
-  How to ask.
+  The most the winner pays for publishing the award, as the note says: read as the advertising cost the awardee bears (tender/01#F19).
+- `Note` = **Questions through the platform only. The winner bears the cost of publishing the award notice, up to 500 lume. Paper copies of the documents cost 50 lume; the electronic documents are free.**  
+  How to ask, who pays the publication, and the documentation fee in words (tender/01#F11, F19).
 - `PaymentFrequencyCode` = **PERRELEASE** (listID `urn:ubl-examples:world:codelist:PaymentFrequencyCode`)  
   Payment after each release. The code is from the Trade Accord's payment frequency list: PERRELEASE = After each release.
 - `EconomicOperatorRegistryURI` = **https://register.bayvarra.example**  
   Where tenderers are registered.
-- `RequiredCurriculaIndicator` = **true**  
-  The installers' qualifications are asked.
-- `RequiredCurriculaCode` = **INSTALLERS** (listID `urn:ubl-examples:world:codelist:CurriculaCode`)  
-  For lot 2. The code is from the Trade Accord's curricula list: INSTALLERS = Installers' qualifications.
 - `OtherConditionsIndicator` = **true**  
   There are other conditions.
 - `RecurringProcurementIndicator` = **true**  
@@ -269,26 +263,28 @@ Inside `TenderingTerms`:
   The next notice.
 - `AdditionalConditions` = **Benches must carry the maker's serial number.**  
   A condition.
-- `LatestSecurityClearanceDate` = **2026-02-21**  
-  No clearance is needed; the date is the latest for site access passes.
 - `DocumentationFeeAmount` = **50.00** (currencyID `XBL`)  
   For paper documents.
 - `MultipleTendersCode` = **NOTALLOWED** (listID `urn:ubl-examples:world:codelist:MultipleTendersCode`)  
   One tender per tenderer. The code is from the Trade Accord's multiple tenders list: NOTALLOWED = Not allowed.
 - `PenaltyClause/ID` = **PEN-1**  
-  Late delivery.
-- `PenaltyClause/Content` = **0.5 % per day late, at most 10 %.**  
-  The penalty.
+  Late completion.
+- `PenaltyClause/Content` = **0.5 % of the price of the late part of a release for each working day late, at most 10 % of that price.**  
+  The penalty, with the base its percentages apply to (tender/01#F20).
 - `RequiredFinancialGuarantee/GuaranteeTypeCode` = **TENDER** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
   A tender guarantee. The code is from the Trade Accord's financial guarantee type list: TENDER = Tender guarantee.
-- `RequiredFinancialGuarantee/Description` = **A bank guarantee for the tender.**  
-  What.
-- `RequiredFinancialGuarantee/LiabilityAmount` = **2400.00** (currencyID `XBL`)  
+- `RequiredFinancialGuarantee/Description` = **A fixed 2,500 lume, about 2 % of the estimate, given as a bank guarantee or by pledging government bonds deposited with a bank; released for every tenderer once the contract is signed.**  
+  What, in which forms, and when it is released (D28 point 5, O176); a fixed amount, so no rate (tender/01#F8).
+- `RequiredFinancialGuarantee/LiabilityAmount` = **2500.00** (currencyID `XBL`)  
   Its amount.
-- `RequiredFinancialGuarantee/AmountRate` = **2**  
-  2 % of the estimated value of 120,000 lume.
 - `RequiredFinancialGuarantee/ConstitutionPeriod/EndDate` = **2026-02-25**  
   With the tender, by the deadline.
+- `RequiredFinancialGuarantee/GuaranteeTypeCode` = **PERFORMANCE** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
+  A performance guarantee. The code is from the Trade Accord's financial guarantee type list: PERFORMANCE = Performance guarantee.
+- `RequiredFinancialGuarantee/Description` = **A bank guarantee of 5 % of the contract value, from the winner, for the execution of the contract.**  
+  Announced in the notices and the call, carried by the contract (D28 point 5, tender/22#F4).
+- `RequiredFinancialGuarantee/AmountRate` = **5**  
+  Five per cent of the contract value.
 - `ProcurementLegislationDocumentReference/ID` = **XB-PPA-2019**  
   Bayvarra's public procurement act.
 - `FiscalLegislationDocumentReference/ID` = **XB-STT-ACT**  
@@ -311,7 +307,7 @@ Inside `TenderingTerms`:
   At least three years in business.
 - `TendererQualificationRequest/EmployeeQuantity` = **10** (unitCode `IE`)  
   At least ten employees (persons).
-- `TendererQualificationRequest/Description` = **Economic and technical capacity.**  
+- `TendererQualificationRequest/Description` = **Economic and technical capacity; the request is the same for every tenderer, alone or in a group, so it names no role (tender/01#F21).**  
   What is asked.
 - `TendererQualificationRequest/RequiredBusinessClassificationScheme/ID` = **ISIC4**  
   ISIC Rev. 4.
@@ -335,13 +331,13 @@ Inside `TenderingTerms`:
   What.
 - `TendererQualificationRequest/FinancialEvaluationCriterion/EvaluationCriterionTypeCode` = **TURNOVER** (listID `urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode`)  
   Turnover. The code is from the Trade Accord's evaluation criterion type list: TURNOVER = Turnover.
-- `TendererQualificationRequest/FinancialEvaluationCriterion/Description` = **Yearly turnover of at least twice the estimate.**  
-  What.
-- `TendererQualificationRequest/FinancialEvaluationCriterion/ThresholdAmount` = **250000.00** (currencyID `XBL`)  
+- `TendererQualificationRequest/FinancialEvaluationCriterion/Description` = **A yearly turnover of at least 124,800 lume, twice the yearly estimate of 62,400 lume, in the last financial year with filed accounts.**  
+  What (D28 point 2).
+- `TendererQualificationRequest/FinancialEvaluationCriterion/ThresholdAmount` = **124800.00** (currencyID `XBL`)  
   The minimum.
-- `TendererQualificationRequest/FinancialEvaluationCriterion/ExpressionCode` = **GT** (listID `urn:ubl-examples:world:codelist:ExpressionCode`)  
-  As a rule. The code is from the Trade Accord's expression list: GT = Greater than.
-- `TendererQualificationRequest/FinancialEvaluationCriterion/Expression` = **Turnover > 2 × estimate**  
+- `TendererQualificationRequest/FinancialEvaluationCriterion/ExpressionCode` = **GE** (listID `urn:ubl-examples:world:codelist:ExpressionCode`)  
+  At least: greater than or equal (tender/01#F9). The code is from the Trade Accord's expression list: GE = Greater than or equal to.
+- `TendererQualificationRequest/FinancialEvaluationCriterion/Expression` = **Turnover ≥ 2 × yearly estimate**  
   The formula.
 - `TendererQualificationRequest/SpecificTendererRequirement/Name` = **Certified timber**  
   The requirement.
@@ -355,18 +351,8 @@ Inside `TenderingTerms`:
   A forestry certificate.
 - `TendererQualificationRequest/SpecificTendererRequirement/SuggestedEvidence/Name` = **Forestry certificate**  
   What.
-- `TendererQualificationRequest/EconomicOperatorRole/RoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
-  The lead tenderer. The code is from the Trade Accord's economic operator role list: LEAD = Consortium lead.
-- `TendererQualificationRequest/EconomicOperatorRole/RoleDescription` = **Leads a consortium.**  
-  In words.
-- `AllowedSubcontractTerms/Rate` = **30**  
-  Up to 30 % subcontracted.
-- `AllowedSubcontractTerms/UnknownPriceIndicator` = **false**  
-  The subcontracting share is known.
-- `AllowedSubcontractTerms/Description` = **Installation may be subcontracted.**  
-  What.
-- `AllowedSubcontractTerms/Amount` = **4320.00** (currencyID `XBL`)  
-  Lot 2's value.
+- `AllowedSubcontractTerms/Description` = **Installation may be subcontracted, up to 30 % of the contract value; the tenderer stays liable for it.**  
+  What may be subcontracted; the limit is the maximum below, not a precise share (tender/01#F10).
 - `AllowedSubcontractTerms/SubcontractingConditionsCode` = **ALLOWED** (listID `urn:ubl-examples:world:codelist:SubcontractingConditionsCode`)  
   As a code. The code is from the Trade Accord's subcontracting conditions list: ALLOWED = Allowed.
 - `AllowedSubcontractTerms/MaximumPercent` = **30**  
@@ -378,9 +364,7 @@ Inside `TenderingTerms`:
 - `TenderPreparation/Description` = **One encrypted envelope per tender.**  
   How.
 - `TenderPreparation/OpenTenderID` = **OPEN-1**  
-  Opened at the opening.
-- `TenderPreparation/ProcurementProjectLot/ID` = **LOT-1**  
-  For lot 1 and lot 2 alike.
+  Opened at the opening; one envelope for both lots (tender/01#F23).
 - `TenderPreparation/DocumentTenderRequirement/Name` = **Price schedule**  
   A document to submit.
 - `TenderPreparation/DocumentTenderRequirement/Description` = **Unit prices per lot.**  
@@ -409,18 +393,10 @@ Inside `TenderingTerms`:
   A weighted sum. The code is from the Trade Accord's weighting algorithm list: WSUM = Weighted sum.
 - `AwardingTerms/Description` = **Price 60 %, quality 40 %.**  
   The award.
-- `AwardingTerms/TechnicalCommitteeDescription` = **Three officers of the department.**  
-  Who evaluates.
+- `AwardingTerms/TechnicalCommitteeDescription` = **Three officers of the department, chaired by Mara Delling, head of parks; the other two are appointed when the tenders are opened.**  
+  Who evaluates, and why one is named (tender/01#F26).
 - `AwardingTerms/LowTendersDescription` = **Prices 30 % below the average are examined.**  
   Abnormally low.
-- `AwardingTerms/PrizeIndicator` = **false**  
-  Not a design contest: no prizes.
-- `AwardingTerms/FollowupContractIndicator` = **false**  
-  No follow-up contract.
-- `AwardingTerms/BindingOnBuyerIndicator` = **true**  
-  The evaluation binds the buyer.
-- `AwardingTerms/NoFurtherNegotiationIndicator` = **true**  
-  No negotiation after the award.
 - `AwardingTerms/AwardingCriterion/ID` = **AC-1**  
   Price.
 - `AwardingTerms/AwardingCriterion/AwardingCriterionTypeCode` = **PRICE** (listID `urn:ubl-examples:world:codelist:AwardCriterionTypeCode`)  
@@ -449,18 +425,26 @@ Inside `TenderingTerms`:
   Its kind. The code is from the Trade Accord's award criterion type list: QUALITY = Quality.
 - `AwardingTerms/AwardingCriterion/Name` = **Quality**  
   Name.
+- `AwardingTerms/AwardingCriterion/Description` = **The durability of the coating or finish (20 points) and the years of warranty offered on it (20 points).**  
+  What quality scores, its two halves (tender/01#F25).
 - `AwardingTerms/AwardingCriterion/WeightNumeric` = **40**  
   Weight.
-- `AwardingTerms/AwardingCriterion/MinimumQuantity` = **5** (unitCode `ANN`)  
-  Warranty of at least five years.
-- `AwardingTerms/AwardingCriterion/MaximumQuantity` = **10** (unitCode `ANN`)  
-  Up to ten years counts.
 - `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/ID` = **AC-2.1**  
   Durability.
 - `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/Name` = **Durability of the coating**  
   Name.
 - `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/WeightNumeric` = **20**  
   Half of quality.
+- `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/ID` = **AC-2.2**  
+  Warranty.
+- `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/Name` = **Years of warranty on the coating**  
+  Name.
+- `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/WeightNumeric` = **20**  
+  The other half.
+- `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/MinimumQuantity` = **5** (unitCode `ANN`)  
+  A warranty of at least five years is required.
+- `AwardingTerms/AwardingCriterion/SubordinateAwardingCriterion/MaximumQuantity` = **10** (unitCode `ANN`)  
+  Years above ten earn no more points.
 - `AwardingTerms/TechnicalCommitteePerson/FirstName` = **Mara**  
   The head of parks on the committee.
 - `AwardingTerms/TechnicalCommitteePerson/FamilyName` = **Delling**  
@@ -523,27 +507,21 @@ Inside `TenderingTerms`:
   Call-offs as UBL orders.
 - `PostAwardProcess/ElectronicPaymentUsageIndicator` = **true**  
   Paid by transfer.
-- `SecurityClearanceTerm/Code` = **NOTREQUIRED** (listID `urn:ubl-examples:world:codelist:SecurityClearanceCode`)  
-  No security clearance. The code is from the Trade Accord's security clearance list: NOTREQUIRED = Not required.
-- `SecurityClearanceTerm/Description` = **Parks are public places.**  
-  Why.
 
 ### Tendering Process
 
 Inside `TenderingProcess`:
 
 - `ID` = **PWD-2026-PARKS-P**  
-  The procedure.
-- `OriginalContractingSystemID` = **PWD-FW-2024-PARKS**  
-  The framework this one follows.
-- `Description` = **Open procedure with two lots.**  
-  The procedure.
+  The procedure; it reopens no earlier framework (tender/02#F12).
+- `Description` = **Open procedure with two lots for a framework agreement with one supplier, with an electronic auction on the unit prices after the evaluation.**  
+  The procedure, with the framework and the auction it plans (tender/01#F22).
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
 - `ExpenseCode` = **INVESTMENT** (listID `urn:ubl-examples:world:codelist:ExpenseTypeCode`)  
   Paid from the investment budget. The code is from the Trade Accord's expense type list: INVESTMENT = Investment budget.
-- `PartPresentationCode` = **ONEORMORE** (listID `urn:ubl-examples:world:codelist:LotSubmissionCode`)  
-  Tenders for one or both lots. The code is from the Trade Accord's lot submission list: ONEORMORE = One or more lots.
+- `PartPresentationCode` = **ALL** (listID `urn:ubl-examples:world:codelist:LotSubmissionCode`)  
+  A tender covers both lots: the money terms (guarantee, turnover, price limits) are set for the procedure as a whole (D28 points 2 and 5, tender/02#F36). The code is from the Trade Accord's lot submission list: ALL = All lots.
 - `ContractingSystemCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractingSystemCode`)  
   A framework agreement. The code is from the Trade Accord's contracting system list: FRAMEWORK = Framework agreement.
 - `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
@@ -614,10 +592,10 @@ Inside `TenderingProcess`:
   Why one.
 - `FrameworkAgreement/Frequency` = **Releases every few months.**  
   How often.
-- `FrameworkAgreement/EstimatedMaximumValueAmount` = **148896.00** (currencyID `XBL`)  
-  The estimated maximum.
-- `FrameworkAgreement/MaximumValueAmount` = **186120.00** (currencyID `XBL`)  
-  With the extension.
+- `FrameworkAgreement/EstimatedMaximumValueAmount` = **187200.00** (currencyID `XBL`)  
+  The estimated value of the framework with the renewal year: 360 benches at the estimate of 500 and 20 (D28 point 2, tender/02#F16).
+- `FrameworkAgreement/MaximumValueAmount` = **212160.00** (currencyID `XBL`)  
+  The ceiling the terms allow: the quantity option up to 288 benches and the renewal year, 408 at 520 lume.
 - `FrameworkAgreement/DurationPeriod/DurationMeasure` = **24** (unitCode `MON`)  
   Two years.
 - `FrameworkAgreement/SubsequentProcessTenderRequirement/Name` = **Release order**  
@@ -647,10 +625,6 @@ Inside `ProcurementProject`:
   The kind within it. The code is from the Trade Accord's procurement subtype list: PURCHASE = Purchase.
 - `QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
   Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
-- `RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
-  The fee for the tender documents on paper.
-- `FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
-  The fee.
 - `RequestedDeliveryDate` = **2026-04-02**  
   The first release.
 - `EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
@@ -659,10 +633,10 @@ Inside `ProcurementProject`:
   The programme.
 - `SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
-  Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
-  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
+- `ProcurementAdditionalType/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
+  The procurement buys supplies with services as a second type: the installation of the benches (tender/01#F12). The code is from the Trade Accord's contract nature list: SERVICES = Services.
+- `ProcurementAdditionalType/ProcurementType` = **Services: the installation of the benches, lot 2**  
+  The name of code SERVICES in the Trade Accord's contract nature list, followed by the detail of this case: what the services are; the environmental aims are in the execution requirement and the tenderer requirement.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **124080.00** (currencyID `XBL`)  
   The estimated value.
 - `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124080.00** (currencyID `XBL`)  
@@ -729,10 +703,10 @@ Inside `ProcurementProject`:
   At most.
 - `RequestForTenderLine/TaxIncludedIndicator` = **false**  
   Prices without tax.
-- `RequestForTenderLine/MinimumAmount` = **350.00** (currencyID `XBL`)  
-  A unit price below this would be abnormally low.
-- `RequestForTenderLine/MaximumAmount` = **600.00** (currencyID `XBL`)  
-  The most the budget allows per bench.
+- `RequestForTenderLine/MinimumAmount` = **84000.00** (currencyID `XBL`)  
+  The line's total at 350 lume a bench, below which a tender would be abnormally low: on the same basis as the estimate (tender/01#F13).
+- `RequestForTenderLine/MaximumAmount` = **144000.00** (currencyID `XBL`)  
+  The line's total at the most the budget allows per bench, 600 lume.
 - `RequestForTenderLine/EstimatedAmount` = **119760.00** (currencyID `XBL`)  
   The estimate.
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
@@ -778,10 +752,6 @@ Inside `ProcurementProjectLot`:
   Questions and answers.
 - `AdditionalDocumentReference/DocumentType` = **Questions and answers**  
   The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `TenderingTerms/Note` = **As for the procedure.**  
-  The lot's terms.
-- `TenderingProcess/Description` = **As for the procedure.**  
-  The lot's process.
 - `ProcurementProject/ID` = **LOT-1**  
   The project's identifier.
 - `ProcurementProject/Name` = **Park benches**  
@@ -794,10 +764,6 @@ Inside `ProcurementProjectLot`:
   The kind within it. The code is from the Trade Accord's procurement subtype list: PURCHASE = Purchase.
 - `ProcurementProject/QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
   Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
-- `ProcurementProject/RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
-  The fee for the tender documents on paper.
-- `ProcurementProject/FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
-  The fee.
 - `ProcurementProject/RequestedDeliveryDate` = **2026-04-02**  
   The first release.
 - `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
@@ -806,10 +772,6 @@ Inside `ProcurementProjectLot`:
   The programme.
 - `ProcurementProject/SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
-  Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
-  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **119760.00** (currencyID `XBL`)  
   The estimated value.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **119760.00** (currencyID `XBL`)  
@@ -876,10 +838,10 @@ Inside `ProcurementProjectLot`:
   At most.
 - `ProcurementProject/RequestForTenderLine/TaxIncludedIndicator` = **false**  
   Prices without tax.
-- `ProcurementProject/RequestForTenderLine/MinimumAmount` = **350.00** (currencyID `XBL`)  
-  A unit price below this would be abnormally low.
-- `ProcurementProject/RequestForTenderLine/MaximumAmount` = **600.00** (currencyID `XBL`)  
-  The most the budget allows per bench.
+- `ProcurementProject/RequestForTenderLine/MinimumAmount` = **84000.00** (currencyID `XBL`)  
+  The line's total at 350 lume a bench, below which a tender would be abnormally low: on the same basis as the estimate (tender/01#F13).
+- `ProcurementProject/RequestForTenderLine/MaximumAmount` = **144000.00** (currencyID `XBL`)  
+  The line's total at the most the budget allows per bench, 600 lume.
 - `ProcurementProject/RequestForTenderLine/EstimatedAmount` = **119760.00** (currencyID `XBL`)  
   The estimate.
 - `ProcurementProject/RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
@@ -920,10 +882,10 @@ Inside `ProcurementProjectLot`:
   Questions and answers.
 - `AdditionalDocumentReference/DocumentType` = **Questions and answers**  
   The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `TenderingTerms/Note` = **As for the procedure.**  
-  The lot's terms.
-- `TenderingProcess/Description` = **As for the procedure.**  
-  The lot's process.
+- `TenderingTerms/RequiredCurriculaIndicator` = **true**  
+  The installers' qualifications are asked, for the installation lot only.
+- `TenderingTerms/RequiredCurriculaCode` = **INSTALLERS** (listID `urn:ubl-examples:world:codelist:CurriculaCode`)  
+  Whose curricula: the installers'. The code is from the Trade Accord's curricula list: INSTALLERS = Installers' qualifications.
 - `ProcurementProject/ID` = **LOT-2**  
   The project's identifier.
 - `ProcurementProject/Name` = **Installation of the benches**  
@@ -936,10 +898,6 @@ Inside `ProcurementProjectLot`:
   The kind within it. The code is from the Trade Accord's procurement subtype list: INSTALL = Installation.
 - `ProcurementProject/QualityControlCode` = **INSPECTION** (listID `urn:ubl-examples:world:codelist:QualityControlCode`)  
   Each release is inspected on delivery. The code is from the Trade Accord's quality control list: INSPECTION = Inspection on delivery.
-- `ProcurementProject/RequiredFeeAmount` = **50.00** (currencyID `XBL`)  
-  The fee for the tender documents on paper.
-- `ProcurementProject/FeeDescription` = **Electronic documents are free; paper copies cost 50 lume.**  
-  The fee.
 - `ProcurementProject/RequestedDeliveryDate` = **2026-04-02**  
   The first release.
 - `ProcurementProject/EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
@@ -948,10 +906,6 @@ Inside `ProcurementProjectLot`:
   The programme.
 - `ProcurementProject/SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementTypeCode` = **GREEN** (listID `urn:ubl-examples:world:codelist:StrategicProcurementCode`)  
-  Green public procurement. The code is from the Trade Accord's strategic procurement list: GREEN = Environmental impact.
-- `ProcurementProject/ProcurementAdditionalType/ProcurementType` = **Environmental impact: recycled steel and certified timber are asked**  
-  The name of code GREEN in the Trade Accord's strategic procurement list, followed by the detail of this case: what the green criteria ask for.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallContractAmount` = **4320.00** (currencyID `XBL`)  
   The estimated value.
 - `ProcurementProject/RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **4320.00** (currencyID `XBL`)  
@@ -1163,38 +1117,38 @@ Inside `ProcurementProjectLot`:
     <cbc:AwardingMethodTypeCode listID="urn:ubl-examples:world:codelist:AwardingMethodCode">BESTVALUE</cbc:AwardingMethodTypeCode>
     <cbc:PriceEvaluationCode listID="urn:ubl-examples:world:codelist:PriceEvaluationCode">UNITPRICE</cbc:PriceEvaluationCode>
     <cbc:MaximumVariantQuantity>1</cbc:MaximumVariantQuantity>
-    <cbc:VariantConstraintIndicator>true</cbc:VariantConstraintIndicator>
     <cbc:AcceptedVariantsDescription>A bench of recycled plastic slats.</cbc:AcceptedVariantsDescription>
     <cbc:VariantConstraintCode listID="urn:ubl-examples:world:codelist:VariantConstraintCode">ALLOWED</cbc:VariantConstraintCode>
     <cbc:PriceRevisionFormulaDescription>Steel index each January.</cbc:PriceRevisionFormulaDescription>
     <cbc:FundingProgramCode>PARKS-26</cbc:FundingProgramCode>
     <cbc:FundingProgram>Parks renewal programme 2026</cbc:FundingProgram>
     <cbc:MaximumAdvertisementAmount currencyID="XBL">500.00</cbc:MaximumAdvertisementAmount>
-    <cbc:Note>Questions through the platform only.</cbc:Note>
+    <cbc:Note>Questions through the platform only. The winner bears the cost of publishing the award notice, up to 500 lume. Paper copies of the documents cost 50 lume; the electronic documents are free.</cbc:Note>
     <cbc:PaymentFrequencyCode listID="urn:ubl-examples:world:codelist:PaymentFrequencyCode">PERRELEASE</cbc:PaymentFrequencyCode>
     <cbc:EconomicOperatorRegistryURI>https://register.bayvarra.example</cbc:EconomicOperatorRegistryURI>
-    <cbc:RequiredCurriculaIndicator>true</cbc:RequiredCurriculaIndicator>
-    <cbc:RequiredCurriculaCode listID="urn:ubl-examples:world:codelist:CurriculaCode">INSTALLERS</cbc:RequiredCurriculaCode>
     <cbc:OtherConditionsIndicator>true</cbc:OtherConditionsIndicator>
     <cbc:RecurringProcurementIndicator>true</cbc:RecurringProcurementIndicator>
     <cbc:RecurringProcurementDescription>A next procedure in about four years.</cbc:RecurringProcurementDescription>
     <cbc:EstimatedTimingFurtherPublication>2030</cbc:EstimatedTimingFurtherPublication>
     <cbc:AdditionalConditions>Benches must carry the maker's serial number.</cbc:AdditionalConditions>
-    <cbc:LatestSecurityClearanceDate>2026-02-21</cbc:LatestSecurityClearanceDate>
     <cbc:DocumentationFeeAmount currencyID="XBL">50.00</cbc:DocumentationFeeAmount>
     <cbc:MultipleTendersCode listID="urn:ubl-examples:world:codelist:MultipleTendersCode">NOTALLOWED</cbc:MultipleTendersCode>
     <cac:PenaltyClause>
       <cbc:ID>PEN-1</cbc:ID>
-      <cbc:Content>0.5 % per day late, at most 10 %.</cbc:Content>
+      <cbc:Content>0.5 % of the price of the late part of a release for each working day late, at most 10 % of that price.</cbc:Content>
     </cac:PenaltyClause>
     <cac:RequiredFinancialGuarantee>
       <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
-      <cbc:Description>A bank guarantee for the tender.</cbc:Description>
-      <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
-      <cbc:AmountRate>2</cbc:AmountRate>
+      <cbc:Description>A fixed 2,500 lume, about 2 % of the estimate, given as a bank guarantee or by pledging government bonds deposited with a bank; released for every tenderer once the contract is signed.</cbc:Description>
+      <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
       <cac:ConstitutionPeriod>
         <cbc:EndDate>2026-02-25</cbc:EndDate>
       </cac:ConstitutionPeriod>
+    </cac:RequiredFinancialGuarantee>
+    <cac:RequiredFinancialGuarantee>
+      <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">PERFORMANCE</cbc:GuaranteeTypeCode>
+      <cbc:Description>A bank guarantee of 5 % of the contract value, from the winner, for the execution of the contract.</cbc:Description>
+      <cbc:AmountRate>5</cbc:AmountRate>
     </cac:RequiredFinancialGuarantee>
     <cac:ProcurementLegislationDocumentReference>
       <cbc:ID>XB-PPA-2019</cbc:ID>
@@ -1222,7 +1176,7 @@ Inside `ProcurementProjectLot`:
       <cbc:PersonalSituation>The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
-      <cbc:Description>Economic and technical capacity.</cbc:Description>
+      <cbc:Description>Economic and technical capacity; the request is the same for every tenderer, alone or in a group, so it names no role (tender/01#F21).</cbc:Description>
       <cac:RequiredBusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
         <cbc:Name>ISIC Rev. 4</cbc:Name>
@@ -1245,10 +1199,10 @@ Inside `ProcurementProjectLot`:
       </cac:TechnicalEvaluationCriterion>
       <cac:FinancialEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode listID="urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode">TURNOVER</cbc:EvaluationCriterionTypeCode>
-        <cbc:Description>Yearly turnover of at least twice the estimate.</cbc:Description>
-        <cbc:ThresholdAmount currencyID="XBL">250000.00</cbc:ThresholdAmount>
-        <cbc:ExpressionCode listID="urn:ubl-examples:world:codelist:ExpressionCode">GT</cbc:ExpressionCode>
-        <cbc:Expression>Turnover &gt; 2 × estimate</cbc:Expression>
+        <cbc:Description>A yearly turnover of at least 124,800 lume, twice the yearly estimate of 62,400 lume, in the last financial year with filed accounts.</cbc:Description>
+        <cbc:ThresholdAmount currencyID="XBL">124800.00</cbc:ThresholdAmount>
+        <cbc:ExpressionCode listID="urn:ubl-examples:world:codelist:ExpressionCode">GE</cbc:ExpressionCode>
+        <cbc:Expression>Turnover ≥ 2 × yearly estimate</cbc:Expression>
       </cac:FinancialEvaluationCriterion>
       <cac:SpecificTendererRequirement>
         <cbc:Name>Certified timber</cbc:Name>
@@ -1260,16 +1214,9 @@ Inside `ProcurementProjectLot`:
           <cbc:Name>Forestry certificate</cbc:Name>
         </cac:SuggestedEvidence>
       </cac:SpecificTendererRequirement>
-      <cac:EconomicOperatorRole>
-        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
-        <cbc:RoleDescription>Leads a consortium.</cbc:RoleDescription>
-      </cac:EconomicOperatorRole>
     </cac:TendererQualificationRequest>
     <cac:AllowedSubcontractTerms>
-      <cbc:Rate>30</cbc:Rate>
-      <cbc:UnknownPriceIndicator>false</cbc:UnknownPriceIndicator>
-      <cbc:Description>Installation may be subcontracted.</cbc:Description>
-      <cbc:Amount currencyID="XBL">4320.00</cbc:Amount>
+      <cbc:Description>Installation may be subcontracted, up to 30 % of the contract value; the tenderer stays liable for it.</cbc:Description>
       <cbc:SubcontractingConditionsCode listID="urn:ubl-examples:world:codelist:SubcontractingConditionsCode">ALLOWED</cbc:SubcontractingConditionsCode>
       <cbc:MaximumPercent>30</cbc:MaximumPercent>
     </cac:AllowedSubcontractTerms>
@@ -1278,9 +1225,6 @@ Inside `ProcurementProjectLot`:
       <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
       <cbc:Description>One encrypted envelope per tender.</cbc:Description>
       <cbc:OpenTenderID>OPEN-1</cbc:OpenTenderID>
-      <cac:ProcurementProjectLot>
-        <cbc:ID>LOT-1</cbc:ID>
-      </cac:ProcurementProjectLot>
       <cac:DocumentTenderRequirement>
         <cbc:Name>Price schedule</cbc:Name>
         <cbc:Description>Unit prices per lot.</cbc:Description>
@@ -1313,12 +1257,8 @@ Inside `ProcurementProjectLot`:
     <cac:AwardingTerms>
       <cbc:WeightingAlgorithmCode listID="urn:ubl-examples:world:codelist:WeightingAlgorithmCode">WSUM</cbc:WeightingAlgorithmCode>
       <cbc:Description>Price 60 %, quality 40 %.</cbc:Description>
-      <cbc:TechnicalCommitteeDescription>Three officers of the department.</cbc:TechnicalCommitteeDescription>
+      <cbc:TechnicalCommitteeDescription>Three officers of the department, chaired by Mara Delling, head of parks; the other two are appointed when the tenders are opened.</cbc:TechnicalCommitteeDescription>
       <cbc:LowTendersDescription>Prices 30 % below the average are examined.</cbc:LowTendersDescription>
-      <cbc:PrizeIndicator>false</cbc:PrizeIndicator>
-      <cbc:FollowupContractIndicator>false</cbc:FollowupContractIndicator>
-      <cbc:BindingOnBuyerIndicator>true</cbc:BindingOnBuyerIndicator>
-      <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
       <cac:AwardingCriterion>
         <cbc:ID>AC-1</cbc:ID>
         <cbc:AwardingCriterionTypeCode listID="urn:ubl-examples:world:codelist:AwardCriterionTypeCode">PRICE</cbc:AwardingCriterionTypeCode>
@@ -1336,13 +1276,19 @@ Inside `ProcurementProjectLot`:
         <cbc:ID>AC-2</cbc:ID>
         <cbc:AwardingCriterionTypeCode listID="urn:ubl-examples:world:codelist:AwardCriterionTypeCode">QUALITY</cbc:AwardingCriterionTypeCode>
         <cbc:Name>Quality</cbc:Name>
+        <cbc:Description>The durability of the coating or finish (20 points) and the years of warranty offered on it (20 points).</cbc:Description>
         <cbc:WeightNumeric>40</cbc:WeightNumeric>
-        <cbc:MinimumQuantity unitCode="ANN">5</cbc:MinimumQuantity>
-        <cbc:MaximumQuantity unitCode="ANN">10</cbc:MaximumQuantity>
         <cac:SubordinateAwardingCriterion>
           <cbc:ID>AC-2.1</cbc:ID>
           <cbc:Name>Durability of the coating</cbc:Name>
           <cbc:WeightNumeric>20</cbc:WeightNumeric>
+        </cac:SubordinateAwardingCriterion>
+        <cac:SubordinateAwardingCriterion>
+          <cbc:ID>AC-2.2</cbc:ID>
+          <cbc:Name>Years of warranty on the coating</cbc:Name>
+          <cbc:WeightNumeric>20</cbc:WeightNumeric>
+          <cbc:MinimumQuantity unitCode="ANN">5</cbc:MinimumQuantity>
+          <cbc:MaximumQuantity unitCode="ANN">10</cbc:MaximumQuantity>
         </cac:SubordinateAwardingCriterion>
       </cac:AwardingCriterion>
       <cac:TechnicalCommitteePerson>
@@ -1419,18 +1365,13 @@ Inside `ProcurementProjectLot`:
       <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
       <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
     </cac:PostAwardProcess>
-    <cac:SecurityClearanceTerm>
-      <cbc:Code listID="urn:ubl-examples:world:codelist:SecurityClearanceCode">NOTREQUIRED</cbc:Code>
-      <cbc:Description>Parks are public places.</cbc:Description>
-    </cac:SecurityClearanceTerm>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
     <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
-    <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
-    <cbc:Description>Open procedure with two lots.</cbc:Description>
+    <cbc:Description>Open procedure with two lots for a framework agreement with one supplier, with an electronic auction on the unit prices after the evaluation.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
-    <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ONEORMORE</cbc:PartPresentationCode>
+    <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ALL</cbc:PartPresentationCode>
     <cbc:ContractingSystemCode listID="urn:ubl-examples:world:codelist:ContractingSystemCode">FRAMEWORK</cbc:ContractingSystemCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
@@ -1491,8 +1432,8 @@ Inside `ProcurementProjectLot`:
       <cbc:MaximumOperatorQuantity>1</cbc:MaximumOperatorQuantity>
       <cbc:Justification>Uniform benches across the parks.</cbc:Justification>
       <cbc:Frequency>Releases every few months.</cbc:Frequency>
-      <cbc:EstimatedMaximumValueAmount currencyID="XBL">148896.00</cbc:EstimatedMaximumValueAmount>
-      <cbc:MaximumValueAmount currencyID="XBL">186120.00</cbc:MaximumValueAmount>
+      <cbc:EstimatedMaximumValueAmount currencyID="XBL">187200.00</cbc:EstimatedMaximumValueAmount>
+      <cbc:MaximumValueAmount currencyID="XBL">212160.00</cbc:MaximumValueAmount>
       <cac:DurationPeriod>
         <cbc:DurationMeasure unitCode="MON">24</cbc:DurationMeasure>
       </cac:DurationPeriod>
@@ -1514,15 +1455,13 @@ Inside `ProcurementProjectLot`:
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
     <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
-    <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
-    <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
     <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
     <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
     <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
     <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
     <cac:ProcurementAdditionalType>
-      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-      <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
+      <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
+      <cbc:ProcurementType>Services: the installation of the benches, lot 2</cbc:ProcurementType>
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124080.00</cbc:EstimatedOverallContractAmount>
@@ -1584,8 +1523,8 @@ Inside `ProcurementProjectLot`:
       <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
       <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
-      <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
-      <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
+      <cbc:MinimumAmount currencyID="XBL">84000.00</cbc:MinimumAmount>
+      <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
       <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
       <cac:DocumentReference>
         <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
@@ -1633,12 +1572,6 @@ Inside `ProcurementProjectLot`:
       <cbc:ID>PWD-QA-26</cbc:ID>
       <cbc:DocumentType>Questions and answers</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
-    <cac:TenderingTerms>
-      <cbc:Note>As for the procedure.</cbc:Note>
-    </cac:TenderingTerms>
-    <cac:TenderingProcess>
-      <cbc:Description>As for the procedure.</cbc:Description>
-    </cac:TenderingProcess>
     <cac:ProcurementProject>
       <cbc:ID>LOT-1</cbc:ID>
       <cbc:Name>Park benches</cbc:Name>
@@ -1646,16 +1579,10 @@ Inside `ProcurementProjectLot`:
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
       <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
       <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
-      <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
-      <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
       <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
       <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
-      <cac:ProcurementAdditionalType>
-        <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
-      </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">119760.00</cbc:EstimatedOverallContractAmount>
         <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">119760.00</cbc:EstimatedOverallFrameworkContractsAmount>
@@ -1716,8 +1643,8 @@ Inside `ProcurementProjectLot`:
         <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
         <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
-        <cbc:MinimumAmount currencyID="XBL">350.00</cbc:MinimumAmount>
-        <cbc:MaximumAmount currencyID="XBL">600.00</cbc:MaximumAmount>
+        <cbc:MinimumAmount currencyID="XBL">84000.00</cbc:MinimumAmount>
+        <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
         <cbc:EstimatedAmount currencyID="XBL">119760.00</cbc:EstimatedAmount>
         <cac:DocumentReference>
           <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>
@@ -1767,11 +1694,9 @@ Inside `ProcurementProjectLot`:
       <cbc:DocumentType>Questions and answers</cbc:DocumentType>
     </cac:AdditionalDocumentReference>
     <cac:TenderingTerms>
-      <cbc:Note>As for the procedure.</cbc:Note>
+      <cbc:RequiredCurriculaIndicator>true</cbc:RequiredCurriculaIndicator>
+      <cbc:RequiredCurriculaCode listID="urn:ubl-examples:world:codelist:CurriculaCode">INSTALLERS</cbc:RequiredCurriculaCode>
     </cac:TenderingTerms>
-    <cac:TenderingProcess>
-      <cbc:Description>As for the procedure.</cbc:Description>
-    </cac:TenderingProcess>
     <cac:ProcurementProject>
       <cbc:ID>LOT-2</cbc:ID>
       <cbc:Name>Installation of the benches</cbc:Name>
@@ -1779,16 +1704,10 @@ Inside `ProcurementProjectLot`:
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
       <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">INSTALL</cbc:ProcurementSubTypeCode>
       <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
-      <cbc:RequiredFeeAmount currencyID="XBL">50.00</cbc:RequiredFeeAmount>
-      <cbc:FeeDescription>Electronic documents are free; paper copies cost 50 lume.</cbc:FeeDescription>
       <cbc:RequestedDeliveryDate>2026-04-02</cbc:RequestedDeliveryDate>
       <cbc:EstimatedOverallContractQuantity unitCode="EA">240</cbc:EstimatedOverallContractQuantity>
       <cbc:Note>Part of the parks renewal programme 2026.</cbc:Note>
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
-      <cac:ProcurementAdditionalType>
-        <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:StrategicProcurementCode">GREEN</cbc:ProcurementTypeCode>
-        <cbc:ProcurementType>Environmental impact: recycled steel and certified timber are asked</cbc:ProcurementType>
-      </cac:ProcurementAdditionalType>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">4320.00</cbc:EstimatedOverallContractAmount>
         <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">4320.00</cbc:EstimatedOverallFrameworkContractsAmount>

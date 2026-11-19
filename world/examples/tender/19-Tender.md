@@ -339,23 +339,35 @@ Inside `TenderedProject`:
 - `TenderLine/Item/Name` = **Installation of a park bench**  
   The service.
 - `AwardingCriterionResponse/ID` = **ACR-1**  
+  The response to the price criterion.
+- `AwardingCriterionResponse/AwardingCriterionID` = **AC-1**  
+  Price.
+- `AwardingCriterionResponse/AwardingCriterionDescription` = **The lowest total of unit prices.**  
+  The criterion.
+- `AwardingCriterionResponse/Description` = **480.00 lume a bench and 16.00 lume an installation.**  
+  The unit prices the criterion evaluates.
+- `AwardingCriterionResponse/Amount` = **119040.00** (currencyID `XBL`)  
+  The tendered total of the unit prices for both lots.
+- `AwardingCriterionResponse/ID` = **ACR-2**  
   The response to the quality criterion.
 - `AwardingCriterionResponse/AwardingCriterionID` = **AC-2**  
   Quality.
-- `AwardingCriterionResponse/AwardingCriterionDescription` = **Warranty and coating.**  
+- `AwardingCriterionResponse/AwardingCriterionDescription` = **Durability and warranty of the coating.**  
   The criterion.
-- `AwardingCriterionResponse/Description` = **Six years on the frame and the slats.**  
-  The offer.
-- `AwardingCriterionResponse/Quantity` = **6** (unitCode `ANN`)  
-  The years of warranty offered.
-- `AwardingCriterionResponse/Amount` = **119040.00** (currencyID `XBL`)  
-  The price offered.
-- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-1.1**  
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-2.1**  
   Durability.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID` = **AC-2.1**  
   Its criterion.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **Oiled hardwood, painted steel.**  
   The offer.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-2.2**  
+  Warranty.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID` = **AC-2.2**  
+  Its criterion.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **Six years on the frame and the slats.**  
+  The offer.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity` = **6** (unitCode `ANN`)  
+  The years of warranty offered.
 
 ## The document
 
@@ -623,15 +635,25 @@ Inside `TenderedProject`:
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>
-      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Six years on the frame and the slats.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      <cbc:AwardingCriterionID>AC-1</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>The lowest total of unit prices.</cbc:AwardingCriterionDescription>
+      <cbc:Description>480.00 lume a bench and 16.00 lume an installation.</cbc:Description>
       <cbc:Amount currencyID="XBL">119040.00</cbc:Amount>
+    </cac:AwardingCriterionResponse>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-2</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
-        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
         <cbc:Description>Oiled hardwood, painted steel.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.2</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
+        <cbc:Description>Six years on the frame and the slats.</cbc:Description>
+        <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

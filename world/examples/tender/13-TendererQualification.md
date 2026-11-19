@@ -28,8 +28,8 @@ The manufacturer declares its qualifications and those of its consortium partner
   Submitted with the tender, the day before the deadline.
 - `IssueTime` = **08:52:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The manufacturer with Saltmere as subcontractor for the installation.**  
-  Who.
+- `Note` = **The manufacturer tenders alone, with Saltmere Engineering as its subcontractor for the installation (lot 2); the manufacturer is liable for it.**  
+  Who (D28 point 3).
 - `VersionID` = **1**  
   The first version.
 
@@ -52,8 +52,8 @@ Inside `TendererPartyQualification`:
   Lot 1.
 - `InterestedProcurementProjectLot/ID` = **LOT-2**  
   Lot 2.
-- `MainQualifyingParty/ParticipationPercent` = **80**  
-  The manufacturer's share.
+- `MainQualifyingParty/ParticipationPercent` = **96.5**  
+  The manufacturer's share of the tender's value: all but the installation (tender/13#F8).
 - `MainQualifyingParty/PersonalSituation` = **No exclusion grounds apply.**  
   Declared.
 - `MainQualifyingParty/OperatingYearsQuantity` = **63** (unitCode `ANN`)  
@@ -64,8 +64,8 @@ Inside `TendererPartyQualification`:
   Its class.
 - `MainQualifyingParty/BusinessIdentityEvidenceID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   Its registration. The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
-- `MainQualifyingParty/TendererRoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
-  The lead tenderer. The code is from the Trade Accord's tenderer role list: LEAD = Consortium lead.
+- `MainQualifyingParty/TendererRoleCode` = **SOLE** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
+  The manufacturer tenders alone (tender/13#F2). The code is from the Trade Accord's tenderer role list: SOLE = Sole tenderer.
 - `MainQualifyingParty/BusinessClassificationScheme/ID` = **ISIC4**  
   ISIC Rev. 4.
 - `MainQualifyingParty/BusinessClassificationScheme/ClassificationCategory/CodeValue` = **3100**  
@@ -214,14 +214,14 @@ Inside `TendererPartyQualification`:
   The network in which the address is registered: the world's own exchange network.
 - `MainQualifyingParty/Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `MainQualifyingParty/EconomicOperatorRole/RoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
-  The lead. The code is from the Trade Accord's economic operator role list: LEAD = Consortium lead.
-- `MainQualifyingParty/EconomicOperatorRole/RoleDescription` = **Leads.**  
+- `MainQualifyingParty/EconomicOperatorRole/RoleCode` = **SOLE** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
+  A sole tenderer. The code is from the Trade Accord's economic operator role list: SOLE = Sole tenderer.
+- `MainQualifyingParty/EconomicOperatorRole/RoleDescription` = **Tenders alone and relies on a subcontractor for the installation.**  
   Role.
-- `AdditionalQualifyingParty/ParticipationPercent` = **20**  
-  Saltmere's share.
+- `AdditionalQualifyingParty/ParticipationPercent` = **3.5**  
+  Saltmere's share: the installation, 4,320 of 124,080 lume.
 - `AdditionalQualifyingParty/TendererRoleCode` = **SUBCONTRACTOR** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
-  For the installation. The code is from the Trade Accord's tenderer role list: SUBCONTRACTOR = Subcontractor.
+  For the installation: UBL places a relied-on subcontractor among the additional qualifying parties. The code is from the Trade Accord's tenderer role list: SUBCONTRACTOR = Subcontractor.
 - `AdditionalQualifyingParty/Party/IndustryClassificationCode` = **4290** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Saltmere Engineering (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4290 = Construction of other civil engineering projects.
 - `AdditionalQualifyingParty/Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -398,7 +398,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>08:52:00-01:00</cbc:IssueTime>
-  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:Note>The manufacturer tenders alone, with Saltmere Engineering as its subcontractor for the installation (lot 2); the manufacturer is liable for it.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>VI-SIG-TQ</cbc:ID>
@@ -419,13 +419,13 @@ Inside `AdditionalDocumentReference`:
       <cbc:ID>LOT-2</cbc:ID>
     </cac:InterestedProcurementProjectLot>
     <cac:MainQualifyingParty>
-      <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
+      <cbc:ParticipationPercent>96.5</cbc:ParticipationPercent>
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">63</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">3083</cbc:EmployeeQuantity>
       <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:BusinessIdentityEvidenceID>
-      <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
+      <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">SOLE</cbc:TendererRoleCode>
       <cac:BusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
         <cac:ClassificationCategory>
@@ -565,12 +565,12 @@ Inside `AdditionalDocumentReference`:
         </cac:ElectronicAddress>
       </cac:Party>
       <cac:EconomicOperatorRole>
-        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
-        <cbc:RoleDescription>Leads.</cbc:RoleDescription>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">SOLE</cbc:RoleCode>
+        <cbc:RoleDescription>Tenders alone and relies on a subcontractor for the installation.</cbc:RoleDescription>
       </cac:EconomicOperatorRole>
     </cac:MainQualifyingParty>
     <cac:AdditionalQualifyingParty>
-      <cbc:ParticipationPercent>20</cbc:ParticipationPercent>
+      <cbc:ParticipationPercent>3.5</cbc:ParticipationPercent>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">SUBCONTRACTOR</cbc:TendererRoleCode>
       <cac:Party>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>

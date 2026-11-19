@@ -66,22 +66,16 @@ Inside `Signature`:
 
 Inside `EconomicOperatorParty`:
 
-- `QualifyingParty/ParticipationPercent` = **60**  
-  The sawmill's share in the planned consortium.
 - `QualifyingParty/OperatingYearsQuantity` = **22** (unitCode `ANN`)  
   Full years in business since the sawmill was founded on 2004-01-20.
 - `QualifyingParty/EmployeeQuantity` = **85** (unitCode `IE`)  
   Its staff, in persons (world/parties.json).
-- `QualifyingParty/TendererRoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
-  It would lead the consortium. The code is from the Trade Accord's tenderer role list: LEAD = Consortium lead.
 - `QualifyingParty/Party/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `QualifyingParty/Party/PartyName/Name` = **Marrowdale Sawmill**  
   A party referred to from another party's details: its identifier and name are enough.
-- `EconomicOperatorRole/RoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
-  The lead of a consortium still to be formed. The code is from the Trade Accord's economic operator role list: LEAD = Consortium lead.
-- `EconomicOperatorRole/RoleDescription` = **Supplies the slats; a bench maker would build the benches.**  
-  In words.
+- `EconomicOperatorRole/RoleDescription` = **Would supply the slats; it seeks a bench maker to tender with, so no consortium, role or share exists yet.**  
+  In words (tender/04#F5).
 - `Party/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Marrowdale Sawmill (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Marrowdale Sawmill**  
@@ -247,10 +241,8 @@ Inside `ProcurementProjectLotReference`:
   </cac:Signature>
   <cac:EconomicOperatorParty>
     <cac:QualifyingParty>
-      <cbc:ParticipationPercent>60</cbc:ParticipationPercent>
       <cbc:OperatingYearsQuantity unitCode="ANN">22</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">85</cbc:EmployeeQuantity>
-      <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
       <cac:Party>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
@@ -261,8 +253,7 @@ Inside `ProcurementProjectLotReference`:
       </cac:Party>
     </cac:QualifyingParty>
     <cac:EconomicOperatorRole>
-      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
-      <cbc:RoleDescription>Supplies the slats; a bench maker would build the benches.</cbc:RoleDescription>
+      <cbc:RoleDescription>Would supply the slats; it seeks a bench maker to tender with, so no consortium, role or share exists yet.</cbc:RoleDescription>
     </cac:EconomicOperatorRole>
     <cac:Party>
       <cac:PartyIdentification>

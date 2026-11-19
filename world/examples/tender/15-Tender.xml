@@ -335,15 +335,25 @@
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>
-      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Ten years on the coating.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
+      <cbc:AwardingCriterionID>AC-1</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>The lowest total of unit prices.</cbc:AwardingCriterionDescription>
+      <cbc:Description>499.00 lume a bench and 18.00 lume an installation.</cbc:Description>
       <cbc:Amount currencyID="XBL">124080.00</cbc:Amount>
+    </cac:AwardingCriterionResponse>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-2</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
-        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
         <cbc:Description>Hot-dip galvanised and powder coated.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.2</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
+        <cbc:Description>Ten years on the coating.</cbc:Description>
+        <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

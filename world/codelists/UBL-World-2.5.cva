@@ -357,7 +357,7 @@
       <Context address="*[local-name()='PartyAuthorization']/cbc:PurposeCode" values="BaselAnnexIV" metadata="code" />
       <Context address="*[local-name()='TenderingProcess']/cbc:ProcedureCode | *[local-name()='QualificationApplicationRequest']/cbc:ProcedureCode | *[local-name()='QualificationApplicationResponse']/cbc:ProcedureCode | *[local-name()='ProcurementStatus']/cbc:ProcedureCode" values="ProcurementProcedure" metadata="code" />
       <Context address="*[local-name()='ProcurementProject']/cbc:ProcurementTypeCode" values="ContractNature" metadata="code" />
-      <Context address="*[local-name()='ProcurementAdditionalType']/cbc:ProcurementTypeCode" values="StrategicProcurement" metadata="code" />
+      <Context address="*[local-name()='ProcurementAdditionalType']/cbc:ProcurementTypeCode" values="ContractNature" metadata="code" />
       <Context address="*[local-name()='NoticeSubType']/cbc:SubTypeCode" values="NoticeSubType" metadata="code" />
       <Context address="*[local-name()='ResponseValue']/cbc:ResponseCode" values="CriterionResponse" metadata="code" />
       <Context address="*[local-name()='TenderingCriterionProperty']/cbc:TypeCode" values="CriterionPropertyType" metadata="code" />

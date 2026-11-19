@@ -32,10 +32,8 @@
   </cac:Signature>
   <cac:EconomicOperatorParty>
     <cac:QualifyingParty>
-      <cbc:ParticipationPercent>60</cbc:ParticipationPercent>
       <cbc:OperatingYearsQuantity unitCode="ANN">22</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">85</cbc:EmployeeQuantity>
-      <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
       <cac:Party>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
@@ -46,8 +44,7 @@
       </cac:Party>
     </cac:QualifyingParty>
     <cac:EconomicOperatorRole>
-      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
-      <cbc:RoleDescription>Supplies the slats; a bench maker would build the benches.</cbc:RoleDescription>
+      <cbc:RoleDescription>Would supply the slats; it seeks a bench maker to tender with, so no consortium, role or share exists yet.</cbc:RoleDescription>
     </cac:EconomicOperatorRole>
     <cac:Party>
       <cac:PartyIdentification>

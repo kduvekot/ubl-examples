@@ -660,6 +660,23 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `TenderingProcess/InvitationSubmissionPeriod` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice | | | open |
 | `TenderingProcess/ParticipationInvitationPeriod` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice | | | open |
 
+> C119, D28 points 2, 3, 5, 6: the tendering terms state each term once and as it is meant: no security clearance where none is required (tender/01#F1), no variant indicator next to a maximum, no concession fee for the paper copies (their price in the terms' note), no reference to an "original" framework, no negotiation indicator in an open procedure, a tender preparation for both lots, no lot terms or process that only say "as for the procedure" (the installers' curricula become lot 2's own term), and no rounded "precise" subcontract rate.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `AwardingTerms/NoFurtherNegotiationIndicator` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `ProcurementProject/FeeDescription` | 0..n | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `ProcurementProject/RequiredFeeAmount` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `ProcurementProjectLot/TenderingProcess` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice | | | open |
+| `SecurityClearanceTerm/Code` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `SecurityClearanceTerm/Description` | 0..n | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `SubcontractTerms/Rate` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `TenderPreparation/ProcurementProjectLot` | 0..n | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `TenderingProcess/OriginalContractingSystemID` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice | | | open |
+| `TenderingTerms/LatestSecurityClearanceDate` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `TenderingTerms/SecurityClearanceTerm` | 0..n | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+| `TenderingTerms/VariantConstraintIndicator` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

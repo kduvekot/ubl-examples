@@ -8405,7 +8405,7 @@
   },
   {
    "element": "ProcurementTypeCode",
-   "list": "StrategicProcurement",
+   "list": "ContractNature",
    "parents": [
     "ProcurementAdditionalType"
    ],
