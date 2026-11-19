@@ -6962,19 +6962,39 @@ def qualification_limits(prop):
     return [ratio, taxes]
 
 
+def company_years(pid, on):
+    """Full years in business on a day, from the founding date in the party's identity (world/parties.json)."""
+    founded = datetime.date.fromisoformat(PARTY[pid]["identity"]["legal"]["founded"])
+    day = datetime.date.fromisoformat(on)
+    return day.year - founded.year - ((day.month, day.day) < (founded.month, founded.day))
+
+
+def company_headcount(pid):
+    return PARTY[pid]["identity"]["legal"]["headcount"]
+
+
+def company_turnover_lume(pid):
+    """The party's yearly turnover (world/parties.json), in lume at the reference rates."""
+    t = PARTY[pid]["identity"]["legal"]["turnover"]
+    per = {"XBL": Decimal(1), "XUF": Decimal(100), "XLC": Decimal("0.4")}[t["currency"]]
+    return Decimal(t["amount"]) / per
+
+
 @enrich("tender", "QualificationApplicationResponse")
 def _(f, n, doc, out):
     rv = {"ID": V("RV-1", "The answer."), "Description": V("Turnover 2025.", "What."),
           "Response": V("As in the accounts.", "The answer in words."),
-          "ResponseAmount": amount(Decimal("410000"), "XBL", "The turnover."),
+          "ResponseAmount": amount(company_turnover_lume(RUNNER_UP), "XBL", "The turnover of 2025, from the "
+                                                                           "company's accounts (world/parties.json)."),
           "ResponseBinaryObject": V(_b64.b64encode(b"Annual accounts 2025, extract.").decode(), "The extract, "
                                                                                                 "embedded.",
                                     mimeCode="text/plain"),
           "ResponseCode": V("MET", "The criterion is met."), "ResponseDate": V("2025-12-31", "The year's end."),
           "ResponseID": V("BF-ACC-2025", "The accounts."), "ResponseIndicator": V("true", "Yes."),
-          "ResponseMeasure": V("12", "Months covered.", unitCode="MON"), "ResponseNumeric": V("26", "Years in "
-                                                                                                "business."),
-          "ResponseQuantity": qty(26, "ANN", "Years."), "ResponseTime": V("12:00:00", "When signed."),
+          "ResponseMeasure": V("12", "Months covered.", unitCode="MON"),
+          "ResponseNumeric": V(str(company_years(RUNNER_UP, out["IssueDate"].value)), "Full years in business since "
+                               f"the company was founded on {PARTY[RUNNER_UP]['identity']['legal']['founded']}."),
+          "ResponseQuantity": qty(company_years(RUNNER_UP, out["IssueDate"].value), "ANN", "Years."), "ResponseTime": V("12:00:00", "When signed."),
           "ResponseURI": V("https://www.brackenmere.example/accounts-2025.pdf", "Where.")}
     return {"ContractName": V("Park benches for the parks renewal programme", "The contract."),
             "EconomicOperatorGroupName": V("Brackenmere Furniture", "Tendering alone."),
@@ -6987,7 +7007,8 @@ def _(f, n, doc, out):
             "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
             "TenderingCriterion": {"ID": V("CR-TURNOVER", "The criterion answered.")},
             "TenderingCriterionResponse": {"ID": V("CRR-1", "The response."), "Name": V("Turnover", "Name."),
-                                           "Description": V("Yearly turnover of 410,000 lume.", "What."),
+                                           "Description": V(f"Yearly turnover of {company_turnover_lume(RUNNER_UP):,.0f} "
+                                                            "lume.", "What."),
                                            "ValidatedCriterionPropertyID": V("P-1", "The property answered."),
                                            "ConfidentialityLevelCode": V("CONFIDENTIAL", "Not to be published."),
                                            "ResponseValue": rv,
@@ -7018,8 +7039,11 @@ def _(f, n, doc, out):
                 "MainQualifyingParty": {
                     "ParticipationPercent": V("80", "The manufacturer's share."),
                     "PersonalSituation": V("No exclusion grounds apply.", "Declared."),
-                    "OperatingYearsQuantity": qty(41, "ANN", "In business since 1985."),
-                    "EmployeeQuantity": qty(180, "IE", "Employees, in persons."),
+                    "OperatingYearsQuantity": qty(company_years("5-xu", out["IssueDate"].value), "ANN",
+                                                  "Full years in business since the company was founded on "
+                                                  f"{PARTY['5-xu']['identity']['legal']['founded']} (world/parties.json)."),
+                    "EmployeeQuantity": qty(company_headcount("5-xu"), "IE", "The whole company's staff, in persons "
+                                                                         "(world/parties.json)."),
                     "BusinessClassificationEvidenceID": V("ISIC-3100", "Its class."),
                     "BusinessIdentityEvidenceID": V(PARTY["5-xu"]["identity"]["registry_id"], "Its registration."),
                     "TendererRoleCode": V("LEAD", "The lead tenderer."),
@@ -7029,8 +7053,9 @@ def _(f, n, doc, out):
                                                                                             "Capacity."),
                                             "ValueQuantity": qty(4000, "EA", "A year.")},
                     "FinancialCapability": {"ID": V("FC-1", "Turnover."),
-                                            "ValueAmount": amount(Decimal("9200000"), "XBL", "Yearly turnover, in "
-                                                                                             "lume.")},
+                                            "ValueAmount": amount(company_turnover_lume("5-xu"), "XBL",
+                                                                  "The whole company's yearly turnover of 2025, "
+                                                                  "converted to lume (world/parties.json).")},
                     "CompletedTask": {"AnnualAverageAmount": amount(Decimal("180000"), "XBL", "A year, similar "
                                                                                               "supplies."),
                                       "TotalTaskAmount": amount(Decimal("540000"), "XBL", "Three years."),
@@ -7167,8 +7192,12 @@ def _(f, n, doc, out):
             "Signature": seal(SAWMILL, "HS-SIG-EOI"),
             "EconomicOperatorParty": {
                 "QualifyingParty": {"ParticipationPercent": V("60", "The sawmill's share in the planned consortium."),
-                                    "OperatingYearsQuantity": qty(22, "ANN", "Years in business."),
-                                    "EmployeeQuantity": qty(85, "IE", "Its staff, in persons."),
+                                    "OperatingYearsQuantity": qty(company_years(SAWMILL, out["IssueDate"].value),
+                                                                  "ANN", "Full years in business since the sawmill "
+                                                                  "was founded on "
+                                                                  f"{PARTY[SAWMILL]['identity']['legal']['founded']}."),
+                                    "EmployeeQuantity": qty(company_headcount(SAWMILL), "IE", "Its staff, in persons "
+                                                                                         "(world/parties.json)."),
                                     "TendererRoleCode": V("LEAD", "It would lead the consortium."),
                                     "Party": party(SAWMILL, short=True)},
                 "EconomicOperatorRole": {"RoleCode": V("LEAD", "The lead of a consortium still to be formed."),
@@ -7253,7 +7282,8 @@ def _(f, n, doc, out):
                 "ID": V("CAP-1", "A capability on record."),
                 "CapabilityTypeCode": V("PRODUCTION", "Production capacity."),
                 "Description": V("Steel frame benches, cast, galvanised and coated in its own plant.", "What."),
-                "ValueAmount": amount(Decimal("4800000.00"), "XBL", "Yearly turnover, converted to lume."),
+                "ValueAmount": amount(company_turnover_lume(WINNER), "XBL", "The yearly turnover of 2025, "
+                                                                            "converted to lume (world/parties.json)."),
                 "ValueQuantity": qty(6000, "EA", "Benches a year."),
                 "SuppliedEvidence": {"ID": V("EV-ACC-2025", "The audited accounts of 2025."),
                                      "Name": V("Annual accounts", "What.")},

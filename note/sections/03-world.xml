@@ -454,7 +454,7 @@
       which its size class follows. The table of founding years and
       figures in <literal>analysis/worklist-decisions.md</literal> is a
       current base, open to correction; each party's day and month of
-      founding are not yet settled.
+      founding are in <literal>world/parties.json</literal>.
     </para>
   </section>
   <section id="S-03-world-geography">

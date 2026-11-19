@@ -257,7 +257,7 @@ border terminal, Valdara's logistics arm, the numbering agency, island
 warehousing). Each party has its own founding date, headcount and turnover,
 from which its size class follows. The table of founding years and figures
 in `analysis/worklist-decisions.md` is a current base, open to correction;
-each party's day and month of founding are not yet settled.
+each party's day and month of founding are in `world/parties.json`.
 
 ## Geography
 

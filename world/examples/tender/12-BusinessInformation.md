@@ -224,7 +224,7 @@ Inside `BusinessParty`:
 - `PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)** (languageID `en-XU`)  
   The name of code SUA in Urvania's national company legal form list. In English.
 - `PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 3083 persons and its turnover of 23600000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
+  The size class follows from the company's 3083 persons and its turnover of 52000000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
@@ -308,8 +308,8 @@ Inside `BusinessCapability`:
   Production capacity. The code is from the Trade Accord's business capability type list: PRODUCTION = Production.
 - `Description` = **Steel frame benches, cast, galvanised and coated in its own plant.**  
   What.
-- `ValueAmount` = **4800000.00** (currencyID `XBL`)  
-  Yearly turnover, converted to lume.
+- `ValueAmount` = **520000000.00** (currencyID `XBL`)  
+  The yearly turnover of 2025, converted to lume (world/parties.json).
 - `ValueQuantity` = **6000** (unitCode `EA`)  
   Benches a year.
 - `SuppliedEvidence/ID` = **EV-ACC-2025**  
@@ -585,7 +585,7 @@ Inside `NoticeSubType`:
     <cbc:ID>CAP-1</cbc:ID>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
     <cbc:Description>Steel frame benches, cast, galvanised and coated in its own plant.</cbc:Description>
-    <cbc:ValueAmount currencyID="XBL">4800000.00</cbc:ValueAmount>
+    <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
     <cbc:ValueQuantity unitCode="EA">6000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-2025</cbc:ID>

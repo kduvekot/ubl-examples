@@ -32,8 +32,8 @@
     <cac:MainQualifyingParty>
       <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
-      <cbc:OperatingYearsQuantity unitCode="ANN">41</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="IE">180</cbc:EmployeeQuantity>
+      <cbc:OperatingYearsQuantity unitCode="ANN">63</cbc:OperatingYearsQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">3083</cbc:EmployeeQuantity>
       <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
@@ -50,7 +50,7 @@
       </cac:TechnicalCapability>
       <cac:FinancialCapability>
         <cbc:ID>FC-1</cbc:ID>
-        <cbc:ValueAmount currencyID="XBL">9200000.00</cbc:ValueAmount>
+        <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
       </cac:FinancialCapability>
       <cac:CompletedTask>
         <cbc:AnnualAverageAmount currencyID="XBL">180000.00</cbc:AnnualAverageAmount>

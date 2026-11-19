@@ -56,10 +56,10 @@ Inside `TendererPartyQualification`:
   The manufacturer's share.
 - `MainQualifyingParty/PersonalSituation` = **No exclusion grounds apply.**  
   Declared.
-- `MainQualifyingParty/OperatingYearsQuantity` = **41** (unitCode `ANN`)  
-  In business since 1985.
-- `MainQualifyingParty/EmployeeQuantity` = **180** (unitCode `IE`)  
-  Employees, in persons.
+- `MainQualifyingParty/OperatingYearsQuantity` = **63** (unitCode `ANN`)  
+  Full years in business since the company was founded on 1962-04-12 (world/parties.json).
+- `MainQualifyingParty/EmployeeQuantity` = **3083** (unitCode `IE`)  
+  The whole company's staff, in persons (world/parties.json).
 - `MainQualifyingParty/BusinessClassificationEvidenceID` = **ISIC-3100**  
   Its class.
 - `MainQualifyingParty/BusinessIdentityEvidenceID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -78,8 +78,8 @@ Inside `TendererPartyQualification`:
   A year.
 - `MainQualifyingParty/FinancialCapability/ID` = **FC-1**  
   Turnover.
-- `MainQualifyingParty/FinancialCapability/ValueAmount` = **9200000.00** (currencyID `XBL`)  
-  Yearly turnover, in lume.
+- `MainQualifyingParty/FinancialCapability/ValueAmount` = **520000000.00** (currencyID `XBL`)  
+  The whole company's yearly turnover of 2025, converted to lume (world/parties.json).
 - `MainQualifyingParty/CompletedTask/AnnualAverageAmount` = **180000.00** (currencyID `XBL`)  
   A year, similar supplies.
 - `MainQualifyingParty/CompletedTask/TotalTaskAmount` = **540000.00** (currencyID `XBL`)  
@@ -173,7 +173,7 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/PartyLegalEntity/CompanyLegalForm` = **Società urvaniana per azioni (public limited company)** (languageID `en-XU`)  
   The name of code SUA in Urvania's national company legal form list. In English.
 - `MainQualifyingParty/Party/PartyLegalEntity/EntitySizeCode` = **LARGE** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 3083 persons and its turnover of 23600000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
+  The size class follows from the company's 3083 persons and its turnover of 52000000000 XUF in 2025, by the Trade Accord's limits; identity of Valdara Industries (world/parties.json). The code is from the Trade Accord's entity size list: LARGE = Large enterprise.
 - `MainQualifyingParty/Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `MainQualifyingParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Ruldraz** (languageID `qau`)  
@@ -407,8 +407,8 @@ Inside `AdditionalDocumentReference`:
     <cac:MainQualifyingParty>
       <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
-      <cbc:OperatingYearsQuantity unitCode="ANN">41</cbc:OperatingYearsQuantity>
-      <cbc:EmployeeQuantity unitCode="IE">180</cbc:EmployeeQuantity>
+      <cbc:OperatingYearsQuantity unitCode="ANN">63</cbc:OperatingYearsQuantity>
+      <cbc:EmployeeQuantity unitCode="IE">3083</cbc:EmployeeQuantity>
       <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
@@ -425,7 +425,7 @@ Inside `AdditionalDocumentReference`:
       </cac:TechnicalCapability>
       <cac:FinancialCapability>
         <cbc:ID>FC-1</cbc:ID>
-        <cbc:ValueAmount currencyID="XBL">9200000.00</cbc:ValueAmount>
+        <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
       </cac:FinancialCapability>
       <cac:CompletedTask>
         <cbc:AnnualAverageAmount currencyID="XBL">180000.00</cbc:AnnualAverageAmount>

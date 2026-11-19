@@ -23,6 +23,10 @@ something to put in it, and these checks keep it consistent:
     2606), and telephone numbers the country code +999 that the ITU keeps in
     reserve, so none can reach a real organisation;
   * industry codes are ISIC Rev. 4 classes, and parties referred to exist;
+  * a public body has no company figures; a company was entered in the
+    register on a working day that is no holiday of its country, and its
+    turnover per person falls in the band for its kind of business
+    (parties.json turnover_per_person; decisions D14, D46, open point O30);
   * the ISIN of a listed security has the structure and check digit of
     ISO 6166 (Luhn over the digits with each letter expanded to 10..35).
 
@@ -207,6 +211,7 @@ def check(world):
             if t["currency"] != cur["code"] or len(t["amount"].partition(".")[2]) != cur["minor_units"]:
                 problems.append(f"{where}: turnover {t['amount']} {t['currency']} is not in {cur['code']} with its "
                                 f"{cur['minor_units']} decimals")
+        problems += figure_problems(world, p)
         prov = world["countries"][p["c"]].get("province") if p["c"] else None
         if not st and a.get("CountrySubentity") and a.get("CountrySubentity") != prov:
             problems.append(f"{where}: its country has no states" + (f"; its province is {prov}" if prov else ""))
@@ -266,6 +271,77 @@ def check(world):
                 problems.append(f"{where}: account number {acc['number']} does not hold the codes of bank "
                                 f"{acc['bank']} and its branch {acc.get('branch')} (decision ID-Q9)")
         problems += identifier_problems(world, p)
+    return problems
+
+
+def in_lume(world, amount, currency):
+    """An amount in lume, at the world's reference rates (world/countries.json exchange_rates)."""
+    from decimal import Decimal
+    if currency == "XBL":
+        return Decimal(amount)
+    rates = world["exchange_rates"]
+    if f"{currency}/XBL" in rates:
+        return Decimal(amount) * Decimal(str(rates[f"{currency}/XBL"]))
+    return Decimal(amount) / Decimal(str(rates[f"XBL/{currency}"]))
+
+
+def holiday_on(world, country, day):
+    """The name of the country's holiday that falls on a day of any year, or None. The holidays are given with
+    their dates in 2026 (world/countries.json holidays); a holiday counts on the same day of the month and,
+    unless the country keeps fixed dates only, also on the same weekday of the month (the third Monday in
+    February), since some of its holidays are set that way. Stricter than the calendar, never looser."""
+    import datetime
+    hol = world["countries"][country].get("holidays", {})
+    fixed = hol.get("rule", "").startswith("Fixed dates")
+    for iso, name in hol.get("2026", {}).items():
+        h = datetime.date.fromisoformat(iso)
+        if h.month != day.month:
+            continue
+        if h.day == day.day or (not fixed and h.weekday() == day.weekday()
+                                and (h.day - 1) // 7 == (day.day - 1) // 7):
+            return name
+    return None
+
+
+def figure_problems(world, p):
+    """A party's founding date, headcount and turnover (worklist C60, decisions D4, D14 and D46, open points O21
+    and O30): a public body has no company figures; a company is entered in the register on a working day that
+    is not a holiday of its country, and its turnover per person falls in the band for its kind of business
+    (parties.json turnover_per_person), unless it is listed there as awaiting the owner's decision."""
+    import datetime
+    problems, where = [], f"party {p['id']}"
+    idn = p["identity"]
+    le = idn.get("legal", {})
+    if idn.get("kind") == "public":
+        for k in ("founded", "headcount", "turnover", "capital", "business"):
+            if k in le:
+                problems.append(f"{where}: a public body has no company figures, but has {k} (D46)")
+        return problems
+    if le.get("founded"):
+        day = datetime.date.fromisoformat(le["founded"])
+        if day.weekday() >= 5:
+            problems.append(f"{where}: founded on a {day:%A} ({day}), when the register is closed (O21)")
+        name = holiday_on(world, p["c"], day)
+        if name:
+            problems.append(f"{where}: founded on {day}, on {name}, a holiday of {p['c']} (O21)")
+    if not le.get("turnover") or idn.get("person") or le.get("sole_proprietor"):
+        return problems                        # a farm is in the farm register, not the companies register (D46)
+    rule = world["turnover_per_person"]
+    band = rule["bands"].get(le.get("business"))
+    if not band:
+        problems.append(f"{where}: business {le.get('business')!r} is not one of the kinds of turnover_per_person "
+                        f"({', '.join(rule['bands'])}) (O30)")
+        return problems
+    t = le["turnover"]
+    per = in_lume(world, t["amount"], t["currency"]) / le["headcount"]
+    inside = band["min"] <= per <= band["max"]
+    if not inside and p["id"] not in rule.get("awaiting_owner", {}):
+        problems.append(f"{where}: turnover per person {per:,.0f} lume ({le['headcount']} persons, {t['amount']} "
+                        f"{t['currency']}) is outside the band of {band['min']:,} to {band['max']:,} for "
+                        f"{band['name'].lower()} (D14, O30)")
+    if inside and p["id"] in rule.get("awaiting_owner", {}):
+        problems.append(f"{where}: listed as awaiting the owner in turnover_per_person, but its turnover per person "
+                        f"({per:,.0f} lume) is inside its band: take it off the list")
     return problems
 
 

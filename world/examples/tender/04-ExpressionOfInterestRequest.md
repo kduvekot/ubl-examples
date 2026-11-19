@@ -69,9 +69,9 @@ Inside `EconomicOperatorParty`:
 - `QualifyingParty/ParticipationPercent` = **60**  
   The sawmill's share in the planned consortium.
 - `QualifyingParty/OperatingYearsQuantity` = **22** (unitCode `ANN`)  
-  Years in business.
+  Full years in business since the sawmill was founded on 2004-01-20.
 - `QualifyingParty/EmployeeQuantity` = **85** (unitCode `IE`)  
-  Its staff, in persons.
+  Its staff, in persons (world/parties.json).
 - `QualifyingParty/TendererRoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
   It would lead the consortium. The code is from the Trade Accord's tenderer role list: LEAD = Consortium lead.
 - `QualifyingParty/Party/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  

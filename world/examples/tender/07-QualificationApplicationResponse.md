@@ -172,14 +172,14 @@ Inside `EconomicOperatorParty`:
   The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/RegistrationDate` = **1996-01-01**  
+- `Party/PartyLegalEntity/RegistrationDate` = **2000-01-12**  
   The day the company was entered in the register; identity of Brackenmere Furniture (world/parties.json).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
   The name of code LTD in Bayvarra's national company legal form list.
 - `Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 19 persons and its turnover of 6830000.00 XBL in 2025, by the Trade Accord's limits; identity of Brackenmere Furniture (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
+  The size class follows from the company's 45 persons and its turnover of 6830000.00 XBL in 2025, by the Trade Accord's limits; identity of Brackenmere Furniture (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -240,7 +240,7 @@ Inside `TenderingCriterionResponse`:
   The response.
 - `Name` = **Turnover**  
   Name.
-- `Description` = **Yearly turnover of 410,000 lume.**  
+- `Description` = **Yearly turnover of 6,830,000 lume.**  
   What.
 - `ValidatedCriterionPropertyID` = **P-1**  
   The property answered.
@@ -252,8 +252,8 @@ Inside `TenderingCriterionResponse`:
   What.
 - `ResponseValue/Response` = **As in the accounts.**  
   The answer in words.
-- `ResponseValue/ResponseAmount` = **410000.00** (currencyID `XBL`)  
-  The turnover.
+- `ResponseValue/ResponseAmount` = **6830000.00** (currencyID `XBL`)  
+  The turnover of 2025, from the company's accounts (world/parties.json).
 - `ResponseValue/ResponseBinaryObject` = **QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu** (mimeCode `text/plain`)  
   The extract, embedded.
 - `ResponseValue/ResponseCode` = **MET** (listID `urn:ubl-examples:world:codelist:CriterionResponseCode`)  
@@ -267,7 +267,7 @@ Inside `TenderingCriterionResponse`:
 - `ResponseValue/ResponseMeasure` = **12** (unitCode `MON`)  
   Months covered.
 - `ResponseValue/ResponseNumeric` = **26**  
-  Years in business.
+  Full years in business since the company was founded on 2000-01-12.
 - `ResponseValue/ResponseQuantity` = **26** (unitCode `ANN`)  
   Years.
 - `ResponseValue/ResponseTime` = **12:00:00**  
@@ -456,7 +456,7 @@ Inside `Signature`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
-        <cbc:RegistrationDate>1996-01-01</cbc:RegistrationDate>
+        <cbc:RegistrationDate>2000-01-12</cbc:RegistrationDate>
         <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
         <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
         <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
@@ -504,14 +504,14 @@ Inside `Signature`:
   <cac:TenderingCriterionResponse>
     <cbc:ID>CRR-1</cbc:ID>
     <cbc:Name>Turnover</cbc:Name>
-    <cbc:Description>Yearly turnover of 410,000 lume.</cbc:Description>
+    <cbc:Description>Yearly turnover of 6,830,000 lume.</cbc:Description>
     <cbc:ValidatedCriterionPropertyID>P-1</cbc:ValidatedCriterionPropertyID>
     <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
     <cac:ResponseValue>
       <cbc:ID>RV-1</cbc:ID>
       <cbc:Description>Turnover 2025.</cbc:Description>
       <cbc:Response>As in the accounts.</cbc:Response>
-      <cbc:ResponseAmount currencyID="XBL">410000.00</cbc:ResponseAmount>
+      <cbc:ResponseAmount currencyID="XBL">6830000.00</cbc:ResponseAmount>
       <cbc:ResponseBinaryObject mimeCode="text/plain">QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu</cbc:ResponseBinaryObject>
       <cbc:ResponseCode listID="urn:ubl-examples:world:codelist:CriterionResponseCode">MET</cbc:ResponseCode>
       <cbc:ResponseDate>2025-12-31</cbc:ResponseDate>
