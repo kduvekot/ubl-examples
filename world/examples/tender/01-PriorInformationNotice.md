@@ -524,7 +524,7 @@ Inside `ProcurementProject`:
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme**  
   The project's name.
-- `Description` = **240 steel park benches with hardwood slats over two years, delivered and anchored.**  
+- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.**  
   What is bought.
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
@@ -604,7 +604,7 @@ Inside `ProcurementProject`:
   The benches.
 - `RequestForTenderLine/UUID` = **b98b5bc4-6b96-59da-b8e9-89fc28afcae4**  
   Its UUID.
-- `RequestForTenderLine/Note` = **Steel frame, five hardwood slats, ground anchors.**  
+- `RequestForTenderLine/Note` = **Galvanised metal frame, five hardwood slats, ground anchors.**  
   The requirement.
 - `RequestForTenderLine/Quantity` = **240** (unitCode `EA`)  
   Over the contract.
@@ -1069,7 +1069,7 @@ Inside `ProcurementProjectLot`:
   <cac:ProcurementProject>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
-    <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
     <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
@@ -1138,7 +1138,7 @@ Inside `ProcurementProjectLot`:
     <cac:RequestForTenderLine>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
-      <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
+      <cbc:Note>Galvanised metal frame, five hardwood slats, ground anchors.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
       <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>

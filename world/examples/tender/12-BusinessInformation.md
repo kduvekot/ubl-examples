@@ -316,7 +316,7 @@ Inside `BusinessCapability`:
   A capability on record.
 - `CapabilityTypeCode` = **PRODUCTION** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
   Production capacity. The code is from the Trade Accord's business capability type list: PRODUCTION = Production.
-- `Description` = **Steel frame benches, cast, galvanised and coated in its own plant.**  
+- `Description` = **Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant.**  
   What.
 - `ValueAmount` = **520000000.00** (currencyID `XBL`)  
   The yearly turnover of 2025, converted to lume (world/parties.json).
@@ -605,7 +605,7 @@ Inside `NoticeSubType`:
   <cac:BusinessCapability>
     <cbc:ID>CAP-1</cbc:ID>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
-    <cbc:Description>Steel frame benches, cast, galvanised and coated in its own plant.</cbc:Description>
+    <cbc:Description>Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
     <cbc:ValueQuantity unitCode="EA">6000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>

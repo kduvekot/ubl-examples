@@ -235,7 +235,7 @@
   <cac:ProcurementProject>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
     <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
-    <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
     <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
@@ -304,7 +304,7 @@
     <cac:RequestForTenderLine>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
-      <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
+      <cbc:Note>Galvanised metal frame, five hardwood slats, ground anchors.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
       <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
@@ -367,7 +367,7 @@
     <cac:ProcurementProject>
       <cbc:ID>LOT-1</cbc:ID>
       <cbc:Name>Park benches</cbc:Name>
-      <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+      <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
       <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
       <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>
@@ -436,7 +436,7 @@
       <cac:RequestForTenderLine>
         <cbc:ID>1</cbc:ID>
         <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
-        <cbc:Note>Steel frame, five hardwood slats, ground anchors.</cbc:Note>
+        <cbc:Note>Galvanised metal frame, five hardwood slats, ground anchors.</cbc:Note>
         <cbc:Quantity unitCode="EA">240</cbc:Quantity>
         <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
         <cbc:MaximumQuantity unitCode="EA">288</cbc:MaximumQuantity>
@@ -500,7 +500,7 @@
     <cac:ProcurementProject>
       <cbc:ID>LOT-2</cbc:ID>
       <cbc:Name>Installation of the benches</cbc:Name>
-      <cbc:Description>240 steel park benches with hardwood slats over two years, delivered and anchored.</cbc:Description>
+      <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
       <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
       <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">INSTALL</cbc:ProcurementSubTypeCode>
       <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>

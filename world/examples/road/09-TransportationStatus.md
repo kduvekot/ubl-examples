@@ -218,7 +218,7 @@ Inside `TransportEvent`:
   Recorded by the trailer's sensor. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
 - `CurrentStatus/Condition/Measure` = **14** (unitCode `CEL`)  
   The temperature in the trailer.
-- `CurrentStatus/Condition/Description` = **No protection needed for steel benches.**  
+- `CurrentStatus/Condition/Description` = **No protection needed for galvanised frames and thermally modified slats.**  
   Why it is only noted.
 - `CurrentStatus/Condition/MinimumMeasure` = **4** (unitCode `CEL`)  
   The lowest during the night.
@@ -486,7 +486,7 @@ Inside `StatusPeriod`:
       <cac:Condition>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">14</cbc:Measure>
-        <cbc:Description>No protection needed for steel benches.</cbc:Description>
+        <cbc:Description>No protection needed for galvanised frames and thermally modified slats.</cbc:Description>
         <cbc:MinimumMeasure unitCode="CEL">4</cbc:MinimumMeasure>
         <cbc:MaximumMeasure unitCode="CEL">18</cbc:MaximumMeasure>
       </cac:Condition>

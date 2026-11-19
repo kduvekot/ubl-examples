@@ -152,7 +152,7 @@
       <cac:Condition>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">14</cbc:Measure>
-        <cbc:Description>No protection needed for steel benches.</cbc:Description>
+        <cbc:Description>No protection needed for galvanised frames and thermally modified slats.</cbc:Description>
         <cbc:MinimumMeasure unitCode="CEL">4</cbc:MinimumMeasure>
         <cbc:MaximumMeasure unitCode="CEL">18</cbc:MaximumMeasure>
       </cac:Condition>

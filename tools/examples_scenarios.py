@@ -2697,7 +2697,7 @@ def tender(n, doc):
                                             "document of the procedure.")}
     project = {"ProcurementProject": {
         "Name": V("Park benches for the city parks", "The name of the procurement project."),
-        "Description": V(f"{TENDER_QTY} park benches with steel frames and hardwood slats over three years, ordered in "
+        "Description": V(f"{TENDER_QTY} park benches with galvanised metal frames and hardwood slats over three years, ordered in "
                          "call-offs.", "What the authority buys."),
         "RequestedTenderTotal": {"EstimatedOverallContractAmount": amount(120000, "XBL", "The authority's estimate of "
                                                                                          "the contract value, in lume.")}}}
@@ -6008,7 +6008,7 @@ def _(f, n, doc, out):
                                          "Measure": V("14", "The temperature in the trailer.", unitCode="CEL"),
                                          "MinimumMeasure": V("4", "The lowest during the night.", unitCode="CEL"),
                                          "MaximumMeasure": V("18", "The highest in the afternoon.", unitCode="CEL"),
-                                         "Description": V("No protection needed for steel benches.", "Why it is "
+                                         "Description": V("No protection needed for galvanised frames and thermally modified slats.", "Why it is "
                                                                                                     "only noted.")}]
     return {}
 
@@ -6717,7 +6717,7 @@ def procurement_project(f, lot=None):
            "Name": V({"LOT-1": "Park benches", "LOT-2": "Installation of the benches"}.get(lot, "Park benches for the "
                                                                                         "parks renewal programme"),
                      "The project's name."),
-           "Description": V("240 steel park benches with hardwood slats over two years, delivered and anchored.",
+           "Description": V("240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.",
                             "What is bought."),
            "ProcurementTypeCode": V("SUPPLIES" if goods else "SERVICES", "Supplies or services."),
            "ProcurementSubTypeCode": V("PURCHASE" if goods else "INSTALL", "The kind within it."),
@@ -6769,7 +6769,7 @@ def procurement_project(f, lot=None):
         out["RequestForTenderLine"] = {
             "ID": V("1", "The benches."), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:{FOLDER}:rftl:1")),
                                                    "Its UUID."),
-            "Note": V("Steel frame, five hardwood slats, ground anchors.", "The requirement."),
+            "Note": V("Galvanised metal frame, five hardwood slats, ground anchors.", "The requirement."),
             "Quantity": qty(TENDER_QTY, "EA", "Over the contract."),
             "MinimumQuantity": qty(120, "EA", "At least."), "MaximumQuantity": qty(288, "EA", "At most."),
             "TaxIncludedIndicator": V("false", "Prices without tax."),
@@ -7661,7 +7661,7 @@ def _(f, n, doc, out):
             "BusinessCapability": {
                 "ID": V("CAP-1", "A capability on record."),
                 "CapabilityTypeCode": V("PRODUCTION", "Production capacity."),
-                "Description": V("Steel frame benches, cast, galvanised and coated in its own plant.", "What."),
+                "Description": V("Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant.", "What."),
                 "ValueAmount": amount(company_turnover_lume(WINNER), "XBL", "The yearly turnover of 2025, "
                                                                             "converted to lume (world/parties.json)."),
                 "ValueQuantity": qty(6000, "EA", "Benches a year."),
