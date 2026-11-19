@@ -11032,6 +11032,13 @@ def road_complete(n, doc):
         out = road(n, doc)
         road_casting(out, lines)
         return out
+    if doc["doc"] == "Order":       # the one exception to the casting's version (O216): the order asked for the
+        out = road(n, doc)          # frame by its part number, before Valdara substituted the 2026 casting
+        for ln in lines_of(out, "OrderLine"):
+            sid = ln["LineItem"].get("Item", {}).get("SellersItemIdentification")
+            if isinstance(sid, dict) and sid["ID"].value == ITEM["bench-casting"]["sellers_id"]:
+                sid.pop("ExtendedID", None)
+        return out
     if doc["doc"] == "FulfilmentCancellation":
         return {**head(f, "receipt-cancellation", doc, 10, "Sent with the recount, before the corrected receipt "
                                                            "advice."),

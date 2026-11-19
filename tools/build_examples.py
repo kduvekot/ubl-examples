@@ -1064,6 +1064,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     # once (Lumeway's LD-10442 for the bench in any colour) adds the variant to its own number; one that gives each
     # variant a number of its own (variant_numbers: the store's BM-551005 for the oak bench, O155) needs no
     # variant on it, and the variant goes with the maker's number
+    if maker.get("version"):      # the version of the maker's part, on the maker's number (O216)
+        mid = out["ManufacturersItemIdentification"] if it.get("resale_of") else out["SellersItemIdentification"]
+        mid["ExtendedID"] = V(maker["version"]["extended"], f"{maker['version']['why']} {msrc}.")
     variant = maker.get("variant", {})
     vid = out["ManufacturersItemIdentification"] if it.get("variant_numbers") else out["SellersItemIdentification"]
     if variant.get("extended"):

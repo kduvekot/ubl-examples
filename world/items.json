@@ -403,7 +403,11 @@
     730,
     620,
     70
-   ]
+   ],
+   "version": {
+    "extended": "2026",
+    "why": "The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on (D35 point 3, O216): Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it."
+   }
   },
   {
    "id": "granulate-pe",
