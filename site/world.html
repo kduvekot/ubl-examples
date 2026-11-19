@@ -720,7 +720,7 @@ function frontOf(p) { const fp = footprint(p), inFp = (i, j) => fp.some(q => q[0
   for (const [i, j] of fp) for (const [di, dj] of DIRS) { const nb = tiles[i + di]?.[j + dj];
     if (!inFp(i + di, j + dj) && nb?.links?.road?.has([-di, -dj].join())) return [di, dj]; }
   return [0, 1]; }
-function buildingFrame(p, inset) { const fp = footprint(p), f = frontOf(p), A = [-f[1], f[0]];   // A: along the front, to the right
+function buildingFrame(p, inset, front) { const fp = footprint(p), f = front || frontOf(p), A = [-f[1], f[0]];   // A: along the front, to the right
   const xs = fp.map(q => q[0]), ys = fp.map(q => q[1]), ci = (Math.min(...xs) + Math.max(...xs)) / 2, cj = (Math.min(...ys) + Math.max(...ys)) / 2;
   const ext = d => (d[0] ? Math.max(...xs) - Math.min(...xs) : Math.max(...ys) - Math.min(...ys)) + 1 - 2 * inset;
   const LA = ext(A), LF = ext(f);
@@ -728,7 +728,7 @@ function buildingFrame(p, inset) { const fp = footprint(p), f = frontOf(p), A = 
     const [x, y] = tileWorld(i, j); return [x, y - z]; };
   F.LA = LA; F.LF = LF; return F; }
 // a box in a building's frame: the two side faces turned to the viewer (lit and shaded) and its top; returns its faces
-function box3(g, F, u0, v0, u1, v1, z0, z1, wall, top) {
+function box3(g, F, u0, v0, u1, v1, z0, z1, wall, top) { wall = hexOf(wall);
   const base = [[u0, v0], [u1, v0], [u1, v1], [u0, v1]], c = F((u0 + u1) / 2, (v0 + v1) / 2, z0), faces = [];
   for (let k = 0; k < 4; k++) { const a = base[k], b = base[(k + 1) % 4], A = F(a[0], a[1], z0), B = F(b[0], b[1], z0);
     if ((A[1] + B[1]) / 2 <= c[1]) continue;                          // a face at the back of the box
@@ -935,6 +935,26 @@ function house3(g, p, col, glass) {
   const fc = box3(g, F, .2, .3, .8, .8, 0, 7, "#efe6d2", null); windowsOn(g, F, fc, 5, 2.5, 5.5, glass);
   for (const f2 of fc) if (f2.k === 0) onFace(g, F, f2.a, f2.b, .42, .58, 0, 4.5, "#5a4030");
   gable3(g, F, .2, .3, .8, .8, 7, 4, "#a84a36", "#efe6d2"); }
+// ---- batch 4: the ports, their quay and cranes on the water side ----
+function waterSide(p) { const fp = footprint(p), inFp = (i, j) => fp.some(q => q[0] === i && q[1] === j);
+  for (const [i, j] of fp) for (const [di, dj] of DIRS) { const nb = tiles[i + di]?.[j + dj]; if (!inFp(i + di, j + dj) && nb && !nb.land) return [di, dj]; }
+  return p.water || [0, 1]; }
+function port3(g, p, col, glass) {
+  const F = buildingFrame(p, .03, waterSide(p));        // its front is the quay, at the water
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#9c9d99");
+  poly(g, [F(0, 0), F(1, 0), F(1, .08), F(0, .08)], "#6b6b68");                   // the quay's edge
+  const cs = ["#c0392b", "#2e86c1", "#d4ac0d", "#27ae60", "#8e44ad"]; let n = 0;
+  const parts = [];
+  for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) { const u = .13 + c * .2, v = .52 + r * .2, lv = 1 + ((r * 3 + c) % 2);
+    parts.push({ u, v, draw: () => { for (let l = 0; l < lv; l++) { const col2 = cs[(n++) % 5]; box3(g, F, u - .07, v - .06, u + .07, v + .06, l * 3, l * 3 + 3, col2, shade(col2, .18)); } } }); }
+  parts.push({ u: .88, v: .92, draw: () => { const fc = box3(g, F, .8, .84, .97, .98, 0, 8, "#d6dbe0", col); windowsOn(g, F, fc, 5, 3, 6.5, glass); } });
+  for (const u of [.28, .68]) parts.push({ u, v: .2, draw: () => {               // a gantry crane at the quay: two portal legs, a boom over the water
+    g.strokeStyle = shade(hexOf(col), -.35); g.lineWidth = 1.8; g.lineCap = "butt"; g.beginPath();
+    for (const du of [-.07, .07]) { for (const v of [.1, .3]) { g.moveTo(...F(u + du, v, 0)); g.lineTo(...F(u + du, v, 15)); } g.moveTo(...F(u + du, .1, 7)); g.lineTo(...F(u + du, .3, 7)); }
+    g.stroke();
+    box3(g, F, u - .07, -.28, u + .07, .34, 15, 17, hexOf(col), shade(hexOf(col), .15));
+    box3(g, F, u - .04, .1, u + .04, .2, 17, 20, "#f0f0f0", "#cfd3d6"); } });
+  inOrder(F, parts); }
 function factory3(g, p, col, glass) {
   const F = buildingFrame(p, .04), H = 13, long = F.LA >= F.LF, small = F.LA * F.LF < 1.5;   // one square: no office wing
   const front = (a, b) => F(a, b)[1];                                        // how near the viewer a point is
@@ -986,13 +1006,7 @@ function multiTile(g, p, k, col, glass) {
     const [hx, hy] = tileWorld(...near); const Hn = geo(hx, hy, .7, .55, 8); walls(g, Hn, "#c9ced2"); door(g, Hn, "L", .2, .6, 6, "#7c868d"); gableRoof(g, Hn, 4, "#8d969c", "#c9ced2");
     const [tx, ty] = tileWorld(...far); const Tm = geo(tx, ty, .8, .5, 9); walls(g, Tm, "#e3e6e8"); windows(g, Tm, "L", 4, 1, glass, { top: .85, bottom: .3 }); flatRoof(g, Tm, col);
     block(g, tx + 12, ty - 2, .14, .14, 18, "#d8dcdf"); block(g, tx + 12, ty - 20, .28, .28, 5, "#2b4a66", col); return true; }
-  if (k === "port") {                                   // quay along the footprint, stacks, two gantry cranes
-    poly(g, q(base), "#9c9d99"); const G = footGeo(p, .05, 3); walls(g, G, "#6b6b68"); flatRoof(g, G, "#a5a6a2");
-    const cs = ["#c0392b", "#2e86c1", "#d4ac0d", "#27ae60", "#8e44ad"]; let n = 0;
-    for (const t of footprint(p)) { const [cx, cy] = tileWorld(...t);
-      for (const [dx, dy] of [[-6, -1], [-1, 1.5], [-3, -4]]) for (let lvl = 0; lvl < 2; lvl++) block(g, cx + dx, cy - 3 + dy - lvl * 3, .16, .12, 3, cs[n++ % 5], shade(cs[n % 5], .15));
-      g.strokeStyle = col; g.lineWidth = 2; g.lineCap = "butt"; g.beginPath(); g.moveTo(cx + 6, cy + 2); g.lineTo(cx + 6, cy - 26); g.moveTo(cx + 11, cy - 1); g.lineTo(cx + 11, cy - 28); g.moveTo(cx + 1, cy - 26); g.lineTo(cx + 18, cy - 30); g.stroke(); }
-    return true; }
+  if (k === "port") { port3(g, p, col, glass); return true; }
   if (k === "terminal") {                               // platforms on both sides of the track, containers, gantry spanning it
     for (const [ti, tj] of footprint(p)) for (const v of [.3, -.3]) band(g, ti, tj, [-.5, v], [.5, v], .1, "#b3ab9c");
     const G = footGeo(p, .22, 2);
