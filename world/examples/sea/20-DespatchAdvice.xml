@@ -12,7 +12,7 @@
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -159,24 +159,6 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
@@ -228,8 +210,8 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">104</cbc:DeliveredQuantity>
+    <cbc:Note>96 benches on 24 pallets of four for the Port of Selanu's harbour parks.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -265,6 +247,37 @@
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Two pallets of four benches for the buyer's own stock: it buys by the pallet, and two pallets add little to the freight of a container already booked.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+      </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-10</cbc:ManufactureDate>
         <cac:LotIdentification>
@@ -278,11 +291,11 @@
     </cac:Item>
   </cac:DespatchLine>
   <cac:DespatchLine>
-    <cbc:ID>2</cbc:ID>
+    <cbc:ID>3</cbc:ID>
     <cbc:Note>Spare side frames for the buyer's own service stock.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

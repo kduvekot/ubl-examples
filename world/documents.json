@@ -4348,6 +4348,10 @@
    "what": "the audit report behind the forestry certificate",
    "type": "Forest management audit report"
   },
+  "WS-CERT-26-0884": {
+   "what": "Wavesure's insurance certificate of the sea shipment, with its insured value",
+   "type": "Insurance certificate"
+  },
   "XL-CLS-2026-0042": {
    "what": "the classing certificate of the cotton",
    "type": "Classing certificate"

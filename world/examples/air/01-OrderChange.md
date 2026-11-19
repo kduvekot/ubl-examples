@@ -303,7 +303,7 @@ Inside `AnticipatedMonetaryTotal`:
 
 Inside `OrderLine`:
 
-- `LineItem/ID` = **3**  
+- `LineItem/ID` = **4**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **8** (unitCode `EA`)  
   Eight side frames, needed before the ship arrives.
@@ -561,7 +561,7 @@ Inside `OrderLine`:
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
-      <cbc:ID>3</cbc:ID>
+      <cbc:ID>4</cbc:ID>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
       <cac:Price>

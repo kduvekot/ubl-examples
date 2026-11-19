@@ -40,7 +40,7 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
@@ -224,24 +224,6 @@ Inside `SellerSupplierParty`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
-
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Delivery
 
@@ -446,7 +428,7 @@ Inside `PaymentTerms`:
   The surcharge per month of late payment.
 - `PaymentPercent` = **82.75**  
   Its share of the invoice total.
-- `Amount` = **47974.00** (currencyID `XBL`)  
+- `Amount` = **47974.30** (currencyID `XBL`)  
   The balance.
 - `PenaltyAmount` = **719.61** (currencyID `XBL`)  
   The surcharge for the first month late, on the balance.
@@ -516,8 +498,8 @@ Inside `AllowanceCharge`:
   UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 96 = Insurance.
 - `AllowanceChargeReason` = **Cargo insurance**  
   Under CIF the seller insures the cargo and charges the insurance.
-- `Amount` = **140.00** (currencyID `XBL`)  
-  The premium of the cargo insurance.
+- `Amount` = **140.30** (currencyID `XBL`)  
+  The premium of the cargo insurance, as the forwarder charged it: 0.22 % of the insured value of 63,771.73 lume: the CIF value of 57,974.30 (goods 54,884.00, sea freight 2,950.00 and the premium itself) plus 10 % (O173).
 - `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
@@ -550,7 +532,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **57974.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **57974.30** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -571,17 +553,17 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **57974.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **57974.30** (currencyID `XBL`)  
   The line amounts plus the charges, without tax.
-- `TaxInclusiveAmount` = **57974.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **57974.30** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `ChargeTotalAmount` = **3090.00** (currencyID `XBL`)  
+- `ChargeTotalAmount` = **3090.30** (currencyID `XBL`)  
   The sum of the charges at document level.
 - `PrepaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit, already paid.
-- `PayableAmount` = **47974.00** (currencyID `XBL`)  
+- `PayableAmount` = **47974.30** (currencyID `XBL`)  
   What is still to pay: the total less the deposit.
-- `PayableAlternativeAmount` = **19189.600** (currencyID `XLC`)  
+- `PayableAlternativeAmount` = **19189.720** (currencyID `XLC`)  
   The same in coral, for the buyer's information, at the reference rate of the invoice date.
 
 ### Invoice Line
@@ -590,12 +572,20 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **104** (unitCode `EA`)  
+- `InvoicedQuantity` = **96** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **54080.00** (currencyID `XBL`)  
-  104 × 520.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+  96 × 520.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
+- `OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OriginatorParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -636,11 +626,57 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **2**  
   The line number.
+- `InvoicedQuantity` = **8** (unitCode `EA`)  
+  The quantity delivered.
+- `LineExtensionAmount` = **4160.00** (currencyID `XBL`)  
+  8 × 520.0, rounded to the minor unit of the currency.
+- `OrderLineReference/LineID` = **2**  
+  The order line this invoice line bills.
+- `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
+  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/Name` = **Park bench Serra 180**  
+  The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The variant of the item: the frame colour, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+  The variant in words.
+- `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
+- `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **520** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `ID` = **3**  
+  The line number.
 - `InvoicedQuantity` = **12** (unitCode `EA`)  
   The quantity delivered.
 - `LineExtensionAmount` = **804.00** (currencyID `XBL`)  
   12 × 67.0, rounded to the minor unit of the currency.
-- `OrderLineReference/LineID` = **2**  
+- `OrderLineReference/LineID` = **3**  
   The order line this invoice line bills.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
@@ -691,7 +727,7 @@ Inside `InvoiceLine`:
   <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -850,24 +886,6 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:Delivery>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
@@ -1043,7 +1061,7 @@ Inside `InvoiceLine`:
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PaymentPercent>82.75</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">47974.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">47974.30</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">719.61</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
@@ -1089,7 +1107,7 @@ Inside `InvoiceLine`:
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">96</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">140.30</cbc:Amount>
     <cac:TaxCategory>
       <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
@@ -1110,7 +1128,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">57974.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">57974.30</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -1125,20 +1143,36 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">57974.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">57974.00</cbc:TaxInclusiveAmount>
-    <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">57974.30</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">57974.30</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">3090.30</cbc:ChargeTotalAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">47974.00</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">19189.600</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">47974.30</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">19189.720</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:OriginatorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:OriginatorParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -1179,10 +1213,55 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+      </cac:AdditionalItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

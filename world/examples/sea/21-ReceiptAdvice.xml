@@ -14,7 +14,7 @@
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
   <cbc:Note>Counted and checked at goods-in.</cbc:Note>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -172,7 +172,7 @@
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">104</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -210,6 +210,45 @@
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:Note>Received as despatched.</cbc:Note>
+    <cbc:ReceivedQuantity unitCode="EA">8</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>2</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>LD-DA-26-0145</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+      </cac:AdditionalItemIdentification>
+    </cac:Item>
+  </cac:ReceiptLine>
+  <cac:ReceiptLine>
+    <cbc:ID>3</cbc:ID>
     <cbc:Note>One frame carton crushed at the port; the frame inside is cracked.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
@@ -219,10 +258,10 @@
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:DespatchLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
       <cac:DocumentReference>
         <cbc:ID>LD-DA-26-0145</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>

@@ -480,6 +480,27 @@ def chain_despatch(flow, sender, iid):
     return None
 
 
+def chain_slice(lines, skip, q):
+    """The part of a goods chain's lines (lots or serial ranges, in order) after the first `skip` units, `q` units
+    long: what one of several despatch lines of the same item takes (O172)."""
+    out = []
+    for ln in lines:
+        n = ln.get("qty") or ln["serials"][1] - ln["serials"][0] + 1
+        if skip >= n:
+            skip -= n
+            continue
+        take = min(n - skip, q)
+        if ln.get("serials"):
+            first = ln["serials"][0] + skip
+            out.append({**ln, "serials": [first, first + take - 1]})
+        else:
+            out.append({**ln, "qty": take})
+        skip, q = 0, q - take
+        if not q:
+            break
+    return out
+
+
 def produced(line):
     """The production record entry of a lot or serial range (D21)."""
     for p in CHAIN["production"]:
@@ -504,9 +525,15 @@ def instances(flow, d, which, day, sender=None):
             raise SystemExit(f"{flow.id}: the despatch of {d['item']} is on {flow.date(day)}, before the goods chain "
                              f"(world/items.json) lets it leave, on {date} (O65)")
         q = int(Decimal(str(d[which])))
+        same = [x for x in flow.deal if x["item"] == d["item"]]
         moved = sum(ln.get("qty") or ln["serials"][1] - ln["serials"][0] + 1 for ln in lines)
-        if moved != q:
-            raise SystemExit(f"{flow.id}: the despatch line has {q} of {d['item']}, the goods chain moves {moved}")
+        total = sum(int(Decimal(str(x[which]))) for x in same) if any(x is d for x in same) else q
+        if moved != total:
+            raise SystemExit(f"{flow.id}: the despatch lines have {total} of {d['item']}, the goods chain moves "
+                             f"{moved}")
+        if len(same) > 1 and any(x is d for x in same):     # several lines of one item take the chain's lots in turn
+            skip = sum(int(Decimal(str(x[which]))) for x in same[:next(i for i, x in enumerate(same) if x is d)])
+            lines = chain_slice(lines, skip, q)
         out = []
         for ln in lines:
             p = produced(ln)
@@ -1211,10 +1238,31 @@ def package_count(flow, why):
     return qty(len(pk["pieces"]), "EA", why) if pk else None
 
 
+def by_item(deal):
+    """The lines of a deal summed by item: a goods item of a customs or transport document holds all of one kind of
+    goods, though an order may give them on several lines (such as the sea order's benches for the port and for
+    the buyer's stock, O172). Each merged entry keeps the lines it sums under "lines"."""
+    out, seen = [], {}
+    for d in deal:
+        if d["item"] not in seen:
+            seen[d["item"]] = {**d, "lines": [d]}
+            out.append(seen[d["item"]])
+            continue
+        m = seen[d["item"]]
+        m["lines"].append(d)
+        for k in ("ordered", "delivered", "received"):
+            if k in d or k in m:
+                m[k] = sum(Decimal(str(x.get(k, x.get("ordered", 0)))) for x in m["lines"])
+                m[k] = int(m[k]) if m[k] == int(m[k]) else m[k]
+        for k in ("why", "line", "line_extra", "orderline_extra", "received_why"):
+            m.pop(k, None)
+    return out
+
+
 def goods_items(flow, currency, value_why, deal=None):
-    """GoodsItem per line of the deal: customs value (converted to `currency` at the reference rate if needed),
-    gross weight, quantity and the item with its customs tariff code and origin."""
-    deal = deal or flow.deal
+    """GoodsItem per item of the deal (by_item): customs value (converted to `currency` at the reference rate if
+    needed), gross weight, quantity and the item with its customs tariff code and origin."""
+    deal = by_item(deal or flow.deal)
     which = "delivered" if any("delivered" in d for d in deal) else "ordered"
     out = []
     for i, d in enumerate(deal, 1):
@@ -1234,8 +1282,9 @@ def goods_items(flow, currency, value_why, deal=None):
 
 def transport_goods(flow, deal=None):
     """GoodsItem per line of the deal for a transport document (worklist C21): what is carried, how much, its gross
-    weight and its commodity code, without the customs value, which a carrier does not need."""
-    deal = deal or flow.deal
+    weight and its commodity code, without the customs value, which a carrier does not need; one per item
+    (by_item)."""
+    deal = by_item(deal or flow.deal)
     which = "delivered" if any("delivered" in d for d in deal) else "ordered"
     out = []
     for i, d in enumerate(deal, 1):

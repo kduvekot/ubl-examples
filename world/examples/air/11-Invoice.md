@@ -393,7 +393,7 @@ Inside `InvoiceLine`:
   The quantity delivered.
 - `LineExtensionAmount` = **512.00** (currencyID `XBL`)  
   8 × 64.00, rounded to the minor unit of the currency.
-- `OrderLineReference/LineID` = **3**  
+- `OrderLineReference/LineID` = **4**  
   The order line this invoice line bills.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
@@ -714,7 +714,7 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
-      <cbc:LineID>3</cbc:LineID>
+      <cbc:LineID>4</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

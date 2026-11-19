@@ -86,7 +86,11 @@ def sells(p):
            "codes are Harmonized System subheadings.", ""]
     for i in mine:
         unit = f"`{i['unit']}` ({units[i['unit']]})"
-        rows = [("Seller's item ID", f"`{i['sellers_id']}`"), ("Price", f"{money(i['price'])} per {unit}")]
+        pr = i["price"]
+        price = (f"{pr['rate_percent']} % of the insured value ({pr['cover_percent']} % of the CIF value, premium "
+                 f"included), in {pr['currency']}, per {unit}" if "rate_percent" in pr      # a premium rate (O173)
+                 else f"{money(pr)} per {unit}")
+        rows = [("Seller's item ID", f"`{i['sellers_id']}`"), ("Price", price)]
         if i.get("resale_of"):
             o = ITEMS[i["resale_of"]]
             maker = o

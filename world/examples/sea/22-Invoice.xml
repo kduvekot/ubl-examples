@@ -15,7 +15,7 @@
   <cbc:PaymentAlternativeCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:PaymentAlternativeCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -174,24 +174,6 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:Delivery>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
@@ -367,7 +349,7 @@
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PaymentPercent>82.75</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">47974.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">47974.30</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">719.61</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
@@ -413,7 +395,7 @@
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">96</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">140.30</cbc:Amount>
     <cac:TaxCategory>
       <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
@@ -434,7 +416,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">57974.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">57974.30</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -449,20 +431,36 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">57974.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">57974.00</cbc:TaxInclusiveAmount>
-    <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">57974.30</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">57974.30</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">3090.30</cbc:ChargeTotalAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">47974.00</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">19189.600</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">47974.30</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">19189.720</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
+    <cac:OriginatorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:OriginatorParty>
+    <cac:BeneficiaryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Port of Selanu</cbc:Name>
+      </cac:PartyName>
+    </cac:BeneficiaryParty>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -503,10 +501,55 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+      </cac:AdditionalItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

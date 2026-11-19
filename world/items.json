@@ -1173,11 +1173,13 @@
    "kind": "service",
    "unit": "E48",
    "price": {
-    "amount": 140.0,
-    "currency": "XBL"
+    "rate_percent": 0.22,
+    "cover_percent": 110,
+    "currency": "XBL",
+    "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value holds the premium itself, so the premium follows the value of each shipment (O173)."
    },
    "sellers_id": "BF-INS",
-   "description": "Cargo insurance for one shipment, arranged with the insurer.",
+   "description": "Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.",
    "purchase": "freight"
   },
   {
@@ -1781,6 +1783,13 @@
    },
    "sea": {
     "what": "Sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF (sea/18)",
+    "insured": {
+     "buyer": "1-xl",
+     "with": [
+      "sea-freight"
+     ],
+     "why": "The insured value is the CIF value plus 10 %: the load at the buyer's prices, the sea freight and the premium (O173)."
+    },
     "services": [
      {
       "item": "sea-freight",
@@ -2001,7 +2010,7 @@
   }
  },
  "goods_chain": {
-  "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, and the build checks each despatch against its entry. Items are the maker's (world/items.json); a reseller's item is the maker's item it resells. Each casting day has its own melt number and pour time, and each bench lot its own coating batch (D21, worklist C70): both are numbered in a running count of the year.",
+  "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, damaged stock (damaged: a refused bench that came back) is held apart and never sold or despatched, and a ledger ends with the closing stock it states; the build checks each despatch against its entry (O174). Items are the maker's (world/items.json); a reseller's item is the maker's item it resells. Each casting day has its own melt number and pour time, and each bench lot its own coating batch (D21, worklist C70): both are numbered in a running count of the year.",
   "production": [
    {
     "item": "bench-serra",
@@ -2103,6 +2112,14 @@
   "ledgers": {
    "6-xb": {
     "where": "Lumeway Distribution, Marrowdale",
+    "closing": [
+     {
+      "item": "bench-serra",
+      "qty": 161,
+      "damaged": 1,
+      "why": "Lumeway's benches at the end of May, as the story states them: 72 of the March road lot and 88 of the April rail lot for sale, and the bench Brightmarket refused, held apart as damaged (O174)."
+     }
+    ],
     "entries": [
      {
       "date": "2026-03-25",
@@ -2158,6 +2175,19 @@
        }
       ],
       "why": "Brightmarket's benches come from the March road lot (D21)."
+     },
+     {
+      "date": "2026-04-30",
+      "flow": "retail",
+      "in": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260320",
+        "qty": 1,
+        "damaged": true
+       }
+      ],
+      "why": "The bench Brightmarket refused at goods-in, its frame carton torn and the side frame's armrest bent (retail/17), comes back on the truck the same day; Lumeway holds it apart as damaged stock, not for sale, and credits the store (retail/19; D34, O174)."
      },
      {
       "date": "2026-05-13",

@@ -349,7 +349,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **3175.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **3175.30** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -368,13 +368,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **3175.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **3175.30** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **3175.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **3175.30** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **3175.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **3175.30** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **3175.00** (currencyID `XBL`)  
+- `PayableAmount` = **3175.30** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -439,11 +439,17 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **3**  
   The line number.
+- `Note` = **Premium 0.22 % of the insured value, 63,771.73 lume.**  
+  The basis of the premium, for the distributor's check: the rate of the cargo policy on the CIF value plus 10 % (O173).
 - `InvoicedQuantity` = **1** (unitCode `E48`)  
   Insurance of this shipment.
-- `LineExtensionAmount` = **140.00** (currencyID `XBL`)  
-  1 × 140.0, rounded to the minor unit of the currency.
-- `Item/Description` = **Cargo insurance for one shipment, arranged with the insurer.**  
+- `LineExtensionAmount` = **140.30** (currencyID `XBL`)  
+  1 × 140.30, rounded to the minor unit of the currency.
+- `DocumentReference/ID` = **WS-CERT-26-0884**  
+  The insurance certificate of the shipment, which states the insured value.
+- `DocumentReference/DocumentType` = **Insurance certificate**  
+  The kind of document referred to, Wavesure's insurance certificate of the sea shipment, with its insured value, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+- `Item/Description` = **Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.**  
   The seller's description; item cargo-insurance of Bayforth Forwarding (world/items.json).
 - `Item/Name` = **Cargo insurance**  
   The item's short name; item cargo-insurance of Bayforth Forwarding (world/items.json).
@@ -461,8 +467,8 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **140** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **140.3** (currencyID `XBL`)  
+  The premium: 0.22 % of the insured value of 63,771.73 lume: the CIF value of 57,974.30 (goods 54,884.00, sea freight 2,950.00 and the premium itself) plus 10 %, the cover CIF asks (O173).
 - `Price/BaseQuantity` = **1** (unitCode `E48`)  
   The price is per one unit.
 
@@ -746,7 +752,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">3175.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">3175.30</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -760,10 +766,10 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">3175.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">3175.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">3175.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">3175.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3175.30</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">3175.30</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">3175.30</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">3175.30</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -819,10 +825,15 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
+    <cbc:Note>Premium 0.22 % of the insured value, 63,771.73 lume.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">140.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">140.30</cbc:LineExtensionAmount>
+    <cac:DocumentReference>
+      <cbc:ID>WS-CERT-26-0884</cbc:ID>
+      <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
+    </cac:DocumentReference>
     <cac:Item>
-      <cbc:Description>Cargo insurance for one shipment, arranged with the insurer.</cbc:Description>
+      <cbc:Description>Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.</cbc:Description>
       <cbc:Name>Cargo insurance</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>BF-INS</cbc:ID>
@@ -839,7 +850,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">140</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">140.3</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

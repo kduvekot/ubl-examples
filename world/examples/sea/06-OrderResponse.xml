@@ -17,7 +17,7 @@
   <cbc:NetWeightMeasure unitCode="KGM">4719.6</cbc:NetWeightMeasure>
   <cbc:GrossVolumeMeasure unitCode="MTQ">26</cbc:GrossVolumeMeasure>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -115,24 +115,6 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -253,9 +235,69 @@
       <cbc:ID>1</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">54080.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+      <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-14</cbc:StartDate>
+          <cbc:EndDate>2026-05-17</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:Note>Confirmed as ordered.</cbc:Note>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">4160.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
       <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
@@ -289,13 +331,13 @@
       </cac:WarrantyParty>
     </cac:LineItem>
     <cac:OrderLineReference>
-      <cbc:LineID>1</cbc:LineID>
+      <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
   </cac:OrderLine>
   <cac:OrderLine>
     <cac:LineItem>
-      <cbc:ID>2</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:ID>3</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/3</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
@@ -333,7 +375,7 @@
       </cac:WarrantyParty>
     </cac:LineItem>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
   </cac:OrderLine>
 </OrderResponse>

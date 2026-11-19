@@ -44,7 +44,7 @@ The distributor accepts and confirms the sailing it plans to use.
   The 27 loaded pallets: the bench pallets two high, they take 14 of the 40-foot container's 18 floor places.
 - `CustomerReference` = **Harbour parks Selanu**  
   The buyer's project, as the buyer named it when ordering.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of lines.
 
 ### Order Reference
@@ -59,7 +59,7 @@ Inside `OrderReference`:
 Inside `OriginatorDocumentReference`:
 
 - `ID` = **PS-REQ-26-0031**  
-  The Port of Selanu's request to the trader, which the order follows.
+  The Port of Selanu's request to the trader, which the order's port line follows.
 - `DocumentType` = **Request**  
   The kind of document referred to, the Port of Selanu's request to the trader, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
@@ -176,24 +176,6 @@ Inside `BuyerCustomerParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Island companies register; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
 
@@ -364,11 +346,59 @@ Inside `OrderLine`:
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
-- `LineItem/Quantity` = **104** (unitCode `EA`)  
+- `LineItem/Quantity` = **96** (unitCode `EA`)  
   The quantity confirmed.
-- `LineItem/LineExtensionAmount` = **54080.00** (currencyID `XBL`)  
+- `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
   As ordered.
-- `LineItem/TaxInclusiveLineExtensionAmount` = **54080.00** (currencyID `XBL`)  
+- `LineItem/TaxInclusiveLineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+  No tax on an export: the same amount.
+- `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
+  No tax on an export.
+- `LineItem/PartialDeliveryIndicator` = **false**  
+  All in one container.
+- `LineItem/BackOrderAllowedIndicator` = **false**  
+  Nothing is back-ordered: all is in stock.
+- `LineItem/WarrantyInformation` = **Five years on the frame against corrosion.**  
+  The maker's warranty passes to the buyer.
+- `LineItem/Delivery/PromisedDeliveryPeriod/StartDate` = **2026-05-14**  
+  Shipped on the sailing of day 10.
+- `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-17**  
+  Arriving at Selanu.
+- `LineItem/OriginatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/OriginatorParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/BeneficiaryParty/PartyName/Name` = **Port of Selanu**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `LineItem/Item/Name` = **Park bench Serra 180**  
+  Named only: described in full in the order.
+- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's number.
+- `LineItem/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
+  Five years.
+- `LineItem/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `LineItem/WarrantyParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `OrderLineReference/LineID` = **1**  
+  The order line answered.
+- `LineItem/ID` = **2**  
+  The line number, as in the order.
+- `LineItem/SalesOrderID` = **LD-SO-26-0123/2**  
+  The distributor's line in its sales order.
+- `LineItem/Note` = **Confirmed as ordered.**  
+  The line's status in words.
+- `LineItem/Quantity` = **8** (unitCode `EA`)  
+  The quantity confirmed.
+- `LineItem/LineExtensionAmount` = **4160.00** (currencyID `XBL`)  
+  As ordered.
+- `LineItem/TaxInclusiveLineExtensionAmount` = **4160.00** (currencyID `XBL`)  
   No tax on an export: the same amount.
 - `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   No tax on an export.
@@ -396,11 +426,11 @@ Inside `OrderLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/WarrantyParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
-- `OrderLineReference/LineID` = **1**  
+- `OrderLineReference/LineID` = **2**  
   The order line answered.
-- `LineItem/ID` = **2**  
+- `LineItem/ID` = **3**  
   The line number, as in the order.
-- `LineItem/SalesOrderID` = **LD-SO-26-0123/2**  
+- `LineItem/SalesOrderID` = **LD-SO-26-0123/3**  
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
@@ -436,7 +466,7 @@ Inside `OrderLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/WarrantyParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
-- `OrderLineReference/LineID` = **2**  
+- `OrderLineReference/LineID` = **3**  
   The order line answered.
 
 ## The document
@@ -461,7 +491,7 @@ Inside `OrderLine`:
   <cbc:NetWeightMeasure unitCode="KGM">4719.6</cbc:NetWeightMeasure>
   <cbc:GrossVolumeMeasure unitCode="MTQ">26</cbc:GrossVolumeMeasure>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -559,24 +589,6 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -697,9 +709,69 @@ Inside `OrderLine`:
       <cbc:ID>1</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">54080.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+      <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
+      <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
+      <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cac:Delivery>
+        <cac:PromisedDeliveryPeriod>
+          <cbc:StartDate>2026-05-14</cbc:StartDate>
+          <cbc:EndDate>2026-05-17</cbc:EndDate>
+        </cac:PromisedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:OriginatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginatorParty>
+      <cac:BeneficiaryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:PartyName>
+      </cac:BeneficiaryParty>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>LD-10442</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+      <cac:WarrantyValidityPeriod>
+        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+      </cac:WarrantyValidityPeriod>
+      <cac:WarrantyParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:WarrantyParty>
+    </cac:LineItem>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:Note>Confirmed as ordered.</cbc:Note>
+      <cbc:Quantity unitCode="EA">8</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">4160.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
       <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
@@ -733,13 +805,13 @@ Inside `OrderLine`:
       </cac:WarrantyParty>
     </cac:LineItem>
     <cac:OrderLineReference>
-      <cbc:LineID>1</cbc:LineID>
+      <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
   </cac:OrderLine>
   <cac:OrderLine>
     <cac:LineItem>
-      <cbc:ID>2</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:ID>3</cbc:ID>
+      <cbc:SalesOrderID>LD-SO-26-0123/3</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
@@ -777,7 +849,7 @@ Inside `OrderLine`:
       </cac:WarrantyParty>
     </cac:LineItem>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
   </cac:OrderLine>
 </OrderResponse>

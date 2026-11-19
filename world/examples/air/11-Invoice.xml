@@ -285,7 +285,7 @@
     <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
-      <cbc:LineID>3</cbc:LineID>
+      <cbc:LineID>4</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

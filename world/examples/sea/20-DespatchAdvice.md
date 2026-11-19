@@ -34,7 +34,7 @@ The distributor announces the shipment to the delivery party named in the order,
   The buyer's cost centre, from its order.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **3**  
   The number of lines.
 
 ### Order Reference
@@ -224,24 +224,6 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lumeway Distribution**  
   The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Port of Selanu**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -307,9 +289,9 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.**  
+- `Note` = **96 benches on 24 pallets of four for the Port of Selanu's harbour parks.**  
   The line as the order put it.
-- `DeliveredQuantity` = **104** (unitCode `EA`)  
+- `DeliveredQuantity` = **96** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
@@ -343,6 +325,36 @@ Inside `DespatchLine`:
   A fact about this lot: the galvanising and powder-coating batch its frames went through.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-071**  
   Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
+- `ID` = **2**  
+  The line number.
+- `Note` = **Two pallets of four benches for the buyer's own stock: it buys by the pallet, and two pallets add little to the freight of a container already booked.**  
+  The line as the order put it.
+- `DeliveredQuantity` = **8** (unitCode `EA`)  
+  What was despatched.
+- `OrderLineReference/LineID` = **2**  
+  The order line this line fulfils.
+- `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
+  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/Name` = **Park bench Serra 180**  
+  The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ID` = **LD-10442**  
+  The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The variant of the item: the frame colour, added to the item number.
+- `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
+- `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+  The variant in words.
+- `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
+  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
+- `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+- `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ItemInstance/ManufactureDate` = **2026-04-10**  
   The day the lot was produced.
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260410**  
@@ -351,13 +363,13 @@ Inside `DespatchLine`:
   A fact about this lot: the galvanising and powder-coating batch its frames went through.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-072**  
   Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
-- `ID` = **2**  
+- `ID` = **3**  
   The line number.
 - `Note` = **Spare side frames for the buyer's own service stock.**  
   The line as the order put it.
 - `DeliveredQuantity` = **12** (unitCode `EA`)  
   What was despatched.
-- `OrderLineReference/LineID` = **2**  
+- `OrderLineReference/LineID` = **3**  
   The order line this line fulfils.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
@@ -533,7 +545,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
@@ -680,24 +692,6 @@ Inside `DespatchLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Port of Selanu</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
@@ -749,8 +743,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">104</cbc:DeliveredQuantity>
+    <cbc:Note>96 benches on 24 pallets of four for the Port of Selanu's harbour parks.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -786,6 +780,37 @@ Inside `DespatchLine`:
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Two pallets of four benches for the buyer's own stock: it buys by the pallet, and two pallets add little to the freight of a container already booked.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
+      <cbc:Name>Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="GS1 GTIN">9520610000012</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+      </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-10</cbc:ManufactureDate>
         <cac:LotIdentification>
@@ -799,11 +824,11 @@ Inside `DespatchLine`:
     </cac:Item>
   </cac:DespatchLine>
   <cac:DespatchLine>
-    <cbc:ID>2</cbc:ID>
+    <cbc:ID>3</cbc:ID>
     <cbc:Note>Spare side frames for the buyer's own service stock.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
-      <cbc:LineID>2</cbc:LineID>
+      <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

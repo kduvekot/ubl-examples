@@ -271,7 +271,7 @@ Inside `DespatchLine`:
   The line as the order put it.
 - `DeliveredQuantity` = **8** (unitCode `EA`)  
   What was despatched.
-- `OrderLineReference/LineID` = **3**  
+- `OrderLineReference/LineID` = **4**  
   The order line this line fulfils.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
@@ -586,7 +586,7 @@ Inside `DespatchLine`:
     <cbc:Note>Eight side frames, needed before the ship arrives.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">8</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
-      <cbc:LineID>3</cbc:LineID>
+      <cbc:LineID>4</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>

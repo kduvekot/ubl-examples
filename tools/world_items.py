@@ -156,7 +156,11 @@ def check(world):
         pr = it["price"]
         if pr["currency"] != cur["code"]:
             problems.append(f"{where}: price in {pr['currency']}, but the seller's currency is {cur['code']}")
-        if it.get("free_with"):
+        if "rate_percent" in pr:       # a premium on the insured value (O173)
+            if not 0 < pr["rate_percent"] < 100 or pr.get("cover_percent", 0) < 100 or not pr.get("why"):
+                problems.append(f"{where}: a rate price needs a rate between 0 and 100 %, a cover of at least 100 % "
+                                "and its reason (why)")
+        elif it.get("free_with"):
             if pr["amount"] != 0:
                 problems.append(f"{where}: given free with {it['free_with']}, so its price is zero")
             for w in it["free_with"]:      # each piece it comes with: a model's variants are items of their own
@@ -166,7 +170,7 @@ def check(world):
             problems.append(f"{where}: price must be positive")
         # a unit price may be finer than the currency (29.80 yen per kWh is normal); amounts to pay are
         # rounded to the currency's minor units, which the amounts layer checks
-        if round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
+        if "amount" in pr and round(pr["amount"], UNIT_PRICE_DECIMALS) != pr["amount"]:
             problems.append(f"{where}: unit price {pr['amount']} has more than {UNIT_PRICE_DECIMALS} decimals")
         conv = seller["identity"].get("identification", {})
         if it.get("brand_owner"):        # a private label: the brand owner numbers the item, not the maker (D7)
@@ -351,12 +355,17 @@ def chain_problems(world, items):
     def unit(ln):
         return ln.get("lot") or (tuple(ln["serials"]) if ln.get("serials") else None)
 
+    def key(ln):
+        """A ledger line's stock: its item, lot or serials, and whether it is damaged stock, which is held apart
+        and is not for sale (O174): a sale or despatch takes only sound stock."""
+        return (ln["item"], unit(ln), bool(ln.get("damaged")))
+
     def count(ln):
         return ln["qty"] if "qty" in ln else ln["serials"][1] - ln["serials"][0] + 1
     for pid, led in chain["ledgers"].items():
         stock = {}
         for o in led.get("opening", []):
-            stock[(o["item"], None)] = stock.get((o["item"], None), 0) + o["qty"]
+            stock[key(o)] = stock.get(key(o), 0) + o["qty"]
         last = ""
         for e in led["entries"]:
             where = f"goods chain, ledger of {pid}, {e['date']} ({e['flow']})"
@@ -364,22 +373,26 @@ def chain_problems(world, items):
                 out.append(f"{where}: entries out of date order")
             last = e["date"]
             for ln in e.get("in", []):
-                k = (ln["item"], unit(ln))
-                p = made.get(k) if k[1] else None
+                k = key(ln)
+                p = made.get(k[:2]) if k[1] else None
                 if p and not any(d <= e["date"] for _, d in p["shipped"]):
                     out.append(f"{where}: {k[1]} arrives before Valdara shipped it")
+                if k[2] and not ln.get("lot") and not ln.get("serials"):
+                    out.append(f"{where}: damaged stock of {ln['item']} needs its lot or serials (O174)")
                 stock[k] = stock.get(k, 0) + count(ln)
             for ln in e.get("out", []):
-                k = (ln["item"], unit(ln))
-                have = stock.get(k, 0) if k[1] else sum(v for (i, _), v in stock.items() if i == ln["item"])
+                k = key(ln)
+                same = [kk for kk in stock if kk[0] == ln["item"] and kk[2] == k[2]]     # sound and damaged apart
+                have = stock.get(k, 0) if k[1] else sum(stock[kk] for kk in same)
                 if have < count(ln):
-                    out.append(f"{where}: {count(ln)} of {ln['item']} {k[1] or ''} leave, but only {have} are in "
-                               "stock (D21, O65)")
+                    out.append(f"{where}: {count(ln)} of {ln['item']} {k[1] or ''}{' (damaged)' if k[2] else ''} "
+                               f"leave, but only {have} are in {'damaged ' if k[2] else 'sound '}stock (D21, O65, "
+                               "O174)")
                 if k[1]:
                     stock[k] = have - count(ln)
                 else:          # an issue without a lot: from the oldest stock of the item
                     left = count(ln)
-                    for kk in [kk for kk in stock if kk[0] == ln["item"]]:
+                    for kk in same:
                         take = min(left, stock[kk])
                         stock[kk] -= take
                         left -= take
@@ -390,6 +403,14 @@ def chain_problems(world, items):
         for k, v in stock.items():
             if v < 0:
                 out.append(f"goods chain, ledger of {pid}: {k} below zero")
+        if led.get("closing"):          # the stock the story states at the end of the ledger (O174)
+            for c in led["closing"]:
+                sound = sum(v for (i, _, d), v in stock.items() if i == c["item"] and not d)
+                damaged = sum(v for (i, _, d), v in stock.items() if i == c["item"] and d)
+                if (sound, damaged) != (c["qty"] - c.get("damaged", 0), c.get("damaged", 0)):
+                    out.append(f"goods chain, ledger of {pid}: ends with {sound + damaged} of {c['item']}, "
+                               f"{damaged} damaged; the closing stock says {c['qty']}, {c.get('damaged', 0)} "
+                               "damaged")
     return out
 
 
@@ -516,6 +537,39 @@ def gross_kg(items, iid):
     return it.get("gross_kg")
 
 
+def insurance_premium(price, base):
+    """The premium of a cargo insurance at a rate on the insured value (O173): price is the item's rate price
+    (rate_percent, cover_percent), base the value insured without the premium (the goods and the freight, in the
+    CIF value). The insured value is cover_percent of the base plus the premium itself, so the premium is the fixed
+    point p = round(rate × cover × (base + p)), to the cent. Returns (premium, insured value)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    cent = Decimal("0.01")
+    r = Decimal(str(price["rate_percent"])) / 100
+    c = Decimal(str(price["cover_percent"])) / 100
+    base = Decimal(str(base))
+    p = (r * c * base / (1 - r * c)).quantize(cent, ROUND_HALF_UP)
+    for cand in (p, p - cent, p + cent):
+        if (r * c * (base + cand)).quantize(cent, ROUND_HALF_UP) == cand:
+            return cand, (c * (base + cand)).quantize(cent, ROUND_HALF_UP)
+    raise SystemExit(f"insurance premium: no premium to the cent on a base of {base}")
+
+
+def insured_base(world, items, fr):
+    """The value a freight's cargo insurance covers, without the premium (O173): the load at the insured buyer's
+    prices and the freight services named, in lume."""
+    from decimal import Decimal
+    ins = fr["insured"]
+    out = Decimal(0)
+    for l in fr["load"]:
+        pr = items[l["item"]].get("buyer_prices", {}).get(ins["buyer"]) or items[l["item"]]["price"]
+        out += _lume(world, Decimal(str(pr["amount"])) * Decimal(str(l["qty"])), pr["currency"])
+    for sv in fr["services"]:
+        if sv["item"] in ins["with"]:
+            pr = items[sv["item"]]["price"]
+            out += _lume(world, Decimal(str(pr["amount"])) * Decimal(str(sv["qty"])), pr["currency"])
+    return out
+
+
 def freight_costs(world, items):
     """Each stated freight of resales.freight in lume per unit of each item it carries: the services' prices times
     their quantities (the kilometres of the transport leg on the map, as the carrier invoices them, or the
@@ -534,6 +588,12 @@ def freight_costs(world, items):
             else:
                 q = Decimal(str(sv["qty"]))
             pr = items[sv["item"]]["price"]
+            if "rate_percent" in pr:     # a premium on the insured value of the load (O173)
+                if not fr.get("insured"):
+                    raise SystemExit(f"items.json resales.freight.{name}: {sv['item']} is priced at a rate, but the "
+                                     "freight states no insured value (insured)")
+                total += _lume(world, insurance_premium(pr, insured_base(world, items, fr))[0] * q, pr["currency"])
+                continue
             total += _lume(world, Decimal(str(pr["amount"])) * q, pr["currency"])
         out[name] = {l["item"]: total * Decimal(str(gross_kg(items, l["item"]))) / load_kg for l in fr["load"]}
     return out

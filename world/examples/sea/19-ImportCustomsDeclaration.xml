@@ -11,8 +11,8 @@
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 23,189.600 venamo, 2,318.960 venamo.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 23,189.600 coral, 2,318.960 coral.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 23,189.720 venamo, 2,318.972 venamo.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 23,189.720 coral, 2,318.972 coral.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -204,7 +204,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">22849.894</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">22850.012</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
@@ -237,7 +237,14 @@
       </cac:FreightAllowanceCharge>
       <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="EA">8</cbc:InvoicedQuantity>
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
         </cac:Item>
@@ -319,13 +326,13 @@
       </cac:ContainingPackage>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
       </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">339.706</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">339.708</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
