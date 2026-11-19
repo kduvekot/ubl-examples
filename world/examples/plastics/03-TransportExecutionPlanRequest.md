@@ -199,14 +199,14 @@ Inside `MainTransportationService`:
 
 Inside `ServiceStartTimePeriod`:
 
-- `StartDate` = **2026-04-19**  
+- `StartDate` = **2026-04-20**  
   The day the goods should be collected.
 
 ### Service End Time Period
 
 Inside `ServiceEndTimePeriod`:
 
-- `EndDate` = **2026-04-22**  
+- `EndDate` = **2026-04-23**  
   Delivered within three days.
 
 ### From Location
@@ -434,10 +434,10 @@ Inside `Consignment`:
     <cbc:Name>River barge</cbc:Name>
   </cac:MainTransportationService>
   <cac:ServiceStartTimePeriod>
-    <cbc:StartDate>2026-04-19</cbc:StartDate>
+    <cbc:StartDate>2026-04-20</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-04-22</cbc:EndDate>
+    <cbc:EndDate>2026-04-23</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>

@@ -22,8 +22,8 @@ The packaging maker declares the import in Bayvarra.
   The importer's declaration number.
 - `UUID` = **3ab58340-2ba7-5229-ab1a-e01715bcc1ef**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-22**  
-  Declared when the barge arrives at the coast.
+- `IssueDate` = **2026-04-23**  
+  Declared on the morning of the unloading.
 - `IssueTime` = **10:35:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
@@ -364,7 +364,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RP-IM-26-0893</cbc:ID>
   <cbc:UUID>3ab58340-2ba7-5229-ab1a-e01715bcc1ef</cbc:UUID>
-  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>10:35:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>

@@ -89,8 +89,12 @@ def tax_rule(seller, buyer, iid):
                                 "supply, so outside the scope of the sales tax (category O).", "Levy collected for a "
                                                                                                "public body")
     if s["c"] == "XU":
+        if it.get("export_carriage"):       # the carriage of exported goods (D41)
+            return ("E", 0, scheme, "The carriage of goods directly linked to their export from Urvania is exempt "
+                                    "from its value added tax, as in most VAT systems (category E, D41).",
+                    "Transport of goods exported from Urvania")
         if b["c"] == "XU":
-            return ("S", c["tax"]["schemes"][0]["rates"]["standard"], scheme,
+            return ("S",c["tax"]["schemes"][0]["rates"]["standard"], scheme,
                     "A domestic supply in Urvania: its value added tax applies at the standard rate (category S).", None)
         if it["kind"] == "goods":
             return ("G", 0, scheme, "Goods exported from Urvania: no value added tax is charged on an export "

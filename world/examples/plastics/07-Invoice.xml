@@ -6,11 +6,11 @@
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FB-INV-26-0891</cbc:ID>
   <cbc:UUID>948156f2-1939-56f7-915d-221e02660acd</cbc:UUID>
-  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-19</cbc:DueDate>
+  <cbc:DueDate>2026-05-20</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:TaxPointDate>2026-04-22</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-23</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Freight</cbc:AccountingCost>
@@ -171,7 +171,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF45FBINV260891</cbc:InstructionNote>
@@ -220,7 +220,7 @@
   <cac:PaymentTerms>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net from the consignment note.</cbc:Note>
-    <cbc:PaymentDueDate>2026-05-19</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-20</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
@@ -228,13 +228,16 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">35880</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XUF">179400</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">35880</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>20</cbc:Percent>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXPTRANSPORT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason languageID="qau">Drutraz skul valnir gazvan mir Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason languageID="en-XU">Transport of goods exported from Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
@@ -244,8 +247,8 @@
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">179400</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XUF">179400</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">215280</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">215280</cbc:PayableAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">179400</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">179400</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -260,8 +263,11 @@
         <cbc:ID>FB-BULK</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>20</cbc:Percent>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXPTRANSPORT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason languageID="qau">Drutraz skul valnir gazvan mir Urvania</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason languageID="en-XU">Transport of goods exported from Urvania</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>

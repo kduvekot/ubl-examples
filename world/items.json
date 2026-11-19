@@ -447,7 +447,6 @@
     "issuer": "20-xu"
    },
    "lot_prefix": "RR-PE-",
-   "best_before_months": 12,
    "lot_props": [
     [
      "Melt flow index",
@@ -527,6 +526,7 @@
     "currency": "XUF"
    },
    "sellers_id": "FB-BULK",
+   "export_carriage": true,
    "description": "Bagged cargo in jumbo bags down the river to the coast of Bayvarra, per tonne.",
    "purchase": "freight"
   },

@@ -485,6 +485,16 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `WasteMovement/DisposalFacilityParty` | 0..1 | waste/02-WasteMovement | a waste whose operation is disposal (a D code of Basel Annex IV), such as Rinova's sorting residue (labels, contaminated film) sent to an incinerator under its own notification and movement reports (O190) | waste | candidate |
 | `WasteNotification/DisposalFacilityParty` | 0..1 | waste/01-WasteNotification | the same: the residue's own notification, with the incinerator as disposal facility (O190) | waste | candidate |
 
+> C87, D41: the barge's consignment note no longer gives a value for duties (06#F11), nor the bags as a returnable quantity of the goods (06#F9; the bag stays returnable on its package), and the bag's height moves to the bag (06#F13). The granulate's despatch advice gives no best-before or expiry date: polymer granulate has none (08#F6).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `GoodsItem/MeasurementDimension` | 0..n | plastics/06-Waybill | | | open |
+| `GoodsItem/ReturnableQuantity` | 0..1 | plastics/06-Waybill | | | open |
+| `GoodsItem/ValueAmount` | 0..1 | plastics/06-Waybill | the amount the island's import consumption tax of 10 % is assessed on, the landed value of a goods item in an import declaration into Lisavu (D18; "the amount on which a duty, tax, or fee will be assessed") | sea | candidate |
+| `ItemInstance/BestBeforeDate` | 0..1 | plastics/08-DespatchAdvice | fresh food with a best-before date, such as the reefer's apples (O137, still to design) | reefer | open |
+| `LotIdentification/ExpiryDate` | 0..1 | plastics/08-DespatchAdvice | a lot of vaccines or medicines with its expiry date in the medicines flow's despatch advice (D47) | medicines | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

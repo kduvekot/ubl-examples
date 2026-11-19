@@ -260,6 +260,10 @@
      "Service supplied outside Urvania",
      "A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax (decision D17, which widened \"a service to a business established outside Urvania\")."
     ],
+    "EXPTRANSPORT": [
+     "Transport of goods exported from Urvania",
+     "The carriage of goods directly linked to their export from Urvania (or their import into it) is exempt, with the right to deduct the tax on its costs, as in most VAT systems (in the EU, Article 146(1)(e) of Directive 2006/112/EC; decision D41)."
+    ],
     "HEALTH": [
      "Medical care",
      "Care by a licensed doctor, dentist or hospital."

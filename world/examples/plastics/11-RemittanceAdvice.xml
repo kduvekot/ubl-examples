@@ -194,7 +194,7 @@
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>RR-INV-26-0894</cbc:ID>
-        <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+        <cbc:IssueDate>2026-04-21</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

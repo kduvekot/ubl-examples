@@ -88,7 +88,7 @@
   {
    "id": "plastics",
    "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
-   "text": "The waste processor recovers plastic from production waste and sells it as granulate to the packaging maker on the coast of Bayvarra, carriage paid to (CPT) the river quay: the seller books the barge and pays the freight, the buyer takes the risk once the barge is loaded. The packaging maker turns it into packaging for the benches and the clothing.",
+   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow) (decision D41).",
    "legs": [
     {
      "mode": "river",
@@ -96,6 +96,7 @@
      "to": "41-xb",
      "carrier": "15-xu",
      "why": "The barge from the quay next to the recovery plant down the river to the packaging maker.",
+     "transit_days": 3,
      "from_place": {
       "name": "Quay of Rinova Recovery, Ferrano",
       "locode": "XUFER"

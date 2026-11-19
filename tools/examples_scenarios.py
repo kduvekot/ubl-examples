@@ -864,10 +864,15 @@ BARGE_QUAY = kit.place("XUFER", "At the recovery plant's own quay on the river."
 BARGE_BORDER = {"Name": V("River border Urvania–Bayvarra", "Where the barge leaves Urvania.")}
 BARGE_UNLOADING = {"Name": V("River quay, Lumeport", "The quay named in the CPT terms, where the bags are unloaded.")}
 PLASTICS = kit.Flow("plastics", "2026-04-13", [
-    {"item": "granulate-pe", "ordered": 120, "why": "One barge load of recycled granulate in jumbo bags."}])
+    {"item": "granulate-pe", "ordered": 120, "why": "120 tonnes of recycled granulate, in jumbo bags of one tonne."}])
 
 
 BARGE_VOYAGE = "FB4-26-031"
+BARGE_LOAD = 7       # Monday 20 April: loading and sailing on a working day of the quay and the barge (D27, D41)
+# the granulate's lot (world/items.json lot_prefix and the day it was made, three days before loading): one number in
+# the waybill and the despatch advice (D41)
+PE_LOT = ITEM["granulate-pe"]["lot_prefix"] + PLASTICS.date(BARGE_LOAD - 3)[5:].replace("-", "")
+DIESEL_TTW = Decimal("0.268")    # kg CO2e per kWh of diesel, tank to wheel (D41)
 # the voyage on the map (O152): the river leg from Rinova's quay to Rivermouth's, with no locks (the river runs free
 # below the rapids above Ferrano); the barge sails by day, downstream at about 11 km/h, and moors at night
 BARGE_KM = wmap.leg_km("plastics", "7-xu", "41-xb")
@@ -877,14 +882,14 @@ BARGE_SAILS = "15:10"
 
 
 def barge_time(f, km):
-    """When the barge, sailing at day 6 BARGE_SAILS, has made km: to the quarter hour."""
-    t = wmap.sail_by_day(wmap.at(f.date(6), BARGE_SAILS), km, BARGE_KMH, *BARGE_DAY)
+    """When the barge, sailing on BARGE_LOAD at BARGE_SAILS, has made km: to the quarter hour."""
+    t = wmap.sail_by_day(wmap.at(f.date(BARGE_LOAD), BARGE_SAILS), km, BARGE_KMH, *BARGE_DAY)
     q = round((t.hour * 60 + t.minute) / 15) * 15
     return (t.date() - datetime.date.fromisoformat(f.date(0))).days, f"{q // 60:02d}:{q % 60:02d}:00"
 
 
 def barge_stage(f, actual):
-    if barge_time(f, BARGE_KM)[0] != 8:
+    if barge_time(f, BARGE_KM)[0] != BARGE_LOAD + 2:
         raise SystemExit("plastics: the barge no longer arrives the day before its discharge (O152); set the dates")
     out = {"ID": V("1", "Down the river, from the recovery plant's quay to the river quay in Lumeport."),
            "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
@@ -896,14 +901,14 @@ def barge_stage(f, actual):
            "EstimatedTransitPeriod": {"DurationMeasure": V("3", f"Three days from takeover to discharge: about "
                                                                 f"{wmap.nearest(BARGE_KM, 10)} km downstream, with "
                                                                 "no locks, sailing by day.", unitCode="DAY")},
-           "TakeoverTransportEvent": kit.event(f, 6, "09:00:00", "The barge operator takes over the bags at the "
+           "TakeoverTransportEvent": kit.event(f, BARGE_LOAD, "09:00:00", "The barge operator takes over the bags at the "
                                                                  "quay.", location=BARGE_QUAY),
-           "LoadingTransportEvent": kit.event(f, 6, "13:30:00", "Loading finished: 120 bags in the hold.", location=BARGE_QUAY),
+           "LoadingTransportEvent": kit.event(f, BARGE_LOAD, "13:30:00", "Loading finished: 120 bags in the hold.", location=BARGE_QUAY),
            "ExportationTransportEvent": kit.event(f, *barge_time(f, BARGE_BORDER_KM), "The barge leaves Urvania at "
                                                   f"the river border, {wmap.whole(BARGE_BORDER_KM)} km below the "
                                                   "quay: sailing from the afternoon of loading and through the "
                                                   "next day from first light.", location=BARGE_BORDER),
-           "DischargeTransportEvent": kit.event(f, 9, "08:00:00", "Planned unloading at the Lumeport quay, with the "
+           "DischargeTransportEvent": kit.event(f, BARGE_LOAD + 3, "08:00:00", "Planned unloading at the Lumeport quay, with the "
                                                 "consignee's morning shift: the barge arrives about "
                                                 f"{barge_time(f, BARGE_KM)[1][:5]} the day before and moors at the "
                                                 "quay overnight.", done=False, location=BARGE_UNLOADING)}
@@ -916,7 +921,6 @@ def barge_goods(f, w):
     return {"ID": V("1", "The only goods item."),
             "SequenceNumberID": V("1", "Its place in the cargo list."),
             "Description": V(it["name"], "What the goods are."),
-            "ValueAmount": amount(goods_xuf, "XUF", "The value of the goods, the sales price under CPT."),
             "DeclaredForCarriageValueAmount": amount(goods_xuf, "XUF", "Declared to the barge operator, which raises "
                                                                        "its liability to this value."),
             "GrossWeightMeasure": qty(w, "KGM", "With the bags."),
@@ -924,29 +928,31 @@ def barge_goods(f, w):
             "NetNetWeightMeasure": qty(120000, "KGM", "No inner packaging: the same as the net weight."),
             "ChargeableWeightMeasure": qty(120000, "KGM", "The freight is charged per tonne of granulate."),
             "GrossVolumeMeasure": V("204", "The 120 bags take 1.7 m³ each.", unitCode="MTQ"),
-            "NetVolumeMeasure": V("130", "The granulate's own volume, at 0.92 tonne per m³.", unitCode="MTQ"),
+            "NetVolumeMeasure": V("200", "The granulate as it lies in the bags, at a bulk density of about 0.6 "
+                                         "tonne per m³; the bags' fabric and loops make up the rest of the gross "
+                                         "volume (D41).", unitCode="MTQ"),
             "ChargeableQuantity": qty(120, "TNE", "The tonnes charged."),
-            "ReturnableQuantity": qty(120, "EA", "The 120 jumbo bags go back to the recovery plant."),
-            "TraceID": V("RR-PE-LOT-26-0416", "The lot on the bags' labels."),
+            "TraceID": V(PE_LOT, "The lot on the bags' labels, the seller's lot number, as in its despatch advice "
+                                 "(D41)."),
             "Quantity": qty(120, "TNE", "120 tonnes."),
             "OriginAddress": address("7-xu"),
-            "ContainingPackage": {"ID": V("RR-JB-0416", "The 120 bags of the lot as one package entry, with their "
-                                                    "number: the plant numbers its bags by lot."),
-                                  "Quantity": qty(120, "EA", "120 bags."),
+            "ContainingPackage": {"Quantity": qty(1, "TNE", "What one bag holds: a tonne of granulate; the "
+                                                            "consignment counts the 120 bags (D41)."),
                                   "PackagingTypeCode": V("JB", "UN/ECE Recommendation 21 code JB: bag, jumbo."),
                                   "PackagingType": V("Jumbo bag of one tonne with four lifting loops", "In words."),
                                   "PackingMaterial": V("Woven polypropylene", "What the bags are made of."),
-                                  "ReturnableMaterialIndicator": V("true", "The bags go back for reuse.")},
-            "MeasurementDimension": {"AttributeID": V("HEIGHT", "The height of one filled bag."),
-                                     "Measure": V("1300", "In millimetres.", unitCode="MMT")},
-            "Pickup": {"EarliestPickupDate": V(f.date(6), "The bags are ready on the quay."),
+                                  "ReturnableMaterialIndicator": V("true", "The bags go back to the recovery plant "
+                                                                           "for reuse."),
+                                  "MeasurementDimension": {"AttributeID": V("HEIGHT", "The height of one filled bag."),
+                                                           "Measure": V("1300", "In millimetres.", unitCode="MMT")}},
+            "Pickup": {"EarliestPickupDate": V(f.date(BARGE_LOAD), "The bags are ready on the quay."),
                        "EarliestPickupTime": V("08:00:00", "From eight."),
-                       "LatestPickupDate": V(f.date(6), "They must go the same day."),
+                       "LatestPickupDate": V(f.date(BARGE_LOAD), "They must go the same day."),
                        "LatestPickupTime": V("16:00:00", "Before the quay closes.")},
-            "Despatch": {"ActualDespatchDate": V(f.date(6), "The barge cast off."),
+            "Despatch": {"ActualDespatchDate": V(f.date(BARGE_LOAD), "The barge cast off."),
                          "ActualDespatchTime": V(BARGE_SAILS + ":00", "In the afternoon.")},
-            "Delivery": {"LatestDeliveryDate": V(f.date(10), "The packaging maker's production starts the day "
-                                                             "after.")},
+            "Delivery": {"LatestDeliveryDate": V(f.date(BARGE_LOAD + 4), "The last day of the delivery window "
+                                                                     "the buyer's order asks for (D41).")},
             "OrderLineReference": {"LineID": V("1", "The order line."),
                                    "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
             "DespatchLineReference": {"LineID": V("1", "The line of the despatch advice."),
@@ -975,11 +981,14 @@ def barge_consignment(f, view):
     out.update({"CarrierAssignedID": V(BARGE_VOYAGE + "/2", "The barge operator's number: the second lot of "
                                                              "the voyage."),
                 "MainCarriageShipmentStage": barge_stage(f, True),
+                "TotalPackagesQuantity": V("120", "The 120 jumbo bags of a tonne each (D41)."),
                 "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight, a charge."),
                                            "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                            "AllowanceChargeReason": V("River freight", "What it is for."),
                                            "Amount": amount(Decimal("179400"), "XUF", "120 tonnes at 1,495 ferra."),
-                                           "BaseAmount": amount(Decimal("1495"), "XUF", "The rate per tonne.")}})
+                                           "PerUnitAmount": amount(Decimal("1495"), "XUF", "The rate per tonne, "
+                                                                   "times the 120 chargeable tonnes of the goods "
+                                                                   "item (D41).")}})
     return out
 
 
@@ -993,35 +1002,43 @@ def plastics(n, doc):
     if doc["doc"] == "OrderResponse":
         return kit.order_response(f, n, doc, 1, "The waste processor confirms the lot.")
     if doc["doc"] == "TransportExecutionPlanRequest":
-        out = kit.tep_request(f, n, doc, 1, "Under CPT the seller is the transport user and books the barge.", 6, w,
+        out = kit.tep_request(f, n, doc, 1, "Under CPT the seller is the transport user and books the barge.",
+                              BARGE_LOAD, w,
                               "120 jumbo bags of one tonne, with their bags.")
         kit.deep_merge(out["Consignment"], barge_consignment(f, "request"))
         return out
     if doc["doc"] == "TransportExecutionPlan":
-        out = kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", 6, w)
+        out = kit.tep(f, n, doc, 2, "The barge operator confirms the sailing.", BARGE_LOAD, w)
+        out.pop("TransportUserRemarks")          # the request's "please confirm" is answered, not repeated (D41)
         kit.deep_merge(out["Consignment"], barge_consignment(f, "plan"))
         return out
     if doc["doc"] == "ExportCustomsDeclaration":
-        out = kit.export_declaration(f, n, doc, 6, "Declared the day the barge is loaded.",
+        out = kit.export_declaration(f, n, doc, BARGE_LOAD, "Declared the day the barge is loaded.",
                                      "The value of the granulate, in ferra.")
         out["IssueTime"] = V("12:40:00", "Before the bags are loaded, so that customs releases them before the barge "
                                          "leaves (timelines#F6).")
         return out
     if doc["doc"] == "Waybill":
-        out = kit.waybill(f, n, doc, 6, "Issued when the barge is loaded.", w, "The gross weight on board.")
+        out = kit.waybill(f, n, doc, BARGE_LOAD, "Issued when the barge is loaded.", w, "The gross weight on board.")
         kit.deep_merge(out["Shipment"]["Consignment"], barge_consignment(f, "note"))
         g = barge_goods(f, w)
         out["Shipment"]["GoodsItem"] = {k: v for k, v in g.items() if v is not None}
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "15-xu":
-        return kit.invoice(f, n, doc, 9, "Issued after the sailing.",
+        return kit.invoice(f, n, doc, BARGE_LOAD + 3, "Issued when the bags have been unloaded.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
                            [{"item": "barge-freight", "qty": 120, "invoice_why": "The tonnes carried."}],
                            key="freight-invoice", terms="plan")
     if doc["doc"] == "DespatchAdvice":
-        return kit.despatch_advice(f, n, doc, 6, "The day the barge was loaded.", "The gross weight loaded.")
+        out = kit.despatch_advice(f, n, doc, BARGE_LOAD, "The day the barge was loaded.", "The gross weight loaded.",
+                                  extra={"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The barge's "
+                                                                                "consignment note, on which damage "
+                                                                                "is to be reported (D41).")}})
+        kit.deep_merge(out, {"Shipment": {"Consignment": {"TotalPackagesQuantity": V(
+            "120", "The 120 jumbo bags of a tonne each, as the consignment note counts them (D41).")}}})
+        return out
     if doc["doc"] == "ImportCustomsDeclaration":
-        out = kit.import_declaration(f, n, doc, 9, "Declared when the barge arrives at the coast.",
+        out = kit.import_declaration(f, n, doc, BARGE_LOAD + 3, "Declared on the morning of the unloading.",
                                      "The customs value in lume: the invoice value in ferra at the world's reference "
                                      "rate (1 ferra = 0.01 lume).")
         kit.deep_merge(out["Shipment"]["GoodsItem"][0], {
@@ -1041,7 +1058,8 @@ def plastics(n, doc):
             "AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The barge's consignment note.")}})
         return out
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 7, "Issued once the granulate is on board.",
+        return kit.invoice(f, n, doc, BARGE_LOAD + 1, "Issued the day after the granulate went on board, the "
+                                                      "delivery under CPT.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
                            extra={"Note": V("Carriage paid to: the price includes the barge to the river quay.",
@@ -8687,9 +8705,14 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     for d in find_dicts(out, "EnergyConsumptionAllocation"):
         for e in lines_of(d, "EnergyConsumptionAllocation"):
+            kwh = Decimal(e["AllocatedEnergyMeasure"].value)
             e["EnvironmentalEmission"] = {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases as CO2 "
                                                                                     "equivalent."),
-                                          "ValueMeasure": V("14.3", "2.65 kg per litre of the diesel allocated.",
+                                          "ValueMeasure": V(str(round(kwh * DIESEL_TTW)),
+                                                            f"Tank to wheel: the {kwh:,} kWh of diesel allocated to "
+                                                            f"the goods times {DIESEL_TTW} kg CO2e per kWh, about "
+                                                            "2.67 kg per litre of diesel of about 10 kWh, the order "
+                                                            "of the default factor for diesel in EN 16258 (D41).",
                                                             unitCode="KGM")}
     return {}
 

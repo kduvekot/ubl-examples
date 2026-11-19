@@ -1079,7 +1079,10 @@ scheme. Nothing is implied by that absence, because the totals state it: the
 amount without tax, the amount with tax and the amount to pay are equal.
 Taxes the island does have keep their section. Urvania does not tax a
 service supplied outside Urvania, to a customer established abroad or on
-land abroad, and Urvania also levies an energy tax per kilowatt hour, in two
+land abroad; it exempts the carriage of goods directly linked to their
+export, as most VAT systems do, so the barge operator's freight for the
+granulate going down the river to Bayvarra carries no Urvanian tax and says
+why; and Urvania also levies an energy tax per kilowatt hour, in two
 tiers, on which value added tax is then charged.
 
 Bayvarra taxes what foreign businesses earn from its public purse, at

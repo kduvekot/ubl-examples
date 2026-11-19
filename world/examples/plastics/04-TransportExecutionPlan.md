@@ -38,8 +38,6 @@ The barge operator confirms the vessel and the sailing.
   The note in Urvanian, the sender's language (world/countries.json): The transport agreed.
 - `Note` = **The barge from the quay next to the recovery plant down the river to the packaging maker.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: The transport agreed.
-- `TransportUserRemarks` = **Please confirm by return.**  
-  The user's remark from the request.
 - `TransportServiceProviderRemarks` = **Collection as requested; notice two hours before arrival.**  
   The carrier's remark.
 
@@ -229,7 +227,7 @@ Inside `ValidityPeriod`:
 
 - `StartDate` = **2026-04-15**  
   From the confirmation.
-- `EndDate` = **2026-04-22**  
+- `EndDate` = **2026-04-23**  
   Until the carriage is done.
 
 ### Main Transportation Service
@@ -254,14 +252,14 @@ Inside `AdditionalTransportationService`:
 
 Inside `ServiceStartTimePeriod`:
 
-- `StartDate` = **2026-04-19**  
+- `StartDate` = **2026-04-20**  
   Collection, as requested.
 
 ### Service End Time Period
 
 Inside `ServiceEndTimePeriod`:
 
-- `EndDate` = **2026-04-22**  
+- `EndDate` = **2026-04-23**  
   Delivered within three days.
 
 ### From Location
@@ -399,7 +397,7 @@ Inside `Consignment`:
   Where the bags are loaded.
 - `MainCarriageShipmentStage/UnloadingPortLocation/Name` = **River quay, Lumeport**  
   The place named in the CPT terms.
-- `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-19**  
+- `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-20**  
   Loading finished: 120 bags in the hold.
 - `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00**  
   The local time.
@@ -409,13 +407,13 @@ Inside `Consignment`:
   At the recovery plant's own quay on the river.
 - `MainCarriageShipmentStage/LoadingTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-20**  
+- `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-21**  
   The barge leaves Urvania at the river border, 105 km below the quay: sailing from the afternoon of loading and through the next day from first light.
 - `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **13:45:00**  
   The local time.
 - `MainCarriageShipmentStage/ExportationTransportEvent/Location/Name` = **River border Urvania–Bayvarra**  
   Where the barge leaves Urvania.
-- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-22**  
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-23**  
   Planned unloading at the Lumeport quay, with the consignee's morning shift: the barge arrives about 16:15 the day before and moors at the quay overnight.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
   The local time.
@@ -423,7 +421,7 @@ Inside `Consignment`:
   Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/DischargeTransportEvent/Location/Name` = **River quay, Lumeport**  
   The quay named in the CPT terms, where the bags are unloaded.
-- `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-19**  
+- `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-20**  
   The barge operator takes over the bags at the quay.
 - `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00**  
   The local time.
@@ -461,7 +459,6 @@ Inside `Consignment`:
   <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek bikrek mir drek nir nan krir drek balman halkan zir drek gakzaz krir drek zulskir nerzhek.</cbc:Note>
   <cbc:Note languageID="en-XU">The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
-  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -598,7 +595,7 @@ Inside `Consignment`:
   </cac:TransportUserResponseRequiredPeriod>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-15</cbc:StartDate>
-    <cbc:EndDate>2026-04-22</cbc:EndDate>
+    <cbc:EndDate>2026-04-23</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:MainTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RIVERBARGE</cbc:TransportServiceCode>
@@ -609,10 +606,10 @@ Inside `Consignment`:
     <cbc:Name>Notice two hours before arrival</cbc:Name>
   </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
-    <cbc:StartDate>2026-04-19</cbc:StartDate>
+    <cbc:StartDate>2026-04-20</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-04-22</cbc:EndDate>
+    <cbc:EndDate>2026-04-23</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -725,7 +722,7 @@ Inside `Consignment`:
         <cbc:Name>River quay, Lumeport</cbc:Name>
       </cac:UnloadingPortLocation>
       <cac:LoadingTransportEvent>
-        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -738,14 +735,14 @@ Inside `Consignment`:
         </cac:Location>
       </cac:LoadingTransportEvent>
       <cac:ExportationTransportEvent>
-        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-21</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
         </cac:Location>
       </cac:ExportationTransportEvent>
       <cac:DischargeTransportEvent>
-        <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
         <cac:Location>
@@ -753,7 +750,7 @@ Inside `Consignment`:
         </cac:Location>
       </cac:DischargeTransportEvent>
       <cac:TakeoverTransportEvent>
-        <cbc:OccurrenceDate>2026-04-19</cbc:OccurrenceDate>
+        <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>

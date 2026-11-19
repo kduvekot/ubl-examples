@@ -268,7 +268,7 @@ Inside `RemittanceAdviceLine`:
   The reference the invoicing party asked to quote.
 - `BillingReference/InvoiceDocumentReference/ID` = **RR-INV-26-0894**  
   The invoice this payment settles.
-- `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-20**  
+- `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-21**  
   Its issue date, so the reference is unambiguous.
 
 ## The document
@@ -470,7 +470,7 @@ Inside `RemittanceAdviceLine`:
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>RR-INV-26-0894</cbc:ID>
-        <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+        <cbc:IssueDate>2026-04-21</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
