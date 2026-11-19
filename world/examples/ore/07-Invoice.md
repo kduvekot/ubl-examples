@@ -57,6 +57,22 @@ Inside `DespatchDocumentReference`:
 - `ID` = **SM-DA-26-0308**  
   The despatch advice of the goods invoiced.
 
+### Contract Document Reference
+
+Inside `ContractDocumentReference`:
+
+- `ID` = **SM-VI-SA-2026**  
+  The supply agreement whose price basis and moisture clause the invoice applies.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **SM-ASSAY-26-12**  
+  The assay certificate of the sample taken at loading, which measured the moisture the deduction rests on (ore/07#F2).
+- `DocumentTypeCode` = **1** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, Serravona Mining's assay certificate of the sample taken when March's ore train was loaded on 10 March: 62 % iron, 7.5 % moisture (D45), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
+
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
@@ -399,7 +415,7 @@ Inside `InvoiceLine`:
 - `InvoicedQuantity` = **1788.4** (unitCode `TNE`)  
   The weighed quantity from the despatch advice, not the ordered quantity.
 - `LineExtensionAmount` = **14198286** (currencyID `XUF`)  
-  1788.4 × the price = 14414504, less the 1.5 % moisture deduction.
+  1788.4 × the price = 14414504, less the 1.5 % moisture deduction under the moisture clause of supply agreement sm-vi-sa-2026: 7.5 % moisture measured at loading, above the 6 % agreed.
 - `TaxInclusiveLineExtensionAmount` = **17037943** (currencyID `XUF`)  
   The line with its tax.
 - `OrderLineReference/LineID` = **1**  
@@ -407,9 +423,9 @@ Inside `InvoiceLine`:
 - `AllowanceCharge/ChargeIndicator` = **false**  
   An allowance on the line.
 - `AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189: the moisture deduction is agreed in the contract. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
-- `AllowanceCharge/AllowanceChargeReason` = **Moisture deduction**  
-  The sample at loading showed 7.5 % moisture, above the 6 % of the contract: the contract deducts 1.5 % of the value.
+  The reason for the allowance as a code of UN/EDIFACT 5189: special agreement, the moisture clause of the supply agreement. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
+- `AllowanceCharge/AllowanceChargeReason` = **Moisture deduction under the moisture clause of supply agreement SM-VI-SA-2026: 7.5 % moisture measured at loading, above the 6 % agreed**  
+  The sample at loading showed 7.5 % moisture (assay SM-ASSAY-26-12), above the 6 % of the supply agreement, whose moisture clause deducts 1.5 % of the value (D45, ore/07#F2).
 - `AllowanceCharge/MultiplierFactorNumeric` = **0.015**  
   The rate.
 - `AllowanceCharge/Amount` = **216218** (currencyID `XUF`)  
@@ -476,6 +492,13 @@ Inside `InvoiceLine`:
   <cac:DespatchDocumentReference>
     <cbc:ID>SM-DA-26-0308</cbc:ID>
   </cac:DespatchDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>SM-VI-SA-2026</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>SM-ASSAY-26-12</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">1</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -753,7 +776,7 @@ Inside `InvoiceLine`:
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Moisture deduction</cbc:AllowanceChargeReason>
+      <cbc:AllowanceChargeReason>Moisture deduction under the moisture clause of supply agreement SM-VI-SA-2026: 7.5 % moisture measured at loading, above the 6 % agreed</cbc:AllowanceChargeReason>
       <cbc:MultiplierFactorNumeric>0.015</cbc:MultiplierFactorNumeric>
       <cbc:Amount currencyID="XUF">216218</cbc:Amount>
       <cbc:BaseAmount currencyID="XUF">14414504</cbc:BaseAmount>

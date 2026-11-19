@@ -8,8 +8,8 @@
   <cbc:UUID>7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:30:00-01:00</cbc:IssueTime>
-  <cbc:Note languageID="qau">Kul drek titran sezhul nul?</cbc:Note>
-  <cbc:Note languageID="en-XU">Has the container train left?</cbc:Note>
+  <cbc:Note languageID="qau">Gannek skuskek drek krakbek skul drek titran sezhul FRC 4417 mir Ferrano.</cbc:Note>
+  <cbc:Note languageID="en-XU">Please report the departure of the container train FRC 4417 from Ferrano.</cbc:Note>
   <cac:Signature>
     <cbc:ID>FRC-SIG-TPSR</cbc:ID>
     <cac:SignatoryParty>
@@ -64,21 +64,21 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_t8rn</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+      <cbc:Name>Rail Infrastructure Agency of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200139820702</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160207305518243</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qau">Bek Han Krazhul</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Via del Terminal</cbc:StreetName>
-      <cbc:BuildingNumber>59</cbc:BuildingNumber>
+      <cbc:StreetName languageID="qau">Bek Hekrul Zhuzkek</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via della Stazione</cbc:StreetName>
+      <cbc:BuildingNumber>2</cbc:BuildingNumber>
       <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
       <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-      <cbc:PostalZone>4180</cbc:PostalZone>
+      <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
@@ -87,20 +87,23 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Terminal control</cbc:Name>
-      <cbc:JobTitle>Terminal controller</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 371 6482</cbc:Telephone>
-      <cbc:ElectronicMail>terminal@ferranohub.example</cbc:ElectronicMail>
+      <cbc:Name>Traffic control</cbc:Name>
+      <cbc:JobTitle>Train controller</cbc:JobTitle>
+      <cbc:Department>Traffic management</cbc:Department>
+      <cbc:Telephone>+999 1 041 816 2047</cbc:Telephone>
+      <cbc:ElectronicMail>traffic@railinfra-xu.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105096</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_t8rn</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>
+    <cac:RailTransport>
+      <cbc:TrainID>FRC 4417</cbc:TrainID>
+    </cac:RailTransport>
   </cac:TransportMeans>
   <cac:StatusLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>

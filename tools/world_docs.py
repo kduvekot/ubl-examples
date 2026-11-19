@@ -135,8 +135,16 @@ def item_parties(world, parties):
     return out
 
 
+# The three debit notes in which a buyer charges its supplier (flow, document, sender). D9 makes a debit note the
+# supplier's addition to an invoice it issued, as the model's direction now says (tools/extract_ubl_model.py), and
+# re-homes these three with their flows (furniture D32, sea D30, tender D28); until then they keep their old
+# direction, and the check asks for each to be taken off this list once it is gone.
+BUYER_DEBIT_NOTES = {("furniture", "DebitNote", "26-xb"), ("sea", "DebitNote", "1-xl"), ("tender", "DebitNote", "2-xb")}
+
+
 def check(world, model):
     problems = []
+    legacy_seen = set()
     parties = {p["id"] for p in world["parties"]}
     flows = {f["id"] for f in world["flows"]}
     used = set()
@@ -160,7 +168,11 @@ def check(world, model):
                 if v not in parties:
                     problems.append(f"{where}: unknown party {v} at {path}")
                 used.add(v)
-        for side, key, elements in (("sender", "from", spec["senders"]), ("receiver", "to", spec["receivers"])):
+        directions = (("sender", "from", spec["senders"]), ("receiver", "to", spec["receivers"]))
+        if (d["flow"], d["doc"], d["from"]) in BUYER_DEBIT_NOTES:
+            directions = (("sender", "from", spec["receivers"]), ("receiver", "to", spec["senders"]))
+            legacy_seen.add((d["flow"], d["doc"], d["from"]))
+        for side, key, elements in directions:
             party = d[key]
             if party not in parties:
                 problems.append(f"{where}: unknown {side} {party}")
@@ -192,6 +204,8 @@ def check(world, model):
     used |= item_parties(world, parties)
     for p in sorted(parties - used):
         problems.append(f"party {p}: takes part in no document")
+    for gone in sorted(BUYER_DEBIT_NOTES - legacy_seen):
+        problems.append(f"{gone}: no longer in the world: remove it from BUYER_DEBIT_NOTES in tools/world_docs.py")
     return problems
 
 

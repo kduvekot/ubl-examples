@@ -25,7 +25,6 @@ Coverage 5153 → 5151 (commit c15bf42c), 2 elements.
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `Address/AdditionalStreetName` | 0..n | air/01-OrderChange, air/02-OrderResponse, air/03-ForwardingInstructions … | | | open |
-| `Address/Region` | 0..1 | carnet/01-GoodsItemPassport, carnet/02-ProofOfReexportationRequest, carnet/03-ProofOfReexportationReminder … | | | open |
 
 ### Stage 1 step 1b: public bodies and state companies (C04, D46)
 
@@ -103,7 +102,6 @@ Coverage 5120 → 5117 (commit 5e00c80d), 3 elements.
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `NotificationRequirement/PostEventNotificationDurationMeasure` | 0..1 | ore/03-TransportExecutionPlan, plastics/04-TransportExecutionPlan, rail/03-TransportExecutionPlan | | | open |
-| `TransportExecutionPlan/AtLocation` | 0..1 | ore/03-TransportExecutionPlan, plastics/04-TransportExecutionPlan, rail/03-TransportExecutionPlan | | | open |
 | `TransportExecutionTerms/CommissionPaymentTerms` | 0..1 | plastics/04-TransportExecutionPlan | | | open |
 
 ### Stage 1 step 1e, part 3: remittance advices (C17)
@@ -220,7 +218,6 @@ Coverage 5058 → 5049 (commit 0edd7d78), 9 elements.
 |---|---|---|---|---|---|
 | `Consignment/OfficeOfEntryLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `ImportCustomsDeclaration/CustomsExitOfficeLocation` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `ImportCustomsDeclaration/PreviousCustomsDeclaration` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
 | `ImportCustomsDeclaration/ValidityPeriod` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
 | `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | | | open |
 | `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | | | open |
@@ -566,6 +563,27 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `Delivery/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
 | `OrderChange/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
 | `OrderResponse/ValidityPeriod` | 0..1 | air/02-OrderResponse | a conditional acceptance whose terms lapse at a stated time | | open |
+### G3: ore, rail (2026-11-19)
+
+Stage 6, building group G3 (C81, C90).
+
+> C81, D45: the ore train's transport request has no status, so it gives no status reason; how it updates the standing plan is said next to its reference to the plan (ore/02#F4, F5).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TransportExecutionPlanRequest/DocumentStatusReasonCode` | 0..1 | ore/02-TransportExecutionPlanRequest | | | open |
+| `TransportExecutionPlanRequest/DocumentStatusReasonDescription` | 0..1 | ore/02-TransportExecutionPlanRequest | | | open |
+
+> C90, D37: a freight train carries no passengers, so the stages state no passenger quantity (03#F20, 08#F22). The waybill describes both containers alike and drops what did not fit: the wagon given as equipment "contained in" the container (08#F8; UBL's name and definition disagree, recorded for the TC), the hub's stack as the storage location of a box that is on the train (08#F10; the stack is now the place of the box's handling event), the terminal as operator of the carrier's own box (08#F15), the reference from the box to the waybill it stands in (08#F21) and the Container Convention indicator, which nothing in the story settles (08#F25).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ShipmentStage/PassengerQuantity` | 0..1 | rail/03-TransportExecutionPlan, rail/08-Waybill | the feeder ship's report before arrival at Selanu lists a passenger, so its stage carries 1 (D37 point 7, O128) | sea | agreed |
+| `TransportEquipment/ContainedInTransportEquipment` | 0..n | rail/08-Waybill | | | open |
+| `TransportEquipment/LegalStatusIndicator` | 0..1 | rail/08-Waybill | | | open |
+| `TransportEquipment/OperatingParty` | 0..1 | rail/08-Waybill | | | open |
+| `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
+| `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
 
 ## Left out on purpose
 
@@ -587,6 +605,9 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
+| `Address/Region` | rail/06-TransitCustomsDeclaration | the jurisdiction of the transit declaration: the Lumeport Trade Accord, a group of countries, because the Accord's common transit runs from Urvania's office of departure to Bayvarra's office of destination (D37 point 2, rail/06#F18; O140's candidate, a territory that covers the Accord area) | 2026-11-19 |
+| `ImportCustomsDeclaration/PreviousCustomsDeclaration` | rail/14-ImportCustomsDeclaration | Lumeway's import at Marrowdale ends the Accord's common transit that Valdara lodged at Ferrano: the transit declaration, a declaration of the same procedure chain valid in Bayvarra, is its previous declaration (D37 point 2) | 2026-11-19 |
 | `LineItem/BeneficiaryParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `LineItem/OriginatorParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |

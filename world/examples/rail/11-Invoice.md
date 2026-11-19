@@ -1,8 +1,8 @@
 # Invoice: Valdara Industries to Lumeway Distribution
 
-*Example 11 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 11 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-Under DAP the price includes the transport, so the invoice covers goods and freight.
+Under DAP the price includes the transport, so the invoice covers goods and freight; Valdara invoices on despatch, so the importer has it when it declares the goods.
 
 [The XML file](11-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,17 +22,17 @@ Under DAP the price includes the transport, so the invoice covers goods and frei
   The seller's invoice number.
 - `UUID` = **4e437657-fd23-506f-a503-988422d5e64c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-17**  
-  Issued on delivery at the distributor's siding.
+- `IssueDate` = **2026-04-14**  
+  Issued on despatch, as Valdara invoices: the morning the train leaves the hub, so that the importer can declare the goods on arrival.
 - `IssueTime` = **11:14:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-17**  
+- `DueDate` = **2026-05-14**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Delivered at place: the price includes the carriage to the siding. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
   Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference (D18).
-- `TaxPointDate` = **2026-04-17**  
+- `TaxPointDate` = **2026-04-14**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
@@ -61,7 +61,7 @@ Inside `AdditionalDocumentReference`:
 - `DocumentTypeCode` = **TransitCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: VI-TD-26-0331 is the example rail/06, a TransitCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransitCustomsDeclaration = Transit Customs Declaration.
 - `ID` = **FRC-WB-26-0334**  
-  The rail consignment note, signed on delivery at the siding.
+  The rail consignment note the benches travel under.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: FRC-WB-26-0334 is the example rail/08, a Waybill; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Waybill.
 
@@ -245,12 +245,12 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-04-15**  
-  The day the containers were placed at the siding.
 - `DeliveryLocation/ID` = **9520610900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Name` = **Lumeway rail siding, Marrowdale**  
   Where the boxes are placed for unloading.
+- `Despatch/ActualDespatchDate` = **2026-04-14**  
+  The day the train left the hub with the benches.
 
 ### Payment Means
 
@@ -262,7 +262,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-17**  
+- `PaymentDueDate` = **2026-05-14**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
@@ -339,11 +339,11 @@ Inside `PaymentTerms`:
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.valdara.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-17**  
+- `PaymentDueDate` = **2026-05-14**  
   The day the amount is due, as the terms count it.
-- `SettlementPeriod/StartDate` = **2026-04-17**  
+- `SettlementPeriod/StartDate` = **2026-04-14**  
   From the invoice date.
-- `SettlementPeriod/EndDate` = **2026-04-27**  
+- `SettlementPeriod/EndDate` = **2026-04-24**  
   For 10 days.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
   The interest on late payment.
@@ -452,12 +452,12 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-INV-26-0337</cbc:ID>
   <cbc:UUID>4e437657-fd23-506f-a503-988422d5e64c</cbc:UUID>
-  <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>11:14:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-17</cbc:DueDate>
+  <cbc:DueDate>2026-05-14</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Delivered at place: the price includes the carriage to the siding. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
-  <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-14</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
@@ -629,17 +629,19 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-04-15</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
       <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-04-14</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF20VIINV260337</cbc:InstructionNote>
@@ -693,10 +695,10 @@ Inside `InvoiceLine`:
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">153216</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-17</cbc:StartDate>
-      <cbc:EndDate>2026-04-27</cbc:EndDate>
+      <cbc:StartDate>2026-04-14</cbc:StartDate>
+      <cbc:EndDate>2026-04-24</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>

@@ -7,7 +7,7 @@
   <cbc:ID>FIH-TS-26-0333</cbc:ID>
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>13:11:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>06:05:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
@@ -58,7 +58,12 @@
       </cac:ElectronicAddress>
     </cac:CarrierParty>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
+      <cac:TransportMeans>
+        <cac:RailTransport>
+          <cbc:TrainID>FRC 4417</cbc:TrainID>
+        </cac:RailTransport>
+      </cac:TransportMeans>
       <cac:OptionalTakeoverTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>17:00:00</cbc:OccurrenceTime>
@@ -73,19 +78,6 @@
           </cac:Address>
         </cac:Location>
       </cac:OptionalTakeoverTransportEvent>
-      <cac:ActualPickupTransportEvent>
-        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
-        <cac:Location>
-          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
-          <cac:Address>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:Location>
-      </cac:ActualPickupTransportEvent>
       <cac:DeliveryTransportEvent>
         <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
@@ -152,6 +144,72 @@
         </cac:Location>
       </cac:TransportEvent>
     </cac:MainCarriageShipmentStage>
+    <cac:PreCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">37</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 RC</cbc:LicensePlateID>
+        </cac:RoadTransport>
+      </cac:TransportMeans>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+      <cac:ActualPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualPickupTransportEvent>
+      <cac:ActualArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:50:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualArrivalTransportEvent>
+    </cac:PreCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>

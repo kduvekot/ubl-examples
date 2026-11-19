@@ -32,8 +32,8 @@ The rail carrier confirms the train, the wagons and the schedule; this is the ag
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed). The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
 - `DocumentStatusReasonCode` = **ASREQUESTED** (listID `urn:ubl-examples:world:codelist:DocumentStatusReasonCode`)  
   Confirmed without changes. The code is from the Trade Accord's document status reason list: ASREQUESTED = As requested.
-- `DocumentStatusReasonDescription` = **Capacity available on the requested day.**  
-  Why it is confirmed.
+- `DocumentStatusReasonDescription` = **Capacity available in the requested window, 10 to 13 March: the train is planned for its first day.**  
+  Why it is confirmed as requested.
 - `Note` = **Drek trir sezhul mir drek daz nintrek krir drek drunbaz.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): The transport agreed.
 - `Note` = **The ore train from the mine siding to the factory.** (languageID `en-XU`)  
@@ -268,10 +268,10 @@ Inside `MainTransportationService`:
 
 Inside `AdditionalTransportationService`:
 
-- `TransportServiceCode` = **NOTIFY** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  Pre-arrival notice. The code is from the Trade Accord's transport service list: NOTIFY = Pre-arrival notice.
-- `Name` = **Notice two hours before arrival**  
-  In words.
+- `TransportServiceCode` = **WEIGH** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
+  The wagons are weighed at the mine siding, as requested: the weighed tonnes are what the freight and the ore are billed by. The code is from the Trade Accord's transport service list: WEIGH = Weighing.
+- `TariffClassCode` = **B** (listID `urn:ubl-examples:world:codelist:TariffClassCode`)  
+  The carrier's tariff class, as requested. The code is from the Trade Accord's tariff class list: B = Basic class.
 
 ### Service Start Time Period
 
@@ -309,21 +309,32 @@ Inside `ToLocation`:
 - `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
+### At Location
+
+Inside `AtLocation`:
+
+- `ID` = **XUFNT** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Name` = **Fucinalta mine siding**  
+  Where the weighing, a service without movement, is done.
+- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+
 ### Transport Execution Terms
 
 Inside `TransportExecutionTerms`:
 
-- `TransportUserSpecialTerms` = **Delivery within the agreed slot; the consignee unloads.**  
-  The user's terms.
-- `TransportServiceProviderSpecialTerms` = **Waiting time beyond two hours is charged.**  
-  The carrier's.
+- `TransportUserSpecialTerms` = **Wagons sheeted against dust.**  
+  The user's term, as the request asked it.
+- `TransportServiceProviderSpecialTerms` = **Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.**  
+  The carrier's terms.
 - `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
   When the freight is paid: the term the carrier's invoices under this plan apply (D22).
 - `DeliveryTerms/ID` = **FCA** (schemeID `INCOTERMS`)  
   The buyer's terms with the mine, for the carrier's information. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
-- `BonusPaymentTerms/Note` = **2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.**  
+- `BonusPaymentTerms/Note` = **2 % of the freight when the train is delivered on the first day of the service window, so that the factory can start the blend a day early.**  
   The bonus the factory pays for an early train: its stockyard can use the ore at once.
 - `PenaltyPaymentTerms/Note` = **For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.**  
   The carrier's liability for delay, in words: PenaltySurchargePercent is a surcharge for late payment, not for late delivery (worklist C19).
@@ -358,12 +369,12 @@ Inside `Consignment`:
 
 - `ID` = **VI-CS-26-0306**  
   The consignment of the request.
-- `SummaryDescription` = **1788.4 t of Iron ore, lump**  
-  What is to be carried, in a few words (worklist C21).
+- `SummaryDescription` = **One train of 30 wagons, about 1,800 t of lump iron ore.**  
+  What is to be carried, before the wagons are loaded and weighed.
 - `GrossWeightMeasure` = **1800000** (unitCode `KGM`)  
   The weight the plan is made for.
 - `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  The number of goods items.
+  The number of goods items: the ore.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `ConsigneeParty/PartyName/Name` = **Valdara Industries**  
@@ -429,7 +440,7 @@ Inside `Consignment`:
   <cbc:IssueTime>12:50:00-01:00</cbc:IssueTime>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">ASREQUESTED</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
+  <cbc:DocumentStatusReasonDescription>Capacity available in the requested window, 10 to 13 March: the train is planned for its first day.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek trir sezhul mir drek daz nintrek krir drek drunbaz.</cbc:Note>
   <cbc:Note languageID="en-XU">The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
@@ -586,8 +597,8 @@ Inside `Consignment`:
     <cbc:Name>Rail wagon load</cbc:Name>
   </cac:MainTransportationService>
   <cac:AdditionalTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">NOTIFY</cbc:TransportServiceCode>
-    <cbc:Name>Notice two hours before arrival</cbc:Name>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">WEIGH</cbc:TransportServiceCode>
+    <cbc:TariffClassCode listID="urn:ubl-examples:world:codelist:TariffClassCode">B</cbc:TariffClassCode>
   </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-03-10</cbc:StartDate>
@@ -613,9 +624,18 @@ Inside `Consignment`:
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
+  <cac:AtLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+    <cbc:Name>Fucinalta mine siding</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:AtLocation>
   <cac:TransportExecutionTerms>
-    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
-    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:TransportUserSpecialTerms>Wagons sheeted against dust.</cbc:TransportUserSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
@@ -624,7 +644,7 @@ Inside `Consignment`:
       <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     </cac:DeliveryTerms>
     <cac:BonusPaymentTerms>
-      <cbc:Note>2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.</cbc:Note>
+      <cbc:Note>2 % of the freight when the train is delivered on the first day of the service window, so that the factory can start the blend a day early.</cbc:Note>
     </cac:BonusPaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
@@ -664,7 +684,7 @@ Inside `Consignment`:
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
-    <cbc:SummaryDescription>1788.4 t of Iron ore, lump</cbc:SummaryDescription>
+    <cbc:SummaryDescription>One train of 30 wagons, about 1,800 t of lump iron ore.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>

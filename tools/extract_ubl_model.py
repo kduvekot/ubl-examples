@@ -80,8 +80,11 @@ DIRECTION = {
                                ["A document used by a contracting party to declare the intention to buy"]),
     "CreditNote": (["AccountingSupplierParty"], ["AccountingCustomerParty"], "role table",
                    ["Accounting Supplier", "Accounting Customer"]),
-    "DebitNote": (["AccountingCustomerParty"], ["AccountingSupplierParty"], "role table",
-                  ["Accounting Customer", "Accounting Supplier"]),
+    # the role table lists the debit note under both roles; the specification names the Supplier Accounting Party
+    # as its submitter and the Customer Accounting Party as its receiver (UBL 2.5, 2.3.7.1.3 and 3.2.19), the
+    # counterpart of the credit note: the supplier's addition to an invoice it issued (decision D9)
+    "DebitNote": (["AccountingSupplierParty"], ["AccountingCustomerParty"], "role table",
+                  ["Accounting Supplier", "Accounting Customer"]),
     "DeliveryNote": (["DespatchSupplierParty"], ["DeliveryCustomerParty"], "inferred",
                      ["The Party that executed the delivery.", "The Party to whom the goods or services were delivered."]),
     "DespatchAdvice": (["DespatchSupplierParty"], ["DeliveryCustomerParty"], "role table", ["Despatch", "Delivery"]),

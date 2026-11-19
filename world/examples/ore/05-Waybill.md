@@ -29,9 +29,9 @@ The rail consignment note goes to the party that contracted the carriage, the ma
 - `StatusCode` = **ISSUED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-03-10**  
-  Issued when the carrier takes over the loaded train.
-- `IssueTime` = **11:35:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Made out at the mine siding when the carrier took over the loaded train, and completed at delivery: this is the receiver's electronic copy, sent once the consignee has signed for the train in its siding, so it records the arrival (D45, ore/06#F4).
+- `IssueTime` = **14:36:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Consignment note under the national rail carriage law**  
   The kind of transport document.
 - `Description` = **The ore train from the mine siding to the factory.**  
@@ -254,6 +254,16 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **260111** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 260111 = Iron ores and concentrates, non-agglomerated.
+- `Delivery/ActualDeliveryDate` = **2026-03-10**  
+  The train arrived the same day, the first day of the window.
+- `Delivery/ActualDeliveryTime` = **14:18:00**  
+  It left the mine siding at 10:05 and ran 159 km on the line past Ferrano at about 40 km/h, then shunted into the factory's siding.
+- `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Delivery/DeliveryLocation/Name` = **Valdara Industries works siding, Ferrano**  
+  The factory's siding, where the train is placed for unloading.
+- `Delivery/DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Document Reference
 
@@ -305,7 +315,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
-  <cbc:IssueTime>11:35:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>14:36:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the national rail carriage law</cbc:Name>
   <cbc:Description>The ore train from the mine siding to the factory.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
@@ -477,6 +487,19 @@ Inside `Signature`:
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryTime>14:18:00</cbc:ActualDeliveryTime>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>
