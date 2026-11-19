@@ -50,7 +50,7 @@
      "founded": "1958-06-30",
      "headcount": 987,
      "turnover": {
-      "amount": "48000000000",
+      "amount": "28000000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -846,7 +846,7 @@
     "legal": {
      "form": "SUA",
      "founded": "1921-09-01",
-     "headcount": 1121,
+     "headcount": 520,
      "turnover": {
       "amount": "8860000000",
       "currency": "XUF",
@@ -2177,7 +2177,7 @@
       "currency": "XBL",
       "year": 2025
      },
-     "business": "services",
+     "business": "shipping",
      "capital": 40000000
     },
     "week": "always"
@@ -2850,7 +2850,7 @@
     "legal": {
      "form": "LTD",
      "founded": "1965-07-01",
-     "headcount": 534,
+     "headcount": 760,
      "turnover": {
       "amount": "163000000.000",
       "currency": "XLC",
@@ -3931,7 +3931,7 @@
       "currency": "XBL",
       "year": 2025
      },
-     "business": "industry",
+     "business": "oil_gas",
      "capital": 120000000
     },
     "customs_id": "XB-TR-412877",
@@ -4025,7 +4025,7 @@
      "founded": "1974-06-03",
      "headcount": 2935,
      "turnover": {
-      "amount": "35700000000",
+      "amount": "48000000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -4165,7 +4165,7 @@
   }
  ],
  "turnover_per_person": {
-  "note": "Rules of thumb for a company's yearly turnover per person, in lume, by the kind of business it is in (identity.legal.business): estimates of typical ranges, meant to catch the implausible (worklist decision D14, open point O30). Turnovers in ferra and coral count at the reference rates (world/countries.json exchange_rates). Only companies in a commercial register are checked: public bodies have no company figures, and a farm is entered in Lisavu's farm register, not the companies register (D46). tools/world_parties.py checks every company against its band.",
+  "note": "Rules of thumb for a company's yearly turnover per person, in lume, by the kind of business it is in (identity.legal.business): estimates of typical ranges, meant to catch the implausible (worklist decision D14, open point O30). Turnovers in ferra and coral count at the reference rates (world/countries.json exchange_rates). Only companies in a commercial register are checked: public bodies have no company figures, and a farm is entered in Lisavu's farm register, not the companies register (D46). tools/world_parties.py checks every company against its band. Shipping lines and oil and gas producers have bands of their own, because their ships and platforms make them earn far more per person than other transport or industry (owner, 2026-11-19).",
   "bands": {
    "distributor": {
     "name": "Distributor, wholesaler",
@@ -4191,15 +4191,18 @@
     "name": "Utilities, banks, insurance",
     "min": 150000,
     "max": 600000
+   },
+   "shipping": {
+    "name": "Shipping lines (capital-heavy: ships)",
+    "min": 400000,
+    "max": 1500000
+   },
+   "oil_gas": {
+    "name": "Oil and gas production (capital-heavy: platforms, pipelines)",
+    "min": 300000,
+    "max": 1500000
    }
   },
-  "awaiting_owner": {
-   "4-xu": "Serravona Mining keeps its own figures (D4): 987 persons and 480 million lume, about 486,000 a person, above the band for industry.",
-   "23-xu": "Crevalto Bank keeps its own figures (D4): 1,121 persons and 88.6 million lume, about 79,000 a person, below the band for banks.",
-   "11-xb": "Tidewell Ocean Lines keeps its own figures (D4): 776 persons and 865 million lume, about 1,115,000 a person, above the band for transport.",
-   "22-xl": "Bank of Selanu keeps its own figures (D4): 534 persons and 407.5 million lume, about 763,000 a person, above the band for banks.",
-   "42-xb": "Kelpstone Gas keeps its own figures (D4): 1,315 persons and 833 million lume, about 633,000 a person, above the band for industry.",
-   "43-xu": "Montebrio Power keeps its own figures (D4): 2,935 persons and 357 million lume, about 122,000 a person, below the band for utilities."
-  }
+  "awaiting_owner": {}
  }
 }
