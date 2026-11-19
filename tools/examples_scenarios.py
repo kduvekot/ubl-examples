@@ -504,12 +504,9 @@ def road(n, doc):
                                                                  "it when booking the truck."),
                                "ActualDeliveryTransportEvent": kit.event(f, 9, "09:40:00", "Delivered at dock 4: the "
                                                                          "carriage invoiced is complete.",
-                                                                         location=LUMEWAY_GOODS_IN)},
-                               "GoodsItem": {"ID": V("1", "The benches carried."),
-                                             "ReceiptLineReference": {
-                                                 "LineID": V("1", "The line of the consignee's receipt advice."),
-                                                 "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt "
-                                                                               "advice: proof of delivery.")}}}}}})
+                                                                         location=LUMEWAY_GOODS_IN)}}}})
+        # the carrier's proof of delivery is its own: the consignment note and the delivery event; the consignee's
+        # receipt advice comes a day later, after the invoice (road/14#F1, C72)
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 8, "Issued when the goods have left the warehouse.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},

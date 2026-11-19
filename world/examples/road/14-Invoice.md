@@ -254,14 +254,6 @@ Inside `Delivery`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
-- `Shipment/GoodsItem/ID` = **1**  
-  The benches carried.
-- `Shipment/GoodsItem/ReceiptLineReference/LineID` = **1**  
-  The line of the consignee's receipt advice.
-- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/ID` = **LD-RA-26-0164**  
-  The receipt advice: proof of delivery.
-- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-RA-26-0164 is the example road/13, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
 
 ### Payment Means
 
@@ -640,16 +632,6 @@ Inside `InvoiceLine`:
           </cac:PartyName>
         </cac:CarrierParty>
       </cac:Consignment>
-      <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
-        <cac:ReceiptLineReference>
-          <cbc:LineID>1</cbc:LineID>
-          <cac:DocumentReference>
-            <cbc:ID>LD-RA-26-0164</cbc:ID>
-            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
-          </cac:DocumentReference>
-        </cac:ReceiptLineReference>
-      </cac:GoodsItem>
     </cac:Shipment>
   </cac:Delivery>
   <cac:PaymentMeans>
