@@ -128,7 +128,23 @@ def _optd_aircraft(path):
                 for r in csv.DictReader(f, delimiter="^")}
 
 
-READERS = {"rec28": _rec28, "optd-aircraft": _optd_aircraft, "cefact": _cefact, "peppol": _peppol, "cpc": _cpc, "iso639": _iso639, "mic": _mic, "epsg": _epsg}
+def _eurlex_low(path):
+    """The European List of Waste (Commission Decision 2000/532/EC, its consolidated text from the Publications
+    Office): every six-digit entry of the list's table, its code without spaces (with the asterisk of a hazardous
+    entry) and its name."""
+    import html as _html
+    x = open(path, encoding="utf-8").read()
+    cells = [re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", c))).strip()
+             for c in re.findall(r"<td[^>]*>(.*?)</td>", x, re.S)]
+    out = {}
+    for a, b in zip(cells, cells[1:]):
+        m = re.fullmatch(r"(\d\d) (\d\d) (\d\d)(\*?)", a)
+        if m and b:
+            out["".join(m.groups())] = {"name": b, "description": f"{a} of the European List of Waste"}
+    return out
+
+
+READERS = {"eurlex-low": _eurlex_low, "rec28": _rec28, "optd-aircraft": _optd_aircraft, "cefact": _cefact, "peppol": _peppol, "cpc": _cpc, "iso639": _iso639, "mic": _mic, "epsg": _epsg}
 
 
 def source_codes(spec):
@@ -189,6 +205,13 @@ def load():
                 codes[c] = {"name": extra[0], "description": extra[1], "added": True}
         else:
             codes = {c: {"name": v[0], "description": v[1] if len(v) > 1 else ""} for c, v in spec["codes"].items()}
+            if spec.get("source"):        # a national list numbered after a real one: every entry checked against it
+                real = source_codes(spec)
+                for c, v in codes.items():
+                    if c not in real or real[c]["name"].lower() != v["name"].lower():
+                        raise SystemExit(f"world/codelists/lists.json: {key}: {c} {v['name']!r} is not the entry of "
+                                         f"world/codelists/sources/{spec['source']['file']} "
+                                         f"({real.get(c, {}).get('name')!r})")
         lst["codes"] = codes
         if "tax_included" in spec and set(spec["tax_included"]) != set(codes):     # O28: said for every code
             raise SystemExit(f"world/codelists/lists.json: {key}: tax_included must say for every code whether "

@@ -1387,6 +1387,29 @@ flow names must carry one of its legs. Domestic jobs go to a carrier of
 that country: a truck of one country driving within another would be
 cabotage, which only happens where a document says so.
 
+A truck is weighed against the Trade Accord's road protocol: a tractor unit
+with its semi-trailer, or a truck with its trailer, may weigh at most 40
+tonnes with its load. The carrier's fleet gives each vehicle's empty weight,
+so its payload is what is left: Trasvia's tractor of about 7.8 t and its
+curtain-side trailer of about 7.5 t can carry about 24.7 t. A weighed load
+stays within both, and the build checks it.
+
+Waste that stays in Urvania moves under Urvania's own waste law, not under
+the Basel Convention's procedure for transboundary movements, on the model
+of a national reporting point for waste. Urvania's environment agency is the
+competent authority: it issues the permits of waste treatment plants,
+registers waste carriers, and receives two reports. The producer notifies
+its waste stream for a year before the first load (the waste by its code in
+Urvania's waste list, which takes over the numbers and the rules of the
+European List of Waste, the planned total, the number of loads, the period,
+the loading place and the facility), and the agency acknowledges it with a
+waste-stream number; a domestic stream of non-hazardous waste for recovery
+needs no consent. The facility then reports each load it receives, with its
+net weight from its weighbridge and the stream's number. UBL's waste
+notification requires a `CustomsParty`, "the competent authority granting a
+permit to export or import the waste"; for a domestic stream it names the
+environment agency, the only competent authority there is.
+
 A leg takes the time its distance needs at the mode's usual speed. Where a
 document's timeline is longer than that, the extra time has a reason that is
 part of the world, before any date moves:

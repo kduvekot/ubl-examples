@@ -467,7 +467,7 @@
     "currency": "XUF"
    },
    "sellers_id": "RR-SVC-01",
-   "description": "Collection at the factory and recovery of sorted production waste, per tonne collected.",
+   "description": "Collection at the factory and recovery of sorted production waste, per tonne of waste as the recovery plant weighs it.",
    "lifecycle": [
     "ENDOFLIFE",
     "The service handles the production waste at the end of its life, before it is recycled."

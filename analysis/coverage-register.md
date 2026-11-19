@@ -473,6 +473,18 @@ Coverage 4937 → 4930, 9 elements lost and 2 won back (`LineItem/OriginatorPart
 | `OrderResponse/BeneficiaryParty` | 0..n | sea/06-OrderResponse | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
 | `OrderResponse/OriginatorCustomerParty` | 0..1 | sea/06-OrderResponse | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
 
+### G1: waste, plastics, wood (2026-11-19)
+
+Stage 6, building group G1 (C77, C87, C88, C89).
+
+> C77, D42, O190: the waste movement is domestic, under Urvania's environment agency. Rinova recovers the film and disposes of nothing, so it is no longer named a disposal facility (waste/01#F2, 02#F5). The customs administration no longer receives the notification and the movement, and with its border office's contact the world's only fax number went. `CustomsParty` stays: the schema requires it in a waste notification (1..n), and it names the environment agency, the competent authority (see the question in the G1 report).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Contact/Telefax` | 0..1 | waste/01-WasteNotification, waste/02-WasteMovement | | | open |
+| `WasteMovement/DisposalFacilityParty` | 0..1 | waste/02-WasteMovement | a waste whose operation is disposal (a D code of Basel Annex IV), such as Rinova's sorting residue (labels, contaminated film) sent to an incinerator under its own notification and movement reports (O190) | waste | candidate |
+| `WasteNotification/DisposalFacilityParty` | 0..1 | waste/01-WasteNotification | the same: the residue's own notification, with the incinerator as disposal facility (O190) | waste | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

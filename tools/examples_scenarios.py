@@ -11,6 +11,7 @@ import uuid
 from decimal import Decimal
 
 import build_examples
+import codelists
 import examples_kit as kit
 import world_ids
 import world_items
@@ -2974,34 +2975,158 @@ def carnet(n, doc):
 
 # ---------------------------------------------------------------- the waste flow (Urvania, domestic)
 WASTE = kit.Flow("waste", "2026-03-23")
-WASTE_DESCRIPTION = "Mixed polyethylene production waste, sorted, in big bags"
+# The waste stream of D42: Valdara's baled polyethylene film to Rinova, about 275 t a year in twelve loads; the first
+# load on day 10 (Thursday 2 April), 54 bales, weighed on Rinova's weighbridge with Trasvia's truck T-07.
+WASTE_DESCRIPTION = "Used polyethylene stretch film and film offcuts, baled"
+WASTE_CODE = "150102"            # Urvania's waste list (XU:Waste), after the European List of Waste (O191)
+WASTE_YEAR_T, WASTE_LOADS = 275, 12
+WASTE_BALES, WASTE_GROSS = 54, 38200        # the load: bales, and the truck full on the weighbridge, kg
+WASTE_TRUCK = kit.fleet("13-xu", "T-07")
+WASTE_TARE = sum(WASTE_TRUCK["tare_kg"].values())          # tractor and trailer, empty (O134)
+WASTE_NET = WASTE_GROSS - WASTE_TARE
+WASTE_LOAD_DAY, WASTE_ACK_DAY = 10, 2
+WASTE_STREAM = "XU-ENV-WS-2026-04417"     # the agency's waste-stream number, given on its acknowledgement
+LIMIT = WORLD["road_rules_accord"]["max_combination_kg"]
+if WASTE_GROSS > LIMIT or WASTE_NET > LIMIT - WASTE_TARE:
+    raise SystemExit(f"waste: the load of {WASTE_GROSS} kg exceeds the Accord's {LIMIT} kg for a combination (O134)")
 
 
-def waste_shipment(f, tonnes, why):
-    return {"ID": V(f.number("waste-shipment", "5-xu", "Shipment"), "The movement's shipment number."),
-            "GrossWeightMeasure": qty(Decimal(tonnes) * 1000, "KGM", why),
-            "Consignment": {"ID": V(f.number("waste-consignment", "5-xu", "Consignment"), "The consignment carried "
-                                                                                          "by the road carrier.")},
-            "GoodsItem": {"ID": V("1", "The only goods item."),
-                          "Description": V(WASTE_DESCRIPTION, "What the waste is."),
-                          "HazardousRiskIndicator": V("false", "Sorted polyethylene is not hazardous waste.")}}
+def waste_item(why):
+    return {"Description": V(WASTE_DESCRIPTION, why),
+            "CommodityClassification": {"ItemClassificationCode": V(
+                WASTE_CODE, "The waste by its entry in Urvania's waste list, numbered after the European List of "
+                            "Waste: the film comes from the packaging of the parts and materials the factory receives "
+                            "and from the wrapping of its own pallets, and no chapter for the factory's activity "
+                            "(metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the "
+                            "list's rule sends it to chapter 15: 15 01 02 plastic packaging (O191).",
+                listID=codelists.NATIONAL.format("XU", "Waste"))}}
+
+
+def waste_goods():
+    return {"ID": V("1", "The only goods item: one kind of waste."),
+            "Description": V(WASTE_DESCRIPTION, "What the waste is, in words."),
+            "HazardousRiskIndicator": V("false", "Polyethylene film is not hazardous waste: its entry in the waste "
+                                                 "list has no asterisk."),
+            "Item": waste_item("The waste, in words."),
+            "ContainingPackage": {"PackagingTypeCode": V("BL", "UN/ECE Recommendation 21 code BL: bale, compressed. "
+                                                               "Loose film would fill the trailer long before its "
+                                                               "payload; pressed into bales of about 1.2 × 0.8 × "
+                                                               "1.0 m and 425 kg, two layers high, a load reaches "
+                                                               "the weight limit first (D42)."),
+                                  "PackingMaterial": V("Steel baling wire", "What holds a bale together.")}}
+
+
+def waste_load_consignment(f, why):
+    return {"ID": V(f.number("waste-load-1-consignment", "5-xu", "Consignment"), why),
+            "TotalPackagesQuantity": V(str(WASTE_BALES), f"{WASTE_BALES} bales on the truck, in two layers.")}
+
+
+def waste_places(f, actual):
+    """Where the waste is loaded and where it is delivered: the waste leg (world/documents.json)."""
+    leg = kit.flow_leg(f, "13-xu")
+    if not actual:
+        return {"DeliveryLocation": kit.leg_location(leg, "to", "The recovery facility's plant, where the waste "
+                                                                "of the stream is delivered."),
+                "EstimatedDeliveryPeriod": {"StartDate": V("2026-04-01", "The stream's year starts in April."),
+                                            "EndDate": V("2027-03-31", "And ends after twelve months."),
+                                            "Description": V(f"About one load a month, {WASTE_LOADS} in the year.",
+                                                             "How the deliveries are spread.")},
+                "Despatch": {"DespatchLocation": kit.leg_location(leg, "from", "The producer's works, where the "
+                                                                               "bales are loaded.")}}
+    return {"ActualDeliveryDate": V(f.date(WASTE_LOAD_DAY), "The load arrived at the recovery plant."),
+            "ActualDeliveryTime": V("10:05:00", "Trasvia's truck at the weighbridge."),
+            "DeliveryLocation": kit.leg_location(leg, "to", "Where the waste was delivered."),
+            "Despatch": {"ActualDespatchDate": V(f.date(WASTE_LOAD_DAY), "Loaded at the factory the same morning."),
+                         "ActualDespatchTime": V("09:35:00", "The truck left the factory; the two sites are a few "
+                                                             "kilometres apart in Ferrano."),
+                         "DespatchLocation": kit.leg_location(leg, "from", "Where the bales were loaded.")}}
+
+
+def waste_stage(why):
+    return {"ID": V("1", "The one road leg, across Ferrano."),
+            "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road transport.",
+                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+            "TransportMeans": kit.means("13-xu", "T-07"),
+            "DriverPerson": kit.person(WASTE_TRUCK["driver"]["first"], WASTE_TRUCK["driver"]["family"], why,
+                                       pid=WASTE_TRUCK["driver"]["id"])}
+
+
+def waste_stream_ref(f, why):
+    return {"ID": V(WASTE_STREAM, "The waste-stream number the environment agency gave the notified stream."),
+            "IssueDate": V(f.date(WASTE_ACK_DAY), "The day of the agency's acknowledgement."),
+            "DocumentType": V("Acknowledgement of the waste-stream notification", why),
+            "IssuerParty": party("46-xu", short=True)}
 
 
 def waste(n, doc):
     f = WASTE
     if doc["doc"] == "WasteNotification":
         return {"ID": V(f.number("notification", doc["from"], "WasteNotification"), "The notification number."),
-                "IssueDate": V(f.date(0), "Notified before the movements start."),
-                "Shipment": waste_shipment(f, 40, "The planned movement: about 40 tonnes in two truck loads.")}
+                "IssueDate": V(f.date(0), "Notified before the year's movements start."),
+                "Shipment": {"ID": V(f.number("waste-stream", "5-xu", "Shipment"), "The producer's number for the "
+                                     "notified stream as a whole: each load gets a shipment number of its own."),
+                             "NetWeightMeasure": qty(WASTE_YEAR_T, "TNE", f"The total planned for the year: about "
+                                                     f"{WASTE_LOADS} loads of about 23 tonnes."),
+                             "Consignment": {"ID": V(f.number("waste-consignment", "5-xu", "Consignment"),
+                                                     "The consignment of the notified stream, which names its "
+                                                     "carrier.")},
+                             "GoodsItem": waste_goods(),
+                             "Delivery": waste_places(f, False)}}
     if doc["doc"] == "WasteMovement":
-        return {"ID": V(f.number("movement", doc["from"], "WasteMovement"), "The movement document number."),
-                "IssueDate": V(f.date(10), "Reported when the waste has been received."),
-                "Shipment": waste_shipment(f, "38.2", "Weighed on arrival at the recovery facility.")}
+        return {"ID": V(f.number("movement", doc["from"], "WasteMovement"), "The movement report number."),
+                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Reported the day the load was received."),
+                "IssueTime": V("11:45:00", "Once the truck had been weighed empty."),
+                "Shipment": {"ID": V(f.number("waste-load-1", "5-xu", "Shipment"), "This load's own shipment "
+                                     "number, beside the stream's."),
+                             "NetWeightMeasure": qty(WASTE_NET, "KGM", "The waste received, net, from the "
+                                                     "weighbridge ticket."),
+                             "Consignment": waste_load_consignment(f, "This load's consignment, carried by the waste "
+                                                                      "carrier."),
+                             "GoodsItem": waste_goods(),
+                             "ShipmentStage": waste_stage("The driver."),
+                             "Delivery": waste_places(f, True)}}
+    if doc["doc"] == "WeightStatement":
+        t = WASTE_TRUCK["tare_kg"]
+        return {"ID": V(f.number("weighbridge", doc["from"], "WeightStatement"), "The weighbridge ticket number."),
+                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Printed after the second weighing."),
+                "IssueTime": V("10:50:00", "When the empty truck left the weighbridge."),
+                "Shipment": {"ID": V(f.numbers["waste-load-1"], "The load weighed."),
+                             "NetWeightMeasure": qty(WASTE_NET, "KGM", f"The waste: the truck full less the truck "
+                                                     f"empty, {WASTE_GROSS:,} kg − {WASTE_TARE:,} kg."),
+                             "Consignment": waste_load_consignment(f, "The consignment weighed."),
+                             "GoodsItem": waste_goods(),
+                             "ShipmentStage": {**waste_stage("The driver, who took the ticket."),
+                                               "TransportMeans": {
+                                                   **kit.means("13-xu", "T-07"),
+                                                   "MeasurementDimension": [
+                                                       {"AttributeID": V("GROSSWEIGHT", "The first weighing: the "
+                                                                         "truck with its load, on arrival."),
+                                                        "Measure": V(str(WASTE_GROSS), "Within the Accord's "
+                                                                     f"{LIMIT:,} kg for a combination.",
+                                                                     unitCode="KGM"),
+                                                        "Description": V("Loaded, at 10:07", "When it was weighed.")},
+                                                       {"AttributeID": V("TAREWEIGHT", "The second weighing: the "
+                                                                         "same truck after unloading."),
+                                                        "Measure": V(str(WASTE_TARE), f"The tractor about "
+                                                                     f"{t['tractor']:,} kg and the trailer about "
+                                                                     f"{t['trailer']:,} kg (world/parties.json).",
+                                                                     unitCode="KGM"),
+                                                        "Description": V("Empty, at 10:46", "When it was weighed.")}]}}}}
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 12, "Issued after the waste was collected and recovered.",
-                           {"AdditionalDocumentReference": ref(f, "movement", "The waste movement document.")},
-                           [{"item": "waste-recovery", "qty": "38.2", "invoice_why": "The tonnes received, from the "
-                                                                                     "waste movement document."}])
+        return kit.invoice(f, n, doc, 14, "Issued on the next working day after the load (D27).",
+                           {"AdditionalDocumentReference": [
+                               {**ref(f, "movement", "The movement report of the load billed."),
+                                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")},
+                               {"ID": V(f.number("weighbridge", "7-xu", "WeightStatement"), "The weighbridge ticket "
+                                        "whose net weight is billed."),
+                                "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")}]},
+                           [{"item": "waste-recovery", "qty": str(Decimal(WASTE_NET) / 1000),
+                             "invoice_why": "The net tonnes received, from the weighbridge ticket."}],
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(WASTE_LOAD_DAY), "The day of the "
+                                                                       "service: the load collected and received."),
+                                               "DeliveryLocation": kit.leg_location(kit.flow_leg(f, "13-xu"), "to",
+                                                                                    "Where the waste was received "
+                                                                                    "for recovery.")}})
     raise SystemExit(f"waste scenario: no document {n} {doc['doc']}")
 
 
@@ -8518,32 +8643,44 @@ def _(f, n, doc, out):
 
 @enrich("waste", "WasteNotification")
 def _(f, n, doc, out):
-    return {"WasteNotificationTypeCode": V("RECOVERY", "A notification of waste for recovery, not disposal."),
-            "ConsignmentQuantity": qty(12, "EA", "About twelve movements over the year."),
+    return {"WasteNotificationTypeCode": V("DOMESTIC", "A notification of a waste stream within Urvania under its "
+                                                      "national waste law, not of a transboundary movement: producer "
+                                                      "and recovery facility are both in Ferrano (D42)."),
+            "ConsignmentQuantity": qty(WASTE_LOADS, "EA", "About one load a month over the year."),
             "DocumentReference": {"ID": V("VI-WASTE-CONTRACT-26", "The contract between producer and recovery "
                                                                   "facility, which the notification needs.")},
-            "Signature": seal("5-xu", "VI-SIG-WN"),
-            "DisposalFacilityParty": party("7-xu", short=True)}
+            "Signature": seal("5-xu", "VI-SIG-WN")}
 
 
 @enrich("waste", "WasteMovement")
 def _(f, n, doc, out):
-    return {"WasteMovementTypeCode": V("RECOVERY", "A movement of waste for recovery."),
-            "SequenceNumberID": V("1", "The first movement under the notification."),
-            "ConsignmentQuantity": qty(12, "EA", "Of about twelve notified."),
+    return {"WasteMovementTypeCode": V("RECOVERY", "The waste goes to recovery: Rinova recycles the film into "
+                                                   "granulate (operation R3 of its permit)."),
+            "SequenceNumberID": V("1", "The first load of the stream."),
+            "ConsignmentQuantity": qty(WASTE_LOADS, "EA", "Of about twelve notified."),
             "WasteNotificationDocumentReference": {"ID": V(f.numbers["notification"],
-                                                           "The notification the movement is made under.")},
-            "WeightStatementDocumentReference": {"ID": V("RR-WB-26-0412", "The weighbridge ticket of the "
-                                                                          "recovery plant (not shown).")},
-            "DocumentReference": {"ID": V("RR-REC-26-0412", "The certificate of recovery to follow.")},
+                                                           "The notification of the stream the load belongs to."),
+                                                   "IssueDate": V(f.date(0), "Its date.")},
+            "WeightStatementDocumentReference": {"ID": V(f.number("weighbridge", "7-xu", "WeightStatement"),
+                                                         "The weighbridge ticket of the load, whose net weight this "
+                                                         "report states."),
+                                                 "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")},
+            "DocumentReference": [waste_stream_ref(f, "The agency's acknowledgement, whose number each report of "
+                                                      "the stream quotes; a domestic stream of non-hazardous waste "
+                                                      "for recovery needs no consent (D42)."),
+                                  {"ID": V("RR-REC-26-0412", "The certificate of recovery to follow.")}],
             "DocumentDistribution": {"DocumentTypeCode": V("WasteMovement", "The document distributed: this "
                                                                             "movement document."),
                                      "DistributionTypeCode": V("ELECTRONICCOPY", "Sent electronically, as a copy."),
                                      "DistributionType": Detail("the producer must keep it with the notification",
                                                                 "why the producer gets a copy."),
                                      "Party": party("5-xu", short=True)},
-            "Signature": seal("7-xu", "RR-SIG-WM"),
-            "DisposalFacilityParty": party("7-xu", short=True)}
+            "Signature": seal("7-xu", "RR-SIG-WM")}
+
+
+@enrich("waste", "WeightStatement")
+def _(f, n, doc, out):
+    return {"WeightStatementTypeCode": V("WEIGHBRIDGE", "A weighbridge ticket: the vehicle and its load weighed.")}
 
 
 @enrich("plastics", "Waybill")

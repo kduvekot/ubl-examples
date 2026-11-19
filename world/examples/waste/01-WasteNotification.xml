@@ -8,7 +8,7 @@
   <cbc:UUID>96a4f1da-8c13-5fd0-9418-114168f14a1f</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>09:28:00-01:00</cbc:IssueTime>
-  <cbc:WasteNotificationTypeCode listID="urn:ubl-examples:world:codelist:WasteNotificationTypeCode">RECOVERY</cbc:WasteNotificationTypeCode>
+  <cbc:WasteNotificationTypeCode listID="urn:ubl-examples:world:codelist:WasteNotificationTypeCode">DOMESTIC</cbc:WasteNotificationTypeCode>
   <cbc:ConsignmentQuantity unitCode="EA">12</cbc:ConsignmentQuantity>
   <cac:Signature>
     <cbc:ID>VI-SIG-WN</cbc:ID>
@@ -71,22 +71,21 @@
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_k4r7</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_p3wz</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Customs Administration of Urvania</cbc:Name>
+      <cbc:Name>Environment Agency of Urvania</cbc:Name>
     </cac:PartyName>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4180202968066555</cbc:ID>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">POSTAL</cbc:AddressTypeCode>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160204417730582</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-      <cbc:Postbox>PB 18</cbc:Postbox>
-      <cbc:StreetName languageID="qau">Zalsul Han Trurdrek</cbc:StreetName>
-      <cbc:StreetName languageID="en-XU">Strada del Confine</cbc:StreetName>
-      <cbc:BuildingNumber>22</cbc:BuildingNumber>
-      <cbc:CityName languageID="qau">Menbaz</cbc:CityName>
-      <cbc:CityName languageID="en-XU">Valico Euridice</cbc:CityName>
-      <cbc:PostalZone>4530</cbc:PostalZone>
+      <cbc:StreetName languageID="qau">Bek Stuzman Drarban</cbc:StreetName>
+      <cbc:StreetName languageID="en-XU">Via delle Acque</cbc:StreetName>
+      <cbc:BuildingNumber>8</cbc:BuildingNumber>
+      <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+      <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+      <cbc:PostalZone>4150</cbc:PostalZone>
       <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
       <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
       <cac:Country>
@@ -95,17 +94,16 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Border office</cbc:Name>
-      <cbc:JobTitle>Customs officer</cbc:JobTitle>
-      <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 1 041 850 3855</cbc:Telephone>
-      <cbc:Telefax>+999 1 041 545 1432</cbc:Telefax>
-      <cbc:ElectronicMail>border@customs-xu.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
+      <cbc:Name>Waste reporting office</cbc:Name>
+      <cbc:JobTitle>Waste reporting officer</cbc:JobTitle>
+      <cbc:Department>Waste and resources</cbc:Department>
+      <cbc:Telephone>+999 1 041 732 5019</cbc:Telephone>
+      <cbc:ElectronicMail>waste@environment-xu.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–16:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_k4r7</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_p3wz</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:NotifierParty>
@@ -118,20 +116,12 @@
   </cac:NotifierParty>
   <cac:CustomsParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_k4r7</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_p3wz</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Customs Administration of Urvania</cbc:Name>
+      <cbc:Name>Environment Agency of Urvania</cbc:Name>
     </cac:PartyName>
   </cac:CustomsParty>
-  <cac:DisposalFacilityParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Rinova Recovery</cbc:Name>
-    </cac:PartyName>
-  </cac:DisposalFacilityParty>
   <cac:RecoveryFacilityParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
@@ -191,7 +181,7 @@
   </cac:WasteProducerParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0205</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">40000</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure unitCode="TNE">275</cbc:NetWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0206</cbc:ID>
       <cac:CarrierParty>
@@ -227,24 +217,61 @@
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
         <cac:PartyAuthorization>
-          <cbc:Purpose>International road haulage</cbc:Purpose>
+          <cbc:Purpose>Transport of non-hazardous waste by road</cbc:Purpose>
           <cac:ValidityPeriod>
-            <cbc:EndDate>2030-06-30</cbc:EndDate>
+            <cbc:EndDate>2028-10-31</cbc:EndDate>
           </cac:ValidityPeriod>
           <cac:Certificate>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:haulage-licence">XU-HAUL-2020-0877</cbc:ID>
-            <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">PERMIT</cbc:CertificateTypeCode>
-            <cbc:CertificateType languageID="qau">Kusul treznul</cbc:CertificateType>
-            <cbc:CertificateType languageID="en-XU">Operating permit</cbc:CertificateType>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:waste-carrier">XU-ENV-T-2023-0187</cbc:ID>
+            <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">WASTECARRIER</cbc:CertificateTypeCode>
+            <cbc:CertificateType languageID="qau">Drunvir sundraz dradrek</cbc:CertificateType>
+            <cbc:CertificateType languageID="en-XU">Waste carrier registration</cbc:CertificateType>
           </cac:Certificate>
         </cac:PartyAuthorization>
       </cac:CarrierParty>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Description>Mixed polyethylene production waste, sorted, in big bags</cbc:Description>
+      <cbc:Description>Used polyethylene stretch film and film offcuts, baled</cbc:Description>
       <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+      <cac:Item>
+        <cbc:Description>Used polyethylene stretch film and film offcuts, baled</cbc:Description>
+        <cac:CommodityClassification>
+          <cbc:ItemClassificationCode listID="urn:ubl-examples:world:XU:codelist:WasteCode">150102</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel baling wire</cbc:PackingMaterial>
+      </cac:ContainingPackage>
     </cac:GoodsItem>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Rinova Recovery plant, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:DeliveryLocation>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-04-01</cbc:StartDate>
+        <cbc:EndDate>2027-03-31</cbc:EndDate>
+        <cbc:Description>About one load a month, 12 in the year.</cbc:Description>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cac:DespatchLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DespatchLocation>
+      </cac:Despatch>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>VI-WASTE-CONTRACT-26</cbc:ID>

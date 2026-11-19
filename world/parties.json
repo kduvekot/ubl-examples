@@ -365,7 +365,7 @@
    ],
    "h": 2,
    "kind": "waste",
-   "what": "Takes production waste from the manufacturer and invoices the removal.",
+   "what": "Recovers polyethylene from the production waste of several factories, Valdara's among them: it collects the baled film, weighs each load on its weighbridge, reports it to the environment agency and invoices the net tonnes; it sells the granulate it makes, certified for its recycled content (decisions D41, D42).",
    "how": "Waste movements must be announced and tracked before the waste leaves the site. UBL's waste notification and waste movement documents describe the waste, its producer and the facility that recovers or disposes of it, and the same parties then appear on the invoice for the removal service.",
    "identity": {
     "name": "Rinova Recovery",
@@ -583,7 +583,7 @@
    ],
    "h": 1,
    "kind": "depot",
-   "what": "Trucks the goods across the land border, both ways: benches to Bayvarra, slats and film back to Urvania.",
+   "what": "Trucks the goods across the land border, both ways: benches to Bayvarra, slats and film back to Urvania; registered with Urvania's environment agency as a waste carrier, it also takes Valdara's baled waste film to Rinova across Ferrano.",
    "how": "Road carriers handle many short jobs with frequent changes. With UBL they receive transport instructions, report status at each stop and invoice the freight in one structured format, so every customer, large or small, can process them automatically.",
    "identity": {
     "name": "Trasvia Haulage",
@@ -627,6 +627,15 @@
      "business": "services"
     },
     "authorization": {
+     "purpose": "Transport of non-hazardous waste by road",
+     "valid_until": "2028-10-31",
+     "certificate": "XU-ENV-T-2023-0187",
+     "register": "waste-carrier",
+     "type_code": "WASTECARRIER",
+     "type": "Waste carrier registration",
+     "note": "Shown where Trasvia carries waste (D42); its road haulage licence XU-HAUL-2020-0877 (haulage-licence register, valid to 2030-06-30) covers its other carriage and is not shown in a document."
+    },
+    "haulage_licence": {
      "purpose": "International road haulage",
      "valid_until": "2030-06-30",
      "certificate": "XU-HAUL-2020-0877",
@@ -658,6 +667,10 @@
      "type": "395",
      "loading_m": "13.6",
      "pallets": 33,
+     "tare_kg": {
+      "tractor": 7800,
+      "trailer": 7500
+     },
      "driver": {
       "first": "Ilario",
       "family": "Bencetti",
@@ -4213,6 +4226,46 @@
      }
     },
     "week": "always"
+   }
+  },
+  {
+   "id": "46-xu",
+   "n": "46",
+   "name": "Environment Agency (XU)",
+   "cat": "government",
+   "c": "XU",
+   "at": [
+    74,
+    115
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Urvania's environment agency, the competent authority of its waste law: it issues the permits of waste treatment plants, registers waste carriers, and receives the producers' notifications of their waste streams, which it acknowledges with a waste-stream number, and the facilities' reports of each load received (decision D42).",
+   "how": "A waste authority must know which waste moves, from whom and to which facility. UBL's waste notification tells it the waste stream before the movements start, and the waste movement reports each load as it is received, so the authority can follow the waste from the producer to its recovery without collecting the figures again.",
+   "identity": {
+    "name": "Environment Agency of Urvania",
+    "kind": "public",
+    "registry_id": "xu_p3wz",
+    "endpoint": "XU:xu_p3wz",
+    "contact": {
+     "name": "Waste reporting office",
+     "email": "waste@environment-xu.example",
+     "telephone": "+999 1 041 732 5019",
+     "department": "Waste and resources",
+     "hours": "Weekdays 08:00–16:00",
+     "job_title": "Waste reporting officer"
+    },
+    "address": {
+     "StreetName": "Via delle Acque",
+     "BuildingNumber": "8",
+     "CityName": "Ferrano",
+     "PostalZone": "4150",
+     "CountrySubentity": "Province of Ferrano",
+     "ID": "4160204417730582"
+    },
+    "industry": "8412",
+    "language": "en",
+    "week": "office"
    }
   }
  ],
