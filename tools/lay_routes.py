@@ -17,6 +17,9 @@ Run it when a place, the terrain or the network changes; tools/world_model.py th
 Usage: python3 tools/lay_routes.py            lay and write world/map.json; print every way with its length and its
                                               steepest square
        python3 tools/lay_routes.py --report   print the report for world/map.json as it is
+       python3 tools/lay_routes.py --refit    keep every route, but lay again the minor roads to villages that no
+                                              longer keep to the road rule on their own line (routing.Land.half_ok;
+                                              after a change of the terrain or the rule), and write world/map.json
 """
 import json
 import math
@@ -239,7 +242,7 @@ def lay(world, terrain, land, log=print, upto=None):
     return out, list(st)
 
 
-def lay_villages(world, terrain, land, routes, log=print):
+def lay_villages(world, terrain, land, routes, log=print, cls="minor", skip=frozenset()):
     """The minor roads to the villages (map "villages", O152): each village is joined to the road network by a minor
     road (up to 10 %, bridges as before, no tunnel), laid over the terrain with the same router after every other
     way, so that the main roads, the railways, the pipelines and the access roads stay as they are. The road ends
@@ -302,7 +305,7 @@ def lay_villages(world, terrain, land, routes, log=print):
                      and land.country[q[0]][q[1]] == land.country[c[0]][c[1]] and q not in near_struct}
             if not goals or not starts:
                 continue
-            got = routing.route(land, built, "minor", sorted(starts), goals, box=box, avoid=vsq | (near_struct - goals))
+            got = routing.route(land, built, cls, sorted(starts), goals, box=box, avoid=vsq | (near_struct - goals))
             if got:
                 break
         else:
@@ -318,7 +321,7 @@ def lay_villages(world, terrain, land, routes, log=print):
         out.append(r)
         return True
 
-    todo = sorted(villages, key=near_road)
+    todo = sorted([v for v in villages if tuple(v["c"]) not in skip], key=near_road)
     while todo:                       # passes: a village far from every road is tried again once others have roads
         failed = [v for v in todo if link(v) is None]
         if len(failed) == len(todo):
@@ -349,8 +352,95 @@ def write(routes, station):
     world_data.save("map", m)
 
 
+def refit(world, terrain, land):
+    """The routes, with the village roads that leave the road rule on any square laid again (owner, 2026-11-19,
+    MO002 option c), each village in turn:
+      1. a way that keeps to the rule on every square, if it is reasonable (see reasonable below);
+      2. otherwise a way on which the builder cuts or fills at most routing.ROAD_SLACK_M on each half of a square
+         (class "minor-cut"; the world model makes the cut), if that is reasonable;
+      3. otherwise no road: the village is reached by a track or by sea (as Felulaka's story says).
+    Returns (routes, the ids taken out, {village road id: what became of it})."""
+    routes = [r for r in world["routes"] if r["mode"] in ("road", "rail", "pipeline")]
+    c = routing.CLASSES["minor"]
+    old = {r["id"]: r for r in routes}
+
+    def breaks(r):
+        P = [tuple(q[:2]) for q in r["pts"]]
+        br = {tuple(q) for q in r.get("bridges", [])}
+        for a, b in zip(P, P[1:]):
+            if a in br or b in br:
+                continue
+            if not (land.half_ok(a, (b[0] - a[0], b[1] - a[1]), c["half"], c["lean"])
+                    and land.half_ok(b, (a[0] - b[0], a[1] - b[1]), c["half"], c["lean"])):
+                return True
+        return False
+
+    def reasonable(r):
+        """A builder's road: at most twice as long as the road it replaces (or REFIT_EXTRA squares longer), and
+        not climbing more than REFIT_CLIMB_M above the higher of its two ends."""
+        P = [tuple(q[:2]) for q in r["pts"]]
+        n0 = len(old[r["id"]]["pts"]) if r["id"] in old else 1
+        if len(P) > max(2 * n0, n0 + REFIT_EXTRA):
+            return False
+        hs = [land.hc[i][j] for i, j in P]
+        return max(hs) <= max(hs[0], hs[-1]) + REFIT_CLIMB_M
+
+    def cut_too_deep(keep, new):
+        """The new roads on which the world model, fitting the land to them, moves a corner more than
+        routing.ROAD_SLACK_M (the router's allowance is measured on the road's line; the model's fit, with corners
+        held at the sea, can cut deeper: this checks the result)."""
+        w = json.loads(json.dumps(world))
+        w["routes"] = [r for r in w["routes"] if r["mode"] not in ("road", "rail", "pipeline")] + json.loads(json.dumps(keep + new))
+        model, _ = wm.build(w)
+        V, E = model["v"], terrain_e
+        return [r for r in new if max(abs(V[i + a][j + b] - E[i + a][j + b]) for i, j, *_ in r["pts"] for a in (0, 1)
+                                      for b in (0, 1)) > routing.ROAD_SLACK_M + 1]
+    terrain_e = wm.load_terrain()[1]
+
+    out = {r["id"] for r in routes if r["id"].startswith("village-") and breaks(r)}
+    keep = [r for r in routes if r["id"] not in out]
+    print(f"refit: laying again {len(out)} village roads: {', '.join(sorted(out))}")
+    fate = {}
+    for cls in ("minor", "minor-cut"):
+        refused = set()
+        for _ in range(8):        # lay; if a road is unreasonable, set its village aside and lay them all again
+            new = lay_villages(world, terrain, land, keep, log=lambda s: None, cls=cls, skip=refused)
+            bad = {tuple(int(x) for x in r["id"].split("-")[1:3]) for r in new if not reasonable(r)}
+            if not bad and cls == "minor-cut" and new:
+                bad = {tuple(int(x) for x in r["id"].split("-")[1:3]) for r in cut_too_deep(keep, new)}
+            if bad:
+                refused |= bad
+                continue
+            keep += new
+            for r in new:
+                fate[r["id"]] = "within the rule" if cls == "minor" else f"with cuts of at most {routing.ROAD_SLACK_M} m"
+            break
+    road_sq = {tuple(q[:2]) for r in keep if r["mode"] == "road" for q in r["pts"]}
+    villages = {tuple(v["c"]): v for v in world.get("villages", [])}
+    linked = {r["id"] for r in keep}
+    for vid in out | set(fate):
+        if vid in linked:
+            continue
+        vc = tuple(int(x) for x in vid.split("-")[1:3])
+        beside = any((vc[0] + a, vc[1] + b) in road_sq for a, b in ((1, 0), (0, 1), (-1, 0), (0, -1)))
+        fate[vid] = "beside a road now" if beside else "no road (a track or the sea)"
+    for vid in sorted(fate):
+        v = villages.get(tuple(int(x) for x in vid.split("-")[1:3]), {})
+        print(f"  {vid} ({v.get('name') or 'unnamed'}): {fate[vid]}")
+    return keep, out, fate
+
+
+REFIT_EXTRA = 4                                            # squares a relaid road may be longer than twice the old one
+REFIT_CLIMB_M = 300                                        # metres it may climb above the higher of its ends
+
+
 def main():
     world, terrain, land = load()
+    if "--refit" in sys.argv:
+        routes, _, _ = refit(world, terrain, land)
+        write(routes, world["stations"][0]["at"])
+        report(world_data.load())
+        return
     if "--report" not in sys.argv:
         print("laying the network:")
         routes, station = lay(world, terrain, land)

@@ -291,11 +291,25 @@ function coastCorners(g, i, j, onLand) {
     const other = n => n && (onLand ? !n.land && !n.water : n.land);
     if (!(other(n1) && other(n2) && other(nd))) continue;
     if (onLand && (me.building || me.house || me.links || me.yard || me.urban)) continue;
+    if (V[i + (d1[0] + d2[0] > 0 ? 1 : 0)][j + (d1[1] + d2[1] > 0 ? 1 : 0)] > 1) continue;   // a cliff corner: no beach
     const c = [d1[0] * .5 + d2[0] * .5, d1[1] * .5 + d2[1] * .5], a = [d1[0] * .5 - d2[0] * .5, d1[1] * .5 - d2[1] * .5], b = [d2[0] * .5 - d1[0] * .5, d2[1] * .5 - d1[1] * .5];
     poly(g, [tp(i, j, ...a), tp(i, j, ...c), tp(i, j, ...b)], onLand ? COLORS.sea2 : COLORS.grass);
     band(g, i, j, [a[0] * .92, a[1] * .92], [b[0] * .92, b[1] * .92], .09, COLORS.sand);
     covered.add(d1.join()); covered.add(d2.join()); }
   return covered; }
+// a cliff: where a land square's edge along open water stands above the water, a face from the edge down to the water,
+// on the edges that face the viewer (the others are behind the land)
+function cliffFaces(g, i, j) { const [ri, rj] = R(i, j);
+  for (const [di, dj] of DIRS) { const nb = tiles[i + di]?.[j + dj]; if (!openWater(nb)) continue;
+    const [ni, nj] = R(i + di, j + dj); if (ni + nj <= ri + rj) continue;
+    const pv = [-dj, di], e = [[di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5], [di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5]];
+    const top = e.map(([u, v]) => tileWorld(i + u, j + v)), hs = e.map(([u, v]) => heightAt(i + u, j + v));
+    if (Math.max(...hs) <= 1) continue;
+    SEA0 = true; const foot = e.map(([u, v]) => tileWorld(i + u, j + v)); SEA0 = false;
+    const lit = ni > ri ? "#9a8e7a" : "#7d725f";                 // the face towards the light is brighter
+    poly(g, [top[0], top[1], foot[1], foot[0]], lit);
+    g.strokeStyle = "rgba(60,50,40,.35)"; g.lineWidth = .6;          // strata
+    for (const f of [.33, .66]) { g.beginPath(); g.moveTo(top[0][0], top[0][1] + (foot[0][1] - top[0][1]) * f); g.lineTo(top[1][0], top[1][1] + (foot[1][1] - top[1][1]) * f); g.stroke(); } } }
 // approach lights: a row of lights on the runway axis in the approach zone
 function approachLights(g, i, j) { for (const u of [-.3, 0, .3]) { const [x, y] = tp(i, j, u, u * .0); g.fillStyle = "#fff4b0"; g.fillRect(x - 1, y - 2, 2, 2); g.fillStyle = "rgba(0,0,0,.4)"; g.fillRect(x - .5, y, 1, 2); } }
 // the colour of the land at height h (metres): lowland as it is, uplands a little drier and paler, the high ground
@@ -308,7 +322,7 @@ function mix0(a, b, f) { const p = x => [parseInt(x.slice(1, 3), 16), parseInt(x
   const A = p(a), B = p(b); return "#" + A.map((c, k) => Math.round(c + (B[k] - c) * f).toString(16).padStart(2, "0")).join(""); }
 function groundTile(g, i, j, color) {
   const c = [[-.5, -.5], [.5, -.5], [.5, .5], [-.5, .5]].map(([u, v]) => tileWorld(i + u, j + v));
-  poly(g, c, groundFill(i, j, color));
+  poly(g, c, SEA0 ? color : groundFill(i, j, color));       // open water is level: no slope shading
   if (showGrid) { g.strokeStyle = "rgba(0,0,0,.12)"; g.lineWidth = 1; g.stroke(); } }
 function groundFill(i, j, color) {
   // slope shading from the corner heights (metres): the light comes from the north-west and from above
@@ -357,18 +371,21 @@ function paintWorld(g, box, level) { const detail = level === 2;
     if ((t.shallow ??= DIRS.some(([a, b]) => tiles[i + a]?.[j + b]?.land))) continue;
     const [x, y] = tileWorld(i, j); if (!vis(x, y, 2 * TW)) continue;
     const fill = groundFill(i, j, t.n > .55 ? "#2c65a0" : COLORS.sea); (seaFills.get(fill) || seaFills.set(fill, []).get(fill)).push(i, j); }
+  SEA0 = true;
   for (const [fill, ij] of seaFills) { g.fillStyle = fill;          // in paths of up to SEA_BATCH squares (one huge path is slow)
     for (let k0 = 0; k0 < ij.length; k0 += 2 * SEA_BATCH) { g.beginPath();
       for (let k = k0; k < Math.min(ij.length, k0 + 2 * SEA_BATCH); k += 2) { [[-.5, -.5], [.5, -.5], [.5, .5], [-.5, .5]].forEach(([u, v], m) => { const [x, y] = tileWorld(ij[k] + u, ij[k + 1] + v); m ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath(); }
       g.fill(); } }
+  SEA0 = false;
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; const [x, y] = tileWorld(i, j); if (!vis(x, y, 2 * TW)) continue;
     if (stream(t)) { drawStream(g, i, j, t); if (t.approach && detail) approachLights(g, i, j); continue; }
     if (!t.land) { const shallow = t.shallow ??= DIRS.some(([a, b]) => tiles[i + a]?.[j + b]?.land);
       if (openSea(t) && !shallow) continue;          // drawn already
+      SEA0 = openWater(t);
       groundTile(g, i, j, t.water ? (t.n > .5 ? "#3d7fbf" : "#3a7ab8") : shallow ? COLORS.sea2 : (t.n > .55 ? "#2c65a0" : COLORS.sea));
       coastCorners(g, i, j, false);
-      if (t.approach && detail) approachLights(g, i, j); continue; }
+      if (t.approach && detail) approachLights(g, i, j); SEA0 = false; continue; }
     const yUp = y;
     let base = t.yard ? "#a59c87" : t.t === "field" ? (t.n > .5 ? "#b9a64a" : "#a9a04a") : t.t === "rock" ? COLORS.rock
       : t.t === "heath" ? (t.n > .5 ? COLORS.heath : COLORS.heath2) : t.t === "marsh" ? COLORS.marsh
@@ -382,6 +399,7 @@ function paintWorld(g, box, level) { const detail = level === 2;
     DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || stream(nb) || cut.has(di + "," + dj)) return; const pv = [-dj, di];
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
         tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : steepCoast ? "#8a8272" : COLORS.sand); });
+    cliffFaces(g, i, j);
     if (t.urban && (level || !t.village)) urbanGround(g, i, j, t);
     // hedges around fields, fences around industry yards
     if (!detail) continue;
@@ -832,9 +850,13 @@ function fit() { const r = cv.getBoundingClientRect(), pad = 16, w = LAND.x1 - L
   view.s = Math.max(MIN_S, Math.min(2.5, Math.min((r.width - 2 * pad) / w, (r.height - 2 * pad) / h)));
   view.x = (r.width - w * view.s) / 2 - LAND.x0 * view.s; view.y = (r.height - h * view.s) / 2 - LAND.y0 * view.s; view.fitted = true; }
 const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
+// open water (the sea and the estuary) lies at 0 whatever the heights of its corners: a coastal corner may keep the
+// height of the land round it (a cliff, owner 2026-11-19); SEA0 is set while open water is drawn
+let SEA0 = false;
+const openWater = t => t && ((!t.land && !t.water) || t.estuary);
 // world pixel position of an original tile, in the current rotation
 const tileWorld = (i, j) => { const a = rot === 0 ? i : rot === 1 ? H - 1 - j : rot === 2 ? W - 1 - i : j, b = rot === 0 ? j : rot === 1 ? i : rot === 2 ? H - 1 - j : W - 1 - i;
-  return [(a - b) * TW / 2 + OX, (a + b) * TH / 2 + OY - heightAt(i, j) * HU]; };
+  return [(a - b) * TW / 2 + OX, (a + b) * TH / 2 + OY - (SEA0 ? 0 : heightAt(i, j)) * HU]; };
 // world position of a point inside tile (i, j): u, v in tile units from its centre; while a deck is drawn (DECK
 // set), at the deck's height instead of the ground's
 let DECK = null;
@@ -893,7 +915,8 @@ const half = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 // middle of each tile edge it crosses (rail and river), or through every tile centre (roads and pipelines, which
 // bend at right angles); a road leg starts and ends at the edge of its buildings (its first and last tiles)
 function wayPoints(mode, path) {
-  if (mode === "sea" || mode === "air" || mode === "pipeline") return path.map(p => tileWorld(...p));
+  if (mode === "sea") { SEA0 = true; const out = path.map(p => tileWorld(...p)); SEA0 = false; return out; }
+  if (mode === "air" || mode === "pipeline") return path.map(p => tileWorld(...p));
   // a point of a road or rail way at (x, y) in tile units, between tiles a and b of its path (the same tile for a
   // tile's middle): on the ground, or on a deck (a bridge, a tunnel, an approach)
   const at = (x, y, a, b) => { const ta = tiles[a[0]]?.[a[1]], tb = tiles[b[0]]?.[b[1]]; let h;
