@@ -1272,7 +1272,8 @@ department, delivered, at its list price of 499.00, which the tender
 catalogue calls the contract price. Lumeway sells it to the department store and to
 the island's importer at a trade price of 520.00, a margin of about 22 %
 after the truck from Ferrano. The store sells it to a shopper at a shop
-price of 749.00, or 674.10 during the spring promotion, 10 % off. The
+price of 749.00, or 674.10 in the two weeks of 10 % off when its home and
+garden department reopens after a renovation on 11 May. The
 island's shop price is not yet settled. The spare side frame goes from
 Valdara to Lumeway at 47.50; Lumeway's trade price for it is 64.00, and
 58.00 on its revised list of 20 May. To the island Lumeway sells it at 67.00, CIF Selanu: a price

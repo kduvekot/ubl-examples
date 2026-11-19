@@ -18,7 +18,7 @@ A consumer buys in the shop and gets a receipt.
   The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BS-PR-26-0239**  
+- `ID` = **BS-PR-26-0240**  
   The till's receipt number.
 - `UUID` = **bcdeb9a7-e515-519a-b488-de52151e844f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -513,7 +513,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PR-26-0239</cbc:ID>
+  <cbc:ID>BS-PR-26-0240</cbc:ID>
   <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>

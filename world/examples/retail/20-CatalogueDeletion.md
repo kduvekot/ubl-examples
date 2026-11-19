@@ -18,7 +18,7 @@ The distributor's winter catalogue takes over on 20 June, the start of winter in
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0238**  
+- `ID` = **LD-DOC-26-0239**  
   The sender's number for this document.
 - `UUID` = **f9877c55-f962-5da6-86c9-7b721989951a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -251,7 +251,7 @@ Inside `ContractorCustomerParty`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0238</cbc:ID>
+  <cbc:ID>LD-DOC-26-0239</cbc:ID>
   <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
   <cbc:Name>Withdrawal of the catalogue for the Lumeport store</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>

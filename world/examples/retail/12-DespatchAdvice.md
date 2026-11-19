@@ -25,7 +25,7 @@ The distributor announces the delivery and the truck that brings it.
 - `IssueDate` = **2026-04-29**  
   The day the truck was loaded at the distribution centre.
 - `IssueTime` = **15:34:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  When the truck was loaded and the carrier had signed its consignment note, on the afternoon before the delivery (retail/12#F4, D34); in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage in your receipt advice.**  
@@ -226,6 +226,28 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
+- `Consignment/DocumentReference/ID` = **BF-WB-26-0231**  
+  The carrier's consignment note, issued when the truck was loaded (retail/12#F11).
+- `Consignment/DocumentReference/DocumentType` = **Consignment note**  
+  What the document is.
+- `ShipmentStage/ID` = **1**  
+  The one stage: the truck from the distribution centre to the store.
+- `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `ShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **395** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: truck with curtain-side trailer; the fleet of Bayforth Forwarding (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 395 = Truck, with trailer.
+- `ShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2203** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The registration plate of the truck; the fleet of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+- `ShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV TR 0817** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+- `ShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **LOADINGLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The length of the loading floor. The code is from the Trade Accord's dimension attribute list: LOADINGLENGTH = Loading length. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
+  Room for 33 pallets.
 - `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-30**  
   Expected after the usual transit by road.
 - `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-30**  
@@ -236,8 +258,6 @@ Inside `Shipment`:
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  One kind of goods on the pallet.
 - `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 001 of 006**  
@@ -338,32 +358,10 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
-  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/TransportMeans/RegistrationNationality` = **Bayvarra**  
-  The same, in words.
-- `TransportHandlingUnit/TransportMeans/TransportMeansTypeCode` = **395** (listID `UNECE Recommendation 28`)  
-  The kind of means of transport: truck with curtain-side trailer; the fleet of Bayforth Forwarding (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 395 = Truck, with trailer.
-- `TransportHandlingUnit/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2203** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
-  The registration plate of the truck; the fleet of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
-- `TransportHandlingUnit/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV TR 0817** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
-  The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
-- `TransportHandlingUnit/TransportMeans/MeasurementDimension/AttributeID` = **LOADINGLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  The length of the loading floor. The code is from the Trade Accord's dimension attribute list: LOADINGLENGTH = Loading length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
-  Room for 33 pallets.
-- `TransportHandlingUnit/GoodsItem/ID` = **1**  
-  The goods on the pallet, as one goods item.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **LD-TR-26-0227**  
-  The transport booking the pallet travels under.
-- `TransportHandlingUnit/ShipmentDocumentReference/DocumentTypeCode` = **TransportExecutionPlanRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-TR-26-0227 is the example retail/11, a TransportExecutionPlanRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlanRequest = Transport Execution Plan Request.
 - `TransportHandlingUnit/ID` = **095206100003729026** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  One kind of goods on the pallet.
 - `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 002 of 006**  
@@ -468,8 +466,6 @@ Inside `Shipment`:
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  One kind of goods on the pallet.
 - `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 003 of 006**  
@@ -574,8 +570,6 @@ Inside `Shipment`:
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  One kind of goods on the pallet.
 - `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 004 of 006**  
@@ -680,8 +674,6 @@ Inside `Shipment`:
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  One kind of goods on the pallet.
 - `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 005 of 006**  
@@ -786,8 +778,6 @@ Inside `Shipment`:
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  One kind of goods on the pallet.
 - `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 006 of 006**  
@@ -1104,7 +1094,28 @@ Inside `DespatchLine`:
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
+      <cac:DocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:DocumentReference>
     </cac:Consignment>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
+        </cac:RoadTransport>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:TransportMeans>
+    </cac:ShipmentStage>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-04-30</cbc:StartDate>
@@ -1117,7 +1128,6 @@ Inside `DespatchLine`:
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729019</cbc:TraceID>
@@ -1208,31 +1218,10 @@ Inside `DespatchLine`:
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
-      <cac:TransportMeans>
-        <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
-        <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
-        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
-        <cac:RoadTransport>
-          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
-          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
-        </cac:RoadTransport>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
-        </cac:MeasurementDimension>
-      </cac:TransportMeans>
-      <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
-      </cac:GoodsItem>
-      <cac:ShipmentDocumentReference>
-        <cbc:ID>LD-TR-26-0227</cbc:ID>
-        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
-      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729026</cbc:TraceID>
@@ -1327,7 +1316,6 @@ Inside `DespatchLine`:
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729033</cbc:TraceID>
@@ -1422,7 +1410,6 @@ Inside `DespatchLine`:
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729040</cbc:TraceID>
@@ -1517,7 +1504,6 @@ Inside `DespatchLine`:
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729057</cbc:TraceID>
@@ -1612,7 +1598,6 @@ Inside `DespatchLine`:
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729064</cbc:TraceID>

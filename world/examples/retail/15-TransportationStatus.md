@@ -2,7 +2,7 @@
 
 *Example 15 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Transportation Status in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA)*
 
-The carrier answers the request: the truck is on its way and arrives in the afternoon.
+The carrier answers the request on the morning of the delivery: the truck is on its way and expected at the store at 10:15.
 
 [The XML file](15-TransportationStatus.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,16 +18,16 @@ The carrier answers the request: the truck is on its way and arrives in the afte
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-TS-26-0233**  
+- `ID` = **BF-TS-26-0234**  
   The sender's status report number.
-- `CarrierAssignedID` = **BF-ROAD-26-0231**  
-  The carrier's own number for the job.
+- `CarrierAssignedID` = **BF-NATROAD-26-0217**  
+  The carrier's own number for the carriage, as on its consignment note (retail/15#F1).
 - `UUID` = **c745dc93-d27a-532f-bd4c-8f30bcd9dadf**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-29**  
+- `IssueDate` = **2026-04-30**  
   Answered the same morning.
-- `IssueTime` = **11:49:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **09:35:00-01:00**  
+  Answered fifteen minutes after the request; in the issuer's local time, with its offset from UTC (D27).
 - `TransportationStatusTypeCode` = **CURRENT** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
   The current status. The code is from the Trade Accord's transportation status type list: CURRENT = Current status.
 
@@ -42,13 +42,15 @@ Inside `Consignment`:
 
 Inside `TransportEvent`:
 
-- `OccurrenceDate` = **2026-04-29**  
+- `OccurrenceDate` = **2026-04-30**  
   The day the event took place.
+- `OccurrenceTime` = **09:30:00**  
+  When the truck's position was taken.
 - `TransportEventTypeCode` = **ENROUTE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ENROUTE = En route.
-- `Description` = **On its way from the distribution centre; arrival expected at 14:00.**  
+- `Description` = **On its way from the distribution centre; expected at the store at 10:15.**  
   What happened, in words.
-- `Location/Name` = **Marrowdale ring road**  
+- `Location/Name` = **On the road from Marrowdale to Lumeport**  
   Where it happened.
 
 ### Sender Party
@@ -180,10 +182,10 @@ Inside `TransportationStatusRequestDocumentReference`:
 
 Inside `UpdatedDeliveryTransportEvent`:
 
-- `OccurrenceDate` = **2026-04-29**  
+- `OccurrenceDate` = **2026-04-30**  
   Today.
-- `OccurrenceTime` = **14:00:00**  
-  The expected arrival.
+- `OccurrenceTime` = **10:15:00**  
+  The expected arrival: the truck left Marrowdale at 09:00, and the road to the store takes about an hour and a quarter (retail/15#F4).
 - `Description` = **Expected arrival at the store.**  
   In words.
 - `Location/ID` = **9522610900019** (schemeID `GS1 GLN`)  
@@ -200,21 +202,22 @@ Inside `UpdatedDeliveryTransportEvent`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-TS-26-0233</cbc:ID>
-  <cbc:CarrierAssignedID>BF-ROAD-26-0231</cbc:CarrierAssignedID>
+  <cbc:ID>BF-TS-26-0234</cbc:ID>
+  <cbc:CarrierAssignedID>BF-NATROAD-26-0217</cbc:CarrierAssignedID>
   <cbc:UUID>c745dc93-d27a-532f-bd4c-8f30bcd9dadf</cbc:UUID>
-  <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>11:49:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-30</cbc:IssueDate>
+  <cbc:IssueTime>09:35:00-01:00</cbc:IssueTime>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">CURRENT</cbc:TransportationStatusTypeCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
   </cac:Consignment>
   <cac:TransportEvent>
-    <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+    <cbc:OccurrenceDate>2026-04-30</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>09:30:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ENROUTE</cbc:TransportEventTypeCode>
-    <cbc:Description>On its way from the distribution centre; arrival expected at 14:00.</cbc:Description>
+    <cbc:Description>On its way from the distribution centre; expected at the store at 10:15.</cbc:Description>
     <cac:Location>
-      <cbc:Name>Marrowdale ring road</cbc:Name>
+      <cbc:Name>On the road from Marrowdale to Lumeport</cbc:Name>
     </cac:Location>
   </cac:TransportEvent>
   <cac:SenderParty>
@@ -309,8 +312,8 @@ Inside `UpdatedDeliveryTransportEvent`:
     <cbc:ID>LD-DOC-26-0232</cbc:ID>
   </cac:TransportationStatusRequestDocumentReference>
   <cac:UpdatedDeliveryTransportEvent>
-    <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceDate>2026-04-30</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
     <cbc:Description>Expected arrival at the store.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>

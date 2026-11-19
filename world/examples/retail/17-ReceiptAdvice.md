@@ -18,7 +18,7 @@ The shop confirms the delivery and reports a damaged carton.
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BS-RA-26-0235**  
+- `ID` = **BS-RA-26-0236**  
   The receiving party's number.
 - `UUID` = **aa88e826-e531-55ed-8ac7-22b653697864**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -59,10 +59,10 @@ Inside `DespatchDocumentReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BM-GI-PHOTO-26-0510**  
-  The goods-in photographs.
-- `DocumentType` = **Photograph**  
-  The kind of document referred to, the store's goods-in photographs, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+- `ID` = **BM-GI-PHOTO-26-0430**  
+  The goods-in photographs of the delivery of 30 April (retail/17#F8).
+- `DocumentType` = **Damage photos**  
+  What the document is.
 
 ### Signature
 
@@ -237,7 +237,7 @@ Inside `Shipment`:
   The pallet's condition on arrival. The code is from the Trade Accord's status condition list: DAMAGED = Damaged.
 - `TransportHandlingUnit/Status/Description` = **Three benches accepted, one refused.**  
   What was done.
-- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/URI` = **https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg**  
+- `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/URI` = **https://www.brightmarket.example/goods-in/26-0430/pallet-3.jpg**  
   The photograph taken at goods-in.
 - `TransportHandlingUnit/DamageDocumentationAttachment/ExternalReference/MimeCode` = **image/jpeg** (listID `IANA Media Types`)  
   A photograph. The code is from UBL's default Media type (IANA) list: image/jpeg.
@@ -269,11 +269,11 @@ Inside `ReceiptLine`:
 - `ReceivedDate` = **2026-04-30**  
   Unloaded.
 - `ReceivedTime` = **10:40:00**  
-  Forty minutes after the slot began.
+  Ten minutes after the end of the slot.
 - `TimingComplaintCode` = **LATE** (listID `urn:ubl-examples:world:codelist:TimingComplaintCode`)  
   The truck was late for its slot. The code is from the Trade Accord's timing complaint list: LATE = Late.
-- `TimingComplaint` = **Arrived 40 minutes into the slot; unloading delayed the next truck.**  
-  The complaint.
+- `TimingComplaint` = **Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.**  
+  The complaint: the slot of the carrier's plan (retail/17#F14, D34).
 - `OrderLineReference/LineID` = **1**  
   The order line.
 - `DespatchLineReference/LineID` = **1**  
@@ -282,10 +282,6 @@ Inside `ReceiptLine`:
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
-- `DocumentReference/ID` = **BS-PHOTO-26-0118**  
-  The photograph of the damaged carton.
-- `DocumentReference/DocumentType` = **Photograph**  
-  The kind of document referred to, the photograph of the damaged carton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -320,7 +316,7 @@ Inside `ReceiptLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-RA-26-0235</cbc:ID>
+  <cbc:ID>BS-RA-26-0236</cbc:ID>
   <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>15:21:00-01:00</cbc:IssueTime>
@@ -338,8 +334,8 @@ Inside `ReceiptLine`:
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BM-GI-PHOTO-26-0510</cbc:ID>
-    <cbc:DocumentType>Photograph</cbc:DocumentType>
+    <cbc:ID>BM-GI-PHOTO-26-0430</cbc:ID>
+    <cbc:DocumentType>Damage photos</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-RA</cbc:ID>
@@ -487,7 +483,7 @@ Inside `ReceiptLine`:
       </cac:Status>
       <cac:DamageDocumentationAttachment>
         <cac:ExternalReference>
-          <cbc:URI>https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg</cbc:URI>
+          <cbc:URI>https://www.brightmarket.example/goods-in/26-0430/pallet-3.jpg</cbc:URI>
           <cbc:MimeCode listID="IANA Media Types">image/jpeg</cbc:MimeCode>
           <cbc:FileName>pallet-3.jpg</cbc:FileName>
         </cac:ExternalReference>
@@ -507,7 +503,7 @@ Inside `ReceiptLine`:
     <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
     <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
     <cbc:TimingComplaintCode listID="urn:ubl-examples:world:codelist:TimingComplaintCode">LATE</cbc:TimingComplaintCode>
-    <cbc:TimingComplaint>Arrived 40 minutes into the slot; unloading delayed the next truck.</cbc:TimingComplaint>
+    <cbc:TimingComplaint>Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.</cbc:TimingComplaint>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -518,10 +514,6 @@ Inside `ReceiptLine`:
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
-    <cac:DocumentReference>
-      <cbc:ID>BS-PHOTO-26-0118</cbc:ID>
-      <cbc:DocumentType>Photograph</cbc:DocumentType>
-    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

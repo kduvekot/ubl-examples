@@ -1081,9 +1081,9 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     kind, kind_name = waybill_kind(flow, carrier)
     number = flow.number("waybill", doc["from"], "Waybill")
     flow.numbers[f"waybill-day-{carrier}"] = day          # a freight term may count from it (PLAN_PAYMENT)
+    flow.numbers["carrier-ref"] = f"{initials(carrier)}-{kind}-26-{flow.base:04d}"   # quoted in later documents
     out = {"ID": V(number, "The consignment note number."),
-           "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "
-                                                                                    "the carriage."),
+           "CarrierAssignedID": V(flow.numbers["carrier-ref"], "The carrier's own number for the carriage."),
            "VersionID": V("1", "The original, not a corrected version."),
            "StatusCode": V("ISSUED", "The note is issued and in force."),
            "IssueDate": V(flow.date(day), why),

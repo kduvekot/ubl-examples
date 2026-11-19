@@ -165,7 +165,28 @@
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
+      <cac:DocumentReference>
+        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:DocumentType>Consignment note</cbc:DocumentType>
+      </cac:DocumentReference>
     </cac:Consignment>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
+          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
+        </cac:RoadTransport>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:TransportMeans>
+    </cac:ShipmentStage>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-04-30</cbc:StartDate>
@@ -178,7 +199,6 @@
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729019</cbc:TraceID>
@@ -269,31 +289,10 @@
         <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
-      <cac:TransportMeans>
-        <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
-        <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
-        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
-        <cac:RoadTransport>
-          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
-          <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
-        </cac:RoadTransport>
-        <cac:MeasurementDimension>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
-          <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
-        </cac:MeasurementDimension>
-      </cac:TransportMeans>
-      <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
-      </cac:GoodsItem>
-      <cac:ShipmentDocumentReference>
-        <cbc:ID>LD-TR-26-0227</cbc:ID>
-        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
-      </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729026</cbc:TraceID>
@@ -388,7 +387,6 @@
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729033</cbc:TraceID>
@@ -483,7 +481,6 @@
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729040</cbc:TraceID>
@@ -578,7 +575,6 @@
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729057</cbc:TraceID>
@@ -673,7 +669,6 @@
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
-      <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729064</cbc:TraceID>

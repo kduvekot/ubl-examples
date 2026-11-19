@@ -1497,6 +1497,12 @@ RETAIL = kit.Flow("retail", "2026-04-20", [
 
 
 RESALE = {r["id"]: r for r in WORLD["resales"]["sales"]}      # the resales of the world (items.json, D14, O30)
+
+
+def RETAIL_SLOT(why):
+    """The delivery slot at the store's goods-in on Thursday 30 April (D34), as a period."""
+    return {"StartDate": V("2026-04-30", why), "StartTime": V("10:00:00", "From ten."),
+            "EndDate": V("2026-04-30", "The same day."), "EndTime": V("10:30:00", "To half past ten.")}
 PROMO = Decimal(str(RESALE["lumeway-bench-store"]["less_percent"])) / 100   # the distributor's support on the order
 REOPEN_OFF = Decimal(str(RESALE["store-bench-reopening"]["less_percent"])) / 100   # the reopening's 10 % (D34)
 STORE_BENCH = Decimal("749.00")    # the store's shop price of the Serra bench, before sales tax (D14)
@@ -1612,8 +1618,14 @@ def retail(n, doc):
                                                                               "promotion.")
         return out
     if doc["doc"] == "TransportExecutionPlanRequest":
-        return kit.tep_request(f, n, doc, 5, "Because it sold delivered duty paid, the distributor books the truck.", 9,
-                               w, "Six pallets of benches.")
+        out = kit.tep_request(f, n, doc, 7, "Because it sold delivered duty paid, the distributor books the truck, "
+                                            "on Monday 27 April, the first working day after the order (D27, D34).",
+                              9, w, "Six pallets of benches.")
+        out["IssueTime"] = V("09:10:00", "In the morning, before the carrier plans the week.")
+        out["TransportUserRemarks"] = V("Delivery slot at the store's goods-in: Thursday 30 April, 10:00 to 10:30. "
+                                        "Please confirm by return.", "The slot the store gave (D34).")
+        out["ServiceEndTimePeriod"] = RETAIL_SLOT("The delivery slot at the store, which the store's goods-in gave.")
+        return out
     if doc["doc"] == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, 9, "The day the truck was loaded at the distribution centre.",
                                   "The gross weight loaded.")
@@ -1638,21 +1650,37 @@ def retail(n, doc):
                 "Item": {"Name": V(bench["name"], "The item, named only: it is described in full on despatch line "
                                                   "1."),
                          "SellersItemIdentification": {"ID": V(bench["sellers_id"], "The seller's item number.")}}}
-        units[0].update({
-            "TransportMeans": kit.means("10-xb", "B-03"),
-            "GoodsItem": {"ID": V("1", "The goods on the pallet, as one goods item.")},
-            "ShipmentDocumentReference": {"ID": V(f.numbers["tep-request"], "The transport booking the pallet "
-                                                                            "travels under.")}})
+        for u in units:      # the goods are described by the despatch line, not by an empty goods item (12#F10)
+            u.pop("TotalGoodsItemQuantity", None)
         out["Shipment"]["TransportHandlingUnit"] = units
+        # the truck once, for the whole shipment, and the consignment note it travels under (retail/12#F10, F11)
+        out["Shipment"]["ShipmentStage"] = {"ID": V("1", "The one stage: the truck from the distribution centre to "
+                                                         "the store."),
+                                            "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road "
+                                                                        "transport."),
+                                            "TransportMeans": kit.means("10-xb", "B-03")}
+        out["Shipment"]["Consignment"]["DocumentReference"] = {
+            "ID": V(f.number("waybill", "10-xb", "Waybill"), "The carrier's consignment note, issued when the truck "
+                                                            "was loaded (retail/12#F11)."),
+            "DocumentType": V("Consignment note", "What the document is.")}
+        out["IssueTime"] = V("15:34:00", "When the truck was loaded and the carrier had signed its consignment note, "
+                                         "on the afternoon before the delivery (retail/12#F4, D34).")
         return out
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 9, "Issued when the carrier collects at the distribution centre.", w,
-                           "The gross weight taken over.")
+        out = kit.waybill(f, n, doc, 9, "Issued when the carrier took over the goods: loaded at the distribution "
+                                        "centre on the afternoon of 29 April, for the delivery the next morning.", w,
+                          "The gross weight taken over.")
+        out["IssueTime"] = V("15:05:00", "At the takeover, when the truck was loaded.")
+        return out
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return {"IssueTime": V("11:30:00", "After the delivery it bills: the store took the goods in at 10:40 "
                                            "(retail/16#F5, C72)."),
                 **kit.invoice(f, n, doc, 10, "Issued after delivery.",
-                           {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
+                           {"OrderReference": {"ID": V(f.numbers["tep-request"], "The distributor's booking of the "
+                                                                                 "truck, which the invoice bills "
+                                                                                 "(retail/16#F4).")},
+                            "AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note."),
+                                                            "DocumentType": V("Consignment note", "What it is.")}},
                            [{"item": "road-transport-b", "qty": wmap.whole(wmap.leg_km("retail", "6-xb", "26-xb")),
                              "invoice_why": "The kilometres driven loaded, from the distribution centre in "
                                             "Marrowdale to the store in Lumeport: the truck's leg on the map "
@@ -1668,7 +1696,7 @@ def retail(n, doc):
                                "DamageRemarks": V("One frame carton torn, the side frame's armrest bent.", "What the goods-in "
                                                                                                 "found."),
                                "DamageDocumentationAttachment": {"ExternalReference": {
-                                   "URI": V("https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg",
+                                   "URI": V("https://www.brightmarket.example/goods-in/26-0430/pallet-3.jpg",
                                             "The photograph taken at goods-in."),
                                    "MimeCode": V("image/jpeg", "A photograph."),
                                    "FileName": V("pallet-3.jpg", "The file name.")}},
@@ -5805,14 +5833,19 @@ def retail(n, doc):
                                                           "winter catalogue takes over."),
                 "DeletedCatalogueReference": cat}
     if d == "DocumentStatusRequest":
-        return {**head(f, "status-request", doc, 6, "Asked two days after ordering."),
+        return {**head(f, "status-request", doc, 7, "Asked on Monday 27 April, the first working day after the "
+                                                    "order of Friday 24 April (D27, D34)."),
+                "IssueTime": V("11:00:00", "In the late morning."),
                 "RequestedDocumentReference": {"ID": V(f.numbers["order"], "The order asked about.")}}
     if d == "DocumentStatus":
-        return {**head(f, "document-status", doc, 6, "Answered the same day."),
+        return {**head(f, "document-status", doc, 7, "Answered the same day."),
+                "IssueTime": V("11:20:00", "After the carrier had confirmed the truck (retail/23)."),
                 "DocumentResponse": response("AP", "UN/EDIFACT 4343 code AP: the order is accepted and the truck is "
                                                    "booked.", f.numbers["order"], "The order the status is about.")}
     if d == "TransportationStatusRequest":
-        return {**head(f, "ts-request", doc, 9, "The store asks when to expect the delivery."),
+        return {**head(f, "ts-request", doc, 10, "Lumeway asks the carrier, on the morning of the delivery, when "
+                                                 "the truck will be at the store."),
+                "IssueTime": V("09:20:00", "Twenty minutes after the truck left Marrowdale."),
                 "Consignment": {"ID": V(f.numbers["consignment"], "The consignment asked about.")}}
     return _retail(n, doc)
 
@@ -6477,19 +6510,19 @@ for _fid in ("road", "rail", "sea", "air"):
 
 @enrich("retail", "TransportationStatusRequest")
 def _(f, n, doc, out):
-    return {"CarrierAssignedID": V(f.numbers.get("waybill", ""), "The carrier's consignment note."),
+    return {"CarrierAssignedID": V(f.numbers["carrier-ref"], "The carrier's own number for the carriage, as its "
+                                                               "consignment note gives it (retail/14#F2)."),
             "Name": V("Status request", "What it is."),
             "Description": V("When will the benches arrive?", "The question."),
-            "Note": V("The promotion starts soon.", "Why the store asks."),
+            "Note": V("The store's slot is 10:00 to 10:30.", "Why Lumeway asks."),
             **({"ShippingOrderID": V(kit.shipping_order(f), "The forwarding instructions of the shipment asked "
                                                              "about.")} if kit.shipping_order(f) else {}),
             "OtherInstruction": V("Answer with the expected delivery time.", "What the answer should hold."),
             "TransportationStatusTypeCode": V("DELIVERY", "The status of the delivery is asked."),
-            "DocumentReference": {"ID": V(f.numbers["order"], "The store's order.")},
             "Signature": seal(doc["from"], "LD-SIG-26-TSR"),
             "RequestedStatusLocation": {"Name": V("Brightmarket Stores, goods-in", "Status at the store.")},
-            "RequestedStatusPeriod": {"StartDate": V(f.date(9), "For today."), "EndDate": V(f.date(10), "And "
-                                                                                                       "tomorrow.")}}
+            "RequestedStatusPeriod": {"StartDate": V(f.date(10), "For today, the day of the delivery."),
+                                      "EndDate": V(f.date(10), "Today.")}}
 
 
 @enrich("rail", "TransportProgressStatusRequest")
@@ -6732,11 +6765,15 @@ def _(f, n, doc, out):
 @enrich("retail", "ReceiptAdvice")
 def _(f, n, doc, out):
     lines = out["ReceiptLine"] if isinstance(out["ReceiptLine"], list) else [out["ReceiptLine"]]
-    lines[0].update({"ReceivedTime": V("10:40:00", "Forty minutes after the slot began."),
+    lines[0].update({"ReceivedTime": V("10:40:00", "Ten minutes after the end of the slot."),
                      "TimingComplaintCode": V("LATE", "The truck was late for its slot."),
-                     "TimingComplaint": V("Arrived 40 minutes into the slot; unloading delayed the next truck.",
-                                          "The complaint.")})
-    return {"AdditionalDocumentReference": {"ID": V("BM-GI-PHOTO-26-0510", "The goods-in photographs.")},
+                     "TimingComplaint": V("Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 "
+                                          "to 10:30; unloading delayed the next truck.", "The complaint: the slot of "
+                                                                                          "the carrier's plan "
+                                                                                          "(retail/17#F14, D34).")})
+    return {"AdditionalDocumentReference": {"ID": V("BM-GI-PHOTO-26-0430", "The goods-in photographs of the "
+                                                                           "delivery of 30 April (retail/17#F8)."),
+                                            "DocumentType": V("Damage photos", "What the document is.")},
             "Signature": seal(doc["from"], "BM-SIG-26-RA")}
 
 
@@ -9654,9 +9691,9 @@ def _(f, n, doc, out):
 @enrich("retail", "TransportationStatusRequest")
 def _(f, n, doc, out):
     return {"TransportExecutionPlanDocumentReference": {
-        "ID": V("BF-TEP-26-0262", "The forwarder's confirmation of the booking requested by the distributor: its "
-                                  "transport execution plan (not shown in this flow), numbered in the "
-                                  "forwarder's own series.")}}
+        "ID": V(f.number("tep", "10-xb", "TransportExecutionPlan"), "The forwarder's confirmation of the booking: "
+                                                                    "its transport execution plan, retail/23 "
+                                                                    "(retail/14#F1, D38).")}}
 
 
 @enrich("retail", "CreditNote")
@@ -9886,8 +9923,7 @@ def _(f, n, doc, out):
 @enrich("retail", "ReceiptAdvice")
 def _(f, n, doc, out):
     for ln in lines_of(out, "ReceiptLine"):
-        ln["UUID"] = line_uuid(f, "receipt", ln["ID"].value)
-        ln["DocumentReference"] = {"ID": V("BS-PHOTO-26-0118", "The photograph of the damaged carton.")}
+        ln["UUID"] = line_uuid(f, "receipt", ln["ID"].value)      # one typed photo reference, at document level
     return {}
 
 
@@ -10796,19 +10832,41 @@ def _(f, n, doc, out):
 def retail_complete(n, doc):
     f = RETAIL
     if doc["doc"] == "TransportationStatus":
-        return kit.transportation_status(
-            f, n, doc, 9, "Answered the same morning.", "On its way from the distribution centre; arrival expected "
-                                                        "at 14:00.", "Marrowdale ring road",
-            {"CarrierAssignedID": V("BF-ROAD-26-0231", "The carrier's own number for the job."),
+        out = kit.transportation_status(
+            f, n, doc, 10, "Answered the same morning.", "On its way from the distribution centre; expected at the "
+                                                         "store at 10:15.", "On the road from Marrowdale to Lumeport",
+            {"CarrierAssignedID": V(f.numbers["carrier-ref"], "The carrier's own number for the carriage, as on its "
+                                                              "consignment note (retail/15#F1)."),
              "TransportationStatusRequestDocumentReference": {"ID": V(f.numbers["ts-request"], "The request "
                                                                                                "answered.")},
              "TransportationStatusTypeCode": V("CURRENT", "The current status."),
-             "UpdatedDeliveryTransportEvent": {"OccurrenceDate": V(f.date(9), "Today."),
-                                               "OccurrenceTime": V("14:00:00", "The expected arrival."),
+             "UpdatedDeliveryTransportEvent": {"OccurrenceDate": V(f.date(10), "Today."),
+                                               "OccurrenceTime": V("10:15:00", "The expected arrival: the truck left "
+                                                                   "Marrowdale at 09:00, and the road to the store "
+                                                                   "takes about an hour and a quarter (retail/15#F4)."),
                                                "Description": V("Expected arrival at the store.", "In words."),
                                                "Location": {**kit.gln_location("26-xb", "goods-in"),
                                                             "Name": V("Goods-in of the Lumeport store", "Where "
                                                                       "the truck is expected.")}}}, event_type="ENROUTE")
+        out["IssueTime"] = V("09:35:00", "Answered fifteen minutes after the request.")
+        out["TransportEvent"]["OccurrenceTime"] = V("09:30:00", "When the truck's position was taken.")
+        return out
+    if doc["doc"] == "TransportExecutionPlan":
+        out = kit.tep(f, n, doc, 7, "The carrier confirms the booking on the day of the request.", 9,
+                      kit.gross_weight(f, "ordered"))
+        out["IssueTime"] = V("10:30:00", "An hour after the request, before the distributor answers the store.")
+        out["DocumentStatusReasonDescription"] = V("Truck B-03 available; the slot at the store confirmed.",
+                                                   "Why it is confirmed.")
+        out["TransportServiceProviderRemarks"] = V("Loading at the distribution centre on Wednesday 29 April in the "
+                                                   "afternoon; delivery on Thursday 30 April in the slot of 10:00 to "
+                                                   "10:30.", "The carrier's remark: the plan as requested (D34).")
+        out["TransportUserRemarks"] = V("Delivery slot at the store's goods-in: Thursday 30 April, 10:00 to 10:30. "
+                                        "Please confirm by return.", "The user's remark from the request.")
+        out["ServiceEndTimePeriod"] = RETAIL_SLOT("The delivery slot at the store, confirmed (D34, D38).")
+        # confirmed as requested: no service and no notification the request did not ask for (O215's pattern)
+        out.pop("AdditionalTransportationService", None)
+        out["TransportExecutionTerms"].pop("NotificationRequirement", None)
+        return out
     return retail(n, doc)
 
 

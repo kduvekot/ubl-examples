@@ -18,7 +18,7 @@ The shop refused a damaged bench in its receipt advice; the distributor credits 
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-CN-26-0237**  
+- `ID` = **LD-CN-26-0238**  
   The seller's credit note number.
 - `UUID` = **21527992-a284-577e-b410-c834118ac671**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -61,7 +61,7 @@ Inside `OrderReference`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **LD-INV-26-0236**  
+- `InvoiceDocumentReference/ID` = **LD-INV-26-0237**  
   The invoice this credit note corrects.
 - `InvoiceDocumentReference/IssueDate` = **2026-04-30**  
   Its issue date.
@@ -77,7 +77,7 @@ Inside `DespatchDocumentReference`:
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **BS-RA-26-0235**  
+- `ID` = **BS-RA-26-0236**  
   The receipt advice that reported the damage.
 
 ### Accounting Supplier Party
@@ -270,7 +270,7 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Deducted from the store's payment of invoice LD-INV-26-0236 to Harbourline Factoring, which owns the receivable.**  
+- `Note` = **Deducted from the store's payment of invoice LD-INV-26-0237 to Harbourline Factoring, which owns the receivable.**  
   How the credit is settled: the store pays the factor the invoice less the credit; the factor is not the credit's payee (retail/19#F2, D34).
 
 ### Allowance Charge
@@ -370,11 +370,11 @@ Inside `CreditNoteLine`:
   The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `ReceiptLineReference/LineID` = **1**  
   The receipt line that reported it.
-- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0235**  
+- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0236**  
   The receipt advice.
 - `ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-RA-26-0235 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0236**  
+  The kind of document referred to: BS-RA-26-0236 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0237**  
   The invoice.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
   The invoice line credited.
@@ -432,7 +432,7 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0237</cbc:ID>
+  <cbc:ID>LD-CN-26-0238</cbc:ID>
   <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>13:26:00-01:00</cbc:IssueTime>
@@ -452,7 +452,7 @@ Inside `CreditNoteLine`:
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0236</cbc:ID>
+      <cbc:ID>LD-INV-26-0237</cbc:ID>
       <cbc:IssueDate>2026-04-30</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
@@ -460,7 +460,7 @@ Inside `CreditNoteLine`:
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0235</cbc:ID>
+    <cbc:ID>BS-RA-26-0236</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -632,7 +632,7 @@ Inside `CreditNoteLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentTerms>
-    <cbc:Note>Deducted from the store's payment of invoice LD-INV-26-0236 to Harbourline Factoring, which owns the receivable.</cbc:Note>
+    <cbc:Note>Deducted from the store's payment of invoice LD-INV-26-0237 to Harbourline Factoring, which owns the receivable.</cbc:Note>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
@@ -700,13 +700,13 @@ Inside `CreditNoteLine`:
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>BS-RA-26-0235</cbc:ID>
+        <cbc:ID>BS-RA-26-0236</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0236</cbc:ID>
+        <cbc:ID>LD-INV-26-0237</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>

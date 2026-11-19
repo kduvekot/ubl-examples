@@ -22,10 +22,10 @@ The distributor answers: confirmed, the truck is booked.
   The sender's number for this document.
 - `UUID` = **eb9072fe-2cf3-54f8-bb18-08f7f9930b9c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-26**  
+- `IssueDate` = **2026-04-27**  
   Answered the same day.
-- `IssueTime` = **12:08:00-01:00**  
-  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **11:20:00-01:00**  
+  After the carrier had confirmed the truck (retail/23); in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Accepted; the truck is booked for a delivery on 30 April.**  
   The answer.
 
@@ -118,8 +118,8 @@ Inside `DocumentResponse`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0226</cbc:ID>
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
-  <cbc:IssueDate>2026-04-26</cbc:IssueDate>
-  <cbc:IssueTime>12:08:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
   <cbc:Note>Accepted; the truck is booked for a delivery on 30 April.</cbc:Note>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-DS</cbc:ID>

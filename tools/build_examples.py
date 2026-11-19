@@ -3435,8 +3435,7 @@ def check_issue_order(flow_id, name, root, doc, request=None):
 # ---------------------------------------------------------------- references resolve (C73)
 UNRESOLVED = []        # references to a kind of document the examples have, under an ID no example has: (file, el, ID)
 # References to documents the flow decisions add (D38), each waiting for its flow (stage 6): ID -> the document.
-REFERENCE_WAITS = {"BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
-                   "PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
+REFERENCE_WAITS = {"PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
                                     "D28)"}
 REFERENCE_ALIASES = {"CallForTender": "CallForTenders", "Despatch": "DespatchAdvice", "Receipt": "ReceiptAdvice",
                      "Remittance": "RemittanceAdvice", "TenderNotification": "TenderReceipt",

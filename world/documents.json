@@ -1566,7 +1566,7 @@
    "doc": "TransportationStatus",
    "from": "10-xb",
    "to": "6-xb",
-   "why": "The carrier answers the request: the truck is on its way and arrives in the afternoon.",
+   "why": "The carrier answers the request on the morning of the delivery: the truck is on its way and expected at the store at 10:15.",
    "parties": {
     "SenderParty": "10-xb",
     "ReceiverParty": "6-xb"
@@ -1662,6 +1662,21 @@
    },
    "values": {
     "DeliveryTerms/ID": "EXW"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "TransportExecutionPlan",
+   "from": "10-xb",
+   "to": "6-xb",
+   "why": "The carrier confirms the distributor's booking: loading on 29 April and the delivery slot at the store on 30 April, 10:00 to 10:30 (D38, D34).",
+   "parties": {
+    "SenderParty": "10-xb",
+    "ReceiverParty": "6-xb",
+    "TransportUserParty": "6-xb",
+    "TransportServiceProviderParty": "10-xb",
+    "Consignment/ConsignorParty": "6-xb",
+    "Consignment/ConsigneeParty": "26-xb"
    }
   },
   {
