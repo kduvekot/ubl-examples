@@ -3103,6 +3103,12 @@
      "convention": "own"
     },
     "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Gas trading",
+      "email": "customs@ferranoenergy.example"
+     },
      "payables": {
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",
@@ -3128,7 +3134,8 @@
       "email": "sales@ferranoenergy.example"
      }
     },
-    "week": "always"
+    "week": "always",
+    "customs_id": "XU-TR-105781"
    }
   },
   {

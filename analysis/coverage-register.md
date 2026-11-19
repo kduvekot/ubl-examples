@@ -305,7 +305,6 @@ Coverage 4993 → 4992 (commit 0cbe740c), 1 element.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `RemittanceAdviceLine/Note` | 0..n | utilities/04-RemittanceAdvice | | | open |
 
 ### Stage 2: C50 (no tax section in Lisavan sales), C54 (withholding, D17)
 
@@ -585,6 +584,78 @@ Stage 6, building group G3 (C81, C90).
 | `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
 | `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
 
+### G5: road (2026-11-19)
+
+Stage 6, building group G5 (C100, C101, C102; D35).
+
+> C100, D35 point 4: the order states no maximum delivery unit, which no delivery of the flow uses (01#F11); the carrier's status no longer reports a temperature the goods do not need (09#F11), nor an indicator that said nothing (09#F10); the application response no longer names the issuer and recipient of the invoice it answers (16#F11).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Condition/MaximumMeasure` | 0..1 | road/09-TransportationStatus | the highest temperature the temperature-controlled unit of the medicines flow logged during the flight, in the carrier's status on arrival (2–8 °C, D47) | medicines | candidate |
+| `Condition/Measure` | 0..1 | road/09-TransportationStatus | the temperature in the medicines' temperature-controlled unit at arrival (D47) | medicines | candidate |
+| `Condition/MinimumMeasure` | 0..1 | road/09-TransportationStatus | the lowest temperature the unit logged during the flight (D47) | medicines | candidate |
+| `Delivery/MaximumDeliveryUnit` | 0..1 | road/01-Order | | | open |
+| `DocumentResponse/IssuerParty` | 0..1 | road/16-ApplicationResponse | | | open |
+| `DocumentResponse/RecipientParty` | 0..1 | road/16-ApplicationResponse | | | open |
+| `Status/IndicationIndicator` | 0..1 | road/09-TransportationStatus | in the same status of the medicines flow, whether the temperature stayed within 2–8 °C for the whole carriage, stated as what the indicator means (D47) | medicines | candidate |
+
+> C101, D35 point 2: the chamber certifies and is the only endorser; the embassy endorsement by the Trade Accord Council goes, since a certificate between Accord members needs no legalisation (07#F10), and so does the insurer's endorsement (06#F3, 07#F9); the application is a first one and names no previous job (06#F17, 07#F18).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CertificateOfOrigin/EmbassyEndorsement` | 0..1 | road/07-CertificateOfOrigin | | | open |
+| `CertificateOfOrigin/InsuranceEndorsement` | 0..1 | road/06-CertificateOfOrigin, road/07-CertificateOfOrigin | | | open |
+| `CertificateOfOriginApplication/PreviousJobID` | 0..1 | road/06-CertificateOfOrigin, road/07-CertificateOfOrigin | | | open |
+
+> C102, D35 point 3: the order response substitutes the 2026 casting and proposes no other substitute; the old casting it proposed from stock was the item ordered (02#F6).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `OrderLine/SellerProposedSubstituteLineItem` | 0..n | road/02-OrderResponse | | | open |
+
+### G4: energy, utilities (2026-11-19)
+
+Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
+
+> C91, D31 points 2 and 5: a statement shows a second supplier only where one really bills part of the consumption (Ferrano Grid's network charges on Ferrano Energy's bill, the city's sewage levy on the water bill); the island's telephone statement has one supplier, so `Consumption` only, and with the supplier branch its consumption lines go (utilities/12#F9; UBL reaches consumption lines only under `SupplierConsumption`, a point for the TC, O107): the bundle discount on the subscription line, the subscription's price "per month" and the data pack of 5 GB (which D31 point 6 drops anyway). The consumption lines' delivery location only pointed back to the statement's consumption point (utilities/01#F14, 03#F15, 05#F13, 08#F16, 12#F21).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+| `ConsumptionLine/Delivery` | 0..n | utilities/01-UtilityStatement, utilities/03-UtilityStatement, utilities/05-UtilityStatement, utilities/08-UtilityStatement | | | open |
+| `ConsumptionLine/UnstructuredPrice` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/PriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TaxInclusivePriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TimeAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackQuantity` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackSizeNumeric` | 0..1 | utilities/12-UtilityStatement | | | open |
+
+> C92, D31 point 6: the bundle discount of the telephone statement is given once, on the whole supply, as on the invoice (utilities/12#F6); the six business lines no longer repeat their share of it.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TelecommunicationsSupplyLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+
+> C93, D31 points 1 and 7: the household's annual account. The meter reader reads the meters once a year, so the reading website and its password go (D31 point 7); the open-ended recurring mandate has no limit of instructions (09#F3) and names no payer besides the debtor (09#F4); the household's account appears only in the mandate that collects from it, not again in its party block, nor in the credit note, which is set off (09#F7, 11#F5; the element stays covered by the purchase receipts); the reminder's fee line states its amount once (10#F10).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionPoint/WebSiteAccess` | 0..1 | utilities/08-UtilityStatement | | | open |
+| `PaymentMandate/MaximumPaymentInstructionsNumeric` | 0..1 | utilities/09-Invoice | | | open |
+| `PaymentMandate/PayerParty` | 0..1 | utilities/09-Invoice | | | open |
+| `ReminderLine/Amount` | 0..1 | utilities/10-Reminder | | | open |
+
+> C95, D31 points 4 and 7: Valdara, which owns the warehouse, holds its subscription, so the warehouse statement's consumption names no subscriber of its own (03#F6); a monthly tariff carries no one-time charge (01#F6); a remittance advice of one bill carries no tax total (04#F2); a reminder without tax no tax point date (10#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Reminder/TaxPointDate` | 0..1 | utilities/10-Reminder | | | open |
+| `RemittanceAdvice/TaxTotal` | 0..n | utilities/04-RemittanceAdvice | | | open |
+| `SubscriberConsumption/SubscriberParty` | 0..1 | utilities/03-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeType` | 0..n | utilities/01-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeTypeCode` | 0..1 | utilities/01-UtilityStatement | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
@@ -605,6 +676,7 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `RemittanceAdviceLine/Note` | road/17-RemittanceAdvice | Lumeway pays Valdara's road invoice on Thursday 2 April, within the ten days of `XU-STD`, and takes the 2 % discount, 77,748 ferra on 3,887,400; the line states the short payment (O218) | 2026-11-19 |
 | `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
 | `Address/Region` | rail/06-TransitCustomsDeclaration | the jurisdiction of the transit declaration: the Lumeport Trade Accord, a group of countries, because the Accord's common transit runs from Urvania's office of departure to Bayvarra's office of destination (D37 point 2, rail/06#F18; O140's candidate, a territory that covers the Accord area) | 2026-11-19 |
 | `ImportCustomsDeclaration/PreviousCustomsDeclaration` | rail/14-ImportCustomsDeclaration | Lumeway's import at Marrowdale ends the Accord's common transit that Valdara lodged at Ferrano: the transit declaration, a declaration of the same procedure chain valid in Bayvarra, is its previous declaration (D37 point 2) | 2026-11-19 |

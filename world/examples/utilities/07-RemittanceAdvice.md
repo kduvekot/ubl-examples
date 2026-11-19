@@ -22,8 +22,8 @@ The shop pays its water bill and says which invoice the transfer settles.
   The payer's remittance number.
 - `UUID` = **3fcf184b-537e-5b27-9779-6c4b95b64a32**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-19**  
-  Paid before the due date.
+- `IssueDate` = **2026-04-20**  
+  Paid on Monday 20 April, before the due date (D27, D31 point 7).
 - `IssueTime` = **17:11:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Payment of the invoice below.**  
@@ -318,7 +318,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>3fcf184b-537e-5b27-9779-6c4b95b64a32</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:11:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>

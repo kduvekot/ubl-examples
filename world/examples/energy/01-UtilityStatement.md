@@ -179,8 +179,8 @@ Inside `SubscriberConsumption`:
   The factory's gas connection.
 - `UtilityConsumptionPoint/Description` = **Valdara Industries, gas connection of the coating line**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **FE-C-0047121**  
-  The factory's gas contract with the retail company.
+- `UtilityConsumptionPoint/SubscriberID` = **FE-CU-0381206**  
+  The subscriber's customer number with the retail company, by which the grid operator reports to it; the gas contract stays in the contract (D31 point 5).
 - `UtilityConsumptionPoint/SubscriberType` = **Industrial**  
   The name of code IND in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **IND** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -262,9 +262,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/GasPressureQuantity` = **4** (unitCode `BAR`)  
   The meter runs at 4 bar above the atmosphere: the gas is compressed, so the volume is corrected for the pressure.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/Description` = **1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.**  
-  The conversion.
-- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity` = **61200** (unitCode `KWH`)  
-  The energy, which the retail company bills.
+  The conversion, whose result is the consumption report's energy.
 - `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **116280** (currencyID `XUF`)  
   61200 kWh at the gas network tariff of 1.9 ferra: line 3 of the network invoice.
 - `Consumption/LegalMonetaryTotal/TaxExclusiveAmount` = **116280** (currencyID `XUF`)  
@@ -395,7 +393,7 @@ Inside `SubscriberConsumption`:
     <cac:UtilityConsumptionPoint>
       <cbc:ID>FG-CP-4120-G1</cbc:ID>
       <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
-      <cbc:SubscriberID>FE-C-0047121</cbc:SubscriberID>
+      <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="KWH">61200</cbc:TotalDeliveredQuantity>
@@ -455,7 +453,6 @@ Inside `SubscriberConsumption`:
           <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
           <cbc:GasPressureQuantity unitCode="BAR">4</cbc:GasPressureQuantity>
           <cbc:Description>1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.</cbc:Description>
-          <cbc:ConsumptionEnergyQuantity unitCode="KWH">61200</cbc:ConsumptionEnergyQuantity>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
