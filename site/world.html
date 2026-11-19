@@ -346,16 +346,49 @@ function curveBand(g, i, j, A, B, hw, fill) { const C = [0, 0], L = [], Rr = [];
     const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
     L.push(tp(i, j, p[0] - dy * hw, p[1] + dx * hw)); Rr.unshift(tp(i, j, p[0] + dy * hw, p[1] - dx * hw)); }
   poly(g, L.concat(Rr), fill); }
+// the river upstream of its estuary (owner, 2026-11-19, MO004/MO010): a valley within its square. The water lies at the
+// square's own level (model "river_level"), level across the stream and falling only along the flow, halfway to its
+// neighbour's level at each edge it flows through; the banks rise from the water's edge to the land's height at the
+// square's corners, steeper where the valley is deep
+const RLV = new Map((WORLD.model.river_level || []).map(([i, j, l]) => [i + "," + j, l]));
 function drawStream(g, i, j, t) {
-  groundTile(g, i, j, t.n > .5 ? COLORS.grass2 : COLORS.grass);
-  const wet = DIRS.filter(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; return nb && !nb.land; }).map(mid);
-  const water = t.n > .5 ? "#3d7fbf" : "#3a7ab8";
-  for (const [hw, col] of [[RIVER_HW + .08, "#7f8f52"], [RIVER_HW, water]]) {
-    if (wet.length === 2 && (wet[0][0] !== -wet[1][0] || wet[0][1] !== -wet[1][1])) curveBand(g, i, j, wet[0], wet[1], hw, col);
-    else { for (const d of wet) band(g, i, j, [0, 0], d, hw, col); disk(g, i, j, [0, 0], hw, col); } }
+  const own = RLV.get(i + "," + j) ?? heightAt(i, j);
+  const wetD = DIRS.filter(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; return nb && !nb.land; });
+  const nbL = d => RLV.get((i + d[0]) + "," + (j + d[1])) ?? (tiles[i + d[0]]?.[j + d[1]]?.water ? own : 0);
+  const along = (u, v) => { let best = 0, bd = null;                 // how far towards which wet edge the point lies
+    for (const d of wetD) { const s2 = (u * d[0] + v * d[1]) / .5; if (s2 > best) { best = s2; bd = d; } }
+    return [Math.min(1, best), bd]; };
+  const water = (u, v) => { const [s2, d] = along(u, v); return d ? own + ((own + nbL(d)) / 2 - own) * s2 : own; };
+  const dist = (u, v) => Math.min(...(wetD.length ? wetD : [[0, 0]]).map(d => { const bx = d[0] / 2, by = d[1] / 2, l2 = bx * bx + by * by || 1;
+    const f = Math.max(0, Math.min(1, (u * bx + v * by) / l2)); return Math.hypot(u - f * bx, v - f * by); }));
+  const ground = (u, v) => { const w = water(u, v), lnd = heightAt(i + u, j + v), k = Math.max(0, Math.min(1, (dist(u, v) - RIVER_HW) / (.5 - RIVER_HW)));
+    return w + (Math.max(lnd, w) - w) * k * k * (3 - 2 * k); };
+  const base = t.n > .5 ? COLORS.grass2 : COLORS.grass, N = 8;
+  DECK = ground;                                                    // the banks: a mesh of small cells over the valley
+  const cells = [];
+  for (let a = 0; a < N; a++) for (let b = 0; b < N; b++) { const u0 = a / N - .5, v0 = b / N - .5, u1 = u0 + 1 / N, v1 = v0 + 1 / N;
+    const [ra, rb] = R(i * N + a, j * N + b); cells.push([ra + rb, u0, v0, u1, v1]); }
+  cells.sort((p, q) => p[0] - q[0]);
+  const [ca, cb] = R(i * N + N / 2, j * N + N / 2), mid0 = ca + cb; let wetDone = false;
+  const drawWater = () => { DECK = water;                          // the water, level across the stream: after the
+    const wet = wetD.map(mid), wcol = t.n > .5 ? "#3d7fbf" : "#3a7ab8";   // banks behind it, before those in front
+    for (const [hw, col] of [[RIVER_HW * .55 + .05, "#7f8f52"], [RIVER_HW * .55, wcol]]) {
+      if (wet.length === 2 && (wet[0][0] !== -wet[1][0] || wet[0][1] !== -wet[1][1])) curveBand(g, i, j, wet[0], wet[1], hw, col);
+      else { for (const d of wet) band(g, i, j, [0, 0], d, hw, col); disk(g, i, j, [0, 0], hw, col); } }
+    DECK = ground; wetDone = true; };
+  for (const [dep, u0, v0, u1, v1] of cells) { if (!wetDone && dep > mid0) drawWater(); const h = [ground(u0, v0), ground(u1, v0), ground(u1, v1), ground(u0, v1)];
+    const dx = (h[1] + h[2] - h[0] - h[3]) / 2 / (KM_SQ / N), dy = (h[3] + h[2] - h[0] - h[1]) / 2 / (KM_SQ / N);
+    const lit = Math.max(-.45, Math.min(.35, (-dx - dy) * 6)), steep = Math.max(...h) - Math.min(...h);
+    let col = tint(base, (h[0] + h[1] + h[2] + h[3]) / 4);
+    const rock = steep > 60;                                        // a steep valley side: rock, evenly lit
+    poly(g, [tp(i, j, u0, v0), tp(i, j, u1, v0), tp(i, j, u1, v1), tp(i, j, u0, v1)], rock ? shade(mix(col, "#8a7d68", .7), lit * .4) : shade(col, lit)); }
+  if (!wetDone) drawWater();
+  DECK = water;
   if (RAPIDS.has(i + "," + j)) for (let k = 0; k < 7; k++) {          // the rapids above Ferrano: white water
     const u = (hash(i * 7 + k, j) - .5) * .5, v = (hash(i, j * 5 + k) - .5) * .5, [x, y] = tp(i, j, u, v);
-    g.fillStyle = "rgba(240,248,255,.85)"; g.fillRect(x - 2.5, y - .6, 5, 1.3); } }
+    g.fillStyle = "rgba(240,248,255,.85)"; g.fillRect(x - 2.5, y - .6, 5, 1.3); }
+  DECK = null; }
+const KM_SQ = 3500;
 // a town's own harbour (Larkmouth's, O153): a stone quay with a wool store and a crane
 function harbour(g, i, j) { const [x, y] = tileWorld(i, j);
   poly(g, [tp(i, j, -.45, -.45), tp(i, j, .5, -.45), tp(i, j, .5, .45), tp(i, j, -.45, .45)], "#9b968a");
