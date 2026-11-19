@@ -189,9 +189,9 @@ def party(pid, short=False, desk=None, lang=None):
                                               listID="ISIC Rev.4")
     if idn.get("registry_id"):
         out["PartyIdentification"] = {"ID": V(idn["registry_id"], f"The party's preferred identifier: its number in the "
-                                              f"{c['registry']['name']}; {src}. Later mentions of the same party in "
-                                              "this document repeat only this identifier and the name.",
-                                              schemeID=register_scheme(p["c"]))}
+                                              f"{world_ids.register_of(WORLD, p)[1]['name']}; {src}. Later mentions "
+                                              "of the same party in this document repeat only this identifier and the "
+                                              "name.", schemeID=register_scheme(pid))}
         conv = idn.get("identification", {})
         if conv.get("convention") == "GS1":
             out["AdditionalPartyIdentification"] = [{"ID": V(
@@ -241,7 +241,8 @@ def party(pid, short=False, desk=None, lang=None):
             "ExchangeNetworkID": V("urn:ubl-examples:world:network", "The network in which the address is registered: "
                                    "the world's own exchange network."),
             "ElectronicAddressID": V(idn["endpoint"], "The party's electronic address in that network: its country code and "
-                                     f"registry number; {src}. UBL 2.5 carries it here; Party/EndpointID is deprecated.",
+                                     f"its number in the {world_ids.register_of(WORLD, p)[1]['name']}; {src}. UBL 2.5 "
+                                     "carries it here; Party/EndpointID is deprecated.",
                                      schemeID="urn:ubl-examples:world:endpoint")}
     if idn.get("tax_id"):
         scheme = c["tax"]["schemes"][0]
@@ -375,10 +376,12 @@ def legal_entity(pid):
     le = idn.get("legal", {})
     public = idn["kind"] == "public"           # a public body is in no register of businesses (D46, worklist C04)
     farm = le.get("sole_proprietor") and c.get("farm_registry")
+    reg = world_ids.register_of(WORLD, p)[1]   # a public body's own register, a grower's farm register (O142)
     out = {"RegistrationName": V(legal_name(pid), ("The name under which the party is registered, with its legal form; "
                                                    if not public else "The public body's official name; ") + f"{src}.")}
-    if not public:                             # a public body's own identifier: open point O142
-        out["CompanyID"] = V(idn["registry_id"], f"Number in the {(farm or c['registry'])['name']}; {src}.")
+    out["CompanyID"] = V(idn["registry_id"], f"Number in the {reg['name']}" + (
+        f", which gives every public body a number of its own ({reg['id_format']}), derived from no other register "
+        "(O142)" if public else "") + f"; {src}.")
     if le.get("founded"):
         out["RegistrationDate"] = V(le["founded"], f"The day the company was entered in the register; {src}.")
     if le.get("form"):
@@ -418,7 +421,16 @@ def legal_entity(pid):
             "CorporateRegistrationTypeCode": V("FARM", "A register of farms, not the companies register."),
             "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
                                                                                       "country.")}}}
-    elif not public:
+    elif public:
+        out["CorporateRegistrationScheme"] = {
+            "ID": V(reg["scheme"], "The identifier of the register in the world (world/countries.json)."),
+            "Name": V(reg["name"], f"The register the public body is entered in, kept by "
+                                   f"{PARTY[reg['keeper']]['identity']['name'] if reg['keeper'] in PARTY else reg['keeper']}"
+                                   ": a public body is set up by law and is in no register of businesses (D46, O142)."),
+            "CorporateRegistrationTypeCode": V("PUBLIC", "A register of public bodies, not a register of businesses."),
+            "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
+                                                                                      "country.")}}}
+    else:
         out["CorporateRegistrationScheme"] = {
             "ID": V(c["register_scheme"], "The identifier of the register in the world (world/countries.json)."),
             "Name": V(c["registry"]["name"], "The register the company is entered in."),
@@ -692,8 +704,10 @@ def location(pid):
     return out
 
 
-def register_scheme(country):
-    return f"urn:ubl-examples:world:{country}:register"
+def register_scheme(pid):
+    """The schemeID of a party's register number: its companies register, its register of public bodies or the
+    farm register (O142)."""
+    return world_ids.national_scheme(PARTY[pid]["c"], world_ids.register_of(WORLD, PARTY[pid])[0])
 
 
 def party_again(pid, first):
@@ -705,7 +719,7 @@ def party_again(pid, first):
                                      "enough.")
     out = {"PartyName": {"Name": V(idn["name"], why)}}
     if idn.get("registry_id"):
-        out["PartyIdentification"] = {"ID": V(idn["registry_id"], why, schemeID=register_scheme(PARTY[pid]["c"]))}
+        out["PartyIdentification"] = {"ID": V(idn["registry_id"], why, schemeID=register_scheme(pid))}
     return out
 
 
@@ -1685,6 +1699,11 @@ def scheme_for(element, parent, value):
         rule = "ISO6346"
     if rule is None or rule in SCHEMES:
         return rule
+    if rule == "register":           # a company's, a public body's or a grower's register, told by its shape (O142)
+        hit = world_ids.register_kind_of(WORLD, value)
+        if hit is None:
+            raise SystemExit(f"{parent}/{element}: '{value}' fits no country's register format (world/countries.json)")
+        return world_ids.national_scheme(*hit)
     cc = world_ids.country_of(WORLD, rule, value)
     if cc is None:
         raise SystemExit(f"{parent}/{element}: '{value}' fits no country's {rule} format (world/countries.json)")

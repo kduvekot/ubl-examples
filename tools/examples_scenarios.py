@@ -8704,7 +8704,9 @@ def _(f, n, doc, out):
             "OriginatorCustomerParty": {"Party": party("40-xb", short=True)},
             "BeneficiaryParty": party("40-xb", short=True),
             "AdditionalDocumentReference": [x for x in (out.get("AdditionalDocumentReference"),) if x] + [
-                {"ID": V("XL-FARM-REG-0412", "The farm's registration, which the withholding needs.")}],
+                {"ID": V(PARTY["38-xl"]["identity"]["registry_id"], "The farm's registration, which the withholding "
+                                                                       "needs: its number in Lisavu's farm register "
+                                                                       "(O142).")}],
             "BillingReference": {"SelfBilledInvoiceDocumentReference": {
                 "ID": V(f.numbers["self-billed-1"], "The prepayment self-billed invoice of the season advance, "
                                                     "deducted here as the prepaid amount."),

@@ -91,6 +91,14 @@
    "phone_prefix": "+999 1",
    "timezone": "-01:00",
    "register_scheme": "XU:CR",
+   "public_registry": {
+    "name": "Index of Public Administrations of Urvania",
+    "keeper": "the Agency for Digital Administration of Urvania",
+    "scheme": "XU:IPA",
+    "id_format": "xu_ and four lower-case letters or digits",
+    "example": "xu_k4r7",
+    "note": "Every body of Urvania's public administration (the customs administration, the chambers of commerce, Codana and the other agencies set up by law) is entered in the index on its accreditation and given a code of its own, on the model of Italy's IPA code: the index assigns the code, and it is derived from no other register, not from the body's tax number (O142)."
+   },
    "customs_trader_format": "XU-TR- and 6 digits",
    "legal_forms": {
     "SUA": {
@@ -150,6 +158,11 @@
      "name": "customs trader number of Urvania",
      "pattern": "^XU-TR-\\d{6}$",
      "format": "XU-TR- and 6 digits"
+    },
+    "public-body-register": {
+     "name": "index of public administrations of Urvania",
+     "pattern": "^xu_[a-z0-9]{4}$",
+     "format": "xu_ and four lower-case letters or digits, assigned by the index on the body's accreditation; no real IPA code of Italy's index starts with xu_ (world/codelists/sources/ipa/)"
     },
     "property": {
      "name": "property standard of the Codana Identification Agency",
@@ -363,6 +376,14 @@
    "phone_prefix": "+999 2",
    "timezone": "-01:00",
    "register_scheme": "XB:FBR",
+   "public_registry": {
+    "name": "Federal list of public bodies of Bayvarra",
+    "keeper": "21-xb",
+    "scheme": "XB:FLPB",
+    "id_format": "10 digits, the first not 0",
+    "example": "3071845926",
+    "note": "The Bayvarra Information Service, which also keeps the federal business register, keeps a separate list of the public bodies of the federation, its states and its cities (the customs and border service, the public works department, the review board, the Trade Accord Council seated in Lumeport, the Service itself); the list gives each body a ten-digit number of its own, derived from no other register (O142)."
+   },
    "customs_trader_format": "XB-TR- and 6 digits",
    "legal_forms": {
     "CORP": {
@@ -415,7 +436,13 @@
     "customs-trader": {
      "name": "customs trader number of Bayvarra",
      "pattern": "^XB-TR-\\d{6}$",
-     "format": "XB-TR- and 6 digits"
+     "format": "XB-TR- and 6 digits: a company's are the last six digits of its business register number; a public body, which is in no business register, gets a number customs gives it, starting with 9 (O142)"
+    },
+    "public-body-register": {
+     "name": "federal list of public bodies of Bayvarra",
+     "issuer": "21-xb",
+     "pattern": "^[1-9]\\d{9}$",
+     "format": "10 digits, the first not 0, given by the Bayvarra Information Service"
     },
     "vehicle-register": {
      "name": "federal vehicle register of Bayvarra",
@@ -603,6 +630,14 @@
    "phone_prefix": "+999 3",
    "timezone": "+00:00",
    "register_scheme": "XL:ICR",
+   "public_registry": {
+    "name": "Government list of public bodies of Lisavu",
+    "keeper": "the Government Secretariat of Lisavu",
+    "scheme": "XL:GLPB",
+    "id_format": "GOV- and 3 digits",
+    "example": "GOV-118",
+    "note": "The island's government keeps a short list of its public bodies (the customs service, the chamber of commerce, the maritime administration) and gives each a number of its own, derived from no other register (O142)."
+   },
    "customs_trader_format": "XL-TR- and 6 digits",
    "legal_forms": {
     "LTD": {
@@ -659,6 +694,16 @@
      "pattern": "^XL-TR-\\d{6}$",
      "format": "XL-TR- and 6 digits"
     },
+    "public-body-register": {
+     "name": "government list of public bodies of Lisavu",
+     "pattern": "^GOV-\\d{3}$",
+     "format": "GOV- and 3 digits"
+    },
+    "farm-register": {
+     "name": "farm register of Lisavu",
+     "pattern": "^LFR-\\d{4}$",
+     "format": "LFR- and 4 digits, kept from season to season while the registration is renewed"
+    },
     "vehicle-register": {
      "name": "vehicle register of Lisavu",
      "pattern": "^LV [A-Z]{2,4} \\d{1,4}$",
@@ -701,7 +746,9 @@
    "farm_registry": {
     "name": "Farm register of Lisavu",
     "scheme": "XL:FR",
-    "note": "Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46)."
+    "id_format": "LFR- and 4 digits",
+    "example": "LFR-0412",
+    "note": "Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46). The register gives a grower a number of its own, derived from no other register (O142)."
    },
    "legal_time": "Lisavu Time",
    "holidays": {
@@ -3026,8 +3073,8 @@
   "urn:ubl-examples:world:endpoint": {
    "name": "electronic address in the Trade Accord's exchange network",
    "issuer": "32-xb",
-   "pattern": "^(XU:XU-R-\\d{6}|XB:\\d{8}|XL:IC\\d{5})$",
-   "format": "the country code, a colon and the party's number in its country's companies register"
+   "pattern": "^(XU:(XU-R-\\d{6}|xu_[a-z0-9]{4})|XB:(\\d{8}|[1-9]\\d{9})|XL:(IC\\d{5}|GOV-\\d{3}|LFR-\\d{4}))$",
+   "format": "the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)"
   },
   "urn:ubl-examples:world:account": {
    "name": "account number in the structure of ISO 13616",

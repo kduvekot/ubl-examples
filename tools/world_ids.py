@@ -137,6 +137,29 @@ def formats(world, kind):
     return [(cc, c["identifiers"][kind]) for cc, c in world["countries"].items() if kind in c.get("identifiers", {})]
 
 
+# the registers a party is entered in (D46, O142): a company in its country's companies register, a public body in
+# its country's register of public bodies, a grower in Lisavu's farm register; each gives numbers of its own shape
+REGISTER_KINDS = ("register", "public-body-register", "farm-register")
+
+
+def register_of(world, p):
+    """The register a party's registry_id is from: (kind of national scheme, the register's entry in
+    world/countries.json: name, scheme (CorporateRegistrationScheme/ID), id_format ...)."""
+    c, idn = world["countries"][p["c"]], p.get("identity", {})
+    if idn.get("kind") == "public":
+        return "public-body-register", c["public_registry"]
+    if idn.get("legal", {}).get("sole_proprietor") and c.get("farm_registry"):
+        return "farm-register", c["farm_registry"]
+    return "register", {**c["registry"], "scheme": c["register_scheme"]}
+
+
+def register_kind_of(world, value):
+    """The (country, kind) of the one register whose numbers have the shape of the value, or None."""
+    hits = [(cc, kind) for kind in REGISTER_KINDS for cc, spec in formats(world, kind)
+            if re.fullmatch(spec["pattern"], value)]
+    return hits[0] if len(hits) == 1 else None
+
+
 def problem(spec, value):
     """Why a value does not fit its scheme, or None."""
     if not re.fullmatch(spec["pattern"], value):

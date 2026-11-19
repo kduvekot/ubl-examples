@@ -15,7 +15,7 @@
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -106,7 +106,7 @@
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -135,6 +135,7 @@
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Certificates office</cbc:Name>
@@ -146,7 +147,7 @@
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_m2vd</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:SignatoryContact>
@@ -214,7 +215,7 @@
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -234,7 +235,7 @@
     </cac:PreparationParty>
     <cac:IssuerParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -297,7 +298,7 @@
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -311,7 +312,7 @@
       <cbc:ID>FCC-SIG-26-0309</cbc:ID>
       <cac:SignatoryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -328,7 +329,7 @@
       <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
@@ -342,7 +343,7 @@
       <cbc:ID>LTAC-SIG-26-0311</cbc:ID>
       <cac:SignatoryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411096</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Lumeport Trade Accord Council</cbc:Name>

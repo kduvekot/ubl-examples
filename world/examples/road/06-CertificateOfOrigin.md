@@ -107,7 +107,7 @@ Inside `ExporterParty`:
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Importer Party
 
@@ -158,8 +158,8 @@ Inside `EndorserParty`:
   The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `SequenceNumeric` = **1**  
   The first and only endorsement.
-- `Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The trading name; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/PostalAddress/ID` = **4160202319527073** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -190,6 +190,8 @@ Inside `EndorserParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Ferrano Chamber of Commerce**  
   The public body's official name; identity of Ferrano Chamber of Commerce (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
+  Number in the Index of Public Administrations of Urvania, which gives every public body a number of its own (xu_ and four lower-case letters or digits), derived from no other register (O142); identity of Ferrano Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the index of public administrations of Urvania (xu_ and four lower-case letters or digits, assigned by the index on the body's accreditation; no real IPA code of Italy's index starts with xu_ (world/codelists/sources/ipa/)).
 - `Party/Contact/Name` = **Certificates office**  
   The party's certificates office desk: the desk for its role in this document (a certificate); identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/Contact/JobTitle` = **Certificates officer**  
@@ -204,8 +206,8 @@ Inside `EndorserParty`:
   When the desk can be reached; identity of Ferrano Chamber of Commerce (world/parties.json).
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105370** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and registry number; identity of Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XU:xu_m2vd** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `SignatoryContact/Name` = **Certificates office**  
   The office of the chamber that signs certificates of origin.
 
@@ -283,7 +285,7 @@ Inside `CertificateOfOriginApplication`:
   The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
   The first and only endorsement.
-- `EndorserParty/Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `EndorserParty/Party/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -293,7 +295,7 @@ Inside `CertificateOfOriginApplication`:
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `PreparationParty/PartyName/Name` = **Valdara Industries**  
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
-- `IssuerParty/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `IssuerParty/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `IssuerParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -340,7 +342,7 @@ Inside `IssuerEndorsement`:
   The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
   The first and only endorsement.
-- `EndorserParty/Party/PartyIdentification/ID` = **XU-R-105370** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `EndorserParty/Party/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -490,7 +492,7 @@ Inside `InsuranceEndorsement`:
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -514,6 +516,7 @@ Inside `InsuranceEndorsement`:
       </cac:PostalAddress>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Ferrano Chamber of Commerce</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>Certificates office</cbc:Name>
@@ -525,7 +528,7 @@ Inside `InsuranceEndorsement`:
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-105370</cbc:ElectronicAddressID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:xu_m2vd</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:SignatoryContact>
@@ -593,7 +596,7 @@ Inside `InsuranceEndorsement`:
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -613,7 +616,7 @@ Inside `InsuranceEndorsement`:
     </cac:PreparationParty>
     <cac:IssuerParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>
@@ -675,7 +678,7 @@ Inside `InsuranceEndorsement`:
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
       <cac:Party>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105370</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:public-body-register">xu_m2vd</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
           <cbc:Name>Ferrano Chamber of Commerce</cbc:Name>

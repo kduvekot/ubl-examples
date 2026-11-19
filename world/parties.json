@@ -911,8 +911,8 @@
    "identity": {
     "name": "Ferrano Chamber of Commerce",
     "kind": "public",
-    "registry_id": "XU-R-105370",
-    "endpoint": "XU:XU-R-105370",
+    "registry_id": "xu_m2vd",
+    "endpoint": "XU:xu_m2vd",
     "contact": {
      "name": "Certificates office",
      "email": "certificates@camera-ferrano.example",
@@ -967,8 +967,8 @@
    "identity": {
     "name": "Customs Administration of Urvania",
     "kind": "public",
-    "registry_id": "XU-R-105507",
-    "endpoint": "XU:XU-R-105507",
+    "registry_id": "xu_k4r7",
+    "endpoint": "XU:xu_k4r7",
     "contact": {
      "name": "Border office",
      "email": "border@customs-xu.example",
@@ -1031,8 +1031,8 @@
    "identity": {
     "name": "Codana Identification Agency",
     "kind": "public",
-    "registry_id": "XU-R-105644",
-    "endpoint": "XU:XU-R-105644",
+    "registry_id": "xu_t6hq",
+    "endpoint": "XU:xu_t6hq",
     "contact": {
      "name": "Member services",
      "email": "member@codana.example",
@@ -1073,8 +1073,8 @@
    "identity": {
     "name": "Customs and Border Service of Bayvarra",
     "kind": "public",
-    "registry_id": "20410137",
-    "endpoint": "XB:20410137",
+    "registry_id": "3071845926",
+    "endpoint": "XB:3071845926",
     "contact": {
      "name": "Border office",
      "email": "border@customs-xb.example",
@@ -1498,8 +1498,8 @@
    "identity": {
     "name": "Lumeport Public Works Department",
     "kind": "public",
-    "registry_id": "20410548",
-    "endpoint": "XB:20410548",
+    "registry_id": "6250397184",
+    "endpoint": "XB:6250397184",
     "contact": {
      "name": "Procurement office",
      "email": "procurement@publicworks-lumeport.example",
@@ -1530,7 +1530,7 @@
     "language": "en",
     "tax_exemption": "Buys free of the state sales tax",
     "tax_id": "CO-0900002",
-    "customs_id": "XB-TR-410548",
+    "customs_id": "XB-TR-903826",
     "cost_centre": {
      "code": "PWD-PARKS-26",
      "name": "Parks renewal programme 2026"
@@ -1655,8 +1655,8 @@
    "identity": {
     "name": "Procurement Review Board of Bayvarra",
     "kind": "public",
-    "registry_id": "20410822",
-    "endpoint": "XB:20410822",
+    "registry_id": "4718260539",
+    "endpoint": "XB:4718260539",
     "contact": {
      "name": "Registry",
      "email": "registry@review-xb.example",
@@ -1697,8 +1697,8 @@
    "identity": {
     "name": "Bayvarra Information Service",
     "kind": "public",
-    "registry_id": "20410959",
-    "endpoint": "XB:20410959",
+    "registry_id": "1906473852",
+    "endpoint": "XB:1906473852",
     "contact": {
      "name": "Publications and register",
      "email": "publications@info-xb.example",
@@ -1740,8 +1740,8 @@
    "identity": {
     "name": "Lumeport Trade Accord Council",
     "kind": "public",
-    "registry_id": "20411096",
-    "endpoint": "XB:20411096",
+    "registry_id": "8423019675",
+    "endpoint": "XB:8423019675",
     "contact": {
      "name": "Secretariat",
      "email": "secretariat@tradeaccord.example",
@@ -2545,8 +2545,8 @@
    "identity": {
     "name": "Island Customs Service",
     "kind": "public",
-    "registry_id": "IC41448",
-    "endpoint": "XL:IC41448",
+    "registry_id": "GOV-118",
+    "endpoint": "XL:GOV-118",
     "contact": {
      "name": "Import office",
      "email": "import@customs-xl.example",
@@ -2905,8 +2905,8 @@
    "identity": {
     "name": "Selanu Chamber of Commerce",
     "kind": "public",
-    "registry_id": "IC42133",
-    "endpoint": "XL:IC42133",
+    "registry_id": "GOV-243",
+    "endpoint": "XL:GOV-243",
     "contact": {
      "name": "Members’ office",
      "email": "carnet@chamber-selanu.example",
@@ -2958,8 +2958,8 @@
    "identity": {
     "name": "Maritime Administration of Lisavu",
     "kind": "public",
-    "registry_id": "IC42270",
-    "endpoint": "XL:IC42270",
+    "registry_id": "GOV-131",
+    "endpoint": "XL:GOV-131",
     "contact": {
      "name": "Ship registry",
      "email": "ship@maritime-xl.example",
@@ -3708,8 +3708,8 @@
    "identity": {
     "name": "Lisavu Cotton Farm",
     "kind": "company",
-    "registry_id": "IC42544",
-    "endpoint": "XL:IC42544",
+    "registry_id": "LFR-0412",
+    "endpoint": "XL:LFR-0412",
     "contact": {
      "name": "Farm office",
      "email": "farm@lisavufarm.example",
@@ -4184,7 +4184,7 @@
    "identity": {
     "name": "Maritime Administration of Bayvarra",
     "kind": "public",
-    "registry_id": "20413014"
+    "registry_id": "5389612047"
    }
   }
  ],

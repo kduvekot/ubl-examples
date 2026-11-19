@@ -37,6 +37,12 @@ something to put in it, and these checks keep it consistent:
     number); a GS1 company prefix is 952 and four digits, held by one party,
     and its GLNs are under it; every Codana identifier of the party starts
     with its own company number (the items' KXU numbers in world_items.py);
+  * the registers (D46, O142): a public body carries a number of its
+    country's register of public bodies, a grower one of the farm register
+    and a company one of the companies register, each in its register's shape;
+    no company carries a number in a public body's shape and no public body or
+    grower one in a company register's shape; an electronic address is the
+    country code and that number;
   * every register issues its own numbers (D5, O22): no identifier of a party
     repeats a run of five digits of another of its identifiers, apart from
     the stated reuse of the business register number in the electronic
@@ -286,8 +292,39 @@ def check(world):
                 problems.append(f"{where}: account number {acc['number']} does not hold the codes of bank "
                                 f"{acc['bank']} and its branch {acc.get('branch')} (decision ID-Q9)")
         problems += identifier_problems(world, p)
-    problems += identification_problems(world) + repeat_problems(world)
+    problems += identification_problems(world) + repeat_problems(world) + register_problems(world)
     return problems
+
+
+def register_problems(world):
+    """The registers a party is entered in (D46, O142): a public body has a number from its country's register of
+    public bodies, a grower one from the farm register, a company one from the companies register, each in that
+    register's shape (identifier_problems); its electronic address is its country code and that number (the
+    stated reuse of D5); and no identifier of a company has the shape of a public body's number, nor any of a
+    public body or a grower the shape of a company register number."""
+    import world_ids
+    out = []
+    for p in world["parties"] + world.get("referenced", []):
+        where, idn = f"party {p['id']}", p.get("identity", {})
+        if not idn.get("registry_id"):
+            continue
+        own, reg = world_ids.register_of(world, p)
+        ep = idn.get("endpoint")
+        if ep and ep != f"{p['c']}:{idn['registry_id']}":
+            out.append(f"{where}: electronic address {ep} is not its country code and its number "
+                       f"{idn['registry_id']} in the {reg['name']} (D5, O142)")
+        values = [("registry_id", idn["registry_id"])] + [(label, v) for _, label, v in party_identifiers(world, p)
+                                                          if label not in ("registry_id", "endpoint")]
+        for label, value in values:
+            hit = world_ids.register_kind_of(world, value)
+            if hit and hit != (p["c"], own):
+                out.append(f"{where}: {label} {value} has the shape of a number of the {hit[0]} {hit[1]}, but the "
+                           f"party is entered in the {reg['name']} (O142)")
+        if p in world.get("referenced", []):
+            why = world_ids.problem(world["countries"][p["c"]]["identifiers"][own], idn["registry_id"])
+            if why:
+                out.append(f"{where}: {why}")
+    return out
 
 
 REPEAT_IDENTIFIER, REPEAT_TELEPHONE = 5, 4   # the shortest digit run that counts as a repeat (D5, O22)
@@ -346,7 +383,10 @@ def party_identifiers(world, p):
     its own company number or prefix (a Codana number in the party's 0990 identifier and its KXU numbers, a GS1
     prefix in its GLNs and GTINs); between families no digits may repeat."""
     idn = p.get("identity", {})
-    out = [("register", k, idn.get(k)) for k in ("registry_id", "endpoint", "customs_id")]
+    out = [("register", k, idn.get(k)) for k in ("registry_id", "endpoint")]
+    # customs registers a company under its business register number (D18); a public body, which is in no business
+    # register, under a number customs gives it (O142)
+    out.append(("customs" if idn.get("kind") == "public" else "register", "customs_id", idn.get("customs_id")))
     out.append(("tax", "tax_id", idn.get("tax_id")))
     out.append(("isin", "listing", idn.get("legal", {}).get("listing", {}).get("id")))
     conv = idn.get("identification") or {}
@@ -476,7 +516,8 @@ def identifier_problems(world, p):
     import world_ids
     out, where, ids = [], f"party {p['id']}", world["countries"][p["c"]].get("identifiers", {})
     idn = p["identity"]
-    values = [("register", idn.get("registry_id")), ("tax", idn.get("tax_id")), ("customs-trader", idn.get("customs_id"))]
+    values = [(world_ids.register_of(world, p)[0], idn.get("registry_id")), ("tax", idn.get("tax_id")),
+              ("customs-trader", idn.get("customs_id"))]
     for f in p.get("fleet", []):
         values += [(kind, f.get(k)) for k, kind in FLEET_IDS.items()]
         values += [("rail-vehicle-register", w) for w in f.get("wagons", []) + f.get("ore_wagons", [])]
