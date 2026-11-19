@@ -878,6 +878,10 @@
     "type": "BG",
     "per_package": 1
    },
+   "carton": {
+    "per_carton": 30,
+    "why": "The mill packs 30 bagged shirts to a carton; the item's gross weight of 0.28 kg includes its share of the carton (0.25 kg shirt, 0.012 kg bag, 0.018 kg carton)."
+   },
    "components": [
     {
      "item": "garment-bag",
@@ -1103,7 +1107,7 @@
    },
    "sellers_id": "BM-778120",
    "resale_of": "shirt",
-   "description": "Men's cotton shirt; the state sales tax is added at the till."
+   "description": "Men's cotton shirt."
   },
   {
    "id": "marrow-bench-oak-r",

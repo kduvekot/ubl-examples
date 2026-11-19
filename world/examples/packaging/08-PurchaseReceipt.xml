@@ -217,12 +217,12 @@
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Two shirts: 5.00 off the pair</cbc:AllowanceChargeReason>
+      <cbc:AllowanceChargeReason>Two shirts: 5.00 off the pair, Friday 22 May only</cbc:AllowanceChargeReason>
       <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
       <cbc:BaseAmount currencyID="XBL">59.90</cbc:BaseAmount>
     </cac:AllowanceCharge>
     <cac:Item>
-      <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>Men's cotton shirt.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
       <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:SellersItemIdentification>

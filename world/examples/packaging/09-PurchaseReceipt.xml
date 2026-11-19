@@ -216,7 +216,7 @@
     <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">35.940</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>Men's cotton shirt.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
       <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:SellersItemIdentification>

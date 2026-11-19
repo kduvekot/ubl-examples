@@ -3785,8 +3785,23 @@ def packaging(n, doc):
                          "Delivered duty paid at the store: the mill delivers and bears every cost.",
                          "Brightmarket Stores, goods-in, Lumeport", deal=SHIRTS, key="order-shirts")
     if doc["doc"] == "DespatchAdvice":
-        return kit.despatch_advice(f, n, doc, 15, "The day the shirts left the mill.", "The gross weight of the cartons.",
-                                   deal=SHIRTS, key="order-shirts")
+        out = kit.despatch_advice(f, n, doc, 15, "The day the shirts left the mill.", "The gross weight of the "
+                                  "cartons: the shirts in their bags and the cartons' share (world/items.json).",
+                                  deal=SHIRTS, key="order-shirts")
+        carton = ITEM["shirt"]["carton"]
+        cartons = SHIRTS[0]["ordered"] // carton["per_carton"]
+        assert cartons * carton["per_carton"] == SHIRTS[0]["ordered"], "the shirts fill whole cartons"
+        carrier = next(x for x in WORLD["flows"] if x["id"] == f.id)["legs"][2]["carrier"]
+        kind, kind_name = kit.waybill_kind(f, carrier)
+        out["Shipment"]["Consignment"].update({
+            # the carrier's consignment note, on which the note asks the store to record damage (packaging/06#F3)
+            "CarrierAssignedID": V(f"{kit.initials(carrier)}-{kind}-26-{f.base:04d}", "The carrier's number for "
+                                   f"the consignment: its consignment note, {kind_name[0].lower()}{kind_name[1:]}, "
+                                   "which travels with the truck."),
+            # what goods-in counts at the door (packaging/06#F8)
+            "TotalPackagesQuantity": qty(cartons, "EA", f"{cartons} cartons of {carton['per_carton']} shirts. "
+                                                        + carton["why"])})
+        return out
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 15, "Issued on delivery.",
                            {"OrderReference": ref(f, "order-shirts", "The store's order.")},
@@ -8919,7 +8934,9 @@ def _(f, n, doc, out):
     paid = (total / Decimal("0.05")).quantize(Decimal(1), rounding="ROUND_HALF_UP") * Decimal("0.05")
     ln["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
                              "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
-                             "AllowanceChargeReason": V("Two shirts: 5.00 off the pair", "The store's offer."),
+                             "AllowanceChargeReason": V("Two shirts: 5.00 off the pair, Friday 22 May only",
+                                                       "The store's offer, for one day: the next day's sale of three "
+                                                       "shirts is at the full price (packaging/09#F6)."),
                              "Amount": amount(off, "XBL", "Off the pair."),
                              "BaseAmount": amount(gross, "XBL", "Two shirts at the shelf price.")}
     ln["LineExtensionAmount"] = amount(net, "XBL", "Two shirts less the offer.")
