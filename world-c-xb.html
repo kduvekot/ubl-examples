@@ -93,7 +93,10 @@ differently.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
 Statement</strong></a> from <a href="world-34-xb.html">Coastal State
-Water Company</a>: The household's water consumption. <a
+Water Company</a>: The household's annual statement for water and
+district heat, April 2025 to March 2026: the annual readings, the year's
+water with the city's levy, the heat with its cooling correction, and
+the new payments on account from April (D31). <a
 href="example-utilities-08-UtilityStatement.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
@@ -101,7 +104,10 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-34-xb.html">Coastal State Water Company</a>: The
-household's water bill, exempt from sales tax like every water bill. <a
+household's settlement bill for the account year: water (exempt), the
+city's levy (outside the tax), district heat and its cooling correction
+(with the state's sales tax), less the twelve payments on account; the
+balance is collected by direct debit 21 days later (D31, D23). <a
 href="example-utilities-09-Invoice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
@@ -110,9 +116,9 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA"><strong>Reminder</strong></a>
 from <a href="world-34-xb.html">Coastal State Water Company</a>: The
-household has not paid by the due date; the utility reminds it of the
-amount past due, referring to the invoice. <a
-href="example-utilities-10-Reminder.html">See the example
+direct debit for the settlement bill's balance is returned unpaid; the
+utility reminds the household of the amount past due, referring to the
+invoice. <a href="example-utilities-10-Reminder.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
@@ -120,11 +126,11 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> from <a href="world-34-xb.html">Coastal State Water
-Company</a>: After the reminder the household had its meter tested: it
-over-read by two cubic metres in March. The utility credits the water
-and the city's levy on them. <a
-href="example-utilities-11-CreditNote.html">See the example
-document</a>.</p>
+Company</a>: After the reminder the household had its water meter
+tested: it over-read by two cubic metres at the annual reading. The
+utility credits the water and the city's levy on them, which reduces the
+balance still open. <a href="example-utilities-11-CreditNote.html">See
+the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
 </ul>
 <h2 id="packaging-for-the-benches-clothing-for-the-store">Packaging for
@@ -167,6 +173,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>

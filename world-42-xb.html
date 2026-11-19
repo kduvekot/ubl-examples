@@ -102,7 +102,7 @@ company number <code>19676</code> and the company's own reference)</td>
 pipeline every day. UBL carries the monthly sale as an Invoice in energy
 units, the export and import by fixed installation (transport mode 7) in
 the customs declarations, and a Reminder when the buyer pays late.</p>
-<p>In this world it sends 4 and receives 1 documents, and is named in 1
+<p>In this world it sends 4 and receives 1 documents, and is named in 2
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="gas-and-electricity-in-an-unbundled-market-bayvarras-gas-field--urvania">Gas
@@ -122,13 +122,13 @@ across currencies when the power station pays late.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
 Customs Declaration</strong></a> to <a href="world-19-xb.html">Customs
 and Border Service of Bayvarra</a>: The gas producer declares March's
-gas leaving Bayvarra by pipeline, in one monthly declaration. <a
-href="example-energy-04-ExportCustomsDeclaration.html">See the example
-document</a>.</p>
+gas leaving Bayvarra by pipeline, in one monthly declaration: one
+shipment, the month's flow measured at the border metering station, with
+a consignment for each buyer, the power station and the retail company.
+<a href="example-energy-04-ExportCustomsDeclaration.html">See the
+example document</a>.</p>
 <p>In it as <code>ExporterParty</code>,
-<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p>
-<p>Also mentions: <a href="world-43-xu.html">Montebrio Power</a> as
-<code>CustomsDeclaration/ConsigneeParty</code>.</p></li>
+<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 to <a href="world-43-xu.html">Montebrio Power</a>: The gas producer
@@ -172,8 +172,20 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-D
 Customs Declaration</strong></a> from <a
 href="world-43-xu.html">Montebrio Power</a> to <a
 href="world-19-xu.html">Customs Administration of Urvania</a>: The power
-station declares the gas it received in March into Urvania. <a
+station declares its consignment of March's gas into Urvania, under the
+shipment of the export declaration. <a
 href="example-energy-05-ImportCustomsDeclaration.html">See the example
+document</a>.</p>
+<p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
+sending the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> from <a href="world-33-xu.html">Ferrano
+Energy</a> to <a href="world-19-xu.html">Customs Administration of
+Urvania</a>: The retail company declares its own consignment of March's
+gas, 2,400 MWh fed into the grid at the city gate for its gas customers,
+into Urvania (D44). <a
+href="example-energy-10-ImportCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
@@ -204,6 +216,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>

@@ -50,8 +50,8 @@ The payer's remittance number.</li>
 <strong>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-19</strong><br />
-Paid before the due date.</li>
+<li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
+Paid on Monday 20 April, before the due date (D27, D31 point 7).</li>
 <li><code>IssueTime</code> = <strong>11:40:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -68,13 +68,13 @@ What the advice is for.</li>
 The coral, the currency of the invoice paid; it has three decimals. The
 code is from the world's copy of UBL's Currency (ISO 4217) list: XLC =
 Coral.</li>
-<li><code>TotalDebitAmount</code> = <strong>135.566</strong> (currencyID
+<li><code>TotalDebitAmount</code> = <strong>139.870</strong> (currencyID
 <code>XLC</code>)<br />
 The invoices paid.</li>
 <li><code>TotalCreditAmount</code> = <strong>0.000</strong> (currencyID
 <code>XLC</code>)<br />
 No credits taken.</li>
-<li><code>TotalPaymentAmount</code> = <strong>135.566</strong>
+<li><code>TotalPaymentAmount</code> = <strong>139.870</strong>
 (currencyID <code>XLC</code>)<br />
 The amount transferred: the payable amount of the invoice.</li>
 <li><code>PaymentOrderReference</code> =
@@ -625,7 +625,7 @@ of UBL's Country identification (ISO 3166) list: XL = Lisavu.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 One invoice paid.</li>
-<li><code>DebitLineAmount</code> = <strong>135.566</strong> (currencyID
+<li><code>DebitLineAmount</code> = <strong>139.870</strong> (currencyID
 <code>XLC</code>)<br />
 The amount of the invoice this payment settles: the whole payable
 amount. Paid invoices are debits on a remittance advice, as in the OASIS
@@ -664,14 +664,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;UTILITIES-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-RM-26-0316&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;bcb6eadf-33b2-550e-b57c-1a63cfc06bfc&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-19&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:40:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Mamohe mutaki tohala titutu.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Payment of the invoice below.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XLC&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;135.566&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;139.870&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.000&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;135.566&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;139.870&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentOrderReference</span>&gt;VT-PAY-26-0313&lt;/<span class="kw">cbc:PaymentOrderReference</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF26STINV260323&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
@@ -859,7 +859,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;135.566&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;139.870&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.000&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;PHON&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF26STINV260323&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
@@ -877,6 +877,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>

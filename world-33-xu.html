@@ -76,6 +76,21 @@ System subheadings.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="electricity-energy">Electricity, energy</h3>
+<p>The energy of the electricity supply, per kilowatt hour: the tariff
+FE-KWH without the network charge of the grid.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>FE-KWH-E</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>21.1 XUF per <code>KWH</code> (kilowatt hour)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="natural-gas-supply">Natural gas supply</h3>
 <p>Natural gas supply, per kilowatt hour: the metered volume converted
 with the grid operator's correction for pressure and calorific value;
@@ -98,7 +113,7 @@ and reads the meters. UBL keeps the two apart: the grid operator's
 Utility Statement carries the readings to the retailer, and the
 retailer's Invoice and Utility Statement carry them on to the
 customer.</p>
-<p>In this world it sends 3 and receives 5 documents, and is named in 0
+<p>In this world it sends 4 and receives 5 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
@@ -116,9 +131,10 @@ differently.</p>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
 Statement</strong></a> to <a href="world-5-xu.html">Valdara
 Industries</a>: The factory's monthly electricity consumption: meter
-readings and consumption per connection, in the energy and water supply
-structure. <a href="example-utilities-01-UtilityStatement.html">See the
-example document</a>.</p>
+readings and consumption at its main connection, with Ferrano Energy's
+energy and Ferrano Grid's network charges as the two suppliers of the
+bill's tariff. <a href="example-utilities-01-UtilityStatement.html">See
+the example document</a>.</p>
 <p>In it as <code>SenderParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
@@ -133,15 +149,16 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA"><strong>Utility
 Statement</strong></a> to <a href="world-8-xu.html">Castrano
-Logistics</a>: The 3PL's warehouse is the manufacturer's building: the
-3PL is the subscriber at the connection and receives the statement, but
-the manufacturer pays. The statement therefore names the manufacturer as
-customer, the buyer that differs from the receiver. <a
-href="example-utilities-03-UtilityStatement.html">See the example
+Logistics</a>: The warehouse is the manufacturer's building: the
+manufacturer owns it and holds the subscription, the 3PL operates the
+warehouse and receives the statement of its consumption point; the
+statement names the manufacturer as subscriber and customer (D31 point
+4). <a href="example-utilities-03-UtilityStatement.html">See the example
 document</a>.</p>
 <p>In it as <code>SenderParty</code>.</p>
 <p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
-<code>CustomerParty</code>.</p></li>
+<code>SubscriberParty</code>; <a href="world-5-xu.html">Valdara
+Industries</a> as <code>CustomerParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -169,6 +186,20 @@ pipeline across the border. The documents show the grid operator's
 metering with the correction a gas meter needs, the wholesale and
 network invoices, the customs declarations of a pipeline, and a reminder
 across currencies when the power station pays late.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
+Administration of Urvania</a>: The retail company declares its own
+consignment of March's gas, 2,400 MWh fed into the grid at the city gate
+for its gas customers, into Urvania (D44). <a
+href="example-energy-10-ImportCustomsDeclaration.html">See the example
+document</a>.</p>
+<p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
+<p>Also mentions: <a href="world-42-xb.html">Kelpstone Gas</a> as
+<code>ConsignorParty</code>.</p></li>
+</ul>
 <p><strong>Receives</strong></p>
 <ul>
 <li><p><a
@@ -212,7 +243,8 @@ document</a>.</p>
 <p><code>SenderParty</code> <code>AccountingSupplierParty</code>
 <code>SellerSupplierParty</code> <code>ReceiverParty</code>
 <code>CustomerParty</code> <code>AccountingCustomerParty</code>
-<code>BuyerCustomerParty</code></p>
+<code>BuyerCustomerParty</code> <code>ImporterParty</code>
+<code>ConsigneeParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -222,6 +254,8 @@ world</h2>
 <li><a href="world-44-xu.html">Ferrano Grid</a>, Urvania</li>
 <li><a href="world-43-xu.html">Montebrio Power</a>, Urvania</li>
 <li><a href="world-42-xb.html">Kelpstone Gas</a>, Bayvarra</li>
+<li><a href="world-19-xu.html">Customs Administration of Urvania</a>,
+Urvania</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#33-xu">See Energy Retailer on the map</a> ·
@@ -234,6 +268,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>

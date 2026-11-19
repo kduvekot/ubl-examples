@@ -73,7 +73,7 @@ without asking.</li>
 <li><code>AccountingCost</code> = <strong>Telephone and
 data</strong><br />
 The cost centre in words.</li>
-<li><code>LineCountNumeric</code> = <strong>2</strong><br />
+<li><code>LineCountNumeric</code> = <strong>3</strong><br />
 The number of invoice lines, as a check on the transfer.</li>
 <li><code>DefaultLanguageCode</code> = <strong>en</strong> (listID
 <code>ISO 639</code>)<br />
@@ -609,6 +609,20 @@ with a direct-debit mandate is collected on that day (decision
 D23).</li>
 <li><code>PaymentDueDate</code> = <strong>2026-04-23</strong><br />
 The day the amount is due, as the terms count it.</li>
+<li><code>PenaltyInterestRate/InterestRatePercent</code> =
+<strong>6</strong><br />
+The interest on late payment: the statutory rate, as the terms say
+nothing on late payment (D22).</li>
+<li><code>PenaltyInterestRate/TimeBasisCode</code> =
+<strong>ANN</strong> (listID
+<code>UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade</code>)<br />
+A yearly rate. The code is from UBL's default Unit of measure (UNECE
+Recommendation 20) list: ANN = year.</li>
+<li><code>PenaltyInterestRate/CalculationMethodCode</code> =
+<strong>SIMPLE</strong> (listID
+<code>urn:ubl-examples:world:codelist:InterestCalculationCode</code>)<br />
+Simple interest, per day late. The code is from the Trade Accord's
+interest calculation method list: SIMPLE = Simple interest.</li>
 </ul>
 <h3 id="allowance-charge">Allowance Charge</h3>
 <p>Inside <code>AllowanceCharge</code>:</p>
@@ -635,13 +649,13 @@ The six subscriptions.</li>
 <h3 id="legal-monetary-total">Legal Monetary Total</h3>
 <p>Inside <code>LegalMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>141.920</strong>
+<li><code>LineExtensionAmount</code> = <strong>146.224</strong>
 (currencyID <code>XLC</code>)<br />
 The sum of the line amounts.</li>
-<li><code>TaxExclusiveAmount</code> = <strong>135.566</strong>
+<li><code>TaxExclusiveAmount</code> = <strong>139.870</strong>
 (currencyID <code>XLC</code>)<br />
 The lines less the discount.</li>
-<li><code>TaxInclusiveAmount</code> = <strong>135.566</strong>
+<li><code>TaxInclusiveAmount</code> = <strong>139.870</strong>
 (currencyID <code>XLC</code>)<br />
 The same as the total without tax: Lisavu has no sales tax or value
 added tax, so no tax is due and the document has no tax section
@@ -652,7 +666,7 @@ The bundle discount.</li>
 <li><code>AllowanceTotalTaxInclusiveAmount</code> =
 <strong>6.354</strong> (currencyID <code>XLC</code>)<br />
 The same: no tax on the island.</li>
-<li><code>PayableAmount</code> = <strong>135.566</strong> (currencyID
+<li><code>PayableAmount</code> = <strong>139.870</strong> (currencyID
 <code>XLC</code>)<br />
 What the trader pays.</li>
 </ul>
@@ -662,7 +676,7 @@ What the trader pays.</li>
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>InvoicedQuantity</code> = <strong>6</strong> (unitCode
-<code>MON</code>)<br />
+<code>EA</code>)<br />
 Six business lines for the month.</li>
 <li><code>LineExtensionAmount</code> = <strong>127.080</strong>
 (currencyID <code>XLC</code>)<br />
@@ -678,11 +692,12 @@ The meter or subscription the line is for.</li>
 lines</strong><br />
 Where it is.</li>
 <li><code>Item/Description</code> = <strong>Levise nikeile tofami titefe
-litile, pafipa vivukane.</strong> (languageID <code>qal</code>)<br />
+litile, vivukane tatata litile tofami lovofe.</strong> (languageID
+<code>qal</code>)<br />
 The seller's description in Lisavan, the seller's language; item
 telecom-line of Selanu Telecom (world/items.json).</li>
 <li><code>Item/Description</code> = <strong>Business telephone and data
-line, monthly subscription.</strong> (languageID
+line, subscription per line and month.</strong> (languageID
 <code>en-XL</code>)<br />
 The seller's description in English, the working language between the
 countries; item telecom-line of Selanu Telecom (world/items.json).</li>
@@ -702,16 +717,17 @@ The seller's own item number; item telecom-line of Selanu Telecom
 <code>XLC</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
-<code>MON</code>)<br />
+<code>EA</code>)<br />
 The price is per one unit.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The line number.</li>
-<li><code>InvoicedQuantity</code> = <strong>35</strong> (unitCode
+<li><code>InvoicedQuantity</code> = <strong>31</strong> (unitCode
 <code>E34</code>)<br />
-Mobile data beyond the subscriptions.</li>
-<li><code>LineExtensionAmount</code> = <strong>14.840</strong>
+Mobile data of the data pool beyond the subscriptions, used on the
+island.</li>
+<li><code>LineExtensionAmount</code> = <strong>13.144</strong>
 (currencyID <code>XLC</code>)<br />
-35 × 0.424, rounded to the minor unit of the currency.</li>
+31 × 0.424, rounded to the minor unit of the currency.</li>
 <li><code>PaymentPurposeCode</code> = <strong>PHON</strong> (listID
 <code>ISO 20022 ExternalPurpose1Code</code>)<br />
 What the payment of this line is for, as an ISO 20022 purpose: a
@@ -749,6 +765,53 @@ The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
 <code>E34</code>)<br />
 The price is per one unit.</li>
+<li><code>ID</code> = <strong>3</strong><br />
+The line number.</li>
+<li><code>InvoicedQuantity</code> = <strong>4</strong> (unitCode
+<code>E34</code>)<br />
+Mobile data of the data pool used while roaming in Bayvarra.</li>
+<li><code>LineExtensionAmount</code> = <strong>6.000</strong>
+(currencyID <code>XLC</code>)<br />
+4 × 1.5, rounded to the minor unit of the currency.</li>
+<li><code>PaymentPurposeCode</code> = <strong>PHON</strong> (listID
+<code>ISO 20022 ExternalPurpose1Code</code>)<br />
+What the payment of this line is for, as an ISO 20022 purpose: a
+telephone bill. The code is from the world's copy of ISO 20022
+ExternalPurpose1Code: PHON = TelephoneBill.</li>
+<li><code>PurchaseReference/ID</code> = <strong>ST-D-0042</strong><br />
+The meter or subscription the line is for.</li>
+<li><code>PurchaseReference/Description</code> = <strong>Mobile data
+pool, roaming in Bayvarra</strong><br />
+Where it is.</li>
+<li><code>Item/Description</code> = <strong>Livule titefe vimihi lelala
+vapiseva fivava pelahi, tatata menuti; Trade Accord sohone lelaha helate
+vamufe.</strong> (languageID <code>qal</code>)<br />
+The seller's description in Lisavan, the seller's language; item
+telecom-roaming of Selanu Telecom (world/items.json).</li>
+<li><code>Item/Description</code> = <strong>Mobile data used on a
+partner's network abroad, per gigabyte; the Trade Accord has no roaming
+rule.</strong> (languageID <code>en-XL</code>)<br />
+The seller's description in English, the working language between the
+countries; item telecom-roaming of Selanu Telecom
+(world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Livule titefe helate</strong>
+(languageID <code>qal</code>)<br />
+The item's name in Lisavan, the seller's language; item telecom-roaming
+of Selanu Telecom (world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Mobile data roaming</strong>
+(languageID <code>en-XL</code>)<br />
+The item's name in English, the working language between the countries;
+item telecom-roaming of Selanu Telecom (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ID</code> =
+<strong>ST-GB-RX</strong><br />
+The seller's own item number; item telecom-roaming of Selanu Telecom
+(world/items.json).</li>
+<li><code>Price/PriceAmount</code> = <strong>1.5</strong> (currencyID
+<code>XLC</code>)<br />
+The seller's price per unit (world/items.json).</li>
+<li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
+<code>E34</code>)<br />
+The price is per one unit.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -767,7 +830,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XLC&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;700&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Telephone and data&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;2&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;3&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DefaultLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:DefaultLanguageCode</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -959,72 +1022,100 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansID</span>&gt;1&lt;/<span class="kw">cbc:PaymentMeansID</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;21 days net from the bill.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;false&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 5189&quot;</span>&gt;95&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Business bundle discount&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MultiplierFactorNumeric</span>&gt;0.05&lt;/<span class="kw">cbc:MultiplierFactorNumeric</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.354&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BaseAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;127.080&lt;/<span class="kw">cbc:BaseAmount</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;141.920&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;135.566&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;135.566&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceTotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.354&lt;/<span class="kw">cbc:AllowanceTotalAmount</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceTotalTaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.354&lt;/<span class="kw">cbc:AllowanceTotalTaxInclusiveAmount</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;135.566&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MON&quot;</span>&gt;6&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;127.080&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;PHON&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ST-L-BUS6&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Six business lines&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PurchaseReference</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Levise nikeile tofami titefe litile, pafipa vivukane.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Business telephone and data line, monthly subscription.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Levise nikeile litile&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Business telephone line&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ST-BL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.18&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MON&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;35&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;14.840&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;PHON&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ST-D-0042&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Mobile data pool&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PurchaseReference</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Livule titefe lehimi vivukane, tatata menuti.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Mobile data beyond the subscription, per gigabyte.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Livule titefe&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Mobile data&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ST-GB&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.424&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InterestRatePercent</span>&gt;6&lt;/<span class="kw">cbc:InterestRatePercent</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimeBasisCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade&quot;</span>&gt;ANN&lt;/<span class="kw">cbc:TimeBasisCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CalculationMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InterestCalculationCode&quot;</span>&gt;SIMPLE&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;false&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 5189&quot;</span>&gt;95&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Business bundle discount&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MultiplierFactorNumeric</span>&gt;0.05&lt;/<span class="kw">cbc:MultiplierFactorNumeric</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.354&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BaseAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;127.080&lt;/<span class="kw">cbc:BaseAmount</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AllowanceCharge</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;146.224&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;139.870&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;139.870&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceTotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.354&lt;/<span class="kw">cbc:AllowanceTotalAmount</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AllowanceTotalTaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.354&lt;/<span class="kw">cbc:AllowanceTotalTaxInclusiveAmount</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;139.870&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;6&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;127.080&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;PHON&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ST-L-BUS6&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Six business lines&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Levise nikeile tofami titefe litile, vivukane tatata litile tofami lovofe.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Business telephone and data line, subscription per line and month.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Levise nikeile litile&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Business telephone line&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ST-BL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.18&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;31&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;13.144&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;PHON&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ST-D-0042&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Mobile data pool&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Livule titefe lehimi vivukane, tatata menuti.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Mobile data beyond the subscription, per gigabyte.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Livule titefe&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Mobile data&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ST-GB&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;0.424&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;4&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;6.000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;PHON&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ST-D-0042&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Mobile data pool, roaming in Bayvarra&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PurchaseReference</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Livule titefe vimihi lelala vapiseva fivava pelahi, tatata menuti; Trade Accord sohone lelaha helate vamufe.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Mobile data used on a partner&#39;s network abroad, per gigabyte; the Trade Accord has no roaming rule.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Livule titefe helate&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Mobile data roaming&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ST-GB-RX&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;1.5&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>

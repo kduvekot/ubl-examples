@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: utility type. The kind of utility supply. Also the meaning of SubscriberTypeCode in a utility item, which names the supply. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: utility type. The kind of utility supply. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>UtilityTypeCode</ShortName>

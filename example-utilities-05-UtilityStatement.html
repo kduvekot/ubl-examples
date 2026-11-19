@@ -18,7 +18,9 @@ Statement: Coastal State Water Company to Brightmarket Stores</h1>
 utility in each country)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA">Utility
 Statement in the UBL 2.5 specification</a></em></p>
-<p>The shop's water consumption, read from its meter.</p>
+<p>The shop's water consumption, read from its meter, with the water
+company's water and the city's sewage levy as the two parts of the
+bill.</p>
 <p><a href="examples/utilities/05-UtilityStatement.xml">The XML file</a>
 is valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -417,8 +419,9 @@ The connection's number.</li>
 Lumeport</strong><br />
 Where.</li>
 <li><code>UtilityConsumptionPoint/SubscriberID</code> =
-<strong>CSW-C-260118</strong><br />
-The contract it belongs to.</li>
+<strong>CSW-CU-118204</strong><br />
+The subscriber's customer number with the utility; the contract number
+stays in the contract (D31 point 5).</li>
 <li><code>UtilityConsumptionPoint/SubscriberType</code> =
 <strong>Commercial</strong><br />
 The name of code COM in the Trade Accord's subscriber type list.</li>
@@ -575,141 +578,16 @@ Class 1.</li>
 = <strong>Calibrated 2024</strong><br />
 When it was checked.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name</code>
-= <strong>Maximum flow</strong><br />
-A rating of the meter.</li>
+= <strong>Permanent flow rate (Q3)</strong><br />
+A rating of the meter: the flow it measures continuously within its
+accuracy class (utilities/05#F12).</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity</code>
 = <strong>2.5</strong> (unitCode <code>MQH</code>)<br />
 Its value.</li>
-<li><code>Consumption/UtilityStatementTypeCode</code> =
-<strong>WATER</strong> (listID
-<code>urn:ubl-examples:world:codelist:UtilityTypeCode</code>)<br />
-The kind of supply. The code is from the Trade Accord's utility type
-list: WATER = Water.</li>
-<li><code>Consumption/MainPeriod/StartDate</code> =
-<strong>2026-03-01</strong><br />
-March.</li>
-<li><code>Consumption/MainPeriod/EndDate</code> =
-<strong>2026-03-31</strong><br />
-Its last day.</li>
-<li><code>Consumption/TaxTotal/TaxAmount</code> = <strong>0.00</strong>
-(currencyID <code>XBL</code>)<br />
-The tax of this point's consumption.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ID</code> =
-<strong>CSW-CP-38510-411-2603</strong><br />
-The consumption report of the point for March.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType</code>
-= <strong>Monthly consumption</strong><br />
-The name of code MON in the Trade Accord's consumption type list.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionTypeCode</code>
-= <strong>MON</strong> (listID
-<code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code>)<br />
-As a code. The code is from the Trade Accord's consumption type list:
-MON = Monthly consumption.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/Description</code>
-= <strong>March consumption of Shop, Lumeport.</strong><br />
-In words.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/TotalConsumedQuantity</code>
-= <strong>86</strong> (unitCode <code>MTQ</code>)<br />
-Used in March.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/BasicConsumedQuantity</code>
-= <strong>86</strong> (unitCode <code>MTQ</code>)<br />
-All at the basic tariff: no reduced-rate hours.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate</code>
-= <strong>2026-03-01</strong><br />
-March.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate</code>
-= <strong>2026-03-31</strong><br />
-Its last day.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID</code>
-= <strong>CSW-CP-38510-411-2602</strong><br />
-The report of February.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType</code>
-= <strong>Monthly consumption</strong><br />
-The name of code MON in the Trade Accord's consumption type list.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode</code>
-= <strong>MON</strong> (listID
-<code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code>)<br />
-As a code. The code is from the Trade Accord's consumption type list:
-MON = Monthly consumption.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity</code>
-= <strong>79</strong> (unitCode <code>MTQ</code>)<br />
-What February's report said.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate</code>
-= <strong>2026-02-01</strong><br />
-February.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate</code>
-= <strong>2026-02-28</strong><br />
-Its last day.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber</code>
-= <strong>CSW-W-55102</strong><br />
-The meter.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity</code>
-= <strong>81</strong> (unitCode <code>MTQ</code>)<br />
-The month's consumption.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount</code>
-= <strong>190.35</strong> (currencyID <code>XBL</code>)<br />
-What it cost at the tariff.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode</code>
-= <strong>NORMAL</strong> (listID
-<code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code>)<br />
-Within the usual range. The code is from the Trade Accord's consumption
-level list: NORMAL = Normal.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel</code>
-= <strong>Normal</strong><br />
-The name of code NORMAL in the Trade Accord's consumption level
-list.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Description</code>
-= <strong>Earlier month.</strong><br />
-For comparison.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate</code>
-= <strong>2026-01-01</strong><br />
-The month.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate</code>
-= <strong>2026-01-31</strong><br />
-Its end.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber</code>
-= <strong>CSW-W-55102</strong><br />
-The meter.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity</code>
-= <strong>79</strong> (unitCode <code>MTQ</code>)<br />
-The month's consumption.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount</code>
-= <strong>185.65</strong> (currencyID <code>XBL</code>)<br />
-What it cost at the tariff.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode</code>
-= <strong>NORMAL</strong> (listID
-<code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code>)<br />
-Within the usual range. The code is from the Trade Accord's consumption
-level list: NORMAL = Normal.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel</code>
-= <strong>Normal</strong><br />
-The name of code NORMAL in the Trade Accord's consumption level
-list.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Description</code>
-= <strong>Earlier month.</strong><br />
-For comparison.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate</code>
-= <strong>2026-02-01</strong><br />
-The month.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate</code>
-= <strong>2026-02-28</strong><br />
-Its end.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount</code>
-= <strong>202.10</strong> (currencyID <code>XBL</code>)<br />
-What this month cost.</li>
-<li><code>Consumption/EnergyWaterSupply/ConsumptionAverage/Description</code>
-= <strong>The average over the last three months is 82
-m³.</strong><br />
-For comparison.</li>
-<li><code>Consumption/LegalMonetaryTotal/LineExtensionAmount</code> =
-<strong>202.10</strong> (currencyID <code>XBL</code>)<br />
-The consumption.</li>
-<li><code>Consumption/LegalMonetaryTotal/PayableAmount</code> =
-<strong>202.10</strong> (currencyID <code>XBL</code>)<br />
-With its tax.</li>
-<li><code>SupplierConsumption/Description</code> = <strong>The supply
-under the customer's contract.</strong><br />
-What follows.</li>
+<li><code>SupplierConsumption/Description</code> = <strong>The drinking
+water, which the water company supplies under the customer's
+contract.</strong><br />
+Whose supply this part is, and how it is billed.</li>
 <li><code>SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID</code>
 = <strong>20412192</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -731,17 +609,154 @@ name are enough.</li>
 <li><code>SupplierConsumption/Consumption/UtilityStatementTypeCode</code>
 = <strong>WATER</strong> (listID
 <code>urn:ubl-examples:world:codelist:UtilityTypeCode</code>)<br />
-The supply under the contract. The code is from the Trade Accord's
-utility type list: WATER = Water.</li>
+The kind of supply. The code is from the Trade Accord's utility type
+list: WATER = Water.</li>
 <li><code>SupplierConsumption/Consumption/MainPeriod/StartDate</code> =
 <strong>2026-03-01</strong><br />
 March.</li>
 <li><code>SupplierConsumption/Consumption/MainPeriod/EndDate</code> =
 <strong>2026-03-31</strong><br />
 Its last day.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxAmount</code> =
+<strong>0.00</strong> (currencyID <code>XBL</code>)<br />
+The tax of this part of the consumption.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxableAmount</code>
+= <strong>202.10</strong> (currencyID <code>XBL</code>)<br />
+The lines of this part.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxAmount</code>
+= <strong>0.00</strong> (currencyID <code>XBL</code>)<br />
+0 % of them.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID</code>
+= <strong>E</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+Drinking water is exempt from the state sales tax (category E). The code
+is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category:
+E = Exempt from tax. An identifier that holds a code names the code's
+list in its schemeID.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/Percent</code>
+= <strong>0</strong><br />
+No tax is charged in this category.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReasonCode</code>
+= <strong>WATER</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
+The exemption reason as a code of Bayvarra's national list, the list of
+the seller's country. The code is from Bayvarra's national sales tax
+exemption reason list: WATER = Drinking water.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReason</code>
+= <strong>Drinking water</strong><br />
+The name of code WATER in Bayvarra's national sales tax exemption reason
+list.</li>
+<li><code>SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID</code>
+= <strong>STT</strong> (schemeID
+<code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+STT = State/provincial sales tax. An identifier that holds a code names
+the code's list in its schemeID.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ID</code>
+= <strong>CSW-CP-38510-411-2603</strong><br />
+The consumption report of the point for March.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType</code>
+= <strong>Monthly consumption</strong><br />
+The name of code MON in the Trade Accord's consumption type list.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionTypeCode</code>
+= <strong>MON</strong> (listID
+<code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code>)<br />
+As a code. The code is from the Trade Accord's consumption type list:
+MON = Monthly consumption.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Description</code>
+= <strong>March consumption of Shop, Lumeport.</strong><br />
+In words.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/TotalConsumedQuantity</code>
+= <strong>86</strong> (unitCode <code>MTQ</code>)<br />
+Used in March.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/BasicConsumedQuantity</code>
+= <strong>86</strong> (unitCode <code>MTQ</code>)<br />
+All at the basic tariff: no reduced-rate hours.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate</code>
+= <strong>2026-03-01</strong><br />
+March.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate</code>
+= <strong>2026-03-31</strong><br />
+Its last day.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID</code>
+= <strong>CSW-CP-38510-411-2602</strong><br />
+The report of February.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType</code>
+= <strong>Monthly consumption</strong><br />
+The name of code MON in the Trade Accord's consumption type list.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode</code>
+= <strong>MON</strong> (listID
+<code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code>)<br />
+As a code. The code is from the Trade Accord's consumption type list:
+MON = Monthly consumption.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity</code>
+= <strong>79</strong> (unitCode <code>MTQ</code>)<br />
+What February's report said.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate</code>
+= <strong>2026-02-01</strong><br />
+February.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate</code>
+= <strong>2026-02-28</strong><br />
+Its last day.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber</code>
+= <strong>CSW-W-55102</strong><br />
+The meter.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity</code>
+= <strong>81</strong> (unitCode <code>MTQ</code>)<br />
+The month's consumption.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount</code>
+= <strong>190.35</strong> (currencyID <code>XBL</code>)<br />
+What it cost at the tariff of the bill, without tax.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode</code>
+= <strong>NORMAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code>)<br />
+Within the usual range. The code is from the Trade Accord's consumption
+level list: NORMAL = Normal.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel</code>
+= <strong>Normal</strong><br />
+The name of code NORMAL in the Trade Accord's consumption level
+list.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate</code>
+= <strong>2026-01-01</strong><br />
+The month.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate</code>
+= <strong>2026-01-31</strong><br />
+Its end.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber</code>
+= <strong>CSW-W-55102</strong><br />
+The meter.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity</code>
+= <strong>79</strong> (unitCode <code>MTQ</code>)<br />
+The month's consumption.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount</code>
+= <strong>185.65</strong> (currencyID <code>XBL</code>)<br />
+What it cost at the tariff of the bill, without tax.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode</code>
+= <strong>NORMAL</strong> (listID
+<code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code>)<br />
+Within the usual range. The code is from the Trade Accord's consumption
+level list: NORMAL = Normal.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel</code>
+= <strong>Normal</strong><br />
+The name of code NORMAL in the Trade Accord's consumption level
+list.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate</code>
+= <strong>2026-02-01</strong><br />
+The month.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate</code>
+= <strong>2026-02-28</strong><br />
+Its end.</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount</code>
+= <strong>192.70</strong> (currencyID <code>XBL</code>)<br />
+The average amount of the last three months at the tariff of the bill,
+without tax (utilities/01#F3).</li>
+<li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/Description</code>
+= <strong>The average over the last three months is 82
+m³.</strong><br />
+For comparison.</li>
 <li><code>SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount</code>
 = <strong>202.10</strong> (currencyID <code>XBL</code>)<br />
-The line.</li>
+The lines of this part.</li>
 <li><code>SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount</code>
 = <strong>202.10</strong> (currencyID <code>XBL</code>)<br />
 With its tax.</li>
@@ -775,26 +790,23 @@ March.</li>
 <li><code>SupplierConsumption/ConsumptionLine/Period/EndDate</code> =
 <strong>2026-03-31</strong><br />
 Its last day.</li>
-<li><code>SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description</code>
-= <strong>The consumption point of the statement.</strong><br />
-Where it was delivered.</li>
 <li><code>SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount</code>
 = <strong>0.00</strong> (currencyID <code>XBL</code>)<br />
 0 % of the line.</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/ID</code> =
 <strong>CW-M3</strong><br />
-The utility's tariff item.</li>
+The supplier's tariff item.</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID</code>
-= <strong>CSW-C-260118</strong><br />
-The customer's contract.</li>
+= <strong>CSW-CU-118204</strong><br />
+The subscriber's customer number with the utility (D31 point 5).</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType</code>
-= <strong>Water</strong><br />
-The name of code WATER in the Trade Accord's utility type list.</li>
+= <strong>Commercial</strong><br />
+The name of code COM in the Trade Accord's subscriber type list.</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode</code>
-= <strong>WATER</strong> (listID
-<code>urn:ubl-examples:world:codelist:UtilityTypeCode</code>)<br />
-The supply the item is for, as a code. The code is from the Trade
-Accord's utility type list: WATER = Water.</li>
+= <strong>COM</strong> (listID
+<code>urn:ubl-examples:world:codelist:SubscriberTypeCode</code>)<br />
+As a code. The code is from the Trade Accord's subscriber type list: COM
+= Commercial.</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/Description</code>
 = <strong>Drinking water supply, per cubic metre.</strong><br />
 The tariff in words; world/items.json.</li>
@@ -845,6 +857,126 @@ the code's list in its schemeID.</li>
 The supply contract the tariff belongs to.</li>
 <li><code>SupplierConsumption/ConsumptionLine/Price/PriceAmount</code> =
 <strong>2.35</strong> (currencyID <code>XBL</code>)<br />
+The tariff (world/items.json).</li>
+<li><code>SupplierConsumption/ConsumptionLine/Price/BaseQuantity</code>
+= <strong>1</strong> (unitCode <code>MTQ</code>)<br />
+Per unit.</li>
+<li><code>SupplierConsumption/Description</code> = <strong>The city of
+Lumeport's sewage levy on the water used, which the water company
+collects with its bill and pays to the city.</strong><br />
+Whose supply this part is, and how it is billed.</li>
+<li><code>SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID</code>
+= <strong>6250397184</strong> (schemeID
+<code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>SupplierConsumption/UtilitySupplierParty/PartyName/Name</code>
+= <strong>Lumeport Public Works Department</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>SupplierConsumption/UtilityCustomerParty/PartyIdentification/ID</code>
+= <strong>20410411</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>SupplierConsumption/UtilityCustomerParty/PartyName/Name</code>
+= <strong>Brightmarket Stores</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>SupplierConsumption/Consumption/UtilityStatementTypeCode</code>
+= <strong>WATER</strong> (listID
+<code>urn:ubl-examples:world:codelist:UtilityTypeCode</code>)<br />
+The kind of supply. The code is from the Trade Accord's utility type
+list: WATER = Water.</li>
+<li><code>SupplierConsumption/Consumption/MainPeriod/StartDate</code> =
+<strong>2026-03-01</strong><br />
+March.</li>
+<li><code>SupplierConsumption/Consumption/MainPeriod/EndDate</code> =
+<strong>2026-03-31</strong><br />
+Its last day.</li>
+<li><code>SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount</code>
+= <strong>36.12</strong> (currencyID <code>XBL</code>)<br />
+The lines of this part.</li>
+<li><code>SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount</code>
+= <strong>36.12</strong> (currencyID <code>XBL</code>)<br />
+Outside the scope of the tax: nothing added.</li>
+<li><code>SupplierConsumption/ConsumptionLine/ID</code> =
+<strong>2</strong><br />
+The line of the consumption.</li>
+<li><code>SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID</code>
+= <strong>2</strong><br />
+The line of the invoice this line explains.</li>
+<li><code>SupplierConsumption/ConsumptionLine/InvoicedQuantity</code> =
+<strong>86</strong> (unitCode <code>MTQ</code>)<br />
+The shop's water use, on which the city charges its levy.</li>
+<li><code>SupplierConsumption/ConsumptionLine/LineExtensionAmount</code>
+= <strong>36.12</strong> (currencyID <code>XBL</code>)<br />
+Quantity times the tariff.</li>
+<li><code>SupplierConsumption/ConsumptionLine/Period/StartDate</code> =
+<strong>2026-03-01</strong><br />
+March.</li>
+<li><code>SupplierConsumption/ConsumptionLine/Period/EndDate</code> =
+<strong>2026-03-31</strong><br />
+Its last day.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/ID</code> =
+<strong>CSW-LEVY</strong><br />
+The supplier's tariff item.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType</code>
+= <strong>Commercial</strong><br />
+The name of code COM in the Trade Accord's subscriber type list.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode</code>
+= <strong>COM</strong> (listID
+<code>urn:ubl-examples:world:codelist:SubscriberTypeCode</code>)<br />
+As a code. The code is from the Trade Accord's subscriber type list: COM
+= Commercial.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/Description</code>
+= <strong>The city's levy for sewage treatment, per cubic metre of water
+used; collected by the water company for the city.</strong><br />
+The tariff in words; world/items.json.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType</code>
+= <strong>Metered</strong><br />
+The name of code MET in the Trade Accord's consumption type list.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode</code>
+= <strong>MET</strong> (listID
+<code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code>)<br />
+As a code. The code is from the Trade Accord's consumption type list:
+MET = Metered.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType</code>
+= <strong>Monthly</strong><br />
+The name of code M in the Trade Accord's utility charge type list.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode</code>
+= <strong>M</strong> (listID
+<code>urn:ubl-examples:world:codelist:ChargeTypeCode</code>)<br />
+As a code. The code is from the Trade Accord's utility charge type list:
+M = Monthly.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID</code>
+= <strong>O</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+A public levy the seller collects for Lumeport Public Works Department:
+not a supply, so outside the scope of the sales tax (category O, without
+a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or
+tax or fee category: O = Services outside scope of tax. An identifier
+that holds a code names the code's list in its schemeID.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxExemptionReasonCode</code>
+= <strong>LEVY</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
+The exemption reason as a code of Bayvarra's national list, the list of
+the seller's country. The code is from Bayvarra's national sales tax
+exemption reason list: LEVY = Collected for a public body, outside the
+scope of the state sales tax.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxExemptionReason</code>
+= <strong>Collected for a public body, outside the scope of the state
+sales tax</strong><br />
+The name of code LEVY in Bayvarra's national sales tax exemption reason
+list.</li>
+<li><code>SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID</code>
+= <strong>STT</strong> (schemeID
+<code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+STT = State/provincial sales tax. An identifier that holds a code names
+the code's list in its schemeID.</li>
+<li><code>SupplierConsumption/ConsumptionLine/Price/PriceAmount</code> =
+<strong>0.42</strong> (currencyID <code>XBL</code>)<br />
 The tariff (world/items.json).</li>
 <li><code>SupplierConsumption/ConsumptionLine/Price/BaseQuantity</code>
 = <strong>1</strong> (unitCode <code>MTQ</code>)<br />
@@ -976,7 +1108,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:UtilityConsumptionPoint</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CSW-CP-38510-411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Shop, Lumeport&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberID</span>&gt;CSW-C-260118&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberID</span>&gt;CSW-CU-118204&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberType</span>&gt;Commercial&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubscriberTypeCode&quot;</span>&gt;COM&lt;/<span class="kw">cbc:SubscriberTypeCode</span>&gt;</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalDeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;86&lt;/<span class="kw">cbc:TotalDeliveredQuantity</span>&gt;</span>
@@ -1023,101 +1155,101 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQualifier</span>&gt;Calibrated 2024&lt;/<span class="kw">cbc:ValueQualifier</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeterProperty</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MeterProperty</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Maximum flow&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Permanent flow rate (Q3)&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MQH&quot;</span>&gt;2.5&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeterProperty</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilityMeter</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:UtilityConsumptionPoint</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consumption</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UtilityStatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UtilityTypeCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:UtilityStatementTypeCode</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MainPeriod</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MainPeriod</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnergyWaterSupply</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ConsumptionReport</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CSW-CP-38510-411-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Monthly consumption&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MON&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;March consumption of Shop, Lumeport.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TotalConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;86&lt;/<span class="kw">cbc:TotalConsumedQuantity</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BasicConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;86&lt;/<span class="kw">cbc:BasicConsumedQuantity</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionReportReference</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionReportID</span>&gt;CSW-CP-38510-411-2602&lt;/<span class="kw">cbc:ConsumptionReportID</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Monthly consumption&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MON&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TotalConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;79&lt;/<span class="kw">cbc:TotalConsumedQuantity</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ConsumptionReportReference</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MeterNumber</span>&gt;CSW-W-55102&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;81&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;190.35&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionLevel</span>&gt;Normal&lt;/<span class="kw">cbc:ConsumptionLevel</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;Earlier month.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:StartDate</span>&gt;2026-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:EndDate</span>&gt;2026-01-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MeterNumber</span>&gt;CSW-W-55102&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;79&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;185.65&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionLevel</span>&gt;Normal&lt;/<span class="kw">cbc:ConsumptionLevel</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;Earlier month.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ConsumptionReport</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ConsumptionAverage</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AverageAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;202.10&lt;/<span class="kw">cbc:AverageAmount</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;The average over the last three months is 82 m³.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ConsumptionAverage</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnergyWaterSupply</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;202.10&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;202.10&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consumption</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupplierConsumption</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The supply under the customer&#39;s contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilitySupplierParty</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412192&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Coastal State Water Company&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilitySupplierParty</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilityCustomerParty</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilityCustomerParty</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Consumption</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UtilityStatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UtilityTypeCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:UtilityStatementTypeCode</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MainPeriod</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MainPeriod</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupplierConsumption</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The drinking water, which the water company supplies under the customer&#39;s contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilitySupplierParty</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412192&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Coastal State Water Company&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilitySupplierParty</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilityCustomerParty</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilityCustomerParty</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Consumption</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UtilityStatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UtilityTypeCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:UtilityStatementTypeCode</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MainPeriod</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MainPeriod</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;202.10&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Drinking water&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EnergyWaterSupply</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionReport</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;CSW-CP-38510-411-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Monthly consumption&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MON&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;March consumption of Shop, Lumeport.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TotalConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;86&lt;/<span class="kw">cbc:TotalConsumedQuantity</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BasicConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;86&lt;/<span class="kw">cbc:BasicConsumedQuantity</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionReportReference</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionReportID</span>&gt;CSW-CP-38510-411-2602&lt;/<span class="kw">cbc:ConsumptionReportID</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Monthly consumption&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MON&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TotalConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;79&lt;/<span class="kw">cbc:TotalConsumedQuantity</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ConsumptionReportReference</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;CSW-W-55102&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;81&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;190.35&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevel</span>&gt;Normal&lt;/<span class="kw">cbc:ConsumptionLevel</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:StartDate</span>&gt;2026-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:EndDate</span>&gt;2026-01-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;CSW-W-55102&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;79&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;185.65&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevel</span>&gt;Normal&lt;/<span class="kw">cbc:ConsumptionLevel</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ConsumptionReport</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionAverage</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AverageAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;192.70&lt;/<span class="kw">cbc:AverageAmount</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;The average over the last three months is 82 m³.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ConsumptionAverage</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EnergyWaterSupply</span>&gt;</span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;202.10&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;202.10&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
@@ -1140,47 +1272,104 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Period</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Delivery</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;The consumption point of the statement.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:UtilityItem</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CW-M3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberID</span>&gt;CSW-C-260118&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberType</span>&gt;Water&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UtilityTypeCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:SubscriberTypeCode</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Drinking water supply, per cubic metre.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Metered&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MET&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrentChargeType</span>&gt;Monthly&lt;/<span class="kw">cbc:CurrentChargeType</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrentChargeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ChargeTypeCode&quot;</span>&gt;M&lt;/<span class="kw">cbc:CurrentChargeTypeCode</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Drinking water&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Contract</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;CSW-C-260118&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Contract</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:UtilityItem</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2.35&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ConsumptionLine</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupplierConsumption</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:UtilityItem</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CW-M3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberID</span>&gt;CSW-CU-118204&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberType</span>&gt;Commercial&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubscriberTypeCode&quot;</span>&gt;COM&lt;/<span class="kw">cbc:SubscriberTypeCode</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Drinking water supply, per cubic metre.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Metered&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MET&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrentChargeType</span>&gt;Monthly&lt;/<span class="kw">cbc:CurrentChargeType</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrentChargeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ChargeTypeCode&quot;</span>&gt;M&lt;/<span class="kw">cbc:CurrentChargeTypeCode</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Drinking water&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Contract</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;CSW-C-260118&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Contract</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:UtilityItem</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2.35&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ConsumptionLine</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupplierConsumption</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SupplierConsumption</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The city of Lumeport&#39;s sewage levy on the water used, which the water company collects with its bill and pays to the city.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilitySupplierParty</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;6250397184&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilitySupplierParty</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilityCustomerParty</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UtilityCustomerParty</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Consumption</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UtilityStatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UtilityTypeCode&quot;</span>&gt;WATER&lt;/<span class="kw">cbc:UtilityStatementTypeCode</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MainPeriod</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MainPeriod</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;36.12&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;36.12&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Consumption</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ConsumptionLine</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ParentDocumentLineReferenceID</span>&gt;2&lt;/<span class="kw">cbc:ParentDocumentLineReferenceID</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;86&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;36.12&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Period</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:UtilityItem</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;CSW-LEVY&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberType</span>&gt;Commercial&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubscriberTypeCode&quot;</span>&gt;COM&lt;/<span class="kw">cbc:SubscriberTypeCode</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;The city&#39;s levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Metered&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MET&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrentChargeType</span>&gt;Monthly&lt;/<span class="kw">cbc:CurrentChargeType</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CurrentChargeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ChargeTypeCode&quot;</span>&gt;M&lt;/<span class="kw">cbc:CurrentChargeTypeCode</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;O&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;LEVY&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Collected for a public body, outside the scope of the state sales tax&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:UtilityItem</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.42&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ConsumptionLine</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SupplierConsumption</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>

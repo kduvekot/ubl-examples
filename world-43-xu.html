@@ -82,7 +82,7 @@ megawatt hour.</p>
 Invoice carries the quantities in megawatt hours and the price per unit,
 and the Utility Statement of the grid operator shows what was fed
 in.</p>
-<p>In this world it sends 3 and receives 2 documents, and is named in 1
+<p>In this world it sends 3 and receives 2 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="gas-and-electricity-in-an-unbundled-market-bayvarras-gas-field--urvania">Gas
@@ -108,8 +108,9 @@ href="example-energy-03-Invoice.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
 Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
-Administration of Urvania</a>: The power station declares the gas it
-received in March into Urvania. <a
+Administration of Urvania</a>: The power station declares its
+consignment of March's gas into Urvania, under the shipment of the
+export declaration. <a
 href="example-energy-05-ImportCustomsDeclaration.html">See the example
 document</a>.</p>
 <p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
@@ -143,24 +144,10 @@ contract says nothing on late payment. <a
 href="example-energy-08-Reminder.html">See the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
 </ul>
-<p><strong>Is named in documents between others</strong></p>
-<ul>
-<li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a
-href="world-42-xb.html">Kelpstone Gas</a> to <a
-href="world-19-xb.html">Customs and Border Service of Bayvarra</a>: The
-gas producer declares March's gas leaving Bayvarra by pipeline, in one
-monthly declaration. <a
-href="example-energy-04-ExportCustomsDeclaration.html">See the example
-document</a>.</p>
-<p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
-who receives the goods).</p></li>
-</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>AccountingSupplierParty</code> <code>SellerSupplierParty</code>
-<code>ConsigneeParty</code> <code>ImporterParty</code>
+<code>ImporterParty</code> <code>ConsigneeParty</code>
 <code>AccountingCustomerParty</code> <code>BuyerCustomerParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
@@ -182,6 +169,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b813e282614a397cf2a34ea3aa065cc3e9303a1f"><code>b813e28</code></a> of 2026-11-19 22:11 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/82d34fda13b624120c81ec750671e4e3ec53faf5"><code>82d34fd</code></a> of 2026-11-19 22:26 UTC</p></div></footer>
 </body>
 </html>
