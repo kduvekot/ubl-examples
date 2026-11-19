@@ -707,6 +707,12 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `ServiceProviderParty/ServiceType` | 0..n | tender/12-BusinessInformation | | | open |
 | `ServiceProviderParty/ServiceTypeCode` | 0..1 | tender/12-BusinessInformation | | | open |
 
+> C126: the article of the procurement act a guarantee follows is referred to by its legal reference, not as an ontology (tender/14#F8).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Regulation/OntologyURI` | 0..1 | tender/14-GuaranteeCertificate | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

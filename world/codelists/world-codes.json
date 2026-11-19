@@ -6772,6 +6772,7 @@
    "codes": [
     "BANKGUAR",
     "CASH",
+    "SECURITIES",
     "SURETY"
    ]
   },

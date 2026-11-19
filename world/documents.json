@@ -2316,7 +2316,7 @@
    "doc": "GuaranteeCertificate",
    "from": "25-xb",
    "to": "2-xb",
-   "why": "The guarantor notifies the authority of the bid bond deposited for the manufacturer's tender.",
+   "why": "The bank notifies the authority of the bank guarantee it gives for the manufacturer's tender, on the counter-guarantee of the manufacturer's own bank.",
    "parties": {
     "GuarantorParty": "25-xb",
     "InterestedParty": "5-xu",
@@ -3845,6 +3845,18 @@
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "GuaranteeCertificate",
+   "from": "25-xb",
+   "to": "2-xb",
+   "why": "The furniture maker's bank certifies the government bonds immobilised in favour of the authority as the guarantee of the furniture maker's tender (D28 point 5).",
+   "parties": {
+    "GuarantorParty": "25-xb",
+    "InterestedParty": "37-xb",
+    "BeneficiaryParty": "2-xb"
    }
   },
   {

@@ -3381,11 +3381,19 @@ def tender(n, doc):
         return {"ID": V(f.number("qualification", doc["from"], "TendererQualification"), "The tenderer's number for "
                                                                                        "its declaration."),
                 "IssueDate": V(f.date(43), "Submitted with the tender, the day before the deadline."), **folder}
+    if doc["doc"] == "GuaranteeCertificate" and doc["parties"]["InterestedParty"] == "37-xb":
+        return {"ID": V(f.number("guarantee-bf", doc["from"], "GuaranteeCertificate"), "The bank's number for the "
+                                                                                       "certificate."),
+                "IssueDate": V(f.date(38), "Thursday 19 February, the day after the bonds were deposited and "
+                                           "immobilised, the day before Brackenmere's tender."), **folder,
+                "LiabilityAmount": amount(TENDER_GUARANTEE_AMOUNT, "XBL", "The tender guarantee: the fixed 2,500 "
+                                                                         "lume the procurement documents ask.")}
     if doc["doc"] == "GuaranteeCertificate":
+        f.number("guarantee-bf", doc["from"], "GuaranteeCertificate")   # the bank issued Brackenmere's first
         return {"ID": V(f.number("guarantee", doc["from"], "GuaranteeCertificate"), "The guarantee's number."),
                 "IssueDate": V(f.date(42), "Issued the day before the tender, which it secures."), **folder,
-                "LiabilityAmount": amount(2400, "XBL", "The bid bond: 2 % of the estimated contract value, as the "
-                                                       "procurement documents ask.")}
+                "LiabilityAmount": amount(TENDER_GUARANTEE_AMOUNT, "XBL", "The tender guarantee: the fixed 2,500 "
+                                                                         "lume the procurement documents ask.")}
     if doc["doc"] == "Tender":
         unit = kit.unit_price("bench-serra", "XBL")
         return {"ID": V(f.number("tender", doc["from"], "Tender"), "The tenderer's number for its tender."),
@@ -8507,7 +8515,11 @@ def _(f, n, doc, out):
             "ValidityPeriod": {"DurationMeasure": V("90", "Valid for 90 days.", unitCode="DAY")},
             "CallForTenderDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders, by its ID "
                                                                          "(tender/15#F1, 17#F1, 19#F4).")},
-            "DocumentReference": {"ID": V("VI-DS-B180" if winner else "BF-DS-PARK", "The datasheet.")},
+            "DocumentReference": [
+                {"ID": V("VI-DS-B180" if winner else "BF-DS-PARK", "The datasheet.")},
+                {"ID": V(f.numbers["guarantee" if winner else "guarantee-bf"], "The certificate of the tender "
+                         "guarantee that covers this tender (tender/15#F12, 17#F12)."),
+                 "DocumentTypeCode": V("GuaranteeCertificate", "The kind of document.")}],
             "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TENDER-{n}"),
             # each tenderer cites its own qualification, issued before its tender (tender/17#F2, 19#F2, C72)
             "TendererQualificationDocumentReference": {"ID": V(f.numbers["qualification"], "The qualification "
@@ -8524,9 +8536,12 @@ def _(f, n, doc, out):
                 "FeeDescription": V("Paper copy of the documents.", "What the fee was for."),
                 "TenderEnvelopeID": V("ENV-1", "The envelope."),
                 "TenderEnvelopeTypeCode": V("COMBINED", "Technical and price together."),
-                "AdditionalFee": {"FeeTypeCode": V("COURIER", "A courier fee."),
-                                  "FeeAmount": amount(Decimal("12.00"), "XBL", "For the signed originals."),
-                                  "FeeDescription": V("Courier of the guarantee's original.", "What.")},
+                **({} if winner else {"AdditionalFee": {
+                    "FeeTypeCode": V("COURIER", "A courier fee."),
+                    "FeeAmount": amount(Decimal("12.00"), "XBL", "For the signed original."),
+                    "FeeDescription": V("Courier of the bank's original certificate of the immobilised bonds to the "
+                                        "department.", "What: the pledge needs the original, a bank guarantee does "
+                                                       "not (D28 point 5).")}}),
                 "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")}, {"ID": V("LOT-2", "Lot 2.")}],
                 "EvidenceDocumentReference": {"ID": V("VI-REF-2025" if winner else "BF-REF-2025",
                                                       "The tenderer's own reference letters.")},
@@ -8882,29 +8897,56 @@ def _(f, n, doc, out):
             "AdditionalDocumentReference": {"ID": V("VI-ESPD-26", "The self-declaration.")}}
 
 
+GUARANTEE_RELEASE = ("Released for every tenderer once the contract is signed, so that each tenderer stays bound "
+                     "to its tender until then (O176).")
+GOVERNMENT_BOND = "XB0000260313"     # a Bayvarran federal bond (XB is a user-assigned code: no real ISIN)
+
+
 @enrich("tender", "GuaranteeCertificate")
 def _(f, n, doc, out):
+    regulation = {"Name": V("Public Procurement Act, article 61", "The rule."),
+                  "LegalReference": V("XB-PPA-2019 art. 61", "The reference; no ontology URI for an article of the "
+                                                             "act (tender/14#F8).")}
+    if doc["parties"]["InterestedParty"] == "37-xb":
+        # Brackenmere's guarantee by immobilised government bonds of a third issuer (D28 point 5)
+        return {"GuaranteeTypeCode": V("TENDER", "A tender guarantee."),
+                "Purpose": V("Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging "
+                             "Bayvarran government bonds deposited with the bank.", "Its purpose and how it is "
+                                                                                     "given."),
+                "ConstitutionCode": V("SECURITIES", "Immobilised securities: public debt securities pledged in "
+                                                    "favour of the department, which the notices allow."),
+                "Note": V(GUARANTEE_RELEASE, "When it ends."),
+                "ApplicablePeriod": {"StartDate": V(f.date(37), "From the immobilisation."),
+                                     "EndDate": V(f.date(134), "Until 90 days after the deadline, the validity of "
+                                                               "the tenders, at the latest.")},
+                "ApplicableRegulation": regulation,
+                "ImmobilizedSecurity": {
+                    "ImmobilizationCertificateID": V("BLUM-IMM-26-0044", "The bank's certificate of the immobilised "
+                                                                         "bonds."),
+                    "SecurityID": V(GOVERNMENT_BOND, "Bayvarran federal bonds, the securities of a third issuer "
+                                                     "(D28 point 5)."),
+                    "IssueDate": V("2023-09-15", "The day the federal government issued the bond (tender/14#F9, "
+                                                 "option b: the security's issue date, not the immobilisation)."),
+                    "FaceValueAmount": amount(Decimal("2632.50"), "XBL", "Their value on 18 February, the day they "
+                                                                         "were immobilised (tender/14#F2)."),
+                    "MarketValueAmount": amount(Decimal("2640.00"), "XBL", "Their market value on the certificate's "
+                                                                           "day, above the 2,500 guaranteed."),
+                    "SharesNumberQuantity": qty(25, "C62", "25 bonds of 100 lume nominal."),
+                    "IssuerParty": party("25-xb", short=True)},
+                "Signature": seal("25-xb", "BLUM-SIG-GC-BF")}
     return {"GuaranteeTypeCode": V("TENDER", "A tender guarantee."),
-            "Purpose": V("Guarantee of the tender for the bench procedure.", "Its purpose."),
-            "ConstitutionCode": V("BANKGUAR", "A bank guarantee."),
-            "Note": V("Released at the award.", "When it ends."),
-            "ApplicablePeriod": {"StartDate": V(f.date(40), "From."), "EndDate": V(f.date(135), "Until 90 days "
-                                                                                                "after the "
-                                                                                                "deadline.")},
-            "ApplicableRegulation": {"Name": V("Public Procurement Act, article 61", "The rule."),
-                                     "LegalReference": V("XB-PPA-2019 art. 61", "The reference."),
-                                     "OntologyURI": V("https://law.bayvarra.example/ppa#art61", "Its URI.")},
+            "Purpose": V("Guarantee of Valdara Industries' tender in the bench procedure: a plain bank guarantee of "
+                         "Bank of Lumeport, issued on a counter-guarantee of Crevalto Bank, Valdara's own bank, the "
+                         "usual way for a foreign tenderer to give a guarantee from a bank in the buyer's country.",
+                         "Its purpose and how it is given (D28 point 5)."),
+            "ConstitutionCode": V("BANKGUAR", "A bank guarantee, and nothing else: no securities are pledged "
+                                              "(tender/14#F1)."),
+            "Note": V(GUARANTEE_RELEASE, "When it ends (tender/14#F7)."),
+            "ApplicablePeriod": {"StartDate": V(f.date(42), "From its issue."),
+                                 "EndDate": V(f.date(134), "Until 90 days after the deadline, the validity of the "
+                                                           "tenders, at the latest.")},
+            "ApplicableRegulation": regulation,
             "GuaranteeDocumentReference": {"ID": V("BLUM-G-26-0221", "The bank's guarantee deed.")},
-            "ImmobilizedSecurity": {"ImmobilizationCertificateID": V("BLUM-IMM-26-0044", "The certificate of the "
-                                                                                         "pledged securities."),
-                                    "SecurityID": PARTY["5-xu"]["identity"]["legal"]["listing"] and
-                                    V(PARTY["5-xu"]["identity"]["legal"]["listing"]["id"], "The manufacturer's own "
-                                                                                           "shares, pledged."),
-                                    "IssueDate": V(f.date(40), "Pledged."),
-                                    "FaceValueAmount": amount(Decimal("2500.00"), "XBL", "Their face value."),
-                                    "MarketValueAmount": amount(Decimal("3100.00"), "XBL", "Their market value."),
-                                    "SharesNumberQuantity": qty(250, "E21", "250 shares (unit: shares)."),
-                                    "IssuerParty": party("5-xu", short=True)},
             "Signature": seal("25-xb", "BLUM-SIG-GC")}
 
 

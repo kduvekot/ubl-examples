@@ -18,7 +18,7 @@ The call-off leaves Urvania; the manufacturer declares the export.
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-EX-26-0218**  
+- `ID` = **VI-EX-26-0219**  
   The exporter's reference.
 - `UUID` = **780521a7-44ae-5ddb-a7d2-add468fea007**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -104,7 +104,7 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **VI-CD-26-0219**  
+- `ID` = **VI-CD-26-0220**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
@@ -114,11 +114,11 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Shipment/ID` = **CL-SH-26-0216**  
+- `Shipment/ID` = **CL-SH-26-0217**  
   The shipment declared.
 - `Shipment/TotalTransportHandlingUnitQuantity` = **10** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/Consignment/ID` = **CL-CS-26-0217**  
+- `Shipment/Consignment/ID` = **CL-CS-26-0218**  
   The consignment carried.
 - `Shipment/Consignment/GrossWeightMeasure` = **2162** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
@@ -368,10 +368,10 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XU:xu_k4r7** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Customs Administration of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `AdditionalDocumentReference/ID` = **LPWD-PO-26-0212**  
+- `AdditionalDocumentReference/ID` = **LPWD-PO-26-0213**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-PO-26-0212 is the example tender/26, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: LPWD-PO-26-0213 is the example tender/26, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -393,7 +393,7 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-EX-26-0218</cbc:ID>
+  <cbc:ID>VI-EX-26-0219</cbc:ID>
   <cbc:UUID>780521a7-44ae-5ddb-a7d2-add468fea007</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>13:40:00-01:00</cbc:IssueTime>
@@ -454,7 +454,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>VI-CD-26-0219</cbc:ID>
+    <cbc:ID>VI-CD-26-0220</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-03-30</cbc:StartDate>
@@ -466,10 +466,10 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0216</cbc:ID>
+      <cbc:ID>CL-SH-26-0217</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">10</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
-        <cbc:ID>CL-CS-26-0217</cbc:ID>
+        <cbc:ID>CL-CS-26-0218</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">2162</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">120</cbc:TotalPackagesQuantity>
         <cac:CarrierParty>
@@ -687,7 +687,7 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+      <cbc:ID>LPWD-PO-26-0213</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

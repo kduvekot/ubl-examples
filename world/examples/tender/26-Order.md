@@ -18,7 +18,7 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-PO-26-0212**  
+- `ID` = **LPWD-PO-26-0213**  
   The buyer's order number.
 - `UUID` = **9865133f-cea3-538c-ba26-54de8100727c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -322,7 +322,7 @@ Inside `OrderLine`:
   The barcode the number is printed in on the label: Code 128 carries letters and digits.
 - `LineItem/Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
   The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
-- `LineItem/Item/CatalogueDocumentReference/ID` = **VI-CAT-26-0211**  
+- `LineItem/Item/CatalogueDocumentReference/ID` = **VI-CAT-26-0212**  
   The catalogue the item was ordered from.
 
 ## The document
@@ -334,7 +334,7 @@ Inside `OrderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+  <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   <cbc:UUID>9865133f-cea3-538c-ba26-54de8100727c</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>14:40:00-01:00</cbc:IssueTime>
@@ -542,7 +542,7 @@ Inside `OrderLine`:
           <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
         <cac:CatalogueDocumentReference>
-          <cbc:ID>VI-CAT-26-0211</cbc:ID>
+          <cbc:ID>VI-CAT-26-0212</cbc:ID>
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>

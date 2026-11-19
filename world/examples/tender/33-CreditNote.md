@@ -18,7 +18,7 @@ One bench was damaged during installation and is replaced free of charge; the ma
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-CN-26-0222**  
+- `ID` = **VI-CN-26-0223**  
   The seller's credit note number.
 - `UUID` = **836baac3-c754-5749-8c68-5c404d80fae0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -60,14 +60,14 @@ Inside `InvoicePeriod`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **VI-INV-26-0221**  
+- `InvoiceDocumentReference/ID` = **VI-INV-26-0222**  
   The invoice credited.
 
 ### Delivery Note Document Reference
 
 Inside `DeliveryNoteDocumentReference`:
 
-- `ID` = **CL-DA-26-0215**  
+- `ID` = **CL-DA-26-0216**  
   The despatch advice of the bench.
 
 ### Work Report Document Reference
@@ -526,7 +526,7 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CN-26-0222</cbc:ID>
+  <cbc:ID>VI-CN-26-0223</cbc:ID>
   <cbc:UUID>836baac3-c754-5749-8c68-5c404d80fae0</cbc:UUID>
   <cbc:IssueDate>2026-04-04</cbc:IssueDate>
   <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
@@ -546,11 +546,11 @@ Inside `CreditNoteLine`:
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>VI-INV-26-0221</cbc:ID>
+      <cbc:ID>VI-INV-26-0222</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>CL-DA-26-0215</cbc:ID>
+    <cbc:ID>CL-DA-26-0216</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:WorkReportDocumentReference>
     <cbc:ID>VI-WR-26-0080</cbc:ID>

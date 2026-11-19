@@ -2,7 +2,7 @@
 
 *Example 14 of the flow "A public tender (Bayvarra)" · [Guarantee Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA)*
 
-The guarantor notifies the authority of the bid bond deposited for the manufacturer's tender.
+The bank notifies the authority of the bank guarantee it gives for the manufacturer's tender, on the counter-guarantee of the manufacturer's own bank.
 
 [The XML file](14-GuaranteeCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,7 +18,7 @@ The guarantor notifies the authority of the bid bond deposited for the manufactu
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BL-DOC-26-0200**  
+- `ID` = **BL-DOC-26-0201**  
   The guarantee's number.
 - `UUID` = **1f0c3218-ba4e-54bc-868e-8554b9039fee**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -30,23 +30,23 @@ The guarantor notifies the authority of the bid bond deposited for the manufactu
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `GuaranteeTypeCode` = **TENDER** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
   A tender guarantee. The code is from the Trade Accord's financial guarantee type list: TENDER = Tender guarantee.
-- `Purpose` = **Guarantee of the tender for the bench procedure.**  
-  Its purpose.
-- `LiabilityAmount` = **2400.00** (currencyID `XBL`)  
-  The bid bond: 2 % of the estimated contract value, as the procurement documents ask.
+- `Purpose` = **Guarantee of Valdara Industries' tender in the bench procedure: a plain bank guarantee of Bank of Lumeport, issued on a counter-guarantee of Crevalto Bank, Valdara's own bank, the usual way for a foreign tenderer to give a guarantee from a bank in the buyer's country.**  
+  Its purpose and how it is given (D28 point 5).
+- `LiabilityAmount` = **2500.00** (currencyID `XBL`)  
+  The tender guarantee: the fixed 2,500 lume the procurement documents ask.
 - `ConstitutionCode` = **BANKGUAR** (listID `urn:ubl-examples:world:codelist:GuaranteeConstitutionCode`)  
-  A bank guarantee. The code is from the Trade Accord's guarantee constitution list: BANKGUAR = Bank guarantee.
-- `Note` = **Released at the award.**  
-  When it ends.
+  A bank guarantee, and nothing else: no securities are pledged (tender/14#F1). The code is from the Trade Accord's guarantee constitution list: BANKGUAR = Bank guarantee.
+- `Note` = **Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then (O176).**  
+  When it ends (tender/14#F7).
 
 ### Applicable Period
 
 Inside `ApplicablePeriod`:
 
-- `StartDate` = **2026-02-21**  
-  From.
-- `EndDate` = **2026-05-27**  
-  Until 90 days after the deadline.
+- `StartDate` = **2026-02-23**  
+  From its issue.
+- `EndDate` = **2026-05-26**  
+  Until 90 days after the deadline, the validity of the tenders, at the latest.
 
 ### Applicable Regulation
 
@@ -55,9 +55,7 @@ Inside `ApplicableRegulation`:
 - `Name` = **Public Procurement Act, article 61**  
   The rule.
 - `LegalReference` = **XB-PPA-2019 art. 61**  
-  The reference.
-- `OntologyURI` = **https://law.bayvarra.example/ppa#art61**  
-  Its URI.
+  The reference; no ontology URI for an article of the act (tender/14#F8).
 
 ### Guarantee Document Reference
 
@@ -65,27 +63,6 @@ Inside `GuaranteeDocumentReference`:
 
 - `ID` = **BLUM-G-26-0221**  
   The bank's guarantee deed.
-
-### Immobilized Security
-
-Inside `ImmobilizedSecurity`:
-
-- `ImmobilizationCertificateID` = **BLUM-IMM-26-0044**  
-  The certificate of the pledged securities.
-- `SecurityID` = **XU0001042501** (schemeID `ISO 6166`)  
-  The manufacturer's own shares, pledged. The schemeID names the scheme it is from: the ISO 6166 International Securities Identification Number (the issuer's country code, nine letters or digits, a check digit (Luhn)).
-- `IssueDate` = **2026-02-21**  
-  Pledged.
-- `FaceValueAmount` = **2500.00** (currencyID `XBL`)  
-  Their face value.
-- `MarketValueAmount` = **3100.00** (currencyID `XBL`)  
-  Their market value.
-- `SharesNumberQuantity` = **250** (unitCode `E21`)  
-  250 shares (unit: shares).
-- `IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `IssuerParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
 
@@ -242,44 +219,27 @@ Inside `BeneficiaryParty`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:guarantee-certificate:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BL-DOC-26-0200</cbc:ID>
+  <cbc:ID>BL-DOC-26-0201</cbc:ID>
   <cbc:UUID>1f0c3218-ba4e-54bc-868e-8554b9039fee</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>08:23:00-01:00</cbc:IssueTime>
   <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
-  <cbc:Purpose>Guarantee of the tender for the bench procedure.</cbc:Purpose>
-  <cbc:LiabilityAmount currencyID="XBL">2400.00</cbc:LiabilityAmount>
+  <cbc:Purpose>Guarantee of Valdara Industries' tender in the bench procedure: a plain bank guarantee of Bank of Lumeport, issued on a counter-guarantee of Crevalto Bank, Valdara's own bank, the usual way for a foreign tenderer to give a guarantee from a bank in the buyer's country.</cbc:Purpose>
+  <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
   <cbc:ConstitutionCode listID="urn:ubl-examples:world:codelist:GuaranteeConstitutionCode">BANKGUAR</cbc:ConstitutionCode>
-  <cbc:Note>Released at the award.</cbc:Note>
+  <cbc:Note>Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then (O176).</cbc:Note>
   <cac:ApplicablePeriod>
-    <cbc:StartDate>2026-02-21</cbc:StartDate>
-    <cbc:EndDate>2026-05-27</cbc:EndDate>
+    <cbc:StartDate>2026-02-23</cbc:StartDate>
+    <cbc:EndDate>2026-05-26</cbc:EndDate>
   </cac:ApplicablePeriod>
   <cac:ApplicableRegulation>
     <cbc:Name>Public Procurement Act, article 61</cbc:Name>
     <cbc:LegalReference>XB-PPA-2019 art. 61</cbc:LegalReference>
-    <cbc:OntologyURI>https://law.bayvarra.example/ppa#art61</cbc:OntologyURI>
   </cac:ApplicableRegulation>
   <cac:GuaranteeDocumentReference>
     <cbc:ID>BLUM-G-26-0221</cbc:ID>
   </cac:GuaranteeDocumentReference>
-  <cac:ImmobilizedSecurity>
-    <cbc:ImmobilizationCertificateID>BLUM-IMM-26-0044</cbc:ImmobilizationCertificateID>
-    <cbc:SecurityID schemeID="ISO 6166">XU0001042501</cbc:SecurityID>
-    <cbc:IssueDate>2026-02-21</cbc:IssueDate>
-    <cbc:FaceValueAmount currencyID="XBL">2500.00</cbc:FaceValueAmount>
-    <cbc:MarketValueAmount currencyID="XBL">3100.00</cbc:MarketValueAmount>
-    <cbc:SharesNumberQuantity unitCode="E21">250</cbc:SharesNumberQuantity>
-    <cac:IssuerParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
-      </cac:PartyName>
-    </cac:IssuerParty>
-  </cac:ImmobilizedSecurity>
   <cac:Signature>
     <cbc:ID>BLUM-SIG-GC</cbc:ID>
     <cac:SignatoryParty>

@@ -18,7 +18,7 @@ The framework contract is ordered from a catalogue: the manufacturer publishes t
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-CAT-26-0211**  
+- `ID` = **VI-CAT-26-0212**  
   The provider's catalogue number.
 - `UUID` = **6ddf87fc-d391-5f9a-8a2e-22b484da6820**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -297,7 +297,7 @@ Inside `CatalogueLine`:
   The barcode the number is printed in on the label: Code 128 carries letters and digits.
 - `Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
   The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
-- `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0211-1**  
+- `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0212-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
@@ -525,7 +525,7 @@ Inside `CatalogueLine`:
   The item's name in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **VI-INST-B**  
   The seller's own item number; item bench-installation of Valdara Industries (world/items.json).
-- `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0211-2**  
+- `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0212-2**  
   The item's place in the catalogue: the catalogue number and the line.
 - `CallForTendersLineReference/LineID` = **2**  
   The line of the call for tenders.
@@ -541,7 +541,7 @@ Inside `CatalogueLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CAT-26-0211</cbc:ID>
+  <cbc:ID>VI-CAT-26-0212</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
@@ -756,7 +756,7 @@ Inside `CatalogueLine`:
         <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0211-1</cbc:ID>
+        <cbc:ID>VI-CAT-26-0212-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
@@ -972,7 +972,7 @@ Inside `CatalogueLine`:
         <cbc:ID>VI-INST-B</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0211-2</cbc:ID>
+        <cbc:ID>VI-CAT-26-0212-2</cbc:ID>
       </cac:CatalogueItemIdentification>
     </cac:Item>
     <cac:CallForTendersLineReference>

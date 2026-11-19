@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0224</cbc:ID>
+  <cbc:ID>VI-DOC-26-0225</cbc:ID>
   <cbc:UUID>7f55c2fd-1414-5794-ab15-9ef94a32da95</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>15:23:00-01:00</cbc:IssueTime>
@@ -250,7 +250,7 @@
     <cbc:DebitLineAmount currencyID="XBL">20808.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0221</cbc:ID>
+        <cbc:ID>VI-INV-26-0222</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
@@ -261,7 +261,7 @@
     <cbc:CreditLineAmount currencyID="XBL">515.20</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0222</cbc:ID>
+        <cbc:ID>VI-CN-26-0223</cbc:ID>
       </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
@@ -272,7 +272,7 @@
     <cbc:CreditLineAmount currencyID="XBL">6.48</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:DebitNoteDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0223</cbc:ID>
+        <cbc:ID>LPWD-DOC-26-0224</cbc:ID>
       </cac:DebitNoteDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>

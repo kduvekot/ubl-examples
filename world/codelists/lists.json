@@ -3643,6 +3643,10 @@
      "Cash deposit",
      "Money deposited with the authority."
     ],
+    "SECURITIES": [
+     "Immobilised securities",
+     "Public debt securities pledged in favour of the authority, deposited with a bank that certifies the pledge."
+    ],
     "SURETY": [
      "Surety bond",
      "An insurer's surety bond."

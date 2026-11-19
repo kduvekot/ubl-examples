@@ -18,7 +18,7 @@ The furniture maker finds a price error in its tender and withdraws it before th
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0204**  
+- `ID` = **BF-DOC-26-0205**  
   The sender's number for this document.
 - `UUID` = **ed2964ac-5041-583f-8e50-507bdb320f91**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,7 +39,7 @@ The furniture maker finds a price error in its tender and withdraws it before th
 
 Inside `TenderDocumentReference`:
 
-- `ID` = **BF-DOC-26-0203**  
+- `ID` = **BF-DOC-26-0204**  
   The tender withdrawn.
 
 ### Tender Notification Document Reference
@@ -187,7 +187,7 @@ Inside `TendererParty`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0204</cbc:ID>
+  <cbc:ID>BF-DOC-26-0205</cbc:ID>
   <cbc:UUID>ed2964ac-5041-583f-8e50-507bdb320f91</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
@@ -196,7 +196,7 @@ Inside `TendererParty`:
   <cbc:Note>The price per bench was entered wrongly; a corrected tender follows.</cbc:Note>
   <cbc:WithdrawOfferIndicator>true</cbc:WithdrawOfferIndicator>
   <cac:TenderDocumentReference>
-    <cbc:ID>BF-DOC-26-0203</cbc:ID>
+    <cbc:ID>BF-DOC-26-0204</cbc:ID>
   </cac:TenderDocumentReference>
   <cac:TenderNotificationDocumentReference>
     <cbc:ID>PWD-RCPT-BF-1</cbc:ID>

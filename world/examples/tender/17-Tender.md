@@ -18,7 +18,7 @@ The furniture maker tenders wooden benches.
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0203**  
+- `ID` = **BF-DOC-26-0204**  
   The furniture maker's number for this tender.
 - `UUID` = **21770882-3c11-5392-aed3-5bd95b4c3cc7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -57,6 +57,10 @@ Inside `DocumentReference`:
   The datasheet.
 - `DocumentType` = **Product data sheet**  
   The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+- `ID` = **BL-DOC-26-0200**  
+  The certificate of the tender guarantee that covers this tender (tender/15#F12, 17#F12).
+- `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document. The code is from the Trade Accord's UBL document type list: GuaranteeCertificate = Guarantee Certificate.
 
 ### Signature
 
@@ -263,9 +267,9 @@ Inside `TenderedProject`:
 - `AdditionalFee/FeeTypeCode` = **COURIER** (listID `urn:ubl-examples:world:codelist:FeeTypeCode`)  
   A courier fee. The code is from the Trade Accord's fee type list: COURIER = Courier fee.
 - `AdditionalFee/FeeAmount` = **12.00** (currencyID `XBL`)  
-  For the signed originals.
-- `AdditionalFee/FeeDescription` = **Courier of the guarantee's original.**  
-  What.
+  For the signed original.
+- `AdditionalFee/FeeDescription` = **Courier of the bank's original certificate of the immobilised bonds to the department.**  
+  What: the pledge needs the original, a bank guarantee does not (D28 point 5).
 - `ProcurementProjectLot/ID` = **LOT-1**  
   Lot 1.
 - `ProcurementProjectLot/ID` = **LOT-2**  
@@ -378,7 +382,7 @@ Inside `TenderedProject`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0203</cbc:ID>
+  <cbc:ID>BF-DOC-26-0204</cbc:ID>
   <cbc:UUID>21770882-3c11-5392-aed3-5bd95b4c3cc7</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
@@ -395,6 +399,10 @@ Inside `TenderedProject`:
   <cac:DocumentReference>
     <cbc:ID>BF-DS-PARK</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BL-DOC-26-0200</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-TENDER-17</cbc:ID>
@@ -557,7 +565,7 @@ Inside `TenderedProject`:
     <cac:AdditionalFee>
       <cbc:FeeTypeCode listID="urn:ubl-examples:world:codelist:FeeTypeCode">COURIER</cbc:FeeTypeCode>
       <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
-      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
+      <cbc:FeeDescription>Courier of the bank's original certificate of the immobilised bonds to the department.</cbc:FeeDescription>
     </cac:AdditionalFee>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>

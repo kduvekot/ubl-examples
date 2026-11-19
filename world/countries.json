@@ -1981,7 +1981,9 @@
     "programme": "naktran",
     "renewal": "nezsan",
     "result": "skunzek",
-    "their": "haskek"
+    "their": "haskek",
+    "immobilised": "kulnek",
+    "securities": "malbaz"
    }
   },
   "qal": {
@@ -3109,7 +3111,9 @@
     "programme": "tefefopa",
     "renewal": "tanata",
     "result": "havia",
-    "their": "likami"
+    "their": "likami",
+    "immobilised": "kakilaki",
+    "securities": "luakiki"
    }
   },
   "en": {

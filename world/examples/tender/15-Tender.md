@@ -18,7 +18,7 @@ The tender, with the consortium partner as subcontractor.
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-DOC-26-0201**  
+- `ID` = **VI-DOC-26-0202**  
   The tenderer's number for its tender.
 - `UUID` = **b83ff515-965a-5df1-aaa9-14df71eabb47**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -57,6 +57,10 @@ Inside `DocumentReference`:
   The datasheet.
 - `DocumentType` = **Product data sheet**  
   The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+- `ID` = **BL-DOC-26-0201**  
+  The certificate of the tender guarantee that covers this tender (tender/15#F12, 17#F12).
+- `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document. The code is from the Trade Accord's UBL document type list: GuaranteeCertificate = Guarantee Certificate.
 
 ### Signature
 
@@ -353,12 +357,6 @@ Inside `TenderedProject`:
   The envelope.
 - `TenderEnvelopeTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderEnvelopeCode`)  
   Technical and price together. The code is from the Trade Accord's tender envelope list: COMBINED = Technical and financial together.
-- `AdditionalFee/FeeTypeCode` = **COURIER** (listID `urn:ubl-examples:world:codelist:FeeTypeCode`)  
-  A courier fee. The code is from the Trade Accord's fee type list: COURIER = Courier fee.
-- `AdditionalFee/FeeAmount` = **12.00** (currencyID `XBL`)  
-  For the signed originals.
-- `AdditionalFee/FeeDescription` = **Courier of the guarantee's original.**  
-  What.
 - `ProcurementProjectLot/ID` = **LOT-1**  
   Lot 1.
 - `ProcurementProjectLot/ID` = **LOT-2**  
@@ -471,7 +469,7 @@ Inside `TenderedProject`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0201</cbc:ID>
+  <cbc:ID>VI-DOC-26-0202</cbc:ID>
   <cbc:UUID>b83ff515-965a-5df1-aaa9-14df71eabb47</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
@@ -488,6 +486,10 @@ Inside `TenderedProject`:
   <cac:DocumentReference>
     <cbc:ID>VI-DS-B180</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BL-DOC-26-0201</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-TENDER-15</cbc:ID>
@@ -721,11 +723,6 @@ Inside `TenderedProject`:
     <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
-    <cac:AdditionalFee>
-      <cbc:FeeTypeCode listID="urn:ubl-examples:world:codelist:FeeTypeCode">COURIER</cbc:FeeTypeCode>
-      <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
-      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
-    </cac:AdditionalFee>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>
     </cac:ProcurementProjectLot>

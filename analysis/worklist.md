@@ -1924,6 +1924,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: none of D1 to D27.
 - State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 14#F1, 14#F2, 14#F3, 14#F7, 14#F8, 14#F9, 15#F12, 17#F12, 19#F12
+- **Fixed (2026-11-19):** two guarantees, one per tenderer (D28 point 5): Valdara's (14) is a plain bank guarantee of Bank of Lumeport on Crevalto Bank's counter-guarantee, with no securities; Brackenmere's is new document 37, Bank of Lumeport's certificate of 25 Bayvarran federal bonds (a third issuer's securities, ISIN `XB0000260313`, user-assigned country code) immobilised on 18 February, with their value on that day (2,632.50) and their market value on the certificate's day (2,640.00), the bank as issuer of the immobilisation certificate and the bond's own issue date (14#F9 option b); a new constitution code `SECURITIES` in the Accord's list; both 2,500 lume and released for every tenderer once the contract is signed (O176); no ontology URI for an article of the act; each tender cites the certificate that covers it, and only Brackenmere's tenders carry the courier fee for the original certificate. The bank numbers Brackenmere's certificate, issued first, before Valdara's. New words: immobilised, securities. Coverage −1 (register, G6).
 
 ### C127 · Tender: award, notifications and appeal
 - Kind: flow story · Findings: 7 (High 1, Medium 0, Low 6) in 3 files, 1 flow · Needs decision: owner: D28

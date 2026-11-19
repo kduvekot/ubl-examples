@@ -18,7 +18,7 @@ The manufacturer and its consortium partner are admitted to the evaluation.
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0206**  
+- `ID` = **LPWD-DOC-26-0207**  
   The sender's number for this document.
 - `UUID` = **e88bee18-0123-544d-a805-b3c5573d165c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -215,7 +215,7 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tenderer-qualification:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0206</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0207</cbc:ID>
   <cbc:UUID>e88bee18-0123-544d-a805-b3c5573d165c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>

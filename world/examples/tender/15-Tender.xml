@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0201</cbc:ID>
+  <cbc:ID>VI-DOC-26-0202</cbc:ID>
   <cbc:UUID>b83ff515-965a-5df1-aaa9-14df71eabb47</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
@@ -21,6 +21,10 @@
   <cac:DocumentReference>
     <cbc:ID>VI-DS-B180</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BL-DOC-26-0201</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-TENDER-15</cbc:ID>
@@ -254,11 +258,6 @@
     <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
-    <cac:AdditionalFee>
-      <cbc:FeeTypeCode listID="urn:ubl-examples:world:codelist:FeeTypeCode">COURIER</cbc:FeeTypeCode>
-      <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
-      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
-    </cac:AdditionalFee>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>
     </cac:ProcurementProjectLot>

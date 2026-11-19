@@ -18,7 +18,7 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-INV-26-0221**  
+- `ID` = **VI-INV-26-0222**  
   The seller's invoice number.
 - `UUID` = **24e1d166-df64-5739-a3d9-ff76dde6a054**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -53,14 +53,14 @@ The manufacturer invoices the public buyer under the contract; payment to its ac
 
 Inside `OrderReference`:
 
-- `ID` = **LPWD-PO-26-0212**  
+- `ID` = **LPWD-PO-26-0213**  
   The authority's call-off order.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **CL-DA-26-0215**  
+- `ID` = **CL-DA-26-0216**  
   The despatch advice of the goods billed.
 
 ### Originator Document Reference
@@ -365,9 +365,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF48VIINV260221**  
+- `InstructionNote` = **Quote RF21VIINV260222**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF48VIINV260221** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF21VIINV260222** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -381,7 +381,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice VI-INV-26-0221**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice VI-INV-26-0222**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41600** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -715,7 +715,7 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-INV-26-0221</cbc:ID>
+  <cbc:ID>VI-INV-26-0222</cbc:ID>
   <cbc:UUID>24e1d166-df64-5739-a3d9-ff76dde6a054</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
   <cbc:IssueTime>09:28:00-01:00</cbc:IssueTime>
@@ -731,10 +731,10 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0215</cbc:ID>
+    <cbc:ID>CL-DA-26-0216</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
@@ -974,8 +974,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-30</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF48VIINV260221</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF48VIINV260221</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF21VIINV260222</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF21VIINV260222</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
@@ -983,7 +983,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice VI-INV-26-0221</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice VI-INV-26-0222</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>
