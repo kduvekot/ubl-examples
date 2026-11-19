@@ -33,7 +33,7 @@ The carrier reports that the truck has cleared the border and gives the expected
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do.
+  What the receiver should do, with the slot it is about.
 - `TransportationStatusTypeCode` = **PROGRESS** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
   A report on the progress of the carriage. The code is from the Trade Accord's transportation status type list: PROGRESS = Progress report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
@@ -207,7 +207,7 @@ Inside `TransportEvent`:
 - `CurrentStatus/ReferenceDate` = **2026-03-25**  
   The delivery the status is measured against.
 - `CurrentStatus/ReferenceTime` = **10:00:00**  
-  The start of the goods-in slot.
+  The end of the goods-in slot, the time delivery is required by.
 - `CurrentStatus/Description` = **In transit in Bayvarra, expected at the distribution centre on time.**  
   The status in words.
 - `CurrentStatus/StatusReasonCode` = **CLEARED** (listID `urn:ubl-examples:world:codelist:StatusReasonCode`)  
@@ -216,10 +216,8 @@ Inside `TransportEvent`:
   In words.
 - `CurrentStatus/SequenceID` = **3**  
   The third report on this truck: collection, departure, border.
-- `CurrentStatus/Text` = **Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.**  
+- `CurrentStatus/Text` = **Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow, 09:00 to 10:00, and the driver takes his rest there.**  
   A note for the consignee.
-- `CurrentStatus/IndicationIndicator` = **true**  
-  The status applies: the truck is on time.
 - `CurrentStatus/Percent` = **37**  
   The share of the route driven: 65 of 174 km.
 - `CurrentStatus/ReliabilityPercent` = **90**  
@@ -236,16 +234,6 @@ Inside `TransportEvent`:
   The condition checked. The code is from the Trade Accord's attribute list: SEAL = Seal. An identifier that holds a code names the code's list in its schemeID.
 - `CurrentStatus/Condition/Description` = **Intact, as checked by customs.**  
   Its state.
-- `CurrentStatus/Condition/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  Recorded by the trailer's sensor. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `CurrentStatus/Condition/Measure` = **14** (unitCode `CEL`)  
-  The temperature in the trailer.
-- `CurrentStatus/Condition/Description` = **No protection needed for galvanised frames and thermally modified slats.**  
-  Why it is only noted.
-- `CurrentStatus/Condition/MinimumMeasure` = **4** (unitCode `CEL`)  
-  The lowest during the night.
-- `CurrentStatus/Condition/MaximumMeasure` = **18** (unitCode `CEL`)  
-  The highest in the afternoon.
 - `ResponsibleParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ResponsibleParty/PartyName/Name` = **Trasvia Haulage**  
@@ -512,8 +500,7 @@ Inside `StatusPeriod`:
       <cbc:StatusReasonCode listID="urn:ubl-examples:world:codelist:StatusReasonCode">CLEARED</cbc:StatusReasonCode>
       <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
       <cbc:SequenceID>3</cbc:SequenceID>
-      <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow at 10:00, and the driver takes his rest there.</cbc:Text>
-      <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
+      <cbc:Text>Expected in Marrowdale about 12:20, after the morning goods-in slots; the truck waits at the business park for its slot tomorrow, 09:00 to 10:00, and the driver takes his rest there.</cbc:Text>
       <cbc:Percent>37</cbc:Percent>
       <cbc:ReliabilityPercent>90</cbc:ReliabilityPercent>
       <cac:DocumentationAttachment>
@@ -529,13 +516,6 @@ Inside `StatusPeriod`:
       <cac:Condition>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">SEAL</cbc:AttributeID>
         <cbc:Description>Intact, as checked by customs.</cbc:Description>
-      </cac:Condition>
-      <cac:Condition>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">14</cbc:Measure>
-        <cbc:Description>No protection needed for galvanised frames and thermally modified slats.</cbc:Description>
-        <cbc:MinimumMeasure unitCode="CEL">4</cbc:MinimumMeasure>
-        <cbc:MaximumMeasure unitCode="CEL">18</cbc:MaximumMeasure>
       </cac:Condition>
     </cac:CurrentStatus>
     <cac:ResponsibleParty>

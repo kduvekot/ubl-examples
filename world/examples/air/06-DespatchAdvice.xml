@@ -7,7 +7,7 @@
   <cbc:ID>LD-DA-26-0327</cbc:ID>
   <cbc:UUID>93132e8b-1df2-5401-9265-5f8de7ffa70a</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>10:07:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>12:15:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -151,7 +151,7 @@
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -183,10 +183,24 @@
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
       </cac:CarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KXL209</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="IATA SSIM Aircraft Types">ATF</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KXA</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-05-13</cbc:StartDate>
+        <cbc:StartTime>18:45:00+00:00</cbc:StartTime>
         <cbc:EndDate>2026-05-13</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>

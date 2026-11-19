@@ -6,10 +6,10 @@
   <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCC-DOC-26-0727</cbc:ID>
   <cbc:UUID>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</cbc:UUID>
-  <cbc:IssueDate>2026-08-23</cbc:IssueDate>
+  <cbc:IssueDate>2026-08-24</cbc:IssueDate>
   <cbc:IssueTime>12:04:00+00:00</cbc:IssueTime>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:CustomsProcedureCode">2000</cbc:ProcedureCode>
-  <cbc:Note>Without proof, the import duties will be claimed from the guarantee.</cbc:Note>
+  <cbc:Note>Without proof within 30 days, the island's import consumption tax on the samples and the carnet surcharge will be claimed from the guarantee.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>
@@ -124,8 +124,8 @@
     </cac:PostalAddress>
   </cac:ImportingCustomsParty>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>SCC-DOC-26-0726</cbc:DocumentID>
-    <cbc:ApprovalStatus>Open</cbc:ApprovalStatus>
+    <cbc:DocumentID>SCC-DOC-26-0727</cbc:DocumentID>
+    <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">GUARANTOR</cbc:RoleCode>
       <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
@@ -138,17 +138,39 @@
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
-        <cbc:Name>Carnet desk</cbc:Name>
+        <cbc:Name>Carnet office</cbc:Name>
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>
   <cac:PaymentTerms>
-    <cbc:Note>Duties and import consumption tax of 1,300 coral fall due if no proof arrives within 30 days.</cbc:Note>
-    <cbc:Amount currencyID="XLC">1300.000</cbc:Amount>
-    <cbc:PaymentDueDate>2026-09-22</cbc:PaymentDueDate>
+    <cbc:Note>Import consumption tax of 10 % on the declared value of 399.20 coral, 39.920, and the carnet surcharge of 10 % of the tax, 3.992: 43.912 coral fall due if no proof arrives within 30 days. Benches of Accord origin owe no duty (D18).</cbc:Note>
+    <cbc:Amount currencyID="XLC">43.912</cbc:Amount>
+    <cbc:PaymentDueDate>2026-09-23</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
+    <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
+    <cac:ImportationDocumentReference>
+      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:IssueDate>2026-06-02</cbc:IssueDate>
+      <cbc:DocumentType>Importation registration</cbc:DocumentType>
+    </cac:ImportationDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:AdditionalDocumentReference>
     <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>

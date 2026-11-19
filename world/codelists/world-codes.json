@@ -5382,6 +5382,7 @@
     "101",
     "174",
     "220",
+    "226",
     "227",
     "230",
     "261",
@@ -6203,6 +6204,7 @@
    "name": "Air packing instruction",
    "location": "world/codelists/gc/PackingInstructionCode.gc",
    "codes": [
+    "PI855",
     "PI965IA",
     "PI965IB",
     "PI966",

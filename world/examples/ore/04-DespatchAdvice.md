@@ -24,8 +24,8 @@ The mine announces what was loaded into which wagons, so the factory can plan th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-10**  
   The day the train was loaded and weighed.
-- `IssueTime` = **15:37:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **10:20:00-01:00**  
+  Sent once the train has left the siding at 10:05, so that the factory can plan the unloading before it arrives; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.** (languageID `qau`)  
@@ -286,7 +286,7 @@ Inside `DespatchLine`:
   <cbc:ID>SM-DA-26-0308</cbc:ID>
   <cbc:UUID>e3281a6d-51f4-5981-b7f0-b43b6a9cf2da</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
-  <cbc:IssueTime>15:37:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>10:20:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note languageID="qau">Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
   <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>

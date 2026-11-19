@@ -339,8 +339,6 @@ Inside `Delivery`:
   Benches come in pallets of four.
 - `MinimumDeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `EA`)  
   One bench.
-- `MaximumDeliveryUnit/BatchQuantity` = **100** (unitCode `EA`)  
-  A truck takes at most 25 pallets of four.
 
 ### Delivery Terms
 
@@ -707,9 +705,6 @@ Inside `OrderLine`:
       <cbc:BatchQuantity unitCode="EA">4</cbc:BatchQuantity>
       <cbc:ConsumerUnitQuantity unitCode="EA">1</cbc:ConsumerUnitQuantity>
     </cac:MinimumDeliveryUnit>
-    <cac:MaximumDeliveryUnit>
-      <cbc:BatchQuantity unitCode="EA">100</cbc:BatchQuantity>
-    </cac:MaximumDeliveryUnit>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>

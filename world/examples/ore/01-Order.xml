@@ -8,13 +8,21 @@
   <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>11:10:00-01:00</cbc:IssueTime>
-  <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note languageID="qau">Galmul stek-nek, zan sezhul.</cbc:Note>
-  <cbc:Note languageID="en-XU">Monthly call-off, one train.</cbc:Note>
+  <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">226</cbc:OrderTypeCode>
+  <cbc:Note languageID="qau">Drek stek-nek gan March karul drek tazkraz zhurtrir gan 2026: zan sezhul.</cbc:Note>
+  <cbc:Note languageID="en-XU">The call-off for March under the supply agreement for 2026: one train.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:Contract>
+    <cbc:ID>SM-VI-SA-2026</cbc:ID>
+    <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">SUPPLY</cbc:ContractTypeCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-01-01</cbc:StartDate>
+      <cbc:EndDate>2026-12-31</cbc:EndDate>
+    </cac:ValidityPeriod>
+  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -119,7 +127,7 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-03-09</cbc:StartDate>
+      <cbc:StartDate>2026-03-10</cbc:StartDate>
       <cbc:EndDate>2026-03-13</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>

@@ -62,16 +62,16 @@
             <SimpleValue>CIM</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Rail consignment note (CIM)</SimpleValue>
+            <SimpleValue>Rail consignment note (the Accord's rules after the CIM)</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Kaz silsan mek (CIM)</SimpleValue>
+            <SimpleValue>Kaz silsan mek (drek Accord's trilhek skuskan drek CIM)</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Kepisu lutatehi tamasu (CIM)</SimpleValue>
+            <SimpleValue>Kepisu lutatehi tamasu ( Accord's lelahe lelova CIM)</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>A consignment note under the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (UN/EDIFACT 1001: 720).</SimpleValue>
+            <SimpleValue>A consignment note for the international carriage of goods by rail between the Accord's members, under the Trade Accord's uniform rules for it, which are modelled on the CIM, the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (COTIF Appendix B); like the CIM they also cover a carriage by road within one member state that supplements the rail carriage under the same contract (UN/EDIFACT 1001: 720; D37).</SimpleValue>
          </Value>
       </Row>
       <Row>

@@ -1,8 +1,8 @@
 # Order Change: Velumi Trading to Lumeway Distribution
 
-*Example 1 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Order Change in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA)*
+*Example 1 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Order Change in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA)*
 
-Part of the quantity is needed urgently: delivery by air, CPT island airport, at an extra charge.
+Eight more side frames are needed urgently, spares for the port's harbour benches: a line added to the sea order, by air, carriage paid to the island airport, with the air freight at cost.
 
 [The XML file](01-OrderChange.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -200,10 +200,6 @@ Inside `Delivery`:
   The frames are wanted at Selanu airport on 14 May, before the ship arrives.
 - `RequestedDeliveryPeriod/EndDate` = **2026-05-14**  
   The last day it is wanted.
-- `CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `DeliveryParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `DeliveryParty/PartyName/Name` = **Nalevi Warehousing**  
@@ -246,21 +242,6 @@ Inside `Delivery`:
   A party referred to from another party's details: its identifier and name are enough.
 - `NotifyParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
-- `DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
-  Incoterms 2020: carriage paid to, for this delivery only. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryTerms/SpecialTerms` = **The rest of the order stays CIF by sea.**  
-  Why the delivery has its own terms.
-
-### Delivery Terms
-
-Inside `DeliveryTerms`:
-
-- `ID` = **CPT** (schemeID `INCOTERMS`)  
-  Carriage paid to the island's airport for the urgent frames: the distributor pays the air freight; the rest of the order stays CIF by sea. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
-- `DeliveryLocation/Description` = **Selanu airport, cargo terminal**  
-  Where the delivery terms place the handover of the goods.
 
 ### Destination Country
 
@@ -309,6 +290,16 @@ Inside `OrderLine`:
   Eight side frames, needed before the ship arrives.
 - `LineItem/LineExtensionAmount` = **512.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `LineItem/DeliveryTerms/ID` = **CPT** (schemeID `INCOTERMS`)  
+  Incoterms 2020: carriage paid to, for this line, the frames by air. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
+- `LineItem/DeliveryTerms/SpecialTerms` = **The rest of the order stays CIF by sea.**  
+  Why the line has terms of its own.
+- `LineItem/DeliveryTerms/DeliveryLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `LineItem/DeliveryTerms/DeliveryLocation/Name` = **Selanu airport**  
+  The named place: Selanu airport.
+- `LineItem/DeliveryTerms/DeliveryLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
   Lumeway's trade price, carriage paid to Selanu airport: its price for the island is a CIF price with the sea freight in it, and the air freight is charged on top, at cost.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -477,14 +468,6 @@ Inside `OrderLine`:
       <cbc:StartDate>2026-05-14</cbc:StartDate>
       <cbc:EndDate>2026-05-14</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
-    <cac:CarrierParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Kelaro Air Cargo</cbc:Name>
-      </cac:PartyName>
-    </cac:CarrierParty>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
@@ -524,18 +507,7 @@ Inside `OrderLine`:
         <cbc:Name>Nalevi Warehousing</cbc:Name>
       </cac:PartyName>
     </cac:NotifyParty>
-    <cac:DeliveryTerms>
-      <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
-      <cbc:SpecialTerms>The rest of the order stays CIF by sea.</cbc:SpecialTerms>
-    </cac:DeliveryTerms>
   </cac:Delivery>
-  <cac:DeliveryTerms>
-    <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
-    <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
-      <cbc:Description>Selanu airport, cargo terminal</cbc:Description>
-    </cac:DeliveryLocation>
-  </cac:DeliveryTerms>
   <cac:DestinationCountry>
     <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
   </cac:DestinationCountry>
@@ -564,6 +536,19 @@ Inside `OrderLine`:
       <cbc:ID>4</cbc:ID>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">512.00</cbc:LineExtensionAmount>
+      <cac:DeliveryTerms>
+        <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
+        <cbc:SpecialTerms>The rest of the order stays CIF by sea.</cbc:SpecialTerms>
+        <cac:DeliveryLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+          <cbc:Name>Selanu airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DeliveryLocation>
+      </cac:DeliveryTerms>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>

@@ -11,8 +11,8 @@
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:10:00-01:00</cbc:IssueTime>
-  <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
-  <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
+  <cbc:Name>Rail consignment note under the Accord's uniform rules for international carriage by rail, modelled on the CIM</cbc:Name>
+  <cbc:Description>Two containers of park benches, carried by the carrier's tractor from Castrano's warehouse to the Ferrano hub and by the container train to Lumeway's siding in Marrowdale, under the Accord's common transit.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
   <cbc:Note languageID="en-XU">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">CIM</cbc:WaybillTypeCode>
@@ -20,7 +20,7 @@
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
   <cac:IssueLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-    <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
     <cac:Address>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -191,14 +191,13 @@
         <cbc:Note>Freight prepaid by the consignor under DAP.</cbc:Note>
       </cac:PrepaidPaymentTerms>
       <cac:MainCarriageShipmentStage>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>2</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
         <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
         <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
-        <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
-        <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
+        <cbc:Instructions>Shunt to the Lumeway siding in Marrowdale once the import is declared.</cbc:Instructions>
+        <cbc:DemurrageInstructions>Free time five days at the siding, counted from the day after the boxes are placed; then demurrage of 7,500 ferra per container day, under framework contract FRC-CON-2026-005.</cbc:DemurrageInstructions>
         <cbc:CrewQuantity unitCode="IE">2</cbc:CrewQuantity>
-        <cbc:PassengerQuantity unitCode="IE">0</cbc:PassengerQuantity>
         <cac:TransportMeans>
           <cbc:JourneyID>CT 4471</cbc:JourneyID>
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
@@ -259,6 +258,36 @@
           </cac:Location>
         </cac:EstimatedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
+      <cac:PreCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">37</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 RC</cbc:LicensePlateID>
+          </cac:RoadTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+      </cac:PreCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
@@ -271,7 +300,6 @@
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
           <cbc:Information>Return empty to the Ferrano hub within five days.</cbc:Information>
           <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-          <cbc:LegalStatusIndicator>false</cbc:LegalStatusIndicator>
           <cbc:Characteristics>Steel, high cube, wooden floor.</cbc:Characteristics>
           <cbc:DamageRemarks>Small dent in the left side panel, noted at pick-up; no effect on the cargo.</cbc:DamageRemarks>
           <cbc:Description>40-foot high cube container</cbc:Description>
@@ -317,14 +345,6 @@
               <cbc:Name>Ferrano Rail Cargo</cbc:Name>
             </cac:PartyName>
           </cac:OwnerParty>
-          <cac:OperatingParty>
-            <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
-            </cac:PartyIdentification>
-            <cac:PartyName>
-              <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-            </cac:PartyName>
-          </cac:OperatingParty>
           <cac:LoadingLocation>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano</cbc:Name>
@@ -343,11 +363,8 @@
               </cac:Country>
             </cac:Address>
           </cac:UnloadingLocation>
-          <cac:StorageLocation>
-            <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
-          </cac:StorageLocation>
           <cac:PositioningTransportEvent>
-            <cbc:OccurrenceDate>2026-04-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceDate>2026-04-10</cbc:OccurrenceDate>
             <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -370,7 +387,7 @@
           </cac:DeliveryTransportEvent>
           <cac:PickupTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -383,10 +400,10 @@
           </cac:PickupTransportEvent>
           <cac:HandlingTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>18:30:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-              <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+              <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
               <cac:Address>
                 <cac:Country>
                   <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -432,7 +449,7 @@
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
-            <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
+            <cbc:ActualPickupTime>13:00:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -442,14 +459,6 @@
             <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
             <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
-          <cac:ShipmentDocumentReference>
-            <cbc:ID>FRC-WB-26-0334</cbc:ID>
-            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
-          </cac:ShipmentDocumentReference>
-          <cac:ContainedInTransportEquipment>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:rail-vehicle-register">31 46 4521 042-3</cbc:ID>
-            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">RR</cbc:TransportEquipmentTypeCode>
-          </cac:ContainedInTransportEquipment>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
           <cbc:ID>VI-TD-26-0331</cbc:ID>
@@ -472,9 +481,26 @@
           <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
           <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:ProviderTypeCode listID="urn:ubl-examples:world:codelist:EquipmentProviderTypeCode">CARRIER</cbc:ProviderTypeCode>
+          <cbc:OwnerTypeCode listID="urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode">CARRIER</cbc:OwnerTypeCode>
           <cbc:SizeTypeCode listID="ISO 6346">45G1</cbc:SizeTypeCode>
+          <cbc:DispositionCode listID="urn:ubl-examples:world:codelist:EquipmentDispositionCode">LOADED</cbc:DispositionCode>
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
+          <cbc:Information>Return empty to the Ferrano hub within five days.</cbc:Information>
+          <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+          <cbc:Characteristics>Steel, high cube, wooden floor.</cbc:Characteristics>
+          <cbc:Description>40-foot high cube container</cbc:Description>
+          <cbc:SpecialTransportRequirements>Load with the doors to the rear of the wagon.</cbc:SpecialTransportRequirements>
           <cbc:GrossWeightMeasure unitCode="KGM">9088.8</cbc:GrossWeightMeasure>
+          <cbc:GrossVolumeMeasure unitCode="MTQ">76.3</cbc:GrossVolumeMeasure>
+          <cbc:TrackingDeviceCode listID="urn:ubl-examples:world:codelist:TrackingDeviceCode">GPS</cbc:TrackingDeviceCode>
+          <cbc:PowerIndicator>false</cbc:PowerIndicator>
+          <cbc:TraceID>TRK-FRXU1044180</cbc:TraceID>
+          <cbc:StowagePositionID>31 46 4521 043-1 / A</cbc:StowagePositionID>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">12192</cbc:Measure>
+          </cac:MeasurementDimension>
           <cac:TransportEquipmentSeal>
             <cbc:ID>XU-VI-30412</cbc:ID>
             <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">SHIPPER</cbc:SealIssuerTypeCode>
@@ -482,6 +508,144 @@
             <cbc:SealStatusCode listID="urn:ubl-examples:world:codelist:SealStatusCode">APPLIED</cbc:SealStatusCode>
             <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
           </cac:TransportEquipmentSeal>
+          <cac:ProviderParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+            </cac:PartyName>
+          </cac:ProviderParty>
+          <cac:LoadingProofParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Castrano Logistics</cbc:Name>
+            </cac:PartyName>
+          </cac:LoadingProofParty>
+          <cac:OwnerParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+            </cac:PartyName>
+          </cac:OwnerParty>
+          <cac:LoadingLocation>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:LoadingLocation>
+          <cac:UnloadingLocation>
+            <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
+            <cbc:Name>Marrowdale</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:UnloadingLocation>
+          <cac:PositioningTransportEvent>
+            <cbc:OccurrenceDate>2026-04-10</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
+          </cac:PositioningTransportEvent>
+          <cac:DeliveryTransportEvent>
+            <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+            <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+            <cac:Location>
+              <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+              <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
+            </cac:Location>
+          </cac:DeliveryTransportEvent>
+          <cac:PickupTransportEvent>
+            <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
+          </cac:PickupTransportEvent>
+          <cac:HandlingTransportEvent>
+            <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
+          </cac:HandlingTransportEvent>
+          <cac:LoadingTransportEvent>
+            <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>05:55:00</cbc:OccurrenceTime>
+            <cac:Location>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+              <cac:Address>
+                <cac:Country>
+                  <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+                </cac:Country>
+              </cac:Address>
+            </cac:Location>
+          </cac:LoadingTransportEvent>
+          <cac:ApplicableTransportMeans>
+            <cac:RailTransport>
+              <cbc:TrainID>FRC 4417</cbc:TrainID>
+              <cbc:RailCarID schemeID="urn:ubl-examples:world:XU:rail-vehicle-register">31 46 4521 043-1</cbc:RailCarID>
+            </cac:RailTransport>
+          </cac:ApplicableTransportMeans>
+          <cac:HaulageTradingTerms>
+            <cbc:Information>Carrier haulage: the rail carrier brings the box to the warehouse and back.</cbc:Information>
+            <cbc:Reference>FRC-HT-2026</cbc:Reference>
+          </cac:HaulageTradingTerms>
+          <cac:FreightAllowanceCharge>
+            <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Rail freight per container</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="XUF">54600</cbc:Amount>
+          </cac:FreightAllowanceCharge>
+          <cac:Delivery>
+            <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
+            <cac:DeliveryLocation>
+              <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+              <cbc:Name>Rail siding of Lumeway Distribution, Marrowdale</cbc:Name>
+            </cac:DeliveryLocation>
+          </cac:Delivery>
+          <cac:Pickup>
+            <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
+            <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
+            <cac:PickupLocation>
+              <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+              <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+            </cac:PickupLocation>
+          </cac:Pickup>
+          <cac:Despatch>
+            <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
+            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
+          </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
           <cbc:ID>VI-TD-26-0331</cbc:ID>

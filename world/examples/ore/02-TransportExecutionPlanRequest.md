@@ -28,10 +28,6 @@ The manufacturer, as transport user, asks the rail carrier for wagons and a slot
   The day after the order: the buyer books the train it named in its order.
 - `IssueTime` = **09:24:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DocumentStatusReasonCode` = **UPDATE** (listID `urn:ubl-examples:world:codelist:DocumentStatusReasonCode`)  
-  The request updates the season's standing plan. The code is from the Trade Accord's document status reason list: UPDATE = Update of a standing plan.
-- `DocumentStatusReasonDescription` = **This week's quantity of ore differs from the standing plan.**  
-  Why it is sent.
 - `Note` = **Drek trir sezhul mir drek daz nintrek krir drek drunbaz.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): The transport asked for.
 - `Note` = **The ore train from the mine siding to the factory.** (languageID `en-XU`)  
@@ -191,6 +187,8 @@ Inside `TransportExecutionPlanDocumentReference`:
 
 - `ID` = **FRC-TEP-26-0001**  
   The standing plan for the ore season, agreed in January (not shown).
+- `DocumentDescription` = **The standing plan for 2026 provides one train a month of 30 wagons, about 1,800 t; this request books March's train, for this month's call-off of 1,800 t, in the loading window of 10 to 13 March.**  
+  How this request updates the standing plan (ore/02#F4, F5).
 
 ### Transport Service Description Document Reference
 
@@ -298,12 +296,12 @@ Inside `Consignment`:
 
 - `ID` = **VI-CS-26-0306**  
   The transport user's number for this consignment, quoted along the chain.
-- `SummaryDescription` = **1788.4 t of Iron ore, lump**  
-  What is to be carried, in a few words (worklist C21).
+- `SummaryDescription` = **One train of 30 wagons, about 1,800 t of lump iron ore.**  
+  What is to be carried, before the wagons are loaded and weighed.
 - `GrossWeightMeasure` = **1800000** (unitCode `KGM`)  
   The expected weight: the ordered quantity.
 - `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
-  The number of goods items.
+  The number of goods items: the ore.
 - `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 - `ConsigneeParty/PartyName/Name` = **Valdara Industries**  
@@ -367,8 +365,6 @@ Inside `Consignment`:
   <cbc:UUID>1136675e-5400-5624-8e01-dc21b86cbdfe</cbc:UUID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cbc:IssueTime>09:24:00-01:00</cbc:IssueTime>
-  <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">UPDATE</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>This week's quantity of ore differs from the standing plan.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek trir sezhul mir drek daz nintrek krir drek drunbaz.</cbc:Note>
   <cbc:Note languageID="en-XU">The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
@@ -490,6 +486,7 @@ Inside `Consignment`:
   </cac:Signature>
   <cac:TransportExecutionPlanDocumentReference>
     <cbc:ID>FRC-TEP-26-0001</cbc:ID>
+    <cbc:DocumentDescription>The standing plan for 2026 provides one train a month of 30 wagons, about 1,800 t; this request books March's train, for this month's call-off of 1,800 t, in the loading window of 10 to 13 March.</cbc:DocumentDescription>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:TransportServiceDescriptionDocumentReference>
     <cbc:ID>FRC-TSD-26</cbc:ID>
@@ -545,7 +542,7 @@ Inside `Consignment`:
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
-    <cbc:SummaryDescription>1788.4 t of Iron ore, lump</cbc:SummaryDescription>
+    <cbc:SummaryDescription>One train of 30 wagons, about 1,800 t of lump iron ore.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>

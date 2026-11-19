@@ -1,6 +1,6 @@
 # Goods Item Itinerary: Ferrano Rail Cargo to Valdara Industries
 
-*Example 9 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Goods Item Itinerary in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-ITEM-ITINERARY-SCHEMA)*
+*Example 9 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Goods Item Itinerary in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-ITEM-ITINERARY-SCHEMA)*
 
 The carrier tells the transport user the route and timing of the containers.
 
@@ -166,7 +166,9 @@ Inside `ReferencedConsignment`:
 Inside `ReferencedTransportEquipment`:
 
 - `ID` = **FRXU1044175** (schemeID `ISO6346`)  
-  The first container.
+  The first container (rail/09#F1).
+- `ID` = **FRXU1044180** (schemeID `ISO6346`)  
+  The second container (rail/09#F1).
 
 ### Referenced Package
 
@@ -187,21 +189,37 @@ Inside `ReferencedGoodsItem`:
 Inside `TransportationSegment`:
 
 - `SequenceNumeric` = **1**  
-  One segment: by rail from the hub to the distributor's siding.
+  The first segment: the carrier's tractor from the warehouse to the hub.
+- `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
+  The plan the segment is carried out under.
+- `TransportationService/TransportServiceCode` = **CARRHAUL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
+  Carrier haulage: the rail carrier's own tractor brings the boxes to its terminal, as a code of the Trade Accord's transport services. The code is from the Trade Accord's transport service list: CARRHAUL = Carrier haulage.
+- `TransportServiceProviderParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `TransportServiceProviderParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `ReferencedConsignment/ID` = **VI-CS-26-0327**  
+  The consignment on the segment.
+- `ShipmentStage/ID` = **1**  
+  The haulage, by road.
+- `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The haulage, by road. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `SequenceNumeric` = **2**  
+  The second segment: by rail from the hub to the distributor's siding.
 - `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
   The plan the segment is carried out under.
 - `TransportationService/TransportServiceCode` = **RAILCONT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
   The container train service, as a code of the Trade Accord's transport services. The code is from the Trade Accord's transport service list: RAILCONT = Container train.
 - `TransportServiceProviderParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+  A party referred to from another party's details: its identifier and name are enough.
 - `TransportServiceProviderParty/PartyName/Name` = **Ferrano Rail Cargo**  
-  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+  A party referred to from another party's details: its identifier and name are enough.
 - `ReferencedConsignment/ID` = **VI-CS-26-0327**  
   The consignment on the segment.
-- `ShipmentStage/ID` = **1**  
+- `ShipmentStage/ID` = **2**  
   The rail stage.
 - `ShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
-  Rail transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 2 = Rail transport.
+  The rail stage. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 2 = Rail transport.
 
 ## The document
 
@@ -318,6 +336,9 @@ Inside `TransportationSegment`:
   <cac:ReferencedTransportEquipment>
     <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
   </cac:ReferencedTransportEquipment>
+  <cac:ReferencedTransportEquipment>
+    <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+  </cac:ReferencedTransportEquipment>
   <cac:ReferencedPackage>
     <cbc:ID schemeID="ISO 15459">KXU105190004506265</cbc:ID>
   </cac:ReferencedPackage>
@@ -326,6 +347,28 @@ Inside `TransportationSegment`:
   </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+    <cac:TransportationService>
+      <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">CARRHAUL</cbc:TransportServiceCode>
+    </cac:TransportationService>
+    <cac:TransportServiceProviderParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:TransportServiceProviderParty>
+    <cac:ReferencedConsignment>
+      <cbc:ID>VI-CS-26-0327</cbc:ID>
+    </cac:ReferencedConsignment>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+    </cac:ShipmentStage>
+  </cac:TransportationSegment>
+  <cac:TransportationSegment>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
     <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
@@ -342,7 +385,7 @@ Inside `TransportationSegment`:
       <cbc:ID>VI-CS-26-0327</cbc:ID>
     </cac:ReferencedConsignment>
     <cac:ShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
     </cac:ShipmentStage>
   </cac:TransportationSegment>

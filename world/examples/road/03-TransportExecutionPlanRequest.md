@@ -28,8 +28,6 @@ The distributor, as transport user, books the truck: collection at the seller's 
   The distributor books the truck once the order is accepted.
 - `IssueTime` = **14:16:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The truck the distributor booked, from the 3PL's warehouse across the border.**  
-  The transport asked for.
 - `TransportUserRemarks` = **Please confirm by return.**  
   The user's remark.
 
@@ -241,12 +239,16 @@ Inside `Consignment`:
   The goods in a few words, as on the consignment note.
 - `GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The gross weight of the order: benches and castings with their packaging.
+- `LoadingLengthMeasure` = **9.3** (unitCode `MTR`)  
+  The bench pallets go two high, three abreast, in four rows of 1.85 m, and the pallet of frame cartons in a fifth row: that much of the trailer floor is needed.
 - `ContainerizedIndicator` = **false**  
   The pallets are loaded on the truck, not in a container.
 - `GeneralCargoIndicator` = **true**  
   Packed goods on pallets.
 - `CarrierServiceInstructions` = **Curtain-side trailer; the goods are loaded from the side by forklift.**  
   What the carrier must bring.
+- `TotalTransportHandlingUnitQuantity` = **25** (unitCode `EA`)  
+  The pallets to collect: 24 of benches and one of frame cartons.
 - `RequestedPickupTransportEvent/OccurrenceDate` = **2026-03-23**  
   The day the goods are ready.
 - `RequestedPickupTransportEvent/OccurrenceTime` = **14:00:00**  
@@ -258,7 +260,7 @@ Inside `Consignment`:
 - `RequestedPickupTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `RequestedDeliveryTransportEvent/OccurrenceDate` = **2026-03-25**  
-  The distributor's goods-in slot.
+  By the end of the distributor's goods-in slot, 09:00 to 10:00.
 - `RequestedDeliveryTransportEvent/OccurrenceTime` = **10:00:00**  
   The local time.
 - `RequestedDeliveryTransportEvent/Location/ID` = **XBMRW** (schemeID `UN/LOCODE`)  
@@ -336,7 +338,6 @@ Inside `Consignment`:
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>14:16:00-01:00</cbc:IssueTime>
-  <cbc:Note>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -481,9 +482,11 @@ Inside `Consignment`:
     <cbc:ID>LD-CS-26-0152</cbc:ID>
     <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+    <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>
     <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
     <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
     <cbc:CarrierServiceInstructions>Curtain-side trailer; the goods are loaded from the side by forklift.</cbc:CarrierServiceInstructions>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
       <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>

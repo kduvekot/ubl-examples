@@ -933,56 +933,64 @@ def check_dangerous_goods(root, where):
 
 
 def hazardous_item(it):
-    """The dangerous goods data of an item (world/items.json), as the UN Model Regulations describe it."""
+    """The dangerous goods data of an item (world/items.json), as the UN Model Regulations describe it, and only
+    what the document's carriage uses (D36, C79): the emergency schedules for ships (EmS) and the marine pollutant
+    only where the flow goes by sea, the tunnel code only where it goes by road alone; a placard notation only for
+    goods that carry a hazard label, and no placard endorsement that repeats the class or the label model. The
+    despatch advice keeps the identification and the handling notes, for the receiver."""
     hz = it["hazard"]
+    modes = FLOW_MODES or set()
+    receiver = ITEM_KIND.get(DOC_TYPE) == "despatch"
     out = {"ID": V(f"{it['sellers_id']}-DG", "The seller's dangerous goods record of the item."),
            "UNDGCode": V(hz["un"][2:], "The UN number, from the Dangerous Goods List of the UN Model Regulations."),
            "ProperShippingName": V(hz["name"], "The proper shipping name of the UN entry; the build checks that UN "
                                                "number, name and class agree with the Dangerous Goods List."),
            "HazardClassID": V(hz["class"], "The UN hazard class of the entry."),
            "HazardousCategoryCode": V(hz["class"], "The hazard class of the goods as a code of the UN Model "
-                                                    "Regulations' classes."),
-           "EmergencyProceduresCode": V(hz["ems"], "The emergency schedules for ships (EmS) of the IMDG Code for this "
-                                                   "UN entry: the fire schedule and the spillage schedule."),
-           "MedicalFirstAidGuideCode": V(hz["erg"], "The guide number of the Emergency Response Guidebook (ERG 2024) "
-                                                    "for this UN number: the world's carriers use the ERG, as the IMDG "
-                                                    "Code no longer gives medical first aid table numbers per UN number."),
-           "AdditionalInformation": V(hz.get("note", "Packed as the rules require."), "What the shipper adds."),
-           "PlacardNotation": V(hz["class"], "The class shown on the placard."),
-           "MarkingID": V(hz["un"], "The UN number marked on each package.")}
-    if hz.get("label"):
-        out["PlacardEndorsement"] = V(hz["label"], "The hazard label on the package.")
+                                                    "Regulations' classes.")}
+    if "sea" in modes and not receiver:
+        out["EmergencyProceduresCode"] = V(hz["ems"], "The emergency schedules for ships (EmS) of the IMDG Code for "
+                                                      "this UN entry: the fire schedule and the spillage schedule.")
+    out["MedicalFirstAidGuideCode"] = V(hz["erg"], "The guide number of the Emergency Response Guidebook (ERG 2024) "
+                                                   "for this UN number: the world's carriers and receivers use the "
+                                                   "ERG, as the IMDG Code no longer gives medical first aid table "
+                                                   "numbers per UN number.")
+    if hz.get("note"):
+        out["AdditionalInformation"] = V(hz["note"], "What the shipper adds about handling.")
+    if hz.get("label") and not receiver:
+        out["PlacardNotation"] = V(hz["class"], "The class shown on the hazard label of the packages.")
+    out["MarkingID"] = V(hz["un"], "The UN number marked on each package.")
     out["UNPackingGroupCode"] = V(hz.get("pg", "NA"), "The packing group of the UN entry; NA where the entry has no "
                                                      "packing group, as for lithium batteries and radioactive material.")
     out["UNPackingGroup"] = V(hz.get("pg", "NA"), "In words.")
-    if hz.get("tunnel"):
+    if hz.get("tunnel") and modes == {"road"} and not receiver:
         out["TunnelRestrictionCode"] = V(hz["tunnel"], "The tunnel restriction code for road transport.")
     if hz.get("technical"):
         out["TechnicalName"] = V(hz["technical"], "The technical name, needed with an n.o.s. entry.")
     if hz.get("sub"):
         out["SecondaryHazard"] = {"ID": V(hz["sub"], "The subsidiary hazard: flammable."),
                                   "PlacardNotation": V(hz["sub"], "Shown on a second label."),
-                                  "PlacardEndorsement": V("3", "The flammable liquid label."),
-                                  "Extension": V("Subsidiary risk 3", "In words."),
-                                  "EmergencyProceduresCode": V(f"TEC{hz['sub']}", "UBL defines it as \"A code "
-                                                               "signifying the emergency procedures for this secondary "
-                                                               "hazard\": the Trade Accord's emergency card "
-                                                               f"for class {hz['sub']}. The IMDG Code gives one pair "
-                                                               "of emergency schedules for the whole UN entry (on the "
-                                                               "item above), not one per hazard; the instructions in "
-                                                               "writing of road transport (ADR 5.4.3), which the "
-                                                               "Accord's cards follow, give the actions per danger "
-                                                               "label, the subsidiary hazard's label included.")}
+                                  "Extension": V("Subsidiary risk 3", "In words.")}
+        if not receiver:
+            out["SecondaryHazard"]["EmergencyProceduresCode"] = V(
+                f"TEC{hz['sub']}", "UBL defines it as \"A code signifying the emergency procedures for this "
+                "secondary hazard\": the Trade Accord's emergency card for class "
+                f"{hz['sub']}. The IMDG Code gives one pair of emergency schedules for the whole UN entry, not one "
+                "per hazard; the instructions in writing of road transport (ADR 5.4.3), which the Accord's cards "
+                "follow, give the actions per danger label, the subsidiary hazard's label included.")
         out["FlashpointTemperature"] = {"AttributeID": V("FLASHPOINT", "Closed cup."),
                                         "Measure": V(hz["flash"], "The flashpoint.", unitCode="CEL")}
-        out["MaritimePollutantCode"] = V("N", "Not a marine pollutant.")
-    if hz.get("isotope"):
-        name, act, unit = hz["isotope"]
-        out["RadioactiveMaterial"] = {"Name": V("Americium-241 sources in smoke detectors", "The material."),
-                                      "SpecialFormDescription": V("Sealed source, not special form.", "Its form."),
-                                      "ApplicableRadioactiveIsotope": {"Name": V(name, "The isotope."),
-                                                                       "ActivityLevelMeasure": V(act, "Per detector.",
-                                                                                                 unitCode=unit)}}
+        if "sea" in modes:
+            out["MaritimePollutantCode"] = V("N", "Not a marine pollutant.")
+    if hz.get("radioactive"):
+        r = hz["radioactive"]
+        total = r["kbq_each"] * r["count"]
+        out["RadioactiveMaterial"] = {
+            "Name": V(f"{r['nuclide']}, {r['count']} × {r['kbq_each']} kBq ({total} kBq) in ionisation smoke "
+                      "detectors", "The nuclide and the activity of the pack as carried, in the name: UBL defines "
+                      "ApplicableRadioactiveIsotope for fissile contents only, and americium-241 is not fissile, so "
+                      "the name is the only place left for them (D36, O127)."),
+            "SpecialFormDescription": V(r["form"], "Its form.")}
     return out
 
 
@@ -1423,7 +1431,7 @@ def party_profile(top, path, pid, content):
     if cls == "presentation" and role == "BusinessParty":
         blocks = set(own)                     # the business the document presents
     if cls == "invoice" and pid != top.get("from") and PARTY.get(pid, {}).get("identity", {}).get("person") and \
-            kind == "Invoice" and "PaymentMandate" not in str(content.get("PaymentMeans", "")):
+            kind != "CreditNote" and "PaymentMandate" not in str(content.get("PaymentMeans", "")):
         blocks.add("account")                 # the consumer's account the bills are collected from, unless the
         # mandate already names it or nothing is collected (utilities/09#F7, 11#F5)
     if "customs" in blocks and cls == "transport" and not _cross_border(top):
@@ -2706,6 +2714,7 @@ GENERIC_REFERENCES = {"AdditionalDocumentReference", "DocumentReference", "Suppo
 DOC_DATES = {}      # document ID -> (issue date, world document) of every example
 DOC_TYPES = {}      # document ID -> (flow, file number, UBL document type) of every example of the world
 DOC_TYPE = None     # the type of the document being built (its payment note names it, worklist C39)
+FLOW_MODES = None   # the modes of the transport legs of the flow being built (dangerous goods data by mode, D36)
 INDEXING = False    # True while doc_types() runs the scenarios to collect the IDs
 UNTYPED = []        # references that are neither typed nor an example of the world: (file, element, ID)
 
@@ -3515,7 +3524,8 @@ def main(flow_id, check=False):
     out = os.path.join(world_data.ROOT, "world", "examples", flow_id)
     os.makedirs(out, exist_ok=True)
     stale, roots = [], []
-    global DOC_TYPE
+    global DOC_TYPE, FLOW_MODES
+    FLOW_MODES = {leg["mode"] for leg in flow.get("legs", [])}
     for n, doc in enumerate(docs, 1):
         DOC_TYPE = doc["doc"]
         content = scenario(n, doc)

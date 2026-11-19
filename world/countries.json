@@ -1979,7 +1979,16 @@
     "weighs": "ranskir",
     "exported": "gazvan",
     "transformers": "miktan",
-    "voltage": "vesir"
+    "voltage": "vesir",
+    "they": "kildrek",
+    "days": "drirgir",
+    "demurrage": "gunnek",
+    "minutes": "krizstek",
+    "placed": "dagan",
+    "then": "vabul",
+    "timetable": "santul",
+    "was": "kagaz",
+    "rules": "trilhek"
    }
   },
   "qal": {
@@ -3107,7 +3116,8 @@
     "abroad": "pelahi",
     "partner's": "vapiseva",
     "rule": "vamufe",
-    "used": "vimihi"
+    "used": "vimihi",
+    "rules": "lelahe"
    }
   },
   "en": {

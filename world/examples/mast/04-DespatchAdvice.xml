@@ -7,7 +7,7 @@
   <cbc:ID>SE-DA-26-0718</cbc:ID>
   <cbc:UUID>7619027f-bad8-5009-935f-978a56d56a14</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
-  <cbc:IssueTime>13:20:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:40:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -118,7 +118,7 @@
     <cbc:ID>SE-SH-26-0715</cbc:ID>
     <cac:Consignment>
       <cbc:ID>SE-CS-26-0716</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">376</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -153,8 +153,8 @@
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-06-04</cbc:StartDate>
-        <cbc:EndDate>2026-06-04</cbc:EndDate>
+        <cbc:StartDate>2026-06-05</cbc:StartDate>
+        <cbc:EndDate>2026-06-05</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-06-04</cbc:ActualDespatchDate>
@@ -163,29 +163,25 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Six packs: four hours of back-up power for the mast.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
+    <cbc:Note>Twelve modules of 2.4 kWh: four hours of back-up power for the mast.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">12</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
-      <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+      <cbc:Description>Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.</cbc:Description>
+      <cbc:Name>Lithium-ion battery module 48 V 50 Ah</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>SE-BAT-48100</cbc:ID>
+        <cbc:ID>SE-BAT-4850</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:HazardousItem>
-        <cbc:ID>SE-BAT-48100-DG</cbc:ID>
-        <cbc:PlacardNotation>9</cbc:PlacardNotation>
-        <cbc:PlacardEndorsement>9A</cbc:PlacardEndorsement>
+        <cbc:ID>SE-BAT-4850-DG</cbc:ID>
         <cbc:AdditionalInformation>State of charge below 30 %, as the air rules require.</cbc:AdditionalInformation>
         <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-        <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-A,S-I</cbc:EmergencyProceduresCode>
         <cbc:MedicalFirstAidGuideCode listID="ERG 2024">147</cbc:MedicalFirstAidGuideCode>
-        <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">E</cbc:TunnelRestrictionCode>
         <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
         <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
         <cbc:MarkingID>UN3480</cbc:MarkingID>
@@ -195,7 +191,7 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>One set of ten for the equipment room.</cbc:Note>
+    <cbc:Note>One pack of ten for the equipment room.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="SET">1</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -209,54 +205,42 @@
       </cac:SellersItemIdentification>
       <cac:HazardousItem>
         <cbc:ID>SE-SMK-10-DG</cbc:ID>
-        <cbc:PlacardNotation>7</cbc:PlacardNotation>
-        <cbc:AdditionalInformation>Excepted package: no radioactive label, the UN number on the package.</cbc:AdditionalInformation>
+        <cbc:AdditionalInformation>Excepted package: no radioactive label; the UN number on the package.</cbc:AdditionalInformation>
         <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
-        <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-I,S-S</cbc:EmergencyProceduresCode>
         <cbc:MedicalFirstAidGuideCode listID="ERG 2024">161</cbc:MedicalFirstAidGuideCode>
         <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
         <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
         <cbc:MarkingID>UN2911</cbc:MarkingID>
         <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
         <cac:RadioactiveMaterial>
-          <cbc:Name>Americium-241 sources in smoke detectors</cbc:Name>
-          <cbc:SpecialFormDescription>Sealed source, not special form.</cbc:SpecialFormDescription>
-          <cac:ApplicableRadioactiveIsotope>
-            <cbc:Name>Americium-241</cbc:Name>
-            <cbc:ActivityLevelMeasure unitCode="2Q">37</cbc:ActivityLevelMeasure>
-          </cac:ApplicableRadioactiveIsotope>
+          <cbc:Name>Am-241, 10 × 37 kBq (370 kBq) in ionisation smoke detectors</cbc:Name>
+          <cbc:SpecialFormDescription>Sealed sources inside the detectors, not special form.</cbc:SpecialFormDescription>
         </cac:RadioactiveMaterial>
       </cac:HazardousItem>
     </cac:Item>
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>Four cans of five litres for the circuit boards.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="LTR">20</cbc:DeliveredQuantity>
+    <cbc:Note>Five litres for the circuit boards, in 1-litre tins.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="LTR">5</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
+      <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
       <cbc:Name>Coating stripper for electronics</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>SE-CS-05</cbc:ID>
+        <cbc:ID>SE-CS-01</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:HazardousItem>
-        <cbc:ID>SE-CS-05-DG</cbc:ID>
-        <cbc:PlacardNotation>8</cbc:PlacardNotation>
-        <cbc:PlacardEndorsement>8</cbc:PlacardEndorsement>
-        <cbc:AdditionalInformation>Packed as the rules require.</cbc:AdditionalInformation>
+        <cbc:ID>SE-CS-01-DG</cbc:ID>
         <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">II</cbc:UNPackingGroupCode>
         <cbc:UNPackingGroup>Medium danger</cbc:UNPackingGroup>
-        <cbc:EmergencyProceduresCode listID="IMO IMDG EmS">F-E,S-C</cbc:EmergencyProceduresCode>
         <cbc:MedicalFirstAidGuideCode listID="ERG 2024">132</cbc:MedicalFirstAidGuideCode>
-        <cbc:TunnelRestrictionCode listID="UNECE ADR tunnel restriction code">D/E</cbc:TunnelRestrictionCode>
-        <cbc:MaritimePollutantCode listID="urn:ubl-examples:world:codelist:MarinePollutantCode">N</cbc:MaritimePollutantCode>
         <cbc:TechnicalName>ethanolamine, propanol</cbc:TechnicalName>
         <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
         <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">8</cbc:HazardousCategoryCode>
@@ -265,8 +249,6 @@
         <cac:SecondaryHazard>
           <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
           <cbc:PlacardNotation>3</cbc:PlacardNotation>
-          <cbc:PlacardEndorsement>3</cbc:PlacardEndorsement>
-          <cbc:EmergencyProceduresCode listID="urn:ubl-examples:world:codelist:TransportEmergencyCardCode">TEC3</cbc:EmergencyProceduresCode>
           <cbc:Extension>Subsidiary risk 3</cbc:Extension>
         </cac:SecondaryHazard>
         <cac:FlashpointTemperature>

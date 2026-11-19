@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Batteries for the island's telecom mast, by air (dangerous goods)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-The telecom company orders back-up power and safety equipment for its mast. Carriage paid to its site: the seller arranges the dangerous goods transport.
+The telecom company orders back-up power and safety equipment for its mast. Carriage paid to the mast site: the seller arranges the dangerous goods transport.
 
 [The XML file](01-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -153,9 +153,29 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **CPT** (schemeID `INCOTERMS`)  
-  Carriage paid to the telecom company's site: the seller arranges the dangerous goods transport. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryLocation/Description` = **Selanu Telecom, mast site**  
+  Carriage paid to the telecom company's mast site: the seller arranges the dangerous goods transport. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/Description` = **Selanu Telecom's mast site on Mast Hill**  
   Where the delivery terms place the handover of the goods.
+- `DeliveryLocation/Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `DeliveryLocation/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+- `DeliveryLocation/Address/StreetName` = **Kitata Vekase Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/StreetName` = **Mast Hill Road** (languageID `en-XL`)  
+  The street's name in English, the country's other official language; identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/BuildingNumber` = **58**  
+  Building number of the postal address. identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+- `DeliveryLocation/Address/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `DeliveryLocation/Address/Country/Name` = **Lisavu**  
+  The country's name, for readers of the address.
 
 ### Tax Total
 
@@ -163,7 +183,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **14770.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **14627.50** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -182,9 +202,9 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **14770.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **14627.50** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **14770.00** (currencyID `XBL`)  
+- `PayableAmount` = **14627.50** (currencyID `XBL`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -193,26 +213,26 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **6** (unitCode `EA`)  
-  Six packs: four hours of back-up power for the mast.
+- `LineItem/Quantity` = **12** (unitCode `EA`)  
+  Twelve modules of 2.4 kWh: four hours of back-up power for the mast.
 - `LineItem/LineExtensionAmount` = **14400.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **2400** (currencyID `XBL`)  
+- `LineItem/Price/PriceAmount` = **1200** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.**  
+- `LineItem/Item/Description` = **Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.**  
   The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
-- `LineItem/Item/Name` = **Lithium-ion battery pack 48 V 100 Ah**  
+- `LineItem/Item/Name` = **Lithium-ion battery module 48 V 50 Ah**  
   The item's short name; item battery-pack of Saltmere Engineering (world/items.json).
 - `LineItem/Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `LineItem/Item/SellersItemIdentification/ID` = **SE-BAT-48100**  
+- `LineItem/Item/SellersItemIdentification/ID` = **SE-BAT-4850**  
   The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **1** (unitCode `SET`)  
-  One set of ten for the equipment room.
+  One pack of ten for the equipment room.
 - `LineItem/LineExtensionAmount` = **180.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **180** (currencyID `XBL`)  
@@ -229,21 +249,21 @@ Inside `OrderLine`:
   The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **20** (unitCode `LTR`)  
-  Four cans of five litres for the circuit boards.
-- `LineItem/LineExtensionAmount` = **190.00** (currencyID `XBL`)  
+- `LineItem/Quantity` = **5** (unitCode `LTR`)  
+  Five litres for the circuit boards, in 1-litre tins.
+- `LineItem/LineExtensionAmount` = **47.50** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **9.5** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `LTR`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Remover for the protective coating of circuit boards, in 5-litre cans.**  
+- `LineItem/Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
   The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
 - `LineItem/Item/Name` = **Coating stripper for electronics**  
   The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
 - `LineItem/Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `LineItem/Item/SellersItemIdentification/ID` = **SE-CS-05**  
+- `LineItem/Item/SellersItemIdentification/ID` = **SE-CS-01**  
   The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
 
 ## The document
@@ -359,13 +379,27 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:Description>Selanu Telecom, mast site</cbc:Description>
+      <cbc:Description>Selanu Telecom's mast site on Mast Hill</cbc:Description>
+      <cac:Address>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
+        <cbc:BuildingNumber>58</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:Address>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">14770.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">14627.50</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -379,24 +413,24 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">14770.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">14770.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">14627.50</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">14627.50</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">14400.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">2400</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">1200</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Back-up battery for telecom masts, lithium-ion, 4.8 kWh, in a steel case.</cbc:Description>
-        <cbc:Name>Lithium-ion battery pack 48 V 100 Ah</cbc:Name>
+        <cbc:Description>Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.</cbc:Description>
+        <cbc:Name>Lithium-ion battery module 48 V 50 Ah</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>
-          <cbc:ID>SE-BAT-48100</cbc:ID>
+          <cbc:ID>SE-BAT-4850</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -423,18 +457,18 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
-      <cbc:Quantity unitCode="LTR">20</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">190.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="LTR">5</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">47.50</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">9.5</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="LTR">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Remover for the protective coating of circuit boards, in 5-litre cans.</cbc:Description>
+        <cbc:Description>Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.</cbc:Description>
         <cbc:Name>Coating stripper for electronics</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:SellersItemIdentification>
-          <cbc:ID>SE-CS-05</cbc:ID>
+          <cbc:ID>SE-CS-01</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

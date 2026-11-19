@@ -26,11 +26,11 @@ Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the
   The first working day of the month: the monthly ore call-off.
 - `IssueTime` = **11:10:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
-  UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `Note` = **Galmul stek-nek, zan sezhul.** (languageID `qau`)  
+- `OrderTypeCode` = **226** (listID `UN/EDIFACT EDED 1001`)  
+  UN/EDIFACT 1001 code 226, call off order: the month's train called off under the yearly supply agreement, which sets the price basis, one train a month and the moisture clause (D45, ore/01#F4). The code is from the world's copy of UN/EDIFACT 1001 Document name: 226 = Call off order.
+- `Note` = **Drek stek-nek gan March karul drek tazkraz zhurtrir gan 2026: zan sezhul.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): Says in words what the order is for.
-- `Note` = **Monthly call-off, one train.** (languageID `en-XU`)  
+- `Note` = **The call-off for March under the supply agreement for 2026: one train.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: Says in words what the order is for.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency, in which the seller's prices are; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
@@ -40,6 +40,19 @@ Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of order lines.
+
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **SM-VI-SA-2026**  
+  The supply agreement the order calls off.
+- `ContractTypeCode` = **SUPPLY** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
+  Recurring supplies at agreed quantities: one train a month. The code is from the Trade Accord's contract type list: SUPPLY = Supply contract.
+- `ValidityPeriod/StartDate` = **2026-01-01**  
+  A yearly agreement, for 2026.
+- `ValidityPeriod/EndDate` = **2026-12-31**  
+  To the end of the year.
 
 ### Buyer Customer Party
 
@@ -175,10 +188,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `RequestedDeliveryPeriod/StartDate` = **2026-03-09**  
-  The week in which the factory wants the ore.
+- `RequestedDeliveryPeriod/StartDate` = **2026-03-10**  
+  The loading window for March's train, from Tuesday 10 March: the window the buyer then books the train in.
 - `RequestedDeliveryPeriod/EndDate` = **2026-03-13**  
-  The end of that week.
+  To Friday 13 March.
 - `DeliveryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Valdara Industries**  
@@ -307,13 +320,21 @@ Inside `OrderLine`:
   <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>11:10:00-01:00</cbc:IssueTime>
-  <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note languageID="qau">Galmul stek-nek, zan sezhul.</cbc:Note>
-  <cbc:Note languageID="en-XU">Monthly call-off, one train.</cbc:Note>
+  <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">226</cbc:OrderTypeCode>
+  <cbc:Note languageID="qau">Drek stek-nek gan March karul drek tazkraz zhurtrir gan 2026: zan sezhul.</cbc:Note>
+  <cbc:Note languageID="en-XU">The call-off for March under the supply agreement for 2026: one train.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:Contract>
+    <cbc:ID>SM-VI-SA-2026</cbc:ID>
+    <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">SUPPLY</cbc:ContractTypeCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-01-01</cbc:StartDate>
+      <cbc:EndDate>2026-12-31</cbc:EndDate>
+    </cac:ValidityPeriod>
+  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -418,7 +439,7 @@ Inside `OrderLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-03-09</cbc:StartDate>
+      <cbc:StartDate>2026-03-10</cbc:StartDate>
       <cbc:EndDate>2026-03-13</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>

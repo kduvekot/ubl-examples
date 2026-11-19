@@ -25,7 +25,6 @@ Coverage 5153 → 5151 (commit c15bf42c), 2 elements.
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `Address/AdditionalStreetName` | 0..n | air/01-OrderChange, air/02-OrderResponse, air/03-ForwardingInstructions … | | | open |
-| `Address/Region` | 0..1 | carnet/01-GoodsItemPassport, carnet/02-ProofOfReexportationRequest, carnet/03-ProofOfReexportationReminder … | | | open |
 
 ### Stage 1 step 1b: public bodies and state companies (C04, D46)
 
@@ -58,7 +57,7 @@ Coverage 5150 → 5129 (commit d2506729), 21 elements.
 | `LineReference/LineStatusCode` | 0..1 | cotton/04-SelfBilledInvoice, road/02-OrderResponse | | | open |
 | `Order/SalesOrderID` | 0..1 | tender/26-Order | | | open |
 | `OrderChange/SalesOrderID` | 0..1 | air/01-OrderChange | | | open |
-| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | | | open |
+| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | the fulfilment cancellation's reference to the order change quotes the buyer's own reference of it, "Harbour parks Selanu": the frames are spares for the port's harbour benches (O199 a') | air | candidate |
 | `OrderResponse/Contract` | 0..n | sea/06-OrderResponse | | | open |
 | `SelfBilledCreditNote/DespatchDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
 | `SelfBilledCreditNote/ReceiptDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
@@ -103,7 +102,6 @@ Coverage 5120 → 5117 (commit 5e00c80d), 3 elements.
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `NotificationRequirement/PostEventNotificationDurationMeasure` | 0..1 | ore/03-TransportExecutionPlan, plastics/04-TransportExecutionPlan, rail/03-TransportExecutionPlan | | | open |
-| `TransportExecutionPlan/AtLocation` | 0..1 | ore/03-TransportExecutionPlan, plastics/04-TransportExecutionPlan, rail/03-TransportExecutionPlan | | | open |
 | `TransportExecutionTerms/CommissionPaymentTerms` | 0..1 | plastics/04-TransportExecutionPlan | | | open |
 
 ### Stage 1 step 1e, part 3: remittance advices (C17)
@@ -220,7 +218,6 @@ Coverage 5058 → 5049 (commit 0edd7d78), 9 elements.
 |---|---|---|---|---|---|
 | `Consignment/OfficeOfEntryLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `ImportCustomsDeclaration/CustomsExitOfficeLocation` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `ImportCustomsDeclaration/PreviousCustomsDeclaration` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
 | `ImportCustomsDeclaration/ValidityPeriod` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
 | `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | | | open |
 | `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | | | open |
@@ -252,8 +249,8 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `ContractNotice/BeneficiaryParty` | 0..n | tender/02-ContractNotice | | | open |
 | `ContractNotice/OriginatorCustomerParty` | 0..n | tender/02-ContractNotice | | | open |
 | `CreditNoteLine/OriginatorParty` | 0..1 | tender/33-CreditNote | | | open |
-| `FulfilmentCancellation/BeneficiaryParty` | 0..n | air/07-FulfilmentCancellation | | | open |
-| `FulfilmentCancellation/OriginatorCustomerParty` | 0..1 | air/07-FulfilmentCancellation | | | open |
+| `FulfilmentCancellation/BeneficiaryParty` | 0..n | air/07-FulfilmentCancellation | the Port of Selanu, for whose harbour benches the frames of the cancelled despatch are, as the order change names it (O199 a'; with O198's open point on who bears what) | air | candidate |
+| `FulfilmentCancellation/OriginatorCustomerParty` | 0..1 | air/07-FulfilmentCancellation | the Port of Selanu, whose need started the order of the frames, as in the order change (O199 a'; with O198) | air | candidate |
 | `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | the wholesaler\'s instruction for returns of the spent Mo-99/Tc-99m generator to its maker (a fictional maker abroad, named in the document, not a world party), with the return shipment; owner, 2026-11-19 (O202 choice 7) | medicines | candidate |
 | `ItemIdentification/MeasurementDimension` | 0..n | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `ItemProperty/UsabilityPeriod` | 0..1 | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
@@ -308,7 +305,6 @@ Coverage 4993 → 4992 (commit 0cbe740c), 1 element.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `RemittanceAdviceLine/Note` | 0..n | utilities/04-RemittanceAdvice | | | open |
 
 ### Stage 2: C50 (no tax section in Lisavan sales), C54 (withholding, D17)
 
@@ -499,6 +495,125 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `Price/OrderableUnitFactorRate` | 0..1 | wood/02-Quotation, wood/03-Order, wood/08-Invoice | | | open |
 | `QuotationLine/SellerProposedSubstituteLineItem` | 0..1 | wood/02-Quotation | | | open |
 
+### G2: carnet, mast, air (2026-11-19)
+
+Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86).
+
+> C78, D40: the carnet as issued is stamped nowhere; the chambers quote the stamped counterfoils afterwards. The carnet names no office of subsequent entry: the samples enter the island at Selanu airport, which the importation counterfoil names (carnet/01#F17). The representative is named by first and family name, title and passport only: the middle name, the "other name" (UBL: a second family name) and the suffix had no reason (01#F5, F14). The proof's attachment is a scan, described, not a sentence in place of the document (04#F10).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Attachment/EmbeddedDocument` | 0..1 | carnet/04-ProofOfReexportation | a clear-text document attached as such, such as the temperature logger's readings of the vaccine container as a CSV in the medicines flow's status or receipt (D47) | medicines | candidate |
+| `Consignment/OfficeOfSubSequentiallyEntryLocation` | 0..1 | carnet/01-GoodsItemPassport | the containers of the rail flow enter Bayvarra at the rail border station and are cleared at Bayvarra customs' inland office at Marrowdale, a facility where goods are processed after their initial entry point (D37, rail/14) | rail | candidate |
+| `Person/MiddleName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
+| `Person/NameSuffix` | 0..1 | carnet/01-GoodsItemPassport | | | open |
+| `Person/OtherName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
+
+> C79, D36, O182: the mast flow, the world's only dangerous-goods flow so far, keeps only the data its carriage uses. It goes by road and air, not by sea, so no emergency schedules for ships (EmS) and no marine pollutant code; not by road alone, so no tunnel code; packages by air carry no orange plates, and a truck with packages shows blank ones (mast/02#F6, 03#F7); no placard endorsement that repeats the class or the label model (02#F21, F23); no emergency temperature (D36 point 5); americium-241 is not fissile, so the pack's nuclide and activity are in the radioactive material's name, not in `ApplicableRadioactiveIsotope` (02#F9, O127); no pricing reference in the invoice that only repeats the dangerous-goods indicator (05#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `DeliveryUnit/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
+| `HazardousItem/EmergencyProceduresCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the Trade Accord's emergency card for the propane's class (TEC2), the instructions in writing the road tanker carries, as the secondary hazard already uses it (D48) | lpg | candidate |
+| `HazardousItem/EmergencyTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a self-reactive substance or organic peroxide whose control and emergency temperatures the rules set; the world has none (O126) | | open |
+| `HazardousItem/LowerOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
+| `HazardousItem/MaritimePollutantCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | | | open |
+| `HazardousItem/PlacardEndorsement` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | an endorsement a rule asks for on the papers; none in the world so far (O126) | | open |
+| `HazardousItem/TunnelRestrictionCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the propane road tanker's tunnel restriction code, a carriage by road alone (D48) | lpg | candidate |
+| `HazardousItem/UpperOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
+| `ItemLocationQuantity/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
+| `RadioactiveIsotope/ActivityLevelMeasure` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | only under `ApplicableRadioactiveIsotope`, for fissile contents, which the world does not have (O126, O127) | | open |
+| `RadioactiveIsotope/Name` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | as above (O127) | | open |
+| `RadioactiveMaterial/ApplicableRadioactiveIsotope` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | fissile contents only; the world has none (O126, O127) | | open |
+| `SecondaryHazard/PlacardEndorsement` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | as for the hazardous item (O126) | | open |
+
+> C80, D36 point 3, O210: no active container on the mast flight: lithium batteries on a flight of under three hours in the island's winter need no temperature control, so the reefer settings, the food approvals and the temperatures go from the forwarding instructions and the waybill (mast/02#F17, 03#F18), and with them the road emergency card and the "not toxic" zone on the air consignment's transit data; the dangerous goods' transit data is stated once, on each loaded item (02#F17). The cold chain comes back with the medicines flow (D47, O124), the reefer settings with the fresh produce by sea (O137, O205).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `GoodsItem/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions | the vaccines' 8 °C in the medicines flow's forwarding instructions or waybill (D47, O124) | medicines | agreed |
+| `GoodsItem/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions | the vaccines' 2 °C (D47, O124) | medicines | agreed |
+| `GoodsItem/Temperature` | 0..n | mast/02-ForwardingInstructions | the vaccines' set point in transport (D47, O124) | medicines | agreed |
+| `HazardousGoodsTransit/InhalationToxicityZoneCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a gas or liquid toxic by inhalation; the world has none | | open |
+| `HazardousGoodsTransit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
+| `HazardousGoodsTransit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
+| `HazardousGoodsTransit/TransportEmergencyCardCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the Trade Accord's emergency card for class 2 on the propane road tanker (D48) | lpg | candidate |
+| `HazardousItem/AdditionalTemperature` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
+| `TransportEquipment/AirFlowPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's fresh-air exchange (O137, O205) | reefer | candidate |
+| `TransportEquipment/AnimalFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
+| `TransportEquipment/HazardousGoodsTransit` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
+| `TransportEquipment/HumanFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer, approved for food (O137, O205) | reefer | candidate |
+| `TransportEquipment/HumidityPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's humidity setting (O137, O205) | reefer | candidate |
+| `TransportEquipment/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container of the vaccines, 8 °C (D47, O124) | medicines | agreed |
+| `TransportEquipment/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container, 2 °C (D47, O124) | medicines | agreed |
+| `TransportEquipment/RefrigerationOnIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container switched on (D47, O124) | medicines | agreed |
+| `TransportHandlingUnit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 8 °C (D47, O124) | medicines | agreed |
+| `TransportHandlingUnit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 2 °C (D47, O124) | medicines | agreed |
+
+> C85, C86, D39: the urgent frames fly on a direct air waybill, one small consignment on a named flight, so the consolidation, the house consignment and its sequence number go (air/04#F2, F7); the forwarder trucks the skid to the terminal itself and Nalevi collects it at Selanu, so no substitute carrier (04#F6); CPT is stated once, on the order change's air line, so neither the order change nor its delivery carries delivery terms (01#F5); the acceptance is unconditional, so it has no validity period (02#F4).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/ChildConsignment` | 0..n | air/04-Waybill | a forwarder's consolidation under a master air waybill or a groupage bill of lading, with the house consignments as children; none decided | | open |
+| `Consignment/ChildConsignmentQuantity` | 0..1 | air/04-Waybill | as above | | open |
+| `Consignment/ConsolidatedShipment` | 0..n | air/04-Waybill | as above | | open |
+| `Consignment/SequenceID` | 0..1 | air/04-Waybill | as above | | open |
+| `Consignment/SubstituteCarrierParty` | 0..1 | air/04-Waybill | a carrier that performs the carriage in place of the contracting carrier, such as an airline's road feeder service; none decided | | open |
+| `Delivery/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
+| `OrderChange/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
+| `OrderResponse/ValidityPeriod` | 0..1 | air/02-OrderResponse | a conditional acceptance whose terms lapse at a stated time | | open |
+### G3: ore, rail (2026-11-19)
+
+Stage 6, building group G3 (C81, C90).
+
+> C81, D45: the ore train's transport request has no status, so it gives no status reason; how it updates the standing plan is said next to its reference to the plan (ore/02#F4, F5).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TransportExecutionPlanRequest/DocumentStatusReasonCode` | 0..1 | ore/02-TransportExecutionPlanRequest | | | open |
+| `TransportExecutionPlanRequest/DocumentStatusReasonDescription` | 0..1 | ore/02-TransportExecutionPlanRequest | | | open |
+
+> C90, D37: a freight train carries no passengers, so the stages state no passenger quantity (03#F20, 08#F22). The waybill describes both containers alike and drops what did not fit: the wagon given as equipment "contained in" the container (08#F8; UBL's name and definition disagree, recorded for the TC), the hub's stack as the storage location of a box that is on the train (08#F10; the stack is now the place of the box's handling event), the terminal as operator of the carrier's own box (08#F15), the reference from the box to the waybill it stands in (08#F21) and the Container Convention indicator, which nothing in the story settles (08#F25).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ShipmentStage/PassengerQuantity` | 0..1 | rail/03-TransportExecutionPlan, rail/08-Waybill | the feeder ship's report before arrival at Selanu lists a passenger, so its stage carries 1 (D37 point 7, O128) | sea | agreed |
+| `TransportEquipment/ContainedInTransportEquipment` | 0..n | rail/08-Waybill | | | open |
+| `TransportEquipment/LegalStatusIndicator` | 0..1 | rail/08-Waybill | | | open |
+| `TransportEquipment/OperatingParty` | 0..1 | rail/08-Waybill | | | open |
+| `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
+| `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
+
+### G5: road (2026-11-19)
+
+Stage 6, building group G5 (C100, C101, C102; D35).
+
+> C100, D35 point 4: the order states no maximum delivery unit, which no delivery of the flow uses (01#F11); the carrier's status no longer reports a temperature the goods do not need (09#F11), nor an indicator that said nothing (09#F10); the application response no longer names the issuer and recipient of the invoice it answers (16#F11).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Condition/MaximumMeasure` | 0..1 | road/09-TransportationStatus | the highest temperature the temperature-controlled unit of the medicines flow logged during the flight, in the carrier's status on arrival (2–8 °C, D47) | medicines | candidate |
+| `Condition/Measure` | 0..1 | road/09-TransportationStatus | the temperature in the medicines' temperature-controlled unit at arrival (D47) | medicines | candidate |
+| `Condition/MinimumMeasure` | 0..1 | road/09-TransportationStatus | the lowest temperature the unit logged during the flight (D47) | medicines | candidate |
+| `Delivery/MaximumDeliveryUnit` | 0..1 | road/01-Order | | | open |
+| `DocumentResponse/IssuerParty` | 0..1 | road/16-ApplicationResponse | | | open |
+| `DocumentResponse/RecipientParty` | 0..1 | road/16-ApplicationResponse | | | open |
+| `Status/IndicationIndicator` | 0..1 | road/09-TransportationStatus | in the same status of the medicines flow, whether the temperature stayed within 2–8 °C for the whole carriage, stated as what the indicator means (D47) | medicines | candidate |
+
+> C101, D35 point 2: the chamber certifies and is the only endorser; the embassy endorsement by the Trade Accord Council goes, since a certificate between Accord members needs no legalisation (07#F10), and so does the insurer's endorsement (06#F3, 07#F9); the application is a first one and names no previous job (06#F17, 07#F18).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CertificateOfOrigin/EmbassyEndorsement` | 0..1 | road/07-CertificateOfOrigin | | | open |
+| `CertificateOfOrigin/InsuranceEndorsement` | 0..1 | road/06-CertificateOfOrigin, road/07-CertificateOfOrigin | | | open |
+| `CertificateOfOriginApplication/PreviousJobID` | 0..1 | road/06-CertificateOfOrigin, road/07-CertificateOfOrigin | | | open |
+
+> C102, D35 point 3: the order response substitutes the 2026 casting and proposes no other substitute; the old casting it proposed from stock was the item ordered (02#F6).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `OrderLine/SellerProposedSubstituteLineItem` | 0..n | road/02-OrderResponse | | | open |
+
 ### G4: energy, utilities (2026-11-19)
 
 Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
@@ -522,14 +637,13 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 |---|---|---|---|---|---|
 | `TelecommunicationsSupplyLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
 
-> C93, D31 points 1 and 7: the household's annual account. The meter reader reads the meters once a year, so the reading website and its password go (D31 point 7); the open-ended recurring mandate has no limit of instructions (09#F3) and names no payer besides the debtor (09#F4); the household's account appears only in the mandate that collects from it, not again in its party block, nor in the credit note, which is set off (09#F7, 11#F5); the reminder's fee line states its amount once (10#F10).
+> C93, D31 points 1 and 7: the household's annual account. The meter reader reads the meters once a year, so the reading website and its password go (D31 point 7); the open-ended recurring mandate has no limit of instructions (09#F3) and names no payer besides the debtor (09#F4); the household's account appears only in the mandate that collects from it, not again in its party block, nor in the credit note, which is set off (09#F7, 11#F5; the element stays covered by the purchase receipts); the reminder's fee line states its amount once (10#F10).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `ConsumptionPoint/WebSiteAccess` | 0..1 | utilities/08-UtilityStatement | | | open |
 | `PaymentMandate/MaximumPaymentInstructionsNumeric` | 0..1 | utilities/09-Invoice | | | open |
 | `PaymentMandate/PayerParty` | 0..1 | utilities/09-Invoice | | | open |
-| `Person/FinancialAccount` | 0..1 | utilities/09-Invoice, utilities/11-CreditNote | | | open |
 | `ReminderLine/Amount` | 0..1 | utilities/10-Reminder | | | open |
 
 > C95, D31 points 4 and 7: Valdara, which owns the warehouse, holds its subscription, so the warehouse statement's consumption names no subscriber of its own (03#F6); a monthly tariff carries no one-time charge (01#F6); a remittance advice of one bill carries no tax total (04#F2); a reminder without tax no tax point date (10#F3).
@@ -562,6 +676,10 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `RemittanceAdviceLine/Note` | road/17-RemittanceAdvice | Lumeway pays Valdara's road invoice on Thursday 2 April, within the ten days of `XU-STD`, and takes the 2 % discount, 77,748 ferra on 3,887,400; the line states the short payment (O218) | 2026-11-19 |
+| `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
+| `Address/Region` | rail/06-TransitCustomsDeclaration | the jurisdiction of the transit declaration: the Lumeport Trade Accord, a group of countries, because the Accord's common transit runs from Urvania's office of departure to Bayvarra's office of destination (D37 point 2, rail/06#F18; O140's candidate, a territory that covers the Accord area) | 2026-11-19 |
+| `ImportCustomsDeclaration/PreviousCustomsDeclaration` | rail/14-ImportCustomsDeclaration | Lumeway's import at Marrowdale ends the Accord's common transit that Valdara lodged at Ferrano: the transit declaration, a declaration of the same procedure chain valid in Bayvarra, is its previous declaration (D37 point 2) | 2026-11-19 |
 | `LineItem/BeneficiaryParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `LineItem/OriginatorParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
 | `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |

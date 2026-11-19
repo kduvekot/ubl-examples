@@ -2,7 +2,7 @@
 
 *Example 7 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Certificate of Origin in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CERTIFICATE-OF-ORIGIN-SCHEMA)*
 
-The chamber endorses the certificate and makes it available to the importer, who needs it for the import declaration.
+The chamber, the body Urvania authorises under the Trade Accord to issue proofs of preferential origin, checks the application, issues the certificate under its own number and is its only endorser: a certificate between Accord members needs no legalisation. It makes the certificate available to the importer, who needs it for the import declaration (decision D35).
 
 [The XML file](07-CertificateOfOrigin.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,15 +23,15 @@ The chamber endorses the certificate and makes it available to the importer, who
 - `UUID` = **3152b116-509a-5a0d-8b57-97a8e2b066d0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
-  The day the chamber endorsed the certificate: Monday morning, before the export declaration (road/07#F11).
+  The day the chamber issued the certificate: Monday morning, before the export declaration (road/07#F11, D27).
 - `IssueTime` = **08:41:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
-  What the certificate is for.
+  What the document is for.
 - `Note` = **Preferential origin under the trade accord.**  
   What the certificate is for.
 - `VersionID` = **1**  
-  The first version.
+  The first version of the certificate.
 
 ### Signature
 
@@ -149,9 +149,9 @@ Inside `ImporterParty`:
 Inside `EndorserParty`:
 
 - `RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
-  The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
+  The endorser is the chamber of commerce of the exporting country, the body Urvania authorises under the Accord to issue proofs of preferential origin (D35). The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `SequenceNumeric` = **1**  
-  The first and only endorsement.
+  The first and only endorsement: a certificate between Accord members needs no legalisation.
 - `Party/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
@@ -209,7 +209,9 @@ Inside `EndorserParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:xu_m2vd** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Ferrano Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `SignatoryContact/Name` = **Certificates office**  
-  The office of the chamber that signs certificates of origin.
+  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer, a finding for the UBL TC (road/06#F15, O121).
+- `SignatoryContact/JobTitle` = **Certificates officer**  
+  The signing function: the officer who signs certificates for the chamber (road/06#F16).
 
 ### Certificate of Origin Application
 
@@ -221,11 +223,9 @@ Inside `CertificateOfOriginApplication`:
   The goods qualify for the preferential duty rate in Bayvarra; the importer needs this certificate to claim it.
 - `ApplicationStatusCode` = **APPROVED** (listID `urn:ubl-examples:world:codelist:ApplicationStatusCode`)  
   The chamber has approved the application. The code is from the Trade Accord's application status list: APPROVED = Approved.
-- `OriginalJobID` = **LD-PO-26-0149**  
-  The order the goods are for.
-- `PreviousJobID` = **VI-CO-25-0412**  
-  The exporter's application of last year for the same goods.
-- `Remarks` = **Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.**  
+- `OriginalJobID` = **FCC-JOB-26-0418**  
+  The job number the chamber's e-certificate system gave the application when it was lodged, by which it tracks amendments; not the buyer's order (road/06#F7, D35).
+- `Remarks` = **Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.**  
   Why the goods are of Urvanian origin.
 - `Shipment/ID` = **CL-SH-26-0154**  
   The shipment the certificate covers.
@@ -388,15 +388,17 @@ Inside `CertificateOfOriginApplication`:
 - `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
   What the packaging is made of.
 - `EndorserParty/RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
-  The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
+  The endorser is the chamber of commerce of the exporting country, the body Urvania authorises under the Accord to issue proofs of preferential origin (D35). The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
-  The first and only endorsement.
+  The first and only endorsement: a certificate between Accord members needs no legalisation.
 - `EndorserParty/Party/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/SignatoryContact/Name` = **Certificates office**  
-  The office of the chamber that signs certificates of origin.
+  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer, a finding for the UBL TC (road/06#F15, O121).
+- `EndorserParty/SignatoryContact/JobTitle` = **Certificates officer**  
+  The signing function: the officer who signs certificates for the chamber (road/06#F16).
 - `PreparationParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `PreparationParty/PartyName/Name` = **Valdara Industries**  
@@ -440,81 +442,29 @@ Inside `CertificateOfOriginApplication`:
 
 Inside `IssuerEndorsement`:
 
-- `DocumentID` = **FCC-CO-26-0157**  
-  The certificate this endorsement belongs to.
+- `DocumentID` = **FCC-JOB-26-0418-E1**  
+  The identifier of this endorsement: the first of the chamber's job.
 - `ApprovalStatus` = **Approved**  
   The chamber has endorsed the certificate.
 - `Remarks` = **Origin verified against the exporter's production records.**  
   What the chamber checked.
 - `EndorserParty/RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
-  The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
+  The endorser is the chamber of commerce of the exporting country, the body Urvania authorises under the Accord to issue proofs of preferential origin (D35). The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
-  The first and only endorsement.
+  The first and only endorsement: a certificate between Accord members needs no legalisation.
 - `EndorserParty/Party/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/SignatoryContact/Name` = **Certificates office**  
-  The office of the chamber that signs certificates of origin.
+  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer, a finding for the UBL TC (road/06#F15, O121).
+- `EndorserParty/SignatoryContact/JobTitle` = **Certificates officer**  
+  The signing function: the officer who signs certificates for the chamber (road/06#F16).
 - `Signature/ID` = **FCC-SIG-26-0309**  
   The sender's electronic seal.
 - `Signature/SignatoryParty/PartyIdentification/ID` = **xu_m2vd** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Signature/SignatoryParty/PartyName/Name` = **Ferrano Chamber of Commerce**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Embassy Endorsement
-
-Inside `EmbassyEndorsement`:
-
-- `DocumentID` = **FCC-CO-26-0157**  
-  The certificate legalised.
-- `ApprovalStatus` = **Legalised**  
-  The trade accord council confirms the chamber's signature.
-- `Remarks` = **Signature of the Ferrano chamber confirmed.**  
-  What was checked.
-- `EndorserParty/RoleCode` = **LEGALISATION** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
-  The council legalises. The code is from the Trade Accord's endorser role list: LEGALISATION = Legalising authority.
-- `EndorserParty/SequenceNumeric` = **2**  
-  After the chamber.
-- `EndorserParty/Party/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `EndorserParty/Party/PartyName/Name` = **Lumeport Trade Accord Council**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `EndorserParty/SignatoryContact/Name` = **Legalisation desk**  
-  The council's desk that signs.
-- `Signature/ID` = **LTAC-SIG-26-0311**  
-  The sender's electronic seal.
-- `Signature/SignatoryParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Signature/SignatoryParty/PartyName/Name` = **Lumeport Trade Accord Council**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Insurance Endorsement
-
-Inside `InsuranceEndorsement`:
-
-- `DocumentID` = **WS-CP-26-4471-E1**  
-  The insurer's endorsement of the cargo policy for this consignment.
-- `ApprovalStatus` = **Endorsed**  
-  The insurer confirms the cover.
-- `Remarks` = **The goods described in this certificate are insured door to door.**  
-  What it confirms.
-- `EndorserParty/RoleCode` = **INSURER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
-  It endorses as insurer. The code is from the Trade Accord's endorser role list: INSURER = Insurer.
-- `EndorserParty/SequenceNumeric` = **2**  
-  After the chamber; the embassy legalises separately.
-- `EndorserParty/Party/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `EndorserParty/Party/PartyName/Name` = **Wavesure Cargo Insurance**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `EndorserParty/SignatoryContact/Name` = **Cargo claims desk**  
-  Who signs for the insurer.
-- `Signature/ID` = **WS-SIG-26-E1**  
-  The insurer's seal on the endorsement.
-- `Signature/SignatoryParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Signature/SignatoryParty/PartyName/Name` = **Wavesure Cargo Insurance**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
@@ -674,15 +624,15 @@ Inside `InsuranceEndorsement`:
     </cac:Party>
     <cac:SignatoryContact>
       <cbc:Name>Certificates office</cbc:Name>
+      <cbc:JobTitle>Certificates officer</cbc:JobTitle>
     </cac:SignatoryContact>
   </cac:EndorserParty>
   <cac:CertificateOfOriginApplication>
     <cbc:ReferenceID>VI-AP-26-0158</cbc:ReferenceID>
     <cbc:CertificateType>Preferential</cbc:CertificateType>
     <cbc:ApplicationStatusCode listID="urn:ubl-examples:world:codelist:ApplicationStatusCode">APPROVED</cbc:ApplicationStatusCode>
-    <cbc:OriginalJobID>LD-PO-26-0149</cbc:OriginalJobID>
-    <cbc:PreviousJobID>VI-CO-25-0412</cbc:PreviousJobID>
-    <cbc:Remarks>Benches made of Urvanian steel and Bayvarran timber; the processing in Urvania gives origin.</cbc:Remarks>
+    <cbc:OriginalJobID>FCC-JOB-26-0418</cbc:OriginalJobID>
+    <cbc:Remarks>Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.</cbc:Remarks>
     <cac:Shipment>
       <cbc:ID>CL-SH-26-0154</cbc:ID>
       <cac:GoodsItem>
@@ -834,6 +784,7 @@ Inside `InsuranceEndorsement`:
       </cac:Party>
       <cac:SignatoryContact>
         <cbc:Name>Certificates office</cbc:Name>
+        <cbc:JobTitle>Certificates officer</cbc:JobTitle>
       </cac:SignatoryContact>
     </cac:EndorserParty>
     <cac:PreparationParty>
@@ -901,7 +852,7 @@ Inside `InsuranceEndorsement`:
     </cac:Signature>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>FCC-CO-26-0157</cbc:DocumentID>
+    <cbc:DocumentID>FCC-JOB-26-0418-E1</cbc:DocumentID>
     <cbc:ApprovalStatus>Approved</cbc:ApprovalStatus>
     <cbc:Remarks>Origin verified against the exporter's production records.</cbc:Remarks>
     <cac:EndorserParty>
@@ -917,6 +868,7 @@ Inside `InsuranceEndorsement`:
       </cac:Party>
       <cac:SignatoryContact>
         <cbc:Name>Certificates office</cbc:Name>
+        <cbc:JobTitle>Certificates officer</cbc:JobTitle>
       </cac:SignatoryContact>
     </cac:EndorserParty>
     <cac:Signature>
@@ -931,67 +883,5 @@ Inside `InsuranceEndorsement`:
       </cac:SignatoryParty>
     </cac:Signature>
   </cac:IssuerEndorsement>
-  <cac:EmbassyEndorsement>
-    <cbc:DocumentID>FCC-CO-26-0157</cbc:DocumentID>
-    <cbc:ApprovalStatus>Legalised</cbc:ApprovalStatus>
-    <cbc:Remarks>Signature of the Ferrano chamber confirmed.</cbc:Remarks>
-    <cac:EndorserParty>
-      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">LEGALISATION</cbc:RoleCode>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SignatoryContact>
-        <cbc:Name>Legalisation desk</cbc:Name>
-      </cac:SignatoryContact>
-    </cac:EndorserParty>
-    <cac:Signature>
-      <cbc:ID>LTAC-SIG-26-0311</cbc:ID>
-      <cac:SignatoryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
-        </cac:PartyName>
-      </cac:SignatoryParty>
-    </cac:Signature>
-  </cac:EmbassyEndorsement>
-  <cac:InsuranceEndorsement>
-    <cbc:DocumentID>WS-CP-26-4471-E1</cbc:DocumentID>
-    <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
-    <cbc:Remarks>The goods described in this certificate are insured door to door.</cbc:Remarks>
-    <cac:EndorserParty>
-      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">INSURER</cbc:RoleCode>
-      <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SignatoryContact>
-        <cbc:Name>Cargo claims desk</cbc:Name>
-      </cac:SignatoryContact>
-    </cac:EndorserParty>
-    <cac:Signature>
-      <cbc:ID>WS-SIG-26-E1</cbc:ID>
-      <cac:SignatoryParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
-        </cac:PartyName>
-      </cac:SignatoryParty>
-    </cac:Signature>
-  </cac:InsuranceEndorsement>
 </CertificateOfOrigin>
 ```
