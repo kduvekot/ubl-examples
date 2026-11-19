@@ -373,8 +373,6 @@
       <Context address="*[local-name()='Signature']/cbc:ReasonCode" values="SignatureReason" metadata="code" />
       <Context address="*[local-name()='Response']/cbc:ResponseCode" values="UNCL4343" metadata="code" />
       <Context address="*[local-name()='DiscrepancyResponse']/cbc:ResponseCode" values="UNCL4465" metadata="code" />
-      <Context address="*[local-name()='UtilityItem']/cbc:SubscriberTypeCode" values="UtilityType" metadata="code" />
-      <Context address="*[local-name()='UtilityConsumptionPoint']/cbc:SubscriberTypeCode" values="SubscriberType" metadata="code" />
       <Context address="*[local-name()='WasteGenerated']/cbc:WasteTypeCode" values="WasteType" metadata="code" />
       <Context address="*[local-name()='TaxCategory']/cbc:ID | *[local-name()='ClassifiedTaxCategory']/cbc:ID | *[local-name()='ApplicableTaxCategory']/cbc:ID" values="UNCL5305" metadata="scheme" />
       <Context address="*[local-name()='TaxScheme']/cbc:ID" values="UNCL5153" metadata="scheme" />
@@ -616,6 +614,7 @@
       <Context address="cbc:OrderResponseCode" values="UNCL4343" metadata="code" />
       <Context address="cbc:IndustryClassificationCode" values="ISICRev4" metadata="code" />
       <Context address="cbc:UtilityStatementTypeCode" values="UtilityType" metadata="code" />
+      <Context address="cbc:SubscriberTypeCode" values="SubscriberType" metadata="code" />
       <Context address="cbc:ConsumptionTypeCode" values="ConsumptionType" metadata="code" />
       <Context address="cbc:CurrentChargeTypeCode" values="ChargeType" metadata="code" />
       <Context address="cbc:ChargeTypeCode" values="ChargeType" metadata="code" />

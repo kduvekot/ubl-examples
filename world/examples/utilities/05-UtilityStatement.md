@@ -2,7 +2,7 @@
 
 *Example 5 of the flow "Electricity, water and telecom (one utility in each country)" · [Utility Statement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA)*
 
-The shop's water consumption, read from its meter.
+The shop's water consumption, read from its meter, with the water company's water and the city's sewage levy as the two parts of the bill.
 
 [The XML file](05-UtilityStatement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -192,8 +192,8 @@ Inside `SubscriberConsumption`:
   The connection's number.
 - `UtilityConsumptionPoint/Description` = **Shop, Lumeport**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **CSW-C-260118**  
-  The contract it belongs to.
+- `UtilityConsumptionPoint/SubscriberID` = **CSW-CU-118204**  
+  The subscriber's customer number with the utility; the contract number stays in the contract (D31 point 5).
 - `UtilityConsumptionPoint/SubscriberType` = **Commercial**  
   The name of code COM in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **COM** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -266,88 +266,12 @@ Inside `SubscriberConsumption`:
   Class 1.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQualifier` = **Calibrated 2024**  
   When it was checked.
-- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Maximum flow**  
-  A rating of the meter.
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Permanent flow rate (Q3)**  
+  A rating of the meter: the flow it measures continuously within its accuracy class (utilities/05#F12).
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity` = **2.5** (unitCode `MQH`)  
   Its value.
-- `Consumption/UtilityStatementTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The kind of supply. The code is from the Trade Accord's utility type list: WATER = Water.
-- `Consumption/MainPeriod/StartDate` = **2026-03-01**  
-  March.
-- `Consumption/MainPeriod/EndDate` = **2026-03-31**  
-  Its last day.
-- `Consumption/TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  The tax of this point's consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **CSW-CP-38510-411-2603**  
-  The consumption report of the point for March.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
-  The name of code MON in the Trade Accord's consumption type list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/Description` = **March consumption of Shop, Lumeport.**  
-  In words.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/TotalConsumedQuantity` = **86** (unitCode `MTQ`)  
-  Used in March.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/BasicConsumedQuantity` = **86** (unitCode `MTQ`)  
-  All at the basic tariff: no reduced-rate hours.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate` = **2026-03-01**  
-  March.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate` = **2026-03-31**  
-  Its last day.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **CSW-CP-38510-411-2602**  
-  The report of February.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
-  The name of code MON in the Trade Accord's consumption type list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **79** (unitCode `MTQ`)  
-  What February's report said.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
-  February.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate` = **2026-02-28**  
-  Its last day.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **CSW-W-55102**  
-  The meter.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **81** (unitCode `MTQ`)  
-  The month's consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **190.35** (currencyID `XBL`)  
-  What it cost at the tariff.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
-  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
-  The name of code NORMAL in the Trade Accord's consumption level list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Description` = **Earlier month.**  
-  For comparison.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-01-01**  
-  The month.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-01-31**  
-  Its end.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **CSW-W-55102**  
-  The meter.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **79** (unitCode `MTQ`)  
-  The month's consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **185.65** (currencyID `XBL`)  
-  What it cost at the tariff.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
-  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
-  The name of code NORMAL in the Trade Accord's consumption level list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Description` = **Earlier month.**  
-  For comparison.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-02-01**  
-  The month.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-02-28**  
-  Its end.
-- `Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **202.10** (currencyID `XBL`)  
-  What this month cost.
-- `Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 82 m³.**  
-  For comparison.
-- `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **202.10** (currencyID `XBL`)  
-  The consumption.
-- `Consumption/LegalMonetaryTotal/PayableAmount` = **202.10** (currencyID `XBL`)  
-  With its tax.
-- `SupplierConsumption/Description` = **The supply under the customer's contract.**  
-  What follows.
+- `SupplierConsumption/Description` = **The drinking water, which the water company supplies under the customer's contract.**  
+  Whose supply this part is, and how it is billed.
 - `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Coastal State Water Company**  
@@ -357,13 +281,89 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/UtilityCustomerParty/PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
 - `SupplierConsumption/Consumption/UtilityStatementTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply under the contract. The code is from the Trade Accord's utility type list: WATER = Water.
+  The kind of supply. The code is from the Trade Accord's utility type list: WATER = Water.
 - `SupplierConsumption/Consumption/MainPeriod/StartDate` = **2026-03-01**  
   March.
 - `SupplierConsumption/Consumption/MainPeriod/EndDate` = **2026-03-31**  
   Its last day.
+- `SupplierConsumption/Consumption/TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  The tax of this part of the consumption.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxableAmount` = **202.10** (currencyID `XBL`)  
+  The lines of this part.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of them.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  Drinking water is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **WATER** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: WATER = Drinking water.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReason` = **Drinking water**  
+  The name of code WATER in Bayvarra's national sales tax exemption reason list.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **CSW-CP-38510-411-2603**  
+  The consumption report of the point for March.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
+  The name of code MON in the Trade Accord's consumption type list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
+  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Description` = **March consumption of Shop, Lumeport.**  
+  In words.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/TotalConsumedQuantity` = **86** (unitCode `MTQ`)  
+  Used in March.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/BasicConsumedQuantity` = **86** (unitCode `MTQ`)  
+  All at the basic tariff: no reduced-rate hours.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate` = **2026-03-01**  
+  March.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate` = **2026-03-31**  
+  Its last day.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **CSW-CP-38510-411-2602**  
+  The report of February.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
+  The name of code MON in the Trade Accord's consumption type list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
+  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **79** (unitCode `MTQ`)  
+  What February's report said.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
+  February.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate` = **2026-02-28**  
+  Its last day.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **CSW-W-55102**  
+  The meter.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **81** (unitCode `MTQ`)  
+  The month's consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **190.35** (currencyID `XBL`)  
+  What it cost at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
+  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
+  The name of code NORMAL in the Trade Accord's consumption level list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-01-01**  
+  The month.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-01-31**  
+  Its end.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **CSW-W-55102**  
+  The meter.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **79** (unitCode `MTQ`)  
+  The month's consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **185.65** (currencyID `XBL`)  
+  What it cost at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
+  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
+  The name of code NORMAL in the Trade Accord's consumption level list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-02-01**  
+  The month.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-02-28**  
+  Its end.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **192.70** (currencyID `XBL`)  
+  The average amount of the last three months at the tariff of the bill, without tax (utilities/01#F3).
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 82 m³.**  
+  For comparison.
 - `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **202.10** (currencyID `XBL`)  
-  The line.
+  The lines of this part.
 - `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **202.10** (currencyID `XBL`)  
   With its tax.
 - `SupplierConsumption/Contract/ID` = **CSW-C-260118**  
@@ -386,18 +386,16 @@ Inside `SubscriberConsumption`:
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
-- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
-  Where it was delivered.
 - `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **CW-M3**  
-  The utility's tariff item.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **CSW-C-260118**  
-  The customer's contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Water**  
-  The name of code WATER in the Trade Accord's utility type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply the item is for, as a code. The code is from the Trade Accord's utility type list: WATER = Water.
+  The supplier's tariff item.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **CSW-CU-118204**  
+  The subscriber's customer number with the utility (D31 point 5).
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Commercial**  
+  The name of code COM in the Trade Accord's subscriber type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **COM** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
+  As a code. The code is from the Trade Accord's subscriber type list: COM = Commercial.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Drinking water supply, per cubic metre.**  
   The tariff in words; world/items.json.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
@@ -421,6 +419,66 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **CSW-C-260118**  
   The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **2.35** (currencyID `XBL`)  
+  The tariff (world/items.json).
+- `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
+  Per unit.
+- `SupplierConsumption/Description` = **The city of Lumeport's sewage levy on the water used, which the water company collects with its bill and pays to the city.**  
+  Whose supply this part is, and how it is billed.
+- `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Lumeport Public Works Department**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/UtilityCustomerParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/UtilityCustomerParty/PartyName/Name` = **Brightmarket Stores**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/Consumption/UtilityStatementTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
+  The kind of supply. The code is from the Trade Accord's utility type list: WATER = Water.
+- `SupplierConsumption/Consumption/MainPeriod/StartDate` = **2026-03-01**  
+  March.
+- `SupplierConsumption/Consumption/MainPeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **36.12** (currencyID `XBL`)  
+  The lines of this part.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **36.12** (currencyID `XBL`)  
+  Outside the scope of the tax: nothing added.
+- `SupplierConsumption/ConsumptionLine/ID` = **2**  
+  The line of the consumption.
+- `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **2**  
+  The line of the invoice this line explains.
+- `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **86** (unitCode `MTQ`)  
+  The shop's water use, on which the city charges its levy.
+- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **36.12** (currencyID `XBL`)  
+  Quantity times the tariff.
+- `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
+  March.
+- `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
+  Its last day.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **CSW-LEVY**  
+  The supplier's tariff item.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Commercial**  
+  The name of code COM in the Trade Accord's subscriber type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **COM** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
+  As a code. The code is from the Trade Accord's subscriber type list: COM = Commercial.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.**  
+  The tariff in words; world/items.json.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
+  The name of code MET in the Trade Accord's consumption type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
+  As a code. The code is from the Trade Accord's consumption type list: MET = Metered.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType` = **Monthly**  
+  The name of code M in the Trade Accord's utility charge type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
+  As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O, without a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxExemptionReasonCode` = **LEVY** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: LEVY = Collected for a public body, outside the scope of the state sales tax.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxExemptionReason` = **Collected for a public body, outside the scope of the state sales tax**  
+  The name of code LEVY in Bayvarra's national sales tax exemption reason list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **0.42** (currencyID `XBL`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
   Per unit.
@@ -552,7 +610,7 @@ Inside `SubscriberConsumption`:
     <cac:UtilityConsumptionPoint>
       <cbc:ID>CSW-CP-38510-411</cbc:ID>
       <cbc:Description>Shop, Lumeport</cbc:Description>
-      <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
+      <cbc:SubscriberID>CSW-CU-118204</cbc:SubscriberID>
       <cbc:SubscriberType>Commercial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="MTQ">86</cbc:TotalDeliveredQuantity>
@@ -599,79 +657,13 @@ Inside `SubscriberConsumption`:
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
         <cac:MeterProperty>
-          <cbc:Name>Maximum flow</cbc:Name>
+          <cbc:Name>Permanent flow rate (Q3)</cbc:Name>
           <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
         </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
-    <cac:Consumption>
-      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
-      <cac:MainPeriod>
-        <cbc:StartDate>2026-03-01</cbc:StartDate>
-        <cbc:EndDate>2026-03-31</cbc:EndDate>
-      </cac:MainPeriod>
-      <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-      </cac:TaxTotal>
-      <cac:EnergyWaterSupply>
-        <cac:ConsumptionReport>
-          <cbc:ID>CSW-CP-38510-411-2603</cbc:ID>
-          <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-          <cbc:Description>March consumption of Shop, Lumeport.</cbc:Description>
-          <cbc:TotalConsumedQuantity unitCode="MTQ">86</cbc:TotalConsumedQuantity>
-          <cbc:BasicConsumedQuantity unitCode="MTQ">86</cbc:BasicConsumedQuantity>
-          <cac:Period>
-            <cbc:StartDate>2026-03-01</cbc:StartDate>
-            <cbc:EndDate>2026-03-31</cbc:EndDate>
-          </cac:Period>
-          <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
-            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-            <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionReportReference>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
-            <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
-            <cbc:Amount currencyID="XBL">190.35</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-01-01</cbc:StartDate>
-              <cbc:EndDate>2026-01-31</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
-            <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
-            <cbc:Amount currencyID="XBL">185.65</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-        </cac:ConsumptionReport>
-        <cac:ConsumptionAverage>
-          <cbc:AverageAmount currencyID="XBL">202.10</cbc:AverageAmount>
-          <cbc:Description>The average over the last three months is 82 m³.</cbc:Description>
-        </cac:ConsumptionAverage>
-      </cac:EnergyWaterSupply>
-      <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
-      </cac:LegalMonetaryTotal>
-    </cac:Consumption>
     <cac:SupplierConsumption>
-      <cbc:Description>The supply under the customer's contract.</cbc:Description>
+      <cbc:Description>The drinking water, which the water company supplies under the customer's contract.</cbc:Description>
       <cac:UtilitySupplierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:ID>
@@ -694,6 +686,72 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:MainPeriod>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="XBL">202.10</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+              <cbc:Percent>0</cbc:Percent>
+              <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">WATER</cbc:TaxExemptionReasonCode>
+              <cbc:TaxExemptionReason>Drinking water</cbc:TaxExemptionReason>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:EnergyWaterSupply>
+          <cac:ConsumptionReport>
+            <cbc:ID>CSW-CP-38510-411-2603</cbc:ID>
+            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+            <cbc:Description>March consumption of Shop, Lumeport.</cbc:Description>
+            <cbc:TotalConsumedQuantity unitCode="MTQ">86</cbc:TotalConsumedQuantity>
+            <cbc:BasicConsumedQuantity unitCode="MTQ">86</cbc:BasicConsumedQuantity>
+            <cac:Period>
+              <cbc:StartDate>2026-03-01</cbc:StartDate>
+              <cbc:EndDate>2026-03-31</cbc:EndDate>
+            </cac:Period>
+            <cac:ConsumptionReportReference>
+              <cbc:ConsumptionReportID>CSW-CP-38510-411-2602</cbc:ConsumptionReportID>
+              <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+              <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+              <cbc:TotalConsumedQuantity unitCode="MTQ">79</cbc:TotalConsumedQuantity>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionReportReference>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+              <cbc:Quantity unitCode="MTQ">81</cbc:Quantity>
+              <cbc:Amount currencyID="XBL">190.35</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-01-01</cbc:StartDate>
+                <cbc:EndDate>2026-01-31</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>CSW-W-55102</cbc:MeterNumber>
+              <cbc:Quantity unitCode="MTQ">79</cbc:Quantity>
+              <cbc:Amount currencyID="XBL">185.65</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+          </cac:ConsumptionReport>
+          <cac:ConsumptionAverage>
+            <cbc:AverageAmount currencyID="XBL">192.70</cbc:AverageAmount>
+            <cbc:Description>The average over the last three months is 82 m³.</cbc:Description>
+          </cac:ConsumptionAverage>
+        </cac:EnergyWaterSupply>
         <cac:LegalMonetaryTotal>
           <cbc:LineExtensionAmount currencyID="XBL">202.10</cbc:LineExtensionAmount>
           <cbc:PayableAmount currencyID="XBL">202.10</cbc:PayableAmount>
@@ -716,19 +774,14 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
         <cac:TaxTotal>
           <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>CW-M3</cbc:ID>
-          <cbc:SubscriberID>CSW-C-260118</cbc:SubscriberID>
-          <cbc:SubscriberType>Water</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:SubscriberTypeCode>
+          <cbc:SubscriberID>CSW-CU-118204</cbc:SubscriberID>
+          <cbc:SubscriberType>Commercial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
           <cbc:Description>Drinking water supply, per cubic metre.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
@@ -749,6 +802,68 @@ Inside `SubscriberConsumption`:
         </cac:UtilityItem>
         <cac:Price>
           <cbc:PriceAmount currencyID="XBL">2.35</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+    </cac:SupplierConsumption>
+    <cac:SupplierConsumption>
+      <cbc:Description>The city of Lumeport's sewage levy on the water used, which the water company collects with its bill and pays to the city.</cbc:Description>
+      <cac:UtilitySupplierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Public Works Department</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilitySupplierParty>
+      <cac:UtilityCustomerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Brightmarket Stores</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilityCustomerParty>
+      <cac:Consumption>
+        <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">WATER</cbc:UtilityStatementTypeCode>
+        <cac:MainPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:MainPeriod>
+        <cac:LegalMonetaryTotal>
+          <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XBL">36.12</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal>
+      </cac:Consumption>
+      <cac:ConsumptionLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="MTQ">86</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XBL">36.12</cbc:LineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:Period>
+        <cac:UtilityItem>
+          <cbc:ID>CSW-LEVY</cbc:ID>
+          <cbc:SubscriberType>Commercial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
+          <cbc:Description>The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+            <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
+            <cbc:TaxExemptionReason>Collected for a public body, outside the scope of the state sales tax</cbc:TaxExemptionReason>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">0.42</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
         </cac:Price>
       </cac:ConsumptionLine>

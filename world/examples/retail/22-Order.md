@@ -18,7 +18,7 @@ The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all 
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **RA-PO-26-0240**  
+- `ID` = **RA-PO-26-0241**  
   The webshop's order number: the store's site writes the order for the customer and numbers it.
 - `UUID` = **6f338d06-4cfb-5630-b53e-6ac243c84956**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -315,7 +315,7 @@ Inside `OrderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RA-PO-26-0240</cbc:ID>
+  <cbc:ID>RA-PO-26-0241</cbc:ID>
   <cbc:UUID>6f338d06-4cfb-5630-b53e-6ac243c84956</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>11:25:00-01:00</cbc:IssueTime>

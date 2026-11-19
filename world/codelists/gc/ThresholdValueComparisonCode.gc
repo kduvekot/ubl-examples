@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: threshold value comparison. How a value is compared with the threshold of an exception criterion. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: threshold value comparison. How a value is compared with the threshold of an exception criterion: the two values UBL's definition of ThresholdValueComparisonCode allows. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ThresholdValueComparisonCode</ShortName>
@@ -42,58 +42,30 @@
    <SimpleCodeList>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>GT</SimpleValue>
+            <SimpleValue>EXCEEDS_EXCEPTION_VALUE</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Greater than</SimpleValue>
+            <SimpleValue>Exceeds the exception value</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Zamek drenrir</SimpleValue>
+            <SimpleValue>Skuzgul drek skarstir munran</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Hipaka kapaku</SimpleValue>
+            <SimpleValue>Telilo pasiteti venete</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>LT</SimpleValue>
+            <SimpleValue>FALLS_BELOW_EXCEPTION_VALUE</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Less than</SimpleValue>
+            <SimpleValue>Falls below the exception value</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Gaz drenrir</SimpleValue>
+            <SimpleValue>Kralzhek krirstul drek skarstir munran</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Hehilo kapaku</SimpleValue>
-         </Value>
-      </Row>
-      <Row>
-         <Value ColumnRef="code">
-            <SimpleValue>GE</SimpleValue>
-         </Value>
-         <Value ColumnRef="name">
-            <SimpleValue>Greater than or equal to</SimpleValue>
-         </Value>
-         <Value ColumnRef="name-qau">
-            <SimpleValue>Zamek drenrir van truknek krir</SimpleValue>
-         </Value>
-         <Value ColumnRef="name-qal">
-            <SimpleValue>Hipaka kapaku vapene pilamu vevisi</SimpleValue>
-         </Value>
-      </Row>
-      <Row>
-         <Value ColumnRef="code">
-            <SimpleValue>LE</SimpleValue>
-         </Value>
-         <Value ColumnRef="name">
-            <SimpleValue>Less than or equal to</SimpleValue>
-         </Value>
-         <Value ColumnRef="name-qau">
-            <SimpleValue>Gaz drenrir van truknek krir</SimpleValue>
-         </Value>
-         <Value ColumnRef="name-qal">
-            <SimpleValue>Hehilo kapaku vapene pilamu vevisi</SimpleValue>
+            <SimpleValue>Litiho titutu pasiteti venete</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

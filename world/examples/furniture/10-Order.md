@@ -18,7 +18,7 @@ A repeat order for the winter, placed before the slow sales were clear.
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **FURNITURE-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BS-PO-26-0576**  
+- `ID` = **BS-PO-26-0577**  
   The buyer's order number.
 - `UUID` = **723b8ed1-619b-5c36-b65d-2cac4a35d4c0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -28,6 +28,8 @@ A repeat order for the winter, placed before the slow sales were clear.
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
+- `Note` = **Forward order for the winter season: one target's worth of each piece, for delivery from 29 June, with the repeat-order discount of the quotation.**  
+  Why the store orders while its stock is still above the minimum: it books the winter stock ahead (furniture/10#F3, D32).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **6120**  
@@ -36,6 +38,13 @@ A repeat order for the winter, placed before the slow sales were clear.
   The cost centre in words.
 - `LineCountNumeric` = **5**  
   The number of order lines.
+
+### Quotation Document Reference
+
+Inside `QuotationDocumentReference`:
+
+- `ID` = **BF-DOC-26-0568**  
+  The quotation whose prices and repeat-order discount of 3 % the order takes (furniture/10#F4, F5).
 
 ### Order Document Reference
 
@@ -406,15 +415,19 @@ Inside `OrderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0576</cbc:ID>
+  <cbc:ID>BS-PO-26-0577</cbc:ID>
   <cbc:UUID>723b8ed1-619b-5c36-b65d-2cac4a35d4c0</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>12:09:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
+  <cbc:Note>Forward order for the winter season: one target's worth of each piece, for delivery from 29 June, with the repeat-order discount of the quotation.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
+  <cac:QuotationDocumentReference>
+    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  </cac:QuotationDocumentReference>
   <cac:OrderDocumentReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderDocumentReference>

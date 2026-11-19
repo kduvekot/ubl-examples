@@ -46,6 +46,10 @@ Inside `DocumentReference`:
   The criteria that were met.
 - `DocumentTypeCode` = **ExceptionCriteria** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BS-DOC-26-0571 is the example furniture/05, a ExceptionCriteria; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionCriteria = Exception Criteria.
+- `ID` = **BS-DOC-26-0572**  
+  The store's sales report the figures come from.
+- `DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0572 is the example furniture/06, a ProductActivity; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ProductActivity = Product Activity.
 
 ### Signature
 
@@ -153,17 +157,15 @@ Inside `ReceiverParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/ID` = **BM-CT-01**  
-  The desk's number in the party's own contact list.
-- `Contact/Name` = **Buying office**  
-  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Buyer**  
+- `Contact/Name` = **Customer service**  
+  The party's customer service desk: the desk for its role in this document (it sells); identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Purchasing**  
+- `Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Contact/ElectronicMail` = **buying@brightmarket.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+- `Contact/ElectronicMail` = **service@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -213,33 +215,17 @@ Inside `ExceptionNotificationLine`:
 - `VarianceQuantity` = **-1** (unitCode `EA`)  
   One oak bench fewer than the threshold.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
-  Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  A sales exception, as the criterion it meets (furniture/07#F1). The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `ExceptionObservationPeriod/StartDate` = **2026-05-11**  
   The four weeks since the reopening.
 - `ExceptionObservationPeriod/EndDate` = **2026-06-07**  
   Their end.
-- `DocumentReference/ID` = **BS-DOC-26-0572**  
-  The product activity reported.
-- `DocumentReference/DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-DOC-26-0572 is the example furniture/06, a ProductActivity; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ProductActivity = Product Activity.
-- `ForecastException/ForecastPurposeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:ForecastPurposeCode`)  
-  The sales forecast compared. The code is from the Trade Accord's forecast purpose list: SALES = Sales forecast.
-- `ForecastException/ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
-  In total. The code is from the Trade Accord's forecast type list: TOTAL = Total.
-- `ForecastException/IssueDate` = **2026-03-16**  
-  The forecast of the first delivery.
-- `ForecastException/IssueTime` = **10:00:00**  
-  Its time.
-- `ForecastException/DataSourceCode` = **SELLER** (listID `urn:ubl-examples:world:codelist:DataSourceCode`)  
-  The maker's forecast. The code is from the Trade Accord's data source list: SELLER = Seller.
-- `ForecastException/ComparisonDataCode` = **ACTUAL** (listID `urn:ubl-examples:world:codelist:ComparisonDataCode`)  
-  Compared with actual sales. The code is from the Trade Accord's comparison data list: ACTUAL = Actual sales.
-- `ForecastException/ComparisonForecastIssueTime` = **18:00:00**  
-  Their time.
-- `ForecastException/ComparisonForecastIssueDate` = **2026-06-08**  
-  The store's figures of 8 June.
+- `DocumentReference/ID` = **BS-DOC-26-0571**  
+  The exception criteria whose line this exception meets (furniture/07#F2).
+- `DocumentReference/DocumentTypeCode` = **ExceptionCriteria** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0571 is the example furniture/05, a ExceptionCriteria; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionCriteria = Exception Criteria.
+- `DocumentReference/DocumentDescription` = **Criterion line 1: slow sales of the oak bench.**  
+  Which criterion.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
 - `SupplyItem/Name` = **Elderwick Marrow bench, oak**  
@@ -275,33 +261,17 @@ Inside `ExceptionNotificationLine`:
 - `VarianceQuantity` = **-1** (unitCode `EA`)  
   One ash bench fewer than the threshold.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
-  Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  A sales exception, as the criterion it meets (furniture/07#F1). The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `ExceptionObservationPeriod/StartDate` = **2026-05-11**  
   The four weeks since the reopening.
 - `ExceptionObservationPeriod/EndDate` = **2026-06-07**  
   Their end.
-- `DocumentReference/ID` = **BS-DOC-26-0572**  
-  The product activity reported.
-- `DocumentReference/DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-DOC-26-0572 is the example furniture/06, a ProductActivity; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ProductActivity = Product Activity.
-- `ForecastException/ForecastPurposeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:ForecastPurposeCode`)  
-  The sales forecast compared. The code is from the Trade Accord's forecast purpose list: SALES = Sales forecast.
-- `ForecastException/ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
-  In total. The code is from the Trade Accord's forecast type list: TOTAL = Total.
-- `ForecastException/IssueDate` = **2026-03-16**  
-  The forecast of the first delivery.
-- `ForecastException/IssueTime` = **10:00:00**  
-  Its time.
-- `ForecastException/DataSourceCode` = **SELLER** (listID `urn:ubl-examples:world:codelist:DataSourceCode`)  
-  The maker's forecast. The code is from the Trade Accord's data source list: SELLER = Seller.
-- `ForecastException/ComparisonDataCode` = **ACTUAL** (listID `urn:ubl-examples:world:codelist:ComparisonDataCode`)  
-  Compared with actual sales. The code is from the Trade Accord's comparison data list: ACTUAL = Actual sales.
-- `ForecastException/ComparisonForecastIssueTime` = **18:00:00**  
-  Their time.
-- `ForecastException/ComparisonForecastIssueDate` = **2026-06-08**  
-  The store's figures of 8 June.
+- `DocumentReference/ID` = **BS-DOC-26-0571**  
+  The exception criteria whose line this exception meets (furniture/07#F2).
+- `DocumentReference/DocumentTypeCode` = **ExceptionCriteria** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BS-DOC-26-0571 is the example furniture/05, a ExceptionCriteria; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExceptionCriteria = Exception Criteria.
+- `DocumentReference/DocumentDescription` = **Criterion line 2: slow sales of the ash bench.**  
+  Which criterion.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
 - `SupplyItem/Name` = **Elderwick Marrow bench, ash**  
@@ -340,6 +310,10 @@ Inside `ExceptionNotificationLine`:
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0571</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-0609</cbc:ID>
@@ -427,12 +401,11 @@ Inside `ExceptionNotificationLine`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -471,25 +444,15 @@ Inside `ExceptionNotificationLine`:
     <cbc:SourceValueMeasure unitCode="EA">3</cbc:SourceValueMeasure>
     <cbc:VarianceQuantity unitCode="EA">-1</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
-      <cbc:ID>BS-DOC-26-0572</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
+      <cbc:ID>BS-DOC-26-0571</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
+      <cbc:DocumentDescription>Criterion line 1: slow sales of the oak bench.</cbc:DocumentDescription>
     </cac:DocumentReference>
-    <cac:ForecastException>
-      <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
-      <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-      <cbc:IssueDate>2026-03-16</cbc:IssueDate>
-      <cbc:IssueTime>10:00:00</cbc:IssueTime>
-      <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
-      <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
-      <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
-    </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
@@ -518,25 +481,15 @@ Inside `ExceptionNotificationLine`:
     <cbc:SourceValueMeasure unitCode="EA">2</cbc:SourceValueMeasure>
     <cbc:VarianceQuantity unitCode="EA">-1</cbc:VarianceQuantity>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
-      <cbc:ID>BS-DOC-26-0572</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
+      <cbc:ID>BS-DOC-26-0571</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
+      <cbc:DocumentDescription>Criterion line 2: slow sales of the ash bench.</cbc:DocumentDescription>
     </cac:DocumentReference>
-    <cac:ForecastException>
-      <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
-      <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-      <cbc:IssueDate>2026-03-16</cbc:IssueDate>
-      <cbc:IssueTime>10:00:00</cbc:IssueTime>
-      <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
-      <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
-      <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
-    </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>

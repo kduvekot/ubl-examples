@@ -22,8 +22,8 @@ The buyer pays the telecom bill from its account at the island's bank.
   The payer's remittance number.
 - `UUID` = **bcb6eadf-33b2-550e-b57c-1a63cfc06bfc**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-19**  
-  Paid before the due date.
+- `IssueDate` = **2026-04-20**  
+  Paid on Monday 20 April, before the due date (D27, D31 point 7).
 - `IssueTime` = **11:40:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Mamohe mutaki tohala titutu.** (languageID `qal`)  
@@ -32,11 +32,11 @@ The buyer pays the telecom bill from its account at the island's bank.
   The same note in English, the working language between the countries: What the advice is for.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the currency of the invoice paid; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TotalDebitAmount` = **135.566** (currencyID `XLC`)  
+- `TotalDebitAmount` = **139.870** (currencyID `XLC`)  
   The invoices paid.
 - `TotalCreditAmount` = **0.000** (currencyID `XLC`)  
   No credits taken.
-- `TotalPaymentAmount` = **135.566** (currencyID `XLC`)  
+- `TotalPaymentAmount` = **139.870** (currencyID `XLC`)  
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **VT-PAY-26-0313**  
   The payment order the payer gave its bank.
@@ -282,7 +282,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **135.566** (currencyID `XLC`)  
+- `DebitLineAmount` = **139.870** (currencyID `XLC`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.000** (currencyID `XLC`)  
   Nothing remains open on the invoice after this payment.
@@ -310,14 +310,14 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-RM-26-0316</cbc:ID>
   <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
   <cbc:Note languageID="qal">Mamohe mutaki tohala titutu.</cbc:Note>
   <cbc:Note languageID="en-XL">Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XLC">135.566</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XLC">139.870</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XLC">135.566</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">139.870</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -505,7 +505,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">135.566</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">139.870</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>

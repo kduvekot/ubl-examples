@@ -24,14 +24,14 @@ Because it sold DDP, the distributor books the outgoing truck from its distribut
   The first version of the request.
 - `UUID` = **3486a63d-1d8e-580d-902a-948d6ff352c9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-25**  
-  Because it sold delivered duty paid, the distributor books the truck.
-- `IssueTime` = **10:28:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-04-27**  
+  Because it sold delivered duty paid, the distributor books the truck, on Monday 27 April, the first working day after the order (D27, D34).
+- `IssueTime` = **09:10:00-01:00**  
+  In the morning, before the carrier plans the week; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **The forwarder's truck from the distribution centre to the store.**  
   The transport asked for.
-- `TransportUserRemarks` = **Please confirm by return.**  
-  The user's remark.
+- `TransportUserRemarks` = **Delivery slot at the store's goods-in: Thursday 30 April, 10:00 to 10:30. Please confirm by return.**  
+  The slot the store gave (D34).
 
 ### Sender Party
 
@@ -183,7 +183,7 @@ Inside `TransportContract`:
 
 Inside `TransportServiceProviderResponseDeadlinePeriod`:
 
-- `EndDate` = **2026-04-26**  
+- `EndDate` = **2026-04-28**  
   An answer is needed by the next day.
 
 ### Main Transportation Service
@@ -206,8 +206,14 @@ Inside `ServiceStartTimePeriod`:
 
 Inside `ServiceEndTimePeriod`:
 
-- `EndDate` = **2026-05-02**  
-  Delivered within three days.
+- `StartDate` = **2026-04-30**  
+  The delivery slot at the store, which the store's goods-in gave.
+- `StartTime` = **10:00:00**  
+  From ten.
+- `EndDate` = **2026-04-30**  
+  The same day.
+- `EndTime` = **10:30:00**  
+  To half past ten.
 
 ### From Location
 
@@ -302,10 +308,10 @@ Inside `Consignment`:
   <cbc:ID>LD-TR-26-0227</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>3486a63d-1d8e-580d-902a-948d6ff352c9</cbc:UUID>
-  <cbc:IssueDate>2026-04-25</cbc:IssueDate>
-  <cbc:IssueTime>10:28:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
   <cbc:Note>The forwarder's truck from the distribution centre to the store.</cbc:Note>
-  <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
+  <cbc:TransportUserRemarks>Delivery slot at the store's goods-in: Thursday 30 April, 10:00 to 10:30. Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -417,7 +423,7 @@ Inside `Consignment`:
     <cbc:ID>LD-BF-FW-2026</cbc:ID>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseDeadlinePeriod>
-    <cbc:EndDate>2026-04-26</cbc:EndDate>
+    <cbc:EndDate>2026-04-28</cbc:EndDate>
   </cac:TransportServiceProviderResponseDeadlinePeriod>
   <cac:MainTransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">FTL</cbc:TransportServiceCode>
@@ -427,7 +433,10 @@ Inside `Consignment`:
     <cbc:StartDate>2026-04-29</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-05-02</cbc:EndDate>
+    <cbc:StartDate>2026-04-30</cbc:StartDate>
+    <cbc:StartTime>10:00:00</cbc:StartTime>
+    <cbc:EndDate>2026-04-30</cbc:EndDate>
+    <cbc:EndTime>10:30:00</cbc:EndTime>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>

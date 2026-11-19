@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-RA-26-0235</cbc:ID>
+  <cbc:ID>BS-RA-26-0236</cbc:ID>
   <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>15:21:00-01:00</cbc:IssueTime>
@@ -21,10 +21,6 @@
   <cac:DespatchDocumentReference>
     <cbc:ID>LD-DA-26-0229</cbc:ID>
   </cac:DespatchDocumentReference>
-  <cac:AdditionalDocumentReference>
-    <cbc:ID>BM-GI-PHOTO-26-0510</cbc:ID>
-    <cbc:DocumentType>Photograph</cbc:DocumentType>
-  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-RA</cbc:ID>
     <cac:SignatoryParty>
@@ -171,7 +167,7 @@
       </cac:Status>
       <cac:DamageDocumentationAttachment>
         <cac:ExternalReference>
-          <cbc:URI>https://www.brightmarket.example/goods-in/26-0510/pallet-3.jpg</cbc:URI>
+          <cbc:URI>https://www.brightmarket.example/goods-in/26-0430/pallet-3.jpg</cbc:URI>
           <cbc:MimeCode listID="IANA Media Types">image/jpeg</cbc:MimeCode>
           <cbc:FileName>pallet-3.jpg</cbc:FileName>
         </cac:ExternalReference>
@@ -191,7 +187,7 @@
     <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
     <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
     <cbc:TimingComplaintCode listID="urn:ubl-examples:world:codelist:TimingComplaintCode">LATE</cbc:TimingComplaintCode>
-    <cbc:TimingComplaint>Arrived 40 minutes into the slot; unloading delayed the next truck.</cbc:TimingComplaint>
+    <cbc:TimingComplaint>Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.</cbc:TimingComplaint>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -203,8 +199,8 @@
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:DocumentReference>
-      <cbc:ID>BS-PHOTO-26-0118</cbc:ID>
-      <cbc:DocumentType>Photograph</cbc:DocumentType>
+      <cbc:ID>BM-GI-PHOTO-26-0430</cbc:ID>
+      <cbc:DocumentType>Damage photos</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>

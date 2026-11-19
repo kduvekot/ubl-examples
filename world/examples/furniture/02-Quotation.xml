@@ -10,7 +10,7 @@
   <cbc:IssueTime>08:58:00-01:00</cbc:IssueTime>
   <cbc:Note>The Elderwick Marrow bench and chair, made to the store's specification under its own label, each in oak and in ash at the same price; a care kit free with each bench.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
-  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>6</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-05-05</cbc:EndDate>
   </cac:ValidityPeriod>
@@ -125,6 +125,25 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:TransactionConditions>
+    <cbc:Description>A repeat order of the line within the season: 3 % off the quoted prices.</cbc:Description>
+  </cac:TransactionConditions>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">12200.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>
@@ -380,6 +399,37 @@
             <cbc:Name>Brackenmere Furniture</cbc:Name>
           </cac:PartyName>
         </cac:ManufacturerParty>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+  <cac:QuotationLine>
+    <cbc:Note>Optional, as asked: not in the quoted total.</cbc:Note>
+    <cbc:LineExtensionAmount currencyID="XBL">640.00</cbc:LineExtensionAmount>
+    <cbc:RequestForQuotationLineID>5</cbc:RequestForQuotationLineID>
+    <cac:LineItem>
+      <cbc:ID>6</cbc:ID>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">16</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Seat pad for the Marrow dining chair: a foam pad in a removable linen cover, with ties, 400 × 400 mm. Sold under Brackenmere's brand; Brackenmere has it made by a textile workshop and does not make it itself.</cbc:Description>
+        <cbc:Name>Brackenmere seat pad, Marrow chair</cbc:Name>
+        <cbc:BrandName>Brackenmere</cbc:BrandName>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-P</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9523710000036</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940490</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">27180</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
       </cac:Item>
     </cac:LineItem>
   </cac:QuotationLine>

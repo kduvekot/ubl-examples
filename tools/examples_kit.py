@@ -84,10 +84,10 @@ def tax_rule(seller, buyer, iid):
     s, b, it = PARTY[seller], PARTY[buyer], ITEM[iid]
     c = WORLD["countries"][s["c"]]
     scheme = c["tax"]["schemes"][0]
-    if it.get("levy"):
+    if it.get("levy"):      # the reason a supply is outside the tax, in the exemption reason (D31 point 3, O107)
         return ("O", 0, scheme, f"A public levy the seller collects for {PARTY[it['levy']]['identity']['name']}: not a "
-                                "supply, so outside the scope of the sales tax (category O).", "Levy collected for a "
-                                                                                               "public body")
+                                "supply, so outside the scope of the sales tax (category O, without a rate).",
+                "Collected for a public body, outside the scope of the state sales tax")
     if s["c"] == "XU":
         if it.get("export_carriage"):       # the carriage of exported goods (D41)
             return ("E", 0, scheme, "The carriage of goods directly linked to their export from Urvania is exempt "
@@ -122,7 +122,7 @@ def tax_rule(seller, buyer, iid):
                                     f"{free_with_name(it).split()[-1].lower()}, and the buyer hands it on "
                                     "with the goods it resells, so it is exempt from the state sales tax as they are; "
                                     "the tax is charged only on the sale to the final consumer (category E).",
-                    "Sale for resale or manufacture")
+                    "Sale for resale or manufacture: supplied free with goods for resale")
         return ("E", 0, scheme, "A sale to a business that resells or processes the goods is exempt from the state sales "
                                 "tax, which is charged only on the sale to the final consumer (category E).",
                 "Sale for resale or manufacture")
@@ -144,13 +144,17 @@ def tax_category(rule, kind=None):
         out["Percent"] = V(str(percent), "The rate for this category." if percent else
                            "No tax is charged in this category.")
     if exemption:
-        cc = next((k for k, c in WORLD["countries"].items() if exemption in c["tax"].get("exemption_codes", {})), None)
+        key = exemption.split(": ")[0]      # the code's reason, before any detail of this supply (furniture/09#F3)
+        cc = next((k for k, c in WORLD["countries"].items() if key in c["tax"].get("exemption_codes", {})), None)
         if cc:
-            out["TaxExemptionReasonCode"] = V(WORLD["countries"][cc]["tax"]["exemption_codes"][exemption],
+            out["TaxExemptionReasonCode"] = V(WORLD["countries"][cc]["tax"]["exemption_codes"][key],
                                               f"The exemption reason as a code of {WORLD['countries'][cc]['name']}'s "
                                               "national list, the list of the seller's country.",
                                               listID=codelists.NATIONAL.format(cc, "TaxExemptionReason"))
-        out["TaxExemptionReason"] = V(exemption, "Why no tax is charged, stated rather than left out (UBL rule IND6).")
+        detail = exemption.partition(": ")[2]
+        out["TaxExemptionReason"] = (Detail(detail, "Why no tax is charged: the code's meaning and the detail of this "
+                                                    "supply (UBL rule IND6).") if detail else
+                                     V(exemption, "Why no tax is charged, stated rather than left out (UBL rule IND6)."))
     if kind:
         out["SupplyTypeCode"] = V("GOODS" if kind == "goods" else "SERVICES", "Whether the category applies to goods "
                                                                                "or services.")
@@ -203,7 +207,9 @@ def terms_of(flow, seller, day, kind=None):
     return {"id": f"{PARTY[seller]['c']}-STD", "id_why": f"The standard terms of {c['name']}.", "text": pay["terms"],
             "why": pay["note"], "start": day, "start_why": "From the invoice date.", "due": day + pay["due_days"],
             "discount": pay.get("discount"), "surcharge": pay.get("penalty_surcharge"),
-            "interest": pay.get("penalty_interest") or pay.get("statutory_interest")}
+            # terms that set a surcharge for late payment say something on it: no statutory interest beside it (D22)
+            "interest": pay.get("penalty_interest") or (None if pay.get("penalty_surcharge")
+                                                        else pay.get("statutory_interest"))}
 
 
 def payment_terms(flow, seller, buyer, t, total, cur, number):
@@ -1075,9 +1081,9 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     kind, kind_name = waybill_kind(flow, carrier)
     number = flow.number("waybill", doc["from"], "Waybill")
     flow.numbers[f"waybill-day-{carrier}"] = day          # a freight term may count from it (PLAN_PAYMENT)
+    flow.numbers["carrier-ref"] = f"{initials(carrier)}-{kind}-26-{flow.base:04d}"   # quoted in later documents
     out = {"ID": V(number, "The consignment note number."),
-           "CarrierAssignedID": V(f"{initials(carrier)}-{kind}-26-{flow.base:04d}", "The carrier's own number for "
-                                                                                    "the carriage."),
+           "CarrierAssignedID": V(flow.numbers["carrier-ref"], "The carrier's own number for the carriage."),
            "VersionID": V("1", "The original, not a corrected version."),
            "StatusCode": V("ISSUED", "The note is issued and in force."),
            "IssueDate": V(flow.date(day), why),
@@ -1196,8 +1202,9 @@ def customs_item(iid):
     if cc and hs:
         cc["NatureCode"] = V(HS_SECTION[hs[:2]], "The section of the Harmonized System the goods fall in, the "
                                                  "highest level of the World Customs Organization's classification.")
-        cc["CargoTypeCode"] = V("BULK" if (ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26") or hs[:4] == "2711"
-                                else "GEN", "The kind of cargo: bulk, or general cargo in packages.")
+        if hs[:4] != "2711":        # gas in a pipeline is no cargo: the HS code and the mode say what it is (C82)
+            cc["CargoTypeCode"] = V("BULK" if ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26" else "GEN",
+                                    "The kind of cargo: bulk, or general cargo in packages.")
     return out
 
 

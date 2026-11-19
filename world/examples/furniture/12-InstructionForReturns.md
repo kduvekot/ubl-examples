@@ -18,7 +18,7 @@ After the sale-or-return trial, the first four weeks of sales, the furniture mak
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **FURNITURE-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0578**  
+- `ID` = **BF-DOC-26-0579**  
   The sender's number for its returns.
 - `UUID` = **1e930432-0fbd-5872-a8b6-1646ccb09ff0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -180,6 +180,10 @@ Inside `Shipment`:
   The return shipment.
 - `GrossWeightMeasure` = **285.45** (unitCode `KGM`)  
   Seven benches of 24 kg, ten chairs of 11.5 kg and seven care kits of 0.35 kg, packed.
+- `Delivery/DeliveryLocation/ID` = **9523710900015** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, factory and goods-in, marrowdale: Brackenmere Furniture identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `Delivery/DeliveryLocation/Name` = **Brackenmere Furniture, Marrowdale**  
+  Where the pieces go back: the maker's workshop (furniture/12#F1).
 - `Delivery/RequestedDeliveryPeriod/StartDate` = **2026-06-12**  
   The store's van brings them.
 - `Delivery/RequestedDeliveryPeriod/EndDate` = **2026-06-15**  
@@ -301,7 +305,7 @@ Inside `InstructionForReturnsLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:instruction-for-returns:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0578</cbc:ID>
+  <cbc:ID>BF-DOC-26-0579</cbc:ID>
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>14:21:00-01:00</cbc:IssueTime>
@@ -425,6 +429,10 @@ Inside `InstructionForReturnsLine`:
     <cbc:ID>BM-RET-26-0611</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
     <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="GS1 GLN">9523710900015</cbc:ID>
+        <cbc:Name>Brackenmere Furniture, Marrowdale</cbc:Name>
+      </cac:DeliveryLocation>
       <cac:RequestedDeliveryPeriod>
         <cbc:StartDate>2026-06-12</cbc:StartDate>
         <cbc:EndDate>2026-06-15</cbc:EndDate>

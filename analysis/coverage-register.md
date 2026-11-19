@@ -584,6 +584,56 @@ Stage 6, building group G3 (C81, C90).
 | `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
 | `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
 
+### G7: furniture, retail, packaging (2026-11-19)
+
+Stage 6, building group G7 (C103 to C105, C110 to C113, the packaging leftovers).
+
+> C103, D32, D38: the store's buyer-issued debit note furniture/14 goes (O6, D9): the store invoices the return transport (furniture/18), so its debit-note elements go with it; the invoice of the opening stock cites the maker's despatch advice furniture/19 instead of a delivery note that exists nowhere (09#F1); the order takes the quoted price without an 'original' price (08#F8); the cancellation refers to the maker's exception notification as an additional document, not as an originator document (11#F4); the request for quotation refers to the store's range plan as an additional document, not as a catalogue (01#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BillingReferenceLine/Amount` | 0..1 | furniture/14-DebitNote |  |  | open |
+| `DebitNote/DefaultLanguageCode` | 0..1 | furniture/14-DebitNote |  |  | open |
+| `DebitNoteLine/Delivery` | 0..n | furniture/14-DebitNote |  |  | open |
+| `DebitNoteLine/DiscrepancyResponse` | 0..n | furniture/14-DebitNote |  |  | open |
+| `Invoice/DeliveryNoteDocumentReference` | 0..n | furniture/09-Invoice |  |  | open |
+| `LineItem/PricingReference` | 0..1 | furniture/08-Order |  |  | open |
+| `OrderCancellation/OriginatorDocumentReference` | 0..1 | furniture/11-OrderCancellation |  |  | open |
+| `RequestForQuotation/CatalogueDocumentReference` | 0..1 | furniture/01-RequestForQuotation |  |  | open |
+
+> C104, D32 (Encoding): each collaboration document carries one kind of criterion per line: the maker asks for sales only (03#F1), the criteria and the notification are sales criteria without a performance metric (05#F2, 07#F1), and the notification reports no forecast exception, because the flow has no forecast it could compare (07#F1, F3 to F5); the criteria give no exception status, which UBL defines for shipments (05#F8).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ExceptionCriteriaLine/ExceptionStatusCode` | 0..1 | furniture/05-ExceptionCriteria |  |  | open |
+| `ExceptionCriteriaLine/PerformanceMetricTypeCode` | 0..1 | furniture/05-ExceptionCriteria |  |  | open |
+| `ExceptionNotificationLine/ForecastException` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ExceptionNotificationLine/PerformanceMetricTypeCode` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ComparisonDataCode` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ComparisonForecastIssueDate` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ComparisonForecastIssueTime` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/DataSourceCode` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ForecastPurposeCode` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/ForecastTypeCode` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/IssueDate` | 1 | furniture/07-ExceptionNotification |  |  | open |
+| `ForecastException/IssueTime` | 0..1 | furniture/07-ExceptionNotification |  |  | open |
+| `ItemInformationRequestLine/ForecastTypeCode` | 0..1 | furniture/03-ItemInformationRequest |  |  | open |
+| `ItemInformationRequestLine/PerformanceMetricTypeCode` | 0..1 | furniture/03-ItemInformationRequest |  |  | open |
+
+> C110, D34: Lumeway's catalogue for the store is new, version 1.0 with no version before it (02#F2); its bench line carries no comparison that repeats the unit price (02#F13); the request names the real Harmonized System without an invented UUID or a midnight revision time (01#F7); the updates repeat no trading terms they do not change (03#F9, 04#F12); the deletion states only when it takes effect (20#F4).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Catalogue/PreviousVersionID` | 0..1 | retail/02-Catalogue |  |  | open |
+| `CatalogueDeletion/ValidityPeriod` | 0..n | retail/20-CatalogueDeletion |  |  | open |
+| `CatalogueItemSpecificationUpdate/TradingTerms` | 0..n | retail/04-CatalogueItemSpecificationUpdate |  |  | open |
+| `CatalogueLine/ItemComparison` | 0..n | retail/02-Catalogue |  |  | open |
+| `CataloguePricingUpdate/TradingTerms` | 0..n | retail/03-CataloguePricingUpdate |  |  | open |
+| `ClassificationScheme/LastRevisionTime` | 0..1 | retail/01-CatalogueRequest |  |  | open |
+| `ClassificationScheme/UUID` | 0..1 | retail/01-CatalogueRequest |  |  | open |
+| `ItemComparison/PriceAmount` | 0..1 | retail/02-Catalogue |  |  | open |
+| `ItemComparison/Quantity` | 0..1 | retail/02-Catalogue |  |  | open |
+
 ### G5: road (2026-11-19)
 
 Stage 6, building group G5 (C100, C101, C102; D35).
@@ -712,6 +762,76 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `Regulation/OntologyURI` | 0..1 | tender/14-GuaranteeCertificate | | | open |
+### G4: energy, utilities (2026-11-19)
+
+Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
+
+> C91, D31 points 2 and 5: a statement shows a second supplier only where one really bills part of the consumption (Ferrano Grid's network charges on Ferrano Energy's bill, the city's sewage levy on the water bill); the island's telephone statement has one supplier, so `Consumption` only, and with the supplier branch its consumption lines go (utilities/12#F9; UBL reaches consumption lines only under `SupplierConsumption`, a point for the TC, O107): the bundle discount on the subscription line, the subscription's price "per month" and the data pack of 5 GB (which D31 point 6 drops anyway). The consumption lines' delivery location only pointed back to the statement's consumption point (utilities/01#F14, 03#F15, 05#F13, 08#F16, 12#F21).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+| `ConsumptionLine/Delivery` | 0..n | utilities/01-UtilityStatement, utilities/03-UtilityStatement, utilities/05-UtilityStatement, utilities/08-UtilityStatement | | | open |
+| `ConsumptionLine/UnstructuredPrice` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/PriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TaxInclusivePriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TimeAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackQuantity` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackSizeNumeric` | 0..1 | utilities/12-UtilityStatement | | | open |
+
+> C92, D31 point 6: the bundle discount of the telephone statement is given once, on the whole supply, as on the invoice (utilities/12#F6); the six business lines no longer repeat their share of it.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TelecommunicationsSupplyLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+
+> C93, D31 points 1 and 7: the household's annual account. The meter reader reads the meters once a year, so the reading website and its password go (D31 point 7); the open-ended recurring mandate has no limit of instructions (09#F3) and names no payer besides the debtor (09#F4); the household's account appears only in the mandate that collects from it, not again in its party block, nor in the credit note, which is set off (09#F7, 11#F5; the element stays covered by the purchase receipts); the reminder's fee line states its amount once (10#F10).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionPoint/WebSiteAccess` | 0..1 | utilities/08-UtilityStatement | | | open |
+| `PaymentMandate/MaximumPaymentInstructionsNumeric` | 0..1 | utilities/09-Invoice | | | open |
+| `PaymentMandate/PayerParty` | 0..1 | utilities/09-Invoice | | | open |
+| `ReminderLine/Amount` | 0..1 | utilities/10-Reminder | | | open |
+
+> C95, D31 points 4 and 7: Valdara, which owns the warehouse, holds its subscription, so the warehouse statement's consumption names no subscriber of its own (03#F6); a monthly tariff carries no one-time charge (01#F6); a remittance advice of one bill carries no tax total (04#F2); a reminder without tax no tax point date (10#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Reminder/TaxPointDate` | 0..1 | utilities/10-Reminder | | | open |
+| `RemittanceAdvice/TaxTotal` | 0..n | utilities/04-RemittanceAdvice | | | open |
+| `SubscriberConsumption/SubscriberParty` | 0..1 | utilities/03-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeType` | 0..n | utilities/01-UtilityStatement | | | open |
+| `UtilityItem/OneTimeChargeTypeCode` | 0..1 | utilities/01-UtilityStatement | | | open |
+
+> C111, D34: the retail event of the reopening is confirmed and agreed, so it gives no acceptance deadline (06#F7); stock on the shelf has no availability date (07#F10); the shop sale's line has no period of its own, the warranty being the maker's card (21#F12).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `InventoryReportLine/AvailabilityDate` | 0..1 | retail/07-InventoryReport |  |  | open |
+| `PromotionalEvent/LatestProposalAcceptanceDate` | 0..1 | retail/06-RetailEvent |  |  | open |
+| `PurchaseReceiptLine/PurchaseLinePeriod` | 0..1 | retail/21-PurchaseReceipt |  |  | open |
+
+> C112, D34: the store's order offers no substitute the catalogue does not have (08#F8), gives no third-party account under its own number (08#F12) and no e-document channel as card data capability (08#F5); the document status answers for the store's order only, not for Lumeway's own transport booking (10#F4); the invoice line has no pricing reference and no payment terms of its own (18#F2, F13); the credit note on the factored invoice names no payee: the store deducts it from what it pays the factor (19#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CreditNote/PayeeParty` | 0..1 | retail/19-CreditNote |  |  | open |
+| `CustomerParty/AdditionalAccountID` | 0..n | retail/08-Order |  |  | open |
+| `DocumentStatus/AdditionalDocumentResponse` | 0..n | retail/10-DocumentStatus |  |  | open |
+| `InvoiceLine/PaymentTerms` | 0..n | retail/18-Invoice |  |  | open |
+| `InvoiceLine/PricingReference` | 0..1 | retail/18-Invoice |  |  | open |
+| `OrderLine/BuyerProposedSubstituteLineItem` | 0..n | retail/08-Order |  |  | open |
+| `PricingReference/OriginalItemLocationQuantity` | 0..1 | retail/18-Invoice |  |  | open |
+| `SupplierParty/DataSendingCapability` | 0..1 | retail/08-Order |  |  | open |
+
+> C113, D34: the despatch advice gives the truck once, for the shipment, and no empty goods item on a pallet (12#F10); Lumeway's status request to the carrier does not name the store's order (14#F6).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TransportHandlingUnit/GoodsItem` | 0..n | retail/12-DespatchAdvice |  |  | open |
+| `TransportHandlingUnit/TransportMeans` | 0..n | retail/12-DespatchAdvice |  |  | open |
+| `TransportationStatusRequest/DocumentReference` | 0..n | retail/14-TransportationStatusRequest |  |  | open |
 
 ## Left out on purpose
 

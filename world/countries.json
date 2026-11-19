@@ -327,7 +327,7 @@
      "Sale to a public body": "PUBLIC",
      "Service to a business": "SVCB2B",
      "Sale for resale or manufacture": "RESALE",
-     "Levy collected for a public body": "LEVY"
+     "Collected for a public body, outside the scope of the state sales tax": "LEVY"
     },
     "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (world/codelists/lists.json, XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
     "withholding": {
@@ -423,6 +423,11 @@
     "cash_rounding": {
      "step": "0.05",
      "note": "The smallest coin of the lume is 5 cents: a cash payment is rounded to 0.05; a card payment is not."
+    },
+    "statutory_interest": {
+     "percent": "7",
+     "basis": "ANN",
+     "note": "Bayvarra's statutory interest on late payment, one federal rate under the federal commercial law, which applies wherever neither a contract nor the seller's terms say anything on late payment (D22, O148)."
     }
    },
    "phone_plan": {
@@ -675,7 +680,12 @@
       "RTGS"
      ]
     },
-    "note": "Island practice: longer terms, simple interest on late payment."
+    "note": "Island practice: longer terms, simple interest on late payment.",
+    "statutory_interest": {
+     "percent": "6",
+     "basis": "ANN",
+     "note": "Lisavu's statutory interest on late payment, which applies wherever neither a contract nor the seller's terms say anything on late payment (D22, O148)."
+    }
    },
    "cotton": {
     "fund_levy_percent": "1",
@@ -1968,6 +1978,8 @@
     "wooden": "zhendul",
     "weighs": "ranskir",
     "exported": "gazvan",
+    "transformers": "miktan",
+    "voltage": "vesir",
     "they": "kildrek",
     "days": "drirgir",
     "demurrage": "gunnek",
@@ -1983,7 +1995,11 @@
     "result": "skunzek",
     "their": "haskek",
     "immobilised": "kulnek",
-    "securities": "malbaz"
+    "securities": "malbaz",
+    "every": "sistan",
+    "exceeds": "skuzgul",
+    "falls": "kralzhek",
+    "weeks": "zakdrir"
    }
   },
   "qal": {
@@ -3113,7 +3129,17 @@
     "result": "havia",
     "their": "likami",
     "immobilised": "kakilaki",
-    "securities": "luakiki"
+    "securities": "luakiki",
+    "every": "tasali",
+    "exceeds": "telilo",
+    "falls": "litiho",
+    "weeks": "hipose",
+    "transformers": "telalimu",
+    "voltage": "vuvai",
+    "abroad": "pelahi",
+    "partner's": "vapiseva",
+    "rule": "vamufe",
+    "used": "vimihi"
    }
   },
   "en": {

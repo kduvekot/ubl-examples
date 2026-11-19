@@ -214,7 +214,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **600** (unitCode `EA`)  
-  The store's spring order of shirts.
+  The store's order of shirts for its winter range.
 - `LineItem/LineExtensionAmount` = **8700.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **14.5** (currencyID `XBL`)  

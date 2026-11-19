@@ -112,7 +112,7 @@
     <cac:UtilityConsumptionPoint>
       <cbc:ID>ST-CP-1077</cbc:ID>
       <cbc:Description>Office of Velumi Trading, Selanu</cbc:Description>
-      <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
+      <cbc:SubscriberID>ST-CU-20418</cbc:SubscriberID>
       <cbc:SubscriberType>Business</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">BUS</cbc:SubscriberTypeCode>
       <cac:Address>
@@ -148,24 +148,17 @@
         <cbc:TelecommunicationsSupplyTypeCode listID="urn:ubl-examples:world:codelist:TelecomSupplyTypeCode">BUS</cbc:TelecommunicationsSupplyTypeCode>
         <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">MASKED</cbc:PrivacyCode>
         <cbc:Description>Six business lines and a mobile data pool.</cbc:Description>
-        <cbc:TotalAmount currencyID="XLC">141.920</cbc:TotalAmount>
+        <cbc:TotalAmount currencyID="XLC">146.224</cbc:TotalAmount>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>1</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1850</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">140</cbc:Quantity>
@@ -175,16 +168,17 @@
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 955 964</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>
             <cbc:TelecommunicationsServiceCall>Outgoing</cbc:TelecommunicationsServiceCall>
             <cbc:TelecommunicationsServiceCallCode listID="urn:ubl-examples:world:codelist:TelecomCallTypeCode">OUT</cbc:TelecommunicationsServiceCallCode>
-            <cbc:CallBaseAmount currencyID="XLC">0.000</cbc:CallBaseAmount>
+            <cbc:CallBaseAmount currencyID="XLC">0.050</cbc:CallBaseAmount>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
             <cac:Price>
-              <cbc:PriceAmount currencyID="XLC">0</cbc:PriceAmount>
+              <cbc:PriceAmount currencyID="XLC">0.2</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="MIN">1</cbc:BaseQuantity>
             </cac:Price>
             <cac:Country>
               <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -193,48 +187,30 @@
               <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
               <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
               <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
-              <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
-              <cbc:BaseAmount currencyID="XLC">2.400</cbc:BaseAmount>
+              <cbc:Amount currencyID="XLC">2.450</cbc:Amount>
             </cac:AllowanceCharge>
             <cac:CallDuty>
-              <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
+              <cbc:Amount currencyID="XLC">0.050</cbc:Amount>
               <cbc:Duty>Set-up</cbc:Duty>
               <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">SETUP</cbc:DutyCode>
             </cac:CallDuty>
             <cac:TimeDuty>
-              <cbc:Amount currencyID="XLC">0.000</cbc:Amount>
+              <cbc:Amount currencyID="XLC">2.400</cbc:Amount>
               <cbc:Duty>Per minute</cbc:Duty>
               <cbc:DutyCode listID="urn:ubl-examples:world:codelist:TelecomDutyCode">MIN</cbc:DutyCode>
             </cac:TimeDuty>
-          </cac:TelecommunicationsService>
-          <cac:TelecommunicationsService>
-            <cbc:ID>D-0318-01</cbc:ID>
-            <cbc:CallDate>2026-03-18</cbc:CallDate>
-            <cbc:CallTime>08:00:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
-            <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
-            <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
-            <cbc:Quantity unitCode="E34">35</cbc:Quantity>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>2</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1851</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">165</cbc:Quantity>
@@ -250,25 +226,28 @@
             <cbc:PayPerView>true</cbc:PayPerView>
             <cbc:Quantity unitCode="EA">1</cbc:Quantity>
             <cbc:CallExtensionAmount currencyID="XLC">0.000</cbc:CallExtensionAmount>
+            <cac:Price>
+              <cbc:PriceAmount currencyID="XLC">2</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+            </cac:Price>
+            <cac:AllowanceCharge>
+              <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+              <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
+              <cbc:AllowanceChargeReason>Training films are included in the business bundle</cbc:AllowanceChargeReason>
+              <cbc:Amount currencyID="XLC">2.000</cbc:Amount>
+            </cac:AllowanceCharge>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1852</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">190</cbc:Quantity>
@@ -278,20 +257,13 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>4</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1853</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">215</cbc:Quantity>
@@ -301,20 +273,13 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>5</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1854</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">240</cbc:Quantity>
@@ -324,20 +289,13 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>6</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1855</cbc:PhoneNumber>
-          <cbc:Description>Business line with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
-          <cac:AllowanceCharge>
-            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-            <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="XLC">1.059</cbc:Amount>
-          </cac:AllowanceCharge>
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">265</cbc:Quantity>
@@ -346,129 +304,48 @@
         </cac:TelecommunicationsSupplyLine>
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>7</cbc:ID>
-          <cbc:PhoneNumber>data pool</cbc:PhoneNumber>
-          <cbc:Description>Mobile data beyond the subscriptions.</cbc:Description>
-          <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
+          <cbc:PhoneNumber>+999 3 721 1856</cbc:PhoneNumber>
+          <cbc:Description>Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.</cbc:Description>
+          <cbc:LineExtensionAmount currencyID="XLC">19.144</cbc:LineExtensionAmount>
+          <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">19.144</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
             <cbc:ID>D-03</cbc:ID>
-            <cbc:CallDate>2026-03-31</cbc:CallDate>
-            <cbc:CallTime>23:59:00</cbc:CallTime>
+            <cbc:CallDate>2026-03-01</cbc:CallDate>
+            <cbc:CallTime>00:00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
-            <cbc:PayPerView>false</cbc:PayPerView>
-            <cbc:Quantity unitCode="E34">35</cbc:Quantity>
-            <cbc:CallExtensionAmount currencyID="XLC">14.840</cbc:CallExtensionAmount>
+            <cbc:TelecommunicationsServiceCategory>Mobile data</cbc:TelecommunicationsServiceCategory>
+            <cbc:Quantity unitCode="E34">31</cbc:Quantity>
+            <cbc:CallExtensionAmount currencyID="XLC">13.144</cbc:CallExtensionAmount>
+            <cac:Price>
+              <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
+            </cac:Price>
+          </cac:TelecommunicationsService>
+          <cac:TelecommunicationsService>
+            <cbc:ID>D-0316-01</cbc:ID>
+            <cbc:CallDate>2026-03-16</cbc:CallDate>
+            <cbc:CallTime>08:00:00</cbc:CallTime>
+            <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
+            <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
+            <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>
+            <cbc:RoamingPartnerName>Lumeport mobile network</cbc:RoamingPartnerName>
+            <cbc:Quantity unitCode="E34">4</cbc:Quantity>
+            <cbc:CallExtensionAmount currencyID="XLC">6.000</cbc:CallExtensionAmount>
+            <cac:Price>
+              <cbc:PriceAmount currencyID="XLC">1.5</cbc:PriceAmount>
+              <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
+            </cac:Price>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
           </cac:TelecommunicationsService>
         </cac:TelecommunicationsSupplyLine>
       </cac:TelecommunicationsSupply>
       <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="XLC">146.224</cbc:LineExtensionAmount>
         <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
-        <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
+        <cbc:PayableAmount currencyID="XLC">139.870</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
-    <cac:SupplierConsumption>
-      <cac:UtilitySupplierParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Selanu Telecom</cbc:Name>
-        </cac:PartyName>
-      </cac:UtilitySupplierParty>
-      <cac:UtilityCustomerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
-        </cac:PartyName>
-      </cac:UtilityCustomerParty>
-      <cac:Consumption>
-        <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-          <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
-          <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
-        </cac:LegalMonetaryTotal>
-      </cac:Consumption>
-      <cac:ConsumptionLine>
-        <cbc:ID>1</cbc:ID>
-        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">127.080</cbc:TaxInclusiveLineExtensionAmount>
-        <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
-          <cbc:EndDate>2026-03-31</cbc:EndDate>
-        </cac:Period>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-          <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-          <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
-        </cac:AllowanceCharge>
-        <cac:UtilityItem>
-          <cbc:ID>ST-BL</cbc:ID>
-          <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
-          <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
-          <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
-          <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
-          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:Contract>
-            <cbc:ID>ST-C-1077</cbc:ID>
-          </cac:Contract>
-        </cac:UtilityItem>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
-        </cac:Price>
-        <cac:UnstructuredPrice>
-          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-          <cbc:TaxInclusivePriceAmount currencyID="XLC">21.18</cbc:TaxInclusivePriceAmount>
-          <cbc:TimeAmount>per month</cbc:TimeAmount>
-        </cac:UnstructuredPrice>
-      </cac:ConsumptionLine>
-      <cac:ConsumptionLine>
-        <cbc:ID>2</cbc:ID>
-        <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">14.840</cbc:TaxInclusiveLineExtensionAmount>
-        <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
-          <cbc:EndDate>2026-03-31</cbc:EndDate>
-        </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
-        <cac:UtilityItem>
-          <cbc:ID>ST-GB</cbc:ID>
-          <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
-          <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
-          <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
-          <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
-          <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
-          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
-          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:Contract>
-            <cbc:ID>ST-C-1077</cbc:ID>
-          </cac:Contract>
-        </cac:UtilityItem>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
-        </cac:Price>
-      </cac:ConsumptionLine>
-    </cac:SupplierConsumption>
   </cac:SubscriberConsumption>
 </UtilityStatement>

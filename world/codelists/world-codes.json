@@ -526,26 +526,6 @@
    ]
   },
   {
-   "element": "SubscriberTypeCode",
-   "address": "*[local-name()='UtilityItem']/cbc:SubscriberTypeCode",
-   "lists": [
-    "UtilityType"
-   ],
-   "parents": [
-    "UtilityItem"
-   ]
-  },
-  {
-   "element": "SubscriberTypeCode",
-   "address": "*[local-name()='UtilityConsumptionPoint']/cbc:SubscriberTypeCode",
-   "lists": [
-    "SubscriberType"
-   ],
-   "parents": [
-    "UtilityConsumptionPoint"
-   ]
-  },
-  {
    "element": "WasteTypeCode",
    "address": "*[local-name()='WasteGenerated']/cbc:WasteTypeCode",
    "lists": [
@@ -2293,6 +2273,13 @@
    "address": "cbc:UtilityStatementTypeCode",
    "lists": [
     "UtilityType"
+   ]
+  },
+  {
+   "element": "SubscriberTypeCode",
+   "address": "cbc:SubscriberTypeCode",
+   "lists": [
+    "SubscriberType"
    ]
   },
   {
@@ -5173,7 +5160,8 @@
     "GASB",
     "WTER",
     "PHON",
-    "TAXS"
+    "TAXS",
+    "UBIL"
    ]
   },
   "ISO20022SequenceType": {
@@ -7391,7 +7379,8 @@
    "codes": [
     "TPR",
     "SEASONAL",
-    "LAUNCH"
+    "LAUNCH",
+    "OPENING"
    ]
   },
   "PackingLabelingType": {
@@ -7489,6 +7478,7 @@
    "codes": [
     "DAILY",
     "WEEKLY",
+    "FOURWEEKLY",
     "MONTHLY"
    ]
   },
@@ -7541,10 +7531,8 @@
    "name": "Threshold value comparison",
    "location": "world/codelists/gc/ThresholdValueComparisonCode.gc",
    "codes": [
-    "GT",
-    "LT",
-    "GE",
-    "LE"
+    "EXCEEDS_EXCEPTION_VALUE",
+    "FALLS_BELOW_EXCEPTION_VALUE"
    ]
   },
   "ForecastAdjustmentReason": {
@@ -8031,7 +8019,8 @@
     "MON",
     "MET",
     "SUB",
-    "EST"
+    "EST",
+    "YEAR"
    ]
   },
   "ChargeType": {
@@ -8091,7 +8080,8 @@
    "location": "world/codelists/gc/MeterConstantTypeCode.gc",
    "codes": [
     "DIRECT",
-    "CTRATIO"
+    "CTRATIO",
+    "CTVT"
    ]
   },
   "ConsumptionCorrectionType": {
@@ -8477,6 +8467,7 @@
     "01921",
     "12020",
     "14100",
+    "27180",
     "28232",
     "31102",
     "34710",
@@ -8518,7 +8509,8 @@
     "853110",
     "940169",
     "940179",
-    "940330"
+    "940330",
+    "940490"
    ]
   },
   "XU:Waste": {

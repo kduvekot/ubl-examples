@@ -53,6 +53,9 @@
          <Value ColumnRef="name-qal">
             <SimpleValue>Kalelo keusa</SimpleValue>
          </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The opening or reopening of a store, or of a department of one.</SimpleValue>
+         </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">

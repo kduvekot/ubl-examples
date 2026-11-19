@@ -120,7 +120,7 @@
     <cac:UtilityConsumptionPoint>
       <cbc:ID>FG-CP-4120-E1</cbc:ID>
       <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
-      <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
+      <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
@@ -143,17 +143,17 @@
       <cac:UtilityMeter>
         <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>
-        <cbc:MeterConstant>40</cbc:MeterConstant>
-        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTRATIO</cbc:MeterConstantCode>
+        <cbc:MeterConstant>4000</cbc:MeterConstant>
+        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTVT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
           <cbc:ID>FG-E-20388-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
-          <cbc:PreviousMeterQuantity unitCode="KWH">52960</cbc:PreviousMeterQuantity>
+          <cbc:PreviousMeterQuantity unitCode="KWH">1324</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
-          <cbc:LatestMeterQuantity unitCode="KWH">63280</cbc:LatestMeterQuantity>
+          <cbc:LatestMeterQuantity unitCode="KWH">1427.2</cbc:LatestMeterQuantity>
           <cbc:PreviousMeterReadingMethod>Remote reading</cbc:PreviousMeterReadingMethod>
           <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">REMOTE</cbc:PreviousMeterReadingMethodCode>
           <cbc:LatestMeterReadingMethod>Remote reading</cbc:LatestMeterReadingMethod>
@@ -172,120 +172,8 @@
         </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
-    <cac:Consumption>
-      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:UtilityStatementTypeCode>
-      <cac:MainPeriod>
-        <cbc:StartDate>2026-03-01</cbc:StartDate>
-        <cbc:EndDate>2026-03-31</cbc:EndDate>
-      </cac:MainPeriod>
-      <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XUF">277680</cbc:TaxAmount>
-        <cac:TaxSubtotal>
-          <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
-          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-          <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-            <cbc:Name>Energy tax</cbc:Name>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
-        </cac:TaxSubtotal>
-        <cac:TaxSubtotal>
-          <cbc:TaxAmount currencyID="XUF">217680</cbc:TaxAmount>
-          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-          <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-            <cbc:Name>Energy tax</cbc:Name>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
-        </cac:TaxSubtotal>
-      </cac:TaxTotal>
-      <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XUF">2309424</cbc:TaxAmount>
-        <cac:TaxSubtotal>
-          <cbc:TaxableAmount currencyID="XUF">11547120</cbc:TaxableAmount>
-          <cbc:TaxAmount currencyID="XUF">2309424</cbc:TaxAmount>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-            <cbc:Percent>20</cbc:Percent>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
-        </cac:TaxSubtotal>
-      </cac:TaxTotal>
-      <cac:EnergyWaterSupply>
-        <cac:ConsumptionReport>
-          <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
-          <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-          <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
-          <cbc:TotalConsumedQuantity unitCode="KWH">412800</cbc:TotalConsumedQuantity>
-          <cbc:BasicConsumedQuantity unitCode="KWH">412800</cbc:BasicConsumedQuantity>
-          <cac:Period>
-            <cbc:StartDate>2026-03-01</cbc:StartDate>
-            <cbc:EndDate>2026-03-31</cbc:EndDate>
-          </cac:Period>
-          <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
-            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-            <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionReportReference>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
-            <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
-            <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-01-01</cbc:StartDate>
-              <cbc:EndDate>2026-01-31</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
-            <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
-            <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-        </cac:ConsumptionReport>
-        <cac:EnergyTaxReport>
-          <cbc:TaxEnergyAmount currencyID="XUF">277680</cbc:TaxEnergyAmount>
-          <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
-          <cbc:TaxEnergyBalanceAmount currencyID="XUF">277680</cbc:TaxEnergyBalanceAmount>
-          <cac:TaxScheme>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
-          </cac:TaxScheme>
-        </cac:EnergyTaxReport>
-        <cac:ConsumptionAverage>
-          <cbc:AverageAmount currencyID="XUF">11269440</cbc:AverageAmount>
-          <cbc:Description>The average over the last three months is 405433 kWh.</cbc:Description>
-        </cac:ConsumptionAverage>
-      </cac:EnergyWaterSupply>
-      <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XUF">13856544</cbc:PayableAmount>
-      </cac:LegalMonetaryTotal>
-    </cac:Consumption>
     <cac:SupplierConsumption>
-      <cbc:Description>The supply under the customer's contract.</cbc:Description>
+      <cbc:Description>The energy, which Ferrano Energy supplies under the customer's contract.</cbc:Description>
       <cac:UtilitySupplierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
@@ -308,9 +196,108 @@
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:MainPeriod>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">277680</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
+            <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+            <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Name>Energy tax</cbc:Name>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+          <cac:TaxSubtotal>
+            <cbc:TaxAmount currencyID="XUF">217680</cbc:TaxAmount>
+            <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+            <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Name>Energy tax</cbc:Name>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">1797552</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="XUF">8987760</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="XUF">1797552</cbc:TaxAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Percent>20</cbc:Percent>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:EnergyWaterSupply>
+          <cac:ConsumptionReport>
+            <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
+            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+            <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
+            <cbc:TotalConsumedQuantity unitCode="KWH">412800</cbc:TotalConsumedQuantity>
+            <cbc:BasicConsumedQuantity unitCode="KWH">412800</cbc:BasicConsumedQuantity>
+            <cac:Period>
+              <cbc:StartDate>2026-03-01</cbc:StartDate>
+              <cbc:EndDate>2026-03-31</cbc:EndDate>
+            </cac:Period>
+            <cac:ConsumptionReportReference>
+              <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
+              <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+              <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+              <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionReportReference>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+              <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
+              <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-01-01</cbc:StartDate>
+                <cbc:EndDate>2026-01-31</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+              <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
+              <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+          </cac:ConsumptionReport>
+          <cac:EnergyTaxReport>
+            <cbc:TaxEnergyAmount currencyID="XUF">277680</cbc:TaxEnergyAmount>
+            <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
+            <cbc:TaxEnergyBalanceAmount currencyID="XUF">277680</cbc:TaxEnergyBalanceAmount>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+            </cac:TaxScheme>
+          </cac:EnergyTaxReport>
+          <cac:ConsumptionAverage>
+            <cbc:AverageAmount currencyID="XUF">11068330</cbc:AverageAmount>
+            <cbc:Description>The average over the last three months is 405,433 kWh.</cbc:Description>
+          </cac:ConsumptionAverage>
+        </cac:EnergyWaterSupply>
         <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XUF">13856544</cbc:PayableAmount>
+          <cbc:LineExtensionAmount currencyID="XUF">8710080</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XUF">10785312</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:Contract>
@@ -324,33 +311,26 @@
         <cbc:ID>1</cbc:ID>
         <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
         <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">13856544</cbc:TaxInclusiveLineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="XUF">8710080</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">10785312</cbc:TaxInclusiveLineExtensionAmount>
         <cac:Period>
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
         <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XUF">2587104</cbc:TaxAmount>
+          <cbc:TaxAmount currencyID="XUF">2075232</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
-          <cbc:ID>FE-KWH</cbc:ID>
-          <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
-          <cbc:SubscriberType>Electricity</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
-          <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+          <cbc:ID>FE-KWH-E</cbc:ID>
+          <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
+          <cbc:SubscriberType>Industrial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
+          <cbc:Description languageID="qau">Drek zikdrir skul drek zuktrek tazkraz, ginek zalhaz bantan: drek zhutek FE-KWH zentul drek gatir vatir skul drek zhek.</cbc:Description>
+          <cbc:Description languageID="en-XU">The energy of the electricity supply, per kilowatt hour: the tariff FE-KWH without the network charge of the grid.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
           <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cbc:OneTimeChargeType>Connection to the 10 kV grid, paid once in 2024</cbc:OneTimeChargeType>
-          <cbc:OneTimeChargeTypeCode listID="urn:ubl-examples:world:codelist:OneTimeChargeTypeCode">CONN</cbc:OneTimeChargeTypeCode>
           <cac:TaxCategory>
             <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
             <cbc:Percent>20</cbc:Percent>
@@ -363,7 +343,87 @@
           </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
-          <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
+          <cbc:PriceAmount currencyID="XUF">21.1</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+    </cac:SupplierConsumption>
+    <cac:SupplierConsumption>
+      <cbc:Description>Ferrano Grid's network charges, which Ferrano Energy collects with its bill and pays to the grid (energy/02).</cbc:Description>
+      <cac:UtilitySupplierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Grid</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilitySupplierParty>
+      <cac:UtilityCustomerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilityCustomerParty>
+      <cac:Consumption>
+        <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:UtilityStatementTypeCode>
+        <cac:MainPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:MainPeriod>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="XUF">2559360</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Percent>20</cbc:Percent>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:LegalMonetaryTotal>
+          <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XUF">3071232</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal>
+      </cac:Consumption>
+      <cac:ConsumptionLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">3071232</cbc:TaxInclusiveLineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:Period>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:UtilityItem>
+          <cbc:ID>FG-NET-E</cbc:ID>
+          <cbc:SubscriberType>Industrial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
+          <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+          <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Percent>20</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XUF">6.2</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
         </cac:Price>
       </cac:ConsumptionLine>

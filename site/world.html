@@ -463,7 +463,7 @@ function paintWorld(g, box, level) { const detail = level === 2;
     if (detail && t.tree && !coversWay(i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4)) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     // the villages and the farmsteads from the middle level on
     if (t.urban && !t.building) { if (level === 1 && t.village) villageCluster(g, i, j, t); else if (level || !t.village) townBlocks(g, i, j, t, detail); }
-    else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7)); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
+    else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7), DIRS[t.house[1]] || [0, 1]); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
     if (t.station) meteringStation(g, i, j);
     if (t.harbour) harbour(g, i, j);
     if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
@@ -648,7 +648,8 @@ function townBlocks(g, i, j, t, detail) {
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; if (onRoad(u, v) || onRail(u, v) || (t.bridge)) continue;
     const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a), u, v]); }
   out.sort((p, q) => p[1] - q[1] || p[0] - q[0]);
-  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail); }
+  const f = t.house && DIRS[t.house[1]], ax = f ? (f[0] ? 1 : 0) : undefined;            // ridges along the square's street
+  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail, ax ?? (n > .5 ? 1 : 0)); }
 // a village at the middle level: a small cluster of red roofs, one house to each built-up sub-square, that reads
 // as a dot when zoomed out
 function villageCluster(g, i, j, t) { const out = [];
@@ -680,14 +681,17 @@ function ringBlocks(i, j, t) { const out = [];
   return out.sort((p, q) => p[1] - q[1] || p[0] - q[0]); }
 // a small building of a town block: no outlines (at 6 to 8 pixels they would turn it dark), a sunlit left face,
 // a shaded right face, a flat or a gabled roof
-function cityBox(g, x, y, w, d, h, wall, roof, gable) { const G = geo(x, y, w, d, h), { L, F, Rr, B } = G;
+function cityBox(g, x, y, w, d, h, wall, roof, gable, ax) { const G = geo(x, y, w, d, h), { L, F, Rr, B } = G;
   poly(g, [L, F, [F[0], F[1] - h], [L[0], L[1] - h]], shade(wall, -.04));
   poly(g, [F, Rr, [Rr[0], Rr[1] - h], [F[0], F[1] - h]], shade(wall, -.26));
   const tl = [L[0], L[1] - h], tf = [F[0], F[1] - h], tr = [Rr[0], Rr[1] - h], tb = [B[0], B[1] - h];
   if (!gable) { poly(g, [tb, tr, tf, tl], roof); return G; }
-  const a = [(tl[0] + tb[0]) / 2, (tl[1] + tb[1]) / 2 - gable], c = [(tf[0] + tr[0]) / 2, (tf[1] + tr[1]) / 2 - gable];
-  poly(g, [tb, tr, c, a], shade(roof, .12)); poly(g, [tl, tf, c, a], roof); poly(g, [tf, tr, c], shade(wall, -.3)); return G; }
-function cityBlock(g, x, y, level, n, m, detail) {
+  const mid = (p, q) => [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2 - gable];
+  if (((ax || 0) ^ (rot & 1)) === 0) { const a = mid(tl, tb), c = mid(tf, tr);         // the ridge from the left to the front-right
+    poly(g, [tb, tr, c, a], shade(roof, .12)); poly(g, [tl, tf, c, a], roof); poly(g, [tf, tr, c], shade(wall, -.3)); return G; }
+  const a = mid(tl, tf), c = mid(tb, tr);                                                // the ridge from the front-left to the back
+  poly(g, [tl, tb, c, a], shade(roof, .12)); poly(g, [tl, tf, a], shade(wall, -.1)); poly(g, [tf, tr, c, a], shade(roof, -.1)); return G; }
+function cityBlock(g, x, y, level, n, m, detail, ax = n > .5 ? 1 : 0) {
   const pick = Math.floor(n * 3);
   if (n > .93 && level < 4) {                           // a park
     g.fillStyle = PARK; g.beginPath(); g.moveTo(x, y - TH / 10); g.lineTo(x + TW / 10, y); g.lineTo(x, y + TH / 10); g.lineTo(x - TW / 10, y); g.fill();
@@ -696,23 +700,310 @@ function cityBlock(g, x, y, level, n, m, detail) {
     g.fillStyle = "#8fb46a"; g.beginPath(); g.moveTo(x, y - TH / 9); g.lineTo(x + TW / 9, y); g.lineTo(x, y + TH / 9); g.lineTo(x - TW / 9, y); g.fill();
     const spots = detail ? [[-2.2, -.6], [2.2, -.4], [(m - .5) * 2, 1.4]] : [[(m - .5) * 2, 0]];   // houses round its street)
     spots.forEach(([dx, dy], k) => { const q = (pick + k) % 3;
-      cityBox(g, x + dx, y + dy, detail ? .08 : .12, detail ? .075 : .11, 3 + m * 1.5, ["#efe7d8", "#e6dccb", "#f1ebe0"][q], ["#c9745c", "#bd8a72", "#9a90ae"][q], detail ? 1.5 : 0); });
+      cityBox(g, x + dx, y + dy, detail ? .08 : .12, detail ? .075 : .11, 3 + m * 1.5, ["#efe7d8", "#e6dccb", "#f1ebe0"][q], ["#c9745c", "#bd8a72", "#9a90ae"][q], detail ? 1.5 : 0, ax ^ (hash(m * 97, k) > .7 ? 1 : 0)); });
     return; }
   if (level === 2)                                       // terraces: a row of houses
-    { cityBox(g, x, y, .18, .14, 6 + m * 3, ["#e9dfcd", "#e0d3bc", "#efe6d6"][pick], ["#c7826b", "#b98f7a", "#a7a09a"][pick], detail ? 1.5 : 0); return; }
+    { cityBox(g, x, y, .18, .14, 6 + m * 3, ["#e9dfcd", "#e0d3bc", "#efe6d6"][pick], ["#c7826b", "#b98f7a", "#a7a09a"][pick], detail ? 1.5 : 0, ax); return; }
   const tower = level === 4 && n < .55;                  // towers among the flats in a capital's centre
   const h = tower ? 20 + m * 20 + (n < .12 ? 10 : 0) : level === 4 ? 14 + m * 8 : 9 + m * 7;
   const w = tower ? .15 + m * .04 : .18;
   const G = cityBox(g, x, y, w, w, h, tower ? ["#a9bccd", "#9fb2c2", "#c3ccd4"][pick] : ["#e4ddd0", "#d7dadc", "#e8dcc8"][pick], tower ? "#6d7a86" : "#9a948d");
   if (detail && tower) { const rows = Math.max(2, Math.round(h / 4)); windows(g, G, "L", 2, rows, "rgba(235,245,252,.55)", { top: .94, bottom: .06 });
     windows(g, G, "R", 2, rows, "rgba(210,225,238,.4)", { top: .94, bottom: .06 }); } }
-// houses by level: 1 detached house, 2 two-storey house, 3 apartment block
-function house(g, x, y, level, n) { const pick = Math.floor(n * 3), wall = ["#e6dccb", "#d9cdb5", "#ece4d6"][pick], roof = ["#a84a36", "#6f5f86", "#3f6f8e"][pick];
-  if (level === 3) { const G = geo(x, y + 2, .62, .62, 22 + n * 8); walls(g, G, ["#d9d2c4", "#c9cdd2", "#e0d6c2"][pick]); windows(g, G, "L", 3, 4, "rgba(60,80,110,.85)", { top: .92, bottom: .08 });
-    windows(g, G, "R", 2, 4, "rgba(50,70,100,.85)", { top: .92, bottom: .08 }); flatRoof(g, G, "#8a8580"); return; }
-  const G = geo(x + (n - .5) * 4, y + 2, level === 2 ? .52 : .42, level === 2 ? .5 : .42, level === 2 ? 12 : 7);
-  walls(g, G, wall); windows(g, G, "L", 2, level, "rgba(60,80,110,.85)"); door(g, G, "R", .4, .2, 4, "#5a4030"); gableRoof(g, G, 4, roof, wall); }
+// houses by level: 1 detached house, 2 two-storey house, 3 apartment block. Drawn in their own frame (owner, 2026-11-19,
+// MO006): the front with the door faces the street (f, a direction on the map), the ridge runs along the street.
+const scr = d => { const [a, b] = R(d[0], d[1]), [o0, o1] = R(0, 0); return [((a - o0) - (b - o1)) * TW / 2, ((a - o0) + (b - o1)) * TH / 2]; };
+function houseFrame(x, y, f, LA, LF) { const A = scr([-f[1], f[0]]), B = scr(f);
+  const F = (u, v, z = 0) => [x + (u - .5) * LA * A[0] + (.5 - v) * LF * B[0], y + (u - .5) * LA * A[1] + (.5 - v) * LF * B[1] - z];
+  F.LA = LA; F.LF = LF; return F; }
+function house(g, x, y, level, n, f = [0, 1]) { const pick = Math.floor(n * 3), wall = ["#e6dccb", "#d9cdb5", "#ece4d6"][pick], roof = ["#a84a36", "#6f5f86", "#3f6f8e"][pick];
+  const glass = "rgba(60,80,110,.85)", door = fc => { for (const q of fc) if (q.k === 0) onFace(g, F, q.a, q.b, .42, .58, 0, Math.min(5, h * .6), "#5a4030"); };
+  const sz = level === 3 ? .62 : level === 2 ? .52 : .42, h = level === 3 ? 22 + n * 8 : level === 2 ? 12 : 7;
+  const F = houseFrame(x + (level === 3 ? 0 : (n - .5) * 4), y + 2, f, sz, level === 3 ? sz : sz * .92);
+  if (level === 3) { const fc = box3(g, F, 0, 0, 1, 1, 0, h, ["#d9d2c4", "#c9cdd2", "#e0d6c2"][pick], "#8a8580");
+    windowsOn(g, F, fc, 5, 2, h - 2, glass, 4, q => q.k === 0); for (const q of fc) if (q.k === 0) { windowsOn(g, F, [q], 5, h * .3, h - 2, glass, 3); onFace(g, F, q.a, q.b, .4, .6, 0, 5, "#5a4030"); } return; }
+  const fc = box3(g, F, 0, 0, 1, 1, 0, h, wall, null); windowsOn(g, F, fc, 5, 2, h - 1.5, glass, level, q => q.k === 0);
+  for (const q of fc) if (q.k === 0) for (let r = 0; r < level; r++) { const z0 = 2.5 + r * 5;
+    onFace(g, F, q.a, q.b, .14, .32, z0, z0 + 2.5, glass); onFace(g, F, q.a, q.b, .68, .86, z0, z0 + 2.5, glass); if (r) onFace(g, F, q.a, q.b, .42, .58, z0, z0 + 2.5, glass); }
+  door(fc); gable3(g, F, 0, 0, 1, 1, h, 4, roof, wall); }
 
+// A building drawn in its own directions (owner, 2026-11-19, MO006): its "front" is the side it is reached from (the
+// road that leads into it), and its parts are placed in its own frame, u along the front (0 left, 1 right, seen from
+// the front), v from the front (0) to the back (1), z up in pixels; the map's rotation then shows it from each side.
+function frontOf(p) { const fp = footprint(p), inFp = (i, j) => fp.some(q => q[0] === i && q[1] === j);
+  for (const [i, j] of fp) for (const [di, dj] of DIRS) { const nb = tiles[i + di]?.[j + dj];
+    if (!inFp(i + di, j + dj) && nb?.links?.road?.has([-di, -dj].join())) return [di, dj]; }
+  return [0, 1]; }
+function buildingFrame(p, inset, front) { const fp = footprint(p), f = front || frontOf(p), A = [-f[1], f[0]];   // A: along the front, to the right
+  const xs = fp.map(q => q[0]), ys = fp.map(q => q[1]), ci = (Math.min(...xs) + Math.max(...xs)) / 2, cj = (Math.min(...ys) + Math.max(...ys)) / 2;
+  const ext = d => (d[0] ? Math.max(...xs) - Math.min(...xs) : Math.max(...ys) - Math.min(...ys)) + 1 - 2 * inset;
+  const LA = ext(A), LF = ext(f);
+  const F = (u, v, z = 0) => { const i = ci + A[0] * (u - .5) * LA + f[0] * (.5 - v) * LF, j = cj + A[1] * (u - .5) * LA + f[1] * (.5 - v) * LF;
+    const [x, y] = tileWorld(i, j); return [x, y - z]; };
+  F.LA = LA; F.LF = LF; return F; }
+// a box in a building's frame: the two side faces turned to the viewer (lit and shaded) and its top; returns its faces
+function box3(g, F, u0, v0, u1, v1, z0, z1, wall, top) { wall = hexOf(wall);
+  const base = [[u0, v0], [u1, v0], [u1, v1], [u0, v1]], c = F((u0 + u1) / 2, (v0 + v1) / 2, z0), faces = [];
+  for (let k = 0; k < 4; k++) { const a = base[k], b = base[(k + 1) % 4], A = F(a[0], a[1], z0), B = F(b[0], b[1], z0);
+    if ((A[1] + B[1]) / 2 <= c[1]) continue;                          // a face at the back of the box
+    const pts = [A, B, F(b[0], b[1], z1), F(a[0], a[1], z1)], lit = B[0] > A[0] === (B[1] > A[1]);
+    poly(g, pts, shade(wall, lit ? -.05 : -.28)); faces.push({ k, a, b, lit }); }
+  if (top) poly(g, base.map(([u, v]) => F(u, v, z1)), top);
+  return faces; }
+// a window or a door on a face of a box: s0..s1 along the face, z0..z1 up
+function onFace(g, F, a, b, s0, s1, z0, z1, color) { const P = s => [a[0] + (b[0] - a[0]) * s, a[1] + (b[1] - a[1]) * s];
+  poly(g, [F(...P(s0), z0), F(...P(s1), z0), F(...P(s1), z1), F(...P(s0), z1)], color); }
+// a gable roof over a box in a building's frame, its ridge along u (swap the frame for a ridge along v): the far slope,
+// the gable ends turned to the viewer, the near slope
+const hexOf = c => { if (c[0] === "#") return c; const m = c.match(/\d+/g).slice(0, 3).map(Number); return "#" + m.map(x => x.toString(16).padStart(2, "0")).join(""); };
+function gable3(g, F, u0, v0, u1, v1, z, rise, roof, wall) { roof = hexOf(roof); wall = hexOf(wall);
+  const vm = (v0 + v1) / 2, c = F((u0 + u1) / 2, vm, z)[1], um = (u0 + u1) / 2;
+  const sl = (va) => [F(u0, va, z), F(u1, va, z), F(u1, vm, z + rise), F(u0, vm, z + rise)];
+  const nearV = F(um, v0, z)[1] > F(um, v1, z)[1] ? v0 : v1, farV = nearV === v0 ? v1 : v0;
+  poly(g, sl(farV), shade(roof, .12));
+  for (const ue of [u0, u1]) if (F(ue, vm, z)[1] > c) poly(g, [F(ue, v0, z), F(ue, v1, z), F(ue, vm, z + rise)], shade(wall, -.12));
+  poly(g, sl(nearV), roof); }
+const swapF = F => { const S = (a, b, z) => F(b, a, z); S.LA = F.LF; S.LF = F.LA; return S; };
+// a round thing standing on the ground in a building's frame (a basin's rim, a tank's foot): its outline at height z
+function ring3(F, u, v, r, z = 0) { const out = []; for (let k = 0; k < 16; k++) { const a = k * Math.PI / 8; out.push(F(u + Math.cos(a) * r / F.LA, v + Math.sin(a) * r / F.LF, z)); } return out; }
+// a vertical round tank: a cylinder of radius r (squares) and height h (pixels), its top lighter
+function tank3(g, F, u, v, r, h, col) { const base = ring3(F, u, v, r), top = ring3(F, u, v, r, h);
+  const xs = base.map(p => p[0]), l = Math.min(...xs), rr = Math.max(...xs), [cx, cy] = F(u, v, 0), ry = Math.max(...base.map(p => p[1])) - cy;
+  g.fillStyle = shade(col, -.15); g.beginPath(); g.moveTo(l, cy); g.lineTo(l, cy - h); g.lineTo(rr, cy - h); g.lineTo(rr, cy); g.ellipse(cx, cy, (rr - l) / 2, ry, 0, 0, Math.PI); g.fill();
+  g.fillStyle = shade(col, .1); g.beginPath(); g.moveTo(cx, cy - h); g.lineTo(cx, cy); g.ellipse(cx, cy, (rr - l) / 2, ry, 0, 0, Math.PI / 2); g.lineTo(rr, cy - h); g.fill();
+  poly(g, top, shade(col, .25)); }
+// draw parts back to front: each { u, v, draw }
+function inOrder(F, parts) { parts.map(q => [F(q.u, q.v)[1], q]).sort((a, b) => a[0] - b[0]).forEach(([, q]) => q.draw()); }
+function windowsOn(g, F, faces, perSq, z0, z1, color, rows = 1, skip = null) {
+  for (const fc of faces) { if (skip && skip(fc)) continue; const len = Math.hypot((fc.b[0] - fc.a[0]) * F.LA, (fc.b[1] - fc.a[1]) * F.LF), n = Math.max(1, Math.round(len * perSq));
+    for (let r = 0; r < rows; r++) { const zz0 = z0 + r * (z1 - z0) / rows, zz1 = zz0 + (z1 - z0) / rows * .62;
+      for (let w = 0; w < n; w++) onFace(g, F, fc.a, fc.b, .1 + w * .8 / n + .1 / n, .1 + (w + .6) * .8 / n + .1 / n, zz0, zz1, color); } } }
+
+// ---- batch 1: the large sites ----
+function power3(g, p, col, glass) {          // a thermal power station: turbine hall, two cooling towers, a chimney, the switchyard
+  const F = buildingFrame(p, .04);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#9c9a90");
+  inOrder(F, [
+    { u: .3, v: .2, draw: () => { poly(g, [F(.08, .06), F(.5, .06), F(.5, .3), F(.08, .3)], "#8b8a82");          // the switchyard
+        for (const [u, v] of [[.16, .14], [.28, .14], [.4, .14], [.16, .23], [.28, .23], [.4, .23]]) box3(g, F, u - .03, v - .025, u + .03, v + .025, 0, 4, "#6f7a80", "#545d62");
+        g.strokeStyle = "#4e555a"; g.lineWidth = .8; for (const u of [.1, .48]) { const A = F(u, .1, 0), B = F(u, .1, 12); g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); }
+        const a = F(.1, .1, 11), b = F(.48, .1, 11); g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.stroke(); } },
+    { u: .3, v: .62, draw: () => { const fc = box3(g, F, .08, .4, .52, .9, 0, 16, "#c9c2b2", shade(col, -.15));
+        windowsOn(g, F, fc, 4, 6, 13, glass); gable3(g, F, .08, .4, .52, .9, 16, 4, shade(col, -.25), "#c9c2b2"); } },
+    { u: .44, v: .94, draw: () => { box3(g, F, .41, .91, .47, .97, 0, 40, "#a7a49b", null); box3(g, F, .405, .905, .475, .975, 37, 41, "#7c3a2e", "#5a2a22"); } },
+    { u: .76, v: .74, draw: () => coolingTower(g, F, .76, .74) },
+    { u: .76, v: .3, draw: () => coolingTower(g, F, .76, .3) } ]); }
+function coolingTower(g, F, u, v) { const [cx, cy] = F(u, v, 0), w = 10.5, ht = 25;
+  g.fillStyle = "#d9d6cf"; g.beginPath(); g.moveTo(cx - w, cy); g.quadraticCurveTo(cx - w * .45, cy - ht * .55, cx - w * .62, cy - ht); g.lineTo(cx + w * .62, cy - ht); g.quadraticCurveTo(cx + w * .45, cy - ht * .55, cx + w, cy); g.ellipse(cx, cy, w, w * .45, 0, 0, Math.PI); g.fill();
+  g.fillStyle = "#bdb9b0"; g.beginPath(); g.moveTo(cx + 2, cy + w * .45); g.quadraticCurveTo(cx + w * .3, cy - ht * .5, cx + w * .2, cy - ht); g.lineTo(cx + w * .62, cy - ht); g.quadraticCurveTo(cx + w * .45, cy - ht * .55, cx + w, cy); g.ellipse(cx, cy, w, w * .45, 0, 0, Math.PI / 2); g.fill();
+  g.fillStyle = "#8f8b83"; g.beginPath(); g.ellipse(cx, cy - ht, w * .62, w * .25, 0, 0, 7); g.fill();
+  for (const [dx, dy, r, a] of [[0, -4, 5, .7], [4, -11, 7, .5], [9, -20, 9, .3]]) { g.fillStyle = `rgba(245,245,245,${a})`; g.beginPath(); g.arc(cx + dx, cy - ht + dy, r, 0, 7); g.fill(); } }
+function gasplant3(g, p, col, glass) {       // a gas treatment plant: control house at the gate, columns, spheres, a flare stack
+  const F = buildingFrame(p, .04);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a3a49f");
+  inOrder(F, [
+    { u: .2, v: .2, draw: () => { const fc = box3(g, F, .08, .08, .32, .3, 0, 7, "#d6dbe0", shade(col, -.1)); windowsOn(g, F, fc, 4, 2.5, 5.5, glass); } },
+    { u: .2, v: .55, draw: () => { const fc = box3(g, F, .08, .42, .3, .62, 0, 9, "#c3c7ca", null); windowsOn(g, F, fc, 3, 4, 7, glass); gable3(g, F, .08, .42, .3, .62, 9, 3, "#7f8c8d", "#c3c7ca"); } },
+    { u: .55, v: .3, draw: () => { for (const u of [.4, .55, .7]) { g.strokeStyle = "#7d858b"; g.lineWidth = 1; g.beginPath(); g.moveTo(...F(u, .3, 0)); g.lineTo(...F(u, .3, 5)); g.stroke(); }
+        g.strokeStyle = "#9aa2a8"; g.lineWidth = 1.6; g.beginPath(); g.moveTo(...F(.35, .3, 5)); g.lineTo(...F(.75, .3, 5)); g.stroke(); g.strokeStyle = "#f0c419"; g.lineWidth = 1.4; g.beginPath(); g.moveTo(...F(.35, .3, 1.5)); g.lineTo(...F(.8, .3, 1.5)); g.lineTo(...F(.8, .7, 1.5)); g.stroke(); } },
+    { u: .5, v: .6, draw: () => { for (const [u, v, h] of [[.45, .55, 22], [.55, .62, 17]]) { tank3(g, F, u, v, .05, h, "#b8bcc0"); } } },
+    { u: .72, v: .45, draw: () => tank3(g, F, .72, .45, .1, 3, "#e8e6df") },
+    { u: .72, v: .45, draw: () => { const [x, y] = F(.72, .45, 0); g.fillStyle = "#ecebe6"; g.beginPath(); g.arc(x, y - 7, 6.5, 0, 7); g.fill(); g.fillStyle = "#d4d1c8"; g.beginPath(); g.arc(x + 2, y - 6, 4.5, 0, 7); g.fill(); } },
+    { u: .3, v: .72, draw: () => { const [x, y] = F(.3, .72, 0); g.fillStyle = "#e8e6df"; g.beginPath(); g.arc(x, y - 6, 5.5, 0, 7); g.fill(); g.fillStyle = "#cfccc3"; g.beginPath(); g.arc(x + 2, y - 5, 3.8, 0, 7); g.fill(); } },
+    { u: .9, v: .9, draw: () => { const A = F(.9, .9, 0), B = F(.9, .9, 32); g.strokeStyle = "#5c6166"; g.lineWidth = 1.6; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke();
+        g.fillStyle = "#f39c12"; g.beginPath(); g.moveTo(B[0] - 2, B[1]); g.quadraticCurveTo(B[0], B[1] - 9, B[0] + 2.5, B[1] - 1); g.quadraticCurveTo(B[0], B[1] + 2, B[0] - 2, B[1]); g.fill(); } } ]); }
+function sawmill3(g, p, col, glass) {        // a sawmill: an open saw shed, log piles, stacks of sawn timber, the office
+  const F = buildingFrame(p, .04), long = F.LA >= F.LF, L = long ? F : swapF(F);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a8936f");
+  const logs = (u0, u1, v) => { for (let r = 0; r < 3; r++) for (let k = 0; k < 4 - r; k++) { const vv = v + (k + r / 2) * .045; const [x, y] = L(u1, vv, 1.6 + r * 2.4);
+      const [x0, y0] = L(u0, vv, 1.6 + r * 2.4); g.strokeStyle = "#7a5636"; g.lineWidth = 2.6; g.lineCap = "round"; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x, y); g.stroke();
+      g.fillStyle = "#d9b98c"; g.beginPath(); g.arc(x, y, 1.2, 0, 7); g.fill(); } g.lineCap = "butt"; };
+  inOrder(L, [
+    { u: .2, v: .2, draw: () => { const fc = box3(g, L, .05, .07, .3, .32, 0, 8, "#9b7b58", null); windowsOn(g, L, fc, 4, 2.5, 6, glass); gable3(g, L, .05, .07, .3, .32, 8, 4, col, "#9b7b58"); } },
+    { u: .62, v: .2, draw: () => { for (let k = 0; k < 3; k++) box3(g, L, .45 + k * .1, .1, .52 + k * .1, .3, 0, 3 + k % 2, "#e2c79a", "#ecd6ae"); } },
+    { u: .55, v: .6, draw: () => { for (const [u, v] of [[.32, .42], [.32, .84], [.78, .42], [.78, .84], [.55, .42], [.55, .84]]) { const A = L(u, v, 0), B = L(u, v, 12); g.strokeStyle = "#5a4632"; g.lineWidth = 1.2; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); }
+        gable3(g, L, .3, .4, .8, .86, 12, 4, shade(col, -.1), "#7c6247"); } },
+    { u: .2, v: .7, draw: () => logs(.06, .26, .5) },
+    { u: .9, v: .7, draw: () => logs(.84, .96, .48) } ]); }
+function warehouse3(g, p, col, glass) {      // a warehouse: a long hall with a gable roof, loading docks along its front, an office at one end
+  const F = buildingFrame(p, .05), big = F.LA * F.LF > 1.5;
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a8a294");
+  inOrder(F, [
+    { u: .5, v: .55, draw: () => { const fc = box3(g, F, .06, .26, .94, .88, 0, big ? 12 : 10, "#cfc4ad", null);
+        for (const f2 of fc) if (f2.k === 0) { const n = big ? 7 : 3; for (let d = 0; d < n; d++) onFace(g, F, f2.a, f2.b, .08 + d * .84 / n, .08 + (d + .6) * .84 / n, 0, 6.5, "#5d6670"); }
+          else windowsOn(g, F, [f2], 2.5, 7, 9.5, glass);
+        gable3(g, F, .06, .26, .94, .88, big ? 12 : 10, 4, shade(col, -.1), "#cfc4ad"); } },
+    { u: .85, v: .14, draw: () => { const fc = box3(g, F, .76, .06, .94, .26, 0, 7, "#e4ddcc", shade(col, -.2)); windowsOn(g, F, fc, 5, 2.5, 5.5, glass); } },
+    { u: .4, v: .12, draw: () => { if (!big) return; for (const u of [.2, .4]) box3(g, F, u - .07, .07, u + .07, .13, 0, 4, "#c0392b", "#d35445"); } } ]); }
+// ---- batch 2: one-square industry and services ----
+function raised(g, z, fn) { g.save(); g.translate(0, -z); fn(); g.restore(); }
+function heap3(g, F, u, v, r, h, col) { const b = [F(u - r, v - r), F(u + r, v - r), F(u + r, v + r), F(u - r, v + r)], top = F(u, v, h);
+  const near = b.map((p, k) => [p, k]).sort((a, c) => c[0][1] - a[0][1]);   // the two faces towards the viewer
+  for (let k = 0; k < 4; k++) { const A = b[k], B = b[(k + 1) % 4]; if ((A[1] + B[1]) / 2 < F(u, v)[1]) continue; poly(g, [A, B, top], shade(col, B[0] > A[0] ? -.05 : -.25)); } }
+function depot3(g, p, col, glass) {
+  const F = buildingFrame(p, .07);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a8a294");
+  inOrder(F, [
+    { u: .45, v: .55, draw: () => { const fc = box3(g, F, .1, .3, .8, .9, 0, 10, "#c3bba9", col);
+        for (const f2 of fc) if (f2.k === 0) for (let d = 0; d < 3; d++) onFace(g, F, f2.a, f2.b, .08 + d * .3, .08 + d * .3 + .24, 0, 7, "#73808c"); else windowsOn(g, F, [f2], 3, 6, 9, glass); } },
+    { u: .88, v: .35, draw: () => { const fc = box3(g, F, .8, .2, .95, .5, 0, 7, "#e4ddcc", shade(col, -.2)); windowsOn(g, F, fc, 5, 2.5, 5.5, glass); } } ]); }
+function waste3(g, p, col, glass) {
+  const F = buildingFrame(p, .07);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#9d9886");
+  inOrder(F, [
+    { u: .25, v: .25, draw: () => { box3(g, F, .08, .1, .45, .38, 0, 7, "#a9a493", null); gable3(g, F, .08, .1, .45, .38, 7, 3, col, "#a9a493"); } },
+    { u: .25, v: .75, draw: () => heap3(g, F, .25, .72, .16, 9, "#6d7f43") },
+    { u: .55, v: .75, draw: () => heap3(g, F, .56, .74, .14, 8, "#7a6650") },
+    { u: .8, v: .55, draw: () => heap3(g, F, .8, .5, .14, 7, "#8f8f86") },
+    { u: .75, v: .2, draw: () => { for (const [u, c] of [[.62, "#2e86c1"], [.74, "#27ae60"], [.86, "#c0392b"]]) box3(g, F, u - .05, .12, u + .05, .26, 0, 4, c, shade(c, .2)); } } ]); }
+function waterworks3(g, p, col, glass) {
+  const F = buildingFrame(p, .06);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a7b0a0");
+  inOrder(F, [
+    { u: .3, v: .3, draw: () => { poly(g, ring3(F, .3, .3, .2), "#9aa3a6"); poly(g, ring3(F, .3, .3, .16, 1), "#4f8fbf"); } },
+    { u: .3, v: .72, draw: () => { poly(g, ring3(F, .3, .72, .2), "#9aa3a6"); poly(g, ring3(F, .3, .72, .16, 1), "#4f8fbf"); } },
+    { u: .75, v: .25, draw: () => { const fc = box3(g, F, .62, .12, .9, .38, 0, 7, "#d8d3c6", null); windowsOn(g, F, fc, 3, 3, 5.5, glass); gable3(g, F, .62, .12, .9, .38, 7, 3, col, "#d8d3c6"); } },
+    { u: .74, v: .72, draw: () => { g.strokeStyle = "#5c6166"; g.lineWidth = 1.2; for (const [a, b] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) { g.beginPath(); g.moveTo(...F(.74 + a * .06, .72 + b * .06, 0)); g.lineTo(...F(.74 + a * .035, .72 + b * .035, 15)); g.stroke(); }
+        raised(g, 15, () => tank3(g, F, .74, .72, .09, 7, col)); } } ]); }
+function grid3(g, p, col, glass) {
+  const F = buildingFrame(p, .06);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a59c87");
+  inOrder(F, [
+    { u: .25, v: .2, draw: () => { const fc = box3(g, F, .1, .08, .4, .3, 0, 6, "#d8d3c6", col); windowsOn(g, F, fc, 3, 2.5, 4.5, glass); } },
+    { u: .65, v: .2, draw: () => { g.strokeStyle = "#f0c419"; g.lineWidth = 1.6; g.beginPath(); g.moveTo(...F(.5, .2, 1.5)); g.lineTo(...F(.9, .2, 1.5)); g.moveTo(...F(.7, .2, 1.5)); g.lineTo(...F(.7, .2, 5)); g.stroke(); } },
+    { u: .5, v: .6, draw: () => { for (const [u, v] of [[.3, .55], [.5, .55], [.7, .55]]) box3(g, F, u - .06, v - .05, u + .06, v + .05, 0, 6, "#6f7a80", "#4f585d"); } },
+    { u: .5, v: .85, draw: () => { g.strokeStyle = "#5c6166"; g.lineWidth = 1.1; g.beginPath();
+        for (const u of [.15, .85]) { g.moveTo(...F(u, .85, 0)); g.lineTo(...F(u, .85, 20)); } g.moveTo(...F(.15, .85, 18)); g.lineTo(...F(.85, .85, 18)); g.moveTo(...F(.15, .85, 14)); g.lineTo(...F(.85, .85, 14)); g.stroke();
+        g.strokeStyle = "rgba(60,60,60,.55)"; g.lineWidth = .7; g.beginPath(); for (const u of [.3, .5, .7]) { g.moveTo(...F(u, .85, 18)); g.lineTo(...F(u, .55, 6)); } g.stroke(); } } ]); }
+function telecom3(g, p, col, glass) {
+  const F = buildingFrame(p, .1);
+  poly(g, [F(.1, .1), F(.9, .1), F(.9, .9), F(.1, .9)], "#b4b8a8");
+  inOrder(F, [
+    { u: .3, v: .3, draw: () => { box3(g, F, .15, .15, .5, .45, 0, 6, "#d8d3c6", col); } },
+    { u: .65, v: .65, draw: () => { const [bx, by] = F(.65, .65, 0), top = by - 36; g.lineWidth = 1;
+        for (let i = 0; i < 6; i++) { const a = by - i * 6, b = by - (i + 1) * 6, wa = 3.5 - i * .45, wb = 3.5 - (i + 1) * .45;
+          g.strokeStyle = i % 2 ? "#f2f2f2" : "#c0392b"; g.beginPath(); g.moveTo(bx - wa, a); g.lineTo(bx - wb, b); g.moveTo(bx + wa, a); g.lineTo(bx + wb, b); g.moveTo(bx - wa, a); g.lineTo(bx + wb, b); g.moveTo(bx + wa, a); g.lineTo(bx - wb, b); g.stroke(); }
+        g.fillStyle = "#e8e8e8"; g.fillRect(bx - 4, top + 7, 2.2, 4.5); g.fillRect(bx + 1.8, top + 10, 2.2, 4.5); g.fillStyle = "#ff4d4d"; g.beginPath(); g.arc(bx, top, 1.3, 0, 7); g.fill(); } } ]); }
+function ginnery3(g, p, col, glass) {
+  const F = buildingFrame(p, .06);
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a19f97");
+  inOrder(F, [
+    { u: .6, v: .6, draw: () => { const fc = box3(g, F, .35, .4, .9, .88, 0, 11, "#c9c1ad", null); windowsOn(g, F, fc, 3, 6, 9, glass);
+        gable3(g, F, .35, .4, .9, .88, 11, 4, col, "#c9c1ad"); const a = F(.5, .6, 17), b = F(.3, .5, 20), c = F(.2, .3, 6); g.strokeStyle = "#8a8f94"; g.lineWidth = 1.8; g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.lineTo(...c); g.stroke(); } },
+    { u: .25, v: .25, draw: () => { for (const [u, v] of [[.12, .15], [.24, .15], [.12, .3], [.24, .3]]) for (let l = 0; l < 2; l++) box3(g, F, u - .05, v - .06, u + .05, v + .06, l * 3, l * 3 + 3, "#efe9dc", "#f8f5ee"); } } ]); }
+function farm3(g, p, col, glass) {
+  const F = buildingFrame(p, .04);
+  poly(g, [F(.5, .05), F(.97, .05), F(.97, .5), F(.5, .5)], "#cdbf99");
+  inOrder(F, [
+    { u: .7, v: .3, draw: () => { g.fillStyle = "#f4f1ea"; for (let a = 0; a < 5; a++) for (let b = 0; b < 4; b++) { const [x, y] = F(.55 + a * .09, .1 + b * .1, 0); g.beginPath(); g.arc(x, y - .8, .9, 0, 7); g.fill(); } } },
+    { u: .4, v: .72, draw: () => { const fc = box3(g, F, .1, .5, .7, .92, 0, 8, "#a8443a", null); for (const f2 of fc) if (f2.k === 0) onFace(g, F, f2.a, f2.b, .35, .65, 0, 7, "#6e2a24");
+        gable3(g, F, .1, .5, .7, .92, 8, 5, "#6d6d6d", "#a8443a"); } },
+    { u: .25, v: .25, draw: () => { const fc = box3(g, F, .1, .12, .36, .34, 0, 6, "#efe6d2", null); windowsOn(g, F, fc, 4, 2, 4.5, glass); for (const f2 of fc) if (f2.k === 0) onFace(g, F, f2.a, f2.b, .42, .58, 0, 3.5, "#5a4030");
+        gable3(g, F, .1, .12, .36, .34, 6, 3, col, "#efe6d2"); } } ]); }
+function quay3(g, p, col, glass) {
+  const fp = footprint(p), [i, j] = fp[0], wd = DIRS.find(([a, b]) => { const n = tiles[i + a]?.[j + b]; return n && !n.land; }) || [0, 1];
+  const F = buildingFrame(p, .04), side = (u, v) => F(u, v);   // the deck, planks across it, bollards and a crane at the water's edge
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#8c6f4c");
+  g.strokeStyle = "#6b5236"; g.lineWidth = .8; for (let k = 1; k < 8; k++) { g.beginPath(); g.moveTo(...F(k / 8, 0)); g.lineTo(...F(k / 8, 1)); g.stroke(); }
+  const [cx, cy] = tileWorld(i + wd[0] * .35, j + wd[1] * .35); g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx, cy - 20); g.lineTo(cx - 9, cy - 15); g.stroke();
+  g.strokeStyle = "#333"; g.lineWidth = .6; g.beginPath(); g.moveTo(cx - 9, cy - 15); g.lineTo(cx - 9, cy - 6); g.stroke();
+  box3(g, F, .1, .1, .3, .3, 0, 5, "#b8a48a", shade(col, -.1)); }
+// ---- batch 3: town buildings ----
+function office3(g, p, col, glass) {
+  const F = buildingFrame(p, .1), floors = 1 + (p.h || 1), H = 6 + floors * 5, official = p.cat === "government" || p.cat === "procurement";
+  const fc = box3(g, F, .2, .22, .8, .82, 0, H, official ? "#e9e2d0" : "#d6dbe0", col);
+  windowsOn(g, F, fc, 4, 2, H - 2, official ? glass : "rgba(60,110,160,.9)", floors);
+  for (const f2 of fc) if (f2.k === 0) { onFace(g, F, f2.a, f2.b, .4, .6, 0, 4.5, "#4a3a2c"); poly(g, [F(.36, .22, 5), F(.64, .22, 5), F(.64, .12, 5), F(.36, .12, 5)], shade(col, -.2)); }
+  if (official) { const [x, y] = F(.72, .72, H); flag(g, x, y, col); } else box3(g, F, .4, .45, .6, .62, H, H + 3, "#9aa3ab", "#7d868e"); }
+function bank3(g, p, col, glass) {
+  const F = buildingFrame(p, .1), H = 10 + (p.h || 1) * 3;
+  const fc = box3(g, F, .16, .2, .84, .82, 0, H, "#e8e1cf", col);
+  for (const f2 of fc) if (f2.k === 0) { for (let c = 0; c < 6; c++) onFace(g, F, f2.a, f2.b, .1 + c * .16, .1 + c * .16 + .05, 0, H - 2, "#f8f4ea");
+      onFace(g, F, f2.a, f2.b, .43, .57, 0, 5, "#4a3a2c"); poly(g, [F(.16, .2, H), F(.84, .2, H), F(.5, .2, H + 5)], shade(hexOf(col), -.2)); }
+    else windowsOn(g, F, [f2], 3, 3, H - 2, glass, 2); }
+function shop3(g, p, col, glass) {
+  const F = buildingFrame(p, .1);
+  const fc = box3(g, F, .14, .26, .86, .86, 0, 12, "#efe7d5", null);
+  for (const f2 of fc) if (f2.k === 0) { onFace(g, F, f2.a, f2.b, .1, .9, .8, 5, glass); windowsOn(g, F, [f2], 4, 7.5, 11, glass);
+      for (let s2 = 0; s2 < 8; s2++) { const u0 = .14 + s2 * .09, u1 = u0 + .09; poly(g, [F(u0, .26, 7), F(u1, .26, 7), F(u1, .14, 5.5), F(u0, .14, 5.5)], s2 % 2 ? "#ffffff" : col); } }
+    else windowsOn(g, F, [f2], 3, 2, 11, glass, 2);
+  gable3(g, F, .14, .26, .86, .86, 12, 4, "#a84a36", "#efe7d5"); }
+function townhall3(g, p, col, glass) {
+  const F = buildingFrame(p, .06);
+  inOrder(F, [
+    { u: .5, v: .55, draw: () => { const fc = box3(g, F, .08, .3, .92, .88, 0, 13, "#ece4cf", null); windowsOn(g, F, fc, 4, 2, 12, glass, 2);
+        gable3(g, F, .08, .3, .92, .88, 13, 5, shade(hexOf(col), -.15), "#ece4cf"); } },
+    { u: .5, v: .2, draw: () => { const fc = box3(g, F, .42, .12, .58, .3, 0, 26, "#e2d8bf", null);
+        for (const f2 of fc) { onFace(g, F, f2.a, f2.b, .3, .7, 18, 22, "#f8f4e8"); if (f2.k === 0) onFace(g, F, f2.a, f2.b, .3, .7, 0, 7, "#5a4030"); }
+        raised(g, 26, () => heap3(g, F, .5, .21, .09, 8, hexOf(col))); const [x, y] = F(.5, .21, 34); flag(g, x, y, col); } } ]); }
+function customs3(g, p, col, glass) {        // a customs post on the road: a canopy over it, a booth beside it, a barrier across it
+  const F = buildingFrame(p, .05);           // its frame runs along the road (v) and across it (u)
+  inOrder(F, [
+    { u: .86, v: .5, draw: () => { const fc = box3(g, F, .78, .38, .96, .62, 0, 7, "#e2dccd", col); windowsOn(g, F, fc, 6, 3, 5.5, glass); } },
+    { u: .5, v: .25, draw: () => { const a = F(.3, .24, 3), b = F(.72, .24, 3); g.lineWidth = 2; g.strokeStyle = "#e9e9e9"; g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.stroke();
+        g.strokeStyle = "#c0392b"; g.setLineDash([2, 2]); g.stroke(); g.setLineDash([]); box3(g, F, .26, .22, .3, .26, 0, 4, "#888", "#666"); } },
+    { u: .5, v: .5, draw: () => { g.strokeStyle = "#dddddd"; g.lineWidth = 1.4; for (const [u, v] of [[.22, .36], [.78, .36], [.22, .64], [.78, .64]]) { g.beginPath(); g.moveTo(...F(u, v, 0)); g.lineTo(...F(u, v, 10)); g.stroke(); }
+        poly(g, [F(.18, .32, 10), F(.82, .32, 10), F(.82, .68, 10), F(.18, .68, 10)], shade(hexOf(col), -.1)); } } ]); }
+function house3(g, p, col, glass) {
+  const F = buildingFrame(p, .25);
+  const fc = box3(g, F, .2, .3, .8, .8, 0, 7, "#efe6d2", null); windowsOn(g, F, fc, 5, 2.5, 5.5, glass);
+  for (const f2 of fc) if (f2.k === 0) onFace(g, F, f2.a, f2.b, .42, .58, 0, 4.5, "#5a4030");
+  gable3(g, F, .2, .3, .8, .8, 7, 4, "#a84a36", "#efe6d2"); }
+// ---- batch 4: the ports, their quay and cranes on the water side ----
+function waterSide(p) { const fp = footprint(p), inFp = (i, j) => fp.some(q => q[0] === i && q[1] === j);
+  for (const [i, j] of fp) for (const [di, dj] of DIRS) { const nb = tiles[i + di]?.[j + dj]; if (!inFp(i + di, j + dj) && nb && !nb.land) return [di, dj]; }
+  return p.water || [0, 1]; }
+function port3(g, p, col, glass) {
+  const F = buildingFrame(p, .03, waterSide(p));        // its front is the quay, at the water
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#9c9d99");
+  poly(g, [F(0, 0), F(1, 0), F(1, .08), F(0, .08)], "#6b6b68");                   // the quay's edge
+  const cs = ["#c0392b", "#2e86c1", "#d4ac0d", "#27ae60", "#8e44ad"]; let n = 0;
+  const parts = [];
+  for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) { const u = .13 + c * .2, v = .52 + r * .2, lv = 1 + ((r * 3 + c) % 2);
+    parts.push({ u, v, draw: () => { for (let l = 0; l < lv; l++) { const col2 = cs[(n++) % 5]; box3(g, F, u - .07, v - .06, u + .07, v + .06, l * 3, l * 3 + 3, col2, shade(col2, .18)); } } }); }
+  parts.push({ u: .88, v: .92, draw: () => { const fc = box3(g, F, .8, .84, .97, .98, 0, 8, "#d6dbe0", col); windowsOn(g, F, fc, 5, 3, 6.5, glass); } });
+  for (const u of [.28, .68]) parts.push({ u, v: .2, draw: () => {               // a gantry crane at the quay: two portal legs, a boom over the water
+    g.strokeStyle = shade(hexOf(col), -.35); g.lineWidth = 1.8; g.lineCap = "butt"; g.beginPath();
+    for (const du of [-.07, .07]) { for (const v of [.1, .3]) { g.moveTo(...F(u + du, v, 0)); g.lineTo(...F(u + du, v, 15)); } g.moveTo(...F(u + du, .1, 7)); g.lineTo(...F(u + du, .3, 7)); }
+    g.stroke();
+    box3(g, F, u - .07, -.28, u + .07, .34, 15, 17, hexOf(col), shade(hexOf(col), .15));
+    box3(g, F, u - .04, .1, u + .04, .2, 17, 20, "#f0f0f0", "#cfd3d6"); } });
+  inOrder(F, parts); }
+function factory3(g, p, col, glass) {
+  const F = buildingFrame(p, .04), H = 13, long = F.LA >= F.LF, small = F.LA * F.LF < 1.5;   // one square: no office wing
+  const front = (a, b) => F(a, b)[1];                                        // how near the viewer a point is
+  poly(g, [F(0, 0), F(1, 0), F(1, 1), F(0, 1)], "#a39c8f");                  // the paved yard
+  const parts = [];
+  // the hall: brick walls, a saw-tooth roof of solid teeth, their glazing to one side
+  parts.push({ d: front(.5, .62), draw: () => {
+    const u0 = .06, u1 = .94, v0 = small ? .14 : .34, v1 = .92;
+    const faces = box3(g, F, u0, v0, u1, v1, 0, H, "#a9614a", null);
+    for (const fc of faces) { const len = Math.hypot((fc.b[0] - fc.a[0]) * F.LA, (fc.b[1] - fc.a[1]) * F.LF), n = Math.max(2, Math.round(len * 3));
+      for (let w = 0; w < n; w++) onFace(g, F, fc.a, fc.b, .07 + w * .86 / n, .07 + (w + .5) * .86 / n, 6, 10.5, "#3b4f63");
+      if (fc.k === 0) for (const s0 of [.14, .3]) onFace(g, F, fc.a, fc.b, s0, s0 + .1, 0, 8, "#6b6f73"); }   // loading doors
+    const T = 4, P = long ? (x, y, z) => F(u0 + (u1 - u0) * x, v0 + (v1 - v0) * y, z) : (x, y, z) => F(u0 + (u1 - u0) * y, v0 + (v1 - v0) * x, z);
+    const teeth = [];
+    for (let t = 0; t < T; t++) { const x0 = t / T, x1 = (t + 1) / T, R = 6;
+      teeth.push({ d: P((x0 + x1) / 2, .5, 0)[1], draw: () => {
+        const ends = [0, 1].map(y => [P(x0, y, H), P(x1, y, H), P(x1, y, H + R)]);
+        const endFront = ends[0][0][1] > ends[1][0][1] ? ends[0] : ends[1];
+        poly(g, endFront, "#94523e");                                          // the tooth's gable end
+        poly(g, [P(x0, 0, H), P(x0, 1, H), P(x1, 1, H + R), P(x1, 0, H + R)], t % 2 ? shade(col, -.08) : col);   // its roof
+        if (P(x1 + .01, .5, H)[1] > P(x1 - .01, .5, H)[1] || t === T - 1)        // its glazing, where it faces the viewer
+          poly(g, [P(x1, 0, H), P(x1, 1, H), P(x1, 1, H + R), P(x1, 0, H + R)], "#9fb6c8"); } }); }
+    teeth.sort((x, y) => x.d - y.d).forEach(q => q.draw()); } });
+  // the office wing by the gate: two storeys, flat roof in the company's colour
+  if (!small) parts.push({ d: front(.76, .2), draw: () => {
+    const faces = box3(g, F, .58, .08, .94, .32, 0, 12, "#ddd5c4", shade(col, -.15));
+    for (const fc of faces) for (const z of [2.5, 7.5]) for (let w = 0; w < 4; w++) onFace(g, F, fc.a, fc.b, .1 + w * .21, .1 + w * .21 + .12, z, z + 2.8, glass);
+    for (const fc of faces) if (fc.k === 0) onFace(g, F, fc.a, fc.b, .42, .58, 0, 5, "#5a4030"); } });
+  // crates by the loading doors
+  if (!small) parts.push({ d: front(.24, .2), draw: () => { for (const [u, v] of [[.16, .2], [.22, .16], [.28, .22]]) box3(g, F, u - .025, v - .025, u + .025, v + .025, 0, 3, "#b68a55", "#cfa36a"); } });
+  // the chimney behind the hall: brick, banded at the top, smoking
+  parts.push({ d: front(.82, .96) - 999, draw: () => { const u = .82, v = .96;
+    box3(g, F, u - .03, v - .03, u + .03, v + .03, 0, 36, "#8e4a37", null); box3(g, F, u - .034, v - .034, u + .034, v + .034, 33, 37, "#4a3a33", "#2c2420");
+    const [x, y] = F(u, v, 37); smoke(g, x, y); } });
+  parts.sort((a, b) => a.d - b.d).forEach(q => q.draw()); }
 // Buildings that cover several tiles: drawn to fill their footprint
 function multiTile(g, p, k, col, glass) {
   const base = footGeo(p, .05, 0), q = G => [[G.B[0], G.B[1]], [G.Rr[0], G.Rr[1]], [G.F[0], G.F[1]], [G.L[0], G.L[1]]];
@@ -729,13 +1020,7 @@ function multiTile(g, p, k, col, glass) {
     const [hx, hy] = tileWorld(...near); const Hn = geo(hx, hy, .7, .55, 8); walls(g, Hn, "#c9ced2"); door(g, Hn, "L", .2, .6, 6, "#7c868d"); gableRoof(g, Hn, 4, "#8d969c", "#c9ced2");
     const [tx, ty] = tileWorld(...far); const Tm = geo(tx, ty, .8, .5, 9); walls(g, Tm, "#e3e6e8"); windows(g, Tm, "L", 4, 1, glass, { top: .85, bottom: .3 }); flatRoof(g, Tm, col);
     block(g, tx + 12, ty - 2, .14, .14, 18, "#d8dcdf"); block(g, tx + 12, ty - 20, .28, .28, 5, "#2b4a66", col); return true; }
-  if (k === "port") {                                   // quay along the footprint, stacks, two gantry cranes
-    poly(g, q(base), "#9c9d99"); const G = footGeo(p, .05, 3); walls(g, G, "#6b6b68"); flatRoof(g, G, "#a5a6a2");
-    const cs = ["#c0392b", "#2e86c1", "#d4ac0d", "#27ae60", "#8e44ad"]; let n = 0;
-    for (const t of footprint(p)) { const [cx, cy] = tileWorld(...t);
-      for (const [dx, dy] of [[-6, -1], [-1, 1.5], [-3, -4]]) for (let lvl = 0; lvl < 2; lvl++) block(g, cx + dx, cy - 3 + dy - lvl * 3, .16, .12, 3, cs[n++ % 5], shade(cs[n % 5], .15));
-      g.strokeStyle = col; g.lineWidth = 2; g.lineCap = "butt"; g.beginPath(); g.moveTo(cx + 6, cy + 2); g.lineTo(cx + 6, cy - 26); g.moveTo(cx + 11, cy - 1); g.lineTo(cx + 11, cy - 28); g.moveTo(cx + 1, cy - 26); g.lineTo(cx + 18, cy - 30); g.stroke(); }
-    return true; }
+  if (k === "port") { port3(g, p, col, glass); return true; }
   if (k === "terminal") {                               // platforms on both sides of the track, containers, gantry spanning it
     for (const [ti, tj] of footprint(p)) for (const v of [.3, -.3]) band(g, ti, tj, [-.5, v], [.5, v], .1, "#b3ab9c");
     const G = footGeo(p, .22, 2);
@@ -744,17 +1029,11 @@ function multiTile(g, p, k, col, glass) {
     const [x0, y0] = [G.L[0], G.L[1]], [x1, y1] = [G.Rr[0], G.Rr[1]];
     g.strokeStyle = col; g.lineWidth = 2.5; g.lineCap = "butt"; g.beginPath(); g.moveTo(x0 + 6, y0 + 2); g.lineTo(x0 + 6, y0 - 22); g.moveTo(x1 - 6, y1 + 2); g.lineTo(x1 - 6, y1 - 22);
     g.moveTo(x0 + 4, y0 - 22); g.lineTo(x1 - 4, y1 - 22); g.stroke(); return true; }
-  if (k === "factory") {                                // large hall with saw-tooth roof, office wing, chimneys
-    poly(g, q(base), "#9a9282"); const G = footGeo(p, .12, 15); walls(g, G, "#b9a487"); windows(g, G, "L", 6, 1, glass); windows(g, G, "R", 5, 1, glass); door(g, G, "R", .6, .2, 9, "#4a4a4a");
-    flatRoof(g, G, shade(col, -.2));
-    for (let s2 = 0; s2 < 5; s2++) { const a0 = lerp([G.L[0], G.L[1] - 15], [G.F[0], G.F[1] - 15], .1 + s2 * .19), b0 = lerp([G.B[0], G.B[1] - 15], [G.Rr[0], G.Rr[1] - 15], .1 + s2 * .19);
-      poly(g, [a0, b0, [b0[0] + 2, b0[1] - 6], [a0[0] + 2, a0[1] - 6]], s2 % 2 ? shade(col, -.05) : col); }
-    for (const [dx, dy, hh] of [[10, -14, 34], [17, -10, 28]]) { block(g, G.x + dx, G.y + dy, .14, .14, hh - 12, "#7a6f66", "#4a4a4a"); smoke(g, G.x + dx, G.y + dy - hh + 10); }
-    return true; }
-  if (k === "warehouse") {                              // long hall with loading docks along the front
-    poly(g, q(base), "#a8a294"); const G = footGeo(p, .1, 11 + (p.h > 2 ? 3 : 0)); walls(g, G, "#cfc4ad");
-    for (let u = .06; u < .94; u += .15) door(g, G, "L", u, .09, 7, "#5d6670"); windows(g, G, "R", 3, 1, glass, { top: .9, bottom: .65 });
-    gableRoof(g, G, 5, shade(col, -.1), "#cfc4ad"); return true; }
+  if (k === "factory") { factory3(g, p, col, glass); return true; }   // large hall, drawn in its own directions (MO006)
+  if (k === "power") { power3(g, p, col, glass); return true; }
+  if (k === "gasplant") { gasplant3(g, p, col, glass); return true; }
+  if (k === "sawmill") { sawmill3(g, p, col, glass); return true; }
+  if (k === "warehouse") { warehouse3(g, p, col, glass); return true; }
   return false;
 }
 
@@ -801,6 +1080,10 @@ function drawBuilding(g, x, y, p) {
   const k = p.kind, official = p.cat === "government" || p.cat === "procurement", big = (p.size || [1, 1]).join() !== "1,1";
   ({ x, y } = footGeo(p, 0, 0));                        // draw at the centre of the footprint
   if (big && multiTile(g, p, k, col, glass)) return;
+  const own = { factory: factory3, warehouse: warehouse3, depot: depot3, waste: waste3, waterworks: waterworks3, grid: grid3,
+    telecom: telecom3, ginnery: ginnery3, farm: farm3, quay: quay3, office: office3, bank: bank3, shop: shop3, townhall: townhall3,
+    customs: customs3, house: house3 }[k];        // drawn in their own directions (MO006)
+  if (own) { own(g, p, col, glass); return; }
   if (k === "mine") { mine(g, p, col); return; }
   if (k === "factory") {                                // hall with saw-tooth roof, two chimneys with smoke
     const G = geo(x, y + 3, .95, .9, 13); walls(g, G, "#b9a487"); windows(g, G, "L", 4, 1, glass); door(g, G, "R", .55, .3, 8, "#4a4a4a");

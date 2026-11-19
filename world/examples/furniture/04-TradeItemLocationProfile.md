@@ -26,8 +26,8 @@ The store sets the replenishment policy per item and store: each piece in each w
   The store sets its replenishment policy for the line, on the Friday before the order.
 - `IssueTime` = **08:23:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The store holds stock; the maker replenishes.**  
-  Who does what.
+- `Note` = **The store holds the stock of the line in its Lumeport store, for the home and garden department, its only stock point for the line, and orders on the maker's proposals.**  
+  Who does what, and for which location (furniture/04#F1, F9).
 - `ProfileStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ProfileStatusCode`)  
   In force. The code is from the Trade Accord's profile status list: ACTIVE = Active.
 
@@ -104,17 +104,15 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/ID` = **BM-CT-01**  
-  The desk's number in the party's own contact list.
-- `Contact/Name` = **Buying office**  
-  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Buyer**  
+- `Contact/Name` = **Customer service**  
+  The party's customer service desk: the desk for its role in this document (it sells); identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Purchasing**  
+- `Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Contact/ElectronicMail` = **buying@brightmarket.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+- `Contact/ElectronicMail` = **service@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -202,8 +200,8 @@ Inside `ItemManagementProfile`:
   Benches in pairs: one row of the maker's van.
 - `OrderIntervalDaysNumeric` = **14**  
   An order every two weeks.
-- `ReplenishmentOwnerDescription` = **The store orders; the maker proposes.**  
-  Who replenishes.
+- `ReplenishmentOwnerDescription` = **Brightmarket Stores**  
+  The partner that replenishes the stock: the store orders, on the maker's proposals (furniture/04#F1).
 - `TargetServicePercent` = **95**  
   On the shelf on 95 % of the days.
 - `TargetInventoryQuantity` = **6** (unitCode `EA`)  
@@ -230,16 +228,14 @@ Inside `ItemManagementProfile`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
   Five days from order to shelf.
-- `ItemLocationQuantity/MinimumQuantity` = **2** (unitCode `EA`)  
-  The smallest order.
 - `MinimumInventoryQuantity` = **2** (unitCode `EA`)  
   Never fewer than 2 in the shop.
 - `MultipleOrderQuantity` = **2** (unitCode `EA`)  
   Benches in pairs: one row of the maker's van.
 - `OrderIntervalDaysNumeric` = **14**  
   An order every two weeks.
-- `ReplenishmentOwnerDescription` = **The store orders; the maker proposes.**  
-  Who replenishes.
+- `ReplenishmentOwnerDescription` = **Brightmarket Stores**  
+  The partner that replenishes the stock: the store orders, on the maker's proposals (furniture/04#F1).
 - `TargetServicePercent` = **95**  
   On the shelf on 95 % of the days.
 - `TargetInventoryQuantity` = **4** (unitCode `EA`)  
@@ -266,16 +262,14 @@ Inside `ItemManagementProfile`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
   Five days from order to shelf.
-- `ItemLocationQuantity/MinimumQuantity` = **2** (unitCode `EA`)  
-  The smallest order.
 - `MinimumInventoryQuantity` = **4** (unitCode `EA`)  
   Never fewer than 4 in the shop.
 - `MultipleOrderQuantity` = **4** (unitCode `EA`)  
   Chairs in fours: two for each of a pair of benches.
 - `OrderIntervalDaysNumeric` = **14**  
   An order every two weeks.
-- `ReplenishmentOwnerDescription` = **The store orders; the maker proposes.**  
-  Who replenishes.
+- `ReplenishmentOwnerDescription` = **Brightmarket Stores**  
+  The partner that replenishes the stock: the store orders, on the maker's proposals (furniture/04#F1).
 - `TargetServicePercent` = **95**  
   On the shelf on 95 % of the days.
 - `TargetInventoryQuantity` = **12** (unitCode `EA`)  
@@ -302,16 +296,14 @@ Inside `ItemManagementProfile`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
   Five days from order to shelf.
-- `ItemLocationQuantity/MinimumQuantity` = **4** (unitCode `EA`)  
-  The smallest order.
 - `MinimumInventoryQuantity` = **4** (unitCode `EA`)  
   Never fewer than 4 in the shop.
 - `MultipleOrderQuantity` = **4** (unitCode `EA`)  
   Chairs in fours: two for each of a pair of benches.
 - `OrderIntervalDaysNumeric` = **14**  
   An order every two weeks.
-- `ReplenishmentOwnerDescription` = **The store orders; the maker proposes.**  
-  Who replenishes.
+- `ReplenishmentOwnerDescription` = **Brightmarket Stores**  
+  The partner that replenishes the stock: the store orders, on the maker's proposals (furniture/04#F1).
 - `TargetServicePercent` = **95**  
   On the shelf on 95 % of the days.
 - `TargetInventoryQuantity` = **8** (unitCode `EA`)  
@@ -338,8 +330,6 @@ Inside `ItemManagementProfile`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
   Five days from order to shelf.
-- `ItemLocationQuantity/MinimumQuantity` = **4** (unitCode `EA`)  
-  The smallest order.
 
 ## The document
 
@@ -354,7 +344,7 @@ Inside `ItemManagementProfile`:
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
   <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cbc:IssueTime>08:23:00-01:00</cbc:IssueTime>
-  <cbc:Note>The store holds stock; the maker replenishes.</cbc:Note>
+  <cbc:Note>The store holds the stock of the line in its Lumeport store, for the home and garden department, its only stock point for the line, and orders on the maker's proposals.</cbc:Note>
   <cbc:ProfileStatusCode listID="urn:ubl-examples:world:codelist:ProfileStatusCode">ACTIVE</cbc:ProfileStatusCode>
   <cac:Period>
     <cbc:StartDate>2026-03-16</cbc:StartDate>
@@ -411,12 +401,11 @@ Inside `ItemManagementProfile`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -487,7 +476,7 @@ Inside `ItemManagementProfile`:
     <cbc:MinimumInventoryQuantity unitCode="EA">2</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">2</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">6</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -512,14 +501,13 @@ Inside `ItemManagementProfile`:
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">2</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
   <cac:ItemManagementProfile>
     <cbc:MinimumInventoryQuantity unitCode="EA">2</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">2</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">4</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -544,14 +532,13 @@ Inside `ItemManagementProfile`:
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">2</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
   <cac:ItemManagementProfile>
     <cbc:MinimumInventoryQuantity unitCode="EA">4</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">4</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">12</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -576,14 +563,13 @@ Inside `ItemManagementProfile`:
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
   <cac:ItemManagementProfile>
     <cbc:MinimumInventoryQuantity unitCode="EA">4</cbc:MinimumInventoryQuantity>
     <cbc:MultipleOrderQuantity unitCode="EA">4</cbc:MultipleOrderQuantity>
     <cbc:OrderIntervalDaysNumeric>14</cbc:OrderIntervalDaysNumeric>
-    <cbc:ReplenishmentOwnerDescription>The store orders; the maker proposes.</cbc:ReplenishmentOwnerDescription>
+    <cbc:ReplenishmentOwnerDescription>Brightmarket Stores</cbc:ReplenishmentOwnerDescription>
     <cbc:TargetServicePercent>95</cbc:TargetServicePercent>
     <cbc:TargetInventoryQuantity unitCode="EA">8</cbc:TargetInventoryQuantity>
     <cac:EffectivePeriod>
@@ -608,7 +594,6 @@ Inside `ItemManagementProfile`:
     </cac:Item>
     <cac:ItemLocationQuantity>
       <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">4</cbc:MinimumQuantity>
     </cac:ItemLocationQuantity>
   </cac:ItemManagementProfile>
 </TradeItemLocationProfile>

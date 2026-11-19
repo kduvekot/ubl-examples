@@ -18,7 +18,7 @@ Furniture sold for resale: exempt from the state sales tax, which the store char
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **FURNITURE-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-INV-26-0575**  
+- `ID` = **BF-INV-26-0576**  
   The seller's invoice number.
 - `UUID` = **a4b6b0fa-d2df-5444-8c02-41ff99bd3bac**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -48,12 +48,12 @@ Inside `OrderReference`:
 - `ID` = **BS-PO-26-0574**  
   The store's order.
 
-### Delivery Note Document Reference
+### Despatch Document Reference
 
-Inside `DeliveryNoteDocumentReference`:
+Inside `DespatchDocumentReference`:
 
-- `ID` = **BF-DN-26-0323**  
-  The delivery note the store signed when the van unloaded.
+- `ID` = **BF-DA-26-0575**  
+  The furniture maker's despatch advice of the delivery billed (furniture/19; furniture/09#F1, D38).
 
 ### Accounting Supplier Party
 
@@ -241,10 +241,12 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `ActualDeliveryDate` = **2026-03-23**  
+  The van delivered the opening stock on Monday 23 March (furniture/09#F7).
 - `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Name` = **Goods-in of the Lumeport store**  
-  Where the goods billed are delivered.
+  Where the goods billed were delivered.
 
 ### Payment Means
 
@@ -262,9 +264,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF74BFINV260575**  
+- `InstructionNote` = **Quote RF47BFINV260576**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF74BFINV260575** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF47BFINV260576** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB42BLUM38712004503347** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -276,7 +278,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice BF-INV-26-0575**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice BF-INV-26-0576**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -546,8 +548,8 @@ Inside `InvoiceLine`:
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
-  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture: supplied free with goods for resale**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why no tax is charged: the code's meaning and the detail of this supply (UBL rule IND6).
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -566,7 +568,7 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0575</cbc:ID>
+  <cbc:ID>BF-INV-26-0576</cbc:ID>
   <cbc:UUID>a4b6b0fa-d2df-5444-8c02-41ff99bd3bac</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>12:42:00-01:00</cbc:IssueTime>
@@ -580,9 +582,9 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>BS-PO-26-0574</cbc:ID>
   </cac:OrderReference>
-  <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>BF-DN-26-0323</cbc:ID>
-  </cac:DeliveryNoteDocumentReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>BF-DA-26-0575</cbc:ID>
+  </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -751,6 +753,7 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-23</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
       <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
@@ -763,15 +766,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-22</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF74BFINV260575</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF74BFINV260575</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF47BFINV260576</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF47BFINV260576</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB42BLUM38712004503347</cbc:ID>
       <cbc:Name>Brackenmere Furniture Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0575</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BF-INV-26-0576</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -997,7 +1000,7 @@ Inside `InvoiceLine`:
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture: supplied free with goods for resale</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
