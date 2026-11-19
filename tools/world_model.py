@@ -77,9 +77,10 @@ Structural rules (the build stops when one is broken):
     square, the height of every square corner in metres (model "v"), with no limit between neighbouring corners;
     0 at the sea and in the estuary;
   * what is built is fitted to the land: a port, a quay, a party a barge loads at, a metering station, a level crossing and a
-    town's harbour stand on a platform (four corners level, at the water where they touch it); buildings, houses,
-    yards, junctions, ends and bends of 90 degrees between two sides, and an airport's approach squares, stand on a
-    terrace that follows the land in a small step (their corners within TERRACE_M = 80 m of each other, 2.3 %; a
+    town's harbour stand on a platform (four corners level, at the water where they touch it); a square of houses
+    (a village's, a town's or a farmstead) keeps the land as it is, each house dug into the slope on the map (owner,
+    2026-11-19, MO004); party buildings, yards, junctions, ends and bends of 90 degrees between two sides, and an
+    airport's approach squares, stand on a terrace that follows the land in a small step (their corners within TERRACE_M = 80 m of each other, 2.3 %; a
     runway within RUNWAY_M = 20 m), so that a town sits near its natural ground and not at the level of the
     water its edge touches (O152 stage 2 B); a road or rail square a way passes straight through,
     or bends 45 degrees in, is a ramp rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
@@ -1042,6 +1043,9 @@ def build(world):
             return ("flat", 0)                              # a quay, a port: one level, at the water
         if "b" in t and q in runway:
             return ("terrace", RUNWAY_M)                    # a runway: nearly level
+        if ("hs" in t or "um" in t) and "b" not in t and "yd" not in t and "rd" not in t and "rl" not in t:
+            return None                                     # houses on their own plots, dug into the slope on the map
+                                                            # (owner, 2026-11-19, MO004): the square keeps the land
         if "b" in t or "hs" in t or "yd" in t:
             return ("terrace", TERRACE_M)                   # built-up ground follows the land in small steps
         if q in road and q in rails:
