@@ -874,6 +874,18 @@ def build(world):
                     drop({q})
                 changed = True
 
+    # a driveway for every party beside a road that no road leads into yet (owner, 2026-11-19, MO007): from the road
+    # square beside it (a road that ends there first, then a main road, then the busiest) into its building, so that a truck leaves and arrives on a road
+    for p in world["parties"]:
+        fp = set(footprint(p))
+        if p.get("on") == "road" or any((x[0] + dx, x[1] + dy) in fp for x, ds in into.items() for dx, dy in ds):
+            continue
+        beside = sorted(((x[0] + di, x[1] + dj), x) for x in fp for di, dj in DIRS if (x[0] + di, x[1] + dj) in road)
+        if beside:
+            q, x = max(beside, key=lambda qx: (degree(qx[0]) <= 1, qx[0] in {y for e in main_edges for y in e},
+                                                degree(qx[0]), qx))   # a road that ends here first, then a main road
+            enter(q, x)
+
     # road connections per tile: edges to neighbouring road tiles (the eight neighbours: bits 0..7 of DIRS8), plus
     # the building a road ends at
     for (i, j) in road:
@@ -1566,6 +1578,58 @@ def check_legs(world, T, adj, owner, neighbours):
                         g.setdefault(b, set()).add(a)
         return g
 
+    def gates(pid):
+        """The road squares a truck may enter the party's building from: those whose road leads into it, and those
+        beside it (not diagonally), where a driveway is laid when a truck uses one: {road square: building square}."""
+        fp = set(footprint(party[pid]))
+        out = {}
+        for q in adj:
+            for bit, (di, dj) in enumerate(DIRS8):
+                if (q[0] + di, q[1] + dj) in fp and (T[q[0]][q[1]].get("rd", 0) >> bit & 1 or bit < 4):
+                    out[q] = (q[0] + di, q[1] + dj)
+        return out
+
+    def drive(a, b):
+        """A truck's way from a's building to b's (owner, 2026-11-19, MO007): it leaves by a driveway, keeps to the
+        roads' links, never turns more than 90 degrees from one step to the next on the road (it may turn round in a
+        yard: the turns into and out of the buildings are free), and arrives by a driveway. The shortest such way, as the squares from building to building.
+        Where two roads meet at 45 degrees and a truck would have to turn back sharply from one to the other, it may
+        take a short link across the corner, between the two squares beside the junction (a slip road); the links
+        a truck takes are laid as roads (slips)."""
+        ga, gb = gates(a), gates(b)
+        sub = lambda x, y: (x[0] - y[0], x[1] - y[1])
+        ok = lambda d, e: d[0] * e[0] + d[1] * e[1] >= 0                  # a turn of at most 90 degrees
+        starts = [(q, None) for q in sorted(ga)]
+        prev, todo = {s: None for s in starts}, deque(starts)
+        while todo:
+            st = todo.popleft()
+            q, d = st
+            if q in gb:
+                out = [gb[q]]
+                while st is not None:
+                    out.append(st[0])
+                    st = prev[st]
+                return [ga[out[-1]]] + out[::-1]
+            for y in sorted(adj[q] | slip_from(q), key=str):
+                e = sub(y, q)
+                if (d is None or ok(d, e)) and (y, e) not in prev:
+                    prev[(y, e)] = st
+                    todo.append((y, e))
+        return None
+
+    def slip_from(q):
+        """The squares a slip road from q could reach: z beside q (not diagonally), not linked to it, linked to a
+        neighbour p of q where the roads to q and to z meet at 45 degrees."""
+        out = set()
+        for p in adj[q]:
+            for z in adj[p]:
+                if z != q and z not in adj[q] and abs(z[0] - q[0]) + abs(z[1] - q[1]) == 1:
+                    a, c = (q[0] - p[0], q[1] - p[1]), (z[0] - p[0], z[1] - p[1])
+                    if a[0] * c[0] + a[1] * c[1] > 0:
+                        out.add(z)
+        return out
+    slips = set()
+
     rail = graph("rail")
     course = graph("river")              # barges follow the river's course, not any water tile ...
     for i in range(W):                   # ... except in the estuary, which is open water: any of it is navigable
@@ -1608,7 +1672,15 @@ def check_legs(world, T, adj, owner, neighbours):
             if not any(x["kind"] == FLEET_KIND[m] for x in party[c].get("fleet", [])):
                 problems.append(f"{what}: carrier {party[c]['identity']['name']} has no {m} means in its fleet")
             if m == "road":
-                path = way([q for q in near(a) if q in adj], {q for q in near(b) if q in adj}, lambda q: adj[q])
+                path = drive(a, b)
+                for x, y in ((path[1], path[0]), (path[-2], path[-1])) if path else ():   # the driveways taken
+                    T[x[0]][x[1]]["rd"] = T[x[0]][x[1]].get("rd", 0) | 1 << DIRS8.index((y[0] - x[0], y[1] - x[1]))
+                for x, y in zip(path or [], (path or [])[1:]):
+                    if x in adj and y not in adj.get(x, ()) and y in adj:
+                        slips.add(frozenset((x, y)))      # lay the slip road: both squares link to each other
+                        adj[x].add(y); adj[y].add(x)
+                        for u, v in ((x, y), (y, x)):
+                            T[u[0]][u[1]]["rd"] = T[u[0]][u[1]].get("rd", 0) | 1 << DIRS8.index((v[0] - u[0], v[1] - u[1]))
             elif m == "rail":
                 path = way([q for q in near(a) if q in rail], {q for q in near(b) if q in rail}, lambda q: rail[q])
             elif m == "river":
@@ -1623,9 +1695,7 @@ def check_legs(world, T, adj, owner, neighbours):
             if not path:
                 problems.append(f"{what}: no {m} connection between them on the map")
                 continue
-            if m == "road":                  # a truck leaves from its building and drives into the other
-                gate = lambda pid, q: next((y for y in footprint(party[pid]) if abs(y[0] - q[0]) + abs(y[1] - q[1]) == 1), None)
-                path = [x for x in [gate(a, path[0])] + path + [gate(b, path[-1])] if x]
+            # (a road leg's path already runs from building to building: drive)
             legs.append({"flow": f["id"], "mode": m, "from": a, "to": b, "carrier": c, "path": [list(q) for q in path]})
         for d in world["documents"]:
             if d["flow"] != f["id"]:
