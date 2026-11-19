@@ -258,6 +258,10 @@ Inside `Shipment`:
 
 - `ID` = **SCG-SH-26-0200**  
   The shipment certified.
+- `Consignment/ID` = **LTM-CS-26-0201**  
+  The consignment, as the mill's forwarding instructions number it.
+- `Consignment/TotalPackagesQuantity` = **27** (unitCode `EA`)  
+  The bales the certificate covers: a plant health certificate states the number of packages.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Cotton lint, compressed bale**  
@@ -288,6 +292,8 @@ Inside `Shipment`:
   The district of the island where the cotton was grown, as the farm's address names it.
 - `GoodsItem/Item/OriginAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of origin. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `GoodsItem/ContainingPackage/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The goods travel in 27 of them, the consignment's package count. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
 
 ### Attestation
 
@@ -299,8 +305,8 @@ Inside `Attestation`:
   What is attested.
 - `Description` = **Sampled and found free of boll weevil and pink bollworm.**  
   In words.
-- `Note` = **10 bales sampled out of 80.**  
-  The sample.
+- `Note` = **10 bales sampled out of 27.**  
+  The sample, out of the bales of the shipment.
 - `AcceptanceIndicator` = **true**  
   Accepted.
 - `ValidityPeriod/EndDate` = **2026-03-14**  
@@ -587,6 +593,10 @@ Inside `Signature`:
   </cac:ApplicantParty>
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
+    </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Cotton lint, compressed bale</cbc:Description>
@@ -613,13 +623,16 @@ Inside `Signature`:
           </cac:Country>
         </cac:OriginAddress>
       </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+      </cac:ContainingPackage>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
     <cbc:ID>SCC-ATT-26-0042</cbc:ID>
     <cbc:Name>Freedom from pests</cbc:Name>
     <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
-    <cbc:Note>10 bales sampled out of 80.</cbc:Note>
+    <cbc:Note>10 bales sampled out of 27.</cbc:Note>
     <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
     <cac:ValidityPeriod>
       <cbc:EndDate>2026-03-14</cbc:EndDate>

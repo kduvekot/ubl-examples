@@ -76,6 +76,7 @@
       <cac:Consignment>
         <cbc:ID>LTM-CS-26-0201</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+        <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       </cac:Consignment>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
@@ -104,6 +105,9 @@
             </cac:Country>
           </cac:OriginAddress>
         </cac:Item>
+        <cac:ContainingPackage>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        </cac:ContainingPackage>
       </cac:GoodsItem>
       <cac:ShipmentStage>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>

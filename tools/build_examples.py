@@ -2835,6 +2835,94 @@ def check_unit_ids(flow_id, roots):
                                      f"{counts[e.text][1]} says {counts[e.text][0]}")
 
 
+def check_packages(flow_id, roots):
+    """Where the world lists a flow's packages piece by piece (world/documents.json, the flow's "packages": the
+    cotton's bales, D12 and O26), the pieces, the totals and every document agree: the pieces' net weights sum to
+    the quantity of the deal, and with the standard tare of each piece to the item's gross weight; every package
+    count of the flow is the number of pieces; every goods item of the item says what package it travels in and
+    gives the totals; every order or invoice line of the item has the deal's quantity; a document that lists the
+    pieces lists each one once, with its net weight and its gross weight (net plus tare), and a container's gross
+    weight less its tare is the pieces' gross weight."""
+    import examples_scenarios
+    pk = next(f for f in WORLD["flows"] if f["id"] == flow_id).get("packages")
+    if not pk:
+        return
+    where = f"flow {flow_id} (world/documents.json packages)"
+    it = ITEM[pk["item"]]
+    tare = Decimal(str(pk["tare_kg"]))
+    pieces = {p["id"]: Decimal(str(p["net_kg"])) for p in pk["pieces"]}
+    if len(pieces) != len(pk["pieces"]):
+        raise SystemExit(f"{where}: a package number is listed twice")
+    count, net = len(pieces), sum(pieces.values())
+    gross = net + count * tare
+    deal = [d for d in examples_scenarios.FLOWS[flow_id].deal if d["item"] == pk["item"]]
+    if len(deal) != 1:
+        raise SystemExit(f"{where}: the deal has {len(deal)} lines of {pk['item']}, not one")
+    q = Decimal(str(deal[0].get("delivered", deal[0]["ordered"])))
+    if net != q:
+        raise SystemExit(f"{where}: the {count} packages hold {net} {it['unit']}, but the deal is {q}")
+    if net * Decimal(str(it["gross_kg"])) != gross:
+        raise SystemExit(f"{where}: net {net} kg plus {count} x {tare} kg tare is {gross} kg, but the item's gross "
+                         f"weight (world/items.json gross_kg) makes it {net * Decimal(str(it['gross_kg']))} kg")
+
+    def num(e):
+        return Decimal(e.text) if e is not None and e.text else None
+    listed = False
+    for name, root in roots:
+        at = f"world/examples/{flow_id}/{name}"
+        for tag in ("TotalPackagesQuantity", "TotalPackageQuantity"):
+            for e in root.iter(f"{{{NS_CBC}}}{tag}"):
+                if num(e) != count:
+                    raise SystemExit(f"{at}: {tag} {e.text}, but the flow's goods are {count} packages")
+        goods = [g for g in root.iter(f"{{{NS_CAC}}}GoodsItem")
+                 if g.findtext(f"{{{NS_CBC}}}Description") == it["name"]
+                 or g.findtext(f"{{{NS_CAC}}}Item/{{{NS_CBC}}}Name") == it["name"]]
+        for g in goods:
+            if g.findtext(f"{{{NS_CAC}}}ContainingPackage/{{{NS_CBC}}}PackagingTypeCode") != pk["type"]:
+                raise SystemExit(f"{at}: the goods item of {it['name']} does not say it travels in packages of "
+                                 f"type {pk['type']}")
+            for tag, want in (("Quantity", net), ("GrossWeightMeasure", gross)):
+                got = num(g.find(f"{{{NS_CBC}}}{tag}"))
+                if got is not None and got != want:
+                    raise SystemExit(f"{at}: goods item {tag} {got}, but the {count} packages make {want}")
+        if goods and root.find(f".//{{{NS_CBC}}}TotalPackagesQuantity") is None:
+            raise SystemExit(f"{at}: the goods of {it['name']} without their package count")
+        for c in root.iter(f"{{{NS_CAC}}}Consignment"):
+            got = num(c.find(f"{{{NS_CBC}}}GrossWeightMeasure"))
+            if got is not None and got != gross:
+                raise SystemExit(f"{at}: consignment gross weight {got}, but the {count} packages weigh {gross} kg")
+        for line in root.iter(f"{{{NS_CAC}}}LineItem", f"{{{NS_CAC}}}InvoiceLine"):
+            if line.findtext(f"{{{NS_CAC}}}Item/{{{NS_CAC}}}SellersItemIdentification/{{{NS_CBC}}}ID") == it["sellers_id"]:
+                got = num(line.find(f"{{{NS_CBC}}}Quantity")) or num(line.find(f"{{{NS_CBC}}}InvoicedQuantity"))
+                if got != net:
+                    raise SystemExit(f"{at}: a line of {it['name']} for {got}, but the {count} packages hold {net}")
+        listed_here = {}
+        for p in root.iter(f"{{{NS_CAC}}}Package"):
+            pid = p.findtext(f"{{{NS_CBC}}}ID")
+            if p.findtext(f"{{{NS_CBC}}}PackagingTypeCode") != pk["type"] or pid is None:
+                continue
+            if pid not in pieces or pid in listed_here:
+                raise SystemExit(f"{at}: package {pid} is not one of the flow's packages, or is listed twice")
+            got = num(p.find(f"{{{NS_CBC}}}Quantity"))
+            pg = [num(d.find(f"{{{NS_CBC}}}Measure")) for d in p.iter(f"{{{NS_CAC}}}MeasurementDimension")
+                  if d.findtext(f"{{{NS_CBC}}}AttributeID") == "GROSSWEIGHT"]
+            if got != pieces[pid] or pg != [pieces[pid] + tare]:
+                raise SystemExit(f"{at}: package {pid} holds {got} kg and weighs {pg}, but the world gives "
+                                 f"{pieces[pid]} kg net and {pieces[pid] + tare} kg gross")
+            listed_here[pid] = True
+        if listed_here:
+            listed = True
+            if len(listed_here) != count:
+                raise SystemExit(f"{at}: lists {len(listed_here)} of the {count} packages")
+            for eq in root.iter(f"{{{NS_CAC}}}TransportEquipment"):
+                g, t = num(eq.find(f"{{{NS_CBC}}}GrossWeightMeasure")), num(eq.find(f"{{{NS_CBC}}}TareWeightMeasure"))
+                if g is not None and t is not None and g - t != gross:
+                    raise SystemExit(f"{at}: container {g} kg less its tare {t} kg is {g - t} kg, but the "
+                                     f"{count} packages weigh {gross} kg")
+    if not listed:
+        raise SystemExit(f"{where}: no document of the flow lists the packages with their weights")
+
+
 # ---------------------------------------------------------------- air legs: the aircraft's capacity, DG stowage
 LITHIUM_IA = {"3480", "3090"}                        # PI 965 / PI 968, section IA or IB (IATA DGR 9.3.2.1.3)
 LITHIUM_APART = ("1", "2.1", "3", "4.1", "5.1")      # labels lithium batteries are kept apart from (1.4S excepted)
@@ -3227,6 +3315,7 @@ def main(flow_id, check=False):
     check_party_profiles(flow_id, roots, docs)
     check_calendar(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
+    check_packages(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow

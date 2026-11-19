@@ -2451,7 +2451,7 @@ def cotton(n, doc):
                                      {"ID": V(b, "The bale's number on its tag, which the ginnery gives every bale it "
                                                  "presses; a package's own number, without a scheme."),
                                       "Quantity": qty(kit.kg(net), "KGM", f"The lint in the bale: its gross weight less "
-                                                                      f"the standard tare of {kit.kg(pk['tare_kg'])} kg, "
+                                                                      f"the standard tare of {kit.kg(pk['tare_kg'])} kg "
                                                                       f"{pk['tare_what']}."),
                                       "PackagingTypeCode": V(pk["type"], f"UN/ECE Recommendation 21 code "
                                                                          f"{pk['type']}: "
@@ -4851,6 +4851,31 @@ def _(f, n, doc, out):
             "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "EB"),
             "DocumentReference": {"ID": V(f.numbers["manifest"], "The cargo manifest.")},
             "Signature": seal(doc["from"], "TWL-SIG-CTR", "The master's signature.")}
+
+
+def cotton_bale_count(f, n, doc, out):
+    """The bales are the shipment's packages (D12, O26): every document that describes the consignment gives their
+    number; the goods item says they are bales, and the weight statement lists each bale with its weight."""
+    why = {"ForwardingInstructions": "The bales the forwarder is to book, in one container.",
+           "GoodsCertificate": "The bales the certificate covers: a plant health certificate states the number of "
+                               "packages.",
+           "ExportCustomsDeclaration": "The number of packages declared for export: the bales.",
+           "BillOfLading": "The bales the carrier received in the container, as the bill of lading counts them.",
+           "ImportCustomsDeclaration": "The number of packages declared for import: the bales."}[doc["doc"]]
+    count = kit.package_count(f, why)
+    cons = next(iter(find_dicts(out, "Consignment")), None)
+    if cons is None:
+        out["Shipment"]["Consignment"] = {"ID": V(f.numbers["consignment"], "The consignment, as the mill's "
+                                                                            "forwarding instructions number it.")}
+        cons = out["Shipment"]
+    for c in lines_of(cons, "Consignment"):
+        c["TotalPackagesQuantity"] = count
+    return {}
+
+
+for _doc in ("ForwardingInstructions", "GoodsCertificate", "ExportCustomsDeclaration", "BillOfLading",
+             "ImportCustomsDeclaration"):
+    enrich("cotton", _doc)(cotton_bale_count)
 
 
 @enrich("cotton", "WeightStatement")

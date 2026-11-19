@@ -204,6 +204,8 @@ Inside `Shipment`:
   The consignment.
 - `Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the bales.
+- `Consignment/TotalPackagesQuantity` = **27** (unitCode `EA`)  
+  The bales the carrier received in the container, as the bill of lading counts them.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeport Textile Mill (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **9524010900002** (schemeID `GS1 GLN`)  
@@ -266,6 +268,8 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **520100** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
+- `GoodsItem/ContainingPackage/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The goods travel in 27 of them, the consignment's package count. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
 
 ### Document Reference
 
@@ -452,6 +456,7 @@ Inside `Signature`:
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0201</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
@@ -511,6 +516,9 @@ Inside `Signature`:
           <cbc:CommodityCode listID="WCO HS 2022">520100</cbc:CommodityCode>
         </cac:CommodityClassification>
       </cac:Item>
+      <cac:ContainingPackage>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+      </cac:ContainingPackage>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>

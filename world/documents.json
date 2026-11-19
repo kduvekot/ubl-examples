@@ -565,7 +565,7 @@
     "why": "The shipment is 27 compressed bales of lint (D12, O26): their number is the shipment's package count, each bale's real weight is in the ginnery's weight statement (12). The container is made up from the ginnery's stock of Middling lint from several farms (D33), so the bale numbers come from three pressing runs.",
     "weighed": "on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g",
     "tare_kg": 2.27,
-    "tare_what": "the bale's woven cotton cover and its steel ties, the standard tare the ginnery and the mill agree in their season agreement",
+    "tare_what": "for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement",
     "pieces": [
      {
       "id": "SCG-26-00412",

@@ -7404,7 +7404,7 @@
   "DimensionAttribute": {
    "scope": "regional",
    "name": "Dimension attribute",
-   "description": "Which dimension of a thing a measure gives: for Dimension, MeasurementDimension and RangeDimension. Each code names the UN/EDIFACT 6313 measured attribute it corresponds to.",
+   "description": "Which dimension of a thing a measure gives: for Dimension, MeasurementDimension and RangeDimension, whose definition includes length, mass, weight and volume. Each code names the UN/EDIFACT 6313 measured attribute it corresponds to.",
    "codes": {
     "LENGTH": [
      "Length",
@@ -7429,6 +7429,10 @@
     "DIAMETER": [
      "Diameter",
      "The diameter of a round thing. UN/EDIFACT 6313: DI."
+    ],
+    "GROSSWEIGHT": [
+     "Gross weight",
+     "The weight of a thing with its packaging, such as a bale with its cover and ties. UN/EDIFACT 6313: AAB (goods item gross weight)."
     ],
     "SEATHEIGHT": [
      "Seat height",

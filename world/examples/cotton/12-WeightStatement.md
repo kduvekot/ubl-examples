@@ -2,7 +2,7 @@
 
 *Example 12 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Weight Statement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WEIGHT-STATEMENT-SCHEMA)*
 
-Before loading, the shipper declares the verified gross mass of the container, weighed on the port's weighbridge.
+Before loading, the shipper declares the verified gross mass of the container by SOLAS method 2: the ginnery has weighed every bale on its bale scale and adds the container's own weight.
 
 [The XML file](12-WeightStatement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -150,44 +150,10 @@ Inside `ReceiverParty`:
 
 Inside `WeighingParty`:
 
-- `PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Port of Selanu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Port of Selanu**  
-  The trading name; identity of Port of Selanu (world/parties.json).
-- `PostalAddress/ID` = **63597165** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Port of Selanu (world/parties.json).
-- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
-- `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Port of Selanu (world/parties.json).
-- `PostalAddress/StreetName` = **Wharf Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Port of Selanu (world/parties.json).
-- `PostalAddress/BuildingNumber` = **32**  
-  Building number of the postal address. identity of Port of Selanu (world/parties.json).
-- `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Port of Selanu (world/parties.json).
-- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Port of Selanu (world/parties.json).
-- `PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `PostalAddress/Country/Name` = **Lisavu**  
-  The country's name, for readers of the address.
-- `Contact/Name` = **Port control**  
-  The party's main desk, which handles this document; identity of Port of Selanu (world/parties.json).
-- `Contact/JobTitle` = **Duty port controller**  
-  The job of the person who answers at the desk; identity of Port of Selanu (world/parties.json).
-- `Contact/Department` = **Port operations**  
-  The department the desk belongs to; identity of Port of Selanu (world/parties.json).
-- `Contact/Telephone` = **+999 3 727 7653**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Port of Selanu (world/parties.json).
-- `Contact/ElectronicMail` = **port@port-selanu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Port of Selanu (world/parties.json).
-- `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Port of Selanu (world/parties.json).
+- `PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
+  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+- `PartyName/Name` = **Selanu Cotton Ginnery**  
+  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
 
 ### Shipper Party
 
@@ -213,12 +179,284 @@ Inside `Shipment`:
 
 - `ID` = **SCG-SH-26-0200**  
   The shipment weighed.
+- `TransportHandlingUnit/TotalPackageQuantity` = **27** (unitCode `EA`)  
+  The 27 bales in the container, each listed below with its weight.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4123110** (schemeID `ISO6346`)  
   The container, with its ISO 6346 check digit.
 - `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9940.29** (unitCode `KGM`)  
-  The verified gross mass: the bales and the container's own weight, weighed on the port's weighbridge.
+  The verified gross mass by SOLAS method 2: the 27 bales as the ginnery weighed them (6190.29 kg) and the container's own weight.
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
-  The empty container's own weight.
+  The empty container's own weight, as marked on its door.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00412**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **227.5** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **229.77** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00413**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **223.5** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **225.77** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00414**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **224** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **226.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00415**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **226** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **228.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00416**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **222** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **224.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00417**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **230** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **232.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00418**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **228** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **230.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00419**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **222** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **224.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00420**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **229** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **231.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00517**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **225** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **227.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00518**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **228.5** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **230.77** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00519**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **232** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **234.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00520**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **230.5** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **232.77** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00521**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **226** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **228.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00522**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **231** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **233.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00523**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **228** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **230.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00524**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **232** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **234.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00525**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **222** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **224.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00603**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **230** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **232.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00604**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **224** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **226.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00605**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **223** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **225.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00606**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **226** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **228.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00607**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **230.5** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **232.77** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00608**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **232** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **234.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00609**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **224** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **226.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00610**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **230.5** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **232.77** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
+- `TransportHandlingUnit/Package/ID` = **SCG-26-00611**  
+  The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
+- `TransportHandlingUnit/Package/Quantity` = **222** (unitCode `KGM`)  
+  The lint in the bale: its gross weight less the standard tare of 2.27 kg for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BL: bale, compressed. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The bale's weight with its cover and ties. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/Package/MeasurementDimension/Measure` = **224.27** (unitCode `KGM`)  
+  Weighed on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g.
 
 ## The document
 
@@ -327,34 +565,11 @@ Inside `Shipment`:
   </cac:ReceiverParty>
   <cac:WeighingParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Port of Selanu</cbc:Name>
+      <cbc:Name>Selanu Cotton Ginnery</cbc:Name>
     </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">63597165</cbc:ID>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
-      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
-      <cbc:BuildingNumber>32</cbc:BuildingNumber>
-      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        <cbc:Name>Lisavu</cbc:Name>
-      </cac:Country>
-    </cac:PostalAddress>
-    <cac:Contact>
-      <cbc:Name>Port control</cbc:Name>
-      <cbc:JobTitle>Duty port controller</cbc:JobTitle>
-      <cbc:Department>Port operations</cbc:Department>
-      <cbc:Telephone>+999 3 727 7653</cbc:Telephone>
-      <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
-    </cac:Contact>
   </cac:WeighingParty>
   <cac:ShipperParty>
     <cac:PartyIdentification>
@@ -375,11 +590,255 @@ Inside `Shipment`:
   <cac:Shipment>
     <cbc:ID>SCG-SH-26-0200</cbc:ID>
     <cac:TransportHandlingUnit>
+      <cbc:TotalPackageQuantity unitCode="EA">27</cbc:TotalPackageQuantity>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">9940.29</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
       </cac:TransportEquipment>
+      <cac:Package>
+        <cbc:ID>SCG-26-00412</cbc:ID>
+        <cbc:Quantity unitCode="KGM">227.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">229.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00413</cbc:ID>
+        <cbc:Quantity unitCode="KGM">223.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">225.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00414</cbc:ID>
+        <cbc:Quantity unitCode="KGM">224</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">226.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00415</cbc:ID>
+        <cbc:Quantity unitCode="KGM">226</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">228.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00416</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00417</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00418</cbc:ID>
+        <cbc:Quantity unitCode="KGM">228</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">230.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00419</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00420</cbc:ID>
+        <cbc:Quantity unitCode="KGM">229</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">231.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00517</cbc:ID>
+        <cbc:Quantity unitCode="KGM">225</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">227.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00518</cbc:ID>
+        <cbc:Quantity unitCode="KGM">228.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">230.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00519</cbc:ID>
+        <cbc:Quantity unitCode="KGM">232</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">234.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00520</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00521</cbc:ID>
+        <cbc:Quantity unitCode="KGM">226</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">228.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00522</cbc:ID>
+        <cbc:Quantity unitCode="KGM">231</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">233.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00523</cbc:ID>
+        <cbc:Quantity unitCode="KGM">228</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">230.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00524</cbc:ID>
+        <cbc:Quantity unitCode="KGM">232</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">234.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00525</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00603</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00604</cbc:ID>
+        <cbc:Quantity unitCode="KGM">224</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">226.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00605</cbc:ID>
+        <cbc:Quantity unitCode="KGM">223</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">225.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00606</cbc:ID>
+        <cbc:Quantity unitCode="KGM">226</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">228.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00607</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00608</cbc:ID>
+        <cbc:Quantity unitCode="KGM">232</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">234.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00609</cbc:ID>
+        <cbc:Quantity unitCode="KGM">224</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">226.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00610</cbc:ID>
+        <cbc:Quantity unitCode="KGM">230.5</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">232.77</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
+      <cac:Package>
+        <cbc:ID>SCG-26-00611</cbc:ID>
+        <cbc:Quantity unitCode="KGM">222</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">224.27</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:Package>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
 </WeightStatement>
