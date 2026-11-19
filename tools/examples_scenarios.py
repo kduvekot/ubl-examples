@@ -625,7 +625,7 @@ RAIL_SEALS = ["XU-VI-30411", "XU-VI-30412"]
 # when each order wants its goods (worklist C28): (first day, last day) from the flow's start, and why
 REQUESTED_DELIVERY = {
     ("air", 1): (3, 3, "The frames are wanted at Selanu airport on 14 May, before the ship arrives."),
-    ("cotton", 8): (28, 28, "Free on board Selanu: the bales are wanted on board the ship of 2 March."),
+    ("cotton", 8): (94, 94, "Free on board Selanu: the bales are wanted on board the Tidewell Reef of 7 May."),
     ("furniture", 8): (21, 21, "The opening stock is wanted on 23 March: the maker makes the line in one run, and "
                                 "the store holds it for the reopening of its home and garden department on 11 May."),
     ("furniture", 10): (119, 123, "The repeat order for the winter is wanted in the first week of July."),
@@ -2886,7 +2886,14 @@ COTTON = kit.Flow("cotton", "2026-02-02", [
     {"item": "cotton-bale", "ordered": 6129, "why": "27 bales of about 227 kg: one container of lint."}])
 SEED_KG = 18000
 ADVANCE_KG = 4500                  # the season advance: a quarter of the farm's expected 18,000 kg
-ADVANCE = Decimal("1017.000")      # 4,500 kg at the agreed 0.226 coral, on the prepayment self-billed invoice
+ADVANCE = Decimal("1485.000")      # 4,500 kg at the season's 0.330 coral, on the prepayment self-billed invoice
+# the flow in the harvest (D33): days from Monday 2 February, the mill's forecast; the farm's three trailer loads on
+# Monday 6 to Wednesday 8 April, the bales on board the Tidewell Reef on Thursday 7 May (O116)
+COTTON_DAY = {"loads": (63, 65), "self-billed": 66, "classing": 72, "credit": 73, "farm-paid": 74, "revision": 78,
+              "order": 80, "instructions": 81, "phyto": 92, "export": 93, "vgm": 93, "on-board": 94,
+              "pre-arrival": 95, "arrival": 96, "import": 98, "forwarder-invoice": 98, "mill-paid": 140}
+COTTON_SEASON = (58, 179)          # the mill's buying season, April to July: the harvest's lint
+COTTON_VOYAGE = "TR-26-19W"        # the Tidewell Reef's voyage from Selanu to Lumeport in week 19, early May
 
 
 def cotton_results():
@@ -2951,19 +2958,23 @@ def cotton(n, doc):
     farm_rows = [{"item": "seed-cotton", "qty": SEED_KG, "why": "The weighed seed cotton of three trailer loads."}]
     if doc["doc"] == "Forecast":
         return {"ID": V(f.number("forecast", doc["from"], "Forecast"), "The mill's forecast number."),
-                "IssueDate": V(f.date(0), "Sent at the start of the ginning season."),
+                "IssueDate": V(f.date(0), "Sent before the harvest, when the crop's size can be judged, so the "
+                                          "ginnery can plan its buying."),
                 "IssueTime": V("09:00:00", "The time is stated, because a revision refers to the forecast by its issue "
                                            "date and time."),
                 "ForecastPurposeCode": V("ORDER", "A forecast of what the mill will order, so the ginnery can plan."),
-                "ForecastPeriod": {"StartDate": V(f.date(14), "The season's shipping period."),
-                                   "EndDate": V(f.date(120), "Its end.")},
+                "ForecastPeriod": {"StartDate": V(f.date(COTTON_SEASON[0]), "The season's buying period, from "
+                                                                            "April, when the harvest's first lint "
+                                                                            "is ginned (D33)."),
+                                   "EndDate": V(f.date(COTTON_SEASON[1]), "To the end of July.")},
                 "ForecastLine": {"ID": V("1", "The only line."),
                                  "ForecastTypeCode": V("TOTAL", "The total expected purchase in the period."),
                                  "SalesItem": {"Quantity": qty(24000, "KGM", "About four containers of lint."),
                                                "Item": item("cotton-bale")}}}
     if doc["doc"] == "DeliveryNote":
         return {"ID": V(f.number("delivery", doc["from"], "DeliveryNote"), "The farm's delivery note number."),
-                "IssueDate": V(f.date(3), "The day the trailers were weighed at the gin."),
+                "IssueDate": V(f.date(COTTON_DAY["loads"][1]), "Written when the last of the three trailer loads was "
+                                                               "weighed at the gin."),
                 "DespatchLine": {"ID": V("1", "The only line."),
                                  "DeliveredQuantity": qty(SEED_KG, "KGM", "Weighed at the gin's weighbridge."),
                                  "OrderLineReference": {"LineID": V("1", "The line of the season agreement between farm "
@@ -2971,22 +2982,31 @@ def cotton(n, doc):
                                                                          "delivered.")},
                                  "Item": item("seed-cotton")}}
     if doc["doc"] == "SelfBilledInvoice":
-        out = kit.self_billed(f, n, doc, 5, "The ginnery bills itself for the delivery, as the self-billing agreement "
-                                            "provides.", farm_rows, {})
+        out = kit.self_billed(f, n, doc, COTTON_DAY["self-billed"], "The day after the last trailer: the ginnery "
+                              "bills itself for the weighed delivery, as the self-billing agreement provides.",
+                              farm_rows, {})
         out.update({
             "Note": V("Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.",
                       "The statement the self-billing agreement requires on every invoice."),
-            "InvoicePeriod": {"StartDate": V(f.date(1), "The week of the deliveries."),
-                              "EndDate": V(f.date(3), "The last trailer.")},
+            "InvoicePeriod": {"StartDate": V(f.date(COTTON_DAY["loads"][0]), "The first of the three trailer loads "
+                                                                             "the delivery note records, on 6 April."),
+                              "EndDate": V(f.date(COTTON_DAY["loads"][1]), "The last, on 8 April.")},
             "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement between farm and ginnery, "
                                                                      "which allows the self-billing.")},
             "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery note.")},
             "AdditionalDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket of the gin, on whose "
                                                                       "weights the invoice rests.")},
-            "Delivery": {"ActualDeliveryDate": V(f.date(3), "The trailers were weighed at the gin."),
+            "Delivery": {"ActualDeliveryDate": V(f.date(COTTON_DAY["loads"][1]), "The last trailer was weighed at "
+                                                                                 "the gin."),
                          "DeliveryLocation": {"Name": V("Selanu Cotton Ginnery, weighbridge", "Where.")}},
-            "DeliveryTerms": {"ID": V("DAP", "Delivered at the gin: the farm brings the cotton with its own "
-                                             "tractor.", schemeID="INCOTERMS")},
+            # no Incoterm: the season agreement says the farm delivers at the gin with its own tractor and the
+            # ginnery pays a haulage allowance (D33 point 5, cotton/04#F18)
+            "DeliveryTerms": {"SpecialTerms": V("Delivered at the gin's weighbridge by the farm's own tractor; the "
+                                                "ginnery pays the farm a haulage allowance of 0.010 coral a "
+                                                "kilogram, as the season agreement provides.", "The delivery "
+                                                "arrangement of the season agreement, in words: no Incoterms rule "
+                                                "fits a farm that carries its crop to the buyer and is paid for the "
+                                                "carting.")},
             "PayeeParty": party("38-xl", short=True),
             "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The third call-off under the season agreement.")},
             "Signature": {"ID": V("SCG-SIG-26-0005", "The ginnery's seal on the self-billed invoice."),
@@ -2998,12 +3018,11 @@ def cotton(n, doc):
                                   "ChargeIndicator": V("true", "A charge in the farm's favour: it adds to what the gin "
                                                                "pays."),
                                   "AllowanceChargeReasonCode": V("CAB", "The gin pays the farm for carting the cotton: a charge in the farm's favour, so a code of UN/EDIFACT 7161."),
-                                  "AllowanceChargeReason": V("Haulage allowance", "The gin pays the farm for bringing "
-                                                                                  "the cotton."),
-                                  "SequenceNumeric": V("1", "Applied after the lines."),
+                                  "AllowanceChargeReason": V("Haulage to the gin, paid to the farm", "The gin pays "
+                                                             "the farm for carting the cotton to it: a charge in the "
+                                                             "farm's favour (cotton/04#F19)."),
                                   "PerUnitAmount": amount(Decimal("0.010"), "XLC", "0.010 coral per kilogram."),
                                   "Amount": amount(haul, "XLC", "18,000 kg at 0.010 coral."),
-                                  "BaseAmount": amount(lines_amt, "XLC", "The cotton delivered."),
                                   "AccountingCostCode": V("210", "The gin's cost centre for haulage."),
                                   "AccountingCost": V("Seed cotton haulage", "In words."),
                                   "TaxInclusiveAmount": amount(haul, "XLC", "No tax on the island."),
@@ -3018,7 +3037,7 @@ def cotton(n, doc):
                                                             "prepayment self-billed invoice."),
                                  "PaidAmount": amount(ADVANCE, "XLC", "Paid before the harvest, against the first "
                                                                       "deliveries."),
-                                 "PaidDate": V(f.date(-20), "Three weeks before the deliveries.")}
+                                 "PaidDate": V(f.date(-20), "In January, while the crop was growing.")}
         f.numbers["self-billed-4-amount"] = lines_amt + haul - ADVANCE
         lines = out["InvoiceLine"] if isinstance(out["InvoiceLine"], list) else [out["InvoiceLine"]]
         lines[0]["Delivery"] = {"DeliveryNoteLineReference": {
@@ -3026,10 +3045,13 @@ def cotton(n, doc):
             "DocumentReference": {"ID": V(f.numbers["delivery"], "The farm's delivery note.")}}}
         return out
     if doc["doc"] == "SelfBilledCreditNote":
-        return kit.self_billed(f, n, doc, 12, "Issued after classing showed part of the delivery a grade lower.",
-                               [{"item": "seed-cotton", "qty": 2500, "unit_price": "0.030",
-                                 "unit_price_why": "The price difference between the agreed grade and the lower grade, "
-                                                   "per kilogram.", "why": "The part of the delivery classed lower."}],
+        return kit.self_billed(f, n, doc, COTTON_DAY["credit"], "Issued the day after the chamber's classing "
+                               "report showed part of the lint a grade lower.",
+                               [{"item": "seed-cotton", "qty": 2500, "unit_price": "0.017",
+                                 "unit_price_why": "The season agreement's discount for seed cotton whose lint is "
+                                                   "classed a grade lower: the lint's discount of 0.050 coral a "
+                                                   "kilogram (about 5 %) at the ginning yield of 34 %.",
+                                 "why": "The seed cotton whose lint was classed lower."}],
                                {"BillingReference": {"SelfBilledInvoiceDocumentReference": {
                                    "ID": V(f.numbers["self-billed-4"], "The self-billed invoice this corrects."),
                                    "IssueDate": V(f.numbers["self-billed-4-date"], "Its issue date.")}},
@@ -3040,38 +3062,42 @@ def cotton(n, doc):
                                                                               "invoice."),
                                                         "ResponseCode": V("2", "The classing found a lower "
                                                                                    "grade."),
-                                                        "Description": V("2,500 kg classed Strict Low Middling "
-                                                                         "instead of Middling.", "In words.")},
+                                                        "Description": V("Lint ginned from 2,500 kg of seed cotton "
+                                                                         "classed Strict Low Middling instead of "
+                                                                         "Middling.", "In words: the grade is the "
+                                                                         "lint's, applied to the seed cotton it was "
+                                                                         "ginned from (cotton/05#F25).")},
                                 "ContractDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement: it "
                                                                                          "sets the price per "
                                                                                          "grade.")},
-                                "DueDate": V(f.date(14), "Set off on the day of payment."),
+                                "DueDate": V(f.date(COTTON_DAY["farm-paid"]), "Set off on the day of payment."),
                                 "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off.")},
                                 "DeliveryNoteDocumentReference": {"ID": V(f.numbers["delivery"], "The delivery "
                                                                                                  "classed.")},
-                                "Delivery": {"ActualDeliveryDate": V(f.date(3), "The delivery classed.")},
-                                "DeliveryTerms": {"ID": V("DAP", "As on the self-billed invoice.",
-                                                          schemeID="INCOTERMS")},
-                                "PayeeParty": party("38-xl", short=True),
+                                "Delivery": {"ActualDeliveryDate": V(f.date(COTTON_DAY["loads"][1]), "The delivery "
+                                                                                                    "classed.")},
                                 "PaymentMeans": {"PaymentMeansCode": V("97", "UN/EDIFACT 4461 code 97: clearing "
                                                                              "between partners; set off against "
                                                                              "the payment.",
                                                                        listID="UN/EDIFACT EDED 4461")},
                                 "PaymentTerms": {"Note": V("Set off against the payment of the self-billed "
                                                            "invoice.", "How the credit is settled.")},
-                                "AdditionalDocumentReference": {"ID": V(f.numbers["goods-certificate"]
-                                                                        if "goods-certificate" in f.numbers else
-                                                                        "XL-CLS-2026-0042", "The classing "
-                                                                                            "certificate.")}},
+},
                                credit=True)
     if doc["doc"] == "RemittanceAdvice" and doc["from"] == "39-xl":
         inv, cn = f.numbers["self-billed-4-amount"], f.numbers["self-billed-5-amount"]
         return {"ID": V(f.number("remittance-farm", doc["from"], "RemittanceAdvice"), "The ginnery's remittance number."),
-                "IssueDate": V(f.date(14), "The ginnery pays the farm after classing."),
+                "IssueDate": V(f.date(COTTON_DAY["farm-paid"]), "The ginnery pays the farm after classing, the day "
+                                                               "after the credit."),
                 "DocumentCurrencyCode": kit.currency_line("XLC", "the island's currency"),
                 "TotalPaymentAmount": amount(inv - cn, "XLC", "The invoice minus the credit note."),
                 "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.",
                                                        listID="UN/EDIFACT EDED 4461"),
+                                 "PaymentDueDate": V(f.date(COTTON_DAY["farm-paid"]), "The day the transfer is "
+                                                     "executed: today, with this advice (cotton/06#F6)."),
+                                 "PaymentID": V(kit.rf_reference(f.numbers["self-billed-4"]), "The payment reference the "
+                                                "self-billed invoice asked to be quoted, so the farm can match the "
+                                                "transfer (cotton/06#F5).", schemeID="ISO 11649"),
                                  "PayerFinancialAccount": kit.account("39-xl", "The ginnery's account."),
                                  "PayeeFinancialAccount": kit.account("38-xl", "The farm's account.")},
                 "RemittanceAdviceLine": [
@@ -3086,18 +3112,23 @@ def cotton(n, doc):
                          "ID": V(f.numbers["self-billed-5"], "The self-billed credit note set off.")}}}]}
     if doc["doc"] == "ForecastRevision":
         return {"ID": V(f.number("forecast-revision", doc["from"], "ForecastRevision"), "The revision's number."),
-                "IssueDate": V(f.date(20), "Demand for clothing has risen."),
+                "IssueDate": V(f.date(COTTON_DAY["revision"]), "Late April, when the store's clothing orders for "
+                                                              "the winter are in and demand has risen."),
                 "SequenceNumberID": V("1", "The first revision of the forecast."),
-                "ForecastPeriod": {"StartDate": V(f.date(14), "The same period."), "EndDate": V(f.date(120), "Its end.")},
+                "ForecastPeriod": {"StartDate": V(f.date(COTTON_SEASON[0]), "The same period as the forecast."),
+                                   "EndDate": V(f.date(COTTON_SEASON[1]), "Its end.")},
                 "ForecastRevisionLine": {"ID": V("1", "The only line."),
                                          "RevisedForecastLineID": V("1", "The forecast line revised."),
                                          "SourceForecastIssueDate": V(f.date(0), "The issue date of the forecast "
                                                                                  "revised."),
                                          "SourceForecastIssueTime": V("09:00:00", "Its issue time."),
-                                         "SalesItem": {"Quantity": qty(30000, "KGM", "Raised to five containers."),
+                                         "SalesItem": {"Quantity": qty(28800, "KGM", "The season's total raised by "
+                                                                       "twenty per cent: 24,000 kg × 1.20 "
+                                                                       "(cotton/07#F1)."),
                                                        "Item": item("cotton-bale")}}}
     if doc["doc"] == "Order":
-        out = kit.order(f, n, doc, 22, "The mill orders the first container of the season.",
+        out = kit.order(f, n, doc, COTTON_DAY["order"], "Late April: the mill orders the first container of the "
+                        "season's lint.",
                          "Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk "
                          "passes when the bales are on board.", "Port of Selanu",
                          {"FreightForwarderParty": party("10-xb", short=True),
@@ -3110,7 +3141,8 @@ def cotton(n, doc):
     if doc["doc"] == "ForwardingInstructions":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The mill's instruction "
                                                                                        "number."),
-                "IssueDate": V(f.date(23), "Under FOB the buyer instructs the forwarder for the main carriage."),
+                "IssueDate": V(f.date(COTTON_DAY["instructions"]), "The day after the order: under FOB the buyer "
+                                                                  "instructs the forwarder for the main carriage."),
                 "Shipment": {"ID": V(f.number("shipment", "39-xl", "Shipment"), "The shipment to be booked."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the bales."),
                              "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
@@ -3119,18 +3151,20 @@ def cotton(n, doc):
         return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"), "The Plant Protection "
                                                                                        "Service's certificate "
                                                                                        "number."),
-                "IssueDate": V(f.date(26), "Issued before shipment, at the ginnery's application."),
+                "IssueDate": V(f.date(COTTON_DAY["phyto"]), "Issued after the inspection at the ginnery, before "
+                                                           "shipment, at the ginnery's application."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment certified."),
                              "GoodsItem": kit.goods_items(f, "XLC", "The value of the bales, in coral.")}}
     if doc["doc"] == "ExportCustomsDeclaration":
-        return kit.export_declaration(f, n, doc, 27, "The island's export: declared before loading.",
+        return kit.export_declaration(f, n, doc, COTTON_DAY["export"], "The island's export: declared before "
+                                      "loading.",
                                       "The value of the bales, in coral.")
     if doc["doc"] == "WeightStatement":
         pk = kit.flow_packages(f, "cotton-bale")
         bales = kit.package_weights(pk)
         return {"ID": V(f.number("vgm", doc["from"], "WeightStatement"), "The shipper's weight statement number."),
-                "IssueDate": V(f.date(27), "Declared before the container is loaded, as required for every packed "
-                                           "container."),
+                "IssueDate": V(f.date(COTTON_DAY["vgm"]), "Declared before the container is loaded, as required for "
+                                                         "every packed container."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment weighed."),
                              "TransportHandlingUnit": {
                                  "TotalPackageQuantity": qty(len(bales), "EA", f"The {len(bales)} bales in the "
@@ -3159,17 +3193,19 @@ def cotton(n, doc):
                                      for b, net, gross in bales]}}}
     if doc["doc"] == "BillOfLading":
         return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
-                "IssueDate": V(f.date(28), "Issued when the bales are on board."),
+                "IssueDate": V(f.date(COTTON_DAY["on-board"]), "Issued when the bales are on board."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the bales."),
                              "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")}}}
     if doc["doc"] == "ImportCustomsDeclaration":
-        return kit.import_declaration(f, n, doc, 32, "The mill declares the bales in Bayvarra.",
+        return kit.import_declaration(f, n, doc, COTTON_DAY["import"], "The first working day after the ship "
+                                      "berthed: the mill declares the bales in Bayvarra.",
                                       "The customs value in lume: the value in coral at the world's reference rate "
                                       "(1 lume = 0.4 coral, so 1 coral = 2.5 lume).",
                                       {"ID": V(f.numbers["bl"], "The bill of lading.")})
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
-        return kit.invoice(f, n, doc, 30, "Issued after the sailing.",
+        return kit.invoice(f, n, doc, COTTON_DAY["forwarder-invoice"], "Issued after the arrival, when the "
+                           "forwarder has paid the collect freight at Lumeport.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
                            [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container, booked for the "
                                                                              "mill under FOB."}],
@@ -3177,12 +3213,12 @@ def cotton(n, doc):
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment shipped.")}}}})
     if doc["doc"] == "Invoice":
-        out = kit.invoice(f, n, doc, 28, "Issued when the bales are on board.",
+        out = kit.invoice(f, n, doc, COTTON_DAY["on-board"], "Issued when the bales are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The mill's order.")},
                             "AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading: the bales "
                                                                                      "are on board, which is the "
                                                                                      "delivery under FOB.")}},
-                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(28), "Free on board: delivered when "
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(COTTON_DAY["on-board"]), "Free on board: delivered when "
                                                                                   "the bales were loaded on the "
                                                                                   "ship (cotton/16#F6)."),
                                                "DeliveryLocation": kit.place("XLSEL", "The port of loading, where "
@@ -3191,7 +3227,9 @@ def cotton(n, doc):
         ln["Item"]["ItemInstance"] = cotton_lot(doc["to"])
         return out
     if doc["doc"] == "RemittanceAdvice":
-        return kit.remittance(f, n, doc, 55, "The mill pays the ginnery: money flows to the island.")
+        return kit.remittance(f, n, doc, COTTON_DAY["mill-paid"], "The mill pays the ginnery 45 days after its "
+                              "invoice, on Monday 22 June, the next working day after the 45th day, a Sunday (D23, "
+                              "D27): money flows to the island.")
     raise SystemExit(f"cotton scenario: no document {n} {doc['doc']}")
 
 
@@ -5771,7 +5809,11 @@ def _(f, n, doc, out):
     return {"Note": V("Depends on clothing orders from the store.", "What the forecast rests on."),
             "VersionID": V("1", "The first forecast of the season."),
             "BasedOnConsensusIndicator": V("true", "Agreed with the ginnery at the season meeting."),
-            "AdditionalDocumentReference": {"ID": V("SCG-SEASON-2026", "The season agreement.")},
+            # the mill's own season agreement with the ginnery, not the ginnery's with its farm (D33 point 5,
+            # cotton/02#F2)
+            "AdditionalDocumentReference": {"ID": V("LTM-SEASON-2026", "The season agreement between the mill and "
+                                                                       "the ginnery, under which the mill forecasts "
+                                                                       "and buys the season's lint.")},
             "Signature": seal(doc["from"], "LT-SIG-26-0202")}
 
 
@@ -5782,11 +5824,13 @@ def _(f, n, doc, out):
             "PurposeCode": V("ORDER", "Of what the mill will order."),
             "OriginalDocumentReference": {"ID": V(f.numbers["forecast"], "The forecast revised.")},
             "Signature": seal(doc["from"], "LT-SIG-26-0222"),
-            "ForecastRevisionLine": {"Note": V("Twenty per cent more.", "The change."),
-                                     "Description": V("More bales from the second half of the season.", "In words."),
+            "ForecastRevisionLine": {"Note": V("Twenty per cent more.", "The change: 28,800 kg against 24,000 kg."),
+                                     "Description": V("More bales over the season.", "In words: the season's total, "
+                                                      "for the whole period of the forecast (cotton/07#F8)."),
                                      "AdjustmentReasonCode": V("DEMAND", "Higher demand."),
-                                     "ForecastPeriod": {"StartDate": V(f.date(60), "From mid-season."),
-                                                        "EndDate": V(f.date(120), "To the end.")}}}
+                                     "ForecastPeriod": {"StartDate": V(f.date(COTTON_SEASON[0]), "The whole period of "
+                                                                       "the forecast: the new total is the season's."),
+                                                        "EndDate": V(f.date(COTTON_SEASON[1]), "To its end.")}}}
 
 
 @enrich("furniture", "InstructionForReturns")
@@ -6161,7 +6205,8 @@ def _(f, n, doc, out):
 
 @enrich("cotton", "DeliveryNote")
 def _(f, n, doc, out):
-    return {"Note": V("Three trailer loads, weighed at the gin.", "What was delivered."),
+    return {"Note": V("Three trailer loads, weighed at the gin on 6, 7 and 8 April.", "What was delivered, and "
+                                                                                     "when."),
             "LineCountNumeric": V("1", "One line."),
             "OrderReference": {"ID": V("SCG-SEASON-2026/03", "The call-off under the season agreement.")},
             "AdditionalDocumentReference": {"ID": V("SCG-WB-26-0311", "The weighbridge ticket.")},
@@ -6169,7 +6214,8 @@ def _(f, n, doc, out):
             "Shipment": {"ID": V("LCF-SH-26-03", "The farm's three trailer loads."),
                          "GrossWeightMeasure": qty(SEED_KG + 2400, "KGM", "The cotton and the empty trailers' "
                                                                           "tare of 2,400 kg, as weighed."),
-                         "Delivery": {"ActualDeliveryDate": V(f.date(3), "At the gin.")}}}
+                         "Delivery": {"ActualDeliveryDate": V(f.date(COTTON_DAY["loads"][1]), "At the gin: the last "
+                                                              "of the three loads, after those of 6 and 7 April.")}}}
 
 
 CUSTOMS_POSTS = {"XU": "Customs post at the land border, Urvanian side", "XB": "Customs post at the land border, "
@@ -6310,8 +6356,9 @@ def _(f, n, doc, out):
             "Description": V("The ginned cotton is free of the pests named by Bayvarra's plant health rules.",
                              "What it certifies."),
             "Note": V("Inspected at the ginnery's warehouse.", "Where."), "VersionID": V("1", "The first version."),
-            "ValidityPeriod": {"StartDate": V(f.date(26), "From the inspection."),
-                               "EndDate": V(f.date(40), "For two weeks: the bales must ship by then.")},
+            "ValidityPeriod": {"StartDate": V(f.date(COTTON_DAY["phyto"]), "From the inspection."),
+                               "EndDate": V(f.date(COTTON_DAY["phyto"] + 14), "For two weeks: the bales must ship by "
+                                                                             "then.")},
             "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XB", "For import into Bayvarra.")}},
             "WarehouseParty": party("39-xl", short=True),
             "ConsignorParty": party("39-xl", short=True),
@@ -6324,7 +6371,8 @@ def _(f, n, doc, out):
                             "Note": V(f"10 bales sampled out of {len(kit.flow_packages(f)['pieces'])}.",
                                       "The sample, out of the bales of the shipment."),
                             "AcceptanceIndicator": V("true", "Accepted."),
-                            "ValidityPeriod": {"EndDate": V(f.date(40), "As the certificate.")},
+                            "ValidityPeriod": {"EndDate": V(f.date(COTTON_DAY["phyto"] + 14), "As the "
+                                                                                               "certificate.")},
                             "IssuerParty": party("45-xl", short=True),
                             "AttestationLine": {"ID": V("1", "The pest checked."), "TypeCode": V("PEST", "A pest "
                                                                                                         "check."),
@@ -6345,8 +6393,11 @@ def _(f, n, doc, out):
                                 "TypeCode": V("GINNING", "The cotton was ginned."),
                                 "Description": V("Ginned, cleaned and pressed into bales.", "In words."),
                                 "Note": V("At the Selanu cotton ginnery.", "Where."),
-                                "Period": {"StartDate": V(f.date(5), "The ginning."), "EndDate": V(f.date(20), "Its "
-                                                                                                             "end.")},
+                                "Period": {"StartDate": V(f.date(COTTON_DAY["loads"][0] - 14), "The ginning and "
+                                                          "pressing of the 27 bales, in three pressing runs of the "
+                                                          "harvest, from 23 March."),
+                                           "EndDate": V(f.date(COTTON_DAY["classing"] + 2), "The last run, on 17 "
+                                                        "April, before the chamber classed the lot on 20 April.")},
                                 "ProcessingParty": party("39-xl", short=True),
                                 "CriterionItem": {"CriterionDescription": V("Seed removed; lint only.", "What "
                                                                             "processing the rule requires."),
@@ -9514,14 +9565,6 @@ def _(f, n, doc, out):
     return {}
 
 
-@enrich("cotton", "DeliveryNote")
-def _(f, n, doc, out):
-    return {"OriginatorCustomerParty": {"Party": party("40-xb", short=True)},
-            "BeneficiaryParty": party("40-xb", short=True),
-            "ProjectReference": {"ID": V("SCC-COTTON-QUALITY-26", "The chamber's cotton quality programme, under "
-                                                                  "which the farm's seed cotton is classed.")}}
-
-
 @enrich("air", "FulfilmentCancellation")
 def _(f, n, doc, out):
     return {"OriginatorCustomerParty": {"Party": party(HARBOUR, short=True)},
@@ -10064,18 +10107,13 @@ def cotton_currencies(f, day):
 
 
 def cotton_refs(f):
-    return {"OriginatorDocumentReference": {"ID": V("LTM-SEASON-2026", "The mill's season contract with the gin, "
-                                                                       "for which the gin buys the seed cotton.")},
-            "ProjectReference": {"ID": V("SCC-COTTON-QUALITY-26", "The chamber's cotton quality programme.")},
-            "PurchaseReference": {"ID": V("LCF-FIELD-07", "The field the cotton was picked from, for traceability.")},
-            "StatementDocumentReference": {"ID": V("SCG-ACC-LCF-26-02", "The gin's season account of the farm "
-                                                                        "(not shown).")},
+    # the farm's documents belong to the farm and the ginnery alone: no mill season agreement as originator, no
+    # chamber project, no season account, no tax representative between two Lisavan businesses (D33 points 3 and 5;
+    # cotton/04#F5, F10, F12, F13, F14, 05#F6, F13, F14, F15, F16)
+    return {"PurchaseReference": {"ID": V("LCF-FIELD-07", "The field the cotton was picked from, for traceability.")},
             "BuyerAssignedReference": {"BuyerReferenceCode": V("SCG-AP-FARMS", "The gin's desk for farm "
                                                                                "payments."),
                                        "BuyerReference": V("Farm payments", "In words.")},
-            "Annotation": {"AnnotationContent": V("Written by the gin on the farm's behalf under the self-billing "
-                                                  "agreement.", "A remark.")},
-            "TaxRepresentativeParty": party("3-xl", short=True),
             "Signature": seal("39-xl", f"SCG-SIG-SB-{f.date(0)[-2:]}")}
 
 
@@ -10094,21 +10132,14 @@ def _(f, n, doc, out):
     lmt["PayableAmount"] = amount(payable, "XLC", "What the gin pays: the cotton and haulage, less the advance and "
                                                   "the withholding, plus the levy the farm collects.")
     f.numbers["self-billed-4-amount"] = payable
-    ac = out["AllowanceCharge"]
-    ac.update({"PrepaidIndicator": V("false", "Not prepaid: paid with the invoice."),
-               "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax on the haulage on the island.")},
-               "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer, with the invoice.",
-                                                      listID="UN/EDIFACT EDED 4461")}})
     lmt["AllowanceTotalTaxInclusiveAmount"] = amount(0, "XLC", "No allowances.")
     ln = out["InvoiceLine"] if isinstance(out["InvoiceLine"], dict) else out["InvoiceLine"][0]
     ref = ln["Delivery"]["DeliveryNoteLineReference"]
     ref["UUID"] = line_uuid(f, "delivery", 1)
     out["CollectionInvoiceLine"] = cline
     out["LineCountNumeric"] = V("2", "The seed cotton and the collection line of the levy.")
-    return {**cotton_currencies(f, 5), **cotton_refs(f),
+    return {**cotton_currencies(f, COTTON_DAY["self-billed"]), **cotton_refs(f),
             "WithholdingTaxTotal": wt,
-            "OriginatorCustomerParty": {"Party": party("40-xb", short=True)},
-            "BeneficiaryParty": party("40-xb", short=True),
             "AdditionalDocumentReference": [x for x in (out.get("AdditionalDocumentReference"),) if x] + [
                 {"ID": V(PARTY["38-xl"]["identity"]["registry_id"], "The farm's registration, which the withholding "
                                                                        "needs: its number in Lisavu's farm register "
@@ -10116,8 +10147,7 @@ def _(f, n, doc, out):
             "BillingReference": {"SelfBilledInvoiceDocumentReference": {
                 "ID": V(f.numbers["self-billed-1"], "The prepayment self-billed invoice of the season advance, "
                                                     "deducted here as the prepaid amount."),
-                "IssueDate": V(f.numbers["self-billed-1-date"], "Its issue date.")}},
-            "WorkReportDocumentReference": {"ID": V("SCG-OUT-26-0311", "The gin's outturn report of the lot.")}}
+                "IssueDate": V(f.numbers["self-billed-1-date"], "Its issue date.")}}}
 
 
 @enrich("cotton", "SelfBilledCreditNote")
@@ -10139,16 +10169,29 @@ def _(f, n, doc, out):
     f.numbers["self-billed-5-amount"] = payable
     out["CollectionCreditNoteLine"] = cline
     out["LineCountNumeric"] = V("2", "The price difference and the levy on it.")
-    return {**cotton_currencies(f, 12), **cotton_refs(f),
-            "InvoicePeriod": {"StartDate": V(f.date(1), "The deliveries classed, from the first"),
-                              "EndDate": V(f.date(3), "to the last trailer.")},
-            "WorkReportDocumentReference": {"ID": V("SCC-CLS-26-0311", "The chamber's classing report.")},
-            "WithholdingTaxTotal": {"TaxAmount": amount(wh, "XLC", "The withholding reversed on the credit.")},
-            "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance: it lowers the credit."),
+    _, wt = withholding_total([(value, Decimal(XL_TAX["tiers"][1]["percent"]), "Above 2,000 coral")],
+                              "The withholding reversed on the credit: the credited value falls in the 2 % tier of "
+                              "the delivery (cotton/05#F24).")
+    return {**cotton_currencies(f, COTTON_DAY["credit"]), **cotton_refs(f),
+            "InvoicePeriod": {"StartDate": V(f.date(COTTON_DAY["loads"][0]), "The deliveries classed, from the "
+                                                                             "first trailer of 6 April"),
+                              "EndDate": V(f.date(COTTON_DAY["loads"][1]), "to the last, of 8 April.")},
+            # the chamber's classing report of the lint ginned from the farm's delivery, which found part of it Strict
+            # Low Middling: not the certificate of the export lot, which says Middling (D33 point 5, cotton/05#F2;
+            # O179: two documents)
+            "WorkReportDocumentReference": {"ID": V("SCC-CLS-26-0311", "The chamber's classing report of the lint "
+                                                                       "ginned from the farm's delivery, of 15 April, "
+                                                                       "on which the downgrade rests.")},
+            "WithholdingTaxTotal": wt,
+            "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance: it lowers the credit, so the farm keeps "
+                                                              "the amount."),
                                 "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
-                                "AllowanceChargeReason": V("Classing fee", "The farm bears the classing of its "
-                                                                           "cotton, as the agreement says."),
-                                "Amount": amount(fee, "XLC", "The chamber's fee for the lot.")}}
+                                "AllowanceChargeReason": V("Classing fee borne by the ginnery", "The ginnery bears "
+                                                           "the chamber's fee for classing the farm's lint, as the "
+                                                           "season agreement says: it is taken off what the farm "
+                                                           "gives back (D33 point 5, cotton/05#F21)."),
+                                "Amount": amount(fee, "XLC", "The chamber's fee for classing the lint of the "
+                                                             "delivery.")}}
 
 
 # --- Coverage completion, batch G: references, allowances and the remaining details -----------------------------
@@ -11328,10 +11371,11 @@ def cotton_ctr(n, doc):
     f = COTTON
     master = kit.person("Hester", "Calloway", "The master.", role="MASTER")
     return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
-            "IssueDate": V(f.date(29), "Sent the day before the ship enters Lumeport."),
+            "IssueDate": V(f.date(COTTON_DAY["pre-arrival"]), "Sent the day before the ship enters Lumeport."),
             "ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
             "ReportType": V("Pre-arrival report", "In words."),
-            "TransportMeans": kit.means("11-xb", "TR", "TR-26-09W", "The voyage from Selanu back to Lumeport.", "WB"),
+            "TransportMeans": kit.means("11-xb", "TR", COTTON_VOYAGE, "The voyage from Selanu back to Lumeport.",
+                                        "WB"),
             "Shipment": {"ID": V(f.number("ctr-shipment", doc["from"], "Shipment"), "The carrier's shipment number "
                                                                                     "for the voyage's cargo."),
                          "ShipmentStage": {
@@ -11344,7 +11388,7 @@ def cotton_ctr(n, doc):
                                  "ISSCAbsenceReason": V("The ship came under Bayvarra's flag on 15 January 2026 and "
                                                         "sails with an interim certificate (ISPS Code A/19.4), valid "
                                                         "for six months; the flag state's verification for the full "
-                                                        "certificate is set for April.", "Why the ship has no full "
+                                                        "certificate is set for June.", "Why the ship has no full "
                                                                                          "certificate, which the "
                                                                                          "port needs to know."),
                                  "ISSCExpiryDate": V("2026-07-14", "The interim certificate's last day: six months, "
@@ -11353,7 +11397,7 @@ def cotton_ctr(n, doc):
                                  "SSPOnBoardIndicator": V("true", "The ship security plan is on board."),
                                  "AdditionalMattersDescription": V("The ship was searched for stowaways before it "
                                                                    "left Selanu, because the port facility had "
-                                                                   "reported a gap in its perimeter fence on 1 March. "
+                                                                   "reported a gap in its perimeter fence on 6 May. "
                                                                    "Nothing was found.", "A security matter the port "
                                                                                          "should know about."),
                                  "ISSCIssuerParty": party("ma-xb", short=True)},

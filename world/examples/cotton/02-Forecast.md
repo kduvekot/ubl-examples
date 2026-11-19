@@ -23,7 +23,7 @@ The mill tells the ginnery how many bales it expects to buy this season.
 - `UUID` = **6810795c-6edd-5653-82dc-04180619e221**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-02**  
-  Sent at the start of the ginning season.
+  Sent before the harvest, when the crop's size can be judged, so the ginnery can plan its buying.
 - `IssueTime` = **09:00:00-01:00**  
   The time is stated, because a revision refers to the forecast by its issue date and time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Depends on clothing orders from the store.**  
@@ -39,19 +39,19 @@ The mill tells the ginnery how many bales it expects to buy this season.
 
 Inside `ForecastPeriod`:
 
-- `StartDate` = **2026-02-16**  
-  The season's shipping period.
-- `EndDate` = **2026-06-02**  
-  Its end.
+- `StartDate` = **2026-04-01**  
+  The season's buying period, from April, when the harvest's first lint is ginned (D33).
+- `EndDate` = **2026-07-31**  
+  To the end of July.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **SCG-SEASON-2026**  
-  The season agreement.
+- `ID` = **LTM-SEASON-2026**  
+  The season agreement between the mill and the ginnery, under which the mill forecasts and buys the season's lint.
 - `DocumentType` = **Season agreement**  
-  The kind of document referred to, the season agreement between the farm and the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+  The kind of document referred to, the textile mill's season agreement with the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Signature
 
@@ -227,11 +227,11 @@ Inside `ForecastLine`:
   <cbc:BasedOnConsensusIndicator>true</cbc:BasedOnConsensusIndicator>
   <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">ORDER</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>
-    <cbc:StartDate>2026-02-16</cbc:StartDate>
-    <cbc:EndDate>2026-06-02</cbc:EndDate>
+    <cbc:StartDate>2026-04-01</cbc:StartDate>
+    <cbc:EndDate>2026-07-31</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCG-SEASON-2026</cbc:ID>
+    <cbc:ID>LTM-SEASON-2026</cbc:ID>
     <cbc:DocumentType>Season agreement</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

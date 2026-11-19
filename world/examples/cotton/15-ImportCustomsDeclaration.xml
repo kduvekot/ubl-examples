@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-IM-26-0209</cbc:ID>
   <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
-  <cbc:IssueDate>2026-03-06</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>15:32:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>

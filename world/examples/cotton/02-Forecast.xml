@@ -13,11 +13,11 @@
   <cbc:BasedOnConsensusIndicator>true</cbc:BasedOnConsensusIndicator>
   <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">ORDER</cbc:ForecastPurposeCode>
   <cac:ForecastPeriod>
-    <cbc:StartDate>2026-02-16</cbc:StartDate>
-    <cbc:EndDate>2026-06-02</cbc:EndDate>
+    <cbc:StartDate>2026-04-01</cbc:StartDate>
+    <cbc:EndDate>2026-07-31</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCG-SEASON-2026</cbc:ID>
+    <cbc:ID>LTM-SEASON-2026</cbc:ID>
     <cbc:DocumentType>Season agreement</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

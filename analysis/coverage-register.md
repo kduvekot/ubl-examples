@@ -14,6 +14,37 @@ The history of losses before this register is in O145 of `analysis/worklist-deci
 
 ## Missing
 
+### G8: cotton, sea (2026-11-19)
+
+Stage 6, building group G8 (C106 to C108, C114 to C118).
+
+> C106, D33: the farm's documents belong to the farm and the ginnery alone. The mill is not originator or beneficiary of the seed-cotton purchase and its season agreement not the originator document (cotton/03#F10, 04#F4, 05#F14, D33); the chamber's "cotton quality project", the ginnery's season account of the farm, the annotation that repeated the note and the customs broker as tax representative of a purchase between two Lisavan businesses go (03#F3, 04#F5, F12, F13, F14, 05#F6, F13, F15, F16); the gin's outturn report did not exist when the invoice was issued and the price does not rest on it (04#F10); the haulage charge keeps only its per-kilogram amount (04#F20); the credit note names no payee (nothing is paid under it, 05#F5), no delivery terms (05#F20) and cites the chamber's classing report as its work report instead of the export lot's certificate (05#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `AllowanceCharge/PaymentMeans` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `AllowanceCharge/PrepaidIndicator` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `AllowanceCharge/SequenceNumeric` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `DeliveryNote/BeneficiaryParty` | 0..n | cotton/03-DeliveryNote |  |  | open |
+| `DeliveryNote/OriginatorCustomerParty` | 0..1 | cotton/03-DeliveryNote |  |  | open |
+| `DeliveryNote/ProjectReference` | 0..n | cotton/03-DeliveryNote |  |  | open |
+| `SelfBilledCreditNote/AdditionalDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/Annotation` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/DeliveryTerms` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/OriginatorDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/PayeeParty` | 0..1 | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/ProjectReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/StatementDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/TaxRepresentativeParty` | 0..1 | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledInvoice/Annotation` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/BeneficiaryParty` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/OriginatorCustomerParty` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/OriginatorDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/ProjectReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/StatementDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/TaxRepresentativeParty` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/WorkReportDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

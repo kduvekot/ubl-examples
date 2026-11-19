@@ -22,8 +22,8 @@ The mill declares the bales in Bayvarra.
   The importer's declaration number.
 - `UUID` = **e09b21a0-357c-579c-b883-6abdf4d32750**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-06**  
-  The mill declares the bales in Bayvarra.
+- `IssueDate` = **2026-05-11**  
+  The first working day after the ship berthed: the mill declares the bales in Bayvarra.
 - `IssueTime` = **15:32:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
@@ -308,7 +308,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-IM-26-0209</cbc:ID>
   <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
-  <cbc:IssueDate>2026-03-06</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>15:32:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>

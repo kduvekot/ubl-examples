@@ -22,11 +22,11 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The number the customer gives the self-billed document, under the self-billing agreement.
 - `UUID` = **6d8069bb-fe8b-5c9f-bd12-45c38c2363b6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-07**  
-  The ginnery bills itself for the delivery, as the self-billing agreement provides.
+- `IssueDate` = **2026-04-09**  
+  The day after the last trailer: the ginnery bills itself for the weighed delivery, as the self-billing agreement provides.
 - `IssueTime` = **15:50:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-03-24**  
+- `DueDate` = **2026-05-24**  
   The supplier's usual term, which the customer applies to itself.
 - `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 389, "An invoice the invoicee is producing instead of the seller": exactly what this document is. It repeats what the root SelfBilledInvoice already says, as no narrower subtype applies; 380 would be wrong, since a commercial invoice is the seller's document "claiming payment", and the customer claims nothing here, it settles what it owes. The code is from the world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed invoice.
@@ -49,10 +49,10 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
 
 Inside `InvoicePeriod`:
 
-- `StartDate` = **2026-02-03**  
-  The week of the deliveries.
-- `EndDate` = **2026-02-05**  
-  The last trailer.
+- `StartDate` = **2026-04-06**  
+  The first of the three trailer loads the delivery note records, on 6 April.
+- `EndDate` = **2026-04-08**  
+  The last, on 8 April.
 
 ### Order Reference
 
@@ -77,35 +77,12 @@ Inside `ContractDocumentReference`:
 - `ID` = **SCG-SEASON-2026**  
   The season agreement between farm and ginnery, which allows the self-billing.
 
-### Work Report Document Reference
-
-Inside `WorkReportDocumentReference`:
-
-- `ID` = **SCG-OUT-26-0311**  
-  The gin's outturn report of the lot.
-
 ### Delivery Note Document Reference
 
 Inside `DeliveryNoteDocumentReference`:
 
 - `ID` = **LCF-DN-26-0193**  
   The farm's delivery note.
-
-### Statement Document Reference
-
-Inside `StatementDocumentReference`:
-
-- `ID` = **SCG-ACC-LCF-26-02**  
-  The gin's season account of the farm (not shown).
-
-### Originator Document Reference
-
-Inside `OriginatorDocumentReference`:
-
-- `ID` = **LTM-SEASON-2026**  
-  The mill's season contract with the gin, for which the gin buys the seed cotton.
-- `DocumentType` = **Season agreement**  
-  The kind of document referred to, the textile mill's season agreement with the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Additional Document Reference
 
@@ -119,13 +96,6 @@ Inside `AdditionalDocumentReference`:
   The farm's registration, which the withholding needs: its number in Lisavu's farm register (O142).
 - `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, the farm's registration in Lisavu's farm register, under its number there, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
-
-### Project Reference
-
-Inside `ProjectReference`:
-
-- `ID` = **SCC-COTTON-QUALITY-26**  
-  The chamber's cotton quality programme.
 
 ### Buyer Assigned Reference
 
@@ -142,13 +112,6 @@ Inside `PurchaseReference`:
 
 - `ID` = **LCF-FIELD-07**  
   The field the cotton was picked from, for traceability.
-
-### Annotation
-
-Inside `Annotation`:
-
-- `AnnotationContent` = **Written by the gin on the farm's behalf under the self-billing agreement.**  
-  A remark.
 
 ### Signature
 
@@ -365,24 +328,6 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Textile Mill**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Lumeport Textile Mill**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Payee Party
 
 Inside `PayeeParty`:
@@ -392,21 +337,12 @@ Inside `PayeeParty`:
 - `PartyName/Name` = **Lisavu Cotton Farm**  
   A party referred to from another party's details: its identifier and name are enough.
 
-### Tax Representative Party
-
-Inside `TaxRepresentativeParty`:
-
-- `PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Tevaro Customs Brokers**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Delivery
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-02-05**  
-  The trailers were weighed at the gin.
+- `ActualDeliveryDate` = **2026-04-08**  
+  The last trailer was weighed at the gin.
 - `DeliveryLocation/Name` = **Selanu Cotton Ginnery, weighbridge**  
   Where.
 
@@ -414,8 +350,8 @@ Inside `Delivery`:
 
 Inside `DeliveryTerms`:
 
-- `ID` = **DAP** (schemeID `INCOTERMS`)  
-  Delivered at the gin: the farm brings the cotton with its own tractor. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
+- `SpecialTerms` = **Delivered at the gin's weighbridge by the farm's own tractor; the ginnery pays the farm a haulage allowance of 0.010 coral a kilogram, as the season agreement provides.**  
+  The delivery arrangement of the season agreement, in words: no Incoterms rule fits a farm that carries its crop to the buyer and is paid for the carting.
 
 ### Payment Means
 
@@ -427,7 +363,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-03-24**  
+- `PaymentDueDate` = **2026-05-24**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -494,7 +430,7 @@ Inside `PaymentTerms`:
   Island practice: longer terms, simple interest on late payment.
 - `PaymentTermsDetailsURI` = **https://www.lisavufarm.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-03-24**  
+- `PaymentDueDate` = **2026-05-24**  
   The day the amount is due, as the terms count it.
 - `PenaltyInterestRate/InterestRatePercent` = **6**  
   The interest on late payment.
@@ -509,10 +445,10 @@ Inside `PrepaidPayment`:
 
 - `ID` = **SCG-ADV-26-0012**  
   The payment of the season advance, billed on the prepayment self-billed invoice.
-- `PaidAmount` = **1017.000** (currencyID `XLC`)  
+- `PaidAmount` = **1485.000** (currencyID `XLC`)  
   Paid before the harvest, against the first deliveries.
 - `PaidDate` = **2026-01-13**  
-  Three weeks before the deliveries.
+  In January, while the crop was growing.
 
 ### Allowance Charge
 
@@ -524,32 +460,24 @@ Inside `AllowanceCharge`:
   A charge in the farm's favour: it adds to what the gin pays.
 - `AllowanceChargeReasonCode` = **CAB** (listID `UN/EDIFACT EDED 7161`)  
   The gin pays the farm for carting the cotton: a charge in the farm's favour, so a code of UN/EDIFACT 7161. The code is from the world's copy of UN/EDIFACT 7161 Special service description: CAB = Cartage.
-- `AllowanceChargeReason` = **Haulage allowance**  
-  The gin pays the farm for bringing the cotton.
-- `PrepaidIndicator` = **false**  
-  Not prepaid: paid with the invoice.
-- `SequenceNumeric` = **1**  
-  Applied after the lines.
+- `AllowanceChargeReason` = **Haulage to the gin, paid to the farm**  
+  The gin pays the farm for carting the cotton to it: a charge in the farm's favour (cotton/04#F19).
 - `Amount` = **180.000** (currencyID `XLC`)  
   18,000 kg at 0.010 coral.
 - `TaxInclusiveAmount` = **180.000** (currencyID `XLC`)  
   No tax on the island.
-- `BaseAmount` = **4068.000** (currencyID `XLC`)  
-  The cotton delivered.
 - `AccountingCostCode` = **210**  
   The gin's cost centre for haulage.
 - `AccountingCost` = **Seed cotton haulage**  
   In words.
 - `PerUnitAmount` = **0.010** (currencyID `XLC`)  
   0.010 coral per kilogram.
-- `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  Credit transfer, with the invoice. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 
 ### Withholding Tax Total
 
 Inside `WithholdingTaxTotal`:
 
-- `TaxAmount` = **61.360** (currencyID `XLC`)  
+- `TaxAmount` = **98.800** (currencyID `XLC`)  
   The presumptive tax the gin withholds on the delivery.
 - `TaxSubtotal/TaxableAmount` = **2000.000** (currencyID `XLC`)  
   The part of the value in this tier.
@@ -573,9 +501,9 @@ Inside `WithholdingTaxTotal`:
   UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Presumptive tax on farm produce**  
   The tax in words.
-- `TaxSubtotal/TaxableAmount` = **2068.000** (currencyID `XLC`)  
+- `TaxSubtotal/TaxableAmount` = **3940.000** (currencyID `XLC`)  
   The part of the value in this tier.
-- `TaxSubtotal/TaxAmount` = **41.360** (currencyID `XLC`)  
+- `TaxSubtotal/TaxAmount` = **78.800** (currencyID `XLC`)  
   2 % of it.
 - `TaxSubtotal/Percent` = **2**  
   The rate.
@@ -600,11 +528,11 @@ Inside `WithholdingTaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **4068.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **5940.000** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **4248.000** (currencyID `XLC`)  
+- `TaxExclusiveAmount` = **6120.000** (currencyID `XLC`)  
   The cotton and the haulage.
-- `TaxInclusiveAmount` = **4248.000** (currencyID `XLC`)  
+- `TaxInclusiveAmount` = **6120.000** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `AllowanceTotalTaxInclusiveAmount` = **0.000** (currencyID `XLC`)  
   No allowances.
@@ -612,11 +540,11 @@ Inside `LegalMonetaryTotal`:
   The haulage allowance.
 - `ChargeTotalTaxInclusiveAmount` = **180.000** (currencyID `XLC`)  
   The same: no tax on the island.
-- `WithholdingTaxTotalAmount` = **61.360** (currencyID `XLC`)  
+- `WithholdingTaxTotalAmount` = **98.800** (currencyID `XLC`)  
   Withheld and paid to the island's tax office.
-- `PrepaidAmount` = **1017.000** (currencyID `XLC`)  
+- `PrepaidAmount` = **1485.000** (currencyID `XLC`)  
   The advance paid at the start of the season.
-- `PayableAmount` = **3210.320** (currencyID `XLC`)  
+- `PayableAmount` = **4595.600** (currencyID `XLC`)  
   What the gin pays: the cotton and haulage, less the advance and the withholding, plus the levy the farm collects.
 
 ### Collection Invoice Line
@@ -629,7 +557,7 @@ Inside `CollectionInvoiceLine`:
   Why the line is there.
 - `InvoicedQuantity` = **1** (unitCode `EA`)  
   The levy, invoiced once.
-- `LineExtensionAmount` = **40.680** (currencyID `XLC`)  
+- `LineExtensionAmount` = **59.400** (currencyID `XLC`)  
   1 % of the value of the seed cotton.
 - `BeneficiaryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -646,7 +574,7 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **18000** (unitCode `KGM`)  
   The weighed seed cotton of three trailer loads.
-- `LineExtensionAmount` = **4068.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **5940.000** (currencyID `XLC`)  
   Quantity times price, rounded to the minor unit.
 - `Delivery/DeliveryNoteLineReference/LineID` = **1**  
   The line of the delivery note the invoice line bills.
@@ -666,8 +594,8 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Price/PriceAmount` = **0.226** (currencyID `XLC`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **0.33** (currencyID `XLC`)  
+  The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram (D33 point 4, O116).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
   The price is per one unit.
 
@@ -682,9 +610,9 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBI-26-0194</cbc:ID>
   <cbc:UUID>6d8069bb-fe8b-5c9f-bd12-45c38c2363b6</cbc:UUID>
-  <cbc:IssueDate>2026-02-07</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>15:50:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-03-24</cbc:DueDate>
+  <cbc:DueDate>2026-05-24</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">389</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
@@ -694,8 +622,8 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
-    <cbc:StartDate>2026-02-03</cbc:StartDate>
-    <cbc:EndDate>2026-02-05</cbc:EndDate>
+    <cbc:StartDate>2026-04-06</cbc:StartDate>
+    <cbc:EndDate>2026-04-08</cbc:EndDate>
   </cac:InvoicePeriod>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
@@ -709,19 +637,9 @@ Inside `InvoiceLine`:
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
-  <cac:WorkReportDocumentReference>
-    <cbc:ID>SCG-OUT-26-0311</cbc:ID>
-  </cac:WorkReportDocumentReference>
   <cac:DeliveryNoteDocumentReference>
     <cbc:ID>LCF-DN-26-0193</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
-  <cac:StatementDocumentReference>
-    <cbc:ID>SCG-ACC-LCF-26-02</cbc:ID>
-  </cac:StatementDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>LTM-SEASON-2026</cbc:ID>
-    <cbc:DocumentType>Season agreement</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
     <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
@@ -730,9 +648,6 @@ Inside `InvoiceLine`:
     <cbc:ID>LFR-0412</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
-  <cac:ProjectReference>
-    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
-  </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>SCG-AP-FARMS</cbc:BuyerReferenceCode>
     <cbc:BuyerReference>Farm payments</cbc:BuyerReference>
@@ -740,9 +655,6 @@ Inside `InvoiceLine`:
   <cac:PurchaseReference>
     <cbc:ID>LCF-FIELD-07</cbc:ID>
   </cac:PurchaseReference>
-  <cac:Annotation>
-    <cbc:AnnotationContent>Written by the gin on the farm's behalf under the self-billing agreement.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>SCG-SIG-SB-02</cbc:ID>
     <cac:SignatoryParty>
@@ -928,24 +840,6 @@ Inside `InvoiceLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Textile Mill</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Textile Mill</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:PayeeParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
@@ -954,28 +848,20 @@ Inside `InvoiceLine`:
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
     </cac:PartyName>
   </cac:PayeeParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
-    </cac:PartyName>
-  </cac:TaxRepresentativeParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-04-08</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Selanu Cotton Ginnery, weighbridge</cbc:Name>
     </cac:DeliveryLocation>
   </cac:Delivery>
   <cac:DeliveryTerms>
-    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+    <cbc:SpecialTerms>Delivered at the gin's weighbridge by the farm's own tractor; the ginnery pays the farm a haulage allowance of 0.010 coral a kilogram, as the season agreement provides.</cbc:SpecialTerms>
   </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF77SCGSBI260194</cbc:InstructionNote>
@@ -1024,7 +910,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>45 days net.</cbc:Note>
     <cbc:PaymentTermsDetailsURI>https://www.lisavufarm.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-03-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
@@ -1033,28 +919,22 @@ Inside `InvoiceLine`:
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
     <cbc:ID>SCG-ADV-26-0012</cbc:ID>
-    <cbc:PaidAmount currencyID="XLC">1017.000</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XLC">1485.000</cbc:PaidAmount>
     <cbc:PaidDate>2026-01-13</cbc:PaidDate>
   </cac:PrepaidPayment>
   <cac:AllowanceCharge>
     <cbc:ID>1</cbc:ID>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAB</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Haulage allowance</cbc:AllowanceChargeReason>
-    <cbc:PrepaidIndicator>false</cbc:PrepaidIndicator>
-    <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:AllowanceChargeReason>Haulage to the gin, paid to the farm</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">180.000</cbc:Amount>
     <cbc:TaxInclusiveAmount currencyID="XLC">180.000</cbc:TaxInclusiveAmount>
-    <cbc:BaseAmount currencyID="XLC">4068.000</cbc:BaseAmount>
     <cbc:AccountingCostCode>210</cbc:AccountingCostCode>
     <cbc:AccountingCost>Seed cotton haulage</cbc:AccountingCost>
     <cbc:PerUnitAmount currencyID="XLC">0.010</cbc:PerUnitAmount>
-    <cac:PaymentMeans>
-      <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    </cac:PaymentMeans>
   </cac:AllowanceCharge>
   <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XLC">61.360</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XLC">98.800</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XLC">2000.000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XLC">20.000</cbc:TaxAmount>
@@ -1073,8 +953,8 @@ Inside `InvoiceLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XLC">2068.000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XLC">41.360</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XLC">3940.000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XLC">78.800</cbc:TaxAmount>
       <cbc:Percent>2</cbc:Percent>
       <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
       <cbc:TierRatePercent>2</cbc:TierRatePercent>
@@ -1091,21 +971,21 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">4248.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">4248.000</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">5940.000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">6120.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">6120.000</cbc:TaxInclusiveAmount>
     <cbc:AllowanceTotalTaxInclusiveAmount currencyID="XLC">0.000</cbc:AllowanceTotalTaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XLC">180.000</cbc:ChargeTotalAmount>
     <cbc:ChargeTotalTaxInclusiveAmount currencyID="XLC">180.000</cbc:ChargeTotalTaxInclusiveAmount>
-    <cbc:WithholdingTaxTotalAmount currencyID="XLC">61.360</cbc:WithholdingTaxTotalAmount>
-    <cbc:PrepaidAmount currencyID="XLC">1017.000</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XLC">3210.320</cbc:PayableAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XLC">98.800</cbc:WithholdingTaxTotalAmount>
+    <cbc:PrepaidAmount currencyID="XLC">1485.000</cbc:PrepaidAmount>
+    <cbc:PayableAmount currencyID="XLC">4595.600</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CollectionInvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">40.680</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">59.400</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
@@ -1121,7 +1001,7 @@ Inside `InvoiceLine`:
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">18000</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">4068.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">5940.000</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryNoteLineReference>
         <cbc:LineID>1</cbc:LineID>
@@ -1142,7 +1022,7 @@ Inside `InvoiceLine`:
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XLC">0.33</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

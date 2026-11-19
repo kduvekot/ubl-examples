@@ -6,9 +6,9 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-INV-26-0211</cbc:ID>
   <cbc:UUID>cda8910e-e53f-5cba-9d28-ea692161d819</cbc:UUID>
-  <cbc:IssueDate>2026-03-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>10:40:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-04-03</cbc:DueDate>
+  <cbc:DueDate>2026-06-10</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>2400</cbc:AccountingCostCode>
@@ -215,7 +215,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-04-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-10</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF08BFINV260211</cbc:InstructionNote>
@@ -266,9 +266,9 @@
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">44.25</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-04-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-10</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-04-04</cbc:StartDate>
+      <cbc:StartDate>2026-06-11</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

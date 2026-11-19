@@ -22,7 +22,7 @@ The bill of lading goes to the forwarder that booked the freight for the mill; t
   The bill of lading number.
 - `UUID` = **9bc6af1f-73d8-5068-ae2b-470a36d51872**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-02**  
+- `IssueDate` = **2026-05-07**  
   Issued when the bales are on board.
 - `IssueTime` = **09:37:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -327,7 +327,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TOL-BL-26-0206</cbc:ID>
   <cbc:UUID>9bc6af1f-73d8-5068-ae2b-470a36d51872</cbc:UUID>
-  <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>09:37:00-01:00</cbc:IssueTime>
   <cbc:Name>Bill of lading</cbc:Name>
   <cbc:Description>Shipped on board.</cbc:Description>

@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TOL-CTR-26-0207</cbc:ID>
   <cbc:UUID>149f7421-1d43-5c08-9504-00a7ea0b615b</cbc:UUID>
-  <cbc:IssueDate>2026-03-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>11:22:00-01:00</cbc:IssueTime>
   <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
@@ -134,11 +134,11 @@
       <cac:ISPSRequirements>
         <cbc:ID>IISSC-XB-2026-0115</cbc:ID>
         <cbc:ValidISSCIndicator>false</cbc:ValidISSCIndicator>
-        <cbc:ISSCAbsenceReason>The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for April.</cbc:ISSCAbsenceReason>
+        <cbc:ISSCAbsenceReason>The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for June.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2026-07-14</cbc:ISSCExpiryDate>
         <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
         <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
-        <cbc:AdditionalMattersDescription>The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 1 March. Nothing was found.</cbc:AdditionalMattersDescription>
+        <cbc:AdditionalMattersDescription>The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.</cbc:AdditionalMattersDescription>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5389612047</cbc:ID>
@@ -173,7 +173,7 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:TransportMeans>
-    <cbc:JourneyID>TR-26-09W</cbc:JourneyID>
+    <cbc:JourneyID>TR-26-19W</cbc:JourneyID>
     <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
     <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
     <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>

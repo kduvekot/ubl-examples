@@ -22,11 +22,11 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
   The number the customer gives the self-billed document, under the self-billing agreement.
 - `UUID` = **4ce8ce40-98a9-5b24-97ee-9a8cbf98f3f1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-14**  
-  Issued after classing showed part of the delivery a grade lower.
+- `IssueDate` = **2026-04-16**  
+  Issued the day after the chamber's classing report showed part of the lint a grade lower.
 - `IssueTime` = **13:28:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-02-16**  
+- `DueDate` = **2026-04-17**  
   Set off on the day of payment.
 - `CreditNoteTypeCode` = **261** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 261, "A document which indicates that the customer is claiming credit in a self billing environment": the customer corrects its own self-billed invoice. It repeats what the root SelfBilledCreditNote already says, but its definition is exact; 381, the supplier's credit note, would not be. The code is from the world's copy of UN/EDIFACT 1001 Document name: 261 = Self billed credit note.
@@ -49,10 +49,10 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
 
 Inside `InvoicePeriod`:
 
-- `StartDate` = **2026-02-03**  
-  The deliveries classed, from the first
-- `EndDate` = **2026-02-05**  
-  to the last trailer.
+- `StartDate` = **2026-04-06**  
+  The deliveries classed, from the first trailer of 6 April
+- `EndDate` = **2026-04-08**  
+  to the last, of 8 April.
 
 ### Discrepancy Response
 
@@ -62,8 +62,8 @@ Inside `DiscrepancyResponse`:
   The line of the self-billed invoice.
 - `ResponseCode` = **2** (listID `UN/EDIFACT EDED 4465`)  
   The classing found a lower grade. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 2 = Below specification goods.
-- `Description` = **2,500 kg classed Strict Low Middling instead of Middling.**  
-  In words.
+- `Description` = **Lint ginned from 2,500 kg of seed cotton classed Strict Low Middling instead of Middling.**  
+  In words: the grade is the lint's, applied to the seed cotton it was ginned from (cotton/05#F25).
 
 ### Order Reference
 
@@ -78,7 +78,7 @@ Inside `BillingReference`:
 
 - `SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0194**  
   The self-billed invoice this corrects.
-- `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-02-07**  
+- `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-04-09**  
   Its issue date.
 
 ### Delivery Note Document Reference
@@ -93,7 +93,7 @@ Inside `DeliveryNoteDocumentReference`:
 Inside `WorkReportDocumentReference`:
 
 - `ID` = **SCC-CLS-26-0311**  
-  The chamber's classing report.
+  The chamber's classing report of the lint ginned from the farm's delivery, of 15 April, on which the downgrade rests.
 
 ### Contract Document Reference
 
@@ -101,38 +101,6 @@ Inside `ContractDocumentReference`:
 
 - `ID` = **SCG-SEASON-2026**  
   The season agreement: it sets the price per grade.
-
-### Statement Document Reference
-
-Inside `StatementDocumentReference`:
-
-- `ID` = **SCG-ACC-LCF-26-02**  
-  The gin's season account of the farm (not shown).
-
-### Originator Document Reference
-
-Inside `OriginatorDocumentReference`:
-
-- `ID` = **LTM-SEASON-2026**  
-  The mill's season contract with the gin, for which the gin buys the seed cotton.
-- `DocumentType` = **Season agreement**  
-  The kind of document referred to, the textile mill's season agreement with the ginnery, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-
-### Additional Document Reference
-
-Inside `AdditionalDocumentReference`:
-
-- `ID` = **XL-CLS-2026-0042**  
-  The classing certificate.
-- `DocumentType` = **Classing certificate**  
-  The kind of document referred to, the classing certificate of the cotton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-
-### Project Reference
-
-Inside `ProjectReference`:
-
-- `ID` = **SCC-COTTON-QUALITY-26**  
-  The chamber's cotton quality programme.
 
 ### Buyer Assigned Reference
 
@@ -149,13 +117,6 @@ Inside `PurchaseReference`:
 
 - `ID` = **LCF-FIELD-07**  
   The field the cotton was picked from, for traceability.
-
-### Annotation
-
-Inside `Annotation`:
-
-- `AnnotationContent` = **Written by the gin on the farm's behalf under the self-billing agreement.**  
-  A remark.
 
 ### Signature
 
@@ -354,15 +315,6 @@ Inside `AccountingSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:LFR-0412** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Payee Party
-
-Inside `PayeeParty`:
-
-- `PartyIdentification/ID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Lisavu Cotton Farm**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -381,28 +333,12 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
-### Tax Representative Party
-
-Inside `TaxRepresentativeParty`:
-
-- `PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Tevaro Customs Brokers**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Delivery
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-02-05**  
+- `ActualDeliveryDate` = **2026-04-08**  
   The delivery classed.
-
-### Delivery Terms
-
-Inside `DeliveryTerms`:
-
-- `ID` = **DAP** (schemeID `INCOTERMS`)  
-  As on the self-billed invoice. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 
 ### Payment Means
 
@@ -423,36 +359,58 @@ Inside `PaymentTerms`:
 Inside `AllowanceCharge`:
 
 - `ChargeIndicator` = **false**  
-  An allowance: it lowers the credit.
+  An allowance: it lowers the credit, so the farm keeps the amount.
 - `AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
   The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
-- `AllowanceChargeReason` = **Classing fee**  
-  The farm bears the classing of its cotton, as the agreement says.
+- `AllowanceChargeReason` = **Classing fee borne by the ginnery**  
+  The ginnery bears the chamber's fee for classing the farm's lint, as the season agreement says: it is taken off what the farm gives back (D33 point 5, cotton/05#F21).
 - `Amount` = **5.000** (currencyID `XLC`)  
-  The chamber's fee for the lot.
+  The chamber's fee for classing the lint of the delivery.
 
 ### Withholding Tax Total
 
 Inside `WithholdingTaxTotal`:
 
-- `TaxAmount` = **1.500** (currencyID `XLC`)  
-  The withholding reversed on the credit.
+- `TaxAmount` = **0.850** (currencyID `XLC`)  
+  The withholding reversed on the credit: the credited value falls in the 2 % tier of the delivery (cotton/05#F24).
+- `TaxSubtotal/TaxableAmount` = **42.500** (currencyID `XLC`)  
+  The part of the value in this tier.
+- `TaxSubtotal/TaxAmount` = **0.850** (currencyID `XLC`)  
+  2 % of it.
+- `TaxSubtotal/Percent` = **2**  
+  The rate.
+- `TaxSubtotal/TierRange` = **Above 2,000 coral**  
+  The tier.
+- `TaxSubtotal/TierRatePercent` = **2**  
+  The rate within the tier.
+- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The withholding applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **2**  
+  The rate of the tier.
+- `TaxSubtotal/TaxCategory/TierRange` = **Above 2,000 coral**  
+  The tier.
+- `TaxSubtotal/TaxCategory/TierRatePercent` = **2**  
+  The rate within the tier.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code OTH: other taxes, the presumptive tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Presumptive tax on farm produce**  
+  The tax in words.
 
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **75.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **42.500** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **70.000** (currencyID `XLC`)  
+- `TaxExclusiveAmount` = **37.500** (currencyID `XLC`)  
   The credit less the fee.
-- `TaxInclusiveAmount` = **70.000** (currencyID `XLC`)  
+- `TaxInclusiveAmount` = **37.500** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
 - `AllowanceTotalAmount` = **5.000** (currencyID `XLC`)  
   The classing fee the farm bears.
-- `WithholdingTaxTotalAmount` = **1.500** (currencyID `XLC`)  
+- `WithholdingTaxTotalAmount` = **0.850** (currencyID `XLC`)  
   The withholding on the credited value, reversed: the value falls in the 2 % tier.
-- `PayableAmount` = **69.250** (currencyID `XLC`)  
+- `PayableAmount` = **37.075** (currencyID `XLC`)  
   What the farm's account is credited: the price difference less the fee and the withholding, plus the levy on it.
 
 ### Collection Credit Note Line
@@ -465,7 +423,7 @@ Inside `CollectionCreditNoteLine`:
   Why the line is there.
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The levy, credited once.
-- `LineExtensionAmount` = **0.750** (currencyID `XLC`)  
+- `LineExtensionAmount` = **0.425** (currencyID `XLC`)  
   1 % of the value of the seed cotton.
 - `BeneficiaryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -481,8 +439,8 @@ Inside `CreditNoteLine`:
 - `ID` = **1**  
   The line number.
 - `CreditedQuantity` = **2500** (unitCode `KGM`)  
-  The part of the delivery classed lower.
-- `LineExtensionAmount` = **75.000** (currencyID `XLC`)  
+  The seed cotton whose lint was classed lower.
+- `LineExtensionAmount` = **42.500** (currencyID `XLC`)  
   Quantity times price, rounded to the minor unit.
 - `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
@@ -494,8 +452,8 @@ Inside `CreditNoteLine`:
   The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Price/PriceAmount` = **0.03** (currencyID `XLC`)  
-  The price difference between the agreed grade and the lower grade, per kilogram.
+- `Price/PriceAmount` = **0.017** (currencyID `XLC`)  
+  The season agreement's discount for seed cotton whose lint is classed a grade lower: the lint's discount of 0.050 coral a kilogram (about 5 %) at the ginning yield of 34 %.
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
   The price is per one unit.
 
@@ -510,9 +468,9 @@ Inside `CreditNoteLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-SBC-26-0195</cbc:ID>
   <cbc:UUID>4ce8ce40-98a9-5b24-97ee-9a8cbf98f3f1</cbc:UUID>
-  <cbc:IssueDate>2026-02-14</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-16</cbc:IssueDate>
   <cbc:IssueTime>13:28:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-02-16</cbc:DueDate>
+  <cbc:DueDate>2026-04-17</cbc:DueDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">261</cbc:CreditNoteTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tetela tamasu tilala kimii mitavema.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed credit note under the season agreement.</cbc:Note>
@@ -522,13 +480,13 @@ Inside `CreditNoteLine`:
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
-    <cbc:StartDate>2026-02-03</cbc:StartDate>
-    <cbc:EndDate>2026-02-05</cbc:EndDate>
+    <cbc:StartDate>2026-04-06</cbc:StartDate>
+    <cbc:EndDate>2026-04-08</cbc:EndDate>
   </cac:InvoicePeriod>
   <cac:DiscrepancyResponse>
     <cbc:ReferenceID>1</cbc:ReferenceID>
     <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">2</cbc:ResponseCode>
-    <cbc:Description>2,500 kg classed Strict Low Middling instead of Middling.</cbc:Description>
+    <cbc:Description>Lint ginned from 2,500 kg of seed cotton classed Strict Low Middling instead of Middling.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
@@ -536,7 +494,7 @@ Inside `CreditNoteLine`:
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
       <cbc:ID>SCG-SBI-26-0194</cbc:ID>
-      <cbc:IssueDate>2026-02-07</cbc:IssueDate>
+      <cbc:IssueDate>2026-04-09</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
   <cac:DeliveryNoteDocumentReference>
@@ -548,20 +506,6 @@ Inside `CreditNoteLine`:
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
-  <cac:StatementDocumentReference>
-    <cbc:ID>SCG-ACC-LCF-26-02</cbc:ID>
-  </cac:StatementDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>LTM-SEASON-2026</cbc:ID>
-    <cbc:DocumentType>Season agreement</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
-  <cac:AdditionalDocumentReference>
-    <cbc:ID>XL-CLS-2026-0042</cbc:ID>
-    <cbc:DocumentType>Classing certificate</cbc:DocumentType>
-  </cac:AdditionalDocumentReference>
-  <cac:ProjectReference>
-    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
-  </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>SCG-AP-FARMS</cbc:BuyerReferenceCode>
     <cbc:BuyerReference>Farm payments</cbc:BuyerReference>
@@ -569,9 +513,6 @@ Inside `CreditNoteLine`:
   <cac:PurchaseReference>
     <cbc:ID>LCF-FIELD-07</cbc:ID>
   </cac:PurchaseReference>
-  <cac:Annotation>
-    <cbc:AnnotationContent>Written by the gin on the farm's behalf under the self-billing agreement.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>SCG-SIG-SB-02</cbc:ID>
     <cac:SignatoryParty>
@@ -737,14 +678,6 @@ Inside `CreditNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingSupplierParty>
-  <cac:PayeeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:farm-register">LFR-0412</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lisavu Cotton Farm</cbc:Name>
-    </cac:PartyName>
-  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -765,20 +698,9 @@ Inside `CreditNoteLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
-    </cac:PartyName>
-  </cac:TaxRepresentativeParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-04-08</cbc:ActualDeliveryDate>
   </cac:Delivery>
-  <cac:DeliveryTerms>
-    <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
-  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">97</cbc:PaymentMeansCode>
   </cac:PaymentMeans>
@@ -788,25 +710,42 @@ Inside `CreditNoteLine`:
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Classing fee</cbc:AllowanceChargeReason>
+    <cbc:AllowanceChargeReason>Classing fee borne by the ginnery</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XLC">5.000</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XLC">1.500</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XLC">0.850</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XLC">42.500</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XLC">0.850</cbc:TaxAmount>
+      <cbc:Percent>2</cbc:Percent>
+      <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
+      <cbc:TierRatePercent>2</cbc:TierRatePercent>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>2</cbc:Percent>
+        <cbc:TierRange>Above 2,000 coral</cbc:TierRange>
+        <cbc:TierRatePercent>2</cbc:TierRatePercent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+          <cbc:Name>Presumptive tax on farm produce</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">75.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">70.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">70.000</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">42.500</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">37.500</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">37.500</cbc:TaxInclusiveAmount>
     <cbc:AllowanceTotalAmount currencyID="XLC">5.000</cbc:AllowanceTotalAmount>
-    <cbc:WithholdingTaxTotalAmount currencyID="XLC">1.500</cbc:WithholdingTaxTotalAmount>
-    <cbc:PayableAmount currencyID="XLC">69.250</cbc:PayableAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XLC">0.850</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XLC">37.075</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CollectionCreditNoteLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Collected by the farm for the cotton fund of the Selanu Chamber of Commerce.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">0.750</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">0.425</cbc:LineExtensionAmount>
     <cac:BeneficiaryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
@@ -822,7 +761,7 @@ Inside `CreditNoteLine`:
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="KGM">2500</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">75.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">42.500</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
       <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
@@ -833,7 +772,7 @@ Inside `CreditNoteLine`:
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">0.03</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XLC">0.017</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>

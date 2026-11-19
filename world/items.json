@@ -1414,8 +1414,9 @@
    "kind": "goods",
    "unit": "KGM",
    "price": {
-    "amount": 0.226,
-    "currency": "XLC"
+    "amount": 0.33,
+    "currency": "XLC",
+    "why": "The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram (D33 point 4, O116)."
    },
    "sellers_id": "LCF-SC",
    "hs": "520100",
@@ -1458,7 +1459,7 @@
     "signature": {
      "id": "SCC-SIG-2026-0042",
      "note": "Signed by the cotton classer of the chamber.",
-     "date": "2026-02-20",
+     "date": "2026-04-20",
      "signatory": "20-xl"
     },
     "layer": "lot"
@@ -1489,7 +1490,7 @@
    "origin_criterion": "P",
    "classed_lot": {
     "id": "SCG-L26-017",
-    "why": "The ginnery's lot of 27 bales, the season's seventeenth, which the chamber classed as one lot on 20 February: its classing certificate gives the lot's results (O160)."
+    "why": "The ginnery's lot of 27 bales, the season's seventeenth, which the chamber classed as one lot on 20 April: its classing certificate gives the lot's results (O160)."
    },
    "buyer_requirements": {
     "40-xb": {

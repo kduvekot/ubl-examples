@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>DAL-GC-26-0202</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
-  <cbc:IssueDate>2026-02-28</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
@@ -14,8 +14,8 @@
   <cbc:Note languageID="en-XL">Inspected at the ginnery's warehouse.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-02-28</cbc:StartDate>
-    <cbc:EndDate>2026-03-14</cbc:EndDate>
+    <cbc:StartDate>2026-05-05</cbc:StartDate>
+    <cbc:EndDate>2026-05-19</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
@@ -214,7 +214,7 @@
     <cbc:Note>10 bales sampled out of 27.</cbc:Note>
     <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
     <cac:ValidityPeriod>
-      <cbc:EndDate>2026-03-14</cbc:EndDate>
+      <cbc:EndDate>2026-05-19</cbc:EndDate>
     </cac:ValidityPeriod>
     <cac:IssuerParty>
       <cac:PartyIdentification>
@@ -247,8 +247,8 @@
     <cbc:Description>Ginned, cleaned and pressed into bales.</cbc:Description>
     <cbc:Note>At the Selanu cotton ginnery.</cbc:Note>
     <cac:Period>
-      <cbc:StartDate>2026-02-07</cbc:StartDate>
-      <cbc:EndDate>2026-02-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:Period>
     <cac:ProcessingParty>
       <cac:PartyIdentification>

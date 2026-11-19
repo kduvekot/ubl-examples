@@ -352,13 +352,13 @@ Inside `PaymentTerms`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **1017.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **1485.000** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **1017.000** (currencyID `XLC`)  
+- `TaxExclusiveAmount` = **1485.000** (currencyID `XLC`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **1017.000** (currencyID `XLC`)  
+- `TaxInclusiveAmount` = **1485.000** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
-- `PayableAmount` = **1017.000** (currencyID `XLC`)  
+- `PayableAmount` = **1485.000** (currencyID `XLC`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -369,7 +369,7 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **4500** (unitCode `KGM`)  
   A quarter of the 18,000 kg the farm expects to deliver: the share the season agreement advances.
-- `LineExtensionAmount` = **1017.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **1485.000** (currencyID `XLC`)  
   Quantity times price, rounded to the minor unit.
 - `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
@@ -381,8 +381,8 @@ Inside `InvoiceLine`:
   The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
-- `Price/PriceAmount` = **0.226** (currencyID `XLC`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **0.33** (currencyID `XLC`)  
+  The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram (D33 point 4, O116).
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
   The price is per one unit.
 
@@ -656,15 +656,15 @@ Inside `InvoiceLine`:
     <cbc:Note>Paid on issue by transfer. No presumptive tax is withheld and no cotton fund levy is collected on the advance: both fall on the delivery, in the final self-billed invoice.</cbc:Note>
   </cac:PaymentTerms>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">1017.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">1017.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">1017.000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">1017.000</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">1485.000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">1485.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">1485.000</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">1485.000</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">4500</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">1017.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">1485.000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
       <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
@@ -675,7 +675,7 @@ Inside `InvoiceLine`:
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XLC">0.33</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

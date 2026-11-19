@@ -22,7 +22,7 @@ Before loading, the shipper declares the verified gross mass of the container by
   The shipper's weight statement number.
 - `UUID` = **43b82e91-f4de-52c1-ac47-945443cd1b55**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-01**  
+- `IssueDate` = **2026-05-06**  
   Declared before the container is loaded, as required for every packed container.
 - `IssueTime` = **15:19:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -469,7 +469,7 @@ Inside `Shipment`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-WS-26-0205</cbc:ID>
   <cbc:UUID>43b82e91-f4de-52c1-ac47-945443cd1b55</cbc:UUID>
-  <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>15:19:00+00:00</cbc:IssueTime>
   <cbc:WeightStatementTypeCode listID="urn:ubl-examples:world:codelist:WeightStatementTypeCode">VGM</cbc:WeightStatementTypeCode>
   <cac:Signature>

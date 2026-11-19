@@ -22,7 +22,7 @@ Before entering Lumeport the carrier reports its second feeder to the port. The 
   The carrier's report number.
 - `UUID` = **149f7421-1d43-5c08-9504-00a7ea0b615b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-03**  
+- `IssueDate` = **2026-05-08**  
   Sent the day before the ship enters Lumeport.
 - `IssueTime` = **11:22:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -197,7 +197,7 @@ Inside `Shipment`:
   The number of the ship's interim International Ship Security Certificate.
 - `ShipmentStage/ISPSRequirements/ValidISSCIndicator` = **false**  
   The ship has no full certificate yet.
-- `ShipmentStage/ISPSRequirements/ISSCAbsenceReason` = **The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for April.**  
+- `ShipmentStage/ISPSRequirements/ISSCAbsenceReason` = **The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for June.**  
   Why the ship has no full certificate, which the port needs to know.
 - `ShipmentStage/ISPSRequirements/ISSCExpiryDate` = **2026-07-14**  
   The interim certificate's last day: six months, the most the ISPS Code allows.
@@ -205,7 +205,7 @@ Inside `Shipment`:
   The ship security plan is on board.
 - `ShipmentStage/ISPSRequirements/CurrentOperatingSecurityLevelCode` = **1** (listID `IMO ISPS security level`)  
   Security level 1, the normal level. The code is from the world's copy of IMO ISPS Code security level: 1 = Security level 1.
-- `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 1 March. Nothing was found.**  
+- `ShipmentStage/ISPSRequirements/AdditionalMattersDescription` = **The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.**  
   A security matter the port should know about.
 - `ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyIdentification/ID` = **5389612047** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   Bayvarra's flag state administration: keeps the register of Bayvarran ships and issues their international ship security certificates under the ISPS Code. Referenced only, as the issuer of the certificate of Tidewell Ocean Lines' ship. Its identifier and name are enough (world/parties.json, referenced).
@@ -240,7 +240,7 @@ Inside `Shipment`:
 
 Inside `TransportMeans`:
 
-- `JourneyID` = **TR-26-09W**  
+- `JourneyID` = **TR-26-19W**  
   The voyage from Selanu back to Lumeport.
 - `RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
@@ -286,7 +286,7 @@ Inside `TransportMeans`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>TOL-CTR-26-0207</cbc:ID>
   <cbc:UUID>149f7421-1d43-5c08-9504-00a7ea0b615b</cbc:UUID>
-  <cbc:IssueDate>2026-03-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>11:22:00-01:00</cbc:IssueTime>
   <cbc:ReportTypeCode listID="urn:ubl-examples:world:codelist:TransportReportTypeCode">PREARRIVAL</cbc:ReportTypeCode>
   <cbc:ReportType>Pre-arrival report</cbc:ReportType>
@@ -414,11 +414,11 @@ Inside `TransportMeans`:
       <cac:ISPSRequirements>
         <cbc:ID>IISSC-XB-2026-0115</cbc:ID>
         <cbc:ValidISSCIndicator>false</cbc:ValidISSCIndicator>
-        <cbc:ISSCAbsenceReason>The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for April.</cbc:ISSCAbsenceReason>
+        <cbc:ISSCAbsenceReason>The ship came under Bayvarra's flag on 15 January 2026 and sails with an interim certificate (ISPS Code A/19.4), valid for six months; the flag state's verification for the full certificate is set for June.</cbc:ISSCAbsenceReason>
         <cbc:ISSCExpiryDate>2026-07-14</cbc:ISSCExpiryDate>
         <cbc:SSPOnBoardIndicator>true</cbc:SSPOnBoardIndicator>
         <cbc:CurrentOperatingSecurityLevelCode listID="IMO ISPS security level">1</cbc:CurrentOperatingSecurityLevelCode>
-        <cbc:AdditionalMattersDescription>The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 1 March. Nothing was found.</cbc:AdditionalMattersDescription>
+        <cbc:AdditionalMattersDescription>The ship was searched for stowaways before it left Selanu, because the port facility had reported a gap in its perimeter fence on 6 May. Nothing was found.</cbc:AdditionalMattersDescription>
         <cac:ISSCIssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5389612047</cbc:ID>
@@ -453,7 +453,7 @@ Inside `TransportMeans`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:TransportMeans>
-    <cbc:JourneyID>TR-26-09W</cbc:JourneyID>
+    <cbc:JourneyID>TR-26-19W</cbc:JourneyID>
     <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
     <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
     <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>

@@ -22,8 +22,8 @@ Lisavu's plant protection organisation under the IPPC, the Plant Protection Serv
   The Plant Protection Service's certificate number.
 - `UUID` = **78516adf-5718-5e78-bd9d-8e44536e335b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-28**  
-  Issued before shipment, at the ginnery's application.
+- `IssueDate` = **2026-05-05**  
+  Issued after the inspection at the ginnery, before shipment, at the ginnery's application.
 - `IssueTime` = **14:43:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **PHYTO** (listID `urn:ubl-examples:world:codelist:GoodsCertificateTypeCode`)  
@@ -41,9 +41,9 @@ Lisavu's plant protection organisation under the IPPC, the Plant Protection Serv
 
 Inside `ValidityPeriod`:
 
-- `StartDate` = **2026-02-28**  
+- `StartDate` = **2026-05-05**  
   From the inspection.
-- `EndDate` = **2026-03-14**  
+- `EndDate` = **2026-05-19**  
   For two weeks: the bales must ship by then.
 
 ### Applicable Territory Address
@@ -293,7 +293,7 @@ Inside `Attestation`:
   The sample, out of the bales of the shipment.
 - `AcceptanceIndicator` = **true**  
   Accepted.
-- `ValidityPeriod/EndDate` = **2026-03-14**  
+- `ValidityPeriod/EndDate` = **2026-05-19**  
   As the certificate.
 - `IssuerParty/PartyIdentification/ID` = **GOV-206** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -328,10 +328,10 @@ Inside `GoodsProcessing`:
   In words.
 - `Note` = **At the Selanu cotton ginnery.**  
   Where.
-- `Period/StartDate` = **2026-02-07**  
-  The ginning.
-- `Period/EndDate` = **2026-02-22**  
-  Its end.
+- `Period/StartDate` = **2026-03-23**  
+  The ginning and pressing of the 27 bales, in three pressing runs of the harvest, from 23 March.
+- `Period/EndDate` = **2026-04-17**  
+  The last run, on 17 April, before the chamber classed the lot on 20 April.
 - `ProcessingParty/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ProcessingParty/PartyName/Name` = **Selanu Cotton Ginnery**  
@@ -387,7 +387,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>DAL-GC-26-0202</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
-  <cbc:IssueDate>2026-02-28</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The ginned cotton is free of the pests named by Bayvarra's plant health rules.</cbc:Description>
@@ -395,8 +395,8 @@ Inside `Signature`:
   <cbc:Note languageID="en-XL">Inspected at the ginnery's warehouse.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-02-28</cbc:StartDate>
-    <cbc:EndDate>2026-03-14</cbc:EndDate>
+    <cbc:StartDate>2026-05-05</cbc:StartDate>
+    <cbc:EndDate>2026-05-19</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
@@ -595,7 +595,7 @@ Inside `Signature`:
     <cbc:Note>10 bales sampled out of 27.</cbc:Note>
     <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
     <cac:ValidityPeriod>
-      <cbc:EndDate>2026-03-14</cbc:EndDate>
+      <cbc:EndDate>2026-05-19</cbc:EndDate>
     </cac:ValidityPeriod>
     <cac:IssuerParty>
       <cac:PartyIdentification>
@@ -628,8 +628,8 @@ Inside `Signature`:
     <cbc:Description>Ginned, cleaned and pressed into bales.</cbc:Description>
     <cbc:Note>At the Selanu cotton ginnery.</cbc:Note>
     <cac:Period>
-      <cbc:StartDate>2026-02-07</cbc:StartDate>
-      <cbc:EndDate>2026-02-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:Period>
     <cac:ProcessingParty>
       <cac:PartyIdentification>
