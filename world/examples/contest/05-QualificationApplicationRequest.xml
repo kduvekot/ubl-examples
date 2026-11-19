@@ -15,6 +15,7 @@
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
   <cbc:WeightScoringMethodologyNote>The exclusion grounds and the qualification of the design lead are pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
   <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
+  <cbc:Note>The self-declaration form of the contest, available to every candidate with the contest documents; this is the copy Brackenmere Furniture obtained.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>

@@ -26,7 +26,7 @@ Version 2 of the self-declaration request: the design lead may also be an indust
   The department's file number for the contest, the same on every document of it.
 - `ContractName` = **Design of the harbour promenade bench**  
   The contest.
-- `IssueDate` = **2026-04-05**  
+- `IssueDate` = **2026-04-06**  
   Sent with the corrigendum.
 - `IssueTime` = **09:40:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -42,6 +42,8 @@ Version 2 of the self-declaration request: the design lead may also be an indust
   How the answers count.
 - `WeightingTypeCode` = **WEIGHTED** (listID `urn:ubl-examples:world:codelist:WeightingTypeCode`)  
   The selection criteria carry weights: the jury scores the references to choose three to five participants. The code is from the Trade Accord's weighting type list: WEIGHTED = Weighted.
+- `Note` = **The self-declaration form of the contest, available to every candidate with the contest documents; this is the copy Brackenmere Furniture obtained. Version 2: the design lead may also be a registered industrial designer, as the corrigendum says.**  
+  Why it names one economic operator before the selection (D29 point 7, contest/05#F7). What version 2 changes, said in the document (D29 point 4).
 
 ### Contracting Party
 
@@ -340,7 +342,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>de72eac2-3ba2-5070-a6d7-1c392c929efc</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:ContractName>Design of the harbour promenade bench</cbc:ContractName>
-  <cbc:IssueDate>2026-04-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>09:40:00-01:00</cbc:IssueTime>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
@@ -348,6 +350,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
   <cbc:WeightScoringMethodologyNote>The exclusion grounds and the qualification of the design lead are pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
   <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
+  <cbc:Note>The self-declaration form of the contest, available to every candidate with the contest documents; this is the copy Brackenmere Furniture obtained. Version 2: the design lead may also be a registered industrial designer, as the corrigendum says.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>

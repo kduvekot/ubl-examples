@@ -8,12 +8,13 @@
   <cbc:UUID>96bef55f-d029-56b6-bd03-038fe825ccdf</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:ContractName>Design of the harbour promenade bench</cbc:ContractName>
-  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>14:18:00-01:00</cbc:IssueTime>
   <cbc:EconomicOperatorGroupName>Brackenmere and Saltmere design team</cbc:EconomicOperatorGroupName>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+  <cbc:Note>Version 2: Brackenmere's own industrial designer, Ivo Harlan, now leads the design in place of Saltmere's architect, Edda Corwin.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>

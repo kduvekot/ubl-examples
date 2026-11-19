@@ -28,8 +28,8 @@ Version 2 of the prior information notice: the city council raised the prize fun
   Revised three weeks later.
 - `IssueTime` = **11:17:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Advance notice of the design contest for the harbour promenade bench.**  
-  What it announces.
+- `Note` = **Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume; the contest notice moves to 19 March.**  
+  What it announces. What version 2 changes, said in the document (D29 point 4).
 - `VersionID` = **2**  
   The second version, which supersedes the first: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume, the first prize from 6,000 to 8,000, and the contest notice moves to 19 March.
 - `PreviousVersionID` = **1**  
@@ -256,7 +256,7 @@ Inside `ProcurementProject`:
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:17:00-01:00</cbc:IssueTime>
-  <cbc:Note>Advance notice of the design contest for the harbour promenade bench.</cbc:Note>
+  <cbc:Note>Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume; the contest notice moves to 19 March.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:PlannedDate>2026-03-19</cbc:PlannedDate>

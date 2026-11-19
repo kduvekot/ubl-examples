@@ -3192,8 +3192,6 @@ def working_day(pid, day):
 
 
 CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
-    ('contest', '12-TendererQualification.xml'): 'D29',
-    ('contest', '11-QualificationApplicationResponse.xml'): 'D29',
     ('retail', '09-DocumentStatusRequest.xml'): 'D34',
     ('retail', '10-DocumentStatus.xml'): 'D34',
     ('retail', '11-TransportExecutionPlanRequest.xml'): 'D34',
@@ -3222,11 +3220,6 @@ CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the documen
     ('cotton', '11-ExportCustomsDeclaration.xml'): 'D33',
     ('cotton', '12-WeightStatement.xml'): 'D33',
     ('cotton', '18-RemittanceAdvice.xml'): 'D33',
-    ('contest', '08-ContractNotice.xml'): 'D29',
-    ('contest', '09-CallForTenders.xml'): 'D29',
-    ('contest', '10-QualificationApplicationRequest.xml'): 'D29',
-    ('contest', '14-BusinessInformation.xml'): 'D29',
-    ('contest', '16-ContractAwardNotice.xml'): 'D29',
 }
 
 

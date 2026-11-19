@@ -11096,14 +11096,14 @@ def contest_exclusion_criteria():
                  "group, each member answers.")]
 
 def contest_process(f, k, call=False):
-    requests_by = 89 if k == 2 else 75
+    requests_by = 87 if k == 2 else 74
     return {"ProcedureCode": V("DESIGNCONTEST", "A design contest."),
             "Description": V("A restricted design contest in two stages: requests to participate, then designs from "
                              "three to five selected participants, judged anonymously.", "How the contest runs."),
             "SubmissionMethodCode": V("ELECTRONIC", "Requests and designs through the department's platform."),
             "ParticipationRequestReceptionPeriod": {
                 "EndDate": V(f.date(requests_by), "Requests to participate by then" +
-                             (": two weeks later than version 1 said, to give time for the corrected site plan."
+                             (": Thursday 30 April, later than the Friday 17 April of version 1, to give time for the corrected site plan (D29 point 10)."
                               if k == 2 else "."))},
             "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(130), "Designs by then."),
                                                "EndTime": V("12:00:00", "At noon.")},
@@ -11135,7 +11135,38 @@ def contest_terms(f, k, first=8000):
             "Language": {"ID": V("en", "Designs and requests in English.")}}
 
 
+# What each version 2 changes, said in the document itself (D29 point 4, contest/02#F3, 16#F11).
+CONTEST_CHANGES = {
+    "PriorInformationNotice": "Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 "
+                              "lume and the first prize from 6,000 to 8,000 lume; the contest notice moves to 19 March.",
+    "ContractNotice": "Corrigendum, version 2: the site plan is replaced by revision B (the sea wall is 420 m long, "
+                      "not 240 m), the deadline for requests to participate moves from 17 to 30 April, and the "
+                      "design lead may also be a registered industrial designer.",
+    "CallForTenders": "Version 2: the site plan revision B replaces revision A, and the design lead may also be a "
+                      "registered industrial designer, as the corrigendum says.",
+    "QualificationApplicationRequest": "Version 2: the design lead may also be a registered industrial designer, as "
+                                       "the corrigendum says.",
+    "QualificationApplicationResponse": "Version 2: Brackenmere's own industrial designer, Ivo Harlan, now leads the "
+                                        "design in place of Saltmere's architect, Edda Corwin.",
+    "TendererQualification": "Version 2: Brackenmere now provides the design lead, so the shares of the work move "
+                             "from 60 and 40 % to 70 and 30 %.",
+    "BusinessInformation": "Version 2: the furniture maker's accounts for 2025, filed on 7 May, replace those for 2024 "
+                           "as the yearly production value.",
+    "ContractAwardNotice": "Version 2: corrects the first prize from 6,000 to 8,000 lume, the amount the contest "
+                           "notice offered; version 1 gave the amount first planned by mistake."}
+
+
 def contest(n, doc):
+    out = contest_document(n, doc)
+    if nth("contest", n, doc) == 2 and doc["doc"] in CONTEST_CHANGES:
+        change = CONTEST_CHANGES[doc["doc"]]
+        note = out.get("Note")
+        out["Note"] = V(f"{note.value} {change}" if note else change, (f"{note.why} " if note else "") +
+                        "What version 2 changes, said in the document (D29 point 4).")
+    return out
+
+
+def contest_document(n, doc):
     f, d = CONTEST, doc["doc"]
     k = nth("contest", n, doc)
     folder = {"ContractFolderID": V(CFOLDER, "The department's file number for the contest, the same on every "
@@ -11169,13 +11200,13 @@ def contest(n, doc):
         return out
     if d == "ContractNotice":
         return {"ID": V(f.number("contest-notice", doc["from"], d), "The notice number, the same in both versions."),
-                "IssueDate": V(f.date(45 if k == 1 else 62), "Published on the date the revised prior information "
+                "IssueDate": V(f.date(45 if k == 1 else 63), "Published on the date the revised prior information "
                                                              "notice gave." if k == 1 else
                                "The corrigendum, published as soon as the error was found."),
                 **folder,
                 **contest_version(k, "a corrigendum. A question from a participant showed that the site plan gave the "
                                      "sea wall as 240 m long; it is 420 m. The corrected plan changes the number of "
-                                     "benches, so the deadline for requests to participate is extended by two weeks, "
+                                     "benches, so the deadline for requests to participate is extended to 30 April, "
                                      "and the professional qualification is widened to industrial designers."),
                 "Note": V("Restricted design contest for the harbour promenade bench, with three prizes.", "What."),
                 "NoticeTypeCode": V("CN-DESG", "A design contest notice (the Accord's list, after the eForms notice "
@@ -11189,15 +11220,31 @@ def contest(n, doc):
                                         "revision A showed.") if k == 2 else \
                ("PWD-PROM-SITE-PLAN-A", "The site plan of the promenade, revision A.")
         return {"ID": V(f.number("contest-call", doc["from"], d), "The number of the contest documents."),
-                "IssueDate": V(f.date(46 if k == 1 else 62), "Retrieved by the furniture maker the day after the "
+                "IssueDate": V(f.date(46 if k == 1 else 63), "Retrieved by the furniture maker the day after the "
                                                              "notice." if k == 1 else
                                "The revised documents, sent with the corrigendum to everyone who retrieved them."),
                 **folder,
                 **contest_version(k, "the site plan is replaced by revision B and the selection criterion widened, "
                                      "as the corrigendum says."),
-                "Note": V("The brief, the site plan and the rules of the contest.", "What the documents are."),
-                "TechnicalDocumentReference": {"ID": V("PWD-PROM-BRIEF", "The design brief.")},
-                "ProvidedDocumentReference": {"ID": V(*plan)},
+                "Note": V("The brief, the site plan and the rules of the contest. The contest documents are available "
+                          "to everyone on the department's platform from the contest notice; this is the set "
+                          "Brackenmere Furniture obtained.", "What the documents are, and why they name one receiver "
+                          "before the selection (D29 point 7, contest/04#F7)."),
+                "TechnicalDocumentReference": {
+                    "ID": V("PWD-PROM-BRIEF", "The design brief."),
+                    "DocumentType": V("Design brief", "What it is (contest/04#F3)."),
+                    "Attachment": {"ExternalReference": {"URI": V(f"https://tenders.lumeport.example/{CFOLDER}/brief",
+                                                                  "Where it is obtained: the contest's page on the "
+                                                                  "department's platform.")}}},
+                "ProvidedDocumentReference": {
+                    "ID": V(*plan), "DocumentType": V("Site plan", "What it is."),
+                    "VersionID": V("B" if k == 2 else "A", "Its revision, so the change between the versions can be "
+                                                          "read (contest/09#F8)."),
+                    **({"DocumentDescription": V("Revision B replaces revision A: the sea wall is 420 m long, not "
+                                                 "240 m.", "What the revision changes.")} if k == 2 else {}),
+                    "Attachment": {"ExternalReference": {"URI": V(f"https://tenders.lumeport.example/{CFOLDER}/"
+                                                                  f"site-plan-{'b' if k == 2 else 'a'}", "Where it "
+                                                                  "is obtained.")}}},
                 "ContractingParty": contracting_party_details(),
                 "TenderingTerms": contest_terms(f, k), "TenderingProcess": contest_process(f, k, call=True),
                 "ProcurementProject": contest_project()}
@@ -11205,11 +11252,14 @@ def contest(n, doc):
         crit = ("registered architect or registered industrial designer" if k == 2 else "registered architect")
         return {**folder, "ID": V(f.number("contest-qar", doc["from"], d), "The number of the self-declaration "
                                                                            "the department asks for."),
-                "IssueDate": V(f.date(46 if k == 1 else 62), "Sent with the contest documents." if k == 1 else
+                "IssueDate": V(f.date(46 if k == 1 else 63), "Sent with the contest documents." if k == 1 else
                                "Sent with the corrigendum."),
                 **contest_version(k, "the criterion on the design lead now admits a registered industrial designer, "
                                      "as the corrigendum says."),
                 "ContractName": V("Design of the harbour promenade bench", "The contest."),
+                "Note": V("The self-declaration form of the contest, available to every candidate with the contest "
+                          "documents; this is the copy Brackenmere Furniture obtained.", "Why it names one economic "
+                          "operator before the selection (D29 point 7, contest/05#F7)."),
                 "ProcedureCode": V("DESIGNCONTEST", "A design contest."),
                 "QualificationApplicationTypeCode": V("REGULATED", "The regulated form of self-declaration."),
                 "WeightingTypeCode": V("WEIGHTED", "The selection criteria carry weights: the jury scores the "
@@ -11261,7 +11311,7 @@ def contest(n, doc):
         coast = next(r for r in CONTEST_REFERENCES if r["coast"])
         return {**folder, "ID": V(f.number("contest-qar-response", doc["from"], d), "The team's number for its "
                                                                                      "self-declaration."),
-                "IssueDate": V(f.date(58 if k == 1 else 70), "With the request to participate." if k == 1 else
+                "IssueDate": V(f.date(58 if k == 1 else 71), "With the request to participate." if k == 1 else
                                "Before the extended deadline for requests."),
                 **contest_version(k, "the team answers version 2 of the request: the furniture maker's industrial "
                                      "designer now leads the design, and the engineering firm's architect stays in "
@@ -11324,7 +11374,7 @@ def contest(n, doc):
         return {"ID": V(f.number("contest-qualification", doc["from"], d), "The team's number for its "
                                                                             "qualification."),
                 **folder,
-                "IssueDate": V(f.date(58 if k == 1 else 70), "With the request to participate." if k == 1 else
+                "IssueDate": V(f.date(58 if k == 1 else 71), "With the request to participate." if k == 1 else
                                "With the revised self-declaration."),
                 **contest_version(k, "the furniture maker now leads the design, so the shares of the work change."),
                 "Note": V(f"Brackenmere Furniture leads the team; {lead}; Saltmere Engineering does the structure "
@@ -11350,10 +11400,12 @@ def contest(n, doc):
                 "BusinessCapability": {
                     "CapabilityTypeCode": V("PRODUCTION", "What the firm produces: its services."),
                     "Description": V("Design and permits of telecom mast sites; installation of back-up power, "
-                                     "safety equipment and ground foundations, with its own crews.", "What."),
+                                     "safety equipment and ground foundations, with its own crews: the yearly value "
+                                     f"of its services in {legal['turnover']['year']}, from the accounts filed for "
+                                     "that year.", "What the amount measures and for which year."),
                     "ValueAmount": amount(Decimal(legal["turnover"]["amount"]), "XBL",
-                                          f"The yearly turnover of {legal['turnover']['year']}, from the accounts "
-                                          "filed (world/parties.json).")},
+                                          f"The value of its services in {legal['turnover']['year']} "
+                                          "(world/parties.json).")},
                 "NoticeSubType": {"SubTypeCode": V("EXTRACT", "An extract on request.")}}
     if d == "TendererQualificationResponse":
         due = Decimal("3860.00")
@@ -11383,26 +11435,30 @@ def contest(n, doc):
                     else BRACKENMERE_TURNOVER_2024)
         return {"ID": V(f.number("contest-business-info", doc["from"], d), "The registry's extract number, the same "
                                                                            "in both versions."),
-                "IssueDate": V(f.date(92 if k == 1 else 96), "The department checks the lead member when the jury "
+                "IssueDate": V(f.date(92 if k == 1 else 95), "The department checks the lead member when the jury "
                                                              "selects the participants." if k == 1 else
                                "The day after the accounts were filed."),
-                **contest_version(k, "the furniture maker filed its accounts for 2025 on " + f.date(95) + ", and the "
+                **contest_version(k, "the furniture maker filed its accounts for 2025 on " + f.date(94) + ", and the "
                                      "registry issues the extract again with the new turnover."),
                 "Note": V("Extract from the register of economic operators.", "What it is."),
                 "BriefDescription": V("Brackenmere Furniture: registered, no exclusion grounds recorded.", "In short."),
                 "NoticeTypeCode": V("BUSREG", "Registration information."),
                 "BusinessCapability": {
                     "CapabilityTypeCode": V("PRODUCTION", "Production capacity."),
-                    "Description": V("Furniture of wood and steel, designed and made in its own workshop.", "What."),
-                    "ValueAmount": amount(turnover, "XBL", "The yearly turnover of 2025, from the accounts filed."
-                                          if k == 2 else "The yearly turnover of 2024, the last accounts filed.")},
+                    "Description": V(f"Furniture of wood and steel, designed and made in its own workshop: the yearly "
+                                     f"production value of {2025 if k == 2 else 2024}, from the accounts filed for that "
+                                     "year.", "What the amount measures and for which year (D29 point 6, "
+                                              "contest/13#F3)."),
+                    "ValueAmount": amount(turnover, "XBL", "The value of what it produced in 2025, as its accounts "
+                                          "for 2025 give it." if k == 2 else "The value of what it produced in 2024, "
+                                          "from the last accounts filed.")},
                 "NoticeSubType": {"SubTypeCode": V("EXTRACT", "An extract on request.")}}
     if d == "ContractAwardNotice":
         first = 6000 if k == 1 else 8000
         return {"ID": V(f.number("contest-result", doc["from"], d), "The notice number, the same in both versions."),
                 **folder,
-                "IssueDate": V(f.date(150 if k == 1 else 153), "Published after the jury's decision." if k == 1 else
-                               "The correction, three days later."),
+                "IssueDate": V(f.date(150 if k == 1 else 154), "Published after the jury's decision." if k == 1 else
+                               "The correction, two working days later (D29 point 10)."),
                 **contest_version(k, "version 1 gave the first prize as 6,000 lume, the amount first planned; the "
                                      "contest notice offered 8,000, and 8,000 is paid."),
                 "Note": V("Results of the design contest for the harbour promenade bench.", "What."),
@@ -11428,18 +11484,21 @@ def contest(n, doc):
                         "LimitationDescription": V("Only the winner of the first prize is invited to negotiate the "
                                                    "follow-up contract, as the contest notice announced.",
                                                    "Why one party."),
-                        "PreSelectedParty": party(TEAM_LEAD, short=True)}},
+                        "PreSelectedParty": [party(TEAM_LEAD, short=True), party(TEAM_MEMBER, short=True)]}},
                 "ProcurementProject": contest_project(),
                 "TenderResult": {
                     "TenderResultCode": V("AWARDED", "The prizes are awarded."),
                     "Description": V("First prize to the Brackenmere and Saltmere design team, second to Valdara "
                                      "Industries. The jury withheld the third prize: no other design reached prize "
                                      "standard.", "The jury's decision."),
-                    "AwardDate": V(f.date(146), "The day the jury decided."),
+                    "AwardDate": V(f.date(144), "The day the jury decided: Friday 26 June (D29 point 10)."),
                     "ReceivedTenderQuantity": qty(4, "EA", "Four of the five selected participants submitted a "
                                                            "design."),
                     "ReceivedForeignTenderQuantity": qty(1, "EA", "Valdara Industries, from Urvania."),
-                    "WinningParty": [{"Rank": V("1", "First prize.")}, {"Rank": V("2", "Second prize.")}]}}
+                    "WinningParty": [{"Rank": V("1", "First prize: the lead member of the winning team.")},
+                                     {"Rank": V("1", "First prize: the team's other member, a winner as much as its "
+                                                     "lead (D29 point 2, contest/15#F2).")},
+                                     {"Rank": V("2", "Second prize.")}]}}
     raise SystemExit(f"contest scenario: no document {n} {doc['doc']}")
 
 

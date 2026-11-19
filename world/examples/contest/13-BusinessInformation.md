@@ -244,10 +244,10 @@ Inside `BusinessCapability`:
 
 - `CapabilityTypeCode` = **PRODUCTION** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
   Production capacity. The code is from the Trade Accord's business capability type list: PRODUCTION = Production.
-- `Description` = **Furniture of wood and steel, designed and made in its own workshop.**  
-  What.
+- `Description` = **Furniture of wood and steel, designed and made in its own workshop: the yearly production value of 2024, from the accounts filed for that year.**  
+  What the amount measures and for which year (D29 point 6, contest/13#F3).
 - `ValueAmount` = **6410000.00** (currencyID `XBL`)  
-  The yearly turnover of 2024, the last accounts filed.
+  The value of what it produced in 2024, from the last accounts filed.
 
 ### Notice Sub Type
 
@@ -437,7 +437,7 @@ Inside `NoticeSubType`:
   </cac:BusinessParty>
   <cac:BusinessCapability>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
-    <cbc:Description>Furniture of wood and steel, designed and made in its own workshop.</cbc:Description>
+    <cbc:Description>Furniture of wood and steel, designed and made in its own workshop: the yearly production value of 2024, from the accounts filed for that year.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">6410000.00</cbc:ValueAmount>
   </cac:BusinessCapability>
   <cac:NoticeSubType>

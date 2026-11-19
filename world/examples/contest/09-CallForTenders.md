@@ -24,12 +24,12 @@ Version 2 of the contest documents, with the corrected site plan.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PROM-DC**  
   The department's file number for the contest, the same on every document of it.
-- `IssueDate` = **2026-04-05**  
+- `IssueDate` = **2026-04-06**  
   The revised documents, sent with the corrigendum to everyone who retrieved them.
 - `IssueTime` = **16:45:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The brief, the site plan and the rules of the contest.**  
-  What the documents are.
+- `Note` = **The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained. Version 2: the site plan revision B replaces revision A, and the design lead may also be a registered industrial designer, as the corrigendum says.**  
+  What the documents are, and why they name one receiver before the selection (D29 point 7, contest/04#F7). What version 2 changes, said in the document (D29 point 4).
 - `VersionID` = **2**  
   The second version, which supersedes the first: the site plan is replaced by revision B and the selection criterion widened, as the corrigendum says.
 - `PreviousVersionID` = **1**  
@@ -41,6 +41,10 @@ Inside `TechnicalDocumentReference`:
 
 - `ID` = **PWD-PROM-BRIEF**  
   The design brief.
+- `DocumentType` = **Design brief**  
+  What it is (contest/04#F3).
+- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD-2026-PROM-DC/brief**  
+  Where it is obtained: the contest's page on the department's platform.
 
 ### Provided Document Reference
 
@@ -48,8 +52,14 @@ Inside `ProvidedDocumentReference`:
 
 - `ID` = **PWD-PROM-SITE-PLAN-B**  
   The site plan, revision B: the sea wall is 420 m long, not 240 m as revision A showed.
-- `DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the site plan of the promenade, revision B, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+- `DocumentType` = **Site plan**  
+  What it is.
+- `VersionID` = **B**  
+  Its revision, so the change between the versions can be read (contest/09#F8).
+- `DocumentDescription` = **Revision B replaces revision A: the sea wall is 420 m long, not 240 m.**  
+  What the revision changes.
+- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-b**  
+  Where it is obtained.
 
 ### Contracting Party
 
@@ -258,8 +268,8 @@ Inside `TenderingProcess`:
   Designs by then.
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
   At noon.
-- `ParticipationRequestReceptionPeriod/EndDate` = **2026-05-02**  
-  Requests to participate by then: two weeks later than version 1 said, to give time for the corrected site plan.
+- `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-30**  
+  Requests to participate by then: Thursday 30 April, later than the Friday 17 April of version 1, to give time for the corrected site plan (D29 point 10).
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
   The prior information notice of the contest.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0634**  
@@ -312,17 +322,30 @@ Inside `ProcurementProject`:
   <cbc:ID>LPWD-DOC-26-0635</cbc:ID>
   <cbc:UUID>14a2c6de-5d51-5968-b1ad-5cfe506bac85</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-04-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
-  <cbc:Note>The brief, the site plan and the rules of the contest.</cbc:Note>
+  <cbc:Note>The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained. Version 2: the site plan revision B replaces revision A, and the design lead may also be a registered industrial designer, as the corrigendum says.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cac:TechnicalDocumentReference>
     <cbc:ID>PWD-PROM-BRIEF</cbc:ID>
+    <cbc:DocumentType>Design brief</cbc:DocumentType>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/brief</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:TechnicalDocumentReference>
   <cac:ProvidedDocumentReference>
     <cbc:ID>PWD-PROM-SITE-PLAN-B</cbc:ID>
-    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
+    <cbc:DocumentType>Site plan</cbc:DocumentType>
+    <cbc:VersionID>B</cbc:VersionID>
+    <cbc:DocumentDescription>Revision B replaces revision A: the sea wall is 420 m long, not 240 m.</cbc:DocumentDescription>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-b</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:ProvidedDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
@@ -490,7 +513,7 @@ Inside `ProcurementProject`:
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-05-02</cbc:EndDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>

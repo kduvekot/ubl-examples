@@ -242,7 +242,7 @@ Inside `TenderingProcess`:
   Designs by then.
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
   At noon.
-- `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-18**  
+- `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-17**  
   Requests to participate by then.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
   The prior information notice of the contest.
@@ -461,7 +461,7 @@ Inside `ProcurementProject`:
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-04-18</cbc:EndDate>
+      <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>

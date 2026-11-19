@@ -145,6 +145,14 @@
           <cbc:Name>Brackenmere Furniture</cbc:Name>
         </cac:PartyName>
       </cac:PreSelectedParty>
+      <cac:PreSelectedParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Saltmere Engineering</cbc:Name>
+        </cac:PartyName>
+      </cac:PreSelectedParty>
     </cac:EconomicOperatorShortList>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
@@ -170,7 +178,7 @@
   <cac:TenderResult>
     <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
     <cbc:Description>First prize to the Brackenmere and Saltmere design team, second to Valdara Industries. The jury withheld the third prize: no other design reached prize standard.</cbc:Description>
-    <cbc:AwardDate>2026-06-28</cbc:AwardDate>
+    <cbc:AwardDate>2026-06-26</cbc:AwardDate>
     <cbc:ReceivedTenderQuantity unitCode="EA">4</cbc:ReceivedTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:WinningParty>
@@ -184,6 +192,17 @@
         </cac:AdditionalPartyIdentification>
         <cac:PartyName>
           <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:WinningParty>
+    <cac:WinningParty>
+      <cbc:Rank>1</cbc:Rank>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Saltmere Engineering</cbc:Name>
         </cac:PartyName>
       </cac:Party>
     </cac:WinningParty>

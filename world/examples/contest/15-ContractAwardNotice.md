@@ -209,6 +209,10 @@ Inside `TenderingProcess`:
   A party referred to from another party's details: its identifier and name are enough.
 - `EconomicOperatorShortList/PreSelectedParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
+- `EconomicOperatorShortList/PreSelectedParty/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `EconomicOperatorShortList/PreSelectedParty/PartyName/Name` = **Saltmere Engineering**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Procurement Project
 
@@ -239,20 +243,26 @@ Inside `TenderResult`:
   The prizes are awarded. The code is from the Trade Accord's tender result list: AWARDED = Awarded.
 - `Description` = **First prize to the Brackenmere and Saltmere design team, second to Valdara Industries. The jury withheld the third prize: no other design reached prize standard.**  
   The jury's decision.
-- `AwardDate` = **2026-06-28**  
-  The day the jury decided.
+- `AwardDate` = **2026-06-26**  
+  The day the jury decided: Friday 26 June (D29 point 10).
 - `ReceivedTenderQuantity` = **4** (unitCode `EA`)  
   Four of the five selected participants submitted a design.
 - `ReceivedForeignTenderQuantity` = **1** (unitCode `EA`)  
   Valdara Industries, from Urvania.
 - `WinningParty/Rank` = **1**  
-  First prize.
+  First prize: the lead member of the winning team.
 - `WinningParty/Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `WinningParty/Party/AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
   A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brackenmere Furniture (world/parties.json).
 - `WinningParty/Party/PartyName/Name` = **Brackenmere Furniture**  
   The trading name; identity of Brackenmere Furniture (world/parties.json).
+- `WinningParty/Rank` = **1**  
+  First prize: the team's other member, a winner as much as its lead (D29 point 2, contest/15#F2).
+- `WinningParty/Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `WinningParty/Party/PartyName/Name` = **Saltmere Engineering**  
+  The trading name; identity of Saltmere Engineering (world/parties.json).
 - `WinningParty/Rank` = **2**  
   Second prize.
 - `WinningParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -412,6 +422,14 @@ Inside `TenderResult`:
           <cbc:Name>Brackenmere Furniture</cbc:Name>
         </cac:PartyName>
       </cac:PreSelectedParty>
+      <cac:PreSelectedParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Saltmere Engineering</cbc:Name>
+        </cac:PartyName>
+      </cac:PreSelectedParty>
     </cac:EconomicOperatorShortList>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
@@ -437,7 +455,7 @@ Inside `TenderResult`:
   <cac:TenderResult>
     <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
     <cbc:Description>First prize to the Brackenmere and Saltmere design team, second to Valdara Industries. The jury withheld the third prize: no other design reached prize standard.</cbc:Description>
-    <cbc:AwardDate>2026-06-28</cbc:AwardDate>
+    <cbc:AwardDate>2026-06-26</cbc:AwardDate>
     <cbc:ReceivedTenderQuantity unitCode="EA">4</cbc:ReceivedTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:WinningParty>
@@ -451,6 +469,17 @@ Inside `TenderResult`:
         </cac:AdditionalPartyIdentification>
         <cac:PartyName>
           <cbc:Name>Brackenmere Furniture</cbc:Name>
+        </cac:PartyName>
+      </cac:Party>
+    </cac:WinningParty>
+    <cac:WinningParty>
+      <cbc:Rank>1</cbc:Rank>
+      <cac:Party>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Saltmere Engineering</cbc:Name>
         </cac:PartyName>
       </cac:Party>
     </cac:WinningParty>

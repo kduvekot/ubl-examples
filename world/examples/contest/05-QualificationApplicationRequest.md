@@ -40,6 +40,8 @@ The authority asks for the self-declaration on the design lead's professional qu
   How the answers count.
 - `WeightingTypeCode` = **WEIGHTED** (listID `urn:ubl-examples:world:codelist:WeightingTypeCode`)  
   The selection criteria carry weights: the jury scores the references to choose three to five participants. The code is from the Trade Accord's weighting type list: WEIGHTED = Weighted.
+- `Note` = **The self-declaration form of the contest, available to every candidate with the contest documents; this is the copy Brackenmere Furniture obtained.**  
+  Why it names one economic operator before the selection (D29 point 7, contest/05#F7).
 
 ### Contracting Party
 
@@ -345,6 +347,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
   <cbc:WeightScoringMethodologyNote>The exclusion grounds and the qualification of the design lead are pass or fail; the two references are scored 0 to 10 and weighted 60 and 40.</cbc:WeightScoringMethodologyNote>
   <cbc:WeightingTypeCode listID="urn:ubl-examples:world:codelist:WeightingTypeCode">WEIGHTED</cbc:WeightingTypeCode>
+  <cbc:Note>The self-declaration form of the contest, available to every candidate with the contest documents; this is the copy Brackenmere Furniture obtained.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>

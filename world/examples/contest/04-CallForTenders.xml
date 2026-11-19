@@ -9,14 +9,26 @@
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>16:56:00-01:00</cbc:IssueTime>
-  <cbc:Note>The brief, the site plan and the rules of the contest.</cbc:Note>
+  <cbc:Note>The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:TechnicalDocumentReference>
     <cbc:ID>PWD-PROM-BRIEF</cbc:ID>
+    <cbc:DocumentType>Design brief</cbc:DocumentType>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/brief</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:TechnicalDocumentReference>
   <cac:ProvidedDocumentReference>
     <cbc:ID>PWD-PROM-SITE-PLAN-A</cbc:ID>
-    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
+    <cbc:DocumentType>Site plan</cbc:DocumentType>
+    <cbc:VersionID>A</cbc:VersionID>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-a</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:ProvidedDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
@@ -184,7 +196,7 @@
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-04-18</cbc:EndDate>
+      <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>

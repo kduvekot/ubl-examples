@@ -24,12 +24,12 @@ Version 2 of the request to participate: the shares of the team members change w
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PROM-DC**  
   The department's file number for the contest, the same on every document of it.
-- `IssueDate` = **2026-04-13**  
+- `IssueDate` = **2026-04-14**  
   With the revised self-declaration.
 - `IssueTime` = **09:52:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring.**  
-  Who does what, and who provides the design lead (D29 point 2, contest/07#F4).
+- `Note` = **Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring. Version 2: Brackenmere now provides the design lead, so the shares of the work move from 60 and 40 % to 70 and 30 %.**  
+  Who does what, and who provides the design lead (D29 point 2, contest/07#F4). What version 2 changes, said in the document (D29 point 4).
 - `VersionID` = **2**  
   The second version, which supersedes the first: the furniture maker now leads the design, so the shares of the work change.
 - `PreviousVersionID` = **1**  
@@ -307,9 +307,9 @@ Inside `ContractingParty`:
   <cbc:ID>BF-DOC-26-0638</cbc:ID>
   <cbc:UUID>34e157b7-f926-5105-950a-23592457ef92</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:52:00-01:00</cbc:IssueTime>
-  <cbc:Note>Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring.</cbc:Note>
+  <cbc:Note>Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring. Version 2: Brackenmere now provides the design lead, so the shares of the work move from 60 and 40 % to 70 and 30 %.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cac:TendererPartyQualification>

@@ -28,8 +28,8 @@ The furniture maker retrieves the contest documents: the brief, the site plan an
   Retrieved by the furniture maker the day after the notice.
 - `IssueTime` = **16:56:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The brief, the site plan and the rules of the contest.**  
-  What the documents are.
+- `Note` = **The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained.**  
+  What the documents are, and why they name one receiver before the selection (D29 point 7, contest/04#F7).
 - `VersionID` = **1**  
   The first version.
 
@@ -39,6 +39,10 @@ Inside `TechnicalDocumentReference`:
 
 - `ID` = **PWD-PROM-BRIEF**  
   The design brief.
+- `DocumentType` = **Design brief**  
+  What it is (contest/04#F3).
+- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD-2026-PROM-DC/brief**  
+  Where it is obtained: the contest's page on the department's platform.
 
 ### Provided Document Reference
 
@@ -46,8 +50,12 @@ Inside `ProvidedDocumentReference`:
 
 - `ID` = **PWD-PROM-SITE-PLAN-A**  
   The site plan of the promenade, revision A.
-- `DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the site plan of the promenade, revision A, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+- `DocumentType` = **Site plan**  
+  What it is.
+- `VersionID` = **A**  
+  Its revision, so the change between the versions can be read (contest/09#F8).
+- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-a**  
+  Where it is obtained.
 
 ### Contracting Party
 
@@ -256,7 +264,7 @@ Inside `TenderingProcess`:
   Designs by then.
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
   At noon.
-- `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-18**  
+- `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-17**  
   Requests to participate by then.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
   The prior information notice of the contest.
@@ -312,14 +320,26 @@ Inside `ProcurementProject`:
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>16:56:00-01:00</cbc:IssueTime>
-  <cbc:Note>The brief, the site plan and the rules of the contest.</cbc:Note>
+  <cbc:Note>The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:TechnicalDocumentReference>
     <cbc:ID>PWD-PROM-BRIEF</cbc:ID>
+    <cbc:DocumentType>Design brief</cbc:DocumentType>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/brief</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:TechnicalDocumentReference>
   <cac:ProvidedDocumentReference>
     <cbc:ID>PWD-PROM-SITE-PLAN-A</cbc:ID>
-    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
+    <cbc:DocumentType>Site plan</cbc:DocumentType>
+    <cbc:VersionID>A</cbc:VersionID>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-a</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
   </cac:ProvidedDocumentReference>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
@@ -487,7 +507,7 @@ Inside `ProcurementProject`:
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-04-18</cbc:EndDate>
+      <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>

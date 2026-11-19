@@ -176,7 +176,7 @@
   </cac:BusinessParty>
   <cac:BusinessCapability>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
-    <cbc:Description>Furniture of wood and steel, designed and made in its own workshop.</cbc:Description>
+    <cbc:Description>Furniture of wood and steel, designed and made in its own workshop: the yearly production value of 2024, from the accounts filed for that year.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">6410000.00</cbc:ValueAmount>
   </cac:BusinessCapability>
   <cac:NoticeSubType>

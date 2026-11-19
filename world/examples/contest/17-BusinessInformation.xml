@@ -171,7 +171,7 @@
   </cac:BusinessParty>
   <cac:BusinessCapability>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
-    <cbc:Description>Design and permits of telecom mast sites; installation of back-up power, safety equipment and ground foundations, with its own crews.</cbc:Description>
+    <cbc:Description>Design and permits of telecom mast sites; installation of back-up power, safety equipment and ground foundations, with its own crews: the yearly value of its services in 2025, from the accounts filed for that year.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">5400000.00</cbc:ValueAmount>
   </cac:BusinessCapability>
   <cac:NoticeSubType>

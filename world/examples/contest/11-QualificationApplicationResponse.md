@@ -26,7 +26,7 @@ Version 2 of the team's self-declaration: the furniture maker's own industrial d
   The department's file number for the contest, the same on every document of it.
 - `ContractName` = **Design of the harbour promenade bench**  
   The contest.
-- `IssueDate` = **2026-04-13**  
+- `IssueDate` = **2026-04-14**  
   Before the extended deadline for requests.
 - `IssueTime` = **14:18:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -38,6 +38,8 @@ Version 2 of the team's self-declaration: the furniture maker's own industrial d
   The version this one supersedes: version 1 of the same document, with the same number.
 - `ProcedureCode` = **DESIGNCONTEST** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   The contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
+- `Note` = **Version 2: Brackenmere's own industrial designer, Ivo Harlan, now leads the design in place of Saltmere's architect, Edda Corwin.**  
+  What version 2 changes, said in the document (D29 point 4).
 
 ### Contracting Party
 
@@ -348,12 +350,13 @@ Inside `Evidence`:
   <cbc:UUID>96bef55f-d029-56b6-bd03-038fe825ccdf</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:ContractName>Design of the harbour promenade bench</cbc:ContractName>
-  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>14:18:00-01:00</cbc:IssueTime>
   <cbc:EconomicOperatorGroupName>Brackenmere and Saltmere design team</cbc:EconomicOperatorGroupName>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+  <cbc:Note>Version 2: Brackenmere's own industrial designer, Ivo Harlan, now leads the design in place of Saltmere's architect, Edda Corwin.</cbc:Note>
   <cac:ContractingParty>
     <cac:Party>
       <cac:PartyIdentification>

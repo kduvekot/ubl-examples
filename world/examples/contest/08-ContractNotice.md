@@ -24,14 +24,14 @@ A corrigendum, version 2 of the contest notice: the site plan was wrong, the dea
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `ContractFolderID` = **PWD-2026-PROM-DC**  
   The department's file number for the contest, the same on every document of it.
-- `IssueDate` = **2026-04-05**  
+- `IssueDate` = **2026-04-06**  
   The corrigendum, published as soon as the error was found.
 - `IssueTime` = **08:19:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Restricted design contest for the harbour promenade bench, with three prizes.**  
-  What.
+- `Note` = **Restricted design contest for the harbour promenade bench, with three prizes. Corrigendum, version 2: the site plan is replaced by revision B (the sea wall is 420 m long, not 240 m), the deadline for requests to participate moves from 17 to 30 April, and the design lead may also be a registered industrial designer.**  
+  What. What version 2 changes, said in the document (D29 point 4).
 - `VersionID` = **2**  
-  The second version, which supersedes the first: a corrigendum. A question from a participant showed that the site plan gave the sea wall as 240 m long; it is 420 m. The corrected plan changes the number of benches, so the deadline for requests to participate is extended by two weeks, and the professional qualification is widened to industrial designers.
+  The second version, which supersedes the first: a corrigendum. A question from a participant showed that the site plan gave the sea wall as 240 m long; it is 420 m. The corrected plan changes the number of benches, so the deadline for requests to participate is extended to 30 April, and the professional qualification is widened to industrial designers.
 - `PreviousVersionID` = **1**  
   The version this one supersedes: version 1 of the same document, with the same number.
 - `NoticeTypeCode` = **CN-DESG** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
@@ -244,8 +244,8 @@ Inside `TenderingProcess`:
   Designs by then.
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
   At noon.
-- `ParticipationRequestReceptionPeriod/EndDate` = **2026-05-02**  
-  Requests to participate by then: two weeks later than version 1 said, to give time for the corrected site plan.
+- `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-30**  
+  Requests to participate by then: Thursday 30 April, later than the Friday 17 April of version 1, to give time for the corrected site plan (D29 point 10).
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
   The prior information notice of the contest.
 - `ProcessJustification/PreviousCancellationReasonCode` = **UNSUITABLE** (listID `urn:ubl-examples:world:codelist:CancellationReasonCode`)  
@@ -294,9 +294,9 @@ Inside `ProcurementProject`:
   <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
   <cbc:UUID>317128f4-cd1c-550c-b5d6-6fe22d03fd12</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-04-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>08:19:00-01:00</cbc:IssueTime>
-  <cbc:Note>Restricted design contest for the harbour promenade bench, with three prizes.</cbc:Note>
+  <cbc:Note>Restricted design contest for the harbour promenade bench, with three prizes. Corrigendum, version 2: the site plan is replaced by revision B (the sea wall is 420 m long, not 240 m), the deadline for requests to participate moves from 17 to 30 April, and the design lead may also be a registered industrial designer.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN-DESG</cbc:NoticeTypeCode>
@@ -464,7 +464,7 @@ Inside `ProcurementProject`:
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-05-02</cbc:EndDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
