@@ -354,7 +354,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01490**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01490**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -368,7 +368,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01491**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01491**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -382,7 +382,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01492**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01492**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -396,7 +396,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01493**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01493**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -410,7 +410,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01494**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01494**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -424,7 +424,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01495**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01495**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -438,7 +438,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01496**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01496**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -452,7 +452,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01497**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01497**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -466,7 +466,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01498**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01498**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -480,7 +480,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01499**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01499**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -494,7 +494,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01500**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01500**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -508,7 +508,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/RegistrationID` = **VI-QR-01501**  
   The casting's entry in the maker's quality register, with its inspection result.
 - `Item/ItemInstance/SerialID` = **VI-SF-01501**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  

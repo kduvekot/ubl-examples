@@ -1998,5 +1998,275 @@
   "awaiting_owner": {
    "velumi-bench": "Velumi's shop price of 289 coral gives a retailer's margin of about 21 %; D30 decided 375 coral (about 38 %), applied with the sea flow's decision (O48)."
   }
+ },
+ "goods_chain": {
+  "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, and the build checks each despatch against its entry. Items are the maker's (world/items.json); a reseller's item is the maker's item it resells.",
+  "production": [
+   {
+    "item": "bench-serra",
+    "lot": "VI-LOT-260320",
+    "made": "2026-03-20",
+    "qty": 96,
+    "frame_serials": [
+     1298,
+     1489
+    ],
+    "shipped": [
+     [
+      "road",
+      "2026-03-23"
+     ]
+    ]
+   },
+   {
+    "item": "bench-casting",
+    "made": "2026-03-20",
+    "serials": [
+     1490,
+     1501
+    ],
+    "shipped": [
+     [
+      "road",
+      "2026-03-23"
+     ]
+    ],
+    "why": "Twelve spare frames cast with the frames of the lot of 20 March, for Lumeway's service stock."
+   },
+   {
+    "item": "bench-serra",
+    "lot": "VI-LOT-260327",
+    "made": "2026-03-27",
+    "qty": 40,
+    "shipped": [
+     [
+      "tender",
+      "2026-03-30"
+     ]
+    ],
+    "why": "The first release of the public works department's contract, in moss green (D28)."
+   },
+   {
+    "item": "bench-serra",
+    "lot": "VI-LOT-260409",
+    "made": "2026-04-09",
+    "qty": 96,
+    "shipped": [
+     [
+      "rail",
+      "2026-04-13"
+     ]
+    ],
+    "why": "The first container of the rail delivery to Lumeway (D21, D37)."
+   },
+   {
+    "item": "bench-serra",
+    "lot": "VI-LOT-260410",
+    "made": "2026-04-10",
+    "qty": 96,
+    "shipped": [
+     [
+      "rail",
+      "2026-04-13"
+     ]
+    ],
+    "why": "The second container of the rail delivery."
+   },
+   {
+    "item": "bench-casting",
+    "made": "2026-05-12",
+    "serials": [
+     3190,
+     3197
+    ],
+    "shipped": [
+     [
+      "air",
+      "2026-05-13"
+     ]
+    ],
+    "why": "Eight frames cast to Velumi's urgent order of 11 May, galvanised and packed on 13 May (D39)."
+   }
+  ],
+  "ledgers": {
+   "6-xb": {
+    "where": "Lumeway Distribution, Marrowdale",
+    "entries": [
+     {
+      "date": "2026-03-25",
+      "flow": "road",
+      "in": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260320",
+        "qty": 96
+       },
+       {
+        "item": "bench-casting",
+        "serials": [
+         1490,
+         1501
+        ]
+       }
+      ],
+      "declaration": [
+       "road",
+       "ImportCustomsDeclaration"
+      ]
+     },
+     {
+      "date": "2026-04-15",
+      "flow": "rail",
+      "in": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260409",
+        "qty": 96
+       },
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260410",
+        "qty": 96
+       }
+      ],
+      "declaration": [
+       "rail",
+       "ImportCustomsDeclaration"
+      ],
+      "why": "Under the Accord's common transit to Marrowdale, where Lumeway declares the import (D37; the rail flow's import declaration is still to be added)."
+     },
+     {
+      "date": "2026-04-29",
+      "flow": "retail",
+      "out": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260320",
+        "qty": 24
+       }
+      ],
+      "why": "Brightmarket's benches come from the March road lot (D21)."
+     },
+     {
+      "date": "2026-05-13",
+      "flow": "sea",
+      "out": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260409",
+        "qty": 96
+       },
+       {
+        "item": "bench-casting",
+        "serials": [
+         1490,
+         1501
+        ]
+       }
+      ],
+      "why": "The island's benches from the April rail delivery, the twelve frames the ones that came by road (D21)."
+     },
+     {
+      "date": "2026-05-13",
+      "flow": "air",
+      "crossdock": [
+       {
+        "item": "bench-casting",
+        "serials": [
+         3190,
+         3197
+        ]
+       }
+      ],
+      "why": "The urgent frames pass through the dispatch area without entering the stock (D21, D39)."
+     }
+    ]
+   },
+   "26-xb": {
+    "where": "Brightmarket Stores, Lumeport",
+    "opening": [
+     {
+      "item": "bench-serra",
+      "qty": 3,
+      "why": "The three benches the store's inventory report of 23 April counts, from deliveries before the documents."
+     }
+    ],
+    "entries": [
+     {
+      "date": "2026-04-30",
+      "flow": "retail",
+      "in": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260320",
+        "qty": 23
+       }
+      ],
+      "why": "Of the 24 delivered, one is refused at goods-in, damaged (retail/17)."
+     },
+     {
+      "date": "2026-05-15",
+      "flow": "retail",
+      "out": [
+       {
+        "item": "bench-serra",
+        "qty": 1
+       }
+      ],
+      "why": "Sold to a consumer in the promotion week (retail/21)."
+     }
+    ]
+   },
+   "1-xl": {
+    "where": "Velumi Trading, through Nalevi Warehousing, Selanu",
+    "entries": [
+     {
+      "date": "2026-05-14",
+      "flow": "air",
+      "in": [
+       {
+        "item": "bench-casting",
+        "serials": [
+         3190,
+         3197
+        ]
+       }
+      ]
+     },
+     {
+      "date": "2026-05-20",
+      "flow": "sea",
+      "in": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260409",
+        "qty": 96
+       },
+       {
+        "item": "bench-casting",
+        "qty": 11
+       }
+      ],
+      "declaration": [
+       "sea",
+       "ImportCustomsDeclaration"
+      ],
+      "why": "One of the twelve frames is refused, its carton crushed at the port (sea/21)."
+     },
+     {
+      "date": "2026-06-13",
+      "flow": "sea",
+      "out": [
+       {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260409",
+        "qty": 2
+       }
+      ],
+      "why": "Two benches sold in the shop to the cotton farm (sea/29)."
+     }
+    ]
+   }
+  }
  }
 }

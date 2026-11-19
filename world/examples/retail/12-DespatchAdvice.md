@@ -925,9 +925,9 @@ Inside `DespatchLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
-- `Item/ItemInstance/ManufactureDate` = **2026-04-26**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the lot was produced.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260426**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260320**  
   The production lot, from the maker's prefix and the production day; a recall names the lot.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
   A fact about this lot.
@@ -1738,9 +1738,9 @@ Inside `DespatchLine`:
         <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
-        <cbc:ManufactureDate>2026-04-26</cbc:ManufactureDate>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>VI-LOT-260426</cbc:LotNumberID>
+          <cbc:LotNumberID>VI-LOT-260320</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
             <cbc:Value>ZN-26-114</cbc:Value>

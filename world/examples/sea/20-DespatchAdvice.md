@@ -335,9 +335,9 @@ Inside `DespatchLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-04-09**  
   The day the lot was produced.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260510**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260409**  
   The production lot, from the maker's prefix and the production day; a recall names the lot.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
   A fact about this lot.
@@ -363,170 +363,170 @@ Inside `DespatchLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-casting of Valdara Industries (world/items.json).
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01230**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01490**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01230**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01490**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01230**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01490**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01231**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01491**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01231**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01491**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01231**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01491**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01232**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01492**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01232**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01492**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01232**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01492**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01233**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01493**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01233**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01493**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01233**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01493**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01234**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01494**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01234**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01494**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01234**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01494**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01235**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01495**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01235**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01495**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01235**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01495**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01236**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01496**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01236**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01496**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01236**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01496**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01237**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01497**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01237**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01497**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01237**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01497**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01238**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01498**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01238**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01498**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01238**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01498**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01239**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01499**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01239**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01499**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01239**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01499**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01240**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01500**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01240**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01500**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01240**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01500**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
   Its value.
-- `Item/ItemInstance/ProductTraceID` = **VI-TR-01241**  
+- `Item/ItemInstance/ProductTraceID` = **VI-TR-01501**  
   The trace code on the casting's label, for the maker's tracing system.
-- `Item/ItemInstance/ManufactureDate` = **2026-05-10**  
+- `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **06:40:00**  
   The time the melt was poured.
-- `Item/ItemInstance/RegistrationID` = **VI-QR-01241**  
+- `Item/ItemInstance/RegistrationID` = **VI-QR-01501**  
   The casting's entry in the maker's quality register, with its inspection result.
-- `Item/ItemInstance/SerialID` = **VI-SF-01241**  
-  The serial number cast into the frame; every casting is traceable to its melt.
+- `Item/ItemInstance/SerialID` = **VI-SF-01501**  
+  The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
   A fact about this one casting.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **M-26-0412**  
@@ -793,9 +793,9 @@ Inside `DespatchLine`:
         <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ManufactureDate>2026-04-09</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>VI-LOT-260510</cbc:LotNumberID>
+          <cbc:LotNumberID>VI-LOT-260409</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
             <cbc:Value>ZN-26-114</cbc:Value>
@@ -827,132 +827,132 @@ Inside `DespatchLine`:
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01230</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01490</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01230</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01230</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01490</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01490</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01231</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01491</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01231</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01231</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01491</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01491</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01232</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01492</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01232</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01232</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01492</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01492</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01233</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01493</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01233</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01233</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01493</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01493</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01234</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01494</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01234</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01234</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01494</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01494</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01235</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01495</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01235</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01235</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01495</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01495</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01236</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01496</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01236</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01236</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01496</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01496</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01237</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01497</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01237</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01237</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01497</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01497</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01238</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01498</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01238</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01238</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01498</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01498</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01239</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01499</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01239</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01239</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01499</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01499</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01240</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01500</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01240</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01240</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01500</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01500</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
-        <cbc:ProductTraceID>VI-TR-01241</cbc:ProductTraceID>
-        <cbc:ManufactureDate>2026-05-10</cbc:ManufactureDate>
+        <cbc:ProductTraceID>VI-TR-01501</cbc:ProductTraceID>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01241</cbc:RegistrationID>
-        <cbc:SerialID>VI-SF-01241</cbc:SerialID>
+        <cbc:RegistrationID>VI-QR-01501</cbc:RegistrationID>
+        <cbc:SerialID>VI-SF-01501</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
           <cbc:Value>M-26-0412</cbc:Value>

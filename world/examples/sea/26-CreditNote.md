@@ -2,7 +2,7 @@
 
 *Example 26 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
 
-One boxed side frame arrived crushed; the distributor credits it, and the buyer deducts the credit from what it pays the factor.
+One side frame arrived in a crushed carton, cracked; the distributor credits it, and the buyer deducts the credit from what it pays the factor.
 
 [The XML file](26-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

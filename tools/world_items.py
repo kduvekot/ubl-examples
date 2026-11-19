@@ -300,7 +300,83 @@ def check(world):
     problems += resale_problems(world)
     problems += physics_problems(items)
     problems += emission_problems(items)
+    problems += chain_problems(world, items)
     return problems
+
+
+def chain_problems(world, items):
+    """The goods chain of the bench (D21, O65): in each warehouse's ledger the stock of every lot, serial and item
+    never goes below zero and nothing leaves before it arrived; every lot and serial range was made before Valdara
+    shipped it and arrives no earlier than it was shipped; a lot is shipped in no more than was made."""
+    chain = world.get("goods_chain")
+    if not chain:
+        return []
+    out = []
+    made = {}
+    for p in chain["production"]:
+        if p["item"] not in items:
+            out.append(f"goods chain: production of unknown item {p['item']}")
+            continue
+        key = p.get("lot") or tuple(p["serials"])
+        made[(p["item"], key)] = p
+        for fl, date in p["shipped"]:
+            if date < p["made"]:
+                out.append(f"goods chain: {key} is shipped in flow {fl} on {date}, before it was made on {p['made']}")
+    serials = sorted((p["serials"][0], p["serials"][1], p["made"], p["item"]) for p in chain["production"]
+                     if p.get("serials")) + sorted((p["frame_serials"][0], p["frame_serials"][1], p["made"],
+                                                    "bench-casting") for p in chain["production"]
+                                                   if p.get("frame_serials"))
+    serials.sort()
+    for (a0, a1, ad, _), (b0, b1, bd, _) in zip(serials, serials[1:]):
+        if b0 <= a1:
+            out.append(f"goods chain: serials {a0}-{a1} and {b0}-{b1} overlap")
+        if bd < ad:
+            out.append(f"goods chain: serials {b0}-{b1} (cast {bd}) are higher than {a0}-{a1} (cast {ad}): serials "
+                       "rise with the day of casting (D21)")
+
+    def unit(ln):
+        return ln.get("lot") or (tuple(ln["serials"]) if ln.get("serials") else None)
+
+    def count(ln):
+        return ln["qty"] if "qty" in ln else ln["serials"][1] - ln["serials"][0] + 1
+    for pid, led in chain["ledgers"].items():
+        stock = {}
+        for o in led.get("opening", []):
+            stock[(o["item"], None)] = stock.get((o["item"], None), 0) + o["qty"]
+        last = ""
+        for e in led["entries"]:
+            where = f"goods chain, ledger of {pid}, {e['date']} ({e['flow']})"
+            if e["date"] < last:
+                out.append(f"{where}: entries out of date order")
+            last = e["date"]
+            for ln in e.get("in", []):
+                k = (ln["item"], unit(ln))
+                p = made.get(k) if k[1] else None
+                if p and not any(d <= e["date"] for _, d in p["shipped"]):
+                    out.append(f"{where}: {k[1]} arrives before Valdara shipped it")
+                stock[k] = stock.get(k, 0) + count(ln)
+            for ln in e.get("out", []):
+                k = (ln["item"], unit(ln))
+                have = stock.get(k, 0) if k[1] else sum(v for (i, _), v in stock.items() if i == ln["item"])
+                if have < count(ln):
+                    out.append(f"{where}: {count(ln)} of {ln['item']} {k[1] or ''} leave, but only {have} are in "
+                               "stock (D21, O65)")
+                if k[1]:
+                    stock[k] = have - count(ln)
+                else:          # an issue without a lot: from the oldest stock of the item
+                    left = count(ln)
+                    for kk in [kk for kk in stock if kk[0] == ln["item"]]:
+                        take = min(left, stock[kk])
+                        stock[kk] -= take
+                        left -= take
+            for ln in e.get("crossdock", []):
+                k = (ln["item"], unit(ln))
+                if k not in made or not any(d <= e["date"] for _, d in made[k]["shipped"]):
+                    out.append(f"{where}: {k[1]} passes through before it was shipped")
+        for k, v in stock.items():
+            if v < 0:
+                out.append(f"goods chain, ledger of {pid}: {k} below zero")
+    return out
 
 
 def emission_problems(items):

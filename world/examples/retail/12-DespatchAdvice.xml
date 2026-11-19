@@ -799,9 +799,9 @@
         <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
       </cac:AdditionalItemIdentification>
       <cac:ItemInstance>
-        <cbc:ManufactureDate>2026-04-26</cbc:ManufactureDate>
+        <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>VI-LOT-260426</cbc:LotNumberID>
+          <cbc:LotNumberID>VI-LOT-260320</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
             <cbc:Value>ZN-26-114</cbc:Value>

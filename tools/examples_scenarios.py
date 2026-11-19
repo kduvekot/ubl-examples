@@ -4186,8 +4186,8 @@ def air(n, doc):
                                       "despatch advice.", "Why the despatch advice is cancelled."),
                 "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice cancelled.")}}
     if d == "DespatchAdvice" and nth("air", n, doc) == 2:
-        out = kit.despatch_advice(f, n, doc, 3, "Sent for the next day's flight.", "The gross weight of the boxed "
-                                                                                    "frames.")
+        out = kit.despatch_advice(f, n, doc, 3, "Sent for the next day's flight.", "The gross weight of the frame "
+                                                                                    "cartons.")
         out["ID"] = V(f.number("despatch-2", doc["from"], "DespatchAdvice"), "A new number: the first despatch "
                                                                              "advice was cancelled.")
         return out
@@ -7838,14 +7838,38 @@ def _(f, n, doc, out):
                                    "transit continues; a document outside the examples (rail/06#F5).")}]}
 
 
+def previous_declarations(f, sender):
+    """The imports under which the goods a flow exports entered the exporter's country, from the exporter's stock
+    ledger (world/items.json goods_chain, D21): [(flow of the import, the goods in words)]."""
+    led = kit.CHAIN["ledgers"][sender]["entries"]
+    out = next(e for e in led if e["flow"] == f.id and e.get("out"))
+    found = []
+    for ln in out["out"]:
+        key = ln.get("lot") or tuple(ln["serials"])
+        came = next(e for e in led if any((x.get("lot") or tuple(x.get("serials", ()))) == key and
+                                          x["item"] == ln["item"] for x in e.get("in", [])))
+        fl = came["declaration"][0]
+        what = (f"the {ln['qty']} benches of lot {ln['lot']}" if ln.get("lot") else
+                f"the {ln['serials'][1] - ln['serials'][0] + 1} side frames")
+        found.append((fl, what))
+    return found
+
+
 @enrich("sea", "ExportCustomsDeclaration")
 def _(f, n, doc, out):
     cd = out.get("CustomsDeclaration")
     if isinstance(cd, dict):
+        prev = previous_declarations(f, "6-xb")      # the exporter's ledger: Lumeway, for whom the forwarder declares
+        built = [(fl, what) for fl, what in prev if FLOWS[fl].numbers.get("import")]
+        if len(built) != 1:
+            raise SystemExit(f"sea export: the goods chain gives {built} as previous declarations; UBL allows one")
+        fl, what = built[0]
+        missing = [w for fl2, w in prev if (fl2, w) != built[0]]
         cd["PreviousCustomsDeclaration"] = {
-            "ID": V(FLOWS["road"].numbers.get("import", "LD-IM-26-0161"), "The import declaration under which the "
-                                                                          "benches entered Bayvarra from Urvania "
-                                                                          "(flow road): the goods now leave again."),
+            "ID": V(FLOWS[fl].numbers["import"], f"The import declaration under which {what} entered Bayvarra from "
+                    f"Urvania (flow {fl}; the stock ledger of world/items.json, D21): they now leave again."
+                    + (f" {missing[0][0].upper() + missing[0][1:]} entered under the rail delivery's import (D37), "
+                       "which is not yet an example." if missing else "")),
             "FunctionCode": V("IMPORT", "The kind of the previous declaration.")}
     return {}
 

@@ -1938,7 +1938,7 @@
    "doc": "CreditNote",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "One boxed side frame arrived crushed; the distributor credits it, and the buyer deducts the credit from what it pays the factor.",
+   "why": "One side frame arrived in a crushed carton, cracked; the distributor credits it, and the buyer deducts the credit from what it pays the factor.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
     "AccountingCustomerParty": "1-xl"

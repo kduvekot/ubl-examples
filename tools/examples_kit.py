@@ -448,50 +448,122 @@ def price_block(iid, currency=None, buyer=None):
     return out
 
 
-def instances(flow, d, which, day):
-    """ItemInstance for a despatched line: the production lot of the maker, or one instance per serial number."""
+CHAIN = WORLD.get("goods_chain", {})
+
+
+def chain_despatch(flow, sender, iid):
+    """What a despatch of the goods chain moves (world/items.json goods_chain, D21): the date and the lines (lots
+    or serial ranges) of the sender's ledger entry for the flow, or of Valdara's production shipped in the flow.
+    None for an item outside the chain."""
+    it = maker(iid)
+    led = CHAIN.get("ledgers", {}).get(sender)
+    if led:
+        for e in led["entries"]:
+            if e["flow"] == flow.id:
+                lines = [ln for k in ("out", "crossdock") for ln in e.get(k, []) if ln["item"] == it["id"]]
+                if lines:
+                    return e["date"], lines
+    lines, dates = [], set()
+    for p in CHAIN.get("production", []):
+        for fl, date in p["shipped"]:
+            if fl == flow.id and p["item"] == it["id"]:
+                lines.append({"item": p["item"], **({"lot": p["lot"], "qty": p["qty"]} if p.get("lot") else
+                                                    {"serials": p["serials"]})})
+                dates.add(date)
+    if lines:
+        if len(dates) != 1:
+            raise SystemExit(f"{flow.id}: the goods chain ships {iid} on several days")
+        return dates.pop(), lines
+    if any(p["item"] == it["id"] for p in CHAIN.get("production", [])):
+        raise SystemExit(f"{flow.id}: {sender} despatches {iid}, but the goods chain (world/items.json) has no "
+                         "entry for it (D21, O65)")
+    return None
+
+
+def produced(line):
+    """The production record entry of a lot or serial range (D21)."""
+    for p in CHAIN["production"]:
+        if p["item"] == line["item"] and (p.get("lot") == line.get("lot") if line.get("lot") else
+                                          p.get("serials") and p["serials"][0] <= line["serials"][0]
+                                          and line["serials"][1] <= p["serials"][1]):
+            return p
+    raise SystemExit(f"goods chain: {line} is in no production record entry (D21, O65)")
+
+
+def instances(flow, d, which, day, sender=None):
+    """ItemInstance for a despatched line: the production lot of the maker, or one instance per serial number;
+    for the bench and its spare frame the lots and serials the goods chain moves (D21)."""
     it = ITEM[d["item"]]
     while it.get("resale_of"):         # a resold item keeps the maker's lot and serial numbers
         it = ITEM[it["resale_of"]]
     made = flow.date(day - 3)
+    chain = chain_despatch(flow, sender, d["item"]) if sender else None
+    if chain:
+        date, lines = chain
+        if flow.date(day) < date:        # a replacement despatch advice may follow the despatch it replaces
+            raise SystemExit(f"{flow.id}: the despatch of {d['item']} is on {flow.date(day)}, before the goods chain "
+                             f"(world/items.json) lets it leave, on {date} (O65)")
+        q = int(Decimal(str(d[which])))
+        moved = sum(ln.get("qty") or ln["serials"][1] - ln["serials"][0] + 1 for ln in lines)
+        if moved != q:
+            raise SystemExit(f"{flow.id}: the despatch line has {q} of {d['item']}, the goods chain moves {moved}")
+        out = []
+        for ln in lines:
+            p = produced(ln)
+            if ln.get("serials"):
+                for s_ in range(ln["serials"][0], ln["serials"][1] + 1):
+                    out.append(casting_instance(it, s_, p))
+            else:
+                out.append(lot_instance(it, ln["lot"], p["made"]))
+        return out
     if it.get("serials"):
         q = int(Decimal(str(d[which])))
         first = flow.base * 10          # a stable range per flow: the same castings keep their numbers
-        out = []
-        for s in range(first, first + q):
-            x = {"ManufactureDate": V(made, "The day the casting was poured and inspected."),
-                 "SerialID": V(f"{it['serials']}{s:05d}", "The serial number cast into the frame; every casting is "
-                                                         "traceable to its melt.")}
-            if it.get("made_time"):
-                x["ManufactureTime"] = V(it["made_time"], "The time the melt was poured.")
-            if it.get("trace"):
-                x["ProductTraceID"] = V(f"{it['trace']}{s:05d}", "The trace code on the casting's label, for the "
-                                                               "maker's tracing system.")
-            if it.get("registration"):
-                x["RegistrationID"] = V(f"{it['registration']}{s:05d}", "The casting's entry in the maker's quality "
-                                                                      "register, with its inspection result.")
-            if it.get("instance_props"):
-                x["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this one casting."),
-                                                "Value": V(v, "Its value.")} for n_, v in it["instance_props"]]
-            out.append(x)
-        return out
+        return [casting_instance(it, s_, {"made": made}) for s_ in range(first, first + q)]
     if it.get("lot_prefix"):
         lot = f"{it['lot_prefix']}{flow.date(day - 3).replace('-', '')[4:]}"
-        x = {"ManufactureDate": V(made, "The day the lot was produced."),
-             "LotIdentification": {"LotNumberID": V(lot, "The production lot, from the maker's prefix and the "
-                                                         "production day; a recall names the lot.")}}
+        x = lot_instance(it, lot, made)
         if it.get("best_before_months"):
             m = it["best_before_months"]
             d0 = datetime.date.fromisoformat(made)
             until = d0.replace(year=d0.year + (d0.month - 1 + m) // 12, month=(d0.month - 1 + m) % 12 + 1).isoformat()
             x["BestBeforeDate"] = V(until, f"Best used within {m} months: the granulate takes up moisture in storage.")
             x["LotIdentification"]["ExpiryDate"] = V(until, "The lot's quality data apply until then.")
-        if it.get("lot_props"):
-            x["LotIdentification"]["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this lot."),
-                                                                 "Value": V(v, "Its value for this lot.")}
-                                                                for n_, v in it["lot_props"]]
         return [x]
     return None
+
+
+def lot_instance(it, lot, made):
+    """The ItemInstance of a production lot: its number and day, and the facts the maker records for it."""
+    x = {"ManufactureDate": V(made, "The day the lot was produced."),
+         "LotIdentification": {"LotNumberID": V(lot, "The production lot, from the maker's prefix and the "
+                                                     "production day; a recall names the lot.")}}
+    if it.get("lot_props"):
+        x["LotIdentification"]["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this lot."),
+                                                             "Value": V(v, "Its value for this lot.")}
+                                                            for n_, v in it["lot_props"]]
+    return x
+
+
+def casting_instance(it, s_, p):
+    """The ItemInstance of one serial-numbered casting: its serial, trace and register numbers and the day it was
+    cast (the production record entry p, D21)."""
+    x = {"ManufactureDate": V(p["made"], "The day the casting was poured and inspected."),
+         "SerialID": V(f"{it['serials']}{s_:05d}", "The serial number cast into the frame; every casting is "
+                                                   "traceable to its melt, and the numbers rise with the day of "
+                                                   "casting.")}
+    if it.get("made_time"):
+        x["ManufactureTime"] = V(it["made_time"], "The time the melt was poured.")
+    if it.get("trace"):
+        x["ProductTraceID"] = V(f"{it['trace']}{s_:05d}", "The trace code on the casting's label, for the "
+                                                        "maker's tracing system.")
+    if it.get("registration"):
+        x["RegistrationID"] = V(f"{it['registration']}{s_:05d}", "The casting's entry in the maker's quality "
+                                                               "register, with its inspection result.")
+    if it.get("instance_props"):
+        x["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this one casting."),
+                                        "Value": V(v, "Its value.")} for n_, v in it["instance_props"]]
+    return x
 
 
 TRANSIT_DAYS = {"air": 0, "road": 1, "rail": 2, "river": 2, "sea": 3}   # door to door, until the place list (O91)
@@ -536,7 +608,7 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
                           "DeliveredQuantity": qty(d[which], ITEM[d["item"]]["unit"], "What was despatched."),
                           "OrderLineReference": {"LineID": V(d.get("line", str(i)), "The order line this line "
                                                                                     "fulfils.")},
-                          "Item": item(d["item"], buyer=doc["to"], instance=instances(flow, d, which, day))}
+                          "Item": item(d["item"], buyer=doc["to"], instance=instances(flow, d, which, day, doc["from"]))}
                          for i, d in enumerate(deal, 1)],
     }
     flow.numbers["despatch"] = flow.numbers[f"despatch-{key}"]
