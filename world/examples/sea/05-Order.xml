@@ -177,7 +177,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">50688.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">50724.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -191,8 +191,8 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50688.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">50688.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">50724.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -252,9 +252,9 @@
       <cbc:ID>2</cbc:ID>
       <cbc:UUID>6c15f781-fb79-59c5-b7b2-bbd9c564ae2b</cbc:UUID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

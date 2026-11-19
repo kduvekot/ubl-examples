@@ -28,8 +28,8 @@ Part of the quantity is needed urgently: delivery by air, CPT island airport, at
   First thing in the morning, when the shortage was noticed; in the issuer's local time, with its offset from UTC (D27).
 - `SequenceNumberID` = **1**  
   The first change to the order.
-- `Note` = **Add eight side frames by air; the rest of the order is unchanged.**  
-  The change in words.
+- `Note` = **Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the order is unchanged.**  
+  The change in words: the buyer asks for the urgent delivery and accepts that it pays for it.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `CustomerReference` = **Harbour parks Selanu**  
@@ -297,7 +297,7 @@ Inside `AnticipatedMonetaryTotal`:
 - `LineExtensionAmount` = **512.00** (currencyID `XBL`)  
   The change: the eight frames added; the sea order's lines are unchanged.
 - `PayableAmount` = **512.00** (currencyID `XBL`)  
-  What the change adds to the order: no tax on an export; freight comes on the invoices.
+  What the change adds to the goods of the order: no tax on an export; the air freight comes on top, on the invoice, at cost.
 
 ### Order Line
 
@@ -310,7 +310,7 @@ Inside `OrderLine`:
 - `LineItem/LineExtensionAmount` = **512.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **64** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+  Lumeway's trade price, carriage paid to Selanu airport: its price for the island is a CIF price with the sea freight in it, and the air freight is charged on top, at cost.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Spare side frame for the Serra bench.**  
@@ -340,7 +340,7 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>07:50:00+00:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Note>Add eight side frames by air; the rest of the order is unchanged.</cbc:Note>
+  <cbc:Note>Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>

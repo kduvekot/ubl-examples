@@ -1309,14 +1309,20 @@ SEA_3PL = {"Name": V("Nalevi Warehousing, Selanu", "The 3PL's warehouse on the i
 SEA = kit.Flow("sea", "2026-05-04", [
     {"item": "bench-serra-b", "ordered": 96, "why": "One 40-foot container: 24 pallets of 4 benches."},
     {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock.",
-     "received": 11, "received_why": "One box crushed at the port; the frame inside is cracked."}])
+     "received": 11, "received_why": "One box crushed at the port; the frame inside is cracked."}],
+    buyer="1-xl")       # Lumeway's CIF price for the island's frames (items.json buyer_prices; O30)
 CONTAINER = kit.container_number("TWL", 412087)       # Tidewell Ocean Lines' container (ISO 6346, with check digit)
 SEA_FREIGHT, INSURANCE = Decimal("2950.00"), Decimal("140.00")
 
 
+def sea_goods(f, iid=None):
+    """The value of the goods sold (of one item, if given) at the buyer's prices, in lume."""
+    return sum(Decimal(str(d["ordered"])) * kit.unit_price(d["item"], "XBL", f.buyer) for d in f.deal
+               if iid in (None, d["item"]))
+
+
 def cif_value(f):
-    goods = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
-    return goods + SEA_FREIGHT + INSURANCE
+    return sea_goods(f) + SEA_FREIGHT + INSURANCE
 
 
 def container(f, gross_why):
@@ -1383,7 +1389,7 @@ def sea_equipment(f, detail):
 
 
 def sea_consignment(f, view):
-    goods = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
+    goods = sea_goods(f)
     out = {"ID": V(f.numbers["consignment"], "The distributor's consignment number.")}
     if view == "instructions":
         out.update({
@@ -1671,7 +1677,7 @@ def sea_order_response(f, n, doc):
             "WarrantyInformation": V(bench["warranty"], "The maker's warranty passes to the buyer."),
             "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
             "WarrantyParty": party(bench["seller"], short=True),
-            "Price": kit.price_block(d["item"], "XBL"),
+            "Price": kit.price_block(d["item"], "XBL", buyer),
             "Item": {"Name": V(ITEM[d["item"]]["name"], "Named only: described in full in the order."),
                      "SellersItemIdentification": {"ID": V(ITEM[d["item"]]["sellers_id"], "The seller's number.")}}},
             "OrderLineReference": {"LineID": V(str(i), "The order line answered.")}}
@@ -1755,7 +1761,7 @@ def sea(n, doc):
     if doc["doc"] == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, 8, "The forwarder, as customs agent, declares the export at the "
                                                    "seaport.", "The value of the goods at export, in lume.")
-        goods = sum(Decimal(str(d["ordered"])) * Decimal(str(ITEM[d["item"]]["price"]["amount"])) for d in f.deal)
+        goods = sea_goods(f)
         kit.deep_merge(out["CustomsDeclaration"]["Shipment"], {
             "FreeOnBoardValueAmount": amount(goods, "XBL", "On board in Lumeport."),
             "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "The cargo insurance the seller "
@@ -1913,9 +1919,11 @@ def sea(n, doc):
                                            "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                            "AllowanceChargeReason": V("Ocean freight, share of the benches",
                                                                       "Part of the CIF value."),
-                                           "Amount": amount(SEA_FREIGHT * 49920 / 50688 * Decimal("0.4"), "XLC",
+                                           "Amount": amount(SEA_FREIGHT * sea_goods(f, "bench-serra-b") / sea_goods(f)
+                                                            * Decimal("0.4"), "XLC",
                                                             "The benches' share of the 2,950 lume freight by value "
-                                                            "(49,920 of 50,688 lume), in coral at 0.4.")}
+                                                            f"({sea_goods(f, 'bench-serra-b'):,.0f} of "
+                                                            f"{sea_goods(f):,.0f} lume), in coral at 0.4.")}
         first["InsurancePolicy"] = {"ID": V("WS-CP-26-4471", "The cargo policy covering the goods."),
                                     "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                                  "As on the insurance certificate.")}
@@ -2050,7 +2058,34 @@ def sea(n, doc):
 # ---------------------------------------------------------------- the air flow (an urgent part, CPT airport)
 AIR = kit.Flow("air", "2026-05-11", [
     {"item": "bench-casting-b", "ordered": 8, "why": "Eight side frames, needed before the ship arrives.",
-     "line": "3"}])     # added by the order change to the sea order's lines 1 and 2 (air/01#F1)
+     "line": "3",       # added by the order change to the sea order's lines 1 and 2 (air/01#F1)
+     # the trade price: Lumeway's island price is a CIF price with the sea freight in it; the air freight comes on
+     # the invoice as a surcharge at cost (O30, owner 2026-11-19)
+     "unit_price": f'{ITEM["bench-casting-b"]["price"]["amount"]:.2f}',
+     "unit_price_why": "Lumeway's trade price, carriage paid to Selanu airport: its price for the island is a CIF "
+                       "price with the sea freight in it, and the air freight is charged on top, at cost."}])
+
+
+def air_freight(f):
+    """The air freight of the urgent frames, which Lumeway pays its forwarder under CPT (air/10) and recharges to
+    the buyer in full, at cost: a pass-through (O30, owner 2026-11-19; the amount is settled with D39)."""
+    return money(kit.gross_weight(f, "ordered") * Decimal(str(ITEM["air-freight"]["price"]["amount"])), "XBL")
+
+
+def air_surcharge(f, why, amount_why):
+    """The air-freight surcharge as a charge: UN/EDIFACT 7161 FC, freight service."""
+    return {"like": "bench-casting-b", "reason": "Air freight for the urgent delivery, recharged at cost",
+            "amount": air_freight(f), "code": "FC",
+            "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
+            "why": why, "amount_why": amount_why}
+
+
+def air_charge(c):
+    """The surcharge as cac:AllowanceCharge of a document without tax totals (the order response)."""
+    return {"ChargeIndicator": V("true", "A charge, not an allowance: it adds to the amount."),
+            "AllowanceChargeReasonCode": V(c["code"], c["code_why"]),
+            "AllowanceChargeReason": V(c["reason"], c["why"]),
+            "Amount": amount(c["amount"], "XBL", c["amount_why"])}
 
 
 # the morning flight Lumeport - Selanu (D19 as corrected with D36, O123): the ATR's block time eastbound is 2 h 45,
@@ -2122,8 +2157,8 @@ def air(n, doc):
         order["AnticipatedMonetaryTotal"] = {      # the amount of the change, as the definition says (air/01#F2)
             "LineExtensionAmount": amount(air_base, "XBL", "The change: the eight frames added; the sea order's "
                                                            "lines are unchanged."),
-            "PayableAmount": amount(air_base, "XBL", "What the change adds to the order: no tax on an export; "
-                                                     "freight comes on the invoices.")}
+            "PayableAmount": amount(air_base, "XBL", "What the change adds to the goods of the order: no tax on an "
+                                                     "export; the air freight comes on top, on the invoice, at cost.")}
         order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(air_base, "XBL", "The change; no tax on an "
                                                                                       "export.")
         order.setdefault("OrderReference", {})["SalesOrderID"] = V(
@@ -2132,7 +2167,9 @@ def air(n, doc):
             "number of the change (air/01#F7).")
         order.update({
             "IssueTime": V("07:50:00", "First thing in the morning, when the shortage was noticed."),
-            "Note": V("Add eight side frames by air; the rest of the order is unchanged.", "The change in words."),
+            "Note": V("Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the "
+                      "order is unchanged.", "The change in words: the buyer asks for the urgent delivery and "
+                                             "accepts that it pays for it."),
             "CustomerReference": V("Harbour parks Selanu", "The buyer's project."),
             "AccountingCustomerParty": {"Party": party("1-xl", short=True)},
             "AccountingSupplierParty": {"Party": party("6-xb", short=True)},
@@ -2161,6 +2198,10 @@ def air(n, doc):
             **kit.cost_centre("1-xl", "The buyer's cost centre, from the change."),
             "AdditionalDocumentReference": {"ID": V("BF-QUOTE-AIR-26-0611", "The forwarder's quotation for the "
                                                                             "flight.")},
+            "AllowanceCharge": air_charge(air_surcharge(
+                f, "The air freight the buyer accepted in its change: the distributor pays it to its forwarder "
+                   "under CPT and recharges it, without margin.",
+                "As the forwarder quoted it for the eight boxed frames; invoiced at cost.")),
             "FreightForwarderParty": party("10-xb", short=True),
             "Signature": {"ID": V("LD-SIG-26-0512", "The distributor's seal."),
                           "SignatoryParty": party("6-xb", short=True)},
@@ -2234,6 +2275,28 @@ def air(n, doc):
                                          "Cargo arrived and ready for customs clearance.", "Selanu airport, cargo "
                                                                                           "terminal",
                                          {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}}, event_type="ARRIVAL")
+    if doc["doc"] == "Invoice" and doc["from"] == "6-xb":
+        if air_freight(f) != f.numbers["forwarder-invoice-amount"]:
+            raise SystemExit("air: the surcharge is not the forwarder's invoice of the air freight (O30)")
+        out = kit.invoice(f, n, doc, 4, "Issued the day after the flight, with the forwarder's invoice of the air "
+                                        "freight it recharges.",
+                          {"OrderReference": {"ID": V(SEA.numbers["order"], "The buyer's order, to which its order "
+                                                                            "change added the frames.")},
+                           "DespatchDocumentReference": {"ID": V(f.numbers["despatch-2"], "The despatch advice of "
+                                                                 "the frames billed, which replaced the cancelled "
+                                                                 "one.")}},
+                          charges=[air_surcharge(
+                              f, f"The air freight of the urgent frames, which the buyer accepted in its order "
+                                 f"change: paid by the distributor under CPT and recharged at cost, a pass-through "
+                                 f"(the forwarder's invoice {f.numbers['forwarder-invoice']}).",
+                              "The forwarder's invoice of the flight, in full.")])
+        out["Note"] = V("Air freight recharged at cost, as agreed in the order change.", "Why the invoice carries a "
+                        "charge.")
+        out["DeliveryTerms"] = {"ID": V("CPT", "Incoterms 2020: carriage paid to, as the order change agreed; the "
+                                               "customs of both countries need the terms on the invoice.",
+                                        schemeID="INCOTERMS"),
+                                "DeliveryLocation": kit.place("XLSLA", "The named place: Selanu airport.")}
+        return out
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 4, "Issued after the flight.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The air waybill.")}},
@@ -8807,6 +8870,8 @@ def _(f, n, doc, out):
 
 @enrich("air", "Invoice")
 def _(f, n, doc, out):
+    if doc["from"] != "10-xb":          # the forwarder's invoice, not the distributor's to the island (air/11)
+        return {}
     return {"StatementDocumentReference": {"ID": V("BF-SOA-26-05", "The forwarder's statement of account for May, "
                                                                    "on which the invoice will appear (not "
                                                                    "shown).")}}

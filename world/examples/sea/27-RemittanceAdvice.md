@@ -30,11 +30,11 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   What the advice is for.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice paid; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalDebitAmount` = **43778.00** (currencyID `XBL`)  
+- `TotalDebitAmount` = **43814.00** (currencyID `XBL`)  
   The invoices paid.
-- `TotalCreditAmount` = **64.00** (currencyID `XBL`)  
+- `TotalCreditAmount` = **67.00** (currencyID `XBL`)  
   The credit note deducted.
-- `TotalPaymentAmount` = **43714.00** (currencyID `XBL`)  
+- `TotalPaymentAmount` = **43747.00** (currencyID `XBL`)  
   The amount transferred: the invoice less the credit note.
 - `PaymentOrderReference` = **VT-PAY-26-0123**  
   The payment order the payer gave its bank.
@@ -261,7 +261,7 @@ Inside `RemittanceAdviceLine`:
   One invoice paid.
 - `UUID` = **add4d37b-e76e-51a8-90dd-0ac065146ca3**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `DebitLineAmount` = **43778.00** (currencyID `XBL`)  
+- `DebitLineAmount` = **43814.00** (currencyID `XBL`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
@@ -289,7 +289,7 @@ Inside `RemittanceAdviceLine`:
   The credit note deducted.
 - `UUID` = **87f012c8-f767-5ff8-9aa8-8bc8a6a1076a**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `CreditLineAmount` = **64.00** (currencyID `XBL`)  
+- `CreditLineAmount` = **67.00** (currencyID `XBL`)  
   The amount of the credit note, set off against the payment.
 - `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0152**  
   The credit note deducted.
@@ -311,9 +311,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:IssueTime>15:43:00+00:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">43778.00</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">64.00</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">43714.00</cbc:TotalPaymentAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">43814.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">67.00</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">43747.00</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -491,7 +491,7 @@ Inside `RemittanceAdviceLine`:
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>add4d37b-e76e-51a8-90dd-0ac065146ca3</cbc:UUID>
-    <cbc:DebitLineAmount currencyID="XBL">43778.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">43814.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
@@ -533,7 +533,7 @@ Inside `RemittanceAdviceLine`:
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>87f012c8-f767-5ff8-9aa8-8bc8a6a1076a</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">64.00</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">67.00</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
         <cbc:ID>LD-CN-26-0152</cbc:ID>

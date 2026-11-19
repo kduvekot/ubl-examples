@@ -428,7 +428,7 @@ Inside `PaymentTerms`:
   The deposit payment, already received.
 - `ReferenceEventCode` = **8** (listID `UN/EDIFACT EDED 2475`)  
   Due when the order is accepted. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 8 = Date of confirmation of order received.
-- `PaymentPercent` = **18.59**  
+- `PaymentPercent` = **18.58**  
   Its share of the invoice total.
 - `Amount` = **10000.00** (currencyID `XBL`)  
   The deposit.
@@ -444,11 +444,11 @@ Inside `PaymentTerms`:
   Counted from the shipment on board. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 81 = Date of shipment as evidenced by the transport document(s).
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PaymentPercent` = **81.41**  
+- `PaymentPercent` = **81.42**  
   Its share of the invoice total.
-- `Amount` = **43778.00** (currencyID `XBL`)  
+- `Amount` = **43814.00** (currencyID `XBL`)  
   The balance.
-- `PenaltyAmount` = **656.67** (currencyID `XBL`)  
+- `PenaltyAmount` = **657.21** (currencyID `XBL`)  
   The surcharge for the first month late, on the balance.
 - `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
   The seller's general terms of payment.
@@ -550,7 +550,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **53778.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **53814.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -569,19 +569,19 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **50688.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **50724.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **53778.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **53814.00** (currencyID `XBL`)  
   The line amounts plus the charges, without tax.
-- `TaxInclusiveAmount` = **53778.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **53814.00** (currencyID `XBL`)  
   The total without tax plus the tax.
 - `ChargeTotalAmount` = **3090.00** (currencyID `XBL`)  
   The sum of the charges at document level.
 - `PrepaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit, already paid.
-- `PayableAmount` = **43778.00** (currencyID `XBL`)  
+- `PayableAmount` = **43814.00** (currencyID `XBL`)  
   What is still to pay: the total less the deposit.
-- `PayableAlternativeAmount` = **17511.200** (currencyID `XLC`)  
+- `PayableAlternativeAmount` = **17525.600** (currencyID `XLC`)  
   The same in coral, for the buyer's information, at the reference rate of the invoice date.
 
 ### Invoice Line
@@ -638,8 +638,8 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **12** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **768.00** (currencyID `XBL`)  
-  12 × 64.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **804.00** (currencyID `XBL`)  
+  12 × 67.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The order line this invoice line bills.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
@@ -666,8 +666,8 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **64** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **67** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
@@ -1032,7 +1032,7 @@ Inside `InvoiceLine`:
     <cbc:ID>DEPOSIT</cbc:ID>
     <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
-    <cbc:PaymentPercent>18.59</cbc:PaymentPercent>
+    <cbc:PaymentPercent>18.58</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
     <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
@@ -1042,9 +1042,9 @@ Inside `InvoiceLine`:
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PaymentPercent>81.41</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">43778.00</cbc:Amount>
-    <cbc:PenaltyAmount currencyID="XBL">656.67</cbc:PenaltyAmount>
+    <cbc:PaymentPercent>81.42</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">43814.00</cbc:Amount>
+    <cbc:PenaltyAmount currencyID="XBL">657.21</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
@@ -1110,7 +1110,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">53778.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">53814.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -1124,13 +1124,13 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50688.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">53778.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">53778.00</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">53814.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">53814.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">43778.00</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">17511.200</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">43814.00</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">17525.600</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -1180,7 +1180,7 @@ Inside `InvoiceLine`:
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">768.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -1211,7 +1211,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

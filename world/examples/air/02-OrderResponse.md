@@ -203,6 +203,19 @@ Inside `FreightForwarderParty`:
 - `PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge, not an allowance: it adds to the amount.
+- `AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
+- `AllowanceChargeReason` = **Air freight for the urgent delivery, recharged at cost**  
+  The air freight the buyer accepted in its change: the distributor pays it to its forwarder under CPT and recharges it, without margin.
+- `Amount` = **554.88** (currencyID `XBL`)  
+  As the forwarder quoted it for the eight boxed frames; invoiced at cost.
+
 ### Order Line
 
 Inside `OrderLine`:
@@ -359,6 +372,12 @@ Inside `OrderLine`:
       <cbc:Name>Bayforth Forwarding</cbc:Name>
     </cac:PartyName>
   </cac:FreightForwarderParty>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Air freight for the urgent delivery, recharged at cost</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">554.88</cbc:Amount>
+  </cac:AllowanceCharge>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>

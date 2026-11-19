@@ -527,8 +527,8 @@ Inside `CatalogueLine`:
   The smallest quantity the seller accepts on an order.
 - `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `RequiredItemLocationQuantity/Price/PriceAmount` = **64** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+- `RequiredItemLocationQuantity/Price/PriceAmount` = **67** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD** (listID `urn:ubl-examples:world:codelist:PriceTypeCode`)  
@@ -543,7 +543,7 @@ Inside `CatalogueLine`:
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
-- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **25.6** (currencyID `XLC`)  
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **26.8** (currencyID `XLC`)  
   The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
 - `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `EA`)  
   Per one unit.
@@ -1058,7 +1058,7 @@ Inside `CatalogueLine`:
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
@@ -1071,7 +1071,7 @@ Inside `CatalogueLine`:
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
-          <cbc:PriceAmount currencyID="XLC">25.6</cbc:PriceAmount>
+          <cbc:PriceAmount currencyID="XLC">26.8</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         </cac:AlternativeCurrencyPrice>
       </cac:Price>

@@ -68,7 +68,7 @@
   </cac:ReceiverParty>
   <cac:Payment>
     <cbc:ID>VT-PAY-26-0199</cbc:ID>
-    <cbc:PaidAmount currencyID="XBL">43778.00</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XBL">43814.00</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-25</cbc:PaidDate>
     <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
     <cac:BillingReference>

@@ -459,7 +459,7 @@
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
@@ -472,7 +472,7 @@
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
-          <cbc:PriceAmount currencyID="XLC">25.6</cbc:PriceAmount>
+          <cbc:PriceAmount currencyID="XLC">26.8</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         </cac:AlternativeCurrencyPrice>
       </cac:Price>

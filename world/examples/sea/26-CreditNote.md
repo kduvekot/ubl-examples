@@ -294,7 +294,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **64.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **67.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -313,13 +313,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **64.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **67.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **64.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **67.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **64.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **67.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **64.00** (currencyID `XBL`)  
+- `PayableAmount` = **67.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Credit Note Line
@@ -332,7 +332,7 @@ Inside `CreditNoteLine`:
   What happened.
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The frame that arrived cracked.
-- `LineExtensionAmount` = **64.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **67.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
@@ -358,8 +358,8 @@ Inside `CreditNoteLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **64** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+- `Price/PriceAmount` = **67** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
@@ -564,7 +564,7 @@ Inside `CreditNoteLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">64.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">67.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -578,16 +578,16 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">64.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">64.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">64.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">64.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">67.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">67.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">67.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Box crushed at the port of Selanu.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">64.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
@@ -615,7 +615,7 @@ Inside `CreditNoteLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">64</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>

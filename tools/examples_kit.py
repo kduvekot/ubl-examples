@@ -306,12 +306,27 @@ def unit_price(iid, currency, buyer=None):
     return money(p * rate(pr["currency"], currency), currency)
 
 
+def deal_price(d, currency, buyer=None):
+    """The unit price of a line of a deal: its own (unit_price, such as the trade price of the urgent air frames,
+    where the buyer's own price holds only for goods by sea, O30), else the item's price for the buyer."""
+    if "unit_price" in d:
+        return Decimal(str(d["unit_price"]))
+    return unit_price(d["item"], currency, buyer)
+
+
+def deal_price_block(d, currency, buyer=None):
+    """cac:Price of a line of a deal: its own unit price (deal_price), else the item's price block for the buyer."""
+    if "unit_price" in d:
+        return line_price(d, currency, buyer)
+    return price_block(d["item"], currency, buyer)
+
+
 def lines(flow, seller, buyer, currency, which="ordered", deal=None):
     """The lines of a commercial document from the deal: (item, quantity, line amount, rule)."""
     out = []
     for d in (deal or flow.deal):
         q = Decimal(str(d[which]))
-        p = unit_price(d["item"], currency, buyer)
+        p = deal_price(d, currency, buyer)
         out.append((d, q, money(q * p, currency), tax_rule(seller, buyer, d["item"])))
     return out
 
@@ -385,7 +400,7 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
                                            "(worklist C34)."),
             "Quantity": qty(q, ITEM[d["item"]]["unit"], d.get("why", "The quantity ordered.")),
             "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
-            "Price": price_block(d["item"], cur, buyer),
+            "Price": deal_price_block(d, cur, buyer),
             "Item": item(d["item"], buyer=buyer, catalogue_ref=flow.numbers.get("catalogue")
                          if flow.numbers.get("catalogue-from") == seller else None)}}
             for i, (d, q, amt, rule) in enumerate(rows, 1)],
@@ -583,7 +598,7 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         which = "delivered" if any("delivered" in d for d in flow.deal) else "ordered"
         rows = lines(flow, seller, buyer, cur, which)
     else:
-        rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * unit_price(d["item"], cur, buyer), cur),
+        rows = [(d, Decimal(str(d["qty"])), money(Decimal(str(d["qty"])) * deal_price(d, cur, buyer), cur),
                  tax_rule(seller, buyer, d["item"])) for d in rows_spec]
     rows, gross = line_allowances(rows, cur)
     base = sum(r[2] for r in rows)
@@ -624,10 +639,10 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         "InvoiceLine": [{
             "ID": V(str(i), "The line number."),
             "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], d.get("invoice_why", "The quantity delivered.")),
-            "LineExtensionAmount": amount(amt, cur, f"{q} × {unit_price(d['item'], cur, buyer)}, rounded to the minor "
+            "LineExtensionAmount": amount(amt, cur, f"{q} × {deal_price(d, cur, buyer)}, rounded to the minor "
                                                     "unit of the currency."),
             "Item": item(d["item"], tax_category(rule, supply_kind(d["item"]))),
-            "Price": price_block(d["item"], cur, buyer)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
+            "Price": deal_price_block(d, cur, buyer)} for i, (d, q, amt, rule) in enumerate(rows, 1)],
     }
     line_features(rows, out["InvoiceLine"], cur, gross)
     if rows_spec is None and "OrderReference" in refs:      # the lines of the deal are the lines of the order
@@ -1327,10 +1342,12 @@ def price_type(code, tax_included):
 
 def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
     """The terms a catalogue line is offered on: lead time, minimum quantity, where it is sold, the price and
-    the price list it belongs to."""
+    the price list it belongs to. The price is the one for the flow's buyer where the catalogue is sent to it (a
+    price agreed for the buyer, such as Lumeway's CIF price for the island, O30), else the seller's own."""
     it = ITEM[iid]
     seller = PARTY[doc["from"]]
-    p = price_block(iid)
+    buyer = flow.buyer if flow.buyer == doc["to"] else None
+    p = price_block(iid, buyer=buyer)
     p["ValidityPeriod"] = {"StartDate": V(flow.date(day), "The price applies from the catalogue's issue date."),
                            "EndDate": V(flow.date(day + validity_days), "And until the catalogue ends.")}
     p["PriceList"] = {"ID": V(f"{initials(doc['from'])}-PL-{flow.date(day)[:4]}",
@@ -1353,7 +1370,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
     p["PriceType"] = V("Contract price" if contract else "Trade price", "The kind of price in words.")
     if alternative:
         p["AlternativeCurrencyPrice"] = {
-            "PriceAmount": price(unit_price(iid, alternative), alternative, "The same price in the buyer's currency, "
+            "PriceAmount": price(unit_price(iid, alternative, buyer), alternative, "The same price in the buyer's currency, "
                                  "at the world's reference rate on the catalogue's issue day; for information only."),
             "BaseQuantity": qty(1, it["unit"], "Per one unit.")}
     if it.get("max_order"):

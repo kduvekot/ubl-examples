@@ -92,9 +92,9 @@ Inside `CustomsDeclaration`:
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/ID` = **LD-SH-26-0132**  
   The shipment declared.
-- `Shipment/InsuranceValueAmount` = **59155.80** (currencyID `XBL`)  
+- `Shipment/InsuranceValueAmount` = **59195.40** (currencyID `XBL`)  
   The cargo insurance the seller took out under CIF.
-- `Shipment/FreeOnBoardValueAmount` = **50688.00** (currencyID `XBL`)  
+- `Shipment/FreeOnBoardValueAmount` = **50724.00** (currencyID `XBL`)  
   On board in Lumeport.
 - `Shipment/Consignment/ID` = **LD-CS-26-0133**  
   The consignment carried.
@@ -132,7 +132,7 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Bench side frame casting**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **768.00** (currencyID `XBL`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **804.00** (currencyID `XBL`)  
   The value of the goods at export, in lume.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
   The gross weight of the goods of this item.
@@ -383,8 +383,8 @@ Inside `Signature`:
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
-      <cbc:InsuranceValueAmount currencyID="XBL">59155.80</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">50688.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">59195.40</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">50724.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
@@ -418,7 +418,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">768.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">804.00</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:Item>
