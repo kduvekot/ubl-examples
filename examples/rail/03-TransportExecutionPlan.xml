@@ -11,9 +11,9 @@
   <cbc:IssueTime>16:46:00-01:00</cbc:IssueTime>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">ASREQUESTED</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
-  <cbc:Note languageID="qau">Sundraz ranrek: drek kaz vuznek kazdrek rizvek drek drazkir trakran krir drek gul.</cbc:Note>
-  <cbc:Note languageID="en-XU">Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Note>
+  <cbc:DocumentStatusReasonDescription>Capacity available in the requested window: slots on the train of 14 April.</cbc:DocumentStatusReasonDescription>
+  <cbc:Note languageID="qau">Kan trunskir mir drek mazmul trek Conciaro krir drek kaz nintrek trek Marrowdale: drek vuznek kazdrek krir drek gul, vabul drek titran sezhul.</cbc:Note>
+  <cbc:Note languageID="en-XU">Two containers from the warehouse in Conciaro to the rail siding in Marrowdale: the carrier's tractor to the hub, then the container train.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
   <cac:SenderParty>
@@ -140,23 +140,25 @@
     <cbc:ID>VI-TR-26-0326</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
-    <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+    <cbc:ID>FRC-CON-2026-005</cbc:ID>
+    <cbc:IssueDate>2026-01-05</cbc:IssueDate>
     <cbc:IssueTime>10:00:00</cbc:IssueTime>
     <cbc:NominationDate>2026-04-08</cbc:NominationDate>
     <cbc:NominationTime>09:00:00</cbc:NominationTime>
     <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
-    <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+    <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
     <cbc:Note>Call-off 88 of the year.</cbc:Note>
     <cbc:VersionID>2</cbc:VersionID>
     <cbc:ModificationReasonCode listID="urn:ubl-examples:world:codelist:ContractModificationReasonCode">VOLUME</cbc:ModificationReasonCode>
     <cbc:ModificationReasonDescription>Ten more slots a month from April.</cbc:ModificationReasonDescription>
-    <cbc:Description>Container slots between the Ferrano hub and Marrowdale.</cbc:Description>
+    <cbc:Description>Container slots on the trains from the Ferrano hub to Marrowdale, with the carrier's haulage of the boxes to the hub.</cbc:Description>
     <cac:ContractDocumentReference>
       <cbc:ID>FRC-CON-2026-005-A1</cbc:ID>
     </cac:ContractDocumentReference>
     <cac:NominationPeriod>
       <cbc:StartDate>2026-04-06</cbc:StartDate>
-      <cbc:EndDate>2026-04-12</cbc:EndDate>
+      <cbc:EndDate>2026-04-08</cbc:EndDate>
+      <cbc:EndTime>09:00:00</cbc:EndTime>
     </cac:NominationPeriod>
     <cac:ContractualDelivery>
       <cbc:LatestDeliveryDate>2026-04-16</cbc:LatestDeliveryDate>
@@ -176,10 +178,6 @@
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
     <cbc:Name>Container train</cbc:Name>
   </cac:MainTransportationService>
-  <cac:AdditionalTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">NOTIFY</cbc:TransportServiceCode>
-    <cbc:Name>Notice two hours before arrival</cbc:Name>
-  </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-13</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
@@ -196,17 +194,11 @@
     </cac:Address>
   </cac:FromLocation>
   <cac:ToLocation>
-    <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-    <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-    <cac:Address>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:Address>
+    <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
+    <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
   </cac:ToLocation>
   <cac:TransportExecutionTerms>
-    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
-    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
@@ -219,10 +211,10 @@
       <cbc:PreEventNotificationDurationMeasure unitCode="HUR">2</cbc:PreEventNotificationDurationMeasure>
       <cac:NotifyParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:NotifyParty>
       <cac:NotificationLocation>
@@ -241,7 +233,7 @@
     <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
     <cac:PlannedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -297,23 +289,17 @@
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:ConsigneeParty>
-    <cac:TransportContract>
-      <cbc:ID>FRC-CON-2026-005</cbc:ID>
-      <cbc:IssueDate>2026-01-05</cbc:IssueDate>
-      <cbc:ContractType>Framework contract for container slots</cbc:ContractType>
-    </cac:TransportContract>
     <cac:PrepaidPaymentTerms>
       <cbc:Note>Freight prepaid by the consignor under DAP.</cbc:Note>
     </cac:PrepaidPaymentTerms>
     <cac:MainCarriageShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
       <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
       <cbc:SuccessiveSequenceID>1</cbc:SuccessiveSequenceID>
-      <cbc:Instructions>Shunt to the Lumeway siding on arrival in Marrowdale.</cbc:Instructions>
-      <cbc:DemurrageInstructions>Free time five days at the siding, then demurrage per container day.</cbc:DemurrageInstructions>
+      <cbc:Instructions>Shunt to the Lumeway siding in Marrowdale once the import is declared.</cbc:Instructions>
+      <cbc:DemurrageInstructions>Free time five days at the siding, counted from the day after the boxes are placed; then demurrage of 7,500 ferra per container day, under framework contract FRC-CON-2026-005.</cbc:DemurrageInstructions>
       <cbc:CrewQuantity unitCode="IE">2</cbc:CrewQuantity>
-      <cbc:PassengerQuantity unitCode="IE">0</cbc:PassengerQuantity>
       <cac:TransportMeans>
         <cbc:JourneyID>CT 4471</cbc:JourneyID>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
@@ -374,5 +360,61 @@
         </cac:Location>
       </cac:EstimatedArrivalTransportEvent>
     </cac:MainCarriageShipmentStage>
+    <cac:PreCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:TransportMeans>
+        <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+        <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+        <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">37</cbc:TransportMeansTypeCode>
+        <cac:RoadTransport>
+          <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XU:vehicle-register">UR 4160 RC</cbc:LicensePlateID>
+        </cac:RoadTransport>
+      </cac:TransportMeans>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+      <cac:PlannedDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:PlannedDepartureTransportEvent>
+      <cac:PlannedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>15:50:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:PlannedArrivalTransportEvent>
+    </cac:PreCarriageShipmentStage>
   </cac:Consignment>
 </TransportExecutionPlan>

@@ -13,12 +13,13 @@ Distribution · UBL Example Documents</title>
 <main class="prose">
 <h1 id="invoice-valdara-industries-to-lumeway-distribution">Invoice:
 Valdara Industries to Lumeway Distribution</h1>
-<p><em>Example 11 of the flow "Containers by rail under transit (Urvania
-→ Bayvarra)" · <a
+<p><em>Example 11 of the flow "Containers by rail under the Accord's
+common transit (Urvania → Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">Invoice
 in the UBL 2.5 specification</a></em></p>
 <p>Under DAP the price includes the transport, so the invoice covers
-goods and freight.</p>
+goods and freight; Valdara invoices on despatch, so the importer has it
+when it declares the goods.</p>
 <p><a href="examples/rail/11-Invoice.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -50,12 +51,13 @@ The seller's invoice number.</li>
 <strong>4e437657-fd23-506f-a503-988422d5e64c</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-17</strong><br />
-Issued on delivery at the distributor's siding.</li>
+<li><code>IssueDate</code> = <strong>2026-04-14</strong><br />
+Issued on despatch, as Valdara invoices: the morning the train leaves
+the hub, so that the importer can declare the goods on arrival.</li>
 <li><code>IssueTime</code> = <strong>11:14:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>DueDate</code> = <strong>2026-05-17</strong><br />
+<li><code>DueDate</code> = <strong>2026-05-14</strong><br />
 As the payment terms below count it: 30 days net; 2 % discount when paid
 within 10 days.</li>
 <li><code>InvoiceTypeCode</code> = <strong>380</strong> (listID
@@ -70,7 +72,7 @@ under the Trade Accord (criterion S).</strong><br />
 Why the invoice has no separate freight line. The exporter's statement
 on origin: the proof of origin the buyer's import declaration refers to,
 to claim the Trade Accord's preference (D18).</li>
-<li><code>TaxPointDate</code> = <strong>2026-04-17</strong><br />
+<li><code>TaxPointDate</code> = <strong>2026-04-14</strong><br />
 Urvania's value added tax becomes due on the invoice date.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XUF</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
@@ -111,7 +113,7 @@ a TransitCustomsDeclaration; a generic reference names the UBL document
 type (decision Q29). The code is from the Trade Accord's UBL document
 type list: TransitCustomsDeclaration = Transit Customs Declaration.</li>
 <li><code>ID</code> = <strong>FRC-WB-26-0334</strong><br />
-The rail consignment note, signed on delivery at the siding.</li>
+The rail consignment note the benches travel under.</li>
 <li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
 The kind of document referred to: FRC-WB-26-0334 is the example rail/08,
@@ -554,8 +556,6 @@ details are given; only its identifier and name are repeated.</li>
 <h3 id="delivery">Delivery</h3>
 <p>Inside <code>Delivery</code>:</p>
 <ul>
-<li><code>ActualDeliveryDate</code> = <strong>2026-04-15</strong><br />
-The day the containers were placed at the siding.</li>
 <li><code>DeliveryLocation/ID</code> = <strong>9520610900015</strong>
 (schemeID <code>GS1 GLN</code>)<br />
 The Global Location Number of the place, rail siding of the distribution
@@ -565,6 +565,9 @@ world/parties.json.</li>
 <li><code>DeliveryLocation/Name</code> = <strong>Lumeway rail siding,
 Marrowdale</strong><br />
 Where the boxes are placed for unloading.</li>
+<li><code>Despatch/ActualDespatchDate</code> =
+<strong>2026-04-14</strong><br />
+The day the train left the hub with the benches.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
 <p>Inside <code>PaymentMeans</code>:</p>
@@ -580,7 +583,7 @@ validation checks. The code is from UBL's default Payment means
 <li><code>PaymentMeansDescription</code> = <strong>Credit
 transfer</strong><br />
 In words.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-17</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-05-14</strong><br />
 When the transfer must be credited.</li>
 <li><code>PaymentChannelCode</code> = <strong>RTNS</strong> (listID
 <code>ISO 20022 ClearingChannel2Code</code>)<br />
@@ -753,13 +756,13 @@ The discount on the amount payable, if paid in time.</li>
 <li><code>PaymentTermsDetailsURI</code> = <strong><a
 href="https://www.valdara.example/terms">https://www.valdara.example/terms</a></strong><br />
 The seller's general terms of payment.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-17</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-05-14</strong><br />
 The day the amount is due, as the terms count it.</li>
 <li><code>SettlementPeriod/StartDate</code> =
-<strong>2026-04-17</strong><br />
+<strong>2026-04-14</strong><br />
 From the invoice date.</li>
 <li><code>SettlementPeriod/EndDate</code> =
-<strong>2026-04-27</strong><br />
+<strong>2026-04-24</strong><br />
 For 10 days.</li>
 <li><code>PenaltyInterestRate/InterestRatePercent</code> =
 <strong>8</strong><br />
@@ -960,12 +963,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;RAIL-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0337&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4e437657-fd23-506f-a503-988422d5e64c&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-17&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:14:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Delivered at place: the price includes the carriage to the siding. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-17&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;4410&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Stock purchases&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
@@ -1137,149 +1140,151 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Delivery</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ActualDeliveryDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:ActualDeliveryDate</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF20VIINV260337&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF20VIINV260337&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeBearerCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ChargeBearerType1Code&quot;</span>&gt;SHAR&lt;/<span class="kw">cbc:ChargeBearerCode</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XU790351041600000000209458&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Invoice VI-INV-26-0337&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:bank-branch&quot;</span>&gt;03510-41600&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano main branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:bank-identifier&quot;</span>&gt;CREVXUFR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Crevalto Bank&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Trazhek Hekrul Rikbul&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Piazza della Banca&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;8&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PostalZone</span>&gt;4100&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XU-STD&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansID</span>&gt;1&lt;/<span class="kw">cbc:PaymentMeansID</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;30 days net; 2 % discount when paid within 10 days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountPercent</span>&gt;2&lt;/<span class="kw">cbc:SettlementDiscountPercent</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;153216&lt;/<span class="kw">cbc:SettlementDiscountAmount</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.valdara.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SettlementPeriod</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-17&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-27&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SettlementPeriod</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InterestRatePercent</span>&gt;8&lt;/<span class="kw">cbc:InterestRatePercent</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimeBasisCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade&quot;</span>&gt;ANN&lt;/<span class="kw">cbc:TimeBasisCode</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CalculationMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InterestCalculationCode&quot;</span>&gt;SIMPLE&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export of goods outside Urvania&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;192&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;COLOUR&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPartPositionCode&quot;</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ColourCode&quot;</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export of goods outside Urvania&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;39900&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF20VIINV260337&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF20VIINV260337&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeBearerCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ChargeBearerType1Code&quot;</span>&gt;SHAR&lt;/<span class="kw">cbc:ChargeBearerCode</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XU790351041600000000209458&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Invoice VI-INV-26-0337&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:bank-branch&quot;</span>&gt;03510-41600&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano main branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:bank-identifier&quot;</span>&gt;CREVXUFR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Crevalto Bank&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Trazhek Hekrul Rikbul&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Piazza della Banca&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BuildingNumber</span>&gt;8&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:PostalZone</span>&gt;4100&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:FinancialInstitution</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;XU-STD&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansID</span>&gt;1&lt;/<span class="kw">cbc:PaymentMeansID</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;30 days net; 2 % discount when paid within 10 days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountPercent</span>&gt;2&lt;/<span class="kw">cbc:SettlementDiscountPercent</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;153216&lt;/<span class="kw">cbc:SettlementDiscountAmount</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.valdara.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SettlementPeriod</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SettlementPeriod</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InterestRatePercent</span>&gt;8&lt;/<span class="kw">cbc:InterestRatePercent</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimeBasisCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade&quot;</span>&gt;ANN&lt;/<span class="kw">cbc:TimeBasisCode</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CalculationMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InterestCalculationCode&quot;</span>&gt;SIMPLE&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export of goods outside Urvania&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;192&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;7660800&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;COLOUR&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPartPositionCode&quot;</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ColourCode&quot;</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export of goods outside Urvania&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;GOODS&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;39900&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
 </body>
 </html>

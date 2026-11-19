@@ -6,12 +6,12 @@
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-INV-26-0337</cbc:ID>
   <cbc:UUID>4e437657-fd23-506f-a503-988422d5e64c</cbc:UUID>
-  <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>11:14:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-17</cbc:DueDate>
+  <cbc:DueDate>2026-05-14</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Delivered at place: the price includes the carriage to the siding. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
-  <cbc:TaxPointDate>2026-04-17</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-14</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4410</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock purchases</cbc:AccountingCost>
@@ -183,17 +183,19 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-04-15</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
       <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-04-14</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF20VIINV260337</cbc:InstructionNote>
@@ -247,10 +249,10 @@
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">153216</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-17</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-17</cbc:StartDate>
-      <cbc:EndDate>2026-04-27</cbc:EndDate>
+      <cbc:StartDate>2026-04-14</cbc:StartDate>
+      <cbc:EndDate>2026-04-24</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>

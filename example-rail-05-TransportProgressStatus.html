@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Transport Progress Status: Ferrano Intermodal Hub to Ferrano Rail
-Cargo · UBL Example Documents</title>
+<title>Transport Progress Status: Rail Infrastructure Agency of Urvania
+to Ferrano Rail Cargo · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=cfc6fda70b">
 </head>
 <body>
@@ -12,14 +12,15 @@ Cargo · UBL Example Documents</title>
 <div class="layout">
 <main class="prose">
 <h1
-id="transport-progress-status-ferrano-intermodal-hub-to-ferrano-rail-cargo">Transport
-Progress Status: Ferrano Intermodal Hub to Ferrano Rail Cargo</h1>
-<p><em>Example 5 of the flow "Containers by rail under transit (Urvania
-→ Bayvarra)" · <a
+id="transport-progress-status-rail-infrastructure-agency-of-urvania-to-ferrano-rail-cargo">Transport
+Progress Status: Rail Infrastructure Agency of Urvania to Ferrano Rail
+Cargo</h1>
+<p><em>Example 5 of the flow "Containers by rail under the Accord's
+common transit (Urvania → Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-SCHEMA">Transport
 Progress Status in the UBL 2.5 specification</a></em></p>
-<p>The hub, as network manager, reports the train's position and
-timetable.</p>
+<p>The rail infrastructure manager reports the train's position and
+timetable on its network, from the hub to the border station (D37).</p>
 <p><a href="examples/rail/05-TransportProgressStatus.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -46,7 +47,7 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>RAIL-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>FIH-DOC-26-0330</strong><br />
+<li><code>ID</code> = <strong>RIAU-DOC-26-0330</strong><br />
 The sender's number for this document.</li>
 <li><code>UUID</code> =
 <strong>78d6602f-27f8-5e6a-b8c0-36b493a71754</strong><br />
@@ -58,44 +59,45 @@ Answered the same morning.</li>
 Answered once the train has left, so that the status can report the
 actual departure (rail/05#F1); in the issuer's local time, with its
 offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>Nul rek baz.</strong> (languageID
-<code>qau</code>)<br />
+<li><code>Note</code> = <strong>Nul hir 06:52, 7 krizstek skuskan drek
+santul.</strong> (languageID <code>qau</code>)<br />
 The note in Urvanian, the sender's language (world/countries.json): The
-answer.</li>
-<li><code>Note</code> = <strong>Left on time.</strong> (languageID
-<code>en-XU</code>)<br />
+answer, as the times say it (rail/05#F5).</li>
+<li><code>Note</code> = <strong>Left at 06:52, 7 minutes after the
+timetable.</strong> (languageID <code>en-XU</code>)<br />
 The same note in English, the working language between the countries:
-The answer.</li>
+The answer, as the times say it (rail/05#F5).</li>
 <li><code>StatusAvailableIndicator</code> = <strong>true</strong><br />
 A status is available.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>FIH-SIG-TPS</strong><br />
+<li><code>ID</code> = <strong>RIAU-SIG-TPS</strong><br />
 The sender's electronic seal.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
-<strong>XU-R-105096</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
+<strong>xu_t8rn</strong> (schemeID
+<code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>SignatoryParty/PartyName/Name</code> = <strong>Ferrano
-Intermodal Hub</strong><br />
+<li><code>SignatoryParty/PartyName/Name</code> = <strong>Rail
+Infrastructure Agency of Urvania</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 </ul>
 <h3 id="sender-party">Sender Party</h3>
 <p>Inside <code>SenderParty</code>:</p>
 <ul>
-<li><code>PartyIdentification/ID</code> = <strong>XU-R-105096</strong>
-(schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
-The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Ferrano Intermodal Hub (world/parties.json).
-Later mentions of the same party in this document repeat only this
-identifier and the name.</li>
-<li><code>PartyName/Name</code> = <strong>Ferrano Intermodal
-Hub</strong><br />
-The trading name; identity of Ferrano Intermodal Hub
+<li><code>PartyIdentification/ID</code> = <strong>xu_t8rn</strong>
+(schemeID
+<code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
+The party's preferred identifier: its number in the Index of Public
+Administrations of Urvania; identity of Rail Infrastructure Agency of
+Urvania (world/parties.json). Later mentions of the same party in this
+document repeat only this identifier and the name.</li>
+<li><code>PartyName/Name</code> = <strong>Rail Infrastructure Agency of
+Urvania</strong><br />
+The trading name; identity of Rail Infrastructure Agency of Urvania
 (world/parties.json).</li>
 <li><code>Language/ID</code> = <strong>qau</strong> (schemeID
 <code>ISO 639</code>)<br />
@@ -106,12 +108,12 @@ of ISO 639 Language: qau = Urvanian. An identifier that holds a code
 names the code's list in its schemeID.</li>
 <li><code>Language/Name</code> = <strong>Urvanian</strong><br />
 The language's name in English; in the language itself: urvanese.</li>
-<li><code>PostalAddress/ID</code> = <strong>4160200139820702</strong>
+<li><code>PostalAddress/ID</code> = <strong>4160207305518243</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
+a ten-digit serial number); identity of Rail Infrastructure Agency of
+Urvania (world/parties.json).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -136,38 +138,40 @@ LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XU =
 Address format of Urvania.</li>
-<li><code>PostalAddress/StreetName</code> = <strong>Bek Han
-Krazhul</strong> (languageID <code>qau</code>)<br />
+<li><code>PostalAddress/StreetName</code> = <strong>Bek Hekrul
+Zhuzkek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
 street names are given in both languages (world/countries.json);
-identity of Ferrano Intermodal Hub (world/parties.json).</li>
-<li><code>PostalAddress/StreetName</code> = <strong>Via del
-Terminal</strong> (languageID <code>en-XU</code>)<br />
+identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Via della
+Stazione</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Ferrano Intermodal Hub (world/parties.json).</li>
-<li><code>PostalAddress/BuildingNumber</code> =
-<strong>59</strong><br />
-Building number of the postal address. identity of Ferrano Intermodal
-Hub (world/parties.json).</li>
+Italian names the British kept are part of English now; identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
+<li><code>PostalAddress/BuildingNumber</code> = <strong>2</strong><br />
+Building number of the postal address. identity of Rail Infrastructure
+Agency of Urvania (world/parties.json).</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Ferrano Intermodal Hub (world/parties.json).</li>
+state. identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Ferrano Intermodal Hub (world/parties.json).</li>
-<li><code>PostalAddress/PostalZone</code> = <strong>4180</strong><br />
-Postal code in Urvania's format (4 digits). identity of Ferrano
-Intermodal Hub (world/parties.json).</li>
+state. identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
+<li><code>PostalAddress/PostalZone</code> = <strong>4150</strong><br />
+Postal code in Urvania's format (4 digits). identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
+country (world/countries.json). identity of Rail Infrastructure Agency
+of Urvania (world/parties.json).</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -180,45 +184,47 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Contact/Name</code> = <strong>Terminal control</strong><br />
-The party's main desk, which handles this document; identity of Ferrano
-Intermodal Hub (world/parties.json).</li>
-<li><code>Contact/JobTitle</code> = <strong>Terminal
+<li><code>Contact/Name</code> = <strong>Traffic control</strong><br />
+The party's main desk, which handles this document; identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
+<li><code>Contact/JobTitle</code> = <strong>Train
 controller</strong><br />
-The job of the person who answers at the desk; identity of Ferrano
-Intermodal Hub (world/parties.json).</li>
-<li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 1 041 371
-6482</strong><br />
+The job of the person who answers at the desk; identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
+<li><code>Contact/Department</code> = <strong>Traffic
+management</strong><br />
+The department the desk belongs to; identity of Rail Infrastructure
+Agency of Urvania (world/parties.json).</li>
+<li><code>Contact/Telephone</code> = <strong>+999 1 041 816
+2047</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Ferrano Intermodal
-Hub (world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. identity of Rail Infrastructure
+Agency of Urvania (world/parties.json).</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
-href="mailto:terminal@ferranohub.example">terminal@ferranohub.example</a></strong><br />
+href="mailto:traffic@railinfra-xu.example">traffic@railinfra-xu.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Ferrano Intermodal Hub (world/parties.json).</li>
+anyone; identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
+When the desk can be reached; identity of Rail Infrastructure Agency of
+Urvania (world/parties.json).</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
 network.</li>
 <li><code>ElectronicAddress/ElectronicAddressID</code> =
-<strong>XU:XU-R-105096</strong> (schemeID
+<strong>XU:xu_t8rn</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; identity of Ferrano
-Intermodal Hub (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Index of Public Administrations of Urvania; identity of
+Rail Infrastructure Agency of Urvania (world/parties.json). UBL 2.5
+carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
@@ -369,27 +375,35 @@ The request answered.</li>
 <ul>
 <li><code>JourneyID</code> = <strong>CT 4471</strong><br />
 The number of the container train in the hub's timetable.</li>
+<li><code>RailTransport/TrainID</code> = <strong>FRC 4417</strong><br />
+The train itself, so that the run of this day is meant, not the
+timetable service on other days (rail/04#F7).</li>
 </ul>
 <h3 id="transport-schedule">Transport Schedule</h3>
 <p>Inside <code>TransportSchedule</code>:</p>
 <ul>
 <li><code>SequenceNumeric</code> = <strong>1</strong><br />
-The first stop: the hub.</li>
+The first point: the hub, where the train starts.</li>
 <li><code>ReferenceDate</code> = <strong>2026-04-14</strong><br />
 The day.</li>
 <li><code>ReferenceTime</code> = <strong>06:45:00</strong><br />
-The time.</li>
+The timetabled departure the status refers to.</li>
 <li><code>ReliabilityPercent</code> = <strong>95</strong><br />
 How sure the schedule is.</li>
-<li><code>Remarks</code> = <strong>On time.</strong><br />
-The status.</li>
+<li><code>Remarks</code> = <strong>Left 7 minutes late, two after the
+estimate.</strong><br />
+The status at the hub.</li>
 <li><code>StatusLocation/ID</code> = <strong>XUFER</strong> (schemeID
 <code>UN/LOCODE</code>)<br />
-The place's identifier, as the world gives it wherever the place appears
-(a code in the form of a UN/LOCODE; worklist C23).</li>
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
 <li><code>StatusLocation/Name</code> = <strong>Ferrano Intermodal
 Hub</strong><br />
-The stop.</li>
+At the intermodal hub, where the boxes go on the train.</li>
+<li><code>StatusLocation/Address/Country/IdentificationCode</code> =
+<strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>ActualArrivalTransportEvent/OccurrenceDate</code> =
 <strong>2026-04-14</strong><br />
 The train arrived at the hub for loading.</li>
@@ -441,21 +455,6 @@ At the intermodal hub, where the boxes go on the train.</li>
 = <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 The country the place is in. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XU = Urvania.</li>
-<li><code>EstimatedArrivalTransportEvent/OccurrenceDate</code> =
-<strong>2026-04-15</strong><br />
-Expected in Marrowdale.</li>
-<li><code>EstimatedArrivalTransportEvent/OccurrenceTime</code> =
-<strong>10:40:00</strong><br />
-The local time.</li>
-<li><code>EstimatedArrivalTransportEvent/Location/ID</code> =
-<strong>9520610900015</strong> (schemeID <code>GS1 GLN</code>)<br />
-The Global Location Number of the place, rail siding of the distribution
-centre, marrowdale: Lumeway Distribution identifies its places the GS1
-way, under its company prefix (952, reserved for examples);
-world/parties.json.</li>
-<li><code>EstimatedArrivalTransportEvent/Location/Name</code> =
-<strong>Lumeway rail siding, Marrowdale</strong><br />
-Where the boxes are placed for unloading.</li>
 <li><code>PlannedDepartureTransportEvent/OccurrenceDate</code> =
 <strong>2026-04-14</strong><br />
 The timetable.</li>
@@ -473,21 +472,42 @@ At the intermodal hub, where the boxes go on the train.</li>
 = <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 The country the place is in. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XU = Urvania.</li>
-<li><code>PlannedArrivalTransportEvent/OccurrenceDate</code> =
-<strong>2026-04-15</strong><br />
-The timetable.</li>
-<li><code>PlannedArrivalTransportEvent/OccurrenceTime</code> =
-<strong>10:30:00</strong><br />
+<li><code>SequenceNumeric</code> = <strong>2</strong><br />
+The second point: the border station, the end of Urvania's network.</li>
+<li><code>Remarks</code> = <strong>The path into Bayvarra at 13:00
+holds.</strong><br />
+The status ahead.</li>
+<li><code>StatusLocation/Name</code> = <strong>Rail border station
+Urvania–Bayvarra</strong><br />
+Where the train crosses the border.</li>
+<li><code>EstimatedArrivalTransportEvent/OccurrenceDate</code> =
+<strong>2026-04-14</strong><br />
+Expected from the actual departure.</li>
+<li><code>EstimatedArrivalTransportEvent/OccurrenceTime</code> =
+<strong>08:08:00</strong><br />
 The local time.</li>
-<li><code>PlannedArrivalTransportEvent/Location/ID</code> =
-<strong>9520610900015</strong> (schemeID <code>GS1 GLN</code>)<br />
-The Global Location Number of the place, rail siding of the distribution
-centre, marrowdale: Lumeway Distribution identifies its places the GS1
-way, under its company prefix (952, reserved for examples);
-world/parties.json.</li>
+<li><code>EstimatedArrivalTransportEvent/Location/Name</code> =
+<strong>Rail border station Urvania–Bayvarra</strong><br />
+Where the train crosses the border.</li>
+<li><code>PlannedDepartureTransportEvent/OccurrenceDate</code> =
+<strong>2026-04-14</strong><br />
+The timetabled path into Bayvarra, after the crew change, the brake test
+and the customs' check of the seals.</li>
+<li><code>PlannedDepartureTransportEvent/OccurrenceTime</code> =
+<strong>13:00:00</strong><br />
+The local time.</li>
+<li><code>PlannedDepartureTransportEvent/Location/Name</code> =
+<strong>Rail border station Urvania–Bayvarra</strong><br />
+Where the train crosses the border.</li>
+<li><code>PlannedArrivalTransportEvent/OccurrenceDate</code> =
+<strong>2026-04-14</strong><br />
+The timetable: 63 km from the hub.</li>
+<li><code>PlannedArrivalTransportEvent/OccurrenceTime</code> =
+<strong>08:01:00</strong><br />
+The local time.</li>
 <li><code>PlannedArrivalTransportEvent/Location/Name</code> =
-<strong>Lumeway rail siding, Marrowdale</strong><br />
-Where the boxes are placed for unloading.</li>
+<strong>Rail border station Urvania–Bayvarra</strong><br />
+Where the train crosses the border.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -497,45 +517,45 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:transport-progress-status:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;RAIL-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FIH-DOC-26-0330&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;RIAU-DOC-26-0330&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;78d6602f-27f8-5e6a-b8c0-36b493a71754&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;06:55:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Nul rek baz.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Left on time.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Nul hir 06:52, 7 krizstek skuskan drek santul.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Left at 06:52, 7 minutes after the timetable.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatusAvailableIndicator</span>&gt;true&lt;/<span class="kw">cbc:StatusAvailableIndicator</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FIH-SIG-TPS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;RIAU-SIG-TPS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_t8rn&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rail Infrastructure Agency of Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SenderParty</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_t8rn&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Rail Infrastructure Agency of Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;qau&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Urvanian&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160200139820702&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160207305518243&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Han Krazhul&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via del Terminal&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;59&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Hekrul Zhuzkek&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via della Stazione&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;2&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4180&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4150&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
@@ -544,16 +564,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Terminal control&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Terminal controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 371 6482&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;terminal@ferranohub.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Traffic control&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Train controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Traffic management&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 816 2047&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;traffic@railinfra-xu.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:XU-R-105096&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:xu_t8rn&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SenderParty</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiverParty</span>&gt;</span>
@@ -602,64 +622,64 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportProgressStatusRequestDocumentReference</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:JourneyID</span>&gt;CT 4471&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportSchedule</span>&gt;</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:ReferenceDate</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceTime</span>&gt;06:45:00&lt;/<span class="kw">cbc:ReferenceTime</span>&gt;</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReliabilityPercent</span>&gt;95&lt;/<span class="kw">cbc:ReliabilityPercent</span>&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Remarks</span>&gt;On time.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:StatusLocation</span>&gt;</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:StatusLocation</span>&gt;</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;05:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActualDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:52:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActualDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RailTransport</span>&gt;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TrainID</span>&gt;FRC 4417&lt;/<span class="kw">cbc:TrainID</span>&gt;</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RailTransport</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportSchedule</span>&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:ReferenceDate</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceTime</span>&gt;06:45:00&lt;/<span class="kw">cbc:ReferenceTime</span>&gt;</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReliabilityPercent</span>&gt;95&lt;/<span class="kw">cbc:ReliabilityPercent</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Remarks</span>&gt;Left 7 minutes late, two after the estimate.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:StatusLocation</span>&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:StatusLocation</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;05:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ActualDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:52:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ActualDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:45:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
@@ -673,18 +693,38 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportSchedule</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportProgressStatus</span>&gt;</span></code></pre></div>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportSchedule</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportSchedule</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;2&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Remarks</span>&gt;The path into Bayvarra at 13:00 holds.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:StatusLocation</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:StatusLocation</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:08:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportSchedule</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportProgressStatus</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
 </body>
 </html>

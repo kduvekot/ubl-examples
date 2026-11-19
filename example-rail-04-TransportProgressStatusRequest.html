@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Transport Progress Status Request: Ferrano Rail Cargo to Ferrano
-Intermodal Hub · UBL Example Documents</title>
+<title>Transport Progress Status Request: Ferrano Rail Cargo to Rail
+Infrastructure Agency of Urvania · UBL Example Documents</title>
 <link rel="stylesheet" href="site.css?v=cfc6fda70b">
 </head>
 <body>
@@ -12,15 +12,16 @@ Intermodal Hub · UBL Example Documents</title>
 <div class="layout">
 <main class="prose">
 <h1
-id="transport-progress-status-request-ferrano-rail-cargo-to-ferrano-intermodal-hub">Transport
-Progress Status Request: Ferrano Rail Cargo to Ferrano Intermodal
-Hub</h1>
-<p><em>Example 4 of the flow "Containers by rail under transit (Urvania
-→ Bayvarra)" · <a
+id="transport-progress-status-request-ferrano-rail-cargo-to-rail-infrastructure-agency-of-urvania">Transport
+Progress Status Request: Ferrano Rail Cargo to Rail Infrastructure
+Agency of Urvania</h1>
+<p><em>Example 4 of the flow "Containers by rail under the Accord's
+common transit (Urvania → Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-REQUEST-SCHEMA">Transport
 Progress Status Request in the UBL 2.5 specification</a></em></p>
-<p>The rail carrier asks the hub, which manages the tracks and slots,
-where the container train stands.</p>
+<p>The rail carrier asks Urvania's rail infrastructure manager, the
+transportation network manager that runs the tracks and the train paths,
+to report the container train's departure (D37).</p>
 <p><a href="examples/rail/04-TransportProgressStatusRequest.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -56,16 +57,19 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-14</strong><br />
 Asked on the morning of departure.</li>
 <li><code>IssueTime</code> = <strong>06:30:00-01:00</strong><br />
-Before the train leaves the hub; in the issuer's local time, with its
-offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>Kul drek titran sezhul nul?</strong>
-(languageID <code>qau</code>)<br />
+Before the timetabled departure: the carrier asks to be told when the
+train leaves (rail/04#F3); in the issuer's local time, with its offset
+from UTC (D27).</li>
+<li><code>Note</code> = <strong>Gannek skuskek drek krakbek skul drek
+titran sezhul FRC 4417 mir Ferrano.</strong> (languageID
+<code>qau</code>)<br />
 The note in Urvanian, the sender's language (world/countries.json): The
-question.</li>
-<li><code>Note</code> = <strong>Has the container train left?</strong>
-(languageID <code>en-XU</code>)<br />
+request: the departure, not presumed (rail/04#F3).</li>
+<li><code>Note</code> = <strong>Please report the departure of the
+container train FRC 4417 from Ferrano.</strong> (languageID
+<code>en-XU</code>)<br />
 The same note in English, the working language between the countries:
-The question.</li>
+The request: the departure, not presumed (rail/04#F3).</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -221,22 +225,23 @@ deprecated.</li>
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
 <ul>
-<li><code>PartyIdentification/ID</code> = <strong>XU-R-105096</strong>
-(schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
-The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Ferrano Intermodal Hub (world/parties.json).
-Later mentions of the same party in this document repeat only this
-identifier and the name.</li>
-<li><code>PartyName/Name</code> = <strong>Ferrano Intermodal
-Hub</strong><br />
-The trading name; identity of Ferrano Intermodal Hub
+<li><code>PartyIdentification/ID</code> = <strong>xu_t8rn</strong>
+(schemeID
+<code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
+The party's preferred identifier: its number in the Index of Public
+Administrations of Urvania; identity of Rail Infrastructure Agency of
+Urvania (world/parties.json). Later mentions of the same party in this
+document repeat only this identifier and the name.</li>
+<li><code>PartyName/Name</code> = <strong>Rail Infrastructure Agency of
+Urvania</strong><br />
+The trading name; identity of Rail Infrastructure Agency of Urvania
 (world/parties.json).</li>
-<li><code>PostalAddress/ID</code> = <strong>4160200139820702</strong>
+<li><code>PostalAddress/ID</code> = <strong>4160207305518243</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
+a ten-digit serial number); identity of Rail Infrastructure Agency of
+Urvania (world/parties.json).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -261,38 +266,40 @@ LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XU =
 Address format of Urvania.</li>
-<li><code>PostalAddress/StreetName</code> = <strong>Bek Han
-Krazhul</strong> (languageID <code>qau</code>)<br />
+<li><code>PostalAddress/StreetName</code> = <strong>Bek Hekrul
+Zhuzkek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
 street names are given in both languages (world/countries.json);
-identity of Ferrano Intermodal Hub (world/parties.json).</li>
-<li><code>PostalAddress/StreetName</code> = <strong>Via del
-Terminal</strong> (languageID <code>en-XU</code>)<br />
+identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Via della
+Stazione</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Ferrano Intermodal Hub (world/parties.json).</li>
-<li><code>PostalAddress/BuildingNumber</code> =
-<strong>59</strong><br />
-Building number of the postal address. identity of Ferrano Intermodal
-Hub (world/parties.json).</li>
+Italian names the British kept are part of English now; identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
+<li><code>PostalAddress/BuildingNumber</code> = <strong>2</strong><br />
+Building number of the postal address. identity of Rail Infrastructure
+Agency of Urvania (world/parties.json).</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Ferrano Intermodal Hub (world/parties.json).</li>
+state. identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Ferrano Intermodal Hub (world/parties.json).</li>
-<li><code>PostalAddress/PostalZone</code> = <strong>4180</strong><br />
-Postal code in Urvania's format (4 digits). identity of Ferrano
-Intermodal Hub (world/parties.json).</li>
+state. identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
+<li><code>PostalAddress/PostalZone</code> = <strong>4150</strong><br />
+Postal code in Urvania's format (4 digits). identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
+country (world/countries.json). identity of Rail Infrastructure Agency
+of Urvania (world/parties.json).</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -305,51 +312,56 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Contact/Name</code> = <strong>Terminal control</strong><br />
-The party's main desk, which handles this document; identity of Ferrano
-Intermodal Hub (world/parties.json).</li>
-<li><code>Contact/JobTitle</code> = <strong>Terminal
+<li><code>Contact/Name</code> = <strong>Traffic control</strong><br />
+The party's main desk, which handles this document; identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
+<li><code>Contact/JobTitle</code> = <strong>Train
 controller</strong><br />
-The job of the person who answers at the desk; identity of Ferrano
-Intermodal Hub (world/parties.json).</li>
-<li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 1 041 371
-6482</strong><br />
+The job of the person who answers at the desk; identity of Rail
+Infrastructure Agency of Urvania (world/parties.json).</li>
+<li><code>Contact/Department</code> = <strong>Traffic
+management</strong><br />
+The department the desk belongs to; identity of Rail Infrastructure
+Agency of Urvania (world/parties.json).</li>
+<li><code>Contact/Telephone</code> = <strong>+999 1 041 816
+2047</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Ferrano Intermodal
-Hub (world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. identity of Rail Infrastructure
+Agency of Urvania (world/parties.json).</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
-href="mailto:terminal@ferranohub.example">terminal@ferranohub.example</a></strong><br />
+href="mailto:traffic@railinfra-xu.example">traffic@railinfra-xu.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Ferrano Intermodal Hub (world/parties.json).</li>
+anyone; identity of Rail Infrastructure Agency of Urvania
+(world/parties.json).</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Ferrano Intermodal Hub
-(world/parties.json).</li>
+When the desk can be reached; identity of Rail Infrastructure Agency of
+Urvania (world/parties.json).</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
 network.</li>
 <li><code>ElectronicAddress/ElectronicAddressID</code> =
-<strong>XU:XU-R-105096</strong> (schemeID
+<strong>XU:xu_t8rn</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; identity of Ferrano
-Intermodal Hub (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Index of Public Administrations of Urvania; identity of
+Rail Infrastructure Agency of Urvania (world/parties.json). UBL 2.5
+carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="transport-means">Transport Means</h3>
 <p>Inside <code>TransportMeans</code>:</p>
 <ul>
 <li><code>JourneyID</code> = <strong>CT 4471</strong><br />
 The number of the container train in the hub's timetable.</li>
+<li><code>RailTransport/TrainID</code> = <strong>FRC 4417</strong><br />
+The train itself, so that the run of this day is meant, not the
+timetable service on other days (rail/04#F7).</li>
 </ul>
 <h3 id="status-location">Status Location</h3>
 <p>Inside <code>StatusLocation</code>:</p>
@@ -359,7 +371,7 @@ The number of the container train in the hub's timetable.</li>
 The place's identifier, as the world gives it wherever the place appears
 (a code in the form of a UN/LOCODE; worklist C23).</li>
 <li><code>Name</code> = <strong>Ferrano Intermodal Hub</strong><br />
-Where the status is asked for.</li>
+Where the status is asked for: the train's departure point.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -373,8 +385,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;06:30:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Kul drek titran sezhul nul?&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Has the container train left?&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Gannek skuskek drek krakbek skul drek titran sezhul FRC 4417 mir Ferrano.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Please report the departure of the container train FRC 4417 from Ferrano.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-SIG-TPSR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
@@ -429,21 +441,21 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SenderParty</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiverParty</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:public-body-register&quot;</span>&gt;xu_t8rn&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Rail Infrastructure Agency of Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160200139820702&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160207305518243&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Han Krazhul&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via del Terminal&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;59&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Hekrul Zhuzkek&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via della Stazione&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;2&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4180&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4150&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
@@ -452,28 +464,31 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Terminal control&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Terminal controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 371 6482&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;terminal@ferranohub.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Traffic control&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Train controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Traffic management&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 816 2047&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;traffic@railinfra-xu.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:XU-R-105096&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:xu_t8rn&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiverParty</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:JourneyID</span>&gt;CT 4471&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatusLocation</span>&gt;</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatusLocation</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportProgressStatusRequest</span>&gt;</span></code></pre></div>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RailTransport</span>&gt;</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TrainID</span>&gt;FRC 4417&lt;/<span class="kw">cbc:TrainID</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RailTransport</span>&gt;</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatusLocation</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:StatusLocation</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportProgressStatusRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
 </body>
 </html>

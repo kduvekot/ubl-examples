@@ -11,7 +11,7 @@
   <cbc:IssueTime>12:50:00-01:00</cbc:IssueTime>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">ASREQUESTED</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
+  <cbc:DocumentStatusReasonDescription>Capacity available in the requested window, 10 to 13 March: the train is planned for its first day.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek trir sezhul mir drek daz nintrek krir drek drunbaz.</cbc:Note>
   <cbc:Note languageID="en-XU">The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
@@ -168,8 +168,8 @@
     <cbc:Name>Rail wagon load</cbc:Name>
   </cac:MainTransportationService>
   <cac:AdditionalTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">NOTIFY</cbc:TransportServiceCode>
-    <cbc:Name>Notice two hours before arrival</cbc:Name>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">WEIGH</cbc:TransportServiceCode>
+    <cbc:TariffClassCode listID="urn:ubl-examples:world:codelist:TariffClassCode">B</cbc:TariffClassCode>
   </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-03-10</cbc:StartDate>
@@ -195,9 +195,18 @@
       </cac:Country>
     </cac:Address>
   </cac:ToLocation>
+  <cac:AtLocation>
+    <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+    <cbc:Name>Fucinalta mine siding</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
+  </cac:AtLocation>
   <cac:TransportExecutionTerms>
-    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
-    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:TransportUserSpecialTerms>Wagons sheeted against dust.</cbc:TransportUserSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>
@@ -206,7 +215,7 @@
       <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     </cac:DeliveryTerms>
     <cac:BonusPaymentTerms>
-      <cbc:Note>2 % of the freight when the train is delivered on the first day of the window, so that the factory can start the blend a day early.</cbc:Note>
+      <cbc:Note>2 % of the freight when the train is delivered on the first day of the service window, so that the factory can start the blend a day early.</cbc:Note>
     </cac:BonusPaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
@@ -246,7 +255,7 @@
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
-    <cbc:SummaryDescription>1788.4 t of Iron ore, lump</cbc:SummaryDescription>
+    <cbc:SummaryDescription>One train of 30 wagons, about 1,800 t of lump iron ore.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>

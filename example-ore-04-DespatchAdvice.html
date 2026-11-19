@@ -51,9 +51,10 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-03-10</strong><br />
 The day the train was loaded and weighed.</li>
-<li><code>IssueTime</code> = <strong>15:37:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+<li><code>IssueTime</code> = <strong>10:20:00-01:00</strong><br />
+Sent once the train has left the siding at 10:05, so that the factory
+can plan the unloading before it arrives; in the issuer's local time,
+with its offset from UTC (D27).</li>
 <li><code>DespatchAdviceTypeCode</code> = <strong>DELIVERY</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code>)<br />
@@ -637,7 +638,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SM-DA-26-0308&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;e3281a6d-51f4-5981-b7f0-b43b6a9cf2da&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:37:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;10:20:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DespatchAdviceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DespatchAdviceTypeCode&quot;</span>&gt;DELIVERY&lt;/<span class="kw">cbc:DespatchAdviceTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Please check the goods on arrival and report any damage on the consignment note.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -839,6 +840,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
 </body>
 </html>

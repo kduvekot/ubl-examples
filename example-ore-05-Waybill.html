@@ -60,10 +60,14 @@ The original, not a corrected version.</li>
 The note is issued and in force. The code is from the Trade Accord's
 record status list: ISSUED = Issued.</li>
 <li><code>IssueDate</code> = <strong>2026-03-10</strong><br />
-Issued when the carrier takes over the loaded train.</li>
-<li><code>IssueTime</code> = <strong>11:35:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+Made out at the mine siding when the carrier took over the loaded train,
+and completed at delivery: this is the receiver's electronic copy, sent
+once the consignee has signed for the train in its siding, so it records
+the arrival (D45, ore/06#F4).</li>
+<li><code>IssueTime</code> = <strong>14:36:00-01:00</strong><br />
+Issued a few minutes after the last thing of its day that it reports,
+cites or answers, in the sender's local time (C72); in the issuer's
+local time, with its offset from UTC (D27).</li>
 <li><code>Name</code> = <strong>Consignment note under the national rail
 carriage law</strong><br />
 The kind of transport document.</li>
@@ -572,6 +576,24 @@ Its Harmonized System subheading, which carriers use to describe the
 cargo. The code is from the world's copy of Harmonized Commodity
 Description and Coding System, 2022 edition (subheadings): 260111 = Iron
 ores and concentrates, non-agglomerated.</li>
+<li><code>Delivery/ActualDeliveryDate</code> =
+<strong>2026-03-10</strong><br />
+The train arrived the same day, the first day of the window.</li>
+<li><code>Delivery/ActualDeliveryTime</code> =
+<strong>14:18:00</strong><br />
+It left the mine siding at 10:05 and ran 159 km on the line past Ferrano
+at about 40 km/h, then shunted into the factory's siding.</li>
+<li><code>Delivery/DeliveryLocation/ID</code> = <strong>XUFER</strong>
+(schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>Delivery/DeliveryLocation/Name</code> = <strong>Valdara
+Industries works siding, Ferrano</strong><br />
+The factory's siding, where the train is placed for unloading.</li>
+<li><code>Delivery/DeliveryLocation/Address/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
@@ -640,7 +662,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RecordStatusCode&quot;</span>&gt;ISSUED&lt;/<span class="kw">cbc:StatusCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:35:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:36:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Consignment note under the national rail carriage law&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;The ore train from the mine siding to the factory.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -812,38 +834,51 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-TEP-26-0307&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;TransportExecutionPlan&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALHANDED&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104137&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Serravona Mining&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-SIG-FRC-WB-26-0310&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104685&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Rail Cargo&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryDate</span>&gt;2026-03-10&lt;/<span class="kw">cbc:ActualDeliveryDate</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryTime</span>&gt;14:18:00&lt;/<span class="kw">cbc:ActualDeliveryTime</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries works siding, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-TEP-26-0307&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;TransportExecutionPlan&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALHANDED&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104137&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Serravona Mining&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-SIG-FRC-WB-26-0310&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104685&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Rail Cargo&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
 </body>
 </html>

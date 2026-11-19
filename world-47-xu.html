@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rail Infrastructure Agency of
+Urvania · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=cfc6fda70b">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html" aria-current="page">World</a></li><li><a href="examples.html">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="rail-infrastructure-agency-of-urvania">Rail Infrastructure
+Agency of Urvania</h1>
+<p><em>#47 Rail Infrastructure Manager (XU) · Urvania (XU) ·
+Government</em></p>
+<p>Urvania's rail infrastructure manager, a public body: it owns and
+maintains the country's tracks, allocates the train paths and runs the
+traffic control that dispatches every train on them, from the ore line
+to the border station. Urvania separated its rail infrastructure from
+the train operators, as it separated its electricity grid from supply,
+so Ferrano Rail Cargo runs its trains on paths it is given here
+(decision D37).</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Rail Infrastructure Agency of Urvania</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>xu_t8rn</code> (Index of Public Administrations of
+Urvania)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>Via della Stazione 2<br>4150 Ferrano<br>Province of
+Ferrano<br>Urvania</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XU:xu_t8rn</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Traffic control, <code>traffic@railinfra-xu.example</code></td>
+</tr>
+<tr>
+<td>In Urvania</td>
+<td>Currency: Ferra (<code>XUF</code>). Taxes: Value added tax in the
+style of the EU VAT: charged at every stage, deducted by businesses, not
+charged on exports.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-ubl-helps">How UBL helps</h2>
+<p>A transport service provider asks the manager of the network where
+its train is. UBL's Transport Progress Status Request goes from the
+carrier to the transportation network manager, and the Transport
+Progress Status answers with the train's position and its timetable at
+each point the manager controls, so the carrier can tell its customers
+when the goods will arrive.</p>
+<p>In this world it sends 1 and receives 1 documents, and is named in 0
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="containers-by-rail-under-the-accords-common-transit-urvania--bayvarra">Containers
+by rail under the Accord's common transit (Urvania → Bayvarra)</h2>
+<p>For full container loads Valdara sells Lumeway 192 benches delivered
+at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges
+and pays the transport: it books Ferrano Rail Cargo under their
+framework contract for container slots. The carrier's tractor brings the
+two packed 40-foot containers from Castrano's warehouse to the
+intermodal hub at Ferrano, a pre-carriage by road of the same contract,
+and the hub lifts them onto the container train FRC 4417; the
+consignment note follows the Accord's uniform rules for international
+carriage by rail, modelled on the CIM. Urvania's rail infrastructure
+manager, which runs the tracks and the train paths since the state
+separated them from the train operators, reports the train's progress to
+the carrier. The goods travel under the Accord's common transit, which
+Valdara lodges the evening before departure, to Bayvarra customs' inland
+office at Marrowdale, where Lumeway declares the import on 15 April and
+claims the Accord preference. Lumeway empties the first container the
+next day; the second waits until 22 April, because the siding's
+fork-lift is in repair, and runs two days past the five days' free time.
+Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to
+its freight invoice, and Valdara passes it on to Lumeway, which bears a
+delay in unloading under DAP, in a debit note to its goods invoice: the
+world's debit notes (decision D37).</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-SCHEMA"><strong>Transport
+Progress Status</strong></a> to <a href="world-14-xu.html">Ferrano Rail
+Cargo</a>: The rail infrastructure manager reports the train's position
+and timetable on its network, from the hub to the border station (D37).
+<a href="example-rail-05-TransportProgressStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-REQUEST-SCHEMA"><strong>Transport
+Progress Status Request</strong></a> from <a
+href="world-14-xu.html">Ferrano Rail Cargo</a>: The rail carrier asks
+Urvania's rail infrastructure manager, the transportation network
+manager that runs the tracks and the train paths, to report the
+container train's departure (D37). <a
+href="example-rail-04-TransportProgressStatusRequest.html">See the
+example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
+<p>The party elements in which this party appears:</p>
+<p><code>ReceiverParty</code> <code>SenderParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-14-xu.html">Ferrano Rail Cargo</a>, Urvania</li>
+</ul>
+<h2 id="in-the-world">In the world</h2>
+<p><a href="world.html#47-xu">See Rail Infrastructure Manager (XU) on
+the map</a> · Urvania: Mainland, inland. Raw materials and
+manufacturing.</p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
+</body>
+</html>

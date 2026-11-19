@@ -14,12 +14,12 @@ Industries · UBL Example Documents</title>
 <h1
 id="transport-execution-plan-ferrano-rail-cargo-to-valdara-industries">Transport
 Execution Plan: Ferrano Rail Cargo to Valdara Industries</h1>
-<p><em>Example 3 of the flow "Containers by rail under transit (Urvania
-→ Bayvarra)" · <a
+<p><em>Example 3 of the flow "Containers by rail under the Accord's
+common transit (Urvania → Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA">Transport
 Execution Plan in the UBL 2.5 specification</a></em></p>
-<p>The rail carrier confirms the train and the slot at the intermodal
-hub.</p>
+<p>The rail carrier confirms the haulage to the hub and the slots on the
+container train to the distributor's siding.</p>
 <p><a href="examples/rail/03-TransportExecutionPlan.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -71,18 +71,21 @@ the world's copy of UBL's Document status list, with a listID: Confirmed
 Confirmed without changes. The code is from the Trade Accord's document
 status reason list: ASREQUESTED = As requested.</li>
 <li><code>DocumentStatusReasonDescription</code> = <strong>Capacity
-available on the requested day.</strong><br />
-Why it is confirmed.</li>
-<li><code>Note</code> = <strong>Sundraz ranrek: drek kaz vuznek kazdrek
-rizvek drek drazkir trakran krir drek gul.</strong> (languageID
+available in the requested window: slots on the train of 14
+April.</strong><br />
+Why it is confirmed as requested.</li>
+<li><code>Note</code> = <strong>Kan trunskir mir drek mazmul trek
+Conciaro krir drek kaz nintrek trek Marrowdale: drek vuznek kazdrek krir
+drek gul, vabul drek titran sezhul.</strong> (languageID
 <code>qau</code>)<br />
 The note in Urvanian, the sender's language (world/countries.json): The
-transport agreed.</li>
-<li><code>Note</code> = <strong>Carrier haulage: the rail carrier's
-tractor brings the packed boxes to the hub.</strong> (languageID
+transport asked for and agreed.</li>
+<li><code>Note</code> = <strong>Two containers from the warehouse in
+Conciaro to the rail siding in Marrowdale: the carrier's tractor to the
+hub, then the container train.</strong> (languageID
 <code>en-XU</code>)<br />
 The same note in English, the working language between the countries:
-The transport agreed.</li>
+The transport asked for and agreed.</li>
 <li><code>TransportUserRemarks</code> = <strong>Please confirm by
 return.</strong><br />
 The user's remark from the request.</li>
@@ -436,21 +439,26 @@ The request this plan answers.</li>
 <h3 id="transport-contract">Transport Contract</h3>
 <p>Inside <code>TransportContract</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-FRC-FW-2026</strong><br />
-The framework agreement.</li>
+<li><code>ID</code> = <strong>FRC-CON-2026-005</strong><br />
+The framework contract for container slots, in the carrier's numbering,
+the same in every document (rail/02#F13, 03#F14).</li>
+<li><code>IssueDate</code> = <strong>2026-01-05</strong><br />
+Signed at the start of the year: the time below has its date
+(rail/03#F15).</li>
 <li><code>IssueTime</code> = <strong>10:00:00</strong><br />
 Signed in the morning.</li>
 <li><code>NominationDate</code> = <strong>2026-04-08</strong><br />
-The slots of this train were nominated today.</li>
+The deadline for booking this train's slots: the request of the day
+before met it.</li>
 <li><code>NominationTime</code> = <strong>09:00:00</strong><br />
 At that time.</li>
 <li><code>ContractTypeCode</code> = <strong>FRAMEWORK</strong> (listID
 <code>urn:ubl-examples:world:codelist:ContractTypeCode</code>)<br />
 A framework contract. The code is from the Trade Accord's contract type
 list: FRAMEWORK = Framework agreement.</li>
-<li><code>ContractType</code> = <strong>Framework transport
-agreement</strong><br />
-Its kind.</li>
+<li><code>ContractType</code> = <strong>Framework contract for container
+slots</strong><br />
+Its kind, as the consignment note names it.</li>
 <li><code>Note</code> = <strong>Call-off 88 of the year.</strong><br />
 Which call-off.</li>
 <li><code>VersionID</code> = <strong>2</strong><br />
@@ -463,18 +471,23 @@ modification reason list: VOLUME = Volume change.</li>
 <li><code>ModificationReasonDescription</code> = <strong>Ten more slots
 a month from April.</strong><br />
 The change.</li>
-<li><code>Description</code> = <strong>Container slots between the
-Ferrano hub and Marrowdale.</strong><br />
+<li><code>Description</code> = <strong>Container slots on the trains
+from the Ferrano hub to Marrowdale, with the carrier's haulage of the
+boxes to the hub.</strong><br />
 What it covers.</li>
 <li><code>ContractDocumentReference/ID</code> =
 <strong>FRC-CON-2026-005-A1</strong><br />
 The amendment.</li>
 <li><code>NominationPeriod/StartDate</code> =
 <strong>2026-04-06</strong><br />
-Slots are nominated a week</li>
+Slots are booked from a week before the train</li>
 <li><code>NominationPeriod/EndDate</code> =
-<strong>2026-04-12</strong><br />
-before the train.</li>
+<strong>2026-04-08</strong><br />
+until the deadline above, so period and deadline agree
+(rail/03#F15).</li>
+<li><code>NominationPeriod/EndTime</code> =
+<strong>09:00:00</strong><br />
+The deadline's time.</li>
 <li><code>ContractualDelivery/LatestDeliveryDate</code> =
 <strong>2026-04-16</strong><br />
 The contract's latest delivery for this call-off.</li>
@@ -514,18 +527,6 @@ Container train.</li>
 <li><code>Name</code> = <strong>Container train</strong><br />
 In words.</li>
 </ul>
-<h3 id="additional-transportation-service">Additional Transportation
-Service</h3>
-<p>Inside <code>AdditionalTransportationService</code>:</p>
-<ul>
-<li><code>TransportServiceCode</code> = <strong>NOTIFY</strong> (listID
-<code>urn:ubl-examples:world:codelist:TransportServiceCode</code>)<br />
-Pre-arrival notice. The code is from the Trade Accord's transport
-service list: NOTIFY = Pre-arrival notice.</li>
-<li><code>Name</code> = <strong>Notice two hours before
-arrival</strong><br />
-In words.</li>
-</ul>
 <h3 id="service-start-time-period">Service Start Time Period</h3>
 <p>Inside <code>ServiceStartTimePeriod</code>:</p>
 <ul>
@@ -547,7 +548,7 @@ The place's code in the form of a UN/LOCODE, with the world's country
 code.</li>
 <li><code>Name</code> = <strong>Castrano Logistics warehouse,
 Conciaro</strong><br />
-Where the goods are taken over.</li>
+Where the carrier takes the packed boxes over.</li>
 <li><code>Address/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 The country the place is in. The code is from the world's copy of UBL's
@@ -556,26 +557,23 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <h3 id="to-location">To Location</h3>
 <p>Inside <code>ToLocation</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>XUFER</strong> (schemeID
-<code>UN/LOCODE</code>)<br />
-The place's code in the form of a UN/LOCODE, with the world's country
-code.</li>
-<li><code>Name</code> = <strong>Ferrano Intermodal Hub</strong><br />
-Where the goods are handed over.</li>
-<li><code>Address/Country/IdentificationCode</code> =
-<strong>XU</strong> (listID <code>ISO 3166</code>)<br />
-The country the place is in. The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>ID</code> = <strong>9520610900015</strong> (schemeID
+<code>GS1 GLN</code>)<br />
+The Global Location Number of the place, rail siding of the distribution
+centre, marrowdale: Lumeway Distribution identifies its places the GS1
+way, under its company prefix (952, reserved for examples);
+world/parties.json.</li>
+<li><code>Name</code> = <strong>Lumeway rail siding,
+Marrowdale</strong><br />
+Where the service ends: the boxes are placed on Lumeway's siding.</li>
 </ul>
 <h3 id="transport-execution-terms">Transport Execution Terms</h3>
 <p>Inside <code>TransportExecutionTerms</code>:</p>
 <ul>
-<li><code>TransportUserSpecialTerms</code> = <strong>Delivery within the
-agreed slot; the consignee unloads.</strong><br />
-The user's terms.</li>
-<li><code>TransportServiceProviderSpecialTerms</code> = <strong>Waiting
-time beyond two hours is charged.</strong><br />
-The carrier's.</li>
+<li><code>TransportServiceProviderSpecialTerms</code> = <strong>Delivery
+within the agreed slot; the consignee unloads. Waiting time beyond two
+hours is charged.</strong><br />
+The carrier's terms.</li>
 <li><code>ChangeConditions</code> = <strong>Changes up to 24 hours
 before collection without charge.</strong><br />
 When the plan may change.</li>
@@ -597,12 +595,12 @@ notification type list: PREARRIVAL = Pre-arrival notice.</li>
 = <strong>2</strong> (unitCode <code>HUR</code>)<br />
 Two hours before.</li>
 <li><code>NotificationRequirement/NotifyParty/PartyIdentification/ID</code>
-= <strong>XU-R-105096</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
+= <strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>NotificationRequirement/NotifyParty/PartyName/Name</code> =
-<strong>Ferrano Intermodal Hub</strong><br />
+<strong>Lumeway Distribution</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>NotificationRequirement/NotificationLocation/ID</code> =
@@ -634,9 +632,9 @@ The weight the plan is made for.</li>
 Two full containers.</li>
 <li><code>PlannedPickupTransportEvent/OccurrenceDate</code> =
 <strong>2026-04-13</strong><br />
-The carrier collects the packed boxes.</li>
+The carrier collects the packed boxes, in two runs.</li>
 <li><code>PlannedPickupTransportEvent/OccurrenceTime</code> =
-<strong>15:00:00</strong><br />
+<strong>13:00:00</strong><br />
 The local time.</li>
 <li><code>PlannedPickupTransportEvent/Location/ID</code> =
 <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
@@ -792,19 +790,10 @@ anyone; identity of Lumeway Distribution (world/parties.json).</li>
 08:00–17:00</strong><br />
 When the desk can be reached; identity of Lumeway Distribution
 (world/parties.json).</li>
-<li><code>TransportContract/ID</code> =
-<strong>FRC-CON-2026-005</strong><br />
-The framework contract for container slots.</li>
-<li><code>TransportContract/IssueDate</code> =
-<strong>2026-01-05</strong><br />
-Signed at the start of the year.</li>
-<li><code>TransportContract/ContractType</code> = <strong>Framework
-contract for container slots</strong><br />
-What it is.</li>
 <li><code>PrepaidPaymentTerms/Note</code> = <strong>Freight prepaid by
 the consignor under DAP.</strong><br />
 The seller pays the carriage.</li>
-<li><code>MainCarriageShipmentStage/ID</code> = <strong>1</strong><br />
+<li><code>MainCarriageShipmentStage/ID</code> = <strong>2</strong><br />
 The main carriage, by rail.</li>
 <li><code>MainCarriageShipmentStage/TransportModeCode</code> =
 <strong>2</strong> (listID
@@ -820,18 +809,18 @@ lift.</li>
 <strong>1</strong><br />
 The first and only rail stage.</li>
 <li><code>MainCarriageShipmentStage/Instructions</code> = <strong>Shunt
-to the Lumeway siding on arrival in Marrowdale.</strong><br />
+to the Lumeway siding in Marrowdale once the import is
+declared.</strong><br />
 What the railway must do.</li>
 <li><code>MainCarriageShipmentStage/DemurrageInstructions</code> =
-<strong>Free time five days at the siding, then demurrage per container
-day.</strong><br />
-What waiting costs.</li>
+<strong>Free time five days at the siding, counted from the day after
+the boxes are placed; then demurrage of 7,500 ferra per container day,
+under framework contract FRC-CON-2026-005.</strong><br />
+What waiting costs: the framework contract's free time and rate (D37,
+O128).</li>
 <li><code>MainCarriageShipmentStage/CrewQuantity</code> =
 <strong>2</strong> (unitCode <code>IE</code>)<br />
 Two persons: a driver and a train manager.</li>
-<li><code>MainCarriageShipmentStage/PassengerQuantity</code> =
-<strong>0</strong> (unitCode <code>IE</code>)<br />
-No persons: a freight train carries no passengers.</li>
 <li><code>MainCarriageShipmentStage/TransportMeans/JourneyID</code> =
 <strong>CT 4471</strong><br />
 The number of the container train in the hub's timetable.</li>
@@ -880,7 +869,7 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate</code>
 = <strong>2026-04-15</strong><br />
 The timetable arrival at the siding in Marrowdale: the train reaches
-Marrowdale yard about 15:30 the day before, 173 km from the hub, and the
+Marrowdale yard about 15:10 the day before, 173 km from the hub, and the
 next morning's shunting trip places the boxes on Lumeway's siding.</li>
 <li><code>MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime</code>
 = <strong>10:30:00</strong><br />
@@ -897,7 +886,7 @@ Where the boxes are placed for unloading.</li>
 <li><code>MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceDate</code>
 = <strong>2026-04-14</strong><br />
 Planned departure from the border station, 63 km from the hub: the train
-stops there from about 08:10 for the crew change, the brake test and the
+stops there from about 08:00 for the crew change, the brake test and the
 customs' check of the seals, and leaves on its timetabled path into
 Bayvarra.</li>
 <li><code>MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceTime</code>
@@ -938,6 +927,94 @@ world/parties.json.</li>
 <li><code>MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/Name</code>
 = <strong>Lumeway rail siding, Marrowdale</strong><br />
 Where the boxes are placed for unloading.</li>
+<li><code>PreCarriageShipmentStage/ID</code> = <strong>1</strong><br />
+The pre-carriage: the carrier's tractor brings the packed boxes to the
+hub.</li>
+<li><code>PreCarriageShipmentStage/TransportModeCode</code> =
+<strong>3</strong> (listID
+<code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
+UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's
+default Transport mode (UNECE Recommendation 19) list: 3 = Road
+transport.</li>
+<li><code>PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID</code>
+= <strong>XU</strong> (schemeID <code>ISO 3166</code>)<br />
+The country the means of transport is registered in. The code is from
+the world's copy of UBL's Country identification (ISO 3166) list: XU =
+Urvania. An identifier that holds a code names the code's list in its
+schemeID.</li>
+<li><code>PreCarriageShipmentStage/TransportMeans/RegistrationNationality</code>
+= <strong>Urvania</strong><br />
+The same, in words.</li>
+<li><code>PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode</code>
+= <strong>37</strong> (listID
+<code>UNECE Recommendation 28</code>)<br />
+The kind of means of transport: container tractor for carrier haulage;
+the fleet of Ferrano Rail Cargo (world/parties.json). The code is from
+the world's copy of UN/ECE Recommendation 28 Codes for types of means of
+transport: 37 = Truck, container.</li>
+<li><code>PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID</code>
+= <strong>UR 4160 RC</strong> (schemeID
+<code>urn:ubl-examples:world:XU:vehicle-register</code>)<br />
+The registration plate of the truck; the fleet of Ferrano Rail Cargo
+(world/parties.json). The schemeID names the scheme it is from: the
+vehicle register of Urvania (UR, the four-digit number of the
+registering district (4160 Ferrano) and two letters).</li>
+<li><code>PreCarriageShipmentStage/LoadingPortLocation/ID</code> =
+<strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>PreCarriageShipmentStage/LoadingPortLocation/Name</code> =
+<strong>Castrano Logistics warehouse, Conciaro</strong><br />
+Where the boxes are collected.</li>
+<li><code>PreCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>PreCarriageShipmentStage/UnloadingPortLocation/ID</code> =
+<strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>PreCarriageShipmentStage/UnloadingPortLocation/Name</code> =
+<strong>Ferrano Intermodal Hub</strong><br />
+Where they are handed to the terminal.</li>
+<li><code>PreCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate</code>
+= <strong>2026-04-13</strong><br />
+The first run leaves the warehouse.</li>
+<li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime</code>
+= <strong>13:00:00</strong><br />
+The local time.</li>
+<li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID</code>
+= <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name</code>
+= <strong>Castrano Logistics warehouse, Conciaro</strong><br />
+At the 3PL's warehouse in Conciaro, where the boxes are packed.</li>
+<li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate</code>
+= <strong>2026-04-13</strong><br />
+The second box at the hub: 46 km each way, two runs.</li>
+<li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime</code>
+= <strong>15:50:00</strong><br />
+The local time.</li>
+<li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID</code>
+= <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
+The place's code in the form of a UN/LOCODE, with the world's country
+code.</li>
+<li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name</code>
+= <strong>Ferrano Intermodal Hub</strong><br />
+At the intermodal hub, where the boxes go on the train.</li>
+<li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Address/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country the place is in. The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -954,9 +1031,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:46:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode&quot;</span>&gt;Confirmed&lt;/<span class="kw">cbc:DocumentStatusCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DocumentStatusReasonCode&quot;</span>&gt;ASREQUESTED&lt;/<span class="kw">cbc:DocumentStatusReasonCode</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusReasonDescription</span>&gt;Capacity available on the requested day.&lt;/<span class="kw">cbc:DocumentStatusReasonDescription</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Sundraz ranrek: drek kaz vuznek kazdrek rizvek drek drazkir trakran krir drek gul.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Carrier haulage: the rail carrier&#39;s tractor brings the packed boxes to the hub.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusReasonDescription</span>&gt;Capacity available in the requested window: slots on the train of 14 April.&lt;/<span class="kw">cbc:DocumentStatusReasonDescription</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Kan trunskir mir drek mazmul trek Conciaro krir drek kaz nintrek trek Marrowdale: drek vuznek kazdrek krir drek gul, vabul drek titran sezhul.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Two containers from the warehouse in Conciaro to the rail siding in Marrowdale: the carrier&#39;s tractor to the hub, then the container train.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransportUserRemarks</span>&gt;Please confirm by return.&lt;/<span class="kw">cbc:TransportUserRemarks</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransportServiceProviderRemarks</span>&gt;Collection as requested; notice two hours before arrival.&lt;/<span class="kw">cbc:TransportServiceProviderRemarks</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SenderParty</span>&gt;</span>
@@ -1083,244 +1160,286 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-TR-26-0326&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportExecutionPlanRequestDocumentReference</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportContract</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-FRC-FW-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:NominationDate</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractType</span>&gt;Framework transport agreement&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Call-off 88 of the year.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ModificationReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractModificationReasonCode&quot;</span>&gt;VOLUME&lt;/<span class="kw">cbc:ModificationReasonCode</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ModificationReasonDescription</span>&gt;Ten more slots a month from April.&lt;/<span class="kw">cbc:ModificationReasonDescription</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Container slots between the Ferrano hub and Marrowdale.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;FRC-CON-2026-005-A1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NominationPeriod</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-12&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NominationPeriod</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractualDelivery</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LatestDeliveryDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:LatestDeliveryDate</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractualDelivery</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportContract</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportServiceProviderResponseRequiredPeriod</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportServiceProviderResponseRequiredPeriod</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportUserResponseRequiredPeriod</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-09&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportUserResponseRequiredPeriod</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:MainTransportationService</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportServiceCode&quot;</span>&gt;RAILCONT&lt;/<span class="kw">cbc:TransportServiceCode</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Container train&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:MainTransportationService</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalTransportationService</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportServiceCode&quot;</span>&gt;NOTIFY&lt;/<span class="kw">cbc:TransportServiceCode</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Notice two hours before arrival&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalTransportationService</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:FromLocation</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:FromLocation</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ToLocation</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ToLocation</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportExecutionTerms</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportUserSpecialTerms</span>&gt;Delivery within the agreed slot; the consignee unloads.&lt;/<span class="kw">cbc:TransportUserSpecialTerms</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceProviderSpecialTerms</span>&gt;Waiting time beyond two hours is charged.&lt;/<span class="kw">cbc:TransportServiceProviderSpecialTerms</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChangeConditions</span>&gt;Changes up to 24 hours before collection without charge.&lt;/<span class="kw">cbc:ChangeConditions</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;30 days net from the consignment note.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyPaymentTerms</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyPaymentTerms</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NotificationRequirement</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NotificationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportNotificationTypeCode&quot;</span>&gt;PREARRIVAL&lt;/<span class="kw">cbc:NotificationTypeCode</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreEventNotificationDurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;HUR&quot;</span>&gt;2&lt;/<span class="kw">cbc:PreEventNotificationDurationMeasure</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:NotifyParty</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105096&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:NotifyParty</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:NotificationLocation</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:NotificationLocation</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NotificationRequirement</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ServiceChargePaymentTerms</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Waiting time 4,000 ferra per hour beyond two hours.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ServiceChargePaymentTerms</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportExecutionTerms</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0327&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SummaryDescription</span>&gt;192 park benches in two 40-foot containers.&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10377.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContainerizedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ContainerizedIndicator</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedPickupTransportEvent</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-CON-2026-005&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:NominationDate</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractType</span>&gt;Framework contract for container slots&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Call-off 88 of the year.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ModificationReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractModificationReasonCode&quot;</span>&gt;VOLUME&lt;/<span class="kw">cbc:ModificationReasonCode</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ModificationReasonDescription</span>&gt;Ten more slots a month from April.&lt;/<span class="kw">cbc:ModificationReasonDescription</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Container slots on the trains from the Ferrano hub to Marrowdale, with the carrier&#39;s haulage of the boxes to the hub.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;FRC-CON-2026-005-A1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NominationPeriod</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NominationPeriod</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractualDelivery</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LatestDeliveryDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:LatestDeliveryDate</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ContractualDelivery</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportContract</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportServiceProviderResponseRequiredPeriod</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportServiceProviderResponseRequiredPeriod</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportUserResponseRequiredPeriod</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-09&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportUserResponseRequiredPeriod</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:MainTransportationService</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportServiceCode&quot;</span>&gt;RAILCONT&lt;/<span class="kw">cbc:TransportServiceCode</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Container train&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:MainTransportationService</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:FromLocation</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:FromLocation</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ToLocation</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ToLocation</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportExecutionTerms</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportServiceProviderSpecialTerms</span>&gt;Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.&lt;/<span class="kw">cbc:TransportServiceProviderSpecialTerms</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChangeConditions</span>&gt;Changes up to 24 hours before collection without charge.&lt;/<span class="kw">cbc:ChangeConditions</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;30 days net from the consignment note.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyPaymentTerms</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyPaymentTerms</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NotificationRequirement</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NotificationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportNotificationTypeCode&quot;</span>&gt;PREARRIVAL&lt;/<span class="kw">cbc:NotificationTypeCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreEventNotificationDurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;HUR&quot;</span>&gt;2&lt;/<span class="kw">cbc:PreEventNotificationDurationMeasure</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:NotifyParty</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:NotifyParty</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:NotificationLocation</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:NotificationLocation</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NotificationRequirement</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ServiceChargePaymentTerms</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Waiting time 4,000 ferra per hour beyond two hours.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ServiceChargePaymentTerms</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportExecutionTerms</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0327&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SummaryDescription</span>&gt;192 park benches in two 40-foot containers.&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10377.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContainerizedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ContainerizedIndicator</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedPickupTransportEvent</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedPickupTransportEvent</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedDeliveryTransportEvent</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedPickupTransportEvent</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedDeliveryTransportEvent</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedDeliveryTransportEvent</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900008&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:UL:address-register&quot;</span>&gt;UL-ADR-693911&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span>&gt;Distribution Drive&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BlockName</span>&gt;Marrowdale Business Park&lt;/<span class="kw">cbc:BlockName</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;43&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlotIdentification</span>&gt;Plot 14&lt;/<span class="kw">cbc:PlotIdentification</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;71214&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Goods-in&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Goods-in supervisor&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;goodsin@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TransportContract</span>&gt;</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;FRC-CON-2026-005&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractType</span>&gt;Framework contract for container slots&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TransportContract</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PrepaidPaymentTerms</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Freight prepaid by the consignor under DAP.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PrepaidPaymentTerms</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;2&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LoadingSequenceID</span>&gt;7&lt;/<span class="kw">cbc:LoadingSequenceID</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SuccessiveSequenceID</span>&gt;1&lt;/<span class="kw">cbc:SuccessiveSequenceID</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Instructions</span>&gt;Shunt to the Lumeway siding on arrival in Marrowdale.&lt;/<span class="kw">cbc:Instructions</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DemurrageInstructions</span>&gt;Free time five days at the siding, then demurrage per container day.&lt;/<span class="kw">cbc:DemurrageInstructions</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CrewQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;2&lt;/<span class="kw">cbc:CrewQuantity</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PassengerQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;0&lt;/<span class="kw">cbc:PassengerQuantity</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JourneyID</span>&gt;CT 4471&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Urvania&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;WB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;2302&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RailTransport</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TrainID</span>&gt;FRC 4417&lt;/<span class="kw">cbc:TrainID</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RailTransport</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:45:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedWaypointTransportEvent</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedWaypointTransportEvent</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlan</span>&gt;</span></code></pre></div>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedDeliveryTransportEvent</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900008&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:UL:address-register&quot;</span>&gt;UL-ADR-693911&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span>&gt;Distribution Drive&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BlockName</span>&gt;Marrowdale Business Park&lt;/<span class="kw">cbc:BlockName</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;43&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PlotIdentification</span>&gt;Plot 14&lt;/<span class="kw">cbc:PlotIdentification</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;71214&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Goods-in&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Goods-in supervisor&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;goodsin@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PrepaidPaymentTerms</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Freight prepaid by the consignor under DAP.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PrepaidPaymentTerms</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;2&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LoadingSequenceID</span>&gt;7&lt;/<span class="kw">cbc:LoadingSequenceID</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SuccessiveSequenceID</span>&gt;1&lt;/<span class="kw">cbc:SuccessiveSequenceID</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Instructions</span>&gt;Shunt to the Lumeway siding in Marrowdale once the import is declared.&lt;/<span class="kw">cbc:Instructions</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DemurrageInstructions</span>&gt;Free time five days at the siding, counted from the day after the boxes are placed; then demurrage of 7,500 ferra per container day, under framework contract FRC-CON-2026-005.&lt;/<span class="kw">cbc:DemurrageInstructions</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CrewQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;IE&quot;</span>&gt;2&lt;/<span class="kw">cbc:CrewQuantity</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JourneyID</span>&gt;CT 4471&lt;/<span class="kw">cbc:JourneyID</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Urvania&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DirectionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TravelDirectionCode&quot;</span>&gt;WB&lt;/<span class="kw">cbc:DirectionCode</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;2302&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RailTransport</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TrainID</span>&gt;FRC 4417&lt;/<span class="kw">cbc:TrainID</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RailTransport</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:45:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedWaypointTransportEvent</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedWaypointTransportEvent</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCarriageShipmentStage</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PreCarriageShipmentStage</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;3&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Urvania&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;37&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RoadTransport</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LicensePlateID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:vehicle-register&quot;</span>&gt;UR 4160 RC&lt;/<span class="kw">cbc:LicensePlateID</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RoadTransport</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LoadingPortLocation</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LoadingPortLocation</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PreCarriageShipmentStage</span>&gt;</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlan</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/67ba7f69265f5a03ae04121ca8ead8498618c0e0"><code>67ba7f6</code></a> of 2026-11-19 19:35 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/20b67d62fb702620916321c7d9a7f0a0c121a4da"><code>20b67d6</code></a> of 2026-11-19 19:45 UTC</p></div></footer>
 </body>
 </html>
