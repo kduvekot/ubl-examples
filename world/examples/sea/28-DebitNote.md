@@ -26,8 +26,8 @@ One pallet's heat-treatment mark was illegible, so customs inspected the contain
   After customs charged the inspection.
 - `IssueTime` = **10:30:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-21**  
-  Thirty days.
+- `DueDate` = **2026-06-22**  
+  Thirty days. The count ends on Sunday 21 June, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 22 June (O180).
 - `Note` = **The illegible mark is the packer's responsibility under the agreement.**  
   Why the seller pays.
 - `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
@@ -355,8 +355,8 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-21**  
-  When the transfer must be credited.
+- `PaymentDueDate` = **2026-06-22**  
+  When the transfer must be credited. The count ends on Sunday 21 June, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 22 June (O180).
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
@@ -595,7 +595,7 @@ Inside `DebitNoteLine`:
   <cbc:UUID>4ac9595a-73a2-5f50-8296-73f9fae827e7</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>10:30:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-21</cbc:DueDate>
+  <cbc:DueDate>2026-06-22</cbc:DueDate>
   <cbc:Note>The illegible mark is the packer's responsibility under the agreement.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-05-20</cbc:TaxPointDate>
@@ -817,7 +817,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-22</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF75VTDOC260153</cbc:InstructionNote>

@@ -26,8 +26,8 @@ Under DDP the seller pays the transport, so the carrier invoices the distributor
   Issued after delivery.
 - `IssueTime` = **11:30:00-01:00**  
   After the delivery it bills: the store took the goods in at 10:40 (retail/16#F5, C72); in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-30**  
-  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
+- `DueDate` = **2026-06-01**  
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Saturday 30 May, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 1 June (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -260,7 +260,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-30**  
+- `PaymentDueDate` = **2026-06-01**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -331,9 +331,9 @@ Inside `PaymentTerms`:
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.bayforth.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-30**  
-  The day the amount is due, as the terms count it.
-- `PenaltyPeriod/StartDate` = **2026-05-31**  
+- `PaymentDueDate` = **2026-06-01**  
+  The day the amount is due, as the terms count it. The count ends on Saturday 30 May, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 1 June (O180).
+- `PenaltyPeriod/StartDate` = **2026-06-02**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
@@ -416,7 +416,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>bd9692ab-c902-5cad-bc2f-37c7464afe3c</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-30</cbc:DueDate>
+  <cbc:DueDate>2026-06-01</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4600</cbc:AccountingCostCode>
@@ -612,7 +612,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF39BFINV260235</cbc:InstructionNote>
@@ -663,9 +663,9 @@ Inside `InvoiceLine`:
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">3.12</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-30</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-05-31</cbc:StartDate>
+      <cbc:StartDate>2026-06-02</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

@@ -22,7 +22,7 @@ The power station has not paid by the due date. The gas producer reminds it in f
   The reminder number.
 - `UUID` = **154cfeb8-3d00-5879-95d5-6ed226239c26**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-06-03**  
+- `IssueDate` = **2026-06-05**  
   A month after the due date.
 - `IssueTime` = **09:46:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -39,9 +39,9 @@ The power station has not paid by the due date. The gas producer reminds it in f
 
 Inside `ReminderPeriod`:
 
-- `StartDate` = **2026-05-04**  
+- `StartDate` = **2026-05-06**  
   Overdue from the day after the due date
-- `EndDate` = **2026-06-03**  
+- `EndDate` = **2026-06-05**  
   to the reminder: one month.
 
 ### Accounting Supplier Party
@@ -263,7 +263,7 @@ Inside `PaymentTerms`:
 
 - `Note` = **Please pay the invoice and the surcharge together.**  
   What is asked.
-- `PaymentDueDate` = **2026-06-10**  
+- `PaymentDueDate` = **2026-06-12**  
   A week after the reminder.
 
 ### Tax Total
@@ -298,7 +298,7 @@ Inside `ReminderLine`:
 
 - `ID` = **1**  
   The unpaid invoice.
-- `Note` = **Invoice due 2026-05-03.**  
+- `Note` = **Invoice due 2026-05-05.**  
   What it is.
 - `UUID` = **bd4ac5e5-9633-5639-a227-c92e47041205**  
   A universally unique identifier of the line, derived from the document and the line number.
@@ -306,7 +306,7 @@ Inside `ReminderLine`:
   The invoice's amount payable.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
-- `ReminderPeriod/StartDate` = **2026-05-04**  
+- `ReminderPeriod/StartDate` = **2026-05-06**  
   Overdue since.
 - `BillingReference/InvoiceDocumentReference/ID` = **KG-INV-26-0158**  
   The invoice not paid.
@@ -322,9 +322,9 @@ Inside `ReminderLine`:
   1.5 % of the invoice's 132480000 ferra.
 - `PenaltySurchargePercent` = **1.5**  
   Bayvarra's surcharge per month late.
-- `ReminderPeriod/StartDate` = **2026-05-04**  
+- `ReminderPeriod/StartDate` = **2026-05-06**  
   Overdue from the day after the due date
-- `ReminderPeriod/EndDate` = **2026-06-03**  
+- `ReminderPeriod/EndDate` = **2026-06-05**  
   to the reminder: one month.
 - `BillingReference/InvoiceDocumentReference/ID` = **KG-INV-26-0158**  
   The invoice not paid.
@@ -342,15 +342,15 @@ Inside `ReminderLine`:
   <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>KG-DOC-26-0160</cbc:ID>
   <cbc:UUID>154cfeb8-3d00-5879-95d5-6ed226239c26</cbc:UUID>
-  <cbc:IssueDate>2026-06-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-05</cbc:IssueDate>
   <cbc:IssueTime>09:46:00-01:00</cbc:IssueTime>
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
   <cbc:Note>The invoice for March's gas is a month overdue: Bayvarra's surcharge of 1.5 % a month applies.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ReminderPeriod>
-    <cbc:StartDate>2026-05-04</cbc:StartDate>
-    <cbc:EndDate>2026-06-03</cbc:EndDate>
+    <cbc:StartDate>2026-05-06</cbc:StartDate>
+    <cbc:EndDate>2026-06-05</cbc:EndDate>
   </cac:ReminderPeriod>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -535,7 +535,7 @@ Inside `ReminderLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>Please pay the invoice and the surcharge together.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-10</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-12</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
@@ -557,12 +557,12 @@ Inside `ReminderLine`:
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Invoice due 2026-05-03.</cbc:Note>
+    <cbc:Note>Invoice due 2026-05-05.</cbc:Note>
     <cbc:UUID>bd4ac5e5-9633-5639-a227-c92e47041205</cbc:UUID>
     <cbc:DebitLineAmount currencyID="XUF">132480000</cbc:DebitLineAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cac:ReminderPeriod>
-      <cbc:StartDate>2026-05-04</cbc:StartDate>
+      <cbc:StartDate>2026-05-06</cbc:StartDate>
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
@@ -578,8 +578,8 @@ Inside `ReminderLine`:
     <cbc:DebitLineAmount currencyID="XUF">1987200</cbc:DebitLineAmount>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cac:ReminderPeriod>
-      <cbc:StartDate>2026-05-04</cbc:StartDate>
-      <cbc:EndDate>2026-06-03</cbc:EndDate>
+      <cbc:StartDate>2026-05-06</cbc:StartDate>
+      <cbc:EndDate>2026-06-05</cbc:EndDate>
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
