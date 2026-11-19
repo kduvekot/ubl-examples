@@ -275,14 +275,6 @@ Inside `AccountingSupplierParty`:
   The district of the island, used to find a farm off the main roads. identity of Lisavu Cotton Farm (world/parties.json).
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
-- `Party/PostalAddress/AddressLine/Line` = **Sifatofu Natii / Plantation Road**  
-  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
-- `Party/PostalAddress/AddressLine/Line` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
-  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
-- `Party/PostalAddress/AddressLine/Line` = **North coast**  
-  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
-- `Party/PostalAddress/AddressLine/Line` = **Kefalasa / Lintwell**  
-  One line of the address as the farm writes it, made from the fields above in Lisavu's address format (world/countries.json), so that lines and fields agree. A name in both languages is given in both on the line, the national language first.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
@@ -681,18 +673,6 @@ Inside `CreditNoteLine`:
         <cbc:CityName languageID="en-XL">Lintwell</cbc:CityName>
         <cbc:District>North coast</cbc:District>
         <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-        <cac:AddressLine>
-          <cbc:Line>Sifatofu Natii / Plantation Road</cbc:Line>
-        </cac:AddressLine>
-        <cac:AddressLine>
-          <cbc:Line>Farm track off Plantation Road at kilometre 4, past the cotton fields.</cbc:Line>
-        </cac:AddressLine>
-        <cac:AddressLine>
-          <cbc:Line>North coast</cbc:Line>
-        </cac:AddressLine>
-        <cac:AddressLine>
-          <cbc:Line>Kefalasa / Lintwell</cbc:Line>
-        </cac:AddressLine>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
           <cbc:Name>Lisavu</cbc:Name>

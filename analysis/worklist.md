@@ -1172,6 +1172,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: ready to fix now.
 - Findings: cotton: 01#F6, 01#F7, 03#F5, 03#F6, 04#F25, 04#F26, 05#F26, 05#F27, 06#F4, 06#F7; sea: 29#F7
 
+- **Fixed (2026-11-19):** the farm's address lines are gone: every part of its address (street in both languages, the description of the farm track, district, town) is in a structured field, so the lines only repeated them (12 files); the registration keeps its yearly expiry, a rule of Lisavu's farm register that the story states. Coverage 4958 → 4956 (`AddressLine`, `AddressLine/Line`; O145).
+
 ### C64 · Industry classes that leave out what the party does
 - Kind: master data · Findings: 9 (High 0, Medium 0, Low 9) in 9 files, 2 flows · Needs decision: decided (D8, 2026-11-16)
 - Decided: Selanu Telecom changes to ISIC 6120 (wireless telecommunications); Ferrano Energy and Ferrano Grid keep 3510, because the class names a party's principal activity.

@@ -3745,7 +3745,6 @@
      "sole_proprietor": true,
      "registration_expires": "2026-12-31"
     },
-    "address_lines": true,
     "site": {
      "locode": null,
      "description": "The cotton fields"
