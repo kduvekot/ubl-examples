@@ -129,6 +129,17 @@ def generate():
     keep = ((n == 1) | ((n == 2) & ~diagonal)) & (corners > COAST_CLIFF_M)
     coastal = (n > 0)
     corners[coastal & ~keep] = 0
+    # the river's water never stands above its banks (owner, 2026-11-19, MO004): its level, taken from the fine cell
+    # the river runs through, is capped at the lowest corner of its square, and still never rises downstream (at the
+    # source the stream's first cell is higher than the corners, which average 3.5 km of land round them)
+    est_set = {tuple(q) for q in estuary}
+    level, capped = 1e9, []
+    for x, y, lv in river:
+        if (x, y) not in est_set:
+            lv = min(lv, float(corners[y:y + 2, x:x + 2].min()))
+        level = min(level, lv)
+        capped.append((x, y, level))
+    river = capped
     # countries: Lisavu; on the mainland the border along the high ground north of the crossing, the river below it
     east, crossing = T.border(md, inp, log)
     country = np.full((H, W), ".")

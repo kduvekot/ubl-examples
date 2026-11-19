@@ -258,8 +258,8 @@ Inside `Delivery`:
   The fuel of this delivery, stated with the freight for the consignee's report of its transport emissions.
 - `FuelConsumption/FuelTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
   The truck runs on diesel. The code is from the Trade Accord's fuel type list: DIESEL = Diesel.
-- `FuelConsumption/FuelConsumptionMeasure` = **59** (unitCode `LTR`)  
-  About 33 litres per 100 km over 179 km.
+- `FuelConsumption/FuelConsumptionMeasure` = **57** (unitCode `LTR`)  
+  About 33 litres per 100 km over 174 km.
 
 ### Payment Means
 
@@ -344,7 +344,7 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **861** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **837** (currencyID `XUF`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.trasvia.example/terms**  
   The seller's general terms of payment.
@@ -367,7 +367,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **43050** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **41847** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -384,13 +384,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **43050** (currencyID `XUF`)  
+- `LineExtensionAmount` = **41847** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **43050** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **41847** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **43050** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **41847** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **43050** (currencyID `XUF`)  
+- `PayableAmount` = **41847** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -399,10 +399,10 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **179** (unitCode `KMT`)  
-  The kilometres driven loaded, from the 3PL's warehouse in Conciaro to the distribution centre in Marrowdale: the truck's leg on the map (179.2 km, O152).
-- `LineExtensionAmount` = **43050** (currencyID `XUF`)  
-  179 × 240.5, rounded to the minor unit of the currency.
+- `InvoicedQuantity` = **174** (unitCode `KMT`)  
+  The kilometres driven loaded, from the 3PL's warehouse in Conciaro to the distribution centre in Marrowdale: the truck's leg on the map (174.3 km, O152).
+- `LineExtensionAmount` = **41847** (currencyID `XUF`)  
+  174 × 240.5, rounded to the minor unit of the currency.
 - `Item/Description` = **Dan stindrul staz, mustek ginek zumul virskek dinskan, starek kritrir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item road-transport of Trasvia Haulage (world/items.json).
 - `Item/Description` = **Full truck load, price per kilometre driven loaded, tolls included.** (languageID `en-XU`)  
@@ -642,7 +642,7 @@ Inside `InvoiceLine`:
     <cac:FuelConsumption>
       <cbc:ID>TH-FC-26-0159</cbc:ID>
       <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
-      <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
+      <cbc:FuelConsumptionMeasure unitCode="LTR">57</cbc:FuelConsumptionMeasure>
     </cac:FuelConsumption>
   </cac:Delivery>
   <cac:PaymentMeans>
@@ -701,7 +701,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">861</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">837</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.trasvia.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-04-24</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -717,7 +717,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">43050</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">41847</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
@@ -730,15 +730,15 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">43050</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">43050</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">43050</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">43050</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">41847</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">41847</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">41847</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">41847</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KMT">179</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">43050</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KMT">174</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">41847</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qau">Dan stindrul staz, mustek ginek zumul virskek dinskan, starek kritrir.</cbc:Description>
       <cbc:Description languageID="en-XU">Full truck load, price per kilometre driven loaded, tolls included.</cbc:Description>
