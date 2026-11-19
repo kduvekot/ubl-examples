@@ -28,10 +28,10 @@ Version 2 of the prior information notice: the city council raised the prize fun
   Revised three weeks later.
 - `IssueTime` = **11:17:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume; the contest notice moves to 19 March.**  
+- `Note` = **Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.**  
   What it announces. What version 2 changes, said in the document (D29 point 4).
 - `VersionID` = **2**  
-  The second version, which supersedes the first: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume, the first prize from 6,000 to 8,000, and the contest notice moves to 19 March.
+  The second version, which supersedes the first: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume, the first prize from 6,000 to 8,000, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.
 - `PreviousVersionID` = **1**  
   The version this one supersedes: version 1 of the same document, with the same number.
 - `PlannedDate` = **2026-03-19**  
@@ -232,7 +232,9 @@ Inside `ProcurementProject`:
 - `ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   A design is a service. The code is from the Trade Accord's contract nature list: SERVICES = Services.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **54000.00** (currencyID `XBL`)  
-  The prizes, 14,000 lume, and the follow-up service contract, estimated at 40,000 lume.
+  The prizes, 14,000 lume, and the follow-up service contract, estimated at 40,000 lume (contest/01#F6).
+- `RequestedTenderTotal/MonetaryScope` = **The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.**  
+  What the estimate covers, in words (D29 point 5).
 - `MainCommodityClassification/ItemClassificationCode` = **83912** (listID `UN CPC Ver.2.1`)  
   The contest is for an industrial design, as a subclass of the UN Central Product Classification. The code is from the world's copy of UN Central Product Classification, Version 2.1: 83912 = Industrial design services.
 - `RealizedLocation/Name` = **Harbour promenade, Lumeport**  
@@ -256,7 +258,7 @@ Inside `ProcurementProject`:
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:17:00-01:00</cbc:IssueTime>
-  <cbc:Note>Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume; the contest notice moves to 19 March.</cbc:Note>
+  <cbc:Note>Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:PlannedDate>2026-03-19</cbc:PlannedDate>
@@ -402,6 +404,7 @@ Inside `ProcurementProject`:
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">54000.00</cbc:EstimatedOverallContractAmount>
+      <cbc:MonetaryScope>The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.</cbc:MonetaryScope>
     </cac:RequestedTenderTotal>
     <cac:MainCommodityClassification>
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">83912</cbc:ItemClassificationCode>

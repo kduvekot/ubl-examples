@@ -10938,7 +10938,7 @@ def contest_prizes(first, why_first):
                               "The jury may withhold it.")}]
 
 
-def contest_project():
+def contest_project(first=8000):
     return {"Name": V("Design of the harbour promenade bench", "The name of the contest."),
             "Description": V("A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in "
                              "salt air, accessible, and buildable for at most 900 lume a bench.", "What the "
@@ -10951,10 +10951,20 @@ def contest_project():
             "RealizedLocation": {"Name": V("Harbour promenade, Lumeport", "Where the furniture will stand."),
                                  "Address": {"CityName": V("Lumeport", "The city."),
                                              "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
-            "RequestedTenderTotal": {"EstimatedOverallContractAmount": amount(54000, "XBL", "The prizes, 14,000 lume, "
-                                                                                           "and the follow-up service "
-                                                                                           "contract, estimated at "
-                                                                                           "40,000 lume.")}}
+            "RequestedTenderTotal": contest_estimate(first)}
+
+
+def contest_estimate(first):
+    """What the contest is worth to the department, as a design contest's value is reckoned: the prizes and the
+    follow-up design service contract of about 40,000 lume (D29 point 5); it rises with the first prize."""
+    prizes = first + 4000 + 2000
+    return {"EstimatedOverallContractAmount": amount(prizes + 40000, "XBL", f"The prizes, {prizes:,} lume, and the "
+                                                     "follow-up service contract, estimated at 40,000 lume "
+                                                     "(contest/01#F6)."),
+            "MonetaryScope": V(f"The three prizes ({prizes:,} lume) and the follow-up service contract for the "
+                               "detailed design and the supervision of the production (about 40,000 lume). The "
+                               "production of the benches is not part of it.", "What the estimate covers, in words "
+                                                                               "(D29 point 5).")}
 
 
 def contest_awarding(f, first, why_first):
@@ -11138,7 +11148,8 @@ def contest_terms(f, k, first=8000):
 # What each version 2 changes, said in the document itself (D29 point 4, contest/02#F3, 16#F11).
 CONTEST_CHANGES = {
     "PriorInformationNotice": "Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 "
-                              "lume and the first prize from 6,000 to 8,000 lume; the contest notice moves to 19 March.",
+                              "lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to "
+                              "54,000 lume; the contest notice moves to 19 March.",
     "ContractNotice": "Corrigendum, version 2: the site plan is replaced by revision B (the sea wall is 420 m long, "
                       "not 240 m), the deadline for requests to participate moves from 17 to 30 April, and the "
                       "design lead may also be a registered industrial designer.",
@@ -11178,7 +11189,8 @@ def contest_document(n, doc):
                               else "Revised three weeks later."),
                **folder,
                **contest_version(k, "on 18 February the city council raised the prize fund from 12,000 to 14,000 "
-                                    "lume, the first prize from 6,000 to 8,000, and the contest notice moves to "
+                                    "lume, the first prize from 6,000 to 8,000, and with them the estimate from 52,000 to 54,000 lume; the "
+                                    "contest notice moves to "
                                     "19 March."),
                "Note": V("Advance notice of the design contest for the harbour promenade bench.", "What it "
                                                                                                     "announces."),
@@ -11196,7 +11208,7 @@ def contest_document(n, doc):
                        "MinimumQuantity": V("3", "At least three participants are planned."),
                        "MaximumQuantity": V("5", "At most five.")}},
                "TenderingProcess": {"ProcedureCode": V("DESIGNCONTEST", "A design contest is planned.")},
-               "ProcurementProject": contest_project()}
+               "ProcurementProject": contest_project(first)}
         return out
     if d == "ContractNotice":
         return {"ID": V(f.number("contest-notice", doc["from"], d), "The notice number, the same in both versions."),

@@ -272,7 +272,9 @@ Inside `ProcurementProject`:
 - `ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   A design is a service. The code is from the Trade Accord's contract nature list: SERVICES = Services.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **54000.00** (currencyID `XBL`)  
-  The prizes, 14,000 lume, and the follow-up service contract, estimated at 40,000 lume.
+  The prizes, 14,000 lume, and the follow-up service contract, estimated at 40,000 lume (contest/01#F6).
+- `RequestedTenderTotal/MonetaryScope` = **The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.**  
+  What the estimate covers, in words (D29 point 5).
 - `MainCommodityClassification/ItemClassificationCode` = **83912** (listID `UN CPC Ver.2.1`)  
   The contest is for an industrial design, as a subclass of the UN Central Product Classification. The code is from the world's copy of UN Central Product Classification, Version 2.1: 83912 = Industrial design services.
 - `RealizedLocation/Name` = **Harbour promenade, Lumeport**  
@@ -486,6 +488,7 @@ Inside `ProcurementProject`:
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">54000.00</cbc:EstimatedOverallContractAmount>
+      <cbc:MonetaryScope>The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.</cbc:MonetaryScope>
     </cac:RequestedTenderTotal>
     <cac:MainCommodityClassification>
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">83912</cbc:ItemClassificationCode>

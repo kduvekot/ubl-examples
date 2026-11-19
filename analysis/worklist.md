@@ -1613,6 +1613,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: none of D1 to D27.
 - State: D29 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D29).
 - Findings: contest: 01#F6, 02#F7, 03#F11, 04#F14, 08#F12, 09#F11, 15#F12, 16#F12
+- **Fixed (2026-11-19):** the estimate says what it covers (`MonetaryScope`: the three prizes and the follow-up design service contract of about 40,000 lume, not the production) and follows the prize change: 52,000 lume in version 1 of the prior information notice (prizes 12,000), 54,000 in every document from version 2 on (prizes 14,000), which says so in its note (D29 point 5); the production limit of 900 lume a bench stays in the description. The contest story in `note/src/03-world.md` is read against the XML and brought into line (O112). Coverage unchanged.
 
 ### C100 · Road flow: isolated slips of the truck shipment
 - Kind: flow story · Findings: 25 (High 1, Medium 6, Low 18) in 10 files, 1 flow · Needs decision: owner: D35
