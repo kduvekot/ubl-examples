@@ -1104,7 +1104,7 @@
    "doc": "FulfilmentCancellation",
    "from": "6-xb",
    "to": "5-xu",
-   "why": "The next morning the distributor's recount finds the 96th bench on the last pallet: the receipt advice reported a shortage that is not there, so the distributor cancels it.",
+   "why": "The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like, so goods-in reported 95 benches and one carton of frames over. The next morning the distributor's recount reads the carton's label: it is the 96th bench's. The receipt advice reported a shortage and a carton over that are not there, so the distributor cancels it (decision D35).",
    "parties": {
     "BuyerCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu",
@@ -1116,7 +1116,7 @@
    "doc": "ReceiptAdvice",
    "from": "6-xb",
    "to": "8-xu",
-   "why": "The corrected receipt advice: all 96 benches received, and one box of side frames more than despatched.",
+   "why": "The corrected receipt advice: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; it names the receipt advice it replaces (decision D35).",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
     "DespatchSupplierParty": "8-xu",

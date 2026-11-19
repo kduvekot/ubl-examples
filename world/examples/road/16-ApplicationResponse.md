@@ -118,14 +118,6 @@ Inside `DocumentResponse`:
   The invoice responded to.
 - `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: VI-INV-26-0166 is the example road/15, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
-- `IssuerParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `IssuerParty/PartyName/Name` = **Lumeway Distribution**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `RecipientParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `RecipientParty/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
 - `LineResponse/LineReference/LineID` = **2**  
   The invoice line of the side frames.
 - `LineResponse/Response/ReferenceID` = **2**  
@@ -225,22 +217,6 @@ Inside `DocumentResponse`:
       <cbc:ID>VI-INV-26-0166</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
-    <cac:IssuerParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeway Distribution</cbc:Name>
-      </cac:PartyName>
-    </cac:IssuerParty>
-    <cac:RecipientParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
-      </cac:PartyName>
-    </cac:RecipientParty>
     <cac:LineResponse>
       <cac:LineReference>
         <cbc:LineID>2</cbc:LineID>

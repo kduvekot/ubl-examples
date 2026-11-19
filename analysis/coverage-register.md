@@ -499,6 +499,22 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `Price/OrderableUnitFactorRate` | 0..1 | wood/02-Quotation, wood/03-Order, wood/08-Invoice | | | open |
 | `QuotationLine/SellerProposedSubstituteLineItem` | 0..1 | wood/02-Quotation | | | open |
 
+### G5: road (2026-11-19)
+
+Stage 6, building group G5 (C100, C101, C102; D35).
+
+> C100, D35 point 4: the order states no maximum delivery unit, which no delivery of the flow uses (01#F11); the carrier's status no longer reports a temperature the goods do not need (09#F11), nor an indicator that said nothing (09#F10); the application response no longer names the issuer and recipient of the invoice it answers (16#F11).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Condition/MaximumMeasure` | 0..1 | road/09-TransportationStatus | the highest temperature the temperature-controlled unit of the medicines flow logged during the flight, in the carrier's status on arrival (2–8 °C, D47) | medicines | candidate |
+| `Condition/Measure` | 0..1 | road/09-TransportationStatus | the temperature in the medicines' temperature-controlled unit at arrival (D47) | medicines | candidate |
+| `Condition/MinimumMeasure` | 0..1 | road/09-TransportationStatus | the lowest temperature the unit logged during the flight (D47) | medicines | candidate |
+| `Delivery/MaximumDeliveryUnit` | 0..1 | road/01-Order | | | open |
+| `DocumentResponse/IssuerParty` | 0..1 | road/16-ApplicationResponse | | | open |
+| `DocumentResponse/RecipientParty` | 0..1 | road/16-ApplicationResponse | | | open |
+| `Status/IndicationIndicator` | 0..1 | road/09-TransportationStatus | in the same status of the medicines flow, whether the temperature stayed within 2–8 °C for the whole carriage, stated as what the indicator means (D47) | medicines | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

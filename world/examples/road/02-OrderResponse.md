@@ -168,8 +168,8 @@ Inside `Delivery`:
 
 - `PromisedDeliveryPeriod/StartDate` = **2026-03-23**  
   Under FCA delivery is the handover to the buyer's carrier: on day 7.
-- `PromisedDeliveryPeriod/EndDate` = **2026-03-23**  
-  The same day.
+- `PromisedDeliveryPeriod/EndDate` = **2026-03-24**  
+  Or the morning after, by the guaranteed despatch (road/02#F4).
 - `Despatch/EstimatedDespatchDate` = **2026-03-23**  
   The goods will be ready on the requested day.
 - `Despatch/EstimatedDespatchTime` = **14:00:00**  
@@ -182,9 +182,9 @@ Inside `Delivery`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Despatch/NotifyParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Despatch/ResponsibleParty/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Despatch/ResponsibleParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Despatch/ResponsibleParty/PartyName/Name` = **Castrano Logistics**  
+- `Despatch/ResponsibleParty/PartyName/Name` = **Trasvia Haulage**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Despatch/EstimatedDespatchPeriod/StartDate` = **2026-03-23**  
   The afternoon of day 7.
@@ -382,7 +382,7 @@ Inside `OrderLine`:
   <cac:Delivery>
     <cac:PromisedDeliveryPeriod>
       <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-03-23</cbc:EndDate>
+      <cbc:EndDate>2026-03-24</cbc:EndDate>
     </cac:PromisedDeliveryPeriod>
     <cac:Despatch>
       <cbc:EstimatedDespatchDate>2026-03-23</cbc:EstimatedDespatchDate>
@@ -399,10 +399,10 @@ Inside `OrderLine`:
       </cac:NotifyParty>
       <cac:ResponsibleParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Castrano Logistics</cbc:Name>
+          <cbc:Name>Trasvia Haulage</cbc:Name>
         </cac:PartyName>
       </cac:ResponsibleParty>
       <cac:EstimatedDespatchPeriod>

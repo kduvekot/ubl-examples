@@ -171,8 +171,6 @@ Inside `PaymentMeans`:
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Lumeway Distribution Ltd**  
   The account holder, as the bank knows it.
-- `PayerFinancialAccount/AliasName` = **Lumeway receivables**  
-  The short name the holder gave the account, shown in its bank's app.
 - `PayerFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
   A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
 - `PayerFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
@@ -395,7 +393,6 @@ Inside `RemittanceAdviceLine`:
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
-      <cbc:AliasName>Lumeway receivables</cbc:AliasName>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
