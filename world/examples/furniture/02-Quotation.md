@@ -30,8 +30,8 @@ The furniture maker quotes the bench and the chair, with a care kit free with ea
   What is quoted.
 - `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `LineCountNumeric` = **5**  
-  A line per piece and wood, and the free care kit.
+- `LineCountNumeric` = **6**  
+  A line per piece and wood, the free care kit and the optional seat pad.
 
 ### Validity Period
 
@@ -177,6 +177,34 @@ Inside `BuyerCustomerParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+
+### Transaction Conditions
+
+Inside `TransactionConditions`:
+
+- `Description` = **A repeat order of the line within the season: 3 % off the quoted prices.**  
+  The repeat-order discount the second order takes (D32, furniture/10#F4).
+
+### Tax Total
+
+Inside `TaxTotal`:
+
+- `TaxAmount` = **0.00** (currencyID `XBL`)  
+  The sum of the tax of all categories.
+- `TaxSubtotal/TaxableAmount` = **12200.00** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Quoted Monetary Total
 
@@ -423,6 +451,36 @@ Inside `QuotationLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/Item/ManufacturerParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
+- `Note` = **Optional, as asked: not in the quoted total.**  
+  The answer to the store's optional line (furniture/02#F3, D32).
+- `LineExtensionAmount` = **640.00** (currencyID `XBL`)  
+  Forty pads at the quoted price, if the option is taken: the line's amount stands on the quotation line, apart from the quoted total and its tax.
+- `RequestForQuotationLineID` = **5**  
+  The request's optional line it answers.
+- `LineItem/ID` = **6**  
+  The line number.
+- `LineItem/Quantity` = **40** (unitCode `EA`)  
+  One for each of the forty chairs, if the store takes the option.
+- `LineItem/Price/PriceAmount` = **16** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `LineItem/Item/Description` = **Seat pad for the Marrow dining chair: a foam pad in a removable linen cover, with ties, 400 × 400 mm. Sold under Brackenmere's brand; Brackenmere has it made by a textile workshop and does not make it itself.**  
+  The seller's description; item marrow-seat-pad of Brackenmere Furniture (world/items.json).
+- `LineItem/Item/Name` = **Brackenmere seat pad, Marrow chair**  
+  The item's short name; item marrow-seat-pad of Brackenmere Furniture (world/items.json).
+- `LineItem/Item/BrandName` = **Brackenmere**  
+  The brand the maker sells the item under; item marrow-seat-pad of Brackenmere Furniture (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **BF-MRW-P**  
+  The seller's own item number; item marrow-seat-pad of Brackenmere Furniture (world/items.json).
+- `LineItem/Item/StandardItemIdentification/ID` = **9523710000036** (schemeID `GS1 GTIN`)  
+  The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's (world/items.json).
+- `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Where the item was produced; item marrow-seat-pad of Brackenmere Furniture (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `LineItem/Item/CommodityClassification/CommodityCode` = **940490** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item marrow-seat-pad of Brackenmere Furniture (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940490 = Bedding and similar furnishing articles, n.e.c. in heading 9404 (cushions and the like).
+- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **27180** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item marrow-seat-pad of Brackenmere Furniture (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 27180 = Quilts, eiderdowns, cushions, pouffes, pillows, sleeping bags and the like, fitted with springs or stuffed or internally fitted with any material or of cellular rubber or plastics.
 
 ## The document
 
@@ -439,7 +497,7 @@ Inside `QuotationLine`:
   <cbc:IssueTime>08:58:00-01:00</cbc:IssueTime>
   <cbc:Note>The Elderwick Marrow bench and chair, made to the store's specification under its own label, each in oak and in ash at the same price; a care kit free with each bench.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
-  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>6</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-05-05</cbc:EndDate>
   </cac:ValidityPeriod>
@@ -554,6 +612,25 @@ Inside `QuotationLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:TransactionConditions>
+    <cbc:Description>A repeat order of the line within the season: 3 % off the quoted prices.</cbc:Description>
+  </cac:TransactionConditions>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">12200.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">12200.00</cbc:LineExtensionAmount>
     <cbc:PayableAmount currencyID="XBL">12200.00</cbc:PayableAmount>
@@ -809,6 +886,37 @@ Inside `QuotationLine`:
             <cbc:Name>Brackenmere Furniture</cbc:Name>
           </cac:PartyName>
         </cac:ManufacturerParty>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+  <cac:QuotationLine>
+    <cbc:Note>Optional, as asked: not in the quoted total.</cbc:Note>
+    <cbc:LineExtensionAmount currencyID="XBL">640.00</cbc:LineExtensionAmount>
+    <cbc:RequestForQuotationLineID>5</cbc:RequestForQuotationLineID>
+    <cac:LineItem>
+      <cbc:ID>6</cbc:ID>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">16</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Seat pad for the Marrow dining chair: a foam pad in a removable linen cover, with ties, 400 × 400 mm. Sold under Brackenmere's brand; Brackenmere has it made by a textile workshop and does not make it itself.</cbc:Description>
+        <cbc:Name>Brackenmere seat pad, Marrow chair</cbc:Name>
+        <cbc:BrandName>Brackenmere</cbc:BrandName>
+        <cac:SellersItemIdentification>
+          <cbc:ID>BF-MRW-P</cbc:ID>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="GS1 GTIN">9523710000036</cbc:ID>
+        </cac:StandardItemIdentification>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940490</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">27180</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
       </cac:Item>
     </cac:LineItem>
   </cac:QuotationLine>

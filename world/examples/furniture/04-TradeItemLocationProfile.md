@@ -104,17 +104,15 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/ID` = **BM-CT-01**  
-  The desk's number in the party's own contact list.
-- `Contact/Name` = **Buying office**  
-  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Buyer**  
+- `Contact/Name` = **Customer service**  
+  The party's customer service desk: the desk for its role in this document (it sells); identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Purchasing**  
+- `Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Contact/ElectronicMail` = **buying@brightmarket.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+- `Contact/ElectronicMail` = **service@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -411,12 +409,11 @@ Inside `ItemManagementProfile`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>

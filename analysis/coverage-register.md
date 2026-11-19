@@ -624,6 +624,23 @@ Stage 6, building group G3 (C81, C90).
 | `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
 | `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
 
+### G7: furniture, retail, packaging (2026-11-19)
+
+Stage 6, building group G7 (C103 to C105, C110 to C113, the packaging leftovers).
+
+> C103, D32, D38: the store's buyer-issued debit note furniture/14 goes (O6, D9): the store invoices the return transport (furniture/18), so its debit-note elements go with it; the invoice of the opening stock cites the maker's despatch advice furniture/19 instead of a delivery note that exists nowhere (09#F1); the order takes the quoted price without an 'original' price (08#F8); the cancellation refers to the maker's exception notification as an additional document, not as an originator document (11#F4); the request for quotation refers to the store's range plan as an additional document, not as a catalogue (01#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BillingReferenceLine/Amount` | 0..1 | furniture/14-DebitNote |  |  | open |
+| `DebitNote/DefaultLanguageCode` | 0..1 | furniture/14-DebitNote |  |  | open |
+| `DebitNoteLine/Delivery` | 0..n | furniture/14-DebitNote |  |  | open |
+| `DebitNoteLine/DiscrepancyResponse` | 0..n | furniture/14-DebitNote |  |  | open |
+| `Invoice/DeliveryNoteDocumentReference` | 0..n | furniture/09-Invoice |  |  | open |
+| `LineItem/PricingReference` | 0..1 | furniture/08-Order |  |  | open |
+| `OrderCancellation/OriginatorDocumentReference` | 0..1 | furniture/11-OrderCancellation |  |  | open |
+| `RequestForQuotation/CatalogueDocumentReference` | 0..1 | furniture/01-RequestForQuotation |  |  | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

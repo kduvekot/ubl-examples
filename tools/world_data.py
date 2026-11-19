@@ -29,7 +29,20 @@ def load():
         data = json.load(open(path(layer), encoding="utf-8"))
         data.pop("description", None)
         world.update(data)
+    number_documents(world)
     return world
+
+
+def number_documents(world):
+    """Each document's example number within its flow ("nn"), in the order of documents.json. A document the
+    owner removed stays in documents.json with "removed" (the reason): it keeps its number, which is never used
+    again (D28), and goes to world["removed_documents"]; world["documents"] holds the documents that exist."""
+    count, kept, removed = {}, [], []
+    for d in world.get("documents", []):
+        count[d["flow"]] = count.get(d["flow"], 0) + 1
+        d["nn"] = count[d["flow"]]
+        (removed if d.get("removed") else kept).append(d)
+    world["documents"], world["removed_documents"] = kept, removed
 
 
 # parts of an address that are not on a line: they say something other than where the post goes

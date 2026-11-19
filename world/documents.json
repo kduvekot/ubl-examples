@@ -468,7 +468,7 @@
   {
    "id": "furniture",
    "title": "Furniture for the department store and for public offices (Bayvarra)",
-   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. The line is for the reopening of the store's home and garden department on Monday 11 May: the stock is delivered in March and held for it, and the first sale is on the day of the reopening. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms for a trial of its first four weeks of sales, and what is above the target at the end of the trial goes back. For the public works department the furniture maker also installs, and documents the work for approval.",
+   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. The line is for the reopening of the store's home and garden department on Monday 11 May: the stock is delivered in March and held for it, and the first sale is on the day of the reopening. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms for a trial of its first four weeks of sales, and what is above the target at the end of the trial goes back in the store's van, at the maker's cost: the maker credits it in full and the store invoices the transport. The store asked for seat pads as an option; the maker quoted one, and the store sells pads from its own textile range instead. For the public works department the furniture maker also installs, and documents the work for approval.",
    "legs": [
     {
      "mode": "road",
@@ -3307,7 +3307,8 @@
    "parties": {
     "AccountingCustomerParty": "26-xb",
     "AccountingSupplierParty": "37-xb"
-   }
+   },
+   "removed": "Removed 2026-11-19 (D32, O6, D9): the store carried the returned pieces back at the maker's cost and invoices the transport (furniture/18); a buyer's debit note is not a seller's charge. Its number 14 is not used again (D28)."
   },
   {
    "flow": "furniture",
@@ -3348,6 +3349,31 @@
     "SellerSupplierParty": "37-xb",
     "BuyerCustomerParty": "2-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Invoice",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "The store took the returned pieces back to the maker's workshop with its own van, at the maker's cost as the own-label agreement says, and invoices the transport (D32).",
+   "parties": {
+    "AccountingSupplierParty": "26-xb",
+    "AccountingCustomerParty": "37-xb",
+    "SellerSupplierParty": "26-xb",
+    "BuyerCustomerParty": "37-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "DespatchAdvice",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "The furniture maker's despatch advice for the delivery of the opening stock on 23 March, which its invoice cites as the delivery document (D38).",
+   "parties": {
+    "DespatchSupplierParty": "37-xb",
+    "DeliveryCustomerParty": "26-xb"
    }
   },
   {

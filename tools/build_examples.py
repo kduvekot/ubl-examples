@@ -1722,6 +1722,8 @@ def scheme_for(element, parent, value):
     rule = SCHEME_RULES.get((element, parent))
     if element == "ID" and parent in CONTAINERS and re.fullmatch(SCHEMES["ISO6346"]["pattern"], value):
         rule = "ISO6346"
+    if rule == "ISO 11649" and not value.startswith("RF"):   # a payer's plain reference, such as a credit note's
+        return None                                          # number for a refund (furniture/13#F5)
     if rule is None or rule in SCHEMES:
         return rule
     if rule == "register":           # a company's, a public body's or a grower's register, told by its shape (O142)
@@ -2727,7 +2729,8 @@ def doc_types():
         saved = [copy.deepcopy(fl.__dict__) for fl in flows]    # the run must leave the flows as it found them
         for flow_id in FLOWS_WITH_EXAMPLES:
             docs = [d for d in WORLD["documents"] if d["flow"] == flow_id]
-            for n, doc in enumerate(docs, 1):
+            for doc in docs:
+                n = doc["nn"]
                 content = examples_scenarios.SCENARIOS[flow_id](n, doc)
                 if isinstance(content.get("ID"), V):
                     DOC_TYPES.setdefault(content["ID"].value, (flow_id, n, doc["doc"]))
@@ -3397,8 +3400,7 @@ def check_issue_order(flow_id, name, root, doc, request=None):
 # ---------------------------------------------------------------- references resolve (C73)
 UNRESOLVED = []        # references to a kind of document the examples have, under an ID no example has: (file, el, ID)
 # References to documents the flow decisions add (D38), each waiting for its flow (stage 6): ID -> the document.
-REFERENCE_WAITS = {"BF-DN-26-0323": "furniture/19, Brackenmere's despatch advice (D38, with D32)",
-                   "BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
+REFERENCE_WAITS = {"BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
                    "PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
                                     "D28)"}
 REFERENCE_ALIASES = {"CallForTender": "CallForTenders", "Despatch": "DespatchAdvice", "Receipt": "ReceiptAdvice",
@@ -3499,7 +3501,8 @@ def main(flow_id, check=False):
     stale, roots = [], []
     global DOC_TYPE, FLOW_MODES
     FLOW_MODES = {leg["mode"] for leg in flow.get("legs", [])}
-    for n, doc in enumerate(docs, 1):
+    for doc in docs:
+        n = doc["nn"]               # the example number in the flow, removed numbers left out (D28)
         DOC_TYPE = doc["doc"]
         content = scenario(n, doc)
         global CONTENT
@@ -3622,8 +3625,7 @@ def main(flow_id, check=False):
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
     check_utility_statements(flow_id, roots)
-    produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
-                                                                  for n, d in enumerate(docs, 1)}
+    produced = {xmlname(d["nn"], d) for d in docs} | {xmlname(d["nn"], d).replace(".xml", ".md") for d in docs}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow
         if name not in produced and ".llm-review." not in name:   # reviews are not generated: keep them
             if check:

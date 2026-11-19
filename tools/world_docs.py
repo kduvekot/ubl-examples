@@ -139,7 +139,7 @@ def item_parties(world, parties):
 # supplier's addition to an invoice it issued, as the model's direction now says (tools/extract_ubl_model.py), and
 # re-homes these three with their flows (furniture D32, sea D30, tender D28); until then they keep their old
 # direction, and the check asks for each to be taken off this list once it is gone.
-BUYER_DEBIT_NOTES = {("furniture", "DebitNote", "26-xb"), ("sea", "DebitNote", "1-xl"), ("tender", "DebitNote", "2-xb")}
+BUYER_DEBIT_NOTES = {("sea", "DebitNote", "1-xl"), ("tender", "DebitNote", "2-xb")}   # furniture/14 removed (D32)
 
 
 def check(world, model):

@@ -1005,6 +1005,31 @@
    "origin_criterion": "S"
   },
   {
+   "id": "marrow-seat-pad",
+   "seller": "37-xb",
+   "name": "Brackenmere seat pad, Marrow chair",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 16.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-MRW-P",
+   "hs": "940490",
+   "cpc": "27180",
+   "origin": "XB",
+   "description": "Seat pad for the Marrow dining chair: a foam pad in a removable linen cover, with ties, 400 × 400 mm. Sold under Brackenmere's brand; Brackenmere has it made by a textile workshop and does not make it itself.",
+   "net_kg": 0.4,
+   "gross_kg": 0.5,
+   "package": {
+    "type": "BG",
+    "per_package": 1
+   },
+   "brand": "Brackenmere",
+   "gtin": "9523710000036",
+   "origin_criterion": "S"
+  },
+  {
    "id": "office-desk",
    "seller": "37-xb",
    "name": "Office desk",
