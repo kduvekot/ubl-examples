@@ -180,7 +180,10 @@
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
-        <cbc:PayableAmount currencyID="XUF">0</cbc:PayableAmount>
+        <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="XUF">116280</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="XUF">139536</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="XUF">139536</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
   </cac:SubscriberConsumption>

@@ -1404,6 +1404,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D22 (energy/08: a cross-border sale follows the seller's country, as the reminder already does).
 - State: ready to fix now.
 - Findings: energy: 01#F1, 02#F1, 02#F2, 04#F9, 05#F9, 08#F1, 08#F8, 08#F9
+- **Fixed (2026-11-19):** the gas statement's total matches the network invoice's gas line (01#F1); each network line names its consumption point and the gas line its metering statement (02#F1, F2); a location's InformationURI only from a site's own `information_uri` in parties.json (the seaports and the airport), no longer the company home page (04#F9, also ore, cotton, energy 06–08); the reminder in ferra without an exchange rate, the surcharge line referring to its invoice (08#F1, F8, F9). 05#F9 was already resolved. Coverage −2 (ReminderLine/ExchangeRate, RemittanceAdviceLine/ExchangeRate; O145).
 
 ### C84 · Packaging flow: isolated slips
 - Kind: flow story · Findings: 5 (High 0, Medium 0, Low 5) in 4 files, 1 flow · Needs decision: none (1 finding marked "yes" goes to D46)
@@ -1415,6 +1416,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D11 (packaging/08#F4: a tax statement is no fact of the item).
 - State: ready to fix now.
 - Findings: packaging: 05#F7, 06#F3, 06#F8, 08#F4, 09#F6
+- **Fixed (2026-11-19):** the carrier's consignment note BF-NATROAD-26-0521 (06#F3); 20 cartons of 30 shirts in the despatch advice, the carton recorded in items.json within the shirt's 0.28 kg (06#F8); no tax text in the shirt's description (08#F4); the pair offer "Friday 22 May only" (09#F6, D46). 05#F7 was already resolved.
 
 ### C85 · Air flow: the missed-flight story and the CPT order change
 - Kind: flow story · Findings: 13 (High 2, Medium 0, Low 11) in 8 files, 1 flow · Needs decision: owner: D39
@@ -1526,6 +1528,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: none of D1 to D27.
 - State: ready to fix now.
 - Findings: utilities: 01#F1, 01#F2, 02#F1, 02#F3, 03#F1, 03#F2, 03#F5
+- **Fixed (2026-11-19):** the excise tiers at their real rates 1.2 and 0.6, each naming its electricity, no TaxableAmount on the per-kWh excise (02#F1, F3); each statement reports its share of the excise (factory 277,680, warehouse 11,160: the tiers apply to the customer's month, the lower tier on the main connection, recorded in countries.json) and carries excise and VAT as two tax totals, so the statements add up to the bill (01#F1, F2, 03#F5); the correction's unit amount 27.3 (03#F2); a build check `check_utility_statements`. **Not done: 03#F1** (the estimate correction), see O159.
 
 ### C95 · Utilities: isolated slips
 - Kind: flow story · Findings: 7 (High 1, Medium 2, Low 4) in 6 files, 1 flow · Needs decision: owner: D31
@@ -1691,6 +1694,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D11 (classing results are lot facts, stated first in the certificate's own elements).
 - State: ready to fix now.
 - Findings: cotton: 02#F11, 07#F12, 08#F16, 10#F10, 11#F11, 15#F11, 16#F9
+- **Fixed (2026-11-19):** the classing certificate no longer carries the classing results as the applicant's remarks (16#F9); the micronaire 4.2 with its test method joins grade and staple as properties of the cotton in items.json. 02#F11, 07#F12, 08#F16, 10#F10, 11#F11, 15#F11 were already resolved by the item profile (C48). See O160.
 
 ### C110 · Retail flow: catalogue request, catalogue, updates and deletion
 - Kind: flow story · Findings: 15 (High 3, Medium 4, Low 8) in 5 files, 1 flow · Needs decision: owner: D34

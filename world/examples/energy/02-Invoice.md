@@ -360,6 +360,10 @@ Inside `InvoiceLine`:
   The factory's electricity connection, March.
 - `LineExtensionAmount` = **2559360** (currencyID `XUF`)  
   412800 × 6.2, rounded to the minor unit of the currency.
+- `Delivery/DeliveryLocation/ID` = **FE-CP-4120-01**  
+  The consumption point whose network use the line bills.
+- `Delivery/DeliveryLocation/Description` = **Factory, main connection at 10 kV**  
+  The connection in words.
 - `Item/Description` = **Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.** (languageID `en-XU`)  
@@ -388,6 +392,10 @@ Inside `InvoiceLine`:
   The warehouse's electricity connection, March.
 - `LineExtensionAmount` = **115320** (currencyID `XUF`)  
   18600 × 6.2, rounded to the minor unit of the currency.
+- `Delivery/DeliveryLocation/ID` = **FE-CP-4160-07**  
+  The consumption point whose network use the line bills.
+- `Delivery/DeliveryLocation/Description` = **Warehouse of Castrano Logistics**  
+  The connection in words.
 - `Item/Description` = **Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
 - `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.** (languageID `en-XU`)  
@@ -416,6 +424,16 @@ Inside `InvoiceLine`:
   The factory's gas connection, March.
 - `LineExtensionAmount` = **116280** (currencyID `XUF`)  
   61200 × 1.9, rounded to the minor unit of the currency.
+- `DocumentReference/ID` = **FG-DOC-26-0149**  
+  The grid operator's metering statement with the readings and the volume conversion behind the line's kWh.
+- `DocumentReference/IssueDate` = **2026-04-02**  
+  Its issue date.
+- `DocumentReference/DocumentTypeCode` = **UtilityStatement** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  A utility statement. The code is from the Trade Accord's UBL document type list: UtilityStatement = Utility Statement.
+- `Delivery/DeliveryLocation/ID` = **FG-CP-4120-G1**  
+  The consumption point whose network use the line bills.
+- `Delivery/DeliveryLocation/Description` = **Valdara Industries, gas connection of the coating line**  
+  The connection in words.
 - `Item/Description` = **Krek skul drek zhul rirtan gatir, ginek zalhaz bantan skul zhul kirhan hir drek trekstan.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item network-gas of Ferrano Grid (world/items.json).
 - `Item/Description` = **Use of the gas distribution network, per kilowatt hour of gas taken at the connection.** (languageID `en-XU`)  
@@ -705,6 +723,12 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID>FE-CP-4120-01</cbc:ID>
+        <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
       <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
@@ -731,6 +755,12 @@ Inside `InvoiceLine`:
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID>FE-CP-4160-07</cbc:ID>
+        <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
       <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
@@ -757,6 +787,17 @@ Inside `InvoiceLine`:
     <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
+    <cac:DocumentReference>
+      <cbc:ID>FG-DOC-26-0149</cbc:ID>
+      <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">UtilityStatement</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID>FG-CP-4120-G1</cbc:ID>
+        <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
     <cac:Item>
       <cbc:Description languageID="qau">Krek skul drek zhul rirtan gatir, ginek zalhaz bantan skul zhul kirhan hir drek trekstan.</cbc:Description>
       <cbc:Description languageID="en-XU">Use of the gas distribution network, per kilowatt hour of gas taken at the connection.</cbc:Description>

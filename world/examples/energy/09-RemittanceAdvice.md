@@ -259,19 +259,9 @@ Inside `RemittanceAdviceLine`:
 - `ID` = **2**  
   The surcharge.
 - `DebitLineAmount` = **1987200** (currencyID `XUF`)  
-  19872.00 lume in ferra.
+  The surcharge of the reminder.
 - `BillingReference/ReminderDocumentReference/ID` = **KG-DOC-26-0159**  
   The reminder.
-- `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The reminder's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `ExchangeRate/TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The payment's. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `ExchangeRate/CalculationRate` = **100**  
-  1 lume = 100 ferra.
-- `ExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `ExchangeRate/Date` = **2026-06-06**  
-  The payment date.
 
 ## The document
 
@@ -477,13 +467,6 @@ Inside `RemittanceAdviceLine`:
         <cbc:ID>KG-DOC-26-0159</cbc:ID>
       </cac:ReminderDocumentReference>
     </cac:BillingReference>
-    <cac:ExchangeRate>
-      <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-      <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-      <cbc:CalculationRate>100</cbc:CalculationRate>
-      <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-06-06</cbc:Date>
-    </cac:ExchangeRate>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>
 ```

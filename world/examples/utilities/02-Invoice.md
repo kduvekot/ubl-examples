@@ -346,53 +346,49 @@ Inside `TaxTotal`:
   The energy tax is calculated first.
 - `TaxIncludedIndicator` = **false**  
   The line prices do not include it.
-- `TaxSubtotal/TaxableAmount` = **60000** (currencyID `XUF`)  
-  The tax base of the tier, in ferra.
 - `TaxSubtotal/TaxAmount` = **60000** (currencyID `XUF`)  
   50000 kWh at 1.2 ferra.
 - `TaxSubtotal/CalculationSequenceNumeric` = **1**  
   The energy tax is calculated first.
 - `TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
   The tax is per kilowatt hour.
-- `TaxSubtotal/PerUnitAmount` = **1** (currencyID `XUF`)  
+- `TaxSubtotal/PerUnitAmount` = **1.2** (currencyID `XUF`)  
   The tax per kWh in this tier.
-- `TaxSubtotal/TierRange` = **The first 50,000 kWh of the month**  
-  The tier of the monthly consumption.
+- `TaxSubtotal/TierRange` = **The first 50,000 kWh of the month's 431,400 kWh of electricity**  
+  The tier of the monthly consumption, and the electricity it applies to.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Name` = **Energy tax**  
   The tax in words.
 - `TaxSubtotal/TaxCategory/BaseUnitMeasure` = **1** (unitCode `KWH`)  
   Per kilowatt hour.
-- `TaxSubtotal/TaxCategory/PerUnitAmount` = **1** (currencyID `XUF`)  
+- `TaxSubtotal/TaxCategory/PerUnitAmount` = **1.2** (currencyID `XUF`)  
   The rate per kWh.
-- `TaxSubtotal/TaxCategory/TierRange` = **The first 50,000 kWh of the month**  
+- `TaxSubtotal/TaxCategory/TierRange` = **The first 50,000 kWh of the month's 431,400 kWh of electricity**  
   The tier.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxDueCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Due in Urvania. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `TaxSubtotal/TaxableAmount` = **228840** (currencyID `XUF`)  
-  The tax base of the tier, in ferra.
 - `TaxSubtotal/TaxAmount` = **228840** (currencyID `XUF`)  
   381400 kWh at 0.6 ferra.
 - `TaxSubtotal/CalculationSequenceNumeric` = **1**  
   The energy tax is calculated first.
 - `TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
   The tax is per kilowatt hour.
-- `TaxSubtotal/PerUnitAmount` = **1** (currencyID `XUF`)  
+- `TaxSubtotal/PerUnitAmount` = **0.6** (currencyID `XUF`)  
   The tax per kWh in this tier.
-- `TaxSubtotal/TierRange` = **Above 50,000 kWh: the industrial rate**  
-  The tier of the monthly consumption.
+- `TaxSubtotal/TierRange` = **The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate**  
+  The tier of the monthly consumption, and the electricity it applies to.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Name` = **Energy tax**  
   The tax in words.
 - `TaxSubtotal/TaxCategory/BaseUnitMeasure` = **1** (unitCode `KWH`)  
   Per kilowatt hour.
-- `TaxSubtotal/TaxCategory/PerUnitAmount` = **1** (currencyID `XUF`)  
+- `TaxSubtotal/TaxCategory/PerUnitAmount` = **0.6** (currencyID `XUF`)  
   The rate per kWh.
-- `TaxSubtotal/TaxCategory/TierRange` = **Above 50,000 kWh: the industrial rate**  
+- `TaxSubtotal/TaxCategory/TierRange` = **The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate**  
   The tier.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
@@ -839,18 +835,17 @@ Inside `InvoiceLine`:
     <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
     <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">60000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-      <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+      <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
+      <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-        <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+        <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
+        <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>
@@ -860,18 +855,17 @@ Inside `InvoiceLine`:
       </cac:TaxDueCountry>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">228840</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">228840</cbc:TaxAmount>
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-      <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+      <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+      <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-        <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+        <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>

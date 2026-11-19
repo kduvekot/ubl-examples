@@ -288,8 +288,6 @@ Inside `AccountingSupplierParty`:
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PhysicalLocation/Description` = **The cotton fields**  
   Where the party actually operates, apart from its postal address.
-- `Party/PhysicalLocation/InformationURI` = **https://www.lisavufarm.example**  
-  Where to find more about the place.
 - `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **32** (unitCode `DD`)  
@@ -860,7 +858,6 @@ Inside `InvoiceLine`:
       </cac:PostalAddress>
       <cac:PhysicalLocation>
         <cbc:Description>The cotton fields</cbc:Description>
-        <cbc:InformationURI>https://www.lisavufarm.example</cbc:InformationURI>
         <cac:LocationCoordinate>
           <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
           <cbc:LatitudeDegreesMeasure unitCode="DD">32</cbc:LatitudeDegreesMeasure>

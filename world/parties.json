@@ -2134,7 +2134,8 @@
     "site": {
      "locode": "XBLMP",
      "description": "Port of Lumeport",
-     "subsidiary": "Container quay"
+     "subsidiary": "Container quay",
+     "information_uri": "https://www.port-lumeport.example"
     },
     "week": "always"
    }
@@ -2298,7 +2299,8 @@
     "site": {
      "locode": "XBLMA",
      "description": "Lumeport airport",
-     "altitude": "map"
+     "altitude": "map",
+     "information_uri": "https://www.lumeport-cargo.example"
     },
     "week": "always"
    }
@@ -2360,7 +2362,8 @@
     },
     "site": {
      "locode": "XLSEL",
-     "description": "Port of Selanu"
+     "description": "Port of Selanu",
+     "information_uri": "https://www.port-selanu.example"
     },
     "week": "always"
    }

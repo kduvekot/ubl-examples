@@ -310,7 +310,7 @@ Inside `PurchaseReceiptLine`:
   Three shirts.
 - `LineExtensionAmount` = **35.940** (currencyID `XLC`)  
   Three at the converted price.
-- `Item/Description` = **Men's cotton shirt; the state sales tax is added at the till.**  
+- `Item/Description` = **Men's cotton shirt.**  
   The seller's description; item shirt-r of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Cotton shirt**  
   The item's short name; item shirt-r of Brightmarket Stores (world/items.json).
@@ -548,7 +548,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:Quantity unitCode="EA">3</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">35.940</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>Men's cotton shirt.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
       <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:SellersItemIdentification>

@@ -180,8 +180,12 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LTM-CS-26-0528**  
   The consignment the goods travel in, as numbered when the transport was booked.
+- `Consignment/CarrierAssignedID` = **BF-NATROAD-26-0521**  
+  The carrier's number for the consignment: its consignment note, consignment note under the national road carriage law, which travels with the truck.
 - `Consignment/GrossWeightMeasure` = **168** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cartons.
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cartons: the shirts in their bags and the cartons' share (world/items.json).
+- `Consignment/TotalPackagesQuantity` = **20** (unitCode `EA`)  
+  20 cartons of 30 shirts. The mill packs 30 bagged shirts to a carton; the item's gross weight of 0.28 kg includes its share of the carton (0.25 kg shirt, 0.012 kg bag, 0.018 kg carton).
 - `Consignment/CarrierParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Bayforth Forwarding**  
@@ -389,7 +393,9 @@ Inside `DespatchLine`:
     <cbc:ID>LTM-SH-26-0527</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LTM-CS-26-0528</cbc:ID>
+      <cbc:CarrierAssignedID>BF-NATROAD-26-0521</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity unitCode="EA">20</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>

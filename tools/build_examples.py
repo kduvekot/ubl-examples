@@ -687,8 +687,9 @@ def location(pid):
     out["Description"] = V(text, why)
     if site.get("conditions"):
         out["Conditions"] = V(site["conditions"], "What a visitor must know about getting there.")
-    if p["identity"].get("website"):
-        out["InformationURI"] = V(p["identity"]["website"], "Where to find more about the place.")
+    if site.get("information_uri"):     # a page about the place itself, not the company's home page (energy/04#F9)
+        out["InformationURI"] = V(site["information_uri"], "A page about the place itself: the port's or the "
+                                                           "airport's own site, with its access and services.")
     out["LocationCoordinate"] = coordinate(p["at"])
     if site.get("altitude") == "map":           # the level the 3D map gives the party's ground (O152 stage 2 B)
         import world_map
@@ -1165,8 +1166,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                     "ID-Q10)." if reg else ", unique only with its issuer, who is named below (decision ID-Q10)."),
                     **({"schemeID": reg} if reg else {})),
                 "CertificateTypeCode": V(ce["code"], "The kind of certificate, as a code."),
-                "CertificateType": V(ce["type"], "The kind of certificate, in words."),
-                "Remarks": V(ce["remarks"], "What the certificate states about the goods.")}
+                "CertificateType": V(ce["type"], "The kind of certificate, in words.")}
+        if ce.get("remarks"):       # a certificate's results are no applicant's remarks (C109): only real remarks
+            cert["Remarks"] = V(ce["remarks"], "What the certificate states about the goods.")
         if ce.get("issuer"):
             cert["IssuerParty"] = party(ce["issuer"], short=True)
         if ce.get("valid_until"):
@@ -2854,6 +2856,66 @@ def check_unit_ids(flow_id, roots):
                                      f"{counts[e.text][1]} says {counts[e.text][0]}")
 
 
+def check_utility_statements(flow_id, roots):
+    """The statements of one bill add up to it, and the tax arithmetic of a tax per unit holds (worklist C94): every
+    tax subtotal per unit taxes a whole quantity (amount / rate per unit); the energy tax of an invoice is the sum
+    of the energy tax its statements report, and its tiers tax exactly the quantity those statements meter; a
+    statement's consumption is payable at its line amount plus its taxes, and its consumption line likewise; an
+    estimate correction is its unit amount times its quantity."""
+    def num(e):
+        return Decimal(e.text) if e is not None and e.text else None
+    c, b = f"{{{NS_CAC}}}", f"{{{NS_CBC}}}"
+    invoices = {r.findtext(f"{b}ID"): (name, r) for name, r in roots if etree.QName(r).localname == "Invoice"}
+    for name, root in roots:
+        at = f"world/examples/{flow_id}/{name}"
+        for st in root.iter(f"{c}TaxSubtotal"):
+            rate_, amt = num(st.find(f"{b}PerUnitAmount")), num(st.find(f"{b}TaxAmount"))
+            if rate_ and amt is not None and (amt / rate_) != (amt / rate_).to_integral_value():
+                raise SystemExit(f"{at}: a tax of {amt} at {rate_} per unit taxes no whole quantity")
+        for corr in root.iter(f"{c}EnergyWaterConsumptionCorrection"):
+            u, q, a = (num(corr.find(f"{b}{t}")) for t in ("CorrectionUnitAmount", "ConsumptionEnergyQuantity",
+                                                            "CorrectionAmount"))
+            if None not in (u, q, a) and u * q != a:
+                raise SystemExit(f"{at}: correction {a}, but {u} x {q} is {u * q}")
+        if etree.QName(root).localname != "UtilityStatement":
+            continue
+        for cons in root.findall(f"{c}SubscriberConsumption/{c}Consumption"):
+            lmt = cons.find(f"{c}LegalMonetaryTotal")
+            if lmt is None or lmt.find(f"{b}AllowanceTotalAmount") is not None or cons.find(f"{c}TaxTotal") is None:
+                continue
+            want = num(lmt.find(f"{b}LineExtensionAmount")) + sum(num(t.find(f"{b}TaxAmount"))
+                                                                  for t in cons.findall(f"{c}TaxTotal"))
+            if num(lmt.find(f"{b}PayableAmount")) != want:
+                raise SystemExit(f"{at}: consumption payable {lmt.findtext(f'{b}PayableAmount')}, but its line "
+                                 f"amount and taxes make {want}")
+        for line in root.iter(f"{c}ConsumptionLine"):
+            incl = num(line.find(f"{b}TaxInclusiveLineExtensionAmount"))
+            if incl is not None and line.find(f"{c}TaxTotal") is not None and line.find(f"{c}AllowanceCharge") is None:
+                want = num(line.find(f"{b}LineExtensionAmount")) + sum(num(t.find(f"{b}TaxAmount"))
+                                                                       for t in line.findall(f"{c}TaxTotal"))
+                if incl != want:
+                    raise SystemExit(f"{at}: consumption line with tax {incl}, but its amount and taxes make {want}")
+    for inv_id, (name, inv) in invoices.items():
+        tiers = [st for t in inv.findall(f"{c}TaxTotal") for st in t.findall(f"{c}TaxSubtotal")
+                 if st.findtext(f"{c}TaxCategory/{c}TaxScheme/{b}ID") == "EXC" and st.find(f"{b}PerUnitAmount") is not None]
+        if not tiers:
+            continue
+        stmts = [(n_, r) for n_, r in roots if etree.QName(r).localname == "UtilityStatement"
+                 and r.findtext(f"{c}ParentDocumentReference/{b}ID") == inv_id]
+        reported = sum(num(e) for _, r in stmts for e in r.iter(f"{b}TaxEnergyAmount"))
+        metered = sum(num(sc.find(f"{b}TotalMeteredQuantity")) for _, r in stmts
+                      for sc in r.findall(f"{c}SubscriberConsumption")
+                      if sc.find(f"{c}Consumption/{c}EnergyWaterSupply/{c}EnergyTaxReport") is not None)
+        excise = sum(num(st.find(f"{b}TaxAmount")) for st in tiers)
+        taxed = sum(num(st.find(f"{b}TaxAmount")) / num(st.find(f"{b}PerUnitAmount")) for st in tiers)
+        if reported != excise:
+            raise SystemExit(f"world/examples/{flow_id}/{name}: energy tax {excise}, but its statements report "
+                             f"{reported}")
+        if taxed != metered:
+            raise SystemExit(f"world/examples/{flow_id}/{name}: the energy tax tiers tax {taxed}, but its statements "
+                             f"meter {metered} with energy tax")
+
+
 def check_packages(flow_id, roots):
     """Where the world lists a flow's packages piece by piece (world/documents.json, the flow's "packages": the
     cotton's bales, D12 and O26), the pieces, the totals and every document agree: the pieces' net weights sum to
@@ -3335,6 +3397,7 @@ def main(flow_id, check=False):
     check_calendar(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
+    check_utility_statements(flow_id, roots)
     produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
                                                                   for n, d in enumerate(docs, 1)}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow

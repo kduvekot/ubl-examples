@@ -311,13 +311,13 @@ Inside `PurchaseReceiptLine`:
   An allowance on the line.
 - `AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
   The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `AllowanceCharge/AllowanceChargeReason` = **Two shirts: 5.00 off the pair**  
-  The store's offer.
+- `AllowanceCharge/AllowanceChargeReason` = **Two shirts: 5.00 off the pair, Friday 22 May only**  
+  The store's offer, for one day: the next day's sale of three shirts is at the full price (packaging/09#F6).
 - `AllowanceCharge/Amount` = **5.00** (currencyID `XBL`)  
   Off the pair.
 - `AllowanceCharge/BaseAmount` = **59.90** (currencyID `XBL`)  
   Two shirts at the shelf price.
-- `Item/Description` = **Men's cotton shirt; the state sales tax is added at the till.**  
+- `Item/Description` = **Men's cotton shirt.**  
   The seller's description; item shirt-r of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Cotton shirt**  
   The item's short name; item shirt-r of Brightmarket Stores (world/items.json).
@@ -566,12 +566,12 @@ Inside `PurchaseReceiptLine`:
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Two shirts: 5.00 off the pair</cbc:AllowanceChargeReason>
+      <cbc:AllowanceChargeReason>Two shirts: 5.00 off the pair, Friday 22 May only</cbc:AllowanceChargeReason>
       <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
       <cbc:BaseAmount currencyID="XBL">59.90</cbc:BaseAmount>
     </cac:AllowanceCharge>
     <cac:Item>
-      <cbc:Description>Men's cotton shirt; the state sales tax is added at the till.</cbc:Description>
+      <cbc:Description>Men's cotton shirt.</cbc:Description>
       <cbc:Name>Cotton shirt</cbc:Name>
       <cbc:BrandName>Lumeport</cbc:BrandName>
       <cac:SellersItemIdentification>

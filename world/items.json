@@ -896,6 +896,10 @@
     "type": "BG",
     "per_package": 1
    },
+   "carton": {
+    "per_carton": 30,
+    "why": "The mill packs 30 bagged shirts to a carton; the item's gross weight of 0.28 kg includes its share of the carton (0.25 kg shirt, 0.012 kg bag, 0.018 kg carton)."
+   },
    "components": [
     {
      "item": "garment-bag",
@@ -1121,7 +1125,7 @@
    },
    "sellers_id": "BM-778120",
    "resale_of": "shirt",
-   "description": "Men's cotton shirt; the state sales tax is added at the till."
+   "description": "Men's cotton shirt."
   },
   {
    "id": "marrow-bench-oak-r",
@@ -1248,7 +1252,6 @@
     "id": "XL-CLS-2026-0042",
     "code": "COTTONCLASS",
     "type": "Cotton classing",
-    "remarks": "Grade Middling, staple 1-1/8 inch, micronaire 4.2.",
     "issuer": "20-xl",
     "signature": {
      "id": "SCC-SIG-2026-0042",
@@ -1262,7 +1265,13 @@
     [
      "Grade",
      "Middling"
-    ]
+    ],
+    {
+     "name": "Micronaire",
+     "why": "A classing result of the lot, from the chamber's classing certificate: the fineness and maturity of the fibre, which spinners ask for beside grade and staple.",
+     "value": "4.2",
+     "test": "Airflow measurement on the classer's high-volume instrument"
+    }
    ],
    "quantity_properties": [
     [

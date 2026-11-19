@@ -4040,7 +4040,7 @@
    "doc": "Reminder",
    "from": "42-xb",
    "to": "43-xu",
-   "why": "The power station has not paid by the due date. The gas producer reminds it in lume, its own currency: the reminder shows the ferra invoice at the exchange rate and adds Bayvarra's surcharge for the month late.",
+   "why": "The power station has not paid by the due date. The gas producer reminds it in ferra, the currency of the debt under the supply contract, and adds Bayvarra's surcharge for the month late: the seller's statutory rule, as the contract says nothing on late payment.",
    "parties": {
     "AccountingSupplierParty": "42-xb",
     "AccountingCustomerParty": "43-xu"

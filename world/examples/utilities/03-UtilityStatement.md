@@ -293,8 +293,32 @@ Inside `SubscriberConsumption`:
   March.
 - `Consumption/MainPeriod/EndDate` = **2026-03-31**  
   Its last day.
-- `Consumption/TaxTotal/TaxAmount` = **101556** (currencyID `XUF`)  
-  The tax of this point's consumption.
+- `Consumption/TaxTotal/TaxAmount` = **11160** (currencyID `XUF`)  
+  The energy tax on this point's electricity.
+- `Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **11160** (currencyID `XUF`)  
+  18600 kWh at 0.6 ferra.
+- `Consumption/TaxTotal/TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  Per kilowatt hour.
+- `Consumption/TaxTotal/TaxSubtotal/PerUnitAmount` = **0.6** (currencyID `XUF`)  
+  The rate of the tier.
+- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/Name` = **Energy tax**  
+  The tax in words.
+- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
+- `Consumption/TaxTotal/TaxAmount` = **103788** (currencyID `XUF`)  
+  20 % value added tax on the price and the energy tax.
+- `Consumption/TaxTotal/TaxSubtotal/TaxableAmount` = **518940** (currencyID `XUF`)  
+  The price plus the energy tax.
+- `Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **103788** (currencyID `XUF`)  
+  20 % of it.
+- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FE-CP-4160-07-2603**  
   The consumption report of the point for March.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
@@ -355,6 +379,14 @@ Inside `SubscriberConsumption`:
   The month.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-02-28**  
   Its end.
+- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyAmount` = **11160** (currencyID `XUF`)  
+  This point's share of the bill's energy tax: 18,600 kWh at 0.6 ferra; the tiers apply to the customer's month as a whole, the lower tier counted on the main connection.
+- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyOnAccountAmount` = **0** (currencyID `XUF`)  
+  No energy tax paid on account.
+- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyBalanceAmount` = **11160** (currencyID `XUF`)  
+  Due with this bill.
+- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
+  Urvania's energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
 - `Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **507780** (currencyID `XUF`)  
   What this month cost.
 - `Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 17900 kWh.**  
@@ -367,16 +399,16 @@ Inside `SubscriberConsumption`:
   The meter.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/Description` = **February's estimate of 17,200 kWh was 750 kWh too high, as the actual reading shows.**  
   Why.
-- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionUnitAmount` = **27** (currencyID `XUF`)  
-  The tariff per kWh.
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionUnitAmount` = **27.3** (currencyID `XUF`)  
+  The tariff per kWh, as it is (utilities/03#F2).
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity` = **-750** (unitCode `KWH`)  
   The correction of February's quantity.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionAmount` = **-20475** (currencyID `XUF`)  
   Credited on the April bill.
 - `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **507780** (currencyID `XUF`)  
   The consumption.
-- `Consumption/LegalMonetaryTotal/PayableAmount` = **609336** (currencyID `XUF`)  
-  With its tax.
+- `Consumption/LegalMonetaryTotal/PayableAmount` = **622728** (currencyID `XUF`)  
+  With its taxes.
 - `SupplierConsumption/Description` = **The supply under the customer's contract.**  
   What follows.
 - `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **XU-R-105781** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -395,8 +427,8 @@ Inside `SubscriberConsumption`:
   Its last day.
 - `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **507780** (currencyID `XUF`)  
   The line.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **609336** (currencyID `XUF`)  
-  With its tax.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **622728** (currencyID `XUF`)  
+  With its taxes.
 - `SupplierConsumption/Contract/ID` = **FE-C-0047120**  
   The supply contract.
 - `SupplierConsumption/Contract/ContractType` = **Electricity supply**  
@@ -411,16 +443,16 @@ Inside `SubscriberConsumption`:
   The consumption of this point.
 - `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **507780** (currencyID `XUF`)  
   Quantity times the tariff.
-- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **609336** (currencyID `XUF`)  
-  With the tax of the line.
+- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **622728** (currencyID `XUF`)  
+  With the energy tax and the value added tax of the line.
 - `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
 - `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
   Where it was delivered.
-- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **101556** (currencyID `XUF`)  
-  20 % of the line.
+- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **114948** (currencyID `XUF`)  
+  The energy tax and the value added tax of the line.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **FE-KWH**  
   The utility's tariff item.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **FE-C-0047120**  
@@ -660,7 +692,33 @@ Inside `SubscriberConsumption`:
         <cbc:EndDate>2026-03-31</cbc:EndDate>
       </cac:MainPeriod>
       <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XUF">101556</cbc:TaxAmount>
+        <cbc:TaxAmount currencyID="XUF">11160</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+          <cbc:TaxAmount currencyID="XUF">11160</cbc:TaxAmount>
+          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+          <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Name>Energy tax</cbc:Name>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
+      </cac:TaxTotal>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XUF">103788</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+          <cbc:TaxableAmount currencyID="XUF">518940</cbc:TaxableAmount>
+          <cbc:TaxAmount currencyID="XUF">103788</cbc:TaxAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Percent>20</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
       </cac:TaxTotal>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
@@ -709,6 +767,14 @@ Inside `SubscriberConsumption`:
             </cac:Period>
           </cac:ConsumptionHistory>
         </cac:ConsumptionReport>
+        <cac:EnergyTaxReport>
+          <cbc:TaxEnergyAmount currencyID="XUF">11160</cbc:TaxEnergyAmount>
+          <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
+          <cbc:TaxEnergyBalanceAmount currencyID="XUF">11160</cbc:TaxEnergyBalanceAmount>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+          </cac:TaxScheme>
+        </cac:EnergyTaxReport>
         <cac:ConsumptionAverage>
           <cbc:AverageAmount currencyID="XUF">507780</cbc:AverageAmount>
           <cbc:Description>The average over the last three months is 17900 kWh.</cbc:Description>
@@ -718,14 +784,14 @@ Inside `SubscriberConsumption`:
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">EST</cbc:CorrectionTypeCode>
           <cbc:MeterNumber>FE-M-881377</cbc:MeterNumber>
           <cbc:Description>February's estimate of 17,200 kWh was 750 kWh too high, as the actual reading shows.</cbc:Description>
-          <cbc:CorrectionUnitAmount currencyID="XUF">27</cbc:CorrectionUnitAmount>
+          <cbc:CorrectionUnitAmount currencyID="XUF">27.3</cbc:CorrectionUnitAmount>
           <cbc:ConsumptionEnergyQuantity unitCode="KWH">-750</cbc:ConsumptionEnergyQuantity>
           <cbc:CorrectionAmount currencyID="XUF">-20475</cbc:CorrectionAmount>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
         <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XUF">609336</cbc:PayableAmount>
+        <cbc:PayableAmount currencyID="XUF">622728</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
     <cac:SupplierConsumption>
@@ -754,7 +820,7 @@ Inside `SubscriberConsumption`:
         </cac:MainPeriod>
         <cac:LegalMonetaryTotal>
           <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XUF">609336</cbc:PayableAmount>
+          <cbc:PayableAmount currencyID="XUF">622728</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:Contract>
@@ -769,7 +835,7 @@ Inside `SubscriberConsumption`:
         <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
         <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">609336</cbc:TaxInclusiveLineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">622728</cbc:TaxInclusiveLineExtensionAmount>
         <cac:Period>
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -780,7 +846,7 @@ Inside `SubscriberConsumption`:
           </cac:DeliveryLocation>
         </cac:Delivery>
         <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XUF">101556</cbc:TaxAmount>
+          <cbc:TaxAmount currencyID="XUF">114948</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>FE-KWH</cbc:ID>

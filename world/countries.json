@@ -43,7 +43,7 @@
         "per_unit": "0.6"
        }
       ],
-      "note": "An excise in ferra per kWh, lower above 50,000 kWh a month for industry; value added tax is charged on the price plus the energy tax."
+      "note": "An excise in ferra per kWh, lower above 50,000 kWh a month for industry; value added tax is charged on the price plus the energy tax. The tiers apply to a customer's month as a whole; where the bill covers several connections, the supplier's statement per connection counts the lower tier on the main connection, so that the statements add up to the bill."
      }
     ],
     "exemption_codes": {
