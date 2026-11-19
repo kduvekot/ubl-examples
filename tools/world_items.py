@@ -298,7 +298,44 @@ def check(world):
                 problems.append(f"exchange rates {a}/{b} x {b}/{c} = {r1 * r2}, but {a}/{c} = {rates[(a, c)]}")
     problems += buyer_price_problems(world)
     problems += resale_problems(world)
+    problems += physics_problems(items)
     return problems
+
+
+# the world's rule for manual handling (D20): ISO 11228-1, 25 kg for one person, about two thirds of the combined
+# capacity (about 33 kg) for two people lifting together
+HANDLING_LIMIT_KG = {1: 25, 2: 33}
+
+
+def physics_problems(items):
+    """Item physics where the world states it (D20, the first part of O62): the parts of an item sum to its net
+    weight, its parcels to its gross weight, every parcel is within the handling limit for the people who lift it,
+    and an item sold as a spare part ships in the same parcel as in the whole."""
+    from decimal import Decimal
+    out = []
+    for iid, it in items.items():
+        where = f"item {iid}"
+        if it.get("parts"):
+            net = sum(Decimal(str(p["n"])) * Decimal(str(p["kg"])) for p in it["parts"])
+            if abs(net - Decimal(str(it["net_kg"]))) > Decimal("0.1"):   # each part rounded to its own digits
+                out.append(f"{where}: its parts weigh {net} kg, but its net weight is {it['net_kg']} kg")
+        if it.get("parcels"):
+            gross = sum(Decimal(str(p["gross_kg"])) for p in it["parcels"])
+            if gross != Decimal(str(it["gross_kg"])):
+                out.append(f"{where}: its parcels weigh {gross} kg, but its gross weight is {it['gross_kg']} kg")
+            for p in it["parcels"]:
+                if Decimal(str(p["gross_kg"])) > HANDLING_LIMIT_KG[p["lift"]]:
+                    out.append(f"{where}: parcel {p['no']} weighs {p['gross_kg']} kg, above the handling limit "
+                               f"for {p['lift']} person(s) (D20)")
+        if it.get("carton"):
+            whole = [w for w in items.values() if any(c.get("item") == iid for c in w.get("spare_parts", []))]
+            for w in whole:
+                if not any(Decimal(str(p["gross_kg"])) == Decimal(str(it["gross_kg"])) and p["mm"] == it["carton"]["mm"]
+                           for p in w.get("parcels", [])):
+                    out.append(f"{where}: a spare part ships in a parcel the whole item {w['id']} does not have")
+            if Decimal(str(it["gross_kg"])) > HANDLING_LIMIT_KG[1]:
+                out.append(f"{where}: one carton of {it['gross_kg']} kg is above the one-person handling limit")
+    return out
 
 
 # ---------------------------------------------------------------- prices along the chain (D14, O28, O30)

@@ -255,7 +255,7 @@ Inside `Shipment`:
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What is carried, in words.
 - `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
@@ -267,7 +267,7 @@ Inside `Shipment`:
 - `GoodsItem/Description` = **Bench side frame casting**  
   What is carried, in words.
 - `GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Bench side frame casting**  

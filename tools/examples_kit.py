@@ -1141,10 +1141,7 @@ def goods_items(flow, currency, value_why, deal=None):
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What the goods are, in words."),
                     "DeclaredCustomsValueAmount": amount(value, currency, value_why),
-                    "GrossWeightMeasure": qty(line_gross(flow, d, which), "KGM",
-                                              "The gross weight of the goods of this item, with their packaging"
-                                              + (" and the pallets they travel on." if pallets(flow, [d]) else
-                                                 ".")),
+                    "GrossWeightMeasure": qty(line_gross(flow, d, which), "KGM", line_gross_why(flow, d)),
                     "Quantity": qty(q, it["unit"], "The quantity declared."),
                     **goods_packages(flow, d),
                     "Item": customs_item(d["item"])})
@@ -1165,10 +1162,7 @@ def transport_goods(flow, deal=None):
         hs = maker(d["item"]).get("hs")
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What is carried, in words."),
-                    "GrossWeightMeasure": qty(line_gross(flow, d, which), "KGM",
-                                              "The gross weight of the goods of this item, with their packaging"
-                                              + (" and the pallets they travel on." if pallets(flow, [d]) else
-                                                 ".")),
+                    "GrossWeightMeasure": qty(line_gross(flow, d, which), "KGM", line_gross_why(flow, d)),
                     "Quantity": qty(q, it["unit"], "How much is carried."),
                     **containing_package(flow, d["item"]),
                     **({"Item": {"Name": V(it["name"], "The goods."),
@@ -1698,6 +1692,16 @@ def line_gross(flow, d, which):
     """The gross weight of a line of a deal: the goods in their parcels, and the pallets they travel on."""
     q = Decimal(str(d[which]))
     return q * Decimal(str(maker(d["item"]).get("gross_kg", 0))) + pallet_tare(flow, [d])
+
+
+def line_gross_why(flow, d):
+    if pallets(flow, [d]):
+        return "The gross weight of the goods of this item, in their parcels and with the pallets they travel on."
+    if maker(d["item"]).get("parcels") or maker(d["item"]).get("carton"):
+        return "The gross weight of the goods of this item, in their parcels."
+    if maker(d["item"]).get("package"):
+        return "The gross weight of the goods of this item, with their packaging."
+    return "The gross weight of the goods of this item."
 
 
 def parcels(it, n):

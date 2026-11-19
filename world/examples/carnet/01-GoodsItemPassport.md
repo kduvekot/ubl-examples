@@ -356,7 +356,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **99800** (currencyID `XUF`)  
   The value of the samples, for the guarantee.
 - `GoodsItem/GrossWeightMeasure` = **94** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging.
+  The gross weight of the goods of this item, in their parcels.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  

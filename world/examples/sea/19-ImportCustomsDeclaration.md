@@ -265,7 +265,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **21184.409** (currencyID `XLC`)  
   Lisavu values the goods with freight and insurance to the island (D16): the goods at 19,968.000 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.000 XLC), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
@@ -403,7 +403,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **341.191** (currencyID `XLC`)  
   Lisavu values the goods with freight and insurance to the island (D16): the goods at 321.600 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.000 XLC), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  

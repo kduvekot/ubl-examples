@@ -233,7 +233,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **49920.00** (currencyID `XBL`)  
   The value of the goods, in lume.
 - `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
@@ -351,7 +351,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **804.00** (currencyID `XBL`)  
   The value of the goods, in lume.
 - `GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Spare side frame for the Serra bench.**  

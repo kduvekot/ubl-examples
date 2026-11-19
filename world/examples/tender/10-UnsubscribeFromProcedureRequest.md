@@ -2,7 +2,7 @@
 
 *Example 10 of the flow "A public tender (Bayvarra)" · [Unsubscribe From Procedure Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UNSUBSCRIBE-FROM-PROCEDURE-REQUEST-SCHEMA)*
 
-The sawmill decides not to tender: a steel-framed bench is not its trade. It unsubscribes.
+The sawmill decides not to tender: a bench with cast-iron frames is not its trade. It unsubscribes.
 
 [The XML file](10-UnsubscribeFromProcedureRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

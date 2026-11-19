@@ -96,7 +96,7 @@
    ],
    "h": 3,
    "kind": "factory",
-   "what": "Makes park benches and street furniture: frames from steel made from the mine's ore, slats from the sawmill in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the distributor abroad and tenders in public procurement.",
+   "what": "Makes park benches and street furniture: frames of ductile iron made from the mine's ore and cast in its own foundry, slats from the sawmill in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the distributor abroad and tenders in public procurement.",
    "how": "The manufacturer sits in the middle of the chain: it buys, produces, sells, exports and tenders. UBL gives it one vocabulary for all of that, from the order it places with the mine to the certificate of origin and the tender it submits to a public buyer, so the same item, party and price data are reused instead of re-entered for every partner.",
    "size": [
     2,

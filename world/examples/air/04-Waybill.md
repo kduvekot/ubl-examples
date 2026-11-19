@@ -402,7 +402,7 @@ Inside `Shipment`:
 - `GoodsItem/Description` = **Bench side frame casting**  
   What is carried, in words.
 - `GoodsItem/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging.
+  The gross weight of the goods of this item, in their parcels.
 - `GoodsItem/Quantity` = **8** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Bench side frame casting**  

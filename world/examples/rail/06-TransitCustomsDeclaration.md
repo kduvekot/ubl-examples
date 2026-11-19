@@ -344,7 +344,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **7660800** (currencyID `XUF`)  
   The value of the goods, in ferra, for the transit guarantee.
 - `GoodsItem/GrossWeightMeasure` = **10377.6** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **192** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  

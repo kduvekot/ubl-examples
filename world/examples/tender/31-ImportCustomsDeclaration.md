@@ -253,7 +253,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **20160.00** (currencyID `XBL`)  
   Bayvarra values the goods as they left the exporting country (D16): the goods at 19,960.00 XBL, with the special colour, part of the price paid (200.00 XBL), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **2162** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **40** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **S** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  

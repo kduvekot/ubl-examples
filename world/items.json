@@ -326,6 +326,12 @@
      "n": 1,
      "kg": 0.77
     }
+   ],
+   "spare_parts": [
+    {
+     "item": "bench-casting",
+     "why": "A spare side frame is one frame carton, parcel 1 of the bench (D20)."
+    }
    ]
   },
   {

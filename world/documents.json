@@ -2212,7 +2212,7 @@
    "doc": "UnsubscribeFromProcedureRequest",
    "from": "36-xb",
    "to": "2-xb",
-   "why": "The sawmill decides not to tender: a steel-framed bench is not its trade. It unsubscribes.",
+   "why": "The sawmill decides not to tender: a bench with cast-iron frames is not its trade. It unsubscribes.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "36-xb"
