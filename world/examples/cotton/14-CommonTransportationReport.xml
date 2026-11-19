@@ -161,10 +161,10 @@
           <cbc:DocumentDescription>Ship Sanitation Control Exemption Certificate (International Health Regulations 2005, Annex 3): the inspection found no evidence of infection or contamination, so no control measures were needed.</cbc:DocumentDescription>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">7140583926</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Port of Lumeport</cbc:Name>
+              <cbc:Name>Port Health Office of Bayvarra, Lumeport</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:ShipSanitationControlExemptionDocumentReference>

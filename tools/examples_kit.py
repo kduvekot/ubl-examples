@@ -1703,7 +1703,7 @@ def fleet(pid, fid):
     return next(x for x in PARTY[pid]["fleet"] if x["id"] == fid)
 
 
-def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
+def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False, port=False):
     """A cac:TransportMeans from the carrier's fleet (world/parties.json): its registration and the vehicle,
     train, vessel or aircraft."""
     f, c = fleet(pid, fid), PARTY[pid]["c"]
@@ -1745,10 +1745,11 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
              "ShipConfigurationCode": V(f["config"], "The kind of vessel"
                                         + (f", for about {f['capacity_teu']:,} TEU." if f.get("capacity_teu") else ".")),
              "RegistryPortLocation": {"Name": V(f["registry"], "The port the vessel is registered in.")}}
-        if f.get("ballast"):
+        if f.get("ballast") and port:       # what a port needs to know of a ship calling, not a cargo document
             m["SegregatedBallastMeasure"] = V(f["ballast"], "The capacity of the tanks for ballast water only.",
                                               unitCode="TNE")
             m["ShipsRequirements"] = V("Shore power at the container quay.", "What the ship needs in port.")
+        if f.get("ballast"):
             m["RegistryCertificateDocumentReference"] = {"ID": V(f"REG-{f['vessel_id']}", "The ship's certificate "
                                                                  "of registry.")}
         out["MaritimeTransport"] = m

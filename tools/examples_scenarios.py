@@ -1826,24 +1826,13 @@ def sea_equipment(f, detail):
             "PackagedTransportHandlingUnit": kit.handling_units(f, f.deal, "6-xb", "VELUMI SELANU"),
             "GoodsItem": {"ID": V("1", "The goods in the container, as one item for the carrier."),
                           "Description": V("Park benches and spare side frames", "In words."),
-                          "GoodsItemContainer": {"ID": V(CONTAINER, "The container the goods are in."),
-                                                 "Quantity": qty(len(kit.pallets(f, f.deal)), "EA",
-                                                                 f"{len(kit.pallets(f, f.deal))} pallets in it.")},
                           "ContainedGoodsItem": [{"ID": V("1.1", "The benches."),
                                                   "Description": V("Park benches", "In words.")},
                                                  {"ID": V("1.2", "The side frames."),
                                                   "Description": V("Spare side frames", "In words.")}]},
-            "SupplierParty": {"Party": party("11-xb", short=True)},
-            "AttachedTransportEquipment": {"ID": V("BV CH 0412", "The forwarder's chassis the container rode on to "
-                                                                 "the port."),
-                                           "TransportEquipmentTypeCode": V("TE", "UN/EDIFACT 8053 code TE: "
-                                                                                 "trailer.",
-                                                                           listID="UN/EDIFACT EDED 8053")},
-            "Package": {"ID": kit.unit_id("6-xb", f, len(kit.pallets(f, f.deal)), "The pallet of frame cartons, "
-                                                                                     "packed last at the doors"),
-                        "Quantity": qty(12, "EA", "Twelve side frames, one to a carton."),
-                        "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
-                        "ContainingTransportEquipment": {"ID": V(CONTAINER, "The container.", schemeID="ISO6346")}}})
+            "SupplierParty": {"Party": party("11-xb", short=True)}})
+        # on board the road chassis stays ashore; the frames' pallet is the 25th handling unit, not a package of its
+        # own; the goods item lies wholly in this container (sea/14#F1, F7, F8)
     return out
 
 
@@ -1869,10 +1858,11 @@ def sea_consignment(f, view):
         return out
     out.update({
         "CarrierAssignedID": V(SEA_BOOKING, "The carrier's booking number."),
-        "FreightForwarderAssignedID": V(f.numbers["instructions"], "The forwarder's file: the instructions it "
-                                                                   "received."),
+        "FreightForwarderAssignedID": V("BF-SH-26-0418", "The forwarder's own file "
+                                        "number for the consignment, not the distributor's instructions "
+                                        "(sea/14#F6)."),
         "BrokerAssignedID": V("TCB-26-0331", "The customs broker's file in Selanu."),
-        "ConsignorAssignedID": V(f.numbers["order"], "The order the goods were sold under."),
+
         "TotalInvoiceAmount": amount(goods, "XBL", "The sales invoice: the goods at their CIF prices."),
         "DeclaredCustomsValueAmount": amount(cif_value(f), "XBL", "The CIF value, the price of the goods, which "
                                                                   "holds the freight and the insurance."),
@@ -1888,7 +1878,7 @@ def sea_consignment(f, view):
         "HandlingInstructions": V("Keep dry.", "The handling, in words."),
         "Information": V("Shipped on board in apparent good order and condition.", "The carrier's clause."),
         "OriginalDespatchParty": party("6-xb", short=True),
-        "FinalDeliveryParty": party("1-xl", short=True),
+        "FinalDeliveryParty": party("9-xl", short=True),
         "LogisticsOperatorParty": party("9-xl", short=True),
         **({"BillOfLadingHolderParty": party("10-xb", short=True)} if view == "bl" else {}),   # sea/14#F11 (b)
         "OriginalDepartureCountry": {"IdentificationCode": V("XB", "From Bayvarra.")},
@@ -2283,8 +2273,6 @@ def sea(n, doc):
         return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
                 "IssueDate": V(f.date(11), "Sent to the island's customs before arrival."),
                 "ManifestTypeCode": V("CARGO", "A cargo manifest, of what the ship carries for Selanu."),
-                "CrewPerson": [kit.person("Corin", "Halvard", "The master of the ship.", role="MASTER"),
-                               kit.person("Elsbeth", "Marrin", "The chief officer.", role="CHIEFOFFICER")],
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment on the manifest."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of this shipment."),
                              "FirstArrivalPortLocation": kit.place("XLSEL", "The ship's first port on the island."),
@@ -2312,8 +2300,11 @@ def sea(n, doc):
         return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
                 "IssueDate": V(f.date(12), "Sent before the ship enters the port of Selanu."),
                 "IssueTime": V(SEA_REPORTS + ":00", "Sent a few hours before the ship comes off the port."),
-                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment the report is for."),
-                             "ShipmentStage": {"ID": V("1", "The sea leg to Selanu."),
+                "Shipment": {"ID": V("TH-26-19E", "The ship's voyage the report is about: a report on the ship "
+                                                  "and all it carries, so its shipment is the voyage, not one "
+                                                  "shipper's consignment (sea/16#F13)."),
+                             "ShipmentStage": {"ID": V("2", "The sea leg to Selanu, stage 2 as on the bill of lading "
+                                                            "and the manifest (sea/16#F14)."),
                                                "ISPSRequirements": {
                                                    "ID": V("ISSC-XB-2023-0117", "The number of the ship's International "
                                                                                  "Ship Security Certificate, issued "
@@ -2336,24 +2327,19 @@ def sea(n, doc):
                                                                                       "way, since the evening.", location=SEA_SELANU),
                                              "DischargeTransportEvent": kit.event(f, SEA_ARRIVES, "11:20:00", "The container "
                                                                                   "came off the ship.", done=True, location=SEA_SELANU),
-                                             "DetentionTransportEvent": kit.event(
-                                                 f, SEA_ARRIVES, "12:00:00", "Held by customs for a check of the pallets.",
-                                                 description="Wooden pallets must carry the heat-treatment mark.", location=SEA_SELANU),
                                              "ReportingPerson": kit.person("Ama", "Kelune", "The terminal's duty "
                                                                            "officer who reports.", job="Duty "
                                                                            "officer")},
                                              "TransportHandlingUnit": {"TransportEquipment": {
                                                  "ID": V(CONTAINER, "The container.", schemeID="ISO6346"),
                                                  "QuarantineTransportEvent": kit.event(
-                                                     f, SEA_ARRIVES, "15:00:00", "Released from the quarantine check: all "
-                                                     "pallets heat-treated.", done=True, location=SEA_SELANU),
-                                                 "ServiceAllowanceCharge": {
-                                                     "ChargeIndicator": V("true", "A service charge."),
-                                                     "AllowanceChargeReasonCode": V("HD", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-                                                     "AllowanceChargeReason": V("Terminal handling at Selanu",
-                                                                                "For unloading the box."),
-                                                     "Amount": amount(Decimal("185.00"), "XBL", "As in the carrier's "
-                                                                                                "tariff.")},
+                                                     f, SEA_ARRIVES, "15:00:00", "Released from the quarantine check, "
+                                                     "which held the container from 12:00: the pallets' heat-treatment "
+                                                     "marks checked, all pallets heat-treated (sea/17#F2).",
+                                                     description="Held from 12:00 for a check of the pallets: wooden "
+                                                                 "pallets must carry the heat-treatment mark, and "
+                                                                 "one mark was illegible.",
+                                                     done=True, location=SEA_SELANU),
                                                  "TransportEvent": kit.event(f, SEA_ARRIVES, "11:40:00", "Stacked in the "
                                                                                                 "import yard.", location=SEA_SELANU, type_code="STORAGE")}}}}, event_type="DISCHARGE")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
@@ -5923,7 +5909,8 @@ STATUS_INSTRUCTION = {     # the slot a cargo terminal's status is about (air/05
     ("air", "17-xb"): "The built-up skid goes to the aircraft for KXL207 on 14 May between 06:00 and 06:20; reply "
                       "only if that slot must change.",
     ("air", "17-xl"): "The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs "
-                      "clearance; reply only if that slot must change."}
+                      "clearance; reply only if that slot must change.",
+    ("sea", "16-xb"): None}   # the port's report on loading is about no slot (sea/13#F7)
 
 
 def status_extras(f, n, doc, out):
@@ -5934,9 +5921,10 @@ def status_extras(f, n, doc, out):
          "Note": V("Automatic report from the sender's tracking system.", "How it was made."),
          **({"ShippingOrderID": V(kit.shipping_order(f), "The forwarding instructions of the shipment it "
                                                           "reports on.")} if kit.shipping_order(f) else {}),
-         "OtherInstruction": V(STATUS_INSTRUCTION.get((f.id, doc["from"]), "Reply only if the delivery slot "
-                                                                             "must change."),
-                               "What the receiver should do, with the slot it is about."),
+         **({"OtherInstruction": V(STATUS_INSTRUCTION.get((f.id, doc["from"]), "Reply only if the delivery slot "
+                                                                                 "must change."),
+                                   "What the receiver should do, with the slot it is about.")}
+            if STATUS_INSTRUCTION.get((f.id, doc["from"]), "") is not None else {}),
          "TransportExecutionStatusCode": V("INPROGRESS", "The carriage is under way."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
          "StatusLocation": (out["TransportEvent"]["Location"] if isinstance(out.get("TransportEvent"), dict) and
@@ -6146,8 +6134,6 @@ def _(f, n, doc, out):
     return {"ManifestType": V("Cargo manifest", "In words."), "Description": V("Cargo for Selanu.", "What it "
                                                                                                      "lists."),
             "Note": V("One container for Selanu.", "The cargo."), "VersionID": V("1", "The first version."),
-            "PassengerPerson": kit.person("Ines", "Tavari", "The one passenger: a supercargo travelling with the "
-                                                            "cargo.", role="PASSENGER"),
             "DocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading of the container.")},
             "DocumentDistribution": {"ID": V("1", "To customs."),
                                      "DocumentTypeCode": V("Manifest", "The document distributed: this manifest."),
@@ -6184,9 +6170,15 @@ def _(f, n, doc, out):
             "ReportingLocation": {"Name": V(f"At sea, {sea_report_nm(f)} nautical miles off Selanu",
                                             "Where the report was made: the ship's distance to go at the time of "
                                             "the report.")},
-            "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "EB"),
+            "TransportMeans": kit.means("11-xb", "TH", "TH-26-19E", "The voyage.", "EB", port=True),
             "DocumentReference": {"ID": V(f.numbers["manifest"], "The cargo manifest.")},
             "Signature": seal(doc["from"], "TWL-SIG-CTR", "The master's signature.")}
+
+
+BALLAST_TANKS = [("BT-1", "PEAK", "The fore peak tank, whose sediment was flushed during the exchange."),
+                 ("BT-2", "DOUBLEBOTTOM", "A double bottom tank."),
+                 ("BT-3", "WING", "A wing tank, port side."),
+                 ("BT-4", "WING", "A wing tank, starboard side.")]
 
 
 def cotton_bale_count(f, n, doc, out):
@@ -7361,6 +7353,10 @@ def _(f, n, doc, out):
                                                                                         "reporting location.")}
     stage = out["Shipment"]["ShipmentStage"]
     stage.update({
+        # the crew and the passenger are in this report, not in the cargo manifest (D30 point 8; O128)
+        "CrewQuantity": qty(14, "IE", "The crew on board: 14 persons; those with a function in this report are "
+                                      "named below (sea/16#F15)."),
+        "PassengerQuantity": qty(1, "IE", "The one passenger, the supercargo travelling with the cargo (O128)."),
         "PassengerPerson": listed(kit.person("Ines", "Tavari", "The one passenger, a supercargo.",
                                              role="PASSENGER"), "2"),
         "ReportingPerson": kit.person("Corin", "Halvard", "The master reports.", role="MASTER"),
@@ -7432,30 +7428,27 @@ def _(f, n, doc, out):
             "TotalBallastWaterOnBoardMeasure": V("1240", "Ballast on board.", unitCode="TNE"),
             "TotalBallastWaterCapacityMeasure": V("2480", "The capacity.", unitCode="TNE"),
             "OtherControlActions": V("Sediment flushed from the forepeak tank during the exchange and recorded in the ballast water record book.", "A control action besides the exchange: sediment management under the ballast water management plan."),
-            "NoControlActionsReason": V("Exchange done at more than 200 nautical miles from land.", "Why no "
-                                                                                                  "treatment was "
-                                                                                                  "needed."),
-            "UptakeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."), "TankTypeCode": V("WING",
-                                                                                                "A wing tank."),
-                                              "VolumeMeasure": V("310", "Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit; "
-                                                                 "the 310 were meant as tonnes of water, which is "
-                                                                 "about the same number of cubic metres.",
-                                                 unitCode="MTQ"),
-                                              "SeaHeightMeasure": V("2", "The depth of the intake.", unitCode="MTR"),
-                                              "SalinityMeasure": V("30", "Salinity.", unitCode="GL"),
-                                              "TransactionDate": V(f.date(10), "At Lumeport."),
-                                              "Location": kit.place("XBLMP", "The port."),
-                                              "BallastWaterTemperature": {"AttributeID": V("WATER", "The water."),
-                                                                          "Measure": V("16", "Its temperature.",
-                                                                                       unitCode="CEL")}},
-            "ExchangeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
-                                                "ExchangeMethodCode": V("SEQ", "Emptied and refilled."),
-                                                "ExchangedPercent": V("95", "Of the volume."),
-                                                "VolumeMeasure": V("310", "Exchanged: the same 310 cubic metres (a volume, so in cubic "
-                                                                   "metres; a tonne of water is about a cubic metre).",
-                                                   unitCode="MTQ"),
-                                                "TransactionDate": V(f.date(11), "At sea, half way across."),
-                                                "Location": sea_place},
+            # the four tanks in ballast, 310 cubic metres each (1,240 t on board), each taken up at Lumeport and
+            # exchanged at sea: one transaction per tank (sea/16#F18)
+            "UptakeBallastWaterTransaction": [
+                {"TankID": V(t, "The tank."), "TankTypeCode": V(k, w),
+                 "VolumeMeasure": V("310", "Taken up at Lumeport: 310 cubic metres, a quarter of the 1,240 tonnes on "
+                                           "board (a tonne of water is about a cubic metre).", unitCode="MTQ"),
+                 "SeaHeightMeasure": V("2", "The depth of the intake.", unitCode="MTR"),
+                 "SalinityMeasure": V("30", "Salinity.", unitCode="GL"),
+                 "TransactionDate": V(f.date(10), "At Lumeport."),
+                 "Location": kit.place("XBLMP", "The port."),
+                 "BallastWaterTemperature": {"AttributeID": V("WATER", "The water."),
+                                             "Measure": V("16", "Its temperature.", unitCode="CEL")}}
+                for t, k, w in BALLAST_TANKS],
+            "ExchangeBallastWaterTransaction": [
+                {"TankID": V(t, "The tank."),
+                 "ExchangeMethodCode": V("SEQ", "Emptied and refilled."),
+                 "ExchangedPercent": V("95", "Of the volume."),
+                 "VolumeMeasure": V("310", "Exchanged: the same 310 cubic metres.", unitCode="MTQ"),
+                 "TransactionDate": V(f.date(11), "At sea, half way across."),
+                 "Location": sea_place}
+                for t, k, w in BALLAST_TANKS],
             "DischargeBallastWaterTransaction": {"TankID": V("BT-3", "The tank."),
                                                  "VolumeMeasure": V("120", "To be discharged at Selanu: 120 cubic metres "
                                                                     "(a volume; a tonne of water is about a cubic "
@@ -7474,18 +7467,18 @@ def _(f, n, doc, out):
             "ValidSanitationCertificateOnBoardIndicator": V("true", "The certificate is valid."),
             "ReinspectionRequiredIndicator": V("false", "No reinspection needed."),
             "TotalDeadPersonQuantity": qty(0, "IE", "No persons."),
-            "TotalIllPersonQuantity": qty(1, "IE", "One person: a crew member with a sprained wrist."),
+            "TotalIllPersonQuantity": qty(1, "IE", "One person: a crew member who was seasick."),
                         "StowawayDescription": V("None found in the search before departure.", "The search."),
             "LastDrinkingWaterAnalysisDate": V("2026-04-02", "The last water test."),
-            "WHOAffectedAreaVisit": {"VisitDate": V("2026-03-28", "No affected area in the last 30 days: the last "
-                                                                  "port visited was Lumeport."),
-                                     "WHOAffectedAreaPortLocation": kit.place("XBLMP", "Not an affected area.")},
             "PersonnelHealthIncident": {"ID": V("HI-1", "The one incident."),
                                         "JoinedShipDate": V("2025-11-01", "When the person joined."),
-                                        "NatureOfIllnessDescription": V("Sprained wrist.", "What happened."),
-                                        "OnsetDate": V(f.date(12), "When."),
+                                        "NatureOfIllnessDescription": V("Seasickness in the swell of the open "
+                                                                        "ocean.", "What the illness was: a mild "
+                                                                        "one, not infectious (sea/16#F20)."),
+                                        "OnsetDate": V(f.date(11), "On the first full day at sea."),
                                         "ReportedToMedicalOfficerIndicator": V("true", "Reported."),
-                                        "GivenTreatmentDescription": V("Bandage and rest.", "Treatment."),
+                                        "GivenTreatmentDescription": V("Tablets against seasickness and rest.",
+                                                                       "Treatment."),
                                         "StillIllIndicator": V("true", "Still recovering."),
                                         "DiedIndicator": V("false", "No."),
                                         "StillOnBoardIndicator": V("true", "On board."),
@@ -7500,7 +7493,7 @@ def _(f, n, doc, out):
                                                          "its issuer, the port health office of its home port "
                                                          "(decision ID-Q10)."),
                                    "CertificateType": V("Medicine chest", "Its kind."),
-                                   "IssuerParty": party("16-xb", short=True)},
+                                   "IssuerParty": party("ph-xb", short=True)},
             "ShipSanitationControlCertificate": {"ID": V("SSCC-XB-2026-0318", "The ship sanitation control "
                                                                               "certificate (International Health "
                                                                               "Regulations, Annex 3), issued at "
@@ -7512,7 +7505,7 @@ def _(f, n, doc, out):
                                                                               "until then. Unique only with its "
                                                                               "issuer (decision ID-Q10)."),
                                                  "CertificateType": V("Ship sanitation control", "Its kind."),
-                                                 "IssuerParty": party("16-xb", short=True)}},
+                                                 "IssuerParty": party("ph-xb", short=True)}},
         "FuelConsumption": {"ID": V("FC-26-19E", "The fuel of the voyage."),
                             "FuelTypeCode": V("MGO", "Marine gas oil."),
                             "FuelType": V("Marine gas oil, 0.1 % sulphur", "In words."),
@@ -7530,7 +7523,8 @@ def _(f, n, doc, out):
         "SSPSecurityMeasuresAppliedIndicator": V("true", "Its measures were applied."),
         "ReportLocation": report_place,
         "ISSCIssuerParty": party("ma-xb", short=True),
-        "SecurityOfficerPerson": crew[1],
+        "SecurityOfficerPerson": {**crew[1], "RoleCode": V("SSO", "The same person as the stage's ship security "
+                                                                   "officer, in the same role (sea/16#F16).")},
         "ShipToShipActivityRecord": {
             "ID": V("STS-1", "The ship's one ship-to-ship activity in its last ten calls at port facilities, which "
                              "the security information before arrival lists (SOLAS XI-2, regulation 9)."),
@@ -7556,9 +7550,7 @@ def _(f, n, doc, out):
                            "PortFacilityLocation": kit.place("XBLMP", "The port facility."),
                            "Period": {"StartDate": V(f.date(9), "Arrived."), "EndDate": V(f.date(10), "Sailed.")}}})
     tm = out["TransportMeans"]["MaritimeTransport"]
-    tm.update({"INFShipClassCode": V("INF1", "Class INF 1 under the IMO INF Code: certified for INF cargo of an "
-                                                "aggregate activity below 4,000 TBq only."),
-               "AntennaLocus": V("Mast, 28 m above the waterline", "Where the AIS antenna is."),
+    tm.update({"AntennaLocus": V("Mast, 28 m above the waterline", "Where the AIS antenna is."),
                "VesselDynamics": {"NavigationStatusCode": V("0", "The AIS navigational status: under way."),
                                   "AtAnchorageIndicator": V("false", "Not at anchor."),
                                   "CourseOverGroundDirection": V("088", "Course over ground, in degrees."),
@@ -9341,9 +9333,6 @@ def _(f, n, doc, out):
 
 @enrich("sea", "BillOfLading")
 def _(f, n, doc, out):
-    for gic in find_dicts(out, "GoodsItemContainer"):
-        gic["GoodsItemContainer"]["TransportEquipment"] = {"ID": V(CONTAINER, "The container itself, as "
-                                                                              "equipment.")}
     for ip in find_dicts(out, "InsurancePolicy"):     # one retention, the deductible (sea/14#F13)
         ip["InsurancePolicy"]["BrokerParty"] = party("10-xb", short=True)
     return {}
@@ -11386,7 +11375,7 @@ def cotton_ctr(n, doc):
             "ReportTypeCode": V("PREARRIVAL", "The report before entering the port."),
             "ReportType": V("Pre-arrival report", "In words."),
             "TransportMeans": kit.means("11-xb", "TR", COTTON_VOYAGE, "The voyage from Selanu back to Lumeport.",
-                                        "WB"),
+                                        "WB", port=True),
             "Shipment": {"ID": V(f.number("ctr-shipment", doc["from"], "Shipment"), "The carrier's shipment number "
                                                                                     "for the voyage's cargo."),
                          "ShipmentStage": {
@@ -11442,7 +11431,7 @@ def cotton_ctr(n, doc):
                                                               "the inspection found no evidence of infection or "
                                                               "contamination, so no control measures were needed.",
                                                               "What the document is."),
-                                     "IssuerParty": party("16-xb", short=True)}}}}}
+                                     "IssuerParty": party("ph-xb", short=True)}}}}}
 
 
 def cotton_complete(n, doc):

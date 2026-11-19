@@ -284,14 +284,10 @@ Inside `Shipment`:
   The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702231**  
   The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
-  What the ship needs in port.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **7480** (unitCode `C62`)  
   The gross tonnage of the vessel, a number without a unit.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **3910** (unitCode `C62`)  
   Its net tonnage, also without a unit.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **1900** (unitCode `TNE`)  
-  The capacity of the tanks for ballast water only.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel, for about 700 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20231**  
@@ -581,10 +577,8 @@ Inside `Signature`:
             <cbc:VesselName>Tidewell Reef</cbc:VesselName>
             <cbc:RadioCallSignID>QBTR4</cbc:RadioCallSignID>
             <cbc:MMSIRegistrationID>298702231</cbc:MMSIRegistrationID>
-            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">7480</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">3910</cbc:NetTonnageMeasure>
-            <cbc:SegregatedBallastMeasure unitCode="TNE">1900</cbc:SegregatedBallastMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20231</cbc:ID>

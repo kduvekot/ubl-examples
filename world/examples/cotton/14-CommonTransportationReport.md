@@ -229,10 +229,10 @@ Inside `Shipment`:
   Issued after the inspection at Lumeport, before the ship's first voyage for the line; valid six months.
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/DocumentDescription` = **Ship Sanitation Control Exemption Certificate (International Health Regulations 2005, Annex 3): the inspection found no evidence of infection or contamination, so no control measures were needed.**  
   What the document is.
-- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssuerParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssuerParty/PartyName/Name` = **Port of Lumeport**  
-  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssuerParty/PartyIdentification/ID` = **7140583926** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships. Its identifier and name are enough (world/parties.json, referenced).
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssuerParty/PartyName/Name` = **Port Health Office of Bayvarra, Lumeport**  
+  Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships. Its identifier and name are enough (world/parties.json, referenced).
 
 ### Transport Means
 
@@ -439,10 +439,10 @@ Inside `TransportMeans`:
           <cbc:DocumentDescription>Ship Sanitation Control Exemption Certificate (International Health Regulations 2005, Annex 3): the inspection found no evidence of infection or contamination, so no control measures were needed.</cbc:DocumentDescription>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">7140583926</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Port of Lumeport</cbc:Name>
+              <cbc:Name>Port Health Office of Bayvarra, Lumeport</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:ShipSanitationControlExemptionDocumentReference>

@@ -226,10 +226,8 @@ Inside `Shipment`:
   The distributor's consignment number.
 - `Consignment/CarrierAssignedID` = **TWL-BK-26-55710**  
   The carrier's booking number.
-- `Consignment/ConsignorAssignedID` = **VT-PO-26-0127**  
-  The order the goods were sold under.
-- `Consignment/FreightForwarderAssignedID` = **LD-FI-26-0131**  
-  The forwarder's file: the instructions it received.
+- `Consignment/FreightForwarderAssignedID` = **BF-SH-26-0418**  
+  The forwarder's own file number for the consignment, not the distributor's instructions (sea/14#F6).
 - `Consignment/BrokerAssignedID` = **TCB-26-0331**  
   The customs broker's file in Selanu.
 - `Consignment/TotalInvoiceAmount` = **54896.00** (currencyID `XBL`)  
@@ -338,9 +336,9 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OriginalDespatchParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/FinalDeliveryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Consignment/FinalDeliveryParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/FinalDeliveryParty/PartyName/Name` = **Velumi Trading**  
+- `Consignment/FinalDeliveryParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/LogisticsOperatorParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -432,14 +430,10 @@ Inside `Shipment`:
   The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702117**  
   The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
-  What the ship needs in port.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
   The gross tonnage of the vessel, a number without a unit.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
   Its net tonnage, also without a unit.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
-  The capacity of the tanks for ballast water only.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
@@ -906,28 +900,10 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729330**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
-  The forwarder's chassis the container rode on to the port. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
-- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
-  UN/EDIFACT 8053 code TE: trailer. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: TE = Trailer.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **095206100003729330** (schemeID `GS1 SSCC`)  
-  The pallet of frame cartons, packed last at the doors: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `EA`)  
-  Twelve side frames, one to a carton.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ContainingTransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
-  The container.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ID` = **1**  
   The goods in the container, as one item for the carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/Description` = **Park benches and spare side frames**  
   In words.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872** (schemeID `ISO6346`)  
-  The container the goods are in. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **27** (unitCode `EA`)  
-  27 pallets in it.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
-  The container itself, as equipment. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.1**  
   The benches.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/Description` = **Park benches**  
@@ -1273,8 +1249,7 @@ Inside `Signature`:
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
-      <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
-      <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
+      <cbc:FreightForwarderAssignedID>BF-SH-26-0418</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
       <cbc:TotalInvoiceAmount currencyID="XBL">54896.00</cbc:TotalInvoiceAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">54896.00</cbc:DeclaredCustomsValueAmount>
@@ -1363,10 +1338,10 @@ Inside `Signature`:
       </cac:OriginalDespatchParty>
       <cac:FinalDeliveryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
       </cac:FinalDeliveryParty>
       <cac:LogisticsOperatorParty>
@@ -1459,10 +1434,8 @@ Inside `Signature`:
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
             <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
             <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
-            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
-            <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20117</cbc:ID>
@@ -1847,28 +1820,9 @@ Inside `Signature`:
             <cbc:ShippingMarks>VELUMI SELANU / 027 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729330</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
-          <cac:AttachedTransportEquipment>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
-            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
-          </cac:AttachedTransportEquipment>
-          <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
-            <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
-            <cac:ContainingTransportEquipment>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-            </cac:ContainingTransportEquipment>
-          </cac:Package>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
-            <cac:GoodsItemContainer>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="EA">27</cbc:Quantity>
-              <cac:TransportEquipment>
-                <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              </cac:TransportEquipment>
-            </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
               <cbc:ID>1.1</cbc:ID>
               <cbc:Description>Park benches</cbc:Description>

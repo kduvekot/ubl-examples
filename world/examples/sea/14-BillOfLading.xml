@@ -148,8 +148,7 @@
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
-      <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
-      <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
+      <cbc:FreightForwarderAssignedID>BF-SH-26-0418</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
       <cbc:TotalInvoiceAmount currencyID="XBL">54896.00</cbc:TotalInvoiceAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">54896.00</cbc:DeclaredCustomsValueAmount>
@@ -238,10 +237,10 @@
       </cac:OriginalDespatchParty>
       <cac:FinalDeliveryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
       </cac:FinalDeliveryParty>
       <cac:LogisticsOperatorParty>
@@ -334,10 +333,8 @@
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
             <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
             <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
-            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
-            <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20117</cbc:ID>
@@ -722,28 +719,9 @@
             <cbc:ShippingMarks>VELUMI SELANU / 027 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729330</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
-          <cac:AttachedTransportEquipment>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
-            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
-          </cac:AttachedTransportEquipment>
-          <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
-            <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
-            <cac:ContainingTransportEquipment>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-            </cac:ContainingTransportEquipment>
-          </cac:Package>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
-            <cac:GoodsItemContainer>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="EA">27</cbc:Quantity>
-              <cac:TransportEquipment>
-                <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              </cac:TransportEquipment>
-            </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
               <cbc:ID>1.1</cbc:ID>
               <cbc:Description>Park benches</cbc:Description>

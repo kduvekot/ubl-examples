@@ -128,6 +128,27 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `StatementLine/InvoicePeriod` | 0..n | sea/25-Statement |  |  | open |
 | `TradeFinancing/FinancingFinancialAccount` | 0..1 | sea/22-Invoice |  |  | open |
 
+> C114, D30 point 8: the bill of lading's container carries no road chassis on board, no goods-item container count of pallets and no second package beside the frames' pallet (sea/14#F1, F7, F8); the cargo manifest names no crew and no passenger, which are in the ship's report (15#F7); the ship's report gives no reason for an absence of control actions it took, no WHO affected area and no INF class for a feeder without INF cargo (16#F6, F7, F21); the hold at Selanu was the container's quarantine check, not a detention of the ship, and the discharge status reports no terminal charge (17#F2, F9). Won back: `ShipmentStage/PassengerQuantity` (O128).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BallastWaterSummary/NoControlActionsReason` | 0..n | sea/16-CommonTransportationReport |  |  | open |
+| `GoodsItem/GoodsItemContainer` | 0..n | sea/14-BillOfLading |  |  | open |
+| `GoodsItemContainer/ID` | 1 | sea/14-BillOfLading |  |  | open |
+| `GoodsItemContainer/Quantity` | 0..1 | sea/14-BillOfLading |  |  | open |
+| `GoodsItemContainer/TransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
+| `Manifest/CrewPerson` | 0..n | sea/15-Manifest |  |  | open |
+| `Manifest/PassengerPerson` | 0..n | sea/15-Manifest |  |  | open |
+| `MaritimeHealthDeclaration/WHOAffectedAreaVisit` | 0..n | sea/16-CommonTransportationReport |  |  | open |
+| `MaritimeTransport/INFShipClassCode` | 0..1 | sea/16-CommonTransportationReport |  |  | open |
+| `Package/ContainingTransportEquipment` | 0..1 | sea/14-BillOfLading |  |  | open |
+| `ShipmentStage/DetentionTransportEvent` | 0..n | sea/17-TransportationStatus |  |  | open |
+| `TransportEquipment/AttachedTransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
+| `TransportEquipment/Package` | 0..n | sea/14-BillOfLading |  |  | open |
+| `TransportEquipment/ServiceAllowanceCharge` | 0..n | sea/17-TransportationStatus |  |  | open |
+| `WHOAffectedAreaVisit/VisitDate` | 1 | sea/16-CommonTransportationReport |  |  | open |
+| `WHOAffectedAreaVisit/WHOAffectedAreaPortLocation` | 1 | sea/16-CommonTransportationReport |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.
@@ -692,7 +713,6 @@ Stage 6, building group G3 (C81, C90).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `ShipmentStage/PassengerQuantity` | 0..1 | rail/03-TransportExecutionPlan, rail/08-Waybill | the feeder ship's report before arrival at Selanu lists a passenger, so its stage carries 1 (D37 point 7, O128) | sea | agreed |
 | `TransportEquipment/ContainedInTransportEquipment` | 0..n | rail/08-Waybill | | | open |
 | `TransportEquipment/LegalStatusIndicator` | 0..1 | rail/08-Waybill | | | open |
 | `TransportEquipment/OperatingParty` | 0..1 | rail/08-Waybill | | | open |
@@ -736,6 +756,7 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `ShipmentStage/PassengerQuantity` | sea/16-CommonTransportationReport | the feeder's one passenger, a supercargo travelling with the cargo, in the ship's report before arrival at Selanu, which lists the crew and passengers instead of the cargo manifest (D37 point 7, O128, D30 point 8) | 2026-11-19 |
 | `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
 | `Address/Region` | rail/06-TransitCustomsDeclaration | the jurisdiction of the transit declaration: the Lumeport Trade Accord, a group of countries, because the Accord's common transit runs from Urvania's office of departure to Bayvarra's office of destination (D37 point 2, rail/06#F18; O140's candidate, a territory that covers the Accord area) | 2026-11-19 |
 | `ImportCustomsDeclaration/PreviousCustomsDeclaration` | rail/14-ImportCustomsDeclaration | Lumeway's import at Marrowdale ends the Accord's common transit that Valdara lodged at Ferrano: the transit declaration, a declaration of the same procedure chain valid in Bayvarra, is its previous declaration (D37 point 2) | 2026-11-19 |

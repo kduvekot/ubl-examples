@@ -198,10 +198,8 @@
             <cbc:VesselName>Tidewell Reef</cbc:VesselName>
             <cbc:RadioCallSignID>QBTR4</cbc:RadioCallSignID>
             <cbc:MMSIRegistrationID>298702231</cbc:MMSIRegistrationID>
-            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">7480</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">3910</cbc:NetTonnageMeasure>
-            <cbc:SegregatedBallastMeasure unitCode="TNE">1900</cbc:SegregatedBallastMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20231</cbc:ID>
