@@ -159,20 +159,16 @@
       </cac:ImporterParty>
       <cac:InsuranceParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:InsuranceParty>
       <cac:OriginalDespatchTransportationService>
         <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
         <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
       </cac:OriginalDespatchTransportationService>
-      <cac:FinalDeliveryTransportationService>
-        <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
-        <cbc:Name>Truck from the port of Selanu to the 3PL</cbc:Name>
-      </cac:FinalDeliveryTransportationService>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -200,7 +196,7 @@
     </cac:GoodsItem>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>

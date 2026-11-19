@@ -1263,6 +1263,21 @@
    "purchase": "freight"
   },
   {
+   "id": "container-haulage",
+   "seller": "10-xb",
+   "name": "Container haulage to the port, 40-foot",
+   "kind": "service",
+   "unit": "E48",
+   "price": {
+    "amount": 310.0,
+    "currency": "XBL",
+    "why": "The forwarder's flat rate for one container move between a shipper in its region and the container quay of the Port of Lumeport: the empty container fetched from the quay, packed at the shipper's dock and brought back full (from Marrowdale twice the 82 km of the map's road, with the time at the dock), as container haulage is usually priced per move (D30 point 1)."
+   },
+   "sellers_id": "BF-HAUL40",
+   "description": "Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.",
+   "purchase": "freight"
+  },
+  {
    "id": "cargo-insurance",
    "seller": "10-xb",
    "name": "Cargo insurance",
@@ -1272,7 +1287,7 @@
     "rate_percent": 0.22,
     "cover_percent": 110,
     "currency": "XBL",
-    "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value holds the premium itself, so the premium follows the value of each shipment (O173)."
+    "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value is the CIF price of the goods, which holds the freight and the premium, so the premium follows the value of each shipment (O173, D30 point 1)."
    },
    "sellers_id": "BF-INS",
    "description": "Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.",
@@ -1313,11 +1328,11 @@
    },
    "buyer_prices": {
     "1-xl": {
-     "amount": 67.0,
+     "amount": 68.0,
      "currency": "XBL",
      "type": "TRD",
      "delivered": "CIF",
-     "why": "Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11)."
+     "why": "Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11)."
     }
    },
    "sellers_id": "LD-10443",
@@ -1333,8 +1348,9 @@
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 289.0,
-    "currency": "XLC"
+    "amount": 375.0,
+    "currency": "XLC",
+    "why": "Velumi's shop price on the island: its cost is the CIF price of 520 lume, the import consumption tax of 10 % and its clearance and port costs, about 577 lume, and 375 coral (937.50 lume) leaves it a retailer's margin of about 38 % (D30 point 2, O48)."
    },
    "sellers_id": "VT-PB-180",
    "resale_of": "bench-serra-b",
@@ -1881,15 +1897,17 @@
     ]
    },
    "sea": {
-    "what": "Sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF (sea/18)",
+    "what": "The container haulage to the port, sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF (sea/18, D30 point 1)",
     "insured": {
      "buyer": "1-xl",
-     "with": [
-      "sea-freight"
-     ],
-     "why": "The insured value is the CIF value plus 10 %: the load at the buyer's prices, the sea freight and the premium (O173)."
+     "with": [],
+     "why": "The insured value is the CIF value plus 10 %: the load at the buyer's CIF prices, which hold the freight and the premium (O173, D30 point 1)."
     },
     "services": [
+     {
+      "item": "container-haulage",
+      "qty": 1
+     },
      {
       "item": "sea-freight",
       "qty": 1
@@ -2104,9 +2122,7 @@
     "bought_from": "lumeway-bench-island"
    }
   ],
-  "awaiting_owner": {
-   "velumi-bench": "Velumi's shop price of 289 coral gives a retailer's margin of about 21 %; D30 decided 375 coral (about 38 %), applied with the sea flow's decision (O48)."
-  }
+  "awaiting_owner": {}
  },
  "goods_chain": {
   "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, damaged stock (damaged: a refused bench that came back) is held apart and never sold or despatched, and a ledger ends with the closing stock it states; the build checks each despatch against its entry (O174). Items are the maker's (world/items.json); a reseller's item is the maker's item it resells. Each casting day has its own melt number and pour time, and each bench lot its own coating batch (D21, worklist C70): both are numbered in a running count of the year.",

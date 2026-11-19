@@ -312,7 +312,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **54884.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **54896.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -331,10 +331,10 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **54896.00** (currencyID `XBL`)  
   The sum of the lines.
-- `PayableAmount` = **54884.00** (currencyID `XBL`)  
-  The goods; freight and insurance follow on the invoice under CIF.
+- `PayableAmount` = **54896.00** (currencyID `XBL`)  
+  The goods at their CIF prices, which hold the sea freight and the insurance: the invoice bills the same amount (D30 point 1, sea/06#F1).
 
 ### Order Line
 
@@ -436,9 +436,9 @@ Inside `OrderLine`:
   The line's status in words.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   The quantity confirmed.
-- `LineItem/LineExtensionAmount` = **804.00** (currencyID `XBL`)  
+- `LineItem/LineExtensionAmount` = **816.00** (currencyID `XBL`)  
   As ordered.
-- `LineItem/TaxInclusiveLineExtensionAmount` = **804.00** (currencyID `XBL`)  
+- `LineItem/TaxInclusiveLineExtensionAmount` = **816.00** (currencyID `XBL`)  
   No tax on an export: the same amount.
 - `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   No tax on an export.
@@ -452,8 +452,8 @@ Inside `OrderLine`:
   Shipped on the sailing of day 10.
 - `LineItem/Delivery/PromisedDeliveryPeriod/EndDate` = **2026-05-17**  
   Arriving at Selanu.
-- `LineItem/Price/PriceAmount` = **67** (currencyID `XBL`)  
-  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
+- `LineItem/Price/PriceAmount` = **68** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Name` = **Bench side frame casting**  
@@ -687,7 +687,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">54884.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54896.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -701,8 +701,8 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">54884.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54896.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">54896.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -814,8 +814,8 @@ Inside `OrderLine`:
       <cbc:SalesOrderID>LD-SO-26-0123/3</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">804.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">816.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">816.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
       <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
@@ -827,7 +827,7 @@ Inside `OrderLine`:
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

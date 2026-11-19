@@ -1755,23 +1755,31 @@ def sea_goods(f, iid=None):
                if iid in (None, d["item"]))
 
 
-# O173: the cargo insurance is a premium rate on the insured value, the CIF value plus 10 %, which holds the premium
-# itself (world/items.json cargo-insurance; the same figure as the margin check's, world_items.insurance_premium)
-INSURANCE, INSURED = world_items.insurance_premium(ITEM["cargo-insurance"]["price"], sea_goods(SEA) + SEA_FREIGHT)
+# D30 point 1: 520 lume a bench and 67 a frame are CIF Selanu prices, the sea freight and the cargo insurance in
+# them; Lumeway pays both to its forwarder (sea/18) and bills the buyer the goods alone (sea/22).
+# O173: the cargo insurance is a premium rate on the insured value, the CIF value plus 10 % (world/items.json
+# cargo-insurance; the same figure as the margin check's, world_items.insurance_premium)
+INSURANCE, INSURED = world_items.insurance_premium(ITEM["cargo-insurance"]["price"], sea_goods(SEA))
 INSURANCE_RATE = ITEM["cargo-insurance"]["price"]["rate_percent"]
-if INSURED != (sea_goods(SEA) + SEA_FREIGHT + INSURANCE) * Decimal("1.1"):
+PRE_CARRIAGE = Decimal(str(ITEM["container-haulage"]["price"]["amount"]))    # Bayforth's truck to the port (D30)
+if INSURED != sea_goods(SEA) * Decimal("1.1"):
     raise SystemExit("sea: the insured value is not the CIF value plus 10 % (O173)")
 
 
 def insurance_basis():
     """The premium's basis in words (O173)."""
-    return (f"{INSURANCE_RATE} % of the insured value of {INSURED:,.2f} lume: the CIF value of "
-            f"{sea_goods(SEA) + SEA_FREIGHT + INSURANCE:,.2f} (goods {sea_goods(SEA):,.2f}, sea freight "
-            f"{SEA_FREIGHT:,.2f} and the premium itself) plus 10 %")
+    return (f"{INSURANCE_RATE} % of the insured value of {INSURED:,.2f} lume: the CIF value of the goods, "
+            f"{sea_goods(SEA):,.2f} at their CIF prices, plus 10 %")
 
 
 def cif_value(f):
-    return sea_goods(f) + SEA_FREIGHT + INSURANCE
+    """The CIF value: the goods at their CIF prices, which hold the sea freight and the insurance (D30 point 1)."""
+    return sea_goods(f)
+
+
+def fob_value(f):
+    """The value on board at Lumeport: the CIF price less the sea freight and the insurance it holds."""
+    return sea_goods(f) - SEA_FREIGHT - INSURANCE
 
 
 def container(f, gross_why):
@@ -1851,14 +1859,13 @@ def sea_consignment(f, view):
             "SpecialInstructions": V("Load the castings last, behind the doors.", "So they are unloaded first."),
             "ExporterParty": party("6-xb", short=True),
             "ImporterParty": party("1-xl", short=True),
-            "InsuranceParty": party("29-xb", short=True),
+            # the party that holds the cargo insurance: Lumeway, the CIF seller and policy holder (sea/09#F1)
+            "InsuranceParty": party("6-xb", short=True),
             "OriginalDespatchTransportationService": {
                 "TransportServiceCode": V("MERCHHAUL", "The forwarder, not the shipping line, brings the "
                                                               "container to the port."),
-                "Name": V("Truck from Marrowdale to the port of Lumeport", "In words.")},
-            "FinalDeliveryTransportationService": {
-                "TransportServiceCode": V("MERCHHAUL", "The buyer's 3PL collects at the port of Selanu."),
-                "Name": V("Truck from the port of Selanu to the 3PL", "In words.")}})
+                "Name": V("Truck from Marrowdale to the port of Lumeport", "In words.")}})
+        # no final delivery haulage: under CIF the on-carriage at Selanu is the buyer's (D30 point 1, sea/09#F7)
         return out
     out.update({
         "CarrierAssignedID": V(SEA_BOOKING, "The carrier's booking number."),
@@ -1866,10 +1873,12 @@ def sea_consignment(f, view):
                                                                    "received."),
         "BrokerAssignedID": V("TCB-26-0331", "The customs broker's file in Selanu."),
         "ConsignorAssignedID": V(f.numbers["order"], "The order the goods were sold under."),
-        "TotalInvoiceAmount": amount(goods, "XBL", "The value of the goods on the sales invoice."),
-        "DeclaredCustomsValueAmount": amount(cif_value(f), "XBL", "The CIF value: goods, freight and insurance."),
-        "FreeOnBoardValueAmount": amount(goods, "XBL", "The value on board in Lumeport: the goods alone."),
-        "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "110 % of the CIF value."),
+        "TotalInvoiceAmount": amount(goods, "XBL", "The sales invoice: the goods at their CIF prices."),
+        "DeclaredCustomsValueAmount": amount(cif_value(f), "XBL", "The CIF value, the price of the goods, which "
+                                                                  "holds the freight and the insurance."),
+        "FreeOnBoardValueAmount": amount(fob_value(f), "XBL", "The value on board in Lumeport: the CIF price less "
+                                                              "the sea freight and the insurance."),
+        "InsuranceValueAmount": amount(INSURED, "XBL", "110 % of the CIF value."),
         "InsurancePremiumAmount": amount(INSURANCE, "XBL", "The premium the seller paid under CIF."),
         "TariffCode": V("TWL-T-0940", "The item of the carrier's own freight tariff for this cargo: furniture. A "
                                      "code the carrier defines, so it has no code list."),
@@ -1917,11 +1926,6 @@ def sea_consignment(f, view):
             "ID": V("1", "By truck from Marrowdale to the port."),
             "ShipmentStageTypeCode": V("10", "The kind of stage."),
             "ShipmentStageType": V("Carriage before the main carriage", "In words."),
-            "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The truck to the port."),
-                                       "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-                                       "AllowanceChargeReason": V("Pre-carriage by road", "In words."),
-                                       "Amount": amount(Decimal("310.00"), "XBL", "The forwarder's own truck; part "
-                                                                                  "of its price to the shipper.")},
             "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
                                                                  "Transport"),
             "PreCarriageIndicator": V("true", "Before the main carriage."),
@@ -1965,13 +1969,22 @@ def sea_consignment(f, view):
                             "BeneficiaryParty": party("1-xl", short=True),
                             "PolicyHolderParty": party("6-xb", short=True),
                             "PolicyDocumentReference": {"ID": V("WS-CERT-26-0884", "The insurance certificate that "
-                                                                                   "goes with the documents.")}},
+                                                                                   "goes with the documents."),
+                                                        "DocumentType": V("Insurance certificate", "What the "
+                                                                          "document is: the certificate of the "
+                                                                          "shipment under the policy, not the policy "
+                                                                          "itself (sea/14#F12).")}},
         "DocumentReference": {"ID": V(f.numbers["packing"], "The packing list of the container.")},
         "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, True)}})
     return out
 
 
 DEPOSIT = Decimal("10000.00")       # paid by the island buyer when the order was accepted
+# the terms agreed for the new customer in the order response: contract terms, layer 1 of D22 (D30 point 5, O72)
+SEA_TERMS = ("Deposit of 10,000.00 lume on acceptance; the balance 45 days after shipment, as agreed in the order "
+             "response; 1.5 % surcharge per month late.",
+             "The terms agreed with this new customer in the order response, contract terms that win over the "
+             "seller's standard 30 days (D22, D30 point 5).")
 
 
 def sea_invoice_terms(f, out):
@@ -2117,8 +2130,10 @@ def sea_order_response(f, n, doc):
         "DestinationCountry": {"IdentificationCode": V("XL", "The goods go to the island.")},
         "TaxTotal": total,
         "LegalMonetaryTotal": {"LineExtensionAmount": amount(base, "XBL", "The sum of the lines."),
-                               "PayableAmount": amount(base + tax, "XBL", "The goods; freight and insurance follow "
-                                                                          "on the invoice under CIF.")},
+                               "PayableAmount": amount(base + tax, "XBL", "The goods at their CIF prices, which hold "
+                                                                          "the sea freight and the insurance: the "
+                                                                          "invoice bills the same amount (D30 point "
+                                                                          "1, sea/06#F1).")},
         "OrderLine": [{"LineItem": {
             "ID": V(str(i), "The line number, as in the order."),
             "SalesOrderID": V(f"{so}/{i}", "The distributor's line in its sales order."),
@@ -2191,9 +2206,9 @@ def sea(n, doc):
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
                              "Consignment": sea_consignment_fi(f, doc),
                              "InsurancePolicy": {
-                                 "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
+                                 "InsuredValueAmount": amount(INSURED, "XBL",
                                                               "CIF requires insurance of at least 110 % of the value; "
-                                                              "the CIF value is the goods, freight and insurance."),
+                                                              "the CIF value is the goods' CIF price."),
                                  "InsuranceTypeDescription": V("Cargo insurance, all risks", "The cover the forwarder "
                                                                                             "is to arrange.")}}}
     if doc["doc"] == "PackingList":
@@ -2224,16 +2239,10 @@ def sea(n, doc):
     if doc["doc"] == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, 8, "The forwarder, as customs agent, declares the export at the "
                                                    "seaport.", "The value of the goods at export, in lume.")
-        goods = sea_goods(f)
         kit.deep_merge(out["CustomsDeclaration"]["Shipment"], {
-            "FreeOnBoardValueAmount": amount(goods, "XBL", "On board in Lumeport."),
-            "InsuranceValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL", "The cargo insurance the seller "
-                                                                                 "took out under CIF."),
-            "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The sea freight, paid by the seller."),
-                                       "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-                                       "AllowanceChargeReason": V("Ocean freight to Selanu", "Stated because it is "
-                                                                  "part of the CIF price, not of the export value."),
-                                       "Amount": amount(SEA_FREIGHT, "XBL", "Freight and bunker surcharge.")},
+            "FreeOnBoardValueAmount": amount(fob_value(f), "XBL", "On board in Lumeport: the CIF price less the sea "
+                                                                  "freight and the insurance, Bayvarra's basis of "
+                                                                  "value at export (D16)."),
             "Consignment": {"OfficeOfExportLocation": {"Name": V("Customs office, port of Lumeport", "Where the "
                                                                  "export is declared.")},
                             "OfficeOfExitLocation": {"Name": V("Customs office, port of Lumeport", "Where the goods "
@@ -2269,9 +2278,6 @@ def sea(n, doc):
                              "TotalGoodsItemQuantity": qty(2, "EA", "Benches and side frames."),
                              "ConsignmentQuantity": qty(1, "EA", "One consignment."),
                              "Consignment": sea_consignment(f, "bl"),
-                             "InsurancePolicy": {"InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
-                                                                              "The insured value, 110 % of the CIF "
-                                                                              "value.")},
                              }}
     if doc["doc"] == "Manifest":
         return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
@@ -2353,7 +2359,12 @@ def sea(n, doc):
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return kit.invoice(f, n, doc, 15, "Issued after the sailing.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
-                           [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container."},
+                           [{"item": "container-haulage", "qty": 1, "invoice_why": "The container from the quay to "
+                                                                                   "Marrowdale and back packed: the "
+                                                                                   "pre-carriage the bill of lading "
+                                                                                   "names, the forwarder's own "
+                                                                                   "truck."},
+                            {"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container."},
                             {"item": "export-clearance", "qty": 1, "invoice_why": "One export declaration."},
                             {"item": "cargo-insurance", "qty": 1, "invoice_why": "Insurance of this shipment.",
                              "unit_price": f"{INSURANCE:.2f}",
@@ -2386,19 +2397,6 @@ def sea(n, doc):
                                 "MandateDocumentReference": {"ID": V("MAND-2026-014", "The signed mandate kept by the "
                                                                                       "broker.")}}}
         first = out["Shipment"]["GoodsItem"][0]
-        first["FreightAllowanceCharge"] = {"ChargeIndicator": V("true", "The share of the sea freight in the customs "
-                                                                        "value."),
-                                           "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-                                           "AllowanceChargeReason": V("Ocean freight, share of the benches",
-                                                                      "Part of the CIF value."),
-                                           "Amount": amount(SEA_FREIGHT * sea_goods(f, "bench-serra-b") / sea_goods(f)
-                                                            * Decimal("0.4"), "XLC",
-                                                            "The benches' share of the 2,950 lume freight by value "
-                                                            f"({sea_goods(f, 'bench-serra-b'):,.0f} of "
-                                                            f"{sea_goods(f):,.0f} lume), in coral at 0.4.")}
-        first["InsurancePolicy"] = {"ID": V("WS-CP-26-4471", "The cargo policy covering the goods."),
-                                    "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
-                                                                 "As on the insurance certificate.")}
         first["InvoiceLine"] = [{"ID": V(str(i), "A line of the seller's invoice for these goods: the benches are "
                                                  "on two lines, the port's and the buyer's own stock (O172)."),
                                  "InvoicedQuantity": qty(d["ordered"], "EA", "The benches invoiced on the line."),
@@ -2414,15 +2412,7 @@ def sea(n, doc):
     if doc["doc"] == "Invoice":
         out = kit.invoice(f, n, doc, 10, "Issued when the goods are on board.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}},
-                           charges=[{"like": "bench-serra-b", "reason": "Sea freight", "amount": SEA_FREIGHT, "code": "FC", "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
-                                     "why": "Under CIF the seller pays the sea freight and charges it on the invoice.",
-                                     "amount_why": "The freight the forwarder charged for the container."},
-                                    {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE, "code": "96",
-                                     "code_why": "UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID.",
-                                     "why": "Under CIF the seller insures the cargo and charges the insurance.",
-                                     "amount_why": f"The premium of the cargo insurance, as the forwarder charged "
-                                                   f"it: {insurance_basis()} (O173)."}],
-                           terms=("until-O72", 45))    # the balance term is settled with the sea flow (O72)
+                           terms=("contract", SEA_TERMS, 45))     # the order response's terms (D22, D30 point 5)
         return sea_invoice_terms(f, out)
     if doc["doc"] == "Statement":
         cur, total = "XBL", f.numbers["invoice-amount"]
@@ -2496,9 +2486,10 @@ def sea(n, doc):
                               {"BillingReference": {"InvoiceDocumentReference": {
                                   "ID": V(f.numbers["invoice"], "The invoice of the frames."),
                                   "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
-                               "Note": V("Under CIF the risk was the buyer's on board; the distributor credits the "
-                                         "frame as a goodwill gesture and claims from the insurer.", "Why a credit "
-                                                                                                    "under CIF."),
+                               "Note": V("Under CIF the risk was the buyer's on board; the loss is below the cargo "
+                                         "policy's deductible of 250.00 lume, so nothing is claimed, and the "
+                                         "distributor credits the frame as a goodwill gesture.", "Why a credit "
+                                         "under CIF, and why no insurer pays (D30 point 3, sea/26#F3)."),
                                "DiscrepancyResponse": {"ResponseCode": V("17", "The goods arrived damaged."),
                                                        "Description": V("One side frame cracked.", "In words.")},
                                "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
@@ -2516,9 +2507,6 @@ def sea(n, doc):
                                    "SourceCurrencyCode": V("XBL", "The credit's currency."),
                                    "TargetCurrencyCode": V("XLC", "The buyer's."),
                                    "CalculationRate": V("0.4", "The reference rate.")},
-                               "Annotation": {"AnnotationContent": V("Claimed from Wavesure Cargo Insurance under "
-                                                                     "policy WS-CP-26-4471.", "Where the cost goes "
-                                                                                              "in the end.")},
                                "Signature": {"ID": V("LD-SIG-26-0042", "The distributor's seal."),
                                              "SignatoryParty": party("6-xb", short=True)}})
         f.numbers["sea-credit"] = out["ID"].value
@@ -9429,10 +9417,8 @@ def _(f, n, doc, out):
     for gic in find_dicts(out, "GoodsItemContainer"):
         gic["GoodsItemContainer"]["TransportEquipment"] = {"ID": V(CONTAINER, "The container itself, as "
                                                                               "equipment.")}
-    for ip in find_dicts(out, "InsurancePolicy"):
-        pol = ip["InsurancePolicy"]
-        pol["BrokerParty"] = party("10-xb", short=True)
-        pol["ExcessAmount"] = amount(Decimal("250.00"), "XBL", "The excess per claim, as in the policy.")
+    for ip in find_dicts(out, "InsurancePolicy"):     # one retention, the deductible (sea/14#F13)
+        ip["InsurancePolicy"]["BrokerParty"] = party("10-xb", short=True)
     return {}
 
 
@@ -10371,21 +10357,8 @@ def _(f, n, doc, out):
 # its invoices, not the reverse (air/10#F5, C72).
 
 
-@enrich("sea", "Statement")
-def _(f, n, doc, out):
-    first = out["StatementLine"][0]
-    first["AllowanceCharge"] = [
-        {"ChargeIndicator": V("true", "A charge in the invoice of the line."),
-         "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-         "AllowanceChargeReason": V("Sea freight", "As on the invoice: CIF."),
-         "Amount": amount(SEA_FREIGHT, "XBL", "The freight.")},
-        {"ChargeIndicator": V("true", "A charge."), "AllowanceChargeReasonCode": V("96", "UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID."), "AllowanceChargeReason": V("Cargo insurance", "As on the "
-                                                                                                "invoice."),
-         "Amount": amount(INSURANCE, "XBL", "The premium.")}]
-    return {"AllowanceCharge": {"ChargeIndicator": V("true", "The charges in the account, summed."),
-                                "AllowanceChargeReasonCode": V("FC", "The sum is mostly freight; one code covers the charge (UN/EDIFACT 7161)."),
-                                "AllowanceChargeReason": V("Freight and insurance of the CIF invoice", "Why."),
-                                "Amount": amount(SEA_FREIGHT + INSURANCE, "XBL", "Included in the balance.")}}
+# The factor's statement reports the invoice once, at its amount: the invoice charges no freight or insurance on
+# top of its CIF prices, and the statement repeats no breakdown (D30 point 1, sea/25#F1).
 
 
 def retail_complete(n, doc):

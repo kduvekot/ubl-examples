@@ -215,17 +215,13 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/ImporterParty/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/InsuranceParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `Consignment/InsuranceParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/InsuranceParty/PartyName/Name` = **Wavesure Cargo Insurance**  
+- `Consignment/InsuranceParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OriginalDespatchTransportationService/TransportServiceCode` = **MERCHHAUL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
   The forwarder, not the shipping line, brings the container to the port. The code is from the Trade Accord's transport service list: MERCHHAUL = Merchant haulage.
 - `Consignment/OriginalDespatchTransportationService/Name` = **Truck from Marrowdale to the port of Lumeport**  
-  In words.
-- `Consignment/FinalDeliveryTransportationService/TransportServiceCode` = **MERCHHAUL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The buyer's 3PL collects at the port of Selanu. The code is from the Trade Accord's transport service list: MERCHHAUL = Merchant haulage.
-- `Consignment/FinalDeliveryTransportationService/Name` = **Truck from the port of Selanu to the 3PL**  
   In words.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -253,8 +249,8 @@ Inside `Shipment`:
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
   The cover the forwarder is to arrange.
-- `InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
-  CIF requires insurance of at least 110 % of the value; the CIF value is the goods, freight and insurance.
+- `InsurancePolicy/InsuredValueAmount` = **60385.60** (currencyID `XBL`)  
+  CIF requires insurance of at least 110 % of the value; the CIF value is the goods' CIF price.
 - `InsurancePolicy/InsurerParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `InsurancePolicy/InsurerParty/PartyName/Name` = **Wavesure Cargo Insurance**  
@@ -482,20 +478,16 @@ Inside `Signature`:
       </cac:ImporterParty>
       <cac:InsuranceParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:InsuranceParty>
       <cac:OriginalDespatchTransportationService>
         <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
         <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
       </cac:OriginalDespatchTransportationService>
-      <cac:FinalDeliveryTransportationService>
-        <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
-        <cbc:Name>Truck from the port of Selanu to the 3PL</cbc:Name>
-      </cac:FinalDeliveryTransportationService>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -523,7 +515,7 @@ Inside `Signature`:
     </cac:GoodsItem>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>

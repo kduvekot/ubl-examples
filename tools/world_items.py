@@ -537,26 +537,22 @@ def gross_kg(items, iid):
     return it.get("gross_kg")
 
 
-def insurance_premium(price, base):
+def insurance_premium(price, cif):
     """The premium of a cargo insurance at a rate on the insured value (O173): price is the item's rate price
-    (rate_percent, cover_percent), base the value insured without the premium (the goods and the freight, in the
-    CIF value). The insured value is cover_percent of the base plus the premium itself, so the premium is the fixed
-    point p = round(rate × cover × (base + p)), to the cent. Returns (premium, insured value)."""
+    (rate_percent, cover_percent), cif the CIF value of the goods, which under a CIF price is the price itself, the
+    freight and the premium included (D30 point 1). The insured value is cover_percent of it, the premium the rate
+    on the insured value, to the cent. Returns (premium, insured value)."""
     from decimal import Decimal, ROUND_HALF_UP
     cent = Decimal("0.01")
     r = Decimal(str(price["rate_percent"])) / 100
     c = Decimal(str(price["cover_percent"])) / 100
-    base = Decimal(str(base))
-    p = (r * c * base / (1 - r * c)).quantize(cent, ROUND_HALF_UP)
-    for cand in (p, p - cent, p + cent):
-        if (r * c * (base + cand)).quantize(cent, ROUND_HALF_UP) == cand:
-            return cand, (c * (base + cand)).quantize(cent, ROUND_HALF_UP)
-    raise SystemExit(f"insurance premium: no premium to the cent on a base of {base}")
+    insured = (c * Decimal(str(cif))).quantize(cent, ROUND_HALF_UP)
+    return (r * insured).quantize(cent, ROUND_HALF_UP), insured
 
 
 def insured_base(world, items, fr):
-    """The value a freight's cargo insurance covers, without the premium (O173): the load at the insured buyer's
-    prices and the freight services named, in lume."""
+    """The CIF value a freight's cargo insurance covers (O173): the load at the insured buyer's prices (CIF prices,
+    with the freight and the premium in them, D30 point 1) and any freight services named, in lume."""
     from decimal import Decimal
     ins = fr["insured"]
     out = Decimal(0)

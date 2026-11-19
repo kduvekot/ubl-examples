@@ -2170,8 +2170,11 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "tender": [("all", Decimal("200.00"), "XBL", "the special colour, part of the price paid")],
     "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
                                                      "distinguished from the price (179,400 ferra)")],
-    "sea": [("XL", Decimal("2950.00"), "XBL", "the sea freight to the island"),
-            ("XL", lambda: __import__("examples_scenarios").INSURANCE, "XBL", "the cargo insurance")],   # O173
+    # the CIF price holds the sea freight and the insurance (D30 point 1): it is Lisavu's landed value as it stands,
+    # and Bayvarra's value at export is the price less them, which the seller's forwarder bills it (sea/18)
+    "sea": [("XB", lambda: -(__import__("examples_scenarios").SEA_FREIGHT
+                             + __import__("examples_scenarios").INSURANCE), "XBL",
+             "less the sea freight and the cargo insurance to the island, which the CIF price holds")],
 }
 
 
@@ -3142,7 +3145,7 @@ def check_air_uld_ids(flow_id, roots):
         raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
 
 
-DUE_DATE_WAITS = {"sea/22-Invoice.xml": "O72"}   # due dates settled with a later decision
+DUE_DATE_WAITS = {}   # due dates settled with a later decision
 
 
 def check_payment_terms(root, where):

@@ -59,8 +59,7 @@
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">51813.15</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
@@ -75,7 +74,7 @@
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">54080.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">51042.97</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">104</cbc:Quantity>
         <cac:Item>
@@ -170,7 +169,7 @@
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">804.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">770.18</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:Item>
@@ -249,12 +248,6 @@
           </cac:ElectronicAddress>
         </cac:CustomsAgentParty>
       </cac:ShipmentStage>
-      <cac:FreightAllowanceCharge>
-        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Ocean freight to Selanu</cbc:AllowanceChargeReason>
-        <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
-      </cac:FreightAllowanceCharge>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs office, port of Lumeport</cbc:Name>

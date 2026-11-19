@@ -60,6 +60,21 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `Consignment/MortgageHolderParty` | 0..1 | cotton/13-BillOfLading |  |  | open |
 | `WeightStatement/ResponsibleParty` | 0..1 | cotton/12-WeightStatement |  |  | open |
 
+> C118, D30 point 1: 520 and 68 lume are CIF Selanu prices, the sea freight and the insurance in them. The factor's statement repeats no freight or insurance of the invoice (sea/25#F1); Bayvarra's export declaration states the value on board without the freight and the insured value after export (11#F13); Lisavu values the CIF price as it is, so the import declaration gives no freight share or policy per goods item (19#F20); the pre-carriage is the forwarder's merchant haulage, billed in its invoice (18), not a charge of the carrier's bill (14#F14); the policy has one retention, its deductible (14#F13); the seller's instructions arrange no on-carriage at Selanu, which is the buyer's (09#F7); the credit note claims nothing from the insurer, the loss being below the deductible (26#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/FinalDeliveryTransportationService` | 0..1 | sea/09-ForwardingInstructions |  |  | open |
+| `CreditNote/Annotation` | 0..n | sea/26-CreditNote |  |  | open |
+| `GoodsItem/FreightAllowanceCharge` | 0..n | sea/19-ImportCustomsDeclaration |  |  | open |
+| `GoodsItem/InsurancePolicy` | 0..n | sea/19-ImportCustomsDeclaration |  |  | open |
+| `InsurancePolicy/ExcessAmount` | 0..1 | sea/14-BillOfLading |  |  | open |
+| `Shipment/FreightAllowanceCharge` | 0..n | sea/11-ExportCustomsDeclaration |  |  | open |
+| `Shipment/InsuranceValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration |  |  | open |
+| `ShipmentStage/FreightAllowanceCharge` | 0..n | sea/14-BillOfLading |  |  | open |
+| `Statement/AllowanceCharge` | 0..n | sea/25-Statement | a charge of the factor's own in its statement, such as a factoring fee, if the factoring agreement gives one | sea | open |
+| `StatementLine/AllowanceCharge` | 0..n | sea/25-Statement |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

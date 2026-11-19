@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00-01:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
-  <cbc:Note>Under CIF the risk was the buyer's on board; the distributor credits the frame as a goodwill gesture and claims from the insurer.</cbc:Note>
+  <cbc:Note>Under CIF the risk was the buyer's on board; the loss is below the cargo policy's deductible of 250.00 lume, so nothing is claimed, and the distributor credits the frame as a goodwill gesture.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
@@ -41,9 +41,6 @@
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>VT-CLAIMS</cbc:BuyerReferenceCode>
   </cac:BuyerAssignedReference>
-  <cac:Annotation>
-    <cbc:AnnotationContent>Claimed from Wavesure Cargo Insurance under policy WS-CP-26-4471.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-0042</cbc:ID>
     <cac:SignatoryParty>
@@ -193,7 +190,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">67.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">68.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -207,16 +204,16 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">67.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">67.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">67.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">68.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">68.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">68.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">68.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Frame carton crushed at the port of Selanu.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">68.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
@@ -244,7 +241,7 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>

@@ -1238,12 +1238,16 @@ department, delivered, at its list price of 499.00, which the tender
 catalogue calls the contract price. Lumeway sells it to the department store and to
 the island's importer at a trade price of 520.00, a margin of about 22 %
 after the truck from Ferrano. The store sells it to a shopper at a shop
-price of 749.00, or 674.10 during the spring promotion, 10 % off. The
-island's shop price is not yet settled. The spare side frame goes from
+price of 749.00, or 674.10 during the spring promotion, 10 % off. On the
+island Velumi Trading sells it in its Selanu shop at 375 coral (937.50
+lume): after the CIF price, the import consumption tax of 10 % and its
+clearance, about 38 %, a retailer's margin. The spare side frame goes from
 Valdara to Lumeway at 47.50; Lumeway's trade price for it is 64.00, and
-58.00 on its revised list of 20 May. To the island Lumeway sells it at 67.00, CIF Selanu: a price
-with the frame's share of the sea freight, export clearance and insurance in
-it, which leaves Lumeway about 16 %. The cargo insurance that CIF obliges
+58.00 on its revised list of 20 May. To the island Lumeway sells it at 68.00, CIF Selanu: a price
+with the frame's share of the container haulage to the port, the sea
+freight, export clearance and insurance in it, which leaves Lumeway about
+16 %. Under CIF the prices hold the freight and the insurance: Lumeway pays
+its forwarder for them and bills the island's buyer the goods alone. The cargo insurance that CIF obliges
 Lumeway to take out costs a premium of 0.22 % of the insured value, the CIF
 value plus 10 %, so it follows the value of each shipment. The eight urgent frames that fly to the
 island go at the trade price, carriage paid to Selanu airport, and Lumeway

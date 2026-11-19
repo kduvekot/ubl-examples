@@ -188,9 +188,11 @@ def terms_of(flow, seller, day, kind=None):
     under the statutory interest of the seller's country. Returns the terms with the day counting starts and the
     due day, so that every due date follows from the terms the document cites (O70)."""
     pay = WORLD["countries"][PARTY[seller]["c"]]["payment"]
-    if isinstance(kind, tuple) and kind[0] == "until-O72":   # sea/22: its balance term is settled with the sea flow
-        t = terms_of(flow, seller, day)
-        return {**t, "due": day + kind[1]}
+    if isinstance(kind, tuple) and kind[0] == "contract":    # terms agreed for the sale (D22 layer 1): (text, why)
+        (text, why), days = kind[1], kind[2]
+        return {"id": None, "text": text, "why": why, "start": day, "start_why": "From the shipment on board, the "
+                "day of the invoice.", "due": day + days, "discount": None,
+                "surcharge": pay.get("penalty_surcharge"), "interest": pay.get("statutory_interest")}
     if kind == "plan":
         text, days = PLAN_PAYMENT
         start = flow.numbers[f"waybill-day-{seller}"]

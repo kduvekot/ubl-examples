@@ -222,7 +222,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **54884.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **54896.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -241,9 +241,9 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **54896.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **54884.00** (currencyID `XBL`)  
+- `PayableAmount` = **54896.00** (currencyID `XBL`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -434,10 +434,10 @@ Inside `OrderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   Spare side frames for the buyer's own service stock.
-- `LineItem/LineExtensionAmount` = **804.00** (currencyID `XBL`)  
+- `LineItem/LineExtensionAmount` = **816.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **67** (currencyID `XBL`)  
-  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
+- `LineItem/Price/PriceAmount` = **68** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Spare side frame for the Serra bench.**  
@@ -621,7 +621,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">54884.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54896.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -635,8 +635,8 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">54884.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54896.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">54896.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -824,9 +824,9 @@ Inside `OrderLine`:
       <cbc:ID>3</cbc:ID>
       <cbc:UUID>eea8f7b8-36a1-5cf0-9cd2-4a67427e3a86</cbc:UUID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">816.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

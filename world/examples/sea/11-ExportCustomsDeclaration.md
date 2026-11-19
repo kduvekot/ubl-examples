@@ -94,10 +94,8 @@ Inside `CustomsDeclaration`:
   The shipment declared.
 - `Shipment/TotalTransportHandlingUnitQuantity` = **27** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/InsuranceValueAmount` = **63771.73** (currencyID `XBL`)  
-  The cargo insurance the seller took out under CIF.
-- `Shipment/FreeOnBoardValueAmount` = **54884.00** (currencyID `XBL`)  
-  On board in Lumeport.
+- `Shipment/FreeOnBoardValueAmount` = **51813.15** (currencyID `XBL`)  
+  On board in Lumeport: the CIF price less the sea freight and the insurance, Bayvarra's basis of value at export (D16).
 - `Shipment/Consignment/ID` = **LD-CS-26-0133**  
   The consignment carried.
 - `Shipment/Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
@@ -112,8 +110,8 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **54080.00** (currencyID `XBL`)  
-  The value of the goods at export, in lume.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **51042.97** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 54,080.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIF price holds (-3,082.85 XBL), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **5621.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **104** (unitCode `EA`)  
@@ -222,8 +220,8 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Bench side frame casting**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **804.00** (currencyID `XBL`)  
-  The value of the goods at export, in lume.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **770.18** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 816.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIF price holds (-3,082.85 XBL), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **12** (unitCode `EA`)  
@@ -318,14 +316,6 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `Shipment/ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XB:20411644** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `Shipment/FreightAllowanceCharge/ChargeIndicator` = **true**  
-  The sea freight, paid by the seller.
-- `Shipment/FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
-  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
-- `Shipment/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight to Selanu**  
-  Stated because it is part of the CIF price, not of the export value.
-- `Shipment/FreightAllowanceCharge/Amount` = **2950.00** (currencyID `XBL`)  
-  Freight and bunker surcharge.
 - `CustomsExitOfficeLocation/Name` = **Customs office, port of Lumeport**  
   Where the goods leave the country.
 - `ConsignorParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -496,8 +486,7 @@ Inside `Signature`:
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">51813.15</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
@@ -512,7 +501,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">54080.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">51042.97</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">104</cbc:Quantity>
         <cac:Item>
@@ -607,7 +596,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">804.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">770.18</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:Item>
@@ -686,12 +675,6 @@ Inside `Signature`:
           </cac:ElectronicAddress>
         </cac:CustomsAgentParty>
       </cac:ShipmentStage>
-      <cac:FreightAllowanceCharge>
-        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Ocean freight to Selanu</cbc:AllowanceChargeReason>
-        <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
-      </cac:FreightAllowanceCharge>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
       <cbc:Name>Customs office, port of Lumeport</cbc:Name>
