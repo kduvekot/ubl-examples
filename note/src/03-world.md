@@ -606,7 +606,7 @@ shape, derived from no other register:
 | Index of Public Administrations of Urvania | the Agency for Digital Administration | `xu_` and four lower-case letters or digits (`xu_k4r7`, the customs administration) | `XU:public-body-register` |
 | Federal list of public bodies of Bayvarra | the Bayvarra Information Service | ten digits, the first not 0 (`3071845926`, the customs and border service) | `XB:public-body-register` |
 | Government list of public bodies of Lisavu | the Government Secretariat | `GOV-` and three digits (`GOV-118`, the customs service) | `XL:public-body-register` |
-| Farm register of Lisavu | the island's Department of Agriculture, which also runs the plant protection service | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
+| Farm register of Lisavu | the Department of Agriculture of Lisavu (`GOV-206`), whose Plant Protection Service also issues the island's phytosanitary certificates | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
 
 The Trade Accord Council, an international body seated in Lumeport, is in
 Bayvarra's federal list under its seat agreement with Bayvarra, so that it can

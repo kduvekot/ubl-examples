@@ -636,7 +636,7 @@
     "scheme": "XL:GLPB",
     "id_format": "GOV- and 3 digits",
     "example": "GOV-118",
-    "note": "The island's government keeps a short list of its public bodies (the customs service, the chamber of commerce, the maritime administration) and gives each a number of its own, derived from no other register (O142)."
+    "note": "The island's government keeps a short list of its public bodies (the customs service, the chamber of commerce, the maritime administration, the Department of Agriculture) and gives each a number of its own, derived from no other register (O142)."
    },
    "customs_trader_format": "XL-TR- and 6 digits",
    "legal_forms": {
@@ -745,7 +745,7 @@
    },
    "farm_registry": {
     "name": "Farm register of Lisavu",
-    "keeper": "the island's Department of Agriculture, which also runs the plant protection service (O157)",
+    "keeper": "45-xl",
     "scheme": "XL:FR",
     "id_format": "LFR- and 4 digits",
     "example": "LFR-0412",

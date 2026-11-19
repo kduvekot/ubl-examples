@@ -3391,11 +3391,11 @@
   {
    "flow": "cotton",
    "doc": "GoodsCertificate",
-   "from": "20-xl",
+   "from": "45-xl",
    "to": "39-xl",
-   "why": "The island's chamber of commerce certifies the bales for export, at the ginnery's application.",
+   "why": "Lisavu's plant protection organisation under the IPPC, the Plant Protection Service of the Department of Agriculture, inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.",
    "parties": {
-    "IssuerParty": "20-xl",
+    "IssuerParty": "45-xl",
     "ApplicantParty": "39-xl",
     "ExporterParty": "39-xl",
     "ImporterParty": "40-xb"
@@ -4243,10 +4243,6 @@
   "SCC-FAIR-26-INV": {
    "what": "the fair's invitation to exhibit",
    "type": "Invitation to exhibit"
-  },
-  "SCC-PH-25-0198": {
-   "what": "last season's phytosanitary certificate",
-   "type": "Phytosanitary certificate"
   },
   "SCG-SEASON-2026": {
    "what": "the season agreement between the farm and the ginnery",

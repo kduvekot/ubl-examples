@@ -417,7 +417,8 @@ def legal_entity(pid):
     if farm:
         out["CorporateRegistrationScheme"] = {
             "ID": V(farm["scheme"], "The identifier of the register in the world (world/countries.json)."),
-            "Name": V(farm["name"], f"The register the farm is entered in, kept by {farm['keeper']}: "
+            "Name": V(farm["name"], f"The register the farm is entered in, kept by "
+                                    f"{'the ' + PARTY[farm['keeper']]['identity']['name'] if farm['keeper'] in PARTY else farm['keeper']}: "
                                     f"{farm['note']}"),
             "CorporateRegistrationTypeCode": V("FARM", "A register of farms, not the companies register."),
             "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "

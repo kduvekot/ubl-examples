@@ -2611,7 +2611,8 @@ def cotton(n, doc):
                              "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment.")}}}
     if doc["doc"] == "GoodsCertificate":
-        return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"), "The chamber's certificate "
+        return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"), "The Plant Protection "
+                                                                                       "Service's certificate "
                                                                                        "number."),
                 "IssueDate": V(f.date(26), "Issued before shipment, at the ginnery's application."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment certified."),
@@ -5433,16 +5434,16 @@ def _(f, n, doc, out):
             "WarehouseParty": party("39-xl", short=True),
             "ConsignorParty": party("39-xl", short=True),
             "ConsigneeParty": party("40-xb", short=True),
-            "FreightForwarderParty": party("10-xb", short=True),
-            "LegalAuthorityParty": party("19-xl", short=True),
-            "Attestation": {"ID": V("SCC-ATT-26-0042", "The inspector's attestation."),
+            # issued and signed by Lisavu's plant protection organisation: customs is not its authority and the
+            # forwarder is not named on it (D33 point 1, O170; cotton/10#F4, F15)
+            "Attestation": {"ID": V("DAL-ATT-26-0042", "The inspector's attestation."),
                             "Name": V("Freedom from pests", "What is attested."),
                             "Description": V("Sampled and found free of boll weevil and pink bollworm.", "In words."),
                             "Note": V(f"10 bales sampled out of {len(kit.flow_packages(f)['pieces'])}.",
                                       "The sample, out of the bales of the shipment."),
                             "AcceptanceIndicator": V("true", "Accepted."),
                             "ValidityPeriod": {"EndDate": V(f.date(40), "As the certificate.")},
-                            "IssuerParty": party("20-xl", short=True),
+                            "IssuerParty": party("45-xl", short=True),
                             "AttestationLine": {"ID": V("1", "The pest checked."), "TypeCode": V("PEST", "A pest "
                                                                                                         "check."),
                                                 "Description": V("Boll weevil: none found.", "The finding."),
@@ -5471,9 +5472,8 @@ def _(f, n, doc, out):
                                 "SubGoodsProcessing": {"TypeCode": V("PRESSING", "Pressed into bales."),
                                                        "Description": V("Bales of about 227 kg.", "In words.")}},
             "OriginalDocumentReference": {"ID": V("XL-CLS-2026-0042", "The classing certificate of the cotton.")},
-            "PreviousDocumentReference": {"ID": V("SCC-PH-25-0198", "Last season's certificate.")},
             "AdditionalDocumentReference": {"ID": V(f.numbers["order"], "The mill's order.")},
-            "Signature": seal(doc["from"], "SCC-SIG-26-PH")}
+            "Signature": seal(doc["from"], "DAL-SIG-26-PH")}
 
 
 @enrich("carnet", "GoodsItemPassport")
