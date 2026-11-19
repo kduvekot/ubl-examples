@@ -58,7 +58,7 @@ Coverage 5150 → 5129 (commit d2506729), 21 elements.
 | `LineReference/LineStatusCode` | 0..1 | cotton/04-SelfBilledInvoice, road/02-OrderResponse | | | open |
 | `Order/SalesOrderID` | 0..1 | tender/26-Order | | | open |
 | `OrderChange/SalesOrderID` | 0..1 | air/01-OrderChange | | | open |
-| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | | | open |
+| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | the fulfilment cancellation's reference to the order change quotes the buyer's own reference of it, "Harbour parks Selanu": the frames are spares for the port's harbour benches (O199 a') | air | candidate |
 | `OrderResponse/Contract` | 0..n | sea/06-OrderResponse | | | open |
 | `SelfBilledCreditNote/DespatchDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
 | `SelfBilledCreditNote/ReceiptDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
@@ -252,8 +252,8 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `ContractNotice/BeneficiaryParty` | 0..n | tender/02-ContractNotice | | | open |
 | `ContractNotice/OriginatorCustomerParty` | 0..n | tender/02-ContractNotice | | | open |
 | `CreditNoteLine/OriginatorParty` | 0..1 | tender/33-CreditNote | | | open |
-| `FulfilmentCancellation/BeneficiaryParty` | 0..n | air/07-FulfilmentCancellation | | | open |
-| `FulfilmentCancellation/OriginatorCustomerParty` | 0..1 | air/07-FulfilmentCancellation | | | open |
+| `FulfilmentCancellation/BeneficiaryParty` | 0..n | air/07-FulfilmentCancellation | the Port of Selanu, for whose harbour benches the frames of the cancelled despatch are, as the order change names it (O199 a'; with O198's open point on who bears what) | air | candidate |
+| `FulfilmentCancellation/OriginatorCustomerParty` | 0..1 | air/07-FulfilmentCancellation | the Port of Selanu, whose need started the order of the frames, as in the order change (O199 a'; with O198) | air | candidate |
 | `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | the wholesaler\'s instruction for returns of the spent Mo-99/Tc-99m generator to its maker (a fictional maker abroad, named in the document, not a world party), with the return shipment; owner, 2026-11-19 (O202 choice 7) | medicines | candidate |
 | `ItemIdentification/MeasurementDimension` | 0..n | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `ItemProperty/UsabilityPeriod` | 0..1 | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
