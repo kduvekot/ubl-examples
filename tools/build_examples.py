@@ -1953,6 +1953,9 @@ def declaration_invoices(content, doc):
     ps = doc.get("parties", {})
     exporter = ps.get("ExporterParty") or ps.get("CustomsDeclaration/ExporterParty")
     importer = ps.get("ImporterParty") or ps.get("CustomsDeclaration/ImporterParty")
+    # an import without an exporter named: the consignor's invoice, not any invoice to the importer (energy/10:
+    # the retail company also buys the grid operator's network service)
+    exporter = exporter or (ps.get("ConsignorParty") if doc["doc"] == "ImportCustomsDeclaration" else None)
     day = content.get("IssueDate").value if isinstance(content.get("IssueDate"), V) else None
     doc_types()
     legs = [leg for fl in WORLD["flows"] if fl["id"] == doc["flow"] for leg in fl.get("legs", [])]

@@ -9823,6 +9823,23 @@ ENERGY = kit.Flow("energy", "2026-04-01", [{"item": "natural-gas", "ordered": GA
 
 
 PLATFORM = next(pf for pf in WORLD["platforms"] if pf["party"] == "42-xb")
+METERING = next(st for st in WORLD["stations"] if st["kind"] == "metering" and st["pipeline"] == "gas")
+# the buyers of March's gas: (party, MWh, consignment key, what the part is), one consignment each (D44 point 1)
+GAS_BUYERS = [("43-xu", GAS_TO_POWER, "consignment", "delivered to the power station."),
+              ("33-xu", GAS_TO_RETAIL, "consignment-retail", "fed into the grid at the city gate for the retail "
+                                                             "company's gas customers.")]
+GAS_MONTH = {"StartDate": V("2026-03-01", "The gas declared flowed through the pipeline in March: a monthly "
+                                          "declaration of a continuous flow (energy/04#F5)."),
+             "EndDate": V("2026-03-31", "The month's last day.")}
+
+
+def metering_station(why):
+    """The pipeline's border metering station (world/map.json, stations): on Bayvarra's side of the border, where
+    the gas crossing into Urvania is measured; no street, so its place on the map and its coordinates."""
+    return {"Name": V("Border metering station of the Kelpstone gas pipeline", why),
+            "Description": V("On Bayvarra's side of the border with Urvania, in the Northern Territory.", "Where it "
+                                                                                                       "stands."),
+            "LocationCoordinate": coordinate(METERING["at"])}
 
 
 def platform_location(why):
@@ -9972,18 +9989,57 @@ def energy(n, doc):
                                                                                          "retail company in March."}],
                            key="power-invoice", extra=MARCH)
     if d == "ExportCustomsDeclaration":
+        # one shipment, March's flow through the pipeline, with a consignment per buyer, each with its own goods
+        # item, weight and value (D44 point 1, energy/04#F1, F2)
         out = kit.export_declaration(f, n, doc, 1, "The monthly declaration of the gas exported in March.",
                                      "The value of the gas at the contract price, in lume.")
-        out["CustomsDeclaration"]["Shipment"]["ShipmentStage"] = pipeline_stage("The gas leaves by pipeline.")
-        out["CustomsDeclaration"]["Shipment"]["OriginAddress"] = platform_location("Where the gas is produced: the "
-                                                                                   "platform of the offshore field.")
+        sh = out["CustomsDeclaration"]["Shipment"]
+        goods, cons = [], []
+        for i, (pid, mwh, key, part) in enumerate(GAS_BUYERS, 1):
+            g = kit.goods_items(f, kit.currency_of(doc["from"]), "The value of this buyer's gas at the contract "
+                                "price, in lume.", deal=[{"item": "natural-gas", "ordered": mwh, "why": part}])[0]
+            g["ID"] = V(str(i), "The goods item number: one per buyer.")
+            goods.append(g)
+            cons.append({"ID": V(f.number(key, doc["from"], "Consignment"), f"The consignment of "
+                                                                             f"{PARTY[pid]['identity']['name']}."),
+                         "SummaryDescription": V(f"Goods item {i}: {mwh:,} MWh of natural gas, {part}",
+                                                 "What the consignment holds: the goods item of this buyer."),
+                         "GrossWeightMeasure": qty(g["GrossWeightMeasure"].value, "KGM", "The weight of this "
+                                                                                         "buyer's gas."),
+                         "ConsigneeParty": build_examples.profiled(doc, "CustomsDeclaration/Shipment/Consignment/"
+                                                                        "ConsigneeParty", pid)})
+        sh["GoodsItem"], sh["Consignment"] = goods, cons
+        sh["ShipmentStage"] = {**pipeline_stage("The gas leaves by pipeline."), "TransitPeriod": GAS_MONTH}
+        sh["LastExitPortLocation"] = metering_station("Where the gas leaves Bayvarra: the border metering station "
+                                                      "measures the gas declared.")
+        sh["OriginAddress"] = platform_location("Where the gas is produced: the platform of the offshore field.")
         return out
     if d == "ImportCustomsDeclaration":
+        # each buyer declares its own consignment of the export's shipment (D44 point 1, energy/05#F1, 07#F1)
+        pid, mwh, key, part = next(b for b in GAS_BUYERS if b[0] == doc["from"])
+        own = "power" if pid == "43-xu" else "retail"
         out = kit.import_declaration(f, n, doc, 1, "The monthly declaration of the gas received in March.",
                                      "The customs value in ferra.",
-                                     deal=[{"item": "natural-gas", "ordered": GAS_TO_POWER,
-                                            "why": "The power station's gas."}])
-        out["Shipment"]["ShipmentStage"] = pipeline_stage("The gas arrives by pipeline.")
+                                     deal=[{"item": "natural-gas", "ordered": mwh, "why": part}])
+        if own == "retail":     # the second import of the flow: the retail company's own number
+            out["ID"] = V(f.number("import-retail", doc["from"], "ImportCustomsDeclaration"),
+                          "The importer's declaration number.")
+        sh = out["Shipment"]
+        sh.pop("GrossWeightMeasure", None)     # the shipment is both buyers' gas: the weight is the consignment's
+        sh["ID"] = V(sh["ID"].value, "The shipment of the export declaration: March's gas through the pipeline, of "
+                                     "which this declaration covers one consignment.")
+        sh["Consignment"] = {"ID": V(f.numbers[key], "The importer's consignment, as the export declaration names "
+                                                     "it."),
+                             "GrossWeightMeasure": qty(sh["GoodsItem"][0]["GrossWeightMeasure"].value, "KGM",
+                                                       "The weight of the gas declared.")}
+        sh["ShipmentStage"] = {**pipeline_stage("The gas arrives by pipeline."), "TransitPeriod": GAS_MONTH}
+        sh["FirstArrivalPortLocation"] = metering_station("Where the gas comes into Urvania: the border metering "
+                                                          "station, just before the border, measures it.")
+        out["AdditionalDocumentReference"] = {
+            "ID": V(f.numbers["export"], "The export declaration of the shipment, which names this consignment."),
+            "IssueDate": V(f.date(1), "Lodged the same day in Bayvarra."),
+            "DocumentTypeCode": V("ExportCustomsDeclaration", "An export declaration: the other country's, so not a "
+                                                              "previous declaration of this customs (O145).")}
         return out
     if d == "Invoice" and doc["from"] == "42-xb":
         to_power = doc["to"] == "43-xu"

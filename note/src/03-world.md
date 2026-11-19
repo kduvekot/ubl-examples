@@ -116,7 +116,12 @@ whether it becomes a company of its own is each country's choice, and an
 isolated system is exempt. Urvania chose the full split in 2007. Bayvarra
 keeps one energy company with a separately run network division, and the
 island, connected to no one, has one company that does everything, so the
-three countries show three arrangements.
+three countries show three arrangements. The gas is measured at a border
+metering station on Bayvarra's side. The producer declares each month's
+export in one declaration, with a consignment for each buyer (the power
+station and the retail company), and each buyer declares its own import.
+Montebrio Power is one of Urvania's power stations, a gas-fired station of
+about 40 MW; the retail company also buys electricity from the others.
 
 The supply of electricity, gas, water and telephone to end customers is a
 national matter under the Accord: each country keeps its own utilities,

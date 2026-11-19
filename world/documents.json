@@ -4026,11 +4026,10 @@
    "doc": "ExportCustomsDeclaration",
    "from": "42-xb",
    "to": "19-xb",
-   "why": "The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration.",
+   "why": "The gas producer declares March's gas leaving Bayvarra by pipeline, in one monthly declaration: one shipment, the month's flow measured at the border metering station, with a consignment for each buyer, the power station and the retail company.",
    "parties": {
     "ExporterParty": "42-xb",
     "CustomsDeclaration/CustomsParty": "19-xb",
-    "CustomsDeclaration/ConsigneeParty": "43-xu",
     "CustomsDeclaration/Shipment/Consignment/CarrierParty": "42-xb"
    }
   },
@@ -4039,7 +4038,7 @@
    "doc": "ImportCustomsDeclaration",
    "from": "43-xu",
    "to": "19-xu",
-   "why": "The power station declares the gas it received in March into Urvania.",
+   "why": "The power station declares its consignment of March's gas into Urvania, under the shipment of the export declaration.",
    "parties": {
     "ImporterParty": "43-xu",
     "ConsignorParty": "42-xb",
@@ -4093,6 +4092,19 @@
    "parties": {
     "AccountingCustomerParty": "43-xu",
     "AccountingSupplierParty": "42-xb"
+   }
+  },
+  {
+   "flow": "energy",
+   "doc": "ImportCustomsDeclaration",
+   "from": "33-xu",
+   "to": "19-xu",
+   "why": "The retail company declares its own consignment of March's gas, 2,400 MWh fed into the grid at the city gate for its gas customers, into Urvania (D44).",
+   "parties": {
+    "ImporterParty": "33-xu",
+    "ConsignorParty": "42-xb",
+    "ConsigneeParty": "33-xu",
+    "CustomsParty": "19-xu"
    }
   }
  ],

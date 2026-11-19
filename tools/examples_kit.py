@@ -1193,8 +1193,9 @@ def customs_item(iid):
     if cc and hs:
         cc["NatureCode"] = V(HS_SECTION[hs[:2]], "The section of the Harmonized System the goods fall in, the "
                                                  "highest level of the World Customs Organization's classification.")
-        cc["CargoTypeCode"] = V("BULK" if (ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26") or hs[:4] == "2711"
-                                else "GEN", "The kind of cargo: bulk, or general cargo in packages.")
+        if hs[:4] != "2711":        # gas in a pipeline is no cargo: the HS code and the mode say what it is (C82)
+            cc["CargoTypeCode"] = V("BULK" if ITEM[iid]["unit"] in ("TNE",) and hs[:2] == "26" else "GEN",
+                                    "The kind of cargo: bulk, or general cargo in packages.")
     return out
 
 
