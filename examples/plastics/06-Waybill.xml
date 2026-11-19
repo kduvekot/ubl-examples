@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
-  <cbc:IssueTime>09:38:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:26:00-01:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>

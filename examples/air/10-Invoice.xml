@@ -15,9 +15,6 @@
   <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
-  <cac:StatementDocumentReference>
-    <cbc:ID>BF-SOA-26-05</cbc:ID>
-  </cac:StatementDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>KXL-WB-26-0325</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

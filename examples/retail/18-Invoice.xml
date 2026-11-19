@@ -343,10 +343,6 @@
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
-    <cac:DocumentReference>
-      <cbc:ID>LD-DS-B180</cbc:ID>
-      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
-    </cac:DocumentReference>
     <cac:PricingReference>
       <cac:OriginalItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>

@@ -52,9 +52,10 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-26</strong><br />
 Answered the same day.</li>
-<li><code>IssueTime</code> = <strong>11:14:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+<li><code>IssueTime</code> = <strong>12:08:00-01:00</strong><br />
+Issued a few minutes after the last thing of its day that it reports,
+cites or answers, in the sender's local time (C72); in the issuer's
+local time, with its offset from UTC (D27).</li>
 <li><code>Note</code> = <strong>Accepted and booked.</strong><br />
 The answer.</li>
 </ul>
@@ -246,7 +247,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LD-DOC-26-0226&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;eb9072fe-2cf3-54f8-bb18-08f7f9930b9c&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-26&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:14:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;12:08:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Accepted and booked.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SIG-26-DS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -331,6 +332,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DocumentStatus</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1b6c93363be4054f9365e0360472e2408fdcdee5"><code>1b6c933</code></a> of 2026-11-19 15:32 UTC</p></div></footer>
 </body>
 </html>

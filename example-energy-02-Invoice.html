@@ -52,12 +52,13 @@ The seller's invoice number.</li>
 <strong>af7f93bd-4f82-5130-82e5-5b40a1c4cefa</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-03</strong><br />
-The month's network charges.</li>
+<li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
+The month's network charges, billed the morning after the meters were
+read, with the metering statement that supplements the invoice.</li>
 <li><code>IssueTime</code> = <strong>08:20:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>DueDate</code> = <strong>2026-05-03</strong><br />
+The grid operator's billing run, first thing in the morning; in the
+issuer's local time, with its offset from UTC (D27).</li>
+<li><code>DueDate</code> = <strong>2026-05-02</strong><br />
 As the payment terms below count it: 30 days net; 2 % discount when paid
 within 10 days.</li>
 <li><code>InvoiceTypeCode</code> = <strong>380</strong> (listID
@@ -65,7 +66,7 @@ within 10 days.</li>
 A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the
 world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial
 invoice.</li>
-<li><code>TaxPointDate</code> = <strong>2026-04-03</strong><br />
+<li><code>TaxPointDate</code> = <strong>2026-04-02</strong><br />
 Urvania's value added tax becomes due on the invoice date.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XUF</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
@@ -524,7 +525,7 @@ validation checks. The code is from UBL's default Payment means
 <li><code>PaymentMeansDescription</code> = <strong>Credit
 transfer</strong><br />
 In words.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-03</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-05-02</strong><br />
 When the transfer must be credited.</li>
 <li><code>PaymentChannelCode</code> = <strong>RTGS</strong> (listID
 <code>ISO 20022 ClearingChannel2Code</code>)<br />
@@ -692,13 +693,13 @@ The discount on the amount payable, if paid in time.</li>
 <li><code>PaymentTermsDetailsURI</code> = <strong><a
 href="https://www.ferranogrid.example/terms">https://www.ferranogrid.example/terms</a></strong><br />
 The seller's general terms of payment.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-03</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-05-02</strong><br />
 The day the amount is due, as the terms count it.</li>
 <li><code>SettlementPeriod/StartDate</code> =
-<strong>2026-04-03</strong><br />
+<strong>2026-04-02</strong><br />
 From the invoice date.</li>
 <li><code>SettlementPeriod/EndDate</code> =
-<strong>2026-04-13</strong><br />
+<strong>2026-04-12</strong><br />
 For 10 days.</li>
 <li><code>PenaltyInterestRate/InterestRatePercent</code> =
 <strong>8</strong><br />
@@ -1053,11 +1054,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;ENERGY-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FG-INV-26-0150&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;af7f93bd-4f82-5130-82e5-5b40a1c4cefa&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-03&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:20:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-02&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-03&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;4&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DefaultLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:DefaultLanguageCode</span>&gt;</span>
@@ -1220,7 +1221,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-02&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTGS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;FERRA-RTGS&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF13FGINV260150&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
@@ -1273,10 +1274,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountPercent</span>&gt;2&lt;/<span class="kw">cbc:SettlementDiscountPercent</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;66983&lt;/<span class="kw">cbc:SettlementDiscountAmount</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.ferranogrid.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-02&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SettlementPeriod</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-03&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-12&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SettlementPeriod</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:InterestRatePercent</span>&gt;8&lt;/<span class="kw">cbc:InterestRatePercent</span>&gt;</span>
@@ -1446,6 +1447,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1b6c93363be4054f9365e0360472e2408fdcdee5"><code>1b6c933</code></a> of 2026-11-19 15:32 UTC</p></div></footer>
 </body>
 </html>

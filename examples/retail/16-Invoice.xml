@@ -7,7 +7,7 @@
   <cbc:ID>BF-INV-26-0234</cbc:ID>
   <cbc:UUID>bd9692ab-c902-5cad-bc2f-37c7464afe3c</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
-  <cbc:IssueTime>10:31:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>

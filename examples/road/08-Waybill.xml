@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>08:16:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:32:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
@@ -250,7 +250,6 @@
         <cbc:RequiredDeliveryTime>10:00:00</cbc:RequiredDeliveryTime>
         <cac:TransitPeriod>
           <cbc:StartDate>2026-03-23</cbc:StartDate>
-          <cbc:EndDate>2026-03-25</cbc:EndDate>
         </cac:TransitPeriod>
         <cac:TransportMeans>
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
@@ -292,15 +291,7 @@
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
-        <cac:ExaminationTransportEvent>
-          <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
-          <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
-          <cac:Location>
-            <cbc:Name>Road border crossing Urvania–Bayvarra</cbc:Name>
-          </cac:Location>
-        </cac:ExaminationTransportEvent>
-        <cac:ActualDepartureTransportEvent>
+        <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
           <cac:Location>
@@ -312,7 +303,7 @@
               </cac:Country>
             </cac:Address>
           </cac:Location>
-        </cac:ActualDepartureTransportEvent>
+        </cac:EstimatedDepartureTransportEvent>
         <cac:DriverPerson>
           <cbc:ID>XU-DL-0417722</cbc:ID>
           <cbc:FirstName>Ilario</cbc:FirstName>
@@ -2867,11 +2858,6 @@
         <cbc:StartTime>09:00:00</cbc:StartTime>
         <cbc:EndTime>11:00:00</cbc:EndTime>
       </cac:EstimatedDeliveryPeriod>
-      <cac:FuelConsumption>
-        <cbc:ID>TH-FC-26-0159</cbc:ID>
-        <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
-        <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
-      </cac:FuelConsumption>
     </cac:Delivery>
     <cac:ReturnAddress>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>

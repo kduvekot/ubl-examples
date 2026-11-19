@@ -64,10 +64,10 @@ sales, when customers asked whether the slats need oil.</li>
 <li><code>IssueTime</code> = <strong>09:01:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>RevisionDate</code> = <strong>2026-05-20</strong><br />
+<li><code>RevisionDate</code> = <strong>2026-05-21</strong><br />
 The day of the change.</li>
-<li><code>RevisionTime</code> = <strong>14:00:00</strong><br />
-At that time.</li>
+<li><code>RevisionTime</code> = <strong>08:30:00</strong><br />
+When the change was made, before the update was sent.</li>
 <li><code>Note</code> = <strong>Applies to the spring
 catalogue.</strong><br />
 Which catalogue.</li>
@@ -82,7 +82,7 @@ One line.</li>
 <h3 id="validity-period">Validity Period</h3>
 <p>Inside <code>ValidityPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-05-20</strong><br />
+<li><code>StartDate</code> = <strong>2026-05-21</strong><br />
 From the change.</li>
 <li><code>EndDate</code> = <strong>2026-07-19</strong><br />
 Until the catalogue ends.</li>
@@ -98,20 +98,21 @@ The catalogue's UUID, as stated in the catalogue.</li>
 <li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
 Its issue date.</li>
 <li><code>IssueTime</code> = <strong>09:00:00</strong><br />
-And time.</li>
-<li><code>RevisionDate</code> = <strong>2026-05-21</strong><br />
-Revised by the specification update.</li>
-<li><code>RevisionTime</code> = <strong>14:00:00</strong><br />
+And time, as the catalogue states it.</li>
+<li><code>RevisionDate</code> = <strong>2026-05-20</strong><br />
+Revised by the price update of the side frame.</li>
+<li><code>RevisionTime</code> = <strong>13:00:00</strong><br />
 At that time.</li>
 <li><code>Note</code> = <strong>Spring catalogue 2026.</strong><br />
 Which catalogue.</li>
 <li><code>Description</code> = <strong>Benches and spare parts for
 resale.</strong><br />
 What it holds.</li>
-<li><code>VersionID</code> = <strong>1.0</strong><br />
-The version referred to.</li>
-<li><code>PreviousVersionID</code> = <strong>0.9</strong><br />
-The draft the store saw at the fair.</li>
+<li><code>VersionID</code> = <strong>1.1</strong><br />
+The version referred to: the one current when this document is
+issued.</li>
+<li><code>PreviousVersionID</code> = <strong>1.0</strong><br />
+The version before it.</li>
 </ul>
 <h3 id="referenced-contract">Referenced Contract</h3>
 <p>Inside <code>ReferencedContract</code>:</p>
@@ -1030,14 +1031,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Revised datasheet of the Serra 180: slat finish and maintenance&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-21&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:01:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RevisionDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:RevisionDate</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RevisionTime</span>&gt;14:00:00&lt;/<span class="kw">cbc:RevisionTime</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RevisionDate</span>&gt;2026-05-21&lt;/<span class="kw">cbc:RevisionDate</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RevisionTime</span>&gt;08:30:00&lt;/<span class="kw">cbc:RevisionTime</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Applies to the spring catalogue.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Revised datasheet of the Serra 180: slat finish and maintenance&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1.2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-21&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RelatedCatalogueReference</span>&gt;</span>
@@ -1045,12 +1046,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;f5163e36-0159-5b9f-b172-a86137e369e6&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionDate</span>&gt;2026-05-21&lt;/<span class="kw">cbc:RevisionDate</span>&gt;</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionTime</span>&gt;14:00:00&lt;/<span class="kw">cbc:RevisionTime</span>&gt;</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:RevisionDate</span>&gt;</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:RevisionTime</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Spring catalogue 2026.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Benches and spare parts for resale.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;1.0&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PreviousVersionID</span>&gt;0.9&lt;/<span class="kw">cbc:PreviousVersionID</span>&gt;</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;1.1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PreviousVersionID</span>&gt;1.0&lt;/<span class="kw">cbc:PreviousVersionID</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RelatedCatalogueReference</span>&gt;</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReferencedContract</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-BM-SUPPLY-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1423,6 +1424,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CatalogueItemSpecificationUpdate</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1b6c93363be4054f9365e0360472e2408fdcdee5"><code>1b6c933</code></a> of 2026-11-19 15:32 UTC</p></div></footer>
 </body>
 </html>

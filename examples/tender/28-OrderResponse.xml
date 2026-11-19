@@ -17,9 +17,6 @@
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0212</cbc:ID>
   </cac:OrderReference>
-  <cac:OrderDocumentReference>
-    <cbc:ID>PWD-PO-26-0212</cbc:ID>
-  </cac:OrderDocumentReference>
   <cac:OrderChangeDocumentReference>
     <cbc:ID>LPWD-OC-26-0213</cbc:ID>
   </cac:OrderChangeDocumentReference>

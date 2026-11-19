@@ -7,7 +7,7 @@
   <cbc:ID>BS-RE-26-0222</cbc:ID>
   <cbc:UUID>31926ddb-5dfd-59d6-bb1b-86b3926753e7</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-  <cbc:IssueTime>08:17:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:13:00-01:00</cbc:IssueTime>
   <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
   <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
   <cbc:RetailEventStatusCode listID="urn:ubl-examples:world:codelist:RetailEventStatusCode">CONFIRMED</cbc:RetailEventStatusCode>
@@ -18,10 +18,6 @@
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-05-24</cbc:EndDate>
   </cac:Period>
-  <cac:OriginalDocumentReference>
-    <cbc:ID>BM-PROMO-PLAN-26</cbc:ID>
-    <cbc:DocumentType>Promotion plan</cbc:DocumentType>
-  </cac:OriginalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-0422E</cbc:ID>
     <cac:SignatoryParty>

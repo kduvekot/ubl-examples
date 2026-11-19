@@ -52,9 +52,10 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
 The monthly bill, issued on the first day of the next month.</li>
-<li><code>IssueTime</code> = <strong>15:44:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+<li><code>IssueTime</code> = <strong>14:51:00-01:00</strong><br />
+Issued a few minutes before the document that cites it, in the sender's
+local time (C72); in the issuer's local time, with its offset from UTC
+(D27).</li>
 <li><code>DueDate</code> = <strong>2026-04-23</strong><br />
 As the payment terms below count it: 21 days net from the bill.</li>
 <li><code>InvoiceTypeCode</code> = <strong>380</strong> (listID
@@ -1077,7 +1078,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;CSWC-INV-26-0319&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4d48b45e-73c0-5476-98a9-69e873037095&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:44:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:51:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
@@ -1460,6 +1461,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1b6c93363be4054f9365e0360472e2408fdcdee5"><code>1b6c933</code></a> of 2026-11-19 15:32 UTC</p></div></footer>
 </body>
 </html>
