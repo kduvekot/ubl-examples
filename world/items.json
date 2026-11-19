@@ -213,12 +213,6 @@
     "position": "FRM"
    },
    "barcode": "Code128",
-   "lot_props": [
-    [
-     "Coating batch",
-     "ZN-26-114"
-    ]
-   ],
    "origin_criterion": "S",
    "parcels": [
     {
@@ -384,14 +378,6 @@
    "national_tariff": "73259990",
    "serials": "VI-SF-",
    "trace": "VI-TR-",
-   "registration": "VI-QR-",
-   "instance_props": [
-    [
-     "Melt number",
-     "M-26-0412"
-    ]
-   ],
-   "made_time": "06:40:00",
    "origin_criterion": "S",
    "carton": {
     "mm": [
@@ -2000,7 +1986,7 @@
   }
  },
  "goods_chain": {
-  "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, and the build checks each despatch against its entry. Items are the maker's (world/items.json); a reseller's item is the maker's item it resells.",
+  "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, and the build checks each despatch against its entry. Items are the maker's (world/items.json); a reseller's item is the maker's item it resells. Each casting day has its own melt number and pour time, and each bench lot its own coating batch (D21, worklist C70): both are numbered in a running count of the year.",
   "production": [
    {
     "item": "bench-serra",
@@ -2016,7 +2002,10 @@
       "road",
       "2026-03-23"
      ]
-    ]
+    ],
+    "coating": "ZN-26-057",
+    "melt": "M-26-0057",
+    "poured": "06:40:00"
    },
    {
     "item": "bench-casting",
@@ -2031,7 +2020,9 @@
       "2026-03-23"
      ]
     ],
-    "why": "Twelve spare frames cast with the frames of the lot of 20 March, for Lumeway's service stock."
+    "why": "Twelve spare frames cast with the frames of the lot of 20 March, for Lumeway's service stock.",
+    "melt": "M-26-0057",
+    "poured": "06:40:00"
    },
    {
     "item": "bench-serra",
@@ -2044,7 +2035,8 @@
       "2026-03-30"
      ]
     ],
-    "why": "The first release of the public works department's contract, in moss green (D28)."
+    "why": "The first release of the public works department's contract, in moss green (D28).",
+    "coating": "ZN-26-062"
    },
    {
     "item": "bench-serra",
@@ -2057,7 +2049,8 @@
       "2026-04-13"
      ]
     ],
-    "why": "The first container of the rail delivery to Lumeway (D21, D37)."
+    "why": "The first container of the rail delivery to Lumeway (D21, D37).",
+    "coating": "ZN-26-071"
    },
    {
     "item": "bench-serra",
@@ -2070,7 +2063,8 @@
       "2026-04-13"
      ]
     ],
-    "why": "The second container of the rail delivery."
+    "why": "The second container of the rail delivery.",
+    "coating": "ZN-26-072"
    },
    {
     "item": "bench-casting",
@@ -2085,7 +2079,10 @@
       "2026-05-13"
      ]
     ],
-    "why": "Eight frames cast to Velumi's urgent order of 11 May, galvanised and packed on 13 May (D39)."
+    "why": "Eight frames cast to Velumi's urgent order of 11 May, galvanised and packed on 13 May (D39).",
+    "melt": "M-26-0094",
+    "poured": "14:15:00",
+    "poured_why": "An extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next."
    }
   ],
   "ledgers": {
@@ -2210,10 +2207,11 @@
       "out": [
        {
         "item": "bench-serra",
-        "qty": 1
+        "qty": 1,
+        "lot": "VI-LOT-260320"
        }
       ],
-      "why": "Sold to a consumer in the promotion week (retail/21)."
+      "why": "Sold to a consumer in the promotion week, a bench of the delivery of 30 April: the receipt names its frame's serial for the warranty (retail/21)."
      }
     ]
    },

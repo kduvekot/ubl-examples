@@ -441,8 +441,8 @@ Inside `PurchaseReceiptLine`:
   The warranty runs from the purchase
 - `PurchaseLinePeriod/EndDate` = **2031-05-15**  
   for five years.
-- `PurchaseReference/ID` = **VI-SF-02170**  
-  The serial number of the bench's frame, for the warranty.
+- `PurchaseReference/ID` = **VI-SF-01298**  
+  The serial number of the bench's frame, for the warranty: the bench is one of the store's delivery from the March lot, whose frames were cast with it (the production record, D21).
 - `PurchaseReference/Description` = **Frame serial number**  
   What the number is.
 - `TaxTotal/TaxAmount` = **43.82** (currencyID `XBL`)  
@@ -816,7 +816,7 @@ Inside `PurchaseReceiptLine`:
       <cbc:EndDate>2031-05-15</cbc:EndDate>
     </cac:PurchaseLinePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>VI-SF-02170</cbc:ID>
+      <cbc:ID>VI-SF-01298</cbc:ID>
       <cbc:Description>Frame serial number</cbc:Description>
     </cac:PurchaseReference>
     <cac:TaxTotal>

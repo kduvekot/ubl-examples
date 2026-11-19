@@ -356,9 +356,9 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260327**  
   The production lot, from the maker's prefix and the production day; a recall names the lot.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
-  A fact about this lot.
-- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-114**  
-  Its value for this lot.
+  A fact about this lot: the galvanising and powder-coating batch its frames went through.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-062**  
+  Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
 - `Shipment/ID` = **CL-SH-26-0216**  
   The shipment the line travels in.
 - `SubDespatchLine/ID` = **1.1**  
@@ -651,7 +651,7 @@ Inside `DespatchLine`:
           <cbc:LotNumberID>VI-LOT-260327</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
-            <cbc:Value>ZN-26-114</cbc:Value>
+            <cbc:Value>ZN-26-062</cbc:Value>
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>

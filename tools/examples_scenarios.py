@@ -6083,8 +6083,11 @@ def _(f, n, doc, out):
                  "TaxTotal": {"TaxAmount": amount(Decimal("43.82"), "XBL", "The sales tax of the line.")},
                  "PurchaseLinePeriod": {"StartDate": V(f.date(25), "The warranty runs from the purchase"),
                                         "EndDate": V("2031-05-15", "for five years.")},
-                 "PurchaseReference": {"ID": V(f"VI-SF-{f.base * 10:05d}", "The serial number of the bench's frame, "
-                                                                             "for the warranty."),
+                 "PurchaseReference": {"ID": V(bench_frame_serial("VI-LOT-260320"), "The serial number of the bench's frame, "
+                                                                             "for the warranty: the bench is one of "
+                                                                             "the store's delivery from the March "
+                                                                             "lot, whose frames were cast with it "
+                                                                             "(the production record, D21)."),
                                        "Description": V("Frame serial number", "What the number is.")}})
     return {"PurchaseReference": {"ID": V("BM-LOYAL-0088127", "The customer's loyalty card."),
                                   "Description": V("Loyalty card", "What the number is.")},
@@ -7836,6 +7839,12 @@ def _(f, n, doc, out):
           else out.get("AdditionalDocumentReference", [])),
         {"ID": V("VI-CD-26-0330E", "The export declaration lodged in Urvania at the office of departure, which the "
                                    "transit continues; a document outside the examples (rail/06#F5).")}]}
+
+
+def bench_frame_serial(lot):
+    """The serial number of the first side frame of a bench lot, from Valdara's production record (D21)."""
+    p = next(x for x in kit.CHAIN["production"] if x.get("lot") == lot)
+    return f"{kit.maker('bench-casting')['serials']}{p['frame_serials'][0]:05d}"
 
 
 def previous_declarations(f, sender):

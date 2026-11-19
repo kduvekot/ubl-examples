@@ -334,6 +334,20 @@ def chain_problems(world, items):
             out.append(f"goods chain: serials {b0}-{b1} (cast {bd}) are higher than {a0}-{a1} (cast {ad}): serials "
                        "rise with the day of casting (D21)")
 
+    melts, coats = {}, {}
+    for p in chain["production"]:     # one melt per casting day, one coating batch per lot (worklist C70)
+        if p.get("melt"):
+            if melts.setdefault(p["made"], p["melt"]) != p["melt"]:
+                out.append(f"goods chain: two melts on {p['made']}; a casting day has one melt (C70)")
+        if p.get("coating"):
+            if coats.setdefault(p["coating"], p["lot"]) != p["lot"]:
+                out.append(f"goods chain: coating batch {p['coating']} on two lots (C70)")
+    if len(set(melts.values())) != len(melts):
+        out.append("goods chain: one melt number on two casting days (C70)")
+    for a_, b_ in zip(sorted(melts.items()), sorted(melts.items())[1:]):
+        if b_[1] <= a_[1]:
+            out.append(f"goods chain: melt {b_[1]} of {b_[0]} does not follow {a_[1]} of {a_[0]} (C70)")
+
     def unit(ln):
         return ln.get("lot") or (tuple(ln["serials"]) if ln.get("serials") else None)
 

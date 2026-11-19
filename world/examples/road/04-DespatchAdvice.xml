@@ -239,7 +239,7 @@
           <cbc:LotNumberID>VI-LOT-260320</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
-            <cbc:Value>ZN-26-114</cbc:Value>
+            <cbc:Value>ZN-26-057</cbc:Value>
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>
@@ -270,132 +270,120 @@
         <cbc:ProductTraceID>VI-TR-01490</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01490</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01490</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01491</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01491</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01491</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01492</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01492</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01492</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01493</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01493</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01493</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01494</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01494</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01494</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01495</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01495</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01495</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01496</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01496</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01496</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01497</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01497</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01497</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01498</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01498</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01498</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01499</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01499</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01499</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01500</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01500</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01500</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-01501</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-03-20</cbc:ManufactureDate>
         <cbc:ManufactureTime>06:40:00</cbc:ManufactureTime>
-        <cbc:RegistrationID>VI-QR-01501</cbc:RegistrationID>
         <cbc:SerialID>VI-SF-01501</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
-          <cbc:Value>M-26-0412</cbc:Value>
+          <cbc:Value>M-26-0057</cbc:Value>
         </cac:AdditionalItemProperty>
       </cac:ItemInstance>
     </cac:Item>

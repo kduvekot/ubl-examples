@@ -514,7 +514,7 @@ def instances(flow, d, which, day, sender=None):
                 for s_ in range(ln["serials"][0], ln["serials"][1] + 1):
                     out.append(casting_instance(it, s_, p))
             else:
-                out.append(lot_instance(it, ln["lot"], p["made"]))
+                out.append(lot_instance(it, ln["lot"], p["made"], p))
         return out
     if it.get("serials"):
         q = int(Decimal(str(d[which])))
@@ -533,11 +533,18 @@ def instances(flow, d, which, day, sender=None):
     return None
 
 
-def lot_instance(it, lot, made):
-    """The ItemInstance of a production lot: its number and day, and the facts the maker records for it."""
+def lot_instance(it, lot, made, p=None):
+    """The ItemInstance of a production lot: its number and day, and the facts the maker records for it (for a lot
+    of the goods chain, its coating batch from the production record, D21)."""
     x = {"ManufactureDate": V(made, "The day the lot was produced."),
          "LotIdentification": {"LotNumberID": V(lot, "The production lot, from the maker's prefix and the "
                                                      "production day; a recall names the lot.")}}
+    if p and p.get("coating"):
+        x["LotIdentification"]["AdditionalItemProperty"] = {
+            "Name": V("Coating batch", "A fact about this lot: the galvanising and powder-coating batch its frames "
+                                       "went through."),
+            "Value": V(p["coating"], "Its batch: each lot has its own, in the coating line's running count of the year "
+                                     "(the production record, world/items.json goods_chain, D21).")}
     if it.get("lot_props"):
         x["LotIdentification"]["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this lot."),
                                                              "Value": V(v, "Its value for this lot.")}
@@ -552,17 +559,22 @@ def casting_instance(it, s_, p):
          "SerialID": V(f"{it['serials']}{s_:05d}", "The serial number cast into the frame; every casting is "
                                                    "traceable to its melt, and the numbers rise with the day of "
                                                    "casting.")}
-    if it.get("made_time"):
-        x["ManufactureTime"] = V(it["made_time"], "The time the melt was poured.")
+    if p.get("poured"):
+        x["ManufactureTime"] = V(p["poured"], "The time the day's melt was poured" + (
+            f": {p['poured_why'][0].lower() + p['poured_why'][1:]}" if p.get("poured_why") else
+            ", the foundry's first melt of the day."))
     if it.get("trace"):
         x["ProductTraceID"] = V(f"{it['trace']}{s_:05d}", "The trace code on the casting's label, for the "
                                                         "maker's tracing system.")
     if it.get("registration"):
         x["RegistrationID"] = V(f"{it['registration']}{s_:05d}", "The casting's entry in the maker's quality "
                                                                "register, with its inspection result.")
-    if it.get("instance_props"):
-        x["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this one casting."),
-                                        "Value": V(v, "Its value.")} for n_, v in it["instance_props"]]
+    if p.get("melt"):
+        x["AdditionalItemProperty"] = {"Name": V("Melt number", "A fact about this one casting: the melt of iron it "
+                                                               "was poured from."),
+                                       "Value": V(p["melt"], "Its melt: one per casting day, in the foundry's running "
+                                                             "count of the year (the production record, "
+                                                             "world/items.json goods_chain, D21).")}
     return x
 
 
