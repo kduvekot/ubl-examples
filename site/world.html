@@ -291,7 +291,9 @@ function coastCorners(g, i, j, onLand) {
     const other = n => n && (onLand ? !n.land && !n.water : n.land);
     if (!(other(n1) && other(n2) && other(nd))) continue;
     if (onLand && (me.building || me.house || me.links || me.yard || me.urban)) continue;
-    if (V[i + (d1[0] + d2[0] > 0 ? 1 : 0)][j + (d1[1] + d2[1] > 0 ? 1 : 0)] > 1) continue;   // a cliff corner: no beach
+    { const ci = i + (d1[0] + d2[0] > 0 ? 1 : 0), cj = j + (d1[1] + d2[1] > 0 ? 1 : 0), ai = i + (d1[0] - d2[0] > 0 ? 1 : 0),
+        aj = j + (d1[1] - d2[1] > 0 ? 1 : 0), bi = i + (d2[0] - d1[0] > 0 ? 1 : 0), bj = j + (d2[1] - d1[1] > 0 ? 1 : 0);
+      if (Math.max(V[ci][cj], V[ai][aj], V[bi][bj]) > LOW_SHORE) continue; }   // only on a low shore: no water or beach up a slope
     const c = [d1[0] * .5 + d2[0] * .5, d1[1] * .5 + d2[1] * .5], a = [d1[0] * .5 - d2[0] * .5, d1[1] * .5 - d2[1] * .5], b = [d2[0] * .5 - d1[0] * .5, d2[1] * .5 - d1[1] * .5];
     poly(g, [tp(i, j, ...a), tp(i, j, ...c), tp(i, j, ...b)], onLand ? COLORS.sea2 : COLORS.grass);
     band(g, i, j, [a[0] * .92, a[1] * .92], [b[0] * .92, b[1] * .92], .09, COLORS.sand);
@@ -396,9 +398,11 @@ function paintWorld(g, box, level) { const detail = level === 2;
     // banks: a strip along every edge that borders water (sand on the sea, a muddy bank on the river)
     const cut = coastCorners(g, i, j, true);
     const steepCoast = Math.max(V[i][j], V[i + 1][j], V[i][j + 1], V[i + 1][j + 1]) > 60;   // a cliff, not a beach
+    const lowEdge = (di, dj) => { const pv = [-dj, di]; return Math.max(heightAt(i + di * .22 + pv[0] * .5, j + dj * .22 + pv[1] * .5),
+      heightAt(i + di * .22 - pv[0] * .5, j + dj * .22 - pv[1] * .5)) <= LOW_SHORE; };
     DIRS.forEach(([di, dj]) => { const nb = tiles[i + di]?.[j + dj]; if (!nb || nb.land || stream(nb) || cut.has(di + "," + dj)) return; const pv = [-dj, di];
       poly(g, [tp(i, j, di * .5 + pv[0] * .5, dj * .5 + pv[1] * .5), tp(i, j, di * .5 - pv[0] * .5, dj * .5 - pv[1] * .5),
-        tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : steepCoast ? "#8a8272" : COLORS.sand); });
+        tp(i, j, di * .22 - pv[0] * .5, dj * .22 - pv[1] * .5), tp(i, j, di * .22 + pv[0] * .5, dj * .22 + pv[1] * .5)], nb.water ? "#7f8f52" : steepCoast || !lowEdge(di, dj) ? "#8a8272" : COLORS.sand); });
     cliffFaces(g, i, j);
     if (t.urban && (level || !t.village)) urbanGround(g, i, j, t);
     // hedges around fields, fences around industry yards
@@ -420,7 +424,7 @@ function paintWorld(g, box, level) { const detail = level === 2;
     if (detail && t.tree) tree(g, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     // the villages and the farmsteads from the middle level on
     if (t.urban && !t.building) { if (level === 1 && t.village) villageCluster(g, i, j, t); else if (level || !t.village) townBlocks(g, i, j, t, detail); }
-    else if (t.house) { if (detail) house(g, x, y, t.house[0], hash(i, j * 7)); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
+    else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7)); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
     if (t.station) meteringStation(g, i, j);
     if (t.harbour) harbour(g, i, j);
     if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
@@ -577,15 +581,31 @@ function townBlocks(g, i, j, t, detail) {
   const onRoad = onWay(rd), onRail = onWay(rl);
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) { if (!subBit(t, a, b)) continue;
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; if (onRoad(u, v) || onRail(u, v) || (t.bridge)) continue;
-    const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a)]); }
+    const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a), u, v]); }
   out.sort((p, q) => p[1] - q[1] || p[0] - q[0]);
-  for (const [x, y, n, m] of out) cityBlock(g, x, y, t.density, n, m, detail); }
+  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail); }
 // a village at the middle level: a small cluster of red roofs, one house to each built-up sub-square, that reads
 // as a dot when zoomed out
 function villageCluster(g, i, j, t) { const out = [];
-  for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) out.push(tp(i, j, (a + .5) / SUB - .5, (b + .5) / SUB - .5));
+  for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) { const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; out.push([...tp(i, j, u, v), u, v]); }
   out.sort((p, q) => p[1] - q[1]);
-  for (const [x, y] of out) cityBox(g, x, y, .2, .18, 5, "#ece4d6", "#b5533c"); }
+  for (const [x, y, u, v] of out) cityBox(g, x, y - foundation(g, i, j, u, v, .11), .2, .18, 5, "#ece4d6", "#b5533c"); }
+// a house on sloping ground is dug into the slope (owner, 2026-11-19, MO004): it stands on ground cut down to the
+// lowest point under it (natural ground, not fill, as builders do), with the cut face of earth and stone behind it on
+// the uphill side; the village square keeps the land's own shape. r: half its size in squares. Returns how many
+// pixels the house stands below the ground at its middle (a negative lift).
+function foundation(g, i, j, u, v, r) {
+  const cs = [[-r, -r], [r, -r], [r, r], [-r, r]], hs = cs.map(([a, b]) => heightAt(i + u + a, j + v + b)), hc = heightAt(i + u, j + v);
+  const lo = Math.min(...hs); if (Math.max(...hs) - lo < 3) return 0;
+  const at = k => { const [x, y] = tp(i, j, u + cs[k][0], v + cs[k][1]); return [[x, y], [x, y + (hs[k] - lo) * HU]]; };   // ground, floor
+  const P = [0, 1, 2, 3].map(at);
+  poly(g, P.map(p => p[1]), "#a69a82");                                                     // the levelled floor
+  const [ri, rj] = R(i, j);
+  for (let k = 0; k < 4; k++) { const k2 = (k + 1) % 4, mu = (cs[k][0] + cs[k2][0]) / 2, mv = (cs[k][1] + cs[k2][1]) / 2;
+    const [qi, qj] = R(i + Math.sign(mu), j + Math.sign(mv)); if (qi + qj > ri + rj) continue;   // only the cut faces at the back show
+    if (hs[k] - lo < 1 && hs[k2] - lo < 1) continue;
+    poly(g, [P[k][0], P[k2][0], P[k2][1], P[k][1]], (qi - ri) + (qj - rj) < -0.5 ? "#8a7d68" : "#97896f"); }
+  return -(hc - lo) * HU; }
 // around an office, a bank or a shop in town, smaller buildings stand on the edge of its square
 const IN_TOWN = new Set(["office", "bank", "shop", "townhall", "house"]);
 function ringBlocks(i, j, t) { const out = [];
@@ -853,6 +873,7 @@ const toScreen = (wx, wy) => [wx * view.s + view.x, wy * view.s + view.y];
 // open water (the sea and the estuary) lies at 0 whatever the heights of its corners: a coastal corner may keep the
 // height of the land round it (a cliff, owner 2026-11-19); SEA0 is set while open water is drawn
 let SEA0 = false;
+const LOW_SHORE = 20;                                  // metres: a shore this low has a beach; higher, shingle or a cliff
 const openWater = t => t && ((!t.land && !t.water) || t.estuary);
 // world pixel position of an original tile, in the current rotation
 const tileWorld = (i, j) => { const a = rot === 0 ? i : rot === 1 ? H - 1 - j : rot === 2 ? W - 1 - i : j, b = rot === 0 ? j : rot === 1 ? i : rot === 2 ? H - 1 - j : W - 1 - i;

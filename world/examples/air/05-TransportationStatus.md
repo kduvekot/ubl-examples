@@ -149,7 +149,7 @@ Inside `Consignment`:
   The minutes of the longitude.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/AltitudeMeasure` = **111** (unitCode `MTR`)  
+- `MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/AltitudeMeasure` = **100** (unitCode `MTR`)  
   The height of the place above sea level: the level its ground stands at on the world's map.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Cargo acceptance**  
   The party's main desk, which handles this document; identity of Lumeport Airport Cargo Terminal (world/parties.json).
@@ -342,7 +342,7 @@ Inside `StatusPeriod`:
             <cbc:LongitudeDegreesMeasure unitCode="DD">13</cbc:LongitudeDegreesMeasure>
             <cbc:LongitudeMinutesMeasure unitCode="D61">23.07</cbc:LongitudeMinutesMeasure>
             <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
-            <cbc:AltitudeMeasure unitCode="MTR">111</cbc:AltitudeMeasure>
+            <cbc:AltitudeMeasure unitCode="MTR">100</cbc:AltitudeMeasure>
           </cac:LocationCoordinate>
         </cac:PhysicalLocation>
         <cac:Contact>
