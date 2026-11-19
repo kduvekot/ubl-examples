@@ -585,14 +585,17 @@ function nearWay(t, u, v) { if (!t.links) return false;
     for (const k of set) { const [di, dj] = k.split(",").map(Number), bx = di / 2, by = dj / 2, l2 = bx * bx + by * by;
       const f = Math.max(0, Math.min(1, (u * bx + v * by) / l2)), dx = u - f * bx, dy = v - f * by; if (dx * dx + dy * dy < ROAD_CLEAR * ROAD_CLEAR) return true; } }
   return false; }
-// ... and a tree whose picture would cover a road or a railway behind it is left out too (a tree is drawn 12 pixels
+// ... and a tree whose picture would cover a road, a railway, a house or a building behind it is left out too (a tree is drawn 12 pixels
 // tall, on a square 16 pixels high: it would hide most of the square behind it). The ways' points on the screen are
 // worked out per square and per rotation.
 const WAY_PTS = new Map();
-function wayPts(i, j) { const t = tiles[i]?.[j]; if (!t?.links) return null; const key = rot + ":" + i + "," + j;
-  let pts = WAY_PTS.get(key); if (pts) return pts; pts = [];
-  for (const set of [t.links.road, t.links.rail]) if (set) for (const k of set) { const [di, dj] = k.split(",").map(Number);
+function wayPts(i, j) { const t = tiles[i]?.[j]; if (!t || !(t.links || t.house || t.building || t.urban)) return null;
+  const key = rot + ":" + i + "," + j; let pts = WAY_PTS.get(key); if (pts) return pts; pts = [];
+  if (t.links) for (const set of [t.links.road, t.links.rail]) if (set) for (const k of set) { const [di, dj] = k.split(",").map(Number);
     for (let f = 0; f <= 1; f += .2) pts.push(tileWorld(i + di / 2 * f, j + dj / 2 * f)); }
+  if (t.house || t.building) for (const [u, v] of [[0, 0], [-.2, -.2], [.2, -.2], [.2, .2], [-.2, .2]]) pts.push(tileWorld(i + u, j + v));   // houses and
+  if (t.urban) for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b))   // buildings: trees keep off them too (owner, 2026-11-19, MO005)
+    pts.push(tileWorld(i + (a + .5) / SUB - .5, j + (b + .5) / SUB - .5));
   WAY_PTS.set(key, pts); return pts; }
 function coversWay(i, j, x, y) {
   for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) { const pts = wayPts(i + a, j + b); if (!pts) continue;
