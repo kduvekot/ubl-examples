@@ -22,8 +22,8 @@ The mill declares the bales in Bayvarra.
   The importer's declaration number.
 - `UUID` = **e09b21a0-357c-579c-b883-6abdf4d32750**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-06**  
-  The mill declares the bales in Bayvarra.
+- `IssueDate` = **2026-05-11**  
+  The first working day after the ship berthed: the mill declares the bales in Bayvarra.
 - `IssueTime` = **15:32:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
@@ -281,6 +281,10 @@ Inside `AdditionalDocumentReference`:
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: SCG-EX-26-0203 is the example cotton/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **DAL-GC-26-0202**  
+  The phytosanitary certificate made out for Bayvarra, on which the release of the lint under Bayvarra's plant health rules depends (cotton/15#F7).
+- `DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: DAL-GC-26-0202 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
 - `ID` = **SCG-INV-26-0210**  
   The commercial invoice the customs value rests on (worklist C12); its statement on origin is the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -308,7 +312,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-IM-26-0209</cbc:ID>
   <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
-  <cbc:IssueDate>2026-03-06</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>15:32:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
@@ -511,6 +515,10 @@ Inside `Signature`:
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-EX-26-0203</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>DAL-GC-26-0202</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-INV-26-0210</cbc:ID>

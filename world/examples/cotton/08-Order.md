@@ -22,8 +22,8 @@ Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the
   The buyer's order number.
 - `UUID` = **4aa8f3b8-9dcb-52c6-849d-e415d93f4130**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-24**  
-  The mill orders the first container of the season.
+- `IssueDate` = **2026-04-23**  
+  Late April: the mill orders the first container of the season's lint.
 - `IssueTime` = **10:37:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -156,9 +156,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Delivery`:
 
-- `RequestedDeliveryPeriod/StartDate` = **2026-03-02**  
-  Free on board Selanu: the bales are wanted on board the ship of 2 March.
-- `RequestedDeliveryPeriod/EndDate` = **2026-03-02**  
+- `RequestedDeliveryPeriod/StartDate` = **2026-05-07**  
+  Free on board Selanu: the bales are wanted on board the Tidewell Reef of 7 May.
+- `RequestedDeliveryPeriod/EndDate` = **2026-05-07**  
   The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -250,7 +250,7 @@ Inside `OrderLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-PO-26-0198</cbc:ID>
   <cbc:UUID>4aa8f3b8-9dcb-52c6-849d-e415d93f4130</cbc:UUID>
-  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>10:37:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -351,8 +351,8 @@ Inside `OrderLine`:
   </cac:FreightForwarderParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-03-02</cbc:StartDate>
-      <cbc:EndDate>2026-03-02</cbc:EndDate>
+      <cbc:StartDate>2026-05-07</cbc:StartDate>
+      <cbc:EndDate>2026-05-07</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>

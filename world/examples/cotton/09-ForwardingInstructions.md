@@ -22,8 +22,8 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   The mill's instruction number.
 - `UUID` = **1e4f0578-b6cd-5679-84ad-93eb9ac890fd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-25**  
-  Under FOB the buyer instructs the forwarder for the main carriage.
+- `IssueDate` = **2026-04-24**  
+  The day after the order: under FOB the buyer instructs the forwarder for the main carriage.
 - `IssueTime` = **11:39:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Forwarding instructions**  
@@ -247,7 +247,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-FI-26-0199</cbc:ID>
   <cbc:UUID>1e4f0578-b6cd-5679-84ad-93eb9ac890fd</cbc:UUID>
-  <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>11:39:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>

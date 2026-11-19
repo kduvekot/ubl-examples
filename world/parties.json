@@ -2262,7 +2262,7 @@
      "net_t": "3910",
      "registry": "Lumeport",
      "ballast": "1900",
-     "voyage": "TR-26-09W",
+     "voyage": "TR-26-19W",
      "master": {
       "first": "Hester",
       "family": "Calloway"
@@ -4346,6 +4346,17 @@
     "name": "Maritime Administration of Bayvarra",
     "kind": "public",
     "registry_id": "5389612047"
+   }
+  },
+  {
+   "id": "ph-xb",
+   "c": "XB",
+   "name": "Port Health Office",
+   "what": "Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships.",
+   "identity": {
+    "name": "Port Health Office of Bayvarra, Lumeport",
+    "kind": "public",
+    "registry_id": "7140583926"
    }
   },
   {

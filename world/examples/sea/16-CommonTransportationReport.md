@@ -170,10 +170,14 @@ Inside `ReportingLocation`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0132**  
-  The shipment the report is for.
-- `ShipmentStage/ID` = **1**  
-  The sea leg to Selanu.
+- `ID` = **TH-26-19E**  
+  The ship's voyage the report is about: a report on the ship and all it carries, so its shipment is the voyage, not one shipper's consignment (sea/16#F13).
+- `ShipmentStage/ID` = **2**  
+  The sea leg to Selanu, stage 2 as on the bill of lading and the manifest (sea/16#F14).
+- `ShipmentStage/CrewQuantity` = **14** (unitCode `IE`)  
+  The crew on board: 14 persons; those with a function in this report are named below (sea/16#F15).
+- `ShipmentStage/PassengerQuantity` = **1** (unitCode `IE`)  
+  The one passenger, the supercargo travelling with the cargo (O128).
 - `ShipmentStage/TerminalOperatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Port of Selanu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `ShipmentStage/TerminalOperatorParty/PartyName/Name` = **Port of Selanu**  
@@ -386,14 +390,12 @@ Inside `Shipment`:
   The capacity.
 - `ShipmentStage/BallastWaterSummary/OtherControlActions` = **Sediment flushed from the forepeak tank during the exchange and recorded in the ballast water record book.**  
   A control action besides the exchange: sediment management under the ballast water management plan.
-- `ShipmentStage/BallastWaterSummary/NoControlActionsReason` = **Exchange done at more than 200 nautical miles from land.**  
-  Why no treatment was needed.
-- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-3**  
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-1**  
   The tank.
-- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **WING** (listID `urn:ubl-examples:world:codelist:BallastTankTypeCode`)  
-  A wing tank. The code is from the Trade Accord's ballast tank type list: WING = Wing tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **PEAK** (listID `urn:ubl-examples:world:codelist:BallastTankTypeCode`)  
+  The fore peak tank, whose sediment was flushed during the exchange. The code is from the Trade Accord's ballast tank type list: PEAK = Peak tank.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
-  Taken up at Lumeport: 310 cubic metres. A volume needs a volume unit; the 310 were meant as tonnes of water, which is about the same number of cubic metres.
+  Taken up at Lumeport: 310 cubic metres, a quarter of the 1,240 tonnes on board (a tonne of water is about a cubic metre).
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
   The depth of the intake.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SalinityMeasure` = **30** (unitCode `GL`)  
@@ -410,6 +412,96 @@ Inside `Shipment`:
   The water. The code is from the Trade Accord's temperature attribute list: WATER = Water temperature. An identifier that holds a code names the code's list in its schemeID.
 - `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
   Its temperature.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-2**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **DOUBLEBOTTOM** (listID `urn:ubl-examples:world:codelist:BallastTankTypeCode`)  
+  A double bottom tank. The code is from the Trade Accord's ballast tank type list: DOUBLEBOTTOM = Double bottom tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Taken up at Lumeport: 310 cubic metres, a quarter of the 1,240 tonnes on board (a tonne of water is about a cubic metre).
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
+  The depth of the intake.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SalinityMeasure` = **30** (unitCode `GL`)  
+  Salinity.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TransactionDate` = **2026-05-14**  
+  At Lumeport.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Name` = **Port of Lumeport**  
+  The port.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **WATER** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The water. The code is from the Trade Accord's temperature attribute list: WATER = Water temperature. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
+  Its temperature.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-3**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **WING** (listID `urn:ubl-examples:world:codelist:BallastTankTypeCode`)  
+  A wing tank, port side. The code is from the Trade Accord's ballast tank type list: WING = Wing tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Taken up at Lumeport: 310 cubic metres, a quarter of the 1,240 tonnes on board (a tonne of water is about a cubic metre).
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
+  The depth of the intake.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SalinityMeasure` = **30** (unitCode `GL`)  
+  Salinity.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TransactionDate` = **2026-05-14**  
+  At Lumeport.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Name` = **Port of Lumeport**  
+  The port.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **WATER** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The water. The code is from the Trade Accord's temperature attribute list: WATER = Water temperature. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
+  Its temperature.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankID` = **BT-4**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TankTypeCode` = **WING** (listID `urn:ubl-examples:world:codelist:BallastTankTypeCode`)  
+  A wing tank, starboard side. The code is from the Trade Accord's ballast tank type list: WING = Wing tank.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Taken up at Lumeport: 310 cubic metres, a quarter of the 1,240 tonnes on board (a tonne of water is about a cubic metre).
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SeaHeightMeasure` = **2** (unitCode `MTR`)  
+  The depth of the intake.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/SalinityMeasure` = **30** (unitCode `GL`)  
+  Salinity.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/TransactionDate` = **2026-05-14**  
+  At Lumeport.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Name` = **Port of Lumeport**  
+  The port.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/AttributeID` = **WATER** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The water. The code is from the Trade Accord's temperature attribute list: WATER = Water temperature. An identifier that holds a code names the code's list in its schemeID.
+- `ShipmentStage/BallastWaterSummary/UptakeBallastWaterTransaction/BallastWaterTemperature/Measure` = **16** (unitCode `CEL`)  
+  Its temperature.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-1**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **SEQ** (listID `urn:ubl-examples:world:codelist:BallastExchangeMethodCode`)  
+  Emptied and refilled. The code is from the Trade Accord's ballast water exchange method list: SEQ = Sequential.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
+  Of the volume.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Exchanged: the same 310 cubic metres.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-15**  
+  At sea, half way across.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, about 320 nautical miles from Selanu, in mid-ocean**  
+  Where: half way, far from any land.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-2**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **SEQ** (listID `urn:ubl-examples:world:codelist:BallastExchangeMethodCode`)  
+  Emptied and refilled. The code is from the Trade Accord's ballast water exchange method list: SEQ = Sequential.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
+  Of the volume.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Exchanged: the same 310 cubic metres.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-15**  
+  At sea, half way across.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, about 320 nautical miles from Selanu, in mid-ocean**  
+  Where: half way, far from any land.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-3**  
   The tank.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **SEQ** (listID `urn:ubl-examples:world:codelist:BallastExchangeMethodCode`)  
@@ -417,7 +509,19 @@ Inside `Shipment`:
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
   Of the volume.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
-  Exchanged: the same 310 cubic metres (a volume, so in cubic metres; a tonne of water is about a cubic metre).
+  Exchanged: the same 310 cubic metres.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-15**  
+  At sea, half way across.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, about 320 nautical miles from Selanu, in mid-ocean**  
+  Where: half way, far from any land.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TankID` = **BT-4**  
+  The tank.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangeMethodCode` = **SEQ** (listID `urn:ubl-examples:world:codelist:BallastExchangeMethodCode`)  
+  Emptied and refilled. The code is from the Trade Accord's ballast water exchange method list: SEQ = Sequential.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/ExchangedPercent` = **95**  
+  Of the volume.
+- `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/VolumeMeasure` = **310** (unitCode `MTQ`)  
+  Exchanged: the same 310 cubic metres.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/TransactionDate` = **2026-05-15**  
   At sea, half way across.
 - `ShipmentStage/BallastWaterSummary/ExchangeBallastWaterTransaction/Location/Name` = **At sea, about 320 nautical miles from Selanu, in mid-ocean**  
@@ -508,8 +612,8 @@ Inside `Shipment`:
   The chief officer, also the ship's medical officer.
 - `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/FamilyName` = **Marrin**  
   The family name.
-- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
-  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
+- `ShipmentStage/ISPSRequirements/SecurityOfficerPerson/RoleCode` = **SSO** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
+  The same person as the stage's ship security officer, in the same role (sea/16#F16). The code is from the Trade Accord's role on board list: SSO = Ship security officer.
 - `ShipmentStage/MaritimeHealthDeclaration/ID` = **MDH-26-0517**  
   The maritime declaration of health.
 - `ShipmentStage/MaritimeHealthDeclaration/InfectiousDiseaseCaseOnBoardIndicator` = **false**  
@@ -533,30 +637,22 @@ Inside `Shipment`:
 - `ShipmentStage/MaritimeHealthDeclaration/TotalDeadPersonQuantity` = **0** (unitCode `IE`)  
   No persons.
 - `ShipmentStage/MaritimeHealthDeclaration/TotalIllPersonQuantity` = **1** (unitCode `IE`)  
-  One person: a crew member with a sprained wrist.
+  One person: a crew member who was seasick.
 - `ShipmentStage/MaritimeHealthDeclaration/StowawayDescription` = **None found in the search before departure.**  
   The search.
 - `ShipmentStage/MaritimeHealthDeclaration/LastDrinkingWaterAnalysisDate` = **2026-04-02**  
   The last water test.
-- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/VisitDate` = **2026-03-28**  
-  No affected area in the last 30 days: the last port visited was Lumeport.
-- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
-- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Name` = **Port of Lumeport**  
-  Not an affected area.
-- `ShipmentStage/MaritimeHealthDeclaration/WHOAffectedAreaVisit/WHOAffectedAreaPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/ID` = **HI-1**  
   The one incident.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/JoinedShipDate` = **2025-11-01**  
   When the person joined.
-- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/NatureOfIllnessDescription` = **Sprained wrist.**  
-  What happened.
-- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/OnsetDate` = **2026-05-16**  
-  When.
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/NatureOfIllnessDescription` = **Seasickness in the swell of the open ocean.**  
+  What the illness was: a mild one, not infectious (sea/16#F20).
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/OnsetDate` = **2026-05-15**  
+  On the first full day at sea.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/ReportedToMedicalOfficerIndicator` = **true**  
   Reported.
-- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/GivenTreatmentDescription` = **Bandage and rest.**  
+- `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/GivenTreatmentDescription` = **Tablets against seasickness and rest.**  
   Treatment.
 - `ShipmentStage/MaritimeHealthDeclaration/PersonnelHealthIncident/StillIllIndicator` = **true**  
   Still recovering.
@@ -586,18 +682,18 @@ Inside `Shipment`:
   The ship's medicine chest certificate, unique only with its issuer, the port health office of its home port (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/CertificateType` = **Medicine chest**  
   Its kind.
-- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyName/Name` = **Port of Lumeport**  
-  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyIdentification/ID` = **7140583926** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships. Its identifier and name are enough (world/parties.json, referenced).
+- `ShipmentStage/MaritimeHealthDeclaration/MedicalCertificate/IssuerParty/PartyName/Name` = **Port Health Office of Bayvarra, Lumeport**  
+  Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships. Its identifier and name are enough (world/parties.json, referenced).
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/ID` = **SSCC-XB-2026-0318**  
   The ship sanitation control certificate (International Health Regulations, Annex 3), issued at Lumeport on 18 March 2026: the inspection found traces of cockroaches in the galley stores, which were treated. It replaced the exemption certificate the ship had carried until then. Unique only with its issuer (decision ID-Q10).
 - `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/CertificateType` = **Ship sanitation control**  
   Its kind.
-- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyIdentification/ID` = **20411781** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyName/Name` = **Port of Lumeport**  
-  A party referred to from another party's details: its identifier and name are enough.
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyIdentification/ID` = **7140583926** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships. Its identifier and name are enough (world/parties.json, referenced).
+- `ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlCertificate/IssuerParty/PartyName/Name` = **Port Health Office of Bayvarra, Lumeport**  
+  Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships. Its identifier and name are enough (world/parties.json, referenced).
 - `ShipmentStage/FuelConsumption/ID` = **FC-26-19E**  
   The fuel of the voyage.
 - `ShipmentStage/FuelConsumption/FuelTypeCode` = **MGO** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
@@ -655,8 +751,6 @@ Inside `TransportMeans`:
   The capacity of the tanks for ballast water only.
 - `MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
-- `MaritimeTransport/INFShipClassCode` = **INF1** (listID `IMO INF Code`)  
-  Class INF 1 under the IMO INF Code: certified for INF cargo of an aggregate activity below 4,000 TBq only. The code is from the world's copy of IMO INF Code ship class: INF1 = Class INF 1 ship.
 - `MaritimeTransport/AntennaLocus` = **Mast, 28 m above the waterline**  
   Where the AIS antenna is.
 - `MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
@@ -811,9 +905,11 @@ Inside `Signature`:
     <cbc:Name>At sea, 30 nautical miles off Selanu</cbc:Name>
   </cac:ReportingLocation>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>TH-26-19E</cbc:ID>
     <cac:ShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
+      <cbc:CrewQuantity unitCode="IE">14</cbc:CrewQuantity>
+      <cbc:PassengerQuantity unitCode="IE">1</cbc:PassengerQuantity>
       <cac:TerminalOperatorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
@@ -983,7 +1079,48 @@ Inside `Signature`:
         <cbc:TotalBallastWaterOnBoardMeasure unitCode="TNE">1240</cbc:TotalBallastWaterOnBoardMeasure>
         <cbc:TotalBallastWaterCapacityMeasure unitCode="TNE">2480</cbc:TotalBallastWaterCapacityMeasure>
         <cbc:OtherControlActions>Sediment flushed from the forepeak tank during the exchange and recorded in the ballast water record book.</cbc:OtherControlActions>
-        <cbc:NoControlActionsReason>Exchange done at more than 200 nautical miles from land.</cbc:NoControlActionsReason>
+        <cac:UptakeBallastWaterTransaction>
+          <cbc:TankID>BT-1</cbc:TankID>
+          <cbc:TankTypeCode listID="urn:ubl-examples:world:codelist:BallastTankTypeCode">PEAK</cbc:TankTypeCode>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
+          <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
+          <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
+          <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+          <cac:BallastWaterTemperature>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">WATER</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">16</cbc:Measure>
+          </cac:BallastWaterTemperature>
+        </cac:UptakeBallastWaterTransaction>
+        <cac:UptakeBallastWaterTransaction>
+          <cbc:TankID>BT-2</cbc:TankID>
+          <cbc:TankTypeCode listID="urn:ubl-examples:world:codelist:BallastTankTypeCode">DOUBLEBOTTOM</cbc:TankTypeCode>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
+          <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
+          <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
+          <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+          <cac:BallastWaterTemperature>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">WATER</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">16</cbc:Measure>
+          </cac:BallastWaterTemperature>
+        </cac:UptakeBallastWaterTransaction>
         <cac:UptakeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
           <cbc:TankTypeCode listID="urn:ubl-examples:world:codelist:BallastTankTypeCode">WING</cbc:TankTypeCode>
@@ -1005,8 +1142,59 @@ Inside `Signature`:
             <cbc:Measure unitCode="CEL">16</cbc:Measure>
           </cac:BallastWaterTemperature>
         </cac:UptakeBallastWaterTransaction>
+        <cac:UptakeBallastWaterTransaction>
+          <cbc:TankID>BT-4</cbc:TankID>
+          <cbc:TankTypeCode listID="urn:ubl-examples:world:codelist:BallastTankTypeCode">WING</cbc:TankTypeCode>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
+          <cbc:SeaHeightMeasure unitCode="MTR">2</cbc:SeaHeightMeasure>
+          <cbc:SalinityMeasure unitCode="GL">30</cbc:SalinityMeasure>
+          <cbc:TransactionDate>2026-05-14</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+          <cac:BallastWaterTemperature>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">WATER</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">16</cbc:Measure>
+          </cac:BallastWaterTemperature>
+        </cac:UptakeBallastWaterTransaction>
+        <cac:ExchangeBallastWaterTransaction>
+          <cbc:TankID>BT-1</cbc:TankID>
+          <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
+          <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:Name>At sea, about 320 nautical miles from Selanu, in mid-ocean</cbc:Name>
+          </cac:Location>
+        </cac:ExchangeBallastWaterTransaction>
+        <cac:ExchangeBallastWaterTransaction>
+          <cbc:TankID>BT-2</cbc:TankID>
+          <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
+          <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:Name>At sea, about 320 nautical miles from Selanu, in mid-ocean</cbc:Name>
+          </cac:Location>
+        </cac:ExchangeBallastWaterTransaction>
         <cac:ExchangeBallastWaterTransaction>
           <cbc:TankID>BT-3</cbc:TankID>
+          <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
+          <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
+          <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
+          <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
+          <cac:Location>
+            <cbc:Name>At sea, about 320 nautical miles from Selanu, in mid-ocean</cbc:Name>
+          </cac:Location>
+        </cac:ExchangeBallastWaterTransaction>
+        <cac:ExchangeBallastWaterTransaction>
+          <cbc:TankID>BT-4</cbc:TankID>
           <cbc:ExchangeMethodCode listID="urn:ubl-examples:world:codelist:BallastExchangeMethodCode">SEQ</cbc:ExchangeMethodCode>
           <cbc:ExchangedPercent>95</cbc:ExchangedPercent>
           <cbc:VolumeMeasure unitCode="MTQ">310</cbc:VolumeMeasure>
@@ -1097,7 +1285,7 @@ Inside `Signature`:
         <cac:SecurityOfficerPerson>
           <cbc:FirstName>Elsbeth</cbc:FirstName>
           <cbc:FamilyName>Marrin</cbc:FamilyName>
-          <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
+          <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">SSO</cbc:RoleCode>
         </cac:SecurityOfficerPerson>
       </cac:ISPSRequirements>
       <cac:MaritimeHealthDeclaration>
@@ -1115,25 +1303,13 @@ Inside `Signature`:
         <cbc:TotalIllPersonQuantity unitCode="IE">1</cbc:TotalIllPersonQuantity>
         <cbc:StowawayDescription>None found in the search before departure.</cbc:StowawayDescription>
         <cbc:LastDrinkingWaterAnalysisDate>2026-04-02</cbc:LastDrinkingWaterAnalysisDate>
-        <cac:WHOAffectedAreaVisit>
-          <cbc:VisitDate>2026-03-28</cbc:VisitDate>
-          <cac:WHOAffectedAreaPortLocation>
-            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
-            <cbc:Name>Port of Lumeport</cbc:Name>
-            <cac:Address>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              </cac:Country>
-            </cac:Address>
-          </cac:WHOAffectedAreaPortLocation>
-        </cac:WHOAffectedAreaVisit>
         <cac:PersonnelHealthIncident>
           <cbc:ID>HI-1</cbc:ID>
           <cbc:JoinedShipDate>2025-11-01</cbc:JoinedShipDate>
-          <cbc:NatureOfIllnessDescription>Sprained wrist.</cbc:NatureOfIllnessDescription>
-          <cbc:OnsetDate>2026-05-16</cbc:OnsetDate>
+          <cbc:NatureOfIllnessDescription>Seasickness in the swell of the open ocean.</cbc:NatureOfIllnessDescription>
+          <cbc:OnsetDate>2026-05-15</cbc:OnsetDate>
           <cbc:ReportedToMedicalOfficerIndicator>true</cbc:ReportedToMedicalOfficerIndicator>
-          <cbc:GivenTreatmentDescription>Bandage and rest.</cbc:GivenTreatmentDescription>
+          <cbc:GivenTreatmentDescription>Tablets against seasickness and rest.</cbc:GivenTreatmentDescription>
           <cbc:StillIllIndicator>true</cbc:StillIllIndicator>
           <cbc:DiedIndicator>false</cbc:DiedIndicator>
           <cbc:StillOnBoardIndicator>true</cbc:StillOnBoardIndicator>
@@ -1158,10 +1334,10 @@ Inside `Signature`:
           <cbc:CertificateType>Medicine chest</cbc:CertificateType>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">7140583926</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Port of Lumeport</cbc:Name>
+              <cbc:Name>Port Health Office of Bayvarra, Lumeport</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:MedicalCertificate>
@@ -1170,10 +1346,10 @@ Inside `Signature`:
           <cbc:CertificateType>Ship sanitation control</cbc:CertificateType>
           <cac:IssuerParty>
             <cac:PartyIdentification>
-              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411781</cbc:ID>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">7140583926</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-              <cbc:Name>Port of Lumeport</cbc:Name>
+              <cbc:Name>Port Health Office of Bayvarra, Lumeport</cbc:Name>
             </cac:PartyName>
           </cac:IssuerParty>
         </cac:ShipSanitationControlCertificate>
@@ -1222,7 +1398,6 @@ Inside `Signature`:
       <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
       <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
       <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
-      <cbc:INFShipClassCode listID="IMO INF Code">INF1</cbc:INFShipClassCode>
       <cbc:AntennaLocus>Mast, 28 m above the waterline</cbc:AntennaLocus>
       <cac:RegistryCertificateDocumentReference>
         <cbc:ID>REG-XB-S-20117</cbc:ID>

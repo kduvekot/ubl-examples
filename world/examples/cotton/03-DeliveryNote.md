@@ -22,14 +22,14 @@ The farm delivers a trailer of seed cotton at the gin and confirms what it deliv
   The farm's delivery note number.
 - `UUID` = **7a1d8c4c-64bb-5f76-ad72-a09687f8943f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-05**  
-  The day the trailers were weighed at the gin.
+- `IssueDate` = **2026-04-08**  
+  Written when the last of the three trailer loads was weighed at the gin.
 - `IssueTime` = **14:29:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Tasela vaputa tuote, fipavi momai tikesa.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): What was delivered.
-- `Note` = **Three trailer loads, weighed at the gin.** (languageID `en-XL`)  
-  The same note in English, the working language between the countries: What was delivered.
+- `Note` = **Tasela vaputa tuote, fipavi momai tikesa lelala 6, 7 tofami 8 April.** (languageID `qal`)  
+  The note in Lisavan, the sender's language (world/countries.json): What was delivered, and when.
+- `Note` = **Three trailer loads, weighed at the gin on 6, 7 and 8 April.** (languageID `en-XL`)  
+  The same note in English, the working language between the countries: What was delivered, and when.
 - `LineCountNumeric` = **1**  
   One line.
 
@@ -39,13 +39,6 @@ Inside `OrderReference`:
 
 - `ID` = **SCG-SEASON-2026/03**  
   The call-off under the season agreement.
-
-### Project Reference
-
-Inside `ProjectReference`:
-
-- `ID` = **SCC-COTTON-QUALITY-26**  
-  The chamber's cotton quality programme, under which the farm's seed cotton is classed.
 
 ### Additional Document Reference
 
@@ -215,24 +208,6 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The same party as at DespatchSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
-### Originator Customer Party
-
-Inside `OriginatorCustomerParty`:
-
-- `Party/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Textile Mill**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Beneficiary Party
-
-Inside `BeneficiaryParty`:
-
-- `PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Lumeport Textile Mill**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -241,8 +216,8 @@ Inside `Shipment`:
   The farm's three trailer loads.
 - `GrossWeightMeasure` = **20400** (unitCode `KGM`)  
   The cotton and the empty trailers' tare of 2,400 kg, as weighed.
-- `Delivery/ActualDeliveryDate` = **2026-02-05**  
-  At the gin.
+- `Delivery/ActualDeliveryDate` = **2026-04-08**  
+  At the gin: the last of the three loads, after those of 6 and 7 April.
 
 ### Despatch Line
 
@@ -276,17 +251,14 @@ Inside `DespatchLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LCF-DN-26-0193</cbc:ID>
   <cbc:UUID>7a1d8c4c-64bb-5f76-ad72-a09687f8943f</cbc:UUID>
-  <cbc:IssueDate>2026-02-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-08</cbc:IssueDate>
   <cbc:IssueTime>14:29:00+00:00</cbc:IssueTime>
-  <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa.</cbc:Note>
-  <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin.</cbc:Note>
+  <cbc:Note languageID="qal">Tasela vaputa tuote, fipavi momai tikesa lelala 6, 7 tofami 8 April.</cbc:Note>
+  <cbc:Note languageID="en-XL">Three trailer loads, weighed at the gin on 6, 7 and 8 April.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>SCG-SEASON-2026/03</cbc:ID>
   </cac:OrderReference>
-  <cac:ProjectReference>
-    <cbc:ID>SCC-COTTON-QUALITY-26</cbc:ID>
-  </cac:ProjectReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
     <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
@@ -422,29 +394,11 @@ Inside `DespatchLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:OriginatorCustomerParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Lumeport Textile Mill</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:OriginatorCustomerParty>
-  <cac:BeneficiaryParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeport Textile Mill</cbc:Name>
-    </cac:PartyName>
-  </cac:BeneficiaryParty>
   <cac:Shipment>
     <cbc:ID>LCF-SH-26-03</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">20400</cbc:GrossWeightMeasure>
     <cac:Delivery>
-      <cbc:ActualDeliveryDate>2026-02-05</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryDate>2026-04-08</cbc:ActualDeliveryDate>
     </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>

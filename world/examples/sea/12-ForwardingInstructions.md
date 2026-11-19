@@ -24,16 +24,16 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   The booking number the carrier gave.
 - `UUID` = **a28c5575-3d16-5217-93bf-9cf7fe81d417**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-10**  
-  The forwarder books the container.
+- `IssueDate` = **2026-05-11**  
+  The forwarder books the container the same morning (D27, D30 point 6).
 - `IssueTime` = **09:15:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  After the distributor's instructions; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Forwarding instructions**  
   What they are.
 - `Description` = **Instructions for the shipment to the island.**  
   In words.
-- `Note` = **Please confirm the booking.**  
-  What the sender expects.
+- `Note` = **Please confirm the shipping instructions for booking TWL-BK-26-55710.**  
+  What the sender expects: from the carrier, the instructions for the booking it already gave (sea/12#F6).
 - `ToOrderIndicator` = **true**  
   A bill of lading to order, so the buyer can transfer it.
 - `OtherInstruction` = **Send the bill of lading to the forwarder.**  
@@ -322,11 +322,11 @@ Inside `Signature`:
   <cbc:ID>BF-FI-26-0137</cbc:ID>
   <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
-  <cbc:IssueDate>2026-05-10</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
-  <cbc:Note>Please confirm the booking.</cbc:Note>
+  <cbc:Note>Please confirm the shipping instructions for booking TWL-BK-26-55710.</cbc:Note>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>

@@ -34,8 +34,6 @@ The port of loading reports the container loaded on board.
   How it was made.
 - `ShippingOrderID` = **BF-FI-26-0137**  
   The forwarding instructions of the shipment it reports on.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -307,7 +305,6 @@ Inside `StatusPeriod`:
   <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0133</cbc:ID>

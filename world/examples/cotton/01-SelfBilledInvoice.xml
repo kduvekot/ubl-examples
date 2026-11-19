@@ -265,15 +265,15 @@
     <cbc:Note>Paid on issue by transfer. No presumptive tax is withheld and no cotton fund levy is collected on the advance: both fall on the delivery, in the final self-billed invoice.</cbc:Note>
   </cac:PaymentTerms>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">1017.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">1017.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">1017.000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">1017.000</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">1485.000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">1485.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">1485.000</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">1485.000</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="KGM">4500</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XLC">1017.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">1485.000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qal">Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.</cbc:Description>
       <cbc:Description languageID="en-XL">Cotton as harvested, not ginned, delivered loose by trailer.</cbc:Description>
@@ -284,7 +284,7 @@
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">0.226</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XLC">0.33</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KGM">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

@@ -239,34 +239,6 @@ Inside `ConsigneeParty`:
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
 
-### Crew Person
-
-Inside `CrewPerson`:
-
-- `FirstName` = **Corin**  
-  The master of the ship.
-- `FamilyName` = **Halvard**  
-  The family name.
-- `RoleCode` = **MASTER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
-  The person's role on board. The code is from the Trade Accord's role on board list: MASTER = Master.
-- `FirstName` = **Elsbeth**  
-  The chief officer.
-- `FamilyName` = **Marrin**  
-  The family name.
-- `RoleCode` = **CHIEFOFFICER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
-  The person's role on board. The code is from the Trade Accord's role on board list: CHIEFOFFICER = Chief officer.
-
-### Passenger Person
-
-Inside `PassengerPerson`:
-
-- `FirstName` = **Ines**  
-  The one passenger: a supercargo travelling with the cargo.
-- `FamilyName` = **Tavari**  
-  The family name.
-- `RoleCode` = **PASSENGER** (listID `urn:ubl-examples:world:codelist:ShipPersonRoleCode`)  
-  The person's role on board. The code is from the Trade Accord's role on board list: PASSENGER = Passenger.
-
 ### Shipment
 
 Inside `Shipment`:
@@ -299,14 +271,10 @@ Inside `Shipment`:
   The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
 - `ShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702117**  
   The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
-- `ShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
-  What the ship needs in port.
 - `ShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
   The gross tonnage of the vessel, a number without a unit.
 - `ShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
   Its net tonnage, also without a unit.
-- `ShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
-  The capacity of the tanks for ballast water only.
 - `ShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `ShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
@@ -574,21 +542,6 @@ Inside `Signature`:
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
   </cac:ConsigneeParty>
-  <cac:CrewPerson>
-    <cbc:FirstName>Corin</cbc:FirstName>
-    <cbc:FamilyName>Halvard</cbc:FamilyName>
-    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">MASTER</cbc:RoleCode>
-  </cac:CrewPerson>
-  <cac:CrewPerson>
-    <cbc:FirstName>Elsbeth</cbc:FirstName>
-    <cbc:FamilyName>Marrin</cbc:FamilyName>
-    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">CHIEFOFFICER</cbc:RoleCode>
-  </cac:CrewPerson>
-  <cac:PassengerPerson>
-    <cbc:FirstName>Ines</cbc:FirstName>
-    <cbc:FamilyName>Tavari</cbc:FamilyName>
-    <cbc:RoleCode listID="urn:ubl-examples:world:codelist:ShipPersonRoleCode">PASSENGER</cbc:RoleCode>
-  </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
@@ -607,10 +560,8 @@ Inside `Signature`:
           <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
           <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
           <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
-          <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
           <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
           <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
-          <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
           <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
           <cac:RegistryCertificateDocumentReference>
             <cbc:ID>REG-XB-S-20117</cbc:ID>

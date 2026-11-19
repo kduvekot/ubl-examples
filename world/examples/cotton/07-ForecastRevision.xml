@@ -6,15 +6,15 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-FR-26-0197</cbc:ID>
   <cbc:UUID>1680348b-7683-52e2-b21d-f88ff92b0f43</cbc:UUID>
-  <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:08:00-01:00</cbc:IssueTime>
   <cbc:Note>Demand for clothing has risen.</cbc:Note>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:RevisionStatusCode listID="urn:ubl-examples:world:codelist:RevisionStatusCode">REVISED</cbc:RevisionStatusCode>
   <cbc:PurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">ORDER</cbc:PurposeCode>
   <cac:ForecastPeriod>
-    <cbc:StartDate>2026-02-16</cbc:StartDate>
-    <cbc:EndDate>2026-06-02</cbc:EndDate>
+    <cbc:StartDate>2026-04-01</cbc:StartDate>
+    <cbc:EndDate>2026-07-31</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:OriginalDocumentReference>
     <cbc:ID>LTM-FC-26-0192</cbc:ID>
@@ -134,17 +134,17 @@
   <cac:ForecastRevisionLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Twenty per cent more.</cbc:Note>
-    <cbc:Description>More bales from the second half of the season.</cbc:Description>
+    <cbc:Description>More bales over the season.</cbc:Description>
     <cbc:RevisedForecastLineID>1</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-02-02</cbc:SourceForecastIssueDate>
     <cbc:SourceForecastIssueTime>09:00:00</cbc:SourceForecastIssueTime>
     <cbc:AdjustmentReasonCode listID="urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode">DEMAND</cbc:AdjustmentReasonCode>
     <cac:ForecastPeriod>
-      <cbc:StartDate>2026-04-03</cbc:StartDate>
-      <cbc:EndDate>2026-06-02</cbc:EndDate>
+      <cbc:StartDate>2026-04-01</cbc:StartDate>
+      <cbc:EndDate>2026-07-31</cbc:EndDate>
     </cac:ForecastPeriod>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="KGM">30000</cbc:Quantity>
+      <cbc:Quantity unitCode="KGM">28800</cbc:Quantity>
       <cac:Item>
         <cbc:Description languageID="qal">Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.</cbc:Description>
         <cbc:Description languageID="en-XB">Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>

@@ -1562,6 +1562,12 @@ def place_parties(doc, content, top=None):
                 break
             if last:
                 desk = desk_for(top, path, pid) if pid in PARTY else None
+                if target == "Party" and step == "SenderParty" and DOC_CLASS.get(top["doc"]) == "presentation" \
+                        and top["parties"].get("BusinessParty") == pid:
+                    # the business presents itself: its full description goes under BusinessParty, the sender is
+                    # only identified (sea/01#F5)
+                    node[step] = party(pid, short=True)
+                    break
                 if target == "Party":
                     block = profiled(top, path, pid)
                 elif target == "FinancialInstitution":
@@ -2200,8 +2206,11 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "tender": [("all", Decimal("200.00"), "XBL", "the special colour, part of the price paid")],
     "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
                                                      "distinguished from the price (179,400 ferra)")],
-    "sea": [("XL", Decimal("2950.00"), "XBL", "the sea freight to the island"),
-            ("XL", lambda: __import__("examples_scenarios").INSURANCE, "XBL", "the cargo insurance")],   # O173
+    # the CIF price holds the sea freight and the insurance (D30 point 1): it is Lisavu's landed value as it stands,
+    # and Bayvarra's value at export is the price less them, which the seller's forwarder bills it (sea/18)
+    "sea": [("XB", lambda: -(__import__("examples_scenarios").SEA_FREIGHT
+                             + __import__("examples_scenarios").INSURANCE), "XBL",
+             "less the sea freight and the cargo insurance to the island, which the CIF price holds")],
 }
 
 
@@ -3187,7 +3196,7 @@ def check_air_uld_ids(flow_id, roots):
         raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
 
 
-DUE_DATE_WAITS = {"sea/22-Invoice.xml": "O72"}   # due dates settled with a later decision
+DUE_DATE_WAITS = {}   # due dates settled with a later decision
 
 
 def check_payment_terms(root, where, payee_country=None):
@@ -3287,11 +3296,6 @@ CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the documen
     ('retail', '10-DocumentStatus.xml'): 'D34',
     ('retail', '11-TransportExecutionPlanRequest.xml'): 'D34',
     ('retail', '19-CreditNote.xml'): 'D34',
-    ('sea', '01-BusinessCard.xml'): 'D30',
-    ('sea', '02-Catalogue.xml'): 'D30',
-    ('sea', '09-ForwardingInstructions.xml'): 'D30',
-    ('sea', '12-ForwardingInstructions.xml'): 'D30',
-    ('sea', '25-Statement.xml'): 'D30',
     ('tender', '04-ExpressionOfInterestRequest.xml'): 'D28',
     ('tender', '05-ExpressionOfInterestResponse.xml'): 'D28',
     ('tender', '09-ProcurementStatus.xml'): 'D28',
@@ -3304,13 +3308,6 @@ CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the documen
     ('utilities', '14-RemittanceAdvice.xml'): 'D31',
     ('plastics', '05-ExportCustomsDeclaration.xml'): 'D41',
     ('plastics', '08-DespatchAdvice.xml'): 'D41',
-    ('cotton', '04-SelfBilledInvoice.xml'): 'D33',
-    ('cotton', '05-SelfBilledCreditNote.xml'): 'D33',
-    ('cotton', '07-ForecastRevision.xml'): 'D33',
-    ('cotton', '10-GoodsCertificate.xml'): 'D33',
-    ('cotton', '11-ExportCustomsDeclaration.xml'): 'D33',
-    ('cotton', '12-WeightStatement.xml'): 'D33',
-    ('cotton', '18-RemittanceAdvice.xml'): 'D33',
     ('contest', '08-ContractNotice.xml'): 'D29',
     ('contest', '09-CallForTenders.xml'): 'D29',
     ('contest', '10-QualificationApplicationRequest.xml'): 'D29',
@@ -3344,7 +3341,6 @@ CITED_LATER = {}       # document ID -> [(moment, where)] of documents that cite
 # Documents that still report or cite something after their issue, each waiting for its flow decision (stage 6):
 # (flow, file) -> the reason. Each entry goes when its flow is implemented.
 ISSUE_ORDER_WAITS = {
-    ("sea", "28-DebitNote.xml"): "cites the factor's statement of 13 June; D30 removes the debit note (sea/28#F3, O6)",
 }
 
 

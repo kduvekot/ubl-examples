@@ -2,7 +2,7 @@
 
 *Example 18 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The forwarder invoices what it arranged for the distributor: sea freight, export clearance and the cargo insurance premium (CIF obliges the seller to insure).
+The forwarder invoices what it arranged for the distributor: its truck to the port, the sea freight, the export clearance and the cargo insurance premium (CIF obliges the seller to insure).
 
 [The XML file](18-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -36,10 +36,17 @@ The forwarder invoices what it arranged for the distributor: sea freight, export
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Freight and forwarding**  
   The cost centre in words.
-- `LineCountNumeric` = **3**  
+- `LineCountNumeric` = **4**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
+
+### Order Reference
+
+Inside `OrderReference`:
+
+- `ID` = **LD-FI-26-0131**  
+  The distributor's forwarding instructions, the order the forwarder's services follow (sea/18#F8).
 
 ### Additional Document Reference
 
@@ -334,7 +341,7 @@ Inside `PaymentTerms`:
   Bayvarran practice: a surcharge per month of late payment, no discount.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **47.63** (currencyID `XBL`)  
+- `PenaltyAmount` = **52.17** (currencyID `XBL`)  
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.bayforth.example/terms**  
   The seller's general terms of payment.
@@ -349,7 +356,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **3175.30** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **3477.85** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -368,13 +375,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **3175.30** (currencyID `XBL`)  
+- `LineExtensionAmount` = **3477.85** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **3175.30** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **3477.85** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **3175.30** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **3477.85** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **3175.30** (currencyID `XBL`)  
+- `PayableAmount` = **3477.85** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -382,6 +389,34 @@ Inside `LegalMonetaryTotal`:
 Inside `InvoiceLine`:
 
 - `ID` = **1**  
+  The line number.
+- `InvoicedQuantity` = **1** (unitCode `E48`)  
+  The container from the quay to Marrowdale and back packed: the pre-carriage the bill of lading names, the forwarder's own truck.
+- `LineExtensionAmount` = **310.00** (currencyID `XBL`)  
+  1 × 310.0, rounded to the minor unit of the currency.
+- `Item/Description` = **Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.**  
+  The seller's description; item container-haulage of Bayforth Forwarding (world/items.json).
+- `Item/Name` = **Container haulage to the port, 40-foot**  
+  The item's short name; item container-haulage of Bayforth Forwarding (world/items.json).
+- `Item/SellersItemIdentification/ID` = **BF-HAUL40**  
+  The seller's own item number; item container-haulage of Bayforth Forwarding (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **SVCB2B** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: SVCB2B = Service to a business.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business**  
+  The name of code SVCB2B in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **310** (currencyID `XBL`)  
+  The forwarder's flat rate for one container move between a shipper in its region and the container quay of the Port of Lumeport: the empty container fetched from the quay, packed at the shipper's dock and brought back full (from Marrowdale twice the 82 km of the map's road, with the time at the dock), as container haulage is usually priced per move (D30 point 1).
+- `Price/BaseQuantity` = **1** (unitCode `E48`)  
+  The price is per one unit.
+- `ID` = **2**  
   The line number.
 - `InvoicedQuantity` = **1** (unitCode `E48`)  
   One 40-foot container.
@@ -409,12 +444,16 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `E48`)  
   The price is per one unit.
-- `ID` = **2**  
+- `ID` = **3**  
   The line number.
 - `InvoicedQuantity` = **1** (unitCode `E48`)  
   One export declaration.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
   1 × 85.0, rounded to the minor unit of the currency.
+- `DocumentReference/ID` = **BF-EX-26-0135**  
+  The export declaration the forwarder lodged as customs agent (sea/18#F8).
+- `DocumentReference/DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: BF-EX-26-0135 is the example sea/11, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 - `Item/Description` = **Preparing and lodging one export declaration as customs agent.**  
   The seller's description; item export-clearance of Bayforth Forwarding (world/items.json).
 - `Item/Name` = **Export customs clearance**  
@@ -437,14 +476,14 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `E48`)  
   The price is per one unit.
-- `ID` = **3**  
+- `ID` = **4**  
   The line number.
-- `Note` = **Premium 0.22 % of the insured value, 63,771.73 lume.**  
+- `Note` = **Premium 0.22 % of the insured value, 60,385.60 lume.**  
   The basis of the premium, for the distributor's check: the rate of the cargo policy on the CIF value plus 10 % (O173).
 - `InvoicedQuantity` = **1** (unitCode `E48`)  
   Insurance of this shipment.
-- `LineExtensionAmount` = **140.30** (currencyID `XBL`)  
-  1 × 140.30, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **132.85** (currencyID `XBL`)  
+  1 × 132.85, rounded to the minor unit of the currency.
 - `DocumentReference/ID` = **WS-CERT-26-0884**  
   The insurance certificate of the shipment, which states the insured value.
 - `DocumentReference/DocumentType` = **Insurance certificate**  
@@ -467,8 +506,8 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **140.3** (currencyID `XBL`)  
-  The premium: 0.22 % of the insured value of 63,771.73 lume: the CIF value of 57,974.30 (goods 54,884.00, sea freight 2,950.00 and the premium itself) plus 10 %, the cover CIF asks (O173).
+- `Price/PriceAmount` = **132.85** (currencyID `XBL`)  
+  The premium: 0.22 % of the insured value of 60,385.60 lume: the CIF value of the goods, 54,896.00 at their CIF prices, plus 10 %, the cover CIF asks (O173).
 - `Price/BaseQuantity` = **1** (unitCode `E48`)  
   The price is per one unit.
 
@@ -490,8 +529,11 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4600</cbc:AccountingCostCode>
   <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
-  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>LD-FI-26-0131</cbc:ID>
+  </cac:OrderReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>TOL-BL-26-0139</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
@@ -742,7 +784,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">47.63</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">52.17</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-06-18</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -752,7 +794,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">3175.30</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">3477.85</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -766,13 +808,39 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">3175.30</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">3175.30</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">3175.30</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">3175.30</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">3477.85</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">3477.85</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">3477.85</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">3477.85</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">310.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.</cbc:Description>
+      <cbc:Name>Container haulage to the port, 40-foot</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>BF-HAUL40</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">SVCB2B</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">310</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">2950.00</cbc:LineExtensionAmount>
     <cac:Item>
@@ -798,9 +866,13 @@ Inside `InvoiceLine`:
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
-    <cbc:ID>2</cbc:ID>
+    <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cac:DocumentReference>
+      <cbc:ID>BF-EX-26-0135</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Preparing and lodging one export declaration as customs agent.</cbc:Description>
       <cbc:Name>Export customs clearance</cbc:Name>
@@ -824,10 +896,10 @@ Inside `InvoiceLine`:
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
-    <cbc:ID>3</cbc:ID>
-    <cbc:Note>Premium 0.22 % of the insured value, 63,771.73 lume.</cbc:Note>
+    <cbc:ID>4</cbc:ID>
+    <cbc:Note>Premium 0.22 % of the insured value, 60,385.60 lume.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">140.30</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">132.85</cbc:LineExtensionAmount>
     <cac:DocumentReference>
       <cbc:ID>WS-CERT-26-0884</cbc:ID>
       <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
@@ -850,7 +922,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">140.3</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">132.85</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

@@ -203,6 +203,12 @@
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
   </cac:PaymentTerms>
+  <cac:PaymentTerms>
+    <cbc:ID>BALANCE</cbc:ID>
+    <cbc:Note>The balance 45 days after shipment.</cbc:Note>
+    <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
+    <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
+  </cac:PaymentTerms>
   <cac:TransactionConditions>
     <cbc:ID>LD-TC-01</cbc:ID>
     <cbc:Description>Sold to trade customers only.</cbc:Description>
@@ -213,7 +219,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">54884.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54896.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -227,8 +233,8 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">54884.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54896.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">54896.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -340,8 +346,8 @@
       <cbc:SalesOrderID>LD-SO-26-0123/3</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">804.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">816.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">816.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
       <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
@@ -353,7 +359,7 @@
         </cac:PromisedDeliveryPeriod>
       </cac:Delivery>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

@@ -32,9 +32,9 @@ Under CIF the buyer clears the import; its licensed customs broker files the dec
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 23,189.720 venamo, 2,318.972 venamo.** (languageID `qal`)  
+- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,958.400 venamo, 2,195.840 venamo.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
-- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 23,189.720 coral, 2,318.972 coral.** (languageID `en-XL`)  
+- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,958.400 coral, 2,195.840 coral.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
@@ -246,9 +246,55 @@ Inside `CustomsParty`:
 Inside `NotifierParty`:
 
 - `PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
+  The party's preferred identifier: its number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Tevaro Customs Brokers**  
-  A party referred to from another party's details: its identifier and name are enough.
+  The trading name; identity of Tevaro Customs Brokers (world/parties.json).
+- `Language/ID` = **qal** (schemeID `ISO 639`)  
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
+- `Language/Name` = **Lisavan**  
+  The language's name in English; in the language itself: Lisavuana.
+- `PostalAddress/ID` = **24307810** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Tevaro Customs Brokers (world/parties.json).
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+- `PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Tevaro Customs Brokers (world/parties.json).
+- `PostalAddress/StreetName` = **Wharf Road** (languageID `en-XL`)  
+  The street's name in English, the country's other official language; identity of Tevaro Customs Brokers (world/parties.json).
+- `PostalAddress/BuildingNumber` = **60**  
+  Building number of the postal address. identity of Tevaro Customs Brokers (world/parties.json).
+- `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Tevaro Customs Brokers (world/parties.json).
+- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Tevaro Customs Brokers (world/parties.json).
+- `PostalAddress/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+- `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `PostalAddress/Country/Name` = **Lisavu**  
+  The country's name, for readers of the address.
+- `PartyLegalEntity/RegistrationName` = **Tevaro Customs Brokers Ltd**  
+  The name under which the party is registered, with its legal form; identity of Tevaro Customs Brokers (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
+  Number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
+- `Contact/Name` = **Declarations**  
+  The party's main desk, which handles this document; identity of Tevaro Customs Brokers (world/parties.json).
+- `Contact/JobTitle` = **Customs declarant**  
+  The job of the person who answers at the desk; identity of Tevaro Customs Brokers (world/parties.json).
+- `Contact/Department` = **Customs**  
+  The department the desk belongs to; identity of Tevaro Customs Brokers (world/parties.json).
+- `Contact/Telephone` = **+999 3 725 3563**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Tevaro Customs Brokers (world/parties.json).
+- `Contact/ElectronicMail` = **declarations@tevaro.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tevaro Customs Brokers (world/parties.json).
+- `Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Tevaro Customs Brokers (world/parties.json).
+- `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `ElectronicAddress/ElectronicAddressID` = **XL:IC41585** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Shipment
 
@@ -262,8 +308,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **22850.012** (currencyID `XLC`)  
-  Lisavu values the goods with freight and insurance to the island (D16): the goods at 21,632.000 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.120 XLC), shared over the goods items by their value.
+- `GoodsItem/DeclaredCustomsValueAmount` = **21632.000** (currencyID `XLC`)  
+  The customs value in coral: the goods' value in lume at the world's reference rate (1 lume = 0.4 coral).
 - `GoodsItem/GrossWeightMeasure` = **5621.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **104** (unitCode `EA`)  
@@ -292,14 +338,6 @@ Inside `Shipment`:
   The island's import consumption tax, as the world codes it. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: IMP = Import tax. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/TaxTypeCode` = **CONSUMPTION** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
   A tax on consumption, charged at import. The code is from the Trade Accord's tax type list: CONSUMPTION = Tax on consumption.
-- `GoodsItem/FreightAllowanceCharge/ChargeIndicator` = **true**  
-  The share of the sea freight in the customs value.
-- `GoodsItem/FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
-  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
-- `GoodsItem/FreightAllowanceCharge/AllowanceChargeReason` = **Ocean freight, share of the benches**  
-  Part of the CIF value.
-- `GoodsItem/FreightAllowanceCharge/Amount` = **1162.714** (currencyID `XLC`)  
-  The benches' share of the 2,950 lume freight by value (54,080 of 54,884 lume), in coral at 0.4.
 - `GoodsItem/InvoiceLine/ID` = **1**  
   A line of the seller's invoice for these goods: the benches are on two lines, the port's and the buyer's own stock (O172).
 - `GoodsItem/InvoiceLine/InvoicedQuantity` = **96** (unitCode `EA`)  
@@ -398,16 +436,12 @@ Inside `Shipment`:
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
   Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
-- `GoodsItem/InsurancePolicy/ID` = **WS-CP-26-4471**  
-  The cargo policy covering the goods.
-- `GoodsItem/InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
-  As on the insurance certificate.
 - `GoodsItem/ID` = **2**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **339.708** (currencyID `XLC`)  
-  Lisavu values the goods with freight and insurance to the island (D16): the goods at 321.600 XLC, with the sea freight to the island (1,180.000 XLC); the cargo insurance (56.120 XLC), shared over the goods items by their value.
+- `GoodsItem/DeclaredCustomsValueAmount` = **326.400** (currencyID `XLC`)  
+  The customs value in coral: the goods' value in lume at the world's reference rate (1 lume = 0.4 coral).
 - `GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
@@ -456,56 +490,8 @@ Inside `Shipment`:
   The carton in words; the goods item's frames travel one to a carton.
 - `GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
   What the packaging is made of.
-- `ShipmentStage/CustomsAgentParty/PartyIdentification/ID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `ShipmentStage/CustomsAgentParty/PartyName/Name` = **Tevaro Customs Brokers**  
-  The trading name; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
-- `ShipmentStage/CustomsAgentParty/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
-- `ShipmentStage/CustomsAgentParty/PostalAddress/ID` = **24307810** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `ShipmentStage/CustomsAgentParty/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
-- `ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Vosapi Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/StreetName` = **Wharf Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/BuildingNumber` = **60**  
-  Building number of the postal address. identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
-- `ShipmentStage/CustomsAgentParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `ShipmentStage/CustomsAgentParty/PostalAddress/Country/Name` = **Lisavu**  
-  The country's name, for readers of the address.
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/RegistrationName` = **Tevaro Customs Brokers Ltd**  
-  The name under which the party is registered, with its legal form; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyID` = **IC41585** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
-- `ShipmentStage/CustomsAgentParty/Contact/Name` = **Declarations**  
-  The party's main desk, which handles this document; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Contact/JobTitle` = **Customs declarant**  
-  The job of the person who answers at the desk; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Contact/Department` = **Customs**  
-  The department the desk belongs to; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Contact/Telephone` = **+999 3 725 3563**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Contact/ElectronicMail` = **declarations@tevaro.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Tevaro Customs Brokers (world/parties.json).
-- `ShipmentStage/CustomsAgentParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `ShipmentStage/CustomsAgentParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41585** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Tevaro Customs Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  The goods cross the border by sea (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
 
 ### Additional Document Reference
 
@@ -551,8 +537,8 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 23,189.720 venamo, 2,318.972 venamo.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 23,189.720 coral, 2,318.972 coral.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,958.400 venamo, 2,195.840 venamo.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,958.400 coral, 2,195.840 coral.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -737,6 +723,41 @@ Inside `Signature`:
     <cac:PartyName>
       <cbc:Name>Tevaro Customs Brokers</cbc:Name>
     </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">24307810</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>60</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Tevaro Customs Brokers Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Declarations</cbc:Name>
+      <cbc:JobTitle>Customs declarant</cbc:JobTitle>
+      <cbc:Department>Customs</cbc:Department>
+      <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
+      <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41585</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
@@ -744,7 +765,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">22850.012</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">21632.000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
@@ -769,12 +790,6 @@ Inside `Signature`:
           </cac:TaxScheme>
         </cac:ClassifiedTaxCategory>
       </cac:Item>
-      <cac:FreightAllowanceCharge>
-        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Ocean freight, share of the benches</cbc:AllowanceChargeReason>
-        <cbc:Amount currencyID="XLC">1162.714</cbc:Amount>
-      </cac:FreightAllowanceCharge>
       <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
         <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
@@ -864,15 +879,11 @@ Inside `Signature`:
           </cac:MeasurementDimension>
         </cac:ContainedPackage>
       </cac:ContainingPackage>
-      <cac:InsurancePolicy>
-        <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
-      </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">339.708</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">326.400</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
@@ -913,49 +924,7 @@ Inside `Signature`:
       </cac:ContainingPackage>
     </cac:GoodsItem>
     <cac:ShipmentStage>
-      <cac:CustomsAgentParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Tevaro Customs Brokers</cbc:Name>
-        </cac:PartyName>
-        <cac:Language>
-          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-          <cbc:Name>Lisavan</cbc:Name>
-        </cac:Language>
-        <cac:PostalAddress>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">24307810</cbc:ID>
-          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
-          <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
-          <cbc:BuildingNumber>60</cbc:BuildingNumber>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            <cbc:Name>Lisavu</cbc:Name>
-          </cac:Country>
-        </cac:PostalAddress>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Tevaro Customs Brokers Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:CompanyID>
-        </cac:PartyLegalEntity>
-        <cac:Contact>
-          <cbc:Name>Declarations</cbc:Name>
-          <cbc:JobTitle>Customs declarant</cbc:JobTitle>
-          <cbc:Department>Customs</cbc:Department>
-          <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
-          <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        </cac:Contact>
-        <cac:ElectronicAddress>
-          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41585</cbc:ElectronicAddressID>
-        </cac:ElectronicAddress>
-      </cac:CustomsAgentParty>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>

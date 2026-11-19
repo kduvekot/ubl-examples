@@ -209,18 +209,6 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XL:IC41037** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Island companies register; identity of Port of Selanu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceDate` = **2026-05-17**  
-  Held by customs for a check of the pallets.
-- `MainCarriageShipmentStage/DetentionTransportEvent/OccurrenceTime` = **12:00:00**  
-  The local time.
-- `MainCarriageShipmentStage/DetentionTransportEvent/Description` = **Wooden pallets must carry the heat-treatment mark.**  
-  What happened, in words.
-- `MainCarriageShipmentStage/DetentionTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
-- `MainCarriageShipmentStage/DetentionTransportEvent/Location/Name` = **Port of Selanu**  
-  At the Port of Selanu.
-- `MainCarriageShipmentStage/DetentionTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-05-17**  
   The ship berthed at Selanu: its pilot boarded at first light; it had been off the port, under way, since the evening.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:30:00**  
@@ -240,10 +228,12 @@ Inside `Consignment`:
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceDate` = **2026-05-17**  
-  Released from the quarantine check: all pallets heat-treated.
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **15:00:00**  
+  The container held from 12:00 at the plant health check of its pallets: the hold is the container's, not the ship's (sea/17#F2).
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **12:00:00**  
   The local time.
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/CompletionIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Description` = **Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.**  
+  What happened, in words.
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -263,14 +253,6 @@ Inside `Consignment`:
   At the Port of Selanu.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/ChargeIndicator` = **true**  
-  A service charge.
-- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReasonCode` = **HD** (listID `UN/EDIFACT EDED 7161`)  
-  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: HD = Handling.
-- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReason` = **Terminal handling at Selanu**  
-  For unloading the box.
-- `TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/Amount` = **185.00** (currencyID `XBL`)  
-  As in the carrier's tariff.
 
 ### Transport Event
 
@@ -549,20 +531,6 @@ Inside `StatusPeriod`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41037</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:TerminalOperatorParty>
-      <cac:DetentionTransportEvent>
-        <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
-        <cbc:Description>Wooden pallets must carry the heat-treatment mark.</cbc:Description>
-        <cac:Location>
-          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
-          <cbc:Name>Port of Selanu</cbc:Name>
-          <cac:Address>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:Location>
-      </cac:DetentionTransportEvent>
       <cac:ActualArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
@@ -587,8 +555,9 @@ Inside `StatusPeriod`:
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cac:QuarantineTransportEvent>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
-          <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+          <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
+          <cbc:Description>Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.</cbc:Description>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
             <cbc:Name>Port of Selanu</cbc:Name>
@@ -613,12 +582,6 @@ Inside `StatusPeriod`:
             </cac:Address>
           </cac:Location>
         </cac:TransportEvent>
-        <cac:ServiceAllowanceCharge>
-          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">HD</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Terminal handling at Selanu</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">185.00</cbc:Amount>
-        </cac:ServiceAllowanceCharge>
       </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
   </cac:Consignment>

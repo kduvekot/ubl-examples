@@ -22,8 +22,8 @@ The mill pays the island's ginnery: money flows to the island for once.
   The payer's remittance number.
 - `UUID` = **4dead5a1-d2ba-5e05-a95b-17805f866743**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-29**  
-  The mill pays the ginnery: money flows to the island.
+- `IssueDate` = **2026-06-22**  
+  The mill pays the ginnery 45 days after its invoice, on Monday 22 June, the next working day after the 45th day, a Sunday (D23, D27): money flows to the island.
 - `IssueTime` = **15:45:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Payment of the invoice below.**  
@@ -260,7 +260,7 @@ Inside `RemittanceAdviceLine`:
   The reference the invoicing party asked to quote.
 - `BillingReference/InvoiceDocumentReference/ID` = **SCG-INV-26-0210**  
   The invoice this payment settles.
-- `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-02**  
+- `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-07**  
   Its issue date, so the reference is unambiguous.
 
 ## The document
@@ -274,7 +274,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-RM-26-0212</cbc:ID>
   <cbc:UUID>4dead5a1-d2ba-5e05-a95b-17805f866743</cbc:UUID>
-  <cbc:IssueDate>2026-03-29</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-22</cbc:IssueDate>
   <cbc:IssueTime>15:45:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -456,7 +456,7 @@ Inside `RemittanceAdviceLine`:
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>SCG-INV-26-0210</cbc:ID>
-        <cbc:IssueDate>2026-03-02</cbc:IssueDate>
+        <cbc:IssueDate>2026-05-07</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

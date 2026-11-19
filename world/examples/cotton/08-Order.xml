@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-PO-26-0198</cbc:ID>
   <cbc:UUID>4aa8f3b8-9dcb-52c6-849d-e415d93f4130</cbc:UUID>
-  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>10:37:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -107,8 +107,8 @@
   </cac:FreightForwarderParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-03-02</cbc:StartDate>
-      <cbc:EndDate>2026-03-02</cbc:EndDate>
+      <cbc:StartDate>2026-05-07</cbc:StartDate>
+      <cbc:EndDate>2026-05-07</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>

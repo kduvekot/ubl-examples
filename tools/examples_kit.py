@@ -225,9 +225,11 @@ def _terms_of(flow, seller, day, kind=None):
     under the statutory interest of the seller's country. Returns the terms with the day counting starts and the
     due day, so that every due date follows from the terms the document cites (O70)."""
     pay = WORLD["countries"][PARTY[seller]["c"]]["payment"]
-    if isinstance(kind, tuple) and kind[0] == "until-O72":   # sea/22: its balance term is settled with the sea flow
-        t = _terms_of(flow, seller, day)
-        return {**t, "due": day + kind[1]}
+    if isinstance(kind, tuple) and kind[0] == "contract":    # terms agreed for the sale (D22 layer 1): (text, why)
+        (text, why), days = kind[1], kind[2]
+        return {"id": None, "text": text, "why": why, "start": day, "start_why": "From the shipment on board, the "
+                "day of the invoice.", "due": day + days, "discount": None,
+                "surcharge": pay.get("penalty_surcharge"), "interest": pay.get("statutory_interest")}
     if kind == "plan":
         text, days = PLAN_PAYMENT
         start = flow.numbers[f"waybill-day-{seller}"]
@@ -1744,7 +1746,7 @@ def fleet(pid, fid):
     return next(x for x in PARTY[pid]["fleet"] if x["id"] == fid)
 
 
-def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
+def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False, port=False):
     """A cac:TransportMeans from the carrier's fleet (world/parties.json): its registration and the vehicle,
     train, vessel or aircraft."""
     f, c = fleet(pid, fid), PARTY[pid]["c"]
@@ -1786,10 +1788,11 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False):
              "ShipConfigurationCode": V(f["config"], "The kind of vessel"
                                         + (f", for about {f['capacity_teu']:,} TEU." if f.get("capacity_teu") else ".")),
              "RegistryPortLocation": {"Name": V(f["registry"], "The port the vessel is registered in.")}}
-        if f.get("ballast"):
+        if f.get("ballast") and port:       # what a port needs to know of a ship calling, not a cargo document
             m["SegregatedBallastMeasure"] = V(f["ballast"], "The capacity of the tanks for ballast water only.",
                                               unitCode="TNE")
             m["ShipsRequirements"] = V("Shore power at the container quay.", "What the ship needs in port.")
+        if f.get("ballast"):
             m["RegistryCertificateDocumentReference"] = {"ID": V(f"REG-{f['vessel_id']}", "The ship's certificate "
                                                                  "of registry.")}
         out["MaritimeTransport"] = m

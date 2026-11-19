@@ -22,13 +22,13 @@ The ginnery pays the farm the net amount.
   The ginnery's remittance number.
 - `UUID` = **f198db4b-7402-5c2b-b4c8-d6f8869c6440**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-16**  
-  The ginnery pays the farm after classing.
+- `IssueDate` = **2026-04-17**  
+  The ginnery pays the farm after classing, the day after the credit.
 - `IssueTime` = **13:06:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the island's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `TotalPaymentAmount` = **3141.070** (currencyID `XLC`)  
+- `TotalPaymentAmount` = **4558.525** (currencyID `XLC`)  
   The invoice minus the credit note.
 
 ### Accounting Customer Party
@@ -151,6 +151,10 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
+- `PaymentDueDate` = **2026-04-17**  
+  The day the transfer is executed: today, with this advice (cotton/06#F6).
+- `PaymentID` = **RF77SCGSBI260194** (schemeID `ISO 11649`)  
+  The payment reference the self-billed invoice asked to be quoted, so the farm can match the transfer (cotton/06#F5).
 - `PayerFinancialAccount/ID` = **XL31BSEL0020004922263** (schemeID `urn:ubl-examples:world:account`)  
   The ginnery's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayerFinancialAccount/Name` = **Selanu Cotton Ginnery Ltd**  
@@ -242,13 +246,13 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   The self-billed invoice.
-- `DebitLineAmount` = **3210.320** (currencyID `XLC`)  
+- `DebitLineAmount` = **4595.600** (currencyID `XLC`)  
   The amount still due on the self-billed invoice, after the season advance.
 - `BillingReference/SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0194**  
   The self-billed invoice paid.
 - `ID` = **2**  
   The self-billed credit note.
-- `CreditLineAmount` = **69.250** (currencyID `XLC`)  
+- `CreditLineAmount` = **37.075** (currencyID `XLC`)  
   The amount credited, deducted from the payment.
 - `BillingReference/SelfBilledCreditNoteDocumentReference/ID` = **SCG-SBC-26-0195**  
   The self-billed credit note set off.
@@ -264,10 +268,10 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-RM-26-0196</cbc:ID>
   <cbc:UUID>f198db4b-7402-5c2b-b4c8-d6f8869c6440</cbc:UUID>
-  <cbc:IssueDate>2026-02-16</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:IssueTime>13:06:00+00:00</cbc:IssueTime>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
-  <cbc:TotalPaymentAmount currencyID="XLC">3141.070</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XLC">4558.525</cbc:TotalPaymentAmount>
   <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -358,6 +362,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentDueDate>2026-04-17</cbc:PaymentDueDate>
+    <cbc:PaymentID schemeID="ISO 11649">RF77SCGSBI260194</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL31BSEL0020004922263</cbc:ID>
       <cbc:Name>Selanu Cotton Ginnery Ltd</cbc:Name>
@@ -435,7 +441,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XLC">3210.320</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XLC">4595.600</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledInvoiceDocumentReference>
         <cbc:ID>SCG-SBI-26-0194</cbc:ID>
@@ -444,7 +450,7 @@ Inside `RemittanceAdviceLine`:
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:CreditLineAmount currencyID="XLC">69.250</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XLC">37.075</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledCreditNoteDocumentReference>
         <cbc:ID>SCG-SBC-26-0195</cbc:ID>

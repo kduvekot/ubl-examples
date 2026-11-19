@@ -22,8 +22,8 @@ The distributor introduces itself to the new island customer.
   The sender's number for this document.
 - `UUID` = **da594e74-bfa8-5df5-ab8d-930b60c73ea9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-04**  
-  Sent before the first offer to the new customer.
+- `IssueDate` = **2026-05-05**  
+  Sent before the first offer to the new customer, on Tuesday 5 May, after Bayvarra's Labour Day (D27, D30 point 6).
 - `IssueTime` = **16:39:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `VersionID` = **2**  
@@ -47,6 +47,46 @@ Inside `Signature`:
 ### Sender Party
 
 Inside `SenderParty`:
+
+- `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
+
+### Receiver Party
+
+Inside `ReceiverParty`:
+
+- `PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+  The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyName/Name` = **Velumi Trading**  
+  The trading name; identity of Velumi Trading (world/parties.json).
+- `PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
+- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+- `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+- `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
+  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
+- `PostalAddress/BuildingNumber` = **16**  
+  Building number of the postal address. identity of Velumi Trading (world/parties.json).
+- `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+- `PostalAddress/TimezoneOffset` = **+00:00**  
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+- `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `PostalAddress/Country/Name` = **Lisavu**  
+  The country's name, for readers of the address.
+
+### Business Party
+
+Inside `BusinessParty`:
 
 - `WebsiteURI` = **https://www.lumeway.example**  
   The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
@@ -135,46 +175,6 @@ Inside `SenderParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Receiver Party
-
-Inside `ReceiverParty`:
-
-- `PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Velumi Trading**  
-  The trading name; identity of Velumi Trading (world/parties.json).
-- `PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
-- `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
-- `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
-- `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
-- `PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. identity of Velumi Trading (world/parties.json).
-- `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
-- `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
-- `PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
-- `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `PostalAddress/Country/Name` = **Lisavu**  
-  The country's name, for readers of the address.
-
-### Business Party
-
-Inside `BusinessParty`:
-
-- `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
-- `PartyName/Name` = **Lumeway Distribution**  
-  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
-
 ### Brochure Document Reference
 
 Inside `BrochureDocumentReference`:
@@ -203,32 +203,30 @@ Inside `BusinessCapability`:
   A capability.
 - `CapabilityTypeCode` = **WAREHOUSING** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
   What it can do. The code is from the Trade Accord's business capability type list: WAREHOUSING = Warehousing.
-- `Description` = **Stock of 2,000 benches in Marrowdale.**  
-  In words.
-- `ValueAmount` = **1040000.00** (currencyID `XBL`)  
-  The stock's value.
-- `ValueQuantity` = **2000** (unitCode `EA`)  
-  Benches in stock.
-- `SuppliedEvidence/ID` = **LD-AUDIT-2025**  
+- `Description` = **Stock of 264 park benches in Marrowdale, as counted on 30 April.**  
+  In words: the benches for sale in Lumeway's warehouse at its month-end count, from the March road lot and the April rail lots (the goods chain's ledger, D21).
+- `ValueAmount` = **105336.00** (currencyID `XBL`)  
+  The stock's value at cost, 399.00 lume a bench, the price Lumeway paid Valdara (D14).
+- `ValueQuantity` = **264** (unitCode `EA`)  
+  Benches in stock, for sale.
+- `SuppliedEvidence/ID` = **LD-COUNT-26-04**  
   The evidence.
-- `SuppliedEvidence/EvidenceTypeCode` = **AUDIT** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
-  An audit report. The code is from the Trade Accord's evidence type list: AUDIT = Audit report.
-- `SuppliedEvidence/Name` = **Stock count 2025**  
+- `SuppliedEvidence/EvidenceTypeCode` = **STOCKCOUNT** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
+  Lumeway's own count of its stock, not an audit (D30 point 7, sea/01#F3). The code is from the Trade Accord's evidence type list: STOCKCOUNT = Stock count.
+- `SuppliedEvidence/Name` = **Stock count of 30 April 2026**  
   Its name.
-- `SuppliedEvidence/Description` = **Year-end count by the auditor.**  
-  What it is.
-- `SuppliedEvidence/CandidateStatement` = **The stock is counted every year.**  
-  The company's statement.
+- `SuppliedEvidence/Description` = **The distributor's own count of its warehouse at the end of April; it counts its stock at the end of every month.**  
+  What it is, and how often it is made (sea/01#F4).
 - `SuppliedEvidence/ConfidentialityLevelCode` = **PUBLIC** (listID `urn:ubl-examples:world:codelist:ConfidentialityLevelCode`)  
   May be shared. The code is from the Trade Accord's confidentiality level list: PUBLIC = Public.
 - `SuppliedEvidence/EvidenceIssuingParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SuppliedEvidence/EvidenceIssuingParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `SuppliedEvidence/Language/ID` = **en** (schemeID `ISO 639`)  
-  English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
-- `ValidityPeriod/EndDate` = **2026-12-30**  
-  Until the next count.
+- `ValidityPeriod/StartDate` = **2026-04-30**  
+  From the count of 30 April
+- `ValidityPeriod/EndDate` = **2026-05-31**  
+  to the next, at the end of May (sea/01#F12).
 - `WebSite/ID` = **WEB-1**  
   The stock page.
 - `WebSite/Name` = **Stock**  
@@ -257,7 +255,7 @@ Inside `BusinessCapability`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0123</cbc:ID>
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
-  <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>16:39:00-01:00</cbc:IssueTime>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
@@ -274,6 +272,37 @@ Inside `BusinessCapability`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Velumi Trading</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+      <cbc:BuildingNumber>16</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:ReceiverParty>
+  <cac:BusinessParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4649</cbc:IndustryClassificationCode>
     <cac:PartyIdentification>
@@ -345,37 +374,6 @@ Inside `BusinessCapability`:
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
-  </cac:SenderParty>
-  <cac:ReceiverParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Velumi Trading</cbc:Name>
-    </cac:PartyName>
-    <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40351721</cbc:ID>
-      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
-      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
-      <cbc:BuildingNumber>16</cbc:BuildingNumber>
-      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-        <cbc:Name>Lisavu</cbc:Name>
-      </cac:Country>
-    </cac:PostalAddress>
-  </cac:ReceiverParty>
-  <cac:BusinessParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Lumeway Distribution</cbc:Name>
-    </cac:PartyName>
   </cac:BusinessParty>
   <cac:BrochureDocumentReference>
     <cbc:ID>LD-BROCHURE-2026</cbc:ID>
@@ -393,15 +391,14 @@ Inside `BusinessCapability`:
   <cac:BusinessCapability>
     <cbc:ID>CAP-STOCK</cbc:ID>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">WAREHOUSING</cbc:CapabilityTypeCode>
-    <cbc:Description>Stock of 2,000 benches in Marrowdale.</cbc:Description>
-    <cbc:ValueAmount currencyID="XBL">1040000.00</cbc:ValueAmount>
-    <cbc:ValueQuantity unitCode="EA">2000</cbc:ValueQuantity>
+    <cbc:Description>Stock of 264 park benches in Marrowdale, as counted on 30 April.</cbc:Description>
+    <cbc:ValueAmount currencyID="XBL">105336.00</cbc:ValueAmount>
+    <cbc:ValueQuantity unitCode="EA">264</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
-      <cbc:ID>LD-AUDIT-2025</cbc:ID>
-      <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">AUDIT</cbc:EvidenceTypeCode>
-      <cbc:Name>Stock count 2025</cbc:Name>
-      <cbc:Description>Year-end count by the auditor.</cbc:Description>
-      <cbc:CandidateStatement>The stock is counted every year.</cbc:CandidateStatement>
+      <cbc:ID>LD-COUNT-26-04</cbc:ID>
+      <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">STOCKCOUNT</cbc:EvidenceTypeCode>
+      <cbc:Name>Stock count of 30 April 2026</cbc:Name>
+      <cbc:Description>The distributor's own count of its warehouse at the end of April; it counts its stock at the end of every month.</cbc:Description>
       <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">PUBLIC</cbc:ConfidentialityLevelCode>
       <cac:EvidenceIssuingParty>
         <cac:PartyIdentification>
@@ -411,12 +408,10 @@ Inside `BusinessCapability`:
           <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:EvidenceIssuingParty>
-      <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-      </cac:Language>
     </cac:SuppliedEvidence>
     <cac:ValidityPeriod>
-      <cbc:EndDate>2026-12-30</cbc:EndDate>
+      <cbc:StartDate>2026-04-30</cbc:StartDate>
+      <cbc:EndDate>2026-05-31</cbc:EndDate>
     </cac:ValidityPeriod>
     <cac:WebSite>
       <cbc:ID>WEB-1</cbc:ID>
