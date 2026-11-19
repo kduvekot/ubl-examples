@@ -174,8 +174,10 @@ Inside `TendererParty`:
 
 Inside `TendererQualificationDocumentReference`:
 
-- `ID` = **VI-DOC-26-0199**  
-  The qualification documents.
+- `ID` = **BF-DOC-26-0193**  
+  The furniture maker's response to the qualification questionnaire, which qualifies it.
+- `DocumentTypeCode` = **QualificationApplicationResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document: the response to the qualification questionnaire, the furniture maker's qualification. The code is from the Trade Accord's UBL document type list: QualificationApplicationResponse = Qualification Application Response.
 
 ### Contracting Party
 
@@ -268,10 +270,10 @@ Inside `TenderedProject`:
   Lot 1.
 - `ProcurementProjectLot/ID` = **LOT-2**  
   Lot 2.
-- `EvidenceDocumentReference/ID` = **VI-REF-2025**  
-  Reference letters.
+- `EvidenceDocumentReference/ID` = **BF-REF-2025**  
+  The tenderer's own reference letters.
 - `EvidenceDocumentReference/DocumentType` = **Reference letters**  
-  The kind of document referred to, Valdara's reference letters, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+  The kind of document referred to, Brackenmere's reference letters from customers for its park furniture of 2025, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax for a public body.
 - `LegalMonetaryTotal/LineExtensionAmount` = **116640.00** (currencyID `XBL`)  
@@ -480,7 +482,8 @@ Inside `TenderedProject`:
     </cac:ElectronicAddress>
   </cac:TendererParty>
   <cac:TendererQualificationDocumentReference>
-    <cbc:ID>VI-DOC-26-0199</cbc:ID>
+    <cbc:ID>BF-DOC-26-0193</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationResponse</cbc:DocumentTypeCode>
   </cac:TendererQualificationDocumentReference>
   <cac:ContractingParty>
     <cac:Party>
@@ -551,7 +554,7 @@ Inside `TenderedProject`:
       <cbc:ID>LOT-2</cbc:ID>
     </cac:ProcurementProjectLot>
     <cac:EvidenceDocumentReference>
-      <cbc:ID>VI-REF-2025</cbc:ID>
+      <cbc:ID>BF-REF-2025</cbc:ID>
       <cbc:DocumentType>Reference letters</cbc:DocumentType>
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>

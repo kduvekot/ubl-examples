@@ -356,7 +356,7 @@ Inside `TenderedProject`:
 - `ProcurementProjectLot/ID` = **LOT-2**  
   Lot 2.
 - `EvidenceDocumentReference/ID` = **VI-REF-2025**  
-  Reference letters.
+  The tenderer's own reference letters.
 - `EvidenceDocumentReference/DocumentType` = **Reference letters**  
   The kind of document referred to, Valdara's reference letters, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  

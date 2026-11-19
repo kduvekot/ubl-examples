@@ -469,7 +469,7 @@
   },
   {
    "element": "DocumentTypeCode",
-   "address": "*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='DocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode | *[local-name()='SupportingDocumentReference']/cbc:DocumentTypeCode | *[local-name()='EvidenceDocumentReference']/cbc:DocumentTypeCode | *[local-name()='OriginatorDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ParentDocumentReference']/cbc:DocumentTypeCode | *[local-name()='PreviousDocumentReference']/cbc:DocumentTypeCode | *[local-name()='OriginalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='RequiredDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ProvidedDocumentReference']/cbc:DocumentTypeCode | *[local-name()='RequestedDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ShipmentDocumentReference']/cbc:DocumentTypeCode",
+   "address": "*[local-name()='DocumentReference']/cbc:DocumentTypeCode | *[local-name()='AdditionalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='DigitalDocumentMetadata']/cbc:DocumentTypeCode | *[local-name()='DocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RemittanceDocumentDistribution']/cbc:DocumentTypeCode | *[local-name()='RequiredCertificationDocumentReference']/cbc:DocumentTypeCode | *[local-name()='TendererQualificationDocumentReference']/cbc:DocumentTypeCode | *[local-name()='SupportingDocumentReference']/cbc:DocumentTypeCode | *[local-name()='EvidenceDocumentReference']/cbc:DocumentTypeCode | *[local-name()='OriginatorDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ParentDocumentReference']/cbc:DocumentTypeCode | *[local-name()='PreviousDocumentReference']/cbc:DocumentTypeCode | *[local-name()='OriginalDocumentReference']/cbc:DocumentTypeCode | *[local-name()='RequiredDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ProvidedDocumentReference']/cbc:DocumentTypeCode | *[local-name()='RequestedDocumentReference']/cbc:DocumentTypeCode | *[local-name()='ShipmentDocumentReference']/cbc:DocumentTypeCode",
    "lists": [
     "UBLDocumentType",
     "UNCL1001",
@@ -482,6 +482,7 @@
     "DocumentDistribution",
     "RemittanceDocumentDistribution",
     "RequiredCertificationDocumentReference",
+    "TendererQualificationDocumentReference",
     "SupportingDocumentReference",
     "EvidenceDocumentReference",
     "OriginatorDocumentReference",

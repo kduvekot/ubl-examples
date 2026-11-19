@@ -22,14 +22,14 @@ The distributor's system confirms the invoice was received and accepted.
   The sender's number for this document.
 - `UUID` = **cd4b74a4-2123-5d02-8f6a-c5422a5e7d12**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-25**  
-  Sent automatically when the invoice was processed.
-- `IssueTime` = **12:55:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `ResponseDate` = **2026-03-25**  
-  The day the invoice was processed.
-- `ResponseTime` = **06:12:00**  
-  Processed overnight.
+- `IssueDate` = **2026-03-26**  
+  Sent automatically when the invoice was matched: after the corrected receipt advice of the same morning, the receipt the match needs (road/16#F1).
+- `IssueTime` = **14:13:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
+- `ResponseDate` = **2026-03-26**  
+  The day the invoice was matched against order and receipt.
+- `ResponseTime` = **14:05:00**  
+  In the afternoon run of the invoice matching, after the corrected receipt advice of 10:48.
 - `Note` = **Accepted for payment; line 2 matched the substituted casting.**  
   The result.
 - `VersionID` = **1**  
@@ -106,10 +106,10 @@ Inside `DocumentResponse`:
 
 - `Response/ResponseCode` = **AP** (listID `UN/EDIFACT EDED 4343`)  
   UN/EDIFACT 4343 code AP: the invoice is accepted. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
-- `Response/EffectiveDate` = **2026-03-25**  
+- `Response/EffectiveDate` = **2026-03-26**  
   Effective at once.
-- `Response/EffectiveTime` = **06:12:00**  
-  When processed.
+- `Response/EffectiveTime` = **14:05:00**  
+  When matched.
 - `Response/Status/ConditionCode` = **MATCHED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
   The invoice matched order and receipt. The code is from the Trade Accord's status condition list: MATCHED = Matched.
 - `Response/Status/Description` = **Three-way match passed.**  
@@ -146,10 +146,10 @@ Inside `DocumentResponse`:
   <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-DOC-26-0167</cbc:ID>
   <cbc:UUID>cd4b74a4-2123-5d02-8f6a-c5422a5e7d12</cbc:UUID>
-  <cbc:IssueDate>2026-03-25</cbc:IssueDate>
-  <cbc:IssueTime>12:55:00-01:00</cbc:IssueTime>
-  <cbc:ResponseDate>2026-03-25</cbc:ResponseDate>
-  <cbc:ResponseTime>06:12:00</cbc:ResponseTime>
+  <cbc:IssueDate>2026-03-26</cbc:IssueDate>
+  <cbc:IssueTime>14:13:00-01:00</cbc:IssueTime>
+  <cbc:ResponseDate>2026-03-26</cbc:ResponseDate>
+  <cbc:ResponseTime>14:05:00</cbc:ResponseTime>
   <cbc:Note>Accepted for payment; line 2 matched the substituted casting.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
@@ -214,8 +214,8 @@ Inside `DocumentResponse`:
   <cac:DocumentResponse>
     <cac:Response>
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
-      <cbc:EffectiveDate>2026-03-25</cbc:EffectiveDate>
-      <cbc:EffectiveTime>06:12:00</cbc:EffectiveTime>
+      <cbc:EffectiveDate>2026-03-26</cbc:EffectiveDate>
+      <cbc:EffectiveTime>14:05:00</cbc:EffectiveTime>
       <cac:Status>
         <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">MATCHED</cbc:ConditionCode>
         <cbc:Description>Three-way match passed.</cbc:Description>

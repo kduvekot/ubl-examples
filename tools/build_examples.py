@@ -3244,9 +3244,6 @@ CITED_LATER = {}       # document ID -> [(moment, where)] of documents that cite
 # Documents that still report or cite something after their issue, each waiting for its flow decision (stage 6):
 # (flow, file) -> the reason. Each entry goes when its flow is implemented.
 ISSUE_ORDER_WAITS = {
-    ("sea", "24-InvoiceStatusResponse.xml"): "reports Velumi's payment of 25 June and its remittance advice in a "
-                                             "status of 30 May; D30 (point 9) drops the payment from the status "
-                                             "(sea/24#F1, C116)",
     ("sea", "28-DebitNote.xml"): "cites the factor's statement of 13 June; D30 removes the debit note (sea/28#F3, O6)",
 }
 
@@ -3311,11 +3308,29 @@ def cited_examples(root, flow_id, name):
                 [x for x in ISSUED[e.text] if (x[0], x[1]) != (flow_id, name)]
 
 
-def issue_floor(root, doc, flow_id, name):
-    """The latest moment on the document's issue day that it reports or cites: its issue time must follow it."""
+ANSWERS = {"Quotation": {"RequestForQuotation"}, "Catalogue": {"CatalogueRequest"}}
+
+
+def answered_request(doc, earlier):
+    """The request a document answers: the last earlier document of the flow, sent the other way between the same
+    two parties, whose type asks for this one (DocumentStatusRequest -> DocumentStatus, Order -> OrderResponse,
+    TransportExecutionPlanRequest -> TransportExecutionPlan ...). earlier: [(world document, root)]."""
+    t = doc["doc"]
+    asks = {t + "Request"} | ANSWERS.get(t, set())
+    if t.endswith("Response"):
+        asks |= {t[:-8], t[:-8] + "Request"}
+    hits = [(d, r) for d, r in earlier if d["doc"] in asks and (d["from"], d["to"]) == (doc["to"], doc["from"])]
+    return hits[-1] if hits else None
+
+
+def issue_floor(root, doc, flow_id, name, request=None):
+    """The latest moment on the document's issue day that it reports or cites, or the request it answers: its issue
+    time must follow it."""
     tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
     day = issue_moment(root, doc)[0]
     times = [m[1] for _, m in reported_facts(root, tz) if m and m[0] == day and m[1] is not None]
+    if request is not None and request[0] == day and request[1] is not None:
+        times.append(request[1])
     for _, _, hits in cited_examples(root, flow_id, name):
         if hits and all(h[2][0] == day and h[2][1] is not None for h in hits):
             times.append(min(h[2][1] for h in hits))
@@ -3328,19 +3343,20 @@ def issue_ceiling(doc_id, day):
     return min(times) if times else None
 
 
-def derived_issue_time(header, root, doc, flow_id, name, doc_id):
+def derived_issue_time(header, root, doc, flow_id, name, doc_id, request=None):
     """The issue time of a document whose scenario gives none (C72): the sender's system issues it a few minutes
-    after the last thing on its issue day that it reports or cites, and before the documents that cite it."""
+    after the last thing on its issue day that it reports or cites, or the request it answers, and before the
+    documents that cite it."""
     tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
     own = issue_moment(root, doc)
-    floor, ceiling = issue_floor(root, doc, flow_id, name), issue_ceiling(doc_id, own[0])
+    floor, ceiling = issue_floor(root, doc, flow_id, name, request), issue_ceiling(doc_id, own[0])
     gap = datetime.timedelta(minutes=4 + zlib.crc32(f"{flow_id}:{name}".encode()) % 17)
     if floor is not None and not own[1] > floor:
-        t, why = floor + gap, ("Issued a few minutes after the last thing of its day that it reports or cites, "
-                               "in the sender's local time.")
+        t, why = floor + gap, ("Issued a few minutes after the last thing of its day that it reports, cites or "
+                               "answers, in the sender's local time (C72).")
     elif ceiling is not None and not own[1] < ceiling:
         t, why = ceiling - gap, ("Issued a few minutes before the document that cites it, in the sender's local "
-                                 "time.")
+                                 "time (C72).")
     else:
         return False
     local = t.astimezone(datetime.timezone(datetime.timedelta(hours=int(tz[:3]), minutes=int(tz[0] + tz[4:]))))
@@ -3351,13 +3367,17 @@ def derived_issue_time(header, root, doc, flow_id, name, doc_id):
     return True
 
 
-def check_issue_order(flow_id, name, root, doc):
-    """C72: no document reports as done, or cites as existing, anything after its own issue."""
+def check_issue_order(flow_id, name, root, doc, request=None):
+    """C72: no document reports as done, or cites as existing, anything after its own issue, and none answers a
+    request issued after it."""
     if (flow_id, name) in ISSUE_ORDER_WAITS:
         return
     own = issue_moment(root, doc)
     if own is None:
         return
+    if request is not None and is_after(request, own):
+        raise SystemExit(f"world/examples/{flow_id}/{name}: issued {own[1] or own[0]}, before the request it answers, "
+                         f"issued {request[1] or request[0]} (C72)")
     tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
     for what, m in reported_facts(root, tz):
         if m and is_after(m, own):
@@ -3500,7 +3520,9 @@ def main(flow_id, check=False):
         issue_time_offset(full, doc)
         root, reasons = build(doc["doc"], full)
         doc_id = content["ID"].value if isinstance(content.get("ID"), V) else None
-        if "IssueTime" in header and derived_issue_time(header, root, doc, flow_id, xmlname(n, doc), doc_id):
+        asked = answered_request(doc, list(zip(docs, [r for _, r in roots])))
+        asked = issue_moment(asked[1], asked[0]) if asked else None
+        if "IssueTime" in header and derived_issue_time(header, root, doc, flow_id, xmlname(n, doc), doc_id, asked):
             full = merge(header, content)          # the issue time follows what the document reports (C72)
             issue_time_offset(full, doc)
             root, reasons = build(doc["doc"], full)
@@ -3512,7 +3534,7 @@ def main(flow_id, check=False):
                     raise SystemExit(f"world/examples/{flow_id}/{xmlname(n, doc)}: issued {here[1] or here[0]}, after "
                                      f"{where}, which cites it at {m[1] or m[0]} (C72)")
             ISSUED.setdefault(doc_id, []).append((flow_id, xmlname(n, doc), here))
-        check_issue_order(flow_id, xmlname(n, doc), root, doc)
+        check_issue_order(flow_id, xmlname(n, doc), root, doc, asked)
         if here and (flow_id, xmlname(n, doc)) not in ISSUE_ORDER_WAITS:
             for e in root.iter(f"{{{NS_CBC}}}*"):        # citations of examples not built yet: checked when they are
                 if etree.QName(e).localname.endswith("ID") and e.text and e.text != doc_id and \

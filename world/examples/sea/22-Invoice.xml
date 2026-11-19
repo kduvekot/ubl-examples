@@ -380,11 +380,11 @@
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
       <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-05-18</cbc:Date>
+      <cbc:Date>2026-05-14</cbc:Date>
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-05-18</cbc:StartDate>
-      <cbc:EndDate>2026-07-02</cbc:EndDate>
+      <cbc:StartDate>2026-05-14</cbc:StartDate>
+      <cbc:EndDate>2026-06-28</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>

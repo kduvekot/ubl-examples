@@ -466,11 +466,11 @@ Inside `PaymentTerms`:
   The reference rate.
 - `ExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   Lume times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `ExchangeRate/Date` = **2026-05-18**  
-  Of the invoice date.
-- `ValidityPeriod/StartDate` = **2026-05-18**  
+- `ExchangeRate/Date` = **2026-05-14**  
+  Of the invoice date, as the payment alternative rate.
+- `ValidityPeriod/StartDate` = **2026-05-14**  
   The terms apply from the invoice date
-- `ValidityPeriod/EndDate` = **2026-07-02**  
+- `ValidityPeriod/EndDate` = **2026-06-28**  
   until the balance is due.
 
 ### Prepaid Payment
@@ -1056,11 +1056,11 @@ Inside `InvoiceLine`:
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
       <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-05-18</cbc:Date>
+      <cbc:Date>2026-05-14</cbc:Date>
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-05-18</cbc:StartDate>
-      <cbc:EndDate>2026-07-02</cbc:EndDate>
+      <cbc:StartDate>2026-05-14</cbc:StartDate>
+      <cbc:EndDate>2026-06-28</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>

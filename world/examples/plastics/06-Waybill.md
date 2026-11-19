@@ -31,7 +31,7 @@ The inland waterway consignment note, issued to the shipper.
 - `IssueDate` = **2026-04-19**  
   Issued when the barge is loaded.
 - `IssueTime` = **15:26:00-01:00**  
-  Issued a few minutes after the last thing of its day that it reports or cites, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Inland waterway consignment note under the CMNI**  
   The kind of transport document.
 - `Description` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  

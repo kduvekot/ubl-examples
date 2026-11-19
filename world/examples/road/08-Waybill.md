@@ -31,7 +31,7 @@ The road consignment note goes to the party that booked the truck, the distribut
 - `IssueDate` = **2026-03-23**  
   Issued when the carrier collects the goods at the warehouse.
 - `IssueTime` = **15:32:00-01:00**  
-  Issued a few minutes after the last thing of its day that it reports or cites, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Consignment note under the road convention, the CMR**  
   The kind of transport document.
 - `Description` = **The truck the distributor booked, from the 3PL's warehouse across the border.**  

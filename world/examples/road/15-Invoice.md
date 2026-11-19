@@ -25,7 +25,7 @@ The manufacturer invoices the goods only (no freight under FCA) and asks for pay
 - `IssueDate` = **2026-03-24**  
   Issued when the goods have left the warehouse.
 - `IssueTime` = **09:38:00-01:00**  
-  Issued a few minutes before the document that cites it, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Issued a few minutes before the document that cites it, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `DueDate` = **2026-04-23**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  

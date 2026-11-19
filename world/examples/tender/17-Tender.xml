@@ -120,7 +120,8 @@
     </cac:ElectronicAddress>
   </cac:TendererParty>
   <cac:TendererQualificationDocumentReference>
-    <cbc:ID>VI-DOC-26-0199</cbc:ID>
+    <cbc:ID>BF-DOC-26-0193</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationResponse</cbc:DocumentTypeCode>
   </cac:TendererQualificationDocumentReference>
   <cac:ContractingParty>
     <cac:Party>
@@ -191,7 +192,7 @@
       <cbc:ID>LOT-2</cbc:ID>
     </cac:ProcurementProjectLot>
     <cac:EvidenceDocumentReference>
-      <cbc:ID>VI-REF-2025</cbc:ID>
+      <cbc:ID>BF-REF-2025</cbc:ID>
       <cbc:DocumentType>Reference letters</cbc:DocumentType>
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>

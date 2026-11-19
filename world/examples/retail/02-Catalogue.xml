@@ -9,7 +9,7 @@
   <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueActionCode">NEW</cbc:ActionCode>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>17:28:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
   <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
   <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>

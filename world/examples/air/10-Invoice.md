@@ -41,13 +41,6 @@ The forwarder invoices the air freight, including the road feeder leg, to the di
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
 
-### Statement Document Reference
-
-Inside `StatementDocumentReference`:
-
-- `ID` = **BF-SOA-26-05**  
-  The forwarder's statement of account for May, on which the invoice will appear (not shown).
-
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -427,9 +420,6 @@ Inside `InvoiceLine`:
   <cbc:AccountingCost>Freight and forwarding</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
-  <cac:StatementDocumentReference>
-    <cbc:ID>BF-SOA-26-05</cbc:ID>
-  </cac:StatementDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>KXL-WB-26-0325</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

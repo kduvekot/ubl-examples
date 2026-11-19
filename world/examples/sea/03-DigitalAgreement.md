@@ -46,8 +46,8 @@ Inside `Signature`:
 - `Note` = **Signed with the company's seal certificate.**  
   How.
 - `ValidationDate` = **2026-05-05**  
-  Checked on receipt.
-- `ValidationTime` = **09:05:00**  
+  Verified by the council's validation service before the document was issued, after the terms it binds were verified (sea/03#F1).
+- `ValidationTime` = **12:40:00**  
   At that time.
 - `ValidatorID` = **LTAC-VALIDATOR**  
   The trade accord council's validation service.
@@ -578,7 +578,7 @@ Inside `DigitalProcess`:
     <cbc:ReasonCode listID="urn:ubl-examples:world:codelist:SignatureReasonCode">APPROVAL</cbc:ReasonCode>
     <cbc:Note>Signed with the company's seal certificate.</cbc:Note>
     <cbc:ValidationDate>2026-05-05</cbc:ValidationDate>
-    <cbc:ValidationTime>09:05:00</cbc:ValidationTime>
+    <cbc:ValidationTime>12:40:00</cbc:ValidationTime>
     <cbc:ValidatorID>LTAC-VALIDATOR</cbc:ValidatorID>
     <cbc:CanonicalizationMethod>http://www.w3.org/2006/12/xml-c14n11</cbc:CanonicalizationMethod>
     <cbc:SignatureMethod>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</cbc:SignatureMethod>

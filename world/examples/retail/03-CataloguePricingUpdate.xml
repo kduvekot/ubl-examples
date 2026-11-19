@@ -10,7 +10,7 @@
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
-  <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+  <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
   <cbc:Note>Applies to the spring catalogue.</cbc:Note>
   <cbc:Description>Price change of the side frame</cbc:Description>
   <cbc:VersionID>1.1</cbc:VersionID>
@@ -24,8 +24,8 @@
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
-    <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
-    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
+    <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
     <cbc:Note>Spring catalogue 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.0</cbc:VersionID>

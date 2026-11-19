@@ -57,19 +57,19 @@ Inside `DeletedCatalogueReference`:
 - `IssueDate` = **2026-04-20**  
   Its issue date.
 - `IssueTime` = **09:00:00**  
-  And time.
+  And time, as the catalogue states it.
 - `RevisionDate` = **2026-05-21**  
-  Revised by the specification update.
-- `RevisionTime` = **14:00:00**  
+  Revised by the specification update of the bench.
+- `RevisionTime` = **08:30:00**  
   At that time.
 - `Note` = **Spring catalogue 2026.**  
   Which catalogue.
 - `Description` = **Benches and spare parts for resale.**  
   What it holds.
 - `VersionID` = **1.2**  
-  The version referred to.
-- `PreviousVersionID` = **0.9**  
-  The draft the store saw at the fair.
+  The version referred to: the one current when this document is issued.
+- `PreviousVersionID` = **1.1**  
+  The version before it.
 
 ### Referenced Contract
 
@@ -277,11 +277,11 @@ Inside `ContractorCustomerParty`:
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
-    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
     <cbc:Note>Spring catalogue 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.2</cbc:VersionID>
-    <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
+    <cbc:PreviousVersionID>1.1</cbc:PreviousVersionID>
   </cac:DeletedCatalogueReference>
   <cac:ReferencedContract>
     <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>

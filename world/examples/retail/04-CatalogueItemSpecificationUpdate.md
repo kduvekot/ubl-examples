@@ -28,10 +28,10 @@ Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's re
   Lumeway passes on Valdara's revised datasheet after the first weeks of sales, when customers asked whether the slats need oil.
 - `IssueTime` = **09:01:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `RevisionDate` = **2026-05-20**  
+- `RevisionDate` = **2026-05-21**  
   The day of the change.
-- `RevisionTime` = **14:00:00**  
-  At that time.
+- `RevisionTime` = **08:30:00**  
+  When the change was made, before the update was sent.
 - `Note` = **Applies to the spring catalogue.**  
   Which catalogue.
 - `Description` = **Revised datasheet of the Serra 180: slat finish and maintenance**  
@@ -45,7 +45,7 @@ Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's re
 
 Inside `ValidityPeriod`:
 
-- `StartDate` = **2026-05-20**  
+- `StartDate` = **2026-05-21**  
   From the change.
 - `EndDate` = **2026-07-19**  
   Until the catalogue ends.
@@ -61,19 +61,19 @@ Inside `RelatedCatalogueReference`:
 - `IssueDate` = **2026-04-20**  
   Its issue date.
 - `IssueTime` = **09:00:00**  
-  And time.
-- `RevisionDate` = **2026-05-21**  
-  Revised by the specification update.
-- `RevisionTime` = **14:00:00**  
+  And time, as the catalogue states it.
+- `RevisionDate` = **2026-05-20**  
+  Revised by the price update of the side frame.
+- `RevisionTime` = **13:00:00**  
   At that time.
 - `Note` = **Spring catalogue 2026.**  
   Which catalogue.
 - `Description` = **Benches and spare parts for resale.**  
   What it holds.
-- `VersionID` = **1.0**  
-  The version referred to.
-- `PreviousVersionID` = **0.9**  
-  The draft the store saw at the fair.
+- `VersionID` = **1.1**  
+  The version referred to: the one current when this document is issued.
+- `PreviousVersionID` = **1.0**  
+  The version before it.
 
 ### Referenced Contract
 
@@ -518,14 +518,14 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:Name>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Name>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>09:01:00-01:00</cbc:IssueTime>
-  <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
-  <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+  <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
+  <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
   <cbc:Note>Applies to the spring catalogue.</cbc:Note>
   <cbc:Description>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Description>
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-05-20</cbc:StartDate>
+    <cbc:StartDate>2026-05-21</cbc:StartDate>
     <cbc:EndDate>2026-07-19</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RelatedCatalogueReference>
@@ -533,12 +533,12 @@ Inside `CatalogueItemSpecificationUpdateLine`:
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
-    <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
-    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
+    <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
     <cbc:Note>Spring catalogue 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
-    <cbc:VersionID>1.0</cbc:VersionID>
-    <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
+    <cbc:VersionID>1.1</cbc:VersionID>
+    <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
   </cac:RelatedCatalogueReference>
   <cac:ReferencedContract>
     <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>

@@ -1000,8 +1000,11 @@ def plastics(n, doc):
         kit.deep_merge(out["Consignment"], barge_consignment(f, "plan"))
         return out
     if doc["doc"] == "ExportCustomsDeclaration":
-        return kit.export_declaration(f, n, doc, 6, "Declared the day the barge is loaded.",
-                                      "The value of the granulate, in ferra.")
+        out = kit.export_declaration(f, n, doc, 6, "Declared the day the barge is loaded.",
+                                     "The value of the granulate, in ferra.")
+        out["IssueTime"] = V("12:40:00", "Before the bags are loaded, so that customs releases them before the barge "
+                                         "leaves (timelines#F6).")
+        return out
     if doc["doc"] == "Waybill":
         out = kit.waybill(f, n, doc, 6, "Issued when the barge is loaded.", w, "The gross weight on board.")
         kit.deep_merge(out["Shipment"]["Consignment"], barge_consignment(f, "note"))
@@ -1205,7 +1208,9 @@ def retail(n, doc):
         return kit.waybill(f, n, doc, 9, "Issued when the carrier collects at the distribution centre.", w,
                            "The gross weight taken over.")
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
-        return kit.invoice(f, n, doc, 10, "Issued after delivery.",
+        return {"IssueTime": V("11:30:00", "After the delivery it bills: the store took the goods in at 10:40 "
+                                           "(retail/16#F5, C72)."),
+                **kit.invoice(f, n, doc, 10, "Issued after delivery.",
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
                            [{"item": "road-transport-b", "qty": wmap.whole(wmap.leg_km("retail", "6-xb", "26-xb")),
                              "invoice_why": "The kilometres driven loaded, from the distribution centre in "
@@ -1213,7 +1218,7 @@ def retail(n, doc):
                                             "(O152)."}],
                            key="freight-invoice",
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
-                                                                                   "The consignment carried.")}}}})
+                                                                                   "The consignment carried.")}}}})}
     if doc["doc"] == "ReceiptAdvice":
         out = kit.receipt_advice(f, n, doc, 10, "The day the goods were unloaded at the store.")
         out["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment received."),
@@ -3759,11 +3764,17 @@ def wood(n, doc):
         return kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck across the border.", 10,
                                kit.gross_weight(f, "ordered"), "96 bundles of slats.")
     if doc["doc"] == "ExportCustomsDeclaration":
-        return kit.export_declaration(f, n, doc, 10, "Declared when the truck leaves for the border.",
-                                      "The value of the slats, in lume.")
+        out = kit.export_declaration(f, n, doc, 10, "Declared the morning the truck leaves for the border.",
+                                     "The value of the slats, in lume.")
+        out["IssueTime"] = V("08:40:00", "After the despatch advice and the invoice, while the loaded truck waits "
+                                         "at the sawmill for customs to release the slats (timelines#F6).")
+        return out
     if doc["doc"] == "DespatchAdvice":
-        return kit.despatch_advice(f, n, doc, 10, "The day the truck was loaded at the sawmill.",
-                                   "The gross weight of the bundles.")
+        out = kit.despatch_advice(f, n, doc, 10, "The day the truck was loaded at the sawmill.",
+                                  "The gross weight of the bundles.")
+        out["IssueTime"] = V("08:10:00", "When the truck is loaded, before it leaves once customs has released "
+                                         "the export.")
+        return out
     if doc["doc"] == "ImportCustomsDeclaration":
         return kit.import_declaration(f, n, doc, 11, "The manufacturer declares the import into Urvania.",
                                       "The customs value in ferra: the value in lume at the reference rate (1 lume = 100 "
@@ -4226,7 +4237,7 @@ def tender(n, doc):
         return {"ID": V(f.number(f"tender-37-{k}", doc["from"], "Tender"), "The furniture maker's number for this "
                                                                            "tender."),
                 "IssueDate": V(f.date(42 if k == 1 else 43), "Submitted before the deadline." if k == 1 else
-                               "The corrected tender, submitted the day after the withdrawal."),
+                               "The corrected tender, submitted after the withdrawal the same day (tender/19#F1)."),
                 **folder,
                 "TenderedProject": {"LegalMonetaryTotal": {
                     "PayableAmount": amount(price * TENDER_QTY, "XBL",
@@ -4235,6 +4246,8 @@ def tender(n, doc):
                                              ", the corrected price."))}}}
     if d == "TenderWithdrawal":
         return {**head(f, "withdrawal", doc, 43, "Withdrawn before the deadline, which the procedure allows."),
+                "IssueTime": V("11:20:00", "In the morning, when the furniture maker noticed the wrong price, before "
+                                           "it submitted the corrected tender (tender/18#F1)."),
                 **folder,
                 "WithdrawOfferIndicator": V("true", "The whole tender is withdrawn."),
                 "TenderDocumentReference": {"ID": V(f.numbers["tender-37-1"], "The tender withdrawn.")}}
@@ -4358,6 +4371,9 @@ def air(n, doc):
     f, d = AIR, doc["doc"]
     if d == "FulfilmentCancellation":
         return {**head(f, "fulfilment-cancellation", doc, 3, "The flight left without the cargo."),
+                "IssueTime": V("08:05:00", "In the morning, when the distributor learned that the cargo had missed "
+                                           "its flight, before the new despatch advice it announces (air/07#F1, "
+                                           "air/08#F1)."),
                 "CancellationNote": V("The cargo missed its flight; it goes on the next day's flight under a new "
                                       "despatch advice.", "Why the despatch advice is cancelled."),
                 "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice cancelled.")}}
@@ -4433,7 +4449,9 @@ def retail(n, doc):
 def road(n, doc):
     f = ROAD
     if doc["doc"] == "ApplicationResponse":
-        return {**head(f, "application-response", doc, 9, "Sent automatically when the invoice was processed."),
+        return {**head(f, "application-response", doc, 10, "Sent automatically when the invoice was matched: after "
+                                                             "the corrected receipt advice of the same morning, the "
+                                                             "receipt the match needs (road/16#F1)."),
                 "DocumentResponse": response("AP", "UN/EDIFACT 4343 code AP: the invoice is accepted.",
                                              f.numbers["invoice"], "The invoice responded to.")}
     return _road(n, doc)
@@ -4587,16 +4605,27 @@ def _with_enrichment(flow_id, fn):
     return run
 
 
+# The store's catalogue and its revisions (retail/02 to 04): version -> (day, time of the revision, what made it,
+# the version before). A reference to the catalogue describes it as it stood when the referring document was issued:
+# the version then current and its last revision, never a later one (retail/04#F1, #F8, O175, C72).
+CATALOGUE_REVISIONS = {"1.0": (0, "09:00:00", "Not revised yet: its issue.", "0.9"),
+                       "1.1": (30, "13:00:00", "Revised by the price update of the side frame.", "1.0"),
+                       "1.2": (31, "08:30:00", "Revised by the specification update of the bench.", "1.1")}
+
+
 def catalogue_ref(f, why, key="catalogue", version="1.0"):
+    day, time, revised, previous = CATALOGUE_REVISIONS[version]
     return {"ID": V(f.numbers[key], why), "UUID": V(build_examples.referenced_uuid(f.id, f.numbers[key]),
                                                      "The catalogue's UUID, as stated in the catalogue."),
-            "IssueDate": V(f.date(0), "Its issue date."), "IssueTime": V("09:00:00", "And time."),
-            "RevisionDate": V(f.date(31), "Revised by the specification update."),
-            "RevisionTime": V("14:00:00", "At that time."),
+            "IssueDate": V(f.date(0), "Its issue date."),
+            "IssueTime": V(CATALOGUE_REVISIONS["1.0"][1], "And time, as the catalogue states it."),
+            "RevisionDate": V(f.date(day), revised),
+            "RevisionTime": V(time, "At that time."),
             "Note": V("Spring catalogue 2026.", "Which catalogue."),
             "Description": V("Benches and spare parts for resale.", "What it holds."),
-            "VersionID": V(version, "The version referred to."),
-            "PreviousVersionID": V("0.9", "The draft the store saw at the fair.")}
+            "VersionID": V(version, "The version referred to: the one current when this document is issued."),
+            "PreviousVersionID": V(previous, "The version before it." if previous != "0.9" else
+                                   "The draft the store saw at the fair.")}
 
 
 def related(iid, q, why):
@@ -4650,8 +4679,10 @@ def _(f, n, doc, out):
                                                                     "2025 casting, which the 2026 casting with "
                                                                     "the reinforced foot replaced.")}})
     return {"ActionCode": V("NEW", "A new catalogue."),
+            "IssueTime": V(CATALOGUE_REVISIONS["1.0"][1], "Issued in the morning, for the store to set up the "
+                                                          "range."),
             "RevisionDate": V(f.date(0), "Not revised yet: the issue date."),
-            "RevisionTime": V("09:00:00", "The issue time."),
+            "RevisionTime": V(CATALOGUE_REVISIONS["1.0"][1], "The issue time."),
             "Note": V("Prices for trade customers, before sales tax.", "What the prices are."),
             "Description": V("Benches and spare parts for resale.", "What the catalogue holds."),
             "VersionID": V("1.0", "The first version."),
@@ -4710,14 +4741,15 @@ def _(f, n, doc, out):
 
 
 def catalogue_update_head(f, name, version):
+    day, time, _, previous = CATALOGUE_REVISIONS[version]
     return {"Name": V(name, "What the update is."),
-            "RevisionDate": V(f.date(30), "The day of the change."),
-            "RevisionTime": V("14:00:00", "At that time."),
+            "RevisionDate": V(f.date(day), "The day of the change."),
+            "RevisionTime": V(time, "When the change was made, before the update was sent."),
             "Note": V("Applies to the spring catalogue.", "Which catalogue."),
             "Description": V(name, "In words."),
             "VersionID": V(version, "The catalogue version after the update."),
             "LineCountNumeric": V("1", "One line."),
-            "ValidityPeriod": {"StartDate": V(f.date(30), "From the change."),
+            "ValidityPeriod": {"StartDate": V(f.date(day), "From the change."),
                                "EndDate": V(f.date(90), "Until the catalogue ends.")},
             "ReferencedContract": {"ID": V("LD-BM-SUPPLY-2026", "The supply agreement.")},
             "Signature": {"ID": V(f"LD-SIG-26-{version}", "The distributor's seal."),
@@ -4725,7 +4757,7 @@ def catalogue_update_head(f, name, version):
             "ContractorCustomerParty": {"Party": party("26-xb", short=True)},
             "TradingTerms": {"Information": V("Unchanged.", "The terms stay as in the catalogue.")},
             "DefaultLanguage": {"ID": V("en", "English."), "Name": V("English", "In words.")},
-            "RelatedCatalogueReference": catalogue_ref(f, "The catalogue updated.")}
+            "RelatedCatalogueReference": catalogue_ref(f, "The catalogue updated.", version=previous)}
 
 
 @enrich("retail", "CataloguePricingUpdate")
@@ -5589,7 +5621,9 @@ def full_signature(pid, no, f, day, why):
     blob = _b64.b64encode(f"Signature value of {no}, shortened for the example world.".encode()).decode()
     return {"ID": V(no, why), "ReasonCode": V("APPROVAL", "The signer approves the document."),
             "Note": V("Signed with the company's seal certificate.", "How."),
-            "ValidationDate": V(f.date(day), "Checked on receipt."), "ValidationTime": V("09:05:00", "At that time."),
+            "ValidationDate": V(f.date(day), "Verified by the council's validation service before the document "
+                                             "was issued, after the terms it binds were verified (sea/03#F1)."),
+            "ValidationTime": V("12:40:00", "At that time."),
             "ValidatorID": V("LTAC-VALIDATOR", "The trade accord council's validation service."),
             "CanonicalizationMethod": V("http://www.w3.org/2006/12/xml-c14n11", "Canonical XML 1.1."),
             "SignatureMethod": V("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256", "RSA with SHA-256."),
@@ -5800,32 +5834,22 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"Note": V("Approved; the balance will be paid to the factor.", "The answer."),
             "VersionID": V("1", "The first answer."),
-            "Signature": seal(doc["from"], "VT-SIG-26-ISP"),
-            "Payment": {"ID": V("VT-PAY-26-0199", "The payment planned."),
-                        "PaidAmount": amount(f.numbers["invoice-amount"], "XBL", "The balance to be paid."),
-                        "PaidDate": V(f.date(52), "The planned payment day."),
-                        "InstructionID": V("VT-PAY-26-0199", "The buyer's payment order."),
-                        "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The invoice currency."),
-                                         "TargetCurrencyCode": V("XLC", "The buyer's."),
-                                         "CalculationRate": V("0.4", "The reference rate.")},
-                        "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
-                                                                                                        "invoice.")}},
-                        "RemittanceDocumentReference": {"ID": V(f.number("remittance", "1-xl", "RemittanceAdvice"),
-                                                                "The remittance advice the buyer prepared with "
-                                                                "the payment order; it is sent on the payment "
-                                                                "day.")}}}
+            # no payment: the response is an approval; the payment of 25 June is reported by the remittance advice
+            # (sea/24#F1, D30 point 9, C72)
+            "Signature": seal(doc["from"], "VT-SIG-26-ISP")}
 
 
 @enrich("road", "ApplicationResponse")
 def _(f, n, doc, out):
-    return {"ResponseDate": V(f.date(9), "The day the invoice was processed."),
-            "ResponseTime": V("06:12:00", "Processed overnight."),
+    return {"ResponseDate": V(f.date(10), "The day the invoice was matched against order and receipt."),
+            "ResponseTime": V("14:05:00", "In the afternoon run of the invoice matching, after the corrected receipt "
+                                          "advice of 10:48."),
             "Note": V("Accepted for payment; line 2 matched the substituted casting.", "The result."),
             "VersionID": V("1", "The first response."),
             "Signature": seal(doc["from"], "LD-SIG-26-AR"),
             "DocumentResponse": {
-                "Response": {"EffectiveDate": V(f.date(9), "Effective at once."),
-                             "EffectiveTime": V("06:12:00", "When processed."),
+                "Response": {"EffectiveDate": V(f.date(10), "Effective at once."),
+                             "EffectiveTime": V("14:05:00", "When matched."),
                              "Status": {"ConditionCode": V("MATCHED", "The invoice matched order and receipt."),
                                         "Description": V("Three-way match passed.", "In words.")}},
                 "IssuerParty": party(doc["from"], short=True),
@@ -7394,8 +7418,13 @@ def _(f, n, doc, out):
             "CallForTenderDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
             "DocumentReference": {"ID": V("VI-DS-B180" if winner else "BF-DS-PARK", "The datasheet.")},
             "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TENDER-{n}"),
-            "TendererQualificationDocumentReference": {"ID": V(f.numbers.get("qualification", "VI-ESPD-26"),
-                                                               "The qualification documents.")},
+            # each tenderer cites its own qualification, issued before its tender (tender/17#F2, 19#F2, C72)
+            "TendererQualificationDocumentReference": {"ID": V(f.numbers["qualification"], "The qualification "
+                                                               "documents.")} if winner else
+            {"ID": V(f.numbers["qar-response"], "The furniture maker's response to the qualification "
+                                                "questionnaire, which qualifies it."),
+             "DocumentTypeCode": V("QualificationApplicationResponse", "The kind of document: the response to the "
+                                   "qualification questionnaire, the furniture maker's qualification.")},
             "OriginatorCustomerParty": {"Party": party(PWD, short=True)},
             "BeneficiaryParty": party(PWD, short=True),
             "TenderedProject": {
@@ -7408,7 +7437,8 @@ def _(f, n, doc, out):
                                   "FeeAmount": amount(Decimal("12.00"), "XBL", "For the signed originals."),
                                   "FeeDescription": V("Courier of the guarantee's original.", "What.")},
                 "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")}, {"ID": V("LOT-2", "Lot 2.")}],
-                "EvidenceDocumentReference": {"ID": V("VI-REF-2025", "Reference letters.")},
+                "EvidenceDocumentReference": {"ID": V("VI-REF-2025" if winner else "BF-REF-2025",
+                                                      "The tenderer's own reference letters.")},
                 "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax for a public body.")},
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(b + i, "XBL", "Both lots."),
                                        "PayableAmount": amount(b + i, "XBL", "The tender's total.")},
@@ -8207,14 +8237,15 @@ def _(f, n, doc, out):
     for ln in lines_of(out, "InvoiceLine"):
         ln["BeneficiaryParty"] = party(HARBOUR, short=True)
     terms = out["PaymentTerms"]
-    terms[1]["ValidityPeriod"] = {"StartDate": V(f.date(14), "The terms apply from the invoice date"),
-                                  "EndDate": V(f.date(59), "until the balance is due.")}
+    issued = out["IssueDate"].value         # the terms and their rate date from the invoice itself (sea/22#F2, C72)
+    terms[1]["ValidityPeriod"] = {"StartDate": V(issued, "The terms apply from the invoice date"),
+                                  "EndDate": V(terms[1]["InstallmentDueDate"].value, "until the balance is due.")}
     terms[1]["ExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The invoice currency."),
                                 "TargetCurrencyCode": V("XLC", "The buyer's currency, in which it shows the "
                                                                "balance too."),
                                 "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The reference rate."),
                                 "MathematicOperatorCode": V("Multiply", "Lume times the rate."),
-                                "Date": V(f.date(14), "Of the invoice date.")}
+                                "Date": V(issued, "Of the invoice date, as the payment alternative rate.")}
     pm = out["PaymentMeans"]
     pm["CreditAccount"] = {"AccountID": V("HF-CL-VT-001", "The credit line the factor granted the buyer, against "
                                                           "which the receivable is held.")}
@@ -9221,13 +9252,8 @@ def _(f, n, doc, out):
     return {}
 
 
-@enrich("air", "Invoice")
-def _(f, n, doc, out):
-    if doc["from"] != "10-xb":          # the forwarder's invoice, not the distributor's to the island (air/11)
-        return {}
-    return {"StatementDocumentReference": {"ID": V("BF-SOA-26-05", "The forwarder's statement of account for May, "
-                                                                   "on which the invoice will appear (not "
-                                                                   "shown).")}}
+# The forwarder's invoice cites no statement: a statement of account for May would be drawn up after it and lists
+# its invoices, not the reverse (air/10#F5, C72).
 
 
 @enrich("sea", "Statement")
@@ -9550,7 +9576,11 @@ def energy(n, doc):
         g = FACTORY_GAS
         vn = (g["m3"] * g["factor"]).quantize(Decimal(1))
         return {"ID": V(f.number("metering", doc["from"], "UtilityStatement"), "The grid operator's metering report."),
-                "IssueDate": V(f.date(1), "Sent on the first working day after the month."),
+                "IssueDate": V(f.date(1), "Sent with the month's network invoice, the morning after the meters "
+                                          "were read."),
+                "IssueTime": V("08:20:00", "Issued in the same billing run as the network invoice it supplements, "
+                                           "each citing the other, and before the retail company bills the gas by "
+                                           "it (energy/01#F5, timelines#F8)."),
                 "UtilityStatementTypeCode": V("GAS", "The kind of supply."),
                 "ParentDocumentReference": {"ID": V(f.number("network-invoice", "44-xu", "Invoice"), "The network "
                                                     "invoice this statement supplements: the metering behind the "
@@ -9610,7 +9640,8 @@ def energy(n, doc):
                                                                                   "company bills.")}},
                         "LegalMonetaryTotal": network_gas_total(doc)}}}
     if d == "Invoice" and doc["from"] == "44-xu":
-        out = kit.invoice(f, n, doc, 2, "The month's network charges.", {},
+        out = kit.invoice(f, n, doc, 1, "The month's network charges, billed the morning after the meters were read, "
+                                        "with the metering statement that supplements the invoice.", {},
                            [{"item": "network-electricity", "qty": 412800, "invoice_why": "The factory's electricity "
                                                                                           "connection, March."},
                             {"item": "network-electricity", "qty": BILLS["33-xu"][1]["qty"], "invoice_why": "The warehouse's electricity "
@@ -9625,6 +9656,7 @@ def energy(n, doc):
                                             "use, which are credited at the network tariff.",
                              "line_extra": FEBRUARY}],
                            key="network-invoice", extra=MARCH)
+        out["IssueTime"] = V("08:20:00", "The grid operator's billing run, first thing in the morning.")
         if not isinstance(out["InvoiceLine"], list):
             out["InvoiceLine"] = [out["InvoiceLine"]]
         # each line names the connection it bills by the grid operator's number (energy/02#F1, O161), which the retail

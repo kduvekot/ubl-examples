@@ -30,8 +30,8 @@ The distributor lowers the price of the spare side frame.
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `RevisionDate` = **2026-05-20**  
   The day of the change.
-- `RevisionTime` = **14:00:00**  
-  At that time.
+- `RevisionTime` = **13:00:00**  
+  When the change was made, before the update was sent.
 - `Note` = **Applies to the spring catalogue.**  
   Which catalogue.
 - `Description` = **Price change of the side frame**  
@@ -61,17 +61,17 @@ Inside `RelatedCatalogueReference`:
 - `IssueDate` = **2026-04-20**  
   Its issue date.
 - `IssueTime` = **09:00:00**  
-  And time.
-- `RevisionDate` = **2026-05-21**  
-  Revised by the specification update.
-- `RevisionTime` = **14:00:00**  
+  And time, as the catalogue states it.
+- `RevisionDate` = **2026-04-20**  
+  Not revised yet: its issue.
+- `RevisionTime` = **09:00:00**  
   At that time.
 - `Note` = **Spring catalogue 2026.**  
   Which catalogue.
 - `Description` = **Benches and spare parts for resale.**  
   What it holds.
 - `VersionID` = **1.0**  
-  The version referred to.
+  The version referred to: the one current when this document is issued.
 - `PreviousVersionID` = **0.9**  
   The draft the store saw at the fair.
 
@@ -307,7 +307,7 @@ Inside `CataloguePricingUpdateLine`:
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
-  <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+  <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
   <cbc:Note>Applies to the spring catalogue.</cbc:Note>
   <cbc:Description>Price change of the side frame</cbc:Description>
   <cbc:VersionID>1.1</cbc:VersionID>
@@ -321,8 +321,8 @@ Inside `CataloguePricingUpdateLine`:
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
-    <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
-    <cbc:RevisionTime>14:00:00</cbc:RevisionTime>
+    <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
+    <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
     <cbc:Note>Spring catalogue 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.0</cbc:VersionID>

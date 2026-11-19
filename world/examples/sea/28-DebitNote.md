@@ -102,7 +102,7 @@ Inside `ReceiptDocumentReference`:
 
 Inside `StatementDocumentReference`:
 
-- `ID` = **HF-ST-26-0151**  
+- `ID` = **HF-ST-26-0150**  
   The factor's statement, which this debit does not touch.
 
 ### Originator Document Reference
@@ -628,7 +628,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>NW-RA-26-0146</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0151</cbc:ID>
+    <cbc:ID>HF-ST-26-0150</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0021</cbc:ID>

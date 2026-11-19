@@ -8812,6 +8812,7 @@
     "DocumentDistribution",
     "RemittanceDocumentDistribution",
     "RequiredCertificationDocumentReference",
+    "TendererQualificationDocumentReference",
     "SupportingDocumentReference",
     "EvidenceDocumentReference",
     "OriginatorDocumentReference",

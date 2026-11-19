@@ -24,8 +24,8 @@ The sawmill announces the slats per lot, so the factory can trace the wood of ev
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   The day the truck was loaded at the sawmill.
-- `IssueTime` = **08:31:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **08:10:00-01:00**  
+  When the truck is loaded, before it leaves once customs has released the export; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
@@ -270,7 +270,7 @@ Inside `DespatchLine`:
   <cbc:ID>MS-DA-26-0633</cbc:ID>
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
-  <cbc:IssueTime>08:31:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>08:10:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

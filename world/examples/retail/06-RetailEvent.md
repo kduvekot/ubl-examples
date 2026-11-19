@@ -24,8 +24,8 @@ A promotion next month will lift demand; the distributor needs to know before it
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Announced with the forecast.
-- `IssueTime` = **08:17:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **11:13:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Agreed with the distributor's sales team.**  
   Status of the agreement.
 - `RetailEventName` = **Spring garden promotion**  
@@ -291,7 +291,7 @@ Inside `MiscellaneousEvent`:
   <cbc:ID>BS-RE-26-0222</cbc:ID>
   <cbc:UUID>31926ddb-5dfd-59d6-bb1b-86b3926753e7</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-  <cbc:IssueTime>08:17:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:13:00-01:00</cbc:IssueTime>
   <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
   <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
   <cbc:RetailEventStatusCode listID="urn:ubl-examples:world:codelist:RetailEventStatusCode">CONFIRMED</cbc:RetailEventStatusCode>
