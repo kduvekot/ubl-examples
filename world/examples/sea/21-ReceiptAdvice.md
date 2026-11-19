@@ -249,7 +249,7 @@ Inside `ReceiptLine`:
   The line number.
 - `Note` = **Received as despatched.**  
   The line in words.
-- `ReceivedQuantity` = **96** (unitCode `EA`)  
+- `ReceivedQuantity` = **104** (unitCode `EA`)  
   Counted at the goods-in and found as announced.
 - `ReceivedDate` = **2026-05-20**  
   Unloaded.
@@ -499,7 +499,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">96</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">104</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

@@ -250,7 +250,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the goods.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -307,9 +307,9 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **One 40-foot container: 24 pallets of 4 benches.**  
+- `Note` = **104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.**  
   The line as the order put it.
-- `DeliveredQuantity` = **96** (unitCode `EA`)  
+- `DeliveredQuantity` = **104** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
@@ -342,6 +342,14 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
   A fact about this lot: the galvanising and powder-coating batch its frames went through.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-071**  
+  Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
+- `Item/ItemInstance/ManufactureDate` = **2026-04-10**  
+  The day the lot was produced.
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260410**  
+  The production lot, from the maker's prefix and the production day; a recall names the lot.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
+  A fact about this lot: the galvanising and powder-coating batch its frames went through.
+- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-072**  
   Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
 - `ID` = **2**  
   The line number.
@@ -694,7 +702,7 @@ Inside `DespatchLine`:
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
@@ -741,8 +749,8 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>One 40-foot container: 24 pallets of 4 benches.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
+    <cbc:Note>104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">104</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -775,6 +783,16 @@ Inside `DespatchLine`:
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
             <cbc:Value>ZN-26-071</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ManufactureDate>2026-04-10</cbc:ManufactureDate>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>VI-LOT-260410</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Coating batch</cbc:Name>
+            <cbc:Value>ZN-26-072</cbc:Value>
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>

@@ -1331,12 +1331,27 @@ def sea_quarter(t):
 SEA_3PL = {"Name": V("Nalevi Warehousing, Selanu", "The 3PL's warehouse on the island, where the goods are received "
                                                    "and stored.")}
 SEA = kit.Flow("sea", "2026-05-04", [
-    {"item": "bench-serra-b", "ordered": 96, "why": "One 40-foot container: 24 pallets of 4 benches."},
+    # O165: Velumi buys by the pallet, and two pallets more in a container already booked add little to the freight
+    {"item": "bench-serra-b", "ordered": 104, "why": "104 benches on 26 pallets of four: 96 for the Port of Selanu's "
+                                                     "harbour parks and two pallets for the buyer's own stock."},
     {"item": "bench-casting-b", "ordered": 12, "why": "Spare side frames for the buyer's own service stock.",
      "received": 11, "received_why": "One frame carton crushed at the port; the frame inside is cracked."}],
     buyer="1-xl")       # Lumeway's CIF price for the island's frames (items.json buyer_prices; O30)
 CONTAINER = kit.container_number("TWL", 412087)       # Tidewell Ocean Lines' container (ISO 6346, with check digit)
 SEA_FREIGHT, INSURANCE = Decimal("2950.00"), Decimal("140.00")
+
+
+def sea_floor_places(f):
+    """The floor places the sea flow's pallets take in the 40-foot container: a bench pallet may carry one more on
+    top, the frame cartons' pallet nothing (world/items.json, the pallets' stack); the container has 18 (O165)."""
+    places = 0
+    for d in f.deal:
+        units = [u for u in kit.pallets(f, [d])]
+        stack = kit.maker(d["item"])["pallet"]["stack"]
+        places += -(-len(units) // stack)
+    if places > 18:
+        raise SystemExit(f"sea: {places} floor places do not fit the 40-foot container's 18 (O165)")
+    return places
 
 
 def sea_goods(f, iid=None):
@@ -1394,7 +1409,8 @@ def sea_equipment(f, detail):
             "GoodsItem": {"ID": V("1", "The goods in the container, as one item for the carrier."),
                           "Description": V("Park benches and spare side frames", "In words."),
                           "GoodsItemContainer": {"ID": V(CONTAINER, "The container the goods are in."),
-                                                 "Quantity": qty(25, "EA", "25 pallets in it.")},
+                                                 "Quantity": qty(len(kit.pallets(f, f.deal)), "EA",
+                                                                 f"{len(kit.pallets(f, f.deal))} pallets in it.")},
                           "ContainedGoodsItem": [{"ID": V("1.1", "The benches."),
                                                   "Description": V("Park benches", "In words.")},
                                                  {"ID": V("1.2", "The side frames."),
@@ -1405,7 +1421,8 @@ def sea_equipment(f, detail):
                                            "TransportEquipmentTypeCode": V("TE", "UN/EDIFACT 8053 code TE: "
                                                                                  "trailer.",
                                                                            listID="UN/EDIFACT EDED 8053")},
-            "Package": {"ID": kit.unit_id("6-xb", f, 25, "The pallet of frame cartons, packed last at the doors"),
+            "Package": {"ID": kit.unit_id("6-xb", f, len(kit.pallets(f, f.deal)), "The pallet of frame cartons, "
+                                                                                     "packed last at the doors"),
                         "Quantity": qty(12, "EA", "Twelve side frames, one to a carton."),
                         "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
                         "ContainingTransportEquipment": {"ID": V(CONTAINER, "The container.", schemeID="ISO6346")}}})
@@ -1665,12 +1682,13 @@ def sea_order_response(f, n, doc):
         "DocumentCurrencyCode": kit.currency_line("XBL", "the distributor's currency, as in the order"),
         "CustomerReference": V("Harbour parks Selanu", "The buyer's project, as the buyer named it when ordering."),
         "LineCountNumeric": V(str(len(rows)), "The number of lines."),
-        "TotalPackagesQuantity": qty(kit.parcel_count(f), "EA", "The parcels: 96 benches in three parcels each and "
-                                     "12 frame cartons (D20)."),
+        "TotalPackagesQuantity": qty(kit.parcel_count(f), "EA", f"The parcels: {f.deal[0]['ordered']} benches in "
+                                     f"three parcels each and {f.deal[1]['ordered']} frame cartons (D20)."),
         "GrossWeightMeasure": qty(w, "KGM", "The expected gross weight, for the booking."),
         "NetWeightMeasure": qty(net, "KGM", "The goods alone."),
-        "GrossVolumeMeasure": V(kit.kg(kit.pallets_volume(f)), "The 25 loaded pallets: about half of a 40-foot "
-                                "container's volume.", unitCode="MTQ"),
+        "GrossVolumeMeasure": V(kit.kg(kit.pallets_volume(f)), f"The {len(kit.pallets(f, f.deal))} loaded pallets: "
+                                f"the bench pallets two high, they take {sea_floor_places(f)} of the 40-foot "
+                                "container's 18 floor places.", unitCode="MTQ"),
         "AccountingSupplierParty": {"Party": party(seller, short=True)},
         "AccountingCustomerParty": {"Party": party(buyer, short=True)},
         "DeliveryTerms": {"ID": V("CIF", "Incoterms 2020, as ordered.", schemeID="INCOTERMS"),
@@ -1776,7 +1794,9 @@ def sea(n, doc):
                              "NetVolumeMeasure": V(kit.kg(kit.goods_volume(f)), "The volume of the goods "
                                                    "themselves, knocked down and without packaging: the envelopes of "
                                                    "the side frames and slats.", unitCode="MTQ"),
-                             "TotalTransportHandlingUnitQuantity": qty(25, "EA", "25 pallets in the container."),
+                             "TotalTransportHandlingUnitQuantity": qty(len(kit.pallets(f, f.deal)), "EA",
+                                                                       f"{len(kit.pallets(f, f.deal))} pallets in the "
+                                                                       "container."),
                              "ShippingPriorityLevelCode": V("STANDARD", "No priority: the next sailing will do."),
                              "HandlingInstructions": V("Castings pallet at the doors.", "How the container is "
                                                                                        "stowed."),
@@ -1956,7 +1976,7 @@ def sea(n, doc):
                                     "InsuredValueAmount": amount(cif_value(f) * Decimal("1.1"), "XBL",
                                                                  "As on the insurance certificate.")}
         first["InvoiceLine"] = {"ID": V("1", "The line of the seller's invoice for these goods."),
-                                "InvoicedQuantity": qty(96, "EA", "The benches invoiced."),
+                                "InvoicedQuantity": qty(f.deal[0]["ordered"], "EA", "The benches invoiced."),
                                 "Item": {"Name": V(ITEM["bench-serra-b"]["name"], "Named only: described in full "
                                                                                   "above.")}}
         return out
@@ -5163,7 +5183,7 @@ def _(f, n, doc, out):
 @enrich("sea", "PackingList")
 def _(f, n, doc, out):
     return {"Name": V("Packing list", "What it is."), "Description": V("The container's contents.", "In words."),
-            "Note": V("25 pallets.", "The count."), "VersionID": V("1", "The first version."),
+            "Note": V(f"{len(kit.pallets(f, f.deal))} pallets.", "The count."), "VersionID": V("1", "The first version."),
             "OtherInstruction": V("Keep with the container's documents.", "Where it goes."),
             "CarrierParty": party("11-xb", short=True),
             "DocumentReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
@@ -8026,8 +8046,8 @@ def _(f, n, doc, out):
         cd["PreviousCustomsDeclaration"] = {
             "ID": V(FLOWS[fl].numbers["import"], f"The import declaration under which {what} entered Bayvarra from "
                     f"Urvania (flow {fl}; the stock ledger of world/items.json, D21): they now leave again."
-                    + (f" {missing[0][0].upper() + missing[0][1:]} entered under the rail delivery's import (D37), "
-                       "which is not yet an example." if missing else "")),
+                    + (f" {(' and '.join(missing))[0].upper() + (' and '.join(missing))[1:]} entered under the "
+                       "rail delivery's import (D37), which is not yet an example." if missing else "")),
             "FunctionCode": V("IMPORT", "The kind of the previous declaration.")}
     return {}
 
@@ -8139,7 +8159,9 @@ def _(f, n, doc, out):
         "Shipment": {"ID": V("VT-SH-PLAN-1", "The shipment the buyer plans for this line: one container."),
                      "ShippingPriorityLevelCode": V("STANDARD", "No urgency for the sea part."),
                      "TotalTransportHandlingUnitQuantity": qty(len(kit.pallets(f, f.deal[:1])), "EA", "The pallets "
-                                                               "the line's benches come on: 24 of four (sea/05#F1).")},
+                                                               f"the line's benches come on: "
+                                                               f"{len(kit.pallets(f, f.deal[:1]))} of four "
+                                                               "(sea/05#F1).")},
         "Package": {"ID": V("PAL", "Packed on pallets."),
                     "Quantity": qty(4, "EA", "The benches on one pallet: four, as the distributor sells them."),
                     "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),

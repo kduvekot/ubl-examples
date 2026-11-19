@@ -144,7 +144,7 @@
   {
    "id": "sea",
    "title": "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)",
-   "text": "The commercial buyer on the island buys cost, insurance and freight (CIF) to the port of discharge. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them.",
+   "text": "The commercial buyer on the island buys 104 benches, cost, insurance and freight (CIF) to the port of discharge: 96 for the Port of Selanu's harbour parks and two more pallets of four for its own stock, since it buys by the pallet and two pallets add little to the freight of a container already booked. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them.",
    "legs": [
     {
      "mode": "road",
@@ -1660,7 +1660,7 @@
    "doc": "Order",
    "from": "1-xl",
    "to": "6-xb",
-   "why": "Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
+   "why": "The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for its own stock, and spare frames. Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
    "parties": {
     "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",

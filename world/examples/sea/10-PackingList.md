@@ -30,7 +30,7 @@ How the goods are packed in the container, for the forwarder's booking and the e
   What it is.
 - `Description` = **The container's contents.**  
   In words.
-- `Note` = **25 pallets.**  
+- `Note` = **27 pallets.**  
   The count.
 - `VersionID` = **1**  
   The first version.
@@ -170,21 +170,21 @@ Inside `Shipment`:
   No priority: the next sailing will do. The code is from the Trade Accord's shipping priority list: STANDARD = Standard.
 - `HandlingInstructions` = **Castings pallet at the doors.**  
   How the container is stowed.
-- `GrossWeightMeasure` = **9113.4** (unitCode `KGM`)  
-  The goods (5363.4 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
-- `NetWeightMeasure` = **4366.8** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
+  The goods (5795.8 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
+- `NetWeightMeasure` = **4719.6** (unitCode `KGM`)  
   The goods without packaging.
-- `NetVolumeMeasure` = **10.2** (unitCode `MTQ`)  
+- `NetVolumeMeasure` = **11** (unitCode `MTQ`)  
   The volume of the goods themselves, knocked down and without packaging: the envelopes of the side frames and slats.
-- `TotalTransportHandlingUnitQuantity` = **25** (unitCode `EA`)  
-  25 pallets in the container.
+- `TotalTransportHandlingUnitQuantity` = **27** (unitCode `EA`)  
+  27 pallets in the container.
 - `SpecialInstructions` = **Photograph the load before closing the doors.**  
   For any damage claim.
 - `DeliveryInstructions` = **Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.**  
   Where the goods end up.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment.
-- `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the goods.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -230,11 +230,11 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **49920.00** (currencyID `XBL`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **54080.00** (currencyID `XBL`)  
   The value of the goods, in lume.
-- `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **5621.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **104** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
@@ -259,7 +259,7 @@ Inside `Shipment`:
 - `GoodsItem/Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `GoodsItem/ContainingPackage/Quantity` = **4** (unitCode `EA`)  
-  4 benches to a pallet; the goods item travels on 24 pallets.
+  4 benches to a pallet; the goods item travels on 26 pallets.
 - `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
   The pallet goes back to the party that loaded it.
 - `GoodsItem/ContainingPackage/PackageLevelCode` = **3** (listID `UN/EDIFACT EDED 7075`)  
@@ -388,7 +388,7 @@ Inside `Shipment`:
   What the packaging is made of.
 - `TransportHandlingUnit/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container's number: the owner code of the ocean carrier, U for a freight container, six digits and the ISO 6346 check digit.
-- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9113.4** (unitCode `KGM`)  
+- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
   The verified gross mass: cargo and the container's own weight of 3,750 kg.
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
@@ -443,7 +443,7 @@ Inside `Signature`:
   <cbc:IssueTime>15:59:00-01:00</cbc:IssueTime>
   <cbc:Name>Packing list</cbc:Name>
   <cbc:Description>The container's contents.</cbc:Description>
-  <cbc:Note>25 pallets.</cbc:Note>
+  <cbc:Note>27 pallets.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:OtherInstruction>Keep with the container's documents.</cbc:OtherInstruction>
   <cac:ConsignorParty>
@@ -544,15 +544,15 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
     <cbc:HandlingInstructions>Castings pallet at the doors.</cbc:HandlingInstructions>
-    <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
-    <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
-    <cbc:NetVolumeMeasure unitCode="MTQ">10.2</cbc:NetVolumeMeasure>
-    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure unitCode="KGM">4719.6</cbc:NetWeightMeasure>
+    <cbc:NetVolumeMeasure unitCode="MTQ">11</cbc:NetVolumeMeasure>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:SpecialInstructions>Photograph the load before closing the doors.</cbc:SpecialInstructions>
     <cbc:DeliveryInstructions>Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.</cbc:DeliveryInstructions>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -591,9 +591,9 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">49920.00</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">54080.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -733,7 +733,7 @@ Inside `Signature`:
     <cac:TransportHandlingUnit>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
       </cac:TransportEquipment>
     </cac:TransportHandlingUnit>

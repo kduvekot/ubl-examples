@@ -181,7 +181,7 @@
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
@@ -228,8 +228,8 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>One 40-foot container: 24 pallets of 4 benches.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
+    <cbc:Note>104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">104</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -262,6 +262,16 @@
           <cac:AdditionalItemProperty>
             <cbc:Name>Coating batch</cbc:Name>
             <cbc:Value>ZN-26-071</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+      <cac:ItemInstance>
+        <cbc:ManufactureDate>2026-04-10</cbc:ManufactureDate>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>VI-LOT-260410</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Coating batch</cbc:Name>
+            <cbc:Value>ZN-26-072</cbc:Value>
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>

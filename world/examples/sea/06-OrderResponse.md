@@ -34,14 +34,14 @@ The distributor accepts and confirms the sailing it plans to use.
   The response in words.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the distributor's currency, as in the order; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalPackagesQuantity` = **300** (unitCode `EA`)  
-  The parcels: 96 benches in three parcels each and 12 frame cartons (D20).
-- `GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
+- `TotalPackagesQuantity` = **324** (unitCode `EA`)  
+  The parcels: 104 benches in three parcels each and 12 frame cartons (D20).
+- `GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The expected gross weight, for the booking.
-- `NetWeightMeasure` = **4366.8** (unitCode `KGM`)  
+- `NetWeightMeasure` = **4719.6** (unitCode `KGM`)  
   The goods alone.
-- `GrossVolumeMeasure` = **24.1** (unitCode `MTQ`)  
-  The 25 loaded pallets: about half of a 40-foot container's volume.
+- `GrossVolumeMeasure` = **26** (unitCode `MTQ`)  
+  The 27 loaded pallets: the bench pallets two high, they take 14 of the 40-foot container's 18 floor places.
 - `CustomerReference` = **Harbour parks Selanu**  
   The buyer's project, as the buyer named it when ordering.
 - `LineCountNumeric` = **2**  
@@ -330,7 +330,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **50724.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -349,9 +349,9 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **50724.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the lines.
-- `PayableAmount` = **50724.00** (currencyID `XBL`)  
+- `PayableAmount` = **54884.00** (currencyID `XBL`)  
   The goods; freight and insurance follow on the invoice under CIF.
 
 ### Order Line
@@ -364,11 +364,11 @@ Inside `OrderLine`:
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
-- `LineItem/Quantity` = **96** (unitCode `EA`)  
+- `LineItem/Quantity` = **104** (unitCode `EA`)  
   The quantity confirmed.
-- `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+- `LineItem/LineExtensionAmount` = **54080.00** (currencyID `XBL`)  
   As ordered.
-- `LineItem/TaxInclusiveLineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+- `LineItem/TaxInclusiveLineExtensionAmount` = **54080.00** (currencyID `XBL`)  
   No tax on an export: the same amount.
 - `LineItem/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   No tax on an export.
@@ -456,10 +456,10 @@ Inside `OrderLine`:
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPackagesQuantity unitCode="EA">300</cbc:TotalPackagesQuantity>
-  <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
-  <cbc:GrossVolumeMeasure unitCode="MTQ">24.1</cbc:GrossVolumeMeasure>
+  <cbc:TotalPackagesQuantity unitCode="EA">324</cbc:TotalPackagesQuantity>
+  <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure unitCode="KGM">4719.6</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure unitCode="MTQ">26</cbc:GrossVolumeMeasure>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
@@ -675,7 +675,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">50724.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54884.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -689,17 +689,17 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">50724.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">54884.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
-      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">49920.00</cbc:TaxInclusiveLineExtensionAmount>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
+      <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">54080.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
       <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
       <cbc:BackOrderAllowedIndicator>false</cbc:BackOrderAllowedIndicator>
