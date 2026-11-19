@@ -308,7 +308,7 @@ Coverage 4993 → 4992 (commit 0cbe740c), 1 element.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `RemittanceAdviceLine/Note` | 0..n | utilities/04-RemittanceAdvice | | | open |
+| `RemittanceAdviceLine/Note` | 0..n | utilities/04-RemittanceAdvice | Lumeway pays Valdara's road invoice within the ten days of `XU-STD` and takes the 2 % discount, 77,748 ferra on 3,887,400, explained on the line (road/17; the payment moves from 22 April to 3 April at the latest; proposed by G5, O181, not yet in the decided story) | road | candidate |
 
 ### Stage 2: C50 (no tax section in Lisavan sales), C54 (withholding, D17)
 

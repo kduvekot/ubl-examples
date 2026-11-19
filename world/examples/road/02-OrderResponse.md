@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
 
-The manufacturer accepts the order and confirms the collection date at its warehouse.
+The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier (decision D35).
 
 [The XML file](02-OrderResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

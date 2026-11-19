@@ -974,7 +974,7 @@
    "doc": "OrderResponse",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "The manufacturer accepts the order and confirms the collection date at its warehouse.",
+   "why": "The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier (decision D35).",
    "parties": {
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb"
