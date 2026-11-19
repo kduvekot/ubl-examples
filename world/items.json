@@ -1563,5 +1563,282 @@
    "supply": "goods",
    "purchase": "energy"
   }
- ]
+ ],
+ "resales": {
+  "note": "Every resale of the world, with what the reseller paid and the freight the documents state, for the build check of decision D14 and open point O30 (tools/world_items.py): nobody resells below what they paid plus the stated freight and the import tax they bear, and a reseller's gross margin on the sale, (price - cost) / price, falls in the band for its kind of business (parties.json identity.legal.business), except during a promotion, when only the upper limit applies. What the reseller paid is the price its seller asks it (items.json buyer_prices, else the seller's price). Freight is shared over the goods a transport carries by their gross weight. Prices before tax; amounts compared in lume at the reference rates. A sale listed under awaiting_owner fails the check for a reason the owner has still to decide.",
+  "margin_bands": {
+   "distributor": {
+    "name": "Distributor, wholesaler",
+    "min": 15,
+    "max": 30
+   },
+   "retailer": {
+    "name": "Retailer",
+    "min": 30,
+    "max": 45
+   }
+  },
+  "freight": {
+   "road-truck": {
+    "what": "Trasvia's truck from Castrano's warehouse in Conciaro to Lumeway in Marrowdale, paid by Lumeway under FCA (road/14)",
+    "services": [
+     {
+      "item": "road-transport",
+      "km_of_leg": [
+       "road",
+       "8-xu",
+       "6-xb"
+      ]
+     }
+    ],
+    "load": [
+     {
+      "item": "bench-serra",
+      "qty": 96
+     },
+     {
+      "item": "bench-casting",
+      "qty": 12
+     }
+    ]
+   },
+   "store-delivery": {
+    "what": "Bayforth's truck from Lumeway to the store, paid by Lumeway under DDP (retail/16)",
+    "services": [
+     {
+      "item": "road-transport-b",
+      "km_of_leg": [
+       "retail",
+       "6-xb",
+       "26-xb"
+      ]
+     }
+    ],
+    "load": [
+     {
+      "item": "bench-serra-b",
+      "qty": 24
+     }
+    ]
+   },
+   "sea": {
+    "what": "Sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF (sea/18)",
+    "services": [
+     {
+      "item": "sea-freight",
+      "qty": 1
+     },
+     {
+      "item": "export-clearance",
+      "qty": 1
+     },
+     {
+      "item": "cargo-insurance",
+      "qty": 1
+     }
+    ],
+    "load": [
+     {
+      "item": "bench-serra-b",
+      "qty": 96
+     },
+     {
+      "item": "bench-casting-b",
+      "qty": 12
+     }
+    ]
+   },
+   "air": {
+    "what": "Air freight to Selanu airport at the chargeable weight, paid by Lumeway under CPT (air/10)",
+    "services": [
+     {
+      "item": "air-freight",
+      "qty": "load_kg"
+     }
+    ],
+    "load": [
+     {
+      "item": "bench-casting-b",
+      "qty": 8
+     }
+    ]
+   }
+  },
+  "sales": [
+   {
+    "id": "lumeway-bench-store",
+    "seller": "6-xb",
+    "buyer": "26-xb",
+    "items": [
+     [
+      "bench-serra-b",
+      1
+     ]
+    ],
+    "less_percent": 5,
+    "what": "The benches for the store's reopening, with Lumeway's promotion support of 5 % (retail/08, 18)",
+    "freight": [
+     "road-truck",
+     "store-delivery"
+    ]
+   },
+   {
+    "id": "lumeway-frame-store",
+    "seller": "6-xb",
+    "buyer": "26-xb",
+    "items": [
+     [
+      "bench-casting-b",
+      1
+     ]
+    ],
+    "price": 58.0,
+    "what": "The side frame on Lumeway's revised list of 20 May (retail/03; O15, D34)",
+    "freight": [
+     "road-truck"
+    ]
+   },
+   {
+    "id": "lumeway-bench-island",
+    "seller": "6-xb",
+    "buyer": "1-xl",
+    "items": [
+     [
+      "bench-serra-b",
+      1
+     ]
+    ],
+    "what": "The benches by sea, CIF Selanu (sea/22)",
+    "freight": [
+     "road-truck",
+     "sea"
+    ]
+   },
+   {
+    "id": "lumeway-frame-island",
+    "seller": "6-xb",
+    "buyer": "1-xl",
+    "items": [
+     [
+      "bench-casting-b",
+      1
+     ]
+    ],
+    "what": "The spare side frames by sea, CIF Selanu (sea/22)",
+    "freight": [
+     "road-truck",
+     "sea"
+    ]
+   },
+   {
+    "id": "lumeway-frame-air",
+    "seller": "6-xb",
+    "buyer": "1-xl",
+    "items": [
+     [
+      "bench-casting-b",
+      1
+     ]
+    ],
+    "what": "The urgent side frames by air, CPT Selanu airport (air/01)",
+    "freight": [
+     "air"
+    ]
+   },
+   {
+    "id": "store-bench",
+    "seller": "26-xb",
+    "items": [
+     [
+      "bench-serra-r",
+      1
+     ]
+    ],
+    "what": "The bench in the shop, at its regular price",
+    "bought_from": "lumeway-bench-store"
+   },
+   {
+    "id": "store-bench-reopening",
+    "seller": "26-xb",
+    "items": [
+     [
+      "bench-serra-r",
+      1
+     ]
+    ],
+    "less_percent": 10,
+    "promotion": true,
+    "what": "The bench in the reopening promotion (retail/21; D34)",
+    "bought_from": "lumeway-bench-store"
+   },
+   {
+    "id": "store-marrow-bench",
+    "seller": "26-xb",
+    "items": [
+     [
+      "marrow-bench-oak-r",
+      1
+     ]
+    ],
+    "what": "The Marrow bench, in oak or in ash at one price (D32)"
+   },
+   {
+    "id": "store-marrow-chair",
+    "seller": "26-xb",
+    "items": [
+     [
+      "marrow-chair-oak-r",
+      1
+     ]
+    ],
+    "what": "The Marrow chair, in oak or in ash at one price (D32)"
+   },
+   {
+    "id": "store-marrow-set",
+    "seller": "26-xb",
+    "items": [
+     [
+      "marrow-bench-ash-r",
+      1
+     ],
+     [
+      "marrow-chair-ash-r",
+      2
+     ]
+    ],
+    "price": 899.0,
+    "what": "The Marrow set, a bench and two chairs in one wood, the shop's offer (retail/22; D32)"
+   },
+   {
+    "id": "store-shirt",
+    "seller": "26-xb",
+    "items": [
+     [
+      "shirt-r",
+      1
+     ]
+    ],
+    "what": "The shirt in the shop (packaging/08, 09)"
+   },
+   {
+    "id": "velumi-bench",
+    "seller": "1-xl",
+    "items": [
+     [
+      "bench-serra-x",
+      1
+     ]
+    ],
+    "import_tax": "IMP",
+    "what": "The bench in Velumi's shop on the island (sea/29)",
+    "bought_from": "lumeway-bench-island"
+   }
+  ],
+  "awaiting_owner": {
+   "velumi-bench": "Velumi's shop price of 289 coral gives a retailer's margin of about 21 %; D30 decided 375 coral (about 38 %), applied with the sea flow's decision (O48).",
+   "lumeway-frame-island": "Under CIF the twelve spare frames bear their share of the sea freight, export clearance and insurance (by gross weight, about 7.90 a frame), so 64.00 leaves Lumeway about 12 %, below the distributor band; the price table's 24 % leaves the sea freight out. For the owner (C68 report).",
+   "lumeway-frame-air": "Under CPT Lumeway pays the air freight of 554.88 for eight frames it sells at 64.00 each (512.00): a sale below cost, which no document explains. For the owner, with D39 (C68 report).",
+   "store-shirt": "The store's shirt at 29.95 against 14.50 paid gives about 52 %, above the retailer band of 30 to 45 % (normal for clothing). For the owner: a band for clothing or another price (C68 report)."
+  }
+ }
 }

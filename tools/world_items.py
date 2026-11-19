@@ -43,7 +43,16 @@ Checks:
     self-billed documents, Quotation, Catalogue, Purchase Receipt, Utility
     Statement) has items to put on its lines, and every seller of items
     takes part in such a document;
-  * the exchange rates between the world's currencies agree with each other.
+  * the exchange rates between the world's currencies agree with each other;
+  * a price agreed for one buyer (buyer_prices: Valdara's distributor price
+    for Lumeway, D14) is below the seller's own price, in its currency, with
+    a price type of the world's list that is before tax (O28);
+  * prices along the chain (D14, O30; items.json resales): nobody resells
+    below what they paid plus the freight the documents state (shared over
+    a transport's load by gross weight) and the import tax they bear, and a
+    reseller's gross margin falls in the band for its kind of business (a
+    promotion only below the upper limit); every resold item is in a resale;
+    a resale listed as awaiting the owner must still fail.
 
 Usage: python3 tools/world_items.py      (prints the problems, exit 1 if any)
 """
@@ -281,6 +290,167 @@ def check(world):
         for (b2, c), r2 in rates.items():
             if b == b2 and (a, c) in rates and abs(r1 * r2 - rates[(a, c)]) > 1e-9 * rates[(a, c)]:
                 problems.append(f"exchange rates {a}/{b} x {b}/{c} = {r1 * r2}, but {a}/{c} = {rates[(a, c)]}")
+    problems += buyer_price_problems(world)
+    problems += resale_problems(world)
+    return problems
+
+
+# ---------------------------------------------------------------- prices along the chain (D14, O28, O30)
+def price_types():
+    """The world's price type list, with whether each type includes tax (lists.json PriceType, O28)."""
+    lst = json.load(open(os.path.join(world_data.ROOT, "world", "codelists", "lists.json"),
+                         encoding="utf-8"))["lists"]["PriceType"]
+    return lst["tax_included"]
+
+
+def buyer_price_problems(world):
+    """A price agreed for one buyer (buyer_prices: Valdara's distributor price for Lumeway, D14) is in the seller's
+    currency, names a price type of the world's list that is before tax, as every item price is (O28), and is
+    below the seller's own price."""
+    problems = []
+    parties = {p["id"]: p for p in world["parties"]}
+    types = price_types()
+    for it in world["items"]:
+        for buyer, bp in it.get("buyer_prices", {}).items():
+            where = f"item {it['id']}: price for {buyer}"
+            if buyer not in parties or buyer == it["seller"]:
+                problems.append(f"{where}: not a buyer of the world other than the seller")
+            if bp["currency"] != it["price"]["currency"]:
+                problems.append(f"{where}: in {bp['currency']}, not in the seller's currency {it['price']['currency']}")
+            if bp.get("type") not in types:
+                problems.append(f"{where}: price type {bp.get('type')!r} is not a code of the world's price type list")
+            elif types[bp["type"]]:
+                problems.append(f"{where}: price type {bp['type']} includes tax, but item prices are before tax (O28)")
+            if not 0 < bp["amount"] < it["price"]["amount"]:
+                problems.append(f"{where}: {bp['amount']} is not below the seller's own price {it['price']['amount']}")
+            if not bp.get("why"):
+                problems.append(f"{where}: needs the reason for the price (why)")
+    return problems
+
+
+def _lume(world, amount, currency):
+    from decimal import Decimal
+    if currency == "XBL":
+        return Decimal(str(amount))
+    rates = world["exchange_rates"]
+    if f"{currency}/XBL" in rates:
+        return Decimal(str(amount)) * Decimal(str(rates[f"{currency}/XBL"]))
+    return Decimal(str(amount)) / Decimal(str(rates[f"XBL/{currency}"]))
+
+
+def maker_item(items, iid):
+    """The maker's item a resold item goes back to."""
+    while items[iid].get("resale_of"):
+        iid = items[iid]["resale_of"]
+    return iid
+
+
+def gross_kg(items, iid):
+    """An item's gross weight, its maker's where a resold item gives none."""
+    it = items[iid]
+    while "gross_kg" not in it and it.get("resale_of"):
+        it = items[it["resale_of"]]
+    return it.get("gross_kg")
+
+
+def freight_costs(world, items):
+    """Each stated freight of resales.freight in lume per unit of each item it carries: the services' prices times
+    their quantities (the kilometres of the transport leg on the map, as the carrier invoices them, or the
+    chargeable weight of the load), shared over the load by gross weight. {name: {item: lume per unit}}."""
+    from decimal import Decimal
+    out = {}
+    for name, fr in world["resales"]["freight"].items():
+        load_kg = sum(Decimal(str(l["qty"])) * Decimal(str(gross_kg(items, l["item"]))) for l in fr["load"])
+        total = Decimal(0)
+        for sv in fr["services"]:
+            if "km_of_leg" in sv:
+                import world_map
+                q = Decimal(world_map.whole(world_map.leg_km(*sv["km_of_leg"])))
+            elif sv["qty"] == "load_kg":
+                q = load_kg
+            else:
+                q = Decimal(str(sv["qty"]))
+            pr = items[sv["item"]]["price"]
+            total += _lume(world, Decimal(str(pr["amount"])) * q, pr["currency"])
+        out[name] = {l["item"]: total * Decimal(str(gross_kg(items, l["item"]))) / load_kg for l in fr["load"]}
+    return out
+
+
+def resale_figures(world):
+    """Each resale of items.json resales with its price, its cost and its gross margin, in lume per sale:
+    [(sale, price, cost, margin percent, how the cost is made)]."""
+    from decimal import Decimal
+    items = {i["id"]: i for i in world["items"]}
+    parties = {p["id"]: p for p in world["parties"]}
+    freight = freight_costs(world, items)
+    sales = {s["id"]: s for s in world["resales"]["sales"]}
+    out = {}
+    for s in world["resales"]["sales"]:
+        seller_cur = world["countries"][parties[s["seller"]]["c"]]["currency"]["code"]
+        listed = sum(Decimal(str(items[i]["price"]["amount"])) * q for i, q in s["items"])
+        p = Decimal(str(s.get("price", listed))) * (1 - Decimal(str(s.get("less_percent", 0))) / 100)
+        price = _lume(world, p, seller_cur)
+        parts, cost = [], Decimal(0)
+        for iid, q in s["items"]:
+            orig = items[iid]["resale_of"]
+            if s.get("bought_from"):        # what the reseller paid: the price its own purchase was made at
+                paid = out[s["bought_from"]][1] / sum(qq for _, qq in sales[s["bought_from"]]["items"])
+            else:
+                pr = items[orig].get("buyer_prices", {}).get(s["seller"]) or items[orig]["price"]
+                paid = _lume(world, pr["amount"], pr["currency"])
+            cost += paid * q
+            parts.append(f"{q} × {paid:.2f} paid for {orig}")
+            for name in s.get("freight", []):      # the share of the goods carried that are the same goods
+                f = freight[name][next(l["item"] for l in world["resales"]["freight"][name]["load"]
+                                       if maker_item(items, l["item"]) == maker_item(items, iid))]
+                cost += f * q
+                parts.append(f"{f:.2f} {name}")
+            if s.get("import_tax"):
+                scheme = next(x for x in world["countries"][parties[s["seller"]]["c"]]["tax"]["schemes"]
+                              if x["id"] == s["import_tax"])
+                tax = paid * Decimal(str(scheme["rate"])) / 100
+                cost += tax * q
+                parts.append(f"{tax:.2f} {scheme['name'].lower()}")
+        out[s["id"]] = (s, price, cost, (price - cost) / price * 100, " + ".join(parts))
+    return out
+
+
+def resale_problems(world):
+    """D14's rules of thumb for every resale (O30): nobody resells below what they paid plus the freight the
+    documents state (and the import tax they bear), and the gross margin falls in the band for the reseller's kind
+    of business, a promotion only below its upper limit; every resold item is in a resale; a sale awaiting the
+    owner still fails."""
+    rs = world.get("resales")
+    if not rs:
+        return ["items.json: no resales for the margin check (D14, O30)"]
+    parties = {p["id"]: p for p in world["parties"]}
+    problems, failing = [], set()
+    for sid, (s, price, cost, margin, how) in resale_figures(world).items():
+        where = f"resale {sid} ({s['what']})"
+        kind = parties[s["seller"]]["identity"].get("legal", {}).get("business")
+        band = rs["margin_bands"].get(kind)
+        found = []
+        if price < cost:
+            found.append(f"sold at {price:.2f} lume, below its cost of {cost:.2f} ({how}) (D14, O30)")
+        if not band:
+            found.append(f"no margin band for the seller's business {kind!r}")
+        elif (margin < band["min"] and not s.get("promotion")) or margin > band["max"]:
+            found.append(f"gross margin {margin:.1f} % (price {price:.2f}, cost {cost:.2f} lume: {how}) is outside the "
+                         f"band of {band['min']} to {band['max']} % for a {band['name'].lower()}"
+                         + (" (in a promotion, only the upper limit)" if s.get("promotion") else "") + " (D14, O30)")
+        if found:
+            failing.add(sid)
+            if sid not in rs.get("awaiting_owner", {}):
+                problems += [f"{where}: {x}" for x in found]
+    for sid in rs.get("awaiting_owner", {}):
+        if sid not in failing:
+            problems.append(f"resale {sid}: listed as awaiting the owner in resales, but it passes: take it off the list")
+    sold = {i for s in rs["sales"] for i, _ in s["items"]}
+    for it in world["items"]:
+        if it.get("resale_of") and not it.get("free_with") and it["id"] not in sold \
+                and not any(it.get("variant") and o.get("variant") and o["id"] in sold and o["sellers_id"] == it["sellers_id"]
+                            and o["seller"] == it["seller"] for o in world["items"]):
+            problems.append(f"item {it['id']}: resold, but in no resale of items.json resales (D14, O30)")
     return problems
 
 

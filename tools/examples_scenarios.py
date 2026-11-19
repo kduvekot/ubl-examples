@@ -1027,7 +1027,8 @@ RETAIL = kit.Flow("retail", "2026-04-20", [
                                                     "ExtendedID": V("GRN", "The green variant.")}}}}}])
 
 
-PROMO = Decimal("0.05")          # the distributor's promotion support on the store's order
+RESALE = {r["id"]: r for r in WORLD["resales"]["sales"]}      # the resales of the world (items.json, D14, O30)
+PROMO = Decimal(str(RESALE["lumeway-bench-store"]["less_percent"])) / 100   # the distributor's support on the order
 
 
 def promo_allowance(base, why):
@@ -1251,7 +1252,9 @@ def retail(n, doc):
     if doc["doc"] == "PurchaseReceipt":
         out = kit.purchase_receipt(f, n, doc, 25, "A consumer buys a bench during the promotion week.",
                                     [{"item": "bench-serra-r", "qty": 1, "why": "One bench."}], cash=False,
-                                    promotion={"name": "Spring garden promotion", "percent": 10, "from": 22, "to": 28})
+                                    promotion={"name": "Spring garden promotion",
+                                               "percent": RESALE["store-bench-reopening"]["less_percent"],
+                                               "from": 22, "to": 28})
         till(out, f, 25, "11:42:00", "G2", "Mira")
         card_payment(out, f, 25, "11:42:00")
         out["Note"] = V("Home delivery booked for Saturday.", "Printed on the receipt.")

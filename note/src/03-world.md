@@ -1130,9 +1130,12 @@ Selanu's ledger.
 ## Prices
 
 Prices along the bench's chain follow its steps, and the figures are a
-current base. Valdara has a list price and gives its distributor a lower
-price: it sells the bench to Lumeway at a distributor price of 399.00 lume, and to the public works department, delivered, at a
-contract price of 499.00. Lumeway sells it to the department store and to
+current base. Valdara has a list price, the price of its list VI-PL-2026,
+which a direct customer pays, and gives Lumeway, its distributor for Bayvarra
+and the island under a distribution agreement of 1996, a lower distributor
+price: it sells the bench to Lumeway at 399.00 lume, and to the public works
+department, delivered, at its list price of 499.00, which the tender
+catalogue calls the contract price. Lumeway sells it to the department store and to
 the island's importer at a trade price of 520.00, a margin of about 22 %
 after the truck from Ferrano. The store sells it to a shopper at a shop
 price of 749.00, or 674.10 during the spring promotion, 10 % off. The
@@ -1146,10 +1149,14 @@ A shop price in Bayvarra excludes the sales tax, which is added at the till
 (674.10, tax 43.82 at 6.5 %, 717.92 to pay): the tax is levied once, at the
 final sale, by the state. On the island there is no sales tax, so the price
 is the price. With its value added tax, a consumer price in Urvania would
-include the tax.
+include the tax. Every kind of price in the world's price type list (trade,
+distributor, catalogue, contract, recommended retail, promotional price) is
+a price before tax, and the list says so for each.
 
 Three rules of thumb keep the figures plausible, and the build checks them:
-nobody resells below what they paid plus the freight the documents state; a
+nobody resells below what they paid plus the freight the documents state
+(shared over a transport's load by gross weight) and the import tax they
+bear; a
 reseller's gross margin falls in a band for its kind (a distributor 15 to
 30 %, a retailer 30 to 45 %, lower during a promotion); and a company's
 turnover per person falls in a band for its kind.
