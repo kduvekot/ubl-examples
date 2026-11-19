@@ -23,12 +23,12 @@ The store wants dining furniture under its own label Elderwick, the Marrow bench
 - `UUID` = **3ce8a8e7-a2bb-57d4-9acb-536e0559cfe3**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-02**  
-  The store wants its own label's dining furniture for the autumn and winter home range.
+  The store wants its own label's dining furniture for the autumn and winter home range of its home and garden department, which reopens on 11 May.
 - `IssueTime` = **10:00:00-01:00**  
   The time of the request; quotations refer to it; in the issuer's local time, with its offset from UTC (D27).
 - `SubmissionDueDate` = **2026-03-07**  
   Quotations within five days.
-- `Note` = **For the store's own label Elderwick: the Marrow dining bench and chair, each in oak and in ash, for the autumn and winter home range.**  
+- `Note` = **For the store's own label Elderwick: the Marrow dining bench and chair, each in oak and in ash, for the autumn and winter home range, on sale from the reopening of the home and garden department on 11 May.**  
   What is asked.
 - `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
@@ -323,7 +323,7 @@ Inside `RequestForQuotationLine`:
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
   <cbc:SubmissionDueDate>2026-03-07</cbc:SubmissionDueDate>
-  <cbc:Note>For the store's own label Elderwick: the Marrow dining bench and chair, each in oak and in ash, for the autumn and winter home range.</cbc:Note>
+  <cbc:Note>For the store's own label Elderwick: the Marrow dining bench and chair, each in oak and in ash, for the autumn and winter home range, on sale from the reopening of the home and garden department on 11 May.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cac:RequestedValidityPeriod>

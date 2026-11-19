@@ -6,19 +6,19 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0572</cbc:ID>
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
-  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-08</cbc:IssueDate>
   <cbc:IssueTime>16:35:00-01:00</cbc:IssueTime>
   <cbc:Note>The chairs sell better than the set: the bench is too long for many apartment kitchens.</cbc:Note>
   <cac:ActivityPeriod>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:EndDate>2026-04-20</cbc:EndDate>
+    <cbc:StartDate>2026-05-11</cbc:StartDate>
+    <cbc:EndDate>2026-06-07</cbc:EndDate>
   </cac:ActivityPeriod>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0569</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ItemInformationRequest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-26-0420A</cbc:ID>
+    <cbc:ID>BM-SIG-26-0608A</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -120,8 +120,8 @@
     <cbc:ID>1</cbc:ID>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cac:ActivityPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-04-20</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ActivityPeriod>
     <cac:ActivityOriginLocation>
       <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
@@ -154,7 +154,7 @@
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:ActivityProperty>
         <cbc:Name>Sold in a Marrow set</cbc:Name>
-        <cbc:Value>1 of 1, with two ash chairs.</cbc:Value>
+        <cbc:Value>1 of 1, with two ash chairs: the webshop order of 30 May, for collection in the department.</cbc:Value>
       </cac:ActivityProperty>
       <cac:Item>
         <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>

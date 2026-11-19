@@ -22,11 +22,11 @@ The store charges the furniture maker for transporting the returned pieces back.
   The sender's number for this document.
 - `UUID` = **0875ae2f-3059-5ccf-bbe9-44ac5e023a67**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-05**  
-  After the returned pieces were collected, with the credit note.
+- `IssueDate` = **2026-06-17**  
+  After the returned pieces were delivered back, the day after the credit note.
 - `IssueTime` = **11:12:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-04**  
+- `DueDate` = **2026-07-17**  
   Thirty days, the store's terms.
 - `Note` = **The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.**  
   Why.
@@ -277,7 +277,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-05-02**  
+- `ActualDeliveryDate` = **2026-06-15**  
   The pieces were delivered back.
 - `DeliveryLocation/ID` = **9523710900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, factory and goods-in, marrowdale: Brackenmere Furniture identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
@@ -294,7 +294,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-04**  
+- `PaymentDueDate` = **2026-07-17**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -355,7 +355,7 @@ Inside `PaymentTerms`:
 
 - `Note` = **30 days net.**  
   The store's terms.
-- `PaymentDueDate` = **2026-06-04**  
+- `PaymentDueDate` = **2026-07-17**  
   The due date.
 
 ### Tax Total
@@ -420,7 +420,7 @@ Inside `DebitNoteLine`:
   The instruction for returns.
 - `DocumentReference/DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BF-DOC-26-0578 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
-- `Delivery/ActualDeliveryDate` = **2026-05-02**  
+- `Delivery/ActualDeliveryDate` = **2026-06-15**  
   The day the pieces were delivered back to the furniture maker.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   The tax of the line.
@@ -456,9 +456,9 @@ Inside `DebitNoteLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0580</cbc:ID>
   <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
-  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-17</cbc:IssueDate>
   <cbc:IssueTime>11:12:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-04</cbc:DueDate>
+  <cbc:DueDate>2026-07-17</cbc:DueDate>
   <cbc:Note>The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -661,7 +661,7 @@ Inside `DebitNoteLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="GS1 GLN">9523710900015</cbc:ID>
       <cbc:Name>Brackenmere Furniture, Marrowdale</cbc:Name>
@@ -671,7 +671,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
@@ -717,7 +717,7 @@ Inside `DebitNoteLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>30 days net.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -765,7 +765,7 @@ Inside `DebitNoteLine`:
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Delivery>
-      <cbc:ActualDeliveryDate>2026-05-02</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
     </cac:Delivery>
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>

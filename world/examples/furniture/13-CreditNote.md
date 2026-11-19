@@ -22,11 +22,11 @@ The returned benches and chairs are credited in full, without a restocking deduc
   The seller's credit note number.
 - `UUID` = **3eb03476-6b48-5174-b997-aaed7a5b8b5b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-05**  
-  Issued on the Tuesday after the returned pieces arrived back: Monday 4 May is Bayvarra's Labour Day.
+- `IssueDate` = **2026-06-16**  
+  Issued on the day after the returned pieces arrived back and were counted.
 - `IssueTime` = **11:55:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-15**  
+- `DueDate` = **2026-06-26**  
   The furniture maker pays the credit back within ten days.
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 381: credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 381 = Credit note.
@@ -260,7 +260,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-15**  
+- `PaymentDueDate` = **2026-06-26**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -524,9 +524,9 @@ Inside `CreditNoteLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-CN-26-0579</cbc:ID>
   <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
-  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-16</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-15</cbc:DueDate>
+  <cbc:DueDate>2026-06-26</cbc:DueDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:Note>The store paid the invoice; the credit is refunded in full: the return ends the sale-or-return trial of the own-label agreement, so there is no restocking deduction. The free care kits came back with the benches and are not credited.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -718,7 +718,7 @@ Inside `CreditNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-15</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-26</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF63BFCN260579</cbc:InstructionNote>

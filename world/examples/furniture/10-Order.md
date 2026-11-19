@@ -22,8 +22,8 @@ A repeat order for the winter, placed before the slow sales were clear.
   The buyer's order number.
 - `UUID` = **723b8ed1-619b-5c36-b65d-2cac4a35d4c0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-16**  
-  A repeat order for the winter, before the slow sales were clear.
+- `IssueDate` = **2026-06-04**  
+  A repeat order for the winter, placed in the fourth week of sales, before the slow sales were clear.
 - `IssueTime` = **12:09:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -162,9 +162,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `RequestedDeliveryPeriod/StartDate` = **2026-05-25**  
-  The repeat order for the winter is wanted in the last week of May.
-- `RequestedDeliveryPeriod/EndDate` = **2026-05-29**  
+- `RequestedDeliveryPeriod/StartDate` = **2026-06-29**  
+  The repeat order for the winter is wanted in the first week of July.
+- `RequestedDeliveryPeriod/EndDate` = **2026-07-03**  
   The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -408,7 +408,7 @@ Inside `OrderLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-PO-26-0576</cbc:ID>
   <cbc:UUID>723b8ed1-619b-5c36-b65d-2cac4a35d4c0</cbc:UUID>
-  <cbc:IssueDate>2026-04-16</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>12:09:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -512,8 +512,8 @@ Inside `OrderLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-05-25</cbc:StartDate>
-      <cbc:EndDate>2026-05-29</cbc:EndDate>
+      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:EndDate>2026-07-03</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>

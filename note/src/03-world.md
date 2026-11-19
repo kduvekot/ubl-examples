@@ -960,8 +960,10 @@ height of about 45 cm. Each comes in oak and in ash, and the shopper
 chooses; the store plans three oak pieces for every two in ash. Brackenmere
 Furniture makes them to the store's specification and sells them to the
 store at 380 and 115 lume, the same in both woods; the store sells them in
-its home and garden department at 549 and 199, and gives a care kit free with
-each bench. Many shoppers buy the chairs alone, because the 1400 mm
+its home and garden department at 549 and 199, from the day the department
+reopens after its renovation, Monday 11 May, and gives a care kit free with
+each bench. The stock comes in March and waits for the reopening; the line is
+taken on sale-or-return terms for its first four weeks of sales. Many shoppers buy the chairs alone, because the 1400 mm
 bench is too long for many apartment kitchens. The shopper sees the store's
 label, and the maker's name is on no label: Elderwick is the world's case of
 an item whose brand owner and manufacturer are different parties. The shirts

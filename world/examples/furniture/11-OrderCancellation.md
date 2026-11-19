@@ -22,7 +22,7 @@ With sales below the threshold, the store cancels the second delivery.
   The sender's number for this document.
 - `UUID` = **4e4382b0-483c-570a-9560-c9d39c4a7902**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-22**  
+- `IssueDate` = **2026-06-10**  
   Cancelled the day after the exception notification.
 - `IssueTime` = **11:51:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -199,7 +199,7 @@ Inside `SellerSupplierParty`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0577</cbc:ID>
   <cbc:UUID>4e4382b0-483c-570a-9560-c9d39c4a7902</cbc:UUID>
-  <cbc:IssueDate>2026-04-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>11:51:00-01:00</cbc:IssueTime>
   <cbc:Note>No cost: cancelled before production.</cbc:Note>
   <cbc:CancellationNote>Sales of the line are below the agreed threshold; the second delivery is not needed.</cbc:CancellationNote>

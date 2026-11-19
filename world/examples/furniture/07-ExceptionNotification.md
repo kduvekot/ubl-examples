@@ -22,8 +22,8 @@ Sales of the Marrow bench run below the agreed threshold, so the furniture maker
   The sender's number for its exception.
 - `UUID` = **54a44709-e8a8-5aed-918e-7a7a369c2ad5**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-21**  
-  The furniture maker sees the sales below the agreed threshold.
+- `IssueDate` = **2026-06-09**  
+  The furniture maker sees the sales below the agreed threshold, the day after the store's report.
 - `IssueTime` = **17:49:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Please review the line with us.**  
@@ -33,9 +33,9 @@ Sales of the Marrow bench run below the agreed threshold, so the furniture maker
 
 Inside `ExceptionObservationPeriod`:
 
-- `StartDate` = **2026-03-23**  
-  The four weeks observed.
-- `EndDate` = **2026-04-20**  
+- `StartDate` = **2026-05-11**  
+  The four weeks observed: the first four weeks of sales, from the reopening.
+- `EndDate` = **2026-06-07**  
   Their end.
 
 ### Document Reference
@@ -51,7 +51,7 @@ Inside `DocumentReference`:
 
 Inside `Signature`:
 
-- `ID` = **BF-SIG-26-0421**  
+- `ID` = **BF-SIG-26-0609**  
   The sender's electronic seal.
 - `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -216,9 +216,9 @@ Inside `ExceptionNotificationLine`:
   Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
   In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
-- `ExceptionObservationPeriod/StartDate` = **2026-03-23**  
-  The four weeks.
-- `ExceptionObservationPeriod/EndDate` = **2026-04-20**  
+- `ExceptionObservationPeriod/StartDate` = **2026-05-11**  
+  The four weeks since the reopening.
+- `ExceptionObservationPeriod/EndDate` = **2026-06-07**  
   Their end.
 - `DocumentReference/ID` = **BS-DOC-26-0572**  
   The product activity reported.
@@ -238,8 +238,8 @@ Inside `ExceptionNotificationLine`:
   Compared with actual sales. The code is from the Trade Accord's comparison data list: ACTUAL = Actual sales.
 - `ForecastException/ComparisonForecastIssueTime` = **18:00:00**  
   Their time.
-- `ForecastException/ComparisonForecastIssueDate` = **2026-04-20**  
-  The figures of day 49.
+- `ForecastException/ComparisonForecastIssueDate` = **2026-06-08**  
+  The store's figures of 8 June.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-oak of Brackenmere Furniture (world/items.json).
 - `SupplyItem/Name` = **Elderwick Marrow bench, oak**  
@@ -278,9 +278,9 @@ Inside `ExceptionNotificationLine`:
   Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
   In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
-- `ExceptionObservationPeriod/StartDate` = **2026-03-23**  
-  The four weeks.
-- `ExceptionObservationPeriod/EndDate` = **2026-04-20**  
+- `ExceptionObservationPeriod/StartDate` = **2026-05-11**  
+  The four weeks since the reopening.
+- `ExceptionObservationPeriod/EndDate` = **2026-06-07**  
   Their end.
 - `DocumentReference/ID` = **BS-DOC-26-0572**  
   The product activity reported.
@@ -300,8 +300,8 @@ Inside `ExceptionNotificationLine`:
   Compared with actual sales. The code is from the Trade Accord's comparison data list: ACTUAL = Actual sales.
 - `ForecastException/ComparisonForecastIssueTime` = **18:00:00**  
   Their time.
-- `ForecastException/ComparisonForecastIssueDate` = **2026-04-20**  
-  The figures of day 49.
+- `ForecastException/ComparisonForecastIssueDate` = **2026-06-08**  
+  The store's figures of 8 June.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
 - `SupplyItem/Name` = **Elderwick Marrow bench, ash**  
@@ -330,19 +330,19 @@ Inside `ExceptionNotificationLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0573</cbc:ID>
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
-  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-09</cbc:IssueDate>
   <cbc:IssueTime>17:49:00-01:00</cbc:IssueTime>
   <cbc:Note>Please review the line with us.</cbc:Note>
   <cac:ExceptionObservationPeriod>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:EndDate>2026-04-20</cbc:EndDate>
+    <cbc:StartDate>2026-05-11</cbc:StartDate>
+    <cbc:EndDate>2026-06-07</cbc:EndDate>
   </cac:ExceptionObservationPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0571</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BF-SIG-26-0421</cbc:ID>
+    <cbc:ID>BF-SIG-26-0609</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
@@ -473,8 +473,8 @@ Inside `ExceptionNotificationLine`:
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-04-20</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
@@ -488,7 +488,7 @@ Inside `ExceptionNotificationLine`:
       <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
       <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
       <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
+      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
     </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
@@ -520,8 +520,8 @@ Inside `ExceptionNotificationLine`:
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-04-20</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
@@ -535,7 +535,7 @@ Inside `ExceptionNotificationLine`:
       <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
       <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
       <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
+      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
     </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>

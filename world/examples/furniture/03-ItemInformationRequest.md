@@ -33,10 +33,10 @@ To plan production, the furniture maker asks the store for sales and stock data 
 
 Inside `Period`:
 
-- `StartDate` = **2026-03-16**  
-  The season the information is wanted for.
-- `EndDate` = **2026-05-11**  
-  Its end.
+- `StartDate` = **2026-05-11**  
+  The season the information is wanted for: from the reopening of the home and garden department on 11 May, when the line goes on sale.
+- `EndDate` = **2026-08-29**  
+  Its end, as the store's replenishment policy.
 
 ### Document Reference
 
@@ -202,10 +202,10 @@ Inside `ItemInformationRequestLine`:
   Total quantities. The code is from the Trade Accord's forecast type list: TOTAL = Total.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
   Measured in pieces sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
-- `Period/StartDate` = **2026-03-16**  
-  Sales data for the season.
-- `Period/EndDate` = **2026-05-11**  
-  Its end.
+- `Period/StartDate` = **2026-05-11**  
+  Sales data from the first day of sales.
+- `Period/EndDate` = **2026-08-29**  
+  To the end of the season.
 - `SalesItem/Quantity` = **12** (unitCode `EA`)  
   The oak benches of the first delivery, to compare sales against.
 - `SalesItem/Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
@@ -294,8 +294,8 @@ Inside `ItemInformationRequestLine`:
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
   <cbc:Note>Weekly figures, please, for the whole season.</cbc:Note>
   <cac:Period>
-    <cbc:StartDate>2026-03-16</cbc:StartDate>
-    <cbc:EndDate>2026-05-11</cbc:EndDate>
+    <cbc:StartDate>2026-05-11</cbc:StartDate>
+    <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:Period>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0568</cbc:ID>
@@ -426,8 +426,8 @@ Inside `ItemInformationRequestLine`:
     <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:Period>
-      <cbc:StartDate>2026-03-16</cbc:StartDate>
-      <cbc:EndDate>2026-05-11</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:Period>
     <cac:SalesItem>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>

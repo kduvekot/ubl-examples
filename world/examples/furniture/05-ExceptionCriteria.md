@@ -214,8 +214,8 @@ Inside `ExceptionCriteriaLine`:
   Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
   In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
-- `EffectivePeriod/StartDate` = **2026-03-23**  
-  From the first four weeks on the shelf.
+- `EffectivePeriod/StartDate` = **2026-05-11**  
+  From the first day of sales, the reopening of the home and garden department: the first four weeks are measured from it.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
   To the end of the season.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
@@ -252,8 +252,8 @@ Inside `ExceptionCriteriaLine`:
   Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
   In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
-- `EffectivePeriod/StartDate` = **2026-03-23**  
-  From the first four weeks on the shelf.
+- `EffectivePeriod/StartDate` = **2026-05-11**  
+  From the first day of sales, the reopening of the home and garden department: the first four weeks are measured from it.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
   To the end of the season.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
@@ -508,7 +508,7 @@ Inside `ExceptionCriteriaLine`:
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:EffectivePeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:SupplyItem>
@@ -539,7 +539,7 @@ Inside `ExceptionCriteriaLine`:
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:EffectivePeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
     </cac:EffectivePeriod>
     <cac:SupplyItem>

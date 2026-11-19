@@ -23,12 +23,12 @@ The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all 
 - `UUID` = **6f338d06-4cfb-5630-b53e-6ac243c84956**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-30**  
-  Placed in the webshop on a Sunday evening.
+  Placed in the webshop on Saturday 30 May.
 - `IssueTime` = **11:25:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `Note` = **Click and collect: ready in the home and garden department from Tuesday; bring the card used for the order.**  
+- `Note` = **Click and collect: ready in the home and garden department from Tuesday 2 June; bring the card used for the order.**  
   What the webshop tells the customer.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
@@ -135,9 +135,9 @@ Inside `Delivery`:
   The Global Location Number of the place, home and garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Name` = **Home and garden department, Lumeport store**  
   Where the set is collected.
-- `RequestedDeliveryPeriod/StartDate` = **2026-06-01**  
-  From Tuesday.
-- `RequestedDeliveryPeriod/EndDate` = **2026-06-08**  
+- `RequestedDeliveryPeriod/StartDate` = **2026-06-02**  
+  From Tuesday 2 June.
+- `RequestedDeliveryPeriod/EndDate` = **2026-06-09**  
   The store keeps it a week.
 - `DeliveryParty/PartyName/Name` = **Robin Ashdale**  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
@@ -320,7 +320,7 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>11:25:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Click and collect: ready in the home and garden department from Tuesday; bring the card used for the order.</cbc:Note>
+  <cbc:Note>Click and collect: ready in the home and garden department from Tuesday 2 June; bring the card used for the order.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:BuyerCustomerParty>
@@ -402,8 +402,8 @@ Inside `OrderLine`:
       <cbc:Name>Home and garden department, Lumeport store</cbc:Name>
     </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
-      <cbc:StartDate>2026-06-01</cbc:StartDate>
-      <cbc:EndDate>2026-06-08</cbc:EndDate>
+      <cbc:StartDate>2026-06-02</cbc:StartDate>
+      <cbc:EndDate>2026-06-09</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyName>

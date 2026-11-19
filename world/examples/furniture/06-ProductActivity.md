@@ -2,7 +2,7 @@
 
 *Example 6 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Product Activity in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRODUCT-ACTIVITY-SCHEMA)*
 
-Weekly sales and stock movements of the line.
+The sales of the line in its first four weeks, from the reopening of the home and garden department on 11 May, per piece and wood.
 
 [The XML file](06-ProductActivity.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,8 +22,8 @@ Weekly sales and stock movements of the line.
   The sender's number for its activity.
 - `UUID` = **35444c15-3be6-5365-a08f-55521605590a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-20**  
-  The store's report of the first four weeks.
+- `IssueDate` = **2026-06-08**  
+  The store's report of the first four weeks of sales, on the Monday after them.
 - `IssueTime` = **16:35:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **The chairs sell better than the set: the bench is too long for many apartment kitchens.**  
@@ -33,10 +33,10 @@ Weekly sales and stock movements of the line.
 
 Inside `ActivityPeriod`:
 
-- `StartDate` = **2026-03-23**  
-  The four weeks reported.
-- `EndDate` = **2026-04-20**  
-  Their end.
+- `StartDate` = **2026-05-11**  
+  The four weeks reported: from the reopening of the home and garden department on Monday 11 May, the first day of sales.
+- `EndDate` = **2026-06-07**  
+  Their end: Sunday 7 June.
 
 ### Document Reference
 
@@ -51,7 +51,7 @@ Inside `DocumentReference`:
 
 Inside `Signature`:
 
-- `ID` = **BM-SIG-26-0420A**  
+- `ID` = **BM-SIG-26-0608A**  
   The sender's electronic seal.
 - `SignatoryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -180,16 +180,16 @@ Inside `SupplyChainActivityDataLine`:
   The only line.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
   The activity reported: sales to consumers. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `ActivityPeriod/StartDate` = **2026-03-23**  
-  The four weeks.
-- `ActivityPeriod/EndDate` = **2026-04-20**  
+- `ActivityPeriod/StartDate` = **2026-05-11**  
+  The four weeks since the reopening.
+- `ActivityPeriod/EndDate` = **2026-06-07**  
   Their end.
 - `ActivityOriginLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, home and garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `ActivityOriginLocation/Name` = **Brightmarket Stores, home and garden department, Lumeport**  
   Where the sales took place.
 - `SalesItem/Quantity` = **2** (unitCode `EA`)  
-  Two oak benches sold in four weeks, both in Marrow sets.
+  Two oak benches sold in the four weeks since the reopening, both in Marrow sets.
 - `SalesItem/ActivityProperty/Name` = **Sold in a Marrow set**  
   What the store notes.
 - `SalesItem/ActivityProperty/Value` = **2 of 2, each with two oak chairs.**  
@@ -211,10 +211,10 @@ Inside `SupplyChainActivityDataLine`:
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `SalesItem/Quantity` = **1** (unitCode `EA`)  
-  One ash bench sold in four weeks, in a Marrow set.
+  One ash bench sold in the four weeks since the reopening, in a Marrow set.
 - `SalesItem/ActivityProperty/Name` = **Sold in a Marrow set**  
   What the store notes.
-- `SalesItem/ActivityProperty/Value` = **1 of 1, with two ash chairs.**  
+- `SalesItem/ActivityProperty/Value` = **1 of 1, with two ash chairs: the webshop order of 30 May, for collection in the department.**  
   How the benches sold.
 - `SalesItem/Item/Description` = **Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
   The seller's description; item marrow-bench-ash of Brackenmere Furniture (world/items.json).
@@ -233,7 +233,7 @@ Inside `SupplyChainActivityDataLine`:
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `SalesItem/Quantity` = **7** (unitCode `EA`)  
-  Seven oak chairs sold in four weeks: 4 in the oak sets and 3 alone.
+  Seven oak chairs sold in the four weeks since the reopening: 4 in the oak sets and 3 alone.
 - `SalesItem/ActivityProperty/Name` = **Sold alone**  
   What the store notes.
 - `SalesItem/ActivityProperty/Value` = **3 of 7: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.**  
@@ -255,7 +255,7 @@ Inside `SupplyChainActivityDataLine`:
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `SalesItem/Quantity` = **3** (unitCode `EA`)  
-  Three ash chairs sold in four weeks: 2 in the ash set and 1 alone.
+  Three ash chairs sold in the four weeks since the reopening: 2 in the ash set and 1 alone.
 - `SalesItem/ActivityProperty/Name` = **Sold alone**  
   What the store notes.
 - `SalesItem/ActivityProperty/Value` = **1 of 3: the 1400 mm bench is too long for many apartment kitchens, so shoppers buy the chairs.**  
@@ -288,19 +288,19 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0572</cbc:ID>
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
-  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-08</cbc:IssueDate>
   <cbc:IssueTime>16:35:00-01:00</cbc:IssueTime>
   <cbc:Note>The chairs sell better than the set: the bench is too long for many apartment kitchens.</cbc:Note>
   <cac:ActivityPeriod>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:EndDate>2026-04-20</cbc:EndDate>
+    <cbc:StartDate>2026-05-11</cbc:StartDate>
+    <cbc:EndDate>2026-06-07</cbc:EndDate>
   </cac:ActivityPeriod>
   <cac:DocumentReference>
     <cbc:ID>BF-DOC-26-0569</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ItemInformationRequest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BM-SIG-26-0420A</cbc:ID>
+    <cbc:ID>BM-SIG-26-0608A</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -402,8 +402,8 @@ Inside `SupplyChainActivityDataLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cac:ActivityPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-04-20</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ActivityPeriod>
     <cac:ActivityOriginLocation>
       <cbc:ID schemeID="GS1 GLN">9522610900026</cbc:ID>
@@ -436,7 +436,7 @@ Inside `SupplyChainActivityDataLine`:
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:ActivityProperty>
         <cbc:Name>Sold in a Marrow set</cbc:Name>
-        <cbc:Value>1 of 1, with two ash chairs.</cbc:Value>
+        <cbc:Value>1 of 1, with two ash chairs: the webshop order of 30 May, for collection in the department.</cbc:Value>
       </cac:ActivityProperty>
       <cac:Item>
         <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>

@@ -452,7 +452,7 @@
   {
    "id": "furniture",
    "title": "Furniture for the department store and for public offices (Bayvarra)",
-   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms, and what is above the target at the end of the trial goes back. For the public works department the furniture maker also installs, and documents the work for approval.",
+   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. The line is for the reopening of the store's home and garden department on Monday 11 May: the stock is delivered in March and held for it, and the first sale is on the day of the reopening. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms for a trial of its first four weeks of sales, and what is above the target at the end of the trial goes back. For the public works department the furniture maker also installs, and documents the work for approval.",
    "legs": [
     {
      "mode": "road",
@@ -2986,7 +2986,7 @@
    "doc": "ProductActivity",
    "from": "26-xb",
    "to": "37-xb",
-   "why": "Weekly sales and stock movements of the line.",
+   "why": "The sales of the line in its first four weeks, from the reopening of the home and garden department on 11 May, per piece and wood.",
    "parties": {
     "SenderParty": "26-xb",
     "ReceiverParty": "37-xb"
@@ -3010,7 +3010,7 @@
    "doc": "Order",
    "from": "26-xb",
    "to": "37-xb",
-   "why": "The store orders the opening stock of the line, piece by piece and wood by wood. Delivery terms DAP store: the furniture maker delivers with its own van.",
+   "why": "The store orders the opening stock of the line, piece by piece and wood by wood, to hold for the reopening of its home and garden department on 11 May. Delivery terms DAP store: the furniture maker delivers with its own van.",
    "parties": {
     "BuyerCustomerParty": "26-xb",
     "SellerSupplierParty": "37-xb",
@@ -3065,7 +3065,7 @@
    "doc": "InstructionForReturns",
    "from": "37-xb",
    "to": "26-xb",
-   "why": "At the end of the sale-or-return trial the furniture maker asks for the stock above the target back, at its own cost.",
+   "why": "After the sale-or-return trial, the first four weeks of sales, the furniture maker asks for the stock above the target back, at its own cost.",
    "parties": {
     "SellerSupplierParty": "37-xb",
     "RetailerCustomerParty": "26-xb",

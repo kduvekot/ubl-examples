@@ -6,19 +6,19 @@
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0573</cbc:ID>
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
-  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-09</cbc:IssueDate>
   <cbc:IssueTime>17:49:00-01:00</cbc:IssueTime>
   <cbc:Note>Please review the line with us.</cbc:Note>
   <cac:ExceptionObservationPeriod>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:EndDate>2026-04-20</cbc:EndDate>
+    <cbc:StartDate>2026-05-11</cbc:StartDate>
+    <cbc:EndDate>2026-06-07</cbc:EndDate>
   </cac:ExceptionObservationPeriod>
   <cac:DocumentReference>
     <cbc:ID>BS-DOC-26-0571</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BF-SIG-26-0421</cbc:ID>
+    <cbc:ID>BF-SIG-26-0609</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
@@ -149,8 +149,8 @@
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-04-20</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
@@ -164,7 +164,7 @@
       <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
       <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
       <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
+      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
     </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
@@ -196,8 +196,8 @@
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
     <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:ExceptionObservationPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2026-04-20</cbc:EndDate>
+      <cbc:StartDate>2026-05-11</cbc:StartDate>
+      <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
       <cbc:ID>BS-DOC-26-0572</cbc:ID>
@@ -211,7 +211,7 @@
       <cbc:DataSourceCode listID="urn:ubl-examples:world:codelist:DataSourceCode">SELLER</cbc:DataSourceCode>
       <cbc:ComparisonDataCode listID="urn:ubl-examples:world:codelist:ComparisonDataCode">ACTUAL</cbc:ComparisonDataCode>
       <cbc:ComparisonForecastIssueTime>18:00:00</cbc:ComparisonForecastIssueTime>
-      <cbc:ComparisonForecastIssueDate>2026-04-20</cbc:ComparisonForecastIssueDate>
+      <cbc:ComparisonForecastIssueDate>2026-06-08</cbc:ComparisonForecastIssueDate>
     </cac:ForecastException>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>

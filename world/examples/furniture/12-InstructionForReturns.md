@@ -2,7 +2,7 @@
 
 *Example 12 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Instruction For Returns in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INSTRUCTION-FOR-RETURNS-SCHEMA)*
 
-At the end of the sale-or-return trial the furniture maker asks for the stock above the target back, at its own cost.
+After the sale-or-return trial, the first four weeks of sales, the furniture maker asks for the stock above the target back, at its own cost.
 
 [The XML file](12-InstructionForReturns.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,11 +22,11 @@ At the end of the sale-or-return trial the furniture maker asks for the stock ab
   The sender's number for its returns.
 - `UUID` = **1e930432-0fbd-5872-a8b6-1646ccb09ff0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-27**  
-  The last day of the sale-or-return trial.
+- `IssueDate` = **2026-06-11**  
+  After the end of the sale-or-return trial on Sunday 7 June, once the store's report and the exception have shown the stock.
 - `IssueTime` = **14:21:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery of 23 March: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.**  
+- `Note` = **The sale-or-return trial of the own-label agreement, the first four weeks of sales from the reopening of the home and garden department on 11 May, ended on Sunday 7 June: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.**  
   Why the goods go back, and at whose cost.
 
 ### Document Reference
@@ -42,7 +42,7 @@ Inside `DocumentReference`:
 
 Inside `Signature`:
 
-- `ID` = **BF-SIG-26-0427**  
+- `ID` = **BF-SIG-26-0611**  
   The sender's electronic seal.
 - `SignatoryParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -176,14 +176,14 @@ Inside `ManufacturerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **BM-RET-26-0427**  
+- `ID` = **BM-RET-26-0611**  
   The return shipment.
 - `GrossWeightMeasure` = **285.45** (unitCode `KGM`)  
   Seven benches of 24 kg, ten chairs of 11.5 kg and seven care kits of 0.35 kg, packed.
-- `Delivery/RequestedDeliveryPeriod/StartDate` = **2026-04-29**  
+- `Delivery/RequestedDeliveryPeriod/StartDate` = **2026-06-12**  
   The store's van brings them.
-- `Delivery/RequestedDeliveryPeriod/EndDate` = **2026-05-02**  
-  Within the week.
+- `Delivery/RequestedDeliveryPeriod/EndDate` = **2026-06-15**  
+  By the Monday after.
 
 ### Instruction For Returns Line
 
@@ -303,15 +303,15 @@ Inside `InstructionForReturnsLine`:
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-DOC-26-0578</cbc:ID>
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
-  <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>14:21:00-01:00</cbc:IssueTime>
-  <cbc:Note>The sale-or-return trial of the own-label agreement ends today, five weeks after the delivery of 23 March: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.</cbc:Note>
+  <cbc:Note>The sale-or-return trial of the own-label agreement, the first four weeks of sales from the reopening of the home and garden department on 11 May, ended on Sunday 7 June: the stock above the target goes back at the maker's cost. The store's van brings it; the maker pays the transport.</cbc:Note>
   <cac:DocumentReference>
     <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
     <cbc:DocumentType>Own-label agreement</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:Signature>
-    <cbc:ID>BF-SIG-26-0427</cbc:ID>
+    <cbc:ID>BF-SIG-26-0611</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
@@ -422,12 +422,12 @@ Inside `InstructionForReturnsLine`:
     </cac:PartyName>
   </cac:ManufacturerParty>
   <cac:Shipment>
-    <cbc:ID>BM-RET-26-0427</cbc:ID>
+    <cbc:ID>BM-RET-26-0611</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:RequestedDeliveryPeriod>
-        <cbc:StartDate>2026-04-29</cbc:StartDate>
-        <cbc:EndDate>2026-05-02</cbc:EndDate>
+        <cbc:StartDate>2026-06-12</cbc:StartDate>
+        <cbc:EndDate>2026-06-15</cbc:EndDate>
       </cac:RequestedDeliveryPeriod>
     </cac:Delivery>
   </cac:Shipment>

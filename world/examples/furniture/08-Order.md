@@ -2,7 +2,7 @@
 
 *Example 8 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-The store orders the opening stock of the line, piece by piece and wood by wood. Delivery terms DAP store: the furniture maker delivers with its own van.
+The store orders the opening stock of the line, piece by piece and wood by wood, to hold for the reopening of its home and garden department on 11 May. Delivery terms DAP store: the furniture maker delivers with its own van.
 
 [The XML file](08-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,7 +28,7 @@ The store orders the opening stock of the line, piece by piece and wood by wood.
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `Note` = **Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the launch display in the home and garden department as well as the shelf.**  
+- `Note` = **Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the display in the home and garden department when it reopens on 11 May as well as the shelf; the store holds the stock until then.**  
   Why the order is larger than the stock policy's target.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency, in which the seller's prices are; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
@@ -165,7 +165,7 @@ Inside `SellerSupplierParty`:
 Inside `Delivery`:
 
 - `RequestedDeliveryPeriod/StartDate` = **2026-03-23**  
-  The opening stock is wanted on 23 March, for the launch of the range.
+  The opening stock is wanted on 23 March: the maker makes the line in one run, and the store holds it for the reopening of its home and garden department on 11 May.
 - `RequestedDeliveryPeriod/EndDate` = **2026-03-23**  
   The last day it is wanted.
 - `DeliveryParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -224,7 +224,7 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **4278e92c-6141-5575-b08f-555e19cf4b75**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `LineItem/Note` = **Twice the target of six oak benches: the shelf and the launch display in the home and garden department.**  
+- `LineItem/Note` = **Twice the target of six oak benches: the shelf and the display in the home and garden department when it reopens.**  
   What the line is.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
   Twelve benches in oak, as the store plans the opening stock: three oak pieces for every two in ash.
@@ -521,7 +521,7 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
   <cbc:IssueTime>11:16:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the launch display in the home and garden department as well as the shelf.</cbc:Note>
+  <cbc:Note>Opening stock of the Elderwick Marrow line, in oak and in ash: twice the target of each item, to fill the display in the home and garden department when it reopens on 11 May as well as the shelf; the store holds the stock until then.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
@@ -667,7 +667,7 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>4278e92c-6141-5575-b08f-555e19cf4b75</cbc:UUID>
-      <cbc:Note>Twice the target of six oak benches: the shelf and the launch display in the home and garden department.</cbc:Note>
+      <cbc:Note>Twice the target of six oak benches: the shelf and the display in the home and garden department when it reopens.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">4560.00</cbc:LineExtensionAmount>
       <cbc:MinimumQuantity unitCode="EA">6</cbc:MinimumQuantity>
