@@ -220,7 +220,7 @@
     <cbc:ID>CAP-1</cbc:ID>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
     <cbc:Description>Steel frame benches, cast, galvanised and coated in its own plant.</cbc:Description>
-    <cbc:ValueAmount currencyID="XBL">4800000.00</cbc:ValueAmount>
+    <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
     <cbc:ValueQuantity unitCode="EA">6000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-2025</cbc:ID>
