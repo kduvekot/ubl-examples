@@ -2260,7 +2260,9 @@ def air(n, doc):
                                                                  "delivery has its own terms.")},
                              "NotifyParty": party("9-xl", short=True),
                              "CarrierParty": party("12-xl", short=True)}
-        return {**order, "ID": V(f.number("order-change", doc["from"], "OrderChange"), "The number of this change."),
+        change = f.number("order-change", doc["from"], "OrderChange")
+        f.numbers["order"] = change     # the frames are ordered by this change of the sea order: no order of its own
+        return {**order, "ID": V(change, "The number of this change."),          # (air/03#F1, 06#F1, 08#F2, C73)
                 "SequenceNumberID": V("1", "The first change to the order."),
                 "OrderReference": {"ID": V(SEA.numbers["order"], "The order of the sea flow that this change "
                                                                  "extends.")}}
@@ -7096,8 +7098,14 @@ def tendering_process(f, held=False):
                                   "Description": V("Framework with one supplier.", "In words.")}}
 
 
-def tendering_terms(f):
-    return {"AwardingMethodTypeCode": V("BESTVALUE", "The best price-quality ratio."),
+def tendering_terms(f, call=False):
+    """The tendering terms of the notices, the call and the contract. Only the contract cites the call for tenders,
+    by its own ID: the notices are issued before it, and the call does not cite itself (tender/02#F3, 03#F3, 24#F2,
+    C73); no notice replaces another (tender/01#F3, 02#F4, 03#F4, 24#F2)."""
+    return {**({"CallForTendersDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders, the "
+                                                            "procurement documents the contract was tendered "
+                                                            "under.")}} if call else {}),
+            "AwardingMethodTypeCode": V("BESTVALUE", "The best price-quality ratio."),
             "PriceEvaluationCode": V("UNITPRICE", "Evaluated on the unit prices."),
             "MaximumVariantQuantity": V("1", "One variant allowed."),
             "VariantConstraintIndicator": V("true", "Variants are allowed."),
@@ -7136,7 +7144,6 @@ def tendering_terms(f):
             "EnvironmentalLegislationDocumentReference": {"ID": V("XB-ENV-2021", "The environmental act.")},
             "EmploymentLegislationDocumentReference": {"ID": V("XB-LAB-2018", "The labour act.")},
             "ContractualDocumentReference": {"ID": V("PWD-CONTRACT-DRAFT", "The draft framework contract.")},
-            "CallForTendersDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
             "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
             "PaymentTerms": {"Note": V("30 days after each accepted release.", "The terms.")},
             "TendererQualificationRequest": {
@@ -7259,8 +7266,6 @@ def tendering_terms(f):
                                                                                                          "green "
                                                                                                          "spaces."),
                                                                                    "Name": V("Parks", "In words.")}}}},
-            "ReplacedNoticeDocumentReference": {"ID": V(f"{FOLDER}-PIN", "The prior information notice this "
-                                                                         "notice follows.")},
             "LotDistribution": {"MaximumLotsAwardedNumeric": V("2", "Both lots to one tenderer if best."),
                                 "MaximumLotsSubmittedNumeric": V("2", "Tenders for both lots allowed."),
                                 "GroupingLots": V("Lots 1 and 2 may be awarded together.", "The grouping."),
@@ -7395,8 +7400,7 @@ def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
          "SubTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One set per bench."),
                            "Item": {"Name": V("Ground anchor set", "Included.")}},
          "CallForTendersLineReference": {"LineID": V("1", "The line of the call for tenders.")},
-         "CallForTendersDocumentReference": {"ID": V(f.numbers.get("call-for-tenders", f"{FOLDER}-CFT"),
-                                                     "The call for tenders.")}},
+         "CallForTendersDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders.")}},
         {"ID": V("2", "The installation."), "Quantity": qty(TENDER_QTY, "EA", "240 installations."),
          "LineExtensionAmount": amount(i, "XBL", "240 at the price."),
          "Item": {"Name": V("Installation of a park bench", "The service.")}}]
@@ -7415,7 +7419,8 @@ def _(f, n, doc, out):
                                                              "bench of the withdrawn tender." if k == 2 else ""),
                       "What is offered."),
             "ValidityPeriod": {"DurationMeasure": V("90", "Valid for 90 days.", unitCode="DAY")},
-            "CallForTenderDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
+            "CallForTenderDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders, by its ID "
+                                                                         "(tender/15#F1, 17#F1, 19#F4).")},
             "DocumentReference": {"ID": V("VI-DS-B180" if winner else "BF-DS-PARK", "The datasheet.")},
             "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TENDER-{n}"),
             # each tenderer cites its own qualification, issued before its tender (tender/17#F2, 19#F2, C72)
@@ -7473,7 +7478,8 @@ def _(f, n, doc, out):
             "Note": V("Answer every criterion.", "What to do."),
             "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
             "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
-            "AdditionalDocumentReference": {"ID": V(f"{FOLDER}-CFT", "The call for tenders.")},
+            "AdditionalDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders, sent with this "
+                                                                      "request (tender/06#F1).")},
             "Signature": seal(PWD, "PWD-SIG-QAR"),
             "TenderingCriterion": [{
                 "ID": V("CR-TURNOVER", "The turnover criterion."), "CriterionTypeCode": V("ECONOMIC", "Its kind."),
@@ -7676,7 +7682,9 @@ def _(f, n, doc, out):
                                                                                                     "Role.")}},
                 "AdditionalQualifyingParty": {"ParticipationPercent": V("20", "Saltmere's share."),
                                               "TendererRoleCode": V("SUBCONTRACTOR", "For the installation.")}},
-            "Evidence": {"ID": V("EV-FER-PARKS", "The reference."), "Name": V("Ferrano reference", "Name.")},
+            "Evidence": [{"ID": V("EV-FER-PARKS", "The reference."), "Name": V("Ferrano reference", "Name.")},
+                         {"ID": V("EV-DEC-1", "The evidence the declaration names (tender/13#F13)."),
+                          "Name": V("Signed declaration of no conflict of interest", "Name.")}],
             "AdditionalDocumentReference": {"ID": V("VI-ESPD-26", "The self-declaration.")}}
 
 
@@ -7988,7 +7996,7 @@ def _(f, n, doc, out):
             "Signature": [seal(PWD, "PWD-SIG-CONTRACT", "The department's seal."),
                           seal(WINNER, "VI-SIG-CONTRACT", "The manufacturer's seal.")],
             "ReceiverParty": party(WINNER, short=True),
-            "TenderingTerms": tendering_terms(f),
+            "TenderingTerms": tendering_terms(f, call=True),
             "TenderingProcess": {"ID": V(f"{FOLDER}-P", "The procedure."), "ProcedureCode": V("OPEN", "Open.")},
             "ProcurementProject": project_brief(), "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
                                                                             {"ID": V("LOT-2", "Lot 2.")}],
@@ -8871,9 +8879,7 @@ def tender_complete(n, doc):
                     "DocumentCurrencyCode": kit.currency_line(cur, "the department's currency"),
                     **tender_currencies(f, 72),
                     "OrderChangeDocumentReference": {"ID": V(f.numbers["order-change"], "The change accepted.")},
-                    "OrderDocumentReference": {"ID": V("PWD-PO-26-0212", "The department's next call-off, already "
-                                                                         "announced: it will be in moss green too "
-                                                                         "(not shown).")},
+                    # no reference to a further call-off: no other order exists (tender/28#F1, C73)
                     "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
                                         "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                         "AllowanceChargeReason": V("Special colour", "As changed."),
