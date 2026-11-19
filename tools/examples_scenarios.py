@@ -120,6 +120,7 @@ def goods_items(f, currency, value_why, convert=None):
 
 HARBOUR_PROJECT = "VT-PRJ-26-07"   # the buyer's number for its project "Harbour parks Selanu"
 ROAD_JOB = "TH-26-04471"          # the carrier's job number for the truck
+ROAD_CASTING = "2026"             # the extended ID of the 2026 side frame casting, which replaced the 2025 one
 ROAD_CO_JOB = "FCC-JOB-26-0418"   # the chamber's job number for Valdara's application for a certificate of origin
 
 
@@ -351,14 +352,12 @@ def road(n, doc):
                  "Price": kit.price_block("bench-casting", buyer=f.buyer),
                  "Item": {"Name": V("Bench side frame casting, 2026", "The substitute."),
                           "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The same item number."),
-                                                        "ExtendedID": V("2026", "The new version.")}}},
-             "SellerProposedSubstituteLineItem": {
-                 "ID": V("2", "What the seller would also accept to ship, if the buyer prefers."),
-                 "Quantity": qty(12, "EA", "The same quantity."),
-                 "Item": {"Name": V("Bench side frame casting, 2025, from stock", "Six left in stock; the rest would "
-                                                                                  "follow in May."),
-                          "SellersItemIdentification": {"ID": V(frame["sellers_id"], "The item number."),
-                                                        "ExtendedID": V("2025", "The old version.")}}},
+                                                        "ExtendedID": V(ROAD_CASTING, "The new version, the 2026 "
+                                                                                      "casting: every later document "
+                                                                                      "of the flow identifies the "
+                                                                                      "frame so (D35 point 3).")}}},
+             # no proposed substitute: the 2026 casting is the substitute, decided; the old casting is no longer made
+             # (road/02#F6, D35 point 3)
              "OrderLineReference": {"LineID": V("2", "The order line."),
                                     "SalesOrderLineID": V("2", "The seller's line.")}}]
         return out
@@ -9843,8 +9842,25 @@ SCENARIOS["packaging"] = _with_enrichment("packaging", packaging_complete)
 
 
 
+def road_casting(out, key):
+    """From the order response on, the side frame shipped is the 2026 casting: its seller's number with the extended
+    ID the response gave it (road/04#F15, 11#F12, 13#F18, 15#F13; D35 point 3, D5)."""
+    for ln in lines_of(out, key):
+        it = ln.get("Item", {})
+        sid = it.get("SellersItemIdentification")
+        if isinstance(sid, dict) and sid["ID"].value == ITEM["bench-casting"]["sellers_id"]:
+            sid["ExtendedID"] = V(ROAD_CASTING, "The 2026 casting with the reinforced foot, which the order response "
+                                                "substituted for the casting ordered.")
+
+
 def road_complete(n, doc):
     f = ROAD
+    lines = {"DespatchAdvice": "DespatchLine", "ReceiptAdvice": "ReceiptLine",
+             "Invoice": "InvoiceLine"}.get(doc["doc"])
+    if lines and doc["from"] != "13-xu":
+        out = road(n, doc)
+        road_casting(out, lines)
+        return out
     if doc["doc"] == "FulfilmentCancellation":
         return {**head(f, "receipt-cancellation", doc, 10, "Sent with the recount, before the corrected receipt "
                                                            "advice."),

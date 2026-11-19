@@ -178,17 +178,6 @@
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
-    <cac:SellerProposedSubstituteLineItem>
-      <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Bench side frame casting, 2025, from stock</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>VI-C180</cbc:ID>
-          <cbc:ExtendedID>2025</cbc:ExtendedID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-    </cac:SellerProposedSubstituteLineItem>
     <cac:SellerSubstitutedLineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>

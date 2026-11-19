@@ -225,16 +225,6 @@ Inside `OrderLine`:
   The frame ordered.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
   Its number.
-- `SellerProposedSubstituteLineItem/ID` = **2**  
-  What the seller would also accept to ship, if the buyer prefers.
-- `SellerProposedSubstituteLineItem/Quantity` = **12** (unitCode `EA`)  
-  The same quantity.
-- `SellerProposedSubstituteLineItem/Item/Name` = **Bench side frame casting, 2025, from stock**  
-  Six left in stock; the rest would follow in May.
-- `SellerProposedSubstituteLineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
-  The item number.
-- `SellerProposedSubstituteLineItem/Item/SellersItemIdentification/ExtendedID` = **2025**  
-  The old version.
 - `SellerSubstitutedLineItem/ID` = **2**  
   The substitute for line 2.
 - `SellerSubstitutedLineItem/Quantity` = **12** (unitCode `EA`)  
@@ -248,7 +238,7 @@ Inside `OrderLine`:
 - `SellerSubstitutedLineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
   The same item number.
 - `SellerSubstitutedLineItem/Item/SellersItemIdentification/ExtendedID` = **2026**  
-  The new version.
+  The new version, the 2026 casting: every later document of the flow identifies the frame so (D35 point 3).
 - `OrderLineReference/LineID` = **2**  
   The order line.
 - `OrderLineReference/SalesOrderLineID` = **2**  
@@ -445,17 +435,6 @@ Inside `OrderLine`:
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
-    <cac:SellerProposedSubstituteLineItem>
-      <cbc:ID>2</cbc:ID>
-      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Bench side frame casting, 2025, from stock</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>VI-C180</cbc:ID>
-          <cbc:ExtendedID>2025</cbc:ExtendedID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-    </cac:SellerProposedSubstituteLineItem>
     <cac:SellerSubstitutedLineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
