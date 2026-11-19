@@ -1,6 +1,6 @@
 # Order: Lumeway Distribution to Valdara Industries
 
-*Example 1 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
+*Example 1 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
 Delivery terms DAP distributor's siding: no carrier in the order, because the seller chooses and pays the transport.
 

@@ -925,6 +925,7 @@
     "101": "",
     "174": "",
     "220": "",
+    "226": "",
     "227": "",
     "230": "",
     "261": "",
@@ -1054,11 +1055,11 @@
     ],
     "MERCHHAUL": [
      "Merchant haulage",
-     "The carriage of a container to or from the port arranged by the merchant, not the shipping line."
+     "The carriage of a container to or from the port or rail terminal arranged by the merchant, not by the carrier of the main carriage."
     ],
     "CARRHAUL": [
      "Carrier haulage",
-     "The carriage of a container to or from the port arranged by the shipping line."
+     "The carriage of a container to or from the port or rail terminal arranged by the carrier of the main carriage (the shipping line or the rail carrier), not by the merchant."
     ],
     "NOTIFY": [
      "Pre-arrival notice",
@@ -1511,8 +1512,8 @@
      "A consignment note under the Convention on the Contract for the International Carriage of Goods by Road (UN/EDIFACT 1001: 730)."
     ],
     "CIM": [
-     "Rail consignment note (CIM)",
-     "A consignment note under the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (UN/EDIFACT 1001: 720)."
+     "Rail consignment note (the Accord's rules after the CIM)",
+     "A consignment note for the international carriage of goods by rail between the Accord's members, under the Trade Accord's uniform rules for it, which are modelled on the CIM, the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (COTIF Appendix B); like the CIM they also cover a carriage by road within one member state that supplements the rail carriage under the same contract (UN/EDIFACT 1001: 720; D37)."
     ],
     "AWB": [
      "Air waybill",

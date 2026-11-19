@@ -1,8 +1,8 @@
 # Transit Customs Declaration: Valdara Industries to Customs Administration of Urvania
 
-*Example 6 of the flow "Containers by rail under transit (Urvania → Bayvarra)" · [Transit Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 6 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Transit Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA)*
 
-The goods travel under customs transit from Urvania to the destination in Bayvarra; the manufacturer, as holder of the procedure, lodges the declaration at the office of departure.
+The goods travel under the Accord's common transit from Urvania's office of departure at the hub to Bayvarra customs' inland office at Marrowdale, the office of destination; the manufacturer, as holder of the procedure, lodges the declaration the evening before the train leaves (D37).
 
 [The XML file](06-TransitCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,9 +23,9 @@ The goods travel under customs transit from Urvania to the destination in Bayvar
 - `UUID` = **39a0d3b7-c2fe-5e50-8ee2-54287be65033**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-13**  
-  Lodged at the office of departure the afternoon before the train leaves, once the sealed boxes are at the hub (rail/08#F5).
+  Lodged at the office of departure the evening before the train leaves, once the sealed boxes are at the hub (D37, rail/08#F5).
 - `IssueTime` = **16:45:00-01:00**  
-  Before the consignment note, which cites it; in the issuer's local time, with its offset from UTC (D27).
+  After the second box came in at the hub, and before the consignment note, which cites it; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **TRANSIT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   A transit declaration. The code is from the Trade Accord's customs declaration type list: TRANSIT = Transit declaration.
 - `SubTypeCode` = **EXTTRANSIT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode`)  
@@ -59,8 +59,8 @@ Inside `ExportCustomsExitOfficeLocation`:
 
 Inside `JurisdictionRegionAddress`:
 
-- `Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Declared under Urvania's customs. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Region` = **Lumeport Trade Accord**  
+  The group of countries in which the declaration is relevant: the Accord's common transit procedure, from Urvania's office of departure to Bayvarra's office of destination.
 
 ### Transit Exporter Party
 
@@ -283,6 +283,22 @@ Inside `Shipment`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/CarrierParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
+- `Consignment/MainCarriageShipmentStage/ID` = **2**  
+  The rail carriage the transit runs on.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 2: rail transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 2 = Rail transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **CT 4471**  
+  The timetable service of the train, for the offices on its way (rail/06#F14).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **WB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
+  The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: WB = Westbound.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **2302** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: container train Ferrano–Marrowdale; the fleet of Ferrano Rail Cargo (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 2302 = Train, container.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RailTransport/TrainID` = **FRC 4417**  
+  The train number; the fleet of Ferrano Rail Cargo (world/parties.json).
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
   The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
@@ -332,7 +348,7 @@ Inside `Shipment`:
 - `Consignment/OfficeOfDepartureLocation/Name` = **Customs office Ferrano Intermodal Hub**  
   Where the transit starts.
 - `Consignment/OfficeOfDestinationLocation/Name` = **Customs office Marrowdale**  
-  Where the transit ends and the goods are declared for import.
+  Bayvarra customs' inland office, where the transit ends and the goods are declared for import (D37).
 - `Consignment/OfficeOfImportLocation/Name` = **Customs office Marrowdale**  
   Where the import is declared.
 - `Consignment/OfficeOfTransitLocation/Name` = **Customs post at the rail border station, Bayvarran side**  
@@ -507,9 +523,7 @@ Inside `Signature`:
     <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
   </cac:ExportCustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
-    <cac:Country>
-      <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-    </cac:Country>
+    <cbc:Region>Lumeport Trade Accord</cbc:Region>
   </cac:JurisdictionRegionAddress>
   <cac:TransitExporterParty>
     <cac:PartyIdentification>
@@ -683,6 +697,20 @@ Inside `Signature`:
           </cac:Country>
         </cac:PostalAddress>
       </cac:CarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>CT 4471</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">2302</cbc:TransportMeansTypeCode>
+          <cac:RailTransport>
+            <cbc:TrainID>FRC 4417</cbc:TrainID>
+          </cac:RailTransport>
+        </cac:TransportMeans>
+      </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>

@@ -110,6 +110,9 @@
   <cac:ReferencedTransportEquipment>
     <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
   </cac:ReferencedTransportEquipment>
+  <cac:ReferencedTransportEquipment>
+    <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+  </cac:ReferencedTransportEquipment>
   <cac:ReferencedPackage>
     <cbc:ID schemeID="ISO 15459">KXU105190004506265</cbc:ID>
   </cac:ReferencedPackage>
@@ -118,6 +121,28 @@
   </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+    <cac:TransportationService>
+      <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">CARRHAUL</cbc:TransportServiceCode>
+    </cac:TransportationService>
+    <cac:TransportServiceProviderParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:TransportServiceProviderParty>
+    <cac:ReferencedConsignment>
+      <cbc:ID>VI-CS-26-0327</cbc:ID>
+    </cac:ReferencedConsignment>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+    </cac:ShipmentStage>
+  </cac:TransportationSegment>
+  <cac:TransportationSegment>
+    <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
     <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
@@ -134,7 +159,7 @@
       <cbc:ID>VI-CS-26-0327</cbc:ID>
     </cac:ReferencedConsignment>
     <cac:ShipmentStage>
-      <cbc:ID>1</cbc:ID>
+      <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
     </cac:ShipmentStage>
   </cac:TransportationSegment>

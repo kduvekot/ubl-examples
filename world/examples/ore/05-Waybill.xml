@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
-  <cbc:IssueTime>11:35:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>14:36:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the national rail carriage law</cbc:Name>
   <cbc:Description>The ore train from the mine siding to the factory.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
@@ -182,6 +182,19 @@
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:Delivery>
+      <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
+      <cbc:ActualDeliveryTime>14:18:00</cbc:ActualDeliveryTime>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+        <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>

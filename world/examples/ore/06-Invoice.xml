@@ -16,6 +16,9 @@
   <cbc:AccountingCost>Freight</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:ContractDocumentReference>
+    <cbc:ID>VI-FRC-FW-2026</cbc:ID>
+  </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>FRC-TEP-26-0307</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
@@ -171,6 +174,19 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
+    <cbc:ActualDeliveryTime>14:18:00</cbc:ActualDeliveryTime>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
@@ -231,11 +247,24 @@
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ZZZ</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Bonus: train delivered on the first day of the window, 10 March</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XUF">34409</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>20</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">344088</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">350970</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">1720441</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">344088</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">1754850</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">350970</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -247,9 +276,10 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XUF">1720441</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">1720441</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">2064529</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">2064529</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">1754850</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">2105820</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XUF">34409</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XUF">2105820</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

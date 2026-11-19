@@ -413,7 +413,7 @@ Inside `CustomsDeclaration`:
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:3071845926** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `PreviousCustomsDeclaration/ID` = **LD-IM-26-0161**  
-  The import declaration under which the 12 side frames entered Bayvarra from Urvania (flow road; the stock ledger of world/items.json, D21): they now leave again. The 96 benches of lot VI-LOT-260409 and the 8 benches of lot VI-LOT-260410 entered under the rail delivery's import (D37), which is not yet an example.
+  The import declaration under which the 12 side frames entered Bayvarra from Urvania (flow road; the stock ledger of world/items.json, D21): they now leave again. The 96 benches of lot VI-LOT-260409 and the 8 benches of lot VI-LOT-260410 entered under the rail delivery's import declaration LD-IM-26-0340 (rail/14, D37), which becomes this declaration's previous declaration with the sea flow (O164).
 - `PreviousCustomsDeclaration/FunctionCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  

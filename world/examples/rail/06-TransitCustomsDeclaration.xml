@@ -22,9 +22,7 @@
     <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
   </cac:ExportCustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
-    <cac:Country>
-      <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-    </cac:Country>
+    <cbc:Region>Lumeport Trade Accord</cbc:Region>
   </cac:JurisdictionRegionAddress>
   <cac:TransitExporterParty>
     <cac:PartyIdentification>
@@ -198,6 +196,20 @@
           </cac:Country>
         </cac:PostalAddress>
       </cac:CarrierParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>CT 4471</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">2302</cbc:TransportMeansTypeCode>
+          <cac:RailTransport>
+            <cbc:TrainID>FRC 4417</cbc:TrainID>
+          </cac:RailTransport>
+        </cac:TransportMeans>
+      </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>

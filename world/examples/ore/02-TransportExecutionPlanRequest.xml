@@ -9,8 +9,6 @@
   <cbc:UUID>1136675e-5400-5624-8e01-dc21b86cbdfe</cbc:UUID>
   <cbc:IssueDate>2026-03-03</cbc:IssueDate>
   <cbc:IssueTime>09:24:00-01:00</cbc:IssueTime>
-  <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">UPDATE</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>This week's quantity of ore differs from the standing plan.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek trir sezhul mir drek daz nintrek krir drek drunbaz.</cbc:Note>
   <cbc:Note languageID="en-XU">The ore train from the mine siding to the factory.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
@@ -132,6 +130,7 @@
   </cac:Signature>
   <cac:TransportExecutionPlanDocumentReference>
     <cbc:ID>FRC-TEP-26-0001</cbc:ID>
+    <cbc:DocumentDescription>The standing plan for 2026 provides one train a month of 30 wagons, about 1,800 t; this request books March's train, for this month's call-off of 1,800 t, in the loading window of 10 to 13 March.</cbc:DocumentDescription>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:TransportServiceDescriptionDocumentReference>
     <cbc:ID>FRC-TSD-26</cbc:ID>
@@ -187,7 +186,7 @@
   </cac:TransportExecutionTerms>
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0306</cbc:ID>
-    <cbc:SummaryDescription>1788.4 t of Iron ore, lump</cbc:SummaryDescription>
+    <cbc:SummaryDescription>One train of 30 wagons, about 1,800 t of lump iron ore.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>

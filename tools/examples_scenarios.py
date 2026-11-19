@@ -25,16 +25,36 @@ def rate(a, b):
 
 
 # ---------------------------------------------------------------- the ore flow (Urvania, domestic)
+# The yearly supply agreement behind the monthly call-off (D45): the price basis, one train a month and the moisture
+# clause; the mine's number for it, in the style of the flow's other contract (VI-FRC-FW-2026).
+ORE_AGREEMENT = "SM-VI-SA-2026"
+ORE_MOISTURE = ("7.5", "6")       # measured at loading, and the limit of the agreement's moisture clause, in %
+ORE_ASSAY = "SM-ASSAY-26-12"      # the assay certificate of the sample taken at loading (world/documents.json, cited)
 ORE = kit.Flow("ore", "2026-03-02", [
     {"item": "ore-lump", "ordered": 1800, "delivered": "1788.4",
      "why": "One train: 30 wagons of about 60 tonnes.",
      "invoice_why": "The weighed quantity from the despatch advice, not the ordered quantity.",
      "line_allowance": {"percent": "1.5", "code": "64", "code_why": "The reason for the allowance as a code of "
-                        "UN/EDIFACT 5189: the moisture deduction is agreed in the contract.",
-                        "reason": "Moisture deduction",
-                        "why": "The sample at loading showed 7.5 % moisture, above the 6 % of the contract: the "
-                               "contract deducts 1.5 % of the value."},
+                        "UN/EDIFACT 5189: special agreement, the moisture clause of the supply agreement.",
+                        "reason": f"Moisture deduction under the moisture clause of supply agreement {ORE_AGREEMENT}: "
+                                  f"{ORE_MOISTURE[0]} % moisture measured at loading, above the {ORE_MOISTURE[1]} % "
+                                  "agreed",
+                        "why": f"The sample at loading showed {ORE_MOISTURE[0]} % moisture (assay {ORE_ASSAY}), above "
+                               f"the {ORE_MOISTURE[1]} % of the supply agreement, whose moisture clause deducts 1.5 % "
+                               "of the value (D45, ore/07#F2)."},
      "line_tax": True}])
+# the ore train on the map (O152, O197): the leg from the mine siding to the factory's siding, on the continuous line
+# past Ferrano; a loaded ore train averages about 40 km/h on the line's gradients (D45: it leaves in the morning and
+# arrives the same afternoon, on the first day of the window, and earns the plan's bonus)
+ORE_KM = wmap.leg_km("ore", "4-xu", "5-xu", "rail")
+ORE_TRAIN_KMH = 40
+ORE_DEPARTS = "10:05"            # once the 30 wagons are loaded, weighed and sheeted and the note is made out
+ORE_ARRIVES = wmap.after(wmap.at("2026-03-10", ORE_DEPARTS), ORE_KM / ORE_TRAIN_KMH + 0.25)   # with the shunt in
+ORE_BONUS = Decimal("2")         # % of the freight, for a train delivered on the first day of the window (plan)
+if ORE_ARRIVES.date().isoformat() != "2026-03-10" or ORE_ARRIVES.hour >= 17:
+    raise SystemExit("ore: the train no longer arrives on the afternoon of 10 March (D45, O152)")
+ORE_SIDING = kit.place("XUFER", "The factory's siding, where the train is placed for unloading.",
+                       name="Valdara Industries works siding, Ferrano")
 
 
 def ore(n, doc):
@@ -45,10 +65,21 @@ def ore(n, doc):
                          "Free carrier at the mine: the buyer arranges and pays the main transport, so the order names "
                          "the carrier the buyer has booked. Stated, because leaving it out would carry no meaning "
                          "(UBL rule IND6).", "Fucinalta mine siding",
-                         {"Note": V("Monthly call-off, one train.", "Says in words what the order is for."),
+                         {"OrderTypeCode": V("226", "UN/EDIFACT 1001 code 226, call off order: the month's train "
+                                                    "called off under the yearly supply agreement, which sets the "
+                                                    "price basis, one train a month and the moisture clause "
+                                                    "(D45, ore/01#F4)."),
+                          "Note": V("The call-off for March under the supply agreement for 2026: one train.",
+                                    "Says in words what the order is for."),
+                          "Contract": {"ID": V(ORE_AGREEMENT, "The supply agreement the order calls off."),
+                                       "ContractTypeCode": V("SUPPLY", "Recurring supplies at agreed quantities: one "
+                                                                       "train a month."),
+                                       "ValidityPeriod": {"StartDate": V("2026-01-01", "A yearly agreement, for 2026."),
+                                                          "EndDate": V("2026-12-31", "To the end of the year.")}},
                           "Delivery": {"RequestedDeliveryPeriod": {
-                              "StartDate": V(f.date(7), "The week in which the factory wants the ore."),
-                              "EndDate": V(f.date(11), "The end of that week.")}}})
+                              "StartDate": V(f.date(8), "The loading window for March's train, from Tuesday 10 "
+                                                        "March: the window the buyer then books the train in."),
+                              "EndDate": V(f.date(11), "To Friday 13 March.")}}})
     if doc["doc"] == "TransportExecutionPlanRequest":
         return kit.tep_request(f, n, doc, 1, "The day after the order: the buyer books the train it named in its order.",
                                8, 1800000, "The expected weight: the ordered quantity.")
@@ -57,24 +88,64 @@ def ore(n, doc):
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 8, "The day the train was loaded and weighed.",
                                    "Weighed on the weighbridge at loading: 30 wagons.",
-                                   {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                                   {"IssueTime": V("10:20:00", f"Sent once the train has left the siding at "
+                                                               f"{ORE_DEPARTS}, so that the factory can plan the "
+                                                               "unloading before it arrives."),
+                                    "Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                          "The buyer's consignment, quoted back.")}}})
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the loaded train.", weighed_kg,
-                           "The weight the carrier takes over, from the weighbridge.")
+        return kit.waybill(f, n, doc, 8, "Made out at the mine siding when the carrier took over the loaded train, "
+                                         "and completed at delivery: this is the receiver's electronic copy, sent "
+                                         "once the consignee has signed for the train in its siding, so it records "
+                                         "the arrival (D45, ore/06#F4).", weighed_kg,
+                           "The weight the carrier takes over, from the weighbridge.",
+                           {"Shipment": {"Delivery": {
+                               "ActualDeliveryDate": V(f.date(8), "The train arrived the same day, the first day of "
+                                                                  "the window."),
+                               "ActualDeliveryTime": V(wmap.hm(ORE_ARRIVES), f"It left the mine siding at "
+                                                       f"{ORE_DEPARTS} and ran {wmap.whole(ORE_KM)} km on the line past "
+                                                       "Ferrano at about 40 km/h, then shunted into the factory's "
+                                                       "siding."),
+                               "DeliveryLocation": ORE_SIDING}}})
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
+        freight = build_examples.money(Decimal("1788.4") * Decimal(str(ITEM["rail-ore"]["price"]["amount"])), "XUF")
         return kit.invoice(f, n, doc, 10, "Issued after the carriage was performed.",
                            {"AdditionalDocumentReference": [
-                               {"ID": V(f.numbers["tep"], "The transport plan with the agreed price.")},
-                               {"ID": V(f.numbers["waybill"], "The consignment note of the carriage invoiced.")}]},
+                               {"ID": V(f.numbers["tep"], "The transport plan with the agreed price and the bonus.")},
+                               {"ID": V(f.numbers["waybill"], "The consignment note of the carriage invoiced, with "
+                                                              "its arrival.")}],
+                            "ContractDocumentReference": {"ID": V("VI-FRC-FW-2026", "The framework transport "
+                                                                  "agreement the freight and its terms rest on "
+                                                                  "(ore/06#F5).")}},
                            [{"item": "rail-ore", "qty": "1788.4",
                              "invoice_why": "The weight carried, from the consignment note: the freight is per tonne."}],
-                           key="freight-invoice", terms="plan")
+                           key="freight-invoice", terms="plan",
+                           charges=[{"like": "rail-ore", "amount": build_examples.money(freight * ORE_BONUS / 100, "XUF"),
+                                     "code": "ZZZ", "code_why": "UN/EDIFACT 7161 has no code for a bonus: mutually "
+                                                                "defined, the plan's bonus term.",
+                                     "reason": "Bonus: train delivered on the first day of the window, 10 March",
+                                     "why": "The plan's bonus term, earned: the factory could start the blend a day "
+                                            "early (D45).",
+                                     "amount_why": f"{ORE_BONUS} % of the freight of {freight:,}."}],
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(8), "The day the train was delivered "
+                                                                                  "in the factory's siding, the first "
+                                                                                  "day of the window: why the bonus "
+                                                                                  "is due."),
+                                               "ActualDeliveryTime": V(wmap.hm(ORE_ARRIVES), "As the consignment note "
+                                                                                             "records it."),
+                                               "DeliveryLocation": ORE_SIDING}})
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 9, "Issued the day after the goods were despatched and weighed.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"],
-                                                                  "The despatch advice of the goods invoiced.")}})
+                                                                  "The despatch advice of the goods invoiced.")},
+                            "AdditionalDocumentReference": {"ID": V(ORE_ASSAY, "The assay certificate of the sample "
+                                                                               "taken at loading, which measured the "
+                                                                               "moisture the deduction rests on "
+                                                                               "(ore/07#F2).")},
+                            "ContractDocumentReference": {"ID": V(ORE_AGREEMENT, "The supply agreement whose price "
+                                                                                 "basis and moisture clause the "
+                                                                                 "invoice applies.")}})
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 38, "The day the payment is made, one day before the due date.")
     raise SystemExit(f"ore scenario: no document {n} {doc['doc']}")
@@ -579,6 +650,8 @@ LUMEWAY_GOODS_IN = {**kit.gln_location("6-xb", "goodsin"), "Name": V("Lumeway go
 RAIL_WAREHOUSE = kit.place("XUFER", "At the 3PL's warehouse in Conciaro, where the boxes are packed.",
                            name="Castrano Logistics warehouse, Conciaro")
 RAIL_HUB = kit.place("XUFER", "At the intermodal hub, where the boxes go on the train.", name="Ferrano Intermodal Hub")
+RAIL_STACK = kit.place("XUFER", "The hub's stack where the boxes wait for the train.",
+                       name="Ferrano Intermodal Hub, stack C")
 RAIL_BORDER = {"Name": V("Rail border station Urvania–Bayvarra", "Where the train crosses the border.")}
 RAIL_SIDING = {**kit.gln_location("6-xb", "siding"), "Name": V("Lumeway rail siding, Marrowdale", "Where the boxes "
                                                                  "are placed for unloading.")}
@@ -587,20 +660,53 @@ RAIL_SIDING = {**kit.gln_location("6-xb", "siding"), "Name": V("Lumeway rail sid
 # the train on the map (O152): the rail leg from the hub to Lumeway's siding, and the border station on it; a container
 # train averages about 50 km/h. It stops at the border station for the crew change, the brake test and the customs'
 # check of the seals, and leaves on its timetabled path into Bayvarra; in Marrowdale the boxes are placed on the
-# siding by the next morning's shunting trip, in Lumeway's working hours.
+# siding by the next morning's shunting trip, once Lumeway has declared the import (D37).
 RAIL_KM = wmap.leg_km("rail", "18-xu", "6-xb", "rail")
 RAIL_BORDER_KM = wmap.border_km("rail", "18-xu", "6-xb", "rail")
+RAIL_ROAD_KM = wmap.leg_km("rail", "8-xu", "18-xu", "road")        # the carrier's haulage to the hub
 TRAIN_KMH = 50
-RAIL_AT_BORDER = wmap.after(wmap.at("2026-04-14", "06:52"), RAIL_BORDER_KM / TRAIN_KMH)
-RAIL_IN_MARROWDALE = wmap.after(wmap.at("2026-04-14", "13:20"), (RAIL_KM - RAIL_BORDER_KM) / TRAIN_KMH)
+RAIL_LEAVES, RAIL_BORDER_LEAVES = "06:52", "13:00"      # the actual departure from the hub; the border path's
+RAIL_AT_BORDER = wmap.after(wmap.at("2026-04-14", RAIL_LEAVES), RAIL_BORDER_KM / TRAIN_KMH)
+RAIL_AT_BORDER_PLANNED = wmap.after(wmap.at("2026-04-14", "06:45"), RAIL_BORDER_KM / TRAIN_KMH)
+RAIL_IN_MARROWDALE = wmap.after(wmap.at("2026-04-14", RAIL_BORDER_LEAVES), (RAIL_KM - RAIL_BORDER_KM) / TRAIN_KMH)
 if not (RAIL_AT_BORDER.hour < 13 and RAIL_IN_MARROWDALE.date().isoformat() == "2026-04-14"):
     raise SystemExit("rail: the train's times no longer fit the leg on the map (O152)")
+# the carrier's one tractor brings the two boxes from the warehouse to the hub in two runs, and before that the two
+# empties to the warehouse (D37: carrier haulage, a pre-carriage stage of the same contract); per box: (day, time)
+TRUCK_KMH = 55
+RAIL_ROAD_H = RAIL_ROAD_KM / TRUCK_KMH
+RAIL_PICKUP = [(7, "13:00"), (7, "15:00")]
+RAIL_AT_HUB = [wmap.hm(wmap.after(wmap.at(RAIL.date(d), t), RAIL_ROAD_H))[:5] for d, t in RAIL_PICKUP]
+RAIL_STACKED = [wmap.hm(wmap.after(wmap.at(RAIL.date(d), t), RAIL_ROAD_H + 0.17))[:5] for d, t in RAIL_PICKUP]
+RAIL_POSITIONED = [(4, "08:00"), (4, "10:00")]
+RAIL_LIFTED = ["05:40", "05:55"]
+if wmap.after(wmap.at(RAIL.date(4), RAIL_POSITIONED[0][1]), 2 * RAIL_ROAD_H) > wmap.at(RAIL.date(4),
+                                                                                    RAIL_POSITIONED[1][1]) or \
+        wmap.after(wmap.at(RAIL.date(7), RAIL_PICKUP[0][1]), 2 * RAIL_ROAD_H) > wmap.at(RAIL.date(7),
+                                                                                      RAIL_PICKUP[1][1]):
+    raise SystemExit("rail: the tractor cannot make its two runs in the time between them (O152)")
+# demurrage (D37, D9, O128): five free days at the siding, counted from the day after the boxes are placed; then the
+# framework contract's rate per container day. The first box is emptied on 16 April; the second waits until 22
+# April, because the siding's fork-lift is in repair: two container days beyond the free time.
+RAIL_EMPTIED = [10, 16]               # days after the flow's start: Thursday 16 April, Wednesday 22 April
+RAIL_PLACED = 9                       # Wednesday 15 April
+RAIL_FREE_DAYS = 5
+DEMURRAGE_XUF = Decimal("7500")       # per container day, the framework contract's rate (O128)
+RAIL_DEMURRAGE_DAYS = RAIL_EMPTIED[1] - RAIL_PLACED - RAIL_FREE_DAYS
+if RAIL_DEMURRAGE_DAYS != 2 or RAIL_EMPTIED[0] - RAIL_PLACED > RAIL_FREE_DAYS:
+    raise SystemExit("rail: the demurrage is no longer two container days on the second box (D37)")
+RAIL_CONTRACT = "FRC-CON-2026-005"    # the framework contract for container slots: one number (rail/02#F13, 03#F14)
+DEMURRAGE_TEXT = ("Free time five days at the siding, counted from the day after the boxes are placed; "
+                  f"then demurrage of {DEMURRAGE_XUF:,.0f} ferra per container day, under framework contract "
+                  f"{RAIL_CONTRACT}.")
 
 
 def rail_container(f, k, full):
-    """One of the two 40-foot containers of the rail flow: Ferrano Rail Cargo's own boxes."""
+    """One of the two 40-foot containers of the rail flow: Ferrano Rail Cargo's own boxes. Both are described alike
+    (rail/08#F17, F18)."""
     box, seal = RAIL_BOXES[k], RAIL_SEALS[k]
     wagon = kit.fleet("14-xu", "FRC-4417")["wagons"][k]
+    nth = ("first", "second")[k]
     out = {"ID": V(box, "The container's number: owner code, U for a freight container, six digits and the ISO 6346 "
                         "check digit.", schemeID="ISO6346"),
            "ReferencedConsignmentID": V(f.numbers["consignment"], "The consignment the container carries."),
@@ -618,53 +724,59 @@ def rail_container(f, k, full):
                                       "SealStatusCode": V("APPLIED", "The seal is in place.")}}
     if not full:
         return out
+    pday, ptime = RAIL_PICKUP[k]
     out.update({
         "ProviderTypeCode": V("CARRIER", "The rail carrier provides the container."),
         "OwnerTypeCode": V("CARRIER", "And owns it."),
         "DispositionCode": V("LOADED", "Loaded with cargo."),
         "Information": V("Return empty to the Ferrano hub within five days.", "What happens to the box afterwards."),
         "ReturnabilityIndicator": V("true", "The container goes back to its owner."),
-        "LegalStatusIndicator": V("false", "Not under a customs container convention; the goods travel under transit."),
+        # no Container Convention indicator: nothing in the story says the box's approval status (D37, rail/08#F25)
         "Characteristics": V("Steel, high cube, wooden floor.", "What kind of box it is."),
         "Description": V("40-foot high cube container", "The container in words."),
-        "DamageRemarks": V("Small dent in the left side panel, noted at pick-up; no effect on the cargo.",
-                           "Damage noted at the hub, so it is not blamed on this carriage."),
+        **({"DamageRemarks": V("Small dent in the left side panel, noted at pick-up; no effect on the cargo.",
+                               "Damage noted when the box was positioned, so it is not blamed on this carriage.")}
+           if k == 0 else {}),
         "SpecialTransportRequirements": V("Load with the doors to the rear of the wagon.", "How it rides."),
         "GrossVolumeMeasure": V("76.3", "The inside volume of a 40-foot high cube.", unitCode="MTQ"),
         "TrackingDeviceCode": V("GPS", "The box carries a satellite tracker."),
         "PowerIndicator": V("false", "It needs no power: not a reefer."),
         "TraceID": V(f"TRK-{box}", "The tracker's number."),
-        "StowagePositionID": V(f"{wagon} / A", "The wagon and the slot on it the box rides in."),
+        "StowagePositionID": V(f"{wagon} / A", f"The wagon and the slot on it the box rides in: the {nth} container "
+                                               "wagon of the train, each box on a wagon of its own."),
         "MeasurementDimension": {"AttributeID": V("LENGTH", "The outside length."),
                                  "Measure": V("12192", "Forty feet.", unitCode="MMT")},
         "OwnerParty": party("14-xu", short=True),
-        "OperatingParty": party("18-xu", short=True),
         "ProviderParty": party("14-xu", short=True),
+        # no operating party: owner and provider name the carrier, which deploys its boxes (D37, rail/08#F15)
         "LoadingProofParty": party("8-xu", short=True),
         "LoadingLocation": kit.place("XUFER", "Packed at the 3PL's warehouse in Conciaro."),
         "UnloadingLocation": kit.place("XBMRW", "Unpacked at the distributor's siding."),
-        "StorageLocation": {"Name": V("Ferrano Intermodal Hub, stack C", "Where the box waited for the train.")},
-        "PositioningTransportEvent": kit.event(f, 6, "08:00:00", "The empty box was delivered to the warehouse "
-                                                                 "for packing.", location=RAIL_WAREHOUSE),
-        "PickupTransportEvent": kit.event(f, 7, "15:00:00", "Collected packed from the warehouse.", location=RAIL_WAREHOUSE),
-        "HandlingTransportEvent": kit.event(f, 7, "18:30:00", "Stacked at the hub overnight.", location=RAIL_HUB),
-        "LoadingTransportEvent": kit.event(f, 8, "05:40:00", "Lifted onto the wagon.", location=RAIL_HUB),
-        "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned arrival at the siding.", done=False, location=RAIL_SIDING),
+        "PositioningTransportEvent": kit.event(f, RAIL_POSITIONED[k][0], RAIL_POSITIONED[k][1] + ":00",
+                                               "The carrier's tractor delivered the empty box to the warehouse for "
+                                               "packing, on the Friday before.", location=RAIL_WAREHOUSE),
+        "PickupTransportEvent": kit.event(f, pday, ptime + ":00", f"Collected packed from the warehouse: the {nth} "
+                                          "of the tractor's two runs to the hub.", location=RAIL_WAREHOUSE),
+        "HandlingTransportEvent": kit.event(f, pday, RAIL_STACKED[k] + ":00", f"Stacked at the hub overnight, "
+                                            f"{wmap.whole(RAIL_ROAD_KM)} km from the warehouse.",
+                                            location=RAIL_STACK),
+        "LoadingTransportEvent": kit.event(f, 8, RAIL_LIFTED[k] + ":00", "Lifted onto its wagon.", location=RAIL_HUB),
+        "DeliveryTransportEvent": kit.event(f, RAIL_PLACED, "11:00:00", "Planned arrival at the siding.", done=False,
+                                            location=RAIL_SIDING),
         "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight for this box."),
                                    "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                    "AllowanceChargeReason": V("Rail freight per container", "In words."),
                                    "Amount": amount(ITEM["rail-container"]["price"]["amount"],
                                                     ITEM["rail-container"]["price"]["currency"],
                                                     "The price of one container slot (world/items.json).")},
-        "ContainedInTransportEquipment": {"ID": V(wagon, "The container wagon the box rides on."),
-                                          "TransportEquipmentTypeCode": V("RR", "UN/EDIFACT 8053 code RR: rail car.",
-                                                                          listID="UN/EDIFACT EDED 8053")},
+        # the wagon is not "contained in" the box: RailCarID and StowagePositionID name it (D37, rail/08#F8)
         "ApplicableTransportMeans": {"RailTransport": {"TrainID": V("FRC 4417", "The train."),
                                                        "RailCarID": V(wagon, "The container wagon it rides on.")}},
         "HaulageTradingTerms": {"Information": V("Carrier haulage: the rail carrier brings the box to the warehouse "
                                                  "and back.", "Who moves the empty box."),
                                 "Reference": V("FRC-HT-2026", "The carrier's haulage terms.")},
-        "Pickup": {"ActualPickupDate": V(f.date(7), "Collected."), "ActualPickupTime": V("15:00:00", "At three."),
+        "Pickup": {"ActualPickupDate": V(f.date(pday), "Collected."), "ActualPickupTime": V(ptime + ":00", "The "
+                                                                                                            "time."),
                    "PickupLocation": {"Name": V("Castrano Logistics warehouse, Conciaro", "Where.")}},
         "Despatch": {"EstimatedDespatchDate": V(f.date(8), "The train is expected to leave the hub that morning; "
                                                            "the consignment note is made out before it leaves "
@@ -672,42 +784,81 @@ def rail_container(f, k, full):
                      "EstimatedDespatchTime": V("06:50:00", "Ten to seven.")},
         "Delivery": {"LatestDeliveryDate": V(f.date(10), "At the latest."),
                      "DeliveryLocation": {**kit.gln_location("6-xb", "siding"),
-                                          "Name": V("Rail siding of Lumeway Distribution, Marrowdale", "Where.")}},
-        "ShipmentDocumentReference": {"ID": V(f.numbers.get("waybill", "pending"), "The rail consignment note.")}
-        if f.numbers.get("waybill") else {"ID": V(f.numbers["tep"], "The transport plan.")}})
+                                          "Name": V("Rail siding of Lumeway Distribution, Marrowdale", "Where.")}}})
+    # no storage location: the box is on the train, and its stack is the place of its handling event (rail/08#F10);
+    # no shipment document reference: the waybill it stands in (rail/08#F21)
+    return out
+
+
+def rail_road_stage(f, view):
+    """The carrier's haulage of the boxes from the warehouse to the hub: a pre-carriage stage of the same contract
+    (D37 point 5, rail/02#F3, 03#F3, 07#F4)."""
+    out = {"ID": V("1", "The pre-carriage: the carrier's tractor brings the packed boxes to the hub."),
+           "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road transport.",
+                                  listID="UNECE Recommendation 19 - Codes for Modes of Transport")}
+    if view == "request":
+        out["RequestedDepartureTransportEvent"] = kit.event(f, 7, RAIL_PICKUP[0][1] + ":00", "The boxes are packed by "
+                                                            "then; the tractor takes them in two runs.",
+                                                            location=RAIL_WAREHOUSE)
+        out["RequestedArrivalTransportEvent"] = kit.event(f, 7, None, "At the hub the same day, for the morning "
+                                                          "train.", location=RAIL_HUB)
+        return out
+    out["TransportMeans"] = kit.means("14-xu", "FRC-T1")
+    out["LoadingPortLocation"] = kit.place("XUFER", "Where the boxes are collected.",
+                                           name="Castrano Logistics warehouse, Conciaro")
+    out["UnloadingPortLocation"] = kit.place("XUFER", "Where they are handed to the terminal.",
+                                             name="Ferrano Intermodal Hub")
+    if view == "plan":
+        out["PlannedDepartureTransportEvent"] = kit.event(f, 7, RAIL_PICKUP[0][1] + ":00", "The first run leaves "
+                                                          "the warehouse.", location=RAIL_WAREHOUSE)
+        out["PlannedArrivalTransportEvent"] = kit.event(f, 7, RAIL_AT_HUB[1] + ":00", f"The second box at the hub: "
+                                                        f"{wmap.whole(RAIL_ROAD_KM)} km each way, two runs.",
+                                                        location=RAIL_HUB)
+    if view == "status":
+        out["ActualPickupTransportEvent"] = kit.event(f, 7, RAIL_PICKUP[0][1] + ":00", "The carrier's tractor "
+                                                      "collected the first box at the warehouse; the second "
+                                                      f"followed at {RAIL_PICKUP[1][1]}.", location=RAIL_WAREHOUSE)
+        out["ActualArrivalTransportEvent"] = kit.event(f, 7, RAIL_AT_HUB[1] + ":00", "The second box came in at the "
+                                                       "hub's gate, the end of the haulage.", location=RAIL_HUB)
     return out
 
 
 def rail_stage(f):
-    out = {"ID": V("1", "The main carriage, by rail."),
+    out = {"ID": V("2", "The main carriage, by rail."),
            "TransportModeCode": V("2", "UN/ECE Recommendation 19 code 2: rail transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
            "TransportMeans": kit.means("14-xu", "FRC-4417", "CT 4471", "The number of the container train in the "
                                                                        "hub's timetable.", "WB"),
            "LoadingSequenceID": V("7", "The order the boxes go on the train: these two are the seventh lift."),
            "SuccessiveSequenceID": V("1", "The first and only rail stage."),
-           "Instructions": V("Shunt to the Lumeway siding on arrival in Marrowdale.", "What the railway must do."),
-           "DemurrageInstructions": V("Free time five days at the siding, then demurrage per container day.",
-                                      "What waiting costs."),
+           "Instructions": V("Shunt to the Lumeway siding in Marrowdale once the import is declared.", "What the "
+                                                                                                 "railway must do."),
+           # container demurrage at a rail siding, under a definition written for vessels: kept, and the definition
+           # recorded for the UBL TC (D37, rail/03#F21, 08#F24)
+           "DemurrageInstructions": V(DEMURRAGE_TEXT, "What waiting costs: the framework contract's free time and "
+                                                      "rate (D37, O128)."),
            "CrewQuantity": qty(2, "IE", "Two persons: a driver and a train manager."),
-           "PassengerQuantity": qty(0, "IE", "No persons: a freight train carries no passengers."),
-           "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub.", location=RAIL_HUB),
-           "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable arrival at the siding in "
-                                                     f"Marrowdale: the train reaches Marrowdale yard about "
+           # no passenger quantity: a freight train carries none (D37 point 7, rail/03#F20, 08#F22)
+           "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable departure from the hub.",
+                                                       location=RAIL_HUB),
+           "PlannedArrivalTransportEvent": kit.event(f, RAIL_PLACED, "10:30:00", "The timetable arrival at the siding "
+                                                     f"in Marrowdale: the train reaches Marrowdale yard about "
                                                      f"{wmap.about(RAIL_IN_MARROWDALE)} the day before, "
                                                      f"{wmap.whole(RAIL_KM)} km from the hub, and the next morning's "
                                                      "shunting trip places the boxes on Lumeway's siding.",
                                                      location=RAIL_SIDING),
-           "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning.", location=RAIL_HUB),
-           "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "The arrival as expected.", location=RAIL_SIDING)}
-    out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned departure from the border "
-                                                     f"station, {wmap.whole(RAIL_BORDER_KM)} km from the hub: "
+           "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning.",
+                                                         location=RAIL_HUB),
+           "EstimatedArrivalTransportEvent": kit.event(f, RAIL_PLACED, "10:40:00", "The arrival as expected.",
+                                                       location=RAIL_SIDING)}
+    out["PlannedWaypointTransportEvent"] = kit.event(f, 8, RAIL_BORDER_LEAVES + ":00", "Planned departure from the "
+                                                     f"border station, {wmap.whole(RAIL_BORDER_KM)} km from the hub: "
                                                      f"the train stops there from about "
-                                                     f"{wmap.about(RAIL_AT_BORDER)} for the crew change, the "
+                                                     f"{wmap.about(RAIL_AT_BORDER_PLANNED)} for the crew change, the "
                                                      "brake test and the customs' check of the seals, and leaves "
                                                      "on its timetabled path into Bayvarra.", location=RAIL_BORDER)
-    # the actual departure is reported by the hub's progress status (rail/05); the consignment note is made out before
-    # the train leaves, so it records no journey (rail/08#F3, C72)
+    # the actual departure is reported by the infrastructure manager's progress status (rail/05); the consignment note
+    # is made out before the train leaves, so it records no journey (rail/08#F3, C72)
     return out
 
 
@@ -719,8 +870,9 @@ def rail_offices():
                                            "Where the goods leave Urvania."),
             "OfficeOfTransitLocation": office("Customs post at the rail border station, Bayvarran side",
                                               "Where the transit is checked on entering Bayvarra."),
-            "OfficeOfDestinationLocation": office("Customs office Marrowdale", "Where the transit ends and the "
-                                                                               "goods are declared for import."),
+            "OfficeOfDestinationLocation": office("Customs office Marrowdale", "Bayvarra customs' inland office, "
+                                                                               "where the transit ends and the "
+                                                                               "goods are declared for import (D37)."),
             "OfficeOfImportLocation": office("Customs office Marrowdale", "Where the import is declared.")}
 
 
@@ -729,33 +881,39 @@ def rail_consignment(f, view):
            "ContainerizedIndicator": V("true", "Two full containers."),
            "SummaryDescription": V("192 park benches in two 40-foot containers.", "The goods in a few words.")}
     if view == "request":
-        out["RequestedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The boxes are packed by then.", location=RAIL_WAREHOUSE)
-        out["RequestedDeliveryTransportEvent"] = kit.event(f, 10, None, "The distributor expects them on day 10.", location=RAIL_SIDING)
+        out["RequestedPickupTransportEvent"] = kit.event(f, 7, RAIL_PICKUP[0][1] + ":00", "The boxes are packed by "
+                                                         "then.", location=RAIL_WAREHOUSE)
+        out["RequestedDeliveryTransportEvent"] = kit.event(f, 10, None, "The distributor expects them on day 10.",
+                                                           location=RAIL_SIDING)
+        out["PreCarriageShipmentStage"] = rail_road_stage(f, "request")
         out["MainCarriageShipmentStage"] = {
-            "ID": V("1", "The rail carriage asked for."),
-            "RequestedDepartureTransportEvent": kit.event(f, 8, "07:00:00", "The morning train from the hub.", location=RAIL_HUB),
+            "ID": V("2", "The rail carriage asked for."),
+            "RequestedDepartureTransportEvent": kit.event(f, 8, "07:00:00", "The morning train from the hub.",
+                                                          location=RAIL_HUB),
             "RequestedWaypointTransportEvent": kit.event(f, 8, None, "Via the border station, where the transit "
                                                                      "is checked.",
                                                          {"Name": V("Rail border station Urvania–Bayvarra", "The "
                                                                                                             "waypoint.")}),
-            "RequestedArrivalTransportEvent": kit.event(f, 9, None, "Arriving the next day.", location=RAIL_SIDING)}
+            "RequestedArrivalTransportEvent": kit.event(f, RAIL_PLACED, None, "Arriving the next day.",
+                                                        location=RAIL_SIDING)}
         return out
-    out["TransportContract"] = {"ID": V("FRC-CON-2026-005", "The framework contract for container slots."),
-                                "IssueDate": V("2026-01-05", "Signed at the start of the year."),
-                                "ContractType": V("Framework contract for container slots", "What it is.")}
     out["PrepaidPaymentTerms"] = {"Note": V("Freight prepaid by the consignor under DAP.", "The seller pays the "
                                                                                           "carriage.")}
-    if view == "plan":
-        out["PlannedPickupTransportEvent"] = kit.event(f, 7, "15:00:00", "The carrier collects the packed boxes.",
-                                                       location=RAIL_WAREHOUSE)
-        out["PlannedDeliveryTransportEvent"] = kit.event(f, 9, "11:00:00", "And places them at the siding.",
+    if view == "plan":       # the plan's contract is the document's own (rail/03#F14): not repeated here
+        out["PlannedPickupTransportEvent"] = kit.event(f, 7, RAIL_PICKUP[0][1] + ":00", "The carrier collects the "
+                                                       "packed boxes, in two runs.", location=RAIL_WAREHOUSE)
+        out["PlannedDeliveryTransportEvent"] = kit.event(f, RAIL_PLACED, "11:00:00", "And places them at the siding.",
                                                          location=RAIL_SIDING)
+        out["PreCarriageShipmentStage"] = rail_road_stage(f, "plan")
         out["MainCarriageShipmentStage"] = rail_stage(f)
         return out
+    out["TransportContract"] = {"ID": V(RAIL_CONTRACT, "The framework contract for container slots."),
+                                "IssueDate": V("2026-01-05", "Signed at the start of the year."),
+                                "ContractType": V("Framework contract for container slots", "What it is.")}
     out.update({
         "PerformingCarrierAssignedID": V("FRC-J-26-3318", "The rail carrier's job number."),
         "LoadingSequenceID": V("7", "The consignment's turn in the loading of the train."),
-        "ContractedCarrierAssignedID": V("FRC-CON-2026-005/88", "The call-off under the framework contract."),
+        "ContractedCarrierAssignedID": V(f"{RAIL_CONTRACT}/88", "The call-off under the framework contract."),
         "TotalTransportHandlingUnitQuantity": qty(2, "EA", "Two containers."),
         "PerformingCarrierParty": party("14-xu", short=True),
         "EnvironmentalEmission": {
@@ -767,8 +925,9 @@ def rail_consignment(f, view):
                 "MeasurementToLocation": {"Name": V("Marrowdale", "To.")},
                 "EmissionCalculationLocation": {"Name": V("Ferrano Rail Cargo, energy office", "Where the figure was "
                                                                                                "calculated.")}}},
+        "PreCarriageShipmentStage": rail_road_stage(f, "note"),
         "MainCarriageShipmentStage": rail_stage(f),
-        "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, k == 0),
+        "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, True),
                                    "CustomsDeclaration": {"ID": V(f.numbers["transit"], "The transit declaration "
                                                                                        "the box travels under."),
                                                           "IssuerParty": party("5-xu", short=True)},   # rail/08#F4
@@ -777,6 +936,116 @@ def rail_consignment(f, view):
                                        "AllocatedEnergyMeasure": V("610", "This box's share of the train's energy, "
                                                                           "by weight.", unitCode="KWH")}}
                                   for k in range(2)]})
+    return out
+
+
+def rail_places(out, f):
+    """The service a rail plan or request is about runs from the warehouse, where the carrier takes the boxes over,
+    to Lumeway's siding, where it hands them over; the hub is a stage location (D37 point 6, rail/02#F3, 03#F3)."""
+    legs = next(x for x in WORLD["flows"] if x["id"] == "rail")["legs"]
+    out["FromLocation"] = kit.leg_location(legs[0], "from", "Where the carrier takes the packed boxes over.")
+    out["ToLocation"] = kit.leg_location(legs[-1], "to", "Where the service ends: the boxes are placed on Lumeway's "
+                                                         "siding.")
+    out["Note"] = V("Two containers from the warehouse in Conciaro to the rail siding in Marrowdale: the carrier's tractor to the hub, "
+                    "then the container train.", "The transport asked for and agreed.")
+    out["TransportContract"] = {**out.get("TransportContract", {}),
+                                "ID": V(RAIL_CONTRACT, "The framework contract for container slots, in the carrier's "
+                                                       "numbering, the same in every document (rail/02#F13, 03#F14).")}
+
+
+def day_text(f, day):
+    """A day of the flow as a text says it: "15 April"."""
+    d = datetime.date.fromisoformat(f.date(day))
+    return f"{d.day} {d.strftime('%B')}"
+
+
+def demurrage_note(f, n, doc, day, why):
+    """The world's debit notes (D37, D9): a supplier's addition to an invoice it issued, for the demurrage on the
+    second box. Ferrano Rail Cargo charges Valdara, the transport user under DAP, under its framework contract;
+    Valdara passes the charge on to Lumeway, which bears the costs of a delay in unloading under DAP."""
+    carrier = doc["from"] == "14-xu"
+    seller, buyer = doc["from"], doc["to"]
+    cur = "XUF"
+    scheme = WORLD["countries"]["XU"]["tax"]["schemes"][0]
+    if carrier:
+        rule = ("E", 0, scheme, "Demurrage on a container of exported goods, charged under the contract of their "
+                                "carriage, follows the carriage: exempt as the transport of goods exported from "
+                                "Urvania is (category E, D41), as the freight invoice it adds to is.",
+                "Transport of goods exported from Urvania")
+        billed, billed_why = f.numbers["freight-invoice"], "The freight invoice this debit note adds to (D9)."
+    else:
+        rule = ("G", 0, scheme, "The demurrage passed on is part of the price of the benches exported to Bayvarra, a "
+                                "cost the buyer bears under the sale's delivered-at-place terms and the seller charges "
+                                "it: no value added tax, as on the goods invoice it adds to (category G, export of "
+                                "goods; O212). The carrier's debit note it passes on is exempt in the same way, as the "
+                                "export carriage it follows (rail/12).",
+                "Export of goods outside Urvania")
+        billed, billed_why = f.numbers["invoice"], "The goods invoice this debit note adds to (D9)."
+    days, rate = RAIL_DEMURRAGE_DAYS, DEMURRAGE_XUF
+    base = days * rate
+    first, last = RAIL_PLACED + RAIL_FREE_DAYS + 1, RAIL_EMPTIED[1]
+    box = RAIL_BOXES[1]
+    t = kit.terms_of(f, seller, day, "plan" if carrier else None)
+    no = f.number("debit-carrier" if carrier else "debit-seller", seller, "DebitNote")
+    reason = (f"Container {box} was placed at Lumeway's siding on {day_text(f, RAIL_PLACED)} and released empty on "
+              f"{day_text(f, last)}: free time {day_text(f, RAIL_PLACED + 1)} to "
+              f"{day_text(f, RAIL_PLACED + RAIL_FREE_DAYS)}, "
+              f"demurrage for {days} container days.")
+    cause = "The siding's fork-lift was in repair, so Lumeway could unload the second container only on " \
+            f"{day_text(f, last)}."
+    period = {"StartDate": V(f.date(first), "The first day of demurrage, after the five free days."),
+              "EndDate": V(f.date(last), "The day the box was released empty.")}
+    tax_cat = kit.tax_category(rule)
+    item = {"Name": V(f"Demurrage, container {box}", "What is charged: the box's days at the siding beyond the free "
+                                                     "time."),
+            "ClassifiedTaxCategory": kit.tax_category(rule, "services" if carrier else None)}
+    refs = [{"ID": V(f.numbers["waybill"], "The consignment note under which the box was carried and placed.")}]
+    if not carrier:
+        refs.append({"ID": V(f.numbers["debit-carrier"], "Ferrano Rail Cargo's debit note for the same days, which "
+                                                         "Valdara passes on.")})
+    out = {"ID": V(no, "The supplier's number for its debit note."),
+           "IssueDate": V(f.date(day), why),
+           "DueDate": V(f.date(t["due"]), f"As the payment terms below count it: {t['text'][0].lower()}{t['text'][1:]}"),
+           "Note": V(reason if carrier else f"{reason} {cause}", "Why more is due: the contract's rule, applied after "
+                                                                 "the invoice was issued (D9, D37)."),
+           "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
+           **({"TaxPointDate": V(f.date(day), "Urvania's value added tax becomes due on the date of the document.")}),
+           "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoice it adds to"),
+           "LineCountNumeric": V("1", "One line: the demurrage."),
+           "InvoicePeriod": period,
+           "DiscrepancyResponse": {"Description": V(("Demurrage after the free time at the consignee's siding, under "
+                                                     f"framework contract {RAIL_CONTRACT}.") if carrier else
+                                                    ("Demurrage at Lumeway's siding, which the buyer bears under the "
+                                                     "delivered-at-place terms of the sale."),
+                                                    "The reason for the debit as a whole: UN/EDIFACT 4465 has no code "
+                                                    "for demurrage, so it is given in words.")},
+           **({} if carrier else {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")}}),
+           "BillingReference": {"InvoiceDocumentReference": {"ID": V(billed, billed_why)}},
+           **({"ContractDocumentReference": {"ID": V(RAIL_CONTRACT, "The framework contract whose free time and rate "
+                                                                    "the charge applies.")}} if carrier else {}),
+           "AdditionalDocumentReference": refs,
+           "PaymentMeans": kit.payment_means(f, seller, buyer, seller, day, t["due"] - day, no, "The account to pay "
+                                                                                                "to."),
+           "PaymentTerms": kit.payment_terms(f, seller, buyer, t, base, cur, no),
+           "TaxTotal": {"TaxAmount": amount(0, cur, "No tax: " + rule[3][0].lower() + rule[3][1:]),
+                        "TaxSubtotal": {"TaxableAmount": amount(base, cur, "The demurrage."),
+                                        "TaxAmount": amount(0, cur, "No tax in this category."),
+                                        "TaxCategory": tax_cat}},
+           "LegalMonetaryTotal": {"LineExtensionAmount": amount(base, cur, "The line."),
+                                  "TaxExclusiveAmount": amount(base, cur, "The line, before tax."),
+                                  "TaxInclusiveAmount": amount(base, cur, "No tax is added."),
+                                  "PayableAmount": amount(base, cur, "What the customer owes.")},
+           "DebitNoteLine": {"ID": V("1", "The demurrage on the second box."),
+                             "Note": V(reason if carrier else cause, "The days charged, and why."),
+                             "DebitedQuantity": qty(days, "DAY", "Container days beyond the free time."),
+                             "LineExtensionAmount": amount(base, cur, f"{days} × {rate:,.0f}."),
+                             "InvoicePeriod": period,
+                             "BillingReference": {"InvoiceDocumentReference": {"ID": V(billed, billed_why)}},
+                             "Item": item,
+                             "Price": {"PriceAmount": price(rate, cur, "The framework contract's rate per container "
+                                                                       "day (O128)." if carrier else
+                                                          "The carrier's rate, passed on at cost."),
+                                       "BaseQuantity": qty(1, "DAY", "Per container day.")}}}
     return out
 
 
@@ -791,70 +1060,142 @@ def rail(n, doc):
     if doc["doc"] == "TransportExecutionPlanRequest":
         out = kit.tep_request(f, n, doc, 1, "Under DAP the manufacturer is the transport user and books the train.",
                               7, w, "Two containers of benches.")   # the service starts with the pickup (rail/02#F2)
+        rail_places(out, f)
         kit.deep_merge(out["Consignment"], rail_consignment(f, "request"))
         return out
     if doc["doc"] == "TransportExecutionPlan":
         out = kit.tep(f, n, doc, 2, "The rail carrier confirms the slots on the container train.", 7, w)
+        rail_places(out, f)
+        # confirmed as requested: the request asked for no additional service and gave no terms of its own, so the
+        # pre-arrival notice stays in the carrier's terms and remarks and the slot terms are the carrier's (as ore/03#F3)
+        out.pop("AdditionalTransportationService", None)
+        out["DocumentStatusReasonDescription"] = V("Capacity available in the requested window: slots on the train "
+                                                   "of 14 April.", "Why it is confirmed as requested.")
+        terms = out["TransportExecutionTerms"]
+        terms.pop("TransportUserSpecialTerms", None)
+        terms["TransportServiceProviderSpecialTerms"] = V("Delivery within the agreed slot; the consignee unloads. "
+                                                          "Waiting time beyond two hours is charged.", "The carrier's "
+                                                                                                       "terms.")
+        out["TransportContract"]["ContractType"] = V("Framework contract for container slots", "Its kind, as the "
+                                                                                              "consignment note "
+                                                                                              "names it.")
         kit.deep_merge(out["Consignment"], rail_consignment(f, "plan"))
         return out
     if doc["doc"] == "TransitCustomsDeclaration":
         return {"ID": V(f.number("transit", doc["from"], "TransitCustomsDeclaration"), "The transit declaration "
                                                                                        "number."),
-                "IssueDate": V(f.date(7), "Lodged at the office of departure the afternoon before the train leaves, "
-                                          "once the sealed boxes are at the hub (rail/08#F5)."),
-                "IssueTime": V("16:45:00", "Before the consignment note, which cites it."),
+                "IssueDate": V(f.date(7), "Lodged at the office of departure the evening before the train leaves, "
+                                          "once the sealed boxes are at the hub (D37, rail/08#F5)."),
+                "IssueTime": V("16:45:00", "After the second box came in at the hub, and before the consignment "
+                                           "note, which cites it."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment under transit."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight under transit."),
                              "GoodsItem": kit.goods_items(f, "XUF", "The value of the goods, in ferra, for the transit "
                                                                     "guarantee."),
                              "Consignment": {"ID": V(f.numbers["consignment"], "The consignment on the train."),
                                              **rail_offices(),
+                                             "MainCarriageShipmentStage": {
+                                                 "ID": V("2", "The rail carriage the transit runs on."),
+                                                 "TransportModeCode": V("2", "UN/ECE Recommendation 19 code 2: rail "
+                                                                             "transport.", listID="UNECE "
+                                                                        "Recommendation 19 - Codes for Modes of "
+                                                                        "Transport"),
+                                                 "TransportMeans": kit.means("14-xu", "FRC-4417", "CT 4471",
+                                                                             "The timetable service of the train, "
+                                                                             "for the offices on its way (rail/06#F14).",
+                                                                             "WB")},
                                              "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, False)}
                                                                        for k in range(2)]}}}
     if doc["doc"] == "TransportationStatus":
         return kit.transportation_status(f, n, doc, 8, "Reported when the containers are on the train.",
                                          "Two containers loaded on the container train.",
                                          "Ferrano Intermodal Hub",
-                                         {"Consignment": {"MainCarriageShipmentStage": {
-                                             "ID": V("1", "The main carriage, by rail."),
-                                             "ActualPickupTransportEvent": kit.event(f, 7, "15:00:00", "The boxes "
-                                                                                     "were collected from the "
-                                                                                     "warehouse.", location=RAIL_WAREHOUSE),
-                                             "OptionalTakeoverTransportEvent": kit.event(
-                                                 f, 8, "17:00:00", "If the morning train is full, the boxes go on the "
-                                                                   "evening train.", done=False, location=RAIL_HUB),
-                                             "DeliveryTransportEvent": kit.event(f, 9, "11:00:00", "Planned "
-                                                                                 "placement at the siding.",
-                                                                                 done=False, location=RAIL_SIDING),
-                                             "TransportEvent": kit.event(f, 8, "05:40:00", "Both boxes lifted onto "
-                                                                                           "the train.", done=True, location=RAIL_HUB, type_code="LOADING")}}}, event_type="LOADING")
+                                         {"IssueTime": V("06:05:00", "Sent by the terminal's system once both boxes "
+                                                                     "were on their wagons."),
+                                          "Consignment": {
+                                              "PreCarriageShipmentStage": rail_road_stage(f, "status"),
+                                              "MainCarriageShipmentStage": {
+                                                  "ID": V("2", "The main carriage, by rail."),
+                                                  "TransportMeans": {"RailTransport": {"TrainID": V(
+                                                      "FRC 4417", "The train the boxes were loaded on (rail/07#F8).")}},
+                                                  "OptionalTakeoverTransportEvent": kit.event(
+                                                      f, 8, "17:00:00", "If the morning train cannot leave, the boxes "
+                                                                        "go on the evening train.", done=False,
+                                                      location=RAIL_HUB),
+                                                  "DeliveryTransportEvent": kit.event(f, RAIL_PLACED, "11:00:00",
+                                                                                      "Planned placement at the "
+                                                                                      "siding.", done=False,
+                                                                                      location=RAIL_SIDING),
+                                                  "TransportEvent": kit.event(f, 8, RAIL_LIFTED[0] + ":00", "Both "
+                                                                              "boxes lifted onto the train, the "
+                                                                              f"second at {RAIL_LIFTED[1]}.",
+                                                                              done=True, location=RAIL_HUB,
+                                                                              type_code="LOADING")},
+                                              "TransportHandlingUnit": [
+                                                  {"TransportEquipment": {
+                                                      "ID": V(RAIL_BOXES[k], "A box the report is about "
+                                                                             "(rail/07#F8).", schemeID="ISO6346")}}
+                                                  for k in range(2)]}}, event_type="LOADING")
     if doc["doc"] == "Waybill":
         out = kit.waybill(f, n, doc, 8, "Made out at the hub when the boxes are on the train, before it leaves: the "
                                         "note records the takeover, not the journey (rail/08#F3).", w,
                           "The gross weight of the two containers' cargo.")
-        out["IssueTime"] = V("06:10:00", "After both boxes were lifted onto the train at 05:40, before the "
-                                         "timetabled departure.")
+        out["IssueTime"] = V("06:10:00", f"After both boxes were lifted onto the train, at {RAIL_LIFTED[0]} and "
+                                         f"{RAIL_LIFTED[1]}, before the timetabled departure.")
+        out["IssueLocation"] = kit.place("XUFER", "Where the note was made out: the hub, where the boxes went on "
+                                                  "the train.", name="Ferrano Intermodal Hub")
+        out["Description"] = V("Two containers of park benches, carried by the carrier's tractor from Castrano's "
+                               "warehouse to the Ferrano hub and by the container train to Lumeway's siding in "
+                               "Marrowdale, under the Accord's common transit.", "The rail carriage in words, with "
+                                                                                 "its road pre-carriage (D37 point 5).")
         kit.deep_merge(out["Shipment"]["Consignment"], rail_consignment(f, "note"))
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
         return kit.invoice(f, n, doc, 11, "Issued after delivery at the siding.",
-                           {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The consignment note.")}},
+                           {"AdditionalDocumentReference": [
+                               {"ID": V(f.numbers["tep"], "The transport plan the slots were confirmed in.")},
+                               {"ID": V(f.numbers["waybill"], "The consignment note.")}],
+                            "ContractDocumentReference": {"ID": V(RAIL_CONTRACT, "The framework contract the freight "
+                                                                                 "and its terms rest on (D22).")}},
                            [{"item": "rail-container", "qty": 2, "invoice_why": "Two container slots."}],
-                           key="freight-invoice", terms="plan")
+                           key="freight-invoice", terms="plan",
+                           extra={"Delivery": {"ActualDeliveryDate": V(f.date(RAIL_PLACED), "The day the boxes were "
+                                                                                            "placed at the siding."),
+                                               "DeliveryLocation": RAIL_SIDING}})
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 11, "Issued on delivery at the distributor's siding.",
+        return kit.invoice(f, n, doc, 8, "Issued on despatch, as Valdara invoices: the morning the train leaves "
+                                         "the hub, so that the importer can declare the goods on arrival.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "AdditionalDocumentReference": [
                                 {"ID": V(f.numbers["transit"], "The transit declaration the benches left Urvania "
                                                                "under: the evidence for the export exemption "
                                                                "(rail/11#F7).")},
-                                {"ID": V(f.numbers["waybill"], "The rail consignment note, signed on delivery at "
-                                                               "the siding.")}]},
+                                {"ID": V(f.numbers["waybill"], "The rail consignment note the benches travel "
+                                                               "under.")}]},
                            extra={"Note": V("Delivered at place: the price includes the carriage to the siding.",
                                             "Why the invoice has no separate freight line."),
-                                  "Delivery": {"ActualDeliveryDate": V(f.date(9), "The day the containers were "
-                                                                                 "placed at the siding."),
-                                               "DeliveryLocation": RAIL_SIDING}})
+                                  "Delivery": {"DeliveryLocation": RAIL_SIDING,
+                                               "Despatch": {"ActualDespatchDate": V(f.date(8), "The day the train "
+                                                                                               "left the hub with "
+                                                                                               "the benches.")}}})
+    if doc["doc"] == "DebitNote" and doc["from"] == "14-xu":
+        return demurrage_note(f, n, doc, RAIL_EMPTIED[1] + 1, "The day after the second box was released empty.")
+    if doc["doc"] == "DebitNote":
+        return demurrage_note(f, n, doc, RAIL_EMPTIED[1] + 2, "The day after the carrier's debit note.")
+    if doc["doc"] == "ImportCustomsDeclaration":
+        out = kit.import_declaration(f, n, doc, RAIL_PLACED, "Declared at Bayvarra customs' inland office in "
+                                                             "Marrowdale, the office of destination of the transit, "
+                                                             "on the morning after the train arrived (D37).",
+                                     "The customs value in lume, Bayvarra's currency: the invoice value in ferra at "
+                                     "the world's reference rate (1 ferra = 0.01 lume).")
+        out["IssueTime"] = V("08:20:00", "When Lumeway's customs desk opens; the boxes are placed on the siding "
+                                         "once the goods are released.")
+        out["PreviousCustomsDeclaration"] = {"ID": V(f.numbers["transit"], "The Accord's common transit declaration "
+                                                                           "under which the goods came to the office "
+                                                                           "of destination: the procedure this import "
+                                                                           "ends (D37)."),
+                                             "FunctionCode": V("TRANSIT", "The kind of the previous declaration.")}
+        return out
     raise SystemExit(f"rail scenario: no document {n} {doc['doc']}")
 
 
@@ -4691,32 +5032,43 @@ def tender(n, doc):
 
 def rail(n, doc):
     f, d = RAIL, doc["doc"]
-    train = {"JourneyID": V("CT 4471", "The number of the container train in the hub's timetable.")}
+    # the train run asked about: the timetable service and the train itself (rail/04#F7)
+    train = {"JourneyID": V("CT 4471", "The number of the container train in the hub's timetable."),
+             "RailTransport": {"TrainID": V("FRC 4417", "The train itself, so that the run of this day is meant, not "
+                                                        "the timetable service on other days (rail/04#F7).")}}
     if d == "TransportProgressStatusRequest":
         return {**head(f, "tps-request", doc, 8, "Asked on the morning of departure."),
-                "IssueTime": V("06:30:00", "Before the train leaves the hub."), "TransportMeans": train}
+                "IssueTime": V("06:30:00", "Before the timetabled departure: the carrier asks to be told when the "
+                                           "train leaves (rail/04#F3)."), "TransportMeans": train}
     if d == "TransportProgressStatus":
         return {**head(f, "tps", doc, 8, "Answered the same morning."),
                 "IssueTime": V("06:55:00", "Answered once the train has left, so that the status can report the "
                                            "actual departure (rail/05#F1)."),
                 "TransportMeans": train}
     if d == "GoodsItemItinerary":
+        def segment(k, why, mode, mode_why, service=None):
+            seg = {"SequenceNumeric": V(str(k), why),
+                   "TransportExecutionPlanReferenceID": V(f.numbers["tep"], "The plan the segment is carried out "
+                                                                            "under."),
+                   "TransportServiceProviderParty": party("14-xu", short=True),
+                   "ReferencedConsignment": {"ID": V(f.numbers["consignment"], "The consignment on the segment.")},
+                   "ShipmentStage": {"ID": V(str(k), mode_why),
+                                     "TransportModeCode": V(mode, mode_why, listID="UNECE Recommendation 19 - Codes "
+                                                                                   "for Modes of Transport")}}
+            seg["TransportationService"] = {"TransportServiceCode": V(service, (
+                "The container train service" if service == "RAILCONT" else "Carrier haulage: the rail carrier's own "
+                "tractor brings the boxes to its terminal") + ", as a code of the Trade Accord's transport services.")}
+            return seg
         return {**head(f, "itinerary", doc, 8, "Sent when the containers are on the train."),
                 "IssueTime": V("09:00:00", "After loading."),
                 "VersionID": V("1", "The first version of the itinerary."),
                 "TransportExecutionPlanReferenceID": V(f.numbers["tep"], "The transport plan the itinerary belongs to."),
-                "TransportationSegment": {
-                    "SequenceNumeric": V("1", "One segment: by rail from the hub to the distributor's siding."),
-                    "TransportExecutionPlanReferenceID": V(f.numbers["tep"], "The plan the segment is carried out "
-                                                                             "under."),
-                    "ReferencedConsignment": {"ID": V(f.numbers["consignment"], "The consignment on the segment.")},
-                    "ShipmentStage": {"ID": V("1", "The rail stage."),
-                                      "TransportModeCode": V("2", "Rail transport.", listID="UNECE Recommendation 19 - "
-                                                                                            "Codes for Modes of "
-                                                                                            "Transport")},
-                    "TransportationService": {"TransportServiceCode": V("RAILCONT", "The container train service, "
-                                                                                         "as a code of the Trade "
-                                                                                         "Accord's transport services.")}}}
+                # from takeover to delivery: the carrier's haulage to the hub, then the train (rail/09#F6)
+                "TransportationSegment": [
+                    segment(1, "The first segment: the carrier's tractor from the warehouse to the hub.", "3",
+                            "The haulage, by road.", "CARRHAUL"),
+                    segment(2, "The second segment: by rail from the hub to the distributor's siding.", "2",
+                            "The rail stage.", "RAILCONT")]}
     return _rail(n, doc)
 
 
@@ -5535,35 +5887,52 @@ def _(f, n, doc, out):
 
 @enrich("rail", "TransportProgressStatusRequest")
 def _(f, n, doc, out):
-    return {"Note": V("Has the container train left?", "The question."),
+    return {"Note": V("Please report the departure of the container train FRC 4417 from Ferrano.", "The request: the "
+                                                                                                  "departure, not "
+                                                                                                  "presumed (rail/04#F3)."),
             "Signature": seal(doc["from"], "FRC-SIG-TPSR"),
-            "StatusLocation": {"Name": V("Ferrano Intermodal Hub", "Where the status is asked for.")}}
+            "StatusLocation": {"Name": V("Ferrano Intermodal Hub", "Where the status is asked for: the train's "
+                                                                   "departure point.")}}
 
 
 @enrich("rail", "TransportProgressStatus")
 def _(f, n, doc, out):
-    return {"Note": V("Left on time.", "The answer."),
+    # Urvania's rail infrastructure manager reports the train on its own network, from the hub to the border
+    # station; the run beyond the border is on Bayvarra's tracks (D37, rail/05#F2, F4)
+    late = 7
+    return {"Note": V(f"Left at {RAIL_LEAVES}, {late} minutes after the timetable.", "The answer, as the times say "
+                                                                                     "it (rail/05#F5)."),
             "StatusAvailableIndicator": V("true", "A status is available."),
-            "Signature": seal(doc["from"], "FIH-SIG-TPS"),
-            "SourceIssuerParty": party("18-xu", short=True),
+            "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TPS"),
             "TransportProgressStatusRequestDocumentReference": {"ID": V(f.numbers["tps-request"], "The request "
                                                                                                   "answered.")},
-            "TransportSchedule": {"SequenceNumeric": V("1", "The first stop: the hub."),
-                                  "ReferenceDate": V(f.date(8), "The day."), "ReferenceTime": V("06:45:00", "The "
-                                                                                                           "time."),
-                                  "ReliabilityPercent": V("95", "How sure the schedule is."),
-                                  "Remarks": V("On time.", "The status."),
-                                  "StatusLocation": {"Name": V("Ferrano Intermodal Hub", "The stop.")},
-                                  "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable.", location=RAIL_HUB),
-                                  "ActualDepartureTransportEvent": kit.event(f, 8, "06:52:00", "The departure.", location=RAIL_HUB),
-                                  "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "Expected in "
-                                                                                                "Marrowdale.", location=RAIL_SIDING),
-                                  "PlannedArrivalTransportEvent": kit.event(f, 9, "10:30:00", "The timetable.", location=RAIL_SIDING),
-                                  "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "As expected "
-                                                                                                  "that morning.", location=RAIL_HUB),
-                                  "ActualArrivalTransportEvent": kit.event(f, 8, "05:30:00", "The train arrived "
-                                                                                             "at the hub for "
-                                                                                             "loading.", location=RAIL_HUB)}}
+            "TransportSchedule": [
+                {"SequenceNumeric": V("1", "The first point: the hub, where the train starts."),
+                 "ReferenceDate": V(f.date(8), "The day."), "ReferenceTime": V("06:45:00", "The timetabled "
+                                                                                           "departure the status "
+                                                                                           "refers to."),
+                 "ReliabilityPercent": V("95", "How sure the schedule is."),
+                 "Remarks": V(f"Left {late} minutes late, two after the estimate.", "The status at the hub."),
+                 "StatusLocation": RAIL_HUB,
+                 "PlannedDepartureTransportEvent": kit.event(f, 8, "06:45:00", "The timetable.", location=RAIL_HUB),
+                 "ActualDepartureTransportEvent": kit.event(f, 8, RAIL_LEAVES + ":00", "The departure.",
+                                                            location=RAIL_HUB),
+                 "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "As expected that morning.",
+                                                               location=RAIL_HUB),
+                 "ActualArrivalTransportEvent": kit.event(f, 8, "05:30:00", "The train arrived at the hub for "
+                                                                            "loading.", location=RAIL_HUB)},
+                {"SequenceNumeric": V("2", "The second point: the border station, the end of Urvania's network."),
+                 "Remarks": V("The path into Bayvarra at 13:00 holds.", "The status ahead."),
+                 "StatusLocation": RAIL_BORDER,
+                 "PlannedArrivalTransportEvent": kit.event(f, 8, wmap.hm(RAIL_AT_BORDER_PLANNED), "The timetable: "
+                                                           f"{wmap.whole(RAIL_BORDER_KM)} km from the hub.",
+                                                           location=RAIL_BORDER),
+                 "EstimatedArrivalTransportEvent": kit.event(f, 8, wmap.hm(RAIL_AT_BORDER), "Expected from the "
+                                                             "actual departure.", location=RAIL_BORDER),
+                 "PlannedDepartureTransportEvent": kit.event(f, 8, RAIL_BORDER_LEAVES + ":00", "The timetabled "
+                                                             "path into Bayvarra, after the crew change, the brake "
+                                                             "test and the customs' check of the seals.",
+                                                             location=RAIL_BORDER)}]}
 
 
 @enrich("rail", "GoodsItemItinerary")
@@ -5571,7 +5940,9 @@ def _(f, n, doc, out):
     return {"Note": V("The itinerary of the two containers.", "What it shows."),
             "Signature": seal(doc["from"], "FRC-SIG-GII"),
             "ReferencedConsignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
-            "ReferencedTransportEquipment": {"ID": V(RAIL_BOXES[0], "The first container.", schemeID="ISO6346")},
+            "ReferencedTransportEquipment": [{"ID": V(RAIL_BOXES[k], f"The {('first', 'second')[k]} container "
+                                                                     "(rail/09#F1).", schemeID="ISO6346")}
+                                             for k in range(2)],
             "ReferencedPackage": {"ID": kit.unit_id("8-xu", f, 1, "The first pallet in it, made up by the 3PL")},
             "ReferencedGoodsItem": {"ID": V("1", "The benches.")}}
 
@@ -5866,6 +6237,7 @@ def import_extras(f, n, doc, out):
 for _fid in ("road", "sea", "tender", "plastics", "wood", "cotton"):
     enrich(_fid, "ExportCustomsDeclaration")(export_extras)
     enrich(_fid, "ImportCustomsDeclaration")(import_extras)
+enrich("rail", "ImportCustomsDeclaration")(import_extras)      # rail/14, Lumeway's import at Marrowdale (D37)
 
 
 @enrich("rail", "TransitCustomsDeclaration")
@@ -5880,8 +6252,13 @@ def _(f, n, doc, out):
                                                         "three days.")},
             "ExportCustomsExitOfficeLocation": {"Name": V("Customs post at the rail border station, Urvanian side",
                                                           "Where the goods leave Urvania.")},
-            "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V("XU", "Declared under Urvania's "
-                                                                                    "customs.")}},
+            # the Accord's common transit, not Urvania's alone: the region of the Trade Accord, where the offices of
+            # both countries act on it (D37 point 2, rail/06#F18; O140's candidate case for Address/Region)
+            "JurisdictionRegionAddress": {"Region": V("Lumeport Trade Accord", "The group of countries in which the "
+                                                                               "declaration is relevant: the Accord's "
+                                                                               "common transit procedure, from "
+                                                                               "Urvania's office of departure to "
+                                                                               "Bayvarra's office of destination.")},
             "FreightForwarderParty": party("14-xu", short=True),
             "NotifierParty": party("5-xu", short=True),
             "AdditionalDocumentReference": {"ID": V(f.numbers["tep"], "The transport plan.")},
@@ -6423,8 +6800,11 @@ def _(f, n, doc, out):
 
 @enrich("rail", "TransportExecutionPlan")
 def _(f, n, doc, out):
-    return {"TransportContract": {"IssueTime": V("10:00:00", "Signed in the morning."),
-                                  "NominationDate": V(f.date(2), "The slots of this train were nominated today."),
+    return {"TransportContract": {"IssueDate": V("2026-01-05", "Signed at the start of the year: the time below "
+                                                               "has its date (rail/03#F15)."),
+                                  "IssueTime": V("10:00:00", "Signed in the morning."),
+                                  "NominationDate": V(f.date(2), "The deadline for booking this train's slots: the "
+                                                                 "request of the day before met it."),
                                   "NominationTime": V("09:00:00", "At that time."),
                                   "ContractTypeCode": V("FRAMEWORK", "A framework contract."),
                                   "Note": V("Call-off 88 of the year.", "Which call-off."),
@@ -6432,12 +6812,15 @@ def _(f, n, doc, out):
                                   "ModificationReasonCode": V("VOLUME", "Amended for higher volumes."),
                                   "ModificationReasonDescription": V("Ten more slots a month from April.", "The "
                                                                                                           "change."),
-                                  "Description": V("Container slots between the Ferrano hub and Marrowdale.", "What "
-                                                                                                            "it "
-                                                                                                            "covers."),
-                                  "ContractDocumentReference": {"ID": V("FRC-CON-2026-005-A1", "The amendment.")},
-                                  "NominationPeriod": {"StartDate": V(f.date(0), "Slots are nominated a week"),
-                                                       "EndDate": V(f.date(6), "before the train.")},
+                                  "Description": V("Container slots on the trains from the Ferrano hub to "
+                                                   "Marrowdale, with the carrier's haulage of the boxes to the hub.",
+                                                   "What it covers."),
+                                  "ContractDocumentReference": {"ID": V(f"{RAIL_CONTRACT}-A1", "The amendment.")},
+                                  "NominationPeriod": {"StartDate": V(f.date(0), "Slots are booked from a week "
+                                                                                 "before the train"),
+                                                       "EndDate": V(f.date(2), "until the deadline above, so period "
+                                                                               "and deadline agree (rail/03#F15)."),
+                                                       "EndTime": V("09:00:00", "The deadline's time.")},
                                   "ContractualDelivery": {"LatestDeliveryDate": V(f.date(10), "The contract's latest "
                                                                                               "delivery for this "
                                                                                               "call-off.")}}}
@@ -8623,7 +9006,9 @@ def _(f, n, doc, out):
     cd = out.get("CustomsDeclaration")
     if isinstance(cd, dict):
         prev = previous_declarations(f, "6-xb")      # the exporter's ledger: Lumeway, for whom the forwarder declares
-        built = [(fl, what) for fl, what in prev if FLOWS[fl].numbers.get("import")]
+        # rail/14 exists since G3 (D37); O164 makes it this declaration's previous declaration when the sea flow is
+        # built, the road import becoming a typed additional reference; until then the road import stays
+        built = [(fl, what) for fl, what in prev if FLOWS[fl].numbers.get("import") and fl != "rail"]
         if len(built) != 1:
             raise SystemExit(f"sea export: the goods chain gives {built} as previous declarations; UBL allows one")
         fl, what = built[0]
@@ -8632,7 +9017,8 @@ def _(f, n, doc, out):
             "ID": V(FLOWS[fl].numbers["import"], f"The import declaration under which {what} entered Bayvarra from "
                     f"Urvania (flow {fl}; the stock ledger of world/items.json, D21): they now leave again."
                     + (f" {(' and '.join(missing))[0].upper() + (' and '.join(missing))[1:]} entered under the "
-                       "rail delivery's import (D37), which is not yet an example." if missing else "")),
+                       f"rail delivery's import declaration {FLOWS['rail'].numbers.get('import')} (rail/14, D37), which "
+                       "becomes this declaration's previous declaration with the sea flow (O164)." if missing else "")),
             "FunctionCode": V("IMPORT", "The kind of the previous declaration.")}
     return {}
 
@@ -8706,6 +9092,13 @@ def _(f, n, doc, out):
             ext["TaxInclusiveAmount"] = amount(base + tax, "XUF", "The price extension with 20 % value added tax.")
             ext["TaxTotal"] = {"TaxAmount": amount(tax, "XUF", "The tax on the price extension, before the line's "
                                                               "allowance.")}
+        if doc["from"] == "4-xu":       # the moisture of this train's ore, measured at loading (D45, ore/07#F2)
+            props = ln["Item"].setdefault("AdditionalItemProperty", [])
+            props.append({"Name": V("Moisture content", "A measured property of the ore delivered, not of the "
+                                                         "item in general: the moisture of this train's lot."),
+                          "ValueQuantity": V(ORE_MOISTURE[0], f"Measured on the sample taken at loading (assay "
+                                                              f"{ORE_ASSAY}); the supply agreement allows "
+                                                              f"{ORE_MOISTURE[1]} %.", unitCode="P1")})
     return {}
 
 
@@ -8928,12 +9321,17 @@ def _(f, n, doc, out):
 
 @enrich("ore", "TransportExecutionPlanRequest")
 def _(f, n, doc, out):
-    return {"DocumentStatusReasonCode": V("UPDATE", "The request updates the season's standing plan."),
-            "DocumentStatusReasonDescription": V("This week's quantity of ore differs from the standing plan.",
-                                                 "Why it is sent."),
-            "TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan for the ore "
-                                                                                   "season, agreed in January "
-                                                                                   "(not shown).")},
+    # no status reason: the request has no status, and its relation to the standing plan is said next to the
+    # reference (D45, ore/02#F5); the quantity is this month's, the standing plan's train (ore/02#F4)
+    out["Consignment"]["SummaryDescription"] = V("One train of 30 wagons, about 1,800 t of lump iron ore.",
+                                                 "What is to be carried, before the wagons are loaded and weighed.")
+    out["Consignment"]["TotalGoodsItemQuantity"] = qty(1, "EA", "The number of goods items: the ore.")
+    return {"TransportExecutionPlanDocumentReference": {
+                "ID": V("FRC-TEP-26-0001", "The standing plan for the ore season, agreed in January (not shown)."),
+                "DocumentDescription": V("The standing plan for 2026 provides one train a month of 30 wagons, about "
+                                         "1,800 t; this request books March's train, for this month's call-off of "
+                                         "1,800 t, in the loading window of 10 to 13 March.",
+                                         "How this request updates the standing plan (ore/02#F4, F5).")},
             "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The rail carrier's published "
                                                                                    "service description (not "
                                                                                    "shown).")},
@@ -8953,6 +9351,27 @@ def _(f, n, doc, out):
         for nr in lines_of(d, "NotificationRequirement"):
             nr["NotificationPeriod"] = {"StartDate": V(f.date(8), "The notice is given on the day of the train"),
                                         "EndDate": V(f.date(8), "before it arrives (ore/03#F2).")}
+    # confirmed as requested, so the plan carries what the request asked: the weighing at the mine siding with its
+    # tariff class, the place of that service and the user's sheeting term; the pre-arrival notice and the slot and
+    # unloading terms are the carrier's own (D45, ore/03#F3)
+    out["DocumentStatusReasonDescription"] = V("Capacity available in the requested window, 10 to 13 March: the "
+                                               "train is planned for its first day.", "Why it is confirmed as "
+                                                                                      "requested.")
+    out["AdditionalTransportationService"] = {
+        "TransportServiceCode": V("WEIGH", "The wagons are weighed at the mine siding, as requested: the weighed "
+                                           "tonnes are what the freight and the ore are billed by."),
+        "TariffClassCode": V("B", "The carrier's tariff class, as requested.")}
+    out["AtLocation"] = kit.place("XUFNT", "Where the weighing, a service without movement, is done.",
+                                  name="Fucinalta mine siding")
+    terms = out["TransportExecutionTerms"]
+    terms["TransportUserSpecialTerms"] = V("Wagons sheeted against dust.", "The user's term, as the request asked "
+                                                                            "it.")
+    terms["TransportServiceProviderSpecialTerms"] = V("Delivery within the agreed slot; the consignee unloads. "
+                                                      "Waiting time beyond two hours is charged.", "The carrier's "
+                                                      "terms.")
+    out["Consignment"]["SummaryDescription"] = V("One train of 30 wagons, about 1,800 t of lump iron ore.",
+                                                 "What is to be carried, before the wagons are loaded and weighed.")
+    out["Consignment"]["TotalGoodsItemQuantity"] = qty(1, "EA", "The number of goods items: the ore.")
     return {"TransportExecutionPlanDocumentReference": {"ID": V("FRC-TEP-26-0001", "The standing plan this plan "
                                                                                    "updates (not shown).")},
             "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The service description it "
