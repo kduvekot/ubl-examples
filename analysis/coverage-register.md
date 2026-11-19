@@ -257,8 +257,6 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | | | open |
 | `ItemIdentification/MeasurementDimension` | 0..n | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `ItemProperty/UsabilityPeriod` | 0..1 | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
-| `LineItem/BeneficiaryParty` | 0..n | sea/05-Order | | | open |
-| `LineItem/OriginatorParty` | 0..1 | sea/05-Order | | | open |
 | `OrderCancellation/BeneficiaryParty` | 0..n | furniture/11-OrderCancellation | | | open |
 | `OrderCancellation/OriginatorCustomerParty` | 0..1 | furniture/11-OrderCancellation | | | open |
 | `PriorInformationNotice/BeneficiaryParty` | 0..n | tender/01-PriorInformationNotice | | | open |
@@ -457,6 +455,24 @@ Coverage 4947 → 4937 (commits 80c237bd to ea814dd4), 10 elements. The job's re
 | `ShipmentStage/ActualWaypointTransportEvent` | 0..1 | rail/08-Waybill | | | open |
 | `TenderingTerms/ReplacedNoticeDocumentReference` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
 
+### O172: the sea order split into the port's line and the buyer's stock lines (2026-11-19)
+
+Coverage 4937 → 4930, 9 elements lost and 2 won back (`LineItem/OriginatorParty` and `LineItem/BeneficiaryParty`, see Won back).
+
+> O172 (owner, a): the sea order has a line of 96 benches for the Port of Selanu, which names the port as originator and beneficiary, and a line of 8 benches and the frames line for Velumi's own stock, which do not. The order, its response, the despatch advice and the invoice cover the stock lines too, so the port is no longer the originator and beneficiary of the whole document: the document-level parties go (the invoice's port line names both). The credit note credits a spare frame of Velumi's stock, so it no longer cites the harbour parks project.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CreditNote/ProjectReference` | 0..n | sea/26-CreditNote | a credit for goods bought for the harbour parks project, such as one of the port's benches found damaged | sea | candidate |
+| `DespatchAdvice/BeneficiaryParty` | 0..n | sea/20-DespatchAdvice | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `DespatchAdvice/OriginatorCustomerParty` | 0..1 | sea/20-DespatchAdvice | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `Invoice/BeneficiaryParty` | 0..n | sea/22-Invoice | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `Invoice/OriginatorCustomerParty` | 0..1 | sea/22-Invoice | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `Order/BeneficiaryParty` | 0..n | sea/05-Order | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `Order/OriginatorCustomerParty` | 0..1 | sea/05-Order | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `OrderResponse/BeneficiaryParty` | 0..n | sea/06-OrderResponse | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+| `OrderResponse/OriginatorCustomerParty` | 0..1 | sea/06-OrderResponse | a document wholly for one beneficiary: a later order of Velumi Trading only for the Port of Selanu (replacement benches for the harbour parks), with its response, despatch advice and invoice | sea | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
@@ -477,3 +493,5 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `LineItem/BeneficiaryParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
+| `LineItem/OriginatorParty` | sea/05-Order, sea/06-OrderResponse | the port's line of the sea order, 96 benches for the harbour parks; the buyer's stock lines name no originator or beneficiary (O172) | 2026-11-19 |
