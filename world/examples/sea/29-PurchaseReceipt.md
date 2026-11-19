@@ -18,7 +18,7 @@ Velumi Trading sells two of the imported benches in its shop in Selanu to the co
   The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VT-PR-26-0154**  
+- `ID` = **VT-PR-26-0153**  
   The till's receipt number.
 - `UUID` = **464955fd-c2fe-5d30-a020-fe67a7fc3e92**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -308,7 +308,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-PR-26-0154</cbc:ID>
+  <cbc:ID>VT-PR-26-0153</cbc:ID>
   <cbc:UUID>464955fd-c2fe-5d30-a020-fe67a7fc3e92</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>

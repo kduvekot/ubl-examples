@@ -20,6 +20,10 @@
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -201,7 +205,7 @@
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
@@ -267,43 +271,6 @@
           <cbc:Name>Harbourline Factoring</cbc:Name>
         </cac:PartyName>
       </cac:FinancingParty>
-      <cac:FinancingFinancialAccount>
-        <cbc:ID schemeID="urn:ubl-examples:world:account">XB51BLUM38020502304038</cbc:ID>
-        <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
-        <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-        <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:FinancialInstitutionBranch>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
-          <cbc:Name>Harbour branch</cbc:Name>
-          <cac:FinancialInstitution>
-            <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-            <cbc:Name>Bank of Lumeport</cbc:Name>
-            <cac:Address>
-              <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-              <cbc:StreetName>Exchange Street</cbc:StreetName>
-              <cbc:BuildingNumber>48</cbc:BuildingNumber>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cbc:PostalZone>38523</cbc:PostalZone>
-              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-              <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                <cbc:Name>Bayvarra</cbc:Name>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitution>
-          <cac:Address>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitutionBranch>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:FinancingFinancialAccount>
       <cac:Clause>
         <cbc:ID>HF-FA-7.2</cbc:ID>
         <cbc:Content>Payment to any other account does not discharge the buyer.</cbc:Content>

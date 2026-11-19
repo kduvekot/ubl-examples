@@ -75,6 +75,59 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `Statement/AllowanceCharge` | 0..n | sea/25-Statement | a charge of the factor's own in its statement, such as a factoring fee, if the factoring agreement gives one | sea | open |
 | `StatementLine/AllowanceCharge` | 0..n | sea/25-Statement |  |  | open |
 
+> C116, D30 point 3 (O6, D9, O104): the buyer's debit note sea/28 is removed; the customs inspection and the day of storage it passed on are the second line of Lumeway's credit note sea/26. Its number 28 is not used again (D28). The world's debit notes are now the rail flow's two of the demurrage (rail/12, 13, D37) and tender/34 until the tender flow removes it (D28); the elements below were in sea/28 alone. The factor's collection account is the invoice's payee account, not a financing account (sea/22#F7); the deposit's payment dates are no invoice period of the statement (25#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `DebitNote/AccountingCost` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/AccountingCostCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/Annotation` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/BuyerAssignedReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/BuyerCustomerParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/CollectionDebitNoteLine` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/Delivery` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/DeliveryNoteDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/DeliveryTerms` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/DespatchDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/OriginatorDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/PayeeParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/PaymentCurrencyCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/PaymentExchangeRate` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/ProjectReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/PurchaseReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/ReceiptDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/SellerSupplierParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/Signature` | 0..n | sea/28-DebitNote | the rail flow's debit notes of the demurrage (rail/12, 13), signed when the signatures stage gives every signing party its key pair (D6) | stage 8 | candidate |
+| `DebitNote/StatementDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/WorkReportDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/AccountingCost` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/AccountingCostCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/AllowanceCharge` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/BeneficiaryParty` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/CollectedForParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/DeliveryTerms` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/DespatchLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/DocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/FreeOfChargeIndicator` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/ItemPriceExtension` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/OrderLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/OriginatorParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/PaymentPurposeCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/PaymentTerms` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/PricingReference` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/ReceiptLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/SubDebitNoteLine` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/TaxInclusiveLineExtensionAmount` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/TaxPointDate` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/TaxTotal` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/UUID` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/WorkReportLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `ProjectReference/IssueDate` | 0..1 | sea/28-DebitNote |  |  | open |
+| `ProjectReference/UUID` | 0..1 | sea/28-DebitNote |  |  | open |
+| `ProjectReference/WorkPhaseReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `StatementLine/InvoicePeriod` | 0..n | sea/25-Statement |  |  | open |
+| `TradeFinancing/FinancingFinancialAccount` | 0..1 | sea/22-Invoice |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.

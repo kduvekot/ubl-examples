@@ -3254,7 +3254,6 @@ CITED_LATER = {}       # document ID -> [(moment, where)] of documents that cite
 # Documents that still report or cite something after their issue, each waiting for its flow decision (stage 6):
 # (flow, file) -> the reason. Each entry goes when its flow is implemented.
 ISSUE_ORDER_WAITS = {
-    ("sea", "28-DebitNote.xml"): "cites the factor's statement of 13 June; D30 removes the debit note (sea/28#F3, O6)",
 }
 
 

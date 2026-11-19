@@ -827,10 +827,11 @@
   "system": "TRADE-ACCORD-PAY",
   "name": "Payment link of the Lumeport Trade Accord",
   "clearing_channels": [
-   "RTNS"
+   "RTNS",
+   "MPNS"
   ],
   "charge_bearer": "SHAR",
-  "note": "Payments between the three countries run over the trade accord's link; charges are shared (ISO 20022 SHAR)."
+  "note": "Payments between the three countries run over the trade accord's link; charges are shared (ISO 20022 SHAR). The link settles in real time on a net basis (RTNS), and a payment the payer marks as not urgent goes in its batch run, a mass payment net system (MPNS)."
  },
  "languages": {
   "qau": {

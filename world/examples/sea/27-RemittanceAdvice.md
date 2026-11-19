@@ -32,9 +32,9 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The lume, the currency of the invoice paid; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TotalDebitAmount` = **44896.00** (currencyID `XBL`)  
   The invoices paid.
-- `TotalCreditAmount` = **68.00** (currencyID `XBL`)  
+- `TotalCreditAmount` = **196.13** (currencyID `XBL`)  
   The credit note deducted.
-- `TotalPaymentAmount` = **44828.00** (currencyID `XBL`)  
+- `TotalPaymentAmount` = **44699.87** (currencyID `XBL`)  
   The amount transferred: the invoice less the credit note.
 - `PaymentOrderReference` = **VT-PAY-26-0123**  
   The payment order the payer gave its bank.
@@ -289,7 +289,7 @@ Inside `RemittanceAdviceLine`:
   The credit note deducted.
 - `UUID` = **87f012c8-f767-5ff8-9aa8-8bc8a6a1076a**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `CreditLineAmount` = **68.00** (currencyID `XBL`)  
+- `CreditLineAmount` = **196.13** (currencyID `XBL`)  
   The amount of the credit note, set off against the payment.
 - `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0151**  
   The credit note deducted.
@@ -312,8 +312,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">44896.00</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">68.00</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">44828.00</cbc:TotalPaymentAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">196.13</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">44699.87</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -533,7 +533,7 @@ Inside `RemittanceAdviceLine`:
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>87f012c8-f767-5ff8-9aa8-8bc8a6a1076a</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">68.00</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">196.13</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
         <cbc:ID>LD-CN-26-0151</cbc:ID>

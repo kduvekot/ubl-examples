@@ -16,7 +16,7 @@
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode listID="urn:ubl-examples:world:codelist:StatementTypeCode">ACCOUNT</cbc:StatementTypeCode>
   <cac:StatementPeriod>
-    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:StartDate>2026-05-08</cbc:StartDate>
     <cbc:EndDate>2026-06-13</cbc:EndDate>
   </cac:StatementPeriod>
   <cac:AdditionalDocumentReference>
@@ -268,14 +268,11 @@
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-05-08</cbc:StartDate>
-      <cbc:EndDate>2026-05-09</cbc:EndDate>
-    </cac:InvoicePeriod>
     <cac:CollectedPayment>
       <cbc:ID>VT-DEP-26-0412</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
       <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+      <cbc:PaidDate>2026-05-08</cbc:PaidDate>
     </cac:CollectedPayment>
   </cac:StatementLine>
 </Statement>

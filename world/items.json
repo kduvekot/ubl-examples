@@ -1278,6 +1278,21 @@
    "purchase": "freight"
   },
   {
+   "id": "inspection-cost-credit",
+   "seller": "6-xb",
+   "name": "Customs inspection and storage at Selanu, passed on",
+   "kind": "service",
+   "supply": "goods",
+   "unit": "E48",
+   "price": {
+    "amount": 128.13,
+    "currency": "XBL",
+    "why": "What the buyer paid at Selanu because a pallet's heat-treatment mark was illegible: the Island Customs Service's inspection fee of 38.500 coral and the Port of Selanu's storage for the day the container was held, 12.750 coral, together 51.250 coral, 128.13 lume at the reference rate (D30 point 3)."
+   },
+   "sellers_id": "LD-CLAIM-INSP",
+   "description": "The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service."
+  },
+  {
    "id": "cargo-insurance",
    "seller": "10-xb",
    "name": "Cargo insurance",

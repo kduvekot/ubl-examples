@@ -2434,7 +2434,8 @@ def sea(n, doc):
                                  "PaymentDueDate": V(f.date(55), "The due date.")},
                 "Signature": {"ID": V("HF-SIG-26-0040", "The factor's seal on the statement."),
                               "SignatoryParty": party("24-xb", short=True)},
-                "StatementPeriod": {"StartDate": V(f.date(10), "From the invoice."),
+                "StatementPeriod": {"StartDate": V(f.date(4), "From the account's first movement, the deposit "
+                                                              "paid on the order's acceptance (sea/25#F6)."),
                                     "EndDate": V(f.date(40), "To the statement date.")},
                 "PaymentMeans": kit.payment_means(f, "24-xb", "1-xl", "24-xb", 40, 15, f.numbers["invoice"],
                                                   "The factor's account, where the invoice is to be paid."),
@@ -2470,19 +2471,45 @@ def sea(n, doc):
             "BalanceAmount": amount(total, cur, "Open after the deposit: what the buyer still owes."),
             "CollectedPayment": {"ID": V("VT-DEP-26-0412", "The deposit payment."),
                                  "PaidAmount": amount(DEPOSIT, cur, "Paid."),
-                                 "ReceivedDate": V(f.date(5), "Received by the distributor.")},
-            "PaymentMeans": {"PaymentMeansCode": V("30", "Paid by credit transfer.", listID="UN/EDIFACT EDED 4461")},
-            "InvoicePeriod": {"StartDate": V(f.date(4), "The order's deposit period."),
-                              "EndDate": V(f.date(5), "Paid and received.")}}]
+                                 "ReceivedDate": V(f.date(5), "Received by the distributor."),
+                                 "PaidDate": V(f.date(4), "Paid by the buyer the day the order was accepted: the "
+                                                          "payment's dates, not an invoice period (sea/25#F3).")},
+            "PaymentMeans": {"PaymentMeansCode": V("30", "Paid by credit transfer.", listID="UN/EDIFACT EDED 4461")}}]
         return out
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 52, "The buyer pays the factor, before the due date, less the credit note.",
                               credit=(f.numbers["sea-credit"], f.numbers["sea-credit-date"],
                                       f.numbers["sea-credit-amount"]))
     if doc["doc"] == "CreditNote":
+        frames_line = next(i for i, d in enumerate(f.deal, 1) if d["item"] == "bench-casting-b")
         out = kit.credit_note(f, n, doc, 42, "Issued when the distributor accepted the buyer's claim.",
                               [{"item": "bench-casting-b", "qty": 1, "why": "The frame that arrived cracked.",
-                                "line_extra": {"Note": V("Frame carton crushed at the port of Selanu.", "What happened.")}}],
+                                "line_extra": {"Note": V("Frame carton crushed at the port of Selanu.", "What happened."),
+                                               "BillingReference": {
+                                                   "InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
+                                                                                        "invoice of the frames.")},
+                                                   "BillingReferenceLine": {"ID": V(str(frames_line), "The invoice "
+                                                                                    "line of the frames this line "
+                                                                                    "credits (sea/26#F6).")}}}},
+                               {"item": "inspection-cost-credit", "qty": 1, "why": "The customs inspection and the "
+                                                                                  "day of storage at Selanu.",
+                                "line_extra": {"Note": V(f"Heat-treatment mark illegible on pallet "
+                                                         f"{kit.unit_id('6-xb', f, 7).value}: customs inspected the "
+                                                         "container and held it for a day.", "Why the buyer's costs "
+                                                         "are credited: a packaging fault on the seller's side, a "
+                                                         "cost passed on instead of a debit note from the buyer "
+                                                         "(D30 point 3, O6)."),
+                                               "BillingReference": {
+                                                   "InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
+                                                                                        "invoice of the benches on "
+                                                                                        "the pallet.")},
+                                                   "BillingReferenceLine": {"ID": V("1", "The invoice line of the "
+                                                                                    "port's benches, whose pallet "
+                                                                                    "carried the illegible mark.")}},
+                                               "DocumentReference": {"ID": V("XL-CUS-RCPT-26-0517", "The customs "
+                                                                             "receipt for the inspection fee the "
+                                                                             "buyer paid, the evidence of its "
+                                                                             "outlay.")}}}],
                               {"BillingReference": {"InvoiceDocumentReference": {
                                   "ID": V(f.numbers["invoice"], "The invoice of the frames."),
                                   "IssueDate": V(f.numbers["invoice-date"], "Its issue date.")}},
@@ -2491,7 +2518,15 @@ def sea(n, doc):
                                          "distributor credits the frame as a goodwill gesture.", "Why a credit "
                                          "under CIF, and why no insurer pays (D30 point 3, sea/26#F3)."),
                                "DiscrepancyResponse": {"ResponseCode": V("17", "The goods arrived damaged."),
-                                                       "Description": V("One side frame cracked.", "In words.")},
+                                                       "Description": V("One side frame cracked; a pallet's "
+                                                                        "heat-treatment mark illegible, so customs "
+                                                                        "inspected the container.", "In words.")},
+                               "PaymentTerms": {"Note": V("Deducted from the payment of invoice "
+                                                          f"{f.numbers['invoice']} to Harbourline Factoring, which "
+                                                          "holds the receivable under its factoring agreement with "
+                                                          "the distributor.", "With whom the credit is settled: "
+                                                          "the buyer pays the factor the balance less the credit, "
+                                                          "as its remittance advice shows (sea/26#F4).")},
                                "OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                                "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The 3PL's receipt "
                                                                                           "advice reporting it.")},
@@ -6865,6 +6900,9 @@ def _(f, n, doc, out):
         return {}
     return {"PaymentMeans": {
         "PaymentPlatformID": V("HF-COLLECT", "The factor's collection platform the payment is matched on."),
+        "PaymentChannelCode": V("MPNS", "A payment that is not urgent goes in the Trade Accord link's batch run, a "
+                                        "mass payment net system, as ISO 20022 clearing channel MPNS (sea/22#F14, "
+                                        "D30 point 9)."),
         "ServiceLevelCode": V("NURG", "ISO 20022 service level NURG: a normal, not urgent, payment."),
         "TradeFinancing": {"ID": V("HF-FA-2026-007/18", "The financing of this receivable under the factoring "
                                                         "agreement."),
@@ -6872,7 +6910,6 @@ def _(f, n, doc, out):
                            "ContractDocumentReference": {"ID": V("HF-FA-2026-007", "The factoring agreement.")},
                            "DocumentReference": {"ID": V("HF-ASSIGN-26-0091", "The notice of assignment.")},
                            "FinancingParty": party("24-xb", short=True),
-                           "FinancingFinancialAccount": kit.account("24-xb", "The factor's account."),
                            "Clause": {"ID": V("HF-FA-7.2", "The clause on payment."),
                                       "Content": V("Payment to any other account does not discharge the buyer.",
                                                    "What it says.")}},
@@ -7764,128 +7801,9 @@ FLOWS["mast"] = MAST
 
 # ---------------------------------------------------------------- foreign-currency debit and credit notes
 def sea_with_debit(n, doc):
-    if doc["doc"] != "DebitNote":
-        return sea(n, doc)
-    f = SEA
-    no = f.number("debit-note", doc["from"], "DebitNote")
-    fee, storage = Decimal("38.500"), Decimal("12.750")
-    total = fee + storage
-    rule = ("O", 0, None, "Lisavu has no sales tax: no tax applies (category O).", None)
-    xbl = money(total / Decimal("0.4"), "XBL")
-    line = {"ID": V("1", "The inspection."), "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, f"urn:{no}:1")), "Its "
-                                                                                                          "UUID."),
-            "Note": V("Customs inspection of the container at Selanu.", "What is charged."),
-            "DebitedQuantity": qty(1, "E48", "One inspection."),
-            "LineExtensionAmount": amount(total, "XLC", "Inspection and storage, as customs charged them."),
-            "TaxInclusiveLineExtensionAmount": amount(total, "XLC", "No tax on the island."),
-            "TaxPointDate": V(f.date(16), "The day customs charged the fee."),
-            **kit.cost_centre("1-xl", "The buyer's cost centre that paid customs."),
-            "PaymentPurposeCode": V("SCVE", "What the payment is for, as an ISO 20022 purpose: services, the inspection and storage recharged to the seller."),
-            "FreeOfChargeIndicator": V("false", "Charged."),
-            "InvoicePeriod": {"StartDate": V(f.date(14), "The container was held"), "EndDate": V(f.date(15),
-                                                                                                "for a day.")},
-            "OrderLineReference": {"LineID": V("1", "The benches' order line.")},
-            "DespatchLineReference": {"LineID": V("1", "The despatch line."),
-                                      "DocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
-            "ReceiptLineReference": {"LineID": V("1", "The receipt line."),
-                                     "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")}},
-            "WorkReportLineReference": {"LineID": V("1", "The inspection report's line."),
-                                        "DocumentReference": {"ID": V("XL-CUS-INSP-26-0517", "Customs' inspection "
-                                                                                             "report.")}},
-            "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The goods' invoice.")}},
-            "DocumentReference": {"ID": V("XL-CUS-RCPT-26-0517", "Customs' receipt for the fee.")},
-            "PricingReference": {"AlternativeConditionPrice": {"PriceAmount": price(total, "XLC", "The fee as "
-                                                                                                  "customs set it.")}},
-            "OriginatorParty": party("19-xl", short=True),
-            "CollectedForParty": party("19-xl", short=True),
-            "PaymentTerms": {"Note": V("Pay within 30 days.", "When.")},
-            "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax.")},
-            "AllowanceCharge": {"ChargeIndicator": V("true", "The storage, a charge on the line."),
-                                "AllowanceChargeReasonCode": V("WH", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-                                "AllowanceChargeReason": V("Storage while held", "In words."),
-                                "Amount": amount(storage, "XLC", "One day's storage."),
-                                "BaseAmount": amount(fee, "XLC", "The inspection fee.")},
-            "DeliveryTerms": {"ID": V("CIF", "As the goods were sold.", schemeID="INCOTERMS")},
-            "ItemPriceExtension": {"Amount": amount(total, "XLC", "The line's price.")},
-            "SubDebitNoteLine": [{"ID": V("1.1", "The inspection fee."),
-                                  "LineExtensionAmount": amount(fee, "XLC", "Customs' fee."),
-                                  "Item": {"Name": V("Customs inspection fee", "What.")}},
-                                 {"ID": V("1.2", "The storage."),
-                                  "LineExtensionAmount": amount(storage, "XLC", "One day."),
-                                  "Item": {"Name": V("Storage at the port", "What.")}}],
-            "Item": {"Name": V("Customs inspection of container " + CONTAINER, "What is debited.")},
-            "Price": {"PriceAmount": price(fee, "XLC", "The fee.")}}
-    to_xbl = {"SourceCurrencyCode": V("XLC", "The debit note's currency."),
-              "TargetCurrencyCode": V("XBL", "The distributor's currency."),
-              "CalculationRate": V("2.5", "1 coral = 2.5 lume, the reference rate."),
-              "MathematicOperatorCode": V("Multiply", "Coral times the rate gives lume."),
-              "Date": V(f.date(18), "The rate of the issue date.")}
-    out = {"ID": V(no, "The buyer's debit note number."), "IssueDate": V(f.date(18), "After customs charged the "
-                                                                                     "inspection."),
-           "DebitNoteTypeCode": V("383", "UN/EDIFACT 1001 code 383: debit note."),
-           "DueDate": V(f.date(48), "Thirty days."),
-           "Note": V("The illegible mark is the packer's responsibility under the agreement.", "Why the seller "
-                                                                                               "pays."),
-           "TaxPointDate": V(f.date(16), "The day the fee was charged."),
-           "DocumentCurrencyCode": kit.currency_line("XLC", "the buyer's currency, in which customs charged"),
-           "TaxCurrencyCode": V("XLC", "No tax, but stated in the island's currency."),
-           "PricingCurrencyCode": V("XLC", "The fee is priced in coral."),
-           "PaymentCurrencyCode": V("XBL", "The distributor pays in lume."),
-           "PaymentAlternativeCurrencyCode": V("XLC", "The amount in coral, for comparison."),
-           **kit.cost_centre("1-xl", "The buyer's cost centre."),
-           "LineCountNumeric": V("1", "One line."),
-           "InvoicePeriod": {"StartDate": V(f.date(14), "Held from discharge"), "EndDate": V(f.date(15), "to "
-                                                                                                       "release.")},
-           "DiscrepancyResponse": {"ResponseCode": V("2", "A packaging fault."),
-                                   "Description": V(f"Heat-treatment mark illegible on pallet "
-                                                    f"{kit.unit_id('6-xb', f, 7).value}.", "The fault, with the "
-                                                    "pallet's SSCC.")},
-           "OrderReference": {"ID": V(f.numbers["order"], "The order.")},
-           "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")},
-           "DeliveryNoteDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading, the note the goods "
-                                                                      "came with.")},
-           "WorkReportDocumentReference": {"ID": V("XL-CUS-INSP-26-0517", "Customs' inspection report.")},
-           "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")},
-           "StatementDocumentReference": {"ID": V(f.numbers["statement"], "The factor's statement, which this "
-                                                                          "debit does not touch.")},
-           "OriginatorDocumentReference": {"ID": V("VT-CLAIM-26-0021", "The buyer's claim.")},
-           "ContractDocumentReference": {"ID": V(f.numbers["agreement"], "The digital agreement.")},
-           "ProjectReference": {"ID": V(HARBOUR_PROJECT, "The buyer's project number for the harbour parks of "
-                                                         "Selanu."),
-                                "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:project:harbour-parks")), "Its "
-                                                                                                           "UUID."),
-                                "IssueDate": V(f.date(3), "Started with the order."),
-                                "WorkPhaseReference": {"ID": V("PH-1", "Benches for the harbour park."),
-                                                       "WorkPhaseCode": V("SUPPLY", "The supply phase.")}},
-           "BuyerAssignedReference": {"BuyerReferenceCode": V("LD-AP-CLAIMS", "The distributor's claims desk.")},
-           "PurchaseReference": {"ID": V(CONTAINER, "The container the charge is about.")},
-           "Annotation": {"AnnotationContent": V("The distributor may claim it from the packer.", "A remark.")},
-           "Signature": seal("1-xl", "VT-SIG-26-DN"),
-           "PayeeParty": party("1-xl", short=True),
-           "BuyerCustomerParty": {"Party": party("6-xb", short=True)},
-           "SellerSupplierParty": {"Party": party("1-xl", short=True)},
-           "Delivery": {"ActualDeliveryDate": V(f.date(17), "The goods' arrival at the 3PL.")},
-           "DeliveryTerms": {"ID": V("CIF", "As sold.", schemeID="INCOTERMS")},
-           "PaymentMeans": kit.payment_means(f, "1-xl", "6-xb", "1-xl", 18, 30, no, "The buyer's account."),
-           "PaymentTerms": {"Note": V("30 days net.", "The terms.")},
-           "TaxExchangeRate": {**to_xbl, "TargetCurrencyCode": V("XLC", "No conversion: the tax currency is "
-                                                                        "coral."),
-                               "CalculationRate": V("1", "The same currency.")},
-           "PricingExchangeRate": {**to_xbl, "TargetCurrencyCode": V("XLC", "Priced in coral."),
-                                   "CalculationRate": V("1", "The same currency.")},
-           "PaymentExchangeRate": to_xbl,
-           "PaymentAlternativeExchangeRate": {**to_xbl, "TargetCurrencyCode": V("XLC", "The coral equivalent."),
-                                              "CalculationRate": V("1", "The same.")},
-           "TaxTotal": {"TaxAmount": amount(0, "XLC", "No tax on the island."),
-                        "TaxSubtotal": {"TaxableAmount": amount(total, "XLC", "The debit."),
-                                        "TaxAmount": amount(0, "XLC", "No tax: the island has no sales tax."),
-                                        "TaxCategory": kit.tax_category(rule)}},
-           "LegalMonetaryTotal": {"LineExtensionAmount": amount(total, "XLC", "The line."),
-                                  "TaxExclusiveAmount": amount(total, "XLC", "No tax."),
-                                  "PayableAmount": amount(total, "XLC", f"Payable; {xbl} lume at the rate."),
-                                  "PayableAlternativeAmount": amount(xbl, "XBL", "The same in lume.")},
-           "DebitNoteLine": line}
-    return out
+    """The sea flow has no debit note: the buyer's debit note sea/28 is removed, the customs inspection and the
+    day of storage it passed on are the second line of the seller's credit note sea/26 (D30 point 3, O6, D9)."""
+    return sea(n, doc)
 
 
 def tender_with_credit(n, doc):
@@ -9313,6 +9231,15 @@ def _(f, n, doc, out):
     pm = out["PaymentMeans"]
     pm["CreditAccount"] = {"AccountID": V("HF-CL-VT-001", "The credit line the factor granted the buyer, against "
                                                           "which the receivable is held.")}
+    # the balance runs from the shipment: the invoice states it and the transport document (sea/22#F13)
+    for dl in lines_of(out, "Delivery"):
+        dl["ActualDeliveryDate"] = V(issued, "Under CIF the goods are delivered when they are on board at "
+                                             "Lumeport: the day the balance's 45 days run from.")
+        dl["DeliveryLocation"] = kit.place("XBLMP", "Where CIF delivers: on board at the port of loading.")
+    refs = out.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    out["AdditionalDocumentReference"] = refs + [{"ID": V(f.numbers["bl"], "The bill of lading of the shipment "
+                                                                         "on board, which dates the delivery.")}]
     return {}       # the invoice bills the buyer's stock too: the port is named on its line only (O172)
 
 

@@ -1999,7 +1999,7 @@
    "doc": "CreditNote",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "One side frame arrived in a crushed carton, cracked; the distributor credits it, and the buyer deducts the credit from what it pays the factor.",
+   "why": "One side frame arrived in a crushed carton, cracked, and a pallet's illegible heat-treatment mark made customs inspect the container: the distributor credits the frame as goodwill and the inspection and the day of storage the buyer paid, and the buyer deducts the credit from what it pays the factor.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
     "AccountingCustomerParty": "1-xl"
@@ -3816,7 +3816,8 @@
    "parties": {
     "AccountingCustomerParty": "1-xl",
     "AccountingSupplierParty": "6-xb"
-   }
+   },
+   "removed": "Removed 2026-11-19 (D30 point 3, O6, D9): the customs inspection and the day of storage that Velumi paid are a cost passed on, which Lumeway credits as the second line of its credit note (sea/26); a buyer's debit note is not a seller's charge. Its number 28 is not used again (D28)."
   },
   {
    "flow": "sea",

@@ -45,8 +45,8 @@ The factor, who now owns the receivables, sends the statement of account on beha
 
 Inside `StatementPeriod`:
 
-- `StartDate` = **2026-05-14**  
-  From the invoice.
+- `StartDate` = **2026-05-08**  
+  From the account's first movement, the deposit paid on the order's acceptance (sea/25#F6).
 - `EndDate` = **2026-06-13**  
   To the statement date.
 
@@ -335,16 +335,14 @@ Inside `StatementLine`:
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InvoicePeriod/StartDate` = **2026-05-08**  
-  The order's deposit period.
-- `InvoicePeriod/EndDate` = **2026-05-09**  
-  Paid and received.
 - `CollectedPayment/ID` = **VT-DEP-26-0412**  
   The deposit payment.
 - `CollectedPayment/PaidAmount` = **10000.00** (currencyID `XBL`)  
   Paid.
 - `CollectedPayment/ReceivedDate` = **2026-05-09**  
   Received by the distributor.
+- `CollectedPayment/PaidDate` = **2026-05-08**  
+  Paid by the buyer the day the order was accepted: the payment's dates, not an invoice period (sea/25#F3).
 
 ## The document
 
@@ -367,7 +365,7 @@ Inside `StatementLine`:
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode listID="urn:ubl-examples:world:codelist:StatementTypeCode">ACCOUNT</cbc:StatementTypeCode>
   <cac:StatementPeriod>
-    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:StartDate>2026-05-08</cbc:StartDate>
     <cbc:EndDate>2026-06-13</cbc:EndDate>
   </cac:StatementPeriod>
   <cac:AdditionalDocumentReference>
@@ -619,14 +617,11 @@ Inside `StatementLine`:
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-05-08</cbc:StartDate>
-      <cbc:EndDate>2026-05-09</cbc:EndDate>
-    </cac:InvoicePeriod>
     <cac:CollectedPayment>
       <cbc:ID>VT-DEP-26-0412</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
       <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+      <cbc:PaidDate>2026-05-08</cbc:PaidDate>
     </cac:CollectedPayment>
   </cac:StatementLine>
 </Statement>
