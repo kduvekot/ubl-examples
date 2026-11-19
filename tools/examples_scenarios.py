@@ -5913,6 +5913,8 @@ def furniture(n, doc):
                         "them.")
         out["IssueTime"] = V("07:30:00", "When the loaded van left the workshop, before the goods-in opens at the "
                                          "store, about 80 km away.")
+        for ln in out["DespatchLine"]:   # the store's planning notes of the order are not the maker's to repeat
+            ln.pop("Note", None)
         sh = out["Shipment"]
         sh.pop("Consignment", None)      # the maker's own van: no carrier, no consignment number
         sh["Delivery"] = {"Despatch": {"ActualDespatchDate": V(f.date(21), "The van left Marrowdale in the morning.")},
