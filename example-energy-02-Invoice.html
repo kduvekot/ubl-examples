@@ -18,7 +18,8 @@ Ferrano Energy</h1>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA">Invoice
 in the UBL 2.5 specification</a></em></p>
 <p>The grid operator charges the retail company for the use of the
-networks at the factory's and the warehouse's connections.</p>
+networks at the factory's and the warehouse's connections, and credits
+the 750 kWh its February estimate charged the warehouse too much.</p>
 <p><a href="examples/energy/02-Invoice.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -70,7 +71,7 @@ Urvania's value added tax becomes due on the invoice date.</li>
 <code>ISO 4217 Alpha</code>)<br />
 The ferra, the seller's currency; it has no minor unit. The code is from
 the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.</li>
-<li><code>LineCountNumeric</code> = <strong>3</strong><br />
+<li><code>LineCountNumeric</code> = <strong>4</strong><br />
 The number of invoice lines, as a check on the transfer.</li>
 <li><code>DefaultLanguageCode</code> = <strong>en</strong> (listID
 <code>ISO 639</code>)<br />
@@ -685,7 +686,7 @@ Urvanian practice: a cash discount for early payment, statutory interest
 on late payment.</li>
 <li><code>SettlementDiscountPercent</code> = <strong>2</strong><br />
 The cash discount for early payment.</li>
-<li><code>SettlementDiscountAmount</code> = <strong>67095</strong>
+<li><code>SettlementDiscountAmount</code> = <strong>66983</strong>
 (currencyID <code>XUF</code>)<br />
 The discount on the amount payable, if paid in time.</li>
 <li><code>PaymentTermsDetailsURI</code> = <strong><a
@@ -716,13 +717,13 @@ interest calculation method list: SIMPLE = Simple interest.</li>
 <h3 id="tax-total">Tax Total</h3>
 <p>Inside <code>TaxTotal</code>:</p>
 <ul>
-<li><code>TaxAmount</code> = <strong>559122</strong> (currencyID
+<li><code>TaxAmount</code> = <strong>558192</strong> (currencyID
 <code>XUF</code>)<br />
 The sum of the tax of all categories.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>2795610</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>2790960</strong>
 (currencyID <code>XUF</code>)<br />
 The sum of the line amounts in this tax category.</li>
-<li><code>TaxSubtotal/TaxAmount</code> = <strong>559122</strong>
+<li><code>TaxSubtotal/TaxAmount</code> = <strong>558192</strong>
 (currencyID <code>XUF</code>)<br />
 20 % of the taxable amount, rounded to the minor unit of the
 currency.</li>
@@ -745,16 +746,16 @@ list in its schemeID.</li>
 <h3 id="legal-monetary-total">Legal Monetary Total</h3>
 <p>Inside <code>LegalMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>2795610</strong>
+<li><code>LineExtensionAmount</code> = <strong>2790960</strong>
 (currencyID <code>XUF</code>)<br />
 The sum of the line amounts.</li>
-<li><code>TaxExclusiveAmount</code> = <strong>2795610</strong>
+<li><code>TaxExclusiveAmount</code> = <strong>2790960</strong>
 (currencyID <code>XUF</code>)<br />
 The total without tax: the line amounts, no allowances or charges.</li>
-<li><code>TaxInclusiveAmount</code> = <strong>3354732</strong>
+<li><code>TaxInclusiveAmount</code> = <strong>3349152</strong>
 (currencyID <code>XUF</code>)<br />
 The total without tax plus the tax.</li>
-<li><code>PayableAmount</code> = <strong>3354732</strong> (currencyID
+<li><code>PayableAmount</code> = <strong>3349152</strong> (currencyID
 <code>XUF</code>)<br />
 What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 2.2.2 Manifest Values).</li>
@@ -962,6 +963,85 @@ The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
 <code>KWH</code>)<br />
 The price is per one unit.</li>
+<li><code>ID</code> = <strong>4</strong><br />
+The line number.</li>
+<li><code>InvoicedQuantity</code> = <strong>-750</strong> (unitCode
+<code>KWH</code>)<br />
+February's estimate corrected: February's network invoice charged the
+warehouse's connection 750 kWh it did not use, which are credited at the
+network tariff.</li>
+<li><code>LineExtensionAmount</code> = <strong>-4650</strong>
+(currencyID <code>XUF</code>)<br />
+-750 × 6.2, rounded to the minor unit of the currency.</li>
+<li><code>InvoicePeriod/StartDate</code> =
+<strong>2026-02-01</strong><br />
+The month corrected: February.</li>
+<li><code>InvoicePeriod/EndDate</code> =
+<strong>2026-02-28</strong><br />
+Its last day.</li>
+<li><code>InvoicePeriod/DescriptionCode</code> = <strong>MONTH</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:PeriodDescriptionCode</code>)<br />
+A month's consumption. The code is from the Trade Accord's period
+description list: MONTH = Calendar month.</li>
+<li><code>InvoicePeriod/Description</code> = <strong>February
+2026</strong><br />
+The period in words.</li>
+<li><code>Delivery/DeliveryLocation/ID</code> =
+<strong>FG-CP-4160-E1</strong><br />
+The consumption point whose network use the line bills.</li>
+<li><code>Delivery/DeliveryLocation/Description</code> =
+<strong>Warehouse of Castrano Logistics</strong><br />
+The connection in words.</li>
+<li><code>Item/Description</code> = <strong>Krek skul drek zuktrek
+rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</strong>
+(languageID <code>qau</code>)<br />
+The seller's description in Urvanian, the seller's language; item
+network-electricity of Ferrano Grid (world/items.json).</li>
+<li><code>Item/Description</code> = <strong>Use of the electricity
+distribution network, per kilowatt hour taken at the
+connection.</strong> (languageID <code>en-XU</code>)<br />
+The seller's description in English, the working language between the
+countries; item network-electricity of Ferrano Grid
+(world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Zuktrek gatir krek</strong>
+(languageID <code>qau</code>)<br />
+The item's name in Urvanian, the seller's language; item
+network-electricity of Ferrano Grid (world/items.json).</li>
+<li><code>Item/Name</code> = <strong>Electricity network use</strong>
+(languageID <code>en-XU</code>)<br />
+The item's name in English, the working language between the countries;
+item network-electricity of Ferrano Grid (world/items.json).</li>
+<li><code>Item/SellersItemIdentification/ID</code> =
+<strong>FG-NET-E</strong><br />
+The seller's own item number; item network-electricity of Ferrano Grid
+(world/items.json).</li>
+<li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>S</strong>
+(schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+A domestic supply in Urvania: its value added tax applies at the
+standard rate (category S). The code is from the world's copy of
+UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An
+identifier that holds a code names the code's list in its schemeID.</li>
+<li><code>Item/ClassifiedTaxCategory/Percent</code> =
+<strong>20</strong><br />
+The rate for this category.</li>
+<li><code>Item/ClassifiedTaxCategory/SupplyTypeCode</code> =
+<strong>SERVICES</strong> (listID
+<code>urn:ubl-examples:world:codelist:SupplyTypeCode</code>)<br />
+Whether the category applies to goods or services. The code is from the
+Trade Accord's supply type list: SERVICES = Services.</li>
+<li><code>Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
+<strong>VAT</strong> (schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+VAT = Value added tax. An identifier that holds a code names the code's
+list in its schemeID.</li>
+<li><code>Price/PriceAmount</code> = <strong>6.2</strong> (currencyID
+<code>XUF</code>)<br />
+The seller's price per unit (world/items.json).</li>
+<li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
+<code>KWH</code>)<br />
+The price is per one unit.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -979,7 +1059,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-03&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;3&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;4&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DefaultLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:DefaultLanguageCode</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -1191,7 +1271,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansID</span>&gt;1&lt;/<span class="kw">cbc:PaymentMeansID</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;30 days net; 2 % discount when paid within 10 days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountPercent</span>&gt;2&lt;/<span class="kw">cbc:SettlementDiscountPercent</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;67095&lt;/<span class="kw">cbc:SettlementDiscountAmount</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;66983&lt;/<span class="kw">cbc:SettlementDiscountAmount</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.ferranogrid.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SettlementPeriod</span>&gt;</span>
@@ -1205,10 +1285,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyInterestRate</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;559122&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;558192&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2795610&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;559122&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2790960&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;558192&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;20&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
@@ -1219,10 +1299,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2795610&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2795610&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3354732&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3354732&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2790960&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxExclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2790960&lt;/<span class="kw">cbc:TaxExclusiveAmount</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3349152&lt;/<span class="kw">cbc:TaxInclusiveAmount</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;3349152&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1325,9 +1405,47 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;-750&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;-4650&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PeriodDescriptionCode&quot;</span>&gt;MONTH&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;February 2026&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:InvoicePeriod</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;FG-CP-4160-E1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Warehouse of Castrano Logistics&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Use of the electricity distribution network, per kilowatt hour taken at the connection.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Zuktrek gatir krek&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Electricity network use&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;FG-NET-E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;20&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SupplyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SupplyTypeCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:SupplyTypeCode</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;6.2&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ff161dab3e77acec7f90bd2d87a96c86a57575d1"><code>ff161da</code></a> of 2026-11-19 14:01 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
 </body>
 </html>

@@ -63,13 +63,13 @@ Who the statement is for.</li>
 The lume, the currency of the invoices; it has two decimals. The code is
 from the world's copy of UBL's Currency (ISO 4217) list: XBL =
 Lume.</li>
-<li><code>TotalDebitAmount</code> = <strong>53814.00</strong>
+<li><code>TotalDebitAmount</code> = <strong>57974.00</strong>
 (currencyID <code>XBL</code>)<br />
 The invoice in full.</li>
 <li><code>TotalCreditAmount</code> = <strong>10000.00</strong>
 (currencyID <code>XBL</code>)<br />
 The deposit the buyer paid on the order.</li>
-<li><code>TotalBalanceAmount</code> = <strong>43814.00</strong>
+<li><code>TotalBalanceAmount</code> = <strong>47974.00</strong>
 (currencyID <code>XBL</code>)<br />
 What is owed.</li>
 <li><code>LineCountNumeric</code> = <strong>2</strong><br />
@@ -622,10 +622,10 @@ and the line number.</li>
 <li><code>BalanceBroughtForwardIndicator</code> =
 <strong>false</strong><br />
 A new item, not a balance carried over.</li>
-<li><code>DebitLineAmount</code> = <strong>53814.00</strong> (currencyID
+<li><code>DebitLineAmount</code> = <strong>57974.00</strong> (currencyID
 <code>XBL</code>)<br />
 The invoice in full.</li>
-<li><code>BalanceAmount</code> = <strong>53814.00</strong> (currencyID
+<li><code>BalanceAmount</code> = <strong>57974.00</strong> (currencyID
 <code>XBL</code>)<br />
 Before the deposit.</li>
 <li><code>PaymentPurposeCode</code> = <strong>GDDS</strong> (listID
@@ -727,7 +727,7 @@ and the line number.</li>
 <li><code>CreditLineAmount</code> = <strong>10000.00</strong>
 (currencyID <code>XBL</code>)<br />
 The deposit.</li>
-<li><code>BalanceAmount</code> = <strong>43814.00</strong> (currencyID
+<li><code>BalanceAmount</code> = <strong>47974.00</strong> (currencyID
 <code>XBL</code>)<br />
 Open after the deposit: what the buyer still owes.</li>
 <li><code>PaymentMeans/PaymentMeansCode</code> = <strong>30</strong>
@@ -764,9 +764,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:43:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;53814.00&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.00&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalBalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;43814.00&lt;/<span class="kw">cbc:TotalBalanceAmount</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalBalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;47974.00&lt;/<span class="kw">cbc:TotalBalanceAmount</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;2&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:StatementTypeCode&quot;</span>&gt;ACCOUNT&lt;/<span class="kw">cbc:StatementTypeCode</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:StatementPeriod</span>&gt;</span>
@@ -964,8 +964,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The invoice, bought by the factor.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;56439119-78e3-59ec-bc7d-84c3d3a46f09&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceBroughtForwardIndicator</span>&gt;false&lt;/<span class="kw">cbc:BalanceBroughtForwardIndicator</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;53814.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;53814.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;GDDS&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-28&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
@@ -1036,7 +1036,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Paid to the distributor before the invoice was assigned.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;16aec267-0a53-5561-ad4f-79c534c1d918&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;43814.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;47974.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
@@ -1053,6 +1053,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Statement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ff161dab3e77acec7f90bd2d87a96c86a57575d1"><code>ff161da</code></a> of 2026-11-19 14:01 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
 </body>
 </html>

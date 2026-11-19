@@ -17,9 +17,10 @@ Trading to Lumeway Distribution</h1>
 and freight (Bayvarra → island Lisavu)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA">Order
 in the UBL 2.5 specification</a></em></p>
-<p>Delivery terms CIF port of the island: the order names the buyer's
-3PL as delivery party; freight and insurance are the seller's
-business.</p>
+<p>The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu
+and 8 for its own stock, and spare frames. Delivery terms CIF port of
+the island: the order names the buyer's 3PL as delivery party; freight
+and insurance are the seller's business.</p>
 <p><a href="examples/sea/05-Order.xml">The XML file</a> is valid against
 the UBL 2.5 schemas and the world's code lists. Below, every value with
 its place in the document and the reason for it.</p>
@@ -522,7 +523,7 @@ Where the delivery terms place the handover of the goods.</li>
 <li><code>TaxAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
 The sum of the tax of all categories.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>50724.00</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>54884.00</strong>
 (currencyID <code>XBL</code>)<br />
 The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
@@ -558,10 +559,10 @@ the code's list in its schemeID.</li>
 <h3 id="anticipated-monetary-total">Anticipated Monetary Total</h3>
 <p>Inside <code>AnticipatedMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>50724.00</strong>
+<li><code>LineExtensionAmount</code> = <strong>54884.00</strong>
 (currencyID <code>XBL</code>)<br />
 The sum of the line amounts.</li>
-<li><code>PayableAmount</code> = <strong>50724.00</strong> (currencyID
+<li><code>PayableAmount</code> = <strong>54884.00</strong> (currencyID
 <code>XBL</code>)<br />
 What the buyer expects to pay, tax included.</li>
 </ul>
@@ -575,11 +576,12 @@ The line number: a line added by a change keeps a number of its own
 <strong>b79591a7-1ff5-5442-b47e-328e3c23e0c7</strong><br />
 A universally unique identifier of the line, derived from the document
 and the line number.</li>
-<li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
+<li><code>LineItem/Quantity</code> = <strong>104</strong> (unitCode
 <code>EA</code>)<br />
-One 40-foot container: 24 pallets of 4 benches.</li>
+104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour
+parks and two pallets for the buyer's own stock.</li>
 <li><code>LineItem/LineExtensionAmount</code> =
-<strong>49920.00</strong> (currencyID <code>XBL</code>)<br />
+<strong>54080.00</strong> (currencyID <code>XBL</code>)<br />
 Quantity times price, rounded to the minor unit.</li>
 <li><code>LineItem/OrderedShipment/Shipment/ID</code> =
 <strong>VT-SH-PLAN-1</strong><br />
@@ -590,8 +592,8 @@ The shipment the buyer plans for this line: one container.</li>
 No urgency for the sea part. The code is from the Trade Accord's
 shipping priority list: STANDARD = Standard.</li>
 <li><code>LineItem/OrderedShipment/Shipment/TotalTransportHandlingUnitQuantity</code>
-= <strong>24</strong> (unitCode <code>EA</code>)<br />
-The pallets the line's benches come on: 24 of four (sea/05#F1).</li>
+= <strong>26</strong> (unitCode <code>EA</code>)<br />
+The pallets the line's benches come on: 26 of four (sea/05#F1).</li>
 <li><code>LineItem/OrderedShipment/Package/ID</code> =
 <strong>PAL</strong><br />
 Packed on pallets.</li>
@@ -1097,7 +1099,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;50724.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54884.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1111,20 +1113,20 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;50724.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;50724.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54884.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54884.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AnticipatedMonetaryTotal</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:UUID</span>&gt;b79591a7-1ff5-5442-b47e-328e3c23e0c7&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;49920.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;104&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54080.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OrderedShipment</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VT-SH-PLAN-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ShippingPriorityLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ShippingPriorityCode&quot;</span>&gt;STANDARD&lt;/<span class="kw">cbc:ShippingPriorityLevelCode</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;24&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;26&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Package</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;PAL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1272,6 +1274,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ff161dab3e77acec7f90bd2d87a96c86a57575d1"><code>ff161da</code></a> of 2026-11-19 14:01 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ea0d486bae37945d217390daaf9ad2435a293c4b"><code>ea0d486</code></a> of 2026-11-19 14:48 UTC</p></div></footer>
 </body>
 </html>
