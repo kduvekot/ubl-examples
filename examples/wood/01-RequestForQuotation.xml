@@ -146,14 +146,14 @@
     </cac:DocumentReference>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
+        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
-        <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800</cbc:ID>
+          <cbc:ID>MS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

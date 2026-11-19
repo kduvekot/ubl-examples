@@ -711,11 +711,11 @@ heat-treated. The code is from the world's copy of UN/EDIFACT 7161
 Special service description: ACH = Heat treatment.</li>
 <li><code>AllowanceChargeReason</code> = <strong>Heat-treated export
 pallets</strong><br />
-96 bundles on pallets treated to ISPM 15, as the quotation offered for
-the export.</li>
+The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM
+15, as the quotation offered for the export.</li>
 <li><code>Amount</code> = <strong>240.00</strong> (currencyID
 <code>XBL</code>)<br />
-96 pallets at 2.50 lume.</li>
+24 pallets at 10.00 lume.</li>
 <li><code>TaxCategory/ID</code> = <strong>G</strong> (schemeID
 <code>UN/EDIFACT EDED 5305</code>)<br />
 An export from Bayvarra: the state sales tax is not charged (category
@@ -805,24 +805,26 @@ What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
-<li><code>InvoicedQuantity</code> = <strong>4800</strong> (unitCode
+<li><code>InvoicedQuantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
-The slats despatched.</li>
+The bundles despatched, 4,800 slats.</li>
 <li><code>LineExtensionAmount</code> = <strong>34560.00</strong>
 (currencyID <code>XBL</code>)<br />
-4800 × 7.2, rounded to the minor unit of the currency.</li>
-<li><code>Item/Description</code> = <strong>Sawn hardwood slat, 1800 ×
-95 × 38 mm, planed, kiln dried.</strong><br />
-The seller's description; item slat-1800 of Marrowdale Sawmill
+96 × 360.0, rounded to the minor unit of the currency.</li>
+<li><code>Item/Description</code> = <strong>Bundle of 50 hardwood bench
+slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak,
+sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high,
+strapped.</strong><br />
+The seller's description; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
-<li><code>Item/Name</code> = <strong>Hardwood bench slat
-1800</strong><br />
-The item's short name; item slat-1800 of Marrowdale Sawmill
+<li><code>Item/Name</code> = <strong>Bench slat 1800, bundle of
+50</strong><br />
+The item's short name; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
-<strong>MS-SL-1800</strong><br />
-The seller's own item number; item slat-1800 of Marrowdale Sawmill
-(world/items.json).</li>
+<strong>MS-SL-1800-50</strong><br />
+The seller's own item number; item slat-bundle-1800 of Marrowdale
+Sawmill (world/items.json).</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>G</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 An export from Bayvarra: the state sales tax is not charged (category
@@ -853,16 +855,12 @@ UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
 from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
 STT = State/provincial sales tax. An identifier that holds a code names
 the code's list in its schemeID.</li>
-<li><code>Price/PriceAmount</code> = <strong>7.2</strong> (currencyID
+<li><code>Price/PriceAmount</code> = <strong>360</strong> (currencyID
 <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
 The price is per one unit.</li>
-<li><code>Price/OrderableUnitFactorRate</code> =
-<strong>50</strong><br />
-The item is priced per piece and ordered in packs: one pack holds 50
-pieces.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -1149,13 +1147,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InvoiceLine</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4800&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Hardwood bench slat 1800&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 hardwood bench slats, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;MS-SL-1800&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;MS-SL-1800-50&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1169,14 +1167,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;7.2&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;360&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OrderableUnitFactorRate</span>&gt;50&lt;/<span class="kw">cbc:OrderableUnitFactorRate</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InvoiceLine</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8fa04c963548717265eacdbe58295bdc439b14e2"><code>8fa04c9</code></a> of 2026-11-19 18:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d4b794c0f93ac653ac96095e1efc617930dce247"><code>d4b794c</code></a> of 2026-11-19 18:28 UTC</p></div></footer>
 </body>
 </html>

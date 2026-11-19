@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weight Statement: Rinova Recovery to Valdara
+Industries · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=cfc6fda70b">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html">World</a></li><li><a href="examples.html" aria-current="page">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="weight-statement-rinova-recovery-to-valdara-industries">Weight
+Statement: Rinova Recovery to Valdara Industries</h1>
+<p><em>Example 4 of the flow "Production waste to recovery (domestic,
+Urvania)" · <a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WEIGHT-STATEMENT-SCHEMA">Weight
+Statement in the UBL 2.5 specification</a></em></p>
+<p>Rinova's weighbridge ticket of the load: the truck weighed full on
+arrival and empty after unloading, so that the difference is the waste
+received. Rinova gives it to the producer, who pays by the net tonne,
+and cites it in its movement report and its invoice (decisions D38,
+D42).</p>
+<p><a href="examples/waste/04-WeightStatement.xml">The XML file</a> is
+valid against the UBL 2.5 schemas and the world's code lists. Below,
+every value with its place in the document and the reason for it.</p>
+<h2 id="values-and-their-reasons">Values and their reasons</h2>
+<h3 id="the-document-itself">The document itself</h3>
+<ul>
+<li><code>UBLVersionID</code> = <strong>2.5</strong><br />
+The earliest version of UBL 2 that defines every element of the
+document, as UBLVersionID asks: computed from the published models of
+UBL 2.0 to 2.5 (world/ubl-versions.json);
+Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+<li><code>CustomizationID</code> =
+<strong>urn:ubl-examples:world:trns:weight-statement:1.0</strong><br />
+The specification the document follows, at each level it claims, chained
+with #compliant#: the Trade Accord's transaction "Weight statement".
+Each has a public description on the world's pages
+(world/specifications.json).</li>
+<li><code>ProfileID</code> =
+<strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
+The Trade Accord's process profile the document belongs to: transport, a
+generic, versioned profile, not the flow; the run of the process is the
+ProfileExecutionID.</li>
+<li><code>ProfileExecutionID</code> =
+<strong>WASTE-2026-01</strong><br />
+This run of the process: the same in every document of the flow.</li>
+<li><code>ID</code> = <strong>RR-WS-26-0210</strong><br />
+The weighbridge ticket number.</li>
+<li><code>UUID</code> =
+<strong>389662b4-907e-55fc-9944-1cf97ccc36c8</strong><br />
+A universally unique identifier of the document, derived from its place
+in the world (UUID version 5), so it stays the same on every build.</li>
+<li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
+Printed after the second weighing.</li>
+<li><code>IssueTime</code> = <strong>10:50:00-01:00</strong><br />
+When the empty truck left the weighbridge; in the issuer's local time,
+with its offset from UTC (D27).</li>
+<li><code>WeightStatementTypeCode</code> = <strong>WEIGHBRIDGE</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:WeightStatementTypeCode</code>)<br />
+A weighbridge ticket: the vehicle and its load weighed. The code is from
+the Trade Accord's weight statement type list: WEIGHBRIDGE = Weighbridge
+ticket.</li>
+</ul>
+<h3 id="sender-party">Sender Party</h3>
+<p>Inside <code>SenderParty</code>:</p>
+<ul>
+<li><code>PartyIdentification/ID</code> = <strong>XU-R-104548</strong>
+(schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
+The party's preferred identifier: its number in the Commercial register
+of Urvania; identity of Rinova Recovery (world/parties.json). Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
+<li><code>AdditionalPartyIdentification/ID</code> =
+<strong>0990:13362</strong> (schemeID <code>ISO 6523</code>)<br />
+A further identifier (the endorsed PartyIdentification holds one only),
+the party's organisation identifier in the structure of ISO/IEC 6523:
+the international code designator 0990 of the Codana Identification
+Agency and the party's Codana company number, which also starts its
+licence plates (decision ID-Q7). No real scheme has the code designator
+0990; identity of Rinova Recovery (world/parties.json).</li>
+<li><code>PartyName/Name</code> = <strong>Rinova Recovery</strong><br />
+The trading name; identity of Rinova Recovery (world/parties.json).</li>
+<li><code>Language/ID</code> = <strong>qau</strong> (schemeID
+<code>ISO 639</code>)<br />
+Urvanian, the language of Urvania and of the party; the code is from the
+range ISO 639 reserves for local use (qaa–qtz), as the world's languages
+are invented (world/countries.json). The code is from the world's copy
+of ISO 639 Language: qau = Urvanian. An identifier that holds a code
+names the code's list in its schemeID.</li>
+<li><code>Language/Name</code> = <strong>Urvanian</strong><br />
+The language's name in English; in the language itself: urvanese.</li>
+<li><code>PostalAddress/ID</code> = <strong>4160202983340277</strong>
+(schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
+The address's number in the national address register of Urvania (16
+digits: the four-digit code of the municipality, 20 for an address, and
+a ten-digit serial number); identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>PostalAddress/AddressTypeCode</code> =
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
+The address follows Urvania's address format (world/countries.json), one
+line after the other, a line left out when the address has none of its
+fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
+Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; PostalZone CityName;
+CountrySubentity. A line is made of the fields named in it, in that
+order, separated by a space; a field the address does not have is left
+out, and a line without any field is left out. A field with two language
+versions (street and town names in a bilingual country) gives both on
+the line, the national language first, then ' / ', then English: the
+building number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines. The code is from the Trade Accord's address format list: XU =
+Address format of Urvania.</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Bek Han
+Zugaz</strong> (languageID <code>qau</code>)<br />
+The street's name in Urvanian: Urvania is officially bilingual, and
+street names are given in both languages (world/countries.json);
+identity of Rinova Recovery (world/parties.json).</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Via del
+Riciclo</strong> (languageID <code>en-XU</code>)<br />
+The street's name in English, the country's other official language; the
+Italian names the British kept are part of English now; identity of
+Rinova Recovery (world/parties.json).</li>
+<li><code>PostalAddress/BuildingNumber</code> =
+<strong>31</strong><br />
+Building number of the postal address. identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
+(languageID <code>qau</code>)<br />
+The town's Urvanian name, which its people have always used. The town or
+locality nearest to the party's place on the map, in its own country and
+state. identity of Rinova Recovery (world/parties.json).</li>
+<li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
+(languageID <code>en-XU</code>)<br />
+The town's English name, inherited from the Italian. The town or
+locality nearest to the party's place on the map, in its own country and
+state. identity of Rinova Recovery (world/parties.json).</li>
+<li><code>PostalAddress/PostalZone</code> = <strong>4140</strong><br />
+Postal code in Urvania's format (4 digits). identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
+Ferrano</strong><br />
+The province, part of an address in Urvania: a subdivision of the
+country (world/countries.json). identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>PostalAddress/TimezoneOffset</code> =
+<strong>-01:00</strong><br />
+The offset from UTC of Urvanian Time, Urvania's legal time, all year:
+there is no summer time (D27, world/countries.json).</li>
+<li><code>PostalAddress/Country/IdentificationCode</code> =
+<strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+Urvania: a user-assigned ISO 3166-1 code, in the world's country code
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>PostalAddress/Country/Name</code> =
+<strong>Urvania</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>Contact/Name</code> = <strong>Transport
+planning</strong><br />
+The party's transport planning desk: the desk for its role in this
+document (it books or uses the transport); identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>Contact/JobTitle</code> = <strong>Logistics
+planner</strong><br />
+The job of the person who answers at the desk; identity of Rinova
+Recovery (world/parties.json).</li>
+<li><code>Contact/Department</code> = <strong>Logistics</strong><br />
+The department the desk belongs to; identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>Contact/Telephone</code> = <strong>+999 1 041 697
+6856</strong><br />
+The party's switchboard, which puts the caller through to the desk.
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Urvania's own plan: Open numbering, kept
+from Italian times: the area code starts with 0 and stays in the number,
+also from abroad; the longer the area code, the shorter the number:
+Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
+Mobiles start with 3 and have 10 digits. identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>Contact/ElectronicMail</code> = <strong><a
+href="mailto:logistics@rinova.example">logistics@rinova.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone; identity of Rinova Recovery (world/parties.json).</li>
+<li><code>Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
+When the desk can be reached; identity of Rinova Recovery
+(world/parties.json).</li>
+<li><code>ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>ElectronicAddress/ElectronicAddressID</code> =
+<strong>XU:XU-R-104548</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and its
+number in the Commercial register of Urvania; identity of Rinova
+Recovery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
+is deprecated.</li>
+</ul>
+<h3 id="receiver-party">Receiver Party</h3>
+<p>Inside <code>ReceiverParty</code>:</p>
+<ul>
+<li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
+(schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
+The party's preferred identifier: its number in the Commercial register
+of Urvania; identity of Valdara Industries (world/parties.json). Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
+<li><code>AdditionalPartyIdentification/ID</code> =
+<strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
+A further identifier (the endorsed PartyIdentification holds one only),
+the party's organisation identifier in the structure of ISO/IEC 6523:
+the international code designator 0990 of the Codana Identification
+Agency and the party's Codana company number, which also starts its
+licence plates (decision ID-Q7). No real scheme has the code designator
+0990; identity of Valdara Industries (world/parties.json).</li>
+<li><code>PartyName/Name</code> = <strong>Valdara
+Industries</strong><br />
+The trading name; identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>PostalAddress/ID</code> = <strong>4160200467394686</strong>
+(schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
+The address's number in the national address register of Urvania (16
+digits: the four-digit code of the municipality, 20 for an address, and
+a ten-digit serial number); identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>PostalAddress/AddressTypeCode</code> =
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
+The address follows Urvania's address format (world/countries.json), one
+line after the other, a line left out when the address has none of its
+fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
+Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; PostalZone CityName;
+CountrySubentity. A line is made of the fields named in it, in that
+order, separated by a space; a field the address does not have is left
+out, and a line without any field is left out. A field with two language
+versions (street and town names in a bilingual country) gives both on
+the line, the national language first, then ' / ', then English: the
+building number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines. The code is from the Trade Accord's address format list: XU =
+Address format of Urvania.</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Bek Stuzman
+Nulban</strong> (languageID <code>qau</code>)<br />
+The street's name in Urvanian: Urvania is officially bilingual, and
+street names are given in both languages (world/countries.json);
+identity of Valdara Industries (world/parties.json).</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Via delle
+Officine</strong> (languageID <code>en-XU</code>)<br />
+The street's name in English, the country's other official language; the
+Italian names the British kept are part of English now; identity of
+Valdara Industries (world/parties.json).</li>
+<li><code>PostalAddress/BuildingNumber</code> =
+<strong>17</strong><br />
+Building number of the postal address. identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
+(languageID <code>qau</code>)<br />
+The town's Urvanian name, which its people have always used. The town or
+locality nearest to the party's place on the map, in its own country and
+state. identity of Valdara Industries (world/parties.json).</li>
+<li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
+(languageID <code>en-XU</code>)<br />
+The town's English name, inherited from the Italian. The town or
+locality nearest to the party's place on the map, in its own country and
+state. identity of Valdara Industries (world/parties.json).</li>
+<li><code>PostalAddress/PostalZone</code> = <strong>4120</strong><br />
+Postal code in Urvania's format (4 digits). identity of Valdara
+Industries (world/parties.json).</li>
+<li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
+Ferrano</strong><br />
+The province, part of an address in Urvania: a subdivision of the
+country (world/countries.json). identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>PostalAddress/TimezoneOffset</code> =
+<strong>-01:00</strong><br />
+The offset from UTC of Urvanian Time, Urvania's legal time, all year:
+there is no summer time (D27, world/countries.json).</li>
+<li><code>PostalAddress/Country/IdentificationCode</code> =
+<strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+Urvania: a user-assigned ISO 3166-1 code, in the world's country code
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>PostalAddress/Country/Name</code> =
+<strong>Urvania</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>Contact/Name</code> = <strong>Transport
+planning</strong><br />
+The party's transport planning desk: the desk for its role in this
+document (it books or uses the transport); identity of Valdara
+Industries (world/parties.json).</li>
+<li><code>Contact/JobTitle</code> = <strong>Logistics
+planner</strong><br />
+The job of the person who answers at the desk; identity of Valdara
+Industries (world/parties.json).</li>
+<li><code>Contact/Department</code> = <strong>Logistics</strong><br />
+The department the desk belongs to; identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>Contact/Telephone</code> = <strong>+999 1 041 386
+4551</strong><br />
+The party's switchboard, which puts the caller through to the desk.
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Urvania's own plan: Open numbering, kept
+from Italian times: the area code starts with 0 and stays in the number,
+also from abroad; the longer the area code, the shorter the number:
+Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
+Mobiles start with 3 and have 10 digits. identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>Contact/ElectronicMail</code> = <strong><a
+href="mailto:logistics@valdara.example">logistics@valdara.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone; identity of Valdara Industries (world/parties.json).</li>
+<li><code>Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
+When the desk can be reached; identity of Valdara Industries
+(world/parties.json).</li>
+<li><code>ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>ElectronicAddress/ElectronicAddressID</code> =
+<strong>XU:XU-R-104274</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and its
+number in the Commercial register of Urvania; identity of Valdara
+Industries (world/parties.json). UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
+</ul>
+<h3 id="weighing-party">Weighing Party</h3>
+<p>Inside <code>WeighingParty</code>:</p>
+<ul>
+<li><code>PartyIdentification/ID</code> = <strong>XU-R-104548</strong>
+(schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
+The same party as at SenderParty, where its full details are given; only
+its identifier and name are repeated.</li>
+<li><code>PartyName/Name</code> = <strong>Rinova Recovery</strong><br />
+The same party as at SenderParty, where its full details are given; only
+its identifier and name are repeated.</li>
+</ul>
+<h3 id="shipment">Shipment</h3>
+<p>Inside <code>Shipment</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>VI-SH-26-0208</strong><br />
+The load weighed.</li>
+<li><code>NetWeightMeasure</code> = <strong>22900</strong> (unitCode
+<code>KGM</code>)<br />
+The waste: the truck full less the truck empty, 38,200 kg − 15,300
+kg.</li>
+<li><code>Consignment/ID</code> = <strong>VI-CS-26-0209</strong><br />
+The consignment weighed.</li>
+<li><code>Consignment/TotalPackagesQuantity</code> =
+<strong>54</strong><br />
+54 bales on the truck, in two layers.</li>
+<li><code>GoodsItem/ID</code> = <strong>1</strong><br />
+The only goods item: one kind of waste.</li>
+<li><code>GoodsItem/Description</code> = <strong>Used polyethylene
+stretch film and film offcuts, baled</strong><br />
+What the waste is, in words.</li>
+<li><code>GoodsItem/HazardousRiskIndicator</code> =
+<strong>false</strong><br />
+Polyethylene film is not hazardous waste: its entry in the waste list
+has no asterisk.</li>
+<li><code>GoodsItem/Item/Description</code> = <strong>Used polyethylene
+stretch film and film offcuts, baled</strong><br />
+The waste, in words.</li>
+<li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
+= <strong>150102</strong> (listID
+<code>urn:ubl-examples:world:XU:codelist:WasteCode</code>)<br />
+The waste by its entry in Urvania's waste list, numbered after the
+European List of Waste: the film comes from the packaging of the parts
+and materials the factory receives and from the wrapping of its own
+pallets, and no chapter for the factory's activity (metal working and
+coating, chapters 08, 11 and 12) has an entry for packaging, so the
+list's rule sends it to chapter 15: 15 01 02 plastic packaging (O191).
+The code is from Urvania's national waste list list: 150102 = Plastic
+packaging.</li>
+<li><code>GoodsItem/ContainingPackage/PackagingTypeCode</code> =
+<strong>BL</strong> (listID
+<code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code>)<br />
+UN/ECE Recommendation 21 code BL: bale, compressed. Loose film would
+fill the trailer long before its payload; pressed into bales of about
+1.2 × 0.8 × 1.0 m and 425 kg, two layers high, a load reaches the weight
+limit first (D42). The code is from the world's copy of UBL's Packaging
+type (UNECE Recommendation 21) list, with a listID: BL = Bale,
+compressed.</li>
+<li><code>GoodsItem/ContainingPackage/PackingMaterial</code> =
+<strong>Steel baling wire</strong><br />
+What holds a bale together.</li>
+<li><code>ShipmentStage/ID</code> = <strong>1</strong><br />
+The one road leg, across Ferrano.</li>
+<li><code>ShipmentStage/TransportModeCode</code> = <strong>3</strong>
+(listID
+<code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
+UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's
+default Transport mode (UNECE Recommendation 19) list: 3 = Road
+transport.</li>
+<li><code>ShipmentStage/TransportMeans/RegistrationNationalityID</code>
+= <strong>XU</strong> (schemeID <code>ISO 3166</code>)<br />
+The country the means of transport is registered in. The code is from
+the world's copy of UBL's Country identification (ISO 3166) list: XU =
+Urvania. An identifier that holds a code names the code's list in its
+schemeID.</li>
+<li><code>ShipmentStage/TransportMeans/RegistrationNationality</code> =
+<strong>Urvania</strong><br />
+The same, in words.</li>
+<li><code>ShipmentStage/TransportMeans/TransportMeansTypeCode</code> =
+<strong>395</strong> (listID <code>UNECE Recommendation 28</code>)<br />
+The kind of means of transport: tractor unit 07 with curtain-side
+trailer; the fleet of Trasvia Haulage (world/parties.json). The code is
+from the world's copy of UN/ECE Recommendation 28 Codes for types of
+means of transport: 395 = Truck, with trailer.</li>
+<li><code>ShipmentStage/TransportMeans/RoadTransport/LicensePlateID</code>
+= <strong>UR 4160 KT</strong> (schemeID
+<code>urn:ubl-examples:world:XU:vehicle-register</code>)<br />
+The registration plate of the truck; the fleet of Trasvia Haulage
+(world/parties.json). The schemeID names the scheme it is from: the
+vehicle register of Urvania (UR, the four-digit number of the
+registering district (4160 Ferrano) and two letters).</li>
+<li><code>ShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID</code>
+= <strong>UR 4160 TR</strong> (schemeID
+<code>urn:ubl-examples:world:XU:vehicle-register</code>)<br />
+The trailer's own plate. The schemeID names the scheme it is from: the
+vehicle register of Urvania (UR, the four-digit number of the
+registering district (4160 Ferrano) and two letters).</li>
+<li><code>ShipmentStage/TransportMeans/OwnerParty/PartyIdentification/ID</code>
+= <strong>XU-R-104822</strong> (schemeID
+<code>urn:ubl-examples:world:XU:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>ShipmentStage/TransportMeans/OwnerParty/PartyName/Name</code>
+= <strong>Trasvia Haulage</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>ShipmentStage/TransportMeans/MeasurementDimension/AttributeID</code>
+= <strong>GROSSWEIGHT</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code>)<br />
+The first weighing: the truck with its load, on arrival. The code is
+from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross
+weight. An identifier that holds a code names the code's list in its
+schemeID.</li>
+<li><code>ShipmentStage/TransportMeans/MeasurementDimension/Measure</code>
+= <strong>38200</strong> (unitCode <code>KGM</code>)<br />
+Within the Accord's 40,000 kg for a combination.</li>
+<li><code>ShipmentStage/TransportMeans/MeasurementDimension/Description</code>
+= <strong>Loaded, at 10:07</strong><br />
+When it was weighed.</li>
+<li><code>ShipmentStage/TransportMeans/MeasurementDimension/AttributeID</code>
+= <strong>TAREWEIGHT</strong> (schemeID
+<code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code>)<br />
+The second weighing: the same truck after unloading. The code is from
+the Trade Accord's dimension attribute list: TAREWEIGHT = Tare weight.
+An identifier that holds a code names the code's list in its
+schemeID.</li>
+<li><code>ShipmentStage/TransportMeans/MeasurementDimension/Measure</code>
+= <strong>15300</strong> (unitCode <code>KGM</code>)<br />
+The tractor about 7,800 kg and the trailer about 7,500 kg
+(world/parties.json).</li>
+<li><code>ShipmentStage/TransportMeans/MeasurementDimension/Description</code>
+= <strong>Empty, at 10:46</strong><br />
+When it was weighed.</li>
+<li><code>ShipmentStage/DriverPerson/ID</code> =
+<strong>XU-DL-0417722</strong><br />
+The number of the driving licence.</li>
+<li><code>ShipmentStage/DriverPerson/FirstName</code> =
+<strong>Ilario</strong><br />
+The driver, who took the ticket.</li>
+<li><code>ShipmentStage/DriverPerson/FamilyName</code> =
+<strong>Bencetti</strong><br />
+The family name.</li>
+</ul>
+<h2 id="the-document">The document</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&#39;1.0&#39;</span> <span class="ot">encoding=</span><span class="st">&#39;UTF-8&#39;</span><span class="fu">?&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">WeightStatement</span> <span class="ot">xmlns=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2&quot;</span> <span class="ot">xmlns:cac=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot;</span> <span class="ot">xmlns:cbc=</span><span class="st">&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot;</span>&gt;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:weight-statement:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;WASTE-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;RR-WS-26-0210&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;389662b4-907e-55fc-9944-1cf97ccc36c8&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;10:50:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:WeightStatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WeightStatementTypeCode&quot;</span>&gt;WEIGHBRIDGE&lt;/<span class="kw">cbc:WeightStatementTypeCode</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SenderParty</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 6523&quot;</span>&gt;0990:13362&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Rinova Recovery&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;qau&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Urvanian&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160202983340277&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Han Zugaz&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via del Riciclo&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;31&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4140&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Transport planning&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Logistics planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Logistics&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 697 6856&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;logistics@rinova.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:XU-R-104548&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SenderParty</span>&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiverParty</span>&gt;</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 6523&quot;</span>&gt;0990:10014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160200467394686&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Stuzman Nulban&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via delle Officine&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;17&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4120&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Transport planning&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Logistics planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Logistics&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 386 4551&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;logistics@valdara.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:XU-R-104274&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReceiverParty</span>&gt;</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:WeighingParty</span>&gt;</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104548&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Rinova Recovery&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:WeighingParty</span>&gt;</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-SH-26-0208&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;22900&lt;/<span class="kw">cbc:NetWeightMeasure</span>&gt;</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0209&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalPackagesQuantity</span>&gt;54&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Used polyethylene stretch film and film offcuts, baled&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;false&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Used polyethylene stretch film and film offcuts, baled&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XU:codelist:WasteCode&quot;</span>&gt;150102&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackagingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)&quot;</span>&gt;BL&lt;/<span class="kw">cbc:PackagingTypeCode</span>&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackingMaterial</span>&gt;Steel baling wire&lt;/<span class="kw">cbc:PackingMaterial</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainingPackage</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;3&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationalityID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:RegistrationNationalityID</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationNationality</span>&gt;Urvania&lt;/<span class="kw">cbc:RegistrationNationality</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportMeansTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 28&quot;</span>&gt;395&lt;/<span class="kw">cbc:TransportMeansTypeCode</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RoadTransport</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LicensePlateID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:vehicle-register&quot;</span>&gt;UR 4160 KT&lt;/<span class="kw">cbc:LicensePlateID</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TrailerLicensePlateID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:vehicle-register&quot;</span>&gt;UR 4160 TR&lt;/<span class="kw">cbc:TrailerLicensePlateID</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RoadTransport</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OwnerParty</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OwnerParty</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;GROSSWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;38200&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Loaded, at 10:07&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;TAREWEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;15300&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Empty, at 10:46&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:MeasurementDimension</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DriverPerson</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XU-DL-0417722&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FirstName</span>&gt;Ilario&lt;/<span class="kw">cbc:FirstName</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FamilyName</span>&gt;Bencetti&lt;/<span class="kw">cbc:FamilyName</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DriverPerson</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">WeightStatement</span>&gt;</span></code></pre></div>
+</main>
+</div>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d4b794c0f93ac653ac96095e1efc617930dce247"><code>d4b794c</code></a> of 2026-11-19 18:28 UTC</p></div></footer>
+</body>
+</html>

@@ -146,9 +146,11 @@
   </cac:ToLocation>
   <cac:Consignment>
     <cbc:ID>MS-CS-26-0629</cbc:ID>
-    <cbc:SummaryDescription>4800 × Hardwood bench slat 1800</cbc:SummaryDescription>
-    <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
+    <cbc:SummaryDescription>96 × Bench slat 1800, bundle of 50</cbc:SummaryDescription>
+    <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalTransportHandlingUnitQuantity>24</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:TotalPackagesQuantity>96</cbc:TotalPackagesQuantity>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>

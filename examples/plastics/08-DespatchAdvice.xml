@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-DA-26-0892</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
@@ -14,6 +14,10 @@
   <cac:OrderReference>
     <cbc:ID>RP-PO-26-0882</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>FB-WB-26-0890</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -127,6 +131,7 @@
     <cac:Consignment>
       <cbc:ID>RR-CS-26-0885</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
+      <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>
@@ -163,17 +168,17 @@
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-04-21</cbc:StartDate>
-        <cbc:EndDate>2026-04-21</cbc:EndDate>
+        <cbc:StartDate>2026-04-23</cbc:StartDate>
+        <cbc:EndDate>2026-04-23</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
-        <cbc:ActualDespatchDate>2026-04-19</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>One barge load of recycled granulate in jumbo bags.</cbc:Note>
+    <cbc:Note>120 tonnes of recycled granulate, in jumbo bags of one tonne.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="TNE">120</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -190,11 +195,9 @@
         <cbc:ID schemeID="ISO 15459-6">KXU13362PER1</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:ItemInstance>
-        <cbc:ManufactureDate>2026-04-16</cbc:ManufactureDate>
-        <cbc:BestBeforeDate>2027-04-16</cbc:BestBeforeDate>
+        <cbc:ManufactureDate>2026-04-17</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>RR-PE-0416</cbc:LotNumberID>
-          <cbc:ExpiryDate>2027-04-16</cbc:ExpiryDate>
+          <cbc:LotNumberID>RR-PE-0417</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Melt flow index</cbc:Name>
             <cbc:Value>0.9 g/10 min</cbc:Value>

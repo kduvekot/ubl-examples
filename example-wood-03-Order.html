@@ -51,8 +51,9 @@ The buyer's order number.</li>
 <strong>0a8bf098-56ca-53c4-9d5d-05c0010de461</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-02-22</strong><br />
-The manufacturer accepts the quotation and orders.</li>
+<li><code>IssueDate</code> = <strong>2026-02-23</strong><br />
+The manufacturer accepts the quotation and orders, on the Monday after
+it (D27).</li>
 <li><code>IssueTime</code> = <strong>14:40:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -405,11 +406,11 @@ heat-treated. The code is from the world's copy of UN/EDIFACT 7161
 Special service description: ACH = Heat treatment.</li>
 <li><code>AllowanceChargeReason</code> = <strong>Heat-treated export
 pallets</strong><br />
-96 bundles on pallets treated to ISPM 15, as the quotation offered for
-the export.</li>
+The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM
+15, as the quotation offered for the export.</li>
 <li><code>Amount</code> = <strong>240.00</strong> (currencyID
 <code>XBL</code>)<br />
-96 pallets at 2.50 lume.</li>
+24 pallets at 10.00 lume.</li>
 <li><code>TaxCategory/ID</code> = <strong>G</strong> (schemeID
 <code>UN/EDIFACT EDED 5305</code>)<br />
 An export from Bayvarra: the state sales tax is not charged (category
@@ -494,45 +495,40 @@ The slats and the pallets.</li>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
 The line number: a line added by a change keeps a number of its own
 (worklist C34).</li>
-<li><code>LineItem/Quantity</code> = <strong>4800</strong> (unitCode
+<li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
-Slats for 960 benches: five per bench, 96 bundles of 50.</li>
+96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five
+a bench, a quarter's supply (D43).</li>
 <li><code>LineItem/LineExtensionAmount</code> =
 <strong>34560.00</strong> (currencyID <code>XBL</code>)<br />
 Quantity times price, rounded to the minor unit.</li>
-<li><code>LineItem/Price/PriceAmount</code> = <strong>7.2</strong>
+<li><code>LineItem/Price/PriceAmount</code> = <strong>360</strong>
 (currencyID <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
-<li><code>LineItem/Price/OrderableUnitFactorRate</code> =
-<strong>50</strong><br />
-The item is priced per piece and ordered in packs: one pack holds 50
-pieces.</li>
-<li><code>LineItem/Item/Description</code> = <strong>Sawn hardwood slat,
-1800 × 95 × 38 mm, planed, kiln dried.</strong><br />
-The seller's description; item slat-1800 of Marrowdale Sawmill
+<li><code>LineItem/Item/Description</code> = <strong>Bundle of 50
+hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part
+VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five
+across and ten high, strapped.</strong><br />
+The seller's description; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/PackQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 One pack of this item.</li>
 <li><code>LineItem/Item/PackSizeNumeric</code> =
 <strong>50</strong><br />
-The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale
-Sawmill (world/items.json).</li>
-<li><code>LineItem/Item/Name</code> = <strong>Hardwood bench slat
-1800</strong><br />
-The item's short name; item slat-1800 of Marrowdale Sawmill
-(world/items.json).</li>
-<li><code>LineItem/Item/BuyersItemIdentification/ID</code> =
-<strong>VI-R-SL1800</strong><br />
-The number the buyer keeps for this item in its own system
+The units in one pack: 50 in a bundle; item slat-bundle-1800 of
+Marrowdale Sawmill (world/items.json).</li>
+<li><code>LineItem/Item/Name</code> = <strong>Bench slat 1800, bundle of
+50</strong><br />
+The item's short name; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
-<strong>MS-SL-1800</strong><br />
-The seller's own item number; item slat-1800 of Marrowdale Sawmill
-(world/items.json).</li>
+<strong>MS-SL-1800-50</strong><br />
+The seller's own item number; item slat-bundle-1800 of Marrowdale
+Sawmill (world/items.json).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -544,7 +540,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;WOOD-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-PO-26-0627&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;0a8bf098-56ca-53c4-9d5d-05c0010de461&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-23&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:40:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OrderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;220&lt;/<span class="kw">cbc:OrderTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
@@ -699,30 +695,26 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4800&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;7.2&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;360&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OrderableUnitFactorRate</span>&gt;50&lt;/<span class="kw">cbc:OrderableUnitFactorRate</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Hardwood bench slat 1800&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-R-SL1800&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MS-SL-1800&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 hardwood bench slats, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MS-SL-1800-50&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderLine</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8fa04c963548717265eacdbe58295bdc439b14e2"><code>8fa04c9</code></a> of 2026-11-19 18:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d4b794c0f93ac653ac96095e1efc617930dce247"><code>d4b794c</code></a> of 2026-11-19 18:28 UTC</p></div></footer>
 </body>
 </html>

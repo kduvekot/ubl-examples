@@ -314,6 +314,14 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>8412</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>8413</SimpleValue>
          </Value>
          <Value ColumnRef="name">

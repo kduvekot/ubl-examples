@@ -168,7 +168,7 @@ sells, exports and tenders. UBL gives it one vocabulary for all of that,
 from the order it places with the mine to the certificate of origin and
 the tender it submits to a public buyer, so the same item, party and
 price data are reused instead of re-entered for every partner.</p>
-<p>In this world it sends 25 and receives 31 documents, and is named in
+<p>In this world it sends 25 and receives 32 documents, and is named in
 19 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
 mine to the factory (domestic, Urvania)</h2>
@@ -802,19 +802,35 @@ Customs Service</a> as <code>ImportingCustomsParty</code>.</p></li>
 </ul>
 <h2 id="production-waste-to-recovery-domestic-urvania">Production waste
 to recovery (domestic, Urvania)</h2>
-<p>The factory's hazardous production waste may only move with a
-notification. In Urvania one administration acts as customs and as
-competent authority for waste permits. The waste processor recovers the
-material and invoices the service.</p>
+<p>Valdara bales the polyethylene film its factory throws out, the
+stretch film of the pallets it receives and the offcuts of its own
+wrapping, about 275 t a year, and sends it to Rinova Recovery across
+Ferrano, which recycles it into granulate. The waste is not hazardous
+and does not leave Urvania, so Urvania's waste law applies, not the
+Basel procedure: the producer notifies the waste stream for the year to
+the environment agency, which acknowledges it with a waste-stream
+number, and the recovery facility reports each load it receives.
+Trasvia, registered with the agency as a waste carrier, brings about 54
+bales a load; Rinova's weighbridge weighs the truck full and empty,
+about 38.2 t and 15.3 t, and Rinova invoices the 22.9 t of waste
+(decision D42).</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-NOTIFICATION-SCHEMA"><strong>Waste
-Notification</strong></a> to <a href="world-19-xu.html">Customs
-Administration of Urvania</a>: The manufacturer, as producer and
-notifier, notifies the planned movements to the competent authority. <a
-href="example-waste-01-WasteNotification.html">See the example
-document</a>.</p>
+Notification</strong></a> to <a href="world-46-xu.html">Environment
+Agency of Urvania</a>: Before the year's movements start, the
+manufacturer, as producer and notifier, notifies its waste stream to
+Urvania's environment agency under the national waste law: the baled
+polyethylene film it sends to Rinova for recycling, about 275 tonnes in
+twelve loads from April to March, by Trasvia. The agency acknowledges it
+with a waste-stream number; no consent is needed for a domestic stream
+of non-hazardous waste for recovery (decision D42). UBL requires a
+CustomsParty in a waste notification, "the competent authority granting
+a permit to export or import the waste"; a domestic stream crosses no
+border, so it names the environment agency, the only competent authority
+there is. <a href="example-waste-01-WasteNotification.html">See the
+example document</a>.</p>
 <p>In it as <code>SenderParty</code>, <code>NotifierParty</code>,
 <code>WasteProducerParty</code>.</p>
 <p>Also mentions: <a href="world-7-xu.html">Rinova Recovery</a> as
@@ -825,19 +841,32 @@ Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
-from <a href="world-7-xu.html">Rinova Recovery</a>: The waste processor
-invoices collection and recovery. <a
+from <a href="world-7-xu.html">Rinova Recovery</a>: The recovery
+facility invoices the collection and recovery of the load by its net
+weight, as its weighbridge found it. <a
 href="example-waste-03-Invoice.html">See the example document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WEIGHT-STATEMENT-SCHEMA"><strong>Weight
+Statement</strong></a> from <a href="world-7-xu.html">Rinova
+Recovery</a>: Rinova's weighbridge ticket of the load: the truck weighed
+full on arrival and empty after unloading, so that the difference is the
+waste received. Rinova gives it to the producer, who pays by the net
+tonne, and cites it in its movement report and its invoice (decisions
+D38, D42). <a href="example-waste-04-WeightStatement.html">See the
+example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-MOVEMENT-SCHEMA"><strong>Waste
 Movement</strong></a> from <a href="world-7-xu.html">Rinova Recovery</a>
-to <a href="world-19-xu.html">Customs Administration of Urvania</a>: The
-recovery facility reports each movement received to the competent
-authority. <a href="example-waste-02-WasteMovement.html">See the example
+to <a href="world-46-xu.html">Environment Agency of Urvania</a>: The
+recovery facility reports to the environment agency the first load it
+has received under the notified stream: 54 bales, 22.9 tonnes net as its
+weighbridge found them, under the waste-stream number. <a
+href="example-waste-02-WasteMovement.html">See the example
 document</a>.</p>
 <p>In it as <code>NotifierParty</code>, <code>WasteProducerParty</code>
 (The Party that acts as the notifier in relation to the Waste Movements
@@ -910,12 +939,18 @@ receiver of the document).</p></li>
 id="wood-slats-for-the-benches-and-timber-for-furniture-bayvarra--urvania-and-at-home">Wood:
 slats for the benches and timber for furniture (Bayvarra → Urvania, and
 at home)</h2>
-<p>The sawmill in Upland State saws timber to size. The manufacturer in
-Urvania asks for a quotation for bench slats to its own dimensions and
-orders them delivered at its factory (DAP), so the sawmill arranges the
-truck across the border. The furniture maker buys timber at home;
-selling for manufacture, the sawmill charges no sales tax and says
-why.</p>
+<p>Marrowdale Sawmill in Upland State saws Valdara's bench slats to
+Valdara's drawing, 1800 × 95 × 38 mm, kiln dried, and sells them by the
+bundle of 50. Valdara asks for a quotation, which the sawmill gives
+under Valdara's purchasing terms, for oak with ash as a priced
+alternative, and orders 96 bundles delivered at its factory (DAP), so
+the sawmill books the truck across the border: 4,800 slats on 24
+heat-treated pallets, about 22.2 t, a quarter's supply for 960 benches.
+This delivery is oak; from May the sawmill saws ash, as its felling in
+the managed forest moves to an ash stand. The furniture maker buys
+timber at home; selling for manufacture, against the furniture maker's
+exemption certificate, the sawmill charges no sales tax and says why
+(decision D43).</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -961,14 +996,15 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUOTATION-SCHEMA"><strong>Quotation</strong></a>
 from <a href="world-36-xb.html">Marrowdale Sawmill</a>: The sawmill
-quotes per thousand slats, delivered at the factory. <a
+quotes per bundle of 50 slats, in oak with ash as an alternative,
+delivered at the factory, under the buyer's purchasing terms. <a
 href="example-wood-02-Quotation.html">See the example document</a>.</p>
 <p>In it as <code>BuyerCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
 Advice</strong></a> from <a href="world-36-xb.html">Marrowdale
-Sawmill</a>: The sawmill announces the slats per lot, so the factory can
-trace the wood of every bench. <a
+Sawmill</a>: The sawmill announces the 96 bundles on their 24 pallets,
+with the lot, so the factory can trace the wood of every bench. <a
 href="example-wood-06-DespatchAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
@@ -1096,6 +1132,8 @@ Urvania</li>
 Urvania</li>
 <li><a href="world-2-xb.html">Lumeport Public Works Department</a>,
 Bayvarra</li>
+<li><a href="world-46-xu.html">Environment Agency of Urvania</a>,
+Urvania</li>
 <li><a href="world-7-xu.html">Rinova Recovery</a>, Urvania</li>
 <li><a href="world-33-xu.html">Ferrano Energy</a>, Urvania</li>
 <li><a href="world-36-xb.html">Marrowdale Sawmill</a>, Bayvarra</li>
@@ -1112,6 +1150,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8fa04c963548717265eacdbe58295bdc439b14e2"><code>8fa04c9</code></a> of 2026-11-19 18:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d4b794c0f93ac653ac96095e1efc617930dce247"><code>d4b794c</code></a> of 2026-11-19 18:28 UTC</p></div></footer>
 </body>
 </html>

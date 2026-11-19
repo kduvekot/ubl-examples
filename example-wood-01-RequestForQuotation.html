@@ -450,28 +450,31 @@ Q29). The code is from the world's copy of UN/EDIFACT 1001 Document
 name: 174 = Drawing.</li>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
 The line number.</li>
-<li><code>LineItem/Quantity</code> = <strong>4800</strong> (unitCode
+<li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
-Slats for 960 benches: five per bench, 96 bundles of 50.</li>
-<li><code>LineItem/Item/Description</code> = <strong>Sawn hardwood slat,
-1800 × 95 × 38 mm, planed, kiln dried.</strong><br />
-The seller's description; item slat-1800 of Marrowdale Sawmill
+96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five
+a bench, a quarter's supply (D43).</li>
+<li><code>LineItem/Item/Description</code> = <strong>Bundle of 50
+hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part
+VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five
+across and ten high, strapped.</strong><br />
+The seller's description; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/PackQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 One pack of this item.</li>
 <li><code>LineItem/Item/PackSizeNumeric</code> =
 <strong>50</strong><br />
-The units in one pack: 50 in a bundle; item slat-1800 of Marrowdale
-Sawmill (world/items.json).</li>
-<li><code>LineItem/Item/Name</code> = <strong>Hardwood bench slat
-1800</strong><br />
-The item's short name; item slat-1800 of Marrowdale Sawmill
+The units in one pack: 50 in a bundle; item slat-bundle-1800 of
+Marrowdale Sawmill (world/items.json).</li>
+<li><code>LineItem/Item/Name</code> = <strong>Bench slat 1800, bundle of
+50</strong><br />
+The item's short name; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
-<strong>MS-SL-1800</strong><br />
-The seller's own item number; item slat-1800 of Marrowdale Sawmill
-(world/items.json).</li>
+<strong>MS-SL-1800-50</strong><br />
+The seller's own item number; item slat-bundle-1800 of Marrowdale
+Sawmill (world/items.json).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -623,14 +626,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4800&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 hardwood bench slats, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Hardwood bench slat 1800&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MS-SL-1800&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MS-SL-1800-50&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
@@ -638,6 +641,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RequestForQuotation</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8fa04c963548717265eacdbe58295bdc439b14e2"><code>8fa04c9</code></a> of 2026-11-19 18:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d4b794c0f93ac653ac96095e1efc617930dce247"><code>d4b794c</code></a> of 2026-11-19 18:28 UTC</p></div></footer>
 </body>
 </html>

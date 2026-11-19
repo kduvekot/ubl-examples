@@ -6,13 +6,18 @@
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BF-PO-26-0637</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
-  <cbc:IssueDate>2026-03-08</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>16:20:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
+    <cbc:IssueDate>2024-01-15</cbc:IssueDate>
+    <cbc:DocumentType>Sales tax exemption certificate: purchase for manufacture (Upland State)</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>

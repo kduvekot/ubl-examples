@@ -163,16 +163,17 @@
   </cac:CustomsParty>
   <cac:Shipment>
     <cbc:ID>MS-SH-26-0632</cbc:ID>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Description>Hardwood bench slat 1800</cbc:Description>
+      <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
       <cbc:DeclaredCustomsValueAmount currencyID="XUF">3480000</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">21600</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
-        <cbc:Description>Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.</cbc:Description>
-        <cbc:Name>Hardwood bench slat 1800</cbc:Name>
+        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>

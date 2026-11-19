@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>RR-EX-26-0887</cbc:ID>
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
-  <cbc:IssueDate>2026-04-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>12:40:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
@@ -68,7 +68,7 @@
     <cbc:ID>RR-CD-26-0888</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-04-19</cbc:StartDate>
+      <cbc:StartDate>2026-04-20</cbc:StartDate>
       <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
     </cac:ValidityPeriod>
     <cac:ApplicableTerritoryAddress>

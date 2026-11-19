@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A code list of the UBL example world: waste list. Urvania's national list of waste, under its waste law: it takes over the entries and the six-digit numbers of the European List of Waste (Commission Decision 2000/532/EC, as amended by Decision 2014/955/EU), whose rules for choosing an entry it also follows: first the chapter of the activity that produces the waste (01 to 12, 17 to 20), then chapters 13 to 15, then 16. The world holds the entries for packaging waste (15 01); a code is written without the spaces of the printed list. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>WasteCode</ShortName>
+      <LongName xml:lang="en">Waste list (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:XU:codelist:WasteCode</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:ubl-examples:world:XU:codelist:WasteCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:XU:codelist:WasteCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/XU-WasteCode.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">Government of Urvania</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" />
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Column Id="name-qau" Use="required">
+         <ShortName>Name</ShortName>
+         <Data Type="string" Lang="qau" />
+      </Column>
+      <Column Id="description" Use="optional">
+         <ShortName>Description</ShortName>
+         <Data Type="string" Lang="en" />
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code" />
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150101</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Paper and cardboard packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Serkrir stan skankek zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 01 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150102</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Plastic packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Kekir zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 02 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150103</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wooden packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Zhendul zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 03 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150104</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Metallic packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Bikmek zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 04 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150105</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Composite packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Dukstan zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 05 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150106</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mixed packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Krennan zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 06 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150107</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Glass packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Hezkan zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 07 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>150109</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Textile packaging</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trilbaz zulskir</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>15 01 09 of the European List of Waste.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -4,13 +4,13 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-INV-26-0208</cbc:ID>
+  <cbc:ID>RR-INV-26-0211</cbc:ID>
   <cbc:UUID>24a1c5fe-6940-5f16-8f48-486333315def</cbc:UUID>
-  <cbc:IssueDate>2026-04-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-04</cbc:DueDate>
+  <cbc:DueDate>2026-05-06</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-06</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6400</cbc:AccountingCostCode>
   <cbc:AccountingCost>Waste disposal and other services</cbc:AccountingCost>
@@ -18,7 +18,13 @@
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
     <cbc:ID>RR-DOC-26-0207</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>RR-WS-26-0210</cbc:ID>
+    <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WeightStatement</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -150,22 +156,34 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-04-02</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Rinova Recovery plant, Ferrano</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-06</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF84RRINV260208</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF84RRINV260208</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF03RRINV260211</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF03RRINV260211</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU700351041620000000418916</cbc:ID>
       <cbc:Name>Rinova Recovery SRU</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice RR-INV-26-0208</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice RR-INV-26-0211</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41620</cbc:ID>
         <cbc:Name>Ferrano Porta Nord</cbc:Name>
@@ -205,12 +223,12 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">11322</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">6788</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.rinova.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-06</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-04</cbc:StartDate>
-      <cbc:EndDate>2026-04-14</cbc:EndDate>
+      <cbc:StartDate>2026-04-06</cbc:StartDate>
+      <cbc:EndDate>2026-04-16</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
@@ -219,10 +237,10 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">94354</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">56563</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">471770</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">94354</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">282815</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">56563</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -233,18 +251,18 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">471770</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">566124</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">566124</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">282815</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">282815</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">339378</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">339378</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="TNE">38.2</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">471770</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="TNE">22.9</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">282815</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qau">Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz tanrir.</cbc:Description>
-      <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne collected.</cbc:Description>
+      <cbc:Description languageID="qau">Tuzskaz hir drek drunbaz stan balman skul skelsir huntaz drunvir, ginek zhurkaz skul drunvir dek drek balman halkan ranskir skukstek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Collection at the factory and recovery of sorted production waste, per tonne of waste as the recovery plant weighs it.</cbc:Description>
       <cbc:Name languageID="qau">Tuzskaz stan balman skul huntaz drunvir</cbc:Name>
       <cbc:Name languageID="en-XU">Collection and recovery of production waste</cbc:Name>
       <cac:SellersItemIdentification>
