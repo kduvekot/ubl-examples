@@ -26,8 +26,8 @@ To plan production, the furniture maker asks the store for sales and stock data 
   Asked before the first production run.
 - `IssueTime` = **12:44:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Weekly figures, please, for the whole season.**  
-  What the maker asks.
+- `Note` = **Sales figures every four weeks, please, per piece and wood, for the whole season: the first for the first four weeks of sales, which the sale-or-return trial measures.**  
+  What the maker asks (furniture/06#F6: the report gives one figure for four weeks).
 
 ### Period
 
@@ -153,17 +153,15 @@ Inside `ReceiverParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/ID` = **BM-CT-01**  
-  The desk's number in the party's own contact list.
-- `Contact/Name` = **Buying office**  
-  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Buyer**  
+- `Contact/Name` = **Customer service**  
+  The party's customer service desk: the desk for its role in this document (it sells); identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Purchasing**  
+- `Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Contact/ElectronicMail` = **buying@brightmarket.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+- `Contact/ElectronicMail` = **service@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -194,14 +192,10 @@ Inside `SellerSupplierParty`:
 
 Inside `ItemInformationRequestLine`:
 
-- `TimeFrequencyCode` = **WEEKLY** (listID `urn:ubl-examples:world:codelist:TimeFrequencyCode`)  
-  Figures per week. The code is from the Trade Accord's time frequency list: WEEKLY = Weekly.
+- `TimeFrequencyCode` = **FOURWEEKLY** (listID `urn:ubl-examples:world:codelist:TimeFrequencyCode`)  
+  Figures every four weeks, the rhythm of the trial and of the exception criteria. The code is from the Trade Accord's time frequency list: FOURWEEKLY = Every four weeks.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
-  Sales to consumers. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
-  Total quantities. The code is from the Trade Accord's forecast type list: TOTAL = Total.
-- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  Measured in pieces sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  The one kind of data asked: sales to consumers (furniture/03#F1). The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `Period/StartDate` = **2026-05-11**  
   Sales data from the first day of sales.
 - `Period/EndDate` = **2026-08-29**  
@@ -292,7 +286,7 @@ Inside `ItemInformationRequestLine`:
   <cbc:UUID>4b68042b-1268-52c4-acf1-bb66f788d32b</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
-  <cbc:Note>Weekly figures, please, for the whole season.</cbc:Note>
+  <cbc:Note>Sales figures every four weeks, please, per piece and wood, for the whole season: the first for the first four weeks of sales, which the sale-or-return trial measures.</cbc:Note>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -387,12 +381,11 @@ Inside `ItemInformationRequestLine`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -421,10 +414,8 @@ Inside `ItemInformationRequestLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemInformationRequestLine>
-    <cbc:TimeFrequencyCode listID="urn:ubl-examples:world:codelist:TimeFrequencyCode">WEEKLY</cbc:TimeFrequencyCode>
+    <cbc:TimeFrequencyCode listID="urn:ubl-examples:world:codelist:TimeFrequencyCode">FOURWEEKLY</cbc:TimeFrequencyCode>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:Period>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>

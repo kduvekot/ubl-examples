@@ -32,8 +32,8 @@ The store wants dining furniture under its own label Elderwick, the Marrow bench
   What is asked.
 - `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   In lume. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `LineCountNumeric` = **4**  
-  A line per piece and wood.
+- `LineCountNumeric` = **5**  
+  A line per piece and wood, and the optional seat pads.
 
 ### Requested Validity Period
 
@@ -42,12 +42,16 @@ Inside `RequestedValidityPeriod`:
 - `DurationMeasure` = **60** (unitCode `DAY`)  
   Prices for 60 days.
 
-### Catalogue Document Reference
+### Additional Document Reference
 
-Inside `CatalogueDocumentReference`:
+Inside `AdditionalDocumentReference`:
 
 - `ID` = **BM-RANGE-26**  
-  The store's range plan the line belongs to.
+  The store's range plan the line belongs to: a plan of the store's own, not a catalogue (furniture/01#F2).
+- `DocumentType` = **Range plan**  
+  What the document is.
+- `DocumentDescription` = **The store's autumn and winter home range 2026, for the reopened home and garden department.**  
+  What it plans.
 
 ### Signature
 
@@ -189,13 +193,10 @@ Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
   Delivered at the store. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
-
-### Destination Country
-
-Inside `DestinationCountry`:
-
-- `IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+- `DeliveryLocation/Name` = **Brightmarket Stores, goods-in, Lumeport**  
+  The named place of DAP: the store's goods-in (furniture/01#F7).
 
 ### Contract
 
@@ -256,8 +257,6 @@ Inside `RequestForQuotationLine`:
   The variant in words.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
-- `Note` = **Optional: seat cushions to match.**  
-  An option the store asks about.
 - `OptionalLineItemIndicator` = **false**  
   The piece itself is required.
 - `PrivacyCode` = **CONFIDENTIAL** (listID `urn:ubl-examples:world:codelist:PrivacyCode`)  
@@ -282,8 +281,6 @@ Inside `RequestForQuotationLine`:
   The variant in words.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
-- `Note` = **Optional: seat cushions to match.**  
-  An option the store asks about.
 - `OptionalLineItemIndicator` = **false**  
   The piece itself is required.
 - `PrivacyCode` = **CONFIDENTIAL** (listID `urn:ubl-examples:world:codelist:PrivacyCode`)  
@@ -308,6 +305,16 @@ Inside `RequestForQuotationLine`:
   The variant in words.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000054** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+- `OptionalLineItemIndicator` = **true**  
+  An option the store asks about: seat pads to match the chairs (D32, furniture/01#F9).
+- `LineItem/ID` = **5**  
+  The line number.
+- `LineItem/Quantity` = **40** (unitCode `EA`)  
+  One for each of the forty chairs, if the store takes the option.
+- `LineItem/Item/Description` = **Seat pad to match the Marrow chair, in a neutral linen.**  
+  What the store asks about: a pad of the maker's choosing, not yet an item of either side.
+- `LineItem/Item/Name` = **Seat pad for the Marrow chair**  
+  The option in words.
 
 ## The document
 
@@ -325,13 +332,15 @@ Inside `RequestForQuotationLine`:
   <cbc:SubmissionDueDate>2026-03-07</cbc:SubmissionDueDate>
   <cbc:Note>For the store's own label Elderwick: the Marrow dining bench and chair, each in oak and in ash, for the autumn and winter home range, on sale from the reopening of the home and garden department on 11 May.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
-  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:RequestedValidityPeriod>
     <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
   </cac:RequestedValidityPeriod>
-  <cac:CatalogueDocumentReference>
+  <cac:AdditionalDocumentReference>
     <cbc:ID>BM-RANGE-26</cbc:ID>
-  </cac:CatalogueDocumentReference>
+    <cbc:DocumentType>Range plan</cbc:DocumentType>
+    <cbc:DocumentDescription>The store's autumn and winter home range 2026, for the reopened home and garden department.</cbc:DocumentDescription>
+  </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-RFQ</cbc:ID>
     <cac:SignatoryParty>
@@ -443,10 +452,11 @@ Inside `RequestForQuotationLine`:
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">DAP</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+      <cbc:Name>Brightmarket Stores, goods-in, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
   </cac:DeliveryTerms>
-  <cac:DestinationCountry>
-    <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-  </cac:DestinationCountry>
   <cac:Contract>
     <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:Contract>
@@ -499,7 +509,6 @@ Inside `RequestForQuotationLine`:
     </cac:LineItem>
   </cac:RequestForQuotationLine>
   <cac:RequestForQuotationLine>
-    <cbc:Note>Optional: seat cushions to match.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
     <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">CONFIDENTIAL</cbc:PrivacyCode>
     <cac:LineItem>
@@ -524,7 +533,6 @@ Inside `RequestForQuotationLine`:
     </cac:LineItem>
   </cac:RequestForQuotationLine>
   <cac:RequestForQuotationLine>
-    <cbc:Note>Optional: seat cushions to match.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
     <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">CONFIDENTIAL</cbc:PrivacyCode>
     <cac:LineItem>
@@ -545,6 +553,17 @@ Inside `RequestForQuotationLine`:
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000054</cbc:ID>
         </cac:StandardItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:RequestForQuotationLine>
+  <cac:RequestForQuotationLine>
+    <cbc:OptionalLineItemIndicator>true</cbc:OptionalLineItemIndicator>
+    <cac:LineItem>
+      <cbc:ID>5</cbc:ID>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Seat pad to match the Marrow chair, in a neutral linen.</cbc:Description>
+        <cbc:Name>Seat pad for the Marrow chair</cbc:Name>
       </cac:Item>
     </cac:LineItem>
   </cac:RequestForQuotationLine>

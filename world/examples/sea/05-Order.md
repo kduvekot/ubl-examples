@@ -450,6 +450,8 @@ Inside `OrderLine`:
   The seller's own item number; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-casting.
+- `LineItem/Item/ManufacturersItemIdentification/ExtendedID` = **2026**  
+  The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on (D35 point 3, O216): Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it. item bench-casting of Valdara Industries (world/items.json).
 - `LineItem/Item/StandardItemIdentification/ID` = **9520610000029** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
@@ -838,6 +840,7 @@ Inside `OrderLine`:
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>
+          <cbc:ExtendedID>2026</cbc:ExtendedID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>

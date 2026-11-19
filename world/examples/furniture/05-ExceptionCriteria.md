@@ -104,17 +104,15 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/ID` = **BM-CT-01**  
-  The desk's number in the party's own contact list.
-- `Contact/Name` = **Buying office**  
-  The party's main desk, which handles this document; identity of Brightmarket Stores (world/parties.json).
-- `Contact/JobTitle` = **Buyer**  
+- `Contact/Name` = **Customer service**  
+  The party's customer service desk: the desk for its role in this document (it sells); identity of Brightmarket Stores (world/parties.json).
+- `Contact/JobTitle` = **Customer service officer**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
-- `Contact/Department` = **Purchasing**  
+- `Contact/Department` = **Customer service**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Contact/ElectronicMail` = **buying@brightmarket.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+- `Contact/ElectronicMail` = **service@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -198,22 +196,18 @@ Inside `ExceptionCriteriaLine`:
 
 - `ID` = **1**  
   A sales criterion on the oak bench: the line is planned around the bench, and a criterion is set per item, so each wood has its own.
-- `Note` = **Slow sales.**  
-  What the criterion catches.
-- `ThresholdValueComparisonCode` = **LT** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
-  An exception is raised when actual sales fall below the threshold. The code is from the Trade Accord's threshold value comparison list: LT = Less than.
+- `Note` = **Slow sales: fewer than three benches of this wood sold in the first four weeks of sales.**  
+  What the criterion catches, with its time basis (furniture/05#F1).
+- `ThresholdValueComparisonCode` = **FALLS_BELOW_EXCEPTION_VALUE** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
+  An exception is raised when actual sales fall below the threshold: one of the two values UBL's definition allows (furniture/05#F7). The code is from the Trade Accord's threshold value comparison list: FALLS_BELOW_EXCEPTION_VALUE = Falls below the exception value.
 - `ThresholdQuantity` = **3** (unitCode `EA`)  
   Fewer than three oak benches sold in the first four weeks is worth a message: five benches in all, shared by the woods as the stock targets are.
-- `ExceptionStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ExceptionStatusCode`)  
-  In force. The code is from the Trade Accord's exception status list: ACTIVE = Criterion in force.
 - `CollaborationPriorityCode` = **HIGH** (listID `urn:ubl-examples:world:codelist:CollaborationPriorityCode`)  
   Answered within two days. The code is from the Trade Accord's collaboration priority list: HIGH = High.
 - `ExceptionResolutionCode` = **REVIEW** (listID `urn:ubl-examples:world:codelist:ExceptionResolutionCode`)  
-  The partners review the line together. The code is from the Trade Accord's exception resolution list: REVIEW = Joint review.
+  The partners review the line together: a world extension of the values UBL names, which all default to a value (furniture/05#F7). The code is from the Trade Accord's exception resolution list: REVIEW = Joint review.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
-  Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  The one kind of criterion: sales (furniture/05#F2). The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `EffectivePeriod/StartDate` = **2026-05-11**  
   From the first day of sales, the reopening of the home and garden department: the first four weeks are measured from it.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
@@ -236,22 +230,18 @@ Inside `ExceptionCriteriaLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
 - `ID` = **2**  
   A sales criterion on the ash bench: the line is planned around the bench, and a criterion is set per item, so each wood has its own.
-- `Note` = **Slow sales.**  
-  What the criterion catches.
-- `ThresholdValueComparisonCode` = **LT** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
-  An exception is raised when actual sales fall below the threshold. The code is from the Trade Accord's threshold value comparison list: LT = Less than.
+- `Note` = **Slow sales: fewer than two benches of this wood sold in the first four weeks of sales.**  
+  What the criterion catches, with its time basis (furniture/05#F1).
+- `ThresholdValueComparisonCode` = **FALLS_BELOW_EXCEPTION_VALUE** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
+  An exception is raised when actual sales fall below the threshold: one of the two values UBL's definition allows (furniture/05#F7). The code is from the Trade Accord's threshold value comparison list: FALLS_BELOW_EXCEPTION_VALUE = Falls below the exception value.
 - `ThresholdQuantity` = **2** (unitCode `EA`)  
   Fewer than two ash benches sold in the first four weeks is worth a message: five benches in all, shared by the woods as the stock targets are.
-- `ExceptionStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ExceptionStatusCode`)  
-  In force. The code is from the Trade Accord's exception status list: ACTIVE = Criterion in force.
 - `CollaborationPriorityCode` = **HIGH** (listID `urn:ubl-examples:world:codelist:CollaborationPriorityCode`)  
   Answered within two days. The code is from the Trade Accord's collaboration priority list: HIGH = High.
 - `ExceptionResolutionCode` = **REVIEW** (listID `urn:ubl-examples:world:codelist:ExceptionResolutionCode`)  
-  The partners review the line together. The code is from the Trade Accord's exception resolution list: REVIEW = Joint review.
+  The partners review the line together: a world extension of the values UBL names, which all default to a value (furniture/05#F7). The code is from the Trade Accord's exception resolution list: REVIEW = Joint review.
 - `SupplyChainActivityTypeCode` = **SALES** (listID `urn:ubl-examples:world:codelist:SupplyChainActivityCode`)  
-  Measured on sales. The code is from the Trade Accord's supply chain activity list: SALES = Sales.
-- `PerformanceMetricTypeCode` = **SALESUNITS** (listID `urn:ubl-examples:world:codelist:PerformanceMetricCode`)  
-  In benches sold. The code is from the Trade Accord's performance metric list: SALESUNITS = Sales in units.
+  The one kind of criterion: sales (furniture/05#F2). The code is from the Trade Accord's supply chain activity list: SALES = Sales.
 - `EffectivePeriod/StartDate` = **2026-05-11**  
   From the first day of sales, the reopening of the home and garden department: the first four weeks are measured from it.
 - `EffectivePeriod/EndDate` = **2026-08-29**  
@@ -276,8 +266,8 @@ Inside `ExceptionCriteriaLine`:
   The forecast criterion.
 - `Note` = **Forecast far from the store's own plan.**  
   What it catches.
-- `ThresholdValueComparisonCode` = **GT** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
-  When the difference is larger. The code is from the Trade Accord's threshold value comparison list: GT = Greater than.
+- `ThresholdValueComparisonCode` = **EXCEEDS_EXCEPTION_VALUE** (listID `urn:ubl-examples:world:codelist:ThresholdValueComparisonCode`)  
+  When the difference is larger: the other value UBL's definition allows. The code is from the Trade Accord's threshold value comparison list: EXCEEDS_EXCEPTION_VALUE = Exceeds the exception value.
 - `ThresholdQuantity` = **30** (unitCode `P1`)  
   More than 30 % difference.
 - `SupplyItem/Description` = **Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.**  
@@ -425,12 +415,11 @@ Inside `ExceptionCriteriaLine`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -499,14 +488,12 @@ Inside `ExceptionCriteriaLine`:
   </cac:SellerSupplierParty>
   <cac:ExceptionCriteriaLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Slow sales.</cbc:Note>
-    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">LT</cbc:ThresholdValueComparisonCode>
+    <cbc:Note>Slow sales: fewer than three benches of this wood sold in the first four weeks of sales.</cbc:Note>
+    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">FALLS_BELOW_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="EA">3</cbc:ThresholdQuantity>
-    <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">ACTIVE</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ExceptionResolutionCode listID="urn:ubl-examples:world:codelist:ExceptionResolutionCode">REVIEW</cbc:ExceptionResolutionCode>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:EffectivePeriod>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -530,14 +517,12 @@ Inside `ExceptionCriteriaLine`:
   </cac:ExceptionCriteriaLine>
   <cac:ExceptionCriteriaLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Slow sales.</cbc:Note>
-    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">LT</cbc:ThresholdValueComparisonCode>
+    <cbc:Note>Slow sales: fewer than two benches of this wood sold in the first four weeks of sales.</cbc:Note>
+    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">FALLS_BELOW_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="EA">2</cbc:ThresholdQuantity>
-    <cbc:ExceptionStatusCode listID="urn:ubl-examples:world:codelist:ExceptionStatusCode">ACTIVE</cbc:ExceptionStatusCode>
     <cbc:CollaborationPriorityCode listID="urn:ubl-examples:world:codelist:CollaborationPriorityCode">HIGH</cbc:CollaborationPriorityCode>
     <cbc:ExceptionResolutionCode listID="urn:ubl-examples:world:codelist:ExceptionResolutionCode">REVIEW</cbc:ExceptionResolutionCode>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:EffectivePeriod>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -562,7 +547,7 @@ Inside `ExceptionCriteriaLine`:
   <cac:ExceptionCriteriaLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>Forecast far from the store's own plan.</cbc:Note>
-    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">GT</cbc:ThresholdValueComparisonCode>
+    <cbc:ThresholdValueComparisonCode listID="urn:ubl-examples:world:codelist:ThresholdValueComparisonCode">EXCEEDS_EXCEPTION_VALUE</cbc:ThresholdValueComparisonCode>
     <cbc:ThresholdQuantity unitCode="P1">30</cbc:ThresholdQuantity>
     <cac:SupplyItem>
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>

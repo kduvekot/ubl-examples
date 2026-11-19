@@ -8,7 +8,7 @@
   <cbc:UUID>4b68042b-1268-52c4-acf1-bb66f788d32b</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
-  <cbc:Note>Weekly figures, please, for the whole season.</cbc:Note>
+  <cbc:Note>Sales figures every four weeks, please, per piece and wood, for the whole season: the first for the first four weeks of sales, which the sale-or-return trial measures.</cbc:Note>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-08-29</cbc:EndDate>
@@ -103,12 +103,11 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:ID>BM-CT-01</cbc:ID>
-      <cbc:Name>Buying office</cbc:Name>
-      <cbc:JobTitle>Buyer</cbc:JobTitle>
-      <cbc:Department>Purchasing</cbc:Department>
+      <cbc:Name>Customer service</cbc:Name>
+      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
+      <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-      <cbc:ElectronicMail>buying@brightmarket.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>service@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -137,10 +136,8 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:ItemInformationRequestLine>
-    <cbc:TimeFrequencyCode listID="urn:ubl-examples:world:codelist:TimeFrequencyCode">WEEKLY</cbc:TimeFrequencyCode>
+    <cbc:TimeFrequencyCode listID="urn:ubl-examples:world:codelist:TimeFrequencyCode">FOURWEEKLY</cbc:TimeFrequencyCode>
     <cbc:SupplyChainActivityTypeCode listID="urn:ubl-examples:world:codelist:SupplyChainActivityCode">SALES</cbc:SupplyChainActivityTypeCode>
-    <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
-    <cbc:PerformanceMetricTypeCode listID="urn:ubl-examples:world:codelist:PerformanceMetricCode">SALESUNITS</cbc:PerformanceMetricTypeCode>
     <cac:Period>
       <cbc:StartDate>2026-05-11</cbc:StartDate>
       <cbc:EndDate>2026-08-29</cbc:EndDate>

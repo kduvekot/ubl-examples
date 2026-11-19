@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
-  <cbc:IssueTime>08:56:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the national road carriage law</cbc:Name>
   <cbc:Description>The forwarder's truck from the distribution centre to the store.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>

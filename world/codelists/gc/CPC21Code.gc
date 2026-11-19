@@ -58,6 +58,14 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>27180</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Quilts, eiderdowns, cushions, pouffes, pillows, sleeping bags and the like, fitted with springs or stuffed or internally fitted with any material or of cellular rubber or plastics</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>28232</SimpleValue>
          </Value>
          <Value ColumnRef="name">

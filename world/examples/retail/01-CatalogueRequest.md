@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Catalogue Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-REQUEST-SCHEMA)*
 
-The store asks the distributor for its spring catalogue.
+To set up the range of its home and garden department, which reopens on 11 May after a renovation, the store asks the distributor for its catalogue.
 
 [The XML file](01-CatalogueRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,14 +22,14 @@ The store asks the distributor for its spring catalogue.
   The sender's number for this document.
 - `UUID` = **5e45c6c8-ba0a-5689-b0f9-f653754fd6b8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `Name` = **Spring catalogue 2026**  
-  The catalogue asked for.
+- `Name` = **Request for Lumeway's catalogue for the home and garden department**  
+  What the document is: a request, named as one (retail/01#F10).
 - `IssueDate` = **2026-04-20**  
-  The store asks for the spring catalogue. As UBL defines it, the party that sends a catalogue request is its ProviderParty.
+  The store asks Lumeway for its catalogue, to set up the range of the reopened department. As UBL defines it, the party that sends a catalogue request is its ProviderParty.
 - `IssueTime` = **08:42:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **For the garden department.**  
-  Who it is for.
+- `Note` = **To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.**  
+  Who it is for, and why now (D34).
 - `Description` = **Benches and spare parts.**  
   What the store wants to see.
 - `PricingUpdateRequestIndicator` = **true**  
@@ -278,14 +278,10 @@ Inside `RequestedClassificationScheme`:
 
 - `ID` = **HS**  
   Items classified by the Harmonized System.
-- `UUID` = **1afc0bc8-8a3e-5d36-b5be-437211032bac**  
-  Its UUID.
 - `LastRevisionDate` = **2022-01-01**  
-  The edition in force.
-- `LastRevisionTime` = **00:00:00**  
-  From midnight.
-- `Note` = **Six-digit subheadings.**  
-  The level wanted.
+  The edition in force: HS 2022 entered into force on 1 January 2022.
+- `Note` = **The heading and its six-digit subheadings.**  
+  The levels wanted, as the categories give them (retail/01#F3).
 - `Name` = **Harmonized System**  
   In words.
 - `Description` = **The international goods classification.**  
@@ -306,12 +302,12 @@ Inside `RequestedClassificationScheme`:
   The heading the benches fall in.
 - `ClassificationCategory/CodeValue` = **9401**  
   HS heading 94.01.
-- `ClassificationCategory/Description` = **Outdoor furniture and its spare parts.**  
+- `ClassificationCategory/Description` = **Seats and their parts: the bench and its spare side frame.**  
   What the category holds.
-- `ClassificationCategory/CategorizesClassificationCategory/Name` = **Spare parts**  
-  A subcategory the store wants too.
-- `ClassificationCategory/CategorizesClassificationCategory/CodeValue` = **FUR-OUT-SP**  
-  Its code.
+- `ClassificationCategory/CategorizesClassificationCategory/Name` = **Parts of seats, other than of wood**  
+  The subheading of the spare side frame (D13).
+- `ClassificationCategory/CategorizesClassificationCategory/CodeValue` = **940199**  
+  HS subheading 9401.99 (retail/01#F3).
 
 ### Catalogue Request Line
 
@@ -345,10 +341,10 @@ Inside `CatalogueRequestLine`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>BS-DOC-26-0217</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
-  <cbc:Name>Spring catalogue 2026</cbc:Name>
+  <cbc:Name>Request for Lumeway's catalogue for the home and garden department</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>08:42:00-01:00</cbc:IssueTime>
-  <cbc:Note>For the garden department.</cbc:Note>
+  <cbc:Note>To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.</cbc:Note>
   <cbc:Description>Benches and spare parts.</cbc:Description>
   <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>
   <cbc:ItemUpdateRequestIndicator>true</cbc:ItemUpdateRequestIndicator>
@@ -534,10 +530,8 @@ Inside `CatalogueRequestLine`:
   </cac:RequestedLanguage>
   <cac:RequestedClassificationScheme>
     <cbc:ID>HS</cbc:ID>
-    <cbc:UUID>1afc0bc8-8a3e-5d36-b5be-437211032bac</cbc:UUID>
     <cbc:LastRevisionDate>2022-01-01</cbc:LastRevisionDate>
-    <cbc:LastRevisionTime>00:00:00</cbc:LastRevisionTime>
-    <cbc:Note>Six-digit subheadings.</cbc:Note>
+    <cbc:Note>The heading and its six-digit subheadings.</cbc:Note>
     <cbc:Name>Harmonized System</cbc:Name>
     <cbc:Description>The international goods classification.</cbc:Description>
     <cbc:AgencyID>WCO</cbc:AgencyID>
@@ -549,10 +543,10 @@ Inside `CatalogueRequestLine`:
     <cac:ClassificationCategory>
       <cbc:Name>Seats</cbc:Name>
       <cbc:CodeValue>9401</cbc:CodeValue>
-      <cbc:Description>Outdoor furniture and its spare parts.</cbc:Description>
+      <cbc:Description>Seats and their parts: the bench and its spare side frame.</cbc:Description>
       <cac:CategorizesClassificationCategory>
-        <cbc:Name>Spare parts</cbc:Name>
-        <cbc:CodeValue>FUR-OUT-SP</cbc:CodeValue>
+        <cbc:Name>Parts of seats, other than of wood</cbc:Name>
+        <cbc:CodeValue>940199</cbc:CodeValue>
       </cac:CategorizesClassificationCategory>
     </cac:ClassificationCategory>
   </cac:RequestedClassificationScheme>

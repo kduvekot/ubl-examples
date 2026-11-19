@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:instruction-for-returns:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0578</cbc:ID>
+  <cbc:ID>BF-DOC-26-0579</cbc:ID>
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>14:21:00-01:00</cbc:IssueTime>
@@ -128,6 +128,10 @@
     <cbc:ID>BM-RET-26-0611</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
     <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="GS1 GLN">9523710900015</cbc:ID>
+        <cbc:Name>Brackenmere Furniture, Marrowdale</cbc:Name>
+      </cac:DeliveryLocation>
       <cac:RequestedDeliveryPeriod>
         <cbc:StartDate>2026-06-12</cbc:StartDate>
         <cbc:EndDate>2026-06-15</cbc:EndDate>

@@ -7376,7 +7376,8 @@
    "codes": [
     "TPR",
     "SEASONAL",
-    "LAUNCH"
+    "LAUNCH",
+    "OPENING"
    ]
   },
   "PackingLabelingType": {
@@ -7474,6 +7475,7 @@
    "codes": [
     "DAILY",
     "WEEKLY",
+    "FOURWEEKLY",
     "MONTHLY"
    ]
   },
@@ -7526,10 +7528,8 @@
    "name": "Threshold value comparison",
    "location": "world/codelists/gc/ThresholdValueComparisonCode.gc",
    "codes": [
-    "GT",
-    "LT",
-    "GE",
-    "LE"
+    "EXCEEDS_EXCEPTION_VALUE",
+    "FALLS_BELOW_EXCEPTION_VALUE"
    ]
   },
   "ForecastAdjustmentReason": {
@@ -8464,6 +8464,7 @@
     "01921",
     "12020",
     "14100",
+    "27180",
     "28232",
     "31102",
     "34710",
@@ -8505,7 +8506,8 @@
     "853110",
     "940169",
     "940179",
-    "940330"
+    "940330",
+    "940490"
    ]
   },
   "XU:Waste": {

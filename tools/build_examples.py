@@ -234,6 +234,11 @@ def party(pid, short=False, desk=None, lang=None):
                                "Name": V(lang["name"], f"The language's name in English; in the language itself: "
                                                        f"{lang['own_name']}.")}
     out["PostalAddress"] = address(pid, register=True)
+    if desk and idn.get("address_desks") and desk not in idn["address_desks"]:
+        # the lines of the address that name one office (the department's procurement office) go only with the
+        # roles that office answers for; an invoice's accounting customer is the finance office (furniture/17#F6)
+        for k in ("Department", "MarkAttention", "InhouseMail"):
+            out["PostalAddress"].pop(k, None)
     if idn.get("site"):
         out["PhysicalLocation"] = location(pid)
     if idn.get("endpoint"):
@@ -1059,6 +1064,9 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     # once (Lumeway's LD-10442 for the bench in any colour) adds the variant to its own number; one that gives each
     # variant a number of its own (variant_numbers: the store's BM-551005 for the oak bench, O155) needs no
     # variant on it, and the variant goes with the maker's number
+    if maker.get("version"):      # the version of the maker's part, on the maker's number (O216)
+        mid = out["ManufacturersItemIdentification"] if it.get("resale_of") else out["SellersItemIdentification"]
+        mid["ExtendedID"] = V(maker["version"]["extended"], f"{maker['version']['why']} {msrc}.")
     variant = maker.get("variant", {})
     vid = out["ManufacturersItemIdentification"] if it.get("variant_numbers") else out["SellersItemIdentification"]
     if variant.get("extended"):
@@ -1724,6 +1732,8 @@ def scheme_for(element, parent, value):
     rule = SCHEME_RULES.get((element, parent))
     if element == "ID" and parent in CONTAINERS and re.fullmatch(SCHEMES["ISO6346"]["pattern"], value):
         rule = "ISO6346"
+    if rule == "ISO 11649" and not value.startswith("RF"):   # a payer's plain reference, such as a credit note's
+        return None                                          # number for a refund (furniture/13#F5)
     if rule is None or rule in SCHEMES:
         return rule
     if rule == "register":           # a company's, a public body's or a grower's register, told by its shape (O142)
@@ -2732,7 +2742,8 @@ def doc_types():
         saved = [copy.deepcopy(fl.__dict__) for fl in flows]    # the run must leave the flows as it found them
         for flow_id in FLOWS_WITH_EXAMPLES:
             docs = [d for d in WORLD["documents"] if d["flow"] == flow_id]
-            for n, doc in enumerate(docs, 1):
+            for doc in docs:
+                n = doc["nn"]
                 content = examples_scenarios.SCENARIOS[flow_id](n, doc)
                 if isinstance(content.get("ID"), V):
                     DOC_TYPES.setdefault(content["ID"].value, (flow_id, n, doc["doc"]))
@@ -3424,9 +3435,7 @@ def check_issue_order(flow_id, name, root, doc, request=None):
 # ---------------------------------------------------------------- references resolve (C73)
 UNRESOLVED = []        # references to a kind of document the examples have, under an ID no example has: (file, el, ID)
 # References to documents the flow decisions add (D38), each waiting for its flow (stage 6): ID -> the document.
-REFERENCE_WAITS = {"BF-DN-26-0323": "furniture/19, Brackenmere's despatch advice (D38, with D32)",
-                   "BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
-                   "PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
+REFERENCE_WAITS = {"PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
                                     "D28)"}
 REFERENCE_ALIASES = {"CallForTender": "CallForTenders", "Despatch": "DespatchAdvice", "Receipt": "ReceiptAdvice",
                      "Remittance": "RemittanceAdvice", "TenderNotification": "TenderReceipt",
@@ -3526,7 +3535,8 @@ def main(flow_id, check=False):
     stale, roots = [], []
     global DOC_TYPE, FLOW_MODES
     FLOW_MODES = {leg["mode"] for leg in flow.get("legs", [])}
-    for n, doc in enumerate(docs, 1):
+    for doc in docs:
+        n = doc["nn"]               # the example number in the flow, removed numbers left out (D28)
         DOC_TYPE = doc["doc"]
         content = scenario(n, doc)
         global CONTENT
@@ -3649,8 +3659,7 @@ def main(flow_id, check=False):
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
     check_utility_statements(flow_id, roots)
-    produced = {xmlname(n, d) for n, d in enumerate(docs, 1)} | {xmlname(n, d).replace(".xml", ".md")
-                                                                  for n, d in enumerate(docs, 1)}
+    produced = {xmlname(d["nn"], d) for d in docs} | {xmlname(d["nn"], d).replace(".xml", ".md") for d in docs}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow
         if name not in produced and ".llm-review." not in name:   # reviews are not generated: keep them
             if check:

@@ -1,70 +1,47 @@
-# Debit Note: Brightmarket Stores to Brackenmere Furniture
+# Invoice: Brightmarket Stores to Brackenmere Furniture
 
-*Example 14 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Debit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA)*
+*Example 18 of the flow "Furniture for the department store and for public offices (Bayvarra)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The store charges the furniture maker for transporting the returned pieces back.
+The store took the returned pieces back to the maker's workshop with its own van, at the maker's cost as the own-label agreement says, and invoices the transport (D32).
 
-[The XML file](14-DebitNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](18-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); DebitNote/DueDate first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Invoice/DefaultLanguageCode first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages (world/specifications.json).
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **FURNITURE-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BS-DOC-26-0580**  
-  The sender's number for this document.
-- `UUID` = **0875ae2f-3059-5ccf-bbe9-44ac5e023a67**  
+- `ID` = **BS-INV-26-0584**  
+  The seller's invoice number.
+- `UUID` = **4f94dfb7-b177-524c-9081-5910fd8cea6d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-17**  
-  After the returned pieces were delivered back, the day after the credit note.
-- `IssueTime` = **11:12:00-01:00**  
+  Issued on Wednesday 17 June, after the returned pieces were delivered back and counted, the day after the credit note.
+- `IssueTime` = **17:31:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `DueDate` = **2026-07-17**  
-  Thirty days, the store's terms.
-- `Note` = **The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.**  
-  Why.
-- `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
-  UN/EDIFACT 1001 code 383: debit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 383 = Debit note.
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
+- `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
+  A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
+- `Note` = **The stock above the target at the end of the sale-or-return trial went back at the maker's cost, as the own-label agreement says; the store carried it with its own van.**  
+  Why the store invoices the maker (D32, O6).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The lume, the currency of the trade; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **6120**  
-  The store books the income on its home and garden department.
-- `AccountingCost` = **Home and garden department**  
+  The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `AccountingCostCode` = **1100**  
+  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+- `AccountingCost` = **Timber and materials**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
-  One line.
+  The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
-  The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
-
-### Discrepancy Response
-
-Inside `DiscrepancyResponse`:
-
-- `ResponseCode` = **35** (listID `UN/EDIFACT EDED 4465`)  
-  Why the store debits: the cost of a return the furniture maker asked for. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 35 = Goods returned.
-- `Description` = **Return transport of seven benches, ten chairs and their care kits.**  
-  In words.
-
-### Order Reference
-
-Inside `OrderReference`:
-
-- `ID` = **BS-PO-26-0574**  
-  The order of the pieces that went back.
-
-### Billing Reference
-
-Inside `BillingReference`:
-
-- `CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
-  The credit note of the returned pieces.
+  The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
 
 ### Contract Document Reference
 
@@ -77,83 +54,14 @@ Inside `ContractDocumentReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BF-DOC-26-0578**  
-  The instruction for returns that asked for the pieces.
+- `ID` = **BF-DOC-26-0579**  
+  The maker's instruction for returns, which asked for the pieces back.
 - `DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-DOC-26-0578 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
+  The kind of document referred to: BF-DOC-26-0579 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
 
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
-
-- `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Party/AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brackenmere Furniture (world/parties.json).
-- `Party/PartyName/Name` = **Brackenmere Furniture**  
-  The trading name; identity of Brackenmere Furniture (world/parties.json).
-- `Party/PostalAddress/ID` = **UL-ADR-821551** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
-  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Brackenmere Furniture (world/parties.json).
-- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `Party/PostalAddress/StreetName` = **Joiners Row**  
-  Street of the postal address. identity of Brackenmere Furniture (world/parties.json).
-- `Party/PostalAddress/BuildingNumber` = **14**  
-  Building number of the postal address. identity of Brackenmere Furniture (world/parties.json).
-- `Party/PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brackenmere Furniture (world/parties.json).
-- `Party/PostalAddress/PostalZone` = **71203**  
-  Postal code in Bayvarra's format (5 digits). identity of Brackenmere Furniture (world/parties.json).
-- `Party/PostalAddress/CountrySubentity` = **Upland State**  
-  The name of code XB-UL in Bayvarra's national state or territory list.
-- `Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brackenmere Furniture (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
-- `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
-- `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PostalAddress/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `Party/PartyTaxScheme/RegistrationName` = **Brackenmere Furniture Ltd**  
-  The name under which the party is registered for state sales tax; identity of Brackenmere Furniture (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **UL-1237398** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
-  The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/RegistrationName` = **Brackenmere Furniture Ltd**  
-  The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
-- `Party/PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/Contact/Name` = **Accounts receivable**  
-  The party's accounts receivable desk: the desk for its role in this document (it is owed the payment); identity of Brackenmere Furniture (world/parties.json).
-- `Party/Contact/JobTitle` = **Credit controller**  
-  The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
-- `Party/Contact/Department` = **Finance**  
-  The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
-- `Party/Contact/Telephone` = **+999 2 7121 602 606**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brackenmere Furniture (world/parties.json).
-- `Party/Contact/ElectronicMail` = **receivables@brackenmere.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
-- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Brackenmere Furniture (world/parties.json).
-- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
-  The network in which the address is registered: the world's own exchange network.
-- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-
-### Accounting Customer Party
-
-Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -229,15 +137,15 @@ Inside `AccountingCustomerParty`:
   A register of businesses, not a register of charities or associations. The code is from the Trade Accord's corporate registration type list: COMMERCIAL = Commercial register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/Contact/Name` = **Accounts payable**  
-  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/JobTitle` = **Accounts payable clerk**  
+- `Party/Contact/Name` = **Accounts receivable**  
+  The party's accounts receivable desk: the desk for its role in this document (it is owed the payment); identity of Brightmarket Stores (world/parties.json).
+- `Party/Contact/JobTitle` = **Credit controller**  
   The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
-- `Party/Contact/ElectronicMail` = **payables@brightmarket.example**  
+- `Party/Contact/ElectronicMail` = **receivables@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
 - `Party/Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
@@ -246,39 +154,99 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Payee Party
+### Accounting Customer Party
 
-Inside `PayeeParty`:
+Inside `AccountingCustomerParty`:
 
-- `PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Party/AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brackenmere Furniture (world/parties.json).
+- `Party/PartyName/Name` = **Brackenmere Furniture**  
+  The trading name; identity of Brackenmere Furniture (world/parties.json).
+- `Party/PostalAddress/ID` = **UL-ADR-821551** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
+  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Brackenmere Furniture (world/parties.json).
+- `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+- `Party/PostalAddress/StreetName` = **Joiners Row**  
+  Street of the postal address. identity of Brackenmere Furniture (world/parties.json).
+- `Party/PostalAddress/BuildingNumber` = **14**  
+  Building number of the postal address. identity of Brackenmere Furniture (world/parties.json).
+- `Party/PostalAddress/CityName` = **Marrowdale**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brackenmere Furniture (world/parties.json).
+- `Party/PostalAddress/PostalZone` = **71203**  
+  Postal code in Bayvarra's format (5 digits). identity of Brackenmere Furniture (world/parties.json).
+- `Party/PostalAddress/CountrySubentity` = **Upland State**  
+  The name of code XB-UL in Bayvarra's national state or territory list.
+- `Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brackenmere Furniture (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+- `Party/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+- `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Party/PostalAddress/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+- `Party/PartyTaxScheme/RegistrationName` = **Brackenmere Furniture Ltd**  
+  The name under which the party is registered for state sales tax; identity of Brackenmere Furniture (world/parties.json).
+- `Party/PartyTaxScheme/CompanyID` = **UL-1237398** (schemeID `urn:ubl-examples:world:XB:tax`)  
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
+- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
+- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Upland State**  
+  The state or territory whose sales tax the party is registered for.
+- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Party/PartyLegalEntity/RegistrationName` = **Brackenmere Furniture Ltd**  
+  The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
+- `Party/PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
+  Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+- `Party/Contact/Name` = **Accounts payable**  
+  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/JobTitle` = **Accounts payable clerk**  
+  The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/Department` = **Finance**  
+  The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/Telephone` = **+999 2 7121 602 606**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/ElectronicMail` = **payables@brackenmere.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Brackenmere Furniture (world/parties.json).
+- `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
+  The network in which the address is registered: the world's own exchange network.
+- `Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
+  The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Brackenmere Furniture**  
-  A party referred to from another party's details: its identifier and name are enough.
+  The same party as at AccountingCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 
 ### Seller Supplier Party
 
 Inside `SellerSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
+  The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Party/PartyName/Name` = **Brightmarket Stores**  
-  A party referred to from another party's details: its identifier and name are enough.
+  The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 
 ### Delivery
 
 Inside `Delivery`:
 
 - `ActualDeliveryDate` = **2026-06-15**  
-  The pieces were delivered back.
+  The van delivered the pieces back.
 - `DeliveryLocation/ID` = **9523710900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, factory and goods-in, marrowdale: Brackenmere Furniture identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `DeliveryLocation/Name` = **Brackenmere Furniture, Marrowdale**  
@@ -300,12 +268,12 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF86BSDOC260580**  
+- `InstructionNote` = **Quote RF32BSINV260584**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF86BSDOC260580** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF32BSINV260584** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB48BLUM38010001570935** (schemeID `urn:ubl-examples:world:account`)  
-  The store's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+  The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Brightmarket Stores Corp**  
   The account holder, as the bank knows it.
 - `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
@@ -314,7 +282,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Debit note BS-DOC-26-0580**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice BS-INV-26-0584**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -353,10 +321,22 @@ Inside `PaymentMeans`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **30 days net.**  
-  The store's terms.
+- `ID` = **XB-STD**  
+  The standard terms of Bayvarra.
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer below.
+- `Note` = **30 days net; 1.5 % surcharge per month late.**  
+  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `PenaltySurchargePercent` = **1.5**  
+  The surcharge per month of late payment.
+- `PenaltyAmount` = **1.28** (currencyID `XBL`)  
+  The surcharge for each month late.
+- `PaymentTermsDetailsURI` = **https://www.brightmarket.example/terms**  
+  The seller's general terms of payment.
 - `PaymentDueDate` = **2026-07-17**  
-  The due date.
+  The day the amount is due, as the terms count it.
+- `PenaltyPeriod/StartDate` = **2026-07-18**  
+  From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
 
@@ -384,46 +364,26 @@ Inside `TaxTotal`:
 Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
-  The sum of the lines.
+  The sum of the line amounts.
+- `TaxExclusiveAmount` = **85.00** (currencyID `XBL`)  
+  The total without tax: the line amounts, no allowances or charges.
+- `TaxInclusiveAmount` = **85.00** (currencyID `XBL`)  
+  The total without tax plus the tax.
 - `PayableAmount` = **85.00** (currencyID `XBL`)  
-  What the furniture maker owes the store.
+  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
-### Debit Note Line
+### Invoice Line
 
-Inside `DebitNoteLine`:
+Inside `InvoiceLine`:
 
 - `ID` = **1**  
-  The return transport.
-- `Note` = **Collected with the store's van.**  
-  How the pieces went back.
-- `DebitedQuantity` = **1** (unitCode `E48`)  
-  One return delivery.
+  The line number.
+- `Note` = **Seven benches, ten chairs and seven care kits, from the store's goods-in to Brackenmere's workshop in Marrowdale.**  
+  What was carried.
+- `InvoicedQuantity` = **1** (unitCode `E48`)  
+  One return delivery with the store's van.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
-  The store's charge for one return delivery.
-- `TaxInclusiveLineExtensionAmount` = **85.00** (currencyID `XBL`)  
-  The line with its tax.
-- `AccountingCostCode` = **6120**  
-  The store's cost centre the income is booked on.
-- `AccountingCost` = **Home and garden department**  
-  The cost centre in words.
-- `PaymentPurposeCode` = **SCVE** (listID `ISO 20022 ExternalPurpose1Code`)  
-  What the payment is for, as an ISO 20022 purpose: a service, the transport back. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SCVE = PurchaseSaleOfServices.
-- `DiscrepancyResponse/ResponseCode` = **35** (listID `UN/EDIFACT EDED 4465`)  
-  The return transport. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 35 = Goods returned.
-- `BillingReference/CreditNoteDocumentReference/ID` = **BF-CN-26-0579**  
-  The credit note.
-- `BillingReference/BillingReferenceLine/ID` = **1**  
-  Its first line, the returned oak benches.
-- `BillingReference/BillingReferenceLine/Amount` = **1520.00** (currencyID `XBL`)  
-  The amount of the credit note's first line, the oak benches returned.
-- `DocumentReference/ID` = **BF-DOC-26-0578**  
-  The instruction for returns.
-- `DocumentReference/DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-DOC-26-0578 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
-- `Delivery/ActualDeliveryDate` = **2026-06-15**  
-  The day the pieces were delivered back to the furniture maker.
-- `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  The tax of the line.
+  1 × 85.0, rounded to the minor unit of the currency.
 - `Item/Description` = **Transport of returned goods back to the supplier, per delivery.**  
   The seller's description; item return-transport of Brightmarket Stores (world/items.json).
 - `Item/Name` = **Return transport**  
@@ -438,6 +398,8 @@ Inside `DebitNoteLine`:
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: SVCB2B = Service to a business.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service to a business**  
   The name of code SVCB2B in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **85** (currencyID `XBL`)  
@@ -449,103 +411,31 @@ Inside `DebitNoteLine`:
 
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
-<DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0580</cbc:ID>
-  <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
+  <cbc:ID>BS-INV-26-0584</cbc:ID>
+  <cbc:UUID>4f94dfb7-b177-524c-9081-5910fd8cea6d</cbc:UUID>
   <cbc:IssueDate>2026-06-17</cbc:IssueDate>
-  <cbc:IssueTime>11:12:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>17:31:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-07-17</cbc:DueDate>
-  <cbc:Note>The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.</cbc:Note>
-  <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
+  <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The stock above the target at the end of the sale-or-return trial went back at the maker's cost, as the own-label agreement says; the store carried it with its own van.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
-  <cac:DiscrepancyResponse>
-    <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>
-    <cbc:Description>Return transport of seven benches, ten chairs and their care kits.</cbc:Description>
-  </cac:DiscrepancyResponse>
-  <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0574</cbc:ID>
-  </cac:OrderReference>
-  <cac:BillingReference>
-    <cac:CreditNoteDocumentReference>
-      <cbc:ID>BF-CN-26-0579</cbc:ID>
-    </cac:CreditNoteDocumentReference>
-  </cac:BillingReference>
   <cac:ContractDocumentReference>
     <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-DOC-26-0578</cbc:ID>
+    <cbc:ID>BF-DOC-26-0579</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="GS1 GLN">9523710900008</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brackenmere Furniture</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-821551</cbc:ID>
-        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Joiners Row</cbc:StreetName>
-        <cbc:BuildingNumber>14</cbc:BuildingNumber>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cbc:PostalZone>71203</cbc:PostalZone>
-        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          <cbc:Name>Bayvarra</cbc:Name>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1237398</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        <cbc:Name>Accounts receivable</cbc:Name>
-        <cbc:JobTitle>Credit controller</cbc:JobTitle>
-        <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
-        <cbc:ElectronicMail>receivables@brackenmere.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-      </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
-    </cac:Party>
-  </cac:AccountingSupplierParty>
-  <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -619,11 +509,11 @@ Inside `DebitNoteLine`:
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Accounts payable</cbc:Name>
-        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-        <cbc:ElectronicMail>payables@brightmarket.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -631,15 +521,67 @@ Inside `DebitNoteLine`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9523710900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-821551</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Joiners Row</cbc:StreetName>
+        <cbc:BuildingNumber>14</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71203</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1237398</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
+        <cbc:ElectronicMail>payables@brackenmere.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
   </cac:AccountingCustomerParty>
-  <cac:PayeeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Brightmarket Stores</cbc:Name>
-    </cac:PartyName>
-  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -674,15 +616,15 @@ Inside `DebitNoteLine`:
     <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF86BSDOC260580</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF32BSINV260584</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF32BSINV260584</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB48BLUM38010001570935</cbc:ID>
       <cbc:Name>Brightmarket Stores Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Debit note BS-DOC-26-0580</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BS-INV-26-0584</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>
@@ -716,8 +658,16 @@ Inside `DebitNoteLine`:
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>30 days net.</cbc:Note>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">1.28</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.brightmarket.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-07-18</cbc:StartDate>
+    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -737,39 +687,15 @@ Inside `DebitNoteLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">85.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">85.00</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="XBL">85.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
-  <cac:DebitNoteLine>
+  <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Collected with the store's van.</cbc:Note>
-    <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
+    <cbc:Note>Seven benches, ten chairs and seven care kits, from the store's goods-in to Brackenmere's workshop in Marrowdale.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">85.00</cbc:TaxInclusiveLineExtensionAmount>
-    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SCVE</cbc:PaymentPurposeCode>
-    <cac:DiscrepancyResponse>
-      <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>
-    </cac:DiscrepancyResponse>
-    <cac:BillingReference>
-      <cac:CreditNoteDocumentReference>
-        <cbc:ID>BF-CN-26-0579</cbc:ID>
-      </cac:CreditNoteDocumentReference>
-      <cac:BillingReferenceLine>
-        <cbc:ID>1</cbc:ID>
-        <cbc:Amount currencyID="XBL">1520.00</cbc:Amount>
-      </cac:BillingReferenceLine>
-    </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>BF-DOC-26-0578</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
-    <cac:Delivery>
-      <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
-    </cac:Delivery>
-    <cac:TaxTotal>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>Transport of returned goods back to the supplier, per delivery.</cbc:Description>
       <cbc:Name>Return transport</cbc:Name>
@@ -781,6 +707,7 @@ Inside `DebitNoteLine`:
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">SVCB2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -790,6 +717,6 @@ Inside `DebitNoteLine`:
       <cbc:PriceAmount currencyID="XBL">85</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
     </cac:Price>
-  </cac:DebitNoteLine>
-</DebitNote>
+  </cac:InvoiceLine>
+</Invoice>
 ```

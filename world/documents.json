@@ -110,7 +110,7 @@
   {
    "id": "retail",
    "title": "Distributor to retailer, delivered duty paid (domestic, Bayvarra)",
-   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment.",
+   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment. In 2026 the store renovates the home and garden department of its Lumeport store and reopens it on Monday 11 May, with two weeks at 10 % off; to set up the range it asks the distributor for a catalogue, which the distributor deletes when its winter catalogue takes over on 20 June.",
    "legs": [
     {
      "mode": "road",
@@ -468,7 +468,7 @@
   {
    "id": "furniture",
    "title": "Furniture for the department store and for public offices (Bayvarra)",
-   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. The line is for the reopening of the store's home and garden department on Monday 11 May: the stock is delivered in March and held for it, and the first sale is on the day of the reopening. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms for a trial of its first four weeks of sales, and what is above the target at the end of the trial goes back. For the public works department the furniture maker also installs, and documents the work for approval.",
+   "text": "The furniture maker makes the department store's own-label dining furniture, the Elderwick Marrow bench and chair, each in oak and in ash, and supplies it piece by piece: each wood is an item of its own, because the shopper chooses it. The line is for the reopening of the store's home and garden department on Monday 11 May: the stock is delivered in March and held for it, and the first sale is on the day of the reopening. They agree on the item data and the stock policy per piece, the store reports what it sells, and exceptions against agreed thresholds are flagged automatically. The new line is taken on sale-or-return terms for a trial of its first four weeks of sales, and what is above the target at the end of the trial goes back in the store's van, at the maker's cost: the maker credits it in full and the store invoices the transport. The store asked for seat pads as an option; the maker quoted one, and the store sells pads from its own textile range instead. For the public works department the furniture maker also installs, and documents the work for approval.",
    "legs": [
     {
      "mode": "road",
@@ -1388,7 +1388,7 @@
    "doc": "CatalogueRequest",
    "from": "26-xb",
    "to": "6-xb",
-   "why": "The store asks the distributor for its spring catalogue.",
+   "why": "To set up the range of its home and garden department, which reopens on 11 May after a renovation, the store asks the distributor for its catalogue.",
    "parties": {
     "ProviderParty": "26-xb",
     "ReceiverParty": "6-xb",
@@ -1450,7 +1450,7 @@
    "doc": "RetailEvent",
    "from": "26-xb",
    "to": "6-xb",
-   "why": "A promotion next month will lift demand; the distributor needs to know before it orders from the manufacturer.",
+   "why": "The reopening of the home and garden department on 11 May, with two weeks at 10 % off, will lift demand; the distributor needs to know before it orders from the manufacturer.",
    "parties": {
     "SenderParty": "26-xb",
     "ReceiverParty": "6-xb",
@@ -1566,7 +1566,7 @@
    "doc": "TransportationStatus",
    "from": "10-xb",
    "to": "6-xb",
-   "why": "The carrier answers the request: the truck is on its way and arrives in the afternoon.",
+   "why": "The carrier answers the request on the morning of the delivery: the truck is on its way and expected at the store at 10:15.",
    "parties": {
     "SenderParty": "10-xb",
     "ReceiverParty": "6-xb"
@@ -1618,13 +1618,12 @@
    "doc": "CreditNote",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The shop reported a damaged carton in its receipt advice; the distributor credits it. The factor stays the payee, because it owns the receivable being reduced.",
+   "why": "The shop refused a damaged bench in its receipt advice; the distributor credits it. The store deducts the credit from what it pays the factor, which owns the invoice's receivable.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
     "AccountingCustomerParty": "26-xb",
     "SellerSupplierParty": "6-xb",
-    "BuyerCustomerParty": "26-xb",
-    "PayeeParty": "24-xb"
+    "BuyerCustomerParty": "26-xb"
    }
   },
   {
@@ -1632,7 +1631,7 @@
    "doc": "CatalogueDeletion",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The spring catalogue ends; the distributor deletes it before the summer catalogue.",
+   "why": "The distributor's winter catalogue takes over on 20 June, the start of winter in the south; the distributor deletes the store's catalogue the day before.",
    "parties": {
     "ProviderParty": "6-xb",
     "ReceiverParty": "26-xb",
@@ -1663,6 +1662,21 @@
    },
    "values": {
     "DeliveryTerms/ID": "EXW"
+   }
+  },
+  {
+   "flow": "retail",
+   "doc": "TransportExecutionPlan",
+   "from": "10-xb",
+   "to": "6-xb",
+   "why": "The carrier confirms the distributor's booking: loading on 29 April and the delivery slot at the store on 30 April, 10:00 to 10:30 (D38, D34).",
+   "parties": {
+    "SenderParty": "10-xb",
+    "ReceiverParty": "6-xb",
+    "TransportUserParty": "6-xb",
+    "TransportServiceProviderParty": "10-xb",
+    "Consignment/ConsignorParty": "6-xb",
+    "Consignment/ConsigneeParty": "26-xb"
    }
   },
   {
@@ -3307,7 +3321,8 @@
    "parties": {
     "AccountingCustomerParty": "26-xb",
     "AccountingSupplierParty": "37-xb"
-   }
+   },
+   "removed": "Removed 2026-11-19 (D32, O6, D9): the store carried the returned pieces back at the maker's cost and invoices the transport (furniture/18); a buyer's debit note is not a seller's charge. Its number 14 is not used again (D28)."
   },
   {
    "flow": "furniture",
@@ -3348,6 +3363,31 @@
     "SellerSupplierParty": "37-xb",
     "BuyerCustomerParty": "2-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "Invoice",
+   "from": "26-xb",
+   "to": "37-xb",
+   "why": "The store took the returned pieces back to the maker's workshop with its own van, at the maker's cost as the own-label agreement says, and invoices the transport (D32).",
+   "parties": {
+    "AccountingSupplierParty": "26-xb",
+    "AccountingCustomerParty": "37-xb",
+    "SellerSupplierParty": "26-xb",
+    "BuyerCustomerParty": "37-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "furniture",
+   "doc": "DespatchAdvice",
+   "from": "37-xb",
+   "to": "26-xb",
+   "why": "The furniture maker's despatch advice for the delivery of the opening stock on 23 March, which its invoice cites as the delivery document (D38).",
+   "parties": {
+    "DespatchSupplierParty": "37-xb",
+    "DeliveryCustomerParty": "26-xb"
    }
   },
   {

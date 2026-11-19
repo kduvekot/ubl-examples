@@ -11,7 +11,7 @@
   <cbc:IssueTime>09:01:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
   <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
-  <cbc:Note>Applies to the spring catalogue.</cbc:Note>
+  <cbc:Note>A revision of Lumeway's catalogue for the Lumeport store.</cbc:Note>
   <cbc:Description>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Description>
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -26,7 +26,7 @@
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
     <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
-    <cbc:Note>Spring catalogue 2026.</cbc:Note>
+    <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.1</cbc:VersionID>
     <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
@@ -179,9 +179,6 @@
       </cac:PartyName>
     </cac:Party>
   </cac:ContractorCustomerParty>
-  <cac:TradingTerms>
-    <cbc:Information>Unchanged.</cbc:Information>
-  </cac:TradingTerms>
   <cac:DefaultLanguage>
     <cbc:ID schemeID="ISO 639">en</cbc:ID>
     <cbc:Name>English</cbc:Name>

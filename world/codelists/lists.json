@@ -4719,7 +4719,7 @@
    "codes": {
     "STOREOPEN": [
      "Store opening",
-     ""
+     "The opening or reopening of a store, or of a department of one."
     ],
     "REFIT": [
      "Store refit",
@@ -4747,6 +4747,10 @@
     "LAUNCH": [
      "Product launch",
      ""
+    ],
+    "OPENING": [
+     "Opening promotion",
+     "A promotion for the opening or reopening of a store or of a department of one."
     ]
    }
   },
@@ -4911,6 +4915,10 @@
      "Weekly",
      ""
     ],
+    "FOURWEEKLY": [
+     "Every four weeks",
+     ""
+    ],
     "MONTHLY": [
      "Monthly",
      ""
@@ -4924,7 +4932,7 @@
    "codes": {
     "REVIEW": [
      "Joint review",
-     "The partners review the exception together."
+     "The partners review the exception together. A world extension: the values UBL's definition of ExceptionResolutionCode lists all default to a value."
     ],
     "ADJUST": [
      "Adjust the forecast",
@@ -4992,22 +5000,14 @@
   "ThresholdValueComparison": {
    "scope": "regional",
    "name": "Threshold value comparison",
-   "description": "How a value is compared with the threshold of an exception criterion.",
+   "description": "How a value is compared with the threshold of an exception criterion: the two values UBL's definition of ThresholdValueComparisonCode allows.",
    "codes": {
-    "GT": [
-     "Greater than",
+    "EXCEEDS_EXCEPTION_VALUE": [
+     "Exceeds the exception value",
      ""
     ],
-    "LT": [
-     "Less than",
-     ""
-    ],
-    "GE": [
-     "Greater than or equal to",
-     ""
-    ],
-    "LE": [
-     "Less than or equal to",
+    "FALLS_BELOW_EXCEPTION_VALUE": [
+     "Falls below the exception value",
      ""
     ]
    }
@@ -7058,6 +7058,7 @@
     "01921": "",
     "12020": "",
     "14100": "",
+    "27180": "",
     "28232": "",
     "31102": "",
     "34710": "",
@@ -7148,6 +7149,10 @@
     ],
     "940330": [
      "Wooden furniture of a kind used in offices",
+     ""
+    ],
+    "940490": [
+     "Bedding and similar furnishing articles, n.e.c. in heading 9404 (cushions and the like)",
      ""
     ]
    }

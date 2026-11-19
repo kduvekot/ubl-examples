@@ -222,8 +222,6 @@ Inside `OrderLine`:
   Why no price question.
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/UUID` = **4278e92c-6141-5575-b08f-555e19cf4b75**  
-  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **Twice the target of six oak benches: the shelf and the display in the home and garden department when it reopens.**  
   What the line is.
 - `LineItem/Quantity` = **12** (unitCode `EA`)  
@@ -246,8 +244,6 @@ Inside `OrderLine`:
   The cost centre of the home and garden department, which sells the line.
 - `LineItem/AccountingCost` = **Home and garden department**  
   In words.
-- `LineItem/PricingReference/OriginalItemLocationQuantity/Price/PriceAmount` = **380** (currencyID `XBL`)  
-  The price of the quotation, which the order accepts.
 - `LineItem/Price/PriceAmount` = **380** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -286,8 +282,6 @@ Inside `OrderLine`:
   Why no price question.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/UUID` = **f71e5dfc-ff09-5007-9481-ff37edea4f37**  
-  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **Twice the target of four ash benches, for the shelf and the display.**  
   What the line is.
 - `LineItem/Quantity` = **8** (unitCode `EA`)  
@@ -310,8 +304,6 @@ Inside `OrderLine`:
   The cost centre of the home and garden department, which sells the line.
 - `LineItem/AccountingCost` = **Home and garden department**  
   In words.
-- `LineItem/PricingReference/OriginalItemLocationQuantity/Price/PriceAmount` = **380** (currencyID `XBL`)  
-  The price of the quotation, which the order accepts.
 - `LineItem/Price/PriceAmount` = **380** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -350,8 +342,6 @@ Inside `OrderLine`:
   Why no price question.
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/UUID` = **699ff293-236d-51b9-9f06-e81a0e025f0d**  
-  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **Twice the target of twelve oak chairs, two with each oak bench.**  
   What the line is.
 - `LineItem/Quantity` = **24** (unitCode `EA`)  
@@ -374,8 +364,6 @@ Inside `OrderLine`:
   The cost centre of the home and garden department, which sells the line.
 - `LineItem/AccountingCost` = **Home and garden department**  
   In words.
-- `LineItem/PricingReference/OriginalItemLocationQuantity/Price/PriceAmount` = **115** (currencyID `XBL`)  
-  The price of the quotation, which the order accepts.
 - `LineItem/Price/PriceAmount` = **115** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -414,8 +402,6 @@ Inside `OrderLine`:
   Why no price question.
 - `LineItem/ID` = **4**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/UUID` = **9a30b053-0ba0-5128-a3b2-ea0bfe870f3b**  
-  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **Twice the target of eight ash chairs, two with each ash bench.**  
   What the line is.
 - `LineItem/Quantity` = **16** (unitCode `EA`)  
@@ -438,8 +424,6 @@ Inside `OrderLine`:
   The cost centre of the home and garden department, which sells the line.
 - `LineItem/AccountingCost` = **Home and garden department**  
   In words.
-- `LineItem/PricingReference/OriginalItemLocationQuantity/Price/PriceAmount` = **115** (currencyID `XBL`)  
-  The price of the quotation, which the order accepts.
 - `LineItem/Price/PriceAmount` = **115** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -478,8 +462,6 @@ Inside `OrderLine`:
   Why no price question.
 - `LineItem/ID` = **5**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/UUID` = **1e4f09f1-2315-52bf-a059-dcb2ea81a158**  
-  A universally unique identifier of the line, derived from the document and the line number.
 - `LineItem/Note` = **Free: one care kit with each bench, oak or ash.**  
   What the line is.
 - `LineItem/Quantity` = **20** (unitCode `EA`)  
@@ -666,7 +648,6 @@ Inside `OrderLine`:
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:UUID>4278e92c-6141-5575-b08f-555e19cf4b75</cbc:UUID>
       <cbc:Note>Twice the target of six oak benches: the shelf and the display in the home and garden department when it reopens.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">4560.00</cbc:LineExtensionAmount>
@@ -678,13 +659,6 @@ Inside `OrderLine`:
       <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
       <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
       <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-      <cac:PricingReference>
-        <cac:OriginalItemLocationQuantity>
-          <cac:Price>
-            <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
-          </cac:Price>
-        </cac:OriginalItemLocationQuantity>
-      </cac:PricingReference>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
@@ -734,7 +708,6 @@ Inside `OrderLine`:
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:UUID>f71e5dfc-ff09-5007-9481-ff37edea4f37</cbc:UUID>
       <cbc:Note>Twice the target of four ash benches, for the shelf and the display.</cbc:Note>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">3040.00</cbc:LineExtensionAmount>
@@ -746,13 +719,6 @@ Inside `OrderLine`:
       <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
       <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
       <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-      <cac:PricingReference>
-        <cac:OriginalItemLocationQuantity>
-          <cac:Price>
-            <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
-          </cac:Price>
-        </cac:OriginalItemLocationQuantity>
-      </cac:PricingReference>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">380</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
@@ -802,7 +768,6 @@ Inside `OrderLine`:
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
-      <cbc:UUID>699ff293-236d-51b9-9f06-e81a0e025f0d</cbc:UUID>
       <cbc:Note>Twice the target of twelve oak chairs, two with each oak bench.</cbc:Note>
       <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">2760.00</cbc:LineExtensionAmount>
@@ -814,13 +779,6 @@ Inside `OrderLine`:
       <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
       <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
       <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-      <cac:PricingReference>
-        <cac:OriginalItemLocationQuantity>
-          <cac:Price>
-            <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
-          </cac:Price>
-        </cac:OriginalItemLocationQuantity>
-      </cac:PricingReference>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
@@ -870,7 +828,6 @@ Inside `OrderLine`:
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>4</cbc:ID>
-      <cbc:UUID>9a30b053-0ba0-5128-a3b2-ea0bfe870f3b</cbc:UUID>
       <cbc:Note>Twice the target of eight ash chairs, two with each ash bench.</cbc:Note>
       <cbc:Quantity unitCode="EA">16</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">1840.00</cbc:LineExtensionAmount>
@@ -882,13 +839,6 @@ Inside `OrderLine`:
       <cbc:BackOrderAllowedIndicator>true</cbc:BackOrderAllowedIndicator>
       <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
       <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-      <cac:PricingReference>
-        <cac:OriginalItemLocationQuantity>
-          <cac:Price>
-            <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
-          </cac:Price>
-        </cac:OriginalItemLocationQuantity>
-      </cac:PricingReference>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">115</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
@@ -938,7 +888,6 @@ Inside `OrderLine`:
     <cbc:Note>Price as quoted.</cbc:Note>
     <cac:LineItem>
       <cbc:ID>5</cbc:ID>
-      <cbc:UUID>1e4f09f1-2315-52bf-a059-dcb2ea81a158</cbc:UUID>
       <cbc:Note>Free: one care kit with each bench, oak or ash.</cbc:Note>
       <cbc:Quantity unitCode="EA">20</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">0.00</cbc:LineExtensionAmount>

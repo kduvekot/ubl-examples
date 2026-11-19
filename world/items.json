@@ -403,7 +403,11 @@
     730,
     620,
     70
-   ]
+   ],
+   "version": {
+    "extended": "2026",
+    "why": "The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on (D35 point 3, O216): Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it."
+   }
   },
   {
    "id": "granulate-pe",
@@ -1021,6 +1025,31 @@
    "origin_criterion": "S"
   },
   {
+   "id": "marrow-seat-pad",
+   "seller": "37-xb",
+   "name": "Brackenmere seat pad, Marrow chair",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 16.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "BF-MRW-P",
+   "hs": "940490",
+   "cpc": "27180",
+   "origin": "XB",
+   "description": "Seat pad for the Marrow dining chair: a foam pad in a removable linen cover, with ties, 400 × 400 mm. Sold under Brackenmere's brand; Brackenmere has it made by a textile workshop and does not make it itself.",
+   "net_kg": 0.4,
+   "gross_kg": 0.5,
+   "package": {
+    "type": "BG",
+    "per_package": 1
+   },
+   "brand": "Brackenmere",
+   "gtin": "9523710000036",
+   "origin_criterion": "S"
+  },
+  {
    "id": "office-desk",
    "seller": "37-xb",
    "name": "Office desk",
@@ -1573,7 +1602,7 @@
    },
    "sellers_id": "BM-551210",
    "resale_of": "bench-serra-b",
-   "description": "The Serra park bench in the store's garden department; the state sales tax is added at the till."
+   "description": "The Serra park bench in the store's home and garden department; the state sales tax is added at the till."
   },
   {
    "id": "return-transport",

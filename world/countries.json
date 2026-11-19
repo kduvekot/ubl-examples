@@ -1988,7 +1988,11 @@
     "then": "vabul",
     "timetable": "santul",
     "was": "kagaz",
-    "rules": "trilhek"
+    "rules": "trilhek",
+    "every": "sistan",
+    "exceeds": "skuzgul",
+    "falls": "kralzhek",
+    "weeks": "zakdrir"
    }
   },
   "qal": {
@@ -3111,13 +3115,17 @@
     "bodies": "senatu",
     "stream": "tamohi",
     "tare": "nimeme",
+    "rules": "lelahe",
+    "every": "tasali",
+    "exceeds": "telilo",
+    "falls": "litiho",
+    "weeks": "hipose",
     "transformers": "telalimu",
     "voltage": "vuvai",
     "abroad": "pelahi",
     "partner's": "vapiseva",
     "rule": "vamufe",
-    "used": "vimihi",
-    "rules": "lelahe"
+    "used": "vimihi"
    }
   },
   "en": {
