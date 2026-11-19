@@ -156,7 +156,11 @@ def check(world):
         pr = it["price"]
         if pr["currency"] != cur["code"]:
             problems.append(f"{where}: price in {pr['currency']}, but the seller's currency is {cur['code']}")
-        if it.get("free_with"):
+        if "rate_percent" in pr:       # a premium on the insured value (O173)
+            if not 0 < pr["rate_percent"] < 100 or pr.get("cover_percent", 0) < 100 or not pr.get("why"):
+                problems.append(f"{where}: a rate price needs a rate between 0 and 100 %, a cover of at least 100 % "
+                                "and its reason (why)")
+        elif it.get("free_with"):
             if pr["amount"] != 0:
                 problems.append(f"{where}: given free with {it['free_with']}, so its price is zero")
             for w in it["free_with"]:      # each piece it comes with: a model's variants are items of their own
@@ -516,6 +520,39 @@ def gross_kg(items, iid):
     return it.get("gross_kg")
 
 
+def insurance_premium(price, base):
+    """The premium of a cargo insurance at a rate on the insured value (O173): price is the item's rate price
+    (rate_percent, cover_percent), base the value insured without the premium (the goods and the freight, in the
+    CIF value). The insured value is cover_percent of the base plus the premium itself, so the premium is the fixed
+    point p = round(rate × cover × (base + p)), to the cent. Returns (premium, insured value)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    cent = Decimal("0.01")
+    r = Decimal(str(price["rate_percent"])) / 100
+    c = Decimal(str(price["cover_percent"])) / 100
+    base = Decimal(str(base))
+    p = (r * c * base / (1 - r * c)).quantize(cent, ROUND_HALF_UP)
+    for cand in (p, p - cent, p + cent):
+        if (r * c * (base + cand)).quantize(cent, ROUND_HALF_UP) == cand:
+            return cand, (c * (base + cand)).quantize(cent, ROUND_HALF_UP)
+    raise SystemExit(f"insurance premium: no premium to the cent on a base of {base}")
+
+
+def insured_base(world, items, fr):
+    """The value a freight's cargo insurance covers, without the premium (O173): the load at the insured buyer's
+    prices and the freight services named, in lume."""
+    from decimal import Decimal
+    ins = fr["insured"]
+    out = Decimal(0)
+    for l in fr["load"]:
+        pr = items[l["item"]].get("buyer_prices", {}).get(ins["buyer"]) or items[l["item"]]["price"]
+        out += _lume(world, Decimal(str(pr["amount"])) * Decimal(str(l["qty"])), pr["currency"])
+    for sv in fr["services"]:
+        if sv["item"] in ins["with"]:
+            pr = items[sv["item"]]["price"]
+            out += _lume(world, Decimal(str(pr["amount"])) * Decimal(str(sv["qty"])), pr["currency"])
+    return out
+
+
 def freight_costs(world, items):
     """Each stated freight of resales.freight in lume per unit of each item it carries: the services' prices times
     their quantities (the kilometres of the transport leg on the map, as the carrier invoices them, or the
@@ -534,6 +571,12 @@ def freight_costs(world, items):
             else:
                 q = Decimal(str(sv["qty"]))
             pr = items[sv["item"]]["price"]
+            if "rate_percent" in pr:     # a premium on the insured value of the load (O173)
+                if not fr.get("insured"):
+                    raise SystemExit(f"items.json resales.freight.{name}: {sv['item']} is priced at a rate, but the "
+                                     "freight states no insured value (insured)")
+                total += _lume(world, insurance_premium(pr, insured_base(world, items, fr))[0] * q, pr["currency"])
+                continue
             total += _lume(world, Decimal(str(pr["amount"])) * q, pr["currency"])
         out[name] = {l["item"]: total * Decimal(str(gross_kg(items, l["item"]))) / load_kg for l in fr["load"]}
     return out

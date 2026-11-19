@@ -428,7 +428,7 @@ Inside `PaymentTerms`:
   The surcharge per month of late payment.
 - `PaymentPercent` = **82.75**  
   Its share of the invoice total.
-- `Amount` = **47974.00** (currencyID `XBL`)  
+- `Amount` = **47974.30** (currencyID `XBL`)  
   The balance.
 - `PenaltyAmount` = **719.61** (currencyID `XBL`)  
   The surcharge for the first month late, on the balance.
@@ -498,8 +498,8 @@ Inside `AllowanceCharge`:
   UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 96 = Insurance.
 - `AllowanceChargeReason` = **Cargo insurance**  
   Under CIF the seller insures the cargo and charges the insurance.
-- `Amount` = **140.00** (currencyID `XBL`)  
-  The premium of the cargo insurance.
+- `Amount` = **140.30** (currencyID `XBL`)  
+  The premium of the cargo insurance, as the forwarder charged it: 0.22 % of the insured value of 63,771.73 lume: the CIF value of 57,974.30 (goods 54,884.00, sea freight 2,950.00 and the premium itself) plus 10 % (O173).
 - `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
@@ -532,7 +532,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **57974.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **57974.30** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -553,17 +553,17 @@ Inside `LegalMonetaryTotal`:
 
 - `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **57974.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **57974.30** (currencyID `XBL`)  
   The line amounts plus the charges, without tax.
-- `TaxInclusiveAmount` = **57974.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **57974.30** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `ChargeTotalAmount` = **3090.00** (currencyID `XBL`)  
+- `ChargeTotalAmount` = **3090.30** (currencyID `XBL`)  
   The sum of the charges at document level.
 - `PrepaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit, already paid.
-- `PayableAmount` = **47974.00** (currencyID `XBL`)  
+- `PayableAmount` = **47974.30** (currencyID `XBL`)  
   What is still to pay: the total less the deposit.
-- `PayableAlternativeAmount` = **19189.600** (currencyID `XLC`)  
+- `PayableAlternativeAmount` = **19189.720** (currencyID `XLC`)  
   The same in coral, for the buyer's information, at the reference rate of the invoice date.
 
 ### Invoice Line
@@ -1061,7 +1061,7 @@ Inside `InvoiceLine`:
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PaymentPercent>82.75</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">47974.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">47974.30</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">719.61</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
@@ -1107,7 +1107,7 @@ Inside `InvoiceLine`:
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">96</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">140.30</cbc:Amount>
     <cac:TaxCategory>
       <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
@@ -1128,7 +1128,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">57974.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">57974.30</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -1143,12 +1143,12 @@ Inside `InvoiceLine`:
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">57974.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">57974.00</cbc:TaxInclusiveAmount>
-    <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">57974.30</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">57974.30</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">3090.30</cbc:ChargeTotalAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">47974.00</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">19189.600</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">47974.30</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">19189.720</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>

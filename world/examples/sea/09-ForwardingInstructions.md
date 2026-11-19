@@ -253,7 +253,7 @@ Inside `Shipment`:
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
   The cover the forwarder is to arrange.
-- `InsurancePolicy/InsuredValueAmount` = **63771.40** (currencyID `XBL`)  
+- `InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
   CIF requires insurance of at least 110 % of the value; the CIF value is the goods, freight and insurance.
 - `InsurancePolicy/InsurerParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -523,7 +523,7 @@ Inside `Signature`:
     </cac:GoodsItem>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>

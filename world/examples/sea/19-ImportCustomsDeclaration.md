@@ -400,7 +400,7 @@ Inside `Shipment`:
   Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
 - `GoodsItem/InsurancePolicy/ID` = **WS-CP-26-4471**  
   The cargo policy covering the goods.
-- `GoodsItem/InsurancePolicy/InsuredValueAmount` = **63771.40** (currencyID `XBL`)  
+- `GoodsItem/InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
   As on the insurance certificate.
 - `GoodsItem/ID` = **2**  
   The goods item number.
@@ -866,7 +866,7 @@ Inside `Signature`:
       </cac:ContainingPackage>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
       </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>

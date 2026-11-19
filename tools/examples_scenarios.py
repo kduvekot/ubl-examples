@@ -13,6 +13,7 @@ from decimal import Decimal
 import build_examples
 import examples_kit as kit
 import world_ids
+import world_items
 import world_map as wmap
 from build_examples import ITEM, PARTY, WORLD, V, Detail, address, amount, coordinate, item, money, party, price, qty
 
@@ -1364,7 +1365,9 @@ SEA = kit.Flow("sea", "2026-05-04", [
      "received": 11, "received_why": "One frame carton crushed at the port; the frame inside is cracked."}],
     buyer="1-xl")       # Lumeway's CIF price for the island's frames (items.json buyer_prices; O30)
 CONTAINER = kit.container_number("TWL", 412087)       # Tidewell Ocean Lines' container (ISO 6346, with check digit)
-SEA_FREIGHT, INSURANCE = Decimal("2950.00"), Decimal("140.00")
+SEA_FREIGHT = Decimal("2950.00")
+if SEA_FREIGHT != Decimal(str(ITEM["sea-freight"]["price"]["amount"])):
+    raise SystemExit("sea: the sea freight is not the forwarder's price for it (world/items.json sea-freight)")
 
 
 def sea_floor_places(f):
@@ -1384,6 +1387,21 @@ def sea_goods(f, iid=None):
     """The value of the goods sold (of one item, if given) at the buyer's prices, in lume."""
     return sum(Decimal(str(d["ordered"])) * kit.unit_price(d["item"], "XBL", f.buyer) for d in f.deal
                if iid in (None, d["item"]))
+
+
+# O173: the cargo insurance is a premium rate on the insured value, the CIF value plus 10 %, which holds the premium
+# itself (world/items.json cargo-insurance; the same figure as the margin check's, world_items.insurance_premium)
+INSURANCE, INSURED = world_items.insurance_premium(ITEM["cargo-insurance"]["price"], sea_goods(SEA) + SEA_FREIGHT)
+INSURANCE_RATE = ITEM["cargo-insurance"]["price"]["rate_percent"]
+if INSURED != (sea_goods(SEA) + SEA_FREIGHT + INSURANCE) * Decimal("1.1"):
+    raise SystemExit("sea: the insured value is not the CIF value plus 10 % (O173)")
+
+
+def insurance_basis():
+    """The premium's basis in words (O173)."""
+    return (f"{INSURANCE_RATE} % of the insured value of {INSURED:,.2f} lume: the CIF value of "
+            f"{sea_goods(SEA) + SEA_FREIGHT + INSURANCE:,.2f} (goods {sea_goods(SEA):,.2f}, sea freight "
+            f"{SEA_FREIGHT:,.2f} and the premium itself) plus 10 %")
 
 
 def cif_value(f):
@@ -1971,7 +1989,16 @@ def sea(n, doc):
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading.")}},
                            [{"item": "sea-freight", "qty": 1, "invoice_why": "One 40-foot container."},
                             {"item": "export-clearance", "qty": 1, "invoice_why": "One export declaration."},
-                            {"item": "cargo-insurance", "qty": 1, "invoice_why": "Insurance of this shipment."}],
+                            {"item": "cargo-insurance", "qty": 1, "invoice_why": "Insurance of this shipment.",
+                             "unit_price": f"{INSURANCE:.2f}",
+                             "unit_price_why": f"The premium: {insurance_basis()}, the cover CIF asks (O173).",
+                             "line_extra": {
+                                 "Note": V(f"Premium {INSURANCE_RATE} % of the insured value, {INSURED:,.2f} lume.",
+                                           "The basis of the premium, for the distributor's check: the rate of the "
+                                           "cargo policy on the CIF value plus 10 % (O173)."),
+                                 "DocumentReference": {"ID": V("WS-CERT-26-0884", "The insurance certificate of "
+                                                                                  "the shipment, which states the "
+                                                                                  "insured value.")}}}],
                            key="forwarder-invoice",
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment shipped.")}}}})
@@ -2027,7 +2054,8 @@ def sea(n, doc):
                                     {"like": "bench-serra-b", "reason": "Cargo insurance", "amount": INSURANCE, "code": "96",
                                      "code_why": "UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID.",
                                      "why": "Under CIF the seller insures the cargo and charges the insurance.",
-                                     "amount_why": "The premium of the cargo insurance."}],
+                                     "amount_why": f"The premium of the cargo insurance, as the forwarder charged "
+                                                   f"it: {insurance_basis()} (O173)."}],
                            terms=("until-O72", 45))    # the balance term is settled with the sea flow (O72)
         return sea_invoice_terms(f, out)
     if doc["doc"] == "Statement":

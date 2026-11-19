@@ -94,7 +94,7 @@ Inside `CustomsDeclaration`:
   The shipment declared.
 - `Shipment/TotalTransportHandlingUnitQuantity` = **27** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/InsuranceValueAmount` = **63771.40** (currencyID `XBL`)  
+- `Shipment/InsuranceValueAmount` = **63771.73** (currencyID `XBL`)  
   The cargo insurance the seller took out under CIF.
 - `Shipment/FreeOnBoardValueAmount` = **54884.00** (currencyID `XBL`)  
   On board in Lumeport.
@@ -496,7 +496,7 @@ Inside `Signature`:
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.40</cbc:InsuranceValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>

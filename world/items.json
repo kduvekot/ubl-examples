@@ -1173,11 +1173,13 @@
    "kind": "service",
    "unit": "E48",
    "price": {
-    "amount": 140.0,
-    "currency": "XBL"
+    "rate_percent": 0.22,
+    "cover_percent": 110,
+    "currency": "XBL",
+    "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value holds the premium itself, so the premium follows the value of each shipment (O173)."
    },
    "sellers_id": "BF-INS",
-   "description": "Cargo insurance for one shipment, arranged with the insurer.",
+   "description": "Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.",
    "purchase": "freight"
   },
   {
@@ -1781,6 +1783,13 @@
    },
    "sea": {
     "what": "Sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF (sea/18)",
+    "insured": {
+     "buyer": "1-xl",
+     "with": [
+      "sea-freight"
+     ],
+     "why": "The insured value is the CIF value plus 10 %: the load at the buyer's prices, the sea freight and the premium (O173)."
+    },
     "services": [
      {
       "item": "sea-freight",

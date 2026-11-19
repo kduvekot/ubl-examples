@@ -59,7 +59,7 @@
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.40</cbc:InsuranceValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>

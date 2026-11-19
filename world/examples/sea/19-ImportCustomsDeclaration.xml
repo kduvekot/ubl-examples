@@ -326,7 +326,7 @@
       </cac:ContainingPackage>
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
       </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>

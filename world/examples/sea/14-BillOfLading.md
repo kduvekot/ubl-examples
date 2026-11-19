@@ -234,13 +234,13 @@ Inside `Shipment`:
   The customs broker's file in Selanu.
 - `Consignment/TotalInvoiceAmount` = **54884.00** (currencyID `XBL`)  
   The value of the goods on the sales invoice.
-- `Consignment/DeclaredCustomsValueAmount` = **57974.00** (currencyID `XBL`)  
+- `Consignment/DeclaredCustomsValueAmount` = **57974.30** (currencyID `XBL`)  
   The CIF value: goods, freight and insurance.
 - `Consignment/TariffDescription` = **Furniture, packed, not hazardous**  
   The carrier's commodity tariff, in words.
 - `Consignment/TariffCode` = **TWL-T-0940**  
   The item of the carrier's own freight tariff for this cargo: furniture. A code the carrier defines, so it has no code list.
-- `Consignment/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
+- `Consignment/InsurancePremiumAmount` = **140.30** (currencyID `XBL`)  
   The premium the seller paid under CIF.
 - `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo.
@@ -252,7 +252,7 @@ Inside `Shipment`:
   The handling, in words.
 - `Consignment/Information` = **Shipped on board in apparent good order and condition.**  
   The carrier's clause.
-- `Consignment/InsuranceValueAmount` = **63771.40** (currencyID `XBL`)  
+- `Consignment/InsuranceValueAmount` = **63771.73** (currencyID `XBL`)  
   110 % of the CIF value.
 - `Consignment/FreeOnBoardValueAmount` = **54884.00** (currencyID `XBL`)  
   The value on board in Lumeport: the goods alone.
@@ -360,7 +360,7 @@ Inside `Shipment`:
   The risk is the buyer's from on board in Lumeport. The code is from the Trade Accord's party bearing the risk list: BUYER = Buyer.
 - `Consignment/DeliveryTerms/LossRisk` = **Risk passes when the goods are on board the vessel in Lumeport.**  
   In words.
-- `Consignment/DeliveryTerms/Amount` = **57974.00** (currencyID `XBL`)  
+- `Consignment/DeliveryTerms/Amount` = **57974.30** (currencyID `XBL`)  
   The CIF value the terms are based on.
 - `Consignment/DeliveryTerms/DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -994,13 +994,13 @@ Inside `Shipment`:
   The cargo policy of the insurer.
 - `Consignment/InsurancePolicy/InsuranceTypeCode` = **ALLRISKS** (listID `urn:ubl-examples:world:codelist:InsuranceCoverCode`)  
   Cover against all risks. The code is from the Trade Accord's insurance cover list: ALLRISKS = All risks.
-- `Consignment/InsurancePolicy/InsuredValueAmount` = **63771.40** (currencyID `XBL`)  
+- `Consignment/InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
   110 % of the CIF value.
 - `Consignment/InsurancePolicy/DeductibleAmount` = **250.00** (currencyID `XBL`)  
   The part of a claim the insured bears.
 - `Consignment/InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
   The excess per claim, as in the policy.
-- `Consignment/InsurancePolicy/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
+- `Consignment/InsurancePolicy/InsurancePremiumAmount` = **140.30** (currencyID `XBL`)  
   The premium.
 - `Consignment/InsurancePolicy/BrokerParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -1040,7 +1040,7 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
-- `InsurancePolicy/InsuredValueAmount` = **63771.40** (currencyID `XBL`)  
+- `InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
   The insured value, 110 % of the CIF value.
 - `InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
   The excess per claim, as in the policy.
@@ -1293,16 +1293,16 @@ Inside `Signature`:
       <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
       <cbc:TotalInvoiceAmount currencyID="XBL">54884.00</cbc:TotalInvoiceAmount>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">57974.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">57974.30</cbc:DeclaredCustomsValueAmount>
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
-      <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+      <cbc:InsurancePremiumAmount currencyID="XBL">140.30</cbc:InsurancePremiumAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
       <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.40</cbc:InsuranceValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -1411,7 +1411,7 @@ Inside `Signature`:
         <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
-        <cbc:Amount currencyID="XBL">57974.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">57974.30</cbc:Amount>
         <cac:DeliveryLocation>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -1964,10 +1964,10 @@ Inside `Signature`:
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
         <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
-        <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
+        <cbc:InsurancePremiumAmount currencyID="XBL">140.30</cbc:InsurancePremiumAmount>
         <cac:BrokerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -2022,7 +2022,7 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
     <cac:InsurancePolicy>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
       <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>

@@ -30,11 +30,11 @@ The factor, who now owns the receivables, sends the statement of account on beha
   Who the statement is for.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoices; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalDebitAmount` = **57974.00** (currencyID `XBL`)  
+- `TotalDebitAmount` = **57974.30** (currencyID `XBL`)  
   The invoice in full.
 - `TotalCreditAmount` = **10000.00** (currencyID `XBL`)  
   The deposit the buyer paid on the order.
-- `TotalBalanceAmount` = **47974.00** (currencyID `XBL`)  
+- `TotalBalanceAmount` = **47974.30** (currencyID `XBL`)  
   What is owed.
 - `LineCountNumeric` = **2**  
   The invoice and the deposit.
@@ -289,7 +289,7 @@ Inside `AllowanceCharge`:
   The sum is mostly freight; one code covers the charge (UN/EDIFACT 7161). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
 - `AllowanceChargeReason` = **Freight and insurance of the CIF invoice**  
   Why.
-- `Amount` = **3090.00** (currencyID `XBL`)  
+- `Amount` = **3090.30** (currencyID `XBL`)  
   Included in the balance.
 
 ### Statement Line
@@ -304,9 +304,9 @@ Inside `StatementLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `BalanceBroughtForwardIndicator` = **false**  
   A new item, not a balance carried over.
-- `DebitLineAmount` = **57974.00** (currencyID `XBL`)  
+- `DebitLineAmount` = **57974.30** (currencyID `XBL`)  
   The invoice in full.
-- `BalanceAmount` = **57974.00** (currencyID `XBL`)  
+- `BalanceAmount` = **57974.30** (currencyID `XBL`)  
   Before the deposit.
 - `PaymentPurposeCode` = **GDDS** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code GDDS: purchase of goods. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: GDDS = PurchaseSaleOfGoods.
@@ -350,7 +350,7 @@ Inside `StatementLine`:
   UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 96 = Insurance.
 - `AllowanceCharge/AllowanceChargeReason` = **Cargo insurance**  
   As on the invoice.
-- `AllowanceCharge/Amount` = **140.00** (currencyID `XBL`)  
+- `AllowanceCharge/Amount` = **140.30** (currencyID `XBL`)  
   The premium.
 - `ID` = **2**  
   The deposit.
@@ -360,7 +360,7 @@ Inside `StatementLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `CreditLineAmount` = **10000.00** (currencyID `XBL`)  
   The deposit.
-- `BalanceAmount` = **47974.00** (currencyID `XBL`)  
+- `BalanceAmount` = **47974.30** (currencyID `XBL`)  
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
@@ -390,9 +390,9 @@ Inside `StatementLine`:
   <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">57974.00</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">57974.30</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">10000.00</cbc:TotalCreditAmount>
-  <cbc:TotalBalanceAmount currencyID="XBL">47974.00</cbc:TotalBalanceAmount>
+  <cbc:TotalBalanceAmount currencyID="XBL">47974.30</cbc:TotalBalanceAmount>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode listID="urn:ubl-examples:world:codelist:StatementTypeCode">ACCOUNT</cbc:StatementTypeCode>
   <cac:StatementPeriod>
@@ -583,15 +583,15 @@ Inside `StatementLine`:
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Freight and insurance of the CIF invoice</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">3090.00</cbc:Amount>
+    <cbc:Amount currencyID="XBL">3090.30</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>
     <cbc:UUID>56439119-78e3-59ec-bc7d-84c3d3a46f09</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">57974.00</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">57974.00</cbc:BalanceAmount>
+    <cbc:DebitLineAmount currencyID="XBL">57974.30</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">57974.30</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
       <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
@@ -654,7 +654,7 @@ Inside `StatementLine`:
       <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">96</cbc:AllowanceChargeReasonCode>
       <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
-      <cbc:Amount currencyID="XBL">140.00</cbc:Amount>
+      <cbc:Amount currencyID="XBL">140.30</cbc:Amount>
     </cac:AllowanceCharge>
   </cac:StatementLine>
   <cac:StatementLine>
@@ -662,7 +662,7 @@ Inside `StatementLine`:
     <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
     <cbc:UUID>16aec267-0a53-5561-ad4f-79c534c1d918</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">47974.00</cbc:BalanceAmount>
+    <cbc:BalanceAmount currencyID="XBL">47974.30</cbc:BalanceAmount>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
