@@ -53,7 +53,7 @@
       <cbc:Name>Billing</cbc:Name>
       <cbc:JobTitle>Billing officer</cbc:JobTitle>
       <cbc:Department>Business sales</cbc:Department>
-      <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
+      <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
       <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -88,7 +88,7 @@
       <cbc:Name>Accounts payable</cbc:Name>
       <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
       <cbc:Department>Finance</cbc:Department>
-      <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+      <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
       <cbc:ElectronicMail>payables@velumi.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>
@@ -175,7 +175,7 @@
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 474 274</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 7121 955 964</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>

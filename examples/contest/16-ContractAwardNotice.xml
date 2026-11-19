@@ -71,7 +71,7 @@
         <cbc:Name>Procurement office</cbc:Name>
         <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
-        <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -109,7 +109,7 @@
       <cbc:Name>Publications and register</cbc:Name>
       <cbc:JobTitle>Publications officer</cbc:JobTitle>
       <cbc:Department>Publications</cbc:Department>
-      <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5339 4832</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -194,7 +194,7 @@
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
         </cac:PartyIdentification>
         <cac:AdditionalPartyIdentification>
-          <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+          <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
         </cac:AdditionalPartyIdentification>
         <cac:PartyName>
           <cbc:Name>Valdara Industries</cbc:Name>

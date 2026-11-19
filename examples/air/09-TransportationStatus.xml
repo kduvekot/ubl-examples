@@ -45,7 +45,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 3 729 1859</cbc:Telephone>
+        <cbc:Telephone>+999 3 729 5794</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@velumi.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
@@ -76,7 +76,7 @@
         <cbc:Name>Cargo operations</cbc:Name>
         <cbc:JobTitle>Load controller</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 3 721 1311</cbc:Telephone>
+        <cbc:Telephone>+999 3 721 1044</cbc:Telephone>
         <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
@@ -114,7 +114,7 @@
           <cbc:Name>Import desk</cbc:Name>
           <cbc:JobTitle>Cargo handling agent</cbc:JobTitle>
           <cbc:Department>Cargo handling</cbc:Department>
-          <cbc:Telephone>+999 3 724 1174</cbc:Telephone>
+          <cbc:Telephone>+999 3 724 5671</cbc:Telephone>
           <cbc:ElectronicMail>import@selanu-cargo.example</cbc:ElectronicMail>
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
@@ -190,7 +190,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Export coordinator</cbc:JobTitle>
       <cbc:Department>Export</cbc:Department>
-      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

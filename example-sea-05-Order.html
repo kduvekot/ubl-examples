@@ -178,7 +178,7 @@ Trading (world/parties.json).</li>
 The department the desk belongs to; identity of Velumi Trading
 (world/parties.json).</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 3 729
-1859</strong><br />
+5794</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
@@ -313,8 +313,8 @@ Distribution (world/parties.json).</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to; identity of Lumeway Distribution
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 474
-274</strong><br />
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
+964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -481,7 +481,7 @@ Warehousing (world/parties.json).</li>
 The department the desk belongs to; identity of Nalevi Warehousing
 (world/parties.json).</li>
 <li><code>DeliveryParty/Contact/Telephone</code> = <strong>+999 3 722
-1722</strong><br />
+1882</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
@@ -661,11 +661,11 @@ the maker numbers its items in another scheme, and GS1 lets a wholesaler
 or importer allocate the GTIN where the brand owner has none
 (world/items.json).</li>
 <li><code>LineItem/Item/AdditionalItemIdentification/ID</code> =
-<strong>771020000027</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The maker's own number for the item, its Codana item number, which
-travels along with the GTIN; item bench-serra of Valdara Industries
-(world/items.json).</li>
+<strong>KXU10014B180</strong> (schemeID <code>ISO 15459-6</code>)<br />
+The maker's number for the item in its globally unique form under
+ISO/IEC 15459 (KXU and the company number Codana gave Valdara
+Industries), which travels along with the GTIN, as an importer may carry
+it; item bench-serra of Valdara Industries (world/items.json).</li>
 <li><code>LineItem/Item/CatalogueDocumentReference/ID</code> =
 <strong>LD-CAT-26-0124</strong><br />
 The catalogue the item was ordered from.</li>
@@ -717,11 +717,11 @@ the maker numbers its items in another scheme, and GS1 lets a wholesaler
 or importer allocate the GTIN where the brand owner has none
 (world/items.json).</li>
 <li><code>LineItem/Item/AdditionalItemIdentification/ID</code> =
-<strong>771020000034</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The maker's own number for the item, its Codana item number, which
-travels along with the GTIN; item bench-casting of Valdara Industries
-(world/items.json).</li>
+<strong>KXU10014C180</strong> (schemeID <code>ISO 15459-6</code>)<br />
+The maker's number for the item in its globally unique form under
+ISO/IEC 15459 (KXU and the company number Codana gave Valdara
+Industries), which travels along with the GTIN, as an importer may carry
+it; item bench-casting of Valdara Industries (world/items.json).</li>
 <li><code>LineItem/Item/CatalogueDocumentReference/ID</code> =
 <strong>LD-CAT-26-0124</strong><br />
 The catalogue the item was ordered from.</li>
@@ -776,7 +776,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Purchasing&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Buyer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Purchasing&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 729 1859&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 729 5794&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;purchasing@velumi.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Monday to Saturday 09:00–18:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -819,7 +819,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;sales@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -891,7 +891,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Goods inwards&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Warehouse supervisor&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 722 1722&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 722 1882&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;goods@nalevi.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Monday to Saturday 07:00–18:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -969,7 +969,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9520610000012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000027&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CatalogueDocumentReference</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-CAT-26-0124&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1001,7 +1001,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9520610000029&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000034&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CatalogueDocumentReference</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LD-CAT-26-0124&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1012,6 +1012,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f512c65</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>89e41a1</code></p></div></footer>
 </body>
 </html>

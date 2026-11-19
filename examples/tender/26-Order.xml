@@ -62,7 +62,7 @@
         <cbc:Name>Procurement office</cbc:Name>
         <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
-        <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -78,7 +78,7 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
         <cbc:Name>Valdara Industries</cbc:Name>
@@ -104,12 +104,12 @@
         <cbc:Name>Order desk</cbc:Name>
         <cbc:JobTitle>Order administrator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
         <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         <cac:OtherCommunication>
           <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-          <cbc:Value>+999 1 344 474 4274</cbc:Value>
+          <cbc:Value>+999 1 351 400 5258</cbc:Value>
         </cac:OtherCommunication>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -207,9 +207,9 @@
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:item">771020000027</cbc:ID>
+          <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
           <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
-          <cbc:IssuerScopeID>771</cbc:IssuerScopeID>
+          <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>VI-CAT-26-0211</cbc:ID>

@@ -50,7 +50,7 @@
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+      <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
       <cbc:ElectronicMail>customs@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -125,6 +125,9 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412603</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9524010900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-412603</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
@@ -177,7 +180,7 @@
         <cbc:Name>Export office</cbc:Name>
         <cbc:JobTitle>Customs officer</cbc:JobTitle>
         <cbc:Department>Customs</cbc:Department>
-        <cbc:Telephone>+999 3 728 1448</cbc:Telephone>
+        <cbc:Telephone>+999 3 728 6449</cbc:Telephone>
         <cbc:ElectronicMail>export@customs-xl.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

@@ -66,7 +66,7 @@
         <cbc:Name>Procurement office</cbc:Name>
         <cbc:JobTitle>Procurement officer</cbc:JobTitle>
         <cbc:Department>Procurement</cbc:Department>
-        <cbc:Telephone>+999 2 38 2648 0548</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
         <cbc:ElectronicMail>procurement@publicworks-lumeport.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -104,7 +104,7 @@
       <cbc:Name>Publications and register</cbc:Name>
       <cbc:JobTitle>Publications officer</cbc:JobTitle>
       <cbc:Department>Publications</cbc:Department>
-      <cbc:Telephone>+999 2 38 2259 0959</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5339 4832</cbc:Telephone>
       <cbc:ElectronicMail>publications@info-xb.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

@@ -58,7 +58,7 @@
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>logistics@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -95,7 +95,7 @@
       <cbc:Name>Bookings</cbc:Name>
       <cbc:JobTitle>Booking agent</cbc:JobTitle>
       <cbc:Department>Bookings</cbc:Department>
-      <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2058 7929</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>

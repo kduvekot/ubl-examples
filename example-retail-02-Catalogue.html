@@ -18,8 +18,9 @@ Lumeway Distribution to Brightmarket Stores</h1>
 paid (domestic, Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA">Catalogue
 in the UBL 2.5 specification</a></em></p>
-<p>The distributor's catalogue of items and prices; items carry the
-identifiers of the identifier issuing agency.</p>
+<p>The distributor's catalogue of items and prices; each item carries
+the GTIN the distributor gives it, with the distributor named as the
+GTIN's issuer.</p>
 <p><a href="examples/retail/02-Catalogue.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -311,8 +312,8 @@ Distribution (world/parties.json).</li>
 <li><code>Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to; identity of Lumeway Distribution
 (world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 7121 474
-274</strong><br />
+<li><code>Contact/Telephone</code> = <strong>+999 2 7121 955
+964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -464,8 +465,8 @@ Stores (world/parties.json).</li>
 <li><code>Contact/Department</code> = <strong>Purchasing</strong><br />
 The department the desk belongs to; identity of Brightmarket Stores
 (world/parties.json).</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 38 2511
-0411</strong><br />
+<li><code>Contact/Telephone</code> = <strong>+999 2 38 4609
+7100</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
@@ -931,26 +932,24 @@ the maker numbers its items in another scheme, and GS1 lets a wholesaler
 or importer allocate the GTIN where the brand owner has none
 (world/items.json).</li>
 <li><code>Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID</code>
-= <strong>XU-R-105644</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
-The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Codana Identification Agency
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+= <strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+The same party as at ProviderParty, where its full details are given;
+only its identifier and name are repeated.</li>
 <li><code>Item/StandardItemIdentification/IssuerParty/PartyName/Name</code>
-= <strong>Codana Identification Agency</strong><br />
-The trading name; identity of Codana Identification Agency
-(world/parties.json).</li>
+= <strong>Lumeway Distribution</strong><br />
+The same party as at ProviderParty, where its full details are given;
+only its identifier and name are repeated.</li>
 <li><code>Item/CatalogueItemIdentification/ID</code> =
 <strong>LD-CAT-26-0218-1</strong><br />
 The item's place in the catalogue: the catalogue number and the
 line.</li>
 <li><code>Item/AdditionalItemIdentification/ID</code> =
-<strong>771020000027</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The maker's own number for the item, its Codana item number, which
-travels along with the GTIN; item bench-serra of Valdara Industries
-(world/items.json).</li>
+<strong>KXU10014B180</strong> (schemeID <code>ISO 15459-6</code>)<br />
+The maker's number for the item in its globally unique form under
+ISO/IEC 15459 (KXU and the company number Codana gave Valdara
+Industries), which travels along with the GTIN, as an importer may carry
+it; item bench-serra of Valdara Industries (world/items.json).</li>
 <li><code>Item/ItemSpecificationDocumentReference/ID</code> =
 <strong>VI-DS-B180</strong><br />
 The maker's datasheet with drawings and assembly instructions.</li>
@@ -1449,26 +1448,24 @@ the maker numbers its items in another scheme, and GS1 lets a wholesaler
 or importer allocate the GTIN where the brand owner has none
 (world/items.json).</li>
 <li><code>Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID</code>
-= <strong>XU-R-105644</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
-The same party as at
-CatalogueLine/Item/StandardItemIdentification/IssuerParty, where its
-full details are given; only its identifier and name are repeated.</li>
+= <strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+The same party as at ProviderParty, where its full details are given;
+only its identifier and name are repeated.</li>
 <li><code>Item/StandardItemIdentification/IssuerParty/PartyName/Name</code>
-= <strong>Codana Identification Agency</strong><br />
-The same party as at
-CatalogueLine/Item/StandardItemIdentification/IssuerParty, where its
-full details are given; only its identifier and name are repeated.</li>
+= <strong>Lumeway Distribution</strong><br />
+The same party as at ProviderParty, where its full details are given;
+only its identifier and name are repeated.</li>
 <li><code>Item/CatalogueItemIdentification/ID</code> =
 <strong>LD-CAT-26-0218-2</strong><br />
 The item's place in the catalogue: the catalogue number and the
 line.</li>
 <li><code>Item/AdditionalItemIdentification/ID</code> =
-<strong>771020000034</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The maker's own number for the item, its Codana item number, which
-travels along with the GTIN; item bench-casting of Valdara Industries
-(world/items.json).</li>
+<strong>KXU10014C180</strong> (schemeID <code>ISO 15459-6</code>)<br />
+The maker's number for the item in its globally unique form under
+ISO/IEC 15459 (KXU and the company number Codana gave Valdara
+Industries), which travels along with the GTIN, as an importer may carry
+it; item bench-casting of Valdara Industries (world/items.json).</li>
 <li><code>Item/OriginCountry/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Where the item was produced; item bench-casting of Valdara Industries
@@ -1621,7 +1618,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;sales@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1670,7 +1667,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Buying office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Buyer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Purchasing&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 4609 7100&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;buying@brightmarket.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Monday to Saturday 09:00–18:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1892,10 +1889,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9520610000012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Codana Identification Agency&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
@@ -1903,7 +1900,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-CAT-26-0218-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CatalogueItemIdentification</span>&gt;</span>
 <span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000027&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemSpecificationDocumentReference</span>&gt;</span>
 <span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-DS-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -2145,10 +2142,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9520610000029&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-105644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Codana Identification Agency&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
@@ -2156,7 +2153,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-CAT-26-0218-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CatalogueItemIdentification</span>&gt;</span>
 <span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000034&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
 <span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
@@ -2186,6 +2183,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Catalogue</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f512c65</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>89e41a1</code></p></div></footer>
 </body>
 </html>

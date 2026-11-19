@@ -40,7 +40,7 @@
       <cbc:Name>Dispatch office</cbc:Name>
       <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 2 7121 885 685</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 930 729</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@saltmere.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -77,7 +77,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Export coordinator</cbc:JobTitle>
       <cbc:Department>Export</cbc:Department>
-      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -118,7 +118,7 @@
           <cbc:Name>Network stores</cbc:Name>
           <cbc:JobTitle>Stores supervisor</cbc:JobTitle>
           <cbc:Department>Network operations</cbc:Department>
-          <cbc:Telephone>+999 3 727 2407</cbc:Telephone>
+          <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
           <cbc:ElectronicMail>stores@selanutelecom.example</cbc:ElectronicMail>
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>

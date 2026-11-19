@@ -281,8 +281,8 @@ Stores (world/parties.json).</li>
 <strong>Finance</strong><br />
 The department the desk belongs to; identity of Brightmarket Stores
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 2511
-0411</strong><br />
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 4609
+7100</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -413,7 +413,7 @@ Trading (world/parties.json).</li>
 The department the desk belongs to; identity of Velumi Trading
 (world/parties.json).</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 3 729
-1859</strong><br />
+5794</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -466,7 +466,7 @@ The shop.</li>
 <h3 id="point-of-sale-contact">Point of Sale Contact</h3>
 <p>Inside <code>PointOfSaleContact</code>:</p>
 <ul>
-<li><code>Telephone</code> = <strong>+999 2 38 2511 0411</strong><br />
+<li><code>Telephone</code> = <strong>+999 2 38 4609 7100</strong><br />
 The shop's number, for questions about the purchase.</li>
 </ul>
 <h3 id="payment">Payment</h3>
@@ -628,19 +628,12 @@ The seller's own item number; item shirt-r of Brightmarket Stores
 The item number of the maker, Lumeport Textile Mill: the reseller's item
 is resale of item shirt.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
-<strong>9522610000016</strong> (schemeID <code>GS1 GTIN</code>)<br />
-The GTIN Brightmarket Stores gives the item, under its GS1 company
+<strong>9524010000016</strong> (schemeID <code>GS1 GTIN</code>)<br />
+The GTIN Lumeport Textile Mill gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
-the maker numbers its items in another scheme, and GS1 lets a wholesaler
-or importer allocate the GTIN where the brand owner has none
-(world/items.json).</li>
-<li><code>Item/AdditionalItemIdentification/ID</code> =
-<strong>772030000090</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The maker's own number for the item, its Codana item number, which
-travels along with the GTIN; item shirt of Lumeport Textile Mill
-(world/items.json).</li>
+under GS1 rules the brand owner numbers the item, and the brand Lumeport
+is Lumeport Textile Mill's (world/items.json).</li>
 <li><code>Price/PriceAmount</code> = <strong>11.98</strong> (currencyID
 <code>XLC</code>)<br />
 The shelf price of 29.95 lume, in coral.</li>
@@ -743,7 +736,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Accounts receivable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Credit controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Finance&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 4609 7100&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;receivables@brightmarket.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Monday to Saturday 09:00–18:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -784,7 +777,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Accounts payable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Accounts payable clerk&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Finance&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 729 1859&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 729 5794&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;payables@velumi.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Monday to Saturday 09:00–18:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -806,7 +799,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PointOfSaleLocation</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PointOfSaleContact</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 4609 7100&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PointOfSaleContact</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Payment</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;38.276&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
@@ -878,20 +871,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LT-SH-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9522610000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9524010000016&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;772030000090&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;11.98&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PurchaseReceiptLine</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PurchaseReceipt</span>&gt;</span></code></pre></div>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;11.98&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PurchaseReceiptLine</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PurchaseReceipt</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f512c65</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>89e41a1</code></p></div></footer>
 </body>
 </html>

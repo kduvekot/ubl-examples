@@ -61,7 +61,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -103,7 +103,7 @@
         <cbc:Name>Planning desk</cbc:Name>
         <cbc:JobTitle>Transport planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
+        <cbc:Telephone>+999 1 041 266 7643</cbc:Telephone>
         <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
@@ -167,7 +167,7 @@
     </cac:ResponsibleParty>
     <cac:Contact>
       <cbc:Name>Planning desk</cbc:Name>
-      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 266 7643</cbc:Telephone>
     </cac:Contact>
     <cac:Location>
       <cbc:Name>Land border crossing Urvania–Bayvarra</cbc:Name>

@@ -59,7 +59,7 @@
       <cbc:Name>Planning desk</cbc:Name>
       <cbc:JobTitle>Transport planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 041 354 4822</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 266 7643</cbc:Telephone>
       <cbc:ElectronicMail>planning@trasvia.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -108,7 +108,7 @@
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 474 274</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>logistics@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -122,7 +122,7 @@
       <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
     </cac:PartyIdentification>
     <cac:AdditionalPartyIdentification>
-      <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+      <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
     </cac:AdditionalPartyIdentification>
     <cac:AdditionalPartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -151,7 +151,7 @@
       <cbc:Name>Dispatch office</cbc:Name>
       <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 1 041 518 4274</cbc:Telephone>
+      <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -320,16 +320,16 @@
         </cac:DriverPerson>
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506012</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506012</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 001 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506012</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506012</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506012</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506012</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -365,16 +365,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506029</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506029</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 002 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506029</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506029</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506029</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506029</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -410,16 +410,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506036</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506036</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 003 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506036</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506036</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506036</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506036</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -455,16 +455,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506043</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506043</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 004 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506043</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506043</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506043</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506043</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -500,16 +500,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506050</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506050</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 005 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506050</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506050</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506050</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506050</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -545,16 +545,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506067</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506067</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 006 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506067</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506067</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506067</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506067</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -590,16 +590,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506074</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506074</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 007 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506074</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506074</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506074</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506074</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -635,16 +635,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506081</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506081</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 008 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506081</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506081</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506081</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506081</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -680,16 +680,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506098</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506098</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 009 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506098</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506098</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506098</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506098</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -725,16 +725,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506104</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506104</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 010 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506104</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506104</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506104</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506104</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -770,16 +770,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506111</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506111</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 011 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506111</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506111</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506111</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506111</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -815,16 +815,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506128</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506128</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 012 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506128</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506128</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506128</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506128</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -860,16 +860,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506135</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506135</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 013 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506135</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506135</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506135</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506135</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -905,16 +905,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506142</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506142</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 014 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506142</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506142</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506142</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506142</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -950,16 +950,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506159</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506159</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 015 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506159</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506159</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506159</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506159</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -995,16 +995,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506166</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506166</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 016 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506166</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506166</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506166</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506166</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1040,16 +1040,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506173</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506173</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 017 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506173</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506173</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506173</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506173</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1085,16 +1085,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506180</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506180</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 018 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506180</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506180</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506180</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506180</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1130,16 +1130,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506197</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506197</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 019 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506197</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506197</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506197</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506197</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1175,16 +1175,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506203</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506203</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 020 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506203</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506203</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506203</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506203</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1220,16 +1220,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506210</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506210</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 021 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506210</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506210</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506210</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506210</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1265,16 +1265,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506227</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506227</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 022 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506227</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506227</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506227</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506227</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1310,16 +1310,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506234</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506234</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 023 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506234</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506234</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506234</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506234</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1355,16 +1355,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506241</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506241</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
         <cbc:HandlingInstructions>May be stacked two high, steel frames on steel frames.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 024 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506241</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506241</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506241</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506241</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
@@ -1400,16 +1400,16 @@
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="ISO 15459">KXU104410004506258</cbc:ID>
+        <cbc:ID schemeID="ISO 15459">KXU105190004506258</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">NOSTACK</cbc:HandlingCode>
         <cbc:HandlingInstructions>Load on top: nothing may be stacked on the boxes.</cbc:HandlingInstructions>
         <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
         <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
         <cbc:ShippingMarks>LD MARROWDALE / 025 of 025</cbc:ShippingMarks>
-        <cbc:TraceID>KXU104410004506258</cbc:TraceID>
+        <cbc:TraceID>KXU105190004506258</cbc:TraceID>
         <cac:ActualPackage>
-          <cbc:ID schemeID="ISO 15459">KXU104410004506258</cbc:ID>
+          <cbc:ID schemeID="ISO 15459">KXU105190004506258</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>

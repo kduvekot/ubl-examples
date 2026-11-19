@@ -54,7 +54,7 @@
       <cbc:Name>Billing</cbc:Name>
       <cbc:JobTitle>Billing officer</cbc:JobTitle>
       <cbc:Department>Customer service</cbc:Department>
-      <cbc:Telephone>+999 2 38 2692 2192</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
       <cbc:ElectronicMail>billing@coastalwater.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -97,7 +97,7 @@
       <cbc:Name>Accounts payable</cbc:Name>
       <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
       <cbc:Department>Finance</cbc:Department>
-      <cbc:Telephone>+999 2 38 2511 0411</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
       <cbc:ElectronicMail>payables@brightmarket.example</cbc:ElectronicMail>
       <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
     </cac:Contact>

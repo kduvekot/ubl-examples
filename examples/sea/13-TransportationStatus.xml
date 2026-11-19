@@ -44,7 +44,7 @@
         <cbc:Name>Bookings</cbc:Name>
         <cbc:JobTitle>Booking agent</cbc:JobTitle>
         <cbc:Department>Bookings</cbc:Department>
-        <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
+        <cbc:Telephone>+999 2 38 2058 7929</cbc:Telephone>
         <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>
@@ -101,7 +101,7 @@
           <cbc:Name>Port control</cbc:Name>
           <cbc:JobTitle>Duty port controller</cbc:JobTitle>
           <cbc:Department>Port operations</cbc:Department>
-          <cbc:Telephone>+999 2 38 2281 1781</cbc:Telephone>
+          <cbc:Telephone>+999 2 38 8964 6053</cbc:Telephone>
           <cbc:ElectronicMail>port@port-lumeport.example</cbc:ElectronicMail>
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
@@ -191,7 +191,7 @@
       <cbc:Name>Export desk</cbc:Name>
       <cbc:JobTitle>Export coordinator</cbc:JobTitle>
       <cbc:Department>Export</cbc:Department>
-      <cbc:Telephone>+999 2 38 2144 1644</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
       <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

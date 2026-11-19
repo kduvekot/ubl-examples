@@ -130,7 +130,7 @@ of Urvania; identity of Valdara Industries (world/parties.json). Later
 mentions of the same party in this document repeat only this identifier
 and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
-<strong>0990:10427</strong> (schemeID <code>ISO 6523</code>)<br />
+<strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
@@ -341,8 +341,8 @@ Industries (world/parties.json).</li>
 <strong>Finance</strong><br />
 The department the desk belongs to; identity of Valdara Industries
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 1 041 518
-4274</strong><br />
+<li><code>Party/Contact/Telephone</code> = <strong>+999 1 041 386
+4551</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -493,8 +493,8 @@ Distribution (world/parties.json).</li>
 <strong>Finance</strong><br />
 The department the desk belongs to; identity of Lumeway Distribution
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 474
-274</strong><br />
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
+964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -890,19 +890,22 @@ list: GRY = Grey.</li>
 = <strong>Frame in Ferro grey</strong><br />
 The variant in words.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
-<strong>771020000027</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The Codana item number of the maker, issued by the Codana Identification
-Agency, Urvania's public numbering body: twelve digits with a check
-digit, a number of the world, not a GTIN; item bench-serra of Valdara
-Industries (world/items.json).</li>
+<strong>KXU10014B180</strong> (schemeID <code>ISO 15459-6</code>)<br />
+The item's number in its globally unique form under ISO/IEC 15459, which
+Valdara Industries gives it: the issuing agency code KXU of the Codana
+Identification Agency, the company number Codana gave Valdara Industries
+and the company's own reference for the item, without a check character.
+Codana gives a company its number; the company numbers its own items;
+item bench-serra of Valdara Industries (world/items.json).</li>
 <li><code>Item/StandardItemIdentification/BarcodeSymbologyID</code> =
 <strong>Code128</strong><br />
-The barcode the number is printed in on the label.</li>
+The barcode the number is printed in on the label: Code 128 carries
+letters and digits.</li>
 <li><code>Item/StandardItemIdentification/IssuerScopeID</code> =
-<strong>771</strong><br />
-The range of item numbers the agency gives out in the maker's
-country.</li>
+<strong>KXU10014</strong><br />
+The scope within which Valdara Industries gives its item numbers: its
+company prefix, the issuing agency code KXU and its Codana company
+number; what follows is the company's own reference.</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>G</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 Goods exported from Urvania: no value added tax is charged on an export
@@ -979,7 +982,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 6523&quot;</span>&gt;0990:10427&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 6523&quot;</span>&gt;0990:10014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1050,7 +1053,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Accounts receivable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Credit controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Finance&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 518 4274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 386 4551&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;receivables@valdara.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1097,7 +1100,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Accounts payable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Accounts payable clerk&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Finance&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;payables@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1248,9 +1251,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000027&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;771&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1271,6 +1274,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f512c65</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>89e41a1</code></p></div></footer>
 </body>
 </html>

@@ -51,7 +51,7 @@
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 929 329</cbc:Telephone>
+      <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
       <cbc:ElectronicMail>customs@marrowdalesawmill.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -143,7 +143,7 @@
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10427</cbc:ID>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:AdditionalPartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
@@ -199,7 +199,7 @@
         <cbc:Name>Export office</cbc:Name>
         <cbc:JobTitle>Customs officer</cbc:JobTitle>
         <cbc:Department>Customs</cbc:Department>
-        <cbc:Telephone>+999 2 7121 337 137</cbc:Telephone>
+        <cbc:Telephone>+999 2 7121 503 398</cbc:Telephone>
         <cbc:ElectronicMail>export@customs-xb.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

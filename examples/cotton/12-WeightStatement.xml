@@ -54,7 +54,7 @@
       <cbc:Name>Transport planning</cbc:Name>
       <cbc:JobTitle>Logistics planner</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 3 721 2681</cbc:Telephone>
+      <cbc:Telephone>+999 3 721 0486</cbc:Telephone>
       <cbc:ElectronicMail>logistics@selanuginnery.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -91,7 +91,7 @@
       <cbc:Name>Bookings</cbc:Name>
       <cbc:JobTitle>Booking agent</cbc:JobTitle>
       <cbc:Department>Bookings</cbc:Department>
-      <cbc:Telephone>+999 2 38 2418 1918</cbc:Telephone>
+      <cbc:Telephone>+999 2 38 2058 7929</cbc:Telephone>
       <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -126,7 +126,7 @@
       <cbc:Name>Port control</cbc:Name>
       <cbc:JobTitle>Duty port controller</cbc:JobTitle>
       <cbc:Department>Port operations</cbc:Department>
-      <cbc:Telephone>+999 3 727 1037</cbc:Telephone>
+      <cbc:Telephone>+999 3 727 7653</cbc:Telephone>
       <cbc:ElectronicMail>port@port-selanu.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>

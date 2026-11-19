@@ -199,8 +199,8 @@ Distribution (world/parties.json).</li>
 <strong>Warehouse</strong><br />
 The department the desk belongs to; identity of Lumeway Distribution
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 474
-274</strong><br />
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
+964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -343,8 +343,8 @@ Stores (world/parties.json).</li>
 operations</strong><br />
 The department the desk belongs to; identity of Brightmarket Stores
 (world/parties.json).</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 2511
-0411</strong><br />
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 4609
+7100</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
@@ -512,7 +512,7 @@ Forwarding (world/parties.json).</li>
 The department the desk belongs to; identity of Bayforth Forwarding
 (world/parties.json).</li>
 <li><code>Consignment/CarrierParty/Contact/Telephone</code> =
-<strong>+999 2 38 2144 1644</strong><br />
+<strong>+999 2 38 5155 2404</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
@@ -1034,11 +1034,11 @@ the maker numbers its items in another scheme, and GS1 lets a wholesaler
 or importer allocate the GTIN where the brand owner has none
 (world/items.json).</li>
 <li><code>Item/AdditionalItemIdentification/ID</code> =
-<strong>771020000027</strong> (schemeID
-<code>urn:ubl-examples:world:item</code>)<br />
-The maker's own number for the item, its Codana item number, which
-travels along with the GTIN; item bench-serra of Valdara Industries
-(world/items.json).</li>
+<strong>KXU10014B180</strong> (schemeID <code>ISO 15459-6</code>)<br />
+The maker's number for the item in its globally unique form under
+ISO/IEC 15459 (KXU and the company number Codana gave Valdara
+Industries), which travels along with the GTIN, as an importer may carry
+it; item bench-serra of Valdara Industries (world/items.json).</li>
 <li><code>Item/ItemInstance/ManufactureDate</code> =
 <strong>2026-04-26</strong><br />
 The day the lot was produced.</li>
@@ -1109,7 +1109,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Dispatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Dispatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 474 274&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;dispatch@lumeway.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1154,7 +1154,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Goods-in, Lumeport store&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Goods-in supervisor&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Store operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2511 0411&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 4609 7100&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;goodsin@brightmarket.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Monday to Saturday 09:00–18:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1217,7 +1217,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Export desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Export coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Export&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 2144 1644&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 5155 2404&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;export@bayforth.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1445,7 +1445,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GTIN&quot;</span>&gt;9520610000012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:item&quot;</span>&gt;771020000027&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalItemIdentification</span>&gt;</span>
 <span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
 <span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManufactureDate</span>&gt;2026-04-26&lt;/<span class="kw">cbc:ManufactureDate</span>&gt;</span>
@@ -1462,6 +1462,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>f512c65</code></p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from <code>89e41a1</code></p></div></footer>
 </body>
 </html>
