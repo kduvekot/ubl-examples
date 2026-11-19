@@ -70,7 +70,7 @@ These are the general rules at the top of `analysis/codelist-decisions.md`.
 ## Git and deployment
 
 - Work on the session's designated branch and commit with clear messages.
-- Deploy by pushing the branch to `main`, and only after a full clean build. `.github/workflows/pages.yml` publishes to the `gh-pages` branch, and only while its commit is still the head of main.
+- Deploy by pushing the branch to `main`, and only after a full clean build. **Owner, 2026-11-19:** while working through the worklist, each fix is checked, fully built and then deployed to `main` on its own (no need to ask again for each). `.github/workflows/pages.yml` publishes to the `gh-pages` branch, and only while its commit is still the head of main.
 - No pull requests unless asked.
 
 ## Open work
