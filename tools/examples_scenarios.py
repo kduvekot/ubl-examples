@@ -974,8 +974,11 @@ def demurrage_note(f, n, doc, day, why):
                 "Transport of goods exported from Urvania")
         billed, billed_why = f.numbers["freight-invoice"], "The freight invoice this debit note adds to (D9)."
     else:
-        rule = ("G", 0, scheme, "The demurrage passed on adds to the price of the goods exported to Bayvarra: no value "
-                                "added tax, as on the goods invoice it adds to (category G).",
+        rule = ("G", 0, scheme, "The demurrage passed on is part of the price of the benches exported to Bayvarra, a "
+                                "cost the buyer bears under the sale's delivered-at-place terms and the seller charges "
+                                "it: no value added tax, as on the goods invoice it adds to (category G, export of "
+                                "goods; O212). The carrier's debit note it passes on is exempt in the same way, as the "
+                                "export carriage it follows (rail/12).",
                 "Export of goods outside Urvania")
         billed, billed_why = f.numbers["invoice"], "The goods invoice this debit note adds to (D9)."
     days, rate = RAIL_DEMURRAGE_DAYS, DEMURRAGE_XUF

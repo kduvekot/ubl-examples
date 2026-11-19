@@ -345,13 +345,13 @@ Inside `PaymentTerms`:
 Inside `TaxTotal`:
 
 - `TaxAmount` = **0** (currencyID `XUF`)  
-  No tax: the demurrage passed on adds to the price of the goods exported to Bayvarra: no value added tax, as on the goods invoice it adds to (category G).
+  No tax: the demurrage passed on is part of the price of the benches exported to Bayvarra, a cost the buyer bears under the sale's delivered-at-place terms and the seller charges it: no value added tax, as on the goods invoice it adds to (category G, export of goods; O212). The carrier's debit note it passes on is exempt in the same way, as the export carriage it follows (rail/12).
 - `TaxSubtotal/TaxableAmount` = **15000** (currencyID `XUF`)  
   The demurrage.
 - `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
   No tax in this category.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  The demurrage passed on adds to the price of the goods exported to Bayvarra: no value added tax, as on the goods invoice it adds to (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  The demurrage passed on is part of the price of the benches exported to Bayvarra, a cost the buyer bears under the sale's delivered-at-place terms and the seller charges it: no value added tax, as on the goods invoice it adds to (category G, export of goods; O212). The carrier's debit note it passes on is exempt in the same way, as the export carriage it follows (rail/12). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
@@ -395,7 +395,7 @@ Inside `DebitNoteLine`:
 - `Item/Name` = **Demurrage, container FRXU1044180**  
   What is charged: the box's days at the siding beyond the free time.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  The demurrage passed on adds to the price of the goods exported to Bayvarra: no value added tax, as on the goods invoice it adds to (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  The demurrage passed on is part of the price of the benches exported to Bayvarra, a cost the buyer bears under the sale's delivered-at-place terms and the seller charges it: no value added tax, as on the goods invoice it adds to (category G, export of goods; O212). The carrier's debit note it passes on is exempt in the same way, as the export carriage it follows (rail/12). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
