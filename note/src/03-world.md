@@ -1057,7 +1057,11 @@ pallets are for its own stock, from which its shop sells two benches to a
 cotton farm in June; six remain. An urgent order does not come from stock: when
 Velumi asks for eight more frames on 11 May, Lumeway has none, so Valdara
 casts them and they pass through Lumeway's dispatch area to the aircraft, a
-cross-dock. Valdara also sells direct: 40 benches to the public works
+cross-dock. They are spares for the port's harbour benches and travel under
+the Accord's common transit from Ferrano to Selanu airport. Booked on the
+afternoon flight of 13 May, they reach the cargo terminal after the cut-off,
+because the truck from Ferrano is late, and fly the next morning; Lumeway
+cancels its despatch advice, which named the missed flight, and replaces it. Valdara also sells direct: 40 benches to the public works
 department on 30 March, from a lot of their own, and two benches travel to a
 fair under a carnet.
 

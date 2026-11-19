@@ -196,15 +196,30 @@
   },
   {
    "id": "air",
-   "title": "An urgent part of the order by air (Bayvarra → island Lisavu)",
-   "text": "The buyer needs part of the quantity before the ship arrives. It changes the order: that part goes by air, carriage paid to (CPT) the island's airport. The forwarder books the airline, whose road feeder service (the road carrier) trucks the cargo to the airport. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
+   "title": "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)",
+   "text": "On 11 May the buyer asks for eight more side frames by air, spares for the Port of Selanu's harbour benches, on top of the twelve on the ship: it changes its order with a line carriage paid to (CPT) the island's airport. The distributor has none left: Valdara casts them on 12 May and packs them on 13 May, and Trasvia trucks them under the Trade Accord's common transit to the distributor's dispatch area in Marrowdale, where the forwarder takes them straight on to Lumeport airport, a cross-dock. They are booked on the afternoon flight KXL209, but the truck from Ferrano is late and the cargo reaches the terminal after the cut-off; the island's airline flies it on the next morning's KXL207 under a direct air waybill. The distributor cancels its despatch advice and replaces it, and the 3PL collects the skid at Selanu airport on 14 May. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
    "legs": [
+    {
+     "mode": "road",
+     "from": "5-xu",
+     "to": "6-xb",
+     "carrier": "13-xu",
+     "why": "Trasvia trucks the freshly packed frames under transit to the distributor's dispatch area, where they pass through without entering its stock (D39).",
+     "from_place": {
+      "name": "Valdara Industries works, Ferrano",
+      "locode": "XUFER"
+     },
+     "to_place": {
+      "name": "Lumeway distribution centre, dispatch area, Marrowdale",
+      "gln": "6-xb:dc"
+     }
+    },
     {
      "mode": "road",
      "from": "6-xb",
      "to": "17-xb",
      "carrier": "10-xb",
-     "why": "The forwarder picks up the boxes and takes them to the cargo terminal.",
+     "why": "The forwarder takes the skid straight on from the dispatch area to the cargo terminal.",
      "from_place": {
       "name": "Lumeway distribution centre, goods-out, Marrowdale",
       "gln": "6-xb:dc"
@@ -219,13 +234,13 @@
      "from": "17-xb",
      "to": "17-xl",
      "carrier": "12-xl",
-     "why": "The flight to the island.",
+     "why": "The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.",
      "load": {
       "ulds": [],
       "bulk": [
        "bench-casting-b"
       ],
-      "why": "One skid of eight boxed side frames, lashed in the aft bulk compartment."
+      "why": "One skid of eight frame cartons, lashed in the aft bulk compartment."
      },
      "from_place": {
       "name": "Lumeport airport, cargo terminal",
@@ -241,7 +256,7 @@
      "from": "17-xl",
      "to": "9-xl",
      "carrier": "9-xl",
-     "why": "The 3PL collects the boxes at the airport.",
+     "why": "The 3PL collects the skid at the airport.",
      "from_place": {
       "name": "Selanu airport, cargo terminal",
       "locode": "XLSLA"
@@ -1972,14 +1987,11 @@
    "doc": "OrderChange",
    "from": "1-xl",
    "to": "6-xb",
-   "why": "Part of the quantity is needed urgently: delivery by air, CPT island airport, at an extra charge.",
+   "why": "Eight more side frames are needed urgently, spares for the port's harbour benches: a line added to the sea order, by air, carriage paid to the island airport, with the air freight at cost.",
    "parties": {
     "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
     "Delivery/DeliveryParty": "9-xl"
-   },
-   "values": {
-    "DeliveryTerms/ID": "CPT"
    }
   },
   {
@@ -1987,7 +1999,7 @@
    "doc": "OrderResponse",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "The distributor accepts the change: the urgent part goes by air at an extra charge, the rest stays on the ship.",
+   "why": "The distributor accepts the change: the frames fly on the afternoon flight of 13 May; the rest of the order stays on the ship.",
    "parties": {
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "1-xl"
@@ -1998,7 +2010,7 @@
    "doc": "ForwardingInstructions",
    "from": "6-xb",
    "to": "10-xb",
-   "why": "The distributor asks its forwarder to book air freight for the urgent part.",
+   "why": "The distributor asks its forwarder to book the frames on the afternoon flight of 13 May.",
    "parties": {
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
@@ -2010,7 +2022,7 @@
    "doc": "Waybill",
    "from": "12-xl",
    "to": "10-xb",
-   "why": "The air waybill; the airline's road feeder service, run by the road carrier, is named as substitute carrier for the truck leg to the airport.",
+   "why": "The direct air waybill, issued when the airline accepted the cargo after the cut-off for the afternoon flight: it names the next morning's flight, and the 3PL as the party to notify.",
    "parties": {
     "SenderParty": "12-xl",
     "ReceiverParty": "10-xb",
@@ -2018,7 +2030,7 @@
     "ConsignorParty": "6-xb",
     "FreightForwarderParty": "10-xb",
     "Shipment/Consignment/ConsigneeParty": "1-xl",
-    "Shipment/Consignment/SubstituteCarrierParty": "9-xl"
+    "Shipment/Consignment/NotifyParty": "9-xl"
    }
   },
   {
@@ -2026,7 +2038,7 @@
    "doc": "TransportationStatus",
    "from": "17-xb",
    "to": "12-xl",
-   "why": "The air cargo terminal reports the cargo accepted and built up for the flight.",
+   "why": "The air cargo terminal reports the cargo accepted after the cut-off for the afternoon flight and built up for the next morning's.",
    "parties": {
     "SenderParty": "17-xb",
     "ReceiverParty": "12-xl",
@@ -2039,7 +2051,7 @@
    "doc": "DespatchAdvice",
    "from": "6-xb",
    "to": "9-xl",
-   "why": "The distributor announces the air part to the buyer's 3PL, with the airline as carrier.",
+   "why": "The distributor announces the frames to the buyer's 3PL with the flight they are booked on: first the afternoon flight of 13 May, then, replacing it, the morning flight of 14 May.",
    "parties": {
     "DespatchSupplierParty": "6-xb",
     "DeliveryCustomerParty": "9-xl",
@@ -2053,7 +2065,7 @@
    "doc": "FulfilmentCancellation",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "The cargo missed its flight; the despatch advice is cancelled and a new one follows for the next flight.",
+   "why": "The cargo missed the afternoon flight of 13 May; the despatch advice, which named it, is cancelled, and a new one follows for the next morning's flight.",
    "parties": {
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "1-xl",
@@ -2065,7 +2077,7 @@
    "doc": "DespatchAdvice",
    "from": "6-xb",
    "to": "9-xl",
-   "why": "The new despatch advice, for the next day's flight.",
+   "why": "The distributor announces the frames to the buyer's 3PL with the flight they are booked on: first the afternoon flight of 13 May, then, replacing it, the morning flight of 14 May.",
    "parties": {
     "DespatchSupplierParty": "6-xb",
     "DeliveryCustomerParty": "9-xl",
@@ -2093,7 +2105,7 @@
    "doc": "Invoice",
    "from": "10-xb",
    "to": "6-xb",
-   "why": "The forwarder invoices the air freight, including the road feeder leg, to the distributor, who sold carriage paid to the island airport.",
+   "why": "The forwarder invoices the airport-to-airport air freight at the chargeable weight of the airline's waybill to the distributor, who sold carriage paid to the island airport.",
    "parties": {
     "AccountingSupplierParty": "10-xb",
     "AccountingCustomerParty": "6-xb",
@@ -4186,10 +4198,6 @@
    "what": "the factoring agreement between Lumeway and Harbourline",
    "type": "Factoring agreement"
   },
-  "KXL-OFFLOAD-26-0513": {
-   "what": "the airline's offload notice",
-   "type": "Offload notice"
-  },
   "LD-GTC-2026": {
    "what": "Lumeway's general terms of trade",
    "type_code": "774"
@@ -4354,6 +4362,10 @@
    "what": "Valdara's reference letters",
    "type": "Reference letters"
   },
+  "VI-TD-26-0513": {
+   "what": "Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport",
+   "type": "Transit declaration"
+  },
   "VI-WARRANTY-B180": {
    "what": "the maker's warranty card of the bench",
    "type": "Warranty card"
@@ -4378,13 +4390,13 @@
    "what": "Velumi's claim",
    "type": "Claim"
   },
-  "XB-FOR-AUD-2025-0118": {
-   "what": "the audit report behind the forestry certificate",
-   "type": "Forest management audit report"
-  },
   "WS-CERT-26-0884": {
    "what": "Wavesure's insurance certificate of the sea shipment, with its insured value",
    "type": "Insurance certificate"
+  },
+  "XB-FOR-AUD-2025-0118": {
+   "what": "the audit report behind the forestry certificate",
+   "type": "Forest management audit report"
   },
   "XL-CLS-2026-0042": {
    "what": "the classing certificate of the cotton",

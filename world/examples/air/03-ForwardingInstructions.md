@@ -1,8 +1,8 @@
 # Forwarding Instructions: Lumeway Distribution to Bayforth Forwarding
 
-*Example 3 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
+*Example 3 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
 
-The distributor asks its forwarder to book air freight for the urgent part.
+The distributor asks its forwarder to book the frames on the afternoon flight of 13 May.
 
 [The XML file](03-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -157,8 +157,8 @@ Inside `Shipment`:
   The shipment to be booked.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The distributor's consignment number.
-- `Consignment/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the eight frame cartons.
+- `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
+  The eight frame cartons and the skid of 7.0 kg they are strapped to.
 - `Consignment/NetNetWeightMeasure` = **88.8** (unitCode `KGM`)  
   The castings alone.
 - `Consignment/NetVolumeMeasure` = **0.3** (unitCode `MTQ`)  
@@ -218,8 +218,8 @@ Inside `Shipment`:
 - `Consignment/FreightForwarderParty/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportEvent/OccurrenceDate` = **2026-05-13**  
-  Latest acceptance at the cargo terminal for the morning flight.
-- `Consignment/TransportEvent/OccurrenceTime` = **19:00:00**  
+  Latest acceptance at the cargo terminal for the afternoon flight KXL209 of 13 May.
+- `Consignment/TransportEvent/OccurrenceTime` = **12:00:00-01:00**  
   The local time.
 - `Consignment/TransportEvent/TransportEventTypeCode` = **ACCEPTANCE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
@@ -261,24 +261,24 @@ Inside `Shipment`:
   In millimetres.
 - `Consignment/TransportHandlingUnit/Package/DeliveryUnit/BatchQuantity` = **8** (unitCode `EA`)  
   All eight delivered together.
-- `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/StartDate` = **2026-05-14**  
-  Wanted at the 3PL on day 3.
+- `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/StartDate` = **2026-05-13**  
+  At Selanu airport on the evening of 13 May, by KXL209.
 - `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/EndDate` = **2026-05-14**  
-  The same day.
+  At the latest the next day, before the ship arrives.
 - `Consignment/TransportHandlingUnit/Package/Pickup/ID` = **BF-PU-26-0611**  
   The forwarder's pick-up order.
-- `Consignment/TransportHandlingUnit/Package/Pickup/EarliestPickupDate` = **2026-05-12**  
-  Ready the day of the instructions.
+- `Consignment/TransportHandlingUnit/Package/Pickup/EarliestPickupDate` = **2026-05-13**  
+  Valdara casts the frames on 12 May and packs them on 13 May; Trasvia brings them to the distributor's dispatch area that morning (D39).
 - `Consignment/TransportHandlingUnit/Package/Pickup/PickupParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/Package/Pickup/PickupParty/PartyName/Name` = **Bayforth Forwarding**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/Package/Despatch/RequestedDespatchDate` = **2026-05-13**  
-  To make the next morning's flight.
-- `Consignment/TransportHandlingUnit/Package/Status/ConditionCode` = **READY** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
-  Packed and labelled. The code is from the Trade Accord's status condition list: READY = Ready.
-- `Consignment/TransportHandlingUnit/Package/Status/Description` = **Waiting at the distributor's dispatch area.**  
-  Where they are.
+  For the afternoon flight KXL209 of 13 May.
+- `Consignment/TransportHandlingUnit/Package/Status/ConditionCode` = **SCHEDULED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
+  Not packed yet: the frames are cast today. The code is from the Trade Accord's status condition list: SCHEDULED = Scheduled.
+- `Consignment/TransportHandlingUnit/Package/Status/Description` = **Cast at Valdara on 12 May, galvanised and packed on 13 May, then trucked to the dispatch area under transit.**  
+  Where they are and what follows.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
@@ -419,7 +419,7 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
@@ -471,7 +471,7 @@ Inside `Signature`:
       </cac:FreightForwarderParty>
       <cac:TransportEvent>
         <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>19:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>12:00:00-01:00</cbc:OccurrenceTime>
         <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
         <cac:Location>
@@ -515,13 +515,13 @@ Inside `Signature`:
           </cac:DeliveryUnit>
           <cac:Delivery>
             <cac:RequestedDeliveryPeriod>
-              <cbc:StartDate>2026-05-14</cbc:StartDate>
+              <cbc:StartDate>2026-05-13</cbc:StartDate>
               <cbc:EndDate>2026-05-14</cbc:EndDate>
             </cac:RequestedDeliveryPeriod>
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ID>BF-PU-26-0611</cbc:ID>
-            <cbc:EarliestPickupDate>2026-05-12</cbc:EarliestPickupDate>
+            <cbc:EarliestPickupDate>2026-05-13</cbc:EarliestPickupDate>
             <cac:PickupParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -535,8 +535,8 @@ Inside `Signature`:
             <cbc:RequestedDespatchDate>2026-05-13</cbc:RequestedDespatchDate>
           </cac:Despatch>
           <cac:Status>
-            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">READY</cbc:ConditionCode>
-            <cbc:Description>Waiting at the distributor's dispatch area.</cbc:Description>
+            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">SCHEDULED</cbc:ConditionCode>
+            <cbc:Description>Cast at Valdara on 12 May, galvanised and packed on 13 May, then trucked to the dispatch area under transit.</cbc:Description>
           </cac:Status>
         </cac:Package>
       </cac:TransportHandlingUnit>

@@ -2204,15 +2204,27 @@ def air_freight(f):
     return money(air_chargeable(f) * Decimal(str(ITEM["air-freight"]["price"]["amount"])), "XBL")
 
 
+# the skid the eight frame cartons are stacked and strapped on (D39, air/03#F9): two softwood runners and a deck,
+# a little larger than a carton (790 x 680 mm), about 7 kg; the stack of eight cartons is 800 mm high
+AIR_SKID = {"mm": [800, 700, 120], "tare_kg": Decimal("7.0")}
+
+
+def air_gross(f):
+    """The gross weight of the urgent consignment: the eight frame cartons and the skid."""
+    return kit.gross_weight(f, "ordered") + AIR_SKID["tare_kg"]
+
+
 def air_volume(f):
-    """The volume of the eight frame cartons, in m³ (D20)."""
-    return (Decimal(8) * kit.volume_m3(kit.maker("bench-casting-b")["carton"]["mm"])).quantize(Decimal("0.01"))
+    """The gross volume of the consignment as built, in m³: the skid's footprint times the height of the eight
+    cartons stacked on it and of the skid (D20, D39)."""
+    c, k = kit.maker("bench-casting-b")["carton"]["mm"], AIR_SKID["mm"]
+    return kit.volume_m3([k[0], k[1], 8 * c[2] + k[2]]).quantize(Decimal("0.01"))
 
 
 def air_chargeable(f):
     """The chargeable weight of the urgent frames: the higher of the gross weight and the volume weight (167 kg per
     m³), rounded up to the next half kilogram, as airlines charge."""
-    w = max(kit.gross_weight(f, "ordered"), air_volume(f) * 167)
+    w = max(air_gross(f), air_volume(f) * 167)
     return (w * 2).to_integral_value(rounding="ROUND_CEILING") / 2
 
 
@@ -2239,6 +2251,32 @@ FLIGHT_BLOCK_EAST = 2.75
 if (10 + 20) / 60 + max(0.0, wmap.air_km() - 100) / 500 > FLIGHT_BLOCK_EAST:
     raise SystemExit("air: the flight no longer fits its block time of 2 h 45 (O152, O123)")
 FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", "07:00"), FLIGHT_BLOCK_EAST + 1)
+# D39: the frames are booked on the afternoon flight KXL209 of Wednesday 13 May (day 2), Lumeport 15:00 to Selanu
+# 18:45; the truck from Ferrano is late, the cargo reaches the terminal after the acceptance cut-off at 12:00, is
+# accepted that evening and flies on the morning flight KXL207 of Thursday 14 May (day 3), landing at about 10:30
+AIR_BOOKED = ("KXL209", 2, "15:00", wmap.hm(wmap.after(wmap.at("2026-05-13", "15:00"), FLIGHT_BLOCK_EAST + 1)))
+AIR_FLOWN = ("KXL207", 3, "07:00", wmap.hm(FLIGHT_ARRIVES))
+AIR_CUTOFF = "12:00:00"
+AIR_TRANSIT = "VI-TD-26-0513"      # Valdara's transit declaration, Ferrano to Selanu airport (D39, a cited document)
+
+
+def air_flight(f, flight, why, planned=True):
+    """The main carriage of the frames on a flight of the timetable (D39), with its airports and times."""
+    no, day, dep, arr = flight
+    kind = "Planned" if planned else "Estimated"
+    return {"ID": V("1", "The flight."),
+            "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                "Transport"),
+            "TransportMeans": kit.means("12-xl", "KXL", no, why),
+            "LoadingPortLocation": kit.place("XBLMA", "The airport of departure."),
+            "UnloadingPortLocation": kit.place("XLSLA", "The airport of destination."),
+            f"{kind}DepartureTransportEvent": kit.event(f, day, dep + ":00-01:00", "The flight's timetabled "
+                                                        "departure, in Lumeport's time, with its offset (D27).",
+                                                        location=kit.place("XBLMA", "The airport of departure.")),
+            f"{kind}ArrivalTransportEvent": kit.event(f, day, arr + "+00:00", "The timetabled arrival, in island "
+                                                      "time, an hour ahead of Lumeport's: a block time of 2 h 45 "
+                                                      "eastbound (D19, D36, O123).",
+                                                      location=kit.place("XLSLA", "The airport of destination."))}
 
 
 def air_consignment(f, doc):
@@ -2260,14 +2298,21 @@ def air_consignment(f, doc):
                          "Description": V("Bench side frame castings", "In words.")},
            "DeliveryUnit": {"BatchQuantity": qty(8, "EA", "All eight delivered together.")},
            "Pickup": {"ID": V("BF-PU-26-0611", "The forwarder's pick-up order."),
-                      "EarliestPickupDate": V(f.date(1), "Ready the day of the instructions."),
+                      "EarliestPickupDate": V(f.date(2), "Valdara casts the frames on 12 May and packs them on 13 "
+                                                         "May; Trasvia brings them to the distributor's dispatch "
+                                                         "area that morning (D39)."),
                       "PickupParty": party("10-xb", short=True)},
-           "Despatch": {"RequestedDespatchDate": V(f.date(2), "To make the next morning's flight.")},
-           "Delivery": {"RequestedDeliveryPeriod": {"StartDate": V(f.date(3), "Wanted at the 3PL on day 3."),
-                                                    "EndDate": V(f.date(3), "The same day.")}},
-           "Status": {"ConditionCode": V("READY", "Packed and labelled."),
-                      "Description": V("Waiting at the distributor's dispatch area.", "Where they are.")}}
+           "Despatch": {"RequestedDespatchDate": V(f.date(2), "For the afternoon flight KXL209 of 13 May.")},
+           "Delivery": {"RequestedDeliveryPeriod": {"StartDate": V(f.date(2), "At Selanu airport on the evening of "
+                                                                              "13 May, by KXL209."),
+                                                    "EndDate": V(f.date(3), "At the latest the next day, before "
+                                                                            "the ship arrives.")}},
+           "Status": {"ConditionCode": V("SCHEDULED", "Not packed yet: the frames are cast today."),
+                      "Description": V("Cast at Valdara on 12 May, galvanised and packed on 13 May, then trucked to "
+                                       "the dispatch area under transit.", "Where they are and what follows.")}}
     return {"ID": V(cid, "The distributor's consignment number."),
+            "GrossWeightMeasure": qty(air_gross(f), "KGM", f"The eight frame cartons and the skid of "
+                                      f"{AIR_SKID['tare_kg']} kg they are strapped to."),
             "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods."),
             "NetNetWeightMeasure": qty(Decimal(8) * Decimal(str(kit.maker("bench-casting-b")["net_kg"])), "KGM",
                                        "The castings alone."),
@@ -2279,8 +2324,10 @@ def air_consignment(f, doc):
             "SplitConsignmentIndicator": V("false", "All eight cartons on one flight."),
             "ConsignmentQuantity": qty(1, "EA", "One consignment."),
             "FreightForwarderParty": party("10-xb", short=True),
-            "TransportEvent": kit.event(f, 2, "19:00:00", "Latest acceptance at the cargo terminal for the morning "
-                                                          "flight.", done=False, location=kit.place("XBLMA", "The cargo terminal at Lumeport airport."), type_code="ACCEPTANCE"),
+            "TransportEvent": kit.event(f, 2, AIR_CUTOFF[:5] + ":00-01:00", "Latest acceptance at the cargo "
+                                        "terminal for the afternoon flight KXL209 of 13 May.", done=False,
+                                        location=kit.place("XBLMA", "The cargo terminal at Lumeport airport."),
+                                        type_code="ACCEPTANCE"),
             "TransportHandlingUnit": {
                 "ID": kit.unit_id("6-xb", f, 1, "The skid the cartons are strapped to"),
                 "TransportHandlingUnitTypeCode": V("SI", "UN/ECE Recommendation 21 code SI: skid."),
@@ -2288,11 +2335,32 @@ def air_consignment(f, doc):
                 "Package": box}}
 
 
+def air_despatch(f, out, flight, time, time_why):
+    """A despatch advice of the frames states the flight they are booked on and when they are expected at Selanu
+    airport: the missed flight makes the first one wrong, which is why it is cancelled and replaced (D39)."""
+    no, day, dep, arr = flight
+    out["IssueTime"] = V(time, time_why)
+    sh = out["Shipment"]
+    sh["Consignment"]["GrossWeightMeasure"] = qty(air_gross(f), "KGM", "The eight frame cartons and their skid.")
+    sh["Consignment"]["MainCarriageShipmentStage"] = {
+        "ID": V("1", "The flight."),
+        "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+        "TransportMeans": kit.means("12-xl", "KXL", no, "The flight the frames are booked on.")}
+    sh["Delivery"]["EstimatedDeliveryPeriod"] = {
+        "StartDate": V(f.date(day), f"Expected at Selanu airport with {no}."),
+        "StartTime": V(arr + "+00:00", "The flight's timetabled arrival, in island time."),
+        "EndDate": V(f.date(day), "The same day.")}
+    sh["Delivery"]["Despatch"] = {"ActualDespatchDate": V(f.date(AIR_BOOKED[1]), "The frames left the dispatch area "
+                                                                                 "on 13 May.")}
+    return out
+
+
 def air(n, doc):
     f = AIR
     w = kit.gross_weight(f, "ordered")
     if doc["doc"] == "OrderChange":
-        order = kit.order(f, n, doc, 0, "The buyer needs eight side frames urgently.",
+        order = kit.order(f, n, {**doc, "values": {"DeliveryTerms/ID": "CPT"}}, 0,   # CPT goes on the line below
+                          "The buyer needs eight side frames urgently.",
                           "Carriage paid to the island's airport for the urgent frames: the distributor pays the air "
                           "freight; the rest of the order stays CIF by sea.", "Selanu airport, cargo terminal")
         order.pop("OrderTypeCode")
@@ -2317,12 +2385,12 @@ def air(n, doc):
             "AccountingCustomerParty": {"Party": party("1-xl", short=True)},
             "AccountingSupplierParty": {"Party": party("6-xb", short=True)},
             "DestinationCountry": {"IdentificationCode": V("XL", "The island.")}})
-        order["Delivery"] = {"DeliveryTerms": {"ID": V("CPT", "Incoterms 2020: carriage paid to, for this delivery "
-                                                              "only.", schemeID="INCOTERMS"),
-                                               "SpecialTerms": V("The rest of the order stays CIF by sea.", "Why the "
-                                                                 "delivery has its own terms.")},
-                             "NotifyParty": party("9-xl", short=True),
-                             "CarrierParty": party("12-xl", short=True)}
+        order.pop("DeliveryTerms", None)       # CPT once, on the air line (air/01#F5); under CPT the seller
+        order["Delivery"] = {"NotifyParty": party("9-xl", short=True)}      # chooses the carrier (air/01#F6)
+        order["OrderLine"][0]["LineItem"]["DeliveryTerms"] = {
+            "ID": V("CPT", "Incoterms 2020: carriage paid to, for this line, the frames by air.", schemeID="INCOTERMS"),
+            "SpecialTerms": V("The rest of the order stays CIF by sea.", "Why the line has terms of its own."),
+            "DeliveryLocation": kit.place("XLSLA", "The named place: Selanu airport.")}
         change = f.number("order-change", doc["from"], "OrderChange")
         f.numbers["order"] = change     # the frames are ordered by this change of the sea order: no order of its own
         return {**order, "ID": V(change, "The number of this change."),          # (air/03#F1, 06#F1, 08#F2, C73)
@@ -2335,8 +2403,8 @@ def air(n, doc):
         out.update({
             "OrderChangeDocumentReference": {"ID": V(f.numbers["order-change"], "The order change this response "
                                                                                 "answers.")},
-            "Note": V("Accepted: the frames fly on the morning flight; the forwarder is booked.", "In words."),
-            "ValidityPeriod": {"EndDate": V(f.date(2), "The flight booking holds for a day.")},
+            "Note": V("Accepted: the frames fly on the afternoon flight KXL209 of 13 May; the forwarder is booked.",
+                      "In words."),
             "NetNetWeightMeasure": qty(Decimal(8) * Decimal(str(kit.maker("bench-casting-b")["net_kg"])), "KGM",
                                        "The frames alone."),
             "NetVolumeMeasure": V(kit.kg(kit.goods_volume(f)), "Their own volume, without the cartons.", unitCode="MTQ"),
@@ -2353,6 +2421,11 @@ def air(n, doc):
             "OrderLine": {"LineItem": {
                 "ID": V(f.deal[0]["line"], f"The added line, line {f.deal[0]['line']} of the order as changed."),
                 "Quantity": qty(8, "EA", "Confirmed."),
+                "Delivery": {"PromisedDeliveryPeriod": {
+                    "StartDate": V(f.date(2), "The frames are promised at Selanu airport on 13 May, on KXL209 "
+                                              "(air/02#F6)."),
+                    "StartTime": V(AIR_BOOKED[3] + "+00:00", "The flight's arrival, in island time."),
+                    "EndDate": V(f.date(2), "The same day.")}},
                 "DeliveryTerms": {"ID": V("CPT", "Carriage paid to the airport of Selanu, for this line.",
                                           schemeID="INCOTERMS")},
                 "Item": {"Name": V(ITEM["bench-casting-b"]["name"], "Named only."),
@@ -2363,11 +2436,21 @@ def air(n, doc):
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
                 "IssueDate": V(f.date(1), "The distributor asks its forwarder to book air freight."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the eight frame cartons."),
-                             "Consignment": air_consignment(f, doc)}}
+                             "GrossWeightMeasure": qty(air_gross(f), "KGM", "The gross weight of the eight frame "
+                                                                            "cartons and their skid."),
+                             "Consignment": air_consignment(f, doc)},
+                "DocumentReference": {"ID": V(AIR_TRANSIT, "The transit declaration the frames travel under, from "
+                                                           "Valdara at Ferrano to Selanu airport through the "
+                                                           "distributor's cross-dock (D39); a document outside the "
+                                                           "examples.")}}
     if doc["doc"] == "Waybill":
-        out = kit.waybill(f, n, doc, 2, "The air waybill, issued when the airline accepts the cargo.", w,
-                          "The gross weight of the cargo.")
+        out = kit.waybill(f, n, doc, AIR_FLOWN[1] - 1, "The air waybill, issued when the airline accepted the "
+                                                      "cargo on the evening of 13 May, after the cut-off for KXL209.",
+                          air_gross(f), "The gross weight of the cargo: the eight frame cartons and their skid.")
+        out["IssueTime"] = V("20:15:00", "At acceptance, 19:15 in Lumeport (D39).")
+        out["DocumentReference"] = {"ID": V(AIR_TRANSIT, "The transit declaration the frames travel under to Selanu "
+                                                         "airport, the office of destination (D39); a document "
+                                                         "outside the examples.")}
         out["DeclaredCarriageValueAmount"] = amount(Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]
                                                                              ["amount"])), "XBL",
                                                     "The value declared for carriage.")
@@ -2378,51 +2461,46 @@ def air(n, doc):
             "ChargeableWeightMeasure": qty(air_chargeable(f), "KGM", f"The gross weight of {kit.kg(w)} kg, rounded up "
                                            "to the next half kilogram: it is higher than the volume weight, "
                                            f"{kit.kg(air_volume(f))} m³ at 167 kg per m³."),
-            "GrossVolumeMeasure": V(kit.kg(air_volume(f)), "Eight frame cartons of "
-                                    + " x ".join(map(str, kit.maker("bench-casting-b")["carton"]["mm"])) + " mm.",
+            "GrossVolumeMeasure": V(kit.kg(air_volume(f)), "The stack of eight frame cartons of "
+                                    + " x ".join(map(str, kit.maker("bench-casting-b")["carton"]["mm"])) + " mm on "
+                                    "its skid of " + " x ".join(map(str, AIR_SKID["mm"][:2])) + " mm.",
                                     unitCode="MTQ"),
-            "SpecialSecurityIndicator": V("true", "The cargo was screened by the forwarder, a known consignor; it "
-                                                  "may fly without further checks."),
             "SpecialServiceInstructions": V("Priority handling at Selanu: the customer is waiting.", "The service "
                                                                                                      "asked for."),
             "ShippingPriorityLevelCode": V("PRIORITY", "Flown on the first flight with room."),
-            "SequenceID": V("1", "The first house consignment under the master air waybill."),
-            "ChildConsignmentQuantity": qty(1, "EA", "One house consignment in the forwarder's consolidation."),
-            "ChildConsignment": {"ID": V("BF-HAWB-26-0918", "The forwarder's house air waybill for the distributor's "
-                                                           "boxes."),
-                                 "ConsignorAssignedID": V(f.numbers["instructions"], "The distributor's "
-                                                                                     "instructions.")},
-            "ConsolidatedShipment": {"ID": V("BF-CONS-26-0207", "The forwarder's consolidation for this flight, "
-                                                                "of which the boxes are part.")},
-            "MainCarriageShipmentStage": {
-                "ID": V("1", "The flight."),
-                "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
-                                                                    "Transport"),
-                "TransportMeans": kit.means("12-xl", "KXL", "KXL207", "The flight number, with the airline's ICAO-style "
-                                                                      "designator KXL, which no real airline "
-                                                                      "holds."),
-                "LoadingPortLocation": kit.place("XBLMA", "The airport of departure."),
-                "UnloadingPortLocation": kit.place("XLSLA", "The airport of destination."),
-                "RequestedDepartureTransportEvent": kit.event(f, 3, "07:00:00", "The forwarder asked for the morning "
-                                                                                "flight.", location=kit.place("XBLMA", "The airport of departure.")),
-                "RequestedArrivalTransportEvent": kit.event(f, 3, wmap.hm(FLIGHT_ARRIVES), "The timetable's arrival, "
-                                                            "in island time, an hour ahead of Lumeport's: a block "
-                                                            "time of 2 h 45 eastbound (D19, D36), before the 3PL's "
-                                                            "cut-off.", location=kit.place("XLSLA", "The airport of destination."))}})
+            "MainCarriageShipmentStage": air_flight(f, AIR_FLOWN, "The morning flight of 14 May, with the airline's "
+                                                                  "ICAO-style designator KXL, which no real airline "
+                                                                  "holds: the cargo missed the cut-off for KXL209 of "
+                                                                  "13 May (D39).")})
         return out
     if doc["doc"] == "TransportationStatus" and doc["from"] == "17-xb":
-        return kit.transportation_status(f, n, doc, 2, "Reported when the cargo is built up for the flight.",
-                                         "Cargo accepted and built up for the flight.", "Lumeport airport, cargo "
-                                                                                        "terminal",
-                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}}, event_type="ACCEPTANCE")
+        out = kit.transportation_status(f, n, doc, 2, "Reported when the cargo was accepted, on the evening of 13 "
+                                                      "May.",
+                                        "Cargo accepted after the cut-off for KXL209 of 13 May and built up for "
+                                        "KXL207 of 14 May.", "Lumeport airport, cargo terminal",
+                                        {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
+                                        event_type="ACCEPTANCE")
+        out["IssueTime"] = V("19:20:00", "When the cargo had been accepted.")
+        out["TransportEvent"]["OccurrenceTime"] = V("19:10:00-01:00", "Accepted at 19:10, long after the cut-off at "
+                                                                "12:00 for the afternoon flight (D39).")
+        return out
     if doc["doc"] == "DespatchAdvice":
-        return kit.despatch_advice(f, n, doc, 2, "Sent to the buyer's 3PL when the cargo leaves.",
-                                   "The gross weight of the frame cartons.")
+        out = kit.despatch_advice(f, n, doc, 2, "Sent to the buyer's 3PL when the forwarder's truck left the "
+                                                "dispatch area for the airport.",
+                                  "The gross weight of the frame cartons and their skid.")
+        return air_despatch(f, out, AIR_BOOKED, "12:15:00", "When the forwarder's truck left the dispatch area, "
+                                                            "late: Trasvia's truck from Ferrano had arrived late "
+                                                            "(D39).")
     if doc["doc"] == "TransportationStatus":
-        return kit.transportation_status(f, n, doc, 3, "Reported when the cargo has landed.",
-                                         "Cargo arrived and ready for customs clearance.", "Selanu airport, cargo "
-                                                                                          "terminal",
-                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}}, event_type="ARRIVAL")
+        out = kit.transportation_status(f, n, doc, 3, "Reported when the cargo had landed and been unloaded.",
+                                        "Cargo arrived on KXL207 and ready for customs clearance.",
+                                        "Selanu airport, cargo terminal",
+                                        {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
+                                        event_type="ARRIVAL")
+        out["IssueTime"] = V("10:55:00", "After unloading.")
+        out["TransportEvent"]["OccurrenceTime"] = V("10:30:00+00:00", "KXL207 landed at about 10:30, a quarter of an hour "
+                                                                "ahead of its timetable (O123).")
+        return out
     if doc["doc"] == "Invoice" and doc["from"] == "6-xb":
         if air_freight(f) != f.numbers["forwarder-invoice-amount"]:
             raise SystemExit("air: the surcharge is not the forwarder's invoice of the air freight (O30)")
@@ -4716,19 +4794,26 @@ def sea(n, doc):
 def air(n, doc):
     f, d = AIR, doc["doc"]
     if d == "FulfilmentCancellation":
-        return {**head(f, "fulfilment-cancellation", doc, 3, "The flight left without the cargo."),
-                "IssueTime": V("08:05:00", "In the morning, when the distributor learned that the cargo had missed "
-                                           "its flight, before the new despatch advice it announces (air/07#F1, "
-                                           "air/08#F1)."),
-                "CancellationNote": V("The cargo missed its flight; it goes on the next day's flight under a new "
-                                      "despatch advice.", "Why the despatch advice is cancelled."),
+        return {**head(f, "fulfilment-cancellation", doc, AIR_BOOKED[1], "On 13 May, the day of the missed flight."),
+                "IssueTime": V("19:50:00", "In the evening, when the terminal reported the cargo accepted for the "
+                                           "next morning's flight, before the new despatch advice it announces "
+                                           "(air/07#F1, air/08#F1)."),
+                "CancellationNote": V("The cargo reached the cargo terminal after the cut-off for the afternoon flight "
+                                      "KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new "
+                                      "despatch advice.", "Why the despatch advice is cancelled: the flight and the "
+                                                          "arrival it gave no longer hold (air/07#F2, F7)."),
                 "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice cancelled.")}}
     if d == "DespatchAdvice" and nth("air", n, doc) == 2:
-        out = kit.despatch_advice(f, n, doc, 3, "Sent for the next day's flight.", "The gross weight of the frame "
-                                                                                    "cartons.")
+        out = kit.despatch_advice(f, n, doc, AIR_BOOKED[1], "Sent the same evening for the next morning's flight.",
+                                  "The gross weight of the frame cartons and their skid.")
         out["ID"] = V(f.number("despatch-2", doc["from"], "DespatchAdvice"), "A new number: the first despatch "
                                                                              "advice was cancelled.")
-        return out
+        out["AdditionalDocumentReference"] = {
+            "ID": V(f.numbers["despatch"], "The despatch advice this one replaces (air/08#F8)."),
+            "DocumentDescription": V("Replaced: the frames missed KXL209 of 13 May and fly on KXL207 of 14 May.",
+                                     "What changed.")}
+        f.numbers["delivery-day"] = AIR_FLOWN[1]
+        return air_despatch(f, out, AIR_FLOWN, "20:05:00", "Right after the cancellation.")
     return _air(n, doc)
 
 
@@ -5386,6 +5471,13 @@ def _(f, n, doc, out):
                               out["CatalogueLine"][1]]}
 
 
+STATUS_INSTRUCTION = {     # the slot a cargo terminal's status is about (air/05#F6, 09#F6)
+    ("air", "17-xb"): "The built-up skid goes to the aircraft for KXL207 on 14 May between 06:00 and 06:20; reply "
+                      "only if that slot must change.",
+    ("air", "17-xl"): "The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs "
+                      "clearance; reply only if that slot must change."}
+
+
 def status_extras(f, n, doc, out):
     """What every transportation status report adds: what it is, the plan it reports on, where and when."""
     x = {"Name": V("Transportation status", "The kind of report."),
@@ -5394,7 +5486,9 @@ def status_extras(f, n, doc, out):
          "Note": V("Automatic report from the sender's tracking system.", "How it was made."),
          **({"ShippingOrderID": V(kit.shipping_order(f), "The forwarding instructions of the shipment it "
                                                           "reports on.")} if kit.shipping_order(f) else {}),
-         "OtherInstruction": V("Reply only if the delivery slot must change.", "What the receiver should do."),
+         "OtherInstruction": V(STATUS_INSTRUCTION.get((f.id, doc["from"]), "Reply only if the delivery slot "
+                                                                             "must change."),
+                               "What the receiver should do, with the slot it is about."),
          "TransportExecutionStatusCode": V("INPROGRESS", "The carriage is under way."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TS-{n:02d}"),
          "StatusLocation": (out["TransportEvent"]["Location"] if isinstance(out.get("TransportEvent"), dict) and
@@ -6548,15 +6642,17 @@ def _(f, n, doc, out):
 
 @enrich("air", "FulfilmentCancellation")
 def _(f, n, doc, out):
-    return {"Note": V("A new despatch advice follows today.", "What happens next."),
+    return {"Note": V("A new despatch advice follows this evening.", "What happens next."),
             "OrderReference": {"ID": V(f.numbers["order-change"], "The order change of the frames."),
                                "SalesOrderID": V(f"LD-SO-26-{SEA.base:04d}", "The distributor's sales order."),
                                "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:air:1:OrderChange")),
                                          "Its UUID."),
-                               "IssueDate": V(f.date(0), "Its date."), "IssueTime": V("07:50:00", "Its time."),
+                               "IssueDate": V(f.date(0), "Its date."), "IssueTime": V("07:50:00+00:00", "Its time, in island time."),
                                "OrderTypeCode": V("230", "UN/EDIFACT 1001 code 230: order change."),
                                "DocumentReference": {"ID": V(SEA.numbers["order"], "The original sea order.")}},
-            "AdditionalDocumentReference": {"ID": V("KXL-OFFLOAD-26-0513", "The airline's offload notice.")},
+            "AdditionalDocumentReference": {"ID": V(f.numbers["status-5"], "The cargo terminal's status: the cargo "
+                                                                         "accepted after the cut-off, for the next "
+                                                                         "morning's flight.")},
             "Signature": seal(doc["from"], "LD-SIG-26-FC"),
             "DespatchSupplierParty": {"Party": party("6-xb", short=True)}}
 

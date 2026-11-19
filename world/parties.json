@@ -2457,8 +2457,8 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "The island's airline; flies urgent cargo with its ATR 72-600F freighter and uses road feeder services on the mainland.",
-   "how": "The air carrier flies urgent shipments and uses road feeder services on the mainland. UBL waybills can name the road carrier as substitute carrier, so the whole route, by truck and by plane, stays under one transport document.",
+   "what": "The island's airline; flies urgent cargo, dangerous goods for cargo aircraft only included, with its ATR 72-600F freighter between Lumeport and Selanu.",
+   "how": "The air carrier flies urgent shipments. A UBL air waybill names the flight, its airports and times, the unit load devices and their positions on board, so the shipper, the terminals and the consignee read the carriage from one document.",
    "identity": {
     "name": "Kelaro Air Cargo",
     "kind": "company",

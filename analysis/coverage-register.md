@@ -554,6 +554,19 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `TransportHandlingUnit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 8 °C (D47, O124) | medicines | agreed |
 | `TransportHandlingUnit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 2 °C (D47, O124) | medicines | agreed |
 
+> C85, C86, D39: the urgent frames fly on a direct air waybill, one small consignment on a named flight, so the consolidation, the house consignment and its sequence number go (air/04#F2, F7); the forwarder trucks the skid to the terminal itself and Nalevi collects it at Selanu, so no substitute carrier (04#F6); CPT is stated once, on the order change's air line, so neither the order change nor its delivery carries delivery terms (01#F5); the acceptance is unconditional, so it has no validity period (02#F4).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/ChildConsignment` | 0..n | air/04-Waybill | a forwarder's consolidation under a master air waybill or a groupage bill of lading, with the house consignments as children; none decided | | open |
+| `Consignment/ChildConsignmentQuantity` | 0..1 | air/04-Waybill | as above | | open |
+| `Consignment/ConsolidatedShipment` | 0..n | air/04-Waybill | as above | | open |
+| `Consignment/SequenceID` | 0..1 | air/04-Waybill | as above | | open |
+| `Consignment/SubstituteCarrierParty` | 0..1 | air/04-Waybill | a carrier that performs the carriage in place of the contracting carrier, such as an airline's road feeder service; none decided | | open |
+| `Delivery/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
+| `OrderChange/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
+| `OrderResponse/ValidityPeriod` | 0..1 | air/02-OrderResponse | a conditional acceptance whose terms lapse at a stated time | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

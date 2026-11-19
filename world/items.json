@@ -1219,7 +1219,7 @@
     "currency": "XBL"
    },
    "sellers_id": "BF-AIR",
-   "description": "Airport-to-airport air freight per kilogram chargeable weight, road feeder included.",
+   "description": "Airport-to-airport air freight per kilogram chargeable weight.",
    "purchase": "freight"
   },
   {

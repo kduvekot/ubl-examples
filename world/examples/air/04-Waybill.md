@@ -1,8 +1,8 @@
 # Waybill: Kelaro Air Cargo to Bayforth Forwarding
 
-*Example 4 of the flow "An urgent part of the order by air (Bayvarra → island Lisavu)" · [Waybill in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA)*
+*Example 4 of the flow "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)" · [Waybill in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA)*
 
-The air waybill; the airline's road feeder service, run by the road carrier, is named as substitute carrier for the truck leg to the airport.
+The direct air waybill, issued when the airline accepted the cargo after the cut-off for the afternoon flight: it names the next morning's flight, and the 3PL as the party to notify.
 
 [The XML file](04-Waybill.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -27,12 +27,12 @@ The air waybill; the airline's road feeder service, run by the road carrier, is 
 - `StatusCode` = **ISSUED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-05-13**  
-  The air waybill, issued when the airline accepts the cargo.
-- `IssueTime` = **10:43:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The air waybill, issued when the airline accepted the cargo on the evening of 13 May, after the cut-off for KXL209.
+- `IssueTime` = **20:15:00+00:00**  
+  At acceptance, 19:15 in Lumeport (D39); in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Air waybill under the Montreal Convention**  
   The kind of transport document.
-- `Description` = **The flight to the island.**  
+- `Description` = **The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.**  
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
   The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
@@ -249,28 +249,16 @@ Inside `Shipment`:
   The value declared on the air waybill, as the distributor instructed.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The consignment of the transport booking.
-- `Consignment/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo.
-- `Consignment/ChargeableWeightMeasure` = **98** (unitCode `KGM`)  
-  The gross weight of 97.6 kg, rounded up to the next half kilogram: it is higher than the volume weight, 0.43 m³ at 167 kg per m³.
-- `Consignment/GrossVolumeMeasure` = **0.43** (unitCode `MTQ`)  
-  Eight frame cartons of 790 x 680 x 100 mm.
-- `Consignment/SpecialSecurityIndicator` = **true**  
-  The cargo was screened by the forwarder, a known consignor; it may fly without further checks.
+- `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo: the eight frame cartons and their skid.
+- `Consignment/ChargeableWeightMeasure` = **105** (unitCode `KGM`)  
+  The gross weight of 97.6 kg, rounded up to the next half kilogram: it is higher than the volume weight, 0.52 m³ at 167 kg per m³.
+- `Consignment/GrossVolumeMeasure` = **0.52** (unitCode `MTQ`)  
+  The stack of eight frame cartons of 790 x 680 x 100 mm on its skid of 800 x 700 mm.
 - `Consignment/SpecialServiceInstructions` = **Priority handling at Selanu: the customer is waiting.**  
   The service asked for.
-- `Consignment/SequenceID` = **1**  
-  The first house consignment under the master air waybill.
 - `Consignment/ShippingPriorityLevelCode` = **PRIORITY** (listID `urn:ubl-examples:world:codelist:ShippingPriorityCode`)  
   Flown on the first flight with room. The code is from the Trade Accord's shipping priority list: PRIORITY = Priority.
-- `Consignment/ChildConsignmentQuantity` = **1** (unitCode `EA`)  
-  One house consignment in the forwarder's consolidation.
-- `Consignment/ConsolidatedShipment/ID` = **BF-CONS-26-0207**  
-  The forwarder's consolidation for this flight, of which the boxes are part.
-- `Consignment/ChildConsignment/ID` = **BF-HAWB-26-0918**  
-  The forwarder's house air waybill for the distributor's boxes.
-- `Consignment/ChildConsignment/ConsignorAssignedID` = **LD-FI-26-0322**  
-  The distributor's instructions.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XL-TR-041859** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
@@ -311,50 +299,50 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
 - `Consignment/ConsigneeParty/Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; identity of Velumi Trading (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Consignment/NotifyParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Nalevi Warehousing (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `Consignment/SubstituteCarrierParty/PartyName/Name` = **Nalevi Warehousing**  
+- `Consignment/NotifyParty/PartyName/Name` = **Nalevi Warehousing**  
   The trading name; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/ID` = **95940358** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
+- `Consignment/NotifyParty/PostalAddress/ID` = **95940358** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+- `Consignment/NotifyParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Consignment/SubstituteCarrierParty/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+- `Consignment/NotifyParty/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
-- `Consignment/SubstituteCarrierParty/PostalAddress/StreetName` = **Vilafa Natii** (languageID `qal`)  
+- `Consignment/NotifyParty/PostalAddress/StreetName` = **Vilafa Natii** (languageID `qal`)  
   The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/StreetName` = **Lagoon Road** (languageID `en-XL`)  
+- `Consignment/NotifyParty/PostalAddress/StreetName` = **Lagoon Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/BuildingNumber` = **9**  
+- `Consignment/NotifyParty/PostalAddress/BuildingNumber` = **9**  
   Building number of the postal address. identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
+- `Consignment/NotifyParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
   The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
+- `Consignment/NotifyParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/TimezoneOffset` = **+00:00**  
+- `Consignment/NotifyParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
-- `Consignment/SubstituteCarrierParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+- `Consignment/NotifyParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Consignment/SubstituteCarrierParty/PostalAddress/Country/Name` = **Lisavu**  
+- `Consignment/NotifyParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `Consignment/SubstituteCarrierParty/Contact/Name` = **Goods inwards**  
-  The party's goods inwards desk: the desk for its role in this document (it carries or handles the goods); identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/JobTitle` = **Warehouse supervisor**  
+- `Consignment/NotifyParty/Contact/Name` = **Goods inwards**  
+  The party's main desk, which handles this document; identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/NotifyParty/Contact/JobTitle` = **Warehouse supervisor**  
   The job of the person who answers at the desk; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/Department` = **Warehouse**  
+- `Consignment/NotifyParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/Telephone` = **+999 3 722 1882**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/ElectronicMail` = **goodsin@nalevi.example**  
+- `Consignment/NotifyParty/Contact/Telephone` = **+999 3 722 1882**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Nalevi Warehousing (world/parties.json).
+- `Consignment/NotifyParty/Contact/ElectronicMail` = **goods@nalevi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Nalevi Warehousing (world/parties.json).
-- `Consignment/SubstituteCarrierParty/Contact/Note` = **Monday to Saturday 07:00–18:00**  
+- `Consignment/NotifyParty/Contact/Note` = **Monday to Saturday 07:00–18:00**  
   When the desk can be reached; identity of Nalevi Warehousing (world/parties.json).
 - `Consignment/MainCarriageShipmentStage/ID` = **1**  
   The flight.
 - `Consignment/MainCarriageShipmentStage/TransportModeCode` = **4** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   Air transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 4 = Air transport.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **KXL207**  
-  The flight number, with the airline's ICAO-style designator KXL, which no real airline holds.
+  The morning flight of 14 May, with the airline's ICAO-style designator KXL, which no real airline holds: the cargo missed the cut-off for KXL209 of 13 May (D39).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XL** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Lisavu**  
@@ -375,25 +363,25 @@ Inside `Shipment`:
   The airport of destination.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
-  The forwarder asked for the morning flight.
-- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **07:00:00**  
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The flight's timetabled departure, in Lumeport's time, with its offset (D27).
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **07:00:00-01:00**  
   The local time.
-- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Lumeport airport**  
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name` = **Lumeport airport**  
   The airport of departure.
-- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceDate` = **2026-05-14**  
-  The timetable's arrival, in island time, an hour ahead of Lumeport's: a block time of 2 h 45 eastbound (D19, D36), before the 3PL's cut-off.
-- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/OccurrenceTime` = **10:45:00**  
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The timetabled arrival, in island time, an hour ahead of Lumeport's: a block time of 2 h 45 eastbound (D19, D36, O123).
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:45:00+00:00**  
   The local time.
-- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/Name` = **Selanu airport**  
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Selanu airport**  
   The airport of destination.
-- `Consignment/MainCarriageShipmentStage/RequestedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -407,6 +395,15 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
+
+### Document Reference
+
+Inside `DocumentReference`:
+
+- `ID` = **VI-TD-26-0513**  
+  The transit declaration the frames travel under to Selanu airport, the office of destination (D39); a document outside the examples.
+- `DocumentType` = **Transit declaration**  
+  The kind of document referred to, Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Document Distribution
 
@@ -460,9 +457,9 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>10:43:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>20:15:00+00:00</cbc:IssueTime>
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
-  <cbc:Description>The flight to the island.</cbc:Description>
+  <cbc:Description>The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
   <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">AWB</cbc:WaybillTypeCode>
@@ -621,21 +618,11 @@ Inside `Signature`:
     <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
-      <cbc:ChargeableWeightMeasure unitCode="KGM">98</cbc:ChargeableWeightMeasure>
-      <cbc:GrossVolumeMeasure unitCode="MTQ">0.43</cbc:GrossVolumeMeasure>
-      <cbc:SpecialSecurityIndicator>true</cbc:SpecialSecurityIndicator>
+      <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">105</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">0.52</cbc:GrossVolumeMeasure>
       <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
-      <cbc:SequenceID>1</cbc:SequenceID>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">PRIORITY</cbc:ShippingPriorityLevelCode>
-      <cbc:ChildConsignmentQuantity unitCode="EA">1</cbc:ChildConsignmentQuantity>
-      <cac:ConsolidatedShipment>
-        <cbc:ID>BF-CONS-26-0207</cbc:ID>
-      </cac:ConsolidatedShipment>
-      <cac:ChildConsignment>
-        <cbc:ID>BF-HAWB-26-0918</cbc:ID>
-        <cbc:ConsignorAssignedID>LD-FI-26-0322</cbc:ConsignorAssignedID>
-      </cac:ChildConsignment>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -670,7 +657,7 @@ Inside `Signature`:
           <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
-      <cac:SubstituteCarrierParty>
+      <cac:NotifyParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
         </cac:PartyIdentification>
@@ -697,10 +684,10 @@ Inside `Signature`:
           <cbc:JobTitle>Warehouse supervisor</cbc:JobTitle>
           <cbc:Department>Warehouse</cbc:Department>
           <cbc:Telephone>+999 3 722 1882</cbc:Telephone>
-          <cbc:ElectronicMail>goodsin@nalevi.example</cbc:ElectronicMail>
+          <cbc:ElectronicMail>goods@nalevi.example</cbc:ElectronicMail>
           <cbc:Note>Monday to Saturday 07:00–18:00</cbc:Note>
         </cac:Contact>
-      </cac:SubstituteCarrierParty>
+      </cac:NotifyParty>
       <cac:MainCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
@@ -731,9 +718,9 @@ Inside `Signature`:
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
-        <cac:RequestedDepartureTransportEvent>
+        <cac:PlannedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>07:00:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
             <cbc:Name>Lumeport airport</cbc:Name>
@@ -743,10 +730,10 @@ Inside `Signature`:
               </cac:Country>
             </cac:Address>
           </cac:Location>
-        </cac:RequestedDepartureTransportEvent>
-        <cac:RequestedArrivalTransportEvent>
+        </cac:PlannedDepartureTransportEvent>
+        <cac:PlannedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:45:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:45:00+00:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
             <cbc:Name>Selanu airport</cbc:Name>
@@ -756,7 +743,7 @@ Inside `Signature`:
               </cac:Country>
             </cac:Address>
           </cac:Location>
-        </cac:RequestedArrivalTransportEvent>
+        </cac:PlannedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -772,6 +759,10 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>VI-TD-26-0513</cbc:ID>
+    <cbc:DocumentType>Transit declaration</cbc:DocumentType>
+  </cac:DocumentReference>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

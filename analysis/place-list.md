@@ -196,6 +196,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | retail | road | Brightmarket Stores (26-xb) → Robin Ashdale (c-xb) | **14.0 km** | 14.0 km | `road-port` | 11.1 km | 1.26 | 0 h 12 – 0 h 14 | - |
 | sea | road | Lumeway Distribution (6-xb) → Port of Lumeport (16-xb) | **82.4 km** | 82.4 km | `road-b`, `road-port` | 70.0 km | 1.18 | 1 h 11 – 1 h 22 | - |
 | sea | road | Port of Selanu (16-xl) → Nalevi Warehousing (9-xl) | **17.5 km** | 17.5 km | town streets, minor roads | 14.8 km | 1.18 | 0 h 15 – 0 h 18 | - |
+| air | road | Valdara Industries (5-xu) → Lumeway Distribution (6-xb) | **189.1 km** | 189.1 km | `road` | 157.5 km | 1.20 | 2 h 42 – 3 h 09 | - |
 | air | road | Lumeway Distribution (6-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 52.5 km | 1.12 | 0 h 50 – 0 h 59 | - |
 | air | road | Selanu Airport Cargo (17-xl) → Nalevi Warehousing (9-xl) | **21.0 km** | 21.0 km | `road-c` | 14.4 km | 1.46 | 0 h 18 – 0 h 21 | - |
 | tender | road | Castrano Logistics (8-xu) → Lumeport Public Works Department (2-xb) | **260.2 km** | 260.2 km | `road`, `road-b`, `road-wool`, `road-lark` | 203.9 km | 1.28 | 3 h 43 – 4 h 20 | - |

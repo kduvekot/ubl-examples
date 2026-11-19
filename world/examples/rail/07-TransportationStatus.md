@@ -35,7 +35,7 @@ The intermodal terminal reports to the rail carrier that the containers are load
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: How it was made.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do.
+  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
