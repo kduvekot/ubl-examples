@@ -2,7 +2,7 @@
 
 *Example 33 of the flow "A public tender (Bayvarra)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
 
-One bench was damaged during installation and is replaced free of charge; the manufacturer credits it and its installation.
+One bench was damaged during installation and rejected on acceptance; the manufacturer credits it with its share of the colour charge (D28 point 9).
 
 [The XML file](33-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,43 +18,30 @@ One bench was damaged during installation and is replaced free of charge; the ma
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-CN-26-0223**  
+- `ID` = **VI-CN-26-0224**  
   The seller's credit note number.
 - `UUID` = **836baac3-c754-5749-8c68-5c404d80fae0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-04**  
-  Issued when the replacement was agreed.
+- `IssueDate` = **2026-04-14**  
+  Tuesday 14 April, the day after the acceptance rejected the bench.
 - `IssueTime` = **09:10:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `TaxPointDate` = **2026-04-04**  
-  Urvania's VAT: the credit's date.
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 381: credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 381 = Credit note.
+- `Note` = **Credit for the bench rejected as damaged on acceptance, with its share of the colour charge; deducted from the payment of the invoice.**  
+  Why it credits and how it is settled, once (tender/33#F1, F12).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The manufacturer reports its VAT in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PricingCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The contract prices are in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Settled in ferra, like the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+  Valdara reports its value added tax in ferra, its own currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, as on the invoice credited.
 - `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
-- `LineCountNumeric` = **2**  
+- `LineCountNumeric` = **1**  
   The number of lines.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
-
-### Invoice Period
-
-Inside `InvoicePeriod`:
-
-- `StartDate` = **2026-03-31**  
-  The release.
-- `EndDate` = **2026-04-04**  
-  To the credit.
 
 ### Billing Reference
 
@@ -63,26 +50,12 @@ Inside `BillingReference`:
 - `InvoiceDocumentReference/ID` = **VI-INV-26-0222**  
   The invoice credited.
 
-### Delivery Note Document Reference
+### Receipt Document Reference
 
-Inside `DeliveryNoteDocumentReference`:
+Inside `ReceiptDocumentReference`:
 
-- `ID` = **CL-DA-26-0216**  
-  The despatch advice of the bench.
-
-### Work Report Document Reference
-
-Inside `WorkReportDocumentReference`:
-
-- `ID` = **VI-WR-26-0080**  
-  The installation report.
-
-### Purchase Reference
-
-Inside `PurchaseReference`:
-
-- `ID` = **PARK-HB**  
-  The harbour park.
+- `ID` = **LPWD-RA-26-0223**  
+  The acceptance that rejected the bench.
 
 ### Accounting Supplier Party
 
@@ -217,30 +190,6 @@ Inside `AccountingCustomerParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/PartyTaxScheme/RegistrationName` = **Lumeport Public Works Department**  
-  The name under which the party is registered for state sales tax; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyTaxScheme/CompanyID` = **CO-0900002** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `Party/PartyTaxScheme/ExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption as a code of Bayvarra's national list of exemption reasons: sale to a public body. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
-- `Party/PartyTaxScheme/ExemptionReason` = **Public body: buys free of the state sales tax**  
-  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why purchases by this party carry no sales tax; identity of Lumeport Public Works Department (world/parties.json).
-- `Party/PartyTaxScheme/RegistrationAddress/CityName` = **Lumeport**  
-  Where the party is registered for the tax.
-- `Party/PartyTaxScheme/RegistrationAddress/CountrySubentity` = **Coastal State**  
-  Its state or territory.
-- `Party/PartyTaxScheme/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Party/PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
   The public body's official name; identity of Lumeport Public Works Department (world/parties.json).
 - `Party/PartyLegalEntity/CompanyID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
@@ -262,25 +211,6 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:6250397184** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Tax Representative Party
-
-Inside `TaxRepresentativeParty`:
-
-- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyTaxScheme/RegistrationName` = **Bayforth Forwarding Ltd**  
-  The representative's registered name.
-- `PartyTaxScheme/CompanyID` = **CO-1234932** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  The representative's number with Bayvarra's tax office, under which it accounts for the withholding of the non-resident manufacturer it represents. The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/Name` = **Withholding tax on payments by public bodies to non-resident businesses**  
-  The tax in words: it applies only where a public body pays a business not established in Bayvarra (D17).
-- `PartyTaxScheme/TaxScheme/TaxTypeCode` = **INCOME** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
-  A tax on the supplier's income, not on the supply: the public body keeps it back from the payment. The code is from the Trade Accord's tax type list: INCOME = Tax on income.
-
 ### Payment Terms
 
 Inside `PaymentTerms`:
@@ -293,41 +223,40 @@ Inside `PaymentTerms`:
 Inside `TaxExchangeRate`:
 
 - `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The credit's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra.
-
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency of the contract prices. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the order and the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `CalculationRate` = **0.01**  
-  The world's reference rate fixed in the contract.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-01-02**  
-  The rate of the first working day of the year, as the contract says.
-
-### Payment Exchange Rate
-
-Inside `PaymentExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency the manufacturer is paid in. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+  The seller's tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
+  1 lume = 100 ferra, the Accord's parity.
 - `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-04-04**  
-  The rate of the document's date.
+- `Date` = **2026-04-14**  
+  The rate of the tax point.
+
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  The colour charge of the bench credited.
+- `AllowanceChargeReasonCode` = **CAT** (listID `UN/EDIFACT EDED 7161`)  
+  As on the invoice. The code is from the world's copy of UN/EDIFACT 7161 Special service description: CAT = Special colour service.
+- `AllowanceChargeReason` = **Special colour**  
+  Its share for one bench.
+- `Amount` = **5.00** (currencyID `XBL`)  
+  5 lume, the charge for one bench.
+- `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXP = Export of goods outside Urvania.
+- `TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  The name of code EXP in Urvania's national value added tax exemption reason list.
+- `TaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Tax Total
 
@@ -335,8 +264,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **499.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **504.00** (currencyID `XBL`)  
+  The bench and its colour charge.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -349,54 +278,39 @@ Inside `TaxTotal`:
   The name of code EXP in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxableAmount` = **18.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
-  The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
+- `TaxAmount` = **0** (currencyID `XUF`)  
+  The same tax in ferra, for the seller's tax return.
+- `TaxSubtotal/TaxableAmount` = **50400** (currencyID `XUF`)  
+  The taxable amount in ferra.
+- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
+  The tax in ferra.
+- `TaxSubtotal/TransactionCurrencyTaxAmount` = **0.00** (currencyID `XBL`)  
+  The same tax in the document currency.
+- `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXP = Export of goods outside Urvania.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
+  The name of code EXP in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-
-### Withholding Tax Total
-
-Inside `WithholdingTaxTotal`:
-
-- `TaxAmount` = **1.80** (currencyID `XBL`)  
-  The withholding on the credited installation, reversed.
-- `TaxSubtotal/TaxableAmount` = **18.00** (currencyID `XBL`)  
-  The installation credited.
-- `TaxSubtotal/TaxAmount` = **1.80** (currencyID `XBL`)  
-  10 % of it, no longer withheld.
-- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
-  The withholding applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **10**  
-  The rate, as on the invoice.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxScheme/Name` = **Withholding tax on payments by public bodies to non-resident businesses**  
-  The tax in words: it applies only where a public body pays a business not established in Bayvarra (D17).
-- `TaxSubtotal/TaxCategory/TaxScheme/TaxTypeCode` = **INCOME** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
-  A tax on the supplier's income, not on the supply: the public body keeps it back from the payment. The code is from the Trade Accord's tax type list: INCOME = Tax on income.
 
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **517.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **499.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **517.00** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **517.00** (currencyID `XBL`)  
-  The total without tax plus the tax.
-- `WithholdingTaxTotalAmount` = **1.80** (currencyID `XBL`)  
-  The department had withheld this on the credited installation; it reclaims it from the state.
-- `PayableAmount` = **515.20** (currencyID `XBL`)  
-  What the manufacturer refunds: the credit less the tax the department withheld on it.
+- `TaxExclusiveAmount` = **504.00** (currencyID `XBL`)  
+  The bench and its colour charge.
+- `TaxInclusiveAmount` = **504.00** (currencyID `XBL`)  
+  No tax: an export.
+- `ChargeTotalAmount` = **5.00** (currencyID `XBL`)  
+  The colour charge credited.
+- `PayableAmount` = **504.00** (currencyID `XBL`)  
+  What the manufacturer credits: 499 and 5 (D28 point 9).
 
 ### Credit Note Line
 
@@ -405,49 +319,39 @@ Inside `CreditNoteLine`:
 - `ID` = **1**  
   The line number.
 - `CreditedQuantity` = **1** (unitCode `EA`)  
-  The bench damaged during installation.
+  The bench rejected on acceptance: damaged during installation.
 - `LineExtensionAmount` = **499.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `TaxPointDate` = **2026-04-04**  
-  The day of the credit.
-- `FreeOfChargeIndicator` = **false**  
-  A credit, not a free item.
-- `InvoicePeriod/StartDate` = **2026-04-02**  
-  During installation.
-- `WorkReportLineReference/LineID` = **1**  
-  The installation report's line.
 - `DocumentReference/ID` = **PWD-DMG-26-0081**  
   The department's damage report.
-- `DocumentReference/DocumentTypeCode` = **DAMAGEREPORT** (listID `urn:ubl-examples:world:codelist:DocumentTypeCode`)  
-  The kind of document referred to, the public works department's damage report, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's document type list: DAMAGEREPORT = Damage report.
-- `PricingReference/AlternativeConditionPrice/PriceAmount` = **49900** (currencyID `XUF`)  
-  The contract price in ferra.
+- `DocumentReference/IssueDate` = **2026-04-02**  
+  The day of the damage.
+- `DocumentReference/DocumentType` = **Damage report**  
+  What it is.
 - `PurchaseReference/ID` = **PARK-HB-B17**  
   The bench's place in the harbour park.
-- `PaymentTerms/Note` = **Set off against the next release's invoice.**  
-  How the credit is settled.
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
-  The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
-  The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
-  The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+  The item's name in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
-  The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+  The item's name in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **VI-B180**  
-  The seller's own item number; item bench-serra of Valdara Industries (world/items.json).
-- `Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The seller's own item number; item bench-serra-g of Valdara Industries (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **GRN**  
   The variant of the item: the frame colour, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
 - `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
   The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
-  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
-- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRN** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRN = Green.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in moss green, RAL 6005**  
   The variant in words.
 - `Item/StandardItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
-  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra of Valdara Industries (world/items.json).
+  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
   The barcode the number is printed in on the label: Code 128 carries letters and digits.
 - `Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
@@ -468,48 +372,6 @@ Inside `CreditNoteLine`:
   The contract price in lume.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `SubCreditNoteLine/ID` = **1.1**  
-  The frame.
-- `SubCreditNoteLine/LineExtensionAmount` = **180.00** (currencyID `XBL`)  
-  The frame's share.
-- `SubCreditNoteLine/Item/Name` = **Side frames of the bench**  
-  The damaged part.
-- `ID` = **2**  
-  The line number.
-- `CreditedQuantity` = **1** (unitCode `EA`)  
-  Its installation, credited too.
-- `LineExtensionAmount` = **18.00** (currencyID `XBL`)  
-  Quantity times price, rounded to the minor unit.
-- `CollectedForParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `CollectedForParty/PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `WithholdingTaxTotal/TaxAmount` = **1.80** (currencyID `XBL`)  
-  The withholding reversed.
-- `Item/Description` = **Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.** (languageID `qau`)  
-  The seller's description in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
-- `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.** (languageID `en-XU`)  
-  The seller's description in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
-- `Item/Name` = **Dreknul skul sir haz nanskir** (languageID `qau`)  
-  The item's name in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
-- `Item/Name` = **Installation of a park bench** (languageID `en-XU`)  
-  The item's name in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
-- `Item/SellersItemIdentification/ID` = **VI-INST-B**  
-  The seller's own item number; item bench-installation of Valdara Industries (world/items.json).
-- `Item/ClassifiedTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
-  The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
-- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
-  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
-- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **18** (currencyID `XBL`)  
-  The installation price in lume.
-- `Price/BaseQuantity` = **1** (unitCode `EA`)  
-  The price is per one unit.
 
 ## The document
 
@@ -520,38 +382,26 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CN-26-0223</cbc:ID>
+  <cbc:ID>VI-CN-26-0224</cbc:ID>
   <cbc:UUID>836baac3-c754-5749-8c68-5c404d80fae0</cbc:UUID>
-  <cbc:IssueDate>2026-04-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
-  <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
+  <cbc:Note>Credit for the bench rejected as damaged on acceptance, with its share of the colour charge; deducted from the payment of the invoice.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
-  <cac:InvoicePeriod>
-    <cbc:StartDate>2026-03-31</cbc:StartDate>
-    <cbc:EndDate>2026-04-04</cbc:EndDate>
-  </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
       <cbc:ID>VI-INV-26-0222</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
-  <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>CL-DA-26-0216</cbc:ID>
-  </cac:DeliveryNoteDocumentReference>
-  <cac:WorkReportDocumentReference>
-    <cbc:ID>VI-WR-26-0080</cbc:ID>
-  </cac:WorkReportDocumentReference>
-  <cac:PurchaseReference>
-    <cbc:ID>PARK-HB</cbc:ID>
-  </cac:PurchaseReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>LPWD-RA-26-0223</cbc:ID>
+  </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -664,30 +514,6 @@ Inside `CreditNoteLine`:
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:CompanyID>
@@ -706,23 +532,6 @@ Inside `CreditNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Bayforth Forwarding</cbc:Name>
-    </cac:PartyName>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
-        <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
-        <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-  </cac:TaxRepresentativeParty>
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
   </cac:PaymentTerms>
@@ -730,25 +539,29 @@ Inside `CreditNoteLine`:
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-04-14</cbc:Date>
   </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-04-04</cbc:Date>
-  </cac:PaymentExchangeRate>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
+      <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">499.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">504.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -760,82 +573,56 @@ Inside `CreditNoteLine`:
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">18.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">50400</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
-  <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">18.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>10</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
-          <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
-          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">517.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">517.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">517.00</cbc:TaxInclusiveAmount>
-    <cbc:WithholdingTaxTotalAmount currencyID="XBL">1.80</cbc:WithholdingTaxTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">515.20</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">499.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">504.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">504.00</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">5.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">504.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">499.00</cbc:LineExtensionAmount>
-    <cbc:TaxPointDate>2026-04-04</cbc:TaxPointDate>
-    <cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-04-02</cbc:StartDate>
-    </cac:InvoicePeriod>
-    <cac:WorkReportLineReference>
-      <cbc:LineID>1</cbc:LineID>
-    </cac:WorkReportLineReference>
     <cac:DocumentReference>
       <cbc:ID>PWD-DMG-26-0081</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">DAMAGEREPORT</cbc:DocumentTypeCode>
+      <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+      <cbc:DocumentType>Damage report</cbc:DocumentType>
     </cac:DocumentReference>
-    <cac:PricingReference>
-      <cac:AlternativeConditionPrice>
-        <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
-      </cac:AlternativeConditionPrice>
-    </cac:PricingReference>
     <cac:PurchaseReference>
       <cbc:ID>PARK-HB-B17</cbc:ID>
     </cac:PurchaseReference>
-    <cac:PaymentTerms>
-      <cbc:Note>Set off against the next release's invoice.</cbc:Note>
-    </cac:PaymentTerms>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
-        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cbc:ExtendedID>GRN</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
-          <cbc:Description>Frame in Ferro grey</cbc:Description>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+          <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
@@ -856,51 +643,6 @@ Inside `CreditNoteLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-    </cac:Price>
-    <cac:SubCreditNoteLine>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:LineExtensionAmount currencyID="XBL">180.00</cbc:LineExtensionAmount>
-      <cac:Item>
-        <cbc:Name>Side frames of the bench</cbc:Name>
-      </cac:Item>
-    </cac:SubCreditNoteLine>
-  </cac:CreditNoteLine>
-  <cac:CreditNoteLine>
-    <cbc:ID>2</cbc:ID>
-    <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">18.00</cbc:LineExtensionAmount>
-    <cac:CollectedForParty>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Bayforth Forwarding</cbc:Name>
-      </cac:PartyName>
-    </cac:CollectedForParty>
-    <cac:WithholdingTaxTotal>
-      <cbc:TaxAmount currencyID="XBL">1.80</cbc:TaxAmount>
-    </cac:WithholdingTaxTotal>
-    <cac:Item>
-      <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
-      <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
-      <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
-      <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
-      <cac:SellersItemIdentification>
-        <cbc:ID>VI-INST-B</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>

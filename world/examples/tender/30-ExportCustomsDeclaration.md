@@ -164,26 +164,26 @@ Inside `CustomsDeclaration`:
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **40** (unitCode `EA`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
-  The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
-  The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
+- `Shipment/GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
-  The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+  The item's name in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
-  The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+  The item's name in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Where the item was produced; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Where the item was produced; item bench-serra-g of Valdara Industries (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
   The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XX = Miscellaneous manufactured articles.
 - `Shipment/GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
   The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
 - `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item bench-serra-g of Valdara Industries (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra-g of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
-  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
+  The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra-g of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `Shipment/GoodsItem/ContainingPackage/Quantity` = **4** (unitCode `EA`)  
   4 benches to a pallet; the goods item travels on 10 pallets.
 - `Shipment/GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
@@ -499,8 +499,8 @@ Inside `Signature`:
         <cbc:GrossWeightMeasure unitCode="KGM">2162</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">40</cbc:Quantity>
         <cac:Item>
-          <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
-          <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+          <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+          <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
           <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
           <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
           <cac:OriginCountry>

@@ -3322,8 +3322,9 @@ def period(f, start, end, why_start, why_end):
 
 # ---------------------------------------------------------------- the tender flow (Bayvarra, public procurement)
 TENDER = kit.Flow("tender", "2026-01-12", [
-    {"item": "bench-serra", "ordered": 40, "why": "The first call-off under the contract: forty benches for the "
-                                                  "harbour park."}])
+    {"item": "bench-serra-g", "ordered": 40, "why": "The first call-off under the contract: forty benches for the "
+                                                    "harbour park, in moss green as the order change asked."}],
+                   buyer="2-xb")     # the contract prices in lume (D28 point 10, world/items.json buyer_prices)
 FOLDER = "PWD-2026-PARKS"
 PWD_COMMITMENT = "PWD-COMMIT-26-0381"      # the department's budget commitment for the office furniture
 PRICING_RATE = {"SourceCurrencyCode": V("XUF", "The currency of the contract prices."),
@@ -3457,21 +3458,6 @@ def tender(n, doc):
         return {"ID": V(f.number("awarded", doc["from"], "AwardedNotification"), "The notification number."),
                 "IssueDate": V(f.date(56), "The winner is told on the day of the award decision."), **folder,
                 "TenderResult": {"AwardDate": V(f.date(56), "The day of the award decision.")}}
-    if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 70, "The first call-off under the awarded contract.",
-                         "Delivered at place, the authority's depot: the manufacturer delivers, by the carrier it "
-                         "chooses; the authority clears the import.", "Public works depot, Lumeport",
-                         {"Contract": {"ID": V(FOLDER, "The contract under which the call-off is made.")},
-                          "Note": V("Release 1 under the framework contract: 40 of the 240 benches.", "Which call-off "
-                                    "this is; Delivery/ReleaseID is an access approval at the delivery place, not "
-                                    "a call-off number (tender/26#F5)."),
-                          "PricingCurrencyCode": V("XUF", "The contract prices are the manufacturer's, in ferra."),
-                          "PricingExchangeRate": PRICING_RATE,
-                          "ProjectReference": {"ID": V("PARKS-26", "The parks renewal programme the benches "
-                                                                       "are for.")},
-                          "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure the order "
-                                                                          "results from.")}},
-                         currency="XBL")
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 77, "The day the call-off left the 3PL.", "The gross weight loaded.")
     if doc["doc"] == "ExportCustomsDeclaration":
@@ -3480,52 +3466,6 @@ def tender(n, doc):
     if doc["doc"] == "ImportCustomsDeclaration":
         return kit.import_declaration(f, n, doc, 78, "Under DAP the buyer clears the import: the authority declares "
                                                      "the benches.", "The customs value in lume, at the reference rate.")
-    if doc["doc"] == "Invoice":
-        out = kit.invoice(f, n, doc, 78, "Issued on delivery.",
-                          {"OrderReference": ref(f, "order", "The authority's call-off order."),
-                           "ContractDocumentReference": {"ID": V(FOLDER, "The awarded contract.")},
-                           "ProjectReference": {"ID": V("PARKS-26", "The programme the department books it on, by "
-                                                        "its code in the procurement documents.")},
-                           "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure.")}},
-                          [{"item": "bench-serra", "qty": 40, "invoice_why": "The benches of the first release.",
-                            "line_extra": {"OrderLineReference": {"LineID": V("1", "The call-off line.")}}},
-                           {"item": "bench-installation", "qty": 40, "invoice_why": "Each bench anchored by the "
-                                                                                    "manufacturer's installers, as "
-                                                                                    "the contract provides."}],
-                          currency="XBL",
-                          charges=[{"like": "bench-serra", "amount": COLOUR_CHARGE, "reason": "Special colour", "code": "CAT", "code_why": "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services).",
-                                    "why": "The benches in moss green, RAL 6005, as the order change asked.",
-                                    "amount_why": "The charge the manufacturer quoted and confirmed: 5 lume a "
-                                                  "bench."}])
-        withholding(f, out)
-        out["PaymentCurrencyCode"] = V("XUF", "The manufacturer is paid in ferra, the contract currency, to its "
-                                              "account in Urvania over the trade accord's link.")
-        out["PaymentExchangeRate"] = TO_FERRA(f.date(78))
-        out["PricingCurrencyCode"] = V("XUF", "The contract prices are in ferra.")
-        out["PricingExchangeRate"] = PRICING_RATE
-        out["TaxCurrencyCode"] = V("XUF", "The seller reports its value added tax in ferra.")
-        out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The invoice currency."),
-                                  "TargetCurrencyCode": V("XUF", "The seller's tax currency."),
-                                  "CalculationRate": V("100", "1 lume = 100 ferra, the reference rate."),
-                                  "MathematicOperatorCode": V("Multiply", "Lume times the rate gives ferra."),
-                                  "Date": V(f.date(78), "The rate of the tax point.")}
-        base_xbl = Decimal(out["LegalMonetaryTotal"]["TaxExclusiveAmount"].value)
-        out["TaxTotal"] = [out["TaxTotal"], {
-            "TaxAmount": amount(0, "XUF", "The same tax in ferra, for the seller's tax return: none on an export."),
-            "TaxSubtotal": {"TaxableAmount": amount(base_xbl * 100, "XUF", "The taxable amount in ferra."),
-                            "TaxAmount": amount(0, "XUF", "No tax: an export."),
-                            "TransactionCurrencyTaxAmount": amount(0, "XBL", "The tax in the invoice currency."),
-                            "TaxCategory": out["TaxTotal"]["TaxSubtotal"][0]["TaxCategory"]}}]
-        out["Annotation"] = {"SubjectCode": V("CONTRACT", "The annotation is about the contract."),
-                             "Subject": V("Releases under the framework contract", "Its subject."),
-                             "AnnotationContent": V("First release: 40 benches; 200 remain.", "A remark for the "
-                                                                                              "department's "
-                                                                                              "accounts.")}
-        out["Signature"] = {"ID": V("VI-SIG-26-0078", "The seller's electronic signature on the invoice, which "
-                                                      "Bayvarra's public bodies ask for."),
-                            "SignatureMethod": V("XAdES-BES", "The kind of signature."),
-                            "SignatoryParty": party("5-xu", short=True)}
-        return out
     raise SystemExit(f"tender scenario: no document {n} {doc['doc']}")
 
 
@@ -6821,10 +6761,9 @@ def _(f, n, doc, out):
 @enrich("tender", "DespatchAdvice")
 def _(f, n, doc, out):
     lines = out["DespatchLine"] if isinstance(out["DespatchLine"], list) else [out["DespatchLine"]]
-    lines[0].update({"OutstandingQuantity": qty(TENDER_QTY - 40, "EA", "Still to come under the contract."),
-                     "OutstandingReason": V("Later releases under the framework contract.", "Why."),
-                     **kit.cost_centre("2-xb", "The department's programme."),
-                     "DocumentReference": {"ID": V(FOLDER, "The contract.")}})
+    lines[0].update({**kit.cost_centre("2-xb", "The department's programme."),
+                     "DocumentReference": {"ID": V(CONTRACT_ID, "The contract the release is delivered under."),
+                                           "DocumentType": V("Framework contract", "What it is.")}})
     return {"ProjectReference": {"ID": V("PARKS-26", "The parks renewal programme, by its code in the "
                                                      "procurement documents.")},
             **kit.cost_centre("2-xb", "The department's cost centre."),
@@ -8452,76 +8391,7 @@ def sea_with_debit(n, doc):
 
 
 def tender_with_credit(n, doc):
-    if doc["doc"] != "CreditNote":
-        return tender(n, doc)
-    f = TENDER
-    rows_spec = [{"item": "bench-serra", "qty": 1, "why": "The bench damaged during installation.",
-                  "unit_price": str(kit.unit_price("bench-serra", "XBL")), "unit_price_why": "The contract price in "
-                                                                                             "lume.",
-                  "line_extra": {"WorkReportLineReference": {"LineID": V("1", "The installation report's line.")},
-                                 "InvoicePeriod": {"StartDate": V(f.date(80), "During installation.")},
-                                 "TaxPointDate": V(f.date(82), "The day of the credit."),
-                                 "FreeOfChargeIndicator": V("false", "A credit, not a free item."),
-                                 "DocumentReference": {"ID": V("PWD-DMG-26-0081", "The department's damage "
-                                                                                  "report.")},
-                                 "PricingReference": {"AlternativeConditionPrice": {
-                                     "PriceAmount": price("49900", "XUF", "The contract price in ferra.")}},
-                                 "PurchaseReference": {"ID": V("PARK-HB-B17", "The bench's place in the "
-                                                                              "harbour park.")},
-                                 "OriginatorParty": party("2-xb", short=True),
-                                 "BeneficiaryParty": party("2-xb", short=True),
-                                 "PaymentTerms": {"Note": V("Set off against the next release's invoice.",
-                                                            "How the credit is settled.")},
-                                 "SubCreditNoteLine": {"ID": V("1.1", "The frame."),
-                                                       "LineExtensionAmount": amount(Decimal("180.00"), "XBL",
-                                                                                     "The frame's share."),
-                                                       "Item": {"Name": V("Side frames of the bench", "The "
-                                                                                                      "damaged "
-                                                                                                      "part.")}}}},
-                 {"item": "bench-installation", "qty": 1, "why": "Its installation, credited too.",
-                  "unit_price": "18.00", "unit_price_why": "The installation price in lume.",
-                  "line_extra": {"WithholdingTaxTotal": {"TaxAmount": amount(Decimal("1.80"), "XBL",
-                                                                             "The withholding reversed.")},
-                                 "CollectedForParty": party("10-xb", short=True)}}]
-    out = kit.credit_note(f, n, doc, 82, "Issued when the replacement was agreed.", rows_spec,
-                          {"BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
-                                                                                     "invoice credited.")}}},
-                          currency="XBL")
-    out.update({"DocumentCurrencyCode": kit.currency_line("XBL", "the currency of the invoice credited"),
-                "TaxPointDate": V(f.date(82), "Urvania's VAT: the credit's date."),
-                "TaxCurrencyCode": V("XUF", "The manufacturer reports its VAT in ferra."),
-                "PricingCurrencyCode": V("XUF", "The contract prices are in ferra."),
-                "PaymentCurrencyCode": V("XUF", "Settled in ferra, like the invoice."),
-                "InvoicePeriod": {"StartDate": V(f.date(78), "The release."), "EndDate": V(f.date(82), "To the "
-                                                                                                      "credit.")},
-                "DeliveryNoteDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
-                                                                                 "bench.")},
-                "WorkReportDocumentReference": {"ID": V("VI-WR-26-0080", "The installation report.")},
-                "PurchaseReference": {"ID": V("PARK-HB", "The harbour park.")},
-                "TaxRepresentativeParty": tax_representative(),
-                "TaxExchangeRate": {"SourceCurrencyCode": V("XBL", "The credit's currency."),
-                                    "TargetCurrencyCode": V("XUF", "The tax currency."),
-                                    "CalculationRate": V("100", "1 lume = 100 ferra.")},
-                "PricingExchangeRate": PRICING_RATE,
-                "PaymentExchangeRate": TO_FERRA(f.date(82)),
-                "WithholdingTaxTotal": {
-                    "TaxAmount": amount(Decimal("1.80"), "XBL", "The withholding on the credited installation, "
-                                                               "reversed."),
-                    "TaxSubtotal": {"TaxableAmount": amount(Decimal("18.00"), "XBL", "The installation credited."),
-                                    "TaxAmount": amount(Decimal("1.80"), "XBL", "10 % of it, no longer withheld."),
-                                    "TaxCategory": {"ID": V("S", "The withholding applies."),
-                                                    "Percent": V(WORLD["countries"]["XB"]["tax"]["withholding"]
-                                                                 ["percent"], "The rate, as on the invoice."),
-                                                    "TaxScheme": withholding_scheme()}}}})
-    lmt = out["LegalMonetaryTotal"]
-    gross = Decimal(lmt["PayableAmount"].value)
-    lmt["WithholdingTaxTotalAmount"] = amount(Decimal("1.80"), "XBL", "The department had withheld this on the "
-                                                                      "credited installation; it reclaims it from "
-                                                                      "the state.")
-    lmt["PayableAmount"] = amount(gross - Decimal("1.80"), "XBL", "What the manufacturer refunds: the credit less the "
-                                                                  "tax the department withheld on it.")
-    f.numbers["credit-amount"] = gross - Decimal("1.80")
-    return out
+    return tender(n, doc)
 
 
 SCENARIOS["sea"] = _with_enrichment("sea", sea_with_debit)
@@ -9867,7 +9737,32 @@ def _(f, n, doc, out):
             "TenderingProcess": {"ID": V(f"{FOLDER}-P", "The procedure."), "ProcedureCode": V("OPEN", "Open.")},
             "ProcurementProject": project_brief(), "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
                                                                             {"ID": V("LOT-2", "Lot 2.")}],
-            "TenderResult": {**out["TenderResult"], **tender_result(f)}}
+            "TenderResult": contract_result(f, out)}
+
+
+def contract_result(f, out):
+    """The contract's result carries the awarded tender's two lines with their unit prices, the prices the releases
+    are ordered at (tender/24#F4, option b)."""
+    res = {**out["TenderResult"], **tender_result(f)}
+    atp = dict(res["AwardedTenderedProject"])
+    lmt = atp.pop("LegalMonetaryTotal")
+    atp["TenderLine"] = [
+        {"ID": V("1", "The awarded tender's line 1, lot 1."),
+         "Note": V("499 lume a bench, the contract price of every release.", "The unit price the releases are "
+                                                                              "ordered at."),
+         "Quantity": qty(TENDER_QTY, "EA", "The benches of the base quantity, over two years."),
+         "LineExtensionAmount": amount(TENDER_QTY * Decimal("499.00"), "XBL", "240 at 499 lume."),
+         "Item": {"Name": V("Park bench Serra 180", "The bench tendered.")}},
+        {"ID": V("2", "The awarded tender's line 2, lot 2."),
+         "Note": V("18 lume an installation, the contract price of every release.", "The unit price the releases "
+                                                                                     "are ordered at."),
+         "Quantity": qty(TENDER_QTY, "EA", "One installation a bench."),
+         "LineExtensionAmount": amount(TENDER_QTY * Decimal("18.00"), "XBL", "240 at 18 lume."),
+         "Item": {"Name": V("Installation of a park bench", "The service tendered.")}}]
+    order = ["VariantID", "ProcurementProjectLot", "LegalMonetaryTotal", "TenderLine"]
+    atp["LegalMonetaryTotal"] = lmt
+    res["AwardedTenderedProject"] = {k: atp[k] for k in order if k in atp}
+    return res
 
 
 
@@ -10459,20 +10354,29 @@ def _(f, n, doc, out):
     ln["Note"] = V("Forty benches in moss green, RAL 6005, as the order change asked.", "The line as despatched.")
     ln.update({"UUID": line_uuid(f, "despatch", 1),
                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment the line travels in.")},
-               "SubDespatchLine": [
-                   {"ID": V("1.1", "The ground anchor sets that come with the benches."),
-                    "DeliveredQuantity": qty(36, "SET", "36 of the 40 sets."),
-                    "BackorderQuantity": qty(4, "SET", "Four sets follow."),
-                    "BackorderReason": V("The galvanising of the last batch is late; the sets follow within a "
-                                         "week, before the installers need them.", "Why."),
-                    "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
-                    "Item": {"Name": V("Ground anchor set", "Included in the bench.")}},
-                   {"ID": V("1.2", "The fixing bolts."),
-                    "DeliveredQuantity": qty(170, "EA", "Four per bench, and ten more."),
-                    "OversupplyQuantity": qty(10, "EA", "Ten bolts more than needed, as spares for the "
-                                                         "installers."),
-                    "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
-                    "Item": {"Name": V("Fixing bolt M12", "Included in the bench.")}}]})
+               "SubDespatchLine": {
+                   "ID": V("1.1", "The ground anchor sets that come with the benches."),
+                   "DeliveredQuantity": qty(40, "SET", "One set a bench, all forty: four ground anchors and four M12 "
+                                                       "bolts each, no loose bolts (D28, O10)."),
+                   "OrderLineReference": {"LineID": V("1", "Part of the bench line.")},
+                   "Item": {"Name": V("Ground anchor set", "Included in the bench."),
+                            "Description": V("Four ground anchors and four M12 bolts.", "What a set holds.")}}})
+    prod = next(x for x in kit.CHAIN["production"] if x.get("lot") == CALLOFF_LOT)
+    pre = kit.maker("bench-casting")["serials"]
+    a, b = prod["frame_serials"]
+    if b - a + 1 != 2 * RELEASE:
+        raise SystemExit("tender/29: the lot's frame serials are not two a bench")
+    inst = ln["Item"]["ItemInstance"]
+    inst = inst[0] if isinstance(inst, list) else inst
+    inst["AdditionalItemProperty"] = {
+        "Name": V("Side frame serial numbers", "The serial numbers the contract requires on the benches: each side "
+                                              "frame carries its own, cast into it (tender/29#F12, D28)."),
+        "Value": V(f"{pre}{a:05d} to {pre}{b:05d}, two a bench", "The lot's 80 frames, in one unbroken range from "
+                                                                 "Valdara's production record (D21).")}
+    pallet = ITEM["bench-serra"]["package"]["per_package"]
+    out["Shipment"]["Consignment"]["TotalTransportHandlingUnitQuantity"] = qty(
+        RELEASE // pallet, "EA", f"Ten pallets of {pallet} benches, each with its benches' anchor sets "
+                                 "(tender/29#F10, D20).")
     return {}
 
 
@@ -10622,217 +10526,466 @@ def _(f, n, doc, out):
 PENALTY_DAYS, PENALTY_WAIVED = 3, 1
 
 
-def penalty():
-    inst = TENDER_INST_TOTAL
-    gross = money(inst * Decimal("0.005") * PENALTY_DAYS, "XBL")
-    waived = money(inst * Decimal("0.005") * PENALTY_WAIVED, "XBL")
-    net = gross - waived
-    wh = money(net * Decimal("0.10"), "XBL")
-    return gross, waived, net, wh
-
-
-TENDER_INST_TOTAL = Decimal(40) * Decimal("18.00")
-
-
-def tender_currencies(f, day):
-    return {"PricingCurrencyCode": V("XUF", "The contract prices are in ferra."),
-            "TaxCurrencyCode": V("XUF", "The manufacturer accounts its value added tax in ferra."),
-            "PricingExchangeRate": PRICING_RATE,
-            "TaxExchangeRate": {**TO_FERRA(f.date(day)), "TargetCurrencyCode": V("XUF", "The tax currency.")},
-            "PaymentExchangeRate": TO_FERRA(f.date(day))}
-
-
 def tender_complete(n, doc):
+    return tender_with_credit(n, doc)
+
+
+# ================================================================ the tender's first release (D28 points 8 to 10)
+# Release 1 under the framework contract: 40 benches in moss green, a special colour at 5 lume a bench, and their
+# installation by Saltmere Engineering for Valdara. Ordered Tuesday 24 March (installation to be done by Tuesday
+# 7 April), changed to moss green on 25 March, accepted on 26 March; lot VI-LOT-260327 coated on 27 March, despatched
+# on 30 March, delivered on 31 March and invoiced on delivery; installed from 1 April, one bench damaged on 2 April,
+# finished on Friday 10 April, three working days late, one of them waived; 39 benches and their installation
+# accepted on Monday 13 April (the receipt advice, 38); the damaged bench credited (33) and the 39 installations
+# invoiced (39) on 14 April; both invoices due on Wednesday 13 May, reminded on 20 May with Urvania's statutory
+# interest from 14 May, paid on Friday 22 May less the credit, the penalty and the withholding.
+CONTRACT_ID = "PWD-CONTRACT-2026-PARKS"
+CALLOFF_DAYS = {"order": 71, "change": 72, "response": 73, "coated": 74, "despatch": 77, "delivery": 78,
+                "install-from": 79, "damage": 80, "install-due": 85, "install-done": 88, "acceptance": 91,
+                "credit": 92, "install-invoice": 92, "due": 121, "reminder": 128, "remittance": 130}
+BENCH_PRICE, INSTALL_PRICE, COLOUR_RATE = Decimal("499.00"), Decimal("18.00"), Decimal("5.00")
+RELEASE = 40
+ACCEPTED = 39
+LATE_DAYS, WAIVED_DAYS = 3, 1
+CALLOFF_LOT = "VI-LOT-260327"
+
+
+def calloff_terms():
+    """The contract's payment term (D22, O69): 30 days after the release is accepted; late payment carries the
+    seller's statutory interest, Urvania's 8 % a year (the contract says nothing on it, D22's third layer)."""
+    pi = WORLD["countries"]["XU"]["payment"]["statutory_interest"]
+    return {"Note": V("30 days after the release is accepted, as the framework contract says; late payment carries "
+                      "Urvania's statutory interest of 8 % a year.", "The contract's term, not the seller's standard "
+                                                                     "terms (D22, tender/32#F5)."),
+            "PenaltyInterestRate": {"InterestRatePercent": V(pi["percent"], "Urvania's statutory interest: the "
+                                                                            "contract says nothing on late payment "
+                                                                            "(D22)."),
+                                    "TimeBasisCode": V(pi["basis"], "A yearly rate."),
+                                    "CalculationMethodCode": V("SIMPLE", "Simple interest, per day late.")}}
+
+
+def calloff_contract_ref(why="The framework contract the release is ordered under, by its own number (tender/26#F14, "
+                             "32#F19)."):
+    return {"ID": V(CONTRACT_ID, why)}
+
+
+def calloff_penalty():
+    """The penalty for late completion (clause PEN-1): 0.5 % of the price of the late part for each working day late,
+    the late part being the installation billed (39 at 18 lume); one of the three days is waived because the department
+    delayed access to one site (D28 point 9)."""
+    base = INSTALL_PRICE * ACCEPTED
+    days = LATE_DAYS - WAIVED_DAYS
+    return base, days, money(base * Decimal("0.005") * days, "XBL")
+
+
+def calloff_withholding():
+    wh = WORLD["countries"]["XB"]["tax"]["withholding"]
+    base = INSTALL_PRICE * ACCEPTED
+    return base, money(base * Decimal(wh["percent"]) / 100, "XBL"), wh
+
+
+def ferra_currencies(f, out, day, tax=True, pay=True):
+    """Valdara reports its VAT in ferra and is paid in ferra into its account in Urvania, while the documents are in
+    lume, the contract's currency (D28 point 10; tender/33#F13, 35#F8, 36#F2): the tax currency with the tax total
+    in ferra beside the one in lume, and the payment currency with its rate, at the parity of 100."""
+    if tax:
+        out["TaxCurrencyCode"] = V("XUF", "Valdara reports its value added tax in ferra, its own currency.")
+        out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The document currency."),
+                                  "TargetCurrencyCode": V("XUF", "The seller's tax currency."),
+                                  "CalculationRate": V("100", "1 lume = 100 ferra, the Accord's parity."),
+                                  "MathematicOperatorCode": V("Multiply", "Lume times the rate gives ferra."),
+                                  "Date": V(f.date(day), "The rate of the tax point.")}
+        tt = out["TaxTotal"] if isinstance(out["TaxTotal"], dict) else out["TaxTotal"][0]
+        subs = tt["TaxSubtotal"] if isinstance(tt["TaxSubtotal"], list) else [tt["TaxSubtotal"]]
+        out["TaxTotal"] = [tt, {
+            "TaxAmount": amount(Decimal(tt["TaxAmount"].value) * 100, "XUF", "The same tax in ferra, for the "
+                                                                              "seller's tax return."),
+            "TaxSubtotal": [{"TaxableAmount": amount(Decimal(st["TaxableAmount"].value) * 100, "XUF",
+                                                     "The taxable amount in ferra."),
+                             "TaxAmount": amount(Decimal(st["TaxAmount"].value) * 100, "XUF", "The tax in ferra."),
+                             "TransactionCurrencyTaxAmount": amount(Decimal(st["TaxAmount"].value), "XBL",
+                                                                    "The same tax in the document currency."),
+                             "TaxCategory": st["TaxCategory"]} for st in subs]}]
+    if pay:
+        out["PaymentCurrencyCode"] = V("XUF", "Valdara is paid in ferra, into its account in Urvania.")
+        out["PaymentExchangeRate"] = TO_FERRA(f.date(day))
+
+
+def invoice_signature(no):
+    """The seller's electronic signature, which Bayvarra's public bodies ask for on an invoice (kept as it was until
+    the signatures stage, D6)."""
+    return {"ID": V(no, "The seller's electronic signature on the invoice, which Bayvarra's public bodies ask for."),
+            "SignatureMethod": V("XAdES-BES", "The kind of signature."),
+            "SignatoryParty": party("5-xu", short=True)}
+
+
+def installation_payable():
+    """What the installation invoice (39) asks: 39 installations at 18 lume, less the 10 % the department withholds."""
+    base, wh_amount, _ = calloff_withholding()
+    return base - wh_amount
+
+
+def tender_calloff(n, doc):
     f, d = TENDER, doc["doc"]
+    days = CALLOFF_DAYS
     cur = "XBL"
     if d == "Catalogue":
-        out = kit.catalogue(f, n, doc, 70, "Published on Monday 23 March, the first working day after the "
-                                           "contract was signed (D28 point 1).", ["bench-serra",
-                                                                                      "bench-installation"], 730)
+        out = kit.catalogue(f, n, doc, 70, "Published on Monday 23 March, the first working day after the contract "
+                                           "was signed (D28 point 1).", ["bench-serra", "bench-installation"], 0)
+        start = V(f.date(67), "From the contract's signature, 20 March: the contract prices hold from then "
+                              "(tender/25#F12).")
+        end = V("2026-12-31", "Until the contract's price revision by the steel index each January, when a new "
+                              "catalogue replaces this one (tender/25#F12, option b).")
+        out["ValidityPeriod"] = {"StartDate": start, "EndDate": end}
+        bench, inst = out["CatalogueLine"]
+        for cl in out["CatalogueLine"]:
+            riq = cl["RequiredItemLocationQuantity"]
+            riq["Price"]["ValidityPeriod"] = {"StartDate": start, "EndDate": end}
+            riq["Price"].pop("PriceList", None)     # a contract price, not one of the seller's price list
+        bench.update({"OrderableUnit": V("Pallet of 4", "The unit the benches are ordered in, as tendered "
+                                                         "(tender/25#F16)."),
+                      "ContentUnitQuantity": qty(4, "EA", "Four benches to a pallet."),
+                      "OrderQuantityIncrementNumeric": V("4", "Orders in whole pallets."),
+                      "MinimumOrderQuantity": qty(20, "EA", "The smallest release, as tendered."),
+                      "MaximumOrderQuantity": qty(96, "EA", "The largest release, as tendered.")})
+        bench["RequiredItemLocationQuantity"].update({
+            "LeadTimeMeasure": V("7", "Seven days from the order to the delivery, as tendered.", unitCode="DAY"),
+            "MinimumQuantity": qty(20, "EA", "The smallest release, as tendered.")})
+        inst["RequiredItemLocationQuantity"].pop("LeadTimeMeasure", None)   # the installation follows the delivery
+        warranty = "Five years on the frame against corrosion; ten years on the coating, as tendered and awarded."
+        bench["Item"]["WarrantyInformation"] = build_examples.item_texts(
+            ITEM["bench-serra"], warranty, "The warranty of the contract", "the awarded tender (tender/25#F20)")
         for i, cl in enumerate(out["CatalogueLine"], 1):
             cl["CallForTendersDocumentReference"] = {"ID": V(f.numbers["call"], "The call for tenders the line was "
                                                                                 "awarded under.")}
-            cl["CallForTendersLineReference"] = {"LineID": V(str(i), "The line of the call for tenders.")}
-        out["ReferencedContract"] = {"ID": V(FOLDER, "The framework contract the catalogue belongs to."),
+            cl["CallForTendersLineReference"] = {"LineID": V(str(i), "The line of the call for tenders: 1 the "
+                                                                     "benches, 2 the installation (tender/25#F3).")}
+        out["ReferencedContract"] = {"ID": V(CONTRACT_ID, "The framework contract the catalogue belongs to."),
                                      "ContractType": V("Framework contract", "Its kind.")}
         return out
+    if d == "Order":
+        deal = [{"item": "bench-serra", "ordered": RELEASE, "why": "Release 1: forty benches for the harbour park.",
+                 "unit_price": str(BENCH_PRICE), "unit_price_why": "The contract price: the awarded tender's 499 lume a bench, as the catalogue gives it.", "line": "1"},
+                {"item": "bench-installation", "ordered": RELEASE, "why": "Their installation, lot 2: ordered with "
+                 "the benches, so that it is ordered before it is billed (D28 point 9, tender/26#F3).",
+                 "unit_price": str(INSTALL_PRICE), "unit_price_why": "The contract price: the awarded tender's 18 lume an installation, as the catalogue gives it.", "line": "2"}]
+        out = kit.order(f, n, doc, days["order"], "Tuesday 24 March, the day after the catalogue (D28 point 9).",
+                        "Delivered at place, the department's depot: the manufacturer delivers, by the carrier it "
+                        "chooses; the department clears the import.", "Public works depot, Lumeport",
+                        {"Note": V("Release 1 under the framework contract: 40 benches and their installation, to be "
+                                   "completed by Tuesday 7 April.", "Which call-off this is, and when the installation "
+                                   "is due: the penalty clause counts from that day."),
+                         "Contract": calloff_contract_ref(),
+                         "ProjectReference": {"ID": V("PARKS-26", "The parks renewal programme the benches are "
+                                                                  "for.")},
+                         "Delivery": {"RequestedDeliveryPeriod": {
+                             "StartDate": V(f.date(days["delivery"]), "Tuesday 31 March, the first release's date."),
+                             "EndDate": V(f.date(days["delivery"]), "The same day (tender/26#F12).")},
+                             "DeliveryLocation": kit.leg_location(next(x for x in WORLD["flows"] if x["id"] == "tender")
+                                                                  ["legs"][0], "to", "Where the benches are "
+                                                                                     "delivered.")}},
+                        deal=deal, currency=cur)
+        lines = out["OrderLine"]
+        lines[1]["LineItem"]["Delivery"] = {"RequestedDeliveryPeriod": {
+            "StartDate": V(f.date(days["install-from"]), "From Wednesday 1 April, after the delivery."),
+            "EndDate": V(f.date(days["install-due"]), "Completed by Tuesday 7 April (D28 point 9).")}}
+        return out
     if d == "OrderChange":
-        bench = Decimal(40) * Decimal("499.00")
+        bench = BENCH_PRICE * RELEASE
+        charge = COLOUR_RATE * RELEASE
         return {"ID": V(f.number("order-change", doc["from"], "OrderChange"), "The department's number for the "
                                                                               "change."),
                 "SequenceNumberID": V("1", "The first change of the call-off."),
-                "IssueDate": V(f.date(71), "The day after the order."),
-                "Note": V("Please deliver the benches of this release in moss green, RAL 6005.", "The change."),
-                "RequestedInvoiceCurrencyCode": V("XBL", "The department wants its invoices in lume."),
+                "IssueDate": V(f.date(days["change"]), "Wednesday 25 March, the day after the order."),
+                "Note": V("Please deliver the benches of this release in moss green, RAL 6005, the special colour at "
+                          "5 lume a bench the catalogue quotes. The installation is unchanged.", "The change."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the department's currency"),
-                **tender_currencies(f, 71),
-                "ValidityPeriod": {"EndDate": V(f.date(74), "The change must be confirmed before the benches are "
-                                                            "coated.")},
+                "ValidityPeriod": {"EndDate": V(f.date(days["change"] + 1), "To be confirmed before the benches are "
+                                                                            "coated on 27 March.")},
                 "OrderReference": {"ID": V(f.numbers["order"], "The call-off order changed.")},
-                "QuotationDocumentReference": {"ID": V("VI-QT-26-0071", "The manufacturer's quotation for the "
-                                                                        "special colour.")},
-                "OriginatorDocumentReference": {"ID": V(FOLDER, "The procurement procedure.")},
-                "AdditionalDocumentReference": {"ID": V("PWD-COLOUR-RAL6005", "The colour sample of the harbour "
-                                                                              "park.")},
-                "Contract": {"ID": V(FOLDER, "The framework contract.")},
+                "AdditionalDocumentReference": [
+                    {"ID": V(f.numbers["catalogue"], "The catalogue that quotes the special colour charge (D28 "
+                                                     "point 8)."),
+                     "DocumentTypeCode": V("Catalogue", "The kind of document.")},
+                    {"ID": V("PWD-COLOUR-RAL6005", "The colour sample of the harbour park.")}],
+                "Contract": calloff_contract_ref(),
                 "Signature": seal(PWD, "PWD-SIG-OC"),
-                "FreightForwarderParty": party("10-xb", short=True),
-                "PaymentMeans": {"PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.",
-                                                       listID="UN/EDIFACT EDED 4461"),
-                                 "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account, in "
-                                                                              "ferra.")},
-                "PaymentTerms": {"Note": V("30 days after the invoice, as the contract says.", "Unchanged.")},
-                "TransactionConditions": {"Description": V("The framework contract's conditions apply.", "Which "
-                                                                                                         "conditions.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
-                                    "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
+                                    "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a "
+                                                                          "charge UN/EDIFACT 7161 (special services)."),
                                     "AllowanceChargeReason": V("Special colour", "Moss green, RAL 6005."),
-                                    "Amount": amount(COLOUR_CHARGE, cur, "5 lume a bench, as quoted.")},
-                "AnticipatedMonetaryTotal": {"LineExtensionAmount": amount(bench, cur, "The forty benches."),
-                                             "ChargeTotalAmount": amount(COLOUR_CHARGE, cur, "The colour."),
-                                             "PayableAmount": amount(bench + COLOUR_CHARGE, cur, "With the "
-                                                                                                 "colour.")},
+                                    "Amount": amount(charge, cur, "5 lume a bench, as the catalogue quotes.")},
+                "AnticipatedMonetaryTotal": {"ChargeTotalAmount": amount(charge, cur, "The colour."),
+                                             "PayableAmount": amount(charge, cur, "The amount of change to the "
+                                                                                  "order's total: the colour charge "
+                                                                                  "(tender/27#F3).")},
                 "OrderLine": {"LineItem": {"ID": V("1", "The bench line."),
-                                           "LineStatusCode": V("Revised", "Its colour changes."),
-                                           "Quantity": qty(40, "EA", "Unchanged: forty benches."),
+                                           "LineStatusCode": V("Revised", "Its variant changes."),
+                                           "Quantity": qty(RELEASE, "EA", "Unchanged: forty benches."),
                                            "LineExtensionAmount": amount(bench, cur, "Unchanged."),
-                                           "Item": {"Description": V("Park bench Serra 180, frame in moss green "
-                                                                     "RAL 6005", "The changed item."),
-                                                    "Name": V("Park bench Serra 180", "The item.")}}}}
+                                           "Item": item("bench-serra-g", buyer=PWD)}}}
     if d == "OrderResponse":
-        out = kit.order_response(f, n, doc, 72, "The manufacturer confirms the next day.")
-        bench = Decimal(40) * Decimal("499.00")
+        out = kit.order_response(f, n, doc, days["response"], "Thursday 26 March, the day after the change.")
+        bench = BENCH_PRICE * RELEASE
+        inst = INSTALL_PRICE * RELEASE
+        charge = COLOUR_RATE * RELEASE
         out.update({"OrderResponseCode": V("AP", "UN/EDIFACT 4343 code AP: accepted, with the change."),
                     "SalesOrderID": V("VI-SO-26-0058", "The manufacturer's sales order for the call-off, given in "
                                                        "its answer: the seller's number appears first in the "
                                                        "seller's own document (tender/26#F4)."),
-                    "Note": V("Accepted: moss green, at the quoted charge.", "The answer."),
+                    "Note": V("Accepted: moss green, at the quoted charge; delivery on 31 March, installation by "
+                              "Saltmere Engineering from 1 April, completed by 7 April.", "The answer."),
                     "DocumentCurrencyCode": kit.currency_line(cur, "the department's currency"),
-                    **tender_currencies(f, 72),
                     "OrderChangeDocumentReference": {"ID": V(f.numbers["order-change"], "The change accepted.")},
-                    # no reference to a further call-off: no other order exists (tender/28#F1, C73)
+                    "Delivery": {"PromisedDeliveryPeriod": {
+                        "StartDate": V(f.date(days["delivery"]), "The benches on Tuesday 31 March (tender/28#F6)."),
+                        "EndDate": V(f.date(days["delivery"]), "The same day.")}},
                     "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
-                                        "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
+                                        "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: "
+                                                                              "for a charge UN/EDIFACT 7161 (special "
+                                                                              "services)."),
                                         "AllowanceChargeReason": V("Special colour", "As changed."),
-                                        "Amount": amount(COLOUR_CHARGE, cur, "As quoted.")},
-                    "LegalMonetaryTotal": {"LineExtensionAmount": amount(bench, cur, "The benches."),
-                                           "ChargeTotalAmount": amount(COLOUR_CHARGE, cur, "The colour."),
-                                           "PayableAmount": amount(bench + COLOUR_CHARGE, cur, "As it will be "
-                                                                                               "invoiced, with the "
-                                                                                               "installation "
-                                                                                               "separately.")}})
+                                        "Amount": amount(charge, cur, "As quoted.")},
+                    "LegalMonetaryTotal": {"LineExtensionAmount": amount(bench + inst, cur, "The benches and their "
+                                                                                            "installation."),
+                                           "ChargeTotalAmount": amount(charge, cur, "The colour."),
+                                           "PayableAmount": amount(bench + inst + charge, cur, "The release as "
+                                                                   "accepted, installation included (tender/28#F2).")}})
         return out
-    if d == "DebitNote":
-        gross, waived, net, wh = penalty()
-        no = f.number("debit", doc["from"], "DebitNote")
-        f.numbers["debit-amount"] = net - wh
-        f.numbers["debit-date"] = f.date(84)
-        return {"ID": V(no, "The department's debit note number."),
-                "IssueDate": V(f.date(84), "After the installation was accepted."),
-                "Note": V("Penalty for late installation under the contract's clause PEN-1.", "What it is."),
-                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoice"),
-                "OrderReference": {"ID": V(f.numbers["order"], "The call-off.")},
-                "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The invoice of "
-                                                                                                 "the release.")}},
-                "ContractDocumentReference": {"ID": V(FOLDER, "The contract with the penalty clause.")},
-                "TaxRepresentativeParty": party("10-xb", short=True),
-                "AllowanceCharge": {"ChargeIndicator": V("false", "An allowance on the penalty."),
-                                    "AllowanceChargeReasonCode": V("64", "The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it."),
-                                    "AllowanceChargeReason": V("One day waived", "The first day was lost to a "
-                                                                                 "storm, as both agree."),
-                                    "Amount": amount(waived, cur, "One day of the penalty.")},
-                "TaxTotal": {"TaxAmount": amount(0, cur, "No tax on a contractual penalty.")},
-                "WithholdingTaxTotal": {"TaxAmount": amount(wh, cur, "The penalty lowers the price of the "
-                                                                     "installation, so the department withholds "
-                                                                     "10 % less: this part is reversed.")},
-                "LegalMonetaryTotal": {
-                    "LineExtensionAmount": amount(gross, cur, "Three days of penalty."),
-                    "AllowanceTotalAmount": amount(waived, cur, "One day waived."),
-                    "TaxExclusiveAmount": amount(net, cur, "The penalty charged."),
-                    "WithholdingTaxTotalAmount": amount(wh, cur, "The withholding reversed."),
-                    "PayableAmount": amount(net - wh, cur, "What the manufacturer owes: the penalty less the "
-                                                           "withholding the department no longer pays.")},
-                "DebitNoteLine": {"ID": V("1", "The penalty."),
-                                  "Note": V(f"{PENALTY_DAYS} days at 0.5 % of the installation price of the release.",
-                                            "How it is computed."),
-                                  "DebitedQuantity": qty(PENALTY_DAYS, "DAY", "Days late."),
-                                  "LineExtensionAmount": amount(gross, cur, "0.5 % of 720.00 a day."),
-                                  "WithholdingTaxTotal": {"TaxAmount": amount(money(gross * Decimal("0.10"), cur),
-                                                                              cur, "The withholding on the line "
-                                                                                   "before the waiver.")},
-                                  "Item": {"Name": V("Penalty for late installation", "What is charged.")}}}
+    if d == "Invoice" and nth("tender", n, doc) == 1:
+        out = kit.invoice(f, n, doc, days["delivery"], "Issued on delivery, Tuesday 31 March, as the manufacturer "
+                                                       "does for its goods (D28 point 9).",
+                          {"OrderReference": ref(f, "order", "The department's call-off order."),
+                           "ContractDocumentReference": calloff_contract_ref(),
+                           "ProjectReference": {"ID": V("PARKS-26", "The programme the department books it on, by "
+                                                                    "its code in the procurement documents.")}},
+                          [{"item": "bench-serra-g", "qty": RELEASE, "unit_price": str(BENCH_PRICE), "unit_price_why": "The contract price: the awarded tender's 499 lume a bench, as the catalogue gives it.",
+                            "invoice_why": "The benches of the first release, in moss green; the installation is "
+                                           "billed once it is done and accepted (D28 point 9, tender/32#F1).",
+                            "line_extra": {"OrderLineReference": {"LineID": V("1", "The call-off line.")}}}],
+                          currency=cur,
+                          charges=[{"like": "bench-serra-g", "amount": COLOUR_RATE * RELEASE, "reason": "Special colour",
+                                    "code": "CAT", "code_why": "The reason for the charge as a code: for a charge "
+                                                               "UN/EDIFACT 7161 (special services).",
+                                    "why": "The benches in moss green, RAL 6005, as the order change asked.",
+                                    "amount_why": "The charge the catalogue quotes and the order response "
+                                                  "confirmed: 5 lume a bench."}])
+        for k in ("DueDate", "PaymentCurrencyCode", "BuyerAssignedReference"):
+            out.pop(k, None)
+        out["PaymentTerms"] = {"PaymentMeansID": V("1", "The payment means these terms apply to."),
+                               **calloff_terms()}
+        out["PaymentMeans"].pop("PaymentDueDate", None)
+        ferra_currencies(f, out, days["delivery"])
+        out["Signature"] = invoice_signature("VI-SIG-26-0078")
+        return out
+    if d == "ReceiptAdvice":
+        ok = ACCEPTED
+        return {"ID": V(f.number("receipt", doc["from"], "ReceiptAdvice"), "The department's number for the "
+                                                                          "acceptance."),
+                "IssueDate": V(f.date(days["acceptance"]), "Monday 13 April, after the installation ended on Friday "
+                                                           "10 April: Upland State Day, but Lumeport, in Coastal "
+                                                           "State, works (D28 point 9)."),
+                "ReceiptAdviceTypeCode": V("Actual", "UBL's receipt advice type code: the goods actually received."),
+                "DeliveryAcceptanceCode": V("PARTIAL", "39 benches and their installation accepted, one bench "
+                                                       "rejected."),
+                "Note": V("Release 1 accepted: 39 benches installed and accepted; one bench, damaged during "
+                          "installation on 2 April, rejected, with no replacement in this release. The 30 days of "
+                          "payment run from today.", "The acceptance the contract's payment term counts from "
+                                                    "(O69, D22)."),
+                "LineCountNumeric": V("2", "The benches and the installation."),
+                "OrderReference": {"ID": V(f.numbers["order"], "The call-off accepted.")},
+                "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the benches.")},
+                "AdditionalDocumentReference": {**calloff_contract_ref("The contract whose payment term counts from "
+                                                                       "this acceptance."),
+                                                "DocumentType": V("Framework contract", "What it is.")},
+                "Signature": seal(PWD, "PWD-SIG-RA"),
+                "ReceiptLine": [
+                    {"ID": V("1", "The benches."),
+                     "ReceivedQuantity": qty(RELEASE, "EA", "Forty benches delivered on 31 March."),
+                     "RejectedQuantity": qty(1, "EA", "One bench rejected."),
+                     "RejectReasonCode": V("DAMAGED", "Why refused."),
+                     "RejectReason": V("Side frame cracked while the bench was anchored on 2 April.", "In words."),
+                     "RejectActionCode": V("CREDIT", "A credit, not a replacement: the department's 40th bench "
+                                                     "comes with release 2 (D28)."),
+                     "ReceivedDate": V(f.date(days["delivery"]), "Delivered."),
+                     "OrderLineReference": {"LineID": V("1", "The order line.")},
+                     "DespatchLineReference": {"LineID": V("1", "The despatch line."),
+                                               "DocumentReference": {"ID": V(f.numbers["despatch"],
+                                                                             "The despatch advice.")}},
+                     "Item": item("bench-serra-g", buyer=PWD)},
+                    {"ID": V("2", "The installation."),
+                     "ReceivedQuantity": qty(ok, "EA", "39 benches assembled and anchored by Saltmere Engineering."),
+                     "ReceivedDate": V(f.date(days["install-done"]), "The work ended on Friday 10 April."),
+                     "TimingComplaintCode": V("LATE", "Completed after the date the order asked."),
+                     "TimingComplaint": V("Completed on 10 April, three working days after 7 April; one day is "
+                                          "waived because the department delayed access to one site.", "What the "
+                                          "penalty clause counts (tender/34#F3)."),
+                     "OrderLineReference": {"LineID": V("2", "The order line.")},
+                     "Item": item("bench-installation", buyer=PWD)}]}
+    if d == "CreditNote":
+        f.number("receipt", PWD, "ReceiptAdvice")      # the acceptance (38), issued the day before, built later
+        credit = BENCH_PRICE + COLOUR_RATE
+        rows_spec = [{"item": "bench-serra-g", "qty": 1, "why": "The bench rejected on acceptance: damaged during "
+                                                                 "installation.",
+                      "unit_price": str(BENCH_PRICE), "unit_price_why": "The contract price in lume.",
+                      "line_extra": {"DocumentReference": {"ID": V("PWD-DMG-26-0081", "The department's damage "
+                                                                                      "report."),
+                                                           "IssueDate": V(f.date(days["damage"]), "The day of the "
+                                                                                                  "damage."),
+                                                           "DocumentType": V("Damage report", "What it is.")},
+                                     "PurchaseReference": {"ID": V("PARK-HB-B17", "The bench's place in the harbour "
+                                                                                  "park.")}}}]
+        out = kit.credit_note(f, n, doc, days["credit"], "Tuesday 14 April, the day after the acceptance rejected the "
+                                                         "bench.", rows_spec,
+                              {"BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
+                                                                                         "invoice credited.")}},
+                               "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The acceptance that "
+                                                                                          "rejected the bench.")}},
+                              currency=cur)
+        out.update({"Note": V("Credit for the bench rejected as damaged on acceptance, with its share of the colour "
+                              "charge; deducted from the payment of the invoice.", "Why it credits and how it is "
+                              "settled, once (tender/33#F1, F12)."),
+                    "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoice credited")})
+        out["AllowanceCharge"] = {"ChargeIndicator": V("true", "The colour charge of the bench credited."),
+                                  "AllowanceChargeReasonCode": V("CAT", "As on the invoice."),
+                                  "AllowanceChargeReason": V("Special colour", "Its share for one bench."),
+                                  "Amount": amount(COLOUR_RATE, cur, "5 lume, the charge for one bench."),
+                                  "TaxCategory": out["CreditNoteLine"][0]["Item"]["ClassifiedTaxCategory"]
+                                  if isinstance(out["CreditNoteLine"], list) else
+                                  out["CreditNoteLine"]["Item"]["ClassifiedTaxCategory"]}
+        lmt = out["LegalMonetaryTotal"]
+        lmt["ChargeTotalAmount"] = amount(COLOUR_RATE, cur, "The colour charge credited.")
+        lmt["TaxExclusiveAmount"] = amount(credit, cur, "The bench and its colour charge.")
+        lmt["TaxInclusiveAmount"] = amount(credit, cur, "No tax: an export.")
+        lmt["PayableAmount"] = amount(credit, cur, "What the manufacturer credits: 499 and 5 (D28 point 9).")
+        sub = out["TaxTotal"]["TaxSubtotal"]
+        (sub[0] if isinstance(sub, list) else sub)["TaxableAmount"] = amount(credit, cur, "The bench and its colour "
+                                                                                          "charge.")
+        ferra_currencies(f, out, days["credit"], pay=False)    # deducted from the payment, not paid out
+        f.numbers["credit-amount"] = credit
+        return out
+    if d == "Invoice":
+        base, wh_amount, wh = calloff_withholding()
+        out = kit.invoice(f, n, doc, days["install-invoice"], "Tuesday 14 April, the day after the installation was "
+                                                              "accepted: billed once done (D28 point 9).",
+                          {"OrderReference": ref(f, "order", "The department's call-off order."),
+                           "ReceiptDocumentReference": {"ID": V(f.numbers["receipt"], "The acceptance of the "
+                                                                                      "installation.")},
+                           "ContractDocumentReference": calloff_contract_ref(),
+                           "ProjectReference": {"ID": V("PARKS-26", "The programme.")}},
+                          [{"item": "bench-installation", "qty": ACCEPTED, "unit_price": str(INSTALL_PRICE), "unit_price_why": "The contract price: the awarded tender's 18 lume an installation, as the catalogue gives it.",
+                            "invoice_why": "The 39 installations accepted on 13 April; the damaged bench's is not "
+                                           "billed.",
+                            "line_extra": {"OrderLineReference": {"LineID": V("2", "The call-off line.")}}}],
+                          key="invoice-install", currency=cur)
+        for k in ("PaymentCurrencyCode", "BuyerAssignedReference"):
+            out.pop(k, None)
+        out["PaymentMeans"].pop("PaymentDueDate", None)   # the due date is the contract's, given in the terms
+        line = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
+        line["Item"]["Description"] = V("Assembly of one bench and its anchoring in the ground with the supplied "
+                                        "anchors, by Saltmere Engineering for the manufacturer.", "Who installs: the "
+                                        "subcontractor the award names (tender/32#F8).")
+        line["WithholdingTaxTotal"] = {"TaxAmount": amount(wh_amount, cur, "Withheld on this line.")}
+        out["WithholdingTaxTotal"] = {"TaxAmount": amount(wh_amount, cur, f"{wh['percent']} % of the installation."),
+                                      "TaxSubtotal": {"TaxableAmount": amount(base, cur, "The installation."),
+                                                      "TaxAmount": amount(wh_amount, cur, "Withheld."),
+                                                      "TaxCategory": {"ID": V("S", "The withholding applies."),
+                                                                      "Percent": V(wh["percent"], wh["on"]),
+                                                                      "TaxScheme": withholding_scheme()}}}
+        lmt = out["LegalMonetaryTotal"]
+        lmt["WithholdingTaxTotalAmount"] = amount(wh_amount, cur, wh["note"])
+        payable = Decimal(lmt["PayableAmount"].value) - wh_amount
+        lmt["PayableAmount"] = amount(payable, cur, "What the department pays the manufacturer: the total less the "
+                                                    "tax it withholds (D17).")
+        out["TaxRepresentativeParty"] = tax_representative()
+        out["Note"] = V("Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra for the "
+                        "withholding.", "Why it is named.")
+        out["DueDate"] = V(f.date(days["due"]), "30 days after the acceptance of 13 April: Wednesday 13 May.")
+        out["PaymentTerms"] = {"PaymentMeansID": V("1", "The payment means these terms apply to."),
+                               **calloff_terms(),
+                               "PaymentDueDate": V(f.date(days["due"]), "30 days after the acceptance.")}
+        ferra_currencies(f, out, days["install-invoice"])
+        out["Signature"] = invoice_signature("VI-SIG-26-0092")
+        if payable != installation_payable():
+            raise SystemExit("tender/39: the installation invoice's payable amount is not what the reminder and the "
+                             "remittance advice count with")
+        return out
     if d == "Reminder":
-        inv, credit, debit = f.numbers["invoice-amount"], f.numbers["credit-amount"], f.numbers["debit-amount"]
-        balance = inv - credit - debit
-        late = 113 - 108
+        f.number("invoice-install", "5-xu", "Invoice")  # the installation invoice (39), issued in April, built later
+        inv, credit, inst = f.numbers["invoice-amount"], f.numbers["credit-amount"], installation_payable()
+        balance = inv - credit + inst
+        late = days["reminder"] - days["due"]
         interest = money(balance * Decimal("0.08") * late / 365, cur)
         f.numbers["interest"] = interest
-        withheld = Decimal("72.00") - Decimal("1.80") - penalty()[3]
         no = f.number("reminder", doc["from"], "Reminder")
-        f.numbers["reminder-amount"] = balance + interest
         return {"ID": V(no, "The manufacturer's reminder number."),
-                "IssueDate": V(f.date(113), "Five days after the due date."),
+                "IssueDate": V(f.date(days["reminder"]), "Wednesday 20 May, a week after the due date (D28 point 9)."),
                 "ReminderTypeCode": V("PAYMENT", "A reminder of a payment overdue."),
                 "ReminderSequenceNumeric": V("1", "The first reminder."),
-                "Note": V("The balance of the first release is overdue; Urvania's statutory interest applies. "
-                          f"The balance is net of the {withheld} lume the department withheld and paid to the "
-                          "state (receipt XB-WHT-26-04-1187).", "What it says, and why the withholding is not "
-                                                                "reminded: it is already deducted (tender/35#F4)."),
-                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoice"),
-                **tender_currencies(f, 113),
-                "PaymentCurrencyCode": V("XUF", "Payment in ferra, as for the invoice."),
-                "PaymentAlternativeCurrencyCode": V("XBL", "The department may also pay in lume, the currency of "
-                                                           "the reminder."),
-                "PaymentAlternativeExchangeRate": {**TO_FERRA(f.date(113)),
-                                                   "TargetCurrencyCode": V("XBL", "The alternative: lume."),
-                                                   "CalculationRate": V("1", "Lume is the reminder's own currency: "
-                                                                             "no conversion."),
-                                                   "MathematicOperatorCode": V("Multiply", "Times one.")},
-                "ReminderPeriod": {"StartDate": V(f.date(109), "Overdue from the day after the due date"),
-                                   "EndDate": V(f.date(113), "to the reminder.")},
+                "Note": V("Both invoices of the first release fell due on 13 May, 30 days after the acceptance, and "
+                          "are unpaid; Urvania's statutory interest of 8 % a year applies from 14 May. The installation "
+                          "invoice is reminded net of the 10 % the department withholds.", "What it says, under the "
+                          "contract's payment term (D22, tender/35#F1)."),
+                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
+                "PaymentCurrencyCode": V("XUF", "Valdara is paid in ferra, into its account in Urvania, as the "
+                                                "invoices ask (tender/35#F8)."),
+                "PaymentExchangeRate": TO_FERRA(f.date(days["reminder"])),
+                "ReminderPeriod": {"StartDate": V(f.date(days["due"] + 1), "Overdue from the day after the due date"),
+                                   "EndDate": V(f.date(days["reminder"]), "to the reminder.")},
                 "Signature": seal("5-xu", "VI-SIG-REM"),
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account.")},
                 "PaymentTerms": {"Note": V("Please pay within seven days.", "What is asked."),
-                                 "PaymentDueDate": V(f.date(120), "A week after the reminder.")},
+                                 "PaymentDueDate": V(f.date(days["reminder"] + 7), "A week after the reminder.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
-                                    "AllowanceChargeReasonCode": V("48", "UN/EDIFACT 7161 has no code for interest, so the code is from UN/EDIFACT 5189, with that list's listID."),
-                                    "AllowanceChargeReason": V("Statutory interest", "Urvania's interest on late "
-                                                                                     "payment."),
-                                    "MultiplierFactorNumeric": V("0.08", "8 % a year."),
+                                    "AllowanceChargeReasonCode": V("48", "UN/EDIFACT 7161 has no code for interest, "
+                                                                         "so the code is from UN/EDIFACT 5189, with "
+                                                                         "that list's listID."),
+                                    "AllowanceChargeReason": V(f"Statutory interest, 8 % a year for {late} days",
+                                                               "Urvania's interest on late payment, with the time it "
+                                                               "runs: a yearly rate is no factor of the amount "
+                                                               "(tender/35#F2)."),
                                     "Amount": amount(interest, cur, f"{late} days at 8 % a year on the balance."),
                                     "BaseAmount": amount(balance, cur, "The overdue balance.")},
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(balance, cur, "The overdue balance."),
                                        "ChargeTotalAmount": amount(interest, cur, "The interest."),
                                        "PayableAmount": amount(balance + interest, cur, "Now due.")},
                 "ReminderLine": [
-                    {"ID": V("1", "The invoice."), "UUID": line_uuid(f, "reminder", 1),
-                     "Note": V("The release's invoice, due on " + f.date(108) + ".", "What it is."),
+                    {"ID": V("1", "The benches' invoice."), "UUID": line_uuid(f, "reminder", 1),
+                     "Note": V("The invoice of the benches, due on " + f.date(days["due"]) + ".", "What it is."),
                      "DebitLineAmount": amount(inv, cur, "Its payable amount."),
                      "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The "
                                                                                                      "invoice.")}}},
-                    {"ID": V("2", "The credit note."), "UUID": line_uuid(f, "reminder", 2),
+                    {"ID": V("2", "The installation invoice."), "UUID": line_uuid(f, "reminder", 2),
+                     "Note": V("The invoice of the installation, due on " + f.date(days["due"]) + ", net of the "
+                               "withholding.", "What it is."),
+                     "DebitLineAmount": amount(inst, cur, "Its payable amount."),
+                     "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice-install"],
+                                                                               "The invoice.")}}},
+                    {"ID": V("3", "The credit note."), "UUID": line_uuid(f, "reminder", 3),
                      "Note": V("The credit for the damaged bench.", "What it is."),
                      "CreditLineAmount": amount(credit, cur, "Deducted."),
-                     "BillingReference": {"CreditNoteDocumentReference": {"ID": V(f.numbers["credit-33"],
-                                                                                  "The credit note.")}}},
-                    {"ID": V("3", "The penalty."), "UUID": line_uuid(f, "reminder", 3),
-                     "Note": V("The department's penalty, set off.", "What it is."),
-                     "CreditLineAmount": amount(debit, cur, "Deducted."),
-                     "BillingReference": {"DebitNoteDocumentReference": {"ID": V(f.numbers["debit"],
-                                                                                 "The debit note.")}}}]}
+                     "BillingReference": {"CreditNoteDocumentReference": {"ID": V(f.numbers[f"credit-{n_of('CreditNote')}"],
+                                                                                  "The credit note.")}}}]}
     if d == "RemittanceAdvice":
-        inv, credit, debit, interest = (f.numbers["invoice-amount"], f.numbers["credit-amount"],
-                                        f.numbers["debit-amount"], f.numbers["interest"])
-        paid = inv - credit - debit + interest
+        inv, credit, inst, interest = (f.numbers["invoice-amount"], f.numbers["credit-amount"],
+                                       installation_payable(), f.numbers["interest"])
+        base, pdays, pen = calloff_penalty()
+        paid = inv + inst - credit - pen + interest
         return {"ID": V(f.number("remittance", doc["from"], "RemittanceAdvice"), "The department's number."),
-                "IssueDate": V(f.date(116), "Paid three days after the reminder."),
-                "Note": V("Payment of the first release, with the interest.", "What it is for."),
-                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the documents settled"),
-                "TotalDebitAmount": amount(inv + interest, cur, "The invoice and the interest."),
-                "TotalCreditAmount": amount(credit + debit, cur, "The credit note and the penalty."),
-                "TotalPaymentAmount": amount(paid, cur, "Transferred, in ferra at 100 to the lume."),
-                "LineCountNumeric": V("4", "Four documents settled."),
+                "IssueDate": V(f.date(days["remittance"]), "Friday 22 May, two days after the reminder, on a day both "
+                                                           "banking systems are open (D28 point 9)."),
+                "Note": V(f"Paid on 22 May 2026 by credit transfer of {money(paid * 100, 'XUF')} ferra, {paid} lume "
+                          "at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: "
+                          "both invoices with the interest reminded, less the credit note and the penalty of "
+                          f"{pen} lume for late completion under clause PEN-1.", "The payment's date and the amount "
+                          "credited in the payee's currency, and what it settles (tender/36#F2, option b)."),
+                "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the documents settled and of the "
+                                                               "payment"),
+                "TotalDebitAmount": amount(inv + inst + interest, cur, "The invoices and the interest."),
+                "TotalCreditAmount": amount(credit + pen, cur, "The credit note and the penalty."),
+                "TotalPaymentAmount": amount(paid, cur, "Transferred, in lume."),
+                "LineCountNumeric": V("5", "Five items settled."),
                 "AdditionalDocumentReference": {"ID": V("PWD-PAY-AUTH-26-0412", "The department's payment "
                                                                                 "authorisation.")},
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
@@ -10841,26 +10994,44 @@ def tender_complete(n, doc):
                                  "PayerFinancialAccount": kit.account("2-xb", "The department's account."),
                                  "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account.")},
                 "RemittanceAdviceLine": [
-                    {"ID": V("1", "The invoice."), "DebitLineAmount": amount(inv, cur, "Its payable amount."),
+                    {"ID": V("1", "The benches' invoice."), "DebitLineAmount": amount(inv, cur, "Its payable amount."),
                      "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"],
                                                                                "The invoice.")}}},
-                    {"ID": V("2", "The credit note."), "CreditLineAmount": amount(credit, cur, "Deducted."),
-                     "BillingReference": {"CreditNoteDocumentReference": {"ID": V(f.numbers["credit-33"],
+                    {"ID": V("2", "The installation invoice."),
+                     "DebitLineAmount": amount(inst, cur, "Its payable amount, net of the withholding."),
+                     "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice-install"],
+                                                                               "The invoice.")}}},
+                    {"ID": V("3", "The credit note."), "CreditLineAmount": amount(credit, cur, "Deducted."),
+                     "BillingReference": {"CreditNoteDocumentReference": {"ID": V(f.numbers[f"credit-{n_of('CreditNote')}"],
                                                                                   "The credit note.")}}},
-                    {"ID": V("3", "The penalty."), "CreditLineAmount": amount(debit, cur, "Deducted."),
-                     "BillingReference": {"DebitNoteDocumentReference": {"ID": V(f.numbers["debit"],
-                                                                                 "The debit note.")}}},
-                    {"ID": V("4", "The interest."), "DebitLineAmount": amount(interest, cur, "The interest charged."),
+                    {"ID": V("4", "The penalty."),
+                     "Note": V(f"Penalty for late completion under clause PEN-1 of the contract: {pdays} working days "
+                               f"at 0.5 % of the installation price of {base} lume (three days late, one waived); "
+                               "deducted from the payment.", "What is deducted, and why: the department's claim under "
+                               "the contract, not a document of its own (D28 point 9, D9)."),
+                     "CreditLineAmount": amount(pen, cur, "Deducted."),
+                     "DocumentReference": {"ID": V(CONTRACT_ID, "The contract with the penalty clause."),
+                                           "DocumentType": V("Framework contract", "What it is.")}},
+                    {"ID": V("5", "The interest."), "DebitLineAmount": amount(interest, cur, "The interest charged: the "
+                                                                                             "contract's payment term "
+                                                                                             "carries the statutory "
+                                                                                             "interest (tender/36#F6)."),
                      "BillingReference": {"ReminderDocumentReference": {"ID": V(f.numbers["reminder"],
                                                                                 "The reminder."),
-                                                                        "IssueDate": V(f.date(113), "Its date.")},
-                                          "AdditionalDocumentReference": {"ID": V("PWD-PAY-AUTH-26-0412",
-                                                                                  "The authorisation that covers "
-                                                                                  "the interest.")}}}]}
-    return tender_with_credit(n, doc)
+                                                                        "IssueDate": V(f.date(days["reminder"]),
+                                                                                       "Its date.")}}}]}
+    return tender_complete(n, doc)
 
 
-SCENARIOS["tender"] = _with_enrichment("tender", tender_complete)
+def n_of(kind):
+    """The example number of the tender flow's (single) document of a kind."""
+    return next(x["nn"] for x in WORLD["documents"] if x["flow"] == "tender" and x["doc"] == kind)
+
+
+
+
+
+SCENARIOS["tender"] = _with_enrichment("tender", tender_calloff)
 
 
 @enrich("tender", "Order")

@@ -22,27 +22,23 @@ The department wants the benches of this release in the harbour park's moss gree
   The department's number for the change.
 - `UUID` = **8e684e84-32af-5f74-a455-5a17c1622f8a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-24**  
-  The day after the order.
+- `IssueDate` = **2026-03-25**  
+  Wednesday 25 March, the day after the order.
 - `IssueTime` = **08:06:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `SequenceNumberID` = **1**  
   The first change of the call-off.
-- `Note` = **Please deliver the benches of this release in moss green, RAL 6005.**  
+- `Note` = **Please deliver the benches of this release in moss green, RAL 6005, the special colour at 5 lume a bench the catalogue quotes. The installation is unchanged.**  
   The change.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the department's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PricingCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The contract prices are in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The manufacturer accounts its value added tax in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 
 ### Validity Period
 
 Inside `ValidityPeriod`:
 
-- `EndDate` = **2026-03-27**  
-  The change must be confirmed before the benches are coated.
+- `EndDate` = **2026-03-26**  
+  To be confirmed before the benches are coated on 27 March.
 
 ### Order Reference
 
@@ -51,26 +47,14 @@ Inside `OrderReference`:
 - `ID` = **LPWD-PO-26-0213**  
   The call-off order changed.
 
-### Quotation Document Reference
-
-Inside `QuotationDocumentReference`:
-
-- `ID` = **VI-QT-26-0071**  
-  The manufacturer's quotation for the special colour.
-
-### Originator Document Reference
-
-Inside `OriginatorDocumentReference`:
-
-- `ID` = **PWD-2026-PARKS**  
-  The procurement procedure.
-- `DocumentType` = **Procurement file**  
-  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
+- `ID` = **VI-CAT-26-0212**  
+  The catalogue that quotes the special colour charge (D28 point 8).
+- `DocumentTypeCode` = **Catalogue** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document. The code is from the Trade Accord's UBL document type list: Catalogue.
 - `ID` = **PWD-COLOUR-RAL6005**  
   The colour sample of the harbour park.
 - `DocumentType` = **Colour sample**  
@@ -80,8 +64,8 @@ Inside `AdditionalDocumentReference`:
 
 Inside `Contract`:
 
-- `ID` = **PWD-2026-PARKS**  
-  The framework contract.
+- `ID` = **PWD-CONTRACT-2026-PARKS**  
+  The framework contract the release is ordered under, by its own number (tender/26#F14, 32#F19).
 
 ### Signature
 
@@ -214,15 +198,6 @@ Inside `SellerSupplierParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Freight Forwarder Party
-
-Inside `FreightForwarderParty`:
-
-- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Delivery
 
 Inside `Delivery`:
@@ -231,73 +206,6 @@ Inside `Delivery`:
   The change keeps the delivery of 31 March.
 - `RequestedDeliveryPeriod/EndDate` = **2026-03-31**  
   The last day it is wanted.
-
-### Payment Means
-
-Inside `PaymentMeans`:
-
-- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
-  UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `PayeeFinancialAccount/ID` = **XU790351041600000000209458** (schemeID `urn:ubl-examples:world:account`)  
-  The manufacturer's account, in ferra. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `PayeeFinancialAccount/Name` = **Valdara Industries SUA**  
-  The account holder, as the bank knows it.
-- `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
-  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
-- `PayeeFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
-  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41600** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
-  The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Ferrano main branch**  
-  The branch's name.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREVXUFR** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code CREV, the country XU and the location FR; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
-  The bank; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Trazhek Hekrul Rikbul** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **8**  
-  Building number of the postal address. identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **4100**  
-  Postal code in Urvania's format (4 digits). identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town the branch is in.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town the branch is in.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PayeeFinancialAccount/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-
-### Payment Terms
-
-Inside `PaymentTerms`:
-
-- `Note` = **30 days after the invoice, as the contract says.**  
-  Unchanged.
-
-### Transaction Conditions
-
-Inside `TransactionConditions`:
-
-- `Description` = **The framework contract's conditions apply.**  
-  Which conditions.
 
 ### Allowance Charge
 
@@ -310,63 +218,16 @@ Inside `AllowanceCharge`:
 - `AllowanceChargeReason` = **Special colour**  
   Moss green, RAL 6005.
 - `Amount` = **200.00** (currencyID `XBL`)  
-  5 lume a bench, as quoted.
-
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-03-24**  
-  The rate of the document's date.
-
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency of the contract prices. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the order and the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `CalculationRate` = **0.01**  
-  The world's reference rate fixed in the contract.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-01-02**  
-  The rate of the first working day of the year, as the contract says.
-
-### Payment Exchange Rate
-
-Inside `PaymentExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency the manufacturer is paid in. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-03-24**  
-  The rate of the document's date.
+  5 lume a bench, as the catalogue quotes.
 
 ### Anticipated Monetary Total
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
-  The forty benches.
 - `ChargeTotalAmount` = **200.00** (currencyID `XBL`)  
   The colour.
-- `PayableAmount` = **20160.00** (currencyID `XBL`)  
-  With the colour.
+- `PayableAmount` = **200.00** (currencyID `XBL`)  
+  The amount of change to the order's total: the colour charge (tender/27#F3).
 
 ### Order Line
 
@@ -375,15 +236,37 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The bench line.
 - `LineItem/LineStatusCode` = **Revised** (listID `urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode`)  
-  Its colour changes. The code is from the world's copy of UBL's Line status list, with a listID: Revised = Line has been revised..
+  Its variant changes. The code is from the world's copy of UBL's Line status list, with a listID: Revised = Line has been revised..
 - `LineItem/Quantity` = **40** (unitCode `EA`)  
   Unchanged: forty benches.
 - `LineItem/LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
   Unchanged.
-- `LineItem/Item/Description` = **Park bench Serra 180, frame in moss green RAL 6005**  
-  The changed item.
-- `LineItem/Item/Name` = **Park bench Serra 180**  
-  The item.
+- `LineItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
+- `LineItem/Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XB`)  
+  The seller's description in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
+- `LineItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
+- `LineItem/Item/Name` = **Park bench Serra 180** (languageID `en-XB`)  
+  The item's name in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **VI-B180**  
+  The seller's own item number; item bench-serra-g of Valdara Industries (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRN**  
+  The variant of the item: the frame colour, added to the item number.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
+  The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
+  The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRN** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRN = Green.
+- `LineItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in moss green, RAL 6005**  
+  The variant in words.
+- `LineItem/Item/StandardItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
+  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra-g of Valdara Industries (world/items.json).
+- `LineItem/Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
+  The barcode the number is printed in on the label: Code 128 carries letters and digits.
+- `LineItem/Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
+  The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
 
 ## The document
 
@@ -396,32 +279,27 @@ Inside `OrderLine`:
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-OC-26-0214</cbc:ID>
   <cbc:UUID>8e684e84-32af-5f74-a455-5a17c1622f8a</cbc:UUID>
-  <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>08:06:00-01:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Note>Please deliver the benches of this release in moss green, RAL 6005.</cbc:Note>
+  <cbc:Note>Please deliver the benches of this release in moss green, RAL 6005, the special colour at 5 lume a bench the catalogue quotes. The installation is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cac:ValidityPeriod>
-    <cbc:EndDate>2026-03-27</cbc:EndDate>
+    <cbc:EndDate>2026-03-26</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   </cac:OrderReference>
-  <cac:QuotationDocumentReference>
-    <cbc:ID>VI-QT-26-0071</cbc:ID>
-  </cac:QuotationDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:DocumentType>Procurement file</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-CAT-26-0212</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Catalogue</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-COLOUR-RAL6005</cbc:ID>
     <cbc:DocumentType>Colour sample</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
   </cac:Contract>
   <cac:Signature>
     <cbc:ID>PWD-SIG-OC</cbc:ID>
@@ -527,99 +405,21 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:FreightForwarderParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Bayforth Forwarding</cbc:Name>
-    </cac:PartyName>
-  </cac:FreightForwarderParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-03-31</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
   </cac:Delivery>
-  <cac:PaymentMeans>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
-      <cbc:Name>Valdara Industries SUA</cbc:Name>
-      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cac:FinancialInstitutionBranch>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
-        <cbc:Name>Ferrano main branch</cbc:Name>
-        <cac:FinancialInstitution>
-          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">CREVXUFR</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
-          <cac:Address>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
-            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
-            <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitution>
-        <cac:Address>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
-  <cac:PaymentTerms>
-    <cbc:Note>30 days after the invoice, as the contract says.</cbc:Note>
-  </cac:PaymentTerms>
-  <cac:TransactionConditions>
-    <cbc:Description>The framework contract's conditions apply.</cbc:Description>
-  </cac:TransactionConditions>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">200.00</cbc:Amount>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-24</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-24</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">200.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20160.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">200.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -628,8 +428,25 @@ Inside `OrderLine`:
       <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
       <cac:Item>
-        <cbc:Description>Park bench Serra 180, frame in moss green RAL 6005</cbc:Description>
-        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+        <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+        <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
+        <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-B180</cbc:ID>
+          <cbc:ExtendedID>GRN</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+            <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+            <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+          <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+          <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
+        </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

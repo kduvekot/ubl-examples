@@ -268,6 +268,24 @@
       <cac:LegalMonetaryTotal>
         <cbc:PayableAmount currencyID="XBL">124080.00</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
+      <cac:TenderLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:Note>499 lume a bench, the contract price of every release.</cbc:Note>
+        <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">119760.00</cbc:LineExtensionAmount>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:TenderLine>
+      <cac:TenderLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:Note>18 lume an installation, the contract price of every release.</cbc:Note>
+        <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">4320.00</cbc:LineExtensionAmount>
+        <cac:Item>
+          <cbc:Name>Installation of a park bench</cbc:Name>
+        </cac:Item>
+      </cac:TenderLine>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
       <cbc:StartDate>2026-03-20</cbc:StartDate>

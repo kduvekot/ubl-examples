@@ -63,6 +63,7 @@ Checks:
 Usage: python3 tools/world_items.py      (prints the problems, exit 1 if any)
 """
 import json
+from decimal import Decimal
 import os
 import re
 import sys
@@ -218,9 +219,9 @@ def check(world):
             elif len(n) > CODANA_MAX or not re.fullmatch(r"KXU\d{5}[A-Z0-9]+", n):
                 problems.append(f"{where}: Codana item number {n} is longer than {CODANA_MAX} characters or not "
                                 "upper-case letters and digits")
-            elif n in seen:
+            elif n in seen and not variants_of_one_model(it, items.get(seen[n], {})):
                 problems.append(f"{where}: same item number as {seen[n]}")
-            else:
+            elif n not in seen:
                 seen[n] = it["id"]
             hs = it.get("hs", "")
             if not re.fullmatch(r"\d{6}", hs):
@@ -483,6 +484,14 @@ def price_types():
 CARRIAGE_PAID = {"CPT", "CIP", "CFR", "CIF", "DAP", "DPU", "DDP"}   # Incoterms 2020: the seller pays the main carriage
 
 
+def variants_of_one_model(a, b):
+    """Two variants of one model (the bench in Ferro grey and in moss green, D28 point 8) share the maker's item
+    number; the variant is told apart by its extended ID (ExtendedID, as Lumeway's LD-10442 is for any colour)."""
+    va, vb = a.get("variant", {}), b.get("variant", {})
+    return (a.get("sellers_id") == b.get("sellers_id") and va.get("extended") and vb.get("extended")
+            and va.get("extended") != vb.get("extended") and va.get("what") == vb.get("what"))
+
+
 def buyer_price_problems(world):
     """A price agreed for one buyer (buyer_prices: Valdara's distributor price for Lumeway, D14) is in the seller's
     currency, names a price type of the world's list that is before tax, as every item price is (O28), and is
@@ -496,8 +505,16 @@ def buyer_price_problems(world):
             where = f"item {it['id']}: price for {buyer}"
             if buyer not in parties or buyer == it["seller"]:
                 problems.append(f"{where}: not a buyer of the world other than the seller")
+            own = Decimal(str(it["price"]["amount"]))
             if bp["currency"] != it["price"]["currency"]:
-                problems.append(f"{where}: in {bp['currency']}, not in the seller's currency {it['price']['currency']}")
+                if not bp.get("contract_currency"):
+                    problems.append(f"{where}: in {bp['currency']}, not in the seller's currency "
+                                    f"{it['price']['currency']} (only a contract price awarded in the buyer's "
+                                    "currency may be, with contract_currency, D28 point 10)")
+                else:          # compared with the seller's own price at the world's reference rate
+                    r = world["exchange_rates"]
+                    a, b = it["price"]["currency"], bp["currency"]
+                    own *= Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
             if bp.get("type") not in types:
                 problems.append(f"{where}: price type {bp.get('type')!r} is not a code of the world's price type list")
             elif types[bp["type"]]:
@@ -505,7 +522,8 @@ def buyer_price_problems(world):
             if bp.get("delivered") and bp["delivered"] not in CARRIAGE_PAID:
                 problems.append(f"{where}: delivered {bp['delivered']!r} is not an Incoterms rule under which the "
                                 f"seller pays the main carriage ({', '.join(sorted(CARRIAGE_PAID))})")
-            if not 0 < bp["amount"] or (bp["amount"] >= it["price"]["amount"] and not bp.get("delivered")):
+            above = Decimal(str(bp["amount"])) > own if bp.get("contract_currency") else Decimal(str(bp["amount"])) >= own
+            if not 0 < bp["amount"] or (above and not bp.get("delivered")):    # a contract price may equal the list
                 problems.append(f"{where}: {bp['amount']} is not below the seller's own price {it['price']['amount']}")
             if not bp.get("why"):
                 problems.append(f"{where}: needs the reason for the price (why)")

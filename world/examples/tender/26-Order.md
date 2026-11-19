@@ -22,14 +22,14 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The buyer's order number.
 - `UUID` = **9865133f-cea3-538c-ba26-54de8100727c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-23**  
-  The first call-off under the awarded contract.
+- `IssueDate` = **2026-03-24**  
+  Tuesday 24 March, the day after the catalogue (D28 point 9).
 - `IssueTime` = **14:40:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `Note` = **Release 1 under the framework contract: 40 of the 240 benches.**  
-  Which call-off this is; Delivery/ReleaseID is an access approval at the delivery place, not a call-off number (tender/26#F5).
+- `Note` = **Release 1 under the framework contract: 40 benches and their installation, to be completed by Tuesday 7 April.**  
+  Which call-off this is, and when the installation is due: the penalty clause counts from that day.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the buyer's currency, agreed in the contract; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
@@ -38,24 +38,15 @@ The first call-off under the awarded contract. Delivery terms DAP the authority'
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of order lines.
-
-### Originator Document Reference
-
-Inside `OriginatorDocumentReference`:
-
-- `ID` = **PWD-2026-PARKS**  
-  The procurement procedure the order results from.
-- `DocumentType` = **Procurement file**  
-  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ### Contract
 
 Inside `Contract`:
 
-- `ID` = **PWD-2026-PARKS**  
-  The contract under which the call-off is made.
+- `ID` = **PWD-CONTRACT-2026-PARKS**  
+  The framework contract the release is ordered under, by its own number (tender/26#F14, 32#F19).
 
 ### Project Reference
 
@@ -188,10 +179,12 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `DeliveryLocation/Name` = **Public works depot, Lumeport**  
+  Where the benches are delivered.
 - `RequestedDeliveryPeriod/StartDate` = **2026-03-31**  
-  The first release is wanted at the depot on 31 March.
+  Tuesday 31 March, the first release's date.
 - `RequestedDeliveryPeriod/EndDate` = **2026-03-31**  
-  The last day it is wanted.
+  The same day (tender/26#F12).
 - `DeliveryParty/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeport Public Works Department**  
@@ -202,7 +195,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
-  Delivered at place, the authority's depot: the manufacturer delivers, by the carrier it chooses; the authority clears the import. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
+  Delivered at place, the department's depot: the manufacturer delivers, by the carrier it chooses; the department clears the import. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/Description` = **Public works depot, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
@@ -242,8 +235,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **19960.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **0.00** (currencyID `XBL`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -256,14 +249,26 @@ Inside `TaxTotal`:
   The name of code EXP in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxableAmount` = **0.00** (currencyID `XBL`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
+- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  0 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
+  The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Anticipated Monetary Total
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **20680.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **19960.00** (currencyID `XBL`)  
+- `PayableAmount` = **20680.00** (currencyID `XBL`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -273,27 +278,13 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **40** (unitCode `EA`)  
-  The first call-off under the contract: forty benches for the harbour park.
+  Release 1: forty benches for the harbour park.
 - `LineItem/LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **499** (currencyID `XBL`)  
-  The seller's price of 49900 XUF, converted to the buyer's currency at the world's reference rate, as the contract provides.
+  The contract price: the awarded tender's 499 lume a bench, as the catalogue gives it.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Price/PricingExchangeRate/SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency of the seller's price list. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `LineItem/Price/PricingExchangeRate/SourceCurrencyBaseRate` = **1**  
-  The rate is for one unit of the seller's currency.
-- `LineItem/Price/PricingExchangeRate/TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the order. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `LineItem/Price/PricingExchangeRate/TargetCurrencyBaseRate` = **1**  
-  Given in single units of the order's currency.
-- `LineItem/Price/PricingExchangeRate/CalculationRate` = **0.01**  
-  The world's reference rate (world/countries.json).
-- `LineItem/Price/PricingExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  The seller's price times the rate gives the order price. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `LineItem/Price/PricingExchangeRate/Date` = **2026-01-02**  
-  The reference rate of the first working day of the year, fixed in the contract.
 - `LineItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XB`)  
@@ -324,6 +315,34 @@ Inside `OrderLine`:
   The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
 - `LineItem/Item/CatalogueDocumentReference/ID` = **VI-CAT-26-0212**  
   The catalogue the item was ordered from.
+- `LineItem/ID` = **2**  
+  The line number: a line added by a change keeps a number of its own (worklist C34).
+- `LineItem/Quantity` = **40** (unitCode `EA`)  
+  Their installation, lot 2: ordered with the benches, so that it is ordered before it is billed (D28 point 9, tender/26#F3).
+- `LineItem/LineExtensionAmount` = **720.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `LineItem/Delivery/RequestedDeliveryPeriod/StartDate` = **2026-04-01**  
+  From Wednesday 1 April, after the delivery.
+- `LineItem/Delivery/RequestedDeliveryPeriod/EndDate` = **2026-04-07**  
+  Completed by Tuesday 7 April (D28 point 9).
+- `LineItem/Price/PriceAmount` = **18** (currencyID `XBL`)  
+  The contract price: the awarded tender's 18 lume an installation, as the catalogue gives it.
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `LineItem/Item/Description` = **Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
+- `LineItem/Item/Description` = **Assembly of one bench and its anchoring in the ground with the supplied anchors.** (languageID `en-XB`)  
+  The seller's description in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
+- `LineItem/Item/CatalogueIndicator` = **true**  
+  The item is ordered from the seller's catalogue, which the order cites.
+- `LineItem/Item/Name` = **Dreknul skul sir haz nanskir** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
+- `LineItem/Item/Name` = **Installation of a park bench** (languageID `en-XB`)  
+  The item's name in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **VI-INST-B**  
+  The seller's own item number; item bench-installation of Valdara Industries (world/items.json).
+- `LineItem/Item/CatalogueDocumentReference/ID` = **VI-CAT-26-0212**  
+  The catalogue the item was ordered from.
 
 ## The document
 
@@ -336,21 +355,17 @@ Inside `OrderLine`:
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   <cbc:UUID>9865133f-cea3-538c-ba26-54de8100727c</cbc:UUID>
-  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>14:40:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Release 1 under the framework contract: 40 of the 240 benches.</cbc:Note>
+  <cbc:Note>Release 1 under the framework contract: 40 benches and their installation, to be completed by Tuesday 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:DocumentType>Procurement file</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:Contract>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
   </cac:Contract>
   <cac:ProjectReference>
     <cbc:ID>PARKS-26</cbc:ID>
@@ -449,6 +464,9 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>Public works depot, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-03-31</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -485,7 +503,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">19960.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -497,10 +515,22 @@ Inside `OrderLine`:
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">19960.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">20680.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -510,15 +540,6 @@ Inside `OrderLine`:
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-        <cac:PricingExchangeRate>
-          <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-          <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
-          <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-          <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-          <cbc:CalculationRate>0.01</cbc:CalculationRate>
-          <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-          <cbc:Date>2026-01-02</cbc:Date>
-        </cac:PricingExchangeRate>
       </cac:Price>
       <cac:Item>
         <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
@@ -541,6 +562,36 @@ Inside `OrderLine`:
           <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
           <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
+        <cac:CatalogueDocumentReference>
+          <cbc:ID>VI-CAT-26-0212</cbc:ID>
+        </cac:CatalogueDocumentReference>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">720.00</cbc:LineExtensionAmount>
+      <cac:Delivery>
+        <cac:RequestedDeliveryPeriod>
+          <cbc:StartDate>2026-04-01</cbc:StartDate>
+          <cbc:EndDate>2026-04-07</cbc:EndDate>
+        </cac:RequestedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description languageID="qau">Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.</cbc:Description>
+        <cbc:Description languageID="en-XB">Assembly of one bench and its anchoring in the ground with the supplied anchors.</cbc:Description>
+        <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
+        <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
+        <cbc:Name languageID="en-XB">Installation of a park bench</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-INST-B</cbc:ID>
+        </cac:SellersItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>VI-CAT-26-0212</cbc:ID>
         </cac:CatalogueDocumentReference>

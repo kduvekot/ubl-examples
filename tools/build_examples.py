@@ -3234,7 +3234,6 @@ CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the documen
     ('sea', '09-ForwardingInstructions.xml'): 'D30',
     ('sea', '12-ForwardingInstructions.xml'): 'D30',
     ('sea', '25-Statement.xml'): 'D30',
-    ('tender', '33-CreditNote.xml'): 'D28',
     ('carnet', '03-ProofOfReexportationReminder.xml'): 'D40',
     ('utilities', '04-RemittanceAdvice.xml'): 'D31',
     ('utilities', '07-RemittanceAdvice.xml'): 'D31',

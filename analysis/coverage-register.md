@@ -117,7 +117,6 @@ Coverage 5117 → 5111 (commit 9f3f108b), 6 elements.
 | `RemittanceAdvice/PayerReference` | 0..1 | cotton/18-RemittanceAdvice, ore/08-RemittanceAdvice, plastics/11-RemittanceAdvice … | | | open |
 | `RemittanceAdviceLine/AccountingCustomerParty` | 0..1 | cotton/18-RemittanceAdvice, ore/08-RemittanceAdvice, plastics/11-RemittanceAdvice … | | | open |
 | `RemittanceAdviceLine/AccountingSupplierParty` | 0..1 | cotton/18-RemittanceAdvice, ore/08-RemittanceAdvice, plastics/11-RemittanceAdvice … | | | open |
-| `RemittanceAdviceLine/DocumentReference` | 0..n | cotton/18-RemittanceAdvice, ore/08-RemittanceAdvice, plastics/11-RemittanceAdvice … | | | open |
 
 ### Stage 1 step 1e, part 4: tax arithmetic and empty zero totals (C24)
 
@@ -762,6 +761,69 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `Regulation/OntologyURI` | 0..1 | tender/14-GuaranteeCertificate | | | open |
+
+> C120, C123, C128, D28 points 8 to 10, O6, O12, O50, O69: the call-off executes the contract as signed. The contract, the catalogue and every document of the release are in lume, the contract's currency, so no pricing currency, pricing exchange rate or base rates of 1 (C11's tender part: 26#F1, 27#F8, 28#F7, 32#F6, F9, F14, 33#F3, 35#F8); the order change and the response carry no tax or pricing currency of their own (27#F8, 28#F7), the reminder no pricing or tax currency (35#F8), the credit note no payment currency, being deducted (33#F13); the order documents cite the contract by its number, not the procedure as originator (26#F14, 27#F11, 32#F19); the order change names no forwarder, payment means, payment terms or conditions it does not change (27#F9, F10), and the special colour is quoted in the catalogue, not a quotation of its own (D28 point 8); the despatch advice shows no 200 benches outstanding (29#F3, D28's goods balance) and no back-ordered anchor sets or spare bolts (40 sets, no loose bolts, O10); the invoice of the benches bills no installation and carries no annotation of the 200 still open; the credit note credits the bench and its colour charge only, once settled (deducted), with no period, no sub-line, no ferra alternative price, no withholding or tax representative (no installation credited), no work report the world has not got (33#F1, F7, F12, F15 to F17); the debit note tender/34 is removed (D9, O6: the penalty is a deduction in the remittance advice), and with it the reminder's and the remittance's references to it. Kept: Valdara's VAT in ferra (the tax currency, its rate and the tax total in ferra) on both invoices and the credit note, and payment in ferra on both invoices and the reminder (33#F13, 35#F8 option a); the seller's signature on the invoices (until the signatures stage, D6).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Annotation/Subject` | 0..n | tender/32-Invoice | | | open |
+| `Annotation/SubjectCode` | 0..1 | tender/32-Invoice | | | open |
+| `BillingReference/AdditionalDocumentReference` | 0..1 | tender/36-RemittanceAdvice | | | open |
+| `BillingReference/DebitNoteDocumentReference` | 0..1 | tender/35-Reminder, tender/36-RemittanceAdvice | | | open |
+| `CreditNote/DeliveryNoteDocumentReference` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNote/PaymentCurrencyCode` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNote/PaymentExchangeRate` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNote/PricingCurrencyCode` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNote/PricingExchangeRate` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNote/PurchaseReference` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNote/TaxPointDate` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNote/TaxRepresentativeParty` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNote/WithholdingTaxTotal` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNote/WorkReportDocumentReference` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNoteLine/FreeOfChargeIndicator` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNoteLine/InvoicePeriod` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNoteLine/PaymentTerms` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNoteLine/PricingReference` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNoteLine/SubCreditNoteLine` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNoteLine/TaxPointDate` | 0..1 | tender/33-CreditNote | | | open |
+| `CreditNoteLine/WithholdingTaxTotal` | 0..n | tender/33-CreditNote | | | open |
+| `CreditNoteLine/WorkReportLineReference` | 0..n | tender/33-CreditNote | | | open |
+| `DebitNote/AllowanceCharge` | 0..n | tender/34-DebitNote | | | open |
+| `DebitNote/TaxRepresentativeParty` | 0..1 | tender/34-DebitNote | | | open |
+| `DebitNote/WithholdingTaxTotal` | 0..n | tender/34-DebitNote | | | open |
+| `DebitNoteLine/WithholdingTaxTotal` | 0..n | tender/34-DebitNote | | | open |
+| `DespatchLine/BackorderQuantity` | 0..1 | tender/29-DespatchAdvice | | | open |
+| `DespatchLine/BackorderReason` | 0..n | tender/29-DespatchAdvice | | | open |
+| `DespatchLine/OutstandingQuantity` | 0..1 | tender/29-DespatchAdvice | | | open |
+| `DespatchLine/OutstandingReason` | 0..n | tender/29-DespatchAdvice | | | open |
+| `DespatchLine/OversupplyQuantity` | 0..1 | tender/29-DespatchAdvice | | | open |
+| `ExchangeRate/SourceCurrencyBaseRate` | 0..1 | tender/26-Order, tender/32-Invoice | | | open |
+| `ExchangeRate/TargetCurrencyBaseRate` | 0..1 | tender/26-Order, tender/32-Invoice | | | open |
+| `Invoice/Annotation` | 0..n | tender/32-Invoice | | | open |
+| `Invoice/OriginatorDocumentReference` | 0..n | tender/32-Invoice | | | open |
+| `Order/OriginatorDocumentReference` | 0..1 | tender/26-Order | | | open |
+| `OrderChange/FreightForwarderParty` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/OriginatorDocumentReference` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/PaymentExchangeRate` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/PaymentMeans` | 0..n | tender/27-OrderChange | | | open |
+| `OrderChange/PaymentTerms` | 0..n | tender/27-OrderChange | | | open |
+| `OrderChange/PricingCurrencyCode` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/PricingExchangeRate` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/QuotationDocumentReference` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/TaxCurrencyCode` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/TaxExchangeRate` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderChange/TransactionConditions` | 0..1 | tender/27-OrderChange | | | open |
+| `OrderResponse/PaymentExchangeRate` | 0..1 | tender/28-OrderResponse | | | open |
+| `OrderResponse/PricingCurrencyCode` | 0..1 | tender/28-OrderResponse | | | open |
+| `OrderResponse/PricingExchangeRate` | 0..1 | tender/28-OrderResponse | | | open |
+| `OrderResponse/TaxCurrencyCode` | 0..1 | tender/28-OrderResponse | | | open |
+| `OrderResponse/TaxExchangeRate` | 0..1 | tender/28-OrderResponse | | | open |
+| `Price/PricingExchangeRate` | 0..1 | tender/26-Order, tender/32-Invoice | | | open |
+| `Reminder/PricingCurrencyCode` | 0..1 | tender/35-Reminder | | | open |
+| `Reminder/PricingExchangeRate` | 0..1 | tender/35-Reminder | | | open |
+| `Reminder/TaxCurrencyCode` | 0..1 | tender/35-Reminder | | | open |
+| `Reminder/TaxExchangeRate` | 0..1 | tender/35-Reminder | | | open |
+
 ### G4: energy, utilities (2026-11-19)
 
 Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
@@ -852,6 +914,7 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `RemittanceAdviceLine/DocumentReference` | tender/36-RemittanceAdvice | the department's deduction of the penalty for late completion under clause PEN-1 of the framework contract, which the remittance line cites as the document it is based on (D28 point 9, D9: the penalty is not a debit note) | 2026-11-19 |
 | `QualificationResolution/ExclusionReason` | contest/18-TendererQualificationResponse | Fernhollow Studio, a small design studio of Lumeport, asks to take part in the design contest and is excluded at the selection for social security contributions of 3,860 lume due and unpaid, above the minor amounts; the department tells it why and how to appeal (O102, D29 point 6) | 2026-11-19 |
 | `RemittanceAdviceLine/Note` | road/17-RemittanceAdvice | Lumeway pays Valdara's road invoice on Thursday 2 April, within the ten days of `XU-STD`, and takes the 2 % discount, 77,748 ferra on 3,887,400; the line states the short payment (O218) | 2026-11-19 |
 | `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |

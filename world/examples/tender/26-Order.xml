@@ -6,21 +6,17 @@
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   <cbc:UUID>9865133f-cea3-538c-ba26-54de8100727c</cbc:UUID>
-  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>14:40:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Release 1 under the framework contract: 40 of the 240 benches.</cbc:Note>
+  <cbc:Note>Release 1 under the framework contract: 40 benches and their installation, to be completed by Tuesday 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:DocumentType>Procurement file</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:Contract>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
   </cac:Contract>
   <cac:ProjectReference>
     <cbc:ID>PARKS-26</cbc:ID>
@@ -119,6 +115,9 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>Public works depot, Lumeport</cbc:Name>
+    </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-03-31</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -155,7 +154,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">19960.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -167,10 +166,22 @@
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">19960.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">20680.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -180,15 +191,6 @@
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-        <cac:PricingExchangeRate>
-          <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-          <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
-          <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-          <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-          <cbc:CalculationRate>0.01</cbc:CalculationRate>
-          <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-          <cbc:Date>2026-01-02</cbc:Date>
-        </cac:PricingExchangeRate>
       </cac:Price>
       <cac:Item>
         <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
@@ -211,6 +213,36 @@
           <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
           <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
         </cac:StandardItemIdentification>
+        <cac:CatalogueDocumentReference>
+          <cbc:ID>VI-CAT-26-0212</cbc:ID>
+        </cac:CatalogueDocumentReference>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">720.00</cbc:LineExtensionAmount>
+      <cac:Delivery>
+        <cac:RequestedDeliveryPeriod>
+          <cbc:StartDate>2026-04-01</cbc:StartDate>
+          <cbc:EndDate>2026-04-07</cbc:EndDate>
+        </cac:RequestedDeliveryPeriod>
+      </cac:Delivery>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description languageID="qau">Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.</cbc:Description>
+        <cbc:Description languageID="en-XB">Assembly of one bench and its anchoring in the ground with the supplied anchors.</cbc:Description>
+        <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
+        <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
+        <cbc:Name languageID="en-XB">Installation of a park bench</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-INST-B</cbc:ID>
+        </cac:SellersItemIdentification>
         <cac:CatalogueDocumentReference>
           <cbc:ID>VI-CAT-26-0212</cbc:ID>
         </cac:CatalogueDocumentReference>

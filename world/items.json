@@ -48,6 +48,14 @@
      "currency": "XUF",
      "type": "DST",
      "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays."
+    },
+    "2-xb": {
+     "amount": 499,
+     "currency": "XBL",
+     "type": "CON",
+     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench (D14, D28 point 10, tender/25#F17).",
+     "contract_currency": true,
+     "delivered": "DAP"
     }
    },
    "sellers_id": "VI-B180",
@@ -341,6 +349,320 @@
      "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     }
    ]
+  },
+  {
+   "id": "bench-serra-g",
+   "seller": "5-xu",
+   "name": "Park bench Serra 180",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 49900,
+    "currency": "XUF",
+    "list": "VI-PL-2026"
+   },
+   "sellers_id": "VI-B180",
+   "standard_id": "KXU10014B180",
+   "hs": "940179",
+   "cpc": "38111",
+   "origin": "XU",
+   "description": "Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.",
+   "dimensions_mm": [
+    1800,
+    620,
+    780
+   ],
+   "net_kg": 44.1,
+   "gross_kg": 47.0,
+   "package": {
+    "type": "PX",
+    "per_package": 4
+   },
+   "components": [
+    {
+     "item": "slat-1800",
+     "qty": 5
+    },
+    {
+     "item": "film-pe",
+     "qty": 0.1
+    }
+   ],
+   "brand": "Valdara",
+   "model": "Serra 180",
+   "keywords": [
+    "park bench",
+    "street furniture"
+   ],
+   "warranty": "Five years on the frame against corrosion.",
+   "spec_doc": "VI-DS-B180",
+   "national_tariff": "94017910",
+   "properties": [
+    [
+     "Frame material",
+     "Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated"
+    ],
+    [
+     "Slat wood",
+     "Thermally modified ash"
+    ],
+    [
+     "Seats",
+     "3"
+    ],
+    {
+     "id": "COL",
+     "name": "Frame colour",
+     "list": [
+      "Ferro grey",
+      "Moss green"
+     ],
+     "importance": "OPTIONAL",
+     "group": [
+      "APP",
+      "Appearance",
+      "OPTIONAL"
+     ],
+     "why": "The colour of the frame, one of the colours it is offered in."
+    },
+    {
+     "id": "LOAD",
+     "name": "Load capacity",
+     "name_code": "LOAD",
+     "test": "Static load on the seat for one hour, three seats loaded evenly, no lasting deformation",
+     "value_qty": [
+      "450",
+      "KGM"
+     ],
+     "qualifier": [
+      "Distributed over the seat"
+     ],
+     "importance": "MANDATORY",
+     "group": [
+      "SAF",
+      "Safety",
+      "MANDATORY"
+     ],
+     "standard": [
+      "UR-SF-0450",
+      "SF",
+      "31-xu"
+     ]
+    }
+   ],
+   "quantity_properties": [],
+   "dimensions": [
+    [
+     "LENGTH",
+     "1800",
+     "MMT",
+     "Over the slats, from slat end to slat end"
+    ],
+    [
+     "LENGTH",
+     "1660",
+     "MMT",
+     "Over the armrests, between the outer edges of the armrest pads"
+    ],
+    [
+     "DEPTH",
+     "620",
+     "MMT"
+    ],
+    [
+     "HEIGHT",
+     "780",
+     "MMT",
+     "Seat back at its highest point"
+    ],
+    [
+     "SEATHEIGHT",
+     "450",
+     "MMT",
+     "Above the ground when anchored",
+     "440",
+     "460"
+    ]
+   ],
+   "lot_prefix": "VI-LOT-26",
+   "circularity": {
+    "repairability": "8",
+    "repairability_system": "REPAIR10",
+    "maintenance": "YEARLY",
+    "maintenance_description": "Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.",
+    "resources": [
+     [
+      "IRON",
+      "22",
+      "KGM",
+      "Ductile iron made from Serravona ore in Urvania, as poured for the two side frames less the gates remelted"
+     ],
+     [
+      "HARDWOOD",
+      "21.2",
+      "KGM",
+      "Thermally modified ash slats from Upland State, Bayvarra"
+     ]
+    ],
+    "product_doc": "VI-RM-B180",
+    "waste": [
+     "PACKAGING",
+     "The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back",
+     "3.3",
+     "KGM"
+    ]
+   },
+   "additional_info": "Supplied with four ground anchors and the bolts to fix them.",
+   "variant": {
+    "what": "frame colour",
+    "extended": "GRN",
+    "attribute": [
+     "COLOUR",
+     "GRN",
+     "Frame in moss green, RAL 6005"
+    ],
+    "position": "FRM",
+    "why": "The special colour the public works department ordered for the harbour park, at 5 lume a bench (D28 point 8, O12)."
+   },
+   "barcode": "Code128",
+   "origin_criterion": "S",
+   "parcels": [
+    {
+     "no": 1,
+     "type": "CT",
+     "name": "Frame carton",
+     "contents": "one side frame",
+     "mm": [
+      790,
+      680,
+      100
+     ],
+     "gross_kg": 12.2,
+     "lift": 1,
+     "material": "Corrugated cardboard, tray and lid"
+    },
+    {
+     "no": 2,
+     "type": "CT",
+     "name": "Frame carton with the bolt set",
+     "contents": "the other side frame and the bag of 20 stainless bolts with nuts and washers",
+     "mm": [
+      790,
+      680,
+      100
+     ],
+     "gross_kg": 13.0,
+     "lift": 1,
+     "material": "Corrugated cardboard, tray and lid"
+    },
+    {
+     "no": 3,
+     "type": "BE",
+     "name": "Slat bundle",
+     "contents": "five slats, three and two, with edge protectors and end caps, strapped",
+     "mm": [
+      1810,
+      295,
+      100
+     ],
+     "gross_kg": 21.8,
+     "lift": 2,
+     "material": "Polyester straps, cardboard edge protectors and end caps, PE film"
+    }
+   ],
+   "pallet": {
+    "mm": [
+     1850,
+     700,
+     745
+    ],
+    "tare_kg": 28.2,
+    "stack": 2,
+    "what": "Four-way block pallet of heat-treated softwood, 1850 x 700 mm, with a slip sheet, a top cap and stretch film",
+    "pallet_kg": 26.2,
+    "extra_kg": 2.0
+   },
+   "parts": [
+    {
+     "name": "side frame",
+     "n": 2,
+     "mm": [
+      730,
+      620,
+      70
+     ],
+     "kg": 11.1
+    },
+    {
+     "name": "slat",
+     "n": 5,
+     "mm": [
+      1800,
+      95,
+      45
+     ],
+     "kg": 4.24
+    },
+    {
+     "name": "bolt set",
+     "n": 1,
+     "kg": 0.77
+    }
+   ],
+   "spare_parts": [
+    {
+     "item": "bench-casting",
+     "why": "A spare side frame is one frame carton, parcel 1 of the bench (D20)."
+    }
+   ],
+   "emissions": [
+    {
+     "type": "CO2E",
+     "value": "26",
+     "unit": "KGM",
+     "standard": "Greenhouse Gas Protocol Product Standard",
+     "stage": "SOURCING",
+     "stage_desc": "Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.",
+     "method": {
+      "code": "CALCULATED",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "doc": "VI-LCA-2025"
+     },
+     "period": [
+      "2025-01-01",
+      "2025-12-31"
+     ],
+     "description": "The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+    },
+    {
+     "type": "CO2E",
+     "value": "43",
+     "unit": "KGM",
+     "standard": "Greenhouse Gas Protocol Product Standard",
+     "stage": "MANUFACTURING",
+     "stage_desc": "Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace, casting in its foundry, galvanising, powder coating and packing.",
+     "method": {
+      "code": "CALCULATED",
+      "source": "Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc",
+      "doc": "VI-LCA-2025"
+     },
+     "period": [
+      "2025-01-01",
+      "2025-12-31"
+     ],
+     "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
+    }
+   ],
+   "buyer_prices": {
+    "2-xb": {
+     "amount": 499,
+     "currency": "XBL",
+     "type": "CON",
+     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench (D14, D28 point 10, tender/25#F17).",
+     "contract_currency": true,
+     "delivered": "DAP"
+    }
+   }
   },
   {
    "id": "bench-casting",
@@ -1689,8 +2011,17 @@
     "currency": "XUF"
    },
    "sellers_id": "VI-INST-B",
-   "description": "Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.",
-   "purchase": "services"
+   "description": "Assembly of one bench and its anchoring in the ground with the supplied anchors.",
+   "purchase": "services",
+   "buyer_prices": {
+    "2-xb": {
+     "amount": 18,
+     "currency": "XBL",
+     "type": "CON",
+     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded: 18 lume an installation, the list price of 1800 ferra at the parity (D14, D28 point 10, tender/25#F17).",
+     "contract_currency": true
+    }
+   }
   },
   {
    "id": "battery-pack",
@@ -2215,13 +2546,17 @@
     "lot": "VI-LOT-260327",
     "made": "2026-03-27",
     "qty": 40,
+    "frame_serials": [
+     1611,
+     1690
+    ],
     "shipped": [
      [
       "tender",
       "2026-03-30"
      ]
     ],
-    "why": "The first release of the public works department's contract, in moss green (D28).",
+    "why": "The first release of the public works department's contract, in moss green (D28); the contract requires serial numbers, so its 80 side frames carry theirs, cast on the lot's day like every frame of a lot (D21, tender/29#F12).",
     "coating": "ZN-26-062"
    },
    {

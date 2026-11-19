@@ -8,16 +8,15 @@
   <cbc:UUID>24e1d166-df64-5739-a3d9-ff76dde6a054</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
   <cbc:IssueTime>09:28:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-04-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
+  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:TaxPointDate>2026-03-31</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
-  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0213</cbc:ID>
@@ -25,25 +24,12 @@
   <cac:DespatchDocumentReference>
     <cbc:ID>CL-DA-26-0216</cbc:ID>
   </cac:DespatchDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:DocumentType>Procurement file</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
   <cac:ContractDocumentReference>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:ProjectReference>
     <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
-  <cac:BuyerAssignedReference>
-    <cbc:BuyerReferenceCode>4.2.110-AP</cbc:BuyerReferenceCode>
-    <cbc:BuyerReference>Accounts payable, public works</cbc:BuyerReference>
-  </cac:BuyerAssignedReference>
-  <cac:Annotation>
-    <cbc:SubjectCode listID="urn:ubl-examples:world:codelist:AnnotationSubjectCode">CONTRACT</cbc:SubjectCode>
-    <cbc:Subject>Releases under the framework contract</cbc:Subject>
-    <cbc:AnnotationContent>First release: 40 benches; 200 remain.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>VI-SIG-26-0078</cbc:ID>
     <cbc:SignatureMethod>XAdES-BES</cbc:SignatureMethod>
@@ -168,30 +154,6 @@
           <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
-        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
-        <cac:RegistrationAddress>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:RegistrationAddress>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:CompanyID>
@@ -230,23 +192,6 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:TaxRepresentativeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Bayforth Forwarding</cbc:Name>
-    </cac:PartyName>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
-        <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
-        <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-  </cac:TaxRepresentativeParty>
   <cac:Delivery>
     <cbc:ActualDeliveryDate>2026-03-31</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
@@ -257,7 +202,6 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-04-30</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF21VIINV260222</cbc:InstructionNote>
@@ -305,17 +249,8 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XU-STD</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
-    <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XBL">417.60</cbc:SettlementDiscountAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.valdara.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-04-30</cbc:PaymentDueDate>
-    <cac:SettlementPeriod>
-      <cbc:StartDate>2026-03-31</cbc:StartDate>
-      <cbc:EndDate>2026-04-10</cbc:EndDate>
-    </cac:SettlementPeriod>
+    <cbc:Note>30 days after the release is accepted, as the framework contract says; late payment carries Urvania's statutory interest of 8 % a year.</cbc:Note>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
@@ -366,23 +301,11 @@
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">2088000</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XUF">2016000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
       <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
       <cac:TaxCategory>
@@ -396,29 +319,12 @@
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
-  <cac:WithholdingTaxTotal>
-    <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-        <cbc:Percent>10</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
-          <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
-          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:WithholdingTaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">20880.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">20880.00</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">20160.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">20160.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">200.00</cbc:ChargeTotalAmount>
-    <cbc:WithholdingTaxTotalAmount currencyID="XBL">72.00</cbc:WithholdingTaxTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20808.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">20160.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -428,18 +334,18 @@
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
-        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cbc:ExtendedID>GRN</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
-          <cbc:Description>Frame in Ferro grey</cbc:Description>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+          <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
@@ -461,54 +367,6 @@
     <cac:Price>
       <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-      <cac:PricingExchangeRate>
-        <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
-        <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:CalculationRate>0.01</cbc:CalculationRate>
-        <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-        <cbc:Date>2026-01-02</cbc:Date>
-      </cac:PricingExchangeRate>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">720.00</cbc:LineExtensionAmount>
-    <cac:WithholdingTaxTotal>
-      <cbc:TaxAmount currencyID="XBL">72.00</cbc:TaxAmount>
-    </cac:WithholdingTaxTotal>
-    <cac:Item>
-      <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
-      <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
-      <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
-      <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
-      <cac:SellersItemIdentification>
-        <cbc:ID>VI-INST-B</cbc:ID>
-      </cac:SellersItemIdentification>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
-        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-      <cac:PricingExchangeRate>
-        <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-        <cbc:SourceCurrencyBaseRate>1</cbc:SourceCurrencyBaseRate>
-        <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-        <cbc:TargetCurrencyBaseRate>1</cbc:TargetCurrencyBaseRate>
-        <cbc:CalculationRate>0.01</cbc:CalculationRate>
-        <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-        <cbc:Date>2026-01-02</cbc:Date>
-      </cac:PricingExchangeRate>
     </cac:Price>
   </cac:InvoiceLine>
 </Invoice>

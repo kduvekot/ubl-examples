@@ -24,20 +24,16 @@ The manufacturer accepts the change and confirms the charge.
   The manufacturer's sales order for the call-off, given in its answer: the seller's number appears first in the seller's own document (tender/26#F4).
 - `UUID` = **f49b1a90-ec03-58ab-b40d-fe1765db668c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-25**  
-  The manufacturer confirms the next day.
+- `IssueDate` = **2026-03-26**  
+  Thursday 26 March, the day after the change.
 - `IssueTime` = **16:15:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderResponseCode` = **AP** (listID `UN/EDIFACT EDED 4343`)  
   UN/EDIFACT 4343 code AP: accepted, with the change. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
-- `Note` = **Accepted: moss green, at the quoted charge.**  
+- `Note` = **Accepted: moss green, at the quoted charge; delivery on 31 March, installation by Saltmere Engineering from 1 April, completed by 7 April.**  
   The answer.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the department's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PricingCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The contract prices are in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The manufacturer accounts its value added tax in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 
 ### Order Reference
 
@@ -179,6 +175,15 @@ Inside `BuyerCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:6250397184** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Delivery
+
+Inside `Delivery`:
+
+- `PromisedDeliveryPeriod/StartDate` = **2026-03-31**  
+  The benches on Tuesday 31 March (tender/28#F6).
+- `PromisedDeliveryPeriod/EndDate` = **2026-03-31**  
+  The same day.
+
 ### Allowance Charge
 
 Inside `AllowanceCharge`:
@@ -192,61 +197,16 @@ Inside `AllowanceCharge`:
 - `Amount` = **200.00** (currencyID `XBL`)  
   As quoted.
 
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-03-25**  
-  The rate of the document's date.
-
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency of the contract prices. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the order and the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `CalculationRate` = **0.01**  
-  The world's reference rate fixed in the contract.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-01-02**  
-  The rate of the first working day of the year, as the contract says.
-
-### Payment Exchange Rate
-
-Inside `PaymentExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency the manufacturer is paid in. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-03-25**  
-  The rate of the document's date.
-
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **19960.00** (currencyID `XBL`)  
-  The benches.
+- `LineExtensionAmount` = **20680.00** (currencyID `XBL`)  
+  The benches and their installation.
 - `ChargeTotalAmount` = **200.00** (currencyID `XBL`)  
   The colour.
-- `PayableAmount` = **20160.00** (currencyID `XBL`)  
-  As it will be invoiced, with the installation separately.
+- `PayableAmount` = **20880.00** (currencyID `XBL`)  
+  The release as accepted, installation included (tender/28#F2).
 
 ## The document
 
@@ -260,13 +220,11 @@ Inside `LegalMonetaryTotal`:
   <cbc:ID>VI-OR-26-0215</cbc:ID>
   <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
   <cbc:UUID>f49b1a90-ec03-58ab-b40d-fe1765db668c</cbc:UUID>
-  <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>16:15:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
-  <cbc:Note>Accepted: moss green, at the quoted charge.</cbc:Note>
+  <cbc:Note>Accepted: moss green, at the quoted charge; delivery on 31 March, installation by Saltmere Engineering from 1 April, completed by 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cac:OrderReference>
     <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   </cac:OrderReference>
@@ -371,37 +329,22 @@ Inside `LegalMonetaryTotal`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:PromisedDeliveryPeriod>
+      <cbc:StartDate>2026-03-31</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+    </cac:PromisedDeliveryPeriod>
+  </cac:Delivery>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">200.00</cbc:Amount>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-25</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-25</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">200.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20160.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">20880.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
 </OrderResponse>
 ```

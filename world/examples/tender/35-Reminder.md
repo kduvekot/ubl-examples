@@ -2,7 +2,7 @@
 
 *Example 35 of the flow "A public tender (Bayvarra)" · [Reminder in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA)*
 
-The invoice is past due; the manufacturer reminds the department of the balance and charges Urvania's statutory interest.
+Both invoices of the release are past due; the manufacturer reminds the department of the balance and charges Urvania's statutory interest from the day after the due date.
 
 [The XML file](35-Reminder.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,36 +18,32 @@ The invoice is past due; the manufacturer reminds the department of the balance 
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-DOC-26-0225**  
+- `ID` = **VI-DOC-26-0226**  
   The manufacturer's reminder number.
 - `UUID` = **7f55c2fd-1414-5794-ab15-9ef94a32da95**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-05**  
-  Five days after the due date.
+- `IssueDate` = **2026-05-20**  
+  Wednesday 20 May, a week after the due date (D28 point 9).
 - `IssueTime` = **15:23:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ReminderTypeCode` = **PAYMENT** (listID `urn:ubl-examples:world:codelist:ReminderTypeCode`)  
   A reminder of a payment overdue. The code is from the Trade Accord's reminder type list: PAYMENT = Payment reminder.
 - `ReminderSequenceNumeric` = **1**  
   The first reminder.
-- `Note` = **The balance of the first release is overdue; Urvania's statutory interest applies. The balance is net of the 69.48 lume the department withheld and paid to the state (receipt XB-WHT-26-04-1187).**  
-  What it says, and why the withholding is not reminded: it is already deducted (tender/35#F4).
+- `Note` = **Both invoices of the first release fell due on 13 May, 30 days after the acceptance, and are unpaid; Urvania's statutory interest of 8 % a year applies from 14 May. The installation invoice is reminded net of the 10 % the department withholds.**  
+  What it says, under the contract's payment term (D22, tender/35#F1).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The lume, the currency of the invoice; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The manufacturer accounts its value added tax in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PricingCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The contract prices are in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+  The lume, the currency of the invoices; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `PaymentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Payment in ferra, as for the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
+  Valdara is paid in ferra, into its account in Urvania, as the invoices ask (tender/35#F8). The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 
 ### Reminder Period
 
 Inside `ReminderPeriod`:
 
-- `StartDate` = **2026-05-01**  
+- `StartDate` = **2026-05-14**  
   Overdue from the day after the due date
-- `EndDate` = **2026-05-05**  
+- `EndDate` = **2026-05-20**  
   to the reminder.
 
 ### Signature
@@ -274,7 +270,7 @@ Inside `PaymentTerms`:
 
 - `Note` = **Please pay within seven days.**  
   What is asked.
-- `PaymentDueDate` = **2026-05-12**  
+- `PaymentDueDate` = **2026-05-27**  
   A week after the reminder.
 
 ### Allowance Charge
@@ -285,44 +281,12 @@ Inside `AllowanceCharge`:
   A charge.
 - `AllowanceChargeReasonCode` = **48** (listID `UN/EDIFACT EDED 5189`)  
   UN/EDIFACT 7161 has no code for interest, so the code is from UN/EDIFACT 5189, with that list's listID. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 48 = Interest on arrears.
-- `AllowanceChargeReason` = **Statutory interest**  
-  Urvania's interest on late payment.
-- `MultiplierFactorNumeric` = **0.08**  
-  8 % a year.
-- `Amount` = **22.23** (currencyID `XBL`)  
-  5 days at 8 % a year on the balance.
-- `BaseAmount` = **20286.32** (currencyID `XBL`)  
+- `AllowanceChargeReason` = **Statutory interest, 8 % a year for 7 days**  
+  Urvania's interest on late payment, with the time it runs: a yearly rate is no factor of the amount (tender/35#F2).
+- `Amount` = **31.13** (currencyID `XBL`)  
+  7 days at 8 % a year on the balance.
+- `BaseAmount` = **20287.80** (currencyID `XBL`)  
   The overdue balance.
-
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-05**  
-  The rate of the document's date.
-
-### Pricing Exchange Rate
-
-Inside `PricingExchangeRate`:
-
-- `SourceCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The currency of the contract prices. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `TargetCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The currency of the order and the invoice. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `CalculationRate` = **0.01**  
-  The world's reference rate fixed in the contract.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Ferra times the rate gives lume. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-01-02**  
-  The rate of the first working day of the year, as the contract says.
 
 ### Payment Exchange Rate
 
@@ -336,18 +300,18 @@ Inside `PaymentExchangeRate`:
   1 lume = 100 ferra, the reference rate.
 - `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-05-05**  
+- `Date` = **2026-05-20**  
   The rate of the document's date.
 
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **20286.32** (currencyID `XBL`)  
+- `LineExtensionAmount` = **20287.80** (currencyID `XBL`)  
   The overdue balance.
-- `ChargeTotalAmount` = **22.23** (currencyID `XBL`)  
+- `ChargeTotalAmount` = **31.13** (currencyID `XBL`)  
   The interest.
-- `PayableAmount` = **20308.55** (currencyID `XBL`)  
+- `PayableAmount` = **20318.93** (currencyID `XBL`)  
   Now due.
 
 ### Reminder Line
@@ -355,35 +319,35 @@ Inside `LegalMonetaryTotal`:
 Inside `ReminderLine`:
 
 - `ID` = **1**  
-  The invoice.
-- `Note` = **The release's invoice, due on 2026-04-30.**  
+  The benches' invoice.
+- `Note` = **The invoice of the benches, due on 2026-05-13.**  
   What it is.
 - `UUID` = **3cba77dd-c718-5156-b7bd-a00f59a0c5f2**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `DebitLineAmount` = **20808.00** (currencyID `XBL`)  
+- `DebitLineAmount` = **20160.00** (currencyID `XBL`)  
   Its payable amount.
 - `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0222**  
   The invoice.
 - `ID` = **2**  
-  The credit note.
-- `Note` = **The credit for the damaged bench.**  
+  The installation invoice.
+- `Note` = **The invoice of the installation, due on 2026-05-13, net of the withholding.**  
   What it is.
 - `UUID` = **5a60d720-2f6a-5abd-8b8e-3e21e96c35c8**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `CreditLineAmount` = **515.20** (currencyID `XBL`)  
-  Deducted.
-- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0223**  
-  The credit note.
+- `DebitLineAmount` = **631.80** (currencyID `XBL`)  
+  Its payable amount.
+- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0225**  
+  The invoice.
 - `ID` = **3**  
-  The penalty.
-- `Note` = **The department's penalty, set off.**  
+  The credit note.
+- `Note` = **The credit for the damaged bench.**  
   What it is.
 - `UUID` = **10ce0e0b-79f7-51e1-b7c4-a044809f89e6**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `CreditLineAmount` = **6.48** (currencyID `XBL`)  
+- `CreditLineAmount` = **504.00** (currencyID `XBL`)  
   Deducted.
-- `BillingReference/DebitNoteDocumentReference/ID` = **LPWD-DOC-26-0224**  
-  The debit note.
+- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0224**  
+  The credit note.
 
 ## The document
 
@@ -394,20 +358,18 @@ Inside `ReminderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0225</cbc:ID>
+  <cbc:ID>VI-DOC-26-0226</cbc:ID>
   <cbc:UUID>7f55c2fd-1414-5794-ab15-9ef94a32da95</cbc:UUID>
-  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cbc:IssueTime>15:23:00-01:00</cbc:IssueTime>
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
-  <cbc:Note>The balance of the first release is overdue; Urvania's statutory interest applies. The balance is net of the 69.48 lume the department withheld and paid to the state (receipt XB-WHT-26-04-1187).</cbc:Note>
+  <cbc:Note>Both invoices of the first release fell due on 13 May, 30 days after the acceptance, and are unpaid; Urvania's statutory interest of 8 % a year applies from 14 May. The installation invoice is reminded net of the 10 % the department withholds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cac:ReminderPeriod>
-    <cbc:StartDate>2026-05-01</cbc:StartDate>
-    <cbc:EndDate>2026-05-05</cbc:EndDate>
+    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:EndDate>2026-05-20</cbc:EndDate>
   </cac:ReminderPeriod>
   <cac:Signature>
     <cbc:ID>VI-SIG-REM</cbc:ID>
@@ -594,47 +556,32 @@ Inside `ReminderLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>Please pay within seven days.</cbc:Note>
-    <cbc:PaymentDueDate>2026-05-12</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-27</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">48</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Statutory interest</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.08</cbc:MultiplierFactorNumeric>
-    <cbc:Amount currencyID="XBL">22.23</cbc:Amount>
-    <cbc:BaseAmount currencyID="XBL">20286.32</cbc:BaseAmount>
+    <cbc:AllowanceChargeReason>Statutory interest, 8 % a year for 7 days</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">31.13</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">20287.80</cbc:BaseAmount>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-05</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>100</cbc:CalculationRate>
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-05</cbc:Date>
+    <cbc:Date>2026-05-20</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">20286.32</cbc:LineExtensionAmount>
-    <cbc:ChargeTotalAmount currencyID="XBL">22.23</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20308.55</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20287.80</cbc:LineExtensionAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">31.13</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">20318.93</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>The release's invoice, due on 2026-04-30.</cbc:Note>
+    <cbc:Note>The invoice of the benches, due on 2026-05-13.</cbc:Note>
     <cbc:UUID>3cba77dd-c718-5156-b7bd-a00f59a0c5f2</cbc:UUID>
-    <cbc:DebitLineAmount currencyID="XBL">20808.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">20160.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0222</cbc:ID>
@@ -643,24 +590,24 @@ Inside `ReminderLine`:
   </cac:ReminderLine>
   <cac:ReminderLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>The credit for the damaged bench.</cbc:Note>
+    <cbc:Note>The invoice of the installation, due on 2026-05-13, net of the withholding.</cbc:Note>
     <cbc:UUID>5a60d720-2f6a-5abd-8b8e-3e21e96c35c8</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">515.20</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">631.80</cbc:DebitLineAmount>
     <cac:BillingReference>
-      <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0223</cbc:ID>
-      </cac:CreditNoteDocumentReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>VI-INV-26-0225</cbc:ID>
+      </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
   <cac:ReminderLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>The department's penalty, set off.</cbc:Note>
+    <cbc:Note>The credit for the damaged bench.</cbc:Note>
     <cbc:UUID>10ce0e0b-79f7-51e1-b7c4-a044809f89e6</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">6.48</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">504.00</cbc:CreditLineAmount>
     <cac:BillingReference>
-      <cac:DebitNoteDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0224</cbc:ID>
-      </cac:DebitNoteDocumentReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>VI-CN-26-0224</cbc:ID>
+      </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
 </Reminder>

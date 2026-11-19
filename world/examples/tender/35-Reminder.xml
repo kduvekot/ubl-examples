@@ -4,20 +4,18 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0225</cbc:ID>
+  <cbc:ID>VI-DOC-26-0226</cbc:ID>
   <cbc:UUID>7f55c2fd-1414-5794-ab15-9ef94a32da95</cbc:UUID>
-  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cbc:IssueTime>15:23:00-01:00</cbc:IssueTime>
   <cbc:ReminderTypeCode listID="urn:ubl-examples:world:codelist:ReminderTypeCode">PAYMENT</cbc:ReminderTypeCode>
   <cbc:ReminderSequenceNumeric>1</cbc:ReminderSequenceNumeric>
-  <cbc:Note>The balance of the first release is overdue; Urvania's statutory interest applies. The balance is net of the 69.48 lume the department withheld and paid to the state (receipt XB-WHT-26-04-1187).</cbc:Note>
+  <cbc:Note>Both invoices of the first release fell due on 13 May, 30 days after the acceptance, and are unpaid; Urvania's statutory interest of 8 % a year applies from 14 May. The installation invoice is reminded net of the 10 % the department withholds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cac:ReminderPeriod>
-    <cbc:StartDate>2026-05-01</cbc:StartDate>
-    <cbc:EndDate>2026-05-05</cbc:EndDate>
+    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:EndDate>2026-05-20</cbc:EndDate>
   </cac:ReminderPeriod>
   <cac:Signature>
     <cbc:ID>VI-SIG-REM</cbc:ID>
@@ -204,47 +202,32 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>Please pay within seven days.</cbc:Note>
-    <cbc:PaymentDueDate>2026-05-12</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-27</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">48</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Statutory interest</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>0.08</cbc:MultiplierFactorNumeric>
-    <cbc:Amount currencyID="XBL">22.23</cbc:Amount>
-    <cbc:BaseAmount currencyID="XBL">20286.32</cbc:BaseAmount>
+    <cbc:AllowanceChargeReason>Statutory interest, 8 % a year for 7 days</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">31.13</cbc:Amount>
+    <cbc:BaseAmount currencyID="XBL">20287.80</cbc:BaseAmount>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-05</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
     <cbc:CalculationRate>100</cbc:CalculationRate>
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-05-05</cbc:Date>
+    <cbc:Date>2026-05-20</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">20286.32</cbc:LineExtensionAmount>
-    <cbc:ChargeTotalAmount currencyID="XBL">22.23</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20308.55</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20287.80</cbc:LineExtensionAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">31.13</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">20318.93</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:ReminderLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>The release's invoice, due on 2026-04-30.</cbc:Note>
+    <cbc:Note>The invoice of the benches, due on 2026-05-13.</cbc:Note>
     <cbc:UUID>3cba77dd-c718-5156-b7bd-a00f59a0c5f2</cbc:UUID>
-    <cbc:DebitLineAmount currencyID="XBL">20808.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">20160.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0222</cbc:ID>
@@ -253,24 +236,24 @@
   </cac:ReminderLine>
   <cac:ReminderLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>The credit for the damaged bench.</cbc:Note>
+    <cbc:Note>The invoice of the installation, due on 2026-05-13, net of the withholding.</cbc:Note>
     <cbc:UUID>5a60d720-2f6a-5abd-8b8e-3e21e96c35c8</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">515.20</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">631.80</cbc:DebitLineAmount>
     <cac:BillingReference>
-      <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0223</cbc:ID>
-      </cac:CreditNoteDocumentReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>VI-INV-26-0225</cbc:ID>
+      </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
   <cac:ReminderLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>The department's penalty, set off.</cbc:Note>
+    <cbc:Note>The credit for the damaged bench.</cbc:Note>
     <cbc:UUID>10ce0e0b-79f7-51e1-b7c4-a044809f89e6</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">6.48</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">504.00</cbc:CreditLineAmount>
     <cac:BillingReference>
-      <cac:DebitNoteDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0224</cbc:ID>
-      </cac:DebitNoteDocumentReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>VI-CN-26-0224</cbc:ID>
+      </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
 </Reminder>

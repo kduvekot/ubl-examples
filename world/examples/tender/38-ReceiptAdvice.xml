@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>LPWD-RA-26-0223</cbc:ID>
+  <cbc:UUID>7b7a0126-4c5e-5e7b-b42d-9f93027b3319</cbc:UUID>
+  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
+  <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
+  <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">PARTIAL</cbc:DeliveryAcceptanceCode>
+  <cbc:Note>Release 1 accepted: 39 benches installed and accepted; one bench, damaged during installation on 2 April, rejected, with no replacement in this release. The 30 days of payment run from today.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
+  </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>CL-DA-26-0216</cbc:ID>
+  </cac:DespatchDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
+    <cbc:DocumentType>Framework contract</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>PWD-SIG-RA</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:DeliveryCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Civic Square</cbc:StreetName>
+        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38517</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Parks depot</cbc:Name>
+        <cbc:JobTitle>Depot supervisor</cbc:JobTitle>
+        <cbc:Department>Parks maintenance</cbc:Department>
+        <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
+        <cbc:ElectronicMail>parksdepot@publicworks-lumeport.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:6250397184</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DeliveryCustomerParty>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
+        <cbc:BuildingNumber>17</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Dispatch office</cbc:Name>
+        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
+        <cbc:ElectronicMail>dispatch@valdara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
+  <cac:ReceiptLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ReceivedQuantity unitCode="EA">40</cbc:ReceivedQuantity>
+    <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
+    <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
+    <cbc:RejectReason>Side frame cracked while the bench was anchored on 2 April.</cbc:RejectReason>
+    <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
+    <cbc:ReceivedDate>2026-03-31</cbc:ReceivedDate>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:DespatchLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:DocumentReference>
+        <cbc:ID>CL-DA-26-0216</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+    </cac:DespatchLineReference>
+    <cac:Item>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
+      <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+        <cbc:ExtendedID>GRN</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+          <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+        <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+        <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:ReceiptLine>
+  <cac:ReceiptLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:ReceivedQuantity unitCode="EA">39</cbc:ReceivedQuantity>
+    <cbc:ReceivedDate>2026-04-10</cbc:ReceivedDate>
+    <cbc:TimingComplaintCode listID="urn:ubl-examples:world:codelist:TimingComplaintCode">LATE</cbc:TimingComplaintCode>
+    <cbc:TimingComplaint>Completed on 10 April, three working days after 7 April; one day is waived because the department delayed access to one site.</cbc:TimingComplaint>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description languageID="qau">Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.</cbc:Description>
+      <cbc:Description languageID="en-XB">Assembly of one bench and its anchoring in the ground with the supplied anchors.</cbc:Description>
+      <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
+      <cbc:Name languageID="en-XB">Installation of a park bench</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>VI-INST-B</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+  </cac:ReceiptLine>
+</ReceiptAdvice>

@@ -28,7 +28,7 @@ The manufacturer's 3PL despatches the call-off and names the carrier.
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
-- `Note` = **Please check the goods on arrival and report any damage on the consignment note.**  
+- `Note` = **Please check the goods on arrival and report any damage in your receipt advice.**  
   What the receiver should do; the note names the transport document the flow uses (worklist C30).
 - `AccountingCostCode` = **4.2.110**  
   The department's cost centre.
@@ -244,6 +244,8 @@ Inside `Shipment`:
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **2162** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
+- `Consignment/TotalTransportHandlingUnitQuantity` = **10** (unitCode `EA`)  
+  Ten pallets of 4 benches, each with its benches' anchor sets (tender/29#F10, D20).
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
@@ -305,77 +307,61 @@ Inside `DespatchLine`:
   The line as despatched.
 - `DeliveredQuantity` = **40** (unitCode `EA`)  
   What was despatched.
-- `OutstandingQuantity` = **200** (unitCode `EA`)  
-  Still to come under the contract.
-- `OutstandingReason` = **Later releases under the framework contract.**  
-  Why.
 - `AccountingCostCode` = **4.2.110**  
   The department's programme.
 - `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
   The cost centre in words.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
-- `DocumentReference/ID` = **PWD-2026-PARKS**  
-  The contract.
-- `DocumentReference/DocumentType` = **Procurement file**  
-  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
-  The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
-  The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+- `DocumentReference/ID` = **PWD-CONTRACT-2026-PARKS**  
+  The contract the release is delivered under.
+- `DocumentReference/DocumentType` = **Framework contract**  
+  What it is.
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
-  The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
+  The item's name in Urvanian, the seller's language; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
-  The item's name in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+  The item's name in English, the working language between the countries; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ID` = **VI-B180**  
-  The seller's own item number; item bench-serra of Valdara Industries (world/items.json).
-- `Item/SellersItemIdentification/ExtendedID` = **GRY**  
+  The seller's own item number; item bench-serra-g of Valdara Industries (world/items.json).
+- `Item/SellersItemIdentification/ExtendedID` = **GRN**  
   The variant of the item: the frame colour, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: COLOUR = Colour. An identifier that holds a code names the code's list in its schemeID.
 - `Item/SellersItemIdentification/PhysicalAttribute/PositionCode` = **FRM** (listID `urn:ubl-examples:world:codelist:ItemPartPositionCode`)  
   The part of the item the attribute is on: the frame. The code is from the Trade Accord's item part position list: FRM = Frame.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRY** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
-  The variant's code for it. The code is from the Trade Accord's colour list: GRY = Grey.
-- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **GRN** (listID `urn:ubl-examples:world:codelist:ColourCode`)  
+  The variant's code for it. The code is from the Trade Accord's colour list: GRN = Green.
+- `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in moss green, RAL 6005**  
   The variant in words.
 - `Item/StandardItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
-  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra of Valdara Industries (world/items.json).
+  The item's number in its globally unique form under ISO/IEC 15459, which Valdara Industries gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Valdara Industries and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; item bench-serra-g of Valdara Industries (world/items.json).
 - `Item/StandardItemIdentification/BarcodeSymbologyID` = **Code128**  
   The barcode the number is printed in on the label: Code 128 carries letters and digits.
 - `Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
   The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
 - `Item/ItemInstance/ManufactureDate` = **2026-03-27**  
   The day the lot was produced.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Side frame serial numbers**  
+  The serial numbers the contract requires on the benches: each side frame carries its own, cast into it (tender/29#F12, D28).
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **VI-SF-01611 to VI-SF-01690, two a bench**  
+  The lot's 80 frames, in one unbroken range from Valdara's production record (D21).
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260327**  
   The production lot, from the maker's prefix and the production day; a recall names the lot.
-- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
-  A fact about this lot: the galvanising and powder-coating batch its frames went through.
-- `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-062**  
-  Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
 - `Shipment/ID` = **CL-SH-26-0217**  
   The shipment the line travels in.
 - `SubDespatchLine/ID` = **1.1**  
   The ground anchor sets that come with the benches.
-- `SubDespatchLine/DeliveredQuantity` = **36** (unitCode `SET`)  
-  36 of the 40 sets.
-- `SubDespatchLine/BackorderQuantity` = **4** (unitCode `SET`)  
-  Four sets follow.
-- `SubDespatchLine/BackorderReason` = **The galvanising of the last batch is late; the sets follow within a week, before the installers need them.**  
-  Why.
+- `SubDespatchLine/DeliveredQuantity` = **40** (unitCode `SET`)  
+  One set a bench, all forty: four ground anchors and four M12 bolts each, no loose bolts (D28, O10).
 - `SubDespatchLine/OrderLineReference/LineID` = **1**  
   Part of the bench line.
+- `SubDespatchLine/Item/Description` = **Four ground anchors and four M12 bolts.**  
+  What a set holds.
 - `SubDespatchLine/Item/Name` = **Ground anchor set**  
-  Included in the bench.
-- `SubDespatchLine/ID` = **1.2**  
-  The fixing bolts.
-- `SubDespatchLine/DeliveredQuantity` = **170** (unitCode `EA`)  
-  Four per bench, and ten more.
-- `SubDespatchLine/OversupplyQuantity` = **10** (unitCode `EA`)  
-  Ten bolts more than needed, as spares for the installers.
-- `SubDespatchLine/OrderLineReference/LineID` = **1**  
-  Part of the bench line.
-- `SubDespatchLine/Item/Name` = **Fixing bolt M12**  
   Included in the bench.
 
 ## The document
@@ -392,7 +378,7 @@ Inside `DespatchLine`:
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>17:37:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -556,6 +542,7 @@ Inside `DespatchLine`:
     <cac:Consignment>
       <cbc:ID>CL-CS-26-0218</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">2162</cbc:GrossWeightMeasure>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">10</cbc:TotalTransportHandlingUnitQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -605,30 +592,28 @@ Inside `DespatchLine`:
     <cbc:UUID>bf5c479c-ae74-54ad-8a20-aa2eeba424e0</cbc:UUID>
     <cbc:Note>Forty benches in moss green, RAL 6005, as the order change asked.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
-    <cbc:OutstandingQuantity unitCode="EA">200</cbc:OutstandingQuantity>
-    <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
     <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
     <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:DocumentReference>
-      <cbc:ID>PWD-2026-PARKS</cbc:ID>
-      <cbc:DocumentType>Procurement file</cbc:DocumentType>
+      <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
+      <cbc:DocumentType>Framework contract</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
-        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cbc:ExtendedID>GRN</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
-          <cbc:Description>Frame in Ferro grey</cbc:Description>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+          <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
@@ -638,12 +623,12 @@ Inside `DespatchLine`:
       </cac:StandardItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-03-27</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Side frame serial numbers</cbc:Name>
+          <cbc:Value>VI-SF-01611 to VI-SF-01690, two a bench</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:LotIdentification>
           <cbc:LotNumberID>VI-LOT-260327</cbc:LotNumberID>
-          <cac:AdditionalItemProperty>
-            <cbc:Name>Coating batch</cbc:Name>
-            <cbc:Value>ZN-26-062</cbc:Value>
-          </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
@@ -652,25 +637,13 @@ Inside `DespatchLine`:
     </cac:Shipment>
     <cac:SubDespatchLine>
       <cbc:ID>1.1</cbc:ID>
-      <cbc:DeliveredQuantity unitCode="SET">36</cbc:DeliveredQuantity>
-      <cbc:BackorderQuantity unitCode="SET">4</cbc:BackorderQuantity>
-      <cbc:BackorderReason>The galvanising of the last batch is late; the sets follow within a week, before the installers need them.</cbc:BackorderReason>
+      <cbc:DeliveredQuantity unitCode="SET">40</cbc:DeliveredQuantity>
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
       </cac:OrderLineReference>
       <cac:Item>
+        <cbc:Description>Four ground anchors and four M12 bolts.</cbc:Description>
         <cbc:Name>Ground anchor set</cbc:Name>
-      </cac:Item>
-    </cac:SubDespatchLine>
-    <cac:SubDespatchLine>
-      <cbc:ID>1.2</cbc:ID>
-      <cbc:DeliveredQuantity unitCode="EA">170</cbc:DeliveredQuantity>
-      <cbc:OversupplyQuantity unitCode="EA">10</cbc:OversupplyQuantity>
-      <cac:OrderLineReference>
-        <cbc:LineID>1</cbc:LineID>
-      </cac:OrderLineReference>
-      <cac:Item>
-        <cbc:Name>Fixing bolt M12</cbc:Name>
       </cac:Item>
     </cac:SubDespatchLine>
   </cac:DespatchLine>

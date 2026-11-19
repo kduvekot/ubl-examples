@@ -2,7 +2,7 @@
 
 *Example 36 of the flow "A public tender (Bayvarra)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
 
-The department pays the balance with the interest, less the credit and the penalty, and says what the payment settles.
+The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, and says what the payment settles.
 
 [The XML file](36-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,26 +18,26 @@ The department pays the balance with the interest, less the credit and the penal
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-RM-26-0226**  
+- `ID` = **LPWD-RM-26-0227**  
   The department's number.
 - `UUID` = **5f551f90-e2ee-5166-af7c-66a6bfd7dce8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-08**  
-  Paid three days after the reminder.
+- `IssueDate` = **2026-05-22**  
+  Friday 22 May, two days after the reminder, on a day both banking systems are open (D28 point 9).
 - `IssueTime` = **12:49:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Payment of the first release, with the interest.**  
-  What it is for.
+- `Note` = **Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.**  
+  The payment's date and the amount credited in the payee's currency, and what it settles (tender/36#F2, option b).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The lume, the currency of the documents settled; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalDebitAmount` = **20830.23** (currencyID `XBL`)  
-  The invoice and the interest.
-- `TotalCreditAmount` = **521.68** (currencyID `XBL`)  
+  The lume, the currency of the documents settled and of the payment; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `TotalDebitAmount` = **20822.93** (currencyID `XBL`)  
+  The invoices and the interest.
+- `TotalCreditAmount` = **511.02** (currencyID `XBL`)  
   The credit note and the penalty.
-- `TotalPaymentAmount` = **20308.55** (currencyID `XBL`)  
-  Transferred, in ferra at 100 to the lume.
-- `LineCountNumeric` = **4**  
-  Four documents settled.
+- `TotalPaymentAmount` = **20311.91** (currencyID `XBL`)  
+  Transferred, in lume.
+- `LineCountNumeric` = **5**  
+  Five items settled.
 
 ### Additional Document Reference
 
@@ -260,35 +260,41 @@ Inside `PaymentMeans`:
 Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
-  The invoice.
-- `DebitLineAmount` = **20808.00** (currencyID `XBL`)  
+  The benches' invoice.
+- `DebitLineAmount` = **20160.00** (currencyID `XBL`)  
   Its payable amount.
 - `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0222**  
   The invoice.
 - `ID` = **2**  
-  The credit note.
-- `CreditLineAmount` = **515.20** (currencyID `XBL`)  
-  Deducted.
-- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0223**  
-  The credit note.
+  The installation invoice.
+- `DebitLineAmount` = **631.80** (currencyID `XBL`)  
+  Its payable amount, net of the withholding.
+- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0225**  
+  The invoice.
 - `ID` = **3**  
-  The penalty.
-- `CreditLineAmount` = **6.48** (currencyID `XBL`)  
+  The credit note.
+- `CreditLineAmount` = **504.00** (currencyID `XBL`)  
   Deducted.
-- `BillingReference/DebitNoteDocumentReference/ID` = **LPWD-DOC-26-0224**  
-  The debit note.
+- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0224**  
+  The credit note.
 - `ID` = **4**  
+  The penalty.
+- `Note` = **Penalty for late completion under clause PEN-1 of the contract: 2 working days at 0.5 % of the installation price of 702.00 lume (three days late, one waived); deducted from the payment.**  
+  What is deducted, and why: the department's claim under the contract, not a document of its own (D28 point 9, D9).
+- `CreditLineAmount` = **7.02** (currencyID `XBL`)  
+  Deducted.
+- `DocumentReference/ID` = **PWD-CONTRACT-2026-PARKS**  
+  The contract with the penalty clause.
+- `DocumentReference/DocumentType` = **Framework contract**  
+  What it is.
+- `ID` = **5**  
   The interest.
-- `DebitLineAmount` = **22.23** (currencyID `XBL`)  
-  The interest charged.
-- `BillingReference/ReminderDocumentReference/ID` = **VI-DOC-26-0225**  
+- `DebitLineAmount` = **31.13** (currencyID `XBL`)  
+  The interest charged: the contract's payment term carries the statutory interest (tender/36#F6).
+- `BillingReference/ReminderDocumentReference/ID` = **VI-DOC-26-0226**  
   The reminder.
-- `BillingReference/ReminderDocumentReference/IssueDate` = **2026-05-05**  
+- `BillingReference/ReminderDocumentReference/IssueDate` = **2026-05-20**  
   Its date.
-- `BillingReference/AdditionalDocumentReference/ID` = **PWD-PAY-AUTH-26-0412**  
-  The authorisation that covers the interest.
-- `BillingReference/AdditionalDocumentReference/DocumentType` = **Payment authorisation**  
-  The kind of document referred to, the department's payment authorisation, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
 ## The document
 
@@ -299,16 +305,16 @@ Inside `RemittanceAdviceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-RM-26-0226</cbc:ID>
+  <cbc:ID>LPWD-RM-26-0227</cbc:ID>
   <cbc:UUID>5f551f90-e2ee-5166-af7c-66a6bfd7dce8</cbc:UUID>
-  <cbc:IssueDate>2026-05-08</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>12:49:00-01:00</cbc:IssueTime>
-  <cbc:Note>Payment of the first release, with the interest.</cbc:Note>
+  <cbc:Note>Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">20830.23</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">521.68</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">20308.55</cbc:TotalPaymentAmount>
-  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
+  <cbc:TotalDebitAmount currencyID="XBL">20822.93</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">511.02</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">20311.91</cbc:TotalPaymentAmount>
+  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
     <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
@@ -481,7 +487,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">20808.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">20160.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
         <cbc:ID>VI-INV-26-0222</cbc:ID>
@@ -490,34 +496,39 @@ Inside `RemittanceAdviceLine`:
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:CreditLineAmount currencyID="XBL">515.20</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">631.80</cbc:DebitLineAmount>
     <cac:BillingReference>
-      <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0223</cbc:ID>
-      </cac:CreditNoteDocumentReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>VI-INV-26-0225</cbc:ID>
+      </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:CreditLineAmount currencyID="XBL">6.48</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">504.00</cbc:CreditLineAmount>
     <cac:BillingReference>
-      <cac:DebitNoteDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0224</cbc:ID>
-      </cac:DebitNoteDocumentReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>VI-CN-26-0224</cbc:ID>
+      </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>4</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">22.23</cbc:DebitLineAmount>
+    <cbc:Note>Penalty for late completion under clause PEN-1 of the contract: 2 working days at 0.5 % of the installation price of 702.00 lume (three days late, one waived); deducted from the payment.</cbc:Note>
+    <cbc:CreditLineAmount currencyID="XBL">7.02</cbc:CreditLineAmount>
+    <cac:DocumentReference>
+      <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
+      <cbc:DocumentType>Framework contract</cbc:DocumentType>
+    </cac:DocumentReference>
+  </cac:RemittanceAdviceLine>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>5</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XBL">31.13</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:ReminderDocumentReference>
-        <cbc:ID>VI-DOC-26-0225</cbc:ID>
-        <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+        <cbc:ID>VI-DOC-26-0226</cbc:ID>
+        <cbc:IssueDate>2026-05-20</cbc:IssueDate>
       </cac:ReminderDocumentReference>
-      <cac:AdditionalDocumentReference>
-        <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
-        <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
-      </cac:AdditionalDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

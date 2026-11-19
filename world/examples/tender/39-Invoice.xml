@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>VI-INV-26-0225</cbc:ID>
+  <cbc:UUID>28c4a000-2423-538c-8cc0-b619932179bd</cbc:UUID>
+  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
+  <cbc:IssueTime>09:04:00-01:00</cbc:IssueTime>
+  <cbc:DueDate>2026-05-13</cbc:DueDate>
+  <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra for the withholding.</cbc:Note>
+  <cbc:TaxPointDate>2026-04-14</cbc:TaxPointDate>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
+  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
+  </cac:OrderReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>LPWD-RA-26-0223</cbc:ID>
+  </cac:ReceiptDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>PARKS-26</cbc:ID>
+  </cac:ProjectReference>
+  <cac:Signature>
+    <cbc:ID>VI-SIG-26-0092</cbc:ID>
+    <cbc:SignatureMethod>XAdES-BES</cbc:SignatureMethod>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
+        <cbc:BuildingNumber>17</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007299291</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Valdara Industries SUA</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:CompanyID>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode">SUA</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="qau">Skenekhalhek tevul ginek gerrir (hakdrul dudrul riskek)</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalForm languageID="en-XU">Società urvaniana per azioni (public limited company)</cbc:CompanyLegalForm>
+        <cbc:CorporateStockAmount currencyID="XUF">250000000</cbc:CorporateStockAmount>
+        <cbc:FullyPaidSharesIndicator>true</cbc:FullyPaidSharesIndicator>
+        <cac:RegistrationAddress>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XU:CR</cbc:ID>
+          <cbc:Name>Commercial register of Urvania</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
+        <cbc:ElectronicMail>receivables@valdara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Civic Square</cbc:StreetName>
+        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38517</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-0900002</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cbc:ExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:ExemptionReasonCode>
+        <cbc:ExemptionReason>Public body: buys free of the state sales tax</cbc:ExemptionReason>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Lumeport Public Works Department</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Finance office</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 2 38 8235 3927</cbc:Telephone>
+        <cbc:ElectronicMail>finance@publicworks-lumeport.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:6250397184</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Public Works Department</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:TaxRepresentativeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+        <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
+        <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+  </cac:TaxRepresentativeParty>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF37VIINV260225</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF37VIINV260225</cbc:PaymentID>
+    <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
+      <cbc:Name>Valdara Industries SUA</cbc:Name>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice VI-INV-26-0225</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
+        <cbc:Name>Ferrano main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">CREVXUFR</cbc:ID>
+          <cbc:Name>Crevalto Bank</cbc:Name>
+          <cac:Address>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
+            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
+            <cbc:BuildingNumber>8</cbc:BuildingNumber>
+            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+            <cbc:PostalZone>4100</cbc:PostalZone>
+            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              <cbc:Name>Urvania</cbc:Name>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days after the release is accepted, as the framework contract says; late payment carries Urvania's statutory interest of 8 % a year.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-13</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
+  </cac:PaymentTerms>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-04-14</cbc:Date>
+  </cac:TaxExchangeRate>
+  <cac:PaymentExchangeRate>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-04-14</cbc:Date>
+  </cac:PaymentExchangeRate>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">702.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">70200</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
+      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:WithholdingTaxTotal>
+    <cbc:TaxAmount currencyID="XBL">70.20</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">702.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">70.20</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+          <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
+          <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:WithholdingTaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">702.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">702.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">702.00</cbc:TaxInclusiveAmount>
+    <cbc:WithholdingTaxTotalAmount currencyID="XBL">70.20</cbc:WithholdingTaxTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">631.80</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">39</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">702.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:WithholdingTaxTotal>
+      <cbc:TaxAmount currencyID="XBL">70.20</cbc:TaxAmount>
+    </cac:WithholdingTaxTotal>
+    <cac:Item>
+      <cbc:Description>Assembly of one bench and its anchoring in the ground with the supplied anchors, by Saltmere Engineering for the manufacturer.</cbc:Description>
+      <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
+      <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>VI-INST-B</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

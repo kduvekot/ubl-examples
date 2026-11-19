@@ -353,6 +353,26 @@ Inside `TenderResult`:
   Lot 2 of the procedure.
 - `AwardedTenderedProject/LegalMonetaryTotal/PayableAmount` = **124080.00** (currencyID `XBL`)  
   240 benches at 499 lume and their installation at 18 lume each.
+- `AwardedTenderedProject/TenderLine/ID` = **1**  
+  The awarded tender's line 1, lot 1.
+- `AwardedTenderedProject/TenderLine/Note` = **499 lume a bench, the contract price of every release.**  
+  The unit price the releases are ordered at.
+- `AwardedTenderedProject/TenderLine/Quantity` = **240** (unitCode `EA`)  
+  The benches of the base quantity, over two years.
+- `AwardedTenderedProject/TenderLine/LineExtensionAmount` = **119760.00** (currencyID `XBL`)  
+  240 at 499 lume.
+- `AwardedTenderedProject/TenderLine/Item/Name` = **Park bench Serra 180**  
+  The bench tendered.
+- `AwardedTenderedProject/TenderLine/ID` = **2**  
+  The awarded tender's line 2, lot 2.
+- `AwardedTenderedProject/TenderLine/Note` = **18 lume an installation, the contract price of every release.**  
+  The unit price the releases are ordered at.
+- `AwardedTenderedProject/TenderLine/Quantity` = **240** (unitCode `EA`)  
+  One installation a bench.
+- `AwardedTenderedProject/TenderLine/LineExtensionAmount` = **4320.00** (currencyID `XBL`)  
+  240 at 18 lume.
+- `AwardedTenderedProject/TenderLine/Item/Name` = **Installation of a park bench**  
+  The service tendered.
 - `ContractFormalizationPeriod/StartDate` = **2026-03-20**  
   The day after the standstill period ended (tender/22#F5).
 - `ContractFormalizationPeriod/EndDate` = **2026-03-23**  
@@ -643,6 +663,24 @@ Inside `TenderResult`:
       <cac:LegalMonetaryTotal>
         <cbc:PayableAmount currencyID="XBL">124080.00</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
+      <cac:TenderLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:Note>499 lume a bench, the contract price of every release.</cbc:Note>
+        <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">119760.00</cbc:LineExtensionAmount>
+        <cac:Item>
+          <cbc:Name>Park bench Serra 180</cbc:Name>
+        </cac:Item>
+      </cac:TenderLine>
+      <cac:TenderLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:Note>18 lume an installation, the contract price of every release.</cbc:Note>
+        <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="XBL">4320.00</cbc:LineExtensionAmount>
+        <cac:Item>
+          <cbc:Name>Installation of a park bench</cbc:Name>
+        </cac:Item>
+      </cac:TenderLine>
     </cac:AwardedTenderedProject>
     <cac:ContractFormalizationPeriod>
       <cbc:StartDate>2026-03-20</cbc:StartDate>

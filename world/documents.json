@@ -270,7 +270,7 @@
   {
    "id": "tender",
    "title": "A public tender (Bayvarra)",
-   "text": "The contracting authority buys park benches and street furniture for the city's parks under procurement law. The notices are published through the government information service; the manufacturer tenders together with a consortium partner, backed by a bid bond. After the award the authority places orders under the contract and the manufacturer delivers and invoices.",
+   "text": "The contracting authority buys park benches for the city's parks under procurement law, in two lots: the benches and their installation. The notices are published through the government information service; the manufacturer tenders alone, with an engineering firm as its subcontractor for the installation, backed by a bank guarantee; a furniture maker tenders wooden benches, backed by pledged government bonds. After an electronic auction and the award the authority orders the first release under the framework contract; the manufacturer delivers and invoices the benches, the subcontractor installs them, the authority accepts the release, and the installation is invoiced once accepted.",
    "legs": [
     {
      "mode": "road",
@@ -2545,7 +2545,7 @@
    "doc": "Invoice",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The manufacturer invoices the public buyer under the contract; payment to its account at the seller's bank.",
+   "why": "The manufacturer invoices the benches of the release on delivery under the contract; payment to its account at the seller's bank, 30 days after the release is accepted.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb",
@@ -3848,7 +3848,7 @@
    "doc": "CreditNote",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "One bench was damaged during installation and is replaced free of charge; the manufacturer credits it and its installation.",
+   "why": "One bench was damaged during installation and rejected on acceptance; the manufacturer credits it with its share of the colour charge (D28 point 9).",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb"
@@ -3860,6 +3860,7 @@
    "from": "2-xb",
    "to": "5-xu",
    "why": "The installation finished three days late; under the contract's penalty clause the department charges the manufacturer for the late days, one of them waived.",
+   "removed": "Removed 2026-11-19 (D28 point 9, O6, D9): a buyer's debit note is not a seller's charge; the penalty for late completion is a deduction in the remittance advice (36) under the contract's clause. Its number 34 is not used again (D28).",
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
@@ -3870,7 +3871,7 @@
    "doc": "Reminder",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The invoice is past due; the manufacturer reminds the department of the balance and charges Urvania's statutory interest.",
+   "why": "Both invoices of the release are past due; the manufacturer reminds the department of the balance and charges Urvania's statutory interest from the day after the due date.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb"
@@ -3881,7 +3882,7 @@
    "doc": "RemittanceAdvice",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The department pays the balance with the interest, less the credit and the penalty, and says what the payment settles.",
+   "why": "The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, and says what the payment settles.",
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
@@ -3897,6 +3898,31 @@
     "GuarantorParty": "25-xb",
     "InterestedParty": "37-xb",
     "BeneficiaryParty": "2-xb"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "ReceiptAdvice",
+   "from": "2-xb",
+   "to": "5-xu",
+   "why": "The department accepts the release: 39 benches and their installation, one bench rejected as damaged; the contract's 30 days of payment run from this acceptance (D28 point 9, O69).",
+   "parties": {
+    "DeliveryCustomerParty": "2-xb",
+    "DespatchSupplierParty": "5-xu"
+   }
+  },
+  {
+   "flow": "tender",
+   "doc": "Invoice",
+   "from": "5-xu",
+   "to": "2-xb",
+   "why": "The manufacturer invoices the 39 installations once they are done and accepted, as a service supplied outside Urvania; the department withholds Bayvarra's 10 % (D28 point 9, D17).",
+   "parties": {
+    "AccountingSupplierParty": "5-xu",
+    "AccountingCustomerParty": "2-xb",
+    "SellerSupplierParty": "5-xu",
+    "BuyerCustomerParty": "2-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {

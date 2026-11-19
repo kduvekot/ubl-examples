@@ -33,16 +33,16 @@ The framework contract is ordered from a catalogue: the manufacturer publishes t
 
 Inside `ValidityPeriod`:
 
-- `StartDate` = **2026-03-23**  
-  The prices apply from the issue date.
-- `EndDate` = **2028-03-22**  
-  Until the next catalogue.
+- `StartDate` = **2026-03-20**  
+  From the contract's signature, 20 March: the contract prices hold from then (tender/25#F12).
+- `EndDate` = **2026-12-31**  
+  Until the contract's price revision by the steel index each January, when a new catalogue replaces this one (tender/25#F12, option b).
 
 ### Referenced Contract
 
 Inside `ReferencedContract`:
 
-- `ID` = **PWD-2026-PARKS**  
+- `ID` = **PWD-CONTRACT-2026-PARKS**  
   The framework contract the catalogue belongs to.
 - `ContractType` = **Framework contract**  
   Its kind.
@@ -225,28 +225,34 @@ Inside `CatalogueLine`:
 
 - `ID` = **1**  
   The line number.
-- `RequiredItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
-  The days between order and despatch.
-- `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
-  The smallest quantity the seller accepts on an order.
+- `OrderableUnit` = **Pallet of 4**  
+  The unit the benches are ordered in, as tendered (tender/25#F16).
+- `ContentUnitQuantity` = **4** (unitCode `EA`)  
+  Four benches to a pallet.
+- `OrderQuantityIncrementNumeric` = **4**  
+  Orders in whole pallets.
+- `MinimumOrderQuantity` = **20** (unitCode `EA`)  
+  The smallest release, as tendered.
+- `MaximumOrderQuantity` = **96** (unitCode `EA`)  
+  The largest release, as tendered.
+- `RequiredItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
+  Seven days from the order to the delivery, as tendered.
+- `RequiredItemLocationQuantity/MinimumQuantity` = **20** (unitCode `EA`)  
+  The smallest release, as tendered.
 - `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `RequiredItemLocationQuantity/Price/PriceAmount` = **49900** (currencyID `XUF`)  
-  The seller's price per unit (world/items.json).
+- `RequiredItemLocationQuantity/Price/PriceAmount` = **499** (currencyID `XBL`)  
+  The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench (D14, D28 point 10, tender/25#F17).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `RequiredItemLocationQuantity/Price/PriceTypeCode` = **CON** (listID `urn:ubl-examples:world:codelist:PriceTypeCode`)  
   The kind of price, which buyer and seller both understand: the price agreed in the framework contract. The code is from the Trade Accord's price type list: CON = Contract price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Contract price**  
   The name of code CON in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-23**  
-  The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2028-03-22**  
-  And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **VI-PL-2026**  
-  The seller's price list this price is taken from.
-- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-20**  
+  From the contract's signature, 20 March: the contract prices hold from then (tender/25#F12).
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-12-31**  
+  Until the contract's price revision by the steel index each January, when a new catalogue replaces this one (tender/25#F12, option b).
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/Percent` = **0**  
@@ -275,10 +281,10 @@ Inside `CatalogueLine`:
   The brand the maker sells the item under; item bench-serra of Valdara Industries (world/items.json).
 - `Item/ModelName` = **Serra 180**  
   The model; item bench-serra of Valdara Industries (world/items.json).
-- `Item/WarrantyInformation` = **Bukdrek stezskir rek drek manskan savir gilrir.** (languageID `qau`)  
-  The maker's warranty in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/WarrantyInformation` = **Five years on the frame against corrosion.** (languageID `en-XU`)  
-  The maker's warranty in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
+- `Item/WarrantyInformation` = **Bukdrek stezskir rek drek manskan savir gilrir; drarbir stezskir rek drek stirvan, dek skilhan stan zuzskek.** (languageID `qau`)  
+  The warranty of the contract in Urvanian, the seller's language; the awarded tender (tender/25#F20).
+- `Item/WarrantyInformation` = **Five years on the frame against corrosion; ten years on the coating, as tendered and awarded.** (languageID `en-XU`)  
+  The warranty of the contract in English, the working language between the countries; the awarded tender (tender/25#F20).
 - `Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; item bench-serra of Valdara Industries (world/items.json).
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
@@ -480,33 +486,27 @@ Inside `CatalogueLine`:
 - `Item/CircularityProfile/ProductDocumentationDocumentReference/ID` = **VI-RM-B180**  
   The repair and maintenance manual.
 - `CallForTendersLineReference/LineID` = **1**  
-  The line of the call for tenders.
+  The line of the call for tenders: 1 the benches, 2 the installation (tender/25#F3).
 - `CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
   The call for tenders the line was awarded under.
 - `ID` = **2**  
   The line number.
-- `RequiredItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
-  The days between order and despatch.
 - `RequiredItemLocationQuantity/MinimumQuantity` = **1** (unitCode `EA`)  
   The smallest quantity the seller accepts on an order.
 - `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `RequiredItemLocationQuantity/Price/PriceAmount` = **1800** (currencyID `XUF`)  
-  The seller's price per unit (world/items.json).
+- `RequiredItemLocationQuantity/Price/PriceAmount` = **18** (currencyID `XBL`)  
+  The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded: 18 lume an installation, the list price of 1800 ferra at the parity (D14, D28 point 10, tender/25#F17).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `RequiredItemLocationQuantity/Price/PriceTypeCode` = **CON** (listID `urn:ubl-examples:world:codelist:PriceTypeCode`)  
   The kind of price, which buyer and seller both understand: the price agreed in the framework contract. The code is from the Trade Accord's price type list: CON = Contract price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Contract price**  
   The name of code CON in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-23**  
-  The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2028-03-22**  
-  And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **VI-PL-2026**  
-  The seller's price list this price is taken from.
-- `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
-  The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-03-20**  
+  From the contract's signature, 20 March: the contract prices hold from then (tender/25#F12).
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-12-31**  
+  Until the contract's price revision by the steel index each January, when a new catalogue replaces this one (tender/25#F12, option b).
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
@@ -515,9 +515,9 @@ Inside `CatalogueLine`:
   The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/Description` = **Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.** (languageID `qau`)  
+- `Item/Description` = **Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
-- `Item/Description` = **Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.** (languageID `en-XU`)  
+- `Item/Description` = **Assembly of one bench and its anchoring in the ground with the supplied anchors.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-installation of Valdara Industries (world/items.json).
 - `Item/Name` = **Dreknul skul sir haz nanskir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-installation of Valdara Industries (world/items.json).
@@ -528,7 +528,7 @@ Inside `CatalogueLine`:
 - `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0212-2**  
   The item's place in the catalogue: the catalogue number and the line.
 - `CallForTendersLineReference/LineID` = **2**  
-  The line of the call for tenders.
+  The line of the call for tenders: 1 the benches, 2 the installation (tender/25#F3).
 - `CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
   The call for tenders the line was awarded under.
 
@@ -547,11 +547,11 @@ Inside `CatalogueLine`:
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>10:18:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-23</cbc:StartDate>
-    <cbc:EndDate>2028-03-22</cbc:EndDate>
+    <cbc:StartDate>2026-03-20</cbc:StartDate>
+    <cbc:EndDate>2026-12-31</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ReferencedContract>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
     <cbc:ContractType>Framework contract</cbc:ContractType>
   </cac:ReferencedContract>
   <cac:ProviderParty>
@@ -696,27 +696,28 @@ Inside `CatalogueLine`:
   </cac:ContractorCustomerParty>
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
+    <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
+    <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
+    <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
+    <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
     <cac:RequiredItemLocationQuantity>
-      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="EA">20</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-23</cbc:StartDate>
-          <cbc:EndDate>2028-03-22</cbc:EndDate>
+          <cbc:StartDate>2026-03-20</cbc:StartDate>
+          <cbc:EndDate>2026-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
-        <cac:PriceList>
-          <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
-        </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -738,8 +739,8 @@ Inside `CatalogueLine`:
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation languageID="qau">Bukdrek stezskir rek drek manskan savir gilrir.</cbc:WarrantyInformation>
-      <cbc:WarrantyInformation languageID="en-XU">Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="qau">Bukdrek stezskir rek drek manskan savir gilrir; drarbir stezskir rek drek stirvan, dek skilhan stan zuzskek.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="en-XU">Five years on the frame against corrosion; ten years on the coating, as tendered and awarded.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
@@ -933,7 +934,6 @@ Inside `CatalogueLine`:
   <cac:CatalogueLine>
     <cbc:ID>2</cbc:ID>
     <cac:RequiredItemLocationQuantity>
-      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
@@ -941,18 +941,14 @@ Inside `CatalogueLine`:
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">1800</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-23</cbc:StartDate>
-          <cbc:EndDate>2028-03-22</cbc:EndDate>
+          <cbc:StartDate>2026-03-20</cbc:StartDate>
+          <cbc:EndDate>2026-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
-        <cac:PriceList>
-          <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
-        </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
@@ -964,8 +960,8 @@ Inside `CatalogueLine`:
       </cac:ApplicableTaxCategory>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
-      <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
-      <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
+      <cbc:Description languageID="qau">Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Assembly of one bench and its anchoring in the ground with the supplied anchors.</cbc:Description>
       <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>
