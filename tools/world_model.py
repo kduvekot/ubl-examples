@@ -84,12 +84,12 @@ Structural rules (the build stops when one is broken):
     water its edge touches (O152 stage 2 B); a road or rail square a way passes straight through,
     or bends 45 degrees in, is a ramp rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
     (a main road, 7 %) or ROAD_RISE_MINOR = 350 m (a minor road, 10 %) along its direction; on a diagonal the
-    ramp runs from corner to corner; a rail ramp is level across, a road ramp may also slope across, its two sides
-    within ROAD_GRADE_MAIN, ROAD_GRADE_MINOR = .07, .10       # a road's gradient on its own line within a square (owner,
-                                                  # 2026-11-19): a main road 7 %, a minor or access road 10 %
-ROAD_LEAN_MAIN, ROAD_LEAN_MINOR = .06, .08        # how much the land may lean across it: 6 % and 8 %
-ROAD_CROSS = 150 m (a road follows the land's side slope; O152, owner 2026-11-18), so that a town whose
-    streets reach its quay is not tied to the water's level;
+    ramp runs from corner to corner; a rail ramp is level across, a road ramp may also slope across (a road follows
+    the land's side slope; O152, owner 2026-11-18), so that a town whose streets reach its quay is not tied to the
+    water's level; but a road square whose road keeps to its rules on its own line on the land as it is (each half
+    within ROAD_GRADE_MAIN 7 % or ROAD_GRADE_MINOR 10 %, the land across it within ROAD_LEAN_MAIN 6 % or
+    ROAD_LEAN_MINOR 8 %: road_fits) is left as it is (owner, 2026-11-19, O173), and a road ramp's two sides may
+    differ by twice that lean between its corners;
   * roads, rails and pipelines are given square by square (O152 stage 3, tools/lay_routes.py), each square a
     neighbour of the last, diagonals included; no way crosses another, or passes between two squares of water,
     through the corner two squares share;
@@ -178,8 +178,6 @@ ROAD_RISE_MINOR = 350                             # metres a minor road square m
 ROAD_GRADE_MAIN, ROAD_GRADE_MINOR = .07, .10       # a road's gradient on its own line within a square (owner,
                                                   # 2026-11-19): a main road 7 %, a minor or access road 10 %
 ROAD_LEAN_MAIN, ROAD_LEAN_MINOR = .06, .08        # how much the land may lean across it: 6 % and 8 %
-ROAD_CROSS = 150                                  # metres a road square's two sides may differ across it (its side slope;
-                                                  # O152, owner 2026-11-18: so a town is not tied to its quay's level)
 BRIDGE_FREE = 25                                  # metres the ground may stand above a bridge deck's line (its abutments)
 TUNNEL_COVER = 20                                 # metres of ground at least above a tunnel's line
 FLAT_TOL = 1                                      # metres: a platform's corners may differ by this much (rounding)
@@ -913,7 +911,8 @@ def build(world):
     #    building, a house square, a yard, a junction, an end or a bend of a road or rail and an airport's approach
     #    square on a terrace (corners within TERRACE_M of each other; a runway RUNWAY_M); a straight road or rail
     #    square is a ramp rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its direction, a rail
-    #    ramp level across, a road ramp within ROAD_CROSS across.
+    #    ramp level across, a road ramp within twice its lean across (corner_groups); a road square that keeps to
+    #    its rules on the land as it is is left as it is (road_fits).
     V = [[float(E[vi][vj]) for vj in range(H + 1)] for vi in range(W + 1)]
     at_sea = {p["id"] for p in world["parties"] if p["kind"] in ("port", "quay") or p.get("water")}
     fixed = [[False] * (H + 1) for _ in range(W + 1)]        # corners at the water keep their height
@@ -993,7 +992,7 @@ def build(world):
 
     def tilt(sh):
         """A road square's ramp: like a rail square's, but its sides may also differ across it (a road follows the
-        land's side slope; O152, owner 2026-11-18), by at most ROAD_CROSS."""
+        land's side slope; O152, owner 2026-11-18), by twice its lean (corner_groups; owner, 2026-11-19)."""
         return "tilt" + sh[4:]
 
     def road_fits(q):
@@ -1062,18 +1061,24 @@ def build(world):
     def corner_groups(q, rule, limit=None):
         """The corners of square q that stand level together, in order along the way; and the ramps between them
         (pairs of group indexes, the share of the square's rise limit). A road's ramp ('tilt-...') keeps its four
-        corners apart: along the road within its rise limit, across it within ROAD_CROSS."""
+        corners apart: along the road within its rise limit, across it within twice its lean (ROAD_LEAN_MAIN,
+        ROAD_LEAN_MINOR), the difference between corners that the lean on the road's own line allows."""
         i, j = q
         if rule.startswith("tilt"):
             a, b, c, d = (i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)
-            x = ROAD_CROSS / limit
+            # across the road: the lean the road keeps to on its own line (road_fits, measured a quarter square to
+            # each side of it) is a difference of twice that between the corners on the two sides of the square, a
+            # square apart (straight) or a diagonal apart (diagonal) (owner, 2026-11-19, O173)
+            lean = ROAD_LEAN_MAIN if limit <= ROAD_RISE + 1e-6 else ROAD_LEAN_MINOR
+            x = 2 * lean * KM * 500 / limit
+            xd = 2 * math.sqrt(2) * lean * KM * 500 / limit
             if rule == "tilt-i":                            # along i: a-b and c-d; across: a-c and b-d
                 return [[a], [b], [c], [d]], [(0, 1, 1.0), (2, 3, 1.0), (0, 2, x), (1, 3, x)]
             if rule == "tilt-j":
                 return [[a], [b], [c], [d]], [(0, 2, 1.0), (1, 3, 1.0), (0, 1, x), (2, 3, x)]
             if rule == "tilt-d":                            # from a to d, across b-c
-                return [[a], [b], [c], [d]], [(0, 1, HALF), (0, 2, HALF), (1, 3, HALF), (2, 3, HALF), (1, 2, x)]
-            return [[b], [a], [d], [c]], [(0, 1, HALF), (0, 2, HALF), (1, 3, HALF), (2, 3, HALF), (1, 2, x)]
+                return [[a], [b], [c], [d]], [(0, 1, HALF), (0, 2, HALF), (1, 3, HALF), (2, 3, HALF), (1, 2, xd)]
+            return [[b], [a], [d], [c]], [(0, 1, HALF), (0, 2, HALF), (1, 3, HALF), (2, 3, HALF), (1, 2, xd)]
         if rule == "flat":
             return [[(i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)]], []
         if rule == "terrace":                               # each corner on its own, all within the step of each other
