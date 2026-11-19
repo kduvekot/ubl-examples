@@ -39,16 +39,7 @@ The authority checks the tenderer's registration with the business registry.
 - `NoticeTypeCode` = **BUSREG** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
   A notice of registration information. The code is from the Trade Accord's notice type list: BUSREG = Business registration notice.
 - `NoticeLanguageCode` = **en** (listID `ISO 639`)  
-  In English. The code is from the world's copy of ISO 639 Language: en = English.
-
-### Additional Notice Language
-
-Inside `AdditionalNoticeLanguage`:
-
-- `ID` = **qau** (schemeID `ISO 639`)  
-  Also in Urvanian, for operators from Urvania. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Name` = **Urvanian**  
-  The language's name.
+  In English, the only language of its texts (D29 point 11, tender/12#F7). The code is from the world's copy of ISO 639 Language: en = English.
 
 ### Signature
 
@@ -390,10 +381,6 @@ Inside `NoticeSubType`:
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">BUSREG</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
-  <cac:AdditionalNoticeLanguage>
-    <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-    <cbc:Name>Urvanian</cbc:Name>
-  </cac:AdditionalNoticeLanguage>
   <cac:Signature>
     <cbc:ID>BIS-SIG-BI</cbc:ID>
     <cac:SignatoryParty>

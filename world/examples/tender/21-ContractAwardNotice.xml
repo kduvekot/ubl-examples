@@ -14,12 +14,7 @@
   <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
-  <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
-  <cac:AdditionalNoticeLanguage>
-    <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-    <cbc:Name>Urvanian</cbc:Name>
-  </cac:AdditionalNoticeLanguage>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
@@ -143,15 +138,12 @@
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
-    <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
     <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ONEORMORE</cbc:PartPresentationCode>
     <cbc:ContractingSystemCode listID="urn:ubl-examples:world:codelist:ContractingSystemCode">FRAMEWORK</cbc:ContractingSystemCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
-    <cbc:TerminatedIndicator>false</cbc:TerminatedIndicator>
     <cac:DocumentAvailabilityPeriod>
       <cbc:StartDate>2026-01-26</cbc:StartDate>
       <cbc:EndDate>2026-02-25</cbc:EndDate>

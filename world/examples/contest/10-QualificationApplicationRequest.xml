@@ -219,4 +219,9 @@
       </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
+    <cbc:VersionID>2</cbc:VersionID>
+  </cac:AdditionalDocumentReference>
 </QualificationApplicationRequest>

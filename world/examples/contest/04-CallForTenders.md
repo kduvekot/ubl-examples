@@ -187,8 +187,8 @@ Inside `TenderingTerms`:
 
 - `TendererQualificationRequest/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form the department asks for: a group of designers and engineers must form a private limited company before the follow-up service contract is awarded, as the procurement act allows where the contract needs one liable contractor. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `TendererQualificationRequest/CompanyLegalForm` = **Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member**  
-  The name of code LTD in Bayvarra's national company legal form list, followed by the detail of this case: the requirement applies to a group, and only before the follow-up contract.
+- `TendererQualificationRequest/CompanyLegalForm` = **Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded**  
+  The name of code LTD in Bayvarra's national company legal form list, followed by the detail of this case: the requirement on groups, as the code states it (D29 point 8, contest/03#F7); for the contest itself a group names a lead member (below).
 - `TendererQualificationRequest/Description` = **The design lead is a registered architect.**  
   The professional qualification asked for.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/EvaluationCriterionTypeCode` = **REFERENCES** (listID `urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode`)  
@@ -196,9 +196,7 @@ Inside `TenderingTerms`:
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/Description` = **Two completed designs of furniture or fittings for public spaces in the last five years.**  
   What the jury checks to select the participants.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity` = **2** (unitCode `EA`)  
-  Two references.
-- `TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
-  Five years.
+  Two references; the five years are the window the references fall in, stated in the description, not a period the criterion is valid for (contest/03#F8).
 - `TendererQualificationRequest/EconomicOperatorRole/RoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
   A group names a lead member for the contest. The code is from the Trade Accord's economic operator role list: LEAD = Consortium lead.
 - `TendererQualificationRequest/EconomicOperatorRole/RoleDescription` = **Represents the group towards the department.**  
@@ -254,8 +252,6 @@ Inside `TenderingProcess`:
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
 - `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
   Requests and designs through the department's platform. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
-- `CandidateReductionConstraintIndicator` = **true**  
-  The number of participants is limited.
 - `TenderSubmissionDeadlinePeriod/EndDate` = **2026-06-12**  
   Designs by then.
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
@@ -264,6 +260,10 @@ Inside `TenderingProcess`:
   Requests to participate by then.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
   The prior information notice of the contest.
+- `NoticeDocumentReference/ID` = **LPWD-DOC-26-0634**  
+  The contest notice the documents belong to (contest/04#F13).
+- `NoticeDocumentReference/VersionID` = **1**  
+  The version of the notice they go with.
 - `ProcessJustification/PreviousCancellationReasonCode` = **UNSUITABLE** (listID `urn:ubl-examples:world:codelist:CancellationReasonCode`)  
   Why the earlier contest for the same design was cancelled. The code is from the Trade Accord's cancellation reason list: UNSUITABLE = No suitable tender.
 - `ProcessJustification/Description` = **Relaunch of the design contest PWD-2025-PROM-DC, cancelled on 20 November 2025: both designs received were unacceptable, one far above any production budget and one not accessible to wheelchair users. The brief now states both limits.**  
@@ -427,15 +427,12 @@ Inside `ProcurementProject`:
   <cac:TenderingTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm>Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded</cbc:CompanyLegalForm>
       <cbc:Description>The design lead is a registered architect.</cbc:Description>
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode listID="urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode">REFERENCES</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Two completed designs of furniture or fittings for public spaces in the last five years.</cbc:Description>
         <cbc:ThresholdQuantity unitCode="EA">2</cbc:ThresholdQuantity>
-        <cac:DurationPeriod>
-          <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
-        </cac:DurationPeriod>
       </cac:TechnicalEvaluationCriterion>
       <cac:EconomicOperatorRole>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
@@ -485,7 +482,6 @@ Inside `ProcurementProject`:
     <cbc:Description>A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-06-12</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
@@ -495,6 +491,10 @@ Inside `ProcurementProject`:
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:NoticeDocumentReference>
+      <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+      <cbc:VersionID>1</cbc:VersionID>
     </cac:NoticeDocumentReference>
     <cac:ProcessJustification>
       <cbc:PreviousCancellationReasonCode listID="urn:ubl-examples:world:codelist:CancellationReasonCode">UNSUITABLE</cbc:PreviousCancellationReasonCode>

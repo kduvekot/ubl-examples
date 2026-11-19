@@ -34,8 +34,8 @@ A corrigendum, version 2 of the contest notice: the site plan was wrong, the dea
   The second version, which supersedes the first: a corrigendum. A question from a participant showed that the site plan gave the sea wall as 240 m long; it is 420 m. The corrected plan changes the number of benches, so the deadline for requests to participate is extended by two weeks, and the professional qualification is widened to industrial designers.
 - `PreviousVersionID` = **1**  
   The version this one supersedes: version 1 of the same document, with the same number.
-- `NoticeTypeCode` = **CN** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
-  A contract notice; that it corrects version 1 is said by its version identifiers. The code is from the Trade Accord's notice type list: CN = Contract notice.
+- `NoticeTypeCode` = **CN-DESG** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
+  A design contest notice (the Accord's list, after the eForms notice type cn-desg; contest/03#F1, D29 point 1); that version 2 corrects version 1 is said by its version identifiers. The code is from the Trade Accord's notice type list: CN-DESG = Design contest notice.
 
 ### Contracting Party
 
@@ -175,8 +175,8 @@ Inside `TenderingTerms`:
 
 - `TendererQualificationRequest/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form the department asks for: a group of designers and engineers must form a private limited company before the follow-up service contract is awarded, as the procurement act allows where the contract needs one liable contractor. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `TendererQualificationRequest/CompanyLegalForm` = **Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member**  
-  The name of code LTD in Bayvarra's national company legal form list, followed by the detail of this case: the requirement applies to a group, and only before the follow-up contract.
+- `TendererQualificationRequest/CompanyLegalForm` = **Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded**  
+  The name of code LTD in Bayvarra's national company legal form list, followed by the detail of this case: the requirement on groups, as the code states it (D29 point 8, contest/03#F7); for the contest itself a group names a lead member (below).
 - `TendererQualificationRequest/Description` = **The design lead is a registered architect or a registered industrial designer.**  
   The professional qualification asked for, widened by the corrigendum to industrial designers, whom the earlier text excluded without reason.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/EvaluationCriterionTypeCode` = **REFERENCES** (listID `urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode`)  
@@ -184,9 +184,7 @@ Inside `TenderingTerms`:
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/Description` = **Two completed designs of furniture or fittings for public spaces in the last five years.**  
   What the jury checks to select the participants.
 - `TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity` = **2** (unitCode `EA`)  
-  Two references.
-- `TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
-  Five years.
+  Two references; the five years are the window the references fall in, stated in the description, not a period the criterion is valid for (contest/03#F8).
 - `TendererQualificationRequest/EconomicOperatorRole/RoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:EconomicOperatorRoleCode`)  
   A group names a lead member for the contest. The code is from the Trade Accord's economic operator role list: LEAD = Consortium lead.
 - `TendererQualificationRequest/EconomicOperatorRole/RoleDescription` = **Represents the group towards the department.**  
@@ -242,8 +240,6 @@ Inside `TenderingProcess`:
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
 - `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
   Requests and designs through the department's platform. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
-- `CandidateReductionConstraintIndicator` = **true**  
-  The number of participants is limited.
 - `TenderSubmissionDeadlinePeriod/EndDate` = **2026-06-12**  
   Designs by then.
 - `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
@@ -303,7 +299,7 @@ Inside `ProcurementProject`:
   <cbc:Note>Restricted design contest for the harbour promenade bench, with three prizes.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
-  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN</cbc:NoticeTypeCode>
+  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN-DESG</cbc:NoticeTypeCode>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
     <cac:ContractingPartyType>
@@ -408,15 +404,12 @@ Inside `ProcurementProject`:
   <cac:TenderingTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm>Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded</cbc:CompanyLegalForm>
       <cbc:Description>The design lead is a registered architect or a registered industrial designer.</cbc:Description>
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode listID="urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode">REFERENCES</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Two completed designs of furniture or fittings for public spaces in the last five years.</cbc:Description>
         <cbc:ThresholdQuantity unitCode="EA">2</cbc:ThresholdQuantity>
-        <cac:DurationPeriod>
-          <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
-        </cac:DurationPeriod>
       </cac:TechnicalEvaluationCriterion>
       <cac:EconomicOperatorRole>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
@@ -466,7 +459,6 @@ Inside `ProcurementProject`:
     <cbc:Description>A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-06-12</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>

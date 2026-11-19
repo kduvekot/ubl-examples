@@ -28,8 +28,10 @@ The call for competition is published; it names the review body for appeals and 
   The call for competition, a month after the prior information notice.
 - `IssueTime` = **08:32:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Open procedure in two lots.**  
+- `Note` = **Open procedure in two lots.** (languageID `en-XB`)  
   What.
+- `Note` = **Huktrir trelhek trek kan dran.** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: What.
 - `VersionID` = **1**  
   The first version.
 - `RequestedPublicationDate` = **2026-01-27**  
@@ -46,7 +48,7 @@ The call for competition is published; it names the review body for appeals and 
 Inside `AdditionalNoticeLanguage`:
 
 - `ID` = **qau** (schemeID `ISO 639`)  
-  Also published in Urvanian, for tenderers from Urvania (a code from ISO 639's local-use range: the world's languages are invented). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Also published in Urvanian, for tenderers from Urvania: the notice gives its note and the project's name and description in Urvanian too (a code from ISO 639's local-use range: the world's languages are invented; tender/01#F14). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Name` = **Urvanian**  
   The language's name.
 
@@ -519,8 +521,6 @@ Inside `TenderingProcess`:
   The procedure.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
-- `UrgencyCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:UrgencyCode`)  
-  No urgency. The code is from the Trade Accord's urgency list: NORMAL = Normal.
 - `ExpenseCode` = **INVESTMENT** (listID `urn:ubl-examples:world:codelist:ExpenseTypeCode`)  
   Paid from the investment budget. The code is from the Trade Accord's expense type list: INVESTMENT = Investment budget.
 - `PartPresentationCode` = **ONEORMORE** (listID `urn:ubl-examples:world:codelist:LotSubmissionCode`)  
@@ -529,14 +529,10 @@ Inside `TenderingProcess`:
   A framework agreement. The code is from the Trade Accord's contracting system list: FRAMEWORK = Framework agreement.
 - `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
   Tenders are submitted electronically. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
-- `CandidateReductionConstraintIndicator` = **false**  
-  No reduction of candidates.
 - `GovernmentAgreementConstraintIndicator` = **true**  
   Covered by the trade accord's procurement chapter.
 - `AccessToolsURI` = **https://tenders.lumeport.example/PWD-2026-PARKS**  
   Where the documents are.
-- `TerminatedIndicator` = **false**  
-  The procedure runs.
 - `DocumentAvailabilityPeriod/StartDate` = **2026-01-26**  
   From the notice.
 - `DocumentAvailabilityPeriod/EndDate` = **2026-02-25**  
@@ -630,10 +626,14 @@ Inside `ProcurementProject`:
 
 - `ID` = **PWD-2026-PARKS**  
   The project's identifier.
-- `Name` = **Park benches for the parks renewal programme**  
+- `Name` = **Park benches for the parks renewal programme** (languageID `en-XB`)  
   The project's name.
-- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.**  
+- `Name` = **Haz guknaz gan drek zatir nezsan naktran** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: The project's name.
+- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.** (languageID `en-XB`)  
   What is bought.
+- `Description` = **240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: What is bought.
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 - `ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
@@ -1012,7 +1012,8 @@ Inside `ProcurementProjectLot`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-11</cbc:IssueDate>
   <cbc:IssueTime>08:32:00-01:00</cbc:IssueTime>
-  <cbc:Note>Open procedure in two lots.</cbc:Note>
+  <cbc:Note languageID="en-XB">Open procedure in two lots.</cbc:Note>
+  <cbc:Note languageID="qau">Huktrir trelhek trek kan dran.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:RequestedPublicationDate>2026-01-27</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
@@ -1415,15 +1416,12 @@ Inside `ProcurementProjectLot`:
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
-    <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
     <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ONEORMORE</cbc:PartPresentationCode>
     <cbc:ContractingSystemCode listID="urn:ubl-examples:world:codelist:ContractingSystemCode">FRAMEWORK</cbc:ContractingSystemCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
-    <cbc:TerminatedIndicator>false</cbc:TerminatedIndicator>
     <cac:DocumentAvailabilityPeriod>
       <cbc:StartDate>2026-01-26</cbc:StartDate>
       <cbc:EndDate>2026-02-25</cbc:EndDate>
@@ -1506,8 +1504,10 @@ Inside `ProcurementProjectLot`:
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
-    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Name languageID="en-XB">Park benches for the parks renewal programme</cbc:Name>
+    <cbc:Name languageID="qau">Haz guknaz gan drek zatir nezsan naktran</cbc:Name>
+    <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Description languageID="qau">240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
     <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>

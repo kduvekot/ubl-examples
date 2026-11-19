@@ -15,10 +15,6 @@
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">BUSREG</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
-  <cac:AdditionalNoticeLanguage>
-    <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-    <cbc:Name>Urvanian</cbc:Name>
-  </cac:AdditionalNoticeLanguage>
   <cac:Signature>
     <cbc:ID>BIS-SIG-BI</cbc:ID>
     <cac:SignatoryParty>

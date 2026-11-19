@@ -6795,6 +6795,8 @@
     "PIN",
     "CN",
     "CAN",
+    "CN-DESG",
+    "CAN-DESG",
     "BUSREG"
    ]
   },

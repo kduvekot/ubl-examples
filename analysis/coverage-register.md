@@ -640,6 +640,17 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `TenderingCriterionProperty/MinimumValueNumeric` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
 | `TenderingCriterionPropertyGroup/FulfilmentIndicator` | 0..1 | tender/06-QualificationApplicationRequest | | | open |
 
+> C97, D29 points 1, 9 and 11, O101: `PublishAwardIndicator` goes from the contest's results notices and from the tender's award notice and contract: its definition names service categories for which publication is optional, and the world has none. Urvanian is declared only where a notice gives Urvanian text (the tender's prior information notice and contract notice now do); the registry's extract and the award notice give none and no longer declare it. The tender's process no longer states the defaults (normal urgency, not terminated, no reduction of candidates); the contest states the reduction of candidates in its results, after the selection.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BusinessInformation/AdditionalNoticeLanguage` | 0..n | tender/12-BusinessInformation | | | open |
+| `ContractAwardNotice/AdditionalNoticeLanguage` | 0..n | tender/21-ContractAwardNotice | | | open |
+| `ContractAwardNotice/PublishAwardIndicator` | 0..1 | contest/15-ContractAwardNotice, contest/16-ContractAwardNotice, tender/21-ContractAwardNotice | | | open |
+| `TenderContract/PublishAwardIndicator` | 0..1 | tender/24-TenderContract | | | open |
+| `TenderingProcess/TerminatedIndicator` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice … | | | open |
+| `TenderingProcess/UrgencyCode` | 0..1 | tender/02-ContractNotice, tender/03-CallForTenders, tender/21-ContractAwardNotice … | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

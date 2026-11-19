@@ -28,8 +28,10 @@ The authority announces the planned purchase early, through the publication serv
   Published early in the year, before the call for competition.
 - `IssueTime` = **14:18:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Advance notice of the bench procedure.**  
+- `Note` = **Advance notice of the bench procedure.** (languageID `en-XB`)  
   What.
+- `Note` = **Skusek mudek skul drek nanskir trelhek.** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: What.
 - `VersionID` = **1**  
   The first version.
 - `RequestedPublicationDate` = **2026-01-13**  
@@ -48,7 +50,7 @@ The authority announces the planned purchase early, through the publication serv
 Inside `AdditionalNoticeLanguage`:
 
 - `ID` = **qau** (schemeID `ISO 639`)  
-  Also published in Urvanian, for tenderers from Urvania (a code from ISO 639's local-use range: the world's languages are invented). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Also published in Urvanian, for tenderers from Urvania: the notice gives its note and the project's name and description in Urvanian too (a code from ISO 639's local-use range: the world's languages are invented; tender/01#F14). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Name` = **Urvanian**  
   The language's name.
 
@@ -518,10 +520,14 @@ Inside `ProcurementProject`:
 
 - `ID` = **PWD-2026-PARKS**  
   The project's identifier.
-- `Name` = **Park benches for the parks renewal programme**  
+- `Name` = **Park benches for the parks renewal programme** (languageID `en-XB`)  
   The project's name.
-- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.**  
+- `Name` = **Haz guknaz gan drek zatir nezsan naktran** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: The project's name.
+- `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.** (languageID `en-XB`)  
   What is bought.
+- `Description` = **240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.** (languageID `qau`)  
+  The same in Urvanian, the notice's additional language: What is bought.
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   Supplies or services. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 - `ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
@@ -668,7 +674,8 @@ Inside `ProcurementProjectLot`:
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>14:18:00-01:00</cbc:IssueTime>
-  <cbc:Note>Advance notice of the bench procedure.</cbc:Note>
+  <cbc:Note languageID="en-XB">Advance notice of the bench procedure.</cbc:Note>
+  <cbc:Note languageID="qau">Skusek mudek skul drek nanskir trelhek.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:RequestedPublicationDate>2026-01-13</cbc:RequestedPublicationDate>
   <cbc:PlannedDate>2026-01-26</cbc:PlannedDate>
@@ -1058,8 +1065,10 @@ Inside `ProcurementProjectLot`:
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
-    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Name languageID="en-XB">Park benches for the parks renewal programme</cbc:Name>
+    <cbc:Name languageID="qau">Haz guknaz gan drek zatir nezsan naktran</cbc:Name>
+    <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Description languageID="qau">240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
     <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>

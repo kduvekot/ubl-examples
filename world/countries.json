@@ -1976,7 +1976,11 @@
     "then": "vabul",
     "timetable": "santul",
     "was": "kagaz",
-    "rules": "trilhek"
+    "rules": "trilhek",
+    "anchored": "banvir",
+    "programme": "naktran",
+    "renewal": "nezsan",
+    "result": "skunzek"
    }
   },
   "qal": {
@@ -3099,7 +3103,11 @@
     "bodies": "senatu",
     "stream": "tamohi",
     "tare": "nimeme",
-    "rules": "lelahe"
+    "rules": "lelahe",
+    "anchored": "tifiva",
+    "programme": "tefefopa",
+    "renewal": "tanata",
+    "result": "havia"
    }
   },
   "en": {

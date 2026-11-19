@@ -34,8 +34,6 @@ After the standstill period the authority and the manufacturer conclude the cont
   What.
 - `RegulatoryDomain` = **Bayvarra public procurement**  
   The rules the contract follows.
-- `PublishAwardIndicator` = **true**  
-  The award was published.
 
 ### Previous Document Reference
 
@@ -643,7 +641,6 @@ Inside `TenderResult`:
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The framework contract, signed by both parties.</cbc:Note>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
-  <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>

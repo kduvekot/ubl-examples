@@ -8015,15 +8015,13 @@ def tendering_process(f, held=False):
                                                                                        "framework this one "
                                                                                        "follows."),
             "Description": V("Open procedure with two lots.", "The procedure."),
-            "ProcedureCode": V("OPEN", "An open procedure."), "UrgencyCode": V("NORMAL", "No urgency."),
+            "ProcedureCode": V("OPEN", "An open procedure."),
             "ExpenseCode": V("INVESTMENT", "Paid from the investment budget."),
             "PartPresentationCode": V("ONEORMORE", "Tenders for one or both lots."),
             "ContractingSystemCode": V("FRAMEWORK", "A framework agreement."),
             "SubmissionMethodCode": V("ELECTRONIC", "Tenders are submitted electronically."),
-            "CandidateReductionConstraintIndicator": V("false", "No reduction of candidates."),
             "GovernmentAgreementConstraintIndicator": V("true", "Covered by the trade accord's procurement chapter."),
             "AccessToolsURI": V("https://tenders.lumeport.example/PWD-2026-PARKS", "Where the documents are."),
-            "TerminatedIndicator": V("false", "The procedure runs."),
             "DocumentAvailabilityPeriod": {"StartDate": V(f.date(14), "From the notice."),
                                            "EndDate": V(f.date(44), "Until the day before the deadline.")},
             "TenderSubmissionDeadlinePeriod": {"EndDate": V(f.date(45), "The deadline."),
@@ -8269,19 +8267,32 @@ def procurement_lots(f):
     return [lot("LOT-1"), lot("LOT-2")]
 
 
-def notice_head(f, kind, code):
+def notice_head(f, kind, code, urvanian=True):
     return {"VersionID": V("1", "The first version."),
             "RequestedPublicationDate": V(out_day(f, kind), "When to publish."),
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules the notice follows."),
             "NoticeTypeCode": V(code, "The kind of notice."),
             "NoticeLanguageCode": V("en", "In English, as an ISO 639 code."),
-            "AdditionalNoticeLanguage": {"ID": V("qau", "Also published in Urvanian, for tenderers from Urvania "
-                                                "(a code from ISO 639's local-use range: the world's languages are "
-                                                "invented)."),
-                                         "Name": V("Urvanian", "The language's name.")},
+            **({"AdditionalNoticeLanguage": {"ID": V("qau", "Also published in Urvanian, for tenderers from Urvania: the "
+                                                         "notice gives its note and the project's name and description "
+                                                         "in Urvanian too (a code from ISO 639's local-use range: the "
+                                                         "world's languages are invented; tender/01#F14)."),
+                                         "Name": V("Urvanian", "The language's name.")}} if urvanian else {}),
             "Signature": seal(PWD, f"PWD-SIG-{kind}"),
             "OriginatorCustomerParty": {"Party": party("2-xb", short=True)},
             "BeneficiaryParty": party("2-xb", short=True)}
+
+
+
+def with_urvanian(block, *keys):
+    """The texts of a notice published in Urvanian too (its AdditionalNoticeLanguage): each in English and in
+    Urvanian, with its languageID (tender/01#F14, 02#F18)."""
+    for k in keys:
+        v = block[k]
+        block[k] = [V(v.value, v.why, languageID="en"),
+                    V(build_examples.translate(v.value, "qau"), f"The same in Urvanian, the notice's additional "
+                      f"language: {v.why}", languageID="qau")]
+    return block
 
 
 def out_day(f, kind):
@@ -8303,14 +8314,16 @@ def contracting_party_details():
 @enrich("tender", "PriorInformationNotice")
 def _(f, n, doc, out):
     f.numbers["pin"] = out["ID"].value if "ID" in out else f"{FOLDER}-PIN"
-    return {**notice_head(f, "PIN", "PIN"), "Note": V("Advance notice of the bench procedure.", "What."),
+    head = with_urvanian({**notice_head(f, "PIN", "PIN"), "Note": V("Advance notice of the bench procedure.",
+                                                                     "What.")}, "Note")
+    return {**head,
             "PlannedDate": V(f.date(14), "The contract notice is planned for then."),
             "DocumentReference": {"ID": V("PWD-PARKS-PLAN-26", "The parks plan.")},
             "ContractingParty": contracting_party_details(),
             "TenderingTerms": tendering_terms(f),
             "TenderingProcess": {"ProcedureCode": V("OPEN", "An open procedure is planned."),
                                  "Description": V("Planned as an open procedure in two lots.", "What is planned.")},
-            "ProcurementProject": procurement_project(f),
+            "ProcurementProject": with_urvanian(procurement_project(f), "Name", "Description"),
             "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1, planned."), "ProcurementProject": project_brief("LOT-1")},
                                       {"ID": V("LOT-2", "Lot 2, planned."),
                                        "ProcurementProject": project_brief("LOT-2")}]}
@@ -8318,12 +8331,14 @@ def _(f, n, doc, out):
 
 @enrich("tender", "ContractNotice")
 def _(f, n, doc, out):
-    return {**notice_head(f, "CN", "CN"), "Note": V("Open procedure in two lots.", "What."),
+    head = with_urvanian({**notice_head(f, "CN", "CN"), "Note": V("Open procedure in two lots.", "What.")}, "Note")
+    return {**head,
             "FrequencyPeriod": {"DurationMeasure": V("4", "Notices like this about every four years.",
                                                      unitCode="ANN")},
             "ContractingParty": contracting_party_details(),
             "TenderingTerms": tendering_terms(f), "TenderingProcess": tendering_process(f),
-            "ProcurementProject": procurement_project(f), "ProcurementProjectLot": procurement_lots(f)}
+            "ProcurementProject": with_urvanian(procurement_project(f), "Name", "Description"),
+            "ProcurementProjectLot": procurement_lots(f)}
 
 
 @enrich("tender", "CallForTenders")
@@ -8339,7 +8354,10 @@ def _(f, n, doc, out):
             "OriginatorCustomerParty": {"Party": party("2-xb", short=True)},
             "BeneficiaryParty": party("2-xb", short=True),
             "ContractingParty": contracting_party_details(),
-            "TenderingTerms": tendering_terms(f), "TenderingProcess": tendering_process(f),
+            "TenderingTerms": tendering_terms(f),
+            "TenderingProcess": {**tendering_process(f), "NoticeDocumentReference": [
+                {"ID": V(f.numbers["pin"], "The prior information notice.")},
+                {"ID": V(f.numbers["notice"], "The contract notice the call belongs to (tender/03#F44).")}]},
             "ProcurementProject": procurement_project(f), "ProcurementProjectLot": procurement_lots(f)}
 
 
@@ -8918,9 +8936,7 @@ def _(f, n, doc, out):
             "RequestedPublicationDate": V(f.date(46), "Published on the register on the day of the extract."),
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules of the register."),
             "NoticeTypeCode": V("BUSREG", "A notice of registration information."),
-            "NoticeLanguageCode": V("en", "In English."),
-            "AdditionalNoticeLanguage": {"ID": V("qau", "Also in Urvanian, for operators from Urvania."),
-                                         "Name": V("Urvanian", "The language's name.")},
+            "NoticeLanguageCode": V("en", "In English, the only language of its texts (D29 point 11, tender/12#F7)."),
             "Signature": seal(INFO, "BIS-SIG-BI"),
             "BrochureDocumentReference": {"ID": V("VI-BROCHURE-26", "The manufacturer's brochure, kept on the "
                                                                     "register.")},
@@ -8986,9 +9002,8 @@ def _(f, n, doc, out):
 
 @enrich("tender", "ContractAwardNotice")
 def _(f, n, doc, out):
-    return {**notice_head(f, "CAN", "CAN"),
+    return {**notice_head(f, "CAN", "CAN", urvanian=False),
             "Note": V("Award of the framework contract for park benches.", "What."),
-            "PublishAwardIndicator": V("true", "The award is published."),
             "PreviousDocumentReference": {"ID": V(f.numbers.get("notice", f"{FOLDER}-CN"), "The contract notice.")},
             "MinutesDocumentReference": {"ID": V("PWD-MIN-AWARD-26", "The minutes of the evaluation.")},
             "TenderingProcess": tendering_process(f, held=True), "ProcurementProject": procurement_project(f),
@@ -9029,7 +9044,6 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"ContractName": contract_name(), "Note": V("The framework contract, signed by both parties.", "What."),
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules the contract follows."),
-            "PublishAwardIndicator": V("true", "The award was published."),
             "PreviousDocumentReference": {"ID": V(f.numbers["awarded"], "The award notification.")},
             "ContractDocumentReference": {"ID": V("PWD-CONTRACT-2026-PARKS", "The signed contract.")},
             "Signature": [seal(PWD, "PWD-SIG-CONTRACT", "The department's seal."),
@@ -10969,10 +10983,10 @@ def contest_qualification(k):
                                              "engineers must form a private limited company before the follow-up "
                                              "service contract is awarded, as the procurement act allows where the "
                                              "contract needs one liable contractor.", listID=LTD_LIST),
-            "CompanyLegalForm": Detail("a group of participants forms one before the follow-up contract is awarded; "
-                                       "for the contest itself a group names a lead member",
-                                       "the requirement applies to a group, and only before the follow-up "
-                                       "contract."),
+            "CompanyLegalForm": Detail("required of a group of participants, which forms one before the follow-up "
+                                       "contract is awarded", "the requirement on groups, as the code states it "
+                                       "(D29 point 8, contest/03#F7); for the contest itself a group names a lead "
+                                       "member (below)."),
             "Description": V("The design lead is a registered architect or a registered industrial designer."
                              if widened else "The design lead is a registered architect.",
                              "The professional qualification asked for" +
@@ -10982,8 +10996,9 @@ def contest_qualification(k):
                 "EvaluationCriterionTypeCode": V("REFERENCES", "References."),
                 "Description": V("Two completed designs of furniture or fittings for public spaces in the last five "
                                  "years.", "What the jury checks to select the participants."),
-                "ThresholdQuantity": qty(2, "EA", "Two references."),
-                "DurationPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")}},
+                "ThresholdQuantity": qty(2, "EA", "Two references; the five years are the window the references "
+                                                  "fall in, stated in the description, not a period the criterion "
+                                                  "is valid for (contest/03#F8).")},
             "EconomicOperatorRole": {"RoleCode": V("LEAD", "A group names a lead member for the contest."),
                                      "RoleDescription": V("Represents the group towards the department.",
                                                           "The role in words.")}}
@@ -11080,13 +11095,12 @@ def contest_exclusion_criteria():
                  "Whether the participant owes taxes or social security contributions that are due and unpaid; in a "
                  "group, each member answers.")]
 
-def contest_process(f, k):
+def contest_process(f, k, call=False):
     requests_by = 89 if k == 2 else 75
     return {"ProcedureCode": V("DESIGNCONTEST", "A design contest."),
             "Description": V("A restricted design contest in two stages: requests to participate, then designs from "
                              "three to five selected participants, judged anonymously.", "How the contest runs."),
             "SubmissionMethodCode": V("ELECTRONIC", "Requests and designs through the department's platform."),
-            "CandidateReductionConstraintIndicator": V("true", "The number of participants is limited."),
             "ParticipationRequestReceptionPeriod": {
                 "EndDate": V(f.date(requests_by), "Requests to participate by then" +
                              (": two weeks later than version 1 said, to give time for the corrected site plan."
@@ -11105,8 +11119,10 @@ def contest_process(f, k):
                                  "designs received were unacceptable, one far above any production budget and one not "
                                  "accessible to wheelchair users. The brief now states both limits.",
                                  "The previous procedure and what changed.")},
-            "NoticeDocumentReference": {"ID": V(f.numbers["contest-pin"], "The prior information notice of the "
-                                                                          "contest.")}}
+            "NoticeDocumentReference": [{"ID": V(f.numbers["contest-pin"], "The prior information notice of the "
+                                                                           "contest.")}] +
+            ([{"ID": V(f.numbers["contest-notice"], "The contest notice the documents belong to (contest/04#F13)."),
+               "VersionID": V(str(k), "The version of the notice they go with.")}] if call else [])}
 
 
 def contest_terms(f, k, first=8000):
@@ -11162,8 +11178,9 @@ def contest(n, doc):
                                      "benches, so the deadline for requests to participate is extended by two weeks, "
                                      "and the professional qualification is widened to industrial designers."),
                 "Note": V("Restricted design contest for the harbour promenade bench, with three prizes.", "What."),
-                "NoticeTypeCode": V("CN", "A contract notice; that it corrects version 1 is said by its version "
-                                          "identifiers."),
+                "NoticeTypeCode": V("CN-DESG", "A design contest notice (the Accord's list, after the eForms notice "
+                                               "type cn-desg; contest/03#F1, D29 point 1); that version 2 corrects "
+                                               "version 1 is said by its version identifiers."),
                 "ContractingParty": contracting_party_details(),
                 "TenderingTerms": contest_terms(f, k), "TenderingProcess": contest_process(f, k),
                 "ProcurementProject": contest_project()}
@@ -11182,7 +11199,7 @@ def contest(n, doc):
                 "TechnicalDocumentReference": {"ID": V("PWD-PROM-BRIEF", "The design brief.")},
                 "ProvidedDocumentReference": {"ID": V(*plan)},
                 "ContractingParty": contracting_party_details(),
-                "TenderingTerms": contest_terms(f, k), "TenderingProcess": contest_process(f, k),
+                "TenderingTerms": contest_terms(f, k), "TenderingProcess": contest_process(f, k, call=True),
                 "ProcurementProject": contest_project()}
     if d == "QualificationApplicationRequest":
         crit = ("registered architect or registered industrial designer" if k == 2 else "registered architect")
@@ -11197,6 +11214,9 @@ def contest(n, doc):
                 "QualificationApplicationTypeCode": V("REGULATED", "The regulated form of self-declaration."),
                 "WeightingTypeCode": V("WEIGHTED", "The selection criteria carry weights: the jury scores the "
                                                    "references to choose three to five participants."),
+                "AdditionalDocumentReference": {"ID": V(f.numbers["contest-notice"], "The contest notice whose "
+                                                        "criteria this request asks (contest/05#F11)."),
+                                                "VersionID": V(str(k), "The version of the notice.")},
                 "WeightScoringMethodologyNote": V("The exclusion grounds and the qualification of the design lead "
                                                   "are pass or fail; the two references are scored 0 to 10 and "
                                                   "weighted 60 and 40.", "How the answers count."),
@@ -11386,8 +11406,8 @@ def contest(n, doc):
                 **contest_version(k, "version 1 gave the first prize as 6,000 lume, the amount first planned; the "
                                      "contest notice offered 8,000, and 8,000 is paid."),
                 "Note": V("Results of the design contest for the harbour promenade bench.", "What."),
-                "NoticeTypeCode": V("CAN", "The results of the contest."),
-                "PublishAwardIndicator": V("true", "The results are published."),
+                "NoticeTypeCode": V("CAN-DESG", "A design contest result notice (the Accord's list, after the eForms "
+                                                "notice type can-desg; contest/15#F3, D29 point 1)."),
                 "PreviousDocumentReference": {"ID": V(f.numbers["contest-notice"], "The contest notice.")},
                 "ContractingParty": contracting_party_details(),
                 "TenderingTerms": {"AwardingTerms": {"Prize": contest_prizes(first, "Wrongly given as the amount "
@@ -11395,6 +11415,11 @@ def contest(n, doc):
                                                      "The amount the contest notice offered.")[:2]}},
                 "TenderingProcess": {
                     "ProcedureCode": V("DESIGNCONTEST", "A design contest."),
+                    "CandidateReductionConstraintIndicator": V("true", "The number of candidates was reduced: the "
+                                                                       "jury selected five participants from the "
+                                                                       "requests, as the notice announced. Stated "
+                                                                       "here, after the selection, not in the notice "
+                                                                       "and the call (contest/03#F10)."),
                     "NegotiationDescription": V("The service contract for the detailed design and the supervision of "
                                                 "the production is negotiated with the first-prize winner, without a "
                                                 "new call for competition, on fees, timetable and the number of "

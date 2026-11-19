@@ -32,10 +32,8 @@ The results of the contest are published: first prize to the furniture maker's t
   What.
 - `VersionID` = **1**  
   The first version.
-- `NoticeTypeCode` = **CAN** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
-  The results of the contest. The code is from the Trade Accord's notice type list: CAN = Contract award notice.
-- `PublishAwardIndicator` = **true**  
-  The results are published.
+- `NoticeTypeCode` = **CAN-DESG** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
+  A design contest result notice (the Accord's list, after the eForms notice type can-desg; contest/15#F3, D29 point 1). The code is from the Trade Accord's notice type list: CAN-DESG = Design contest result notice.
 
 ### Previous Document Reference
 
@@ -203,6 +201,8 @@ Inside `TenderingProcess`:
   The negotiation that follows the contest.
 - `ProcedureCode` = **DESIGNCONTEST** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   A design contest. The code is from the Trade Accord's procurement procedure list: DESIGNCONTEST = Design contest.
+- `CandidateReductionConstraintIndicator` = **true**  
+  The number of candidates was reduced: the jury selected five participants from the requests, as the notice announced. Stated here, after the selection, not in the notice and the call (contest/03#F10).
 - `EconomicOperatorShortList/LimitationDescription` = **Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.**  
   Why one party.
 - `EconomicOperatorShortList/PreSelectedParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -278,8 +278,7 @@ Inside `TenderResult`:
   <cbc:IssueTime>11:31:00-01:00</cbc:IssueTime>
   <cbc:Note>Results of the design contest for the harbour promenade bench.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
-  <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
+  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN-DESG</cbc:NoticeTypeCode>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
@@ -402,6 +401,7 @@ Inside `TenderResult`:
   <cac:TenderingProcess>
     <cbc:NegotiationDescription>The service contract for the detailed design and the supervision of the production is negotiated with the first-prize winner, without a new call for competition, on fees, timetable and the number of prototypes.</cbc:NegotiationDescription>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
+    <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
     <cac:EconomicOperatorShortList>
       <cbc:LimitationDescription>Only the winner of the first prize is invited to negotiate the follow-up contract, as the contest notice announced.</cbc:LimitationDescription>
       <cac:PreSelectedParty>

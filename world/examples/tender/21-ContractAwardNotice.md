@@ -38,19 +38,8 @@ The award is published; the review body is named for appeals.
   The rules the notice follows.
 - `NoticeTypeCode` = **CAN** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
   The kind of notice. The code is from the Trade Accord's notice type list: CAN = Contract award notice.
-- `PublishAwardIndicator` = **true**  
-  The award is published.
 - `NoticeLanguageCode` = **en** (listID `ISO 639`)  
   In English, as an ISO 639 code. The code is from the world's copy of ISO 639 Language: en = English.
-
-### Additional Notice Language
-
-Inside `AdditionalNoticeLanguage`:
-
-- `ID` = **qau** (schemeID `ISO 639`)  
-  Also published in Urvanian, for tenderers from Urvania (a code from ISO 639's local-use range: the world's languages are invented). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
-- `Name` = **Urvanian**  
-  The language's name.
 
 ### Previous Document Reference
 
@@ -218,8 +207,6 @@ Inside `TenderingProcess`:
   The procedure.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
-- `UrgencyCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:UrgencyCode`)  
-  No urgency. The code is from the Trade Accord's urgency list: NORMAL = Normal.
 - `ExpenseCode` = **INVESTMENT** (listID `urn:ubl-examples:world:codelist:ExpenseTypeCode`)  
   Paid from the investment budget. The code is from the Trade Accord's expense type list: INVESTMENT = Investment budget.
 - `PartPresentationCode` = **ONEORMORE** (listID `urn:ubl-examples:world:codelist:LotSubmissionCode`)  
@@ -228,14 +215,10 @@ Inside `TenderingProcess`:
   A framework agreement. The code is from the Trade Accord's contracting system list: FRAMEWORK = Framework agreement.
 - `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
   Tenders are submitted electronically. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
-- `CandidateReductionConstraintIndicator` = **false**  
-  No reduction of candidates.
 - `GovernmentAgreementConstraintIndicator` = **true**  
   Covered by the trade accord's procurement chapter.
 - `AccessToolsURI` = **https://tenders.lumeport.example/PWD-2026-PARKS**  
   Where the documents are.
-- `TerminatedIndicator` = **false**  
-  The procedure runs.
 - `DocumentAvailabilityPeriod/StartDate` = **2026-01-26**  
   From the notice.
 - `DocumentAvailabilityPeriod/EndDate` = **2026-02-25**  
@@ -781,12 +764,7 @@ Inside `TenderResult`:
   <cbc:RequestedPublicationDate>2026-03-14</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN</cbc:NoticeTypeCode>
-  <cbc:PublishAwardIndicator>true</cbc:PublishAwardIndicator>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
-  <cac:AdditionalNoticeLanguage>
-    <cbc:ID schemeID="ISO 639">qau</cbc:ID>
-    <cbc:Name>Urvanian</cbc:Name>
-  </cac:AdditionalNoticeLanguage>
   <cac:PreviousDocumentReference>
     <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
@@ -910,15 +888,12 @@ Inside `TenderResult`:
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
-    <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
     <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ONEORMORE</cbc:PartPresentationCode>
     <cbc:ContractingSystemCode listID="urn:ubl-examples:world:codelist:ContractingSystemCode">FRAMEWORK</cbc:ContractingSystemCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
-    <cbc:TerminatedIndicator>false</cbc:TerminatedIndicator>
     <cac:DocumentAvailabilityPeriod>
       <cbc:StartDate>2026-01-26</cbc:StartDate>
       <cbc:EndDate>2026-02-25</cbc:EndDate>

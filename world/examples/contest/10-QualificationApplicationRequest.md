@@ -316,6 +316,17 @@ Inside `TenderingCriterion`:
 - `TenderingCriterionPropertyGroup/TenderingCriterionProperty/ValueDataTypeCode` = **DESCRIPTION** (listID `urn:ubl-examples:world:codelist:ResponseDataTypeCode`)  
   The kind of answer it takes. The code is from the Trade Accord's response data type list: DESCRIPTION = Description.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **LPWD-DOC-26-0634**  
+  The contest notice whose criteria this request asks (contest/05#F11).
+- `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: LPWD-DOC-26-0634 is the example contest/03, a ContractNotice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
+- `VersionID` = **2**  
+  The version of the notice.
+
 ## The document
 
 ```xml
@@ -540,5 +551,10 @@ Inside `TenderingCriterion`:
       </cac:TenderingCriterionProperty>
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
+    <cbc:VersionID>2</cbc:VersionID>
+  </cac:AdditionalDocumentReference>
 </QualificationApplicationRequest>
 ```

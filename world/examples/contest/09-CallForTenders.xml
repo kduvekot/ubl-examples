@@ -125,15 +125,12 @@
   <cac:TenderingTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm>Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded</cbc:CompanyLegalForm>
       <cbc:Description>The design lead is a registered architect or a registered industrial designer.</cbc:Description>
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode listID="urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode">REFERENCES</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Two completed designs of furniture or fittings for public spaces in the last five years.</cbc:Description>
         <cbc:ThresholdQuantity unitCode="EA">2</cbc:ThresholdQuantity>
-        <cac:DurationPeriod>
-          <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
-        </cac:DurationPeriod>
       </cac:TechnicalEvaluationCriterion>
       <cac:EconomicOperatorRole>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
@@ -183,7 +180,6 @@
     <cbc:Description>A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-06-12</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
@@ -193,6 +189,10 @@
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:NoticeDocumentReference>
+      <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+      <cbc:VersionID>2</cbc:VersionID>
     </cac:NoticeDocumentReference>
     <cac:ProcessJustification>
       <cbc:PreviousCancellationReasonCode listID="urn:ubl-examples:world:codelist:CancellationReasonCode">UNSUITABLE</cbc:PreviousCancellationReasonCode>

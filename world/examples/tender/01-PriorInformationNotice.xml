@@ -9,7 +9,8 @@
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>14:18:00-01:00</cbc:IssueTime>
-  <cbc:Note>Advance notice of the bench procedure.</cbc:Note>
+  <cbc:Note languageID="en-XB">Advance notice of the bench procedure.</cbc:Note>
+  <cbc:Note languageID="qau">Skusek mudek skul drek nanskir trelhek.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:RequestedPublicationDate>2026-01-13</cbc:RequestedPublicationDate>
   <cbc:PlannedDate>2026-01-26</cbc:PlannedDate>
@@ -399,8 +400,10 @@
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
-    <cbc:Description>240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Name languageID="en-XB">Park benches for the parks renewal programme</cbc:Name>
+    <cbc:Name languageID="qau">Haz guknaz gan drek zatir nezsan naktran</cbc:Name>
+    <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered and anchored.</cbc:Description>
+    <cbc:Description languageID="qau">240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran stan banvir.</cbc:Description>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
     <cbc:ProcurementSubTypeCode listID="urn:ubl-examples:world:codelist:ProcurementSubTypeCode">PURCHASE</cbc:ProcurementSubTypeCode>
     <cbc:QualityControlCode listID="urn:ubl-examples:world:codelist:QualityControlCode">INSPECTION</cbc:QualityControlCode>

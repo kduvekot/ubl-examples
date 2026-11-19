@@ -540,8 +540,6 @@ Inside `TenderingProcess`:
   The procedure.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
-- `UrgencyCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:UrgencyCode`)  
-  No urgency. The code is from the Trade Accord's urgency list: NORMAL = Normal.
 - `ExpenseCode` = **INVESTMENT** (listID `urn:ubl-examples:world:codelist:ExpenseTypeCode`)  
   Paid from the investment budget. The code is from the Trade Accord's expense type list: INVESTMENT = Investment budget.
 - `PartPresentationCode` = **ONEORMORE** (listID `urn:ubl-examples:world:codelist:LotSubmissionCode`)  
@@ -550,14 +548,10 @@ Inside `TenderingProcess`:
   A framework agreement. The code is from the Trade Accord's contracting system list: FRAMEWORK = Framework agreement.
 - `SubmissionMethodCode` = **ELECTRONIC** (listID `urn:ubl-examples:world:codelist:SubmissionMethodCode`)  
   Tenders are submitted electronically. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
-- `CandidateReductionConstraintIndicator` = **false**  
-  No reduction of candidates.
 - `GovernmentAgreementConstraintIndicator` = **true**  
   Covered by the trade accord's procurement chapter.
 - `AccessToolsURI` = **https://tenders.lumeport.example/PWD-2026-PARKS**  
   Where the documents are.
-- `TerminatedIndicator` = **false**  
-  The procedure runs.
 - `DocumentAvailabilityPeriod/StartDate` = **2026-01-26**  
   From the notice.
 - `DocumentAvailabilityPeriod/EndDate` = **2026-02-25**  
@@ -580,6 +574,8 @@ Inside `TenderingProcess`:
   Questions by then.
 - `NoticeDocumentReference/ID` = **LPWD-DOC-26-0187**  
   The prior information notice.
+- `NoticeDocumentReference/ID` = **LPWD-DOC-26-0188**  
+  The contract notice the call belongs to (tender/03#F44).
 - `AdditionalDocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The specification.
 - `AdditionalDocumentReference/DocumentType` = **Technical specification**  
@@ -1443,15 +1439,12 @@ Inside `ProcurementProjectLot`:
     <cbc:OriginalContractingSystemID>PWD-FW-2024-PARKS</cbc:OriginalContractingSystemID>
     <cbc:Description>Open procedure with two lots.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
-    <cbc:UrgencyCode listID="urn:ubl-examples:world:codelist:UrgencyCode">NORMAL</cbc:UrgencyCode>
     <cbc:ExpenseCode listID="urn:ubl-examples:world:codelist:ExpenseTypeCode">INVESTMENT</cbc:ExpenseCode>
     <cbc:PartPresentationCode listID="urn:ubl-examples:world:codelist:LotSubmissionCode">ONEORMORE</cbc:PartPresentationCode>
     <cbc:ContractingSystemCode listID="urn:ubl-examples:world:codelist:ContractingSystemCode">FRAMEWORK</cbc:ContractingSystemCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
     <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
     <cbc:AccessToolsURI>https://tenders.lumeport.example/PWD-2026-PARKS</cbc:AccessToolsURI>
-    <cbc:TerminatedIndicator>false</cbc:TerminatedIndicator>
     <cac:DocumentAvailabilityPeriod>
       <cbc:StartDate>2026-01-26</cbc:StartDate>
       <cbc:EndDate>2026-02-25</cbc:EndDate>
@@ -1476,6 +1469,9 @@ Inside `ProcurementProjectLot`:
     </cac:AdditionalInformationRequestPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:NoticeDocumentReference>
+      <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
     </cac:NoticeDocumentReference>
     <cac:AdditionalDocumentReference>
       <cbc:ID>PWD-SPEC-BENCH-26</cbc:ID>

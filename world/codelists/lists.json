@@ -3685,6 +3685,14 @@
      "Contract award notice",
      "Announces the result (eForms can-standard)."
     ],
+    "CN-DESG": [
+     "Design contest notice",
+     "Calls for competition in a design contest (eForms notice type cn-desg, subtypes 23 and 24)."
+    ],
+    "CAN-DESG": [
+     "Design contest result notice",
+     "Announces the results of a design contest (eForms notice type can-desg, subtypes 36 and 37)."
+    ],
     "BUSREG": [
      "Business registration notice",
      "Information on an economic operator from a business register."
