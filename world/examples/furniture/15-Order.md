@@ -164,10 +164,38 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
+- `DeliveryLocation/Name` = **New planning office, Lumeport Public Works Department**  
+  Where the desks are delivered and installed (furniture/15#F3).
+- `DeliveryLocation/Address/ID` = **LUM-ADR-000417** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Lumeport Public Works Department (world/parties.json).
+- `DeliveryLocation/Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `DeliveryLocation/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+- `DeliveryLocation/Address/StreetName` = **Civic Square**  
+  Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+- `DeliveryLocation/Address/BuildingNumber` = **6**  
+  Building number of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+- `DeliveryLocation/Address/CitySubdivisionName` = **Government Hill**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
+- `DeliveryLocation/Address/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
+- `DeliveryLocation/Address/PostalZone` = **38517**  
+  Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
+- `DeliveryLocation/Address/CountrySubentity` = **Coastal State**  
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `DeliveryLocation/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+- `DeliveryLocation/Address/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `DeliveryLocation/Address/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
 - `RequestedDeliveryPeriod/StartDate` = **2026-04-08**  
-  The desks are wanted on 8 April, when the installers come.
-- `RequestedDeliveryPeriod/EndDate` = **2026-04-08**  
-  The last day it is wanted.
+  Delivered and installed over two days: from Wednesday 8 April.
+- `RequestedDeliveryPeriod/EndDate` = **2026-04-09**  
+  To Thursday 9 April.
 - `DeliveryParty/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Lumeport Public Works Department**  
@@ -182,14 +210,37 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Description` = **Lumeport Public Works Department, Civic Square**  
   Where the delivery terms place the handover of the goods.
 
+### Allowance Charge
+
+Inside `AllowanceCharge`:
+
+- `ChargeIndicator` = **true**  
+  A charge.
+- `AllowanceChargeReasonCode` = **AEO** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code of UN/EDIFACT 7161 (special services): collection and recycling. The code is from the world's copy of UN/EDIFACT 7161 Special service description: AEO = Collection and recycling.
+- `AllowanceChargeReason` = **Packaging disposal**  
+  The installers take the desks' packaging away.
+- `Amount` = **24.00** (currencyID `XBL`)  
+  The furniture maker's flat charge, ordered with the desks.
+- `TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `TaxCategory/TaxExemptionReason` = **Public body**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+
 ### Tax Total
 
 Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **5952.00** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxableAmount` = **5976.00** (currencyID `XBL`)  
+  The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -209,8 +260,10 @@ Inside `AnticipatedMonetaryTotal`:
 
 - `LineExtensionAmount` = **5952.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **5952.00** (currencyID `XBL`)  
-  What the buyer expects to pay, tax included.
+- `ChargeTotalAmount` = **24.00** (currencyID `XBL`)  
+  The packaging disposal.
+- `PayableAmount` = **5976.00** (currencyID `XBL`)  
+  What the department expects to pay: the lines and the disposal; no sales tax for a public body.
 
 ### Order Line
 
@@ -362,9 +415,29 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cbc:Name>New planning office, Lumeport Public Works Department</cbc:Name>
+      <cac:Address>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-000417</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Civic Square</cbc:StreetName>
+        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38517</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-04-08</cbc:StartDate>
-      <cbc:EndDate>2026-04-08</cbc:EndDate>
+      <cbc:EndDate>2026-04-09</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
     <cac:DeliveryParty>
       <cac:PartyIdentification>
@@ -381,10 +454,25 @@ Inside `OrderLine`:
       <cbc:Description>Lumeport Public Works Department, Civic Square</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">AEO</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Packaging disposal</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="XBL">24.00</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">5952.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">5976.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -399,7 +487,8 @@ Inside `OrderLine`:
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">5952.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">5952.00</cbc:PayableAmount>
+    <cbc:ChargeTotalAmount currencyID="XBL">24.00</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="XBL">5976.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>

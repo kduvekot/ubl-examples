@@ -4674,6 +4674,17 @@ for _iid, _q, _ in MARROW_BACK:
 assert sum(MARROW_SETS.values()) == 3 and all(MARROW_SOLD["bench"][w] == MARROW_SETS[w] for w in WOODS)
 assert sum(d["ordered"] for d in MARROW_REPEAT if "-bench-" in d["item"]) == 10
 assert MARROW_SETS[WEBSHOP_WOOD] >= 1        # the webshop's set is among the sets the report counts
+DESK_DISPOSAL = Decimal("24.00")    # the flat packaging-disposal charge, in the order (D32), the report and the invoice
+
+
+def desk_office(why):
+    """The department's new planning office, where the desks go: in the department's building, by its address
+    register number, without the procurement office's lines (furniture/15#F3, 16#F8)."""
+    a = {k: v for k, v in build_examples.address("2-xb", register=True).items()
+         if k not in ("Department", "MarkAttention", "InhouseMail")}
+    return {"Name": V("New planning office, Lumeport Public Works Department", why), "Address": a}
+
+
 DESKS = [{"item": "office-desk", "ordered": 6, "why": "Six desks for the new planning office."},
          {"item": "installation", "ordered": 14, "why": "Two installers for seven hours."}]
 FURNITURE = kit.Flow("furniture", "2026-03-02", MARROW_ORDER)
@@ -4868,6 +4879,28 @@ def furniture(n, doc):
         out["AdditionalDocumentReference"] = {"ID": V(PWD_COMMITMENT, "The department's budget commitment for the "
                                                                       "purchase, which its rules ask the supplier to "
                                                                       "quote on the work report and the invoice.")}
+        # where and when the desks are delivered and installed (furniture/15#F3), and the disposal charge the
+        # installers bill, ordered with the desks (D32, furniture/16#F4, 17#F4)
+        kit.deep_merge(out.setdefault("Delivery", {}), {
+            "DeliveryLocation": desk_office("Where the desks are delivered and installed (furniture/15#F3)."),
+            "RequestedDeliveryPeriod": {"StartDate": V(f.date(37), "Delivered and installed over two days: from "
+                                                                   "Wednesday 8 April."),
+                                        "EndDate": V(f.date(38), "To Thursday 9 April.")}})
+        rule = kit.tax_rule("37-xb", "2-xb", "installation")
+        out["AllowanceCharge"] = {"ChargeIndicator": V("true", "A charge."),
+                                  "AllowanceChargeReasonCode": V("AEO", "The reason for the charge as a code of "
+                                                                        "UN/EDIFACT 7161 (special services): "
+                                                                        "collection and recycling."),
+                                  "AllowanceChargeReason": V("Packaging disposal", "The installers take the desks' "
+                                                                                   "packaging away."),
+                                  "Amount": amount(DESK_DISPOSAL, "XBL", "The furniture maker's flat charge, "
+                                                                         "ordered with the desks."),
+                                  "TaxCategory": kit.tax_category(rule)}
+        amt = out["AnticipatedMonetaryTotal"]
+        base = Decimal(amt["LineExtensionAmount"].value)
+        amt["ChargeTotalAmount"] = amount(DESK_DISPOSAL, "XBL", "The packaging disposal.")
+        amt["PayableAmount"] = amount(base + DESK_DISPOSAL, "XBL", "What the department expects to pay: the lines "
+                                                                   "and the disposal; no sales tax for a public body.")
         return out
     if doc["doc"] == "WorkReport":
         return {**collab(f, doc, "work-report", 38, "Reported when the installation was finished."),
@@ -7021,7 +7054,12 @@ def _(f, n, doc, out):
             "OrderReference": {"ID": V(f.numbers["order-desks"], "The department's order.")},
             "ProjectReference": {"ID": V("PWD-PLAN-OFFICE-26", "The new planning office.")},
             "AdditionalDocumentReference": {"ID": V("BF-PHOTO-26-0408", "Photographs of the finished office.")},
-            "TaxTotal": {"TaxAmount": amount(0, "XBL", "Exempt: a service to a public body.")},
+            "TaxTotal": {"TaxAmount": amount(0, "XBL", "Exempt: a service to a public body."),
+                         "TaxSubtotal": {"TaxableAmount": amount(amt + DESK_DISPOSAL, "XBL", "The hours and the "
+                                                                                             "disposal charge."),
+                                         "TaxAmount": amount(0, "XBL", "No tax in this category."),
+                                         "TaxCategory": kit.tax_category(kit.tax_rule("37-xb", "2-xb",
+                                                                                      "installation"))}},
             "StatementMonetaryTotal": {"LineExtensionAmount": amount(amt, "XBL", "14 hours at 48 lume."),
                                        "PayableAmount": amount(amt, "XBL", "What the invoice will charge.")},
             "WorkReportLine": {"WorkItemID": V("INST", "The installation."),
@@ -7029,8 +7067,7 @@ def _(f, n, doc, out):
                                "LineExtensionAmount": amount(amt, "XBL", "14 hours at the rate."),
                                "TaxInclusiveLineExtensionAmount": amount(amt, "XBL", "Exempt."),
                                "CompletionPercent": V("100", "Finished."),
-                               "ActivityOriginLocation": {"Name": V("Lumeport Public Works Department, Civic Square",
-                                                                    "Where.")},
+                               "ActivityOriginLocation": desk_office("Where the work was done (furniture/16#F8)."),
                                "Period": {"StartDate": V(f.date(37), "From."), "EndDate": V(f.date(38), "To.")},
                                "PerformingParty": party("37-xb", short=True),
                                "WorkPhaseReference": {"ID": V("PH-2", "The second phase of the move."),
@@ -7043,8 +7080,14 @@ def _(f, n, doc, out):
                                                       "WorkOrderDocumentReference": {"ID": V(f.numbers["order-desks"],
                                                                                              "The order.")}},
                                "DocumentReference": {"ID": V("BF-CHECK-26-0408", "The installation checklist.")},
-                               "Price": {"PriceAmount": price(rate, "XBL", "Per hour.")},
-                               "TaxTotal": {"TaxAmount": amount(0, "XBL", "Exempt.")},
+                               "Price": {"PriceAmount": price(rate, "XBL", "Per hour."),
+                                         "BaseQuantity": qty(1, "HUR", "Per hour of one installer "
+                                                                       "(furniture/16#F12).")},
+                               "TaxTotal": {"TaxAmount": amount(0, "XBL", "Exempt."),
+                                            "TaxSubtotal": {"TaxableAmount": amount(amt, "XBL", "The hours."),
+                                                            "TaxAmount": amount(0, "XBL", "No tax."),
+                                                            "TaxCategory": kit.tax_category(kit.tax_rule(
+                                                                "37-xb", "2-xb", "installation"))}},
                                "SubWorkReportLine": [half("37-xb", 1), half("37-xb", 2)]}}
 
 
@@ -10239,14 +10282,16 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     smt = out["StatementMonetaryTotal"]
     amt = Decimal(smt["LineExtensionAmount"].value)
-    smt["ChargeTotalAmount"] = amount(Decimal("24.00"), "XBL", "The packaging disposal.")
-    smt["PayableAmount"] = amount(amt + Decimal("24.00"), "XBL", "What the invoice will charge: the hours and the "
-                                                                 "disposal.")
+    smt["ChargeTotalAmount"] = amount(DESK_DISPOSAL, "XBL", "The packaging disposal.")
+    smt["PayableAmount"] = amount(amt + DESK_DISPOSAL, "XBL", "What the invoice will charge: the hours and the "
+                                                              "disposal, as ordered.")
     return {"AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
                                 "AllowanceChargeReasonCode": V("AEO", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
                                 "AllowanceChargeReason": V("Packaging disposal", "The installers took the "
-                                                                                 "packaging away."),
-                                "Amount": amount(Decimal("24.00"), "XBL", "A flat charge.")},
+                                                                                 "packaging away, as the order "
+                                                                                 "agreed (furniture/16#F4)."),
+                                "Amount": amount(DESK_DISPOSAL, "XBL", "The flat charge of the order."),
+                                "TaxCategory": kit.tax_category(kit.tax_rule("37-xb", "2-xb", "installation"))},
             "AdditionalDocumentReference": {"ID": V(PWD_COMMITMENT, "The department's budget commitment the work "
                                                                     "will be billed against, as its order gave it.")}}
 

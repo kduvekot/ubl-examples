@@ -234,6 +234,11 @@ def party(pid, short=False, desk=None, lang=None):
                                "Name": V(lang["name"], f"The language's name in English; in the language itself: "
                                                        f"{lang['own_name']}.")}
     out["PostalAddress"] = address(pid, register=True)
+    if desk and idn.get("address_desks") and desk not in idn["address_desks"]:
+        # the lines of the address that name one office (the department's procurement office) go only with the
+        # roles that office answers for; an invoice's accounting customer is the finance office (furniture/17#F6)
+        for k in ("Department", "MarkAttention", "InhouseMail"):
+            out["PostalAddress"].pop(k, None)
     if idn.get("site"):
         out["PhysicalLocation"] = location(pid)
     if idn.get("endpoint"):

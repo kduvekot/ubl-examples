@@ -1577,7 +1577,12 @@
       }
      }
     },
-    "week": "office"
+    "week": "office",
+    "address_desks": [
+     "purchasing",
+     "procurement"
+    ],
+    "address_desks_note": "The address's department, attention and in-house mail lines are the procurement office's: they go with the roles it answers for, and are left out where another office of the department is addressed."
    }
   },
   {

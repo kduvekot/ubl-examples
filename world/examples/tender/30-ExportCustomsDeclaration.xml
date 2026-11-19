@@ -240,9 +240,6 @@
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Civic Square</cbc:StreetName>
         <cbc:BuildingNumber>6</cbc:BuildingNumber>
-        <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
-        <cbc:Department>Procurement office</cbc:Department>
-        <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
         <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38517</cbc:PostalZone>

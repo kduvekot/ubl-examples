@@ -294,12 +294,6 @@ Inside `CustomsDeclaration`:
   Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PostalAddress/BuildingNumber` = **6**  
   Building number of the postal address. identity of Lumeport Public Works Department (world/parties.json).
-- `ConsigneeParty/PostalAddress/InhouseMail` = **Room 2.14**  
-  The internal mail code of the procurement office. identity of Lumeport Public Works Department (world/parties.json).
-- `ConsigneeParty/PostalAddress/Department` = **Procurement office**  
-  The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
-- `ConsigneeParty/PostalAddress/MarkAttention` = **Head of procurement**  
-  For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PostalAddress/CitySubdivisionName` = **Government Hill**  
   The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
 - `ConsigneeParty/PostalAddress/CityName` = **Lumeport**  
@@ -629,9 +623,6 @@ Inside `Signature`:
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
         <cbc:StreetName>Civic Square</cbc:StreetName>
         <cbc:BuildingNumber>6</cbc:BuildingNumber>
-        <cbc:InhouseMail>Room 2.14</cbc:InhouseMail>
-        <cbc:Department>Procurement office</cbc:Department>
-        <cbc:MarkAttention>Head of procurement</cbc:MarkAttention>
         <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
         <cbc:CityName>Lumeport</cbc:CityName>
         <cbc:PostalZone>38517</cbc:PostalZone>
