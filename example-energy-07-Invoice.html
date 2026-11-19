@@ -55,9 +55,11 @@ The month's gas.</li>
 <li><code>IssueTime</code> = <strong>15:31:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>DueDate</code> = <strong>2026-05-03</strong><br />
+<li><code>DueDate</code> = <strong>2026-05-05</strong><br />
 As the payment terms below count it: 30 days net; 1.5 % surcharge per
-month late.</li>
+month late. The count ends on Sunday 3 May, no business day in Bayvarra,
+the payee's country, so the payment is due on the next one, Tuesday 5
+May (O180).</li>
 <li><code>InvoiceTypeCode</code> = <strong>380</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the
@@ -546,7 +548,7 @@ validation checks. The code is from UBL's default Payment means
 <li><code>PaymentMeansDescription</code> = <strong>Credit
 transfer</strong><br />
 In words.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-03</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-05-05</strong><br />
 When the transfer must be credited.</li>
 <li><code>PaymentChannelCode</code> = <strong>RTNS</strong> (listID
 <code>ISO 20022 ClearingChannel2Code</code>)<br />
@@ -706,10 +708,12 @@ The surcharge for each month late.</li>
 <li><code>PaymentTermsDetailsURI</code> = <strong><a
 href="https://www.kelpstone.example/terms">https://www.kelpstone.example/terms</a></strong><br />
 The seller's general terms of payment.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-03</strong><br />
-The day the amount is due, as the terms count it.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-05-05</strong><br />
+The day the amount is due, as the terms count it. The count ends on
+Sunday 3 May, no business day in Bayvarra, the payee's country, so the
+payment is due on the next one, Tuesday 5 May (O180).</li>
 <li><code>PenaltyPeriod/StartDate</code> =
-<strong>2026-05-04</strong><br />
+<strong>2026-05-06</strong><br />
 From the day after the due date, with no end: the surcharge runs per
 month for as long as the amount is late (worklist C38).</li>
 </ul>
@@ -887,7 +891,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;1e7ea11c-b11c-5f5d-b9a6-1cc6a2557832&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-03&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:31:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Priced in ferra as the supply contract says: the buyer&#39;s own currency. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion P).&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
@@ -1061,7 +1065,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF84KGINV260159&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
@@ -1113,9 +1117,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PenaltySurchargePercent</span>&gt;1.5&lt;/<span class="kw">cbc:PenaltySurchargePercent</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PenaltyAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;129600&lt;/<span class="kw">cbc:PenaltyAmount</span>&gt;</span>
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.kelpstone.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-03&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PenaltyPeriod</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-04&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PenaltyPeriod</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
@@ -1184,6 +1188,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Invoice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/4b21f6b88548c807313942b7c0e87b176346a6a6"><code>4b21f6b</code></a> of 2026-11-19 23:34 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
 </body>
 </html>

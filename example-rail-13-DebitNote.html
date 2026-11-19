@@ -56,7 +56,7 @@ The day after the carrier's debit note.</li>
 <li><code>IssueTime</code> = <strong>09:26:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>DueDate</code> = <strong>2026-05-24</strong><br />
+<li><code>DueDate</code> = <strong>2026-05-25</strong><br />
 As the payment terms below count it: 30 days net; 2 % discount when paid
 within 10 days.</li>
 <li><code>Note</code> = <strong>Container FRXU1044180 was placed at
@@ -552,7 +552,7 @@ validation checks. The code is from UBL's default Payment means
 <li><code>PaymentMeansDescription</code> = <strong>Credit
 transfer</strong><br />
 In words.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-24</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-05-25</strong><br />
 When the transfer must be credited.</li>
 <li><code>PaymentChannelCode</code> = <strong>RTNS</strong> (listID
 <code>ISO 20022 ClearingChannel2Code</code>)<br />
@@ -725,8 +725,10 @@ The discount on the amount payable, if paid in time.</li>
 <li><code>PaymentTermsDetailsURI</code> = <strong><a
 href="https://www.valdara.example/terms">https://www.valdara.example/terms</a></strong><br />
 The seller's general terms of payment.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-24</strong><br />
-The day the amount is due, as the terms count it.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-05-25</strong><br />
+The day the amount is due, as the terms count it. The count ends on
+Sunday 24 May, no business day in Urvania, the payee's country, so the
+payment is due on the next one, Monday 25 May (O180).</li>
 <li><code>SettlementPeriod/StartDate</code> =
 <strong>2026-04-24</strong><br />
 From the invoice date.</li>
@@ -887,7 +889,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;6b1333eb-a95b-5a28-9c76-1522ab34fd75&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:26:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-24&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-25&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180 was placed at Lumeway&#39;s siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding&#39;s fork-lift was in repair, so Lumeway could unload the second container only on 22 April.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DebitNoteTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;383&lt;/<span class="kw">cbc:DebitNoteTypeCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
@@ -1054,7 +1056,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-24&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-25&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF09VIDOC260339&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
@@ -1108,7 +1110,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountPercent</span>&gt;2&lt;/<span class="kw">cbc:SettlementDiscountPercent</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SettlementDiscountAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;300&lt;/<span class="kw">cbc:SettlementDiscountAmount</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;https://www.valdara.example/terms&lt;/<span class="kw">cbc:PaymentTermsDetailsURI</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-24&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-25&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SettlementPeriod</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-04&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
@@ -1175,6 +1177,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DebitNote</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/4b21f6b88548c807313942b7c0e87b176346a6a6"><code>4b21f6b</code></a> of 2026-11-19 23:34 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
 </body>
 </html>

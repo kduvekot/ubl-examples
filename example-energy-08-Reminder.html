@@ -52,7 +52,7 @@ The reminder number.</li>
 <strong>154cfeb8-3d00-5879-95d5-6ed226239c26</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-06-03</strong><br />
+<li><code>IssueDate</code> = <strong>2026-06-05</strong><br />
 A month after the due date.</li>
 <li><code>IssueTime</code> = <strong>09:46:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
@@ -75,9 +75,9 @@ the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.</li>
 <h3 id="reminder-period">Reminder Period</h3>
 <p>Inside <code>ReminderPeriod</code>:</p>
 <ul>
-<li><code>StartDate</code> = <strong>2026-05-04</strong><br />
+<li><code>StartDate</code> = <strong>2026-05-06</strong><br />
 Overdue from the day after the due date</li>
-<li><code>EndDate</code> = <strong>2026-06-03</strong><br />
+<li><code>EndDate</code> = <strong>2026-06-05</strong><br />
 to the reminder: one month.</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
@@ -622,7 +622,7 @@ of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Note</code> = <strong>Please pay the invoice and the surcharge
 together.</strong><br />
 What is asked.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-06-10</strong><br />
+<li><code>PaymentDueDate</code> = <strong>2026-06-12</strong><br />
 A week after the reminder.</li>
 </ul>
 <h3 id="tax-total">Tax Total</h3>
@@ -668,7 +668,7 @@ Now due, in ferra.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The unpaid invoice.</li>
-<li><code>Note</code> = <strong>Invoice due 2026-05-03.</strong><br />
+<li><code>Note</code> = <strong>Invoice due 2026-05-05.</strong><br />
 What it is.</li>
 <li><code>UUID</code> =
 <strong>bd4ac5e5-9633-5639-a227-c92e47041205</strong><br />
@@ -683,7 +683,7 @@ ISO 20022 purpose code SUPP: payment to a supplier. The code is from the
 world's copy of ISO 20022 ExternalPurpose1Code: SUPP =
 SupplierPayment.</li>
 <li><code>ReminderPeriod/StartDate</code> =
-<strong>2026-05-04</strong><br />
+<strong>2026-05-06</strong><br />
 Overdue since.</li>
 <li><code>BillingReference/InvoiceDocumentReference/ID</code> =
 <strong>KG-INV-26-0158</strong><br />
@@ -705,10 +705,10 @@ and the line number.</li>
 <li><code>PenaltySurchargePercent</code> = <strong>1.5</strong><br />
 Bayvarra's surcharge per month late.</li>
 <li><code>ReminderPeriod/StartDate</code> =
-<strong>2026-05-04</strong><br />
+<strong>2026-05-06</strong><br />
 Overdue from the day after the due date</li>
 <li><code>ReminderPeriod/EndDate</code> =
-<strong>2026-06-03</strong><br />
+<strong>2026-06-05</strong><br />
 to the reminder: one month.</li>
 <li><code>BillingReference/InvoiceDocumentReference/ID</code> =
 <strong>KG-INV-26-0158</strong><br />
@@ -727,15 +727,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;ENERGY-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;KG-DOC-26-0160&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;154cfeb8-3d00-5879-95d5-6ed226239c26&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-03&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:46:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ReminderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ReminderTypeCode&quot;</span>&gt;PAYMENT&lt;/<span class="kw">cbc:ReminderTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ReminderSequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:ReminderSequenceNumeric</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The invoice for March&#39;s gas is a month overdue: Bayvarra&#39;s surcharge of 1.5 % a month applies.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReminderPeriod</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-04&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-03&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-05&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ReminderPeriod</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
@@ -920,7 +920,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Please pay the invoice and the surcharge together.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-10&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-12&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;0&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
@@ -942,12 +942,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReminderLine</span>&gt;</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Invoice due 2026-05-03.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Invoice due 2026-05-05.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;bd4ac5e5-9633-5639-a227-c92e47041205&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;132480000&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;SUPP&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReminderPeriod</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-04&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReminderPeriod</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
@@ -963,8 +963,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;1987200&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PenaltySurchargePercent</span>&gt;1.5&lt;/<span class="kw">cbc:PenaltySurchargePercent</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ReminderPeriod</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-04&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-03&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-05&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ReminderPeriod</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
@@ -976,6 +976,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Reminder</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/4b21f6b88548c807313942b7c0e87b176346a6a6"><code>4b21f6b</code></a> of 2026-11-19 23:34 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
 </body>
 </html>

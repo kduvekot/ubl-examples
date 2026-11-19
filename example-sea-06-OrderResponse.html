@@ -448,8 +448,10 @@ validation checks. The code is from UBL's default Payment means
 <li><code>PaymentMeansDescription</code> = <strong>Credit
 transfer</strong><br />
 In words.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-09</strong><br />
-When the transfer must be credited.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-05-11</strong><br />
+When the transfer must be credited. The count ends on Saturday 9 May, no
+business day in Bayvarra, the payee's country, so the payment is due on
+the next one, Monday 11 May (O180).</li>
 <li><code>PaymentChannelCode</code> = <strong>RTNS</strong> (listID
 <code>ISO 20022 ClearingChannel2Code</code>)<br />
 How the payment system clears and settles the transfer, as an ISO 20022
@@ -605,8 +607,10 @@ The first instalment.</li>
 <li><code>Amount</code> = <strong>10000.00</strong> (currencyID
 <code>XBL</code>)<br />
 The deposit asked.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-05-09</strong><br />
-Within a day.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-05-11</strong><br />
+Within a day. The count ends on Saturday 9 May, no business day in
+Bayvarra, the payee's country, so the payment is due on the next one,
+Monday 11 May (O180).</li>
 </ul>
 <h3 id="transaction-conditions">Transaction Conditions</h3>
 <p>Inside <code>TransactionConditions</code>:</p>
@@ -1040,7 +1044,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF41LDSO260123&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
@@ -1090,7 +1094,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;DEPOSIT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Deposit due on acceptance.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-11&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransactionConditions</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-TC-01&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1270,6 +1274,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/4b21f6b88548c807313942b7c0e87b176346a6a6"><code>4b21f6b</code></a> of 2026-11-19 23:34 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
 </body>
 </html>

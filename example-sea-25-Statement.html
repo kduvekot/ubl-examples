@@ -439,8 +439,10 @@ validation checks. The code is from UBL's default Payment means
 <li><code>PaymentMeansDescription</code> = <strong>Credit
 transfer</strong><br />
 In words.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-06-28</strong><br />
-When the transfer must be credited.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-06-29</strong><br />
+When the transfer must be credited. The count ends on Sunday 28 June, no
+business day in Bayvarra, the payee's country, so the payment is due on
+the next one, Monday 29 June (O180).</li>
 <li><code>PaymentChannelCode</code> = <strong>RTNS</strong> (listID
 <code>ISO 20022 ClearingChannel2Code</code>)<br />
 How the payment system clears and settles the transfer, as an ISO 20022
@@ -587,8 +589,10 @@ of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Note</code> = <strong>Pay the balance by the due date of the
 invoice.</strong><br />
 The terms.</li>
-<li><code>PaymentDueDate</code> = <strong>2026-06-28</strong><br />
-The due date.</li>
+<li><code>PaymentDueDate</code> = <strong>2026-06-29</strong><br />
+The due date. The count ends on Sunday 28 June, no business day in
+Bayvarra, the payee's country, so the payment is due on the next one,
+Monday 29 June (O180).</li>
 </ul>
 <h3 id="allowance-charge">Allowance Charge</h3>
 <p>Inside <code>AllowanceCharge</code>:</p>
@@ -634,8 +638,10 @@ ISO 20022 purpose code GDDS: purchase of goods. The code is from the
 world's copy of ISO 20022 ExternalPurpose1Code: GDDS =
 PurchaseSaleOfGoods.</li>
 <li><code>PaymentTerms/PaymentDueDate</code> =
-<strong>2026-06-28</strong><br />
-The due date of the balance.</li>
+<strong>2026-06-29</strong><br />
+The due date of the balance. The count ends on Sunday 28 June, no
+business day in Bayvarra, the payee's country, so the payment is due on
+the next one, Monday 29 June (O180).</li>
 <li><code>BuyerCustomerParty/Party/PartyIdentification/ID</code> =
 <strong>IC41859</strong> (schemeID
 <code>urn:ubl-examples:world:XL:register</code>)<br />
@@ -904,7 +910,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansDescription</span>&gt;Credit transfer&lt;/<span class="kw">cbc:PaymentMeansDescription</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-28&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-29&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF20LDINV260147&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
@@ -951,7 +957,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Pay the balance by the due date of the invoice.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-28&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-29&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AllowanceCharge</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
@@ -968,7 +974,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;57974.30&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;GDDS&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-28&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-06-29&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BuyerCustomerParty</span>&gt;</span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Party</span>&gt;</span>
@@ -1053,6 +1059,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Statement</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/4b21f6b88548c807313942b7c0e87b176346a6a6"><code>4b21f6b</code></a> of 2026-11-19 23:34 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/fcb962441f57feda155346fd7d398bbfe48ffd43"><code>fcb9624</code></a> of 2026-11-19 23:39 UTC</p></div></footer>
 </body>
 </html>

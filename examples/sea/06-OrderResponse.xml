@@ -151,7 +151,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF41LDSO260123</cbc:InstructionNote>
@@ -201,7 +201,7 @@
     <cbc:ID>DEPOSIT</cbc:ID>
     <cbc:Note>Deposit due on acceptance.</cbc:Note>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
-    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:TransactionConditions>
     <cbc:ID>LD-TC-01</cbc:ID>
