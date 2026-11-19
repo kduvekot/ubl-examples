@@ -254,7 +254,7 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `CreditNoteLine/OriginatorParty` | 0..1 | tender/33-CreditNote | | | open |
 | `FulfilmentCancellation/BeneficiaryParty` | 0..n | air/07-FulfilmentCancellation | | | open |
 | `FulfilmentCancellation/OriginatorCustomerParty` | 0..1 | air/07-FulfilmentCancellation | | | open |
-| `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | | | open |
+| `InstructionForReturnsLine/ManufacturerParty` | 0..1 | furniture/12-InstructionForReturns | the wholesaler\'s instruction for returns of the spent Mo-99/Tc-99m generator to its maker (a fictional maker abroad, named in the document, not a world party), with the return shipment; owner, 2026-11-19 (O202 choice 7) | medicines | candidate |
 | `ItemIdentification/MeasurementDimension` | 0..n | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `ItemProperty/UsabilityPeriod` | 0..1 | wood/01-RequestForQuotation, wood/02-Quotation, wood/03-Order … | | | open |
 | `OrderCancellation/BeneficiaryParty` | 0..n | furniture/11-OrderCancellation | | | open |
