@@ -224,7 +224,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">66983</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">67095</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranogrid.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
@@ -238,10 +238,10 @@
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">559122</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">2790960</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">2795610</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">559122</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -252,10 +252,10 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">2790960</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">2790960</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">3349152</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">3349152</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">2795610</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">2795610</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">3354732</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">3354732</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -263,7 +263,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FE-CP-4120-01</cbc:ID>
+        <cbc:ID>FG-CP-4120-E1</cbc:ID>
         <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -291,11 +291,11 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XUF">115320</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KWH">19350</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">119970</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FE-CP-4160-07</cbc:ID>
+        <cbc:ID>FG-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>

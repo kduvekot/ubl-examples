@@ -1201,28 +1201,36 @@ a[href]:hover { background: #ffa }
             </td></tr><tr><td align="left">
               Farm register of Lisavu
             </td><td align="left">
-              the island's government
+              the island's Department of Agriculture, which also runs
+              the plant protection service
             </td><td align="left">
               <code class="literal">LFR-</code> and four digits
               (<code class="literal">LFR-0412</code>, the cotton farm)
             </td><td align="left">
               <code class="literal">XL:farm-register</code>
             </td></tr></tbody></table></div><p>
+      The Trade Accord Council, an international body seated in
+      Lumeport, is in Bayvarra's federal list under its seat agreement
+      with Bayvarra, so that it can deal with Bayvarran bodies, banks
+      and the exchange network.
+    </p><p>
       A public body's party identifier and the
       <code class="literal">CompanyID</code> of its legal entity carry that number
       under its register's scheme
       (<code class="literal">urn:ubl-examples:world:</code> and the scheme), and
       its electronic address is built from it, as a company's is from
       its business register number; the farm's likewise from its number
-      in the farm register. Bayvarra's customs, which register a company
-      under its business register number, give a public body that
-      imports a number of their own, starting with 9. No real code of
-      Italy's index starts with <code class="literal">xu_</code>. The build checks
-      that each public body carries a number of its country's register
-      in that register's shape, that no company carries a number in a
-      public body's shape and no public body one in a company
-      register's, and that the number repeats the digits of none of the
-      party's other identifiers.
+      in the farm register. Bayvarra's customs build a trader number
+      from the last six digits of the trader's number in its register: a
+      company's business register number, a public body's number in the
+      federal list (<code class="literal">XB-TR-397184</code> for the Lumeport
+      Public Works Department). No real code of Italy's index starts
+      with <code class="literal">xu_</code>. The build checks that each public
+      body carries a number of its country's register in that register's
+      shape, that no company carries a number in a public body's shape
+      and no public body one in a company register's, and that the
+      number repeats the digits of none of the party's other
+      identifiers.
     </p><p>
       A code held in an identifier element, such as the tax category in
       <code class="literal">TaxCategory/ID</code>, the language in

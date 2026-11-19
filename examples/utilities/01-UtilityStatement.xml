@@ -113,12 +113,12 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FE-CP-4120-01-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FG-CP-4120-E1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Factory, main connection at 10 kV</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="KWH">412800</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FE-CP-4120-01</cbc:ID>
+      <cbc:ID>FG-CP-4120-E1</cbc:ID>
       <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
@@ -141,13 +141,13 @@
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+        <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>
         <cbc:MeterConstant>40</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTRATIO</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FE-M-881204-2603</cbc:ID>
+          <cbc:ID>FG-E-20388-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
@@ -221,7 +221,7 @@
       </cac:TaxTotal>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
-          <cbc:ID>FE-CP-4120-01-2603</cbc:ID>
+          <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
           <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
@@ -232,7 +232,7 @@
             <cbc:EndDate>2026-03-31</cbc:EndDate>
           </cac:Period>
           <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>FE-CP-4120-01-2602</cbc:ConsumptionReportID>
+            <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
             <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
             <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
@@ -242,7 +242,7 @@
             </cac:Period>
           </cac:ConsumptionReportReference>
           <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
             <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -254,7 +254,7 @@
             </cac:Period>
           </cac:ConsumptionHistory>
           <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FE-M-881204</cbc:MeterNumber>
+            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
             <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
             <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
             <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
