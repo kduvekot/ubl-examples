@@ -2899,7 +2899,8 @@ def check_utility_statements(flow_id, roots):
                 raise SystemExit(f"{at}: correction {a}, but {u} x {q} is {u * q}")
         if etree.QName(root).localname != "UtilityStatement":
             continue
-        for cons in root.findall(f"{c}SubscriberConsumption/{c}Consumption"):
+        for cons in root.findall(f"{c}SubscriberConsumption/{c}Consumption") + \
+                root.findall(f"{c}SubscriberConsumption/{c}SupplierConsumption/{c}Consumption"):
             lmt = cons.find(f"{c}LegalMonetaryTotal")
             if lmt is None or lmt.find(f"{b}AllowanceTotalAmount") is not None or cons.find(f"{c}TaxTotal") is None:
                 continue
@@ -2915,6 +2916,20 @@ def check_utility_statements(flow_id, roots):
                                                                        for t in line.findall(f"{c}TaxTotal"))
                 if incl != want:
                     raise SystemExit(f"{at}: consumption line with tax {incl}, but its amount and taxes make {want}")
+    for name, root in roots:     # the parts of each supplier add up to the invoice lines they explain (D31 p. 2)
+        inv = invoices.get(root.findtext(f"{c}ParentDocumentReference/{b}ID"))
+        if etree.QName(root).localname != "UtilityStatement" or inv is None:
+            continue
+        parts = {}
+        for cl in root.iter(f"{c}ConsumptionLine"):
+            k = cl.findtext(f"{b}ParentDocumentLineReferenceID")
+            parts[k] = parts.get(k, Decimal(0)) + num(cl.find(f"{b}LineExtensionAmount"))
+        billed = {ln.findtext(f"{b}ID"): num(ln.find(f"{b}LineExtensionAmount"))
+                  for t in ("InvoiceLine", "CollectionInvoiceLine") for ln in inv[1].findall(f"{c}{t}")}
+        for k, a in parts.items():
+            if billed.get(k) != a:
+                raise SystemExit(f"world/examples/{flow_id}/{name}: its consumption lines for line {k} of "
+                                 f"{inv[0]} make {a}, the invoice line {billed.get(k)}")
     for inv_id, (name, inv) in invoices.items():
         tiers = [st for t in inv.findall(f"{c}TaxTotal") for st in t.findall(f"{c}TaxSubtotal")
                  if st.findtext(f"{c}TaxCategory/{c}TaxScheme/{b}ID") == "EXC" and st.find(f"{b}PerUnitAmount") is not None]
@@ -2924,9 +2939,9 @@ def check_utility_statements(flow_id, roots):
                  and r.findtext(f"{c}ParentDocumentReference/{b}ID") == inv_id]
         reported = sum(num(e) for _, r in stmts for e in r.iter(f"{b}TaxEnergyAmount"))
         metered = sum(num(cl.find(f"{b}InvoicedQuantity")) for _, r in stmts      # an estimate correction credits
-                      for sc in r.findall(f"{c}SubscriberConsumption")               # its kWh on a line of its own
-                      if sc.find(f"{c}Consumption/{c}EnergyWaterSupply/{c}EnergyTaxReport") is not None
-                      for cl in sc.iter(f"{c}ConsumptionLine"))
+                      for sc in r.findall(f"{c}SubscriberConsumption/{c}SupplierConsumption")   # its kWh on a line
+                      if sc.find(f"{c}Consumption/{c}EnergyWaterSupply/{c}EnergyTaxReport") is not None  # of its own;
+                      for cl in sc.iter(f"{c}ConsumptionLine"))              # the energy supplier's part (D31 p. 2)
         excise = sum(num(st.find(f"{b}TaxAmount")) for st in tiers)
         taxed = sum(num(st.find(f"{b}TaxAmount")) / num(st.find(f"{b}PerUnitAmount")) for st in tiers)
         if reported != excise:

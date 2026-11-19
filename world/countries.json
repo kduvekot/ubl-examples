@@ -1967,7 +1967,9 @@
     "textile": "trilbaz",
     "wooden": "zhendul",
     "weighs": "ranskir",
-    "exported": "gazvan"
+    "exported": "gazvan",
+    "transformers": "miktan",
+    "voltage": "vesir"
    }
   },
   "qal": {
@@ -3089,7 +3091,9 @@
     "distributor": "kelokifi",
     "bodies": "senatu",
     "stream": "tamohi",
-    "tare": "nimeme"
+    "tare": "nimeme",
+    "transformers": "telalimu",
+    "voltage": "vuvai"
    }
   },
   "en": {

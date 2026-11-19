@@ -6115,7 +6115,7 @@
   "UtilityType": {
    "scope": "regional",
    "name": "Utility type",
-   "description": "The kind of utility supply. Also the meaning of SubscriberTypeCode in a utility item, which names the supply.",
+   "description": "The kind of utility supply.",
    "codes": {
     "ELEC": [
      "Electricity",
@@ -6301,6 +6301,10 @@
     "CTRATIO": [
      "Transformer ratio",
      "The meter is connected through current transformers: the constant is their ratio."
+    ],
+    "CTVT": [
+     "Current and voltage transformers",
+     "The meter is connected through current and voltage transformers, as at a medium-voltage connection: the constant is the product of their ratios."
     ]
    }
   },
@@ -8964,18 +8968,7 @@
   },
   {
    "element": "SubscriberTypeCode",
-   "list": "UtilityType",
-   "parents": [
-    "UtilityItem"
-   ],
-   "text": "SubscriberType"
-  },
-  {
-   "element": "SubscriberTypeCode",
    "list": "SubscriberType",
-   "parents": [
-    "UtilityConsumptionPoint"
-   ],
    "text": "SubscriberType"
   },
   {

@@ -180,8 +180,8 @@ Inside `SubscriberConsumption`:
   The company's connection.
 - `UtilityConsumptionPoint/Description` = **Office of Velumi Trading, Selanu**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **ST-C-1077**  
-  The contract.
+- `UtilityConsumptionPoint/SubscriberID` = **ST-CU-20418**  
+  The subscriber's customer number with the telecom company; the contract number stays in the contract (D31 point 5).
 - `UtilityConsumptionPoint/SubscriberType` = **Business**  
   The name of code BUS in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **BUS** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -546,122 +546,6 @@ Inside `SubscriberConsumption`:
   The bundle discount.
 - `Consumption/LegalMonetaryTotal/PayableAmount` = **135.566** (currencyID `XLC`)  
   The supply less the discount; no tax.
-- `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Selanu Telecom**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/UtilityCustomerParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/UtilityCustomerParty/PartyName/Name` = **Velumi Trading**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **141.920** (currencyID `XLC`)  
-  The supply.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/AllowanceTotalAmount` = **6.354** (currencyID `XLC`)  
-  The bundle discount.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **135.566** (currencyID `XLC`)  
-  The supply less the discount.
-- `SupplierConsumption/ConsumptionLine/ID` = **1**  
-  The line of the consumption.
-- `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **1**  
-  The line of the invoice this line explains.
-- `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **6** (unitCode `MON`)  
-  Six business lines for the month.
-- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **127.080** (currencyID `XLC`)  
-  Quantity times the tariff.
-- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **127.080** (currencyID `XLC`)  
-  With the tax of the line.
-- `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
-  March.
-- `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
-  Its last day.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/ChargeIndicator` = **false**  
-  An allowance: it lowers the amount.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
-  The reason in words.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
-  5 %.
-- `SupplierConsumption/ConsumptionLine/AllowanceCharge/Amount` = **6.354** (currencyID `XLC`)  
-  On the subscriptions of this line.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-BL**  
-  The utility's tariff item.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **ST-C-1077**  
-  The customer's contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Telephone**  
-  The name of code TEL in the Trade Accord's utility type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply the item is for, as a code. The code is from the Trade Accord's utility type list: TEL = Telephone.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Levise nikeile tofami titefe litile, pafipa vivukane.** (languageID `qal`)  
-  The tariff in words in Lisavan, the seller's language; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Business telephone and data line, monthly subscription.** (languageID `en-XL`)  
-  The tariff in words in English, the working language between the countries; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Subscription**  
-  The name of code SUB in the Trade Accord's consumption type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **SUB** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: SUB = Subscription.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType` = **Monthly**  
-  The name of code M in the Trade Accord's utility charge type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
-  As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
-  The supply contract the tariff belongs to.
-- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **21.18** (currencyID `XLC`)  
-  The tariff (world/items.json).
-- `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MON`)  
-  Per unit.
-- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/PriceAmount` = **21.18** (currencyID `XLC`)  
-  The subscription price as the tariff sheet states it.
-- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/TaxInclusivePriceAmount` = **21.18** (currencyID `XLC`)  
-  No tax on the island.
-- `SupplierConsumption/ConsumptionLine/UnstructuredPrice/TimeAmount` = **per month**  
-  The period the price is for.
-- `SupplierConsumption/ConsumptionLine/ID` = **2**  
-  The line of the consumption.
-- `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **2**  
-  The line of the invoice this line explains.
-- `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **35** (unitCode `E34`)  
-  Mobile data beyond the subscriptions.
-- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **14.840** (currencyID `XLC`)  
-  Quantity times the tariff.
-- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **14.840** (currencyID `XLC`)  
-  With the tax of the line.
-- `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
-  March.
-- `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
-  Its last day.
-- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
-  Where it was delivered.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **ST-GB**  
-  The utility's tariff item.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **ST-C-1077**  
-  The customer's contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Telephone**  
-  The name of code TEL in the Trade Accord's utility type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply the item is for, as a code. The code is from the Trade Accord's utility type list: TEL = Telephone.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Livule titefe lehimi vivukane, tatata menuti.** (languageID `qal`)  
-  The tariff in words in Lisavan, the seller's language; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Mobile data beyond the subscription, per gigabyte.** (languageID `en-XL`)  
-  The tariff in words in English, the working language between the countries; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/PackQuantity` = **5** (unitCode `E34`)  
-  Data beyond the subscriptions is sold in packs of 5 GB.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/PackSizeNumeric` = **7**  
-  Seven packs: the 35 GB of March.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
-  The name of code MET in the Trade Accord's consumption type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: MET = Metered.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType` = **Monthly**  
-  The name of code M in the Trade Accord's utility charge type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
-  As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **ST-C-1077**  
-  The supply contract the tariff belongs to.
-- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **0.424** (currencyID `XLC`)  
-  The tariff (world/items.json).
-- `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `E34`)  
-  Per unit.
 
 ## The document
 
@@ -780,7 +664,7 @@ Inside `SubscriberConsumption`:
     <cac:UtilityConsumptionPoint>
       <cbc:ID>ST-CP-1077</cbc:ID>
       <cbc:Description>Office of Velumi Trading, Selanu</cbc:Description>
-      <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
+      <cbc:SubscriberID>ST-CU-20418</cbc:SubscriberID>
       <cbc:SubscriberType>Business</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">BUS</cbc:SubscriberTypeCode>
       <cac:Address>
@@ -1034,110 +918,6 @@ Inside `SubscriberConsumption`:
         <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
-    <cac:SupplierConsumption>
-      <cac:UtilitySupplierParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Selanu Telecom</cbc:Name>
-        </cac:PartyName>
-      </cac:UtilitySupplierParty>
-      <cac:UtilityCustomerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
-        </cac:PartyName>
-      </cac:UtilityCustomerParty>
-      <cac:Consumption>
-        <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XLC">141.920</cbc:LineExtensionAmount>
-          <cbc:AllowanceTotalAmount currencyID="XLC">6.354</cbc:AllowanceTotalAmount>
-          <cbc:PayableAmount currencyID="XLC">135.566</cbc:PayableAmount>
-        </cac:LegalMonetaryTotal>
-      </cac:Consumption>
-      <cac:ConsumptionLine>
-        <cbc:ID>1</cbc:ID>
-        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="MON">6</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">127.080</cbc:TaxInclusiveLineExtensionAmount>
-        <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
-          <cbc:EndDate>2026-03-31</cbc:EndDate>
-        </cac:Period>
-        <cac:AllowanceCharge>
-          <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">95</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Business bundle discount</cbc:AllowanceChargeReason>
-          <cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-          <cbc:Amount currencyID="XLC">6.354</cbc:Amount>
-        </cac:AllowanceCharge>
-        <cac:UtilityItem>
-          <cbc:ID>ST-BL</cbc:ID>
-          <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
-          <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qal">Levise nikeile tofami titefe litile, pafipa vivukane.</cbc:Description>
-          <cbc:Description languageID="en-XL">Business telephone and data line, monthly subscription.</cbc:Description>
-          <cbc:ConsumptionType>Subscription</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">SUB</cbc:ConsumptionTypeCode>
-          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:Contract>
-            <cbc:ID>ST-C-1077</cbc:ID>
-          </cac:Contract>
-        </cac:UtilityItem>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
-        </cac:Price>
-        <cac:UnstructuredPrice>
-          <cbc:PriceAmount currencyID="XLC">21.18</cbc:PriceAmount>
-          <cbc:TaxInclusivePriceAmount currencyID="XLC">21.18</cbc:TaxInclusivePriceAmount>
-          <cbc:TimeAmount>per month</cbc:TimeAmount>
-        </cac:UnstructuredPrice>
-      </cac:ConsumptionLine>
-      <cac:ConsumptionLine>
-        <cbc:ID>2</cbc:ID>
-        <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
-        <cbc:InvoicedQuantity unitCode="E34">35</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XLC">14.840</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">14.840</cbc:TaxInclusiveLineExtensionAmount>
-        <cac:Period>
-          <cbc:StartDate>2026-03-01</cbc:StartDate>
-          <cbc:EndDate>2026-03-31</cbc:EndDate>
-        </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
-        <cac:UtilityItem>
-          <cbc:ID>ST-GB</cbc:ID>
-          <cbc:SubscriberID>ST-C-1077</cbc:SubscriberID>
-          <cbc:SubscriberType>Telephone</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qal">Livule titefe lehimi vivukane, tatata menuti.</cbc:Description>
-          <cbc:Description languageID="en-XL">Mobile data beyond the subscription, per gigabyte.</cbc:Description>
-          <cbc:PackQuantity unitCode="E34">5</cbc:PackQuantity>
-          <cbc:PackSizeNumeric>7</cbc:PackSizeNumeric>
-          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
-          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
-          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
-          <cac:Contract>
-            <cbc:ID>ST-C-1077</cbc:ID>
-          </cac:Contract>
-        </cac:UtilityItem>
-        <cac:Price>
-          <cbc:PriceAmount currencyID="XLC">0.424</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="E34">1</cbc:BaseQuantity>
-        </cac:Price>
-      </cac:ConsumptionLine>
-    </cac:SupplierConsumption>
   </cac:SubscriberConsumption>
 </UtilityStatement>
 ```

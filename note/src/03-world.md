@@ -1174,6 +1174,15 @@ the customers of the national utilities. They carry terms of their own, an
 Accord code, `TA-UTIL`, not a country's standard terms; a bill collected by direct
 debit says so and is collected on the due date.
 
+A utility gives each customer a customer number of its own; the supply
+contract keeps its own number. The statement behind a bill shows, beside
+the utility's own supply, the part of the bill another party really
+supplies: in Urvania Ferrano Grid's network charges, which Ferrano Energy
+collects with its bill and pays to the grid (its tariff of 27.3 ferra a
+kilowatt hour is 21.1 for the energy and 6.2 for the network), and in
+Bayvarra the city's sewage levy, which the water company collects for the
+city. The island's telephone company bills its own service only.
+
 Bayvarra rounds cash payments to 5 cents, its smallest coin. A transfer
 quotes a creditor reference in the structure of ISO 11649, made from the
 invoice number, so the payee can match it, and runs over the domestic

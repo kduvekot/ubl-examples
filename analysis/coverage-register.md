@@ -499,6 +499,23 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `Price/OrderableUnitFactorRate` | 0..1 | wood/02-Quotation, wood/03-Order, wood/08-Invoice | | | open |
 | `QuotationLine/SellerProposedSubstituteLineItem` | 0..1 | wood/02-Quotation | | | open |
 
+### G4: energy, utilities (2026-11-19)
+
+Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
+
+> C91, D31 points 2 and 5: a statement shows a second supplier only where one really bills part of the consumption (Ferrano Grid's network charges on Ferrano Energy's bill, the city's sewage levy on the water bill); the island's telephone statement has one supplier, so `Consumption` only, and with the supplier branch its consumption lines go (utilities/12#F9; UBL reaches consumption lines only under `SupplierConsumption`, a point for the TC, O107): the bundle discount on the subscription line, the subscription's price "per month" and the data pack of 5 GB (which D31 point 6 drops anyway). The consumption lines' delivery location only pointed back to the statement's consumption point (utilities/01#F14, 03#F15, 05#F13, 08#F16, 12#F21).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `ConsumptionLine/AllowanceCharge` | 0..n | utilities/12-UtilityStatement | | | open |
+| `ConsumptionLine/Delivery` | 0..n | utilities/01-UtilityStatement, utilities/03-UtilityStatement, utilities/05-UtilityStatement, utilities/08-UtilityStatement | | | open |
+| `ConsumptionLine/UnstructuredPrice` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/PriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TaxInclusivePriceAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UnstructuredPrice/TimeAmount` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackQuantity` | 0..1 | utilities/12-UtilityStatement | | | open |
+| `UtilityItem/PackSizeNumeric` | 0..1 | utilities/12-UtilityStatement | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

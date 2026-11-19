@@ -546,6 +546,22 @@
    "purchase": "energy"
   },
   {
+   "id": "electricity-energy",
+   "seller": "33-xu",
+   "name": "Electricity, energy",
+   "kind": "service",
+   "unit": "KWH",
+   "price": {
+    "amount": 21.1,
+    "currency": "XUF"
+   },
+   "sellers_id": "FE-KWH-E",
+   "description": "The energy of the electricity supply, per kilowatt hour: the tariff FE-KWH without the network charge of the grid.",
+   "supply": "goods",
+   "purchase": "energy",
+   "note": "Shown only on the utility statements, which split the tariff FE-KWH (27.3) into the energy (21.1) and Ferrano Grid's network charge (6.2) that Ferrano Energy collects with its bill (D31 point 2, O194)."
+  },
+  {
    "id": "slat-1800",
    "seller": "36-xb",
    "name": "Hardwood bench slat 1800",

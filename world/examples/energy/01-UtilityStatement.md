@@ -179,8 +179,8 @@ Inside `SubscriberConsumption`:
   The factory's gas connection.
 - `UtilityConsumptionPoint/Description` = **Valdara Industries, gas connection of the coating line**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **FE-C-0047121**  
-  The factory's gas contract with the retail company.
+- `UtilityConsumptionPoint/SubscriberID` = **FE-CU-0381206**  
+  The subscriber's customer number with the retail company, by which the grid operator reports to it; the gas contract stays in the contract (D31 point 5).
 - `UtilityConsumptionPoint/SubscriberType` = **Industrial**  
   The name of code IND in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **IND** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -395,7 +395,7 @@ Inside `SubscriberConsumption`:
     <cac:UtilityConsumptionPoint>
       <cbc:ID>FG-CP-4120-G1</cbc:ID>
       <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
-      <cbc:SubscriberID>FE-C-0047121</cbc:SubscriberID>
+      <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="KWH">61200</cbc:TotalDeliveredQuantity>

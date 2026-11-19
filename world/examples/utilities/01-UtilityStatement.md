@@ -192,8 +192,8 @@ Inside `SubscriberConsumption`:
   The connection, numbered by the grid operator, Ferrano Grid, which owns and reads the meters; the retail company uses its numbers, its own reference being the contract (O161).
 - `UtilityConsumptionPoint/Description` = **Factory, main connection at 10 kV**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **FE-C-0047120**  
-  The contract it belongs to.
+- `UtilityConsumptionPoint/SubscriberID` = **FE-CU-0381206**  
+  The subscriber's customer number with the utility; the contract number stays in the contract (D31 point 5).
 - `UtilityConsumptionPoint/SubscriberType` = **Industrial**  
   The name of code IND in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **IND** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -228,10 +228,10 @@ Inside `SubscriberConsumption`:
   The meter, numbered by the grid operator, Ferrano Grid, which owns and reads the meters; the retail company uses its numbers, its own reference being the contract (O161).
 - `UtilityConsumptionPoint/UtilityMeter/MeterName` = **Main meter, factory**  
   Its name.
-- `UtilityConsumptionPoint/UtilityMeter/MeterConstant` = **40**  
+- `UtilityConsumptionPoint/UtilityMeter/MeterConstant` = **4000**  
   The register is multiplied by this.
-- `UtilityConsumptionPoint/UtilityMeter/MeterConstantCode` = **CTRATIO** (listID `urn:ubl-examples:world:codelist:MeterConstantTypeCode`)  
-  Why: transformer ratio. The code is from the Trade Accord's meter constant type list: CTRATIO = Transformer ratio.
+- `UtilityConsumptionPoint/UtilityMeter/MeterConstantCode` = **CTVT** (listID `urn:ubl-examples:world:codelist:MeterConstantTypeCode`)  
+  Why: current and voltage transformers. The code is from the Trade Accord's meter constant type list: CTVT = Current and voltage transformers.
 - `UtilityConsumptionPoint/UtilityMeter/TotalDeliveredQuantity` = **412800** (unitCode `KWH`)  
   Delivered in March.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/ID` = **FG-E-20388-2603**  
@@ -242,11 +242,11 @@ Inside `SubscriberConsumption`:
   As a code. The code is from the Trade Accord's meter reading type list: M = Monthly reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingDate` = **2026-02-28**  
   The previous reading.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterQuantity` = **52960** (unitCode `KWH`)  
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterQuantity` = **1324** (unitCode `KWH`)  
   The register then.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingDate` = **2026-03-31**  
   This reading.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterQuantity` = **63280** (unitCode `KWH`)  
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterQuantity` = **1427.2** (unitCode `KWH`)  
   The register now.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingMethod` = **Remote reading**  
   The name of code REMOTE in the Trade Accord's meter reading method list.
@@ -257,7 +257,7 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/LatestMeterReadingMethodCode` = **REMOTE** (listID `urn:ubl-examples:world:codelist:MeterReadingMethodCode`)  
   As a code. The code is from the Trade Accord's meter reading method list: REMOTE = Remote reading.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/DeliveredQuantity` = **412800** (unitCode `KWH`)  
-  The difference of the readings, times the meter constant of 40.
+  The difference of the readings, times the meter constant of 4000.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Accuracy class**  
   The name of code ACC in the Trade Accord's item property name list.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/NameCode` = **ACC** (listID `urn:ubl-examples:world:codelist:ItemPropertyNameCode`)  
@@ -269,129 +269,9 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Rated current**  
   A rating of the meter.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity` = **5** (unitCode `AMP`)  
-  Its value.
-- `Consumption/UtilityStatementTypeCode` = **ELEC** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The kind of supply. The code is from the Trade Accord's utility type list: ELEC = Electricity.
-- `Consumption/MainPeriod/StartDate` = **2026-03-01**  
-  March.
-- `Consumption/MainPeriod/EndDate` = **2026-03-31**  
-  Its last day.
-- `Consumption/TaxTotal/TaxAmount` = **277680** (currencyID `XUF`)  
-  The energy tax on this point's electricity.
-- `Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **60000** (currencyID `XUF`)  
-  50000 kWh at 1.2 ferra.
-- `Consumption/TaxTotal/TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
-  Per kilowatt hour.
-- `Consumption/TaxTotal/TaxSubtotal/PerUnitAmount` = **1.2** (currencyID `XUF`)  
-  The rate of the tier.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
-  The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/Name` = **Energy tax**  
-  The tax in words.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **217680** (currencyID `XUF`)  
-  362800 kWh at 0.6 ferra.
-- `Consumption/TaxTotal/TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
-  Per kilowatt hour.
-- `Consumption/TaxTotal/TaxSubtotal/PerUnitAmount` = **0.6** (currencyID `XUF`)  
-  The rate of the tier.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
-  The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/Name` = **Energy tax**  
-  The tax in words.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/TaxTotal/TaxAmount` = **2309424** (currencyID `XUF`)  
-  20 % value added tax on the price and the energy tax.
-- `Consumption/TaxTotal/TaxSubtotal/TaxableAmount` = **11547120** (currencyID `XUF`)  
-  The price plus the energy tax.
-- `Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **2309424** (currencyID `XUF`)  
-  20 % of it.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
-  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/Percent` = **20**  
-  The rate for this category.
-- `Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FG-CP-4120-E1-2603**  
-  The consumption report of the point for March.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
-  The name of code MON in the Trade Accord's consumption type list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/Description` = **March consumption of Factory, main connection at 10 kV.**  
-  In words.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/TotalConsumedQuantity` = **412800** (unitCode `KWH`)  
-  Used in March.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/BasicConsumedQuantity` = **412800** (unitCode `KWH`)  
-  All at the basic tariff: no reduced-rate hours.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate` = **2026-03-01**  
-  March.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate` = **2026-03-31**  
-  Its last day.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **FG-CP-4120-E1-2602**  
-  The report of February.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
-  The name of code MON in the Trade Accord's consumption type list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
-  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **405100** (unitCode `KWH`)  
-  What February's report said.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
-  February.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate` = **2026-02-28**  
-  Its last day.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FG-E-20388**  
-  The meter.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **398400** (unitCode `KWH`)  
-  The month's consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **10876320** (currencyID `XUF`)  
-  What it cost at the tariff.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
-  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
-  The name of code NORMAL in the Trade Accord's consumption level list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Description` = **Earlier month.**  
-  For comparison.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-01-01**  
-  The month.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-01-31**  
-  Its end.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FG-E-20388**  
-  The meter.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **405100** (unitCode `KWH`)  
-  The month's consumption.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **11059230** (currencyID `XUF`)  
-  What it cost at the tariff.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
-  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
-  The name of code NORMAL in the Trade Accord's consumption level list.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Description` = **Earlier month.**  
-  For comparison.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-02-01**  
-  The month.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-02-28**  
-  Its end.
-- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyAmount` = **277680** (currencyID `XUF`)  
-  This point's share of the bill's energy tax: 50,000 kWh at 1.2 and 362,800 kWh at 0.6 ferra; the tiers apply to the customer's month as a whole, the lower tier counted on the main connection.
-- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyOnAccountAmount` = **0** (currencyID `XUF`)  
-  No energy tax paid on account.
-- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyBalanceAmount` = **277680** (currencyID `XUF`)  
-  Due with this bill.
-- `Consumption/EnergyWaterSupply/EnergyTaxReport/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
-  Urvania's energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
-- `Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **11269440** (currencyID `XUF`)  
-  What this month cost.
-- `Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 405433 kWh.**  
-  For comparison.
-- `Consumption/LegalMonetaryTotal/LineExtensionAmount` = **11269440** (currencyID `XUF`)  
-  The consumption.
-- `Consumption/LegalMonetaryTotal/PayableAmount` = **13856544** (currencyID `XUF`)  
-  With its taxes.
-- `SupplierConsumption/Description` = **The supply under the customer's contract.**  
-  What follows.
+  Its value: the secondary current of the current transformers.
+- `SupplierConsumption/Description` = **The energy, which Ferrano Energy supplies under the customer's contract.**  
+  Whose supply this part is, and how it is billed.
 - `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **XU-R-105781** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Ferrano Energy**  
@@ -401,14 +281,120 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/UtilityCustomerParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 - `SupplierConsumption/Consumption/UtilityStatementTypeCode` = **ELEC** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply under the contract. The code is from the Trade Accord's utility type list: ELEC = Electricity.
+  The kind of supply. The code is from the Trade Accord's utility type list: ELEC = Electricity.
 - `SupplierConsumption/Consumption/MainPeriod/StartDate` = **2026-03-01**  
   March.
 - `SupplierConsumption/Consumption/MainPeriod/EndDate` = **2026-03-31**  
   Its last day.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **11269440** (currencyID `XUF`)  
-  The line.
-- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **13856544** (currencyID `XUF`)  
+- `SupplierConsumption/Consumption/TaxTotal/TaxAmount` = **277680** (currencyID `XUF`)  
+  The energy tax on this point's electricity.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **60000** (currencyID `XUF`)  
+  50000 kWh at 1.2 ferra.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  Per kilowatt hour.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/PerUnitAmount` = **1.2** (currencyID `XUF`)  
+  The rate of the tier.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/Name` = **Energy tax**  
+  The tax in words.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **217680** (currencyID `XUF`)  
+  362800 kWh at 0.6 ferra.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/BaseUnitMeasure` = **1** (unitCode `KWH`)  
+  Per kilowatt hour.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/PerUnitAmount` = **0.6** (currencyID `XUF`)  
+  The rate of the tier.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  The energy tax applies. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/Name` = **Energy tax**  
+  The tax in words.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code EXC: excise duty, the energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxAmount` = **1797552** (currencyID `XUF`)  
+  20 % value added tax on the energy and the energy tax.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxableAmount` = **8987760** (currencyID `XUF`)  
+  The energy plus the energy tax.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **1797552** (currencyID `XUF`)  
+  20 % of it.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FG-CP-4120-E1-2603**  
+  The consumption report of the point for March.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
+  The name of code MON in the Trade Accord's consumption type list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
+  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Description` = **March consumption of Factory, main connection at 10 kV.**  
+  In words.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/TotalConsumedQuantity` = **412800** (unitCode `KWH`)  
+  Used in March.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/BasicConsumedQuantity` = **412800** (unitCode `KWH`)  
+  All at the basic tariff: no reduced-rate hours.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate` = **2026-03-01**  
+  March.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/Period/EndDate` = **2026-03-31**  
+  Its last day.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **FG-CP-4120-E1-2602**  
+  The report of February.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Monthly consumption**  
+  The name of code MON in the Trade Accord's consumption type list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionTypeCode` = **MON** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
+  As a code. The code is from the Trade Accord's consumption type list: MON = Monthly consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/TotalConsumedQuantity` = **405100** (unitCode `KWH`)  
+  What February's report said.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/StartDate` = **2026-02-01**  
+  February.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/Period/EndDate` = **2026-02-28**  
+  Its last day.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FG-E-20388**  
+  The meter.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **398400** (unitCode `KWH`)  
+  The month's consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **10876320** (currencyID `XUF`)  
+  What it cost at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
+  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
+  The name of code NORMAL in the Trade Accord's consumption level list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-01-01**  
+  The month.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-01-31**  
+  Its end.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber` = **FG-E-20388**  
+  The meter.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **405100** (unitCode `KWH`)  
+  The month's consumption.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **11059230** (currencyID `XUF`)  
+  What it cost at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
+  Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
+  The name of code NORMAL in the Trade Accord's consumption level list.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/StartDate` = **2026-02-01**  
+  The month.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Period/EndDate` = **2026-02-28**  
+  Its end.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyAmount` = **277680** (currencyID `XUF`)  
+  This point's share of the bill's energy tax: 50,000 kWh at 1.2 and 362,800 kWh at 0.6 ferra; the tiers apply to the customer's month as a whole, the lower tier counted on the main connection.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyOnAccountAmount` = **0** (currencyID `XUF`)  
+  No energy tax paid on account.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/EnergyTaxReport/TaxEnergyBalanceAmount` = **277680** (currencyID `XUF`)  
+  Due with this bill.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/EnergyTaxReport/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
+  Urvania's energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **11068330** (currencyID `XUF`)  
+  The average amount of the last three months at the tariff of the bill, without tax (utilities/01#F3).
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 405,433 kWh.**  
+  For comparison.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **8710080** (currencyID `XUF`)  
+  The lines of this part.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **10785312** (currencyID `XUF`)  
   With its taxes.
 - `SupplierConsumption/Contract/ID` = **FE-C-0047120**  
   The supply contract.
@@ -422,29 +408,27 @@ Inside `SubscriberConsumption`:
   The line of the invoice this line explains.
 - `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **412800** (unitCode `KWH`)  
   The consumption of this point.
-- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **11269440** (currencyID `XUF`)  
+- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **8710080** (currencyID `XUF`)  
   Quantity times the tariff.
-- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **13856544** (currencyID `XUF`)  
+- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **10785312** (currencyID `XUF`)  
   With the energy tax and the value added tax of the line.
 - `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
   March.
 - `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
   Its last day.
-- `SupplierConsumption/ConsumptionLine/Delivery/DeliveryLocation/Description` = **The consumption point of the statement.**  
-  Where it was delivered.
-- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **2587104** (currencyID `XUF`)  
+- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **2075232** (currencyID `XUF`)  
   The energy tax and the value added tax of the line.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **FE-KWH**  
-  The utility's tariff item.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **FE-C-0047120**  
-  The customer's contract.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Electricity**  
-  The name of code ELEC in the Trade Accord's utility type list.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **ELEC** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
-  The supply the item is for, as a code. The code is from the Trade Accord's utility type list: ELEC = Electricity.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.** (languageID `qau`)  
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **FE-KWH-E**  
+  The supplier's tariff item.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **FE-CU-0381206**  
+  The subscriber's customer number with the utility (D31 point 5).
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Industrial**  
+  The name of code IND in the Trade Accord's subscriber type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **IND** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
+  As a code. The code is from the Trade Accord's subscriber type list: IND = Industrial.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Drek zikdrir skul drek zuktrek tazkraz, ginek zalhaz bantan: drek zhutek FE-KWH zentul drek gatir vatir skul drek zhek.** (languageID `qau`)  
   The tariff in words in Urvanian, the seller's language; world/items.json.
-- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Electricity supply, per kilowatt hour, network charges included.** (languageID `en-XU`)  
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **The energy of the electricity supply, per kilowatt hour: the tariff FE-KWH without the network charge of the grid.** (languageID `en-XU`)  
   The tariff in words in English, the working language between the countries; world/items.json.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
   The name of code MET in the Trade Accord's consumption type list.
@@ -466,7 +450,83 @@ Inside `SubscriberConsumption`:
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **FE-C-0047120**  
   The supply contract the tariff belongs to.
-- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **27.3** (currencyID `XUF`)  
+- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **21.1** (currencyID `XUF`)  
+  The tariff (world/items.json).
+- `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `KWH`)  
+  Per unit.
+- `SupplierConsumption/Description` = **Ferrano Grid's network charges, which Ferrano Energy collects with its bill and pays to the grid (energy/02).**  
+  Whose supply this part is, and how it is billed.
+- `SupplierConsumption/UtilitySupplierParty/PartyIdentification/ID` = **XU-R-106055** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/UtilitySupplierParty/PartyName/Name` = **Ferrano Grid**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/UtilityCustomerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/UtilityCustomerParty/PartyName/Name` = **Valdara Industries**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `SupplierConsumption/Consumption/UtilityStatementTypeCode` = **ELEC** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
+  The kind of supply. The code is from the Trade Accord's utility type list: ELEC = Electricity.
+- `SupplierConsumption/Consumption/MainPeriod/StartDate` = **2026-03-01**  
+  March.
+- `SupplierConsumption/Consumption/MainPeriod/EndDate` = **2026-03-31**  
+  Its last day.
+- `SupplierConsumption/Consumption/TaxTotal/TaxAmount` = **511872** (currencyID `XUF`)  
+  The tax of this part of the consumption.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxableAmount` = **2559360** (currencyID `XUF`)  
+  The lines of this part.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxAmount` = **511872** (currencyID `XUF`)  
+  20 % of them.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `SupplierConsumption/Consumption/TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **2559360** (currencyID `XUF`)  
+  The lines of this part.
+- `SupplierConsumption/Consumption/LegalMonetaryTotal/PayableAmount` = **3071232** (currencyID `XUF`)  
+  With its tax.
+- `SupplierConsumption/ConsumptionLine/ID` = **2**  
+  The line of the consumption.
+- `SupplierConsumption/ConsumptionLine/ParentDocumentLineReferenceID` = **1**  
+  The line of the invoice this line explains.
+- `SupplierConsumption/ConsumptionLine/InvoicedQuantity` = **412800** (unitCode `KWH`)  
+  The consumption of this point.
+- `SupplierConsumption/ConsumptionLine/LineExtensionAmount` = **2559360** (currencyID `XUF`)  
+  Quantity times the tariff.
+- `SupplierConsumption/ConsumptionLine/TaxInclusiveLineExtensionAmount` = **3071232** (currencyID `XUF`)  
+  With the tax of the line.
+- `SupplierConsumption/ConsumptionLine/Period/StartDate` = **2026-03-01**  
+  March.
+- `SupplierConsumption/ConsumptionLine/Period/EndDate` = **2026-03-31**  
+  Its last day.
+- `SupplierConsumption/ConsumptionLine/TaxTotal/TaxAmount` = **511872** (currencyID `XUF`)  
+  20 % of the line.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **FG-NET-E**  
+  The supplier's tariff item.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Industrial**  
+  The name of code IND in the Trade Accord's subscriber type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **IND** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
+  As a code. The code is from the Trade Accord's subscriber type list: IND = Industrial.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.** (languageID `qau`)  
+  The tariff in words in Urvanian, the seller's language; world/items.json.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.** (languageID `en-XU`)  
+  The tariff in words in English, the working language between the countries; world/items.json.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
+  The name of code MET in the Trade Accord's consumption type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
+  As a code. The code is from the Trade Accord's consumption type list: MET = Metered.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeType` = **Monthly**  
+  The name of code M in the Trade Accord's utility charge type list.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/CurrentChargeTypeCode` = **M** (listID `urn:ubl-examples:world:codelist:ChargeTypeCode`)  
+  As a code. The code is from the Trade Accord's utility charge type list: M = Monthly.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **6.2** (currencyID `XUF`)  
   The tariff (world/items.json).
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `KWH`)  
   Per unit.
@@ -596,7 +656,7 @@ Inside `SubscriberConsumption`:
     <cac:UtilityConsumptionPoint>
       <cbc:ID>FG-CP-4120-E1</cbc:ID>
       <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
-      <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
+      <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
       <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
@@ -619,17 +679,17 @@ Inside `SubscriberConsumption`:
       <cac:UtilityMeter>
         <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>
-        <cbc:MeterConstant>40</cbc:MeterConstant>
-        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTRATIO</cbc:MeterConstantCode>
+        <cbc:MeterConstant>4000</cbc:MeterConstant>
+        <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTVT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
           <cbc:ID>FG-E-20388-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
-          <cbc:PreviousMeterQuantity unitCode="KWH">52960</cbc:PreviousMeterQuantity>
+          <cbc:PreviousMeterQuantity unitCode="KWH">1324</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
-          <cbc:LatestMeterQuantity unitCode="KWH">63280</cbc:LatestMeterQuantity>
+          <cbc:LatestMeterQuantity unitCode="KWH">1427.2</cbc:LatestMeterQuantity>
           <cbc:PreviousMeterReadingMethod>Remote reading</cbc:PreviousMeterReadingMethod>
           <cbc:PreviousMeterReadingMethodCode listID="urn:ubl-examples:world:codelist:MeterReadingMethodCode">REMOTE</cbc:PreviousMeterReadingMethodCode>
           <cbc:LatestMeterReadingMethod>Remote reading</cbc:LatestMeterReadingMethod>
@@ -648,120 +708,8 @@ Inside `SubscriberConsumption`:
         </cac:MeterProperty>
       </cac:UtilityMeter>
     </cac:UtilityConsumptionPoint>
-    <cac:Consumption>
-      <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:UtilityStatementTypeCode>
-      <cac:MainPeriod>
-        <cbc:StartDate>2026-03-01</cbc:StartDate>
-        <cbc:EndDate>2026-03-31</cbc:EndDate>
-      </cac:MainPeriod>
-      <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XUF">277680</cbc:TaxAmount>
-        <cac:TaxSubtotal>
-          <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
-          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-          <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-            <cbc:Name>Energy tax</cbc:Name>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
-        </cac:TaxSubtotal>
-        <cac:TaxSubtotal>
-          <cbc:TaxAmount currencyID="XUF">217680</cbc:TaxAmount>
-          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-          <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-            <cbc:Name>Energy tax</cbc:Name>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
-        </cac:TaxSubtotal>
-      </cac:TaxTotal>
-      <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XUF">2309424</cbc:TaxAmount>
-        <cac:TaxSubtotal>
-          <cbc:TaxableAmount currencyID="XUF">11547120</cbc:TaxableAmount>
-          <cbc:TaxAmount currencyID="XUF">2309424</cbc:TaxAmount>
-          <cac:TaxCategory>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
-            <cbc:Percent>20</cbc:Percent>
-            <cac:TaxScheme>
-              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-            </cac:TaxScheme>
-          </cac:TaxCategory>
-        </cac:TaxSubtotal>
-      </cac:TaxTotal>
-      <cac:EnergyWaterSupply>
-        <cac:ConsumptionReport>
-          <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
-          <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-          <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
-          <cbc:TotalConsumedQuantity unitCode="KWH">412800</cbc:TotalConsumedQuantity>
-          <cbc:BasicConsumedQuantity unitCode="KWH">412800</cbc:BasicConsumedQuantity>
-          <cac:Period>
-            <cbc:StartDate>2026-03-01</cbc:StartDate>
-            <cbc:EndDate>2026-03-31</cbc:EndDate>
-          </cac:Period>
-          <cac:ConsumptionReportReference>
-            <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
-            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
-            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
-            <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionReportReference>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
-            <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
-            <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-01-01</cbc:StartDate>
-              <cbc:EndDate>2026-01-31</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-          <cac:ConsumptionHistory>
-            <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
-            <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
-            <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
-            <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
-            <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
-            <cbc:Description>Earlier month.</cbc:Description>
-            <cac:Period>
-              <cbc:StartDate>2026-02-01</cbc:StartDate>
-              <cbc:EndDate>2026-02-28</cbc:EndDate>
-            </cac:Period>
-          </cac:ConsumptionHistory>
-        </cac:ConsumptionReport>
-        <cac:EnergyTaxReport>
-          <cbc:TaxEnergyAmount currencyID="XUF">277680</cbc:TaxEnergyAmount>
-          <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
-          <cbc:TaxEnergyBalanceAmount currencyID="XUF">277680</cbc:TaxEnergyBalanceAmount>
-          <cac:TaxScheme>
-            <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
-          </cac:TaxScheme>
-        </cac:EnergyTaxReport>
-        <cac:ConsumptionAverage>
-          <cbc:AverageAmount currencyID="XUF">11269440</cbc:AverageAmount>
-          <cbc:Description>The average over the last three months is 405433 kWh.</cbc:Description>
-        </cac:ConsumptionAverage>
-      </cac:EnergyWaterSupply>
-      <cac:LegalMonetaryTotal>
-        <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XUF">13856544</cbc:PayableAmount>
-      </cac:LegalMonetaryTotal>
-    </cac:Consumption>
     <cac:SupplierConsumption>
-      <cbc:Description>The supply under the customer's contract.</cbc:Description>
+      <cbc:Description>The energy, which Ferrano Energy supplies under the customer's contract.</cbc:Description>
       <cac:UtilitySupplierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105781</cbc:ID>
@@ -784,9 +732,108 @@ Inside `SubscriberConsumption`:
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:MainPeriod>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">277680</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
+            <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+            <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Name>Energy tax</cbc:Name>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+          <cac:TaxSubtotal>
+            <cbc:TaxAmount currencyID="XUF">217680</cbc:TaxAmount>
+            <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+            <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Name>Energy tax</cbc:Name>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">1797552</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="XUF">8987760</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="XUF">1797552</cbc:TaxAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Percent>20</cbc:Percent>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:EnergyWaterSupply>
+          <cac:ConsumptionReport>
+            <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
+            <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+            <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+            <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
+            <cbc:TotalConsumedQuantity unitCode="KWH">412800</cbc:TotalConsumedQuantity>
+            <cbc:BasicConsumedQuantity unitCode="KWH">412800</cbc:BasicConsumedQuantity>
+            <cac:Period>
+              <cbc:StartDate>2026-03-01</cbc:StartDate>
+              <cbc:EndDate>2026-03-31</cbc:EndDate>
+            </cac:Period>
+            <cac:ConsumptionReportReference>
+              <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
+              <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
+              <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
+              <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionReportReference>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+              <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
+              <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-01-01</cbc:StartDate>
+                <cbc:EndDate>2026-01-31</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+            <cac:ConsumptionHistory>
+              <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+              <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
+              <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
+              <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
+              <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
+              <cac:Period>
+                <cbc:StartDate>2026-02-01</cbc:StartDate>
+                <cbc:EndDate>2026-02-28</cbc:EndDate>
+              </cac:Period>
+            </cac:ConsumptionHistory>
+          </cac:ConsumptionReport>
+          <cac:EnergyTaxReport>
+            <cbc:TaxEnergyAmount currencyID="XUF">277680</cbc:TaxEnergyAmount>
+            <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
+            <cbc:TaxEnergyBalanceAmount currencyID="XUF">277680</cbc:TaxEnergyBalanceAmount>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+            </cac:TaxScheme>
+          </cac:EnergyTaxReport>
+          <cac:ConsumptionAverage>
+            <cbc:AverageAmount currencyID="XUF">11068330</cbc:AverageAmount>
+            <cbc:Description>The average over the last three months is 405,433 kWh.</cbc:Description>
+          </cac:ConsumptionAverage>
+        </cac:EnergyWaterSupply>
         <cac:LegalMonetaryTotal>
-          <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XUF">13856544</cbc:PayableAmount>
+          <cbc:LineExtensionAmount currencyID="XUF">8710080</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XUF">10785312</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:Contract>
@@ -800,27 +847,22 @@ Inside `SubscriberConsumption`:
         <cbc:ID>1</cbc:ID>
         <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
         <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="XUF">11269440</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">13856544</cbc:TaxInclusiveLineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="XUF">8710080</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">10785312</cbc:TaxInclusiveLineExtensionAmount>
         <cac:Period>
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
         </cac:Period>
-        <cac:Delivery>
-          <cac:DeliveryLocation>
-            <cbc:Description>The consumption point of the statement.</cbc:Description>
-          </cac:DeliveryLocation>
-        </cac:Delivery>
         <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XUF">2587104</cbc:TaxAmount>
+          <cbc:TaxAmount currencyID="XUF">2075232</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
-          <cbc:ID>FE-KWH</cbc:ID>
-          <cbc:SubscriberID>FE-C-0047120</cbc:SubscriberID>
-          <cbc:SubscriberType>Electricity</cbc:SubscriberType>
-          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:SubscriberTypeCode>
-          <cbc:Description languageID="qau">Zuktrek tazkraz, ginek zalhaz bantan, gatir vinskan kritrir.</cbc:Description>
-          <cbc:Description languageID="en-XU">Electricity supply, per kilowatt hour, network charges included.</cbc:Description>
+          <cbc:ID>FE-KWH-E</cbc:ID>
+          <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
+          <cbc:SubscriberType>Industrial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
+          <cbc:Description languageID="qau">Drek zikdrir skul drek zuktrek tazkraz, ginek zalhaz bantan: drek zhutek FE-KWH zentul drek gatir vatir skul drek zhek.</cbc:Description>
+          <cbc:Description languageID="en-XU">The energy of the electricity supply, per kilowatt hour: the tariff FE-KWH without the network charge of the grid.</cbc:Description>
           <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
           <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
           <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
@@ -839,7 +881,87 @@ Inside `SubscriberConsumption`:
           </cac:Contract>
         </cac:UtilityItem>
         <cac:Price>
-          <cbc:PriceAmount currencyID="XUF">27.3</cbc:PriceAmount>
+          <cbc:PriceAmount currencyID="XUF">21.1</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:ConsumptionLine>
+    </cac:SupplierConsumption>
+    <cac:SupplierConsumption>
+      <cbc:Description>Ferrano Grid's network charges, which Ferrano Energy collects with its bill and pays to the grid (energy/02).</cbc:Description>
+      <cac:UtilitySupplierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Grid</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilitySupplierParty>
+      <cac:UtilityCustomerParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Valdara Industries</cbc:Name>
+        </cac:PartyName>
+      </cac:UtilityCustomerParty>
+      <cac:Consumption>
+        <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:UtilityStatementTypeCode>
+        <cac:MainPeriod>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:MainPeriod>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
+          <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="XUF">2559360</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
+            <cac:TaxCategory>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+              <cbc:Percent>20</cbc:Percent>
+              <cac:TaxScheme>
+                <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+              </cac:TaxScheme>
+            </cac:TaxCategory>
+          </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:LegalMonetaryTotal>
+          <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
+          <cbc:PayableAmount currencyID="XUF">3071232</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal>
+      </cac:Consumption>
+      <cac:ConsumptionLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ParentDocumentLineReferenceID>1</cbc:ParentDocumentLineReferenceID>
+        <cbc:InvoicedQuantity unitCode="KWH">412800</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">3071232</cbc:TaxInclusiveLineExtensionAmount>
+        <cac:Period>
+          <cbc:StartDate>2026-03-01</cbc:StartDate>
+          <cbc:EndDate>2026-03-31</cbc:EndDate>
+        </cac:Period>
+        <cac:TaxTotal>
+          <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:UtilityItem>
+          <cbc:ID>FG-NET-E</cbc:ID>
+          <cbc:SubscriberType>Industrial</cbc:SubscriberType>
+          <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
+          <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+          <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+          <cbc:ConsumptionType>Metered</cbc:ConsumptionType>
+          <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MET</cbc:ConsumptionTypeCode>
+          <cbc:CurrentChargeType>Monthly</cbc:CurrentChargeType>
+          <cbc:CurrentChargeTypeCode listID="urn:ubl-examples:world:codelist:ChargeTypeCode">M</cbc:CurrentChargeTypeCode>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Percent>20</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:UtilityItem>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XUF">6.2</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
         </cac:Price>
       </cac:ConsumptionLine>
