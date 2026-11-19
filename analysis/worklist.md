@@ -1077,7 +1077,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: O82 was settled on 2026-11-16 (the drawing is a diagram; geography from a place list): agree the place list with the owner (O91), redraw what the diagram shows wrongly (O92), then set the origin and the degrees per square in countries.json (O55), draw the island and its inset (O56), and derive distances and durations from the map; build check O60.
 - Depends on / blocks: blocks C58; the map rendering on the site uses the same tiles
 - Touched by: O82 (found 2026-11-16: at 14 km a square a town's port, airport and companies lie 85 to 140 km apart; the map is redrawn or given two scales "before the scale is implemented").
-- State: waits: sea/08#F3, 16#F2, 16#F3 and timelines#F1 for the place list (O91; O82 itself was settled on 2026-11-16); the energy findings on the "four kilometres" to the gas field (energy/04#F8, 05#F8, 06#F5, 07#F8) for D44 (O54).
+- State: ready (the place list, O91, closed by O152 on 2026-11-19): sea/08#F3, 16#F2, 16#F3 and timelines#F1 (formerly waiting for it; O82 itself was settled on 2026-11-16); the energy findings on the "four kilometres" to the gas field (energy/04#F8, 05#F8, 06#F5, 07#F8) for D44 (O54).
 - Findings: energy: 04#F8, 05#F8, 06#F5, 07#F8; sea: 08#F3, 16#F2, 16#F3; consistency: timelines#F1
 
 - **Fixed (2026-11-18, O152):** the map is leading: 3.5 km squares, coordinates true to scale on both axes around the mainland's centre (30.0 S 15.0 W) and Lisavu's true position (33.0 S 2.65 W), and every stated distance and time taken from the routes (`tools/world_map.py`, `analysis/place-list.md`).
@@ -1491,7 +1491,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; the yes-findings (roles of the hub, CMR vs CIM, Container Convention) go to D37.
 - Depends on / blocks: none
 - Touched by: D9 (demurrage after five days' free time is the first candidate for the world's real debit note, O7), D21 (the April rail delivery gets lot numbers and supplies the island's 96 benches), D22 (the carrier's invoices follow the framework), D20 (96 knocked-down benches per container), D14 (the rail invoice is recalculated); C30's rail/08#F1 goes with this cause.
-- State: D37 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D37); the train times wait for the place list (O54, O91).
+- State: D37 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D37); the train times comes from the map (O91 closed by O152, 2026-11-19).
 - Findings: rail: 02#F3, 02#F13, 03#F3, 03#F14, 03#F15, 03#F20, 03#F21, 04#F2, 04#F3, 04#F6, 04#F7, 05#F2, 05#F4, 05#F5, 05#F8, 06#F14, 06#F18, 06#F22, 07#F4, 07#F8, 08#F8, 08#F10, 08#F15, 08#F17, 08#F18, 08#F19, 08#F21, 08#F22, 08#F24, 08#F25, 09#F1, 09#F6, 09#F7
 
 ### C91 · Utility statement builder: average amount, supplier consumption, subscriber data
@@ -1605,7 +1605,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; the yes ones with D35.
 - Depends on / blocks: none
 - Touched by: D19 (O54: the road distances 186 km and 38 km are derived from the map; Ferrano to Marrowdale is about 182 km), D20 (the load becomes 24 pallets of knocked-down benches and the castings pallet), D9 (O8: the extra box of side frames is settled with D35), D14 (the road invoice is recalculated).
-- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance waits for the place list (O54, O91).
+- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance come from the map (O91 closed by O152, 2026-11-19).
 - Findings: road: 01#F10, 01#F11, 02#F4, 02#F5, 03#F5, 03#F9, 08#F2, 08#F11, 08#F13, 08#F14, 08#F18, 08#F24, 08#F25, 08#F26, 08#F28, 08#F29, 08#F30, 09#F10, 09#F11, 12#F1, 13#F8, 13#F15, 14#F11, 16#F11, 17#F8
 
 ### C101 · Road flow: application and certificate of origin
@@ -1616,7 +1616,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D35 for the endorsement roles; the rest are encoding fixes.
 - Depends on / blocks: none
 - Touched by: D18 (the import declaration claims the preference and refers to the certificate as proof of origin), D27 (the certificate dated on a working day of its issuer).
-- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance waits for the place list (O54, O91).
+- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance come from the map (O91 closed by O152, 2026-11-19).
 - Findings: road: 06#F1, 06#F3, 06#F7, 06#F15, 06#F16, 06#F17, 07#F1, 07#F6, 07#F9, 07#F10, 07#F16, 07#F17, 07#F18, 10#F3
 
 ### C102 · Road flow: the substituted 2026 casting
@@ -1627,7 +1627,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Carry the extended ID through; road/13#F9 (the extra frame) with D35.
 - Depends on / blocks: none
 - Touched by: D9 (O8), D5 (the 2026 casting is identified by `VI-C180` with an extended ID, C44).
-- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance waits for the place list (O54, O91).
+- State: D35 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D35); the distance come from the map (O91 closed by O152, 2026-11-19).
 - Findings: road: 02#F6, 04#F15, 07#F25, 10#F21, 11#F12, 13#F9, 13#F18, 15#F13
 
 ### C103 · Furniture flow: quotation, orders, invoice, return and credit
@@ -1717,7 +1717,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D34 (new catalogue vs update).
 - Depends on / blocks: none
 - Touched by: D14 (O15: the reason for Lumeway's side-frame price of 20 May), D5 (GTINs); C73's retail/01#F1 goes with this cause.
-- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time come from the map (O91 closed by O152, 2026-11-19).
 - Findings: retail: 01#F3, 01#F7, 01#F10, 02#F2, 02#F5, 02#F13, 02#F14, 03#F2, 03#F3, 03#F9, 03#F12, 04#F5, 04#F12, 20#F1, 20#F4
 
 ### C111 · Retail flow: promotion, forecast, inventory and the shop sale
@@ -1728,7 +1728,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D34 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D14 (shop price 749.00, promotion 674.10, the sales tax added at the till), D27 (shops work Monday to Saturday).
-- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time come from the map (O91 closed by O152, 2026-11-19).
 - Findings: retail: 05#F1, 05#F10, 06#F5, 06#F6, 06#F7, 06#F11, 06#F13, 06#F14, 07#F10, 07#F14, 21#F3, 21#F7, 21#F12
 
 ### C112 · Retail flow: isolated slips
@@ -1740,7 +1740,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: Possibly not a problem for retail/22#F7 (full card number and CVV in the webshop order): `note/src/03-world.md` says "A webshop order is different: the card is not at hand, so the order carries the full number, the card's dates and its security code".
 - Touched by: none of D1 to D27.
-- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time come from the map (O91 closed by O152, 2026-11-19).
 - Findings: retail: 08#F5, 08#F8, 08#F12, 10#F4, 18#F2, 18#F10, 18#F11, 18#F13, 19#F2, 22#F2, 22#F5, 22#F7
 
 ### C113 · Retail flow: the delivery to the store (carrier references, arrival day)
@@ -1751,7 +1751,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D34 (the delivery day; merge decision Medium/yes).
 - Depends on / blocks: none
 - Touched by: D27 (working days and times with offsets), D19 (O54: the 38 km to the store); C72's retail/12#F4 goes with this cause.
-- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time waits for the place list (O54, O91).
+- State: D34 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D34: the reopening of the department); the travel time come from the map (O91 closed by O152, 2026-11-19).
 - Findings: retail: 12#F10, 12#F11, 13#F2, 14#F2, 14#F6, 15#F1, 15#F4, 16#F4, 17#F4, 17#F8, 17#F12, 17#F14
 
 ### C114 · Sea flow: bill of lading and ship reports
@@ -1762,7 +1762,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D30 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D19 (O53: one passage time of 38 to 43 hours; the arrival moves earlier), D27 (the island is on UTC+00:00), D20 (pallets of parcels), D21 (the island's 96 benches come from the April rail delivery).
-- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures comes from the map (O91 closed by O152, 2026-11-19).
 - Findings: sea: 13#F7, 14#F1, 14#F4, 14#F5, 14#F6, 14#F7, 14#F8, 15#F7, 15#F8, 16#F6, 16#F7, 16#F8, 16#F13, 16#F14, 16#F15, 16#F16, 16#F18, 16#F20, 16#F21, 17#F2, 17#F9
 
 ### C115 · Sea flow: isolated slips
@@ -1773,7 +1773,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: With D30.
 - Depends on / blocks: none
 - Touched by: D19 (O53), D9 (O7: demurrage could explain the container between its release on 19 May and the receipt on 21 May).
-- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures comes from the map (O91 closed by O152, 2026-11-19).
 - Findings: sea: 05#F14, 06#F5, 06#F6, 06#F12, 07#F3, 08#F1, 08#F2, 08#F6, 08#F7, 08#F12, 08#F13, 10#F10, 11#F14, 12#F6, 18#F8, 19#F14, 21#F7, 21#F8, 21#F9; consistency: timelines#F7
 
 ### C116 · Sea flow: factoring, statement, payment and the island's debit note
@@ -1784,7 +1784,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Encoding fixes; yes-findings with D30.
 - Depends on / blocks: none
 - Touched by: D9 (sea/28 is not a debit note: the importer's customs inspection cost is re-homed, O6; C11's, C26's, C39's, C50's and C72's sea/28 findings go with this cause), D23 (O72: sea/22's deposit and balance).
-- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures comes from the map (O91 closed by O152, 2026-11-19).
 - Findings: sea: 22#F7, 22#F13, 22#F14, 24#F1, 24#F2, 25#F3, 25#F6, 26#F4, 26#F6, 26#F7, 27#F1, 27#F2, 28#F2, 28#F5, 28#F6, 28#F12
 
 ### C117 · Sea flow: business card, digital agreement and capabilities
@@ -1795,7 +1795,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D30 for the yes-findings.
 - Depends on / blocks: none
 - Touched by: D6 (the digital agreement's signature waits for the signatures stage).
-- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures comes from the map (O91 closed by O152, 2026-11-19).
 - Findings: sea: 01#F3, 01#F4, 01#F5, 01#F12, 03#F6, 03#F7, 03#F8, 03#F12, 03#F13, 03#F14, 03#F15, 03#F16, 03#F18, 04#F4, 04#F10
 
 ### C118 · Sea flow: the CIF sale, freight and insurance
@@ -1806,7 +1806,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Fix direction: Decide D30 (preferred by sea/22#F3: drop the two charges).
 - Depends on / blocks: C52 (D16)
 - Touched by: D16 (Lisavu values landed: sea/19 states the landed value, which agrees with the 53,778.00 of the bill of lading), D18 (the import consumption tax of 10 % on the landed value; O48: Velumi's shop price).
-- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures wait for the place list (O91, O53).
+- State: D30 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D30); the voyage's figures comes from the map (O91 closed by O152, 2026-11-19).
 - Findings: sea: 05#F12, 05#F13, 06#F1, 09#F1, 09#F7, 11#F13, 14#F12, 14#F13, 14#F14, 18#F3, 19#F20, 22#F3, 25#F1, 26#F3
 
 ### C119 · Tender: tendering terms copied into notices, call, award and contract
