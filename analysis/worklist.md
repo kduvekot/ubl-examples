@@ -1075,6 +1075,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: waits: sea/08#F3, 16#F2, 16#F3 and timelines#F1 for the place list (O91; O82 itself was settled on 2026-11-16); the energy findings on the "four kilometres" to the gas field (energy/04#F8, 05#F8, 06#F5, 07#F8) for D44 (O54).
 - Findings: energy: 04#F8, 05#F8, 06#F5, 07#F8; sea: 08#F3, 16#F2, 16#F3; consistency: timelines#F1
 
+- **Fixed (2026-11-18, O152):** the map is leading: 3.5 km squares, coordinates true to scale on both axes around the mainland's centre (30.0 S 15.0 W) and Lisavu's true position (33.0 S 2.65 W), and every stated distance and time taken from the routes (`tools/world_map.py`, `analysis/place-list.md`).
+
 ### C57 · Duties, import taxes and Trade Accord preference stated nowhere
 - Kind: world rule · Findings: 6 (High 1, Medium 2, Low 3) in 5 files, 4 flows · Needs decision: decided (D18, 2026-11-16)
 - Decided: option a), worked out per country. Goods of Accord origin are free of duty on proof: every import declaration claims the preference, names the criterion and refers to its proof of origin; goods from outside the Accord pay each country's own tariff; the note "Duties paid by the importer's account at customs." goes from all six declarations. Due at import: in Urvania value added tax of 20 % on the value with freight and insurance to the border; in Bayvarra nothing; in Lisavu the import consumption tax of 10 % on the landed value. D18 also settles O1 and O3.
@@ -1098,6 +1100,8 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: after C56 (D19, O82) and with D30
 - State: waits for D30 (O53).
 - Findings: sea: 15#F1, 16#F1, 16#F17; consistency: timelines#F5
+
+- **Fixed (2026-11-18, O152 stage 2):** one passage of about 1,200 km and 48 hours in the service description, manifest, pre-arrival report and status messages, with the wait for daylight pilotage at Selanu.
 
 ### C59 · Lisavu's capital: "Port Wrenfield" in English addresses, "Selanu" in every other English text
 - Kind: world rule · Findings: 1 (High 0, Medium 1, Low 0) in 1 file, 0 flows · Needs decision: decided (D3, 2026-11-15)
