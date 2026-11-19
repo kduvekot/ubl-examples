@@ -683,6 +683,30 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 |---|---|---|---|---|---|
 | `ProcurementProject/QualityControlCode` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders … | | | open |
 
+> C124, D28 point 4: the registry's extract of Valdara carries what the register holds: no group of the two competing tenderers (they are not a group, 12#F4), no operation type holding the line of business (12#F5), no publication date on an extract sent to one authority (12#F6), no brochure (12#F14), and no service provider of the business (Castrano, 12#F13; Valdara was the only party with one in its presentation); Valdara's qualification gives no party capacity that repeats the task's amount (13#F12); the procurement status cites only the act's rule on deadlines it rests on (09#F5).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BusinessInformation/BrochureDocumentReference` | 0..n | tender/12-BusinessInformation | | | open |
+| `CompletedTask/PartyCapacityAmount` | 0..1 | tender/13-TendererQualification | | | open |
+| `BusinessInformation/BusinessPartyGroup` | 0..n | tender/12-BusinessInformation | | | open |
+| `BusinessInformation/OperationType` | 0..1 | tender/12-BusinessInformation | | | open |
+| `BusinessInformation/RequestedPublicationDate` | 0..1 | tender/12-BusinessInformation | | | open |
+| `OperationType/Code` | 0..1 | tender/12-BusinessInformation | | | open |
+| `OperationType/Description` | 0..n | tender/12-BusinessInformation | | | open |
+| `Party/ServiceProviderParty` | 0..n | tender/12-BusinessInformation | | | open |
+| `PartyGroup/GroupType` | 0..n | tender/12-BusinessInformation | | | open |
+| `PartyGroup/GroupTypeCode` | 0..1 | tender/12-BusinessInformation | | | open |
+| `PartyGroup/Party` | 1..n | tender/12-BusinessInformation | | | open |
+| `ProcurementStatus/EmploymentLegislationDocumentReference` | 0..n | tender/09-ProcurementStatus | | | open |
+| `ProcurementStatus/EnvironmentalLegislationDocumentReference` | 0..n | tender/09-ProcurementStatus | | | open |
+| `ProcurementStatus/FiscalLegislationDocumentReference` | 0..n | tender/09-ProcurementStatus | | | open |
+| `ServiceProviderParty/ID` | 0..1 | tender/12-BusinessInformation | | | open |
+| `ServiceProviderParty/Party` | 1 | tender/12-BusinessInformation | | | open |
+| `ServiceProviderParty/SellerContact` | 0..1 | tender/12-BusinessInformation | | | open |
+| `ServiceProviderParty/ServiceType` | 0..n | tender/12-BusinessInformation | | | open |
+| `ServiceProviderParty/ServiceTypeCode` | 0..1 | tender/12-BusinessInformation | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

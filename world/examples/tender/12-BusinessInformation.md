@@ -32,8 +32,6 @@ The authority checks the tenderer's registration with the business registry.
   The first extract.
 - `BriefDescription` = **Valdara Industries: registered, no exclusion grounds recorded.**  
   In short.
-- `RequestedPublicationDate` = **2026-02-27**  
-  Published on the register on the day of the extract.
 - `RegulatoryDomain` = **Bayvarra public procurement**  
   The rules of the register.
 - `NoticeTypeCode` = **BUSREG** (listID `urn:ubl-examples:world:codelist:NoticeTypeCode`)  
@@ -266,38 +264,19 @@ Inside `BusinessParty`:
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
   The sales desk's mobile number, also under the reserved +999.
-- `ServiceProviderParty/ID` = **VI-SP-2026-01**  
-  The number of the service contract between the two; identity of Valdara Industries (world/parties.json).
-- `ServiceProviderParty/ServiceTypeCode` = **LOGISTICS** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
-  The kind of service, as a code. The code is from the Trade Accord's service type list: LOGISTICS = Logistics service.
-- `ServiceProviderParty/ServiceType` = **Warehousing and despatch**  
-  What the service provider does for the party; identity of Valdara Industries (world/parties.json).
-- `ServiceProviderParty/Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ServiceProviderParty/Party/PartyName/Name` = **Castrano Logistics**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `ServiceProviderParty/SellerContact/Name` = **Key account desk**  
-  The provider's contact for this customer.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-
-### Brochure Document Reference
-
-Inside `BrochureDocumentReference`:
-
-- `ID` = **VI-BROCHURE-26**  
-  The manufacturer's brochure, kept on the register.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **VI-ISO9001-CERT**  
-  Its quality certificate.
-- `DocumentType` = **Quality management certificate**  
-  The kind of document referred to, Valdara's quality management certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+  Its quality certificate, which the register records.
+- `DocumentType` = **Certificate of a quality management system (ISO 9001)**  
+  What it is (tender/12#F14).
 
 ### Business Capability
 
@@ -307,12 +286,12 @@ Inside `BusinessCapability`:
   A capability on record.
 - `CapabilityTypeCode` = **PRODUCTION** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
   Production capacity. The code is from the Trade Accord's business capability type list: PRODUCTION = Production.
-- `Description` = **Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant.**  
-  What.
+- `Description` = **Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant: a production capacity of 4,000 benches a year (about 80 a week); the amount is its yearly turnover of 2025.**  
+  What the quantity and the amount measure, the same figures as in its qualification (D28 point 4, tender/12#F15).
 - `ValueAmount` = **520000000.00** (currencyID `XBL`)  
   The yearly turnover of 2025, converted to lume (world/parties.json).
-- `ValueQuantity` = **6000** (unitCode `EA`)  
-  Benches a year.
+- `ValueQuantity` = **4000** (unitCode `EA`)  
+  The capacity: benches a year.
 - `SuppliedEvidence/ID` = **EV-ACC-2025**  
   The audited accounts of 2025.
 - `SuppliedEvidence/Name` = **Annual accounts**  
@@ -325,32 +304,6 @@ Inside `BusinessCapability`:
   A company site. The code is from the Trade Accord's web site type list: COMPANY = Company site.
 - `WebSite/URI` = **https://www.valdara.example**  
   The address.
-
-### Business Party Group
-
-Inside `BusinessPartyGroup`:
-
-- `GroupTypeCode` = **SAMEACTIVITY** (listID `urn:ubl-examples:world:codelist:BusinessPartyGroupTypeCode`)  
-  Operators with the same registered activity. The code is from the Trade Accord's business party group type list: SAMEACTIVITY = Same registered activity.
-- `GroupType` = **Tenderers in this procedure registered for ISIC 3100**  
-  The group.
-- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Valdara Industries**  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Brackenmere Furniture**  
-  A party referred to from another party's details: its identifier and name are enough.
-
-### Operation Type
-
-Inside `OperationType`:
-
-- `Code` = **MANUFACTURE** (listID `urn:ubl-examples:world:codelist:OperationTypeCode`)  
-  Its operation. The code is from the Trade Accord's operation type list: MANUFACTURE = Manufacture.
-- `Description` = **Manufacture of furniture for public spaces.**  
-  In words.
 
 ### Notice Sub Type
 
@@ -377,7 +330,6 @@ Inside `NoticeSubType`:
   <cbc:Note>Extract from the register of economic operators for the evaluation.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:BriefDescription>Valdara Industries: registered, no exclusion grounds recorded.</cbc:BriefDescription>
-  <cbc:RequestedPublicationDate>2026-02-27</cbc:RequestedPublicationDate>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">BUSREG</cbc:NoticeTypeCode>
   <cbc:NoticeLanguageCode listID="ISO 639">en</cbc:NoticeLanguageCode>
@@ -561,40 +513,21 @@ Inside `NoticeSubType`:
         <cbc:Value>+999 1 351 400 5258</cbc:Value>
       </cac:OtherCommunication>
     </cac:Contact>
-    <cac:ServiceProviderParty>
-      <cbc:ID>VI-SP-2026-01</cbc:ID>
-      <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">LOGISTICS</cbc:ServiceTypeCode>
-      <cbc:ServiceType>Warehousing and despatch</cbc:ServiceType>
-      <cac:Party>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Castrano Logistics</cbc:Name>
-        </cac:PartyName>
-      </cac:Party>
-      <cac:SellerContact>
-        <cbc:Name>Key account desk</cbc:Name>
-      </cac:SellerContact>
-    </cac:ServiceProviderParty>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:BusinessParty>
-  <cac:BrochureDocumentReference>
-    <cbc:ID>VI-BROCHURE-26</cbc:ID>
-  </cac:BrochureDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-ISO9001-CERT</cbc:ID>
-    <cbc:DocumentType>Quality management certificate</cbc:DocumentType>
+    <cbc:DocumentType>Certificate of a quality management system (ISO 9001)</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:ID>CAP-1</cbc:ID>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
-    <cbc:Description>Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant.</cbc:Description>
+    <cbc:Description>Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant: a production capacity of 4,000 benches a year (about 80 a week); the amount is its yearly turnover of 2025.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
-    <cbc:ValueQuantity unitCode="EA">6000</cbc:ValueQuantity>
+    <cbc:ValueQuantity unitCode="EA">4000</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-2025</cbc:ID>
       <cbc:Name>Annual accounts</cbc:Name>
@@ -608,30 +541,6 @@ Inside `NoticeSubType`:
       <cbc:URI>https://www.valdara.example</cbc:URI>
     </cac:WebSite>
   </cac:BusinessCapability>
-  <cac:BusinessPartyGroup>
-    <cbc:GroupTypeCode listID="urn:ubl-examples:world:codelist:BusinessPartyGroupTypeCode">SAMEACTIVITY</cbc:GroupTypeCode>
-    <cbc:GroupType>Tenderers in this procedure registered for ISIC 3100</cbc:GroupType>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brackenmere Furniture</cbc:Name>
-      </cac:PartyName>
-    </cac:Party>
-  </cac:BusinessPartyGroup>
-  <cac:OperationType>
-    <cbc:Code listID="urn:ubl-examples:world:codelist:OperationTypeCode">MANUFACTURE</cbc:Code>
-    <cbc:Description>Manufacture of furniture for public spaces.</cbc:Description>
-  </cac:OperationType>
   <cac:NoticeSubType>
     <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:NoticeSubTypeCode">EXTRACT</cbc:SubTypeCode>
     <cbc:SubTypeDescription>Extract asked for by a contracting authority.</cbc:SubTypeDescription>

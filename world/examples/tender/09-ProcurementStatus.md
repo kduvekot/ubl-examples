@@ -49,28 +49,9 @@ Inside `TenderSubmissionDeadlinePeriod`:
 Inside `ProcurementLegislationDocumentReference`:
 
 - `ID` = **XB-PPA-2019**  
-  The procurement act.
-
-### Fiscal Legislation Document Reference
-
-Inside `FiscalLegislationDocumentReference`:
-
-- `ID` = **XB-STT-ACT**  
-  The state sales tax acts.
-
-### Environmental Legislation Document Reference
-
-Inside `EnvironmentalLegislationDocumentReference`:
-
-- `ID` = **XB-ENV-2021**  
-  The environmental act.
-
-### Employment Legislation Document Reference
-
-Inside `EmploymentLegislationDocumentReference`:
-
-- `ID` = **XB-LAB-2018**  
-  The labour act.
+  The procurement act, cited for the rule the answer rests on.
+- `DocumentDescription` = **Art. 47: a deadline is extended only when answers to questions change the procurement documents.**  
+  Why the deadline stands (tender/09#F5).
 
 ### Procedure Status Request Document Reference
 
@@ -255,16 +236,8 @@ Inside `ProcurementProjectLot`:
   </cac:TenderSubmissionDeadlinePeriod>
   <cac:ProcurementLegislationDocumentReference>
     <cbc:ID>XB-PPA-2019</cbc:ID>
+    <cbc:DocumentDescription>Art. 47: a deadline is extended only when answers to questions change the procurement documents.</cbc:DocumentDescription>
   </cac:ProcurementLegislationDocumentReference>
-  <cac:FiscalLegislationDocumentReference>
-    <cbc:ID>XB-STT-ACT</cbc:ID>
-  </cac:FiscalLegislationDocumentReference>
-  <cac:EnvironmentalLegislationDocumentReference>
-    <cbc:ID>XB-ENV-2021</cbc:ID>
-  </cac:EnvironmentalLegislationDocumentReference>
-  <cac:EmploymentLegislationDocumentReference>
-    <cbc:ID>XB-LAB-2018</cbc:ID>
-  </cac:EmploymentLegislationDocumentReference>
   <cac:ProcedureStatusRequestDocumentReference>
     <cbc:ID>BF-DOC-26-0194</cbc:ID>
   </cac:ProcedureStatusRequestDocumentReference>

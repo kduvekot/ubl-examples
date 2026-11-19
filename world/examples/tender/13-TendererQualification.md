@@ -60,10 +60,10 @@ Inside `TendererPartyQualification`:
   Full years in business since the company was founded on 1962-04-12 (world/parties.json).
 - `MainQualifyingParty/EmployeeQuantity` = **3083** (unitCode `IE`)  
   The whole company's staff, in persons (world/parties.json).
-- `MainQualifyingParty/BusinessClassificationEvidenceID` = **ISIC-3100**  
-  Its class.
+- `MainQualifyingParty/BusinessClassificationEvidenceID` = **EV-REG-VI**  
+  The evidence of its class: the extract of Urvania's companies register (tender/13#F1).
 - `MainQualifyingParty/BusinessIdentityEvidenceID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  Its registration. The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
+  Its registration: the world identifies the register entry, the evidence of its identity, by the register number (tender/13#F10, option b). The schemeID names the scheme it is from: the Commercial register of Urvania (XU-R- and 6 digits).
 - `MainQualifyingParty/TendererRoleCode` = **SOLE** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
   The manufacturer tenders alone (tender/13#F2). The code is from the Trade Accord's tenderer role list: SOLE = Sole tenderer.
 - `MainQualifyingParty/BusinessClassificationScheme/ID` = **ISIC4**  
@@ -72,29 +72,55 @@ Inside `TendererPartyQualification`:
   Furniture.
 - `MainQualifyingParty/TechnicalCapability/ID` = **TC-1**  
   Production.
-- `MainQualifyingParty/TechnicalCapability/Description` = **4,000 benches a year.**  
-  Capacity.
+- `MainQualifyingParty/TechnicalCapability/Description` = **A production capacity of 4,000 benches a year, about 80 a week.**  
+  What the quantity measures, as the register's extract states it (D28 point 4).
 - `MainQualifyingParty/TechnicalCapability/ValueQuantity` = **4000** (unitCode `EA`)  
-  A year.
+  Benches a year.
 - `MainQualifyingParty/FinancialCapability/ID` = **FC-1**  
   Turnover.
+- `MainQualifyingParty/FinancialCapability/Description` = **Yearly turnover of 2025, the whole company's, from its audited accounts.**  
+  What the amount is and for which year (tender/13#F3).
 - `MainQualifyingParty/FinancialCapability/ValueAmount` = **520000000.00** (currencyID `XBL`)  
   The whole company's yearly turnover of 2025, converted to lume (world/parties.json).
+- `MainQualifyingParty/FinancialCapability/SuppliedEvidence/ID` = **EV-ACC-VI**  
+  The accounts.
 - `MainQualifyingParty/CompletedTask/AnnualAverageAmount` = **180000.00** (currencyID `XBL`)  
-  A year, similar supplies.
+  A year of the supply, on average.
 - `MainQualifyingParty/CompletedTask/TotalTaskAmount` = **540000.00** (currencyID `XBL`)  
-  Three years.
-- `MainQualifyingParty/CompletedTask/PartyCapacityAmount` = **540000.00** (currencyID `XBL`)  
-  All by itself.
-- `MainQualifyingParty/CompletedTask/Description` = **Benches for Ferrano's parks.**  
-  The task.
-- `MainQualifyingParty/CompletedTask/SuppliedEvidence/ID` = **EV-FER-PARKS**  
-  Ferrano's reference letter.
+  The value of the supply, in lume.
+- `MainQualifyingParty/CompletedTask/Description` = **Park benches for the city's parks, in yearly releases, for the City of Ferrano.**  
+  A similar supply, one of the three the call asks for.
+- `MainQualifyingParty/CompletedTask/SuppliedEvidence/ID` = **EV-REF-FER**  
+  The customer's reference letter.
 - `MainQualifyingParty/CompletedTask/Period/StartDate` = **2023-01-01**  
   From.
 - `MainQualifyingParty/CompletedTask/Period/EndDate` = **2025-12-31**  
   To.
-- `MainQualifyingParty/CompletedTask/RecipientCustomerParty/Party/PartyName/Name` = **City of Ferrano**  
+- `MainQualifyingParty/CompletedTask/RecipientCustomerParty/Party/PartyName/Name` = **City of ferrano**  
+  The customer.
+- `MainQualifyingParty/CompletedTask/TotalTaskAmount` = **62000.00** (currencyID `XBL`)  
+  The value of the supply, in lume.
+- `MainQualifyingParty/CompletedTask/Description` = **Benches for the riverside walk, for the town of Conciaro.**  
+  A similar supply, one of the three the call asks for.
+- `MainQualifyingParty/CompletedTask/SuppliedEvidence/ID` = **EV-REF-CON**  
+  The customer's reference letter.
+- `MainQualifyingParty/CompletedTask/Period/StartDate` = **2024-03-01**  
+  From.
+- `MainQualifyingParty/CompletedTask/Period/EndDate` = **2024-06-30**  
+  To.
+- `MainQualifyingParty/CompletedTask/RecipientCustomerParty/Party/PartyName/Name` = **Town of conciaro**  
+  The customer.
+- `MainQualifyingParty/CompletedTask/TotalTaskAmount` = **38000.00** (currencyID `XBL`)  
+  The value of the supply, in lume.
+- `MainQualifyingParty/CompletedTask/Description` = **Benches for the market square and the station forecourt, for the town of Valico Euridice.**  
+  A similar supply, one of the three the call asks for.
+- `MainQualifyingParty/CompletedTask/SuppliedEvidence/ID` = **EV-REF-VAL**  
+  The customer's reference letter.
+- `MainQualifyingParty/CompletedTask/Period/StartDate` = **2025-04-01**  
+  From.
+- `MainQualifyingParty/CompletedTask/Period/EndDate` = **2025-05-31**  
+  To.
+- `MainQualifyingParty/CompletedTask/RecipientCustomerParty/Party/PartyName/Name` = **Town of valico euridice**  
   The customer.
 - `MainQualifyingParty/Declaration/ID` = **DEC-1**  
   A declaration.
@@ -366,10 +392,34 @@ Inside `ContractingParty`:
 
 Inside `Evidence`:
 
-- `ID` = **EV-FER-PARKS**  
-  The reference.
-- `Name` = **Ferrano reference**  
+- `ID` = **EV-REF-FER**  
+  A reference letter.
+- `Name` = **Reference letter of the City of Ferrano**  
   Name.
+- `ID` = **EV-REF-CON**  
+  A reference letter.
+- `Name` = **Reference letter of the town of Conciaro**  
+  Name.
+- `ID` = **EV-REF-VAL**  
+  A reference letter.
+- `Name` = **Reference letter of the town of Valico Euridice**  
+  Name.
+- `ID` = **EV-REG-VI**  
+  The register extract.
+- `Name` = **Extract of Urvania's companies register**  
+  Name.
+- `Description` = **Registration no. XU-R-104274 and class ISIC 3100.**  
+  What it proves.
+- `ID` = **EV-ACC-VI**  
+  The accounts.
+- `Name` = **Audited annual accounts 2025**  
+  Name.
+- `ID` = **EV-FOR-VI**  
+  The forestry certificate the call asks for (tender/13#F4).
+- `Name` = **Chain-of-custody certificate of the hardwood slats**  
+  Name.
+- `Description` = **The slats are sawn by Marrowdale Sawmill from forests managed for regrowth; the certificate covers its supplies to Valdara.**  
+  What.
 - `ID` = **EV-DEC-1**  
   The evidence the declaration names (tender/13#F13).
 - `Name` = **Signed declaration of no conflict of interest**  
@@ -423,7 +473,7 @@ Inside `AdditionalDocumentReference`:
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">63</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">3083</cbc:EmployeeQuantity>
-      <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
+      <cbc:BusinessClassificationEvidenceID>EV-REG-VI</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:BusinessIdentityEvidenceID>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">SOLE</cbc:TendererRoleCode>
       <cac:BusinessClassificationScheme>
@@ -434,20 +484,23 @@ Inside `AdditionalDocumentReference`:
       </cac:BusinessClassificationScheme>
       <cac:TechnicalCapability>
         <cbc:ID>TC-1</cbc:ID>
-        <cbc:Description>4,000 benches a year.</cbc:Description>
+        <cbc:Description>A production capacity of 4,000 benches a year, about 80 a week.</cbc:Description>
         <cbc:ValueQuantity unitCode="EA">4000</cbc:ValueQuantity>
       </cac:TechnicalCapability>
       <cac:FinancialCapability>
         <cbc:ID>FC-1</cbc:ID>
+        <cbc:Description>Yearly turnover of 2025, the whole company's, from its audited accounts.</cbc:Description>
         <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-ACC-VI</cbc:ID>
+        </cac:SuppliedEvidence>
       </cac:FinancialCapability>
       <cac:CompletedTask>
         <cbc:AnnualAverageAmount currencyID="XBL">180000.00</cbc:AnnualAverageAmount>
         <cbc:TotalTaskAmount currencyID="XBL">540000.00</cbc:TotalTaskAmount>
-        <cbc:PartyCapacityAmount currencyID="XBL">540000.00</cbc:PartyCapacityAmount>
-        <cbc:Description>Benches for Ferrano's parks.</cbc:Description>
+        <cbc:Description>Park benches for the city's parks, in yearly releases, for the City of Ferrano.</cbc:Description>
         <cac:SuppliedEvidence>
-          <cbc:ID>EV-FER-PARKS</cbc:ID>
+          <cbc:ID>EV-REF-FER</cbc:ID>
         </cac:SuppliedEvidence>
         <cac:Period>
           <cbc:StartDate>2023-01-01</cbc:StartDate>
@@ -456,7 +509,43 @@ Inside `AdditionalDocumentReference`:
         <cac:RecipientCustomerParty>
           <cac:Party>
             <cac:PartyName>
-              <cbc:Name>City of Ferrano</cbc:Name>
+              <cbc:Name>City of ferrano</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:RecipientCustomerParty>
+      </cac:CompletedTask>
+      <cac:CompletedTask>
+        <cbc:TotalTaskAmount currencyID="XBL">62000.00</cbc:TotalTaskAmount>
+        <cbc:Description>Benches for the riverside walk, for the town of Conciaro.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-REF-CON</cbc:ID>
+        </cac:SuppliedEvidence>
+        <cac:Period>
+          <cbc:StartDate>2024-03-01</cbc:StartDate>
+          <cbc:EndDate>2024-06-30</cbc:EndDate>
+        </cac:Period>
+        <cac:RecipientCustomerParty>
+          <cac:Party>
+            <cac:PartyName>
+              <cbc:Name>Town of conciaro</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:RecipientCustomerParty>
+      </cac:CompletedTask>
+      <cac:CompletedTask>
+        <cbc:TotalTaskAmount currencyID="XBL">38000.00</cbc:TotalTaskAmount>
+        <cbc:Description>Benches for the market square and the station forecourt, for the town of Valico Euridice.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-REF-VAL</cbc:ID>
+        </cac:SuppliedEvidence>
+        <cac:Period>
+          <cbc:StartDate>2025-04-01</cbc:StartDate>
+          <cbc:EndDate>2025-05-31</cbc:EndDate>
+        </cac:Period>
+        <cac:RecipientCustomerParty>
+          <cac:Party>
+            <cac:PartyName>
+              <cbc:Name>Town of valico euridice</cbc:Name>
             </cac:PartyName>
           </cac:Party>
         </cac:RecipientCustomerParty>
@@ -688,8 +777,30 @@ Inside `AdditionalDocumentReference`:
     </cac:Party>
   </cac:ContractingParty>
   <cac:Evidence>
-    <cbc:ID>EV-FER-PARKS</cbc:ID>
-    <cbc:Name>Ferrano reference</cbc:Name>
+    <cbc:ID>EV-REF-FER</cbc:ID>
+    <cbc:Name>Reference letter of the City of Ferrano</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-REF-CON</cbc:ID>
+    <cbc:Name>Reference letter of the town of Conciaro</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-REF-VAL</cbc:ID>
+    <cbc:Name>Reference letter of the town of Valico Euridice</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-REG-VI</cbc:ID>
+    <cbc:Name>Extract of Urvania's companies register</cbc:Name>
+    <cbc:Description>Registration no. XU-R-104274 and class ISIC 3100.</cbc:Description>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-ACC-VI</cbc:ID>
+    <cbc:Name>Audited annual accounts 2025</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-FOR-VI</cbc:ID>
+    <cbc:Name>Chain-of-custody certificate of the hardwood slats</cbc:Name>
+    <cbc:Description>The slats are sawn by Marrowdale Sawmill from forests managed for regrowth; the certificate covers its supplies to Valdara.</cbc:Description>
   </cac:Evidence>
   <cac:Evidence>
     <cbc:ID>EV-DEC-1</cbc:ID>

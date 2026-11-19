@@ -18,16 +18,8 @@
   </cac:TenderSubmissionDeadlinePeriod>
   <cac:ProcurementLegislationDocumentReference>
     <cbc:ID>XB-PPA-2019</cbc:ID>
+    <cbc:DocumentDescription>Art. 47: a deadline is extended only when answers to questions change the procurement documents.</cbc:DocumentDescription>
   </cac:ProcurementLegislationDocumentReference>
-  <cac:FiscalLegislationDocumentReference>
-    <cbc:ID>XB-STT-ACT</cbc:ID>
-  </cac:FiscalLegislationDocumentReference>
-  <cac:EnvironmentalLegislationDocumentReference>
-    <cbc:ID>XB-ENV-2021</cbc:ID>
-  </cac:EnvironmentalLegislationDocumentReference>
-  <cac:EmploymentLegislationDocumentReference>
-    <cbc:ID>XB-LAB-2018</cbc:ID>
-  </cac:EmploymentLegislationDocumentReference>
   <cac:ProcedureStatusRequestDocumentReference>
     <cbc:ID>BF-DOC-26-0194</cbc:ID>
   </cac:ProcedureStatusRequestDocumentReference>

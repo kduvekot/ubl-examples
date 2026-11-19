@@ -8789,6 +8789,31 @@ def _(f, n, doc, out):
             "Signature": seal("37-xb", "BF-SIG-QAR")}
 
 
+VALDARA_CAPACITY = 4000      # benches a year, about 80 a week (D28 point 4, O97)
+# Valdara's three similar supplies in five years (tender/13#F4): customer, what, start, end, total, evidence
+VALDARA_SUPPLIES = [
+    ("the City of Ferrano", "Park benches for the city's parks, in yearly releases", "2023-01-01", "2025-12-31",
+     Decimal("540000"), "EV-REF-FER"),
+    ("the town of Conciaro", "Benches for the riverside walk", "2024-03-01", "2024-06-30", Decimal("62000"),
+     "EV-REF-CON"),
+    ("the town of Valico Euridice", "Benches for the market square and the station forecourt", "2025-04-01",
+     "2025-05-31", Decimal("38000"), "EV-REF-VAL")]
+
+
+def valdara_task(customer, what, start, end, total, ev):
+    years = int(end[:4]) - int(start[:4]) + 1
+    task = {"TotalTaskAmount": amount(total, "XBL", "The value of the supply, in lume."),
+            "Description": V(f"{what}, for {customer}.", "A similar supply, one of the three the call asks for."),
+            "SuppliedEvidence": {"ID": V(ev, "The customer's reference letter.")},
+            "Period": {"StartDate": V(start, "From."), "EndDate": V(end, "To.")},
+            "RecipientCustomerParty": {"Party": {"PartyName": {"Name": V(customer[4:].capitalize() if
+                                                                         customer.startswith("the ") else customer,
+                                                                         "The customer.")}}}}
+    if years > 1:
+        task["AnnualAverageAmount"] = amount(total / years, "XBL", "A year of the supply, on average.")
+    return task
+
+
 @enrich("tender", "TendererQualification")
 def _(f, n, doc, out):
     return {"Note": V("The manufacturer tenders alone, with Saltmere Engineering as its subcontractor for the "
@@ -8806,29 +8831,29 @@ def _(f, n, doc, out):
                                                   f"{PARTY['5-xu']['identity']['legal']['founded']} (world/parties.json)."),
                     "EmployeeQuantity": qty(company_headcount("5-xu"), "IE", "The whole company's staff, in persons "
                                                                          "(world/parties.json)."),
-                    "BusinessClassificationEvidenceID": V("ISIC-3100", "Its class."),
-                    "BusinessIdentityEvidenceID": V(PARTY["5-xu"]["identity"]["registry_id"], "Its registration."),
+                    "BusinessClassificationEvidenceID": V("EV-REG-VI", "The evidence of its class: the extract "
+                                                                     "of Urvania's companies register "
+                                                                     "(tender/13#F1)."),
+                    "BusinessIdentityEvidenceID": V(PARTY["5-xu"]["identity"]["registry_id"], "Its registration: "
+                                                    "the world identifies the register entry, the evidence of its "
+                                                    "identity, by the register number (tender/13#F10, option b)."),
                     "TendererRoleCode": V("SOLE", "The manufacturer tenders alone (tender/13#F2)."),
                     "BusinessClassificationScheme": {"ID": V("ISIC4", "ISIC Rev. 4."),
                                                      "ClassificationCategory": {"CodeValue": V("3100", "Furniture.")}},
-                    "TechnicalCapability": {"ID": V("TC-1", "Production."), "Description": V("4,000 benches a year.",
-                                                                                            "Capacity."),
-                                            "ValueQuantity": qty(4000, "EA", "A year.")},
+                    "TechnicalCapability": {"ID": V("TC-1", "Production."),
+                                            "Description": V(f"A production capacity of {VALDARA_CAPACITY:,} benches "
+                                                             "a year, about 80 a week.", "What the quantity measures, "
+                                                             "as the register's extract states it (D28 point 4)."),
+                                            "ValueQuantity": qty(VALDARA_CAPACITY, "EA", "Benches a year.")},
                     "FinancialCapability": {"ID": V("FC-1", "Turnover."),
+                                            "Description": V("Yearly turnover of 2025, the whole company's, from its "
+                                                             "audited accounts.", "What the amount is and for which "
+                                                                                  "year (tender/13#F3)."),
                                             "ValueAmount": amount(company_turnover_lume("5-xu"), "XBL",
                                                                   "The whole company's yearly turnover of 2025, "
-                                                                  "converted to lume (world/parties.json).")},
-                    "CompletedTask": {"AnnualAverageAmount": amount(Decimal("180000"), "XBL", "A year, similar "
-                                                                                              "supplies."),
-                                      "TotalTaskAmount": amount(Decimal("540000"), "XBL", "Three years."),
-                                      "PartyCapacityAmount": amount(Decimal("540000"), "XBL", "All by itself."),
-                                      "Description": V("Benches for Ferrano's parks.", "The task."),
-                                      "SuppliedEvidence": {"ID": V("EV-FER-PARKS", "Ferrano's reference letter.")},
-                                      "Period": {"StartDate": V("2023-01-01", "From."), "EndDate": V("2025-12-31",
-                                                                                                    "To.")},
-                                      "RecipientCustomerParty": {"Party": {"PartyName": {"Name": V("City of "
-                                                                                                   "Ferrano",
-                                                                                                   "The customer.")}}}},
+                                                                  "converted to lume (world/parties.json)."),
+                                            "SuppliedEvidence": {"ID": V("EV-ACC-VI", "The accounts.")}},
+                    "CompletedTask": [valdara_task(*x) for x in VALDARA_SUPPLIES],
                     "Declaration": {"ID": V("DEC-1", "A declaration."), "Name": V("No conflict of interest",
                                                                                  "Name."),
                                     "DeclarationTypeCode": V("INTEGRITY", "Its kind."),
@@ -8842,7 +8867,16 @@ def _(f, n, doc, out):
                                               "TendererRoleCode": V("SUBCONTRACTOR", "For the installation: UBL "
                                                                     "places a relied-on subcontractor among the "
                                                                     "additional qualifying parties.")}},
-            "Evidence": [{"ID": V("EV-FER-PARKS", "The reference."), "Name": V("Ferrano reference", "Name.")},
+            "Evidence": [*[{"ID": V(x[5], "A reference letter."), "Name": V(f"Reference letter of {x[0]}", "Name.")}
+                           for x in VALDARA_SUPPLIES],
+                         {"ID": V("EV-REG-VI", "The register extract."),
+                          "Name": V("Extract of Urvania's companies register", "Name."),
+                          "Description": V("Registration no. XU-R-104274 and class ISIC 3100.", "What it proves.")},
+                         {"ID": V("EV-ACC-VI", "The accounts."), "Name": V("Audited annual accounts 2025", "Name.")},
+                         {"ID": V("EV-FOR-VI", "The forestry certificate the call asks for (tender/13#F4)."),
+                          "Name": V("Chain-of-custody certificate of the hardwood slats", "Name."),
+                          "Description": V("The slats are sawn by Marrowdale Sawmill from forests managed for "
+                                           "regrowth; the certificate covers its supplies to Valdara.", "What.")},
                          {"ID": V("EV-DEC-1", "The evidence the declaration names (tender/13#F13)."),
                           "Name": V("Signed declaration of no conflict of interest", "Name.")}],
             "AdditionalDocumentReference": {"ID": V("VI-ESPD-26", "The self-declaration.")}}
@@ -9011,10 +9045,10 @@ def _(f, n, doc, out):
                                                        "documents.", "The status."),
             "ProcedureCode": V("OPEN", "Still an open procedure: it has no invitation or participation periods "
                                        "(D28 point 1)."),
-            "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "The procurement act.")},
-            "FiscalLegislationDocumentReference": {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
-            "EnvironmentalLegislationDocumentReference": {"ID": V("XB-ENV-2021", "The environmental act.")},
-            "EmploymentLegislationDocumentReference": {"ID": V("XB-LAB-2018", "The labour act.")},
+            "ProcurementLegislationDocumentReference": {
+                "ID": V("XB-PPA-2019", "The procurement act, cited for the rule the answer rests on."),
+                "DocumentDescription": V("Art. 47: a deadline is extended only when answers to questions change the "
+                                         "procurement documents.", "Why the deadline stands (tender/09#F5).")},
             "ProcedureStatusRequestDocumentReference": {"ID": V(f.numbers["status-request"], "The request "
                                                                                              "answered.")},
             "Signature": seal(PWD, "PWD-SIG-PS"),
@@ -9045,34 +9079,31 @@ def _(f, n, doc, out):
     return {"Note": V("Extract from the register of economic operators for the evaluation.", "What it is."),
             "VersionID": V("1", "The first extract."),
             "BriefDescription": V("Valdara Industries: registered, no exclusion grounds recorded.", "In short."),
-            "RequestedPublicationDate": V(f.date(46), "Published on the register on the day of the extract."),
             "RegulatoryDomain": V("Bayvarra public procurement", "The rules of the register."),
             "NoticeTypeCode": V("BUSREG", "A notice of registration information."),
             "NoticeLanguageCode": V("en", "In English, the only language of its texts (D29 point 11, tender/12#F7)."),
             "Signature": seal(INFO, "BIS-SIG-BI"),
-            "BrochureDocumentReference": {"ID": V("VI-BROCHURE-26", "The manufacturer's brochure, kept on the "
-                                                                    "register.")},
-            "AdditionalDocumentReference": {"ID": V("VI-ISO9001-CERT", "Its quality certificate.")},
+            "AdditionalDocumentReference": {"ID": V("VI-ISO9001-CERT", "Its quality certificate, which the "
+                                                                   "register records."),
+                                            "DocumentType": V("Certificate of a quality management system "
+                                                              "(ISO 9001)", "What it is (tender/12#F14).")},
             "BusinessCapability": {
                 "ID": V("CAP-1", "A capability on record."),
                 "CapabilityTypeCode": V("PRODUCTION", "Production capacity."),
-                "Description": V("Benches with frames of ductile cast iron, cast, galvanised and powder-coated in its own plant.", "What."),
+                "Description": V(f"Benches with frames of ductile cast iron, cast, galvanised and powder-coated in "
+                                 f"its own plant: a production capacity of {VALDARA_CAPACITY:,} benches a year (about "
+                                 "80 a week); the amount is its yearly turnover of 2025.", "What the quantity and the "
+                                 "amount measure, the same figures as in its qualification (D28 point 4, "
+                                 "tender/12#F15)."),
                 "ValueAmount": amount(company_turnover_lume(WINNER), "XBL", "The yearly turnover of 2025, "
                                                                             "converted to lume (world/parties.json)."),
-                "ValueQuantity": qty(6000, "EA", "Benches a year."),
+                "ValueQuantity": qty(VALDARA_CAPACITY, "EA", "The capacity: benches a year."),
                 "SuppliedEvidence": {"ID": V("EV-ACC-2025", "The audited accounts of 2025."),
                                      "Name": V("Annual accounts", "What.")},
                 "ValidityPeriod": {"EndDate": V("2026-12-31", "Valid until the next accounts.")},
                 "WebSite": {"Name": V("Valdara Industries", "Its site."), "WebSiteTypeCode": V("COMPANY", "A company "
                                                                                                          "site."),
                             "URI": V("https://www.valdara.example", "The address.")}},
-            "BusinessPartyGroup": {"GroupTypeCode": V("SAMEACTIVITY", "Operators with the same registered "
-                                                                       "activity."),
-                                   "GroupType": V("Tenderers in this procedure registered for ISIC 3100", "The "
-                                                                                                         "group."),
-                                   "Party": [party(WINNER, short=True), party(RUNNER_UP, short=True)]},
-            "OperationType": {"Code": V("MANUFACTURE", "Its operation."),
-                              "Description": V("Manufacture of furniture for public spaces.", "In words.")},
             "NoticeSubType": {"SubTypeCode": V("EXTRACT", "An extract on request."),
                               "SubTypeDescription": V("Extract asked for by a contracting authority.", "In words.")}}
 
