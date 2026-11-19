@@ -499,6 +499,20 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `Price/OrderableUnitFactorRate` | 0..1 | wood/02-Quotation, wood/03-Order, wood/08-Invoice | | | open |
 | `QuotationLine/SellerProposedSubstituteLineItem` | 0..1 | wood/02-Quotation | | | open |
 
+### G2: carnet, mast, air (2026-11-19)
+
+Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86).
+
+> C78, D40: the carnet as issued is stamped nowhere; the chambers quote the stamped counterfoils afterwards. The carnet names no office of subsequent entry: the samples enter the island at Selanu airport, which the importation counterfoil names (carnet/01#F17). The representative is named by first and family name, title and passport only: the middle name, the "other name" (UBL: a second family name) and the suffix had no reason (01#F5, F14). The proof's attachment is a scan, described, not a sentence in place of the document (04#F10).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Attachment/EmbeddedDocument` | 0..1 | carnet/04-ProofOfReexportation | a clear-text document attached as such, such as the temperature logger's readings of the vaccine container as a CSV in the medicines flow's status or receipt (D47) | medicines | candidate |
+| `Consignment/OfficeOfSubSequentiallyEntryLocation` | 0..1 | carnet/01-GoodsItemPassport | the containers of the rail flow enter Bayvarra at the rail border station and are cleared at Bayvarra customs' inland office at Marrowdale, a facility where goods are processed after their initial entry point (D37, rail/14) | rail | candidate |
+| `Person/MiddleName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
+| `Person/NameSuffix` | 0..1 | carnet/01-GoodsItemPassport | | | open |
+| `Person/OtherName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

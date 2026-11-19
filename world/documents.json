@@ -282,7 +282,7 @@
   {
    "id": "carnet",
    "title": "Samples to a trade fair on the island (temporary export)",
-   "text": "The manufacturer shows samples at a trade fair on the island and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, avoids paying duties.",
+   "text": "The manufacturer shows two sample benches at the Selanu Chamber of Commerce's trade fair in early June and brings them back. An ATA carnet, guaranteed by the chambers of commerce of both countries, lets them into the island without its import consumption tax; customs stamp its counterfoils as the samples go, and they cross Bayvarra on the carnet's transit vouchers.",
    "legs": [
     {
      "mode": "road",
@@ -2504,7 +2504,7 @@
    "doc": "ProofOfReexportationRequest",
    "from": "20-xl",
    "to": "20-xu",
-   "why": "The island's chamber has no re-export stamp for the samples and asks for proof that they left.",
+   "why": "The re-exportation limit of 30 June has passed and the island's customs have no discharged re-exportation voucher: it went astray. The island's chamber asks Urvania's chamber for proof that the samples left.",
    "parties": {
     "ImportingGuarantorParty": "20-xl",
     "ExportingGuarantorParty": "20-xu",
@@ -2528,7 +2528,7 @@
    "doc": "ProofOfReexportation",
    "from": "20-xu",
    "to": "20-xl",
-   "why": "Urvania's chamber proves the samples were re-exported: they came home through Urvania's customs.",
+   "why": "Urvania's chamber proves the samples were re-exported, with the stamped re-exportation counterfoil and Urvania's record of their re-importation; the claim of the island's tax falls away.",
    "parties": {
     "ExportingGuarantorParty": "20-xu",
     "ImportingGuarantorParty": "20-xl",

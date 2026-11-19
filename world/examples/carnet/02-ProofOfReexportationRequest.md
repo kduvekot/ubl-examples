@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Samples to a trade fair on the island (temporary export)" · [Proof of Reexportation Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA)*
 
-The island's chamber has no re-export stamp for the samples and asks for proof that they left.
+The re-exportation limit of 30 June has passed and the island's customs have no discharged re-exportation voucher: it went astray. The island's chamber asks Urvania's chamber for proof that the samples left.
 
 [The XML file](02-ProofOfReexportationRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,17 +23,17 @@ The island's chamber has no re-export stamp for the samples and asks for proof t
 - `UUID` = **3377b749-219b-5bbb-a9d2-7d1101bcbe28**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-07-24**  
-  Two months after the fair the samples' re-export is not recorded.
+  Friday 24 July: the re-exportation limit of 30 June has passed, and the island's customs have no record that the samples left (D40).
 - `IssueTime` = **08:50:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **The island's customs found no re-export stamp.**  
-  Why the chamber asks.
+- `Note` = **The re-exportation limit of 30 June set on the importation counterfoil has passed, and the Island Customs Service has no discharged re-exportation voucher on file for the samples.**  
+  Why the chamber asks: a missing voucher, not a missing stamp (D40, carnet/02#F4).
 - `VersionID` = **1**  
   The first request.
 - `GoodsItemPassportID` = **FCC-DOC-26-0724**  
   The carnet the samples travelled under.
 - `GoodsItemPassportCounterfoilID` = **IMP-1**  
-  The importation counterfoil without a re-export.
+  The importation counterfoil not discharged.
 
 ### Importing Guarantor Party
 
@@ -211,7 +211,7 @@ Inside `Signature`:
   <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
   <cbc:IssueTime>08:50:00+00:00</cbc:IssueTime>
-  <cbc:Note>The island's customs found no re-export stamp.</cbc:Note>
+  <cbc:Note>The re-exportation limit of 30 June set on the importation counterfoil has passed, and the Island Customs Service has no discharged re-exportation voucher on file for the samples.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
   <cbc:GoodsItemPassportCounterfoilID>IMP-1</cbc:GoodsItemPassportCounterfoilID>

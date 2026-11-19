@@ -10,8 +10,8 @@
   <cbc:IssueTime>15:04:00-01:00</cbc:IssueTime>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">VALID</cbc:StatusCode>
   <cbc:Status>Issued</cbc:Status>
-  <cbc:Note languageID="qau">Barhek gan drek Selanu rizir tran; krir traz naz zhizhek sek mannan.</cbc:Note>
-  <cbc:Note languageID="en-XU">Samples for the Selanu trade fair; to come back within six months.</cbc:Note>
+  <cbc:Note languageID="qau">Barhek gan drek Selanu rizir tran trek geskek June; kildrek traz hek skuskan drek tran.</cbc:Note>
+  <cbc:Note languageID="en-XU">Samples for the Selanu trade fair in early June; they come home after the fair.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">EXHIBITION</cbc:ExportReasonCode>
   <cbc:ExportReason>Exhibition at the Selanu trade fair</cbc:ExportReason>
@@ -123,9 +123,6 @@
       <cbc:FirstName>Davide</cbc:FirstName>
       <cbc:FamilyName>Orsenna</cbc:FamilyName>
       <cbc:Title>Ing.</cbc:Title>
-      <cbc:MiddleName>Ilse</cbc:MiddleName>
-      <cbc:OtherName>Mara</cbc:OtherName>
-      <cbc:NameSuffix>Jr</cbc:NameSuffix>
       <cbc:JobTitle>Sales engineer</cbc:JobTitle>
       <cbc:NationalID>XU-NID-55102311</cbc:NationalID>
       <cbc:NationalityCode listID="ISO 3166">XU</cbc:NationalityCode>
@@ -146,7 +143,7 @@
       </cac:CitizenshipCountry>
       <cac:Contact>
         <cbc:Name>Mobile on the road</cbc:Name>
-        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
+        <cbc:Telephone>+999 1 347 612 0893</cbc:Telephone>
       </cac:Contact>
       <cac:IdentityDocumentReference>
         <cbc:ID>XU-P-2210931</cbc:ID>
@@ -256,9 +253,6 @@
       <cac:TransitCountry>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:TransitCountry>
-      <cac:OfficeOfSubSequentiallyEntryLocation>
-        <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
-      </cac:OfficeOfSubSequentiallyEntryLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -373,36 +367,56 @@
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>EXP-1</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:FinalReexportationDate>2026-11-21</cbc:FinalReexportationDate>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples leave Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ExportationDocumentReference>
-      <cbc:ID>EXP-1-STAMP</cbc:ID>
-    </cac:ExportationDocumentReference>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-EXP-1</cbc:ID>
     </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
-    <cbc:ID>IMP-1</cbc:ID>
+    <cbc:ID>TRA-1</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs and Border Service of Bayvarra, Euridice Crossing</cbc:Name>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ImportationDocumentReference>
-      <cbc:ID>IMP-1-STAMP</cbc:ID>
-    </cac:ImportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-1-IN</cbc:ID>
+    </cac:VoucherDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-1-OUT</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>IMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>To be stamped by customs when the samples arrive on the island.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-IMP-1</cbc:ID>
     </cac:VoucherDocumentReference>
@@ -410,35 +424,62 @@
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REEXP-1</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples leave the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs office, Selanu airport</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ReexportationDocumentReference>
-      <cbc:ID>REEXP-1-STAMP</cbc:ID>
-    </cac:ReexportationDocumentReference>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-REEXP-1</cbc:ID>
     </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
-    <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:ID>TRA-2</cbc:ID>
     <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
-    <cbc:Note>Stamped by customs.</cbc:Note>
+    <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
+      <cbc:Name>Customs and Border Service of Bayvarra, Lumeport airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
-    <cac:ReimportationDocumentReference>
-      <cbc:ID>REIMP-1-STAMP</cbc:ID>
-    </cac:ReimportationDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-2-IN</cbc:ID>
+    </cac:VoucherDocumentReference>
+    <cac:VoucherDocumentReference>
+      <cbc:ID>V-TRA-2-OUT</cbc:ID>
+    </cac:VoucherDocumentReference>
+  </cac:GoodsItemPassportCounterfoil>
+  <cac:GoodsItemPassportCounterfoil>
+    <cbc:ID>REIMP-1</cbc:ID>
+    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:Note>To be stamped by customs when the samples come home to Urvania.</cbc:Note>
+    <cac:CustomsOfficeLocation>
+      <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
+      <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+    </cac:CustomsOfficeLocation>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="EA">2</cbc:Quantity>
+    </cac:GoodsItem>
     <cac:VoucherDocumentReference>
       <cbc:ID>V-REIMP-1</cbc:ID>
     </cac:VoucherDocumentReference>
@@ -458,7 +499,7 @@
         </cac:PartyName>
       </cac:Party>
       <cac:SignatoryContact>
-        <cbc:Name>Carnet desk</cbc:Name>
+        <cbc:Name>Carnet office</cbc:Name>
       </cac:SignatoryContact>
     </cac:EndorserParty>
   </cac:IssuerEndorsement>

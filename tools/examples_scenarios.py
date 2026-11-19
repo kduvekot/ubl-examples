@@ -2985,16 +2985,114 @@ CARNET = kit.Flow("carnet", "2026-05-25", [
     {"item": "bench-serra", "ordered": 2, "why": "Two sample benches for the stand at the trade fair."}])
 
 
+# The carnet's timeline (D40), in days from its issue on Monday 25 May: out of Urvania and through Bayvarra on
+# Monday 1 June, flown to the island on Tuesday 2 June, the fair, flown back on Tuesday 9 June and home through
+# Bayvarra on Wednesday 10 June; the island's customs set 30 June as the limit to re-export. The re-exportation
+# voucher goes astray, so the island's chamber asks for proof on 24 July, reminds on 24 August and is answered on 28.
+CARNET_DAYS = {"export": 7, "import": 8, "reexport": 15, "reimport": 16, "request": 60, "reminder": 91, "proof": 95}
+CARNET_LIMIT = "2026-06-30"
+CARNET_OFFICES = {      # the customs offices that stamp the counterfoils: one name each, the airports by their code
+    "XU": ("Customs Administration of Urvania, Valico Euridice", None, "BORDERPOST"),
+    "XB-road": ("Customs and Border Service of Bayvarra, Euridice Crossing", None, "BORDERPOST"),
+    "XB-air": ("Customs and Border Service of Bayvarra, Lumeport airport", "XBLMA", "CUSTOMSOFFICE"),
+    "XL": ("Island Customs Service, Selanu airport", "XLSLA", "CUSTOMSOFFICE")}
+# The counterfoils as the carnet has them (ATA sheets: yellow for Urvania, blue for transit, white for the island):
+# id -> (sheet, where it is presented, the day it is stamped, what happens then)
+CARNET_SHEETS = {
+    "EXP-1": ("exportation counterfoil (yellow sheet)", "XU", "export", "the samples leave Urvania"),
+    "TRA-1": ("transit counterfoil (blue sheet), outbound", "XB-road", "export",
+              "the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport"),
+    "IMP-1": ("importation counterfoil (white sheet)", "XL", "import", "the samples arrive on the island"),
+    "REEXP-1": ("re-exportation counterfoil (white sheet)", "XL", "reexport", "the samples leave the island"),
+    "TRA-2": ("transit counterfoil (blue sheet), homeward", "XB-air", "reexport",
+              "the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing"),
+    "REIMP-1": ("re-importation counterfoil (yellow sheet)", "XU", "reimport", "the samples come home to Urvania")}
+
+
+def carnet_day(key):
+    d = datetime.date.fromisoformat(CARNET_LIMIT if key == "limit" else CARNET.date(CARNET_DAYS[key]))
+    return f"{d.day} {d.strftime('%B')}"
+
+
+def carnet_office(key, why):
+    name, code, kind = CARNET_OFFICES[key]
+    loc = kit.place(code, why, name) if code else {"Name": V(name, why)}
+    loc["LocationTypeCode"] = V(kind, "A customs office at the airport." if kind == "CUSTOMSOFFICE" else
+                                "A customs post at the road border crossing.")
+    return loc
+
+
+def customs_record(rid, kind, day, why):
+    return {"ID": V(rid, why), "IssueDate": V(CARNET.date(CARNET_DAYS[day]), "The day customs stamped the "
+                                                                              "counterfoil."),
+            "DocumentType": V(kind, "The kind of customs record, in words.")}
+
+
+def carnet_counterfoil(f, cid, stamped):
+    """A counterfoil of the carnet: as issued, with the office where it is to be presented, the goods and its
+    vouchers, and nothing stamped (carnet/01#F1); as stamped, quoted by the chambers afterwards, with the customs
+    office's record of the stamp (carnet/03, 04)."""
+    sheet, office, day, what = CARNET_SHEETS[cid]
+    cf = {"ID": V(cid, f"The {sheet} of the carnet."),
+          "GoodsItemPassportID": V(f.numbers["carnet"], "The carnet the counterfoil belongs to (carnet/04#F4).")}
+    if not stamped:
+        cf["Note"] = V(f"To be stamped by customs when {what}.", "What the counterfoil is for: at issue no "
+                                                                   "counterfoil is stamped yet (D40).")
+    elif cid == "IMP-1":
+        cf["FinalReexportationDate"] = V(CARNET_LIMIT, "The limit the island's customs set on the importation "
+                                                       "counterfoil, shorter than the carnet's year: a short fair "
+                                                       "admission (D40, carnet/01#F22).")
+        cf["Note"] = V(f"Stamped at Selanu airport on {carnet_day('import')}; no discharged re-exportation voucher "
+                       "on file.", "The counterfoil the claim rests on.")
+    elif cid == "REEXP-1":
+        cf["Note"] = V(f"Stamped at Selanu airport on {carnet_day('reexport')}; its voucher did not reach the "
+                       "importation office's records.", "What went wrong: the voucher, not the stamp (D40).")
+    else:
+        cf["Note"] = V(f"Stamped at Valico Euridice on {carnet_day('reimport')}.", "The samples came home.")
+    cf["CustomsOfficeLocation"] = carnet_office(office, "The customs office where the counterfoil is presented.")
+    cf["GoodsItem"] = {"ID": V("1", "The two sample benches."), "Quantity": qty(2, "EA", "Two.")}
+    if stamped and cid == "IMP-1":
+        cf["ImportationDocumentReference"] = customs_record("XL-CUS-ATA-26-0049", "Importation registration",
+                                                            "import", "The island's customs' registration of the "
+                                                                      "importation, noted with the stamp.")
+    if stamped and cid == "REEXP-1":
+        cf["ImportationDocumentReference"] = customs_record("XL-CUS-ATA-26-0049", "Importation registration",
+                                                            "import", "The importation the re-exportation "
+                                                                      "discharges.")
+        cf["ReexportationDocumentReference"] = customs_record("XL-CUS-ATA-26-0053", "Re-exportation registration",
+                                                              "reexport", "The island's customs' registration of "
+                                                                          "the re-exportation.")
+    if stamped and cid == "REIMP-1":
+        cf["ExportationDocumentReference"] = customs_record("XU-CUS-EXP-26-0031", "Exportation registration",
+                                                            "export", "The exportation the samples came back "
+                                                                      "from, as the re-importation counterfoil "
+                                                                      "states it.")
+        cf["ReimportationDocumentReference"] = customs_record("XU-CUS-REIMP-26-0044", "Re-importation record",
+                                                              "reimport", "Urvania's customs' record of the "
+                                                                          "re-importation, the same number as in "
+                                                                          "the evidence (carnet/01#F23).")
+    if not stamped:
+        if cid.startswith("TRA"):
+            cf["VoucherDocumentReference"] = [
+                {"ID": V(f"V-{cid}-IN", "The transit voucher Bayvarra's customs keep on entry.")},
+                {"ID": V(f"V-{cid}-OUT", "The transit voucher they keep on exit.")}]
+        else:
+            cf["VoucherDocumentReference"] = {"ID": V(f"V-{cid}", "The voucher customs detach and keep.")}
+    elif cid == "REEXP-1":
+        cf["VoucherDocumentReference"] = {"ID": V("V-REEXP-1", "The voucher that went astray.")}
+    return cf
+
+
 def carnet(n, doc):
     f = CARNET
-    return {"ID": V(f.number("carnet", doc["from"], "GoodsItemPassport"), "The carnet number, given by the chamber."),
-            "IssueDate": V(f.date(0), "Issued before the samples leave for the fair."),
-            "ValidityPeriod": period(f, 0, 365, "Valid from issue.", "A carnet is valid for one year."),
-            "Shipment": {"ID": V(f.number("shipment", doc["to"], "Shipment"), "The samples travelling under the carnet."),
-                         "GoodsItem": kit.goods_items(f, "XUF", "The value of the samples, for the guarantee.")},
-            "GoodsItemPassportCounterfoil": [
-                {"ID": V("EXP-1", "The exportation counterfoil, stamped by Urvania's customs when the samples leave.")},
-                {"ID": V("IMP-1", "The importation counterfoil, stamped by Lisavu's customs when they arrive.")}]}
+    out = {"ID": V(f.number("carnet", doc["from"], "GoodsItemPassport"), "The carnet number, given by the chamber."),
+           "IssueDate": V(f.date(0), "Issued before the samples leave for the fair."),
+           "ValidityPeriod": period(f, 0, 365, "Valid from issue.", "A carnet is valid for one year."),
+           "Shipment": {"ID": V(f.number("shipment", doc["to"], "Shipment"), "The samples travelling under the "
+                                                                              "carnet."),
+                        "GoodsItem": kit.goods_items(f, "XUF", "The value of the samples, for the guarantee.")}}
+    out["GoodsItemPassportCounterfoil"] = [carnet_counterfoil(f, cid, False) for cid in CARNET_SHEETS]
+    return out
 
 
 # ---------------------------------------------------------------- the waste flow (Urvania, domestic)
@@ -4806,24 +4904,39 @@ def carnet(n, doc):
         return out
     passport = {"GoodsItemPassportID": V(f.numbers.get("carnet", ""), "The carnet the samples travelled under.")}
     if d == "ProofOfReexportationRequest":
-        return {**head(f, "por-request", doc, 60, "Two months after the fair the samples' re-export is not recorded."),
+        return {**head(f, "por-request", doc, CARNET_DAYS["request"], "Friday 24 July: the re-exportation limit "
+                     "of 30 June has passed, and the island's customs have no record that the samples left (D40)."),
                 **passport}
     if d == "ProofOfReexportationReminder":
-        return {**head(f, "por-reminder", doc, 90, "No answer after a month."),
+        return {**head(f, "por-reminder", doc, CARNET_DAYS["reminder"], "Monday 24 August, a month after the "
+                     "request: no answer yet (D40; the Sunday a month later is no working day, D27)."),
                 "ProcedureCode": V("2000", "The procedure the samples were under on the island."),
                 **passport,
                 "ProofOfReexportationRequestDocumentReference": {"ID": V(f.numbers["por-request"], "The request "
                                                                                                    "unanswered.")},
-                "GoodsItemPassportCounterfoil": {"ID": V("IMP-1", "The importation counterfoil without a re-export "
-                                                                  "stamp.")}}
+                "GoodsItemPassportCounterfoil": carnet_counterfoil(f, "IMP-1", True)}
     if d == "ProofOfReexportation":
-        return {**head(f, "proof", doc, 95, "Urvania's chamber answers with the proof."),
-                "GoodsItemPassportCounterfoil": {"ID": V("REIMP-1", "The re-importation counterfoil, stamped by "
-                                                                    "Urvania's customs when the samples came home.")},
-                "ReexportationEvidence": {"ID": V("REIMP-1", "The evidence is the re-importation counterfoil itself."),
-                                          "Description": V("Re-importation counterfoil of the carnet, stamped by "
-                                                           "Urvania's customs: the samples left the island and came "
-                                                           "home.", "What the evidence shows.")}}
+        return {**head(f, "proof", doc, CARNET_DAYS["proof"], "Friday 28 August: Urvania's chamber answers with "
+                                                              "the proof (D40)."),
+                "GoodsItemPassportCounterfoil": [carnet_counterfoil(f, cid, True)
+                                                 for cid in ("IMP-1", "REEXP-1", "REIMP-1")],
+                "ReexportationEvidence": [
+                    {"ID": V("EV-1", "The first evidence, under an ID of its own (carnet/04#F9)."),
+                     "Description": V(f"The re-exportation counterfoil REEXP-1 of the carnet, stamped by the Island "
+                                      f"Customs Service at Selanu airport on {carnet_day('reexport')}: the samples "
+                                      "left the island. Its voucher never reached the importation office's "
+                                      "records.", "What the evidence shows; the stamped counterfoil is in the "
+                                                  "attached scan."),
+                     "EvidenceIssuingParty": party("19-xl", short=True)},
+                    {"ID": V("EV-2", "The second evidence."),
+                     "Description": V(f"Urvania's customs re-imported the samples at Valico Euridice on "
+                                      f"{carnet_day('reimport')}.", "What it shows: goods back in Urvania cannot "
+                                                                    "still be on the island."),
+                     "EvidenceIssuingParty": party("19-xu", short=True),
+                     "DocumentReference": {"ID": V("XU-CUS-REIMP-26-0044", "Urvania's customs' record of the "
+                                                                           "re-importation."),
+                                           "IssueDate": V(f.date(CARNET_DAYS["reimport"]), "The day of the "
+                                                                                           "re-importation.")}}]}
     return _carnet(n, doc)
 
 
@@ -5776,15 +5889,9 @@ def _(f, n, doc, out):
 
 @enrich("carnet", "GoodsItemPassport")
 def _(f, n, doc, out):
-    cf = lambda cid, why, ref, ref_why, office: {
-        "ID": V(cid, why), "GoodsItemPassportID": V(out["ID"].value, "The carnet."),
-        "Note": V("Stamped by customs.", "How it is used."),
-        "CustomsOfficeLocation": {"Name": V(office, "The customs office that stamps it.")},
-        "GoodsItem": {"ID": V("1", "The two sample benches."), "Quantity": qty(2, "EA", "Two.")},
-        ref: {"ID": V(f"{cid}-STAMP", ref_why)},
-        "VoucherDocumentReference": {"ID": V(f"V-{cid}", "The voucher that customs keeps.")}}
     return {"StatusCode": V("VALID", "The carnet is valid."), "Status": V("Issued", "In words."),
-            "Note": V("Samples for the Selanu trade fair; to come back within six months.", "What it is for."),
+            "Note": V("Samples for the Selanu trade fair in early June; they come home after the fair.",
+                      "What it is for."),
             "VersionID": V("1", "The first version."),
             "ExportReasonCode": V("EXHIBITION", "Temporary export for a fair."),
             "ExportReason": V("Exhibition at the Selanu trade fair", "In words."),
@@ -5793,71 +5900,87 @@ def _(f, n, doc, out):
                                   "EndorserParty": {"RoleCode": V("ISSUER", "The issuing chamber."),
                                                     "SequenceNumeric": V("1", "The first endorsement."),
                                                     "Party": party("20-xu", short=True),
-                                                    "SignatoryContact": {"Name": V("Carnet desk", "The chamber's "
-                                                                                                 "desk.")}}},
+                                                    "SignatoryContact": {"Name": V("Carnet office", "The chamber's "
+                                                                                   "carnet office, the name its "
+                                                                                   "contact has (carnet/01#F12).")}}},
             "AdditionalDocumentReference": {"ID": V("SCC-FAIR-26-INV", "The fair's invitation to exhibit.")},
             "DocumentDistribution": {"ID": V("1", "The holder's carnet."),
                                      "DocumentTypeCode": V("GoodsItemPassport", "The document distributed: this "
                                                                                 "carnet."),
                                      "DistributionTypeCode": V("COLLECT", "The holder collects the paper carnet at "
-                                                                          "the chamber's carnet desk: customs stamp "
-                                                                          "its counterfoils at each border."),
+                                                                          "the chamber's carnet office: customs "
+                                                                          "stamp its counterfoils as the samples "
+                                                                          "travel."),
                                      "Party": party("5-xu", short=True)},
-            "Signature": seal("20-xu", "FCC-SIG-26-ATA"),
-            "GoodsItemPassportCounterfoil": [
-                {**cf("EXP-1", "The exportation counterfoil, stamped by Urvania's customs when the samples leave.",
-                      "ExportationDocumentReference", "The export stamp.", "Customs post at the land border, Urvanian "
-                                                                           "side"),
-                 "FinalReexportationDate": V(f.date(180), "The samples must be back by then.")},
-                cf("IMP-1", "The importation counterfoil, stamped by Lisavu's customs when they arrive.",
-                   "ImportationDocumentReference", "The import stamp on the island.", "Customs office, Selanu "
-                                                                                      "airport"),
-                cf("REEXP-1", "The re-exportation counterfoil, to be stamped when they leave the island.",
-                   "ReexportationDocumentReference", "The re-export stamp.", "Customs office, Selanu airport"),
-                cf("REIMP-1", "The re-importation counterfoil, stamped when they come home.",
-                   "ReimportationDocumentReference", "The re-import stamp.", "Customs post at the land border, "
-                                                                             "Urvanian side")]}
+            "Signature": seal("20-xu", "FCC-SIG-26-ATA")}
 
 
 @enrich("carnet", "ProofOfReexportationRequest")
 def _(f, n, doc, out):
-    return {"Note": V("The island's customs found no re-export stamp.", "Why the chamber asks."),
+    return {"Note": V(f"The re-exportation limit of {carnet_day('limit')} set on the importation counterfoil has "
+                      "passed, and the Island Customs Service has no discharged re-exportation voucher on file for "
+                      "the samples.", "Why the chamber asks: a missing voucher, not a missing stamp (D40, "
+                                      "carnet/02#F4)."),
             "VersionID": V("1", "The first request."),
-            "GoodsItemPassportCounterfoilID": V("IMP-1", "The importation counterfoil without a re-export."),
+            "GoodsItemPassportCounterfoilID": V("IMP-1", "The importation counterfoil not discharged."),
             "AdditionalDocumentReference": {"ID": V("XL-CUS-ATA-26-0071", "The customs' notice to the chamber.")},
             "Signature": seal(doc["from"], "SCC-SIG-26-PRQ")}
 
 
 @enrich("carnet", "ProofOfReexportationReminder")
 def _(f, n, doc, out):
-    return {"Note": V("Without proof, the import duties will be claimed from the guarantee.", "What happens "
-                                                                                             "otherwise."),
+    value = out_value_xlc(f).quantize(Decimal('0.01'))
+    tax = (value * Decimal("0.10")).quantize(Decimal("0.001"))
+    surcharge = (tax * Decimal("0.10")).quantize(Decimal("0.001"))
+    claim = tax + surcharge
+    return {"Note": V("Without proof within 30 days, the island's import consumption tax on the samples and the "
+                      "carnet surcharge will be claimed from the guarantee.", "What happens otherwise."),
             "VersionID": V("1", "The first reminder."),
-            "IssuerEndorsement": {"DocumentID": V(f.numbers["por-request"], "The request repeated."),
-                                  "ApprovalStatus": V("Open", "Still unanswered."),
+            "IssuerEndorsement": {"DocumentID": V(out["ID"].value, "The reminder the chamber endorses, as the "
+                                                                   "guaranteeing association whose guarantee is at "
+                                                                   "stake."),
+                                  "ApprovalStatus": V("Endorsed", "The status of the endorsement itself; the "
+                                                                  "request's open state is in the note "
+                                                                  "(carnet/03#F8)."),
                                   "EndorserParty": {"RoleCode": V("GUARANTOR", "The importing guarantor."),
                                                     "SequenceNumeric": V("1", "The only one."),
                                                     "Party": party("20-xl", short=True),
-                                                    "SignatoryContact": {"Name": V("Carnet desk", "The chamber's "
-                                                                                                 "desk.")}}},
-            "PaymentTerms": {"Note": V("Duties and import consumption tax of 1,300 coral fall due if no proof "
-                                       "arrives within 30 days.", "The claim that would follow."),
-                             "Amount": amount(Decimal("1300.000"), "XLC", "The duties at stake."),
-                             "PaymentDueDate": V(f.date(120), "The day they fall due.")},
+                                                    "SignatoryContact": {"Name": V("Carnet office", "The chamber's "
+                                                                                   "carnet office.")}}},
+            "PaymentTerms": {"Note": V(f"Import consumption tax of 10 % on the declared value of {value:,.2f} "
+                                      f"coral, {tax:,.3f}, and the carnet surcharge of 10 % of the tax, "
+                                      f"{surcharge:,.3f}: {claim:,.3f} coral fall due if no proof arrives within "
+                                      "30 days. Benches of Accord origin owe no duty (D18).",
+                                      "The claim that would follow (D40)."),
+                             "Amount": amount(claim, "XLC", "The tax and surcharge at stake."),
+                             "PaymentDueDate": V(f.date(CARNET_DAYS["reminder"] + 30), "The day they fall due: "
+                                                                                        "30 days after the "
+                                                                                        "reminder.")},
             "AdditionalDocumentReference": {"ID": V("XL-CUS-ATA-26-0071", "The customs' notice.")},
             "Signature": seal(doc["from"], "SCC-SIG-26-PRM")}
 
 
+def out_value_xlc(f):
+    """The declared value of the samples in coral: the carnet's value for the guarantee, at the reference rate."""
+    return sum(Decimal(str(d["ordered"])) * Decimal(str(kit.price_of(d["item"], f.buyer)["amount"]))
+               * kit.rate(kit.price_of(d["item"], f.buyer)["currency"], "XLC") for d in kit.by_item(f.deal))
+
+
 @enrich("carnet", "ProofOfReexportation")
 def _(f, n, doc, out):
-    return {"Note": V("The samples came home on the date stamped.", "The proof."),
+    return {"Note": V(f"The samples left Selanu airport on {carnet_day('reexport')} and were re-imported into "
+                      f"Urvania on {carnet_day('reimport')}, as the stamped counterfoils show.", "The proof."),
             "VersionID": V("1", "The first version."),
             "GoodsItemPassportAttachment": {"ExternalReference": {
-                "URI": V("https://www.ferrano-chamber.example/ata/carnet-scan.pdf", "A scan of the stamped "
-                                                                                    "counterfoil."),
-                "MimeCode": V("application/pdf", "A PDF.")}},
-            "AdditionalDocumentReference": {"ID": V("XU-CUS-REIMP-26-0044", "Urvania's customs' re-import "
-                                                                            "record.")},
+                "URI": V("https://www.camera-ferrano.example/ata/carnet-scan.pdf", "A scan of the stamped "
+                                                                                   "counterfoils, on the chamber's "
+                                                                                   "own domain (carnet/04#F11)."),
+                "MimeCode": V("application/pdf", "A PDF."),
+                "Description": V("Scan of the stamped re-exportation and re-importation counterfoils of the carnet",
+                                 "What the attachment is (carnet/04#F10).")}},
+            "AdditionalDocumentReference": [
+                {"ID": V(f.numbers["por-request"], "The request this proof answers (carnet/04#F4).")},
+                {"ID": V(f.numbers["por-reminder"], "And its reminder.")}],
             "Signature": seal(doc["from"], "FCC-SIG-26-POR")}
 
 
@@ -6231,13 +6354,12 @@ def _(f, n, doc, out):
     e = PARTY["5-xu"]["identity"]["employee"]
     return {"RepresentativeParty": {"Person": {
         "Title": V("Ing.", "The professional title, as on the travel documents."),
-        "MiddleName": V("Ilse", "The middle name, as in the passport."),
-        "OtherName": V("Mara", "The name the employee goes by."),
-        "NameSuffix": V("Jr", "As in the passport."),
         "NationalityCode": V("XU", "Urvanian."),
         "BirthplaceLocation": {"Name": V(e["birthplace"], "The place of birth."),
                                "Address": {"Country": {"IdentificationCode": V("XU", "In Urvania.")}}},
-        "Contact": contact("Mobile on the road", "How to reach the employee at the fair.", "5-xu"),
+        "Contact": {"Name": V("Mobile on the road", "How to reach the employee at the fair."),
+                    "Telephone": V(e["mobile"], "The employee's own mobile, not the holder's order desk "
+                                                "(carnet/01#F2).")},
         "ResidenceAddress": {"CityName": build_examples.city_names("XU", "Ferrano", "Where the employee lives."),
                              "Country": {"IdentificationCode": V("XU", "In Urvania.")}}}}}
 
@@ -8293,14 +8415,6 @@ def _(f, n, doc, out):
                              "Date": V(f.date(9), "The rate of the day the waybill is issued.")}}
 
 
-@enrich("carnet", "ProofOfReexportation")
-def _(f, n, doc, out):
-    att = out.get("GoodsItemPassportAttachment") or {}
-    att["EmbeddedDocument"] = V(f"Re-exportation counterfoil of carnet {f.numbers['carnet']}, stamped by the Island "
-                                "Customs Service: all items re-exported.", "The counterfoil, as clear text.")
-    return {"GoodsItemPassportAttachment": att}
-
-
 @enrich("cotton", "Order")
 def _(f, n, doc, out):
     for tt in lines_of(out, "TaxTotal"):
@@ -8799,10 +8913,8 @@ def _(f, n, doc, out):
                                                                                  "samples, in Valdara's series of consignment numbers."),
                  "TransitCountry": [{"IdentificationCode": V("XB", "The samples cross Bayvarra by road to "
                                                                    "Lumeport airport: a transit country between "
-                                                                   "Urvania and the island.")}],
-                 "OfficeOfSubSequentiallyEntryLocation": {"Name": V("Island Customs Service, Selanu airport",
-                                                                    "Where the goods enter next, on the "
-                                                                    "island.")},
+                                                                   "Urvania and the island, on the carnet's "
+                                                                   "transit counterfoils (D40).")}],
                  "TransportAdvisorParty": party("10-xb", short=True)})
     sh["Consignment"] = cons
     return {}
