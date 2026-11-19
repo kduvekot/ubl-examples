@@ -198,7 +198,7 @@ Inside `Shipment`:
   The shipment as the despatching party numbered it.
 - `Consignment/ID` = **LD-CS-26-0228**  
   The consignment of the transport booking.
-- `Consignment/GrossWeightMeasure` = **996** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight taken over.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -250,8 +250,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **996** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
 - `GoodsItem/Quantity` = **24** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
@@ -421,7 +421,7 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0230</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0228</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -465,7 +465,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>

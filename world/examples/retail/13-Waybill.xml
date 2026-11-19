@@ -129,7 +129,7 @@
     <cbc:ID>LD-SH-26-0230</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0228</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -173,7 +173,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">24</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>

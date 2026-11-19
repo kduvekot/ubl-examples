@@ -208,7 +208,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the boxed frames.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -543,7 +543,7 @@ Inside `DespatchLine`:
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

@@ -250,7 +250,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the goods.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Tidewell Ocean Lines (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -718,7 +718,7 @@ Inside `DespatchLine`:
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>

@@ -269,7 +269,7 @@ Inside `Shipment`:
 - `GoodsItem/Description` = **Cotton lint, compressed bale**  
   What the goods are, in words.
 - `GoodsItem/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **6129** (unitCode `KGM`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.** (languageID `qal`)  

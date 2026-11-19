@@ -365,11 +365,11 @@ Inside `CatalogueLine`:
   The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
+- `Item/AdditionalItemProperty/Value` = **Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated**  
   Its value; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalItemProperty/Name` = **Slat wood**  
   A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **Kiln-dried hardwood**  
+- `Item/AdditionalItemProperty/Value` = **Thermally modified ash**  
   Its value; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalItemProperty/Name` = **Seats**  
   A property buyers ask about.
@@ -429,7 +429,13 @@ Inside `CatalogueLine`:
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
   Its size.
-- `Item/Dimension/Description` = **Over the armrests**  
+- `Item/Dimension/Description` = **Over the slats, from slat end to slat end**  
+  Where it is measured.
+- `Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `Item/Dimension/Measure` = **1660** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/Description` = **Over the armrests, between the outer edges of the armrest pads**  
   Where it is measured.
 - `Item/Dimension/AttributeID` = **DEPTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: DEPTH = Depth. An identifier that holds a code names the code's list in its schemeID.
@@ -481,7 +487,7 @@ Inside `CatalogueLine`:
   Its last day.
 - `Item/CircularityProfile/MaintenanceFrequencyCode` = **YEARLY** (listID `urn:ubl-examples:world:codelist:MaintenanceFrequencyCode`)  
   How often the item needs maintenance. The code is from the Trade Accord's maintenance frequency list: YEARLY = Once a year.
-- `Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
+- `Item/CircularityProfile/MaintenanceFrequencyDescription` = **Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.**  
   What the maintenance is.
 - `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **STEEL** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
   A material the item is made of. The code is from the Trade Accord's material resource list: STEEL = Steel.
@@ -505,9 +511,9 @@ Inside `CatalogueLine`:
   Its last day.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **PACKAGING** (listID `urn:ubl-examples:world:codelist:WasteTypeCode`)  
   The kind of waste the item leaves. The code is from the Trade Accord's waste type list: PACKAGING = Packaging.
-- `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
+- `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back**  
   The waste in words.
-- `Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
+- `Item/CircularityProfile/WasteGenerated/WasteMeasure` = **3.3** (unitCode `KGM`)  
   How much of it per item.
 - `Item/CircularityProfile/WasteGenerated/MeasurementPeriod/StartDate` = **2025-01-01**  
   Measured over the deliveries of 2025.
@@ -901,11 +907,11 @@ Inside `CatalogueLine`:
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>
         <cbc:Name>Frame material</cbc:Name>
-        <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
+        <cbc:Value>Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat wood</cbc:Name>
-        <cbc:Value>Kiln-dried hardwood</cbc:Value>
+        <cbc:Value>Thermally modified ash</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>
@@ -967,7 +973,12 @@ Inside `CatalogueLine`:
       <cac:Dimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        <cbc:Description>Over the armrests</cbc:Description>
+        <cbc:Description>Over the slats, from slat end to slat end</cbc:Description>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1660</cbc:Measure>
+        <cbc:Description>Over the armrests, between the outer edges of the armrest pads</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
@@ -1009,7 +1020,7 @@ Inside `CatalogueLine`:
       </cac:EnvironmentalEmission>
       <cac:CircularityProfile>
         <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
-        <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
+        <cbc:MaintenanceFrequencyDescription>Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:MaintenanceFrequencyDescription>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
@@ -1030,8 +1041,8 @@ Inside `CatalogueLine`:
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
-          <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
-          <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
+          <cbc:WasteTypeDescription>The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back</cbc:WasteTypeDescription>
+          <cbc:WasteMeasure unitCode="KGM">3.3</cbc:WasteMeasure>
           <cac:MeasurementPeriod>
             <cbc:StartDate>2025-01-01</cbc:StartDate>
             <cbc:EndDate>2025-12-31</cbc:EndDate>

@@ -237,7 +237,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **15138.63** (currencyID `XBL`)  
   The customs value in lume: the value in coral at the world's reference rate (1 lume = 0.4 coral, so 1 coral = 2.5 lume).
 - `GoodsItem/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **6129** (unitCode `KGM`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  

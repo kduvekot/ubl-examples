@@ -224,7 +224,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LD-CS-26-0152**  
   The distributor's consignment for the truck.
-- `Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded, packaging included.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -281,15 +281,15 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **24 pallets of 4 benches: one full truck.**  
+- `Note` = **24 pallets of four benches, on a truck booked for this delivery alone.**  
   The line as the order put it.
 - `DeliveredQuantity` = **96** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -331,9 +331,9 @@ Inside `DespatchLine`:
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
   The order line this line fulfils.
-- `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
+- `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
-- `Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.** (languageID `en-XU`)  
+- `Item/Description` = **Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Item/Name` = **Nanskir drir manskan telstir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
@@ -679,7 +679,7 @@ Inside `DespatchLine`:
     <cbc:ID>CL-SH-26-0154</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0152</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -724,14 +724,14 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>24 pallets of 4 benches: one full truck.</cbc:Note>
+    <cbc:Note>24 pallets of four benches, on a truck booked for this delivery alone.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:BuyersItemIdentification>
@@ -772,8 +772,8 @@ Inside `DespatchLine`:
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
-      <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
+      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.</cbc:Description>
       <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
       <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
       <cac:BuyersItemIdentification>

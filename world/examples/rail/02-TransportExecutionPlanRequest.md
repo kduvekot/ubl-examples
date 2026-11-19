@@ -239,7 +239,7 @@ Inside `Consignment`:
   The manufacturer's consignment number.
 - `SummaryDescription` = **192 park benches in two 40-foot containers.**  
   The goods in a few words.
-- `GrossWeightMeasure` = **7968** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **10377.6** (unitCode `KGM`)  
   Two containers of benches.
 - `ContainerizedIndicator` = **true**  
   Two full containers.
@@ -496,7 +496,7 @@ Inside `Consignment`:
   <cac:Consignment>
     <cbc:ID>VI-CS-26-0327</cbc:ID>
     <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
-    <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
     <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>

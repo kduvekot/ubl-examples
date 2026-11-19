@@ -55,14 +55,14 @@
    "hs": "940179",
    "cpc": "38111",
    "origin": "XU",
-   "description": "Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.",
+   "description": "Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.",
    "dimensions_mm": [
     1800,
     620,
     780
    ],
-   "net_kg": 38.0,
-   "gross_kg": 41.5,
+   "net_kg": 44.1,
+   "gross_kg": 47.0,
    "package": {
     "type": "PX",
     "per_package": 4
@@ -74,7 +74,7 @@
     },
     {
      "item": "film-pe",
-     "qty": 0.4
+     "qty": 0.1
     }
    ],
    "brand": "Valdara",
@@ -89,11 +89,11 @@
    "properties": [
     [
      "Frame material",
-     "Cast steel, hot-dip galvanised"
+     "Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated"
     ],
     [
      "Slat wood",
-     "Kiln-dried hardwood"
+     "Thermally modified ash"
     ],
     [
      "Seats",
@@ -145,7 +145,13 @@
      "LENGTH",
      "1800",
      "MMT",
-     "Over the armrests"
+     "Over the slats, from slat end to slat end"
+    ],
+    [
+     "LENGTH",
+     "1660",
+     "MMT",
+     "Over the armrests, between the outer edges of the armrest pads"
     ],
     [
      "DEPTH",
@@ -172,7 +178,7 @@
     "repairability": "8",
     "repairability_system": "REPAIR10",
     "maintenance": "YEARLY",
-    "maintenance_description": "Tighten the slat bolts and touch up the coating once a year.",
+    "maintenance_description": "Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.",
     "resources": [
      [
       "STEEL",
@@ -190,8 +196,8 @@
     "product_doc": "VI-RM-B180",
     "waste": [
      "PACKAGING",
-     "Stretch film and pallet straps, per bench",
-     "0.4",
+     "The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back",
+     "3.3",
      "KGM"
     ]
    },
@@ -237,7 +243,90 @@
      "ZN-26-114"
     ]
    ],
-   "origin_criterion": "S"
+   "origin_criterion": "S",
+   "parcels": [
+    {
+     "no": 1,
+     "type": "CT",
+     "name": "Frame carton",
+     "contents": "one side frame",
+     "mm": [
+      790,
+      680,
+      100
+     ],
+     "gross_kg": 12.2,
+     "lift": 1,
+     "material": "Corrugated cardboard, tray and lid"
+    },
+    {
+     "no": 2,
+     "type": "CT",
+     "name": "Frame carton with the bolt set",
+     "contents": "the other side frame and the bag of 20 stainless bolts with nuts and washers",
+     "mm": [
+      790,
+      680,
+      100
+     ],
+     "gross_kg": 13.0,
+     "lift": 1,
+     "material": "Corrugated cardboard, tray and lid"
+    },
+    {
+     "no": 3,
+     "type": "BE",
+     "name": "Slat bundle",
+     "contents": "five slats, three and two, with edge protectors and end caps, strapped",
+     "mm": [
+      1810,
+      295,
+      100
+     ],
+     "gross_kg": 21.8,
+     "lift": 2,
+     "material": "Polyester straps, cardboard edge protectors and end caps, PE film"
+    }
+   ],
+   "pallet": {
+    "mm": [
+     1850,
+     700,
+     745
+    ],
+    "tare_kg": 28.2,
+    "stack": 2,
+    "what": "Four-way block pallet of heat-treated softwood, 1850 x 700 mm, with a slip sheet, a top cap and stretch film",
+    "pallet_kg": 26.2,
+    "extra_kg": 2.0
+   },
+   "parts": [
+    {
+     "name": "side frame",
+     "n": 2,
+     "mm": [
+      730,
+      620,
+      70
+     ],
+     "kg": 11.1
+    },
+    {
+     "name": "slat",
+     "n": 5,
+     "mm": [
+      1800,
+      95,
+      45
+     ],
+     "kg": 4.24
+    },
+    {
+     "name": "bolt set",
+     "n": 1,
+     "kg": 0.77
+    }
+   ]
   },
   {
    "id": "bench-casting",
@@ -263,11 +352,11 @@
    "hs": "732599",
    "cpc": "42999",
    "origin": "XU",
-   "description": "Replacement side frame for the Serra bench, cast steel, galvanised.",
-   "net_kg": 9.5,
-   "gross_kg": 10.2,
+   "description": "Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.",
+   "net_kg": 11.1,
+   "gross_kg": 12.2,
    "package": {
-    "type": "BX",
+    "type": "CT",
     "per_package": 1
    },
    "brand": "Valdara",
@@ -283,7 +372,32 @@
     ]
    ],
    "made_time": "06:40:00",
-   "origin_criterion": "S"
+   "origin_criterion": "S",
+   "carton": {
+    "mm": [
+     790,
+     680,
+     100
+    ],
+    "material": "Corrugated cardboard, tray and lid",
+    "name": "Frame carton"
+   },
+   "pallet": {
+    "mm": [
+     1850,
+     700,
+     740
+    ],
+    "tare_kg": 28.2,
+    "per": 12,
+    "stack": 1,
+    "what": "Four-way block pallet of heat-treated softwood, 1850 x 700 mm, with a slip sheet, a top cap and stretch film"
+   },
+   "envelope_mm": [
+    730,
+    620,
+    70
+   ]
   },
   {
    "id": "granulate-pe",

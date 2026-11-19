@@ -275,9 +275,9 @@ Inside `ReceiptLine`:
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XB`)  
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XB`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -323,9 +323,9 @@ Inside `ReceiptLine`:
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
-- `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
+- `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
-- `Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.** (languageID `en-XB`)  
+- `Item/Description` = **Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.** (languageID `en-XB`)  
   The seller's description in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Item/Name` = **Nanskir drir manskan telstir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
@@ -537,8 +537,8 @@ Inside `ReceiptLine`:
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
       <cac:BuyersItemIdentification>
@@ -579,8 +579,8 @@ Inside `ReceiptLine`:
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
-      <cbc:Description languageID="en-XB">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
+      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.</cbc:Description>
+      <cbc:Description languageID="en-XB">Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.</cbc:Description>
       <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
       <cbc:Name languageID="en-XB">Bench side frame casting</cbc:Name>
       <cac:BuyersItemIdentification>

@@ -146,7 +146,7 @@
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

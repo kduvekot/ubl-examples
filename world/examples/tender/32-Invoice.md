@@ -603,9 +603,9 @@ Inside `InvoiceLine`:
   40 × 499.00, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The call-off line.
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -1142,8 +1142,8 @@ Inside `InvoiceLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>

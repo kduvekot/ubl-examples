@@ -294,9 +294,9 @@ Inside `OrderLine`:
   The seller's price times the rate gives the order price. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
 - `LineItem/Price/PricingExchangeRate/Date` = **2026-01-02**  
   The reference rate of the first working day of the year, fixed in the contract.
-- `LineItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `LineItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `LineItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XB`)  
+- `LineItem/Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XB`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/CatalogueIndicator` = **true**  
   The item is ordered from the seller's catalogue, which the order cites.
@@ -521,8 +521,8 @@ Inside `OrderLine`:
         </cac:PricingExchangeRate>
       </cac:Price>
       <cac:Item>
-        <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-        <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+        <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+        <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
         <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>

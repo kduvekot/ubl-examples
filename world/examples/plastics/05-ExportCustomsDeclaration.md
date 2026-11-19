@@ -157,7 +157,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **9804600** (currencyID `XUF`)  
   Urvania values the goods with freight and insurance to its border (D16): the goods at 9,984,000 XUF, with less the river freight after loading, which the seller distinguished from the price (179,400 ferra) (-179,400 XUF), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `Shipment/GoodsItem/Quantity` = **120** (unitCode `TNE`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Zhaldrek skalsir razkir mir huntaz drunvir, tidrek krirstul 0.94, trek sazdran nihan skul 1 zhurkaz.** (languageID `qau`)  

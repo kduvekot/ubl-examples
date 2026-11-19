@@ -328,7 +328,7 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Box crushed at the port of Selanu.**  
+- `Note` = **Frame carton crushed at the port of Selanu.**  
   What happened.
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The frame that arrived cracked.
@@ -585,7 +585,7 @@ Inside `CreditNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Box crushed at the port of Selanu.</cbc:Note>
+    <cbc:Note>Frame carton crushed at the port of Selanu.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
     <cac:Item>

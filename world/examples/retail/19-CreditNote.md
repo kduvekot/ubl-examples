@@ -367,7 +367,7 @@ Inside `CreditNoteLine`:
   The line number.
 - `UUID` = **226d335b-4a38-5919-b136-61b954cb2fa8**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **Bench refused: armrest bent, carton torn.**  
+- `Note` = **Bench refused: side frame's armrest bent, frame carton torn.**  
   Why the line is credited.
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The bench refused at delivery.
@@ -723,7 +723,7 @@ Inside `CreditNoteLine`:
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>226d335b-4a38-5919-b136-61b954cb2fa8</cbc:UUID>
-    <cbc:Note>Bench refused: armrest bent, carton torn.</cbc:Note>
+    <cbc:Note>Bench refused: side frame's armrest bent, frame carton torn.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">520.00</cbc:LineExtensionAmount>
     <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">520.00</cbc:TaxInclusiveLineExtensionAmount>

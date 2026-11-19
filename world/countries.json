@@ -1942,7 +1942,12 @@
     "ash": "darhir",
     "oak": "kenkrir",
     "distributor": "guldran",
-    "bodies": "sargir"
+    "bodies": "sargir",
+    "coated": "trunnir",
+    "ductile": "zhukvan",
+    "modified": "dunnir",
+    "powder": "krarhir",
+    "thermally": "zhaznul"
    }
   },
   "qal": {

@@ -223,7 +223,7 @@ Inside `Shipment`:
   The shipment received.
 - `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
   The pallet with the damaged carton: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
-- `TransportHandlingUnit/DamageRemarks` = **One carton torn, the bench's armrest bent.**  
+- `TransportHandlingUnit/DamageRemarks` = **One frame carton torn, the side frame's armrest bent.**  
   What the goods-in found.
 - `TransportHandlingUnit/ReceivedHandlingUnitReceiptLine/ID` = **1-3**  
   The receipt of the pallet, as part of receipt line 1 (retail/17#F13).
@@ -252,15 +252,15 @@ Inside `ReceiptLine`:
   The line number.
 - `UUID` = **c9e54602-8f02-5581-88af-5ca8d0131f08**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Note` = **One bench arrived in a damaged carton and was refused.**  
+- `Note` = **One bench refused: its frame carton arrived torn and the side frame's armrest bent.**  
   The line in words.
 - `ReceivedQuantity` = **23** (unitCode `EA`)  
-  One bench arrived in a damaged carton and was refused.
+  One bench refused: its frame carton arrived torn and the side frame's armrest bent.
 - `RejectedQuantity` = **1** (unitCode `EA`)  
   Refused at goods-in.
 - `RejectReasonCode` = **DAMAGED** (listID `urn:ubl-examples:world:codelist:RejectReasonCode`)  
   Why refused. The code is from the Trade Accord's reject reason list: DAMAGED = Damaged.
-- `RejectReason` = **One bench arrived in a damaged carton and was refused.**  
+- `RejectReason` = **One bench refused: its frame carton arrived torn and the side frame's armrest bent.**  
   In words.
 - `RejectActionCode` = **CREDIT** (listID `urn:ubl-examples:world:codelist:RejectActionCode`)  
   The receiver asks for a credit, not a replacement. The code is from the Trade Accord's reject action list: CREDIT = Credit requested.
@@ -474,7 +474,7 @@ Inside `ReceiptLine`:
     <cbc:ID>LD-SH-26-0230</cbc:ID>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
-      <cbc:DamageRemarks>One carton torn, the bench's armrest bent.</cbc:DamageRemarks>
+      <cbc:DamageRemarks>One frame carton torn, the side frame's armrest bent.</cbc:DamageRemarks>
       <cac:ReceivedHandlingUnitReceiptLine>
         <cbc:ID>1-3</cbc:ID>
         <cbc:ReceivedQuantity unitCode="EA">3</cbc:ReceivedQuantity>
@@ -497,11 +497,11 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>c9e54602-8f02-5581-88af-5ca8d0131f08</cbc:UUID>
-    <cbc:Note>One bench arrived in a damaged carton and was refused.</cbc:Note>
+    <cbc:Note>One bench refused: its frame carton arrived torn and the side frame's armrest bent.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">23</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
     <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
-    <cbc:RejectReason>One bench arrived in a damaged carton and was refused.</cbc:RejectReason>
+    <cbc:RejectReason>One bench refused: its frame carton arrived torn and the side frame's armrest bent.</cbc:RejectReason>
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>

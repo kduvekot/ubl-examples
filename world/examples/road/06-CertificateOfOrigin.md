@@ -235,13 +235,13 @@ Inside `CertificateOfOriginApplication`:
   What the goods are, in words.
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **3830400** (currencyID `XUF`)  
   The value of the goods, in ferra.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Shipment/GoodsItem/Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+- `Shipment/GoodsItem/Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -255,19 +255,105 @@ Inside `CertificateOfOriginApplication`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **94017910** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
   The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
+- `Shipment/GoodsItem/ContainingPackage/Quantity` = **4** (unitCode `EA`)  
+  4 benches to a pallet; the goods item travels on 24 pallets.
+- `Shipment/GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back to the party that loaded it.
+- `Shipment/GoodsItem/ContainingPackage/PackageLevelCode` = **3** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 3: the outer level, the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 3 = Outer.
+- `Shipment/GoodsItem/ContainingPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
 - `Shipment/GoodsItem/ID` = **2**  
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Bench side frame casting**  
   What the goods are, in words.
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **57000** (currencyID `XUF`)  
   The value of the goods, in ferra.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **12** (unitCode `EA`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
+- `Shipment/GoodsItem/Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
-- `Shipment/GoodsItem/Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.** (languageID `en-XU`)  
+- `Shipment/GoodsItem/Item/Description` = **Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Nanskir drir manskan telstir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
@@ -281,6 +367,26 @@ Inside `CertificateOfOriginApplication`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-casting of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 42999 = Metal goods n.e.c..
 - `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **73259990** (listID `urn:ubl-examples:world:XU:codelist:CustomsTariffCode`)  
   The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-casting of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 73259990 = Other cast articles of iron or steel.
+- `Shipment/GoodsItem/ContainingPackage/Quantity` = **12** (unitCode `EA`)  
+  12 side frames to a pallet; the goods item travels on 1 pallet.
+- `Shipment/GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
+  The pallet goes back to the party that loaded it.
+- `Shipment/GoodsItem/ContainingPackage/PackageLevelCode` = **3** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 3: the outer level, the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 3 = Outer.
+- `Shipment/GoodsItem/ContainingPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/Quantity` = **1** (unitCode `EA`)  
+  One side frame in each carton.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/ReturnableMaterialIndicator` = **false**  
+  The carton stays with the frame.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackagingType` = **Frame carton, one side frame**  
+  The carton in words; the goods item's frames travel one to a carton.
+- `Shipment/GoodsItem/ContainingPackage/ContainedPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
 - `EndorserParty/RoleCode` = **CHAMBER** (listID `urn:ubl-examples:world:codelist:EndorserRoleCode`)  
   The endorser is the chamber of commerce of the exporting country. The code is from the Trade Accord's endorser role list: CHAMBER = Chamber of commerce.
 - `EndorserParty/SequenceNumeric` = **1**  
@@ -548,11 +654,11 @@ Inside `InsuranceEndorsement`:
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XUF">3830400</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">96</cbc:Quantity>
         <cac:Item>
-          <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-          <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+          <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+          <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
           <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
           <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
           <cac:OriginCountry>
@@ -566,16 +672,91 @@ Inside `InsuranceEndorsement`:
             <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
           </cac:CommodityClassification>
         </cac:Item>
+        <cac:ContainingPackage>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">3</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+          <cac:ContainedPackage>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+            <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">790</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">680</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">100</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:ContainedPackage>
+          <cac:ContainedPackage>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+            <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">790</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">680</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">100</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="KGM">13</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:ContainedPackage>
+          <cac:ContainedPackage>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+            <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">295</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">100</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:ContainedPackage>
+        </cac:ContainingPackage>
       </cac:GoodsItem>
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XUF">57000</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:Item>
-          <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
-          <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
+          <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.</cbc:Description>
+          <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.</cbc:Description>
           <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
           <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
           <cac:OriginCountry>
@@ -589,6 +770,20 @@ Inside `InsuranceEndorsement`:
             <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
           </cac:CommodityClassification>
         </cac:Item>
+        <cac:ContainingPackage>
+          <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">3</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+          <cac:ContainedPackage>
+            <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Frame carton, one side frame</cbc:PackagingType>
+            <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+          </cac:ContainedPackage>
+        </cac:ContainingPackage>
       </cac:GoodsItem>
     </cac:Shipment>
     <cac:EndorserParty>

@@ -129,7 +129,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **1411200.00** (currencyID `XBL`)  
   The value of the gas at the contract price, in lume.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **2940000** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `Shipment/GoodsItem/Quantity` = **39200** (unitCode `MWH`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.**  

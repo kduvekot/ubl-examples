@@ -239,7 +239,7 @@ Inside `Consignment`:
   The distributor's consignment number, from its booking.
 - `SummaryDescription` = **Park benches and spare side frames on 25 pallets.**  
   The goods in a few words, as on the consignment note.
-- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The gross weight of the order: benches and castings with their packaging.
 - `ContainerizedIndicator` = **false**  
   The pallets are loaded on the truck, not in a container.
@@ -480,7 +480,7 @@ Inside `Consignment`:
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0152</cbc:ID>
     <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
-    <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
     <cbc:ContainerizedIndicator>false</cbc:ContainerizedIndicator>
     <cbc:GeneralCargoIndicator>true</cbc:GeneralCargoIndicator>
     <cbc:CarrierServiceInstructions>Curtain-side trailer; the goods are loaded from the side by forklift.</cbc:CarrierServiceInstructions>

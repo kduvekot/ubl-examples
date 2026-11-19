@@ -30,10 +30,10 @@ The distributor accepts the change: the urgent part goes by air at an extra char
   UN/EDIFACT 4343 code AP: accepted, the order is accepted as it stands. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
 - `Note` = **Accepted: the frames fly on the morning flight; the forwarder is booked.**  
   In words.
-- `NetNetWeightMeasure` = **76** (unitCode `KGM`)  
+- `NetNetWeightMeasure` = **88.8** (unitCode `KGM`)  
   The frames alone.
-- `NetVolumeMeasure` = **0.42** (unitCode `MTQ`)  
-  Their own volume.
+- `NetVolumeMeasure` = **0.3** (unitCode `MTQ`)  
+  Their own volume, without the cartons.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, from the change.
 - `AccountingCost` = **Stock for municipal projects**  
@@ -213,8 +213,8 @@ Inside `AllowanceCharge`:
   The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
 - `AllowanceChargeReason` = **Air freight for the urgent delivery, recharged at cost**  
   The air freight the buyer accepted in its change: the distributor pays it to its forwarder under CPT and recharges it, without margin.
-- `Amount` = **554.88** (currencyID `XBL`)  
-  As the forwarder quoted it for the eight boxed frames; invoiced at cost.
+- `Amount` = **666.40** (currencyID `XBL`)  
+  As the forwarder quoted it for the eight frame cartons; invoiced at cost.
 
 ### Order Line
 
@@ -246,8 +246,8 @@ Inside `OrderLine`:
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cbc:Note>Accepted: the frames fly on the morning flight; the forwarder is booked.</cbc:Note>
-  <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
-  <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+  <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
+  <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cac:ValidityPeriod>
@@ -376,7 +376,7 @@ Inside `OrderLine`:
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Air freight for the urgent delivery, recharged at cost</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">554.88</cbc:Amount>
+    <cbc:Amount currencyID="XBL">666.40</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:OrderLine>
     <cac:LineItem>

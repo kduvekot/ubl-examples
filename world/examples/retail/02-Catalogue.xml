@@ -408,11 +408,11 @@
       </cac:TransactionConditions>
       <cac:AdditionalItemProperty>
         <cbc:Name>Frame material</cbc:Name>
-        <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
+        <cbc:Value>Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat wood</cbc:Name>
-        <cbc:Value>Kiln-dried hardwood</cbc:Value>
+        <cbc:Value>Thermally modified ash</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>
@@ -474,7 +474,12 @@
       <cac:Dimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        <cbc:Description>Over the armrests</cbc:Description>
+        <cbc:Description>Over the slats, from slat end to slat end</cbc:Description>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1660</cbc:Measure>
+        <cbc:Description>Over the armrests, between the outer edges of the armrest pads</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
@@ -516,7 +521,7 @@
       </cac:EnvironmentalEmission>
       <cac:CircularityProfile>
         <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
-        <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
+        <cbc:MaintenanceFrequencyDescription>Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:MaintenanceFrequencyDescription>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
@@ -537,8 +542,8 @@
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
-          <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
-          <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
+          <cbc:WasteTypeDescription>The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back</cbc:WasteTypeDescription>
+          <cbc:WasteMeasure unitCode="KGM">3.3</cbc:WasteMeasure>
           <cac:MeasurementPeriod>
             <cbc:StartDate>2025-01-01</cbc:StartDate>
             <cbc:EndDate>2025-12-31</cbc:EndDate>

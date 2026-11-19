@@ -235,7 +235,7 @@ Inside `Consignment`:
   The transport user's number for this consignment, quoted along the chain.
 - `SummaryDescription` = **24 × Park bench Serra 180**  
   What is to be carried, in a few words (worklist C21).
-- `GrossWeightMeasure` = **996** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
   Six pallets of benches.
 - `TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   The number of goods items.
@@ -440,7 +440,7 @@ Inside `Consignment`:
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
     <cbc:SummaryDescription>24 × Park bench Serra 180</cbc:SummaryDescription>
-    <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>

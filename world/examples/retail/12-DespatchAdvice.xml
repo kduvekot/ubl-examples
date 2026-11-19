@@ -131,7 +131,7 @@
     <cbc:ID>LD-SH-26-0230</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0228</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -179,7 +179,7 @@
       <cbc:ID schemeID="GS1 SSCC">095206100003729019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729019</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -196,11 +196,79 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122217</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122217</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
       <cac:TransportMeans>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
@@ -226,7 +294,7 @@
       <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729026</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -243,17 +311,85 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122234</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122234</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729033</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -270,17 +406,85 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122251</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122251</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729040</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -297,17 +501,85 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122268</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122268</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729057</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -324,17 +596,85 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122285</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122285</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729064</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -351,11 +691,79 @@
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122302</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122302</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>

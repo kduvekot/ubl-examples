@@ -181,7 +181,7 @@
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>

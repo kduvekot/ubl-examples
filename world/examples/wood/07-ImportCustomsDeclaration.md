@@ -235,7 +235,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **3480000** (currencyID `XUF`)  
   Urvania values the goods with freight and insurance to its border (D16): the goods at 3,456,000 XUF, with the export pallets the buyer pays for, part of the price paid (24,000 XUF), shared over the goods items by their value.
 - `GoodsItem/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **4800** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  

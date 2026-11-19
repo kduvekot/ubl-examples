@@ -208,7 +208,7 @@ Inside `Shipment`:
   The shipment booked.
 - `Consignment/ID` = **LD-CS-26-0133**  
   The consignment.
-- `Consignment/GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the goods.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -254,8 +254,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **3984** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
@@ -266,8 +266,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **122.4** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
 - `GoodsItem/Quantity` = **12** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Bench side frame casting**  
@@ -452,7 +452,7 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -491,7 +491,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -503,7 +503,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>

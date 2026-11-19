@@ -34,14 +34,14 @@ The distributor accepts and confirms the sailing it plans to use.
   The response in words.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the distributor's currency, as in the order; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalPackagesQuantity` = **108** (unitCode `EA`)  
-  96 benches and 12 boxed frames.
-- `GrossWeightMeasure` = **4106.4** (unitCode `KGM`)  
+- `TotalPackagesQuantity` = **300** (unitCode `EA`)  
+  The parcels: 96 benches in three parcels each and 12 frame cartons (D20).
+- `GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The expected gross weight, for the booking.
-- `NetWeightMeasure` = **3762** (unitCode `KGM`)  
+- `NetWeightMeasure` = **4366.8** (unitCode `KGM`)  
   The goods alone.
-- `GrossVolumeMeasure` = **41.5** (unitCode `MTQ`)  
-  One 40-foot container's load.
+- `GrossVolumeMeasure` = **24.1** (unitCode `MTQ`)  
+  The 25 loaded pallets: about half of a 40-foot container's volume.
 - `CustomerReference` = **Harbour parks Selanu**  
   The buyer's project, as the buyer named it when ordering.
 - `LineCountNumeric` = **2**  
@@ -456,10 +456,10 @@ Inside `OrderLine`:
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cbc:Note>Accepted. A deposit of 10,000.00 lume is due on acceptance; the balance 45 days after shipment.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalPackagesQuantity unitCode="EA">108</cbc:TotalPackagesQuantity>
-  <cbc:GrossWeightMeasure unitCode="KGM">4106.4</cbc:GrossWeightMeasure>
-  <cbc:NetWeightMeasure unitCode="KGM">3762</cbc:NetWeightMeasure>
-  <cbc:GrossVolumeMeasure unitCode="MTQ">41.5</cbc:GrossVolumeMeasure>
+  <cbc:TotalPackagesQuantity unitCode="EA">300</cbc:TotalPackagesQuantity>
+  <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+  <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
+  <cbc:GrossVolumeMeasure unitCode="MTQ">24.1</cbc:GrossVolumeMeasure>
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>

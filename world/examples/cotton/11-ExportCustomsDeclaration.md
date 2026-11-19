@@ -123,7 +123,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **6055.452** (currencyID `XLC`)  
   The value of the bales, in coral.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `Shipment/GoodsItem/Quantity` = **6129** (unitCode `KGM`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.** (languageID `qal`)  

@@ -248,7 +248,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **CL-CS-26-0217**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **1660** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **2162** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -325,9 +325,9 @@ Inside `DespatchLine`:
   The contract.
 - `DocumentReference/DocumentType` = **Procurement file**  
   The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -564,7 +564,7 @@ Inside `DespatchLine`:
     <cbc:ID>CL-SH-26-0216</cbc:ID>
     <cac:Consignment>
       <cbc:ID>CL-CS-26-0217</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">1660</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">2162</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -626,8 +626,8 @@ Inside `DespatchLine`:
       <cbc:DocumentType>Procurement file</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>

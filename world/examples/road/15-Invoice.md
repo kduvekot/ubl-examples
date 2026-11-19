@@ -394,9 +394,9 @@ Inside `InvoiceLine`:
   96 × 39900, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -444,9 +444,9 @@ Inside `InvoiceLine`:
   12 × 4750, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The order line this invoice line bills.
-- `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.** (languageID `qau`)  
+- `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
-- `Item/Description` = **Replacement side frame for the Serra bench, cast steel, galvanised.** (languageID `en-XU`)  
+- `Item/Description` = **Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-casting of Valdara Industries (world/items.json).
 - `Item/Name` = **Nanskir drir manskan telstir** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-casting of Valdara Industries (world/items.json).
@@ -770,8 +770,8 @@ Inside `InvoiceLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
@@ -813,8 +813,8 @@ Inside `InvoiceLine`:
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
-      <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
+      <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.</cbc:Description>
+      <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.</cbc:Description>
       <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
       <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>

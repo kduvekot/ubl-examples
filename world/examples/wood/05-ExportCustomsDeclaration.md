@@ -153,7 +153,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **34800.00** (currencyID `XBL`)  
   Bayvarra values the goods as they left the exporting country (D16): the goods at 34,560.00 XBL, with the export pallets the buyer pays for, part of the price paid (240.00 XBL), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **21600** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `Shipment/GoodsItem/Quantity` = **4800** (unitCode `EA`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.**  

@@ -582,7 +582,9 @@ def receipt_advice(flow, n, doc, day, why):
 
 
 def gross_weight(flow, which, deal=None):
-    return sum(Decimal(str(d[which])) * Decimal(str(maker(d["item"]).get("gross_kg", 0))) for d in (deal or flow.deal))
+    """The gross weight of a deal's goods: in their parcels and, where the flow ships on pallets, with the pallets'
+    own weight (D20)."""
+    return sum((line_gross(flow, d, which) for d in (deal or flow.deal)), Decimal(0))
 
 
 def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", extra=None, charges=None,
@@ -1139,10 +1141,12 @@ def goods_items(flow, currency, value_why, deal=None):
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What the goods are, in words."),
                     "DeclaredCustomsValueAmount": amount(value, currency, value_why),
-                    "GrossWeightMeasure": qty(q * Decimal(str(maker(d["item"]).get("gross_kg", 0))), "KGM",
-                                              "The gross weight of the goods of this item."),
+                    "GrossWeightMeasure": qty(line_gross(flow, d, which), "KGM",
+                                              "The gross weight of the goods of this item, with their packaging"
+                                              + (" and the pallets they travel on." if pallets(flow, [d]) else
+                                                 ".")),
                     "Quantity": qty(q, it["unit"], "The quantity declared."),
-                    **containing_package(flow, d["item"]),
+                    **goods_packages(flow, d),
                     "Item": customs_item(d["item"])})
     return out
 
@@ -1161,8 +1165,10 @@ def transport_goods(flow, deal=None):
         hs = maker(d["item"]).get("hs")
         out.append({"ID": V(str(i), "The goods item number."),
                     "Description": V(it["name"], "What is carried, in words."),
-                    "GrossWeightMeasure": qty(q * Decimal(str(maker(d["item"]).get("gross_kg", 0))), "KGM",
-                                              "The gross weight of the goods of this item, with their packaging."),
+                    "GrossWeightMeasure": qty(line_gross(flow, d, which), "KGM",
+                                              "The gross weight of the goods of this item, with their packaging"
+                                              + (" and the pallets they travel on." if pallets(flow, [d]) else
+                                                 ".")),
                     "Quantity": qty(q, it["unit"], "How much is carried."),
                     **containing_package(flow, d["item"]),
                     **({"Item": {"Name": V(it["name"], "The goods."),
@@ -1189,6 +1195,13 @@ def with_transport_goods(flow, shipment=None, consignment=None, deal=None):
         consignment.setdefault("TotalGoodsItemQuantity", qty(len(goods), "EA", "The number of goods items."))
 
 
+def unit_count(flow, deal=None):
+    """A shipment's count of pallets, where its goods travel on pallets (D20, worklist C12)."""
+    units = pallets(flow, deal or flow.deal)
+    return {"TotalTransportHandlingUnitQuantity": qty(len(units), "EA", "The pallets the goods travel on.")} \
+        if units else {}
+
+
 def export_declaration(flow, n, doc, day, why, value_why, deal=None):
     cur = currency_of(doc["from"])
     deal = deal or flow.deal
@@ -1202,8 +1215,13 @@ def export_declaration(flow, n, doc, day, why, value_why, deal=None):
                                                                                          deal) else "ordered", deal),
                                                        "KGM", "The gross weight leaving the country."),
                              "GoodsItem": goods_items(flow, cur, value_why, deal),
+                             **unit_count(flow, deal),
                              "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
-                                                     "The consignment carried.")}}}}
+                                                     "The consignment carried."),
+                                             **({"TotalPackagesQuantity": qty(parcel_count(flow, deal), "EA",
+                                                                              "The parcels declared, on the pallets "
+                                                                              "counted above (D20).")}
+                                                if pallets(flow, deal) else {})}}}}
 
 
 def import_declaration(flow, n, doc, day, why, value_why, refs=None, deal=None):
@@ -1214,7 +1232,8 @@ def import_declaration(flow, n, doc, day, why, value_why, refs=None, deal=None):
            "IssueDate": V(flow.date(day), why),
            "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The shipment declared."),
                         "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", "The gross weight arriving."),
-                        "GoodsItem": goods_items(flow, cur, value_why, deal)}}
+                        "GoodsItem": goods_items(flow, cur, value_why, deal),
+                        **unit_count(flow, deal)}}
     if refs:
         out["AdditionalDocumentReference"] = refs
     return out
@@ -1643,21 +1662,218 @@ def event(flow, day, time, why, location=None, type_code=None, ident=None, descr
     return out
 
 
+# the flows whose goods travel on pallets (D20, O61): the bench in three parcels, four benches to a pallet, and the
+# spare frames in their cartons on a pallet of their own; the carnet's two samples and the air flow's eight frames
+# travel as loose parcels (the air frames on a skid, D39)
+PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender"}
+
+
 def pallets(flow, deal):
-    """The transport handling units of a deal: the benches on pallets of four, the castings boxed on one pallet."""
+    """The transport handling units of a deal: the benches on pallets of four, the spare frames in their cartons on a
+    pallet of their own (world/items.json, the item's pallet; D20). None for a flow that ships loose parcels."""
     units = []
+    if flow.id not in PALLET_FLOWS:
+        return units
     k = 0
     for d in deal:
-        it = ITEM[d["item"]]
-        while it.get("resale_of"):
-            it = ITEM[it["resale_of"]]
+        it = maker(d["item"])
+        if not it.get("pallet"):
+            continue
         q = int(Decimal(str(d["ordered"])))
-        per = it["package"]["per_package"] if it["package"]["type"] == "PX" else q
+        per = it["package"]["per_package"] if it["package"]["type"] == "PX" else it["pallet"]["per"]
         for start in range(0, q, per):
             k += 1
-            n_ = min(per, q - start)
-            units.append((k, it, n_))
+            units.append((k, it, min(per, q - start)))
     return units
+
+
+def pallet_tare(flow, deal=None, iid=None):
+    """The pallets' own weight in a deal (of one item's pallets, if given): the pallet, slip sheet, top cap and
+    stretch film, which consignment and goods weights include (D20)."""
+    return sum((Decimal(str(it["pallet"]["tare_kg"])) for _, it, _ in pallets(flow, deal or flow.deal)
+                if iid is None or it is maker(iid)), Decimal(0))
+
+
+def line_gross(flow, d, which):
+    """The gross weight of a line of a deal: the goods in their parcels, and the pallets they travel on."""
+    q = Decimal(str(d[which]))
+    return q * Decimal(str(maker(d["item"]).get("gross_kg", 0))) + pallet_tare(flow, [d])
+
+
+def parcels(it, n):
+    """The number of parcels n units of an item travel in: a bench is three parcels, a spare frame one carton."""
+    return n * len(it["parcels"]) if it.get("parcels") else n
+
+
+def parcel_count(flow, deal=None):
+    which = "delivered" if any("delivered" in d for d in (deal or flow.deal)) else "ordered"
+    return sum(parcels(maker(d["item"]), int(Decimal(str(d[which])))) for d in (deal or flow.deal))
+
+
+def volume_m3(mm):
+    return Decimal(mm[0]) * Decimal(mm[1]) * Decimal(mm[2]) / Decimal(10 ** 9)
+
+
+def parcels_volume(flow, deal=None):
+    """The volume of a deal's goods in their parcels, in m³: what the goods themselves take up."""
+    out = Decimal(0)
+    for d in deal or flow.deal:
+        it = maker(d["item"])
+        q = int(Decimal(str(d["ordered"])))
+        boxes = [p["mm"] for p in it["parcels"]] if it.get("parcels") else [it["carton"]["mm"]]
+        out += q * sum(volume_m3(b) for b in boxes)
+    return out.quantize(Decimal("0.1"))
+
+
+def goods_volume(flow, deal=None):
+    """The volume of a deal's goods themselves, without packaging, in m³: the envelopes of the bench's parts (two
+    side frames and five slats; the bolt set's is negligible) or of the spare frame (world/items.json)."""
+    out = Decimal(0)
+    for d in deal or flow.deal:
+        it = maker(d["item"])
+        q = int(Decimal(str(d["ordered"])))
+        if it.get("parts"):
+            out += q * sum(p["n"] * volume_m3(p["mm"]) for p in it["parts"] if p.get("mm"))
+        elif it.get("envelope_mm"):
+            out += q * volume_m3(it["envelope_mm"])
+    return out.quantize(Decimal("0.1"))
+
+
+def pallets_volume(flow, deal=None):
+    """The volume of a deal's loaded pallets, in m³."""
+    return sum((volume_m3(it["pallet"]["mm"]) for _, it, _ in pallets(flow, deal or flow.deal)),
+               Decimal(0)).quantize(Decimal("0.1"))
+
+
+def pallet_load(it, n_):
+    """What one pallet carries, in words, and its packages: the parcels of n_ benches, or n_ frame cartons."""
+    if it.get("parcels"):
+        kinds = ", ".join(f"{n_} × parcel {p['no']} ({p['name'].lower()})" for p in it["parcels"])
+        return n_ * len(it["parcels"]), f"{n_} benches in three parcels each: {kinds}"
+    return n_, f"{n_} spare side frames, one to a frame carton"
+
+
+def unit_weight(it, n_):
+    """The gross weight of one loaded pallet: its goods and the pallet's own weight."""
+    return n_ * Decimal(str(it["gross_kg"])) + Decimal(str(it["pallet"]["tare_kg"]))
+
+
+def parcel_package(p, k=None):
+    """A parcel kind on a pallet as cac:Package: what it is and holds, its size and weight (D20, O61). A bench
+    parcel holds part of a bench, not an item, so it states no quantity of items."""
+    two = p["lift"] == 2
+    return {"PackageLevelCode": V("1", "UN/EDIFACT 7075 code 1: the inner level, below the pallet."),
+            "PackagingTypeCode": V(p["type"], "UN/ECE Recommendation 21 code " + p["type"] + ": "
+                                   + ("carton." if p["type"] == "CT" else "bundle.")),
+            "PackagingType": V(f"{p['name']}, parcel {p['no']} of 3 of each bench: {p['contents']}",
+                               "The parcel in words, as its label marks it; one of these per bench on the pallet."),
+            "PackingMaterial": V(p["material"], "What the packaging is made of."),
+            "ReturnableMaterialIndicator": V("false", "The parcel's packaging stays with the goods."),
+            "MeasurementDimension": [
+                {"AttributeID": V("LENGTH", "The parcel's size."), "Measure": V(str(p["mm"][0]), "Its length.",
+                                                                                unitCode="MMT")},
+                {"AttributeID": V("WIDTH", "The parcel's size."), "Measure": V(str(p["mm"][1]), "Its width.",
+                                                                               unitCode="MMT")},
+                {"AttributeID": V("HEIGHT", "The parcel's size."), "Measure": V(str(p["mm"][2]), "Its height.",
+                                                                                unitCode="MMT")},
+                {"AttributeID": V("GROSSWEIGHT", "The parcel's weight."),
+                 "Measure": V(kg(p["gross_kg"]), ("Within the 25 kg one person may lift (ISO 11228-1, the world's "
+                              "handling rule, D20)." if not two else "Within the limit, but 1.81 m long: two "
+                              "people carry it (ISO 11228-1, the world's handling rule, D20)."), unitCode="KGM")}]}
+
+
+def carton_package(it, where):
+    """A spare frame's carton as cac:Package: one frame in it (D20)."""
+    c = it["carton"]
+    return {"Quantity": qty(1, it["unit"], "One side frame in each carton."),
+            "PackageLevelCode": V("1", "UN/EDIFACT 7075 code 1: the inner level, below the pallet."),
+            "PackagingTypeCode": V("CT", "UN/ECE Recommendation 21 code CT: carton."),
+            "PackagingType": V(f"{c['name']}, one side frame", f"The carton in words; {where}"),
+            "PackingMaterial": V(c["material"], "What the packaging is made of."),
+            "ReturnableMaterialIndicator": V("false", "The carton stays with the frame.")}
+
+
+def goods_packages(flow, d):
+    """The packages a goods item travels in (D20, O61, worklist C12): the bench's three parcels or the frame's
+    carton, on pallets where the flow ships them so; the cotton's bales where the flow lists its packages."""
+    if flow_packages(flow, d["item"]):
+        return containing_package(flow, d["item"])
+    it = maker(d["item"])
+    if it.get("parcels"):
+        inner = [parcel_package(p) for p in it["parcels"]]
+    elif it.get("carton"):
+        inner = [carton_package(it, "the goods item's frames travel one to a carton.")]
+    else:
+        return {}
+    units = pallets(flow, [d])
+    if not units:
+        return {"ContainingPackage": inner}
+    per = units[0][2]
+    what = "benches" if it.get("parcels") else "side frames"
+    return {"ContainingPackage": {
+        "Quantity": qty(per, it["unit"], f"{per} {what} to a pallet; the goods item travels on {len(units)} "
+                                         f"pallet{'s' if len(units) > 1 else ''}."),
+        "PackageLevelCode": V("3", "UN/EDIFACT 7075 code 3: the outer level, the pallet."),
+        "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+        "ReturnableMaterialIndicator": V("true", "The pallet goes back to the party that loaded it."),
+        "ContainedPackage": inner}}
+
+
+def handling_units(flow, deal, owner, marks, detail=False):
+    """The pallets of a deal, as transport handling units, numbered in the convention of the party that makes them
+    up (unit_id). A bench pallet (1850 x 700 mm, four benches in three parcels each, 745 mm high loaded) may go two
+    high; the pallet of frame cartons travels with nothing on top (world/items.json, D20)."""
+    out = []
+    units = pallets(flow, deal)
+    for k, it, n_ in units:
+        bench = bool(it.get("parcels"))
+        uid = unit_id(owner, flow, k)
+        count, load = pallet_load(it, n_)
+        x = {"ID": uid,
+             "TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+             "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods on the pallet."),
+             "TotalPackageQuantity": qty(count, "EA", f"The parcels on the pallet: {load}."),
+             "ShippingMarks": V(f"{marks} / {k:03d} of {len(units):03d}", "The marks on the pallet: the consignee's "
+                                                                          "mark and the pallet's place in the count."),
+             "TraceID": V(uid.value, "The pallet's barcode, scanned at each handover: it carries the same "
+                                     "number.")}
+        if detail:
+            pal = it["pallet"]
+            x["HandlingCode"] = V("STACK2" if pal["stack"] == 2 else "NOSTACK",
+                                  "The carrier's handling code: two high, or nothing on top.")
+            x["HandlingInstructions"] = V(
+                "Fork-lift only. May be stacked two high, bench pallet on bench pallet. Unpacked, a frame carton is "
+                "a one-person lift; a slat bundle, 1.81 m long, is carried by two." if bench else
+                "Fork-lift only. Load on top: nothing may be stacked on the cartons. Unpacked, each carton is a "
+                "one-person lift.", "The handling, in words, with the world's rule for manual handling (ISO 11228-1, "
+                                    "D20).")
+            L, W, H = pal["mm"]
+            area = (Decimal(L) * Decimal(W) / Decimal(10 ** 6)).quantize(Decimal("0.1"))
+            x["MeasurementDimension"] = [
+                {"AttributeID": V("LENGTH", "The pallet's footprint."), "Measure": V(str(L), "Its length.",
+                                                                                     unitCode="MMT")},
+                {"AttributeID": V("WIDTH", "The pallet's footprint."), "Measure": V(str(W), "Its width.",
+                                                                                    unitCode="MMT")},
+                {"AttributeID": V("HEIGHT", "The height of the loaded pallet."), "Measure": V(str(H), "Its height.",
+                                                                                              unitCode="MMT")},
+                {"AttributeID": V("GROSSWEIGHT", "The loaded pallet's weight."),
+                 "Measure": V(kg(unit_weight(it, n_)), f"The goods, {kg(n_ * Decimal(str(it['gross_kg'])))} kg, and "
+                              f"the pallet's own {kg(pal['tare_kg'])} kg.", unitCode="KGM")}]
+            x["FloorSpaceMeasurementDimension"] = {"AttributeID": V("FLOORSPACE", "The floor the pallet takes."),
+                                                   "Measure": V(kg(area), "In square metres.", unitCode="MTK")}
+            x["PalletSpaceMeasurementDimension"] = {"AttributeID": V("PALLETPLACES", "The pallet places taken on "
+                                                                                      "the truck."),
+                                                    "Measure": V("0.5" if pal["stack"] == 2 else "1", "Half a place "
+                                                                 "when two pallets are stacked; the frame cartons' "
+                                                                 "pallet takes a whole one. A number of places, not "
+                                                                 "of articles, so unit C62 (one), which allows a "
+                                                                 "half.", unitCode="C62")}
+            if bench:
+                x["Package"] = [parcel_package(p) for p in it["parcels"]]
+            else:
+                x["Package"] = carton_package(it, f"{n_} of them on the pallet.")
+        out.append(x)
+    return out
 
 
 def card_account(holder, merchant):
@@ -1728,65 +1944,3 @@ def unit_id(owner, flow, k, what="The number on the pallet label"):
                  "Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar "
                  "code on the label adds the data identifier J, which the document leaves out.", schemeID="ISO 15459")
     return V(f"{initials(owner)}-{flow.date(0)[2:4]}-{k:03d}", f"{what}: {name}'s own number for the unit.")
-
-
-def handling_units(flow, deal, owner, marks, detail=False):
-    """The pallets of a deal, as transport handling units, numbered in the convention of the party that makes them
-    up (unit_id). Bench pallets (1850 x 650 mm, four benches) may go two high; the pallet of boxed castings
-    (1200 x 800 mm) carries nothing on top."""
-    out = []
-    units = pallets(flow, deal)
-    for k, it, n_ in units:
-        pal = it["package"]["type"] == "PX"
-        uid = unit_id(owner, flow, k)
-        x = {"ID": uid,
-             "TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
-             "TotalGoodsItemQuantity": qty(1, "EA", "One kind of goods on the pallet."),
-             "TotalPackageQuantity": qty(n_, "EA", f"{n_} benches on the pallet, each wrapped in film." if pal
-                                         else f"{n_} boxed side frames on the pallet."),
-             "ShippingMarks": V(f"{marks} / {k:03d} of {len(units):03d}", "The marks on the pallet: the consignee's "
-                                                                          "mark and the pallet's place in the count."),
-             "TraceID": V(uid.value, "The pallet's barcode, scanned at each handover: it carries the same "
-                                     "number.")}
-        if detail:
-            x["HandlingCode"] = V("STACK2" if pal else "NOSTACK", "The carrier's handling code: two high, or "
-                                                                  "nothing on top.")
-            x["HandlingInstructions"] = V("May be stacked two high, steel frames on steel frames." if pal else
-                                          "Load on top: nothing may be stacked on the boxes.", "The handling, in words.")
-            x["MeasurementDimension"] = [
-                {"AttributeID": V("LENGTH", "The pallet's footprint."),
-                 "Measure": V("1850" if pal else "1200", "Its length.", unitCode="MMT")},
-                {"AttributeID": V("WIDTH", "The pallet's footprint."),
-                 "Measure": V("650" if pal else "800", "Its width.", unitCode="MMT")},
-                {"AttributeID": V("HEIGHT", "The height of the loaded pallet."),
-                 "Measure": V("1650" if pal else "900", "Its height.", unitCode="MMT")}]
-            x["FloorSpaceMeasurementDimension"] = {"AttributeID": V("FLOORSPACE", "The floor the pallet takes."),
-                                                   "Measure": V("1.2" if pal else "0.96", "In square metres.",
-                                                                unitCode="MTK")}
-            x["PalletSpaceMeasurementDimension"] = {"AttributeID": V("PALLETPLACES", "The pallet places taken on "
-                                                                                      "the truck."),
-                                                    "Measure": V("0.5" if pal else "1", "Half a place when two pallets "
-                                                                 "are stacked; the castings take a whole one. A number "
-                                                                 "of places, not of articles, so unit C62 (one), "
-                                                                 "which allows a half.",
-                                                                 unitCode="C62")}
-            x["Package"] = {"ID": V(f"{k:03d}-1", "The packages on the pallet, numbered by the pallet and the kind "
-                                                   "of package: an inner package has a local number, without a "
-                                                   "scheme."),
-                            "Quantity": qty(n_, "EA", "The packages of this kind on the pallet."),
-                            "PackagingTypeCode": V("SW" if pal else "BX", "UN/ECE Recommendation 21: "
-                                                   + ("shrinkwrapped, each bench in film" if pal else "box") + "."),
-                            "PackagingType": V("Bench in stretch film" if pal else "Cardboard box",
-                                               "The packaging in words."),
-                            "PackingMaterial": V("Recycled PE stretch film" if pal else "Corrugated cardboard",
-                                                 "What the packaging is made of."),
-                            "ReturnableMaterialIndicator": V("false", "The packaging is not returned."),
-                            "PackageLevelCode": V("1", "The inner packaging, below the pallet.")}
-            x["ActualPackage"] = {"ID": V(uid.value, "The pallet itself, as packed: the same unit, so the same "
-                                                     "number.", **uid.attrs),
-                                  "Quantity": qty(1, "EA", "One pallet."),
-                                  "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
-                                  "ReturnableMaterialIndicator": V("true", "The pallet is exchanged with the "
-                                                                           "carrier and goes back.")}
-        out.append(x)
-    return out

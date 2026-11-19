@@ -145,7 +145,7 @@
   <cac:Consignment>
     <cbc:ID>LD-CS-26-0228</cbc:ID>
     <cbc:SummaryDescription>24 × Park bench Serra 180</cbc:SummaryDescription>
-    <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>

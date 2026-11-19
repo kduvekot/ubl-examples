@@ -10,8 +10,8 @@
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cbc:Note>Accepted: the frames fly on the morning flight; the forwarder is booked.</cbc:Note>
-  <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
-  <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+  <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
+  <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cac:ValidityPeriod>
@@ -140,7 +140,7 @@
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Air freight for the urgent delivery, recharged at cost</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">554.88</cbc:Amount>
+    <cbc:Amount currencyID="XBL">666.40</cbc:Amount>
   </cac:AllowanceCharge>
   <cac:OrderLine>
     <cac:LineItem>

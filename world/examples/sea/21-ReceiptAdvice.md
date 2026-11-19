@@ -285,15 +285,15 @@ Inside `ReceiptLine`:
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `ID` = **2**  
   The line number.
-- `Note` = **One box crushed at the port; the frame inside is cracked.**  
+- `Note` = **One frame carton crushed at the port; the frame inside is cracked.**  
   The line in words.
 - `ReceivedQuantity` = **11** (unitCode `EA`)  
-  One box crushed at the port; the frame inside is cracked.
+  One frame carton crushed at the port; the frame inside is cracked.
 - `RejectedQuantity` = **1** (unitCode `EA`)  
   Refused at goods-in.
 - `RejectReasonCode` = **DAMAGED** (listID `urn:ubl-examples:world:codelist:RejectReasonCode`)  
   Why refused. The code is from the Trade Accord's reject reason list: DAMAGED = Damaged.
-- `RejectReason` = **One box crushed at the port; the frame inside is cracked.**  
+- `RejectReason` = **One frame carton crushed at the port; the frame inside is cracked.**  
   In words.
 - `RejectActionCode` = **CREDIT** (listID `urn:ubl-examples:world:codelist:RejectActionCode`)  
   The receiver asks for a credit, not a replacement. The code is from the Trade Accord's reject action list: CREDIT = Credit requested.
@@ -537,11 +537,11 @@ Inside `ReceiptLine`:
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>One box crushed at the port; the frame inside is cracked.</cbc:Note>
+    <cbc:Note>One frame carton crushed at the port; the frame inside is cracked.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
     <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
-    <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
+    <cbc:RejectReason>One frame carton crushed at the port; the frame inside is cracked.</cbc:RejectReason>
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>

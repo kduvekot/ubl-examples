@@ -182,7 +182,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **LD-CS-26-0228**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **996** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -238,8 +238,8 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
-  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 001 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206100003729019**  
@@ -254,14 +254,90 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122217** (schemeID `GS1 GRAI`)  
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122217** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
-- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
-  The pallet itself.
-- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
-- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
+  The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/TransportMeans/RegistrationNationality` = **Bayvarra**  
@@ -288,8 +364,8 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
-  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 002 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206100003729026**  
@@ -304,22 +380,98 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122234** (schemeID `GS1 GRAI`)  
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122234** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
-- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
-  The pallet itself.
-- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
-- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
+  The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
-  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 003 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206100003729033**  
@@ -334,22 +486,98 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122251** (schemeID `GS1 GRAI`)  
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122251** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
-- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
-  The pallet itself.
-- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
-- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
+  The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ID` = **095206100003729040** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
-  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 004 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206100003729040**  
@@ -364,22 +592,98 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122268** (schemeID `GS1 GRAI`)  
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122268** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
-- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
-  The pallet itself.
-- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
-- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
+  The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ID` = **095206100003729057** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
-  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 005 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206100003729057**  
@@ -394,22 +698,98 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122285** (schemeID `GS1 GRAI`)  
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122285** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
-- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
-  The pallet itself.
-- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
-- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
+  The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ID` = **095206100003729064** (schemeID `GS1 SSCC`)  
   The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
-- `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
-  4 benches on the pallet, each wrapped in film.
+- `TransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
 - `TransportHandlingUnit/ShippingMarks` = **BRIGHTMARKET LUMEPORT / 006 of 006**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `TransportHandlingUnit/TraceID` = **095206100003729064**  
@@ -424,14 +804,90 @@ Inside `Shipment`:
   The item, named only: it is described in full on despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
   The seller's item number.
-- `TransportHandlingUnit/ActualPackage/ID` = **095206100000122302** (schemeID `GS1 GRAI`)  
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton, parcel 1 of 3 of each bench: one side frame**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Corrugated cardboard, tray and lid**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
+  The parcel's packaging stays with the goods.
+- `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
+  UN/EDIFACT 7075 code 1: the inner level, below the pallet. The code is from the world's copy of UN/EDIFACT 7075 Packaging level: 1 = Inner.
+- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/ActualPackage/PackagingType` = **Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped**  
+  The parcel in words, as its label marks it; one of these per bench on the pallet.
+- `TransportHandlingUnit/ActualPackage/PackingMaterial` = **Polyester straps, cardboard edge protectors and end caps, PE film**  
+  What the packaging is made of.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **1810** (unitCode `MMT`)  
+  Its length.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **295** (unitCode `MMT`)  
+  Its width.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's size. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
+  Its height.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
+- `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+- `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122302** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
-- `TransportHandlingUnit/ActualPackage/Quantity` = **1** (unitCode `EA`)  
-  The pallet itself.
-- `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **true**  
+- `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
-- `TransportHandlingUnit/ActualPackage/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
+  The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 
 ### Despatch Line
 
@@ -614,7 +1070,7 @@ Inside `DespatchLine`:
     <cbc:ID>LD-SH-26-0230</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0228</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">996</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -662,7 +1118,7 @@ Inside `DespatchLine`:
       <cbc:ID schemeID="GS1 SSCC">095206100003729019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 001 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729019</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -679,11 +1135,79 @@ Inside `DespatchLine`:
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122217</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122217</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
       <cac:TransportMeans>
         <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
         <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
@@ -709,7 +1233,7 @@ Inside `DespatchLine`:
       <cbc:ID schemeID="GS1 SSCC">095206100003729026</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 002 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729026</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -726,17 +1250,85 @@ Inside `DespatchLine`:
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122234</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122234</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 003 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729033</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -753,17 +1345,85 @@ Inside `DespatchLine`:
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122251</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122251</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729040</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 004 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729040</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -780,17 +1440,85 @@ Inside `DespatchLine`:
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122268</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122268</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729057</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 005 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729057</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -807,17 +1535,85 @@ Inside `DespatchLine`:
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122285</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122285</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729064</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
-      <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
       <cbc:ShippingMarks>BRIGHTMARKET LUMEPORT / 006 of 006</cbc:ShippingMarks>
       <cbc:TraceID>095206100003729064</cbc:TraceID>
       <cac:HandlingUnitDespatchLine>
@@ -834,11 +1630,79 @@ Inside `DespatchLine`:
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
       <cac:ActualPackage>
-        <cbc:ID schemeID="GS1 GRAI">095206100000122302</cbc:ID>
-        <cbc:Quantity unitCode="EA">1</cbc:Quantity>
-        <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+        </cac:MeasurementDimension>
       </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+        <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">790</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">680</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">13</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:ActualPackage>
+        <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+        <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+        <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">295</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="MMT">100</cbc:Measure>
+        </cac:MeasurementDimension>
+        <cac:MeasurementDimension>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+          <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+        </cac:MeasurementDimension>
+      </cac:ActualPackage>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="GS1 GRAI">095206100000122302</cbc:ID>
+        <cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+        <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
+      </cac:TransportEquipment>
     </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DespatchLine>

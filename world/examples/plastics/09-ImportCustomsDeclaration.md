@@ -241,7 +241,7 @@ Inside `Shipment`:
 - `GoodsItem/InsuranceValueAmount` = **0.00** (currencyID `XBL`)  
   The buyer did not insure the river carriage.
 - `GoodsItem/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **120** (unitCode `TNE`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  

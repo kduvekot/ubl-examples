@@ -210,11 +210,11 @@
   </cac:ReceiptLine>
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>One box crushed at the port; the frame inside is cracked.</cbc:Note>
+    <cbc:Note>One frame carton crushed at the port; the frame inside is cracked.</cbc:Note>
     <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
     <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
-    <cbc:RejectReason>One box crushed at the port; the frame inside is cracked.</cbc:RejectReason>
+    <cbc:RejectReason>One frame carton crushed at the port; the frame inside is cracked.</cbc:RejectReason>
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-05-20</cbc:ReceivedDate>

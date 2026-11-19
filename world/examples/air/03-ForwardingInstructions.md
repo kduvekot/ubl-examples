@@ -157,12 +157,12 @@ Inside `Shipment`:
   The shipment to be booked.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The distributor's consignment number.
-- `Consignment/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the eight boxed frames.
-- `Consignment/NetNetWeightMeasure` = **76** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the eight frame cartons.
+- `Consignment/NetNetWeightMeasure` = **88.8** (unitCode `KGM`)  
   The castings alone.
-- `Consignment/NetVolumeMeasure` = **0.42** (unitCode `MTQ`)  
-  The frames' own volume.
+- `Consignment/NetVolumeMeasure` = **0.3** (unitCode `MTQ`)  
+  The frames' own volume, without their cartons: the envelope of each frame.
 - `Consignment/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods.
 - `Consignment/DeclaredForCarriageValueAmount` = **512.00** (currencyID `XBL`)  
@@ -170,7 +170,7 @@ Inside `Shipment`:
 - `Consignment/DeclaredStatisticsValueAmount` = **512.00** (currencyID `XBL`)  
   The value for the export statistics.
 - `Consignment/SplitConsignmentIndicator` = **false**  
-  All eight boxes on one flight.
+  All eight cartons on one flight.
 - `Consignment/ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -232,38 +232,32 @@ Inside `Shipment`:
 - `Consignment/TransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/TransportHandlingUnit/ID` = **095206100003729323** (schemeID `GS1 SSCC`)  
-  The skid the boxes are strapped to: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
+  The skid the cartons are strapped to: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **SI** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code SI: skid. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: SI = Skid.
 - `Consignment/TransportHandlingUnit/ReferencedShipment/ID` = **LD-SH-26-0323**  
   The distributor's shipment on the skid.
 - `Consignment/TransportHandlingUnit/Package/ID` = **LD-AIR-BOX**  
-  The eight boxes as one package entry with their number: inner packages on the skid have a local identifier, without a scheme.
+  The eight frame cartons as one package entry with their number: inner packages on the skid have a local identifier, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **8** (unitCode `EA`)  
-  Eight boxes.
-- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/Package/ContainedPackage/ID` = **LD-AIR-BAG**  
-  Inside each box, the frame in a plastic bag.
-- `Consignment/TransportHandlingUnit/Package/ContainedPackage/Quantity` = **8** (unitCode `EA`)  
-  One bag per box.
-- `Consignment/TransportHandlingUnit/Package/ContainedPackage/PackagingTypeCode` = **BG** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BG: bag. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BG = Bag.
+  Eight side frames, one to a carton.
+- `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
 - `Consignment/TransportHandlingUnit/Package/GoodsItem/ID` = **1**  
   The side frames.
 - `Consignment/TransportHandlingUnit/Package/GoodsItem/Description` = **Bench side frame castings**  
   In words.
 - `Consignment/TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Of one box. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **800** (unitCode `MMT`)  
+  Of one carton. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **790** (unitCode `MMT`)  
   In millimetres.
 - `Consignment/TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Of one box. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **300** (unitCode `MMT`)  
+  Of one carton. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **680** (unitCode `MMT`)  
   In millimetres.
 - `Consignment/TransportHandlingUnit/Package/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
-  Of one box. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **300** (unitCode `MMT`)  
+  Of one carton. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/TransportHandlingUnit/Package/MeasurementDimension/Measure` = **100** (unitCode `MMT`)  
   In millimetres.
 - `Consignment/TransportHandlingUnit/Package/DeliveryUnit/BatchQuantity` = **8** (unitCode `EA`)  
   All eight delivered together.
@@ -289,7 +283,7 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **8** (unitCode `EA`)  
   How much is carried.
@@ -425,9 +419,9 @@ Inside `Signature`:
     <cbc:ID>LD-SH-26-0323</cbc:ID>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
-      <cbc:NetNetWeightMeasure unitCode="KGM">76</cbc:NetNetWeightMeasure>
-      <cbc:NetVolumeMeasure unitCode="MTQ">0.42</cbc:NetVolumeMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
+      <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
@@ -499,27 +493,22 @@ Inside `Signature`:
         <cac:Package>
           <cbc:ID>LD-AIR-BOX</cbc:ID>
           <cbc:Quantity unitCode="EA">8</cbc:Quantity>
-          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
-          <cac:ContainedPackage>
-            <cbc:ID>LD-AIR-BAG</cbc:ID>
-            <cbc:Quantity unitCode="EA">8</cbc:Quantity>
-            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BG</cbc:PackagingTypeCode>
-          </cac:ContainedPackage>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Bench side frame castings</cbc:Description>
           </cac:GoodsItem>
           <cac:MeasurementDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">800</cbc:Measure>
+            <cbc:Measure unitCode="MMT">790</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:MeasurementDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+            <cbc:Measure unitCode="MMT">680</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:MeasurementDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+            <cbc:Measure unitCode="MMT">100</cbc:Measure>
           </cac:MeasurementDimension>
           <cac:DeliveryUnit>
             <cbc:BatchQuantity unitCode="EA">8</cbc:BatchQuantity>
@@ -555,7 +544,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>

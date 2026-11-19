@@ -251,12 +251,12 @@ Inside `Shipment`:
   The value declared on the air waybill, as the distributor instructed.
 - `Consignment/ID` = **LD-CS-26-0324**  
   The consignment of the transport booking.
-- `Consignment/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo.
-- `Consignment/ChargeableWeightMeasure` = **96** (unitCode `KGM`)  
-  The volume weight is higher than the 81.6 kg: 0.576 m³ at 167 kg per m³, rounded up.
-- `Consignment/GrossVolumeMeasure` = **0.576** (unitCode `MTQ`)  
-  Eight boxes of 0.072 m³.
+- `Consignment/ChargeableWeightMeasure` = **98** (unitCode `KGM`)  
+  The gross weight of 97.6 kg, rounded up to the next half kilogram: it is higher than the volume weight, 0.43 m³ at 167 kg per m³.
+- `Consignment/GrossVolumeMeasure` = **0.43** (unitCode `MTQ`)  
+  Eight frame cartons of 790 x 680 x 100 mm.
 - `Consignment/SpecialSecurityIndicator` = **true**  
   The cargo was screened by the forwarder, a known consignor; it may fly without further checks.
 - `Consignment/SpecialServiceInstructions` = **Priority handling at Selanu: the customer is waiting.**  
@@ -401,7 +401,7 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Bench side frame casting**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **81.6** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **97.6** (unitCode `KGM`)  
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **8** (unitCode `EA`)  
   How much is carried.
@@ -624,9 +624,9 @@ Inside `Signature`:
     <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0324</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
-      <cbc:ChargeableWeightMeasure unitCode="KGM">96</cbc:ChargeableWeightMeasure>
-      <cbc:GrossVolumeMeasure unitCode="MTQ">0.576</cbc:GrossVolumeMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
+      <cbc:ChargeableWeightMeasure unitCode="KGM">98</cbc:ChargeableWeightMeasure>
+      <cbc:GrossVolumeMeasure unitCode="MTQ">0.43</cbc:GrossVolumeMeasure>
       <cbc:SpecialSecurityIndicator>true</cbc:SpecialSecurityIndicator>
       <cbc:SpecialServiceInstructions>Priority handling at Selanu: the customer is waiting.</cbc:SpecialServiceInstructions>
       <cbc:SequenceID>1</cbc:SequenceID>
@@ -765,7 +765,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">81.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">97.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>

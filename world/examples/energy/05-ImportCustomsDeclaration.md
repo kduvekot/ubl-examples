@@ -222,7 +222,7 @@ Inside `Shipment`:
 - `GoodsItem/DeclaredCustomsValueAmount` = **132480000** (currencyID `XUF`)  
   The customs value in ferra.
 - `GoodsItem/GrossWeightMeasure` = **2760000** (unitCode `KGM`)  
-  The gross weight of the goods of this item.
+  The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **36800** (unitCode `MWH`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  

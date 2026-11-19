@@ -196,15 +196,15 @@ Inside `Shipment`:
 
 - `ID` = **VI-SH-26-0332**  
   The shipment as the despatching party numbered it.
-- `GrossWeightMeasure` = **15768** (unitCode `KGM`)  
-  The gross weights of the transport equipment with the goods in it (7884 + 7884 kg): a shipment's gross weight includes the equipment (worklist C15).
+- `GrossWeightMeasure` = **18177.6** (unitCode `KGM`)  
+  The gross weights of the transport equipment with the goods in it (9088.8 + 9088.8 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `Consignment/ID` = **VI-CS-26-0327**  
   The manufacturer's consignment number.
 - `Consignment/ContractedCarrierAssignedID` = **FRC-CON-2026-005/88**  
   The call-off under the framework contract.
 - `Consignment/SummaryDescription` = **192 park benches in two 40-foot containers.**  
   The goods in a few words.
-- `Consignment/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **10377.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the two containers' cargo.
 - `Consignment/ContainerizedIndicator` = **true**  
   Two full containers.
@@ -382,8 +382,8 @@ Inside `Shipment`:
   The container in words.
 - `Consignment/TransportHandlingUnit/TransportEquipment/SpecialTransportRequirements` = **Load with the doors to the rear of the wagon.**  
   How it rides.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7884** (unitCode `KGM`)  
-  Half the benches and the container's own 3,900 kg.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9088.8** (unitCode `KGM`)  
+  Half the benches, on their 24 pallets, and the container's own 3,900 kg.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GrossVolumeMeasure` = **76.3** (unitCode `MTQ`)  
   The inside volume of a 40-foot high cube.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TrackingDeviceCode` = **GPS** (listID `urn:ubl-examples:world:codelist:TrackingDeviceCode`)  
@@ -550,8 +550,8 @@ Inside `Shipment`:
   ISO 6346 size and type: 40 feet long, 9 ft 6 in high, general purpose. The code is from the world's copy of ISO 6346 container size and type code: 45G1 = 40 ft, 9 ft 6 in high, general purpose.
 - `Consignment/TransportHandlingUnit/TransportEquipment/FullnessIndicationCode` = **FCL** (listID `urn:ubl-examples:world:codelist:LoadTypeCode`)  
   A full container load for one consignee. The code is from the Trade Accord's load type list: FCL = Full container load.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **7884** (unitCode `KGM`)  
-  Half the benches and the container's own 3,900 kg.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9088.8** (unitCode `KGM`)  
+  Half the benches, on their 24 pallets, and the container's own 3,900 kg.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **XU-VI-30412**  
   The number of the bolt seal on the doors.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **SHIPPER** (listID `urn:ubl-examples:world:codelist:SealIssuerTypeCode`)  
@@ -592,8 +592,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **7968** (unitCode `KGM`)  
-  The gross weight of the goods of this item, with their packaging.
+- `GoodsItem/GrossWeightMeasure` = **10377.6** (unitCode `KGM`)  
+  The gross weight of the goods of this item, with their packaging and the pallets they travel on.
 - `GoodsItem/Quantity` = **192** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
@@ -788,12 +788,12 @@ Inside `Signature`:
   </cac:CarrierParty>
   <cac:Shipment>
     <cbc:ID>VI-SH-26-0332</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">15768</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>VI-CS-26-0327</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
-      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
       <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:LoadingSequenceID>7</cbc:LoadingSequenceID>
@@ -946,7 +946,7 @@ Inside `Signature`:
           <cbc:DamageRemarks>Small dent in the left side panel, noted at pick-up; no effect on the cargo.</cbc:DamageRemarks>
           <cbc:Description>40-foot high cube container</cbc:Description>
           <cbc:SpecialTransportRequirements>Load with the doors to the rear of the wagon.</cbc:SpecialTransportRequirements>
-          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cbc:GrossWeightMeasure unitCode="KGM">9088.8</cbc:GrossWeightMeasure>
           <cbc:GrossVolumeMeasure unitCode="MTQ">76.3</cbc:GrossVolumeMeasure>
           <cbc:TrackingDeviceCode listID="urn:ubl-examples:world:codelist:TrackingDeviceCode">GPS</cbc:TrackingDeviceCode>
           <cbc:PowerIndicator>false</cbc:PowerIndicator>
@@ -1144,7 +1144,7 @@ Inside `Signature`:
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:SizeTypeCode listID="ISO 6346">45G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
-          <cbc:GrossWeightMeasure unitCode="KGM">7884</cbc:GrossWeightMeasure>
+          <cbc:GrossWeightMeasure unitCode="KGM">9088.8</cbc:GrossWeightMeasure>
           <cac:TransportEquipmentSeal>
             <cbc:ID>XU-VI-30412</cbc:ID>
             <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">SHIPPER</cbc:SealIssuerTypeCode>
@@ -1191,7 +1191,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">7968</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">192</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>

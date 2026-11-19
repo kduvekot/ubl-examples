@@ -255,7 +255,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">8.32</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">10.00</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-06-14</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -265,7 +265,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">554.88</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">666.40</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -279,15 +279,15 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">554.88</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">554.88</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">554.88</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">554.88</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">666.40</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">666.40</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">666.40</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">666.40</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="KGM">81.6</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">554.88</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="KGM">98</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">666.40</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>Airport-to-airport air freight per kilogram chargeable weight, road feeder included.</cbc:Description>
       <cbc:Name>Air freight</cbc:Name>

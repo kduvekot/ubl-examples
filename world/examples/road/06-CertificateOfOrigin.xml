@@ -167,11 +167,11 @@
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XUF">3830400</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">3984</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">96</cbc:Quantity>
         <cac:Item>
-          <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-          <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+          <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+          <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
           <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
           <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
           <cac:OriginCountry>
@@ -185,16 +185,91 @@
             <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94017910</cbc:CommodityCode>
           </cac:CommodityClassification>
         </cac:Item>
+        <cac:ContainingPackage>
+          <cbc:Quantity unitCode="EA">4</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">3</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+          <cac:ContainedPackage>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Frame carton, parcel 1 of 3 of each bench: one side frame</cbc:PackagingType>
+            <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">790</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">680</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">100</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="KGM">12.2</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:ContainedPackage>
+          <cac:ContainedPackage>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Frame carton with the bolt set, parcel 2 of 3 of each bench: the other side frame and the bag of 20 stainless bolts with nuts and washers</cbc:PackagingType>
+            <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">790</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">680</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">100</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="KGM">13</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:ContainedPackage>
+          <cac:ContainedPackage>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Slat bundle, parcel 3 of 3 of each bench: five slats, three and two, with edge protectors and end caps, strapped</cbc:PackagingType>
+            <cbc:PackingMaterial>Polyester straps, cardboard edge protectors and end caps, PE film</cbc:PackingMaterial>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">1810</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">295</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="MMT">100</cbc:Measure>
+            </cac:MeasurementDimension>
+            <cac:MeasurementDimension>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
+              <cbc:Measure unitCode="KGM">21.8</cbc:Measure>
+            </cac:MeasurementDimension>
+          </cac:ContainedPackage>
+        </cac:ContainingPackage>
       </cac:GoodsItem>
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Bench side frame casting</cbc:Description>
         <cbc:DeclaredCustomsValueAmount currencyID="XUF">57000</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">122.4</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:Item>
-          <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, stezir nibir, vazzhan.</cbc:Description>
-          <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, cast steel, galvanised.</cbc:Description>
+          <cbc:Description languageID="qau">Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.</cbc:Description>
+          <cbc:Description languageID="en-XU">Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.</cbc:Description>
           <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
           <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
           <cac:OriginCountry>
@@ -208,6 +283,20 @@
             <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
           </cac:CommodityClassification>
         </cac:Item>
+        <cac:ContainingPackage>
+          <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+          <cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+          <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">3</cbc:PackageLevelCode>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
+          <cac:ContainedPackage>
+            <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+            <cbc:ReturnableMaterialIndicator>false</cbc:ReturnableMaterialIndicator>
+            <cbc:PackageLevelCode listID="UN/EDIFACT EDED 7075">1</cbc:PackageLevelCode>
+            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+            <cbc:PackagingType>Frame carton, one side frame</cbc:PackagingType>
+            <cbc:PackingMaterial>Corrugated cardboard, tray and lid</cbc:PackingMaterial>
+          </cac:ContainedPackage>
+        </cac:ContainingPackage>
       </cac:GoodsItem>
     </cac:Shipment>
     <cac:EndorserParty>

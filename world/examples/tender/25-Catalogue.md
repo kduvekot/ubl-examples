@@ -257,9 +257,9 @@ Inside `CatalogueLine`:
   The name of code EXP in Urvania's national value added tax exemption reason list.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.** (languageID `qau`)  
+- `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
-- `Item/Description` = **Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.** (languageID `en-XU`)  
+- `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries; item bench-serra of Valdara Industries (world/items.json).
 - `Item/Name` = **Haz nanskir Serra 180** (languageID `qau`)  
   The item's name in Urvanian, the seller's language; item bench-serra of Valdara Industries (world/items.json).
@@ -311,11 +311,11 @@ Inside `CatalogueLine`:
   The national tariff code of Urvania, two digits below the HS subheading, as its customs uses it: a second classification; item bench-serra of Valdara Industries (world/items.json). The code is from Urvania's national customs tariff list: 94017910 = Benches for parks and gardens, with metal frames.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **Cast steel, hot-dip galvanised**  
+- `Item/AdditionalItemProperty/Value` = **Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated**  
   Its value; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalItemProperty/Name` = **Slat wood**  
   A property buyers ask about.
-- `Item/AdditionalItemProperty/Value` = **Kiln-dried hardwood**  
+- `Item/AdditionalItemProperty/Value` = **Thermally modified ash**  
   Its value; item bench-serra of Valdara Industries (world/items.json).
 - `Item/AdditionalItemProperty/Name` = **Seats**  
   A property buyers ask about.
@@ -367,7 +367,13 @@ Inside `CatalogueLine`:
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `Item/Dimension/Measure` = **1800** (unitCode `MMT`)  
   Its size.
-- `Item/Dimension/Description` = **Over the armrests**  
+- `Item/Dimension/Description` = **Over the slats, from slat end to slat end**  
+  Where it is measured.
+- `Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
+- `Item/Dimension/Measure` = **1660** (unitCode `MMT`)  
+  Its size.
+- `Item/Dimension/Description` = **Over the armrests, between the outer edges of the armrest pads**  
   Where it is measured.
 - `Item/Dimension/AttributeID` = **DEPTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: DEPTH = Depth. An identifier that holds a code names the code's list in its schemeID.
@@ -419,7 +425,7 @@ Inside `CatalogueLine`:
   Its last day.
 - `Item/CircularityProfile/MaintenanceFrequencyCode` = **YEARLY** (listID `urn:ubl-examples:world:codelist:MaintenanceFrequencyCode`)  
   How often the item needs maintenance. The code is from the Trade Accord's maintenance frequency list: YEARLY = Once a year.
-- `Item/CircularityProfile/MaintenanceFrequencyDescription` = **Tighten the slat bolts and touch up the coating once a year.**  
+- `Item/CircularityProfile/MaintenanceFrequencyDescription` = **Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.**  
   What the maintenance is.
 - `Item/CircularityProfile/ResourceConsumption/ResourceTypeCode` = **STEEL** (listID `urn:ubl-examples:world:codelist:MaterialResourceCode`)  
   A material the item is made of. The code is from the Trade Accord's material resource list: STEEL = Steel.
@@ -443,9 +449,9 @@ Inside `CatalogueLine`:
   Its last day.
 - `Item/CircularityProfile/WasteGenerated/WasteTypeCode` = **PACKAGING** (listID `urn:ubl-examples:world:codelist:WasteTypeCode`)  
   The kind of waste the item leaves. The code is from the Trade Accord's waste type list: PACKAGING = Packaging.
-- `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **Stretch film and pallet straps, per bench**  
+- `Item/CircularityProfile/WasteGenerated/WasteTypeDescription` = **The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back**  
   The waste in words.
-- `Item/CircularityProfile/WasteGenerated/WasteMeasure` = **0.4** (unitCode `KGM`)  
+- `Item/CircularityProfile/WasteGenerated/WasteMeasure` = **3.3** (unitCode `KGM`)  
   How much of it per item.
 - `Item/CircularityProfile/WasteGenerated/MeasurementPeriod/StartDate` = **2025-01-01**  
   Measured over the deliveries of 2025.
@@ -707,8 +713,8 @@ Inside `CatalogueLine`:
       </cac:ApplicableTaxCategory>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul stezir stan vazzhan nibir, bukdrek serskek kalnan, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of cast and galvanised steel, five hardwood slats, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cbc:AdditionalInformation languageID="qau">Zurhul vek krukzan tarkul ziztan stan drek skubir krir vinstaz karhan.</cbc:AdditionalInformation>
@@ -751,11 +757,11 @@ Inside `CatalogueLine`:
       </cac:CommodityClassification>
       <cac:AdditionalItemProperty>
         <cbc:Name>Frame material</cbc:Name>
-        <cbc:Value>Cast steel, hot-dip galvanised</cbc:Value>
+        <cbc:Value>Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat wood</cbc:Name>
-        <cbc:Value>Kiln-dried hardwood</cbc:Value>
+        <cbc:Value>Thermally modified ash</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>
@@ -801,7 +807,12 @@ Inside `CatalogueLine`:
       <cac:Dimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1800</cbc:Measure>
-        <cbc:Description>Over the armrests</cbc:Description>
+        <cbc:Description>Over the slats, from slat end to slat end</cbc:Description>
+      </cac:Dimension>
+      <cac:Dimension>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+        <cbc:Measure unitCode="MMT">1660</cbc:Measure>
+        <cbc:Description>Over the armrests, between the outer edges of the armrest pads</cbc:Description>
       </cac:Dimension>
       <cac:Dimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
@@ -843,7 +854,7 @@ Inside `CatalogueLine`:
       </cac:EnvironmentalEmission>
       <cac:CircularityProfile>
         <cbc:MaintenanceFrequencyCode listID="urn:ubl-examples:world:codelist:MaintenanceFrequencyCode">YEARLY</cbc:MaintenanceFrequencyCode>
-        <cbc:MaintenanceFrequencyDescription>Tighten the slat bolts and touch up the coating once a year.</cbc:MaintenanceFrequencyDescription>
+        <cbc:MaintenanceFrequencyDescription>Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:MaintenanceFrequencyDescription>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">STEEL</cbc:ResourceTypeCode>
           <cbc:ConsumptionMeasure unitCode="KGM">34</cbc:ConsumptionMeasure>
@@ -864,8 +875,8 @@ Inside `CatalogueLine`:
         </cac:ResourceConsumption>
         <cac:WasteGenerated>
           <cbc:WasteTypeCode listID="urn:ubl-examples:world:codelist:WasteTypeCode">PACKAGING</cbc:WasteTypeCode>
-          <cbc:WasteTypeDescription>Stretch film and pallet straps, per bench</cbc:WasteTypeDescription>
-          <cbc:WasteMeasure unitCode="KGM">0.4</cbc:WasteMeasure>
+          <cbc:WasteTypeDescription>The two frame cartons and the slat bundle's straps, edge protectors, end caps and film, and a quarter of the pallet's slip sheet, top cap and stretch film, per bench; the pallet itself goes back</cbc:WasteTypeDescription>
+          <cbc:WasteMeasure unitCode="KGM">3.3</cbc:WasteMeasure>
           <cac:MeasurementPeriod>
             <cbc:StartDate>2025-01-01</cbc:StartDate>
             <cbc:EndDate>2025-12-31</cbc:EndDate>
