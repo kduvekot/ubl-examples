@@ -26,8 +26,8 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
   The day after the last trailer: the ginnery bills itself for the weighed delivery, as the self-billing agreement provides.
 - `IssueTime` = **15:50:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-24**  
-  The supplier's usual term, which the customer applies to itself.
+- `DueDate` = **2026-05-25**  
+  The supplier's usual term, which the customer applies to itself. The count ends on Sunday 24 May, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 25 May (O180).
 - `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 389, "An invoice the invoicee is producing instead of the seller": exactly what this document is. It repeats what the root SelfBilledInvoice already says, as no narrower subtype applies; 380 would be wrong, since a commercial invoice is the seller's document "claiming payment", and the customer claims nothing here, it settles what it owes. The code is from the world's copy of UN/EDIFACT 1001 Document name: 389 = Self-billed invoice.
 - `Note` = **Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.** (languageID `qal`)  
@@ -363,7 +363,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-24**  
+- `PaymentDueDate` = **2026-05-25**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -430,8 +430,8 @@ Inside `PaymentTerms`:
   Island practice: longer terms, simple interest on late payment.
 - `PaymentTermsDetailsURI` = **https://www.lisavufarm.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-24**  
-  The day the amount is due, as the terms count it.
+- `PaymentDueDate` = **2026-05-25**  
+  The day the amount is due, as the terms count it. The count ends on Sunday 24 May, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 25 May (O180).
 - `PenaltyInterestRate/InterestRatePercent` = **6**  
   The interest on late payment.
 - `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
@@ -612,7 +612,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>6d8069bb-fe8b-5c9f-bd12-45c38c2363b6</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>15:50:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-24</cbc:DueDate>
+  <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">389</cbc:InvoiceTypeCode>
   <cbc:Note languageID="qal">Lakau-votee tilala kimii mitavema: sehove kulasi tohala lelala tanaha hokake.</cbc:Note>
   <cbc:Note languageID="en-XL">Self-billed under the season agreement: the ginnery writes the invoice on the farm's behalf.</cbc:Note>
@@ -861,7 +861,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF77SCGSBI260194</cbc:InstructionNote>
@@ -910,7 +910,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>45 days net.</cbc:Note>
     <cbc:PaymentTermsDetailsURI>https://www.lisavufarm.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-24</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

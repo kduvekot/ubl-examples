@@ -8,7 +8,7 @@
   <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>12:32:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-28</cbc:DueDate>
+  <cbc:DueDate>2026-06-29</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">393</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -204,7 +204,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
@@ -307,7 +307,7 @@
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
     <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
-    <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
+    <cbc:InstallmentDueDate>2026-05-11</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
   <cac:PaymentTerms>
     <cbc:ID>BALANCE</cbc:ID>
@@ -318,10 +318,10 @@
     <cbc:PaymentPercent>81.78</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">673.44</cbc:PenaltyAmount>
-    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
+    <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:StartDate>2026-06-30</cbc:StartDate>
     </cac:PenaltyPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
@@ -337,7 +337,7 @@
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-14</cbc:StartDate>
-      <cbc:EndDate>2026-06-28</cbc:EndDate>
+      <cbc:EndDate>2026-06-29</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>

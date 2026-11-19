@@ -150,7 +150,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
@@ -197,7 +197,7 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
@@ -208,7 +208,7 @@
     <cbc:BalanceAmount currencyID="XBL">54896.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
-      <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+      <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     </cac:PaymentTerms>
     <cac:BuyerCustomerParty>
       <cac:Party>

@@ -335,7 +335,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/ShipmentStage/CustomsAgentParty/PartyLegalEntity/CompanyID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Shipment/ShipmentStage/CustomsAgentParty/Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Bayforth Forwarding (world/parties.json).
+  The party's customs desk: the desk for its role in this document (it deals with customs); identity of Bayforth Forwarding (world/parties.json).
 - `Shipment/ShipmentStage/CustomsAgentParty/Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Shipment/ShipmentStage/CustomsAgentParty/Contact/Department` = **Logistics**  

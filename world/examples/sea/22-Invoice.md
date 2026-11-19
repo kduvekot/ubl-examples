@@ -26,8 +26,8 @@ The goods at their CIF prices, which hold the sea freight and the insurance; the
   Issued when the goods are on board.
 - `IssueTime` = **12:32:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-28**  
-  As the payment terms below count it: deposit of 10,000.00 lume on acceptance; the balance 45 days after shipment, as agreed in the order response; 1.5 % surcharge per month late.
+- `DueDate` = **2026-06-29**  
+  As the payment terms below count it: deposit of 10,000.00 lume on acceptance; the balance 45 days after shipment, as agreed in the order response; 1.5 % surcharge per month late. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 - `InvoiceTypeCode` = **393** (listID `UN/EDIFACT EDED 1001`)  
   The invoice is assigned to the factor, who collects it: a factored invoice, a subtype UN/EDIFACT 1001 has its own code for. The code is from the world's copy of UN/EDIFACT 1001 Document name: 393 = Factored invoice.
 - `Note` = **This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
@@ -266,7 +266,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-28**  
+- `PaymentDueDate` = **2026-06-29**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   A payment that is not urgent goes in the Trade Accord link's batch run, a mass payment net system, as ISO 20022 clearing channel MPNS (sea/22#F14, D30 point 9). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
@@ -381,8 +381,8 @@ Inside `PaymentTerms`:
   Its share of the invoice total.
 - `Amount` = **10000.00** (currencyID `XBL`)  
   The deposit.
-- `InstallmentDueDate` = **2026-05-09**  
-  It was due on acceptance; paid.
+- `InstallmentDueDate` = **2026-05-11**  
+  It was due on acceptance; paid. The count ends on Saturday 9 May, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 11 May (O180).
 - `ID` = **BALANCE**  
   The balance, the second instalment.
 - `PaymentMeansID` = **1**  
@@ -399,11 +399,11 @@ Inside `PaymentTerms`:
   The balance.
 - `PenaltyAmount` = **673.44** (currencyID `XBL`)  
   The surcharge for the first month late, on the balance.
-- `InstallmentDueDate` = **2026-06-28**  
-  45 days after the goods were shipped.
+- `InstallmentDueDate` = **2026-06-29**  
+  45 days after the goods were shipped. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 - `InvoicingPartyReference` = **RF20LDINV260147**  
   The reference to quote with the payment.
-- `PenaltyPeriod/StartDate` = **2026-06-29**  
+- `PenaltyPeriod/StartDate` = **2026-06-30**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 - `PenaltyInterestRate/InterestRatePercent` = **7**  
   The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
@@ -423,7 +423,7 @@ Inside `PaymentTerms`:
   Of the invoice date, as the payment alternative rate.
 - `ValidityPeriod/StartDate` = **2026-05-14**  
   The terms apply from the invoice date
-- `ValidityPeriod/EndDate` = **2026-06-28**  
+- `ValidityPeriod/EndDate` = **2026-06-29**  
   until the balance is due.
 
 ### Prepaid Payment
@@ -650,7 +650,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>12:32:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-28</cbc:DueDate>
+  <cbc:DueDate>2026-06-29</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">393</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -846,7 +846,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
@@ -949,7 +949,7 @@ Inside `InvoiceLine`:
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
     <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
-    <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
+    <cbc:InstallmentDueDate>2026-05-11</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
   <cac:PaymentTerms>
     <cbc:ID>BALANCE</cbc:ID>
@@ -960,10 +960,10 @@ Inside `InvoiceLine`:
     <cbc:PaymentPercent>81.78</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">673.44</cbc:PenaltyAmount>
-    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
+    <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:StartDate>2026-06-30</cbc:StartDate>
     </cac:PenaltyPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
@@ -979,7 +979,7 @@ Inside `InvoiceLine`:
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-14</cbc:StartDate>
-      <cbc:EndDate>2026-06-28</cbc:EndDate>
+      <cbc:EndDate>2026-06-29</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>

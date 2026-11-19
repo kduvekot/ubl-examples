@@ -26,8 +26,8 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
   Issued when the bales are on board.
 - `IssueTime` = **12:38:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-21**  
-  As the payment terms below count it: 45 days net.
+- `DueDate` = **2026-06-22**  
+  As the payment terms below count it: 45 days net. The count ends on Sunday 21 June, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 22 June (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).**  
@@ -234,7 +234,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-21**  
+- `PaymentDueDate` = **2026-06-22**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
@@ -303,8 +303,8 @@ Inside `PaymentTerms`:
   Island practice: longer terms, simple interest on late payment.
 - `PaymentTermsDetailsURI` = **https://www.selanuginnery.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-06-21**  
-  The day the amount is due, as the terms count it.
+- `PaymentDueDate` = **2026-06-22**  
+  The day the amount is due, as the terms count it. The count ends on Sunday 21 June, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 22 June (O180).
 - `PenaltyInterestRate/InterestRatePercent` = **6**  
   The interest on late payment.
 - `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
@@ -401,7 +401,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>2f034562-199a-5d23-88a9-248b9fdf7727</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>12:38:00+00:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-21</cbc:DueDate>
+  <cbc:DueDate>2026-06-22</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -564,7 +564,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-22</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF46SCGINV260210</cbc:InstructionNote>
@@ -614,7 +614,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>45 days net.</cbc:Note>
     <cbc:PaymentTermsDetailsURI>https://www.selanuginnery.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-06-21</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-22</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>6</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>

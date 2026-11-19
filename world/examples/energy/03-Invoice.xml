@@ -8,7 +8,7 @@
   <cbc:UUID>f2bffa54-247a-500b-9993-16f7d9a166d9</cbc:UUID>
   <cbc:IssueDate>2026-04-03</cbc:IssueDate>
   <cbc:IssueTime>16:42:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-03</cbc:DueDate>
+  <cbc:DueDate>2026-05-04</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-03</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -173,7 +173,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF32MPINV260151</cbc:InstructionNote>
@@ -226,7 +226,7 @@
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">4327680</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.montebrio.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
       <cbc:StartDate>2026-04-03</cbc:StartDate>
       <cbc:EndDate>2026-04-13</cbc:EndDate>

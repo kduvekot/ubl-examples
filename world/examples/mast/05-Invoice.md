@@ -26,8 +26,8 @@ Goods and carriage to the site; an export, so no sales tax.
   Issued on despatch.
 - `IssueTime` = **17:34:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-07-04**  
-  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
+- `DueDate` = **2026-07-06**  
+  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Saturday 4 July, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 6 July (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).**  
@@ -226,7 +226,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-07-04**  
+- `PaymentDueDate` = **2026-07-06**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
@@ -297,9 +297,9 @@ Inside `PaymentTerms`:
   The surcharge per month of late payment.
 - `PenaltyAmount` = **219.41** (currencyID `XBL`)  
   The surcharge for each month late.
-- `PaymentDueDate` = **2026-07-04**  
-  The day the amount is due, as the terms count it.
-- `PenaltyPeriod/StartDate` = **2026-07-05**  
+- `PaymentDueDate` = **2026-07-06**  
+  The day the amount is due, as the terms count it. The count ends on Saturday 4 July, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 6 July (O180).
+- `PenaltyPeriod/StartDate` = **2026-07-07**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
 
 ### Tax Total
@@ -450,7 +450,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>40aff29f-0459-5985-901d-8a4a505d1f5d</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>17:34:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-07-04</cbc:DueDate>
+  <cbc:DueDate>2026-07-06</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -613,7 +613,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-06</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF78SEINV260719</cbc:InstructionNote>
@@ -664,9 +664,9 @@ Inside `InvoiceLine`:
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">219.41</cbc:PenaltyAmount>
-    <cbc:PaymentDueDate>2026-07-04</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-07-06</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-07-05</cbc:StartDate>
+      <cbc:StartDate>2026-07-07</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>

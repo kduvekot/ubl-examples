@@ -213,8 +213,8 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-28**  
-  When the transfer must be credited.
+- `PaymentDueDate` = **2026-06-29**  
+  When the transfer must be credited. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
@@ -276,8 +276,8 @@ Inside `PaymentTerms`:
 
 - `Note` = **Pay the balance by the due date of the invoice.**  
   The terms.
-- `PaymentDueDate` = **2026-06-28**  
-  The due date.
+- `PaymentDueDate` = **2026-06-29**  
+  The due date. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 
 ### Statement Line
 
@@ -297,8 +297,8 @@ Inside `StatementLine`:
   Before the deposit.
 - `PaymentPurposeCode` = **GDDS** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code GDDS: purchase of goods. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: GDDS = PurchaseSaleOfGoods.
-- `PaymentTerms/PaymentDueDate` = **2026-06-28**  
-  The due date of the balance.
+- `PaymentTerms/PaymentDueDate` = **2026-06-29**  
+  The due date of the balance. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 - `BuyerCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `BuyerCustomerParty/Party/PartyName/Name` = **Velumi Trading**  
@@ -499,7 +499,7 @@ Inside `StatementLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
@@ -546,7 +546,7 @@ Inside `StatementLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
@@ -557,7 +557,7 @@ Inside `StatementLine`:
     <cbc:BalanceAmount currencyID="XBL">54896.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
-      <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+      <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     </cac:PaymentTerms>
     <cac:BuyerCustomerParty>
       <cac:Party>
