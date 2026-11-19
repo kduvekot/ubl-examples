@@ -200,7 +200,7 @@
     </cac:GoodsItem>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>

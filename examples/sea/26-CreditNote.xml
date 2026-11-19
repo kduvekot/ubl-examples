@@ -38,9 +38,6 @@
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
     <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
-  <cac:ProjectReference>
-    <cbc:ID>VT-PRJ-26-07</cbc:ID>
-  </cac:ProjectReference>
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>VT-CLAIMS</cbc:BuyerReferenceCode>
   </cac:BuyerAssignedReference>
