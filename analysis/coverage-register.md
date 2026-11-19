@@ -139,10 +139,10 @@ Coverage 5110 → 5106 (commit 6fe6444b), 4 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `DependentPriceReference/DependentLineReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | | | open |
-| `DependentPriceReference/LocationAddress` | 0..1 | retail/02-Catalogue | | | open |
-| `DependentPriceReference/Percent` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | | | open |
-| `ItemLocationQuantity/DependentPriceReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | | | open |
+| `DependentPriceReference/DependentLineReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
+| `DependentPriceReference/LocationAddress` | 0..1 | retail/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
+| `DependentPriceReference/Percent` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
+| `ItemLocationQuantity/DependentPriceReference` | 0..1 | retail/02-Catalogue, sea/02-Catalogue | no longer the single slat priced from the bundle (D43 sells only the bundle, G1); other candidate from O145: a price that follows another by a stated rule | | open |
 
 ### Stage 1 step 1e, part 6: currencies with something to convert (C11)
 
@@ -339,10 +339,10 @@ Coverage 4982 → 4971 (commit 11566a00), 11 elements.
 |---|---|---|---|---|---|
 | `CircularityProfile/EndOfLifeTreatment` | 0..1 | packaging/01-Order, packaging/02-Invoice | the stretch film's product information from Rivermouth (a catalogue of the film to Valdara, packaging flow): recyclable in full, back to Rinova for recycling (the film's data in world/items.json) | packaging | candidate |
 | `CircularityProfile/RecyclabilityPercent` | 0..1 | packaging/01-Order, packaging/02-Invoice | the stretch film's product information from Rivermouth (a catalogue of the film to Valdara, packaging flow): recyclable in full, back to Rinova for recycling (the film's data in world/items.json) | packaging | candidate |
-| `EndOfLifeTreatment/ImpactCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
-| `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | | | open |
+| `EndOfLifeTreatment/ImpactCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
+| `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
+| `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
+| `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
 | `Item/LifecycleStageCode` | 0..1 | waste/03-Invoice | | | open |
 | `Item/LifecycleStageDescription` | 0..n | waste/03-Invoice | | | open |
 
