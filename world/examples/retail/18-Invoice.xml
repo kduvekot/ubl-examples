@@ -326,9 +326,10 @@
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>09323e18-1b75-5598-8829-c136e146de6a</cbc:UUID>
+    <cbc:Note>Twenty-four benches delivered; the one the store refused at goods-in is credited by a credit note.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="EA">24</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:TaxPointDate>2026-05-08</cbc:TaxPointDate>
+    <cbc:TaxPointDate>2026-04-30</cbc:TaxPointDate>
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
@@ -343,14 +344,6 @@
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
-    <cac:PricingReference>
-      <cac:OriginalItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      </cac:OriginalItemLocationQuantity>
-    </cac:PricingReference>
-    <cac:PaymentTerms>
-      <cbc:Note>The promotion stock is paid with the invoice, 30 days net.</cbc:Note>
-    </cac:PaymentTerms>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

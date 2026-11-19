@@ -79,8 +79,6 @@ Inside `BuyerCustomerParty`:
   The store's own number for its garden department.
 - `SupplierAssignedAccountID` = **LD-C-0418**  
   The distributor's customer number for the store.
-- `AdditionalAccountID` = **BM-LUM-01**  
-  The store's branch number.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
@@ -160,8 +158,6 @@ Inside `SellerSupplierParty`:
   The store's supplier number for the distributor.
 - `AdditionalAccountID` = **LD-XB-01**  
   The distributor's sales office.
-- `DataSendingCapability` = **UBL 2.5 over the trade accord network**  
-  How the distributor sends documents.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
@@ -377,16 +373,6 @@ Inside `OrderLine`:
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
 - `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0218**  
   The catalogue the item was ordered from.
-- `BuyerProposedSubstituteLineItem/ID` = **1.1**  
-  The store's fall-back if the Serra 180 is out of stock: an ID of its own (retail/08#F9).
-- `BuyerProposedSubstituteLineItem/Quantity` = **24** (unitCode `EA`)  
-  The same quantity.
-- `BuyerProposedSubstituteLineItem/Item/Name` = **Park bench Serra 180, moss green**  
-  The other frame colour: the store would take it.
-- `BuyerProposedSubstituteLineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
-  The distributor's number.
-- `BuyerProposedSubstituteLineItem/Item/SellersItemIdentification/ExtendedID` = **GRN**  
-  The green variant.
 - `CatalogueLineReference/LineID` = **1**  
   The catalogue line ordered from.
 
@@ -432,7 +418,6 @@ Inside `OrderLine`:
   <cac:BuyerCustomerParty>
     <cbc:CustomerAssignedAccountID>BM-6120</cbc:CustomerAssignedAccountID>
     <cbc:SupplierAssignedAccountID>LD-C-0418</cbc:SupplierAssignedAccountID>
-    <cbc:AdditionalAccountID>BM-LUM-01</cbc:AdditionalAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -498,7 +483,6 @@ Inside `OrderLine`:
   <cac:SellerSupplierParty>
     <cbc:CustomerAssignedAccountID>BM-S-0071</cbc:CustomerAssignedAccountID>
     <cbc:AdditionalAccountID>LD-XB-01</cbc:AdditionalAccountID>
-    <cbc:DataSendingCapability>UBL 2.5 over the trade accord network</cbc:DataSendingCapability>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -666,17 +650,6 @@ Inside `OrderLine`:
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>
-    <cac:BuyerProposedSubstituteLineItem>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Park bench Serra 180, moss green</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
-          <cbc:ExtendedID>GRN</cbc:ExtendedID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-    </cac:BuyerProposedSubstituteLineItem>
     <cac:CatalogueLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:CatalogueLineReference>

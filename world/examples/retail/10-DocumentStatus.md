@@ -26,7 +26,7 @@ The distributor answers: confirmed, the truck is booked.
   Answered the same day.
 - `IssueTime` = **12:08:00-01:00**  
   Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Accepted and booked.**  
+- `Note` = **Accepted; the truck is booked for a delivery on 30 April.**  
   The answer.
 
 ### Signature
@@ -107,17 +107,6 @@ Inside `DocumentResponse`:
 - `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BS-PO-26-0224 is the example retail/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
 
-### Additional Document Response
-
-Inside `AdditionalDocumentResponse`:
-
-- `Response/ResponseCode` = **AP** (listID `UN/EDIFACT EDED 4343`)  
-  The transport booking is confirmed too. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
-- `DocumentReference/ID` = **LD-TR-26-0227**  
-  The transport booking: the request that follows as the next document of the flow, numbered when the truck was booked.
-- `DocumentReference/DocumentTypeCode` = **TransportExecutionPlanRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-TR-26-0227 is the example retail/11, a TransportExecutionPlanRequest; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: TransportExecutionPlanRequest = Transport Execution Plan Request.
-
 ## The document
 
 ```xml
@@ -131,7 +120,7 @@ Inside `AdditionalDocumentResponse`:
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
   <cbc:IssueTime>12:08:00-01:00</cbc:IssueTime>
-  <cbc:Note>Accepted and booked.</cbc:Note>
+  <cbc:Note>Accepted; the truck is booked for a delivery on 30 April.</cbc:Note>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-DS</cbc:ID>
     <cac:SignatoryParty>
@@ -203,14 +192,5 @@ Inside `AdditionalDocumentResponse`:
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>
-  <cac:AdditionalDocumentResponse>
-    <cac:Response>
-      <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
-    </cac:Response>
-    <cac:DocumentReference>
-      <cbc:ID>LD-TR-26-0227</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
-  </cac:AdditionalDocumentResponse>
 </DocumentStatus>
 ```

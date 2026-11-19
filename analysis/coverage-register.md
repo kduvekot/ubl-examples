@@ -714,6 +714,19 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `PromotionalEvent/LatestProposalAcceptanceDate` | 0..1 | retail/06-RetailEvent |  |  | open |
 | `PurchaseReceiptLine/PurchaseLinePeriod` | 0..1 | retail/21-PurchaseReceipt |  |  | open |
 
+> C112, D34: the store's order offers no substitute the catalogue does not have (08#F8), gives no third-party account under its own number (08#F12) and no e-document channel as card data capability (08#F5); the document status answers for the store's order only, not for Lumeway's own transport booking (10#F4); the invoice line has no pricing reference and no payment terms of its own (18#F2, F13); the credit note on the factored invoice names no payee: the store deducts it from what it pays the factor (19#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CreditNote/PayeeParty` | 0..1 | retail/19-CreditNote |  |  | open |
+| `CustomerParty/AdditionalAccountID` | 0..n | retail/08-Order |  |  | open |
+| `DocumentStatus/AdditionalDocumentResponse` | 0..n | retail/10-DocumentStatus |  |  | open |
+| `InvoiceLine/PaymentTerms` | 0..n | retail/18-Invoice |  |  | open |
+| `InvoiceLine/PricingReference` | 0..1 | retail/18-Invoice |  |  | open |
+| `OrderLine/BuyerProposedSubstituteLineItem` | 0..n | retail/08-Order |  |  | open |
+| `PricingReference/OriginalItemLocationQuantity` | 0..1 | retail/18-Invoice |  |  | open |
+| `SupplierParty/DataSendingCapability` | 0..1 | retail/08-Order |  |  | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

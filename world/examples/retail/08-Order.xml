@@ -37,7 +37,6 @@
   <cac:BuyerCustomerParty>
     <cbc:CustomerAssignedAccountID>BM-6120</cbc:CustomerAssignedAccountID>
     <cbc:SupplierAssignedAccountID>LD-C-0418</cbc:SupplierAssignedAccountID>
-    <cbc:AdditionalAccountID>BM-LUM-01</cbc:AdditionalAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -103,7 +102,6 @@
   <cac:SellerSupplierParty>
     <cbc:CustomerAssignedAccountID>BM-S-0071</cbc:CustomerAssignedAccountID>
     <cbc:AdditionalAccountID>LD-XB-01</cbc:AdditionalAccountID>
-    <cbc:DataSendingCapability>UBL 2.5 over the trade accord network</cbc:DataSendingCapability>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -271,17 +269,6 @@
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>
-    <cac:BuyerProposedSubstituteLineItem>
-      <cbc:ID>1.1</cbc:ID>
-      <cbc:Quantity unitCode="EA">24</cbc:Quantity>
-      <cac:Item>
-        <cbc:Name>Park bench Serra 180, moss green</cbc:Name>
-        <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
-          <cbc:ExtendedID>GRN</cbc:ExtendedID>
-        </cac:SellersItemIdentification>
-      </cac:Item>
-    </cac:BuyerProposedSubstituteLineItem>
     <cac:CatalogueLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:CatalogueLineReference>

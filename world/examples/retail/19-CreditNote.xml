@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-CN-26-0237</cbc:ID>
   <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
-  <cbc:IssueDate>2026-05-02</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>13:26:00-01:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -183,29 +183,6 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
-  <cac:PayeeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Harbourline Factoring</cbc:Name>
-    </cac:PartyName>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Harbourline Factoring Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1233699</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -227,7 +204,7 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:Note>Deducted from the store's payment of invoice LD-INV-26-0236 to Harbourline Factoring, which owns the receivable.</cbc:Note>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>

@@ -1618,13 +1618,12 @@
    "doc": "CreditNote",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The shop reported a damaged carton in its receipt advice; the distributor credits it. The factor stays the payee, because it owns the receivable being reduced.",
+   "why": "The shop refused a damaged bench in its receipt advice; the distributor credits it. The store deducts the credit from what it pays the factor, which owns the invoice's receivable.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
     "AccountingCustomerParty": "26-xb",
     "SellerSupplierParty": "6-xb",
-    "BuyerCustomerParty": "26-xb",
-    "PayeeParty": "24-xb"
+    "BuyerCustomerParty": "26-xb"
    }
   },
   {

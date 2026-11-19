@@ -439,12 +439,14 @@ Inside `InvoiceLine`:
   The line number.
 - `UUID` = **09323e18-1b75-5598-8829-c136e146de6a**  
   A universally unique identifier of the line, derived from the document and the line number.
+- `Note` = **Twenty-four benches delivered; the one the store refused at goods-in is credited by a credit note.**  
+  Why the line bills 24 while the receipt accepted 23 (retail/18#F10, D34).
 - `InvoicedQuantity` = **24** (unitCode `EA`)  
   The benches despatched.
 - `LineExtensionAmount` = **12480.00** (currencyID `XBL`)  
   24 × 520.0, rounded to the minor unit of the currency.
-- `TaxPointDate` = **2026-05-08**  
-  The day the goods were delivered.
+- `TaxPointDate` = **2026-04-30**  
+  The day the goods were delivered, 30 April (retail/18#F11).
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
 - `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
@@ -457,10 +459,6 @@ Inside `InvoiceLine`:
   The receipt advice.
 - `ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BS-RA-26-0235 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
-- `PricingReference/OriginalItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
-  As in the catalogue.
-- `PaymentTerms/Note` = **The promotion stock is paid with the invoice, 30 days net.**  
-  The line's terms.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Park bench Serra 180**  
@@ -833,9 +831,10 @@ Inside `InvoiceLine`:
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>09323e18-1b75-5598-8829-c136e146de6a</cbc:UUID>
+    <cbc:Note>Twenty-four benches delivered; the one the store refused at goods-in is credited by a credit note.</cbc:Note>
     <cbc:InvoicedQuantity unitCode="EA">24</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">12480.00</cbc:LineExtensionAmount>
-    <cbc:TaxPointDate>2026-05-08</cbc:TaxPointDate>
+    <cbc:TaxPointDate>2026-04-30</cbc:TaxPointDate>
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
@@ -850,14 +849,6 @@ Inside `InvoiceLine`:
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
-    <cac:PricingReference>
-      <cac:OriginalItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      </cac:OriginalItemLocationQuantity>
-    </cac:PricingReference>
-    <cac:PaymentTerms>
-      <cbc:Note>The promotion stock is paid with the invoice, 30 days net.</cbc:Note>
-    </cac:PaymentTerms>
     <cac:Item>
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>

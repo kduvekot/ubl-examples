@@ -8,7 +8,7 @@
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
   <cbc:IssueTime>12:08:00-01:00</cbc:IssueTime>
-  <cbc:Note>Accepted and booked.</cbc:Note>
+  <cbc:Note>Accepted; the truck is booked for a delivery on 30 April.</cbc:Note>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-DS</cbc:ID>
     <cac:SignatoryParty>
@@ -80,13 +80,4 @@
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>
-  <cac:AdditionalDocumentResponse>
-    <cac:Response>
-      <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
-    </cac:Response>
-    <cac:DocumentReference>
-      <cbc:ID>LD-TR-26-0227</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlanRequest</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
-  </cac:AdditionalDocumentResponse>
 </DocumentStatus>

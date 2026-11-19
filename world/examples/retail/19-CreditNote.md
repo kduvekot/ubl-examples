@@ -2,7 +2,7 @@
 
 *Example 19 of the flow "Distributor to retailer, delivered duty paid (domestic, Bayvarra)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
 
-The shop reported a damaged carton in its receipt advice; the distributor credits it. The factor stays the payee, because it owns the receivable being reduced.
+The shop refused a damaged bench in its receipt advice; the distributor credits it. The store deducts the credit from what it pays the factor, which owns the invoice's receivable.
 
 [The XML file](19-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,8 +22,8 @@ The shop reported a damaged carton in its receipt advice; the distributor credit
   The seller's credit note number.
 - `UUID` = **21527992-a284-577e-b410-c834118ac671**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-02**  
-  Issued after the receipt advice reported the refused bench.
+- `IssueDate` = **2026-05-05**  
+  Issued on Tuesday 5 May, after the receipt advice reported the refused bench: Saturday 2 May is no working day of Lumeway's, and Monday 4 May is Bayvarra's Labour Day (D27, D34).
 - `IssueTime` = **13:26:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
@@ -248,29 +248,6 @@ Inside `AccountingCustomerParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Payee Party
-
-Inside `PayeeParty`:
-
-- `PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Harbourline Factoring (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Harbourline Factoring**  
-  The trading name; identity of Harbourline Factoring (world/parties.json).
-- `PartyTaxScheme/RegistrationName` = **Harbourline Factoring Ltd**  
-  The name under which the party is registered for state sales tax; identity of Harbourline Factoring (world/parties.json).
-- `PartyTaxScheme/CompanyID` = **CO-1233699** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Harbourline Factoring (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
-  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
-- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
-  The state or territory whose sales tax the party is registered for.
-- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -293,8 +270,8 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Settled against the next payment to the seller, unless refunded.**  
-  How a credit note is settled in the world.
+- `Note` = **Deducted from the store's payment of invoice LD-INV-26-0236 to Harbourline Factoring, which owns the receivable.**  
+  How the credit is settled: the store pays the factor the invoice less the credit; the factor is not the credit's payee (retail/19#F2, D34).
 
 ### Allowance Charge
 
@@ -457,7 +434,7 @@ Inside `CreditNoteLine`:
   <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-CN-26-0237</cbc:ID>
   <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
-  <cbc:IssueDate>2026-05-02</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>13:26:00-01:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -634,29 +611,6 @@ Inside `CreditNoteLine`:
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:AccountingCustomerParty>
-  <cac:PayeeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411233</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Harbourline Factoring</cbc:Name>
-    </cac:PartyName>
-    <cac:PartyTaxScheme>
-      <cbc:RegistrationName>Harbourline Factoring Ltd</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1233699</cbc:CompanyID>
-      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:JurisdictionRegionAddress>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:JurisdictionRegionAddress>
-      </cac:TaxScheme>
-    </cac:PartyTaxScheme>
-  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -678,7 +632,7 @@ Inside `CreditNoteLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:Note>Deducted from the store's payment of invoice LD-INV-26-0236 to Harbourline Factoring, which owns the receivable.</cbc:Note>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>

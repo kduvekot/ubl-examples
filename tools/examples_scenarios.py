@@ -1492,14 +1492,8 @@ RETAIL = kit.Flow("retail", "2026-04-20", [
     {"item": "bench-serra-b", "ordered": 24, "why": "Six pallets for the reopening of the home and garden department.",
      "received": 23, "received_why": "One bench refused: its frame carton arrived torn and the side frame's armrest bent.",
      "orderline_extra": {
-         "CatalogueLineReference": {"LineID": V("1", "The catalogue line ordered from.")},
-         "BuyerProposedSubstituteLineItem": {
-             "ID": V("1.1", "The store's fall-back if the Serra 180 is out of stock: an ID of its own (retail/08#F9)."),
-             "Quantity": qty(24, "EA", "The same quantity."),
-             "Item": {"Name": V("Park bench Serra 180, moss green", "The other frame colour: the store would take "
-                                                                     "it."),
-                      "SellersItemIdentification": {"ID": V("LD-10442", "The distributor's number."),
-                                                    "ExtendedID": V("GRN", "The green variant.")}}}}}])
+         # no substitute: the catalogue offers the bench in one colour only (retail/08#F8, D34)
+         "CatalogueLineReference": {"LineID": V("1", "The catalogue line ordered from.")}}}])
 
 
 RESALE = {r["id"]: r for r in WORLD["resales"]["sales"]}      # the resales of the world (items.json, D14, O30)
@@ -1700,7 +1694,9 @@ def retail(n, doc):
         f.numbers["invoice-amount"] = payable
         return out
     if doc["doc"] == "CreditNote":
-        out = kit.credit_note(f, n, doc, 12, "Issued after the receipt advice reported the refused bench.",
+        out = kit.credit_note(f, n, doc, 15, "Issued on Tuesday 5 May, after the receipt advice reported the refused "
+                                             "bench: Saturday 2 May is no working day of Lumeway's, and Monday 4 May "
+                                             "is Bayvarra's Labour Day (D27, D34).",
                                [{"item": "bench-serra-b", "qty": 1, "why": "The bench refused at delivery.",
                                  "line_tax": True,
                                  "line_extra": {
@@ -1730,6 +1726,10 @@ def retail(n, doc):
                                                                                              "the goods.")}})
         with_allowance(out, "LegalMonetaryTotal", Decimal(out["LegalMonetaryTotal"]["LineExtensionAmount"].value),
                        "The invoice gave the promotion support on the whole order, so the credit is 5 % less too.")
+        out["PaymentTerms"] = {"Note": V(f"Deducted from the store's payment of invoice {f.numbers['invoice']} to "
+                                         "Harbourline Factoring, which owns the receivable.",
+                                         "How the credit is settled: the store pays the factor the invoice less the "
+                                         "credit; the factor is not the credit's payee (retail/19#F2, D34).")}
         line = out["CreditNoteLine"][0]
         line.update({"Note": V("Bench refused: side frame's armrest bent, frame carton torn.", "Why the line is credited."),
                      "DiscrepancyResponse": {"ReferenceID": V("1", "The invoice line."),
@@ -7309,16 +7309,10 @@ def _(f, n, doc, out):
 
 @enrich("retail", "DocumentStatus")
 def _(f, n, doc, out):
-    tep = next(d for d in WORLD["documents"] if d["flow"] == f.id and d["doc"] == "TransportExecutionPlanRequest")
-    booking = f.number("tep-request", tep["from"], tep["doc"])     # booked now, sent as the next document
-    return {"Note": V("Accepted and booked.", "The answer."),
-            "Signature": seal(doc["from"], "LD-SIG-26-DS"),
-            "AdditionalDocumentResponse": {"Response": {"ResponseCode": V("AP", "The transport booking is "
-                                                                                "confirmed too.")},
-                                           "DocumentReference": {"ID": V(booking, "The transport booking: the "
-                                                                         "request that follows as the next document "
-                                                                         "of the flow, numbered when the truck was "
-                                                                         "booked.")}}}
+    # the status of the store's order only: Lumeway's own booking with the carrier is not the store's document,
+    # so the answer says "booked" in words (retail/10#F4, D34)
+    return {"Note": V("Accepted; the truck is booked for a delivery on 30 April.", "The answer."),
+            "Signature": seal(doc["from"], "LD-SIG-26-DS")}
 
 
 def contact(name, why, tel_of=None, email=None):
@@ -7338,7 +7332,6 @@ def _(f, n, doc, out):
                                                                              "garden department."),
                                    "SupplierAssignedAccountID": V("LD-C-0418", "The distributor's customer number "
                                                                                "for the store."),
-                                   "AdditionalAccountID": V("BM-LUM-01", "The store's branch number."),
                                    "DeliveryContact": contact("Goods-in, home and garden department", "Whom the driver "
                                                               "reports to.", "26-xb"),
                                    "AccountingContact": contact("Accounts payable", "Where invoices go.",
@@ -7348,10 +7341,6 @@ def _(f, n, doc, out):
             "SellerSupplierParty": {"CustomerAssignedAccountID": V("BM-S-0071", "The store's supplier number for "
                                                                                 "the distributor."),
                                     "AdditionalAccountID": V("LD-XB-01", "The distributor's sales office."),
-                                    "DataSendingCapability": V("UBL 2.5 over the trade accord network", "How the "
-                                                                                                         "distributor "
-                                                                                                         "sends "
-                                                                                                         "documents."),
                                     "DespatchContact": contact("Dispatch office", "Who despatches.", "6-xb"),
                                     "AccountingContact": contact("Accounts receivable", "For payment questions.",
                                                                  email="ar@lumeway.example"),
@@ -9880,18 +9869,17 @@ def _(f, n, doc, out):
     ln = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
     ln.update({
         "UUID": line_uuid(f, "invoice", 1),
-        "TaxPointDate": V(f.date(18), "The day the goods were delivered."),
+        "TaxPointDate": V(f.date(10), "The day the goods were delivered, 30 April (retail/18#F11)."),
+        "Note": V("Twenty-four benches delivered; the one the store refused at goods-in is credited by a credit "
+                  "note.", "Why the line bills 24 while the receipt accepted 23 (retail/18#F10, D34)."),
         "DespatchLineReference": {"LineID": V("1", "The despatch line."),
                                   "DocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
         "ReceiptLineReference": {"LineID": V("1", "The receipt line, with the damaged carton."),
                                  "DocumentReference": {"ID": V(f.numbers["receipt"], "The receipt advice.")}},
-        # no line reference to a datasheet: the catalogue names the maker's (retail/18#F12, C73)
-        "PricingReference": {"OriginalItemLocationQuantity": {
-            "LeadTimeMeasure": V("5", "As in the catalogue.", unitCode="DAY")}},
+        # no line reference to a datasheet: the catalogue names the maker's (retail/18#F12, C73); no pricing
+        # reference and no line payment terms (retail/18#F2, F13)
         "DeliveryTerms": {"ID": V("DDP", "Delivered duty paid, the store's shop, as for the whole order.",
-                                  schemeID="INCOTERMS")},
-        "PaymentTerms": {"Note": V("The promotion stock is paid with the invoice, 30 days net.", "The line's "
-                                                                                                   "terms.")}})
+                                  schemeID="INCOTERMS")}})
     return {}
 
 
