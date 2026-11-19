@@ -2983,6 +2983,44 @@
    }
   },
   {
+   "id": "45-xl",
+   "n": "45",
+   "name": "Department of Agriculture (XL)",
+   "cat": "government",
+   "c": "XL",
+   "at": [
+    236,
+    112
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "The island's Department of Agriculture: its Plant Protection Service is Lisavu's plant protection organisation under the IPPC and issues the phytosanitary certificates of plants and plant products leaving the island; it also keeps the farm register.",
+   "how": "A plant protection organisation inspects a consignment before export and certifies it free of the pests the importing country names. UBL's goods certificate carries the inspection, its findings and the issuing authority, so the importing country's inspectors and customs can check it before the goods arrive.",
+   "identity": {
+    "name": "Department of Agriculture of Lisavu",
+    "kind": "public",
+    "registry_id": "GOV-206",
+    "endpoint": "XL:GOV-206",
+    "contact": {
+     "name": "Export certification",
+     "email": "phyto@agriculture-xl.example",
+     "telephone": "+999 3 724 1958",
+     "department": "Plant Protection Service",
+     "hours": "Weekdays 07:30–16:00",
+     "job_title": "Plant health inspector"
+    },
+    "address": {
+     "StreetName": "Reef Street",
+     "BuildingNumber": "44",
+     "CityName": "Selanu",
+     "ID": "71826543"
+    },
+    "industry": "8413",
+    "language": "en",
+    "week": "office"
+   }
+  },
+  {
    "id": "33-xu",
    "n": "33",
    "name": "Energy Retailer",
