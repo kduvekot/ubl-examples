@@ -23,9 +23,9 @@ The grid operator reads the factory's gas meter and sends the retail company the
 - `UUID` = **4dda14a2-d50d-5ef3-84d8-980f6cc7eedb**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
-  Sent on the first working day after the month.
-- `IssueTime` = **17:42:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Sent with the month's network invoice, the morning after the meters were read.
+- `IssueTime` = **08:20:00-01:00**  
+  Issued in the same billing run as the network invoice it supplements, each citing the other, and before the retail company bills the gas by it (energy/01#F5, timelines#F8); in the issuer's local time, with its offset from UTC (D27).
 - `UtilityStatementTypeCode` = **GAS** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of supply. The code is from the Trade Accord's utility type list: GAS = Gas.
 - `Note` = **Bazbaz binmaz gan drek stekraz nalbaz sidir; drek zhek trizhul trul stan huldan drek geltaz.** (languageID `qau`)  
@@ -286,7 +286,7 @@ Inside `SubscriberConsumption`:
   <cbc:ID>FG-DOC-26-0149</cbc:ID>
   <cbc:UUID>4dda14a2-d50d-5ef3-84d8-980f6cc7eedb</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:42:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">GAS</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qau">Bazbaz binmaz gan drek stekraz nalbaz sidir; drek zhek trizhul trul stan huldan drek geltaz.</cbc:Note>
   <cbc:Note languageID="en-XU">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>

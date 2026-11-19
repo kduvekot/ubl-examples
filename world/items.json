@@ -1798,7 +1798,7 @@
     "load": [
      {
       "item": "bench-serra-b",
-      "qty": 96
+      "qty": 104
      },
      {
       "item": "bench-casting-b",
@@ -2169,6 +2169,11 @@
         "qty": 96
        },
        {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260410",
+        "qty": 8
+       },
+       {
         "item": "bench-casting",
         "serials": [
          1490,
@@ -2176,7 +2181,7 @@
         ]
        }
       ],
-      "why": "The island's benches from the April rail delivery, the twelve frames the ones that came by road (D21)."
+      "why": "The island's 104 benches from the April rail delivery, the whole first container's lot and two pallets of the second (O165); the twelve frames the ones that came by road (D21)."
      },
      {
       "date": "2026-05-13",
@@ -2256,6 +2261,11 @@
         "qty": 96
        },
        {
+        "item": "bench-serra",
+        "lot": "VI-LOT-260410",
+        "qty": 8
+       },
+       {
         "item": "bench-casting",
         "qty": 11
        }
@@ -2272,11 +2282,11 @@
       "out": [
        {
         "item": "bench-serra",
-        "lot": "VI-LOT-260409",
+        "lot": "VI-LOT-260410",
         "qty": 2
        }
       ],
-      "why": "Two benches sold in the shop to the cotton farm (sea/29)."
+      "why": "Two benches sold in the shop to the cotton farm (sea/29), from the two pallets Velumi ordered for its own stock (O165): six remain."
      }
     ]
    }

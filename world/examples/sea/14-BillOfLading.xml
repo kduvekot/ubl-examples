@@ -142,7 +142,7 @@
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
@@ -151,18 +151,18 @@
       <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
       <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
-      <cbc:TotalInvoiceAmount currencyID="XBL">50724.00</cbc:TotalInvoiceAmount>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">53814.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:TotalInvoiceAmount currencyID="XBL">54884.00</cbc:TotalInvoiceAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">57974.00</cbc:DeclaredCustomsValueAmount>
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
       <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
       <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
-      <cbc:InsuranceValueAmount currencyID="XBL">59195.40</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">50724.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">63771.40</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -270,7 +270,7 @@
         <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
-        <cbc:Amount currencyID="XBL">53814.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">57974.00</cbc:Amount>
         <cac:DeliveryLocation>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -494,7 +494,7 @@
           <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
           <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-          <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+          <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
           <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
           <cbc:StowagePositionID>140282</cbc:StowagePositionID>
           <cac:TransportEquipmentSeal>
@@ -517,7 +517,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 001 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729071</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -525,7 +525,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 002 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729088</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -533,7 +533,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 003 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729095</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -541,7 +541,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 004 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729101</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -549,7 +549,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 005 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729118</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -557,7 +557,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 006 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729125</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -565,7 +565,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 007 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729132</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -573,7 +573,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 008 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729149</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -581,7 +581,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 009 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729156</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -589,7 +589,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 010 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729163</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -597,7 +597,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 011 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729170</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -605,7 +605,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 012 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729187</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -613,7 +613,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 013 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729194</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -621,7 +621,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 014 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729200</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -629,7 +629,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 015 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729217</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -637,7 +637,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 016 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729224</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -645,7 +645,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 017 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729231</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -653,7 +653,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 018 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729248</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -661,7 +661,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 019 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729255</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -669,7 +669,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 020 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729262</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -677,7 +677,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 021 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729279</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -685,7 +685,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 022 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729286</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -693,7 +693,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 023 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729293</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -701,7 +701,7 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 024 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729309</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -709,15 +709,31 @@
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 025 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729316</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729323</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 026 of 027</cbc:ShippingMarks>
+            <cbc:TraceID>095206100003729323</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 027 of 027</cbc:ShippingMarks>
+            <cbc:TraceID>095206100003729330</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206100003729316</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
             <cbc:Quantity unitCode="EA">12</cbc:Quantity>
             <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
             <cac:ContainingTransportEquipment>
@@ -729,7 +745,7 @@
             <cbc:Description>Park benches and spare side frames</cbc:Description>
             <cac:GoodsItemContainer>
               <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="EA">25</cbc:Quantity>
+              <cbc:Quantity unitCode="EA">27</cbc:Quantity>
               <cac:TransportEquipment>
                 <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
               </cac:TransportEquipment>
@@ -750,7 +766,7 @@
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
-            <cbc:GrossMassMeasure unitCode="KGM">9113.4</cbc:GrossMassMeasure>
+            <cbc:GrossMassMeasure unitCode="KGM">9545.8</cbc:GrossMassMeasure>
             <cac:WeighingParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -807,7 +823,7 @@
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
-        <cbc:InsuredValueAmount currencyID="XBL">59195.40</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
         <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
         <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
@@ -843,8 +859,8 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:CommodityClassification>
@@ -865,7 +881,7 @@
       </cac:Item>
     </cac:GoodsItem>
     <cac:InsurancePolicy>
-      <cbc:InsuredValueAmount currencyID="XBL">59195.40</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
       <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>

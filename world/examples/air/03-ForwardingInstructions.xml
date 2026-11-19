@@ -168,7 +168,7 @@
         </cac:Location>
       </cac:TransportEvent>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="GS1 SSCC">095206100003729323</cbc:ID>
+        <cbc:ID schemeID="GS1 SSCC">095206100003729347</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SI</cbc:TransportHandlingUnitTypeCode>
         <cac:ReferencedShipment>
           <cbc:ID>LD-SH-26-0323</cbc:ID>
@@ -238,7 +238,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0319</cbc:ID>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

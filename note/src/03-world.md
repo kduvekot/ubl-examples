@@ -606,7 +606,7 @@ shape, derived from no other register:
 | Index of Public Administrations of Urvania | the Agency for Digital Administration | `xu_` and four lower-case letters or digits (`xu_k4r7`, the customs administration) | `XU:public-body-register` |
 | Federal list of public bodies of Bayvarra | the Bayvarra Information Service | ten digits, the first not 0 (`3071845926`, the customs and border service) | `XB:public-body-register` |
 | Government list of public bodies of Lisavu | the Government Secretariat | `GOV-` and three digits (`GOV-118`, the customs service) | `XL:public-body-register` |
-| Farm register of Lisavu | the island's Department of Agriculture, which also runs the plant protection service | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
+| Farm register of Lisavu | the Department of Agriculture of Lisavu (`GOV-206`), whose Plant Protection Service also issues the island's phytosanitary certificates | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
 
 The Trade Accord Council, an international body seated in Lumeport, is in
 Bayvarra's federal list under its seat agreement with Bayvarra, so that it can
@@ -1042,9 +1042,12 @@ batch, every side frame has a serial number that rises with the day it was
 cast, and every casting day has its own melt number. Lumeway holds stock in
 Marrowdale. It receives 96 benches and 12 spare frames by road on 25 March
 and 192 benches by rail on 15 April, and sells from that stock in the order
-the goods arrived: 24 benches to Brightmarket on 29 April, and 96 benches
+the goods arrived: 24 benches to Brightmarket on 29 April, and 104 benches
 and the 12 frames to Velumi on the island on 13 May. At the end of May it
-still holds 168 benches. An urgent order does not come from stock: when
+still holds 160 benches. Velumi buys by the pallet: of its 104 benches, on
+26 pallets of four, 96 are for the Port of Selanu's harbour parks and two
+pallets are for its own stock, from which its shop sells two benches to a
+cotton farm in June; six remain. An urgent order does not come from stock: when
 Velumi asks for eight more frames on 11 May, Lumeway has none, so Valdara
 casts them and they pass through Lumeway's dispatch area to the aircraft, a
 cross-dock. Valdara also sells direct: 40 benches to the public works

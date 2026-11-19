@@ -1,8 +1,8 @@
-# Goods Certificate: Selanu Chamber of Commerce to Selanu Cotton Ginnery
+# Goods Certificate: Department of Agriculture of Lisavu to Selanu Cotton Ginnery
 
 *Example 10 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Goods Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA)*
 
-The island's chamber of commerce certifies the bales for export, at the ginnery's application.
+Lisavu's plant protection organisation under the IPPC, the Plant Protection Service of the Department of Agriculture, inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.
 
 [The XML file](10-GoodsCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,8 +18,8 @@ The island's chamber of commerce certifies the bales for export, at the ginnery'
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **COTTON-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **SCC-GC-26-0202**  
-  The chamber's certificate number.
+- `ID` = **DAL-GC-26-0202**  
+  The Plant Protection Service's certificate number.
 - `UUID` = **78516adf-5718-5e78-bd9d-8e44536e335b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-28**  
@@ -172,78 +172,60 @@ Inside `ConsigneeParty`:
 - `PartyName/Name` = **Lumeport Textile Mill**  
   A party referred to from another party's details: its identifier and name are enough.
 
-### Freight Forwarder Party
-
-Inside `FreightForwarderParty`:
-
-- `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
-
 ### Issuer Party
 
 Inside `IssuerParty`:
 
-- `PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
-  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Selanu Chamber of Commerce (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `PartyName/Name` = **Selanu Chamber of Commerce**  
-  The trading name; identity of Selanu Chamber of Commerce (world/parties.json).
+- `PartyIdentification/ID` = **GOV-206** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  The party's preferred identifier: its number in the Government list of public bodies of Lisavu; identity of Department of Agriculture of Lisavu (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `PartyName/Name` = **Department of Agriculture of Lisavu**  
+  The trading name; identity of Department of Agriculture of Lisavu (world/parties.json).
 - `Language/ID` = **qal** (schemeID `ISO 639`)  
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
-- `PostalAddress/ID` = **95763809** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Chamber of Commerce (world/parties.json).
+- `PostalAddress/ID` = **71826543** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Department of Agriculture of Lisavu (world/parties.json).
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Chamber of Commerce (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Department of Agriculture of Lisavu (world/parties.json).
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Selanu Chamber of Commerce (world/parties.json).
-- `PostalAddress/BuildingNumber` = **30**  
-  Building number of the postal address. identity of Selanu Chamber of Commerce (world/parties.json).
+  The street's name in English, the country's other official language; identity of Department of Agriculture of Lisavu (world/parties.json).
+- `PostalAddress/BuildingNumber` = **44**  
+  Building number of the postal address. identity of Department of Agriculture of Lisavu (world/parties.json).
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Chamber of Commerce (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Department of Agriculture of Lisavu (world/parties.json).
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Chamber of Commerce (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Department of Agriculture of Lisavu (world/parties.json).
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
-- `PartyLegalEntity/RegistrationName` = **Selanu Chamber of Commerce**  
-  The public body's official name; identity of Selanu Chamber of Commerce (world/parties.json).
-- `PartyLegalEntity/CompanyID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
-  Number in the Government list of public bodies of Lisavu, which gives every public body a number of its own (GOV- and 3 digits), derived from no other register (O142); identity of Selanu Chamber of Commerce (world/parties.json). The schemeID names the scheme it is from: the government list of public bodies of Lisavu (GOV- and 3 digits).
-- `Contact/Name` = **Certificates office**  
-  The party's certificates office desk: the desk for its role in this document (a certificate); identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/JobTitle` = **Certificates officer**  
-  The job of the person who answers at the desk; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Department` = **Certificates**  
-  The department the desk belongs to; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Telephone` = **+999 3 723 0513**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/ElectronicMail` = **certificates@chamber-selanu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Chamber of Commerce (world/parties.json).
-- `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Selanu Chamber of Commerce (world/parties.json).
+- `PartyLegalEntity/RegistrationName` = **Department of Agriculture of Lisavu**  
+  The public body's official name; identity of Department of Agriculture of Lisavu (world/parties.json).
+- `PartyLegalEntity/CompanyID` = **GOV-206** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+  Number in the Government list of public bodies of Lisavu, which gives every public body a number of its own (GOV- and 3 digits), derived from no other register (O142); identity of Department of Agriculture of Lisavu (world/parties.json). The schemeID names the scheme it is from: the government list of public bodies of Lisavu (GOV- and 3 digits).
+- `Contact/Name` = **Export certification**  
+  The party's main desk, which handles this document; identity of Department of Agriculture of Lisavu (world/parties.json).
+- `Contact/JobTitle` = **Plant health inspector**  
+  The job of the person who answers at the desk; identity of Department of Agriculture of Lisavu (world/parties.json).
+- `Contact/Department` = **Plant Protection Service**  
+  The department the desk belongs to; identity of Department of Agriculture of Lisavu (world/parties.json).
+- `Contact/Telephone` = **+999 3 724 1958**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Department of Agriculture of Lisavu (world/parties.json).
+- `Contact/ElectronicMail` = **phyto@agriculture-xl.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Department of Agriculture of Lisavu (world/parties.json).
+- `Contact/Note` = **Weekdays 07:30–16:00**  
+  When the desk can be reached; identity of Department of Agriculture of Lisavu (world/parties.json).
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
-- `ElectronicAddress/ElectronicAddressID` = **XL:GOV-243** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; identity of Selanu Chamber of Commerce (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
-
-### Legal Authority Party
-
-Inside `LegalAuthorityParty`:
-
-- `PartyIdentification/ID` = **GOV-118** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `PartyName/Name` = **Island Customs Service**  
-  A party referred to from another party's details: its identifier and name are enough.
+- `ElectronicAddress/ElectronicAddressID` = **XL:GOV-206** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; identity of Department of Agriculture of Lisavu (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Applicant Party
 
@@ -301,7 +283,7 @@ Inside `Shipment`:
 
 Inside `Attestation`:
 
-- `ID` = **SCC-ATT-26-0042**  
+- `ID` = **DAL-ATT-26-0042**  
   The inspector's attestation.
 - `Name` = **Freedom from pests**  
   What is attested.
@@ -313,9 +295,9 @@ Inside `Attestation`:
   Accepted.
 - `ValidityPeriod/EndDate` = **2026-03-14**  
   As the certificate.
-- `IssuerParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+- `IssuerParty/PartyIdentification/ID` = **GOV-206** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `IssuerParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+- `IssuerParty/PartyName/Name` = **Department of Agriculture of Lisavu**  
   A party referred to from another party's details: its identifier and name are enough.
 - `AttestationLine/ID` = **1**  
   The pest checked.
@@ -374,15 +356,6 @@ Inside `OriginalDocumentReference`:
 - `DocumentType` = **Classing certificate**  
   The kind of document referred to, the classing certificate of the cotton, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 
-### Previous Document Reference
-
-Inside `PreviousDocumentReference`:
-
-- `ID` = **SCC-PH-25-0198**  
-  Last season's certificate.
-- `DocumentType` = **Phytosanitary certificate**  
-  The kind of document referred to, last season's phytosanitary certificate, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
-
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
@@ -396,11 +369,11 @@ Inside `AdditionalDocumentReference`:
 
 Inside `Signature`:
 
-- `ID` = **SCC-SIG-26-PH**  
+- `ID` = **DAL-SIG-26-PH**  
   The sender's electronic seal.
-- `SignatoryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
+- `SignatoryParty/PartyIdentification/ID` = **GOV-206** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `SignatoryParty/PartyName/Name` = **Selanu Chamber of Commerce**  
+- `SignatoryParty/PartyName/Name` = **Department of Agriculture of Lisavu**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ## The document
@@ -412,7 +385,7 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCC-GC-26-0202</cbc:ID>
+  <cbc:ID>DAL-GC-26-0202</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-02-28</cbc:IssueDate>
   <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
@@ -527,32 +500,24 @@ Inside `Signature`:
       <cbc:Name>Lumeport Textile Mill</cbc:Name>
     </cac:PartyName>
   </cac:ConsigneeParty>
-  <cac:FreightForwarderParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Bayforth Forwarding</cbc:Name>
-    </cac:PartyName>
-  </cac:FreightForwarderParty>
   <cac:IssuerParty>
     <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-206</cbc:ID>
     </cac:PartyIdentification>
     <cac:PartyName>
-      <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+      <cbc:Name>Department of Agriculture of Lisavu</cbc:Name>
     </cac:PartyName>
     <cac:Language>
       <cbc:ID schemeID="ISO 639">qal</cbc:ID>
       <cbc:Name>Lisavan</cbc:Name>
     </cac:Language>
     <cac:PostalAddress>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">95763809</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">71826543</cbc:ID>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
       <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
       <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
       <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
-      <cbc:BuildingNumber>30</cbc:BuildingNumber>
+      <cbc:BuildingNumber>44</cbc:BuildingNumber>
       <cbc:CityName languageID="qal">Selanu</cbc:CityName>
       <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
       <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
@@ -562,30 +527,22 @@ Inside `Signature`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Selanu Chamber of Commerce</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:CompanyID>
+      <cbc:RegistrationName>Department of Agriculture of Lisavu</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-206</cbc:CompanyID>
     </cac:PartyLegalEntity>
     <cac:Contact>
-      <cbc:Name>Certificates office</cbc:Name>
-      <cbc:JobTitle>Certificates officer</cbc:JobTitle>
-      <cbc:Department>Certificates</cbc:Department>
-      <cbc:Telephone>+999 3 723 0513</cbc:Telephone>
-      <cbc:ElectronicMail>certificates@chamber-selanu.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      <cbc:Name>Export certification</cbc:Name>
+      <cbc:JobTitle>Plant health inspector</cbc:JobTitle>
+      <cbc:Department>Plant Protection Service</cbc:Department>
+      <cbc:Telephone>+999 3 724 1958</cbc:Telephone>
+      <cbc:ElectronicMail>phyto@agriculture-xl.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:30–16:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-243</cbc:ElectronicAddressID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-206</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:IssuerParty>
-  <cac:LegalAuthorityParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Island Customs Service</cbc:Name>
-    </cac:PartyName>
-  </cac:LegalAuthorityParty>
   <cac:ApplicantParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42681</cbc:ID>
@@ -632,7 +589,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
-    <cbc:ID>SCC-ATT-26-0042</cbc:ID>
+    <cbc:ID>DAL-ATT-26-0042</cbc:ID>
     <cbc:Name>Freedom from pests</cbc:Name>
     <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
     <cbc:Note>10 bales sampled out of 27.</cbc:Note>
@@ -642,10 +599,10 @@ Inside `Signature`:
     </cac:ValidityPeriod>
     <cac:IssuerParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-206</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+        <cbc:Name>Department of Agriculture of Lisavu</cbc:Name>
       </cac:PartyName>
     </cac:IssuerParty>
     <cac:AttestationLine>
@@ -698,22 +655,18 @@ Inside `Signature`:
     <cbc:ID>XL-CLS-2026-0042</cbc:ID>
     <cbc:DocumentType>Classing certificate</cbc:DocumentType>
   </cac:OriginalDocumentReference>
-  <cac:PreviousDocumentReference>
-    <cbc:ID>SCC-PH-25-0198</cbc:ID>
-    <cbc:DocumentType>Phytosanitary certificate</cbc:DocumentType>
-  </cac:PreviousDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>LTM-PO-26-0198</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
-    <cbc:ID>SCC-SIG-26-PH</cbc:ID>
+    <cbc:ID>DAL-SIG-26-PH</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-243</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-206</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Selanu Chamber of Commerce</cbc:Name>
+        <cbc:Name>Department of Agriculture of Lisavu</cbc:Name>
       </cac:PartyName>
     </cac:SignatoryParty>
   </cac:Signature>

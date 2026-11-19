@@ -30,8 +30,8 @@ The road consignment note goes to the party that booked the truck, the distribut
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-03-23**  
   Issued when the carrier collects the goods at the warehouse.
-- `IssueTime` = **08:16:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **15:32:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Consignment note under the road convention, the CMR**  
   The kind of transport document.
 - `Description` = **The truck the distributor booked, from the 3PL's warehouse across the border.**  
@@ -335,7 +335,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/CabotageIndicator` = **false**  
   A carriage between two countries, not within a foreign one.
 - `Consignment/MainCarriageShipmentStage/EstimatedDeliveryDate` = **2026-03-25**  
-  The carrier's estimate when it takes over the goods.
+  The carrier's estimate when it takes over the goods: the goods-in slot of the third day. The leg is 179 km, about three hours' driving, but the truck reaches the border about 17:25, after the distributor's customs desk has closed, so the driver takes his night rest at the border and the import is declared in the morning; the distribution centre takes full loads in morning slots only, and the slot booked a week ahead is the next morning's.
 - `Consignment/MainCarriageShipmentStage/EstimatedDeliveryTime` = **09:00:00**  
   Early in the working day.
 - `Consignment/MainCarriageShipmentStage/RequiredDeliveryDate` = **2026-03-25**  
@@ -343,9 +343,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/RequiredDeliveryTime` = **10:00:00**  
   The slot starts at ten.
 - `Consignment/MainCarriageShipmentStage/TransitPeriod/StartDate` = **2026-03-23**  
-  Collected in the afternoon.
-- `Consignment/MainCarriageShipmentStage/TransitPeriod/EndDate` = **2026-03-25**  
-  Delivered in the goods-in slot of the third day. The leg is 179 km, about three hours' driving, but the truck reaches the border about 17:25, after the distributor's customs desk has closed, so the driver takes his night rest at the border and the import is declared in the morning; the distribution centre takes full loads in morning slots only, and the slot booked a week ahead is the next morning's.
+  Collected in the afternoon; the stage has begun when the carrier takes over the goods.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
@@ -378,23 +376,15 @@ Inside `Shipment`:
   Unloaded at the distributor's distribution centre.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceDate` = **2026-03-24**  
-  Customs looked at the seals at the border, the morning after the truck arrived there.
-- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceTime` = **07:45:00**  
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
+  Expected once customs has released the export declaration and the truck may leave.
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
   The local time.
-- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Description` = **Seal check, no inspection of the goods.**  
-  What happened, in words.
-- `Consignment/MainCarriageShipmentStage/ExaminationTransportEvent/Location/Name` = **Road border crossing Urvania–Bayvarra**  
-  Where customs checked the seals.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
-  The truck left the warehouse; the land border is 70 km ahead.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
-  The local time.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Ferrano**  
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Ferrano**  
   Castrano Logistics warehouse.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/MainCarriageShipmentStage/DriverPerson/ID` = **XU-DL-0417722**  
   The number of the driving licence.
@@ -3322,12 +3312,6 @@ Inside `Shipment`:
   From nine.
 - `Delivery/EstimatedDeliveryPeriod/EndTime` = **11:00:00**  
   Until eleven.
-- `Delivery/FuelConsumption/ID` = **TH-FC-26-0159**  
-  The fuel of this delivery.
-- `Delivery/FuelConsumption/FuelTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
-  The truck runs on diesel. The code is from the Trade Accord's fuel type list: DIESEL = Diesel.
-- `Delivery/FuelConsumption/FuelConsumptionMeasure` = **59** (unitCode `LTR`)  
-  About 33 litres per 100 km over 179 km.
 - `ReturnAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `ReturnAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
@@ -3420,7 +3404,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>08:16:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:32:00-01:00</cbc:IssueTime>
   <cbc:Name>Consignment note under the road convention, the CMR</cbc:Name>
   <cbc:Description>The truck the distributor booked, from the 3PL's warehouse across the border.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
@@ -3660,7 +3644,6 @@ Inside `Signature`:
         <cbc:RequiredDeliveryTime>10:00:00</cbc:RequiredDeliveryTime>
         <cac:TransitPeriod>
           <cbc:StartDate>2026-03-23</cbc:StartDate>
-          <cbc:EndDate>2026-03-25</cbc:EndDate>
         </cac:TransitPeriod>
         <cac:TransportMeans>
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
@@ -3702,15 +3685,7 @@ Inside `Signature`:
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
-        <cac:ExaminationTransportEvent>
-          <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
-          <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
-          <cac:Location>
-            <cbc:Name>Road border crossing Urvania–Bayvarra</cbc:Name>
-          </cac:Location>
-        </cac:ExaminationTransportEvent>
-        <cac:ActualDepartureTransportEvent>
+        <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
           <cac:Location>
@@ -3722,7 +3697,7 @@ Inside `Signature`:
               </cac:Country>
             </cac:Address>
           </cac:Location>
-        </cac:ActualDepartureTransportEvent>
+        </cac:EstimatedDepartureTransportEvent>
         <cac:DriverPerson>
           <cbc:ID>XU-DL-0417722</cbc:ID>
           <cbc:FirstName>Ilario</cbc:FirstName>
@@ -6277,11 +6252,6 @@ Inside `Signature`:
         <cbc:StartTime>09:00:00</cbc:StartTime>
         <cbc:EndTime>11:00:00</cbc:EndTime>
       </cac:EstimatedDeliveryPeriod>
-      <cac:FuelConsumption>
-        <cbc:ID>TH-FC-26-0159</cbc:ID>
-        <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
-        <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
-      </cac:FuelConsumption>
     </cac:Delivery>
     <cac:ReturnAddress>
       <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>

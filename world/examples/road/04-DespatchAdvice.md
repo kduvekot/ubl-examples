@@ -272,8 +272,8 @@ Inside `Shipment`:
   The 3PL's outbound number.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-03-23**  
   Loaded and gone.
-- `Delivery/Despatch/ActualDespatchTime` = **16:20:00**  
-  The truck left the gate.
+- `Delivery/Despatch/ActualDespatchTime` = **15:05:00**  
+  The carrier took over the loaded goods: the despatch is the pickup (road/04#F1).
 
 ### Despatch Line
 
@@ -694,7 +694,7 @@ Inside `DespatchLine`:
       <cac:Despatch>
         <cbc:ID>CL-OUT-26-0871</cbc:ID>
         <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>16:20:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>15:05:00</cbc:ActualDespatchTime>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>

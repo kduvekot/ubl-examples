@@ -417,7 +417,8 @@ def legal_entity(pid):
     if farm:
         out["CorporateRegistrationScheme"] = {
             "ID": V(farm["scheme"], "The identifier of the register in the world (world/countries.json)."),
-            "Name": V(farm["name"], f"The register the farm is entered in, kept by {farm['keeper']}: "
+            "Name": V(farm["name"], f"The register the farm is entered in, kept by "
+                                    f"{'the ' + PARTY[farm['keeper']]['identity']['name'] if farm['keeper'] in PARTY else farm['keeper']}: "
                                     f"{farm['note']}"),
             "CorporateRegistrationTypeCode": V("FARM", "A register of farms, not the companies register."),
             "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
@@ -3237,6 +3238,192 @@ def issue_time_offset(content, doc):
                                                    "offset from UTC (D27).", **t.attrs)
 
 
+# ---------------------------------------------------------------- issue times follow what a document reports (C72)
+ISSUED = {}            # document ID -> [(flow, file, issue moment)] of every example built so far in this run
+CITED_LATER = {}       # document ID -> [(moment, where)] of documents that cite it before it was built
+# Documents that still report or cite something after their issue, each waiting for its flow decision (stage 6):
+# (flow, file) -> the reason. Each entry goes when its flow is implemented.
+ISSUE_ORDER_WAITS = {
+    ("sea", "28-DebitNote.xml"): "cites the factor's statement of 13 June; D30 removes the debit note (sea/28#F3, O6)",
+}
+
+
+def moment(day, time, offset):
+    """An issue or event moment: (date, aware datetime or None). A time without offset is in the given offset,
+    the issuer's local time (D27)."""
+    if not day:
+        return None
+    d = datetime.date.fromisoformat(day[:10])
+    if not time:
+        return (d, None)
+    m = re.fullmatch(r"(\d\d:\d\d:\d\d)(Z|[+-]\d\d:\d\d)?", time)
+    off = {"Z": "+00:00", None: offset}.get(m.group(2), m.group(2))
+    return (d, datetime.datetime.fromisoformat(f"{d.isoformat()}T{m.group(1)}{off}"))
+
+
+def is_after(a, b):
+    """Whether moment a lies after moment b: by the clock where both have a time, else by the day."""
+    if a[1] is not None and b[1] is not None:
+        return a[1] > b[1]
+    return a[0] > b[0]
+
+
+def issue_moment(root, doc):
+    tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
+    return moment(root.findtext(f"{{{NS_CBC}}}IssueDate"), root.findtext(f"{{{NS_CBC}}}IssueTime"), tz)
+
+
+def reported_facts(root, tz):
+    """What a document states as done, each with its moment: actual events and dates, receipts and payments,
+    verified signatures, revisions, comments made and exchange rates established (C72). Events not completed
+    (CompletionIndicator false) are left out."""
+    out = []
+    for e in root.iter(f"{{{NS_CBC}}}*"):
+        name, parent = etree.QName(e).localname, e.getparent()
+        pname = etree.QName(parent).localname
+        if name == "OccurrenceDate" and pname.startswith("Actual"):
+            if parent.findtext(f"{{{NS_CBC}}}CompletionIndicator") == "false":
+                continue
+            out.append((f"{pname}/{name}", moment(e.text, parent.findtext(f"{{{NS_CBC}}}OccurrenceTime"), tz)))
+        elif re.fullmatch(r"(Actual\w*|Paid|Received|Validation|Revision|Response)Date", name) and \
+                (parent is not root or name in ("RevisionDate", "ResponseDate")):
+            out.append((f"{pname}/{name}", moment(e.text, parent.findtext(f"{{{NS_CBC}}}{name[:-4]}Time"), tz)))
+        elif name == "RevisionDate" and parent is root:
+            out.append((name, moment(e.text, root.findtext(f"{{{NS_CBC}}}RevisionTime"), tz)))
+        elif name == "IssueDate" and pname == "EventComment":
+            out.append((f"{pname}/{name}", moment(e.text, parent.findtext(f"{{{NS_CBC}}}IssueTime"), tz)))
+        elif name == "Date" and pname == "ExchangeRate":
+            out.append((f"{pname}/{name}", moment(e.text, None, tz)))
+    return out
+
+
+def cited_examples(root, flow_id, name):
+    """The examples a document cites by their document ID: (element, cited ID, [(flow, file, moment)])."""
+    own = root.findtext(f"{{{NS_CBC}}}ID")
+    for e in root.iter(f"{{{NS_CBC}}}*"):
+        if e.getparent() is root and etree.QName(e).localname == "ID":
+            continue
+        if etree.QName(e).localname.endswith("ID") and e.text and e.text != own and e.text in ISSUED:
+            yield etree.QName(e.getparent()).localname + "/" + etree.QName(e).localname, e.text, \
+                [x for x in ISSUED[e.text] if (x[0], x[1]) != (flow_id, name)]
+
+
+ANSWERS = {"Quotation": {"RequestForQuotation"}, "Catalogue": {"CatalogueRequest"}}
+
+
+def answered_request(doc, earlier):
+    """The request a document answers: the last earlier document of the flow, sent the other way between the same
+    two parties, whose type asks for this one (DocumentStatusRequest -> DocumentStatus, Order -> OrderResponse,
+    TransportExecutionPlanRequest -> TransportExecutionPlan ...). earlier: [(world document, root)]."""
+    t = doc["doc"]
+    asks = {t + "Request"} | ANSWERS.get(t, set())
+    if t.endswith("Response"):
+        asks |= {t[:-8], t[:-8] + "Request"}
+    hits = [(d, r) for d, r in earlier if d["doc"] in asks and (d["from"], d["to"]) == (doc["to"], doc["from"])]
+    return hits[-1] if hits else None
+
+
+def issue_floor(root, doc, flow_id, name, request=None):
+    """The latest moment on the document's issue day that it reports or cites, or the request it answers: its issue
+    time must follow it."""
+    tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
+    day = issue_moment(root, doc)[0]
+    times = [m[1] for _, m in reported_facts(root, tz) if m and m[0] == day and m[1] is not None]
+    if request is not None and request[0] == day and request[1] is not None:
+        times.append(request[1])
+    for _, _, hits in cited_examples(root, flow_id, name):
+        if hits and all(h[2][0] == day and h[2][1] is not None for h in hits):
+            times.append(min(h[2][1] for h in hits))
+    return max(times) if times else None
+
+
+def issue_ceiling(doc_id, day):
+    """The earliest moment on the issue day at which an example built before this one cites it."""
+    times = [m[1] for m, _ in CITED_LATER.get(doc_id, []) if m[0] == day and m[1] is not None]
+    return min(times) if times else None
+
+
+def derived_issue_time(header, root, doc, flow_id, name, doc_id, request=None):
+    """The issue time of a document whose scenario gives none (C72): the sender's system issues it a few minutes
+    after the last thing on its issue day that it reports or cites, or the request it answers, and before the
+    documents that cite it."""
+    tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
+    own = issue_moment(root, doc)
+    floor, ceiling = issue_floor(root, doc, flow_id, name, request), issue_ceiling(doc_id, own[0])
+    gap = datetime.timedelta(minutes=4 + zlib.crc32(f"{flow_id}:{name}".encode()) % 17)
+    if floor is not None and not own[1] > floor:
+        t, why = floor + gap, ("Issued a few minutes after the last thing of its day that it reports, cites or "
+                               "answers, in the sender's local time (C72).")
+    elif ceiling is not None and not own[1] < ceiling:
+        t, why = ceiling - gap, ("Issued a few minutes before the document that cites it, in the sender's local "
+                                 "time (C72).")
+    else:
+        return False
+    local = t.astimezone(datetime.timezone(datetime.timedelta(hours=int(tz[:3]), minutes=int(tz[0] + tz[4:]))))
+    if local.date() != own[0]:
+        raise SystemExit(f"world/examples/{flow_id}/{name}: no issue time on {own[0]} fits what the document "
+                         "reports or cites, and the documents that cite it (C72): give its day in the scenario")
+    header["IssueTime"] = V(local.strftime("%H:%M:%S"), why)
+    return True
+
+
+def check_issue_order(flow_id, name, root, doc, request=None):
+    """C72: no document reports as done, or cites as existing, anything after its own issue, and none answers a
+    request issued after it."""
+    if (flow_id, name) in ISSUE_ORDER_WAITS:
+        return
+    own = issue_moment(root, doc)
+    if own is None:
+        return
+    if request is not None and is_after(request, own):
+        raise SystemExit(f"world/examples/{flow_id}/{name}: issued {own[1] or own[0]}, before the request it answers, "
+                         f"issued {request[1] or request[0]} (C72)")
+    tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
+    for what, m in reported_facts(root, tz):
+        if m and is_after(m, own):
+            raise SystemExit(f"world/examples/{flow_id}/{name}: {what} {m[1] or m[0]} lies after the document's "
+                             f"issue {own[1] or own[0]} (C72)")
+    for what, rid, hits in cited_examples(root, flow_id, name):
+        if hits and all(is_after(h[2], own) for h in hits if h[2]):
+            h = hits[0]
+            raise SystemExit(f"world/examples/{flow_id}/{name}: {what} cites {rid}, the example {h[0]}/{h[1]} "
+                             f"issued {h[2][1] or h[2][0]}, after this document's issue {own[1] or own[0]} (C72)")
+
+
+# ---------------------------------------------------------------- references resolve (C73)
+UNRESOLVED = []        # references to a kind of document the examples have, under an ID no example has: (file, el, ID)
+# References to documents the flow decisions add (D38), each waiting for its flow (stage 6): ID -> the document.
+REFERENCE_WAITS = {"RR-WB-26-0412": "waste/04, Rinova's weight statement (D38, with D42)",
+                   "BF-DN-26-0323": "furniture/19, Brackenmere's despatch advice (D38, with D32)",
+                   "BF-TEP-26-0262": "retail/23, Bayforth's transport execution plan (D38, with D34)",
+                   "PWD-RCPT-BF-1": "tender/40, the department's receipt of Brackenmere's first tender (D38, with "
+                                    "D28)"}
+REFERENCE_ALIASES = {"CallForTender": "CallForTenders", "Despatch": "DespatchAdvice", "Receipt": "ReceiptAdvice",
+                     "Remittance": "RemittanceAdvice", "TenderNotification": "TenderReceipt",
+                     "Notice": "ContractNotice"}
+
+
+def reference_kind(name):
+    """The kind of document a specific reference element names (OrderReference -> Order, StatementDocumentReference
+    -> Statement, RequestedCatalogueReference -> Catalogue ...), when the examples have documents of that kind."""
+    base = re.sub(r"(Document)?Reference$", "", name)
+    base = re.sub(r"^(Requested|Source|Related|Deleted|Replaced)(?=[A-Z])", "", base)
+    base = REFERENCE_ALIASES.get(base, base)
+    return base if base in {d["doc"] for d in WORLD["documents"]} else None
+
+
+def check_reference_targets(root, where):
+    """C73: a reference to a kind of document the examples have resolves to an example, or is declared a document
+    outside the examples (world/documents.json, cited), or waits for the document its flow adds (REFERENCE_WAITS)."""
+    for e in root.iter(f"{{{NS_CAC}}}*"):
+        name = etree.QName(e).localname
+        rid = e.findtext(f"{{{NS_CBC}}}ID")
+        if not name.endswith("Reference") or rid is None or not reference_kind(name):
+            continue
+        if rid not in doc_types() and rid not in WORLD["cited"] and rid not in REFERENCE_WAITS:
+            UNRESOLVED.append((where, name, rid))
+
+
 PARTY_SAYS = {}        # pid -> {"self": element paths it gives about itself, "other": paths others give about it}
 
 
@@ -3366,7 +3553,28 @@ def main(flow_id, check=False):
         full = merge(header, content)
         issue_time_offset(full, doc)
         root, reasons = build(doc["doc"], full)
+        doc_id = content["ID"].value if isinstance(content.get("ID"), V) else None
+        asked = answered_request(doc, list(zip(docs, [r for _, r in roots])))
+        asked = issue_moment(asked[1], asked[0]) if asked else None
+        if "IssueTime" in header and derived_issue_time(header, root, doc, flow_id, xmlname(n, doc), doc_id, asked):
+            full = merge(header, content)          # the issue time follows what the document reports (C72)
+            issue_time_offset(full, doc)
+            root, reasons = build(doc["doc"], full)
         set_ubl_version(root, reasons)
+        here = issue_moment(root, doc)
+        if doc_id and here:
+            for m, where in CITED_LATER.get(doc_id, []):
+                if is_after(here, m):
+                    raise SystemExit(f"world/examples/{flow_id}/{xmlname(n, doc)}: issued {here[1] or here[0]}, after "
+                                     f"{where}, which cites it at {m[1] or m[0]} (C72)")
+            ISSUED.setdefault(doc_id, []).append((flow_id, xmlname(n, doc), here))
+        check_issue_order(flow_id, xmlname(n, doc), root, doc, asked)
+        check_reference_targets(root, f"{flow_id}/{xmlname(n, doc)}")
+        if here and (flow_id, xmlname(n, doc)) not in ISSUE_ORDER_WAITS:
+            for e in root.iter(f"{{{NS_CBC}}}*"):        # citations of examples not built yet: checked when they are
+                if etree.QName(e).localname.endswith("ID") and e.text and e.text != doc_id and \
+                        e.text in doc_types() and e.text not in ISSUED:
+                    CITED_LATER.setdefault(e.text, []).append((here, f"{flow_id}/{xmlname(n, doc)}"))
         check_specifications(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         if "UUID" in header and isinstance(content.get("ID"), V):
             DOC_UUIDS[(flow_id, content["ID"].value)] = header["UUID"].value
@@ -3448,6 +3656,11 @@ if __name__ == "__main__":
         print(f"references without a document type that point to no example and are not in world/documents.json "
               f"cited ({len(build_examples.UNTYPED)}):",
               "; ".join(f"{w} {e} {i}" for w, e, i in build_examples.UNTYPED), file=sys.stderr)
+        ok = False
+    if build_examples.UNRESOLVED:
+        print(f"references to a kind of document the examples have, under an ID no example has and not in "
+              f"world/documents.json cited (C73, {len(build_examples.UNRESOLVED)}):",
+              "; ".join(f"{w} {e} {i}" for w, e, i in build_examples.UNRESOLVED), file=sys.stderr)
         ok = False
     if build_examples.UNBOUND:
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",

@@ -161,6 +161,28 @@ Inside `Consignment`:
   The network in which the address is registered: the world's own exchange network.
 - `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104822** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `MainCarriageShipmentStage/ID` = **1**  
+  The only stage: one truck from the warehouse to the distribution centre.
+- `MainCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceDate` = **2026-03-24**  
+  Customs looked at the seals at the border, the morning after the truck arrived there.
+- `MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceTime` = **07:45:00**  
+  The local time.
+- `MainCarriageShipmentStage/ExaminationTransportEvent/Description` = **Seal check, no inspection of the goods.**  
+  What happened, in words.
+- `MainCarriageShipmentStage/ExaminationTransportEvent/Location/Name` = **Road border crossing Urvania–Bayvarra**  
+  Where customs checked the seals.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
+  The truck left the warehouse; the land border is 70 km ahead.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
+  The local time.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Ferrano**  
+  Castrano Logistics warehouse.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Transport Event
 
@@ -446,6 +468,31 @@ Inside `StatusPeriod`:
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104822</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:CarrierParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+      <cac:ExaminationTransportEvent>
+        <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
+        <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
+        <cac:Location>
+          <cbc:Name>Road border crossing Urvania–Bayvarra</cbc:Name>
+        </cac:Location>
+      </cac:ExaminationTransportEvent>
+      <cac:ActualDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+          <cbc:Name>Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualDepartureTransportEvent>
+    </cac:MainCarriageShipmentStage>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:IdentificationID>TH-26-04471-E03</cbc:IdentificationID>

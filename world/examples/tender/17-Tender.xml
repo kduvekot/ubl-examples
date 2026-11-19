@@ -16,7 +16,7 @@
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
   <cac:CallForTenderDocumentReference>
-    <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>BF-DS-PARK</cbc:ID>
@@ -120,7 +120,8 @@
     </cac:ElectronicAddress>
   </cac:TendererParty>
   <cac:TendererQualificationDocumentReference>
-    <cbc:ID>VI-DOC-26-0199</cbc:ID>
+    <cbc:ID>BF-DOC-26-0193</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationResponse</cbc:DocumentTypeCode>
   </cac:TendererQualificationDocumentReference>
   <cac:ContractingParty>
     <cac:Party>
@@ -191,7 +192,7 @@
       <cbc:ID>LOT-2</cbc:ID>
     </cac:ProcurementProjectLot>
     <cac:EvidenceDocumentReference>
-      <cbc:ID>VI-REF-2025</cbc:ID>
+      <cbc:ID>BF-REF-2025</cbc:ID>
       <cbc:DocumentType>Reference letters</cbc:DocumentType>
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>
@@ -247,7 +248,7 @@
         <cbc:LineID>1</cbc:LineID>
       </cac:CallForTendersLineReference>
       <cac:CallForTendersDocumentReference>
-        <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
+        <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
       </cac:CallForTendersDocumentReference>
     </cac:TenderLine>
     <cac:TenderLine>

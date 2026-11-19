@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Gas and electricity in an unbundled market (Bayvarra's gas field → Urvania)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections.
+The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections, and credits the 750 kWh its February estimate charged the warehouse too much.
 
 [The XML file](02-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -22,19 +22,19 @@ The grid operator charges the retail company for the use of the networks at the 
   The seller's invoice number.
 - `UUID` = **af7f93bd-4f82-5130-82e5-5b40a1c4cefa**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-03**  
-  The month's network charges.
+- `IssueDate` = **2026-04-02**  
+  The month's network charges, billed the morning after the meters were read, with the metering statement that supplements the invoice.
 - `IssueTime` = **08:20:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-03**  
+  The grid operator's billing run, first thing in the morning; in the issuer's local time, with its offset from UTC (D27).
+- `DueDate` = **2026-05-02**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `TaxPointDate` = **2026-04-03**  
+- `TaxPointDate` = **2026-04-02**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `LineCountNumeric` = **3**  
+- `LineCountNumeric` = **4**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
@@ -232,7 +232,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-03**  
+- `PaymentDueDate` = **2026-05-02**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -303,15 +303,15 @@ Inside `PaymentTerms`:
   Urvanian practice: a cash discount for early payment, statutory interest on late payment.
 - `SettlementDiscountPercent` = **2**  
   The cash discount for early payment.
-- `SettlementDiscountAmount` = **67095** (currencyID `XUF`)  
+- `SettlementDiscountAmount` = **66983** (currencyID `XUF`)  
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.ferranogrid.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-03**  
+- `PaymentDueDate` = **2026-05-02**  
   The day the amount is due, as the terms count it.
-- `SettlementPeriod/StartDate` = **2026-04-03**  
+- `SettlementPeriod/StartDate` = **2026-04-02**  
   From the invoice date.
-- `SettlementPeriod/EndDate` = **2026-04-13**  
+- `SettlementPeriod/EndDate` = **2026-04-12**  
   For 10 days.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
   The interest on late payment.
@@ -324,11 +324,11 @@ Inside `PaymentTerms`:
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **559122** (currencyID `XUF`)  
+- `TaxAmount` = **558192** (currencyID `XUF`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **2795610** (currencyID `XUF`)  
+- `TaxSubtotal/TaxableAmount` = **2790960** (currencyID `XUF`)  
   The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **559122** (currencyID `XUF`)  
+- `TaxSubtotal/TaxAmount` = **558192** (currencyID `XUF`)  
   20 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -341,13 +341,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **2795610** (currencyID `XUF`)  
+- `LineExtensionAmount` = **2790960** (currencyID `XUF`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **2795610** (currencyID `XUF`)  
+- `TaxExclusiveAmount` = **2790960** (currencyID `XUF`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **3354732** (currencyID `XUF`)  
+- `TaxInclusiveAmount` = **3349152** (currencyID `XUF`)  
   The total without tax plus the tax.
-- `PayableAmount` = **3354732** (currencyID `XUF`)  
+- `PayableAmount` = **3349152** (currencyID `XUF`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -456,6 +456,46 @@ Inside `InvoiceLine`:
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `KWH`)  
   The price is per one unit.
+- `ID` = **4**  
+  The line number.
+- `InvoicedQuantity` = **-750** (unitCode `KWH`)  
+  February's estimate corrected: February's network invoice charged the warehouse's connection 750 kWh it did not use, which are credited at the network tariff.
+- `LineExtensionAmount` = **-4650** (currencyID `XUF`)  
+  -750 × 6.2, rounded to the minor unit of the currency.
+- `InvoicePeriod/StartDate` = **2026-02-01**  
+  The month corrected: February.
+- `InvoicePeriod/EndDate` = **2026-02-28**  
+  Its last day.
+- `InvoicePeriod/DescriptionCode` = **MONTH** (listID `urn:ubl-examples:world:codelist:PeriodDescriptionCode`)  
+  A month's consumption. The code is from the Trade Accord's period description list: MONTH = Calendar month.
+- `InvoicePeriod/Description` = **February 2026**  
+  The period in words.
+- `Delivery/DeliveryLocation/ID` = **FG-CP-4160-E1**  
+  The consumption point whose network use the line bills.
+- `Delivery/DeliveryLocation/Description` = **Warehouse of Castrano Logistics**  
+  The connection in words.
+- `Item/Description` = **Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.** (languageID `qau`)  
+  The seller's description in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Description` = **Use of the electricity distribution network, per kilowatt hour taken at the connection.** (languageID `en-XU`)  
+  The seller's description in English, the working language between the countries; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Name` = **Zuktrek gatir krek** (languageID `qau`)  
+  The item's name in Urvanian, the seller's language; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/Name` = **Electricity network use** (languageID `en-XU`)  
+  The item's name in English, the working language between the countries; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/SellersItemIdentification/ID` = **FG-NET-E**  
+  The seller's own item number; item network-electricity of Ferrano Grid (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **20**  
+  The rate for this category.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: SERVICES = Services.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **6.2** (currencyID `XUF`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `KWH`)  
+  The price is per one unit.
 
 ## The document
 
@@ -468,13 +508,13 @@ Inside `InvoiceLine`:
   <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>FG-INV-26-0150</cbc:ID>
   <cbc:UUID>af7f93bd-4f82-5130-82e5-5b40a1c4cefa</cbc:UUID>
-  <cbc:IssueDate>2026-04-03</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-03</cbc:DueDate>
+  <cbc:DueDate>2026-05-02</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:TaxPointDate>2026-04-03</cbc:TaxPointDate>
+  <cbc:TaxPointDate>2026-04-02</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
-  <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -635,7 +675,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-02</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF13FGINV260150</cbc:InstructionNote>
@@ -686,12 +726,12 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 2 % discount when paid within 10 days.</cbc:Note>
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
-    <cbc:SettlementDiscountAmount currencyID="XUF">67095</cbc:SettlementDiscountAmount>
+    <cbc:SettlementDiscountAmount currencyID="XUF">66983</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranogrid.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-03</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-02</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
-      <cbc:StartDate>2026-04-03</cbc:StartDate>
-      <cbc:EndDate>2026-04-13</cbc:EndDate>
+      <cbc:StartDate>2026-04-02</cbc:StartDate>
+      <cbc:EndDate>2026-04-12</cbc:EndDate>
     </cac:SettlementPeriod>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
@@ -700,10 +740,10 @@ Inside `InvoiceLine`:
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">559122</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">2795610</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">559122</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="XUF">2790960</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">558192</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Percent>20</cbc:Percent>
@@ -714,10 +754,10 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XUF">2795610</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XUF">2795610</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XUF">3354732</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XUF">3354732</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XUF">2790960</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XUF">2790960</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XUF">3349152</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XUF">3349152</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -817,6 +857,44 @@ Inside `InvoiceLine`:
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="XUF">1.9</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="KWH">-750</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XUF">-4650</cbc:LineExtensionAmount>
+    <cac:InvoicePeriod>
+      <cbc:StartDate>2026-02-01</cbc:StartDate>
+      <cbc:EndDate>2026-02-28</cbc:EndDate>
+      <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:PeriodDescriptionCode">MONTH</cbc:DescriptionCode>
+      <cbc:Description>February 2026</cbc:Description>
+    </cac:InvoicePeriod>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID>FG-CP-4160-E1</cbc:ID>
+        <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
+      </cac:DeliveryLocation>
+    </cac:Delivery>
+    <cac:Item>
+      <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Use of the electricity distribution network, per kilowatt hour taken at the connection.</cbc:Description>
+      <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
+      <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>FG-NET-E</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XUF">6.2</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="KWH">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

@@ -144,7 +144,7 @@
   {
    "id": "sea",
    "title": "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)",
-   "text": "The commercial buyer on the island buys cost, insurance and freight (CIF) to the port of discharge. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them.",
+   "text": "The commercial buyer on the island buys 104 benches, cost, insurance and freight (CIF) to the port of discharge: 96 for the Port of Selanu's harbour parks and two more pallets of four for its own stock, since it buys by the pallet and two pallets add little to the freight of a container already booked. The distributor therefore pays the sea freight and the cargo insurance; it hands both to its freight forwarder. The buyer takes over at the port of discharge: its customs broker clears the goods and its 3PL receives them.",
    "legs": [
     {
      "mode": "road",
@@ -1364,7 +1364,7 @@
    "doc": "CatalogueItemSpecificationUpdate",
    "from": "6-xb",
    "to": "26-xb",
-   "why": "The bench now comes with slats from a different hardwood; the description is updated.",
+   "why": "Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's revised datasheet: the slats are left untreated and turn silver-grey, only the end grain is sealed, with the yearly maintenance. The product, its GTIN and its price stay.",
    "parties": {
     "ProviderParty": "6-xb",
     "ReceiverParty": "26-xb",
@@ -1660,7 +1660,7 @@
    "doc": "Order",
    "from": "1-xl",
    "to": "6-xb",
-   "why": "Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
+   "why": "The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for its own stock, and spare frames. Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
    "parties": {
     "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
@@ -3391,11 +3391,11 @@
   {
    "flow": "cotton",
    "doc": "GoodsCertificate",
-   "from": "20-xl",
+   "from": "45-xl",
    "to": "39-xl",
-   "why": "The island's chamber of commerce certifies the bales for export, at the ginnery's application.",
+   "why": "Lisavu's plant protection organisation under the IPPC, the Plant Protection Service of the Department of Agriculture, inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.",
    "parties": {
-    "IssuerParty": "20-xl",
+    "IssuerParty": "45-xl",
     "ApplicantParty": "39-xl",
     "ExporterParty": "39-xl",
     "ImporterParty": "40-xb"
@@ -3975,7 +3975,7 @@
    "doc": "Invoice",
    "from": "44-xu",
    "to": "33-xu",
-   "why": "The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections.",
+   "why": "The grid operator charges the retail company for the use of the networks at the factory's and the warehouse's connections, and credits the 750 kWh its February estimate charged the warehouse too much.",
    "parties": {
     "AccountingSupplierParty": "44-xu",
     "AccountingCustomerParty": "33-xu",
@@ -4096,6 +4096,10 @@
    "what": "Bayforth's quotation for the air freight",
    "type_code": "361"
   },
+  "BF-REF-2025": {
+   "what": "Brackenmere's reference letters from customers for its park furniture of 2025",
+   "type": "Reference letters"
+  },
   "BM-GI-PHOTO-26-0510": {
    "what": "the store's goods-in photographs",
    "type": "Photograph"
@@ -4103,10 +4107,6 @@
   "BM-OWN-BRAND-2026": {
    "what": "the own-label agreement between Brightmarket Stores and Brackenmere Furniture for the Elderwick Marrow line: the store's specification, the sale-or-return trial and the returns",
    "type": "Own-label agreement"
-  },
-  "BM-PROMO-PLAN-26": {
-   "what": "the store's promotion plan",
-   "type": "Promotion plan"
   },
   "BM-RANGE-26": {
    "what": "the store's range plan",
@@ -4128,6 +4128,18 @@
    "what": "the water company's quarterly water quality report",
    "type": "Water quality report"
   },
+  "FE-INV-26-0211": {
+   "what": "Ferrano Energy's electricity bill of February to Valdara, with the estimated reading the March bill corrects",
+   "type": "Invoice"
+  },
+  "FRC-TEP-26-0001": {
+   "what": "Ferrano Rail Cargo's standing transport plan for the ore season, agreed in January (D38: a document outside the examples)",
+   "type": "Transport execution plan"
+  },
+  "FRC-TSD-26": {
+   "what": "Ferrano Rail Cargo's published description of its ore train service (D38: a document outside the examples)",
+   "type": "Transport service description"
+  },
   "FRC-WAGON-LIST-11": {
    "what": "Ferrano Rail Cargo's list of the wagons",
    "type": "Wagon list"
@@ -4143,10 +4155,6 @@
   "KXL-OFFLOAD-26-0513": {
    "what": "the airline's offload notice",
    "type": "Offload notice"
-  },
-  "LD-DS-B180": {
-   "what": "Lumeway's data sheet of the Serra bench",
-   "type": "Product data sheet"
   },
   "LD-GTC-2026": {
    "what": "Lumeway's general terms of trade",
@@ -4179,10 +4187,6 @@
   "PWD-2026-PARKS": {
    "what": "the public works department's procurement file of the park benches",
    "type": "Procurement file"
-  },
-  "PWD-2026-PARKS-CFT": {
-   "what": "the call for tenders of the park benches (tender/03)",
-   "type_code": "CallForTenders"
   },
   "PWD-COLOUR-RAL6005": {
    "what": "the colour sample of the harbour benches",
@@ -4240,17 +4244,29 @@
    "what": "Rinova's certificate of recovery",
    "type": "Certificate of recovery"
   },
+  "SCC-CLS-26-0311": {
+   "what": "the Selanu Chamber of Commerce's classing report of the farm's lot",
+   "type": "Classing report"
+  },
   "SCC-FAIR-26-INV": {
    "what": "the fair's invitation to exhibit",
    "type": "Invitation to exhibit"
   },
-  "SCC-PH-25-0198": {
-   "what": "last season's phytosanitary certificate",
-   "type": "Phytosanitary certificate"
+  "SCG-ACC-LCF-26-02": {
+   "what": "the ginnery's season account of the cotton farm",
+   "type": "Statement of account"
+  },
+  "SCG-OUT-26-0311": {
+   "what": "the ginnery's outturn report of the farm's lot",
+   "type": "Outturn report"
   },
   "SCG-SEASON-2026": {
    "what": "the season agreement between the farm and the ginnery",
    "type": "Season agreement"
+  },
+  "SCG-SEASON-2026/03": {
+   "what": "the March call-off under the ginnery's season agreement with the farm",
+   "type": "Call-off order"
   },
   "SCG-WB-26-0311": {
    "what": "the ginnery's weighbridge ticket",
@@ -4267,6 +4283,10 @@
   "VI-BANK-26-04": {
    "what": "the payer's bank statement line",
    "type": "Bank statement"
+  },
+  "VI-CAT-2026": {
+   "what": "Valdara's own catalogue of 2026, from which Lumeway's catalogue lines come",
+   "type": "Catalogue"
   },
   "VI-CD-26-0330E": {
    "what": "Valdara's export declaration lodged in Urvania at the office of departure of the rail transit",
@@ -4292,6 +4312,10 @@
    "what": "Valdara's quality management certificate",
    "type": "Quality management certificate"
   },
+  "VI-QT-26-0071": {
+   "what": "Valdara's quotation for the special colour of the first call-off",
+   "type": "Quotation"
+  },
   "VI-REF-2025": {
    "what": "Valdara's reference letters",
    "type": "Reference letters"
@@ -4304,6 +4328,10 @@
    "what": "the contract between Valdara and Rinova for the waste",
    "type_code": "315"
   },
+  "VI-WR-26-0080": {
+   "what": "Valdara's report of the bench installation",
+   "type": "Installation report"
+  },
   "VT-BANK-26-04": {
    "what": "the payer's bank statement line",
    "type": "Bank statement"
@@ -4315,10 +4343,6 @@
   "VT-CLAIM-26-0021": {
    "what": "Velumi's claim",
    "type": "Claim"
-  },
-  "VT-PO-26-0319": {
-   "what": "Velumi's order change for the frames by air (air/01)",
-   "type_code": "OrderChange"
   },
   "XB-FOR-AUD-2025-0118": {
    "what": "the audit report behind the forestry certificate",

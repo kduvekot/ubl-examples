@@ -24,8 +24,8 @@ The port of loading reports the container loaded on board.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-14**  
   Reported when the container is on board.
-- `IssueTime` = **16:05:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **18:25:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time (C72); in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Transportation status**  
   The kind of report.
 - `Description` = **Container TWLU4120872 loaded on board.**  
@@ -302,7 +302,7 @@ Inside `StatusPeriod`:
   <cbc:ID>PL-TS-26-0138</cbc:ID>
   <cbc:UUID>2564cf59-a7e2-5a31-9b4c-e17cc91746d5</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
-  <cbc:IssueTime>16:05:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>18:25:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 loaded on board.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>

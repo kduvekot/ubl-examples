@@ -66,20 +66,6 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
-  <cac:Payment>
-    <cbc:ID>VT-PAY-26-0199</cbc:ID>
-    <cbc:PaidAmount currencyID="XBL">43814.00</cbc:PaidAmount>
-    <cbc:PaidDate>2026-06-25</cbc:PaidDate>
-    <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
-    <cac:BillingReference>
-      <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
-      </cac:InvoiceDocumentReference>
-    </cac:BillingReference>
-    <cac:RemittanceDocumentReference>
-      <cbc:ID>VT-RM-26-0150</cbc:ID>
-    </cac:RemittanceDocumentReference>
-  </cac:Payment>
   <cac:DocumentResponse>
     <cac:Response>
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>

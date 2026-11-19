@@ -10,7 +10,7 @@
   <cbc:IssueTime>15:59:00-01:00</cbc:IssueTime>
   <cbc:Name>Packing list</cbc:Name>
   <cbc:Description>The container's contents.</cbc:Description>
-  <cbc:Note>25 pallets.</cbc:Note>
+  <cbc:Note>27 pallets.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:OtherInstruction>Keep with the container's documents.</cbc:OtherInstruction>
   <cac:ConsignorParty>
@@ -111,15 +111,15 @@
     <cbc:ID>LD-SH-26-0132</cbc:ID>
     <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
     <cbc:HandlingInstructions>Castings pallet at the doors.</cbc:HandlingInstructions>
-    <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
-    <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
-    <cbc:NetVolumeMeasure unitCode="MTQ">10.2</cbc:NetVolumeMeasure>
-    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
+    <cbc:NetWeightMeasure unitCode="KGM">4719.6</cbc:NetWeightMeasure>
+    <cbc:NetVolumeMeasure unitCode="MTQ">11</cbc:NetVolumeMeasure>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:SpecialInstructions>Photograph the load before closing the doors.</cbc:SpecialInstructions>
     <cbc:DeliveryInstructions>Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.</cbc:DeliveryInstructions>
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -158,9 +158,9 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">49920.00</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">54080.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cac:Item>
         <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
         <cbc:Name>Park bench Serra 180</cbc:Name>
@@ -300,7 +300,7 @@
     <cac:TransportHandlingUnit>
       <cac:TransportEquipment>
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
       </cac:TransportEquipment>
     </cac:TransportHandlingUnit>

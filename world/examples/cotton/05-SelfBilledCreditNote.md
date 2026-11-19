@@ -332,7 +332,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:FR**  
   The identifier of the register in the world (world/countries.json).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Farm register of Lisavu**  
-  The register the farm is entered in, kept by the island's Department of Agriculture, which also runs the plant protection service (O157): Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46). The register gives a grower a number of its own, derived from no other register (O142).
+  The register the farm is entered in, kept by the Department of Agriculture of Lisavu: Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46). The register gives a grower a number of its own, derived from no other register (O142).
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **FARM** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
   A register of farms, not the companies register. The code is from the Trade Accord's corporate registration type list: FARM = Register of farms.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  

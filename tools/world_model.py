@@ -88,7 +88,7 @@ Structural rules (the build stops when one is broken):
     the land's side slope; O152, owner 2026-11-18), so that a town whose streets reach its quay is not tied to the
     water's level; but a road square whose road keeps to its rules on its own line on the land as it is (each half
     within ROAD_GRADE_MAIN 7 % or ROAD_GRADE_MINOR 10 %, the land across it within ROAD_LEAN_MAIN 6 % or
-    ROAD_LEAN_MINOR 8 %: road_fits) is left as it is (owner, 2026-11-19, O173), and a road ramp's two sides may
+    ROAD_LEAN_MINOR 8 %: road_fits) is left as it is (owner, 2026-11-19, MO002), and a road ramp's two sides may
     differ by twice that lean between its corners;
   * roads, rails and pipelines are given square by square (O152 stage 3, tools/lay_routes.py), each square a
     neighbour of the last, diagonals included; no way crosses another, or passes between two squares of water,
@@ -1068,7 +1068,7 @@ def build(world):
             a, b, c, d = (i, j), (i + 1, j), (i, j + 1), (i + 1, j + 1)
             # across the road: the lean the road keeps to on its own line (road_fits, measured a quarter square to
             # each side of it) is a difference of twice that between the corners on the two sides of the square, a
-            # square apart (straight) or a diagonal apart (diagonal) (owner, 2026-11-19, O173)
+            # square apart (straight) or a diagonal apart (diagonal) (owner, 2026-11-19, MO002)
             lean = ROAD_LEAN_MAIN if limit <= ROAD_RISE + 1e-6 else ROAD_LEAN_MINOR
             x = 2 * lean * KM * 500 / limit
             xd = 2 * math.sqrt(2) * lean * KM * 500 / limit

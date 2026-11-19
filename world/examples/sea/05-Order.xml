@@ -177,7 +177,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">50724.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54884.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -191,20 +191,20 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">50724.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">54884.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
       <cac:OrderedShipment>
         <cac:Shipment>
           <cbc:ID>VT-SH-PLAN-1</cbc:ID>
           <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
-          <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
+          <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">26</cbc:TotalTransportHandlingUnitQuantity>
         </cac:Shipment>
         <cac:Package>
           <cbc:ID>PAL</cbc:ID>

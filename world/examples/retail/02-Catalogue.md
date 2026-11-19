@@ -28,8 +28,8 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
   The catalogue's title.
 - `IssueDate` = **2026-04-20**  
   The spring catalogue for the store.
-- `IssueTime` = **17:28:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **09:00:00-01:00**  
+  Issued in the morning, for the store to set up the range; in the issuer's local time, with its offset from UTC (D27).
 - `RevisionDate` = **2026-04-20**  
   Not revised yet: the issue date.
 - `RevisionTime` = **09:00:00**  
@@ -803,7 +803,7 @@ Inside `CatalogueLine`:
   <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueActionCode">NEW</cbc:ActionCode>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>17:28:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
   <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
   <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>

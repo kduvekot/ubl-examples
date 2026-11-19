@@ -254,14 +254,12 @@ Inside `Delivery`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
-- `Shipment/GoodsItem/ID` = **1**  
-  The benches carried.
-- `Shipment/GoodsItem/ReceiptLineReference/LineID` = **1**  
-  The line of the consignee's receipt advice.
-- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/ID` = **LD-RA-26-0164**  
-  The receipt advice: proof of delivery.
-- `Shipment/GoodsItem/ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-RA-26-0164 is the example road/13, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
+- `FuelConsumption/ID` = **TH-FC-26-0159**  
+  The fuel of this delivery, stated with the freight for the consignee's report of its transport emissions.
+- `FuelConsumption/FuelTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
+  The truck runs on diesel. The code is from the Trade Accord's fuel type list: DIESEL = Diesel.
+- `FuelConsumption/FuelConsumptionMeasure` = **59** (unitCode `LTR`)  
+  About 33 litres per 100 km over 179 km.
 
 ### Payment Means
 
@@ -640,17 +638,12 @@ Inside `InvoiceLine`:
           </cac:PartyName>
         </cac:CarrierParty>
       </cac:Consignment>
-      <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
-        <cac:ReceiptLineReference>
-          <cbc:LineID>1</cbc:LineID>
-          <cac:DocumentReference>
-            <cbc:ID>LD-RA-26-0164</cbc:ID>
-            <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
-          </cac:DocumentReference>
-        </cac:ReceiptLineReference>
-      </cac:GoodsItem>
     </cac:Shipment>
+    <cac:FuelConsumption>
+      <cbc:ID>TH-FC-26-0159</cbc:ID>
+      <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
+      <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
+    </cac:FuelConsumption>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

@@ -124,6 +124,7 @@ Every party on the map with its place (the town of its address), the district of
 | Bank of Selanu (22-xl) | Reef Street, Selanu | Selanu | Selanu (core, 4.2 km) | 4.9 km SE | edge | 238/113 | 33.0315 S 2.1626 W (33° 01.89′ S, 2° 09.76′ W) | 49 m |
 | Selanu Chamber of Commerce (20-xl) | Reef Street, Selanu | Selanu | Agreement Quarter (industry, 5.8 km) | 7.8 km SW | edge | 236/114 | 33.0631 S 2.2376 W (33° 03.78′ S, 2° 14.26′ W) | 98 m |
 | Maritime Administration of Lisavu (30-xl) | Wharf Road, Selanu | Selanu | Agreement Quarter (industry, 7.4 km) | 7.8 km NW | edge | 235/111 | 32.9685 S 2.2751 W (32° 58.11′ S, 2° 16.51′ W) | 164 m |
+| Department of Agriculture of Lisavu (45-xl) | Reef Street, Selanu | Selanu | Selanu (core, 3.1 km) | 3.5 km E | edge | 238/112 | 33.0000 S 2.1626 W (33° 00.00′ S, 2° 09.76′ W) | 82 m (3D map 34 m) |
 | Ferrano Energy (33-xu) | Corso della Repubblica, Ferrano | Ferrano | Zona Industriale (industry, 3.0 km) | 4.9 km SE | inside | 78/117 | 30.7252 S 15.4901 W (30° 43.51′ S, 15° 29.41′ W) | 198 m (3D map 129 m) |
 | Coastal State Water Company (34-xb) | Reservoir Road, Lumeport | Lumeport | Westside (industry, 9.2 km) | 14.4 km W | outside | 134/125 | 30.9775 S 13.4570 W (30° 58.65′ S, 13° 27.42′ W) | 39 m |
 | Selanu Telecom (35-xl) | Mast Hill Road, Selanu | Selanu | Agreement Quarter (industry, 19.5 km) | 21.3 km W | outside | 231/113 | 33.0315 S 2.4251 W (33° 01.89′ S, 2° 25.50′ W) | 638 m |

@@ -29,9 +29,9 @@ The rail consignment note goes to the transport user, now the seller.
 - `StatusCode` = **ISSUED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-04-14**  
-  Issued when the carrier takes over the containers.
-- `IssueTime` = **13:10:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  Made out at the hub when the boxes are on the train, before it leaves: the note records the takeover, not the journey (rail/08#F3).
+- `IssueTime` = **06:10:00-01:00**  
+  After both boxes were lifted onto the train at 05:40, before the timetabled departure; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Rail consignment note under the CIM uniform rules**  
   The kind of transport document.
 - `Description` = **Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.**  
@@ -320,20 +320,6 @@ Inside `Shipment`:
   The local time.
 - `Consignment/MainCarriageShipmentStage/PlannedWaypointTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
   Where the train crosses the border.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
-  The train left the hub.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **06:52:00**  
-  The local time.
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
-- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
-  Where.
-- `Consignment/MainCarriageShipmentStage/ActualWaypointTransportEvent/OccurrenceDate` = **2026-04-14**  
-  The train passed the border station.
-- `Consignment/MainCarriageShipmentStage/ActualWaypointTransportEvent/OccurrenceTime` = **13:20:00**  
-  The local time.
-- `Consignment/MainCarriageShipmentStage/ActualWaypointTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
-  Where the train crosses the border.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The departure as expected that morning.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
@@ -518,9 +504,9 @@ Inside `Shipment`:
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/Name` = **Castrano Logistics warehouse, Conciaro**  
   Where.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/ActualDespatchDate` = **2026-04-14**  
-  The train left the hub.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/ActualDespatchTime` = **06:50:00**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchDate` = **2026-04-14**  
+  The train is expected to leave the hub that morning; the consignment note is made out before it leaves (rail/08#F3).
+- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00**  
   Ten to seven.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ShipmentDocumentReference/ID` = **FRC-WB-26-0334**  
   The rail consignment note.
@@ -665,7 +651,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>06:10:00-01:00</cbc:IssueTime>
   <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
   <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
@@ -892,21 +878,6 @@ Inside `Signature`:
             <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:PlannedWaypointTransportEvent>
-        <cac:ActualDepartureTransportEvent>
-          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
-          <cac:Location>
-            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-            <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-          </cac:Location>
-        </cac:ActualDepartureTransportEvent>
-        <cac:ActualWaypointTransportEvent>
-          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>13:20:00</cbc:OccurrenceTime>
-          <cac:Location>
-            <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
-          </cac:Location>
-        </cac:ActualWaypointTransportEvent>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
@@ -1109,8 +1080,8 @@ Inside `Signature`:
             </cac:PickupLocation>
           </cac:Pickup>
           <cac:Despatch>
-            <cbc:ActualDespatchDate>2026-04-14</cbc:ActualDespatchDate>
-            <cbc:ActualDespatchTime>06:50:00</cbc:ActualDespatchTime>
+            <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
+            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>

@@ -299,8 +299,6 @@ Inside `TenderingTerms`:
   The labour act.
 - `ContractualDocumentReference/ID` = **PWD-CONTRACT-DRAFT**  
   The draft framework contract.
-- `CallForTendersDocumentReference/ID` = **PWD-2026-PARKS-CFT**  
-  The call for tenders.
 - `WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
 - `PaymentTerms/Note` = **30 days after each accepted release.**  
@@ -505,8 +503,6 @@ Inside `TenderingTerms`:
   In words.
 - `BudgetAccountLine/BudgetAccount/RequiredClassificationScheme/ClassificationCategory/CodeValue` = **4.2**  
   Parks and green spaces.
-- `ReplacedNoticeDocumentReference/ID` = **PWD-2026-PARKS-PIN**  
-  The prior information notice this notice follows.
 - `LotDistribution/MaximumLotsAwardedNumeric` = **2**  
   Both lots to one tenderer if best.
 - `LotDistribution/MaximumLotsSubmittedNumeric` = **2**  
@@ -1229,9 +1225,6 @@ Inside `ProcurementProjectLot`:
     <cac:ContractualDocumentReference>
       <cbc:ID>PWD-CONTRACT-DRAFT</cbc:ID>
     </cac:ContractualDocumentReference>
-    <cac:CallForTendersDocumentReference>
-      <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
-    </cac:CallForTendersDocumentReference>
     <cac:WarrantyValidityPeriod>
       <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
     </cac:WarrantyValidityPeriod>
@@ -1420,9 +1413,6 @@ Inside `ProcurementProjectLot`:
         </cac:RequiredClassificationScheme>
       </cac:BudgetAccount>
     </cac:BudgetAccountLine>
-    <cac:ReplacedNoticeDocumentReference>
-      <cbc:ID>PWD-2026-PARKS-PIN</cbc:ID>
-    </cac:ReplacedNoticeDocumentReference>
     <cac:LotDistribution>
       <cbc:MaximumLotsAwardedNumeric>2</cbc:MaximumLotsAwardedNumeric>
       <cbc:MaximumLotsSubmittedNumeric>2</cbc:MaximumLotsSubmittedNumeric>

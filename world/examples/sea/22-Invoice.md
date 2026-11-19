@@ -428,7 +428,7 @@ Inside `PaymentTerms`:
   The deposit payment, already received.
 - `ReferenceEventCode` = **8** (listID `UN/EDIFACT EDED 2475`)  
   Due when the order is accepted. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 8 = Date of confirmation of order received.
-- `PaymentPercent` = **18.58**  
+- `PaymentPercent` = **17.25**  
   Its share of the invoice total.
 - `Amount` = **10000.00** (currencyID `XBL`)  
   The deposit.
@@ -444,11 +444,11 @@ Inside `PaymentTerms`:
   Counted from the shipment on board. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 81 = Date of shipment as evidenced by the transport document(s).
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PaymentPercent` = **81.42**  
+- `PaymentPercent` = **82.75**  
   Its share of the invoice total.
-- `Amount` = **43814.00** (currencyID `XBL`)  
+- `Amount` = **47974.00** (currencyID `XBL`)  
   The balance.
-- `PenaltyAmount` = **657.21** (currencyID `XBL`)  
+- `PenaltyAmount` = **719.61** (currencyID `XBL`)  
   The surcharge for the first month late, on the balance.
 - `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
   The seller's general terms of payment.
@@ -466,11 +466,11 @@ Inside `PaymentTerms`:
   The reference rate.
 - `ExchangeRate/MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   Lume times the rate. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `ExchangeRate/Date` = **2026-05-18**  
-  Of the invoice date.
-- `ValidityPeriod/StartDate` = **2026-05-18**  
+- `ExchangeRate/Date` = **2026-05-14**  
+  Of the invoice date, as the payment alternative rate.
+- `ValidityPeriod/StartDate` = **2026-05-14**  
   The terms apply from the invoice date
-- `ValidityPeriod/EndDate` = **2026-07-02**  
+- `ValidityPeriod/EndDate` = **2026-06-28**  
   until the balance is due.
 
 ### Prepaid Payment
@@ -550,7 +550,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **53814.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **57974.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -569,19 +569,19 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **50724.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **53814.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **57974.00** (currencyID `XBL`)  
   The line amounts plus the charges, without tax.
-- `TaxInclusiveAmount` = **53814.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **57974.00** (currencyID `XBL`)  
   The total without tax plus the tax.
 - `ChargeTotalAmount` = **3090.00** (currencyID `XBL`)  
   The sum of the charges at document level.
 - `PrepaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit, already paid.
-- `PayableAmount` = **43814.00** (currencyID `XBL`)  
+- `PayableAmount` = **47974.00** (currencyID `XBL`)  
   What is still to pay: the total less the deposit.
-- `PayableAlternativeAmount` = **17525.600** (currencyID `XLC`)  
+- `PayableAlternativeAmount` = **19189.600** (currencyID `XLC`)  
   The same in coral, for the buyer's information, at the reference rate of the invoice date.
 
 ### Invoice Line
@@ -590,10 +590,10 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **96** (unitCode `EA`)  
+- `InvoicedQuantity` = **104** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
-  96 × 520.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **54080.00** (currencyID `XBL`)  
+  104 × 520.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The order line this invoice line bills.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
@@ -1032,7 +1032,7 @@ Inside `InvoiceLine`:
     <cbc:ID>DEPOSIT</cbc:ID>
     <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
-    <cbc:PaymentPercent>18.58</cbc:PaymentPercent>
+    <cbc:PaymentPercent>17.25</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
     <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
@@ -1042,9 +1042,9 @@ Inside `InvoiceLine`:
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PaymentPercent>81.42</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">43814.00</cbc:Amount>
-    <cbc:PenaltyAmount currencyID="XBL">657.21</cbc:PenaltyAmount>
+    <cbc:PaymentPercent>82.75</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">47974.00</cbc:Amount>
+    <cbc:PenaltyAmount currencyID="XBL">719.61</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
@@ -1056,11 +1056,11 @@ Inside `InvoiceLine`:
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
       <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-05-18</cbc:Date>
+      <cbc:Date>2026-05-14</cbc:Date>
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-05-18</cbc:StartDate>
-      <cbc:EndDate>2026-07-02</cbc:EndDate>
+      <cbc:StartDate>2026-05-14</cbc:StartDate>
+      <cbc:EndDate>2026-06-28</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
@@ -1110,7 +1110,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">53814.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">57974.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -1124,18 +1124,18 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">53814.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">53814.00</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">57974.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">57974.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">43814.00</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">17525.600</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">47974.00</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">19189.600</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

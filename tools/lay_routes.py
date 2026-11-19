@@ -354,7 +354,7 @@ def write(routes, station):
 
 def refit(world, terrain, land):
     """The routes, with the village roads that leave the road rule on any square laid again (owner, 2026-11-19,
-    O173 option c), each village in turn:
+    MO002 option c), each village in turn:
       1. a way that keeps to the rule on every square, if it is reasonable (see reasonable below);
       2. otherwise a way on which the builder cuts or fills at most routing.ROAD_SLACK_M on each half of a square
          (class "minor-cut"; the world model makes the cut), if that is reasonable;

@@ -18,7 +18,7 @@ The factor, who now owns the receivables, sends the statement of account on beha
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HF-ST-26-0151**  
+- `ID` = **HF-ST-26-0150**  
   The factor's statement number.
 - `UUID` = **16a04e73-7f53-554f-be69-453ee6e81d9c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -30,11 +30,11 @@ The factor, who now owns the receivables, sends the statement of account on beha
   Who the statement is for.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoices; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalDebitAmount` = **53814.00** (currencyID `XBL`)  
+- `TotalDebitAmount` = **57974.00** (currencyID `XBL`)  
   The invoice in full.
 - `TotalCreditAmount` = **10000.00** (currencyID `XBL`)  
   The deposit the buyer paid on the order.
-- `TotalBalanceAmount` = **43814.00** (currencyID `XBL`)  
+- `TotalBalanceAmount` = **47974.00** (currencyID `XBL`)  
   What is owed.
 - `LineCountNumeric` = **2**  
   The invoice and the deposit.
@@ -304,9 +304,9 @@ Inside `StatementLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `BalanceBroughtForwardIndicator` = **false**  
   A new item, not a balance carried over.
-- `DebitLineAmount` = **53814.00** (currencyID `XBL`)  
+- `DebitLineAmount` = **57974.00** (currencyID `XBL`)  
   The invoice in full.
-- `BalanceAmount` = **53814.00** (currencyID `XBL`)  
+- `BalanceAmount` = **57974.00** (currencyID `XBL`)  
   Before the deposit.
 - `PaymentPurposeCode` = **GDDS** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code GDDS: purchase of goods. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: GDDS = PurchaseSaleOfGoods.
@@ -360,7 +360,7 @@ Inside `StatementLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `CreditLineAmount` = **10000.00** (currencyID `XBL`)  
   The deposit.
-- `BalanceAmount` = **43814.00** (currencyID `XBL`)  
+- `BalanceAmount` = **47974.00** (currencyID `XBL`)  
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
@@ -384,15 +384,15 @@ Inside `StatementLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HF-ST-26-0151</cbc:ID>
+  <cbc:ID>HF-ST-26-0150</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">53814.00</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">57974.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">10000.00</cbc:TotalCreditAmount>
-  <cbc:TotalBalanceAmount currencyID="XBL">43814.00</cbc:TotalBalanceAmount>
+  <cbc:TotalBalanceAmount currencyID="XBL">47974.00</cbc:TotalBalanceAmount>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode listID="urn:ubl-examples:world:codelist:StatementTypeCode">ACCOUNT</cbc:StatementTypeCode>
   <cac:StatementPeriod>
@@ -590,8 +590,8 @@ Inside `StatementLine`:
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>
     <cbc:UUID>56439119-78e3-59ec-bc7d-84c3d3a46f09</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">53814.00</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">53814.00</cbc:BalanceAmount>
+    <cbc:DebitLineAmount currencyID="XBL">57974.00</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">57974.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
       <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
@@ -662,7 +662,7 @@ Inside `StatementLine`:
     <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
     <cbc:UUID>16aec267-0a53-5561-ad4f-79c534c1d918</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">43814.00</cbc:BalanceAmount>
+    <cbc:BalanceAmount currencyID="XBL">47974.00</cbc:BalanceAmount>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>

@@ -273,8 +273,8 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment on the manifest.
-- `GrossWeightMeasure` = **9113.4** (unitCode `KGM`)  
-  The goods (5363.4 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
+- `GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
+  The goods (5795.8 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `ShipmentStage/ID` = **2**  
   The sea leg.
 - `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -347,7 +347,7 @@ Inside `Shipment`:
   UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
 - `TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
   ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
-- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9113.4** (unitCode `KGM`)  
+- `TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
   The verified gross mass: cargo and the container's own weight of 3,750 kg.
 - `TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
@@ -591,7 +591,7 @@ Inside `Signature`:
   </cac:PassengerPerson>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
@@ -658,7 +658,7 @@ Inside `Signature`:
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
         <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
-        <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
         <cac:TransportEquipmentSeal>
           <cbc:ID>TWL-S-0884213</cbc:ID>

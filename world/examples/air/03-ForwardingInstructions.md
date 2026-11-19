@@ -231,7 +231,7 @@ Inside `Shipment`:
   The cargo terminal at Lumeport airport.
 - `Consignment/TransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/TransportHandlingUnit/ID` = **095206100003729323** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/ID` = **095206100003729347** (schemeID `GS1 SSCC`)  
   The skid the cartons are strapped to: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **SI** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code SI: skid. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: SI = Skid.
@@ -296,10 +296,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **VT-PO-26-0319**  
+- `ID` = **VT-OC-26-0320**  
   The order the goods are for.
 - `DocumentTypeCode` = **OrderChange** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, Velumi's order change for the frames by air (air/01), a document outside the examples (world/documents.json, cited; decision Q29). The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
+  The kind of document referred to: VT-OC-26-0320 is the example air/01, a OrderChange; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
 
 ### Signature
 
@@ -485,7 +485,7 @@ Inside `Signature`:
         </cac:Location>
       </cac:TransportEvent>
       <cac:TransportHandlingUnit>
-        <cbc:ID schemeID="GS1 SSCC">095206100003729323</cbc:ID>
+        <cbc:ID schemeID="GS1 SSCC">095206100003729347</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SI</cbc:TransportHandlingUnitTypeCode>
         <cac:ReferencedShipment>
           <cbc:ID>LD-SH-26-0323</cbc:ID>
@@ -555,7 +555,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0319</cbc:ID>
+    <cbc:ID>VT-OC-26-0320</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

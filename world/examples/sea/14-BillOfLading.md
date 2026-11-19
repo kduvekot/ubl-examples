@@ -216,8 +216,8 @@ Inside `Shipment`:
 
 - `ID` = **LD-SH-26-0132**  
   The shipment carried.
-- `GrossWeightMeasure` = **9113.4** (unitCode `KGM`)  
-  The goods (5363.4 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
+- `GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
+  The goods (5795.8 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment (worklist C15).
 - `TotalGoodsItemQuantity` = **2** (unitCode `EA`)  
   Benches and side frames.
 - `ConsignmentQuantity` = **1** (unitCode `EA`)  
@@ -232,9 +232,9 @@ Inside `Shipment`:
   The forwarder's file: the instructions it received.
 - `Consignment/BrokerAssignedID` = **TCB-26-0331**  
   The customs broker's file in Selanu.
-- `Consignment/TotalInvoiceAmount` = **50724.00** (currencyID `XBL`)  
+- `Consignment/TotalInvoiceAmount` = **54884.00** (currencyID `XBL`)  
   The value of the goods on the sales invoice.
-- `Consignment/DeclaredCustomsValueAmount` = **53814.00** (currencyID `XBL`)  
+- `Consignment/DeclaredCustomsValueAmount` = **57974.00** (currencyID `XBL`)  
   The CIF value: goods, freight and insurance.
 - `Consignment/TariffDescription` = **Furniture, packed, not hazardous**  
   The carrier's commodity tariff, in words.
@@ -242,7 +242,7 @@ Inside `Shipment`:
   The item of the carrier's own freight tariff for this cargo: furniture. A code the carrier defines, so it has no code list.
 - `Consignment/InsurancePremiumAmount` = **140.00** (currencyID `XBL`)  
   The premium the seller paid under CIF.
-- `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo.
 - `Consignment/ShippingPriorityLevelCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ShippingPriorityCode`)  
   The normal sailing, no priority loading. The code is from the Trade Accord's shipping priority list: STANDARD = Standard.
@@ -252,9 +252,9 @@ Inside `Shipment`:
   The handling, in words.
 - `Consignment/Information` = **Shipped on board in apparent good order and condition.**  
   The carrier's clause.
-- `Consignment/InsuranceValueAmount` = **59195.40** (currencyID `XBL`)  
+- `Consignment/InsuranceValueAmount` = **63771.40** (currencyID `XBL`)  
   110 % of the CIF value.
-- `Consignment/FreeOnBoardValueAmount` = **50724.00** (currencyID `XBL`)  
+- `Consignment/FreeOnBoardValueAmount` = **54884.00** (currencyID `XBL`)  
   The value on board in Lumeport: the goods alone.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -360,7 +360,7 @@ Inside `Shipment`:
   The risk is the buyer's from on board in Lumeport. The code is from the Trade Accord's party bearing the risk list: BUYER = Buyer.
 - `Consignment/DeliveryTerms/LossRisk` = **Risk passes when the goods are on board the vessel in Lumeport.**  
   In words.
-- `Consignment/DeliveryTerms/Amount` = **53814.00** (currencyID `XBL`)  
+- `Consignment/DeliveryTerms/Amount` = **57974.00** (currencyID `XBL`)  
   The CIF value the terms are based on.
 - `Consignment/DeliveryTerms/DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -574,7 +574,7 @@ Inside `Shipment`:
   A full container load. The code is from the Trade Accord's load type list: FCL = Full container load.
 - `Consignment/TransportHandlingUnit/TransportEquipment/RefrigeratedIndicator` = **false**  
   A dry container.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9113.4** (unitCode `KGM`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
   The verified gross mass: cargo and the container's own weight of 3,750 kg.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
   The empty container's own weight, as marked on its door.
@@ -598,7 +598,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 001 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 001 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729071**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -610,7 +610,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 002 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 002 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729088**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -622,7 +622,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 003 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 003 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729095**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -634,7 +634,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 004 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 004 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729101**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -646,7 +646,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 005 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 005 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729118**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -658,7 +658,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 006 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 006 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729125**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -670,7 +670,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 007 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 007 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729132**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -682,7 +682,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 008 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 008 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729149**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -694,7 +694,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 009 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 009 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729156**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -706,7 +706,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 010 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 010 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729163**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -718,7 +718,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 011 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 011 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729170**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -730,7 +730,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 012 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 012 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729187**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -742,7 +742,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 013 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 013 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729194**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -754,7 +754,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 014 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 014 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729200**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -766,7 +766,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 015 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 015 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729217**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -778,7 +778,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 016 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 016 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729224**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -790,7 +790,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 017 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 017 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729231**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -802,7 +802,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 018 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 018 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729248**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -814,7 +814,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 019 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 019 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729255**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -826,7 +826,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 020 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 020 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729262**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -838,7 +838,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 021 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 021 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729279**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -850,7 +850,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 022 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 022 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729286**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -862,7 +862,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 023 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 023 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729293**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -874,7 +874,7 @@ Inside `Shipment`:
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
   The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 024 of 025**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 024 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729309**  
   The pallet's barcode, scanned at each handover: it carries the same number.
@@ -885,16 +885,40 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
   One kind of goods on the pallet.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
-  The parcels on the pallet: 12 spare side frames, one to a frame carton.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 025 of 025**  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 025 of 027**  
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729316**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729323** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 4 benches in three parcels each: 4 × parcel 1 (frame carton), 4 × parcel 2 (frame carton with the bolt set), 4 × parcel 3 (slat bundle).
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 026 of 027**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729323**  
+  The pallet's barcode, scanned at each handover: it carries the same number.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID` = **095206100003729330** (schemeID `GS1 SSCC`)  
+  The number on the pallet label: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity` = **1** (unitCode `EA`)  
+  One kind of goods on the pallet.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalPackageQuantity` = **12** (unitCode `EA`)  
+  The parcels on the pallet: 12 spare side frames, one to a frame carton.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ShippingMarks` = **VELUMI SELANU / 027 of 027**  
+  The marks on the pallet: the consignee's mark and the pallet's place in the count.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729330**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
   The forwarder's chassis the container rode on to the port. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code TE: trailer. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: TE = Trailer.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **095206100003729316** (schemeID `GS1 SSCC`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **095206100003729330** (schemeID `GS1 SSCC`)  
   The pallet of frame cartons, packed last at the doors: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `EA`)  
   Twelve side frames, one to a carton.
@@ -908,8 +932,8 @@ Inside `Shipment`:
   In words.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container the goods are in. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **25** (unitCode `EA`)  
-  25 pallets in it.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **27** (unitCode `EA`)  
+  27 pallets in it.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
   The container itself, as equipment. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.1**  
@@ -932,7 +956,7 @@ Inside `Shipment`:
   The scale of the warehouse.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Platform scale**  
   Its kind.
-- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/GrossMassMeasure` = **9113.4** (unitCode `KGM`)  
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/GrossMassMeasure` = **9545.8** (unitCode `KGM`)  
   The verified gross mass.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -970,7 +994,7 @@ Inside `Shipment`:
   The cargo policy of the insurer.
 - `Consignment/InsurancePolicy/InsuranceTypeCode` = **ALLRISKS** (listID `urn:ubl-examples:world:codelist:InsuranceCoverCode`)  
   Cover against all risks. The code is from the Trade Accord's insurance cover list: ALLRISKS = All risks.
-- `Consignment/InsurancePolicy/InsuredValueAmount` = **59195.40** (currencyID `XBL`)  
+- `Consignment/InsurancePolicy/InsuredValueAmount` = **63771.40** (currencyID `XBL`)  
   110 % of the CIF value.
 - `Consignment/InsurancePolicy/DeductibleAmount` = **250.00** (currencyID `XBL`)  
   The part of a claim the insured bears.
@@ -996,9 +1020,9 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **5621.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **104** (unitCode `EA`)  
   How much is carried.
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
   The goods.
@@ -1016,7 +1040,7 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
-- `InsurancePolicy/InsuredValueAmount` = **59195.40** (currencyID `XBL`)  
+- `InsurancePolicy/InsuredValueAmount` = **63771.40** (currencyID `XBL`)  
   The insured value, 110 % of the CIF value.
 - `InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
   The excess per claim, as in the policy.
@@ -1259,7 +1283,7 @@ Inside `Signature`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
@@ -1268,18 +1292,18 @@ Inside `Signature`:
       <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
       <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
-      <cbc:TotalInvoiceAmount currencyID="XBL">50724.00</cbc:TotalInvoiceAmount>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">53814.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:TotalInvoiceAmount currencyID="XBL">54884.00</cbc:TotalInvoiceAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">57974.00</cbc:DeclaredCustomsValueAmount>
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
       <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
       <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
-      <cbc:InsuranceValueAmount currencyID="XBL">59195.40</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">50724.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">63771.40</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -1387,7 +1411,7 @@ Inside `Signature`:
         <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
-        <cbc:Amount currencyID="XBL">53814.00</cbc:Amount>
+        <cbc:Amount currencyID="XBL">57974.00</cbc:Amount>
         <cac:DeliveryLocation>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -1611,7 +1635,7 @@ Inside `Signature`:
           <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
           <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-          <cbc:GrossWeightMeasure unitCode="KGM">9113.4</cbc:GrossWeightMeasure>
+          <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
           <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
           <cbc:StowagePositionID>140282</cbc:StowagePositionID>
           <cac:TransportEquipmentSeal>
@@ -1634,7 +1658,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 001 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 001 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729071</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1642,7 +1666,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 002 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 002 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729088</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1650,7 +1674,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 003 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 003 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729095</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1658,7 +1682,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 004 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 004 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729101</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1666,7 +1690,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 005 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 005 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729118</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1674,7 +1698,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 006 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 006 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729125</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1682,7 +1706,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 007 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 007 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729132</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1690,7 +1714,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 008 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 008 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729149</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1698,7 +1722,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 009 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 009 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729156</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1706,7 +1730,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 010 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 010 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729163</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1714,7 +1738,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 011 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 011 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729170</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1722,7 +1746,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 012 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 012 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729187</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1730,7 +1754,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 013 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 013 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729194</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1738,7 +1762,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 014 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 014 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729200</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1746,7 +1770,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 015 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 015 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729217</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1754,7 +1778,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 016 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 016 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729224</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1762,7 +1786,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 017 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 017 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729231</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1770,7 +1794,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 018 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 018 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729248</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1778,7 +1802,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 019 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 019 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729255</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1786,7 +1810,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 020 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 020 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729262</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1794,7 +1818,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 021 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 021 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729279</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1802,7 +1826,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 022 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 022 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729286</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1810,7 +1834,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 023 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 023 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729293</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1818,7 +1842,7 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 024 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 024 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729309</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:PackagedTransportHandlingUnit>
@@ -1826,15 +1850,31 @@ Inside `Signature`:
             <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
             <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
             <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
-            <cbc:ShippingMarks>VELUMI SELANU / 025 of 025</cbc:ShippingMarks>
+            <cbc:ShippingMarks>VELUMI SELANU / 025 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729316</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729323</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 026 of 027</cbc:ShippingMarks>
+            <cbc:TraceID>095206100003729323</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+            <cbc:TotalPackageQuantity unitCode="EA">12</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>VELUMI SELANU / 027 of 027</cbc:ShippingMarks>
+            <cbc:TraceID>095206100003729330</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
           <cac:AttachedTransportEquipment>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
             <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
           </cac:AttachedTransportEquipment>
           <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206100003729316</cbc:ID>
+            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
             <cbc:Quantity unitCode="EA">12</cbc:Quantity>
             <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
             <cac:ContainingTransportEquipment>
@@ -1846,7 +1886,7 @@ Inside `Signature`:
             <cbc:Description>Park benches and spare side frames</cbc:Description>
             <cac:GoodsItemContainer>
               <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="EA">25</cbc:Quantity>
+              <cbc:Quantity unitCode="EA">27</cbc:Quantity>
               <cac:TransportEquipment>
                 <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
               </cac:TransportEquipment>
@@ -1867,7 +1907,7 @@ Inside `Signature`:
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
-            <cbc:GrossMassMeasure unitCode="KGM">9113.4</cbc:GrossMassMeasure>
+            <cbc:GrossMassMeasure unitCode="KGM">9545.8</cbc:GrossMassMeasure>
             <cac:WeighingParty>
               <cac:PartyIdentification>
                 <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -1924,7 +1964,7 @@ Inside `Signature`:
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
-        <cbc:InsuredValueAmount currencyID="XBL">59195.40</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
         <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
         <cbc:InsurancePremiumAmount currencyID="XBL">140.00</cbc:InsurancePremiumAmount>
@@ -1960,8 +2000,8 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:CommodityClassification>
@@ -1982,7 +2022,7 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
     <cac:InsurancePolicy>
-      <cbc:InsuredValueAmount currencyID="XBL">59195.40</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">63771.40</cbc:InsuredValueAmount>
       <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>

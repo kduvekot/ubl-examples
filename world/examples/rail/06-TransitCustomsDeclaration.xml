@@ -6,8 +6,8 @@
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-TD-26-0331</cbc:ID>
   <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
-  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>17:29:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">TRANSIT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">EXTTRANSIT</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>

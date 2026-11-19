@@ -18,7 +18,7 @@ One side frame arrived in a crushed carton, cracked; the distributor credits it,
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LD-CN-26-0152**  
+- `ID` = **LD-CN-26-0151**  
   The seller's credit note number.
 - `UUID` = **2d2cd2d8-031b-5aba-b59f-4e3ba799184e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -77,7 +77,7 @@ Inside `ReceiptDocumentReference`:
 
 Inside `StatementDocumentReference`:
 
-- `ID` = **HF-ST-26-0151**  
+- `ID` = **HF-ST-26-0150**  
   The factor's statement the invoice is on.
 
 ### Originator Document Reference
@@ -372,7 +372,7 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0152</cbc:ID>
+  <cbc:ID>LD-CN-26-0151</cbc:ID>
   <cbc:UUID>2d2cd2d8-031b-5aba-b59f-4e3ba799184e</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00-01:00</cbc:IssueTime>
@@ -400,7 +400,7 @@ Inside `CreditNoteLine`:
     <cbc:ID>NW-RA-26-0146</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0151</cbc:ID>
+    <cbc:ID>HF-ST-26-0150</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
     <cbc:ID>VT-CLAIM-26-0019</cbc:ID>

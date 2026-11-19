@@ -54,7 +54,7 @@ CLASSES = {
     "pipeline": dict(mode="pipeline", grade=.08, hard=None, climb=1.2, relief=.8, turn45=.08, turn90=.35, bridge=None,
                      valley=None, estuary=None, tunnel=None, max_bridge=0, max_tunnel=0, join=None, cover=1.4, rf=.3, max_high=0),
 }
-# a minor road where no reasonable way keeps to the rule on the land as it is (owner, 2026-11-19, O173 option c):
+# a minor road where no reasonable way keeps to the rule on the land as it is (owner, 2026-11-19, MO002 option c):
 # the builder may cut or fill up to ROAD_SLACK_M on each half of a square; the world model makes the cut
 ROAD_SLACK_M = 100
 CLASSES["minor-cut"] = dict(CLASSES["minor"], slack=ROAD_SLACK_M)

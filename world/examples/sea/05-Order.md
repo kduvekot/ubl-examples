@@ -2,7 +2,7 @@
 
 *Example 5 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.
+The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for its own stock, and spare frames. Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.
 
 [The XML file](05-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -240,7 +240,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **50724.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -259,9 +259,9 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **50724.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `PayableAmount` = **50724.00** (currencyID `XBL`)  
+- `PayableAmount` = **54884.00** (currencyID `XBL`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -272,16 +272,16 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/UUID` = **b79591a7-1ff5-5442-b47e-328e3c23e0c7**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `LineItem/Quantity` = **96** (unitCode `EA`)  
-  One 40-foot container: 24 pallets of 4 benches.
-- `LineItem/LineExtensionAmount` = **49920.00** (currencyID `XBL`)  
+- `LineItem/Quantity` = **104** (unitCode `EA`)  
+  104 benches on 26 pallets of four: 96 for the Port of Selanu's harbour parks and two pallets for the buyer's own stock.
+- `LineItem/LineExtensionAmount` = **54080.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/OrderedShipment/Shipment/ID` = **VT-SH-PLAN-1**  
   The shipment the buyer plans for this line: one container.
 - `LineItem/OrderedShipment/Shipment/ShippingPriorityLevelCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ShippingPriorityCode`)  
   No urgency for the sea part. The code is from the Trade Accord's shipping priority list: STANDARD = Standard.
-- `LineItem/OrderedShipment/Shipment/TotalTransportHandlingUnitQuantity` = **24** (unitCode `EA`)  
-  The pallets the line's benches come on: 24 of four (sea/05#F1).
+- `LineItem/OrderedShipment/Shipment/TotalTransportHandlingUnitQuantity` = **26** (unitCode `EA`)  
+  The pallets the line's benches come on: 26 of four (sea/05#F1).
 - `LineItem/OrderedShipment/Package/ID` = **PAL**  
   Packed on pallets.
 - `LineItem/OrderedShipment/Package/Quantity` = **4** (unitCode `EA`)  
@@ -609,7 +609,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">50724.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54884.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -623,20 +623,20 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="XBL">50724.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="XBL">54884.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:UUID>b79591a7-1ff5-5442-b47e-328e3c23e0c7</cbc:UUID>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
       <cac:OrderedShipment>
         <cac:Shipment>
           <cbc:ID>VT-SH-PLAN-1</cbc:ID>
           <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
-          <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
+          <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">26</cbc:TotalTransportHandlingUnitQuantity>
         </cac:Shipment>
         <cac:Package>
           <cbc:ID>PAL</cbc:ID>

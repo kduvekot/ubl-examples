@@ -24,8 +24,8 @@ The granulate leaves Urvania; the waste processor declares the export.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-19**  
   Declared the day the barge is loaded.
-- `IssueTime` = **16:08:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **12:40:00-01:00**  
+  Before the bags are loaded, so that customs releases them before the barge leaves (timelines#F6); in the issuer's local time, with its offset from UTC (D27).
 - `ExportTypeCode` = **PERMANENT** (listID `urn:ubl-examples:world:codelist:ExportTypeCode`)  
   A permanent export: the goods are sold abroad. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
 - `ExportReasonCode` = **SALE** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  
@@ -298,7 +298,7 @@ Inside `Signature`:
   <cbc:ID>RR-EX-26-0887</cbc:ID>
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
-  <cbc:IssueTime>16:08:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>12:40:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
   <cbc:Note languageID="qau">Tragan zunir dizek drek valnir krukek.</cbc:Note>

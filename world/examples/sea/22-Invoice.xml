@@ -356,7 +356,7 @@
     <cbc:ID>DEPOSIT</cbc:ID>
     <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
-    <cbc:PaymentPercent>18.58</cbc:PaymentPercent>
+    <cbc:PaymentPercent>17.25</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
     <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
@@ -366,9 +366,9 @@
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PaymentPercent>81.42</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">43814.00</cbc:Amount>
-    <cbc:PenaltyAmount currencyID="XBL">657.21</cbc:PenaltyAmount>
+    <cbc:PaymentPercent>82.75</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">47974.00</cbc:Amount>
+    <cbc:PenaltyAmount currencyID="XBL">719.61</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
@@ -380,11 +380,11 @@
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
       <cbc:CalculationRate>0.4</cbc:CalculationRate>
       <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-      <cbc:Date>2026-05-18</cbc:Date>
+      <cbc:Date>2026-05-14</cbc:Date>
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-05-18</cbc:StartDate>
-      <cbc:EndDate>2026-07-02</cbc:EndDate>
+      <cbc:StartDate>2026-05-14</cbc:StartDate>
+      <cbc:EndDate>2026-06-28</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
@@ -434,7 +434,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">53814.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">57974.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -448,18 +448,18 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">50724.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">53814.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">53814.00</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">57974.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">57974.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">3090.00</cbc:ChargeTotalAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">43814.00</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">17525.600</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">47974.00</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">19189.600</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">104</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">54080.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>

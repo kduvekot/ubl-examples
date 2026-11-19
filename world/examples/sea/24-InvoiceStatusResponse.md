@@ -94,23 +94,6 @@ Inside `ReceiverParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
-### Payment
-
-Inside `Payment`:
-
-- `ID` = **VT-PAY-26-0199**  
-  The payment planned.
-- `PaidAmount` = **43814.00** (currencyID `XBL`)  
-  The balance to be paid.
-- `PaidDate` = **2026-06-25**  
-  The planned payment day.
-- `InstructionID` = **VT-PAY-26-0199**  
-  The buyer's payment order.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
-  The invoice.
-- `RemittanceDocumentReference/ID` = **VT-RM-26-0150**  
-  The remittance advice the buyer prepared with the payment order; it is sent on the payment day.
-
 ### Document Response
 
 Inside `DocumentResponse`:
@@ -193,20 +176,6 @@ Inside `DocumentResponse`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
-  <cac:Payment>
-    <cbc:ID>VT-PAY-26-0199</cbc:ID>
-    <cbc:PaidAmount currencyID="XBL">43814.00</cbc:PaidAmount>
-    <cbc:PaidDate>2026-06-25</cbc:PaidDate>
-    <cbc:InstructionID>VT-PAY-26-0199</cbc:InstructionID>
-    <cac:BillingReference>
-      <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
-      </cac:InvoiceDocumentReference>
-    </cac:BillingReference>
-    <cac:RemittanceDocumentReference>
-      <cbc:ID>VT-RM-26-0150</cbc:ID>
-    </cac:RemittanceDocumentReference>
-  </cac:Payment>
   <cac:DocumentResponse>
     <cac:Response>
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>

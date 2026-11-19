@@ -186,9 +186,6 @@
     <cac:ContractualDocumentReference>
       <cbc:ID>PWD-CONTRACT-DRAFT</cbc:ID>
     </cac:ContractualDocumentReference>
-    <cac:CallForTendersDocumentReference>
-      <cbc:ID>PWD-2026-PARKS-CFT</cbc:ID>
-    </cac:CallForTendersDocumentReference>
     <cac:WarrantyValidityPeriod>
       <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
     </cac:WarrantyValidityPeriod>
@@ -385,9 +382,6 @@
         </cac:RequiredClassificationScheme>
       </cac:BudgetAccount>
     </cac:BudgetAccountLine>
-    <cac:ReplacedNoticeDocumentReference>
-      <cbc:ID>PWD-2026-PARKS-PIN</cbc:ID>
-    </cac:ReplacedNoticeDocumentReference>
     <cac:LotDistribution>
       <cbc:MaximumLotsAwardedNumeric>2</cbc:MaximumLotsAwardedNumeric>
       <cbc:MaximumLotsSubmittedNumeric>2</cbc:MaximumLotsSubmittedNumeric>

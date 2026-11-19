@@ -457,10 +457,6 @@ Inside `InvoiceLine`:
   The receipt advice.
 - `ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: BS-RA-26-0235 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
-- `DocumentReference/ID` = **LD-DS-B180**  
-  The distributor's datasheet for the bench.
-- `DocumentReference/DocumentType` = **Product data sheet**  
-  The kind of document referred to, Lumeway's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `PricingReference/OriginalItemLocationQuantity/LeadTimeMeasure` = **5** (unitCode `DAY`)  
   As in the catalogue.
 - `PaymentTerms/Note` = **The promotion stock is paid with the invoice, 30 days net.**  
@@ -854,10 +850,6 @@ Inside `InvoiceLine`:
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
-    <cac:DocumentReference>
-      <cbc:ID>LD-DS-B180</cbc:ID>
-      <cbc:DocumentType>Product data sheet</cbc:DocumentType>
-    </cac:DocumentReference>
     <cac:PricingReference>
       <cac:OriginalItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>

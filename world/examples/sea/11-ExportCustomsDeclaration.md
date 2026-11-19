@@ -92,17 +92,17 @@ Inside `CustomsDeclaration`:
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/ID` = **LD-SH-26-0132**  
   The shipment declared.
-- `Shipment/TotalTransportHandlingUnitQuantity` = **25** (unitCode `EA`)  
+- `Shipment/TotalTransportHandlingUnitQuantity` = **27** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/InsuranceValueAmount` = **59195.40** (currencyID `XBL`)  
+- `Shipment/InsuranceValueAmount` = **63771.40** (currencyID `XBL`)  
   The cargo insurance the seller took out under CIF.
-- `Shipment/FreeOnBoardValueAmount` = **50724.00** (currencyID `XBL`)  
+- `Shipment/FreeOnBoardValueAmount` = **54884.00** (currencyID `XBL`)  
   On board in Lumeport.
 - `Shipment/Consignment/ID` = **LD-CS-26-0133**  
   The consignment carried.
-- `Shipment/Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
+- `Shipment/Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
-- `Shipment/Consignment/TotalPackagesQuantity` = **300** (unitCode `EA`)  
+- `Shipment/Consignment/TotalPackagesQuantity` = **324** (unitCode `EA`)  
   The parcels declared, on the pallets counted above (D20).
 - `Shipment/Consignment/OfficeOfExitLocation/Name` = **Customs office, port of Lumeport**  
   Where the goods leave Bayvarra: the same port.
@@ -112,11 +112,11 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Park bench Serra 180**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **49920.00** (currencyID `XBL`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **54080.00** (currencyID `XBL`)  
   The value of the goods at export, in lume.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+- `Shipment/GoodsItem/GrossWeightMeasure` = **5621.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `Shipment/GoodsItem/Quantity` = **96** (unitCode `EA`)  
+- `Shipment/GoodsItem/Quantity` = **104** (unitCode `EA`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
@@ -133,7 +133,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item bench-serra of Valdara Industries (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `Shipment/GoodsItem/ContainingPackage/Quantity` = **4** (unitCode `EA`)  
-  4 benches to a pallet; the goods item travels on 24 pallets.
+  4 benches to a pallet; the goods item travels on 26 pallets.
 - `Shipment/GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
   The pallet goes back to the party that loaded it.
 - `Shipment/GoodsItem/ContainingPackage/PackageLevelCode` = **3** (listID `UN/EDIFACT EDED 7075`)  
@@ -413,7 +413,7 @@ Inside `CustomsDeclaration`:
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:3071845926** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `PreviousCustomsDeclaration/ID` = **LD-IM-26-0161**  
-  The import declaration under which the 12 side frames entered Bayvarra from Urvania (flow road; the stock ledger of world/items.json, D21): they now leave again. The 96 benches of lot VI-LOT-260409 entered under the rail delivery's import (D37), which is not yet an example.
+  The import declaration under which the 12 side frames entered Bayvarra from Urvania (flow road; the stock ledger of world/items.json, D21): they now leave again. The 96 benches of lot VI-LOT-260409 and the 8 benches of lot VI-LOT-260410 entered under the rail delivery's import (D37), which is not yet an example.
 - `PreviousCustomsDeclaration/FunctionCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  
@@ -495,13 +495,13 @@ Inside `Signature`:
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
       <cbc:ID>LD-SH-26-0132</cbc:ID>
-      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
-      <cbc:InsuranceValueAmount currencyID="XBL">59195.40</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">50724.00</cbc:FreeOnBoardValueAmount>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:InsuranceValueAmount currencyID="XBL">63771.40</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
         <cbc:ID>LD-CS-26-0133</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
-        <cbc:TotalPackagesQuantity unitCode="EA">300</cbc:TotalPackagesQuantity>
+        <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
+        <cbc:TotalPackagesQuantity unitCode="EA">324</cbc:TotalPackagesQuantity>
         <cac:OfficeOfExitLocation>
           <cbc:Name>Customs office, port of Lumeport</cbc:Name>
         </cac:OfficeOfExitLocation>
@@ -512,9 +512,9 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">49920.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">54080.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">104</cbc:Quantity>
         <cac:Item>
           <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
           <cbc:Name>Park bench Serra 180</cbc:Name>

@@ -231,13 +231,6 @@ Inside `ContractorCustomerParty`:
 - `Party/PartyName/Name` = **Brightmarket Stores**  
   A party referred to from another party's details: its identifier and name are enough.
 
-### Requested Catalogue Reference
-
-Inside `RequestedCatalogueReference`:
-
-- `ID` = **LD-CAT-SPRING-26**  
-  The catalogue as announced at the fair.
-
 ### Referenced Contract
 
 Inside `ReferencedContract`:
@@ -519,9 +512,6 @@ Inside `CatalogueRequestLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:ContractorCustomerParty>
-  <cac:RequestedCatalogueReference>
-    <cbc:ID>LD-CAT-SPRING-26</cbc:ID>
-  </cac:RequestedCatalogueReference>
   <cac:ReferencedContract>
     <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
   </cac:ReferencedContract>
