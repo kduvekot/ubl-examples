@@ -1196,6 +1196,12 @@
       </tgroup>
     </informaltable>
     <para>
+      The Trade Accord Council, an international body seated in
+      Lumeport, is in Bayvarra's federal list under its seat agreement
+      with Bayvarra, so that it can deal with Bayvarran bodies, banks
+      and the exchange network.
+    </para>
+    <para>
       A public body's party identifier and the
       <literal>CompanyID</literal> of its legal entity carry that number
       under its register's scheme

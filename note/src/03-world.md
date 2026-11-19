@@ -608,6 +608,10 @@ shape, derived from no other register:
 | Government list of public bodies of Lisavu | the Government Secretariat | `GOV-` and three digits (`GOV-118`, the customs service) | `XL:public-body-register` |
 | Farm register of Lisavu | the island's Department of Agriculture, which also runs the plant protection service | `LFR-` and four digits (`LFR-0412`, the cotton farm) | `XL:farm-register` |
 
+The Trade Accord Council, an international body seated in Lumeport, is in
+Bayvarra's federal list under its seat agreement with Bayvarra, so that it can
+deal with Bayvarran bodies, banks and the exchange network.
+
 A public body's party identifier and the `CompanyID` of its legal entity
 carry that number under its register's scheme (`urn:ubl-examples:world:` and
 the scheme), and its electronic address is built from it, as a company's is
