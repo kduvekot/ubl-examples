@@ -50,13 +50,13 @@ The sender's number for this document.</li>
 <strong>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-04-26</strong><br />
+<li><code>IssueDate</code> = <strong>2026-04-27</strong><br />
 Answered the same day.</li>
-<li><code>IssueTime</code> = <strong>12:08:00-01:00</strong><br />
-Issued a few minutes after the last thing of its day that it reports,
-cites or answers, in the sender's local time (C72); in the issuer's
+<li><code>IssueTime</code> = <strong>11:20:00-01:00</strong><br />
+After the carrier had confirmed the truck (retail/23); in the issuer's
 local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>Accepted and booked.</strong><br />
+<li><code>Note</code> = <strong>Accepted; the truck is booked for a
+delivery on 30 April.</strong><br />
 The answer.</li>
 </ul>
 <h3 id="signature">Signature</h3>
@@ -216,26 +216,6 @@ retail/08, a Order; a generic reference names the UBL document type
 (decision Q29). The code is from the Trade Accord's UBL document type
 list: Order.</li>
 </ul>
-<h3 id="additional-document-response">Additional Document Response</h3>
-<p>Inside <code>AdditionalDocumentResponse</code>:</p>
-<ul>
-<li><code>Response/ResponseCode</code> = <strong>AP</strong> (listID
-<code>UN/EDIFACT EDED 4343</code>)<br />
-The transport booking is confirmed too. The code is from the world's
-copy of UN/EDIFACT 4343 Response type: AP = Accepted.</li>
-<li><code>DocumentReference/ID</code> =
-<strong>LD-TR-26-0227</strong><br />
-The transport booking: the request that follows as the next document of
-the flow, numbered when the truck was booked.</li>
-<li><code>DocumentReference/DocumentTypeCode</code> =
-<strong>TransportExecutionPlanRequest</strong> (listID
-<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: LD-TR-26-0227 is the example
-retail/11, a TransportExecutionPlanRequest; a generic reference names
-the UBL document type (decision Q29). The code is from the Trade
-Accord's UBL document type list: TransportExecutionPlanRequest =
-Transport Execution Plan Request.</li>
-</ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&#39;1.0&#39;</span> <span class="ot">encoding=</span><span class="st">&#39;UTF-8&#39;</span><span class="fu">?&gt;</span></span>
@@ -246,9 +226,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;RETAIL-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LD-DOC-26-0226&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;eb9072fe-2cf3-54f8-bb18-08f7f9930b9c&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-26&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;12:08:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Accepted and booked.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-27&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:20:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Accepted; the truck is booked for a delivery on 30 April.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SIG-26-DS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
@@ -320,18 +300,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentResponse</span>&gt;</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentResponse</span>&gt;</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Response</span>&gt;</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ResponseCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4343&quot;</span>&gt;AP&lt;/<span class="kw">cbc:ResponseCode</span>&gt;</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Response</span>&gt;</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-TR-26-0227&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;TransportExecutionPlanRequest&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentResponse</span>&gt;</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DocumentStatus</span>&gt;</span></code></pre></div>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DocumentStatus</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/5b3382ea0953ba8e146114c8b58def178260303d"><code>5b3382e</code></a> of 2026-11-19 23:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8c3065d2b4a0d7ef825354f1be84e86c72130e67"><code>8c3065d</code></a> of 2026-11-19 23:14 UTC</p></div></footer>
 </body>
 </html>

@@ -18,7 +18,9 @@ Request: Brightmarket Stores to Lumeway Distribution</h1>
 paid (domestic, Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-REQUEST-SCHEMA">Catalogue
 Request in the UBL 2.5 specification</a></em></p>
-<p>The store asks the distributor for its spring catalogue.</p>
+<p>To set up the range of its home and garden department, which reopens
+on 11 May after a renovation, the store asks the distributor for its
+catalogue.</p>
 <p><a href="examples/retail/01-CatalogueRequest.xml">The XML file</a> is
 valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -50,17 +52,20 @@ The sender's number for this document.</li>
 <strong>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>Name</code> = <strong>Spring catalogue 2026</strong><br />
-The catalogue asked for.</li>
+<li><code>Name</code> = <strong>Request for Lumeway's catalogue for the
+home and garden department</strong><br />
+What the document is: a request, named as one (retail/01#F10).</li>
 <li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
-The store asks for the spring catalogue. As UBL defines it, the party
-that sends a catalogue request is its ProviderParty.</li>
+The store asks Lumeway for its catalogue, to set up the range of the
+reopened department. As UBL defines it, the party that sends a catalogue
+request is its ProviderParty.</li>
 <li><code>IssueTime</code> = <strong>08:42:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>For the garden
-department.</strong><br />
-Who it is for.</li>
+<li><code>Note</code> = <strong>To set up the range of the home and
+garden department, which reopens on Monday 11 May after its
+renovation.</strong><br />
+Who it is for, and why now (D34).</li>
 <li><code>Description</code> = <strong>Benches and spare
 parts.</strong><br />
 What the store wants to see.</li>
@@ -543,15 +548,11 @@ Scheme</h3>
 <ul>
 <li><code>ID</code> = <strong>HS</strong><br />
 Items classified by the Harmonized System.</li>
-<li><code>UUID</code> =
-<strong>1afc0bc8-8a3e-5d36-b5be-437211032bac</strong><br />
-Its UUID.</li>
 <li><code>LastRevisionDate</code> = <strong>2022-01-01</strong><br />
-The edition in force.</li>
-<li><code>LastRevisionTime</code> = <strong>00:00:00</strong><br />
-From midnight.</li>
-<li><code>Note</code> = <strong>Six-digit subheadings.</strong><br />
-The level wanted.</li>
+The edition in force: HS 2022 entered into force on 1 January 2022.</li>
+<li><code>Note</code> = <strong>The heading and its six-digit
+subheadings.</strong><br />
+The levels wanted, as the categories give them (retail/01#F3).</li>
 <li><code>Name</code> = <strong>Harmonized System</strong><br />
 In words.</li>
 <li><code>Description</code> = <strong>The international goods
@@ -578,15 +579,15 @@ The heading the benches fall in.</li>
 <li><code>ClassificationCategory/CodeValue</code> =
 <strong>9401</strong><br />
 HS heading 94.01.</li>
-<li><code>ClassificationCategory/Description</code> = <strong>Outdoor
-furniture and its spare parts.</strong><br />
+<li><code>ClassificationCategory/Description</code> = <strong>Seats and
+their parts: the bench and its spare side frame.</strong><br />
 What the category holds.</li>
 <li><code>ClassificationCategory/CategorizesClassificationCategory/Name</code>
-= <strong>Spare parts</strong><br />
-A subcategory the store wants too.</li>
+= <strong>Parts of seats, other than of wood</strong><br />
+The subheading of the spare side frame (D13).</li>
 <li><code>ClassificationCategory/CategorizesClassificationCategory/CodeValue</code>
-= <strong>FUR-OUT-SP</strong><br />
-Its code.</li>
+= <strong>940199</strong><br />
+HS subheading 9401.99 (retail/01#F3).</li>
 </ul>
 <h3 id="catalogue-request-line">Catalogue Request Line</h3>
 <p>Inside <code>CatalogueRequestLine</code>:</p>
@@ -621,10 +622,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;RETAIL-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0217&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;5e45c6c8-ba0a-5689-b0f9-f653754fd6b8&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Spring catalogue 2026&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Request for Lumeway&#39;s catalogue for the home and garden department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:42:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;For the garden department.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Benches and spare parts.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PricingUpdateRequestIndicator</span>&gt;true&lt;/<span class="kw">cbc:PricingUpdateRequestIndicator</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ItemUpdateRequestIndicator</span>&gt;true&lt;/<span class="kw">cbc:ItemUpdateRequestIndicator</span>&gt;</span>
@@ -810,51 +811,49 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RequestedLanguage</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RequestedClassificationScheme</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;HS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;1afc0bc8-8a3e-5d36-b5be-437211032bac&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LastRevisionDate</span>&gt;2022-01-01&lt;/<span class="kw">cbc:LastRevisionDate</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LastRevisionTime</span>&gt;00:00:00&lt;/<span class="kw">cbc:LastRevisionTime</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Six-digit subheadings.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Harmonized System&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;The international goods classification.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AgencyID</span>&gt;WCO&lt;/<span class="kw">cbc:AgencyID</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AgencyName</span>&gt;World Customs Organization&lt;/<span class="kw">cbc:AgencyName</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;2022&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:URI</span>&gt;https://www.wcoomd.org&lt;/<span class="kw">cbc:URI</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SchemeURI</span>&gt;https://www.wcoomd.org/hs&lt;/<span class="kw">cbc:SchemeURI</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LanguageID</span>&gt;en&lt;/<span class="kw">cbc:LanguageID</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ClassificationCategory</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Seats&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CodeValue</span>&gt;9401&lt;/<span class="kw">cbc:CodeValue</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Outdoor furniture and its spare parts.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CategorizesClassificationCategory</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Spare parts&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CodeValue</span>&gt;FUR-OUT-SP&lt;/<span class="kw">cbc:CodeValue</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CategorizesClassificationCategory</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ClassificationCategory</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RequestedClassificationScheme</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractSubdivision</span>&gt;Garden&lt;/<span class="kw">cbc:ContractSubdivision</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Pallet prices, please.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineValidityPeriod</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineValidityPeriod</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;24&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CatalogueRequest</span>&gt;</span></code></pre></div>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LastRevisionDate</span>&gt;2022-01-01&lt;/<span class="kw">cbc:LastRevisionDate</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The heading and its six-digit subheadings.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Harmonized System&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;The international goods classification.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AgencyID</span>&gt;WCO&lt;/<span class="kw">cbc:AgencyID</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AgencyName</span>&gt;World Customs Organization&lt;/<span class="kw">cbc:AgencyName</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;2022&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:URI</span>&gt;https://www.wcoomd.org&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SchemeURI</span>&gt;https://www.wcoomd.org/hs&lt;/<span class="kw">cbc:SchemeURI</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LanguageID</span>&gt;en&lt;/<span class="kw">cbc:LanguageID</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ClassificationCategory</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Seats&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CodeValue</span>&gt;9401&lt;/<span class="kw">cbc:CodeValue</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Seats and their parts: the bench and its spare side frame.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CategorizesClassificationCategory</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Parts of seats, other than of wood&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CodeValue</span>&gt;940199&lt;/<span class="kw">cbc:CodeValue</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CategorizesClassificationCategory</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ClassificationCategory</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RequestedClassificationScheme</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractSubdivision</span>&gt;Garden&lt;/<span class="kw">cbc:ContractSubdivision</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Pallet prices, please.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineValidityPeriod</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-07-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineValidityPeriod</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;24&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CatalogueRequestLine</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CatalogueRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/5b3382ea0953ba8e146114c8b58def178260303d"><code>5b3382e</code></a> of 2026-11-19 23:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8c3065d2b4a0d7ef825354f1be84e86c72130e67"><code>8c3065d</code></a> of 2026-11-19 23:14 UTC</p></div></footer>
 </body>
 </html>

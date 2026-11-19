@@ -54,9 +54,9 @@ Sent after the catalogue arrived.</li>
 <li><code>IssueTime</code> = <strong>11:55:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>Includes the spring garden
-promotion.</strong><br />
-What the figure includes.</li>
+<li><code>Note</code> = <strong>Includes the reopening promotion of the
+home and garden department, 11 to 24 May.</strong><br />
+What the figure includes (D34).</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
 The first forecast of the season.</li>
 <li><code>BasedOnConsensusIndicator</code> =
@@ -80,15 +80,15 @@ The end of the forecast period.</li>
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>BM-RE-26</strong><br />
-The promotion it counts on.</li>
+<li><code>ID</code> = <strong>BS-RE-26-0222</strong><br />
+The store's retail event of the reopening, the promotion the figure
+counts on (retail/05#F1).</li>
 <li><code>DocumentTypeCode</code> = <strong>RetailEvent</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to, the store's retail event for the
-reopening (retail/06), cited before its number is known; its ID is put
-right with the retail flow (D34), a document outside the examples
-(world/documents.json, cited; decision Q29). The code is from the Trade
-Accord's UBL document type list: RetailEvent = Retail Event.</li>
+The kind of document referred to: BS-RE-26-0222 is the example
+retail/06, a RetailEvent; a generic reference names the UBL document
+type (decision Q29). The code is from the Trade Accord's UBL document
+type list: RetailEvent = Retail Event.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -430,8 +430,10 @@ The first and only line.</li>
 <li><code>Note</code> = <strong>Week-by-week figures follow in the
 store's portal.</strong><br />
 Where the detail is.</li>
-<li><code>FrozenDocumentIndicator</code> = <strong>false</strong><br />
-The figure may still change.</li>
+<li><code>FrozenDocumentIndicator</code> = <strong>true</strong><br />
+The figure may still change: by its UBL definition the indicator is true
+when the document can be changed, which its name contradicts; recorded
+for the TC (retail/05#F10, D34).</li>
 <li><code>ForecastTypeCode</code> = <strong>TOTAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:ForecastTypeCode</code>)<br />
 The total expected sales of the item in the period. The code is from the
@@ -511,7 +513,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;60706c39-36eb-5254-aefe-265082af3657&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:55:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Includes the spring garden promotion.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Includes the reopening promotion of the home and garden department, 11 to 24 May.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:BasedOnConsensusIndicator</span>&gt;false&lt;/<span class="kw">cbc:BasedOnConsensusIndicator</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ForecastPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastPurposeCode&quot;</span>&gt;SALES&lt;/<span class="kw">cbc:ForecastPurposeCode</span>&gt;</span>
@@ -520,7 +522,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-15&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ForecastPeriod</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BM-RE-26&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BS-RE-26-0222&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;RetailEvent&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
@@ -647,7 +649,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ForecastLine</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Week-by-week figures follow in the store&#39;s portal.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FrozenDocumentIndicator</span>&gt;false&lt;/<span class="kw">cbc:FrozenDocumentIndicator</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FrozenDocumentIndicator</span>&gt;true&lt;/<span class="kw">cbc:FrozenDocumentIndicator</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ForecastTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastTypeCode&quot;</span>&gt;TOTAL&lt;/<span class="kw">cbc:ForecastTypeCode</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ForecastPeriod</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-04&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -683,6 +685,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Forecast</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/5b3382ea0953ba8e146114c8b58def178260303d"><code>5b3382e</code></a> of 2026-11-19 23:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8c3065d2b4a0d7ef825354f1be84e86c72130e67"><code>8c3065d</code></a> of 2026-11-19 23:14 UTC</p></div></footer>
 </body>
 </html>

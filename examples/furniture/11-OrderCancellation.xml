@@ -4,19 +4,19 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-cancellation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0577</cbc:ID>
+  <cbc:ID>BS-DOC-26-0578</cbc:ID>
   <cbc:UUID>4e4382b0-483c-570a-9560-c9d39c4a7902</cbc:UUID>
   <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>11:51:00-01:00</cbc:IssueTime>
   <cbc:Note>No cost: cancelled before production.</cbc:Note>
   <cbc:CancellationNote>Sales of the line are below the agreed threshold; the second delivery is not needed.</cbc:CancellationNote>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0576</cbc:ID>
+    <cbc:ID>BS-PO-26-0577</cbc:ID>
   </cac:OrderReference>
-  <cac:OriginatorDocumentReference>
+  <cac:AdditionalDocumentReference>
     <cbc:ID>BF-DOC-26-0573</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
-  </cac:OriginatorDocumentReference>
+  </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>BS-DOC-26-0572</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>

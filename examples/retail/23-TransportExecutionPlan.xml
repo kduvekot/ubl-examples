@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TransportExecutionPlan xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>BF-TEP-26-0233</cbc:ID>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cbc:UUID>34de1c5a-0a12-56eb-ae1f-1025193cb28e</cbc:UUID>
+  <cbc:IssueDate>2026-04-27</cbc:IssueDate>
+  <cbc:IssueTime>10:30:00-01:00</cbc:IssueTime>
+  <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
+  <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">ASREQUESTED</cbc:DocumentStatusReasonCode>
+  <cbc:DocumentStatusReasonDescription>Truck B-03 available; the slot at the store confirmed.</cbc:DocumentStatusReasonDescription>
+  <cbc:Note>The forwarder's truck from the distribution centre to the store.</cbc:Note>
+  <cbc:TransportUserRemarks>Delivery slot at the store's goods-in: Thursday 30 April, 10:00 to 10:30. Please confirm by return.</cbc:TransportUserRemarks>
+  <cbc:TransportServiceProviderRemarks>Loading at the distribution centre on Wednesday 29 April in the afternoon; delivery on Thursday 30 April in the slot of 10:00 to 10:30.</cbc:TransportServiceProviderRemarks>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Dockside Way</cbc:StreetName>
+      <cbc:BuildingNumber>4</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38525</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
+      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Distribution Drive</cbc:StreetName>
+      <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+      <cbc:BuildingNumber>43</cbc:BuildingNumber>
+      <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+      <cbc:CityName>Marrowdale</cbc:CityName>
+      <cbc:PostalZone>71214</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Transport planning</cbc:Name>
+      <cbc:JobTitle>Logistics planner</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
+      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+      <cbc:ElectronicMail>logistics@lumeway.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ReceiverParty>
+  <cac:TransportUserParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:TransportUserParty>
+  <cac:TransportServiceProviderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+  </cac:TransportServiceProviderParty>
+  <cac:BillToParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeway Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:BillToParty>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-217</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:TransportExecutionPlanRequestDocumentReference>
+    <cbc:ID>LD-TR-26-0227</cbc:ID>
+  </cac:TransportExecutionPlanRequestDocumentReference>
+  <cac:TransportContract>
+    <cbc:ID>LD-BF-FW-2026</cbc:ID>
+    <cbc:ContractType>Framework transport agreement</cbc:ContractType>
+  </cac:TransportContract>
+  <cac:TransportServiceProviderResponseRequiredPeriod>
+    <cbc:EndDate>2026-04-27</cbc:EndDate>
+  </cac:TransportServiceProviderResponseRequiredPeriod>
+  <cac:TransportUserResponseRequiredPeriod>
+    <cbc:EndDate>2026-04-28</cbc:EndDate>
+  </cac:TransportUserResponseRequiredPeriod>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-27</cbc:StartDate>
+    <cbc:EndDate>2026-05-02</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:MainTransportationService>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">FTL</cbc:TransportServiceCode>
+    <cbc:Name>Full truck load</cbc:Name>
+  </cac:MainTransportationService>
+  <cac:ServiceStartTimePeriod>
+    <cbc:StartDate>2026-04-29</cbc:StartDate>
+  </cac:ServiceStartTimePeriod>
+  <cac:ServiceEndTimePeriod>
+    <cbc:StartDate>2026-04-30</cbc:StartDate>
+    <cbc:StartTime>10:00:00</cbc:StartTime>
+    <cbc:EndDate>2026-04-30</cbc:EndDate>
+    <cbc:EndTime>10:30:00</cbc:EndTime>
+  </cac:ServiceEndTimePeriod>
+  <cac:FromLocation>
+    <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+    <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
+  </cac:FromLocation>
+  <cac:ToLocation>
+    <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+    <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+  </cac:ToLocation>
+  <cac:TransportExecutionTerms>
+    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
+    <cac:PaymentTerms>
+      <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    </cac:PaymentTerms>
+    <cac:PenaltyPaymentTerms>
+      <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
+    </cac:PenaltyPaymentTerms>
+    <cac:ServiceChargePaymentTerms>
+      <cbc:Note>Waiting time 40 lume per hour beyond two hours.</cbc:Note>
+    </cac:ServiceChargePaymentTerms>
+  </cac:TransportExecutionTerms>
+  <cac:Consignment>
+    <cbc:ID>LD-CS-26-0228</cbc:ID>
+    <cbc:SummaryDescription>24 × Park bench Serra 180</cbc:SummaryDescription>
+    <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+    <cac:ConsigneeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9522610900002</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brightmarket Stores</cbc:Name>
+      </cac:PartyName>
+      <cac:TradePartyName>
+        <cbc:Name>Brightmarket</cbc:Name>
+      </cac:TradePartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-579130</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Market Street</cbc:StreetName>
+        <cbc:BuildingNumber>50</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Old Town</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38515</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Goods-in, Lumeport store</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Store operations</cbc:Department>
+        <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
+        <cbc:ElectronicMail>goodsin@brightmarket.example</cbc:ElectronicMail>
+        <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
+      </cac:Contact>
+    </cac:ConsigneeParty>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
+  </cac:Consignment>
+</TransportExecutionPlan>

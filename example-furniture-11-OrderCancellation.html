@@ -46,7 +46,7 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>FURNITURE-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>BS-DOC-26-0577</strong><br />
+<li><code>ID</code> = <strong>BS-DOC-26-0578</strong><br />
 The sender's number for this document.</li>
 <li><code>UUID</code> =
 <strong>4e4382b0-483c-570a-9560-c9d39c4a7902</strong><br />
@@ -67,15 +67,17 @@ Why the order is cancelled.</li>
 <h3 id="order-reference">Order Reference</h3>
 <p>Inside <code>OrderReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>BS-PO-26-0576</strong><br />
+<li><code>ID</code> = <strong>BS-PO-26-0577</strong><br />
 The order cancelled.</li>
 </ul>
-<h3 id="originator-document-reference">Originator Document
+<h3 id="additional-document-reference">Additional Document
 Reference</h3>
-<p>Inside <code>OriginatorDocumentReference</code>:</p>
+<p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>BF-DOC-26-0573</strong><br />
-The exception notification that led to it.</li>
+The maker's exception notification that led to it: a document that bears
+on the cancellation, not one of the originator's (furniture/11#F4,
+D32).</li>
 <li><code>DocumentTypeCode</code> =
 <strong>ExceptionNotification</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
@@ -83,11 +85,6 @@ The kind of document referred to: BF-DOC-26-0573 is the example
 furniture/07, a ExceptionNotification; a generic reference names the UBL
 document type (decision Q29). The code is from the Trade Accord's UBL
 document type list: ExceptionNotification = Exception Notification.</li>
-</ul>
-<h3 id="additional-document-reference">Additional Document
-Reference</h3>
-<p>Inside <code>AdditionalDocumentReference</code>:</p>
-<ul>
 <li><code>ID</code> = <strong>BS-DOC-26-0572</strong><br />
 The sales figures.</li>
 <li><code>DocumentTypeCode</code> = <strong>ProductActivity</strong>
@@ -416,19 +413,19 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:order-cancellation:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:ordering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;FURNITURE-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0577&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0578&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4e4382b0-483c-570a-9560-c9d39c4a7902&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-10&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:51:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;No cost: cancelled before production.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CancellationNote</span>&gt;Sales of the line are below the agreed threshold; the second delivery is not needed.&lt;/<span class="kw">cbc:CancellationNote</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BS-PO-26-0576&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BS-PO-26-0577&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OriginatorDocumentReference</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-DOC-26-0573&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExceptionNotification&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OriginatorDocumentReference</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BS-DOC-26-0572&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ProductActivity&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
@@ -542,6 +539,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">OrderCancellation</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/5b3382ea0953ba8e146114c8b58def178260303d"><code>5b3382e</code></a> of 2026-11-19 23:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8c3065d2b4a0d7ef825354f1be84e86c72130e67"><code>8c3065d</code></a> of 2026-11-19 23:14 UTC</p></div></footer>
 </body>
 </html>

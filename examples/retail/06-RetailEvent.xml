@@ -9,11 +9,11 @@
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>11:13:00-01:00</cbc:IssueTime>
   <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
-  <cbc:RetailEventName>Spring garden promotion</cbc:RetailEventName>
+  <cbc:RetailEventName>Reopening of the home and garden department</cbc:RetailEventName>
   <cbc:RetailEventStatusCode listID="urn:ubl-examples:world:codelist:RetailEventStatusCode">CONFIRMED</cbc:RetailEventStatusCode>
   <cbc:SellerEventID>LD-PROMO-26-03</cbc:SellerEventID>
-  <cbc:BuyerEventID>BM-SPRING-GARDEN-26</cbc:BuyerEventID>
-  <cbc:Description>Ten per cent off garden furniture for two weeks.</cbc:Description>
+  <cbc:BuyerEventID>BM-REOPEN-HG-26</cbc:BuyerEventID>
+  <cbc:Description>After its renovation the home and garden department of the Lumeport store reopens on Monday 11 May: ten per cent off the department's range for two weeks, the Elderwick Marrow line excepted.</cbc:Description>
   <cac:Period>
     <cbc:StartDate>2026-05-11</cbc:StartDate>
     <cbc:EndDate>2026-05-24</cbc:EndDate>
@@ -140,26 +140,25 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:EventComment>
-    <cbc:Comment>Shelf space for 12 benches at the entrance.</cbc:Comment>
+    <cbc:Comment>Floor space for 12 benches at the entrance of the renovated department.</cbc:Comment>
     <cbc:IssueDate>2026-04-22</cbc:IssueDate>
     <cbc:IssueTime>11:00:00</cbc:IssueTime>
   </cac:EventComment>
   <cac:PromotionalEvent>
-    <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">TPR</cbc:PromotionalEventTypeCode>
+    <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">OPENING</cbc:PromotionalEventTypeCode>
     <cbc:SubmissionDate>2026-04-22</cbc:SubmissionDate>
     <cbc:FirstShipmentAvailabilityDate>2026-04-29</cbc:FirstShipmentAvailabilityDate>
-    <cbc:LatestProposalAcceptanceDate>2026-04-26</cbc:LatestProposalAcceptanceDate>
     <cac:PromotionalSpecification>
-      <cbc:SpecificationID>BM-SPRING-GARDEN-26/1</cbc:SpecificationID>
+      <cbc:SpecificationID>BM-REOPEN-HG-26/1</cbc:SpecificationID>
       <cac:PromotionalEventLineItem>
-        <cbc:Amount currencyID="XBL">74.90</cbc:Amount>
+        <cbc:Amount currencyID="XBL">674.10</cbc:Amount>
         <cac:EventLineItem>
           <cbc:LineNumberNumeric>1</cbc:LineNumberNumeric>
           <cac:ParticipatingLocationsLocation>
             <cbc:Name>Brightmarket Stores, Lumeport</cbc:Name>
           </cac:ParticipatingLocationsLocation>
           <cac:RetailPlannedImpact>
-            <cbc:Amount currencyID="XBL">17976.00</cbc:Amount>
+            <cbc:Amount currencyID="XBL">16178.40</cbc:Amount>
             <cbc:ForecastPurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">SALES</cbc:ForecastPurposeCode>
             <cbc:ForecastTypeCode listID="urn:ubl-examples:world:codelist:ForecastTypeCode">TOTAL</cbc:ForecastTypeCode>
             <cac:Period>
@@ -176,11 +175,11 @@
         </cac:EventLineItem>
       </cac:PromotionalEventLineItem>
       <cac:EventTactic>
-        <cbc:Comment>Benches at the entrance, with a price board.</cbc:Comment>
+        <cbc:Comment>Benches on a floor stand at the entrance, with a price board.</cbc:Comment>
         <cbc:Quantity unitCode="EA">12</cbc:Quantity>
         <cac:EventTacticEnumeration>
           <cbc:ConsumerIncentiveTacticTypeCode listID="urn:ubl-examples:world:codelist:ConsumerIncentiveTacticCode">TPR</cbc:ConsumerIncentiveTacticTypeCode>
-          <cbc:DisplayTacticTypeCode listID="urn:ubl-examples:world:codelist:DisplayTacticCode">ENDCAP</cbc:DisplayTacticTypeCode>
+          <cbc:DisplayTacticTypeCode listID="urn:ubl-examples:world:codelist:DisplayTacticCode">FLOORSTAND</cbc:DisplayTacticTypeCode>
           <cbc:FeatureTacticTypeCode listID="urn:ubl-examples:world:codelist:FeatureTacticCode">FLYER</cbc:FeatureTacticTypeCode>
           <cbc:TradeItemPackingLabelingTypeCode listID="urn:ubl-examples:world:codelist:PackingLabelingTypeCode">STICKER</cbc:TradeItemPackingLabelingTypeCode>
         </cac:EventTacticEnumeration>

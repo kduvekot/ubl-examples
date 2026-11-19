@@ -1,101 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0580</cbc:ID>
-  <cbc:UUID>0875ae2f-3059-5ccf-bbe9-44ac5e023a67</cbc:UUID>
+  <cbc:ID>BS-INV-26-0584</cbc:ID>
+  <cbc:UUID>4f94dfb7-b177-524c-9081-5910fd8cea6d</cbc:UUID>
   <cbc:IssueDate>2026-06-17</cbc:IssueDate>
-  <cbc:IssueTime>11:12:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>17:31:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-07-17</cbc:DueDate>
-  <cbc:Note>The pieces went back at the maker's cost, as the own-label agreement says; the store charges the transport.</cbc:Note>
-  <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
+  <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:Note>The stock above the target at the end of the sale-or-return trial went back at the maker's cost, as the own-label agreement says; the store carried it with its own van.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
+  <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
-  <cac:DiscrepancyResponse>
-    <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>
-    <cbc:Description>Return transport of seven benches, ten chairs and their care kits.</cbc:Description>
-  </cac:DiscrepancyResponse>
-  <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0574</cbc:ID>
-  </cac:OrderReference>
-  <cac:BillingReference>
-    <cac:CreditNoteDocumentReference>
-      <cbc:ID>BF-CN-26-0579</cbc:ID>
-    </cac:CreditNoteDocumentReference>
-  </cac:BillingReference>
   <cac:ContractDocumentReference>
     <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-DOC-26-0578</cbc:ID>
+    <cbc:ID>BF-DOC-26-0579</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
-    <cac:Party>
-      <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="GS1 GLN">9523710900008</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:PartyName>
-        <cbc:Name>Brackenmere Furniture</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-821551</cbc:ID>
-        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Joiners Row</cbc:StreetName>
-        <cbc:BuildingNumber>14</cbc:BuildingNumber>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cbc:PostalZone>71203</cbc:PostalZone>
-        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
-        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          <cbc:Name>Bayvarra</cbc:Name>
-        </cac:Country>
-      </cac:PostalAddress>
-      <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1237398</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-          <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:JurisdictionRegionAddress>
-        </cac:TaxScheme>
-      </cac:PartyTaxScheme>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
-      </cac:PartyLegalEntity>
-      <cac:Contact>
-        <cbc:Name>Accounts receivable</cbc:Name>
-        <cbc:JobTitle>Credit controller</cbc:JobTitle>
-        <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
-        <cbc:ElectronicMail>receivables@brackenmere.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-      </cac:Contact>
-      <cac:ElectronicAddress>
-        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
-      </cac:ElectronicAddress>
-    </cac:Party>
-  </cac:AccountingSupplierParty>
-  <cac:AccountingCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -169,11 +97,11 @@
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Accounts payable</cbc:Name>
-        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 4609 7100</cbc:Telephone>
-        <cbc:ElectronicMail>payables@brightmarket.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>receivables@brightmarket.example</cbc:ElectronicMail>
         <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -181,15 +109,67 @@
         <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410411</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9523710900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Brackenmere Furniture</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-821551</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Joiners Row</cbc:StreetName>
+        <cbc:BuildingNumber>14</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71203</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1237398</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Brackenmere Furniture Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412466</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
+        <cbc:ElectronicMail>payables@brackenmere.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
   </cac:AccountingCustomerParty>
-  <cac:PayeeParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Brightmarket Stores</cbc:Name>
-    </cac:PartyName>
-  </cac:PayeeParty>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -224,15 +204,15 @@
     <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF86BSDOC260580</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF86BSDOC260580</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF32BSINV260584</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF32BSINV260584</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB48BLUM38010001570935</cbc:ID>
       <cbc:Name>Brightmarket Stores Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Debit note BS-DOC-26-0580</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BS-INV-26-0584</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>
@@ -266,8 +246,16 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:Note>30 days net.</cbc:Note>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">1.28</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.brightmarket.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-07-18</cbc:StartDate>
+    </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -287,39 +275,15 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">85.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">85.00</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="XBL">85.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
-  <cac:DebitNoteLine>
+  <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Collected with the store's van.</cbc:Note>
-    <cbc:DebitedQuantity unitCode="E48">1</cbc:DebitedQuantity>
+    <cbc:Note>Seven benches, ten chairs and seven care kits, from the store's goods-in to Brackenmere's workshop in Marrowdale.</cbc:Note>
+    <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">85.00</cbc:TaxInclusiveLineExtensionAmount>
-    <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
-    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SCVE</cbc:PaymentPurposeCode>
-    <cac:DiscrepancyResponse>
-      <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">35</cbc:ResponseCode>
-    </cac:DiscrepancyResponse>
-    <cac:BillingReference>
-      <cac:CreditNoteDocumentReference>
-        <cbc:ID>BF-CN-26-0579</cbc:ID>
-      </cac:CreditNoteDocumentReference>
-      <cac:BillingReferenceLine>
-        <cbc:ID>1</cbc:ID>
-        <cbc:Amount currencyID="XBL">1520.00</cbc:Amount>
-      </cac:BillingReferenceLine>
-    </cac:BillingReference>
-    <cac:DocumentReference>
-      <cbc:ID>BF-DOC-26-0578</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
-    </cac:DocumentReference>
-    <cac:Delivery>
-      <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
-    </cac:Delivery>
-    <cac:TaxTotal>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-    </cac:TaxTotal>
     <cac:Item>
       <cbc:Description>Transport of returned goods back to the supplier, per delivery.</cbc:Description>
       <cbc:Name>Return transport</cbc:Name>
@@ -331,6 +295,7 @@
         <cbc:Percent>0</cbc:Percent>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">SVCB2B</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Service to a business</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">SERVICES</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -340,5 +305,5 @@
       <cbc:PriceAmount currencyID="XBL">85</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
     </cac:Price>
-  </cac:DebitNoteLine>
-</DebitNote>
+  </cac:InvoiceLine>
+</Invoice>

@@ -239,6 +239,7 @@
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>
+          <cbc:ExtendedID>2026</cbc:ExtendedID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9520610000029</cbc:ID>

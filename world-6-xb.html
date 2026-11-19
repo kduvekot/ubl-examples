@@ -118,7 +118,7 @@ buys from manufacturers and sells at home and overseas. UBL links all of
 it: catalogue items appear unchanged in orders, orders are referenced by
 despatch advices and invoices, and receipt advices confirm what actually
 arrived.</p>
-<p>In this world it sends 37 and receives 27 documents, and is named in
+<p>In this world it sends 37 and receives 28 documents, and is named in
 15 documents between other parties. They are listed per flow below.</p>
 <h2
 id="finished-goods-by-truck-across-the-land-border-urvania--bayvarra">Finished
@@ -456,7 +456,11 @@ to retailer, delivered duty paid (domestic, Bayvarra)</h2>
 distributor arranges the transport and bears all costs, so the
 distributor, not the retailer, books the truck and receives the
 transport documents. The retailer shares forecasts, promotions and its
-stock levels so the distributor can plan replenishment.</p>
+stock levels so the distributor can plan replenishment. In 2026 the
+store renovates the home and garden department of its Lumeport store and
+reopens it on Monday 11 May, with two weeks at 10 % off; to set up the
+range it asks the distributor for a catalogue, which the distributor
+deletes when its winter catalogue takes over on 20 June.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -539,20 +543,19 @@ as <code>PayeeParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> to <a href="world-26-xb.html">Brightmarket Stores</a>:
-The shop reported a damaged carton in its receipt advice; the
-distributor credits it. The factor stays the payee, because it owns the
-receivable being reduced. <a
+The shop refused a damaged bench in its receipt advice; the distributor
+credits it. The store deducts the credit from what it pays the factor,
+which owns the invoice's receivable. <a
 href="example-retail-19-CreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
-<code>SellerSupplierParty</code>.</p>
-<p>Also mentions: <a href="world-24-xb.html">Harbourline Factoring</a>
-as <code>PayeeParty</code>.</p></li>
+<code>SellerSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-DELETION-SCHEMA"><strong>Catalogue
 Deletion</strong></a> to <a href="world-26-xb.html">Brightmarket
-Stores</a>: The spring catalogue ends; the distributor deletes it before
-the summer catalogue. <a
+Stores</a>: The distributor's winter catalogue takes over on 20 June,
+the start of winter in the south; the distributor deletes the store's
+catalogue the day before. <a
 href="example-retail-20-CatalogueDeletion.html">See the example
 document</a>.</p>
 <p>In it as <code>ProviderParty</code>,
@@ -563,9 +566,10 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-REQUEST-SCHEMA"><strong>Catalogue
 Request</strong></a> from <a href="world-26-xb.html">Brightmarket
-Stores</a>: The store asks the distributor for its spring catalogue. <a
-href="example-retail-01-CatalogueRequest.html">See the example
-document</a>.</p>
+Stores</a>: To set up the range of its home and garden department, which
+reopens on 11 May after a renovation, the store asks the distributor for
+its catalogue. <a href="example-retail-01-CatalogueRequest.html">See the
+example document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
@@ -578,8 +582,9 @@ href="example-retail-05-Forecast.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RETAIL-EVENT-SCHEMA"><strong>Retail
 Event</strong></a> from <a href="world-26-xb.html">Brightmarket
-Stores</a>: A promotion next month will lift demand; the distributor
-needs to know before it orders from the manufacturer. <a
+Stores</a>: The reopening of the home and garden department on 11 May,
+with two weeks at 10 % off, will lift demand; the distributor needs to
+know before it orders from the manufacturer. <a
 href="example-retail-06-RetailEvent.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>,
@@ -617,8 +622,8 @@ href="example-retail-13-Waybill.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
 Status</strong></a> from <a href="world-10-xb.html">Bayforth
-Forwarding</a>: The carrier answers the request: the truck is on its way
-and arrives in the afternoon. <a
+Forwarding</a>: The carrier answers the request on the morning of the
+delivery: the truck is on its way and expected at the store at 10:15. <a
 href="example-retail-15-TransportationStatus.html">See the example
 document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p></li>
@@ -639,6 +644,18 @@ Stores</a>: The shop confirms the delivery and reports a damaged carton.
 document</a>.</p>
 <p>In it as <code>DespatchSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-SCHEMA"><strong>Transport
+Execution Plan</strong></a> from <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The carrier confirms the distributor's booking: loading
+on 29 April and the delivery slot at the store on 30 April, 10:00 to
+10:30 (D38, D34). <a
+href="example-retail-23-TransportExecutionPlan.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>, <code>TransportUserParty</code>,
+<code>Consignment/ConsignorParty</code>.</p>
+<p>Also mentions: <a href="world-26-xb.html">Brightmarket Stores</a> as
+<code>Consignment/ConsigneeParty</code>.</p></li>
 </ul>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
@@ -1073,6 +1090,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/5b3382ea0953ba8e146114c8b58def178260303d"><code>5b3382e</code></a> of 2026-11-19 23:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/8c3065d2b4a0d7ef825354f1be84e86c72130e67"><code>8c3065d</code></a> of 2026-11-19 23:14 UTC</p></div></footer>
 </body>
 </html>
