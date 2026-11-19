@@ -251,18 +251,17 @@
     <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
     <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">60000</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">60000</cbc:TaxAmount>
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-      <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+      <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
+      <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-        <cbc:TierRange>The first 50,000 kWh of the month</cbc:TierRange>
+        <cbc:PerUnitAmount currencyID="XUF">1.2</cbc:PerUnitAmount>
+        <cbc:TierRange>The first 50,000 kWh of the month's 431,400 kWh of electricity</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>
@@ -272,18 +271,17 @@
       </cac:TaxDueCountry>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">228840</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XUF">228840</cbc:TaxAmount>
       <cbc:CalculationSequenceNumeric>1</cbc:CalculationSequenceNumeric>
       <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-      <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-      <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+      <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+      <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
         <cbc:Name>Energy tax</cbc:Name>
         <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
-        <cbc:PerUnitAmount currencyID="XUF">1</cbc:PerUnitAmount>
-        <cbc:TierRange>Above 50,000 kWh: the industrial rate</cbc:TierRange>
+        <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+        <cbc:TierRange>The other 381,400 kWh of electricity above 50,000 kWh: the industrial rate</cbc:TierRange>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
         </cac:TaxScheme>

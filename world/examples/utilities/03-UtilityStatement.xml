@@ -201,7 +201,33 @@
         <cbc:EndDate>2026-03-31</cbc:EndDate>
       </cac:MainPeriod>
       <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="XUF">101556</cbc:TaxAmount>
+        <cbc:TaxAmount currencyID="XUF">11160</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+          <cbc:TaxAmount currencyID="XUF">11160</cbc:TaxAmount>
+          <cbc:BaseUnitMeasure unitCode="KWH">1</cbc:BaseUnitMeasure>
+          <cbc:PerUnitAmount currencyID="XUF">0.6</cbc:PerUnitAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Name>Energy tax</cbc:Name>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
+      </cac:TaxTotal>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="XUF">103788</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+          <cbc:TaxableAmount currencyID="XUF">518940</cbc:TaxableAmount>
+          <cbc:TaxAmount currencyID="XUF">103788</cbc:TaxAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+            <cbc:Percent>20</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
       </cac:TaxTotal>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
@@ -250,6 +276,14 @@
             </cac:Period>
           </cac:ConsumptionHistory>
         </cac:ConsumptionReport>
+        <cac:EnergyTaxReport>
+          <cbc:TaxEnergyAmount currencyID="XUF">11160</cbc:TaxEnergyAmount>
+          <cbc:TaxEnergyOnAccountAmount currencyID="XUF">0</cbc:TaxEnergyOnAccountAmount>
+          <cbc:TaxEnergyBalanceAmount currencyID="XUF">11160</cbc:TaxEnergyBalanceAmount>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">EXC</cbc:ID>
+          </cac:TaxScheme>
+        </cac:EnergyTaxReport>
         <cac:ConsumptionAverage>
           <cbc:AverageAmount currencyID="XUF">507780</cbc:AverageAmount>
           <cbc:Description>The average over the last three months is 17900 kWh.</cbc:Description>
@@ -259,14 +293,14 @@
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">EST</cbc:CorrectionTypeCode>
           <cbc:MeterNumber>FE-M-881377</cbc:MeterNumber>
           <cbc:Description>February's estimate of 17,200 kWh was 750 kWh too high, as the actual reading shows.</cbc:Description>
-          <cbc:CorrectionUnitAmount currencyID="XUF">27</cbc:CorrectionUnitAmount>
+          <cbc:CorrectionUnitAmount currencyID="XUF">27.3</cbc:CorrectionUnitAmount>
           <cbc:ConsumptionEnergyQuantity unitCode="KWH">-750</cbc:ConsumptionEnergyQuantity>
           <cbc:CorrectionAmount currencyID="XUF">-20475</cbc:CorrectionAmount>
         </cac:EnergyWaterConsumptionCorrection>
       </cac:EnergyWaterSupply>
       <cac:LegalMonetaryTotal>
         <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-        <cbc:PayableAmount currencyID="XUF">609336</cbc:PayableAmount>
+        <cbc:PayableAmount currencyID="XUF">622728</cbc:PayableAmount>
       </cac:LegalMonetaryTotal>
     </cac:Consumption>
     <cac:SupplierConsumption>
@@ -295,7 +329,7 @@
         </cac:MainPeriod>
         <cac:LegalMonetaryTotal>
           <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-          <cbc:PayableAmount currencyID="XUF">609336</cbc:PayableAmount>
+          <cbc:PayableAmount currencyID="XUF">622728</cbc:PayableAmount>
         </cac:LegalMonetaryTotal>
       </cac:Consumption>
       <cac:Contract>
@@ -310,7 +344,7 @@
         <cbc:ParentDocumentLineReferenceID>2</cbc:ParentDocumentLineReferenceID>
         <cbc:InvoicedQuantity unitCode="KWH">18600</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="XUF">507780</cbc:LineExtensionAmount>
-        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">609336</cbc:TaxInclusiveLineExtensionAmount>
+        <cbc:TaxInclusiveLineExtensionAmount currencyID="XUF">622728</cbc:TaxInclusiveLineExtensionAmount>
         <cac:Period>
           <cbc:StartDate>2026-03-01</cbc:StartDate>
           <cbc:EndDate>2026-03-31</cbc:EndDate>
@@ -321,7 +355,7 @@
           </cac:DeliveryLocation>
         </cac:Delivery>
         <cac:TaxTotal>
-          <cbc:TaxAmount currencyID="XUF">101556</cbc:TaxAmount>
+          <cbc:TaxAmount currencyID="XUF">114948</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
           <cbc:ID>FE-KWH</cbc:ID>
