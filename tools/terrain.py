@@ -34,6 +34,8 @@ OUT = os.path.join(ROOT, "world", "terrain.json")
 RASTERS = os.path.join(ROOT, "world", "terrain")
 SOURCES = [INPUTS, os.path.join(os.path.dirname(__file__), "terrain.py"), os.path.join(os.path.dirname(__file__), "terrain_lib.py")]
 OFFSET_M = 1000                                     # the height rasters hold metres + OFFSET_M
+COAST_CLIFF_M = 50                                  # a coastal corner with two water squares side by side keeps its land
+                                                    # height above this (a cliff), else goes to 0 (a slope into the water)
 
 
 def fingerprint():
@@ -111,13 +113,21 @@ def generate():
         kinds[y, x] = T.WATER
     for x, y in estuary:
         kinds[y, x] = T.WATER
-    # sea corners at 0: every corner that touches a sea square
-    seat = kinds == T.SEA
-    touch = np.zeros((H + 1, W + 1), bool)
-    touch[:-1, :-1] |= seat; touch[1:, :-1] |= seat; touch[:-1, 1:] |= seat; touch[1:, 1:] |= seat
-    corners[touch] = 0
+    # the coastal corners (owner, 2026-11-19): a corner touching the sea or the estuary keeps the height of the land
+    # round it (the mean of its land cells, as every corner) or goes to 0, by how many of its four squares are water:
+    # three or four, or two diagonally (a neck of land): 0; two side by side: the land's height where it is over
+    # COAST_CLIFF_M, else 0; one: the land's height. The water squares themselves stay at 0 (the world model and the
+    # map); where a land corner along the water stands above 0 the map draws a cliff face down to the water.
+    wet = kinds == T.SEA
     for x, y in estuary:
-        corners[y:y + 2, x:x + 2] = 0
+        wet[y, x] = True
+    wetp = np.pad(wet, 1, constant_values=True)
+    nw, ne, se, sw = wetp[:-1, :-1], wetp[:-1, 1:], wetp[1:, 1:], wetp[1:, :-1]   # the four squares round each corner
+    n = nw.astype(int) + ne + se + sw
+    diagonal = (n == 2) & (nw == se)
+    keep = (n == 1) | ((n == 2) & ~diagonal & (corners > COAST_CLIFF_M))
+    coastal = (n > 0)
+    corners[coastal & ~keep] = 0
     # countries: Lisavu; on the mainland the border along the high ground north of the crossing, the river below it
     east, crossing = T.border(md, inp, log)
     country = np.full((H, W), ".")

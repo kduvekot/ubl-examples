@@ -17,6 +17,9 @@ Run it when a place, the terrain or the network changes; tools/world_model.py th
 Usage: python3 tools/lay_routes.py            lay and write world/map.json; print every way with its length and its
                                               steepest square
        python3 tools/lay_routes.py --report   print the report for world/map.json as it is
+       python3 tools/lay_routes.py --refit    keep every route, but lay again the minor roads to villages that no
+                                              longer keep to the road rule on their own line (routing.Land.half_ok;
+                                              after a change of the terrain or the rule), and write world/map.json
 """
 import json
 import math
@@ -349,8 +352,36 @@ def write(routes, station):
     world_data.save("map", m)
 
 
+def refit(world, terrain, land):
+    """The routes, with the village roads that leave the road rule on any square laid again (the villages they
+    served joined to the network anew by lay_villages, after every other way), each under its old id where the
+    village keeps a road of its own. Returns (routes, the ids taken out)."""
+    routes = [r for r in world["routes"] if r["mode"] in ("road", "rail", "pipeline")]
+    c = routing.CLASSES["minor"]
+
+    def breaks(r):
+        P = [tuple(q[:2]) for q in r["pts"]]
+        br = {tuple(q) for q in r.get("bridges", [])}
+        for a, b in zip(P, P[1:]):
+            if a in br or b in br:
+                continue
+            if not (land.half_ok(a, (b[0] - a[0], b[1] - a[1]), c["half"], c["lean"])
+                    and land.half_ok(b, (a[0] - b[0], a[1] - b[1]), c["half"], c["lean"])):
+                return True
+        return False
+    out = {r["id"] for r in routes if r["id"].startswith("village-") and breaks(r)}
+    keep = [r for r in routes if r["id"] not in out]
+    print(f"refit: laying again {len(out)} village roads: {', '.join(sorted(out))}")
+    return keep + lay_villages(world, terrain, land, keep), out
+
+
 def main():
     world, terrain, land = load()
+    if "--refit" in sys.argv:
+        routes, _ = refit(world, terrain, land)
+        write(routes, world["stations"][0]["at"])
+        report(world_data.load())
+        return
     if "--report" not in sys.argv:
         print("laying the network:")
         routes, station = lay(world, terrain, land)

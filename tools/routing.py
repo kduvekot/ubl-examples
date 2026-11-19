@@ -37,15 +37,16 @@ KM = 3.5
 SQ2 = math.sqrt(2)
 
 # The classes of way. grade: the gradient it is built for; hard: the gradient it never exceeds between two
-# squares; climb: the weight of the gradient cost; turn45/turn90: the cost of a turn; bridge/tunnel: the cost of
+# squares; half, lean (roads): the gradient a road never exceeds on its own line within a square, and how much the
+# land may lean across it (owner, 2026-11-19: Land.half_ok); climb: the weight of the gradient cost; turn45/turn90: the cost of a turn; bridge/tunnel: the cost of
 # a square of bridge or tunnel (on top of its length), max_bridge/max_tunnel: the longest, in squares; join: the
 # cost factor on a square of an existing way of the same kind; rf: squares of extra cost per 100 m of rise and
 # fall between two squares (the climbs and descents of the land between them); max_high: the highest a bridge's
 # deck may stand above the land or the water under it (metres).
 CLASSES = {
-    "main": dict(mode="road", grade=.06, hard=.07, climb=.8, relief=.6, turn45=.10, turn90=.45, bridge=4.0, valley=6.0,
+    "main": dict(mode="road", grade=.06, hard=.07, half=.07, lean=.06, climb=.8, relief=.6, turn45=.10, turn90=.45, bridge=4.0, valley=6.0,
                  estuary=20.0, tunnel=18.0, max_bridge=3, max_tunnel=2, join=.8, cover=1.0, rf=1.0, max_high=140),
-    "minor": dict(mode="road", grade=.08, hard=.10, climb=.6, relief=.4, turn45=.06, turn90=.3, bridge=4.0, valley=8.0,
+    "minor": dict(mode="road", grade=.08, hard=.10, half=.10, lean=.08, climb=.6, relief=.4, turn45=.06, turn90=.3, bridge=4.0, valley=8.0,
                   estuary=40.0, tunnel=None, max_bridge=1, max_tunnel=0, join=.5, cover=1.0, rf=.7, max_high=80),
     "rail": dict(mode="rail", grade=.015, hard=.02, climb=1.6, relief=.6, turn45=.18, turn90=1.2, bridge=5.0, valley=6.0,
                  estuary=20.0, tunnel=14.0, max_bridge=3, max_tunnel=3, join=.6, cover=1.0, rf=2.0, max_high=120),
@@ -69,10 +70,27 @@ class Land:
         self.rng = [[max(corners[i][j], corners[i + 1][j], corners[i][j + 1], corners[i + 1][j + 1])
                      - min(corners[i][j], corners[i + 1][j], corners[i][j + 1], corners[i + 1][j + 1]) for j in range(H)]
                     for i in range(W)]
+        self.corners = corners                                   # [i][j]: the height of each square corner
         self.estuary = set(estuary)
         self.water = dict(water or {})                           # the river's squares: their water level
         self.fine = []                                           # the terrain's fine height rasters, if loaded
         self._rf = {}
+
+    def half_ok(self, q, d, grade, lean):
+        """Whether a road can run on its own line from the middle of square q to the edge or corner in direction d
+        on the land as it is (owner, 2026-11-19; the world model's road_fits): within grade along it, and the land
+        across it, a quarter square to each side of its middle, within lean."""
+        i, j = q
+        C = self.corners
+        c = [C[i][j], C[i + 1][j], C[i][j + 1], C[i + 1][j + 1]]
+        h = lambda u, v: c[0] * (1 - u) * (1 - v) + c[1] * u * (1 - v) + c[2] * (1 - u) * v + c[3] * u * v
+        di, dj = d
+        ell = math.hypot(di, dj)
+        half = KM * 500
+        if abs(h(.5 + di / 2, .5 + dj / 2) - h(.5, .5)) > grade * ell * half:
+            return False
+        mu, mv, pu, pv = .5 + di / 4, .5 + dj / 4, -dj / ell * .25, di / ell * .25
+        return abs(h(mu + pu, mv + pv) - h(mu - pu, mv - pv)) <= lean * half
 
     def load_fine(self, root, rasters):
         """Read the terrain's fine height rasters (world/terrain/*-height.png, 875 m and 437.5 m cells; needs Pillow,
@@ -225,6 +243,9 @@ def route(land, built, cls, starts, goals, *, allow_cross=frozenset(), orth_ends
         g = abs(hc[b[0]][b[1]] - hc[a[0]][a[1]]) / (ell * KM * 1000)
         if hard is not None and g > hard:
             return None
+        if c.get("lean") and not (land.half_ok(a, (b[0] - a[0], b[1] - a[1]), c["half"], c["lean"])
+                                  and land.half_ok(b, (a[0] - b[0], a[1] - b[1]), c["half"], c["lean"])):
+            return None                                     # the road would leave its rules on its own line in a or b
         e = ell * (1 + c["climb"] * (g / c["grade"]) ** 2 + c["relief"] * max(0.0, rng[b[0]][b[1]] - 60) / 300
                    + c["cover"] * COVER.get(kind[b[0]][b[1]], 0)) + c["rf"] * land.rise_fall(a, b) / 100
         if kind[b[0]][b[1]] == "s":

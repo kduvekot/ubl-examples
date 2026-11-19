@@ -85,7 +85,10 @@ Structural rules (the build stops when one is broken):
     or bends 45 degrees in, is a ramp rising at most RAIL_RISE = 70 m (rail, 2 %), ROAD_RISE = 245 m
     (a main road, 7 %) or ROAD_RISE_MINOR = 350 m (a minor road, 10 %) along its direction; on a diagonal the
     ramp runs from corner to corner; a rail ramp is level across, a road ramp may also slope across, its two sides
-    within ROAD_CROSS = 150 m (a road follows the land's side slope; O152, owner 2026-11-18), so that a town whose
+    within ROAD_GRADE_MAIN, ROAD_GRADE_MINOR = .07, .10       # a road's gradient on its own line within a square (owner,
+                                                  # 2026-11-19): a main road 7 %, a minor or access road 10 %
+ROAD_LEAN_MAIN, ROAD_LEAN_MINOR = .06, .08        # how much the land may lean across it: 6 % and 8 %
+ROAD_CROSS = 150 m (a road follows the land's side slope; O152, owner 2026-11-18), so that a town whose
     streets reach its quay is not tied to the water's level;
   * roads, rails and pipelines are given square by square (O152 stage 3, tools/lay_routes.py), each square a
     neighbour of the last, diagonals included; no way crosses another, or passes between two squares of water,
@@ -172,6 +175,9 @@ LEVEL_M = 1                                       # model "v" holds metres (sinc
 RAIL_RISE = 70                                    # metres a rail square may rise along its direction (2 % of 3.5 km)
 ROAD_RISE = 245                                   # metres a main road square may rise along its direction (7 %)
 ROAD_RISE_MINOR = 350                             # metres a minor road square may rise (10 %; access roads, streets)
+ROAD_GRADE_MAIN, ROAD_GRADE_MINOR = .07, .10       # a road's gradient on its own line within a square (owner,
+                                                  # 2026-11-19): a main road 7 %, a minor or access road 10 %
+ROAD_LEAN_MAIN, ROAD_LEAN_MINOR = .06, .08        # how much the land may lean across it: 6 % and 8 %
 ROAD_CROSS = 150                                  # metres a road square's two sides may differ across it (its side slope;
                                                   # O152, owner 2026-11-18: so a town is not tied to its quay's level)
 BRIDGE_FREE = 25                                  # metres the ground may stand above a bridge deck's line (its abutments)
@@ -909,6 +915,7 @@ def build(world):
     #    square is a ramp rising at most RAIL_RISE (rail) or ROAD_RISE (road) metres along its direction, a rail
     #    ramp level across, a road ramp within ROAD_CROSS across.
     V = [[float(E[vi][vj]) for vj in range(H + 1)] for vi in range(W + 1)]
+    at_sea = {p["id"] for p in world["parties"] if p["kind"] in ("port", "quay") or p.get("water")}
     fixed = [[False] * (H + 1) for _ in range(W + 1)]        # corners at the water keep their height
     touches = lambda vi, vj: [tile(vi - a2, vj - b2) for a2 in (0, 1) for b2 in (0, 1) if tile(vi - a2, vj - b2)]
     for vi in range(W + 1):
@@ -917,7 +924,10 @@ def build(world):
             wet = [river_level[(vi - a2, vj - b2)] for a2 in (0, 1) for b2 in (0, 1)
                    if (vi - a2, vj - b2) in river_level and T[vi - a2][vj - b2]["k"] == "w"]
             if any(t["k"] == "s" or t.get("es") for t in ts) or len(ts) < 4:
-                V[vi][vj], fixed[vi][vj] = 0.0, True
+                fixed[vi][vj] = True                          # a coastal corner keeps the height the terrain's coast
+                                                              # rule gave it (0, or the land's height: a cliff),
+                if any(t.get("b") in at_sea or "hb" in t for t in ts):
+                    V[vi][vj] = 0.0                           # but a port's, a quay's or a harbour's is at the water
             elif wet:
                 V[vi][vj], fixed[vi][vj] = float(max(wet)), True
     # the banks: no corner beside the river lies below its water (a lower bound, kept when fitting below)
@@ -986,6 +996,27 @@ def build(world):
         land's side slope; O152, owner 2026-11-18), by at most ROAD_CROSS."""
         return "tilt" + sh[4:]
 
+    def road_fits(q):
+        """Whether the road on square q keeps to its rules on the land as it is (owner, 2026-11-19), measured on the
+        road's own line: each half of it (from the square's middle to the edge or corner it leads to) within its
+        class's gradient (a main road ROAD_GRADE_MAIN, a minor or access road ROAD_GRADE_MINOR), and the land across
+        that half, a quarter square to each side of its middle, within its class's lean (ROAD_LEAN_MAIN,
+        ROAD_LEAN_MINOR). Such a square is left as it is; the others are fitted to their ramp (tilt) below."""
+        i, j = q
+        c = [E[i][j], E[i + 1][j], E[i][j + 1], E[i + 1][j + 1]]
+        h = lambda u, v: c[0] * (1 - u) * (1 - v) + c[1] * u * (1 - v) + c[2] * (1 - u) * v + c[3] * u * v
+        main = road_rise.get(q, ROAD_RISE_MINOR) <= ROAD_RISE + 1e-6
+        grade, lean = (ROAD_GRADE_MAIN, ROAD_LEAN_MAIN) if main else (ROAD_GRADE_MINOR, ROAD_LEAN_MINOR)
+        half = KM * 500                                 # metres from a square's middle to the middle of its edge
+        for di, dj in links(q, "road"):
+            ell = math.hypot(di, dj)
+            if abs(h(.5 + di / 2, .5 + dj / 2) - h(.5, .5)) > grade * ell * half:
+                return False
+            mu, mv, pu, pv = .5 + di / 4, .5 + dj / 4, -dj / ell * .25, di / ell * .25
+            if abs(h(mu + pu, mv + pv) - h(mu - pu, mv - pv)) > lean * half:
+                return False
+        return True
+
     def ground_rule(q):
         """(shape, rise limit in metres for a whole square) or None (free terrain) for the tile at q. Shapes: 'flat'
         (four corners level), 'ramp-i', 'ramp-j', 'ramp-d', 'ramp-a' (see shape())."""
@@ -1002,6 +1033,8 @@ def build(world):
             if len(ls) != 2:
                 return ("flat", 0)
             return (shape(ls), RAIL_RISE) if under == "rail" else (tilt(shape(ls)), road_rise.get(q, ROAD_RISE_MINOR))
+        if (t["k"] == "s" or t.get("es")) and not ("b" in t or "rd" in t or "rl" in t or "hb" in t or "ms" in t):
+            return None                                     # open water: at 0 on the map; its corners belong to the land round it
         if t["k"] in ("s", "w") or "ms" in t or "hb" in t:
             return ("flat", 0)
         if q in approach and t["k"] != "s":
@@ -1014,6 +1047,8 @@ def build(world):
             return ("terrace", TERRACE_M)                   # built-up ground follows the land in small steps
         if q in road and q in rails:
             return ("flat", 0)                              # level crossing
+        if q in road and q not in rails and road_fits(q):
+            return None                                     # the road keeps to its rules on the land as it is: nothing is cut
         if q in road or q in rails:
             ls = links(q)
             if len(ls) != 2 or len(rails.get(q, ())) > 1:
