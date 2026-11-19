@@ -130,24 +130,26 @@ def road_stage(f, actual):
                                                                                 "curtain-side trailer."),
              "TransitDirectionCode": V("EXPORT", "The goods leave Urvania by this stage."),
              "CabotageIndicator": V("false", "A carriage between two countries, not within a foreign one."),
-             "TransitPeriod": {"StartDate": V(f.date(7), "Collected in the afternoon."),
-                               "EndDate": V(f.date(9), f"Delivered in the goods-in slot of the third day. The leg is "
+             # the consignment note is made out at takeover: the stage has begun, its end is still an estimate (C72)
+             "TransitPeriod": {"StartDate": V(f.date(7), "Collected in the afternoon; the stage has begun when the "
+                                                         "carrier takes over the goods.")},
+             "TransportMeans": kit.means("13-xu", "T-07", direction="WB"),   # a one-off trip: no JourneyID (C41, D35)
+             "DriverPerson": kit.person("Ilario", "Bencetti", "The driver of the truck.", "XU-DL-0417722"),
+             "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Conciaro."),
+             "UnloadingPortLocation": kit.place("XBMRW", "Unloaded at the distributor's distribution centre."),
+             "EstimatedDeliveryDate": V(f.date(9), f"The carrier's estimate when it takes over the goods: the goods-in "
+                                                   f"slot of the third day. The leg is "
                                                        f"{DISTANCE_KM} km, about three hours' driving, but the truck "
                                                        f"reaches the border about {wmap.about(ROAD_AT_BORDER)}, after "
                                                        "the distributor's customs desk has closed, so the driver takes "
                                                        "his night rest at the border and the import is declared in "
                                                        "the morning; the distribution centre takes full loads in "
                                                        "morning slots only, and the slot booked a week ahead is the "
-                                                       "next morning's.")},
-             "TransportMeans": kit.means("13-xu", "T-07", direction="WB"),   # a one-off trip: no JourneyID (C41, D35)
-             "DriverPerson": kit.person("Ilario", "Bencetti", "The driver of the truck.", "XU-DL-0417722"),
-             "LoadingPortLocation": kit.place("XUFER", "Loaded at the 3PL's warehouse in Conciaro."),
-             "UnloadingPortLocation": kit.place("XBMRW", "Unloaded at the distributor's distribution centre."),
-             "EstimatedDeliveryDate": V(f.date(9), "The carrier's estimate when it takes over the goods."),
+                                                       "next morning's."),
              "EstimatedDeliveryTime": V("09:00:00", "Early in the working day."),
              "RequiredDeliveryDate": V(f.date(9), "The distributor's goods-in slot."),
              "RequiredDeliveryTime": V("10:00:00", "The slot starts at ten.")}
-    if actual:
+    if actual:      # what the carrier's status reports once it has happened (C72)
         stage["ActualDepartureTransportEvent"] = kit.event(f, 7, ROAD_DEPARTS + ":00", "The truck left the warehouse; "
                                                            f"the land border is {wmap.whole(ROAD_BORDER_KM)} km ahead.",
                                                            kit.place("XUFER", "Castrano Logistics warehouse."))
@@ -156,6 +158,11 @@ def road_stage(f, actual):
                                                        description="Seal check, no inspection of the goods.",
                                                        location={"Name": V("Road border crossing Urvania–Bayvarra",
                                                                            "Where customs checked the seals.")})
+    else:           # the consignment note is made out at takeover, before the truck leaves (road/08#F1, C72)
+        stage["EstimatedDepartureTransportEvent"] = kit.event(f, 7, ROAD_DEPARTS + ":00", "Expected once customs has "
+                                                              "released the export declaration and the truck may "
+                                                              "leave.", kit.place("XUFER", "Castrano Logistics "
+                                                                                           "warehouse."))
     return stage
 
 
@@ -223,7 +230,7 @@ def road_consignment(f, view):
         "CustomsDeclaration": {"ID": V(f.numbers["export-declaration"], "The export declaration the goods travel "
                                                                         "under."),
                                "IssuerParty": party("5-xu", short=True)},     # the declarant (road/08#F5, D46)
-        "MainCarriageShipmentStage": road_stage(f, True),
+        "MainCarriageShipmentStage": road_stage(f, False),
         "TransportHandlingUnit": kit.handling_units(f, d, "8-xu", "LD MARROWDALE", detail=True)})
     return out
 
@@ -332,7 +339,9 @@ def road(n, doc):
                                                  "Delivery": {"Despatch": {
                                                      "ID": V("CL-OUT-26-0871", "The 3PL's outbound number."),
                                                      "ActualDespatchDate": V(f.date(7), "Loaded and gone."),
-                                                     "ActualDespatchTime": V("16:20:00", "The truck left the gate.")}}}})
+                                                     "ActualDespatchTime": V("15:05:00", "The carrier took over "
+                                                                             "the loaded goods: the despatch is the "
+                                                                             "pickup (road/04#F1).")}}}})
     if doc["doc"] == "ExportCustomsDeclaration":
         return {"ID": V(f.number("export", doc["from"], "ExportCustomsDeclaration"), "The exporter's reference."),
                 "IssueDate": V(f.date(7), "Declared the day the goods leave the warehouse for the border."),
@@ -464,6 +473,11 @@ def road(n, doc):
                                                        "In words.")}}),
                 "Consignment": {"ID": V(f.numbers["consignment"], "The consignment the report is about."),
                                 "CarrierAssignedID": V(ROAD_JOB, "The carrier's job number."),
+                                # the departure and the seal check, as done: the waybill was made out before them
+                                "MainCarriageShipmentStage": {
+                                    **{k: v for k, v in road_stage(f, True).items()
+                                       if k in ("ID", "TransportModeCode", "ActualDepartureTransportEvent",
+                                                "ExaminationTransportEvent")}},
                                 "Status": {"ConditionCode": V("INTRANSIT", "The consignment is on its way."),
                                            "Description": V("All 25 pallets on board.", "Nothing left behind.")}}}
     if doc["doc"] == "ImportCustomsDeclaration":
@@ -650,8 +664,10 @@ def rail_container(f, k, full):
                                 "Reference": V("FRC-HT-2026", "The carrier's haulage terms.")},
         "Pickup": {"ActualPickupDate": V(f.date(7), "Collected."), "ActualPickupTime": V("15:00:00", "At three."),
                    "PickupLocation": {"Name": V("Castrano Logistics warehouse, Conciaro", "Where.")}},
-        "Despatch": {"ActualDespatchDate": V(f.date(8), "The train left the hub."),
-                     "ActualDespatchTime": V("06:50:00", "Ten to seven.")},
+        "Despatch": {"EstimatedDespatchDate": V(f.date(8), "The train is expected to leave the hub that morning; "
+                                                           "the consignment note is made out before it leaves "
+                                                           "(rail/08#F3)."),
+                     "EstimatedDespatchTime": V("06:50:00", "Ten to seven.")},
         "Delivery": {"LatestDeliveryDate": V(f.date(10), "At the latest."),
                      "DeliveryLocation": {**kit.gln_location("6-xb", "siding"),
                                           "Name": V("Rail siding of Lumeway Distribution, Marrowdale", "Where.")}},
@@ -660,7 +676,7 @@ def rail_container(f, k, full):
     return out
 
 
-def rail_stage(f, actual):
+def rail_stage(f):
     out = {"ID": V("1", "The main carriage, by rail."),
            "TransportModeCode": V("2", "UN/ECE Recommendation 19 code 2: rail transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
@@ -682,16 +698,14 @@ def rail_stage(f, actual):
                                                      location=RAIL_SIDING),
            "EstimatedDepartureTransportEvent": kit.event(f, 8, "06:50:00", "The departure as expected that morning.", location=RAIL_HUB),
            "EstimatedArrivalTransportEvent": kit.event(f, 9, "10:40:00", "The arrival as expected.", location=RAIL_SIDING)}
-    if actual:
-        out["ActualDepartureTransportEvent"] = kit.event(f, 8, "06:52:00", "The train left the hub.",
-                                                         {"Name": V("Ferrano Intermodal Hub", "Where.")})
-        out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned departure from the border "
-                                                         f"station, {wmap.whole(RAIL_BORDER_KM)} km from the hub: "
-                                                         f"the train stops there from about "
-                                                         f"{wmap.about(RAIL_AT_BORDER)} for the crew change, the "
-                                                         "brake test and the customs' check of the seals, and leaves "
-                                                         "on its timetabled path into Bayvarra.", location=RAIL_BORDER)
-        out["ActualWaypointTransportEvent"] = kit.event(f, 8, "13:20:00", "The train passed the border station.", location=RAIL_BORDER)
+    out["PlannedWaypointTransportEvent"] = kit.event(f, 8, "13:00:00", "Planned departure from the border "
+                                                     f"station, {wmap.whole(RAIL_BORDER_KM)} km from the hub: "
+                                                     f"the train stops there from about "
+                                                     f"{wmap.about(RAIL_AT_BORDER)} for the crew change, the "
+                                                     "brake test and the customs' check of the seals, and leaves "
+                                                     "on its timetabled path into Bayvarra.", location=RAIL_BORDER)
+    # the actual departure is reported by the hub's progress status (rail/05); the consignment note is made out before
+    # the train leaves, so it records no journey (rail/08#F3, C72)
     return out
 
 
@@ -734,7 +748,7 @@ def rail_consignment(f, view):
                                                        location=RAIL_WAREHOUSE)
         out["PlannedDeliveryTransportEvent"] = kit.event(f, 9, "11:00:00", "And places them at the siding.",
                                                          location=RAIL_SIDING)
-        out["MainCarriageShipmentStage"] = rail_stage(f, False)
+        out["MainCarriageShipmentStage"] = rail_stage(f)
         return out
     out.update({
         "PerformingCarrierAssignedID": V("FRC-J-26-3318", "The rail carrier's job number."),
@@ -751,7 +765,7 @@ def rail_consignment(f, view):
                 "MeasurementToLocation": {"Name": V("Marrowdale", "To.")},
                 "EmissionCalculationLocation": {"Name": V("Ferrano Rail Cargo, energy office", "Where the figure was "
                                                                                                "calculated.")}}},
-        "MainCarriageShipmentStage": rail_stage(f, True),
+        "MainCarriageShipmentStage": rail_stage(f),
         "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, k == 0),
                                    "CustomsDeclaration": {"ID": V(f.numbers["transit"], "The transit declaration "
                                                                                        "the box travels under."),
@@ -784,7 +798,9 @@ def rail(n, doc):
     if doc["doc"] == "TransitCustomsDeclaration":
         return {"ID": V(f.number("transit", doc["from"], "TransitCustomsDeclaration"), "The transit declaration "
                                                                                        "number."),
-                "IssueDate": V(f.date(8), "Lodged at the office of departure before the train leaves."),
+                "IssueDate": V(f.date(7), "Lodged at the office of departure the afternoon before the train leaves, "
+                                          "once the sealed boxes are at the hub (rail/08#F5)."),
+                "IssueTime": V("16:45:00", "Before the consignment note, which cites it."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment under transit."),
                              "GrossWeightMeasure": qty(w, "KGM", "The gross weight under transit."),
                              "GoodsItem": kit.goods_items(f, "XUF", "The value of the goods, in ferra, for the transit "
@@ -811,8 +827,11 @@ def rail(n, doc):
                                              "TransportEvent": kit.event(f, 8, "05:40:00", "Both boxes lifted onto "
                                                                                            "the train.", done=True, location=RAIL_HUB, type_code="LOADING")}}}, event_type="LOADING")
     if doc["doc"] == "Waybill":
-        out = kit.waybill(f, n, doc, 8, "Issued when the carrier takes over the containers.", w,
+        out = kit.waybill(f, n, doc, 8, "Made out at the hub when the boxes are on the train, before it leaves: the "
+                                        "note records the takeover, not the journey (rail/08#F3).", w,
                           "The gross weight of the two containers' cargo.")
+        out["IssueTime"] = V("06:10:00", "After both boxes were lifted onto the train at 05:40, before the "
+                                         "timetabled departure.")
         kit.deep_merge(out["Shipment"]["Consignment"], rail_consignment(f, "note"))
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
@@ -4240,7 +4259,9 @@ def rail(n, doc):
         return {**head(f, "tps-request", doc, 8, "Asked on the morning of departure."),
                 "IssueTime": V("06:30:00", "Before the train leaves the hub."), "TransportMeans": train}
     if d == "TransportProgressStatus":
-        return {**head(f, "tps", doc, 8, "Answered at once."), "IssueTime": V("06:45:00", "A quarter of an hour later."),
+        return {**head(f, "tps", doc, 8, "Answered the same morning."),
+                "IssueTime": V("06:55:00", "Answered once the train has left, so that the status can report the "
+                                           "actual departure (rail/05#F1)."),
                 "TransportMeans": train}
     if d == "GoodsItemItinerary":
         return {**head(f, "itinerary", doc, 8, "Sent when the containers are on the train."),
@@ -8472,11 +8493,15 @@ def _(f, n, doc, out):
     return {}
 
 
-@enrich("road", "Waybill")
+@enrich("road", "Invoice")
 def _(f, n, doc, out):
+    if doc["from"] != "13-xu":       # the carrier's freight invoice, after the trip: not the waybill (road/08#F1)
+        return {}
     for d in find_dicts(out, "Delivery"):
         for dl in lines_of(d, "Delivery"):
-            dl["FuelConsumption"] = {"ID": V("TH-FC-26-0159", "The fuel of this delivery."),
+            dl["FuelConsumption"] = {"ID": V("TH-FC-26-0159", "The fuel of this delivery, stated with the freight "
+                                                              "for the consignee's report of its transport "
+                                                              "emissions."),
                                      "FuelTypeCode": V("DIESEL", "The truck runs on diesel."),
                                      "FuelConsumptionMeasure": V(str(wmap.whole(33 * DISTANCE_KM / 100)), f"About 33 litres per 100 km over "
                                                                        f"{DISTANCE_KM} km.", unitCode="LTR")}

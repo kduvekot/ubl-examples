@@ -10,7 +10,7 @@
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>06:10:00-01:00</cbc:IssueTime>
   <cbc:Name>Rail consignment note under the CIM uniform rules</cbc:Name>
   <cbc:Description>Carrier haulage: the rail carrier's tractor brings the packed boxes to the hub.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
@@ -237,21 +237,6 @@
             <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:PlannedWaypointTransportEvent>
-        <cac:ActualDepartureTransportEvent>
-          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
-          <cac:Location>
-            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-            <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
-          </cac:Location>
-        </cac:ActualDepartureTransportEvent>
-        <cac:ActualWaypointTransportEvent>
-          <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>13:20:00</cbc:OccurrenceTime>
-          <cac:Location>
-            <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
-          </cac:Location>
-        </cac:ActualWaypointTransportEvent>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
@@ -454,8 +439,8 @@
             </cac:PickupLocation>
           </cac:Pickup>
           <cac:Despatch>
-            <cbc:ActualDespatchDate>2026-04-14</cbc:ActualDespatchDate>
-            <cbc:ActualDespatchTime>06:50:00</cbc:ActualDespatchTime>
+            <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
+            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
           <cac:ShipmentDocumentReference>
             <cbc:ID>FRC-WB-26-0334</cbc:ID>

@@ -206,6 +206,11 @@
         </cac:CarrierParty>
       </cac:Consignment>
     </cac:Shipment>
+    <cac:FuelConsumption>
+      <cbc:ID>TH-FC-26-0159</cbc:ID>
+      <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
+      <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
+    </cac:FuelConsumption>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

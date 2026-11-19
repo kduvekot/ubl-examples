@@ -24,8 +24,8 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-23**  
   The day the 3PL loaded the truck.
-- `IssueTime` = **16:38:00-01:00**  
-  Issued a few minutes after the last thing of its day that it reports or cites, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **15:15:00-01:00**  
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage in your receipt advice.**  
@@ -272,8 +272,8 @@ Inside `Shipment`:
   The 3PL's outbound number.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-03-23**  
   Loaded and gone.
-- `Delivery/Despatch/ActualDespatchTime` = **16:20:00**  
-  The truck left the gate.
+- `Delivery/Despatch/ActualDespatchTime` = **15:05:00**  
+  The carrier took over the loaded goods: the despatch is the pickup (road/04#F1).
 
 ### Despatch Line
 
@@ -502,7 +502,7 @@ Inside `DespatchLine`:
   <cbc:ID>CL-DA-26-0153</cbc:ID>
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>16:38:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:15:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -694,7 +694,7 @@ Inside `DespatchLine`:
       <cac:Despatch>
         <cbc:ID>CL-OUT-26-0871</cbc:ID>
         <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>16:20:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>15:05:00</cbc:ActualDespatchTime>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>

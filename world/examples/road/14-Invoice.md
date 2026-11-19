@@ -254,6 +254,12 @@ Inside `Delivery`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
+- `FuelConsumption/ID` = **TH-FC-26-0159**  
+  The fuel of this delivery, stated with the freight for the consignee's report of its transport emissions.
+- `FuelConsumption/FuelTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
+  The truck runs on diesel. The code is from the Trade Accord's fuel type list: DIESEL = Diesel.
+- `FuelConsumption/FuelConsumptionMeasure` = **59** (unitCode `LTR`)  
+  About 33 litres per 100 km over 179 km.
 
 ### Payment Means
 
@@ -633,6 +639,11 @@ Inside `InvoiceLine`:
         </cac:CarrierParty>
       </cac:Consignment>
     </cac:Shipment>
+    <cac:FuelConsumption>
+      <cbc:ID>TH-FC-26-0159</cbc:ID>
+      <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
+      <cbc:FuelConsumptionMeasure unitCode="LTR">59</cbc:FuelConsumptionMeasure>
+    </cac:FuelConsumption>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

@@ -7,7 +7,7 @@
   <cbc:ID>CL-DA-26-0153</cbc:ID>
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
-  <cbc:IssueTime>16:38:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:15:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -199,7 +199,7 @@
       <cac:Despatch>
         <cbc:ID>CL-OUT-26-0871</cbc:ID>
         <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>16:20:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>15:05:00</cbc:ActualDespatchTime>
       </cac:Despatch>
     </cac:Delivery>
   </cac:Shipment>

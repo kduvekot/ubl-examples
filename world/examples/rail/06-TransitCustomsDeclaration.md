@@ -22,10 +22,10 @@ The goods travel under customs transit from Urvania to the destination in Bayvar
   The transit declaration number.
 - `UUID` = **39a0d3b7-c2fe-5e50-8ee2-54287be65033**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-14**  
-  Lodged at the office of departure before the train leaves.
-- `IssueTime` = **17:29:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-04-13**  
+  Lodged at the office of departure the afternoon before the train leaves, once the sealed boxes are at the hub (rail/08#F5).
+- `IssueTime` = **16:45:00-01:00**  
+  Before the consignment note, which cites it; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **TRANSIT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   A transit declaration. The code is from the Trade Accord's customs declaration type list: TRANSIT = Transit declaration.
 - `SubTypeCode` = **EXTTRANSIT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode`)  
@@ -491,8 +491,8 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VI-TD-26-0331</cbc:ID>
   <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
-  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>17:29:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">TRANSIT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">EXTTRANSIT</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>

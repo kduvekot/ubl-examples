@@ -30,8 +30,8 @@ The inland waterway consignment note, issued to the shipper.
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-04-19**  
   Issued when the barge is loaded.
-- `IssueTime` = **09:38:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **15:26:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports or cites, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Inland waterway consignment note under the CMNI**  
   The kind of transport document.
 - `Description` = **The barge from the quay next to the recovery plant down the river to the packaging maker.**  
@@ -489,7 +489,7 @@ Inside `Signature`:
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-19</cbc:IssueDate>
-  <cbc:IssueTime>09:38:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:26:00-01:00</cbc:IssueTime>
   <cbc:Name>Inland waterway consignment note under the CMNI</cbc:Name>
   <cbc:Description>The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>

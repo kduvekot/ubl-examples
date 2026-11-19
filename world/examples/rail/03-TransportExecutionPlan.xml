@@ -345,6 +345,13 @@
           <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
         </cac:Location>
       </cac:PlannedArrivalTransportEvent>
+      <cac:PlannedWaypointTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+        </cac:Location>
+      </cac:PlannedWaypointTransportEvent>
       <cac:EstimatedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>

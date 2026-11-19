@@ -23,9 +23,9 @@ The hub, as network manager, reports the train's position and timetable.
 - `UUID` = **78d6602f-27f8-5e6a-b8c0-36b493a71754**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-14**  
-  Answered at once.
-- `IssueTime` = **06:45:00-01:00**  
-  A quarter of an hour later; in the issuer's local time, with its offset from UTC (D27).
+  Answered the same morning.
+- `IssueTime` = **06:55:00-01:00**  
+  Answered once the train has left, so that the status can report the actual departure (rail/05#F1); in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Nul rek baz.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): The answer.
 - `Note` = **Left on time.** (languageID `en-XU`)  
@@ -255,7 +255,7 @@ Inside `TransportSchedule`:
   <cbc:ID>FIH-DOC-26-0330</cbc:ID>
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>06:45:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>06:55:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Nul rek baz.</cbc:Note>
   <cbc:Note languageID="en-XU">Left on time.</cbc:Note>
   <cbc:StatusAvailableIndicator>true</cbc:StatusAvailableIndicator>

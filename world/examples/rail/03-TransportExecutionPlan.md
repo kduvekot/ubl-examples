@@ -471,6 +471,12 @@ Inside `Consignment`:
   The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
 - `MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
   Where the boxes are placed for unloading.
+- `MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceDate` = **2026-04-14**  
+  Planned departure from the border station, 63 km from the hub: the train stops there from about 08:10 for the crew change, the brake test and the customs' check of the seals, and leaves on its timetabled path into Bayvarra.
+- `MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceTime` = **13:00:00**  
+  The local time.
+- `MainCarriageShipmentStage/PlannedWaypointTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
+  Where the train crosses the border.
 - `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The departure as expected that morning.
 - `MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
@@ -840,6 +846,13 @@ Inside `Consignment`:
           <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
         </cac:Location>
       </cac:PlannedArrivalTransportEvent>
+      <cac:PlannedWaypointTransportEvent>
+        <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
+        </cac:Location>
+      </cac:PlannedWaypointTransportEvent>
       <cac:EstimatedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
