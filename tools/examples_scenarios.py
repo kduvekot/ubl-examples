@@ -13049,8 +13049,7 @@ def rf_reefer(detail, view):
                                               "unloading at the cold store: fresh fruit must not warm up."),
         "AirFlowPercent": V(RF_VENT, "The fresh-air vent's setting: open to 15 % of its full opening, about 25 m³ of "
                                      "outside air an hour on Tidewell's units. Apples and pears breathe; fresh air "
-                                     "carries off the carbon dioxide and the ethylene that would ripen them (general "
-                                     "reefer practice for pome fruit, stated from memory)."),
+                                     "carries off the carbon dioxide and the ethylene that would ripen them."),
         "HumidityPercent": V(STORE["humidity_percent"], "The relative humidity the reefer is set to hold: about 90 %, "
                                                          "so that the fruit does not dry out and shrivel."),
         "HumanFoodApprovedIndicator": V("true", "The reefer is approved for food: its interior is of food-grade "
@@ -13113,6 +13112,12 @@ def rf_lots(f, d):
                      "ManufactureDate": V(f.date(packed), "Packed on that day, from the cold store or the orchard "
                                                           "straight into cartons."),
                      "AdditionalItemProperty": [
+                         {"Name": V("Quality class", "The class the lot is graded and packed in, as each carton is "
+                                                     "marked: the Trade Accord's marketing standard for fresh fruit, "
+                                                     "after the UNECE standards FFV-50 for apples and FFV-51 for "
+                                                     "pears, asks the class and the count on the package."),
+                          "Value": V("Class I", "Fruit of good quality, characteristic of its variety; slight "
+                                                "defects of shape, colouring and skin allowed.")},
                          {"Name": V("Grower", "The member whose orchard the lot comes from: the number on the "
                                               "carton label, for tracing a lot back to its orchard."),
                           "Value": V(grower, "The member number in the cooperative's register.")},
@@ -13221,7 +13226,7 @@ def reefer(n, doc):
                     "Name": V("Freedom from quarantine pests", "What is attested."),
                     "Description": V("Sampled at the packhouse and found free of codling moth and fire blight.",
                                      "In words: the two pests of apples and pears that the island, which has neither, "
-                                     "keeps out (as Western Australia keeps out codling moth, a real parallel)."),
+                                     "keeps out."),
                     "Note": V("Two per cent of the cartons sampled: 23 of 1,120.", "The sample."),
                     "AcceptanceIndicator": V("true", "Accepted."),
                     "IssuerParty": party("57-xb", short=True),

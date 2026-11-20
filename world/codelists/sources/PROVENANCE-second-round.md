@@ -253,3 +253,25 @@ f57d777ee2a0c604c60686a11a7897f2144b35568f4c13c13bd3f248ac46ead3  ./eurlex-low/C
 ```
 
 What was read: the entries 15 01 01 to 15 01 09 (chapter 15 01, packaging), with their names, and the list's rules for choosing an entry (the section "List of waste" before the index: first the chapters 01 to 12 or 17 to 20 for the source of the waste, then 13 to 15, then 16, then the 99 code). `tools/codelists.py` reads the list's table from the file (format `eurlex-low`) and stops the build when an entry of `XU:Waste` differs from it. The waste flow's code 150102 "plastic packaging" was chosen by those rules: Valdara's polyethylene film is the stretch film of the deliveries it receives and of its own pallets; the chapters of its activity (08 coatings, 11 coating of metals, 12 shaping of metals and plastics) have no entry for packaging film (12 01 05 "plastics shavings and turnings" is waste of machining plastics), so the rules send it to chapter 15.
+
+---
+
+## Added 2026-11-20: marketing standards and date marking of fresh apples and pears
+
+For the reefer flow's fruit (world/items.json `apples-gala`, `apples-granny`, `pears-packham`): the quality class "Class I" and why the fruit carries no best-before date. Accessed on **2026-11-20**. EU legal texts, reusable under Commission Decision 2011/833/EU, so the files are kept.
+
+| Directory | Source | Version |
+|---|---|---|
+| eurlex-fruit/ | http://publications.europa.eu/resource/celex/32023R2429 (Publications Office of the EU, Cellar; requested with `Accept: application/xhtml+xml` and `Accept-Language: en`, it redirects to http://publications.europa.eu/resource/cellar/a8b77f38-79ea-11ee-99ba-01aa75ed71a1.0006.03/DOC_1) | Commission Delegated Regulation (EU) 2023/2429 of 17 August 2023, as published in the Official Journal |
+| eurlex-fruit/ | http://publications.europa.eu/resource/celex/32011R1169 (redirects to http://publications.europa.eu/resource/cellar/519f20de-6cb8-46d0-b02f-412e34d5a653.0018.03/DOC_1) | Regulation (EU) No 1169/2011, as published in the Official Journal (not a consolidated version) |
+
+```
+5a102a2cc4a0f8344108fe49d0d3c148c6c0fc227adcb0219a50fb2f902d13f0  ./eurlex-fruit/CELEX_32023R2429_EN.xhtml
+2329a152b08275dce422a0546bfdfcbb84c5153b9c3d6135c5e4da2b686f7425  ./eurlex-fruit/CELEX_32011R1169_EN.xhtml
+```
+
+What was read:
+- **2023/2429, Annex I, the marketing standards for apples and for pears:** three classes, "Extra", Class I and Class II; "Apples in this class must be of good quality. They must be characteristic of the variety", and the same for pears; the marking of a package with the class and the size or, for fruit packed in rows and layers, the number of units (the count). The annex's variety lists hold Gala (colour group C), Granny Smith (group D) and Packham's Triumph. Recital 9: the specific marketing standards "should be those set out in the standards adopted by the United Nations Economic Commission for Europe (UNECE)"; the numbers of the UNECE standards (FFV-50 apples, FFV-51 pears) are not in the text and are named from the UNECE series, not read.
+- **1169/2011, Annex X, point 1(d):** "an indication of the date of minimum durability shall not be required for: — fresh fruit and vegetables, including potatoes, which have not been peeled, cut or similarly treated".
+
+Not read: the UNECE texts of FFV-50 and FFV-51 (unece.org answers automated requests with 403), and the Codex General Standard for the Labelling of Prepackaged Foods, CXS 1-1985 (the FAO workspace returns a login page instead of the PDF). The world cites the EU texts it read; the UNECE and Codex parallels are named, not quoted.

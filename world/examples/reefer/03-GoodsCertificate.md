@@ -332,7 +332,7 @@ Inside `Attestation`:
 - `Name` = **Freedom from quarantine pests**  
   What is attested.
 - `Description` = **Sampled at the packhouse and found free of codling moth and fire blight.**  
-  In words: the two pests of apples and pears that the island, which has neither, keeps out (as Western Australia keeps out codling moth, a real parallel).
+  In words: the two pests of apples and pears that the island, which has neither, keeps out.
 - `Note` = **Two per cent of the cartons sampled: 23 of 1,120.**  
   The sample.
 - `AcceptanceIndicator` = **true**  

@@ -429,6 +429,10 @@ Inside `DespatchLine`:
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers' (world/items.json).
 - `Item/ItemInstance/ManufactureDate` = **2026-04-20**  
   Packed on that day, from the cold store or the orchard straight into cartons.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Quality class**  
+  The class the lot is graded and packed in, as each carton is marked: the Trade Accord's marketing standard for fresh fruit, after the UNECE standards FFV-50 for apples and FFV-51 for pears, asks the class and the count on the package.
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **Class I**  
+  Fruit of good quality, characteristic of its variety; slight defects of shape, colouring and skin allowed.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Grower**  
   The member whose orchard the lot comes from: the number on the carton label, for tracing a lot back to its orchard.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **G-017**  
@@ -441,6 +445,10 @@ Inside `DespatchLine`:
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `Item/ItemInstance/ManufactureDate` = **2026-04-20**  
   Packed on that day, from the cold store or the orchard straight into cartons.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Quality class**  
+  The class the lot is graded and packed in, as each carton is marked: the Trade Accord's marketing standard for fresh fruit, after the UNECE standards FFV-50 for apples and FFV-51 for pears, asks the class and the count on the package.
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **Class I**  
+  Fruit of good quality, characteristic of its variety; slight defects of shape, colouring and skin allowed.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Grower**  
   The member whose orchard the lot comes from: the number on the carton label, for tracing a lot back to its orchard.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **G-023**  
@@ -453,6 +461,10 @@ Inside `DespatchLine`:
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `Item/ItemInstance/ManufactureDate` = **2026-04-20**  
   Packed on that day, from the cold store or the orchard straight into cartons.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Quality class**  
+  The class the lot is graded and packed in, as each carton is marked: the Trade Accord's marketing standard for fresh fruit, after the UNECE standards FFV-50 for apples and FFV-51 for pears, asks the class and the count on the package.
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **Class I**  
+  Fruit of good quality, characteristic of its variety; slight defects of shape, colouring and skin allowed.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Grower**  
   The member whose orchard the lot comes from: the number on the carton label, for tracing a lot back to its orchard.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **G-041**  
@@ -481,6 +493,10 @@ Inside `DespatchLine`:
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers' (world/items.json).
 - `Item/ItemInstance/ManufactureDate` = **2026-04-21**  
   Packed on that day, from the cold store or the orchard straight into cartons.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Quality class**  
+  The class the lot is graded and packed in, as each carton is marked: the Trade Accord's marketing standard for fresh fruit, after the UNECE standards FFV-50 for apples and FFV-51 for pears, asks the class and the count on the package.
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **Class I**  
+  Fruit of good quality, characteristic of its variety; slight defects of shape, colouring and skin allowed.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Grower**  
   The member whose orchard the lot comes from: the number on the carton label, for tracing a lot back to its orchard.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **G-008**  
@@ -493,6 +509,10 @@ Inside `DespatchLine`:
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `Item/ItemInstance/ManufactureDate` = **2026-04-21**  
   Packed on that day, from the cold store or the orchard straight into cartons.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Quality class**  
+  The class the lot is graded and packed in, as each carton is marked: the Trade Accord's marketing standard for fresh fruit, after the UNECE standards FFV-50 for apples and FFV-51 for pears, asks the class and the count on the package.
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **Class I**  
+  Fruit of good quality, characteristic of its variety; slight defects of shape, colouring and skin allowed.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Grower**  
   The member whose orchard the lot comes from: the number on the carton label, for tracing a lot back to its orchard.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **G-031**  
@@ -521,6 +541,10 @@ Inside `DespatchLine`:
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers' (world/items.json).
 - `Item/ItemInstance/ManufactureDate` = **2026-04-20**  
   Packed on that day, from the cold store or the orchard straight into cartons.
+- `Item/ItemInstance/AdditionalItemProperty/Name` = **Quality class**  
+  The class the lot is graded and packed in, as each carton is marked: the Trade Accord's marketing standard for fresh fruit, after the UNECE standards FFV-50 for apples and FFV-51 for pears, asks the class and the count on the package.
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **Class I**  
+  Fruit of good quality, characteristic of its variety; slight defects of shape, colouring and skin allowed.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Grower**  
   The member whose orchard the lot comes from: the number on the carton label, for tracing a lot back to its orchard.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **G-012**  
@@ -850,6 +874,10 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
         <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-017</cbc:Value>
         </cac:AdditionalItemProperty>
@@ -864,6 +892,10 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
         <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-023</cbc:Value>
         </cac:AdditionalItemProperty>
@@ -877,6 +909,10 @@ Inside `DespatchLine`:
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-041</cbc:Value>
@@ -910,6 +946,10 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-21</cbc:ManufactureDate>
         <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-008</cbc:Value>
         </cac:AdditionalItemProperty>
@@ -923,6 +963,10 @@ Inside `DespatchLine`:
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-21</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-031</cbc:Value>
@@ -955,6 +999,10 @@ Inside `DespatchLine`:
       </cac:StandardItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-012</cbc:Value>

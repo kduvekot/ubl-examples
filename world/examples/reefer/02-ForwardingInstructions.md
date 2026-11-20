@@ -250,7 +250,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/RefrigerationOnIndicator` = **true**  
   The refrigeration runs, from the pre-cooling before loading to the unloading at the cold store: fresh fruit must not warm up.
 - `TransportHandlingUnit/TransportEquipment/AirFlowPercent` = **15**  
-  The fresh-air vent's setting: open to 15 % of its full opening, about 25 m³ of outside air an hour on Tidewell's units. Apples and pears breathe; fresh air carries off the carbon dioxide and the ethylene that would ripen them (general reefer practice for pome fruit, stated from memory).
+  The fresh-air vent's setting: open to 15 % of its full opening, about 25 m³ of outside air an hour on Tidewell's units. Apples and pears breathe; fresh air carries off the carbon dioxide and the ethylene that would ripen them.
 - `TransportHandlingUnit/TransportEquipment/HumidityPercent` = **90**  
   The relative humidity the reefer is set to hold: about 90 %, so that the fruit does not dry out and shrivel.
 - `TransportHandlingUnit/TransportEquipment/HumanFoodApprovedIndicator` = **true**  

@@ -2308,10 +2308,11 @@
      "Variety",
      "Gala"
     ],
-    [
-     "Quality class",
-     "Class I"
-    ],
+    {
+     "name": "Quality class",
+     "value": "Class I",
+     "why": "The class the fruit is graded and packed in under the Trade Accord's marketing standard for fresh fruit, which follows the UNECE standard FFV-50 for apples: fruit of good quality, characteristic of its variety, with slight defects of shape, development and colouring and of the skin allowed; above it the ‘Extra’ class, below it Class II."
+    },
     [
      "Count",
      "100 fruit to the carton"
@@ -2325,7 +2326,7 @@
     ],
     "set_point_c": "0.5",
     "humidity_percent": "90",
-    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene (stated from the general reefer practice for pome fruit)."
+    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene."
    }
   },
   {
@@ -2381,10 +2382,11 @@
      "Variety",
      "Granny Smith"
     ],
-    [
-     "Quality class",
-     "Class I"
-    ],
+    {
+     "name": "Quality class",
+     "value": "Class I",
+     "why": "The class the fruit is graded and packed in under the Trade Accord's marketing standard for fresh fruit, which follows the UNECE standard FFV-50 for apples: fruit of good quality, characteristic of its variety, with slight defects of shape, development and colouring and of the skin allowed; above it the ‘Extra’ class, below it Class II."
+    },
     [
      "Count",
      "100 fruit to the carton"
@@ -2398,7 +2400,7 @@
     ],
     "set_point_c": "0.5",
     "humidity_percent": "90",
-    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene (stated from the general reefer practice for pome fruit)."
+    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene."
    }
   },
   {
@@ -2454,10 +2456,11 @@
      "Variety",
      "Packham's Triumph"
     ],
-    [
-     "Quality class",
-     "Class I"
-    ],
+    {
+     "name": "Quality class",
+     "value": "Class I",
+     "why": "The class the fruit is graded and packed in under the Trade Accord's marketing standard for fresh fruit, which follows the UNECE standard FFV-51 for pears: fruit of good quality, characteristic of its variety, with slight defects of shape, development and colouring and of the skin allowed; above it the ‘Extra’ class, below it Class II."
+    },
     [
      "Count",
      "80 fruit to the carton"
@@ -2471,7 +2474,7 @@
     ],
     "set_point_c": "0.5",
     "humidity_percent": "90",
-    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene (stated from the general reefer practice for pome fruit)."
+    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene."
    }
   }
  ],

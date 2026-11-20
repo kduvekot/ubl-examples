@@ -313,6 +313,10 @@
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
         <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-017</cbc:Value>
         </cac:AdditionalItemProperty>
@@ -327,6 +331,10 @@
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
         <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-023</cbc:Value>
         </cac:AdditionalItemProperty>
@@ -340,6 +348,10 @@
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-041</cbc:Value>
@@ -373,6 +385,10 @@
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-21</cbc:ManufactureDate>
         <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-008</cbc:Value>
         </cac:AdditionalItemProperty>
@@ -386,6 +402,10 @@
       </cac:ItemInstance>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-21</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-031</cbc:Value>
@@ -418,6 +438,10 @@
       </cac:StandardItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-04-20</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Quality class</cbc:Name>
+          <cbc:Value>Class I</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Grower</cbc:Name>
           <cbc:Value>G-012</cbc:Value>
