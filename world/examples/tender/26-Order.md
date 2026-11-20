@@ -32,8 +32,6 @@ The first call-off under the awarded contract: 40 benches and their 40 installat
   Which call-off this is, and when the installation is due: the penalty clause counts from that day.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the buyer's currency, agreed in the contract; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The manufacturer accounts its value added tax in ferra. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
@@ -199,21 +197,6 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Description` = **Public works depot, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the reference rate.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-03-23**  
-  The rate of the document's date.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -345,7 +328,6 @@ Inside `OrderLine`:
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:Note>Release 1 under the framework contract: 40 benches and their installation, to be completed by Tuesday 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -471,13 +453,6 @@ Inside `OrderLine`:
       <cbc:Description>Public works depot, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-23</cbc:Date>
-  </cac:TaxExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
