@@ -125,14 +125,14 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Energy (33-xu)
 
-- How Ferrano Energy began in 1949 (as a state or a private company, and under the Italian or British era) and who owns it now.
-- Whether Ferrano Grid was split off from Ferrano Energy itself or from another body.
+- ~~How Ferrano Energy began in 1949 (as a state or a private company, and under the Italian or British era) and who owns it now.~~ Filled 2026-11-20 (OW009).
+- ~~Whether Ferrano Grid was split off from Ferrano Energy itself or from another body.~~ Filled 2026-11-20 (OW009).
 - How many customers it serves, and the other power stations it buys from.
 
 ### Ferrano Grid (44-xu)
 
-- Which company it was split off from in 2007 (Ferrano Energy or a state utility)
-- Who owns it
+- ~~Which company it was split off from in 2007 (Ferrano Energy or a state utility)~~ Filled 2026-11-20 (OW009).
+- ~~Who owns it~~ Filled 2026-11-20 (OW009).
 - The size of its networks (length, connections) and the extent of the Ferrano region
 - Whether other grid operators serve the rest of Urvania
 
@@ -143,9 +143,9 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Rail Cargo (14-xu)
 
-- Whether Ferrano Rail Cargo is still owned by the state or was sold, and when it became a company of its own
-- When Urvania separated the rail infrastructure from the train operators
-- Why the depot is at Serravona (the mining village) and not in Ferrano
+- ~~Whether Ferrano Rail Cargo is still owned by the state or was sold, and when it became a company of its own~~ Filled 2026-11-20 (OW009).
+- ~~When Urvania separated the rail infrastructure from the train operators~~ Filled 2026-11-20 (OW009).
+- ~~Why the depot is at Serravona (the mining village) and not in Ferrano~~ Filled 2026-11-20 (OW009).
 - Its other customers besides Valdara and Serravona Mining, if any
 
 ### Fiumella Barges (15-xu)
@@ -239,9 +239,9 @@ decided with the owner one at a time, like the gaps here.
 
 ### Montebrio Power (43-xu)
 
-- what fuel the station burned before the gas arrived in 2011, and when it was converted
-- whether Montebrio is or was owned by the state
-- where the name Montebrio comes from
+- ~~what fuel the station burned before the gas arrived in 2011, and when it was converted~~ Filled 2026-11-20 (OW009).
+- ~~whether Montebrio is or was owned by the state~~ Filled 2026-11-20 (OW009).
+- ~~where the name Montebrio comes from~~ Filled 2026-11-20 (OW009).
 
 ### Nalevi Warehousing (9-xl)
 
@@ -267,7 +267,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Rail Infrastructure Agency of Urvania (47-xu)
 
-- The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.
+- ~~The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.~~ Filled 2026-11-20 (OW009).
 - The length of the network, the number of stations and the agency's staff.
 - Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.
 
@@ -319,7 +319,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Serravona Mining (4-xu)
 
-- whether the company is still owned by the state, and since when it is a public limited company
+- ~~whether the company is still owned by the state, and since when it is a public limited company~~ Filled 2026-11-20 (OW009).
 - when the mine was opened and how long its reserves last
 - who its customers are besides Valdara Industries
 
