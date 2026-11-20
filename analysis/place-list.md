@@ -140,6 +140,7 @@ Every party on the map with its place (the town of its address), the district of
 | Environment Agency of Urvania (46-xu) | Via delle Acque, Ferrano | Ferrano | Borgo Nord (suburb, 6.5 km) | 11.1 km W | edge | 74/115 | 30.6622 S 15.6353 W (30° 39.73′ S, 15° 38.12′ W) | 205 m (3D map 151 m) |
 | Rail Infrastructure Agency of Urvania (47-xu) | Via della Stazione, Ferrano | Ferrano | Borgo Nord (suburb, 6.8 km) | 10.5 km N | edge | 77/113 | 30.5991 S 15.5264 W (30° 35.95′ S, 15° 31.59′ W) | 265 m |
 | Fernhollow Studio (48-xb) | Ropewalk Lane, Lumeport | Lumeport | Northshore (suburb, 8.2 km) | 11.1 km E | outside | 141/125 | 30.9775 S 13.2029 W (30° 58.65′ S, 13° 12.17′ W) | 20 m |
+| Gullhaven Tank Haulage (52-xb) | Harbour Road, Gullhaven | Gullhaven | - | 4.9 km SE | edge | 74/40 | 28.2973 S 15.6353 W (28° 17.84′ S, 15° 38.12′ W) | 107 m |
 
 ## 3. Distances along the routes
 
@@ -222,6 +223,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **32.9 km** | 32.9 km | `road-c` | 22.4 km | 1.47 | 0 h 28 – 0 h 33 | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Montebrio Power (43-xu) | **206.6 km** | - | `gas` | 164.5 km | 1.26 | - | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Ferrano Grid (44-xu) | **281.8 km** | - | `gas`, `gas-grid` | 255.9 km | 1.10 | - | - |
+| lpg | road | Kelpstone Gas (42-xb) → Coastal State Water Company (34-xb) | **514.8 km** | 511.9 km | `road-north`, `road-lark`, `road-wool` | 363.1 km | 1.42 | 7 h 21 – 8 h 35 | 0 |
 
 **Legs inside one town or its surroundings** (the diagram's party squares make them longer than on the ground; O82, O92):
 

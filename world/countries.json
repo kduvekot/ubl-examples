@@ -303,7 +303,7 @@
     "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Two decimals, the most common case."
    },
    "tax": {
-    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the sale to the final consumer. Sales to businesses that resell, exports and sales to public bodies are exempt, and the invoice says so.",
+    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the final use. A sale for resale or manufacture (goods sold on as they are, or that become part of the product sold, the packaging that goes to the customer included), exports, sales to public bodies and services to a business are exempt, and the invoice says so; what a business uses up or keeps (fuel and energy it burns, consumables, tools, machines, vehicles, buildings) is taxed as a retail sale, at the rate of the state where it is delivered (O204).",
     "schemes": [
      {
       "id": "STT",
@@ -315,9 +315,10 @@
        "Northern Territory": 4.0
       },
       "exempt": [
-       "sale for resale",
+       "sale for resale or manufacture",
        "export",
-       "sale to a public body"
+       "sale to a public body",
+       "service to a business"
       ]
      }
     ],
@@ -532,6 +533,11 @@
      "name": "register of bonded warehouse licences of Bayvarra's customs",
      "pattern": "^XB-BOND-LIC-\\d{4}$",
      "format": "XB-BOND-LIC- and a four-digit number"
+    },
+    "dangerous-goods-carrier": {
+     "name": "register of carriers of dangerous goods by road of Bayvarra",
+     "pattern": "^XB-DGC-\\d{4}-\\d{4}$",
+     "format": "XB-DGC-, the year of issue and a four-digit number"
     }
    },
    "legal_time": "Bayvarran Time",

@@ -161,6 +161,16 @@
    ]
   },
   {
+   "element": "FullnessIndicationCode",
+   "address": "*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode",
+   "lists": [
+    "UNCL8169"
+   ],
+   "parents": [
+    "EmissionCalculationMethod"
+   ]
+  },
+  {
    "element": "RoleCode",
    "address": "*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode",
    "lists": [
@@ -5420,7 +5430,8 @@
     "33",
     "2302",
     "815",
-    "71"
+    "71",
+    "3113"
    ]
   },
   "IATAAircraftType": {
@@ -6023,7 +6034,8 @@
     "2920",
     "1202",
     "1203",
-    "1950"
+    "1950",
+    "1965"
    ]
   },
   "UNModelRegsClass": {
@@ -6130,7 +6142,8 @@
     "147",
     "153",
     "161",
-    "171"
+    "171",
+    "115"
    ]
   },
   "ADRTunnel": {
@@ -8498,6 +8511,7 @@
    "location": "world/codelists/gc/WCOHS2022Code.gc",
    "codes": [
     "260111",
+    "271112",
     "271121",
     "321000",
     "381400",
@@ -8802,6 +8816,27 @@
     "en-XU",
     "en-XB",
     "en-XL"
+   ]
+  },
+  "UNCL8169": {
+   "listID": "UN/EDIFACT EDED 8169",
+   "scope": "external",
+   "name": "UN/EDIFACT 8169 Full or empty indicator",
+   "location": "world/codelists/gc/UNCL8169Code.gc",
+   "codes": [
+    "1",
+    "10",
+    "11",
+    "12",
+    "13",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
    ]
   }
  }

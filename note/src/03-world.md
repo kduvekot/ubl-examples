@@ -1146,6 +1146,23 @@ priced from the trade accord's lint reference price, published in lume.
 Lumeport's water company also collects the city's sewage levy, as a line
 collected on behalf of the city, and runs the city's district heating.
 
+Bayvarra's retail sales tax falls on the final use, so what a business buys
+is exempt only where it does not end there. What a business sells on as it
+is, or what becomes part of the product it sells (raw materials,
+ingredients, components, the packaging that goes to the customer), is a
+sale for resale or manufacture and exempt; what it uses up or keeps (fuel
+and energy it burns, consumables, tools, machines, vehicles, buildings) is
+taxed as a retail sale; services to a business are exempt. A waste plant
+paid a gate fee sells a disposal service, exempt to a business and taxed to
+a household; a plant that buys waste as fuel buys taxable goods. So the
+propane the water company burns in its boilers carries the sales tax of
+Coastal State, where it is delivered, and the district heat it sells a
+household carries it again, as in Washington or California, whose sales
+taxes exempt an ingredient or component and tax fuel used to make heat.
+Unlike Urvania's value added tax, which taxes every purchase and lets the
+business deduct it, a retail sales tax keeps the tax a business pays on its
+inputs.
+
 Goods of Accord origin cross the borders free of duty, on proof of origin:
 every import declaration claims the preference, names the criterion
 (wholly obtained, sufficiently processed, or regional value content) and
@@ -1203,12 +1220,22 @@ every five years, against how the three economies have developed: an
 adjustable peg, as the Bretton Woods system was. The last review, on
 1 January 2022, left them unchanged; the next is on 1 January 2027. Through
 2026 every exchange rate in the examples is the parity. There is still a
-daily official rate, the noon fixing of the Lumeport Exchange, which does not
-change between reviews, and the Accord's size classes give their turnover
+daily official rate, the noon fixing of the Lumeport Exchange, which between
+the three currencies does not change between reviews, and the Accord's size classes give their turnover
 limits in all three currencies at the parities. Currency risk is real across
 a review: anything agreed now and paid after 1 January 2027 may be paid at
 another rate, and a forward exchange contract protects a long commitment
 across the review date.
+
+Against currencies outside the Accord the lume floats. Its value is a basket
+of fixed amounts of five currencies, like the IMF's SDR: the Swiss franc, the
+Canadian dollar, the Australian dollar, the Norwegian krone and the Mexican
+peso, weighted 30, 25, 15, 15 and 15 % when the basket was set, on
+2 January 2026, at 1.20 lume to the euro. Every working day at noon the
+Lumeport Exchange publishes its fixing of the lume against eight currencies:
+the euro, the US dollar, the yen, the Indian rupee, the pound sterling, the
+yuan, the rand and the real. The ferra's and the coral's rates against them
+follow from the parities, which stay fixed inside the Accord.
 
 A party keeps its account at a bank of its own country, with one exception.
 For its framework contract with the Lumeport Public Works Department Valdara
@@ -1457,8 +1484,9 @@ packaging and clothing, and distributes and retails; the island Lisavu grows
 and gins cotton, its export. Goods cross the land border by road, rail and
 river barge and go overseas by sea and air in both directions; there is a
 public tender and a design contest, a temporary export with an ATA carnet, a
-utility in each country, and gas by pipeline from Bayvarra's offshore field to Urvania's
-power station and grid. Each flow starts from the business: who buys
+utility in each country, gas by pipeline from Bayvarra's offshore field to Urvania's
+power station and grid, and propane by road tanker from the gas plant to
+Lumeport's district heating. Each flow starts from the business: who buys
 from whom, on which delivery terms, and therefore who arranges and pays the
 transport. A distributor that buys free carrier (FCA) books the truck
 itself and names the carrier in its order; a retailer that buys delivered
@@ -1511,6 +1539,28 @@ tonnes with its load. The carrier's fleet gives each vehicle's empty weight,
 so its payload is what is left: Trasvia's tractor of about 7.8 t and its
 curtain-side trailer of about 7.5 t can carry about 24.7 t. A weighed load
 stays within both, and the build checks it.
+
+Dangerous goods by road follow the ADR, which the Accord's road rules apply
+also to a carriage within one country. Kelpstone Gas separates propane from
+its field's gas at the Gullhaven plant and sells it by road tanker; in
+winter the Coastal State Water Company burns it in the peak boilers of
+Lumeport's district heating and orders a tanker load when its storage runs
+low. Gullhaven Tank Haulage, a tank haulier beside the plant with the federal
+permit to carry dangerous goods in tanks, carries it: about 20 t of
+propane, UN 1965, hydrocarbon gas mixture, liquefied, n.o.s., mixture C, of
+class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so
+about 37 t and within the 40 t. The tank shows the class 2.1 placard and,
+front and back, the orange plates with the hazard identification number 23
+(gas, flammable) over the UN number 1965; the consignment note gives the
+tunnel restriction code B/D, which forbids a tank of it every road tunnel
+(the road from Gullhaven to Lumeport has none), and the crew carries the
+Accord's emergency card for class 2. The tanker is weighed empty and full on
+the plant's weighbridge, which gives the tonnes billed, drives the day to
+Lumeport, about 515 km, pumps the propane into the water company's storage
+and returns empty the next day. Its consignment note reports the CO2e of
+both runs, loaded and empty, from the diesel each used, because the water
+company's greenhouse-gas report asks its suppliers' carriers for the whole
+round trip.
 
 Waste that stays in Urvania moves under Urvania's own waste law, not under
 the Basel Convention's procedure for transboundary movements, on the model

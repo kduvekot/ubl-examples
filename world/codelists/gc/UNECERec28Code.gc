@@ -142,5 +142,16 @@
             <SimpleValue>A line of one or more pipes for continuous transport of liquid or gas commodity.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>3113</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lorry, articulated with tank</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Articulated automotive vehicle with tank designed for carrying liquid or bulk goods.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

@@ -982,9 +982,11 @@ def hazardous_item(it):
         out["AdditionalInformation"] = V(hz["note"], "What the shipper adds about handling.")
     if hz.get("label") and not receiver:
         out["PlacardNotation"] = V(hz["class"], "The class shown on the hazard label of the packages.")
-    out["MarkingID"] = V(hz["un"], "The UN number marked on each package.")
+    if it.get("package"):         # goods in bulk, as propane in a tank, have no package to mark (D48)
+        out["MarkingID"] = V(hz["un"], "The UN number marked on each package.")
     out["UNPackingGroupCode"] = V(hz.get("pg", "NA"), "The packing group of the UN entry; NA where the entry has no "
-                                                     "packing group, as for lithium batteries and radioactive material.")
+                                                     "packing group, as for gases, lithium batteries and "
+                                                     "radioactive material.")
     out["UNPackingGroup"] = V(hz.get("pg", "NA"), "In words.")
     if hz.get("tunnel") and modes == {"road"} and not receiver:
         out["TunnelRestrictionCode"] = V(hz["tunnel"], "The tunnel restriction code for road transport.")
@@ -2705,6 +2707,11 @@ def shipment_weights(content, flow_id):
     if flow_id == "waste":                     # the weighbridge weight is the loaded truck: the waste flow (D42)
         return
 
+    def _plain(x):
+        """A decimal without trailing zeros after the point: 29880 stays 29880, 1.50 becomes 1.5."""
+        t = f"{x:f}"
+        return t.rstrip("0").rstrip(".") if "." in t else t
+
     def walk(node):
         if isinstance(node, list):
             for x in node:
@@ -2727,13 +2734,13 @@ def shipment_weights(content, flow_id):
                                            else [v.get("GoodsItem")]))
                 if equipment and all(isinstance(t, V) for t, _ in equipment):
                     total = Decimal(g.value) + sum(Decimal(t.value) for t, _ in equipment)
-                    v["GrossWeightMeasure"] = V(f"{total:f}".rstrip("0").rstrip("."), f"The goods ({g.value} kg) and "
+                    v["GrossWeightMeasure"] = V(_plain(total), f"The goods ({g.value} kg) and "
                                                 f"the tare of the transport equipment ({' + '.join(t.value for t, _ in equipment)} "
                                                 "kg): a shipment's gross weight includes the equipment (worklist C15).",
                                                 **g.attrs)
                 elif equipment and all(isinstance(w, V) for _, w in equipment):
                     total = sum(Decimal(w.value) for _, w in equipment)
-                    v["GrossWeightMeasure"] = V(f"{total:f}".rstrip("0").rstrip("."), "The gross weights of the "
+                    v["GrossWeightMeasure"] = V(_plain(total), "The gross weights of the "
                                                 f"transport equipment with the goods in it ({' + '.join(w.value for _, w in equipment)} "
                                                 "kg): a shipment's gross weight includes the equipment (worklist C15).",
                                                 **g.attrs)
@@ -3723,7 +3730,7 @@ def main(flow_id, check=False):
 
 
 FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "contest", "carnet",
-                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy"]
+                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "lpg"]
 
 
 if __name__ == "__main__":

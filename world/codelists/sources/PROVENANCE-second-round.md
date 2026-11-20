@@ -253,3 +253,41 @@ f57d777ee2a0c604c60686a11a7897f2144b35568f4c13c13bd3f248ac46ead3  ./eurlex-low/C
 ```
 
 What was read: the entries 15 01 01 to 15 01 09 (chapter 15 01, packaging), with their names, and the list's rules for choosing an entry (the section "List of waste" before the index: first the chapters 01 to 12 or 17 to 20 for the source of the waste, then 13 to 15, then 16, then the 99 code). `tools/codelists.py` reads the list's table from the file (format `eurlex-low`) and stops the build when an entry of `XU:Waste` differs from it. The waste flow's code 150102 "plastic packaging" was chosen by those rules: Valdara's polyethylene film is the stretch film of the deliveries it receives and of its own pallets; the chapters of its activity (08 coatings, 11 coating of metals, 12 shaping of metals and plastics) have no entry for packaging film (12 01 05 "plastics shavings and turnings" is waste of machining plastics), so the rules send it to chapter 15.
+
+---
+
+## Added 2026-11-20: the ECB euro foreign exchange reference rates (O231)
+
+For the Lumeport Exchange's daily noon fixing of the lume against currencies outside the Accord (decision O231): `tools/fx_fixing.py` values the lume's basket (Swiss franc, Canadian dollar, Australian dollar, Norwegian krone, Mexican peso) and quotes it against eight currencies from the ECB's daily euro reference rates, shifted by 1,820 days (260 weeks). Accessed on **2026-11-20**. The ECB's reference rates are published for information and may be reused with the source acknowledged.
+
+| Directory | Source | Version |
+|---|---|---|
+| ecb-eurofxref/ | https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip (European Central Bank, euro foreign exchange reference rates, the complete history since 1999 as CSV): the zip, SHA-256 `b1c3afd354115a48ce46089ea67623cf3297d321e3c4ebe0638e4a214813f25d`, holds `eurofxref-hist.csv`, SHA-256 `1635732dc4c4fd999105ed755906aa53ce4acc1c6a765f22d04786d441e8c239` | HTTP Last-Modified 19 Nov 2026 14:56:30 GMT (latest rate 2026-11-19) |
+
+Only an extract is kept, to keep the repository small: `eurofxref-hist-2020-2023.csv`, the columns Date, CHF, CAD, AUD, NOK, MXN, USD, JPY, INR, GBP, CNY, ZAR and BRL (units per 1 EUR, values unchanged) of every ECB working day from 2020-01-02 to 2023-12-29 (1,027 days), sorted by date. The world's fixings (2026-01-01 to 2027-12-31) use the rates of 2021-01-07 to 2023-01-06 and, on a day without a rate, the previous one. The extract was cut with Python (`csv`, run with `-I`); nothing else was changed.
+
+```
+4da29371e5b036f49c27153dbfc51e32c0374b8bc9b02132d8b9f97715d9a8fa  ./ecb-eurofxref/eurofxref-hist-2020-2023.csv
+```
+
+## Added 2026-11-20: propane by road tanker (D48, stage 6 group G10)
+
+For the lpg flow's propane (UN 1965) and the tanker's emission figures. Accessed on **2026-11-20**.
+
+| Directory | Source | Version |
+|---|---|---|
+| uncefact/ | https://github.com/uncefact/vocabulary-outputs `_data/transportequipmentfullnesscodelist.json` (UN/CEFACT, "TransportEquipmentFullnessCodeList": the codes of UN/EDIFACT data element 8169 Full or empty indicator, 1 to 13, e.g. "4" "Empty", "5" "Full", "8" "Full, single consignment"), for the world list `UNCL8169` | commit 51768f9c41be13673bc6d555c8c21c79d9e481a0 (2024-07-29), the same commit as the other files of `sources/uncefact/` |
+| erg2024/ | https://cameochemicals.noaa.gov/erg_guides/en/Guide_115.pdf (NOAA CAMEO Chemicals; US government work). UN-to-guide mapping from https://cameochemicals.noaa.gov/unna/1965: "Material Names Hydrocarbon gas mixture, liquefied, n.o.s. Response Guide 115 … Gases - Flammable (Including Refrigerated Liquids)", "Emergency Response Guidebook (ERG, 2024)"; its Hazmat Table (49 CFR 172.101) row: "UN Hydrocarbon gas mixture, liquefied, n.o.s. 2.1 … 2.1 - Flammable gas" | ERG 2024 (PDF title "GUIDE 115 Gases - Flammable (Including Refrigerated Liquids)") |
+| (bam, not copied) | BAM DGG-Info, UN 1965 "Kohlenwasserstoffgas, Gemisch C, verflüssigt" (BAM-Nr. 456): ADR 2025 https://www.dgg.bam.de/dgginfo/detailinfo/adr/sp5n6sn3 and UN Rec. https://www.dgg.bam.de/dgginfo/detailinfo/un/sp5n6sn3 (reached through the search form, which needs its session) | "Detailinfo ADR 2025"; "Detailinfo UN Rec. 23rd rev. ed." |
+
+```
+d958b8b224039d2367a4db41d2c31754f2ef5bd463ceda2c4d2ce7a40bd55e6e  ./uncefact/transportequipmentfullnesscodelist.json
+fb57468c3b3a632a2e7a19da5cf52c5427ba8a6e8ba7377dd394e1aad560666e  ./erg2024/Guide_115.pdf
+```
+
+What was read on BAM's pages for UN 1965, mixture C:
+
+- UN Rec. 23rd rev. ed.: "UN-Nr.: 1965 Klasse: 2.1"; "Klasse 2.1 Flammable gases"; "Namen für die Beförderungspapiere … HYDROCARBON GAS MIXTURE, LIQUEFIED, N.O.S. (Mixture C)"; "Vorschriften-Namen … HYDROCARBON GAS MIXTURE, LIQUEFIED, N.O.S."; special provision 274 (the proper shipping name supplemented with the technical name).
+- ADR 2025: "Klassifizierungscode 2F Verflüssigtes Gas, entzündbar"; "Beförderungskategorie 2"; "Gefahrnummer 23 entzündbares Gas"; "Gefahrzettel 2.1"; "Tunnelbeschränkungscode B/D: Beförderungen in Tanks: Durchfahrt verboten durch Tunnel der Kategorien B, C, D und E. Sonstige Beförderungen: Durchfahrt verboten durch Tunnel der Kategorien D und E."; for tanks "Großzettel / Kennzeichen 2.1" and "Orangefarbene Tafel Gefahrnummer 23 entzündbares Gas UN-Nummer 1965"; "Tankcodierung PxBN(M)"; the table of special provision 274/ADR 2.2.2.3 names mixture C "Gemisch C" oder "Propan", with the footnote "Bei Beförderungen in Tanks dürfen die Handelsnamen "Butan" und "Propan" nur als Zusatz verwendet werden."
+
+What `world/codelists/lists.json` takes from them: UN 1965 with its name and class 2.1 in `UNModelRegsUN`; guide 115 in `ERG2024`; the list `UNCL8169`, bound to `EmissionCalculationMethod/FullnessIndicationCode`; Recommendation 28 code 3113 "Lorry, articulated with tank" (from `rec28/Rec28_Rev4.2e_2018.csv`, already kept) in `UNECERec28`. The orange plate numbers 23 over 1965 and the tunnel code B/D of the examples are the ADR values above; the technical name is "Mixture C", with "propane" only as the trade name beside it.

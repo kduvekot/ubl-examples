@@ -12976,3 +12976,197 @@ def cotton_complete(n, doc):
 
 
 SCENARIOS["cotton"] = _with_enrichment("cotton", cotton_complete)
+
+
+# ---------------------------------------------------------------- the lpg flow (Bayvarra, domestic; D48)
+# Kelpstone's propane to the Coastal State Water Company's peak boilers, by Gullhaven Tank Haulage's tanker GT-04.
+# The order on Monday 8 June; the tanker loads at the plant early on Wednesday 10 June, drives the day to Lumeport,
+# pumps the propane into the water company's storage and returns empty on Thursday 11 June; Kelpstone invoices the
+# weighed tonnes on Thursday (D48, O138). Built on the map's current places (O192); distances from the map (O197).
+LPG = kit.Flow("lpg", "2026-06-08", [
+    {"item": "propane", "ordered": 20, "delivered": "20.18",
+     "why": "A full tanker load, about 20 tonnes: the storage at the boiler house is down to a third in the cold "
+            "spell, and one load fills it again."}])
+LPG_LOAD_DAY, LPG_INVOICE_DAY = 2, 3
+LPG_TRUCK = kit.fleet("52-xb", "GT-04")
+LPG_TANK = LPG_TRUCK["tank"]
+LPG_TARE = sum(LPG_TRUCK["tare_kg"].values())               # the tractor and the empty tank semi-trailer
+LPG_NET = int(Decimal(LPG.deal[0]["delivered"]) * 1000)      # the propane loaded, from the weighbridge
+LPG_GROSS = LPG_TARE + LPG_NET
+LPG_KM = wmap.leg_km("lpg", "42-xb", "34-xb")
+LPG_TRUCK_KMH = 65             # a loaded truck's average on the main road, with its stops (as the road flow's)
+LPG_DEPARTS = "07:00"
+LPG_ARRIVES = wmap.after(wmap.at(LPG.date(LPG_LOAD_DAY), LPG_DEPARTS), LPG_KM / LPG_TRUCK_KMH + 0.75)  # one break
+LPG_WEIGHBRIDGE = "KG-WB-26-0610-03"     # the plant's weighbridge ticket (world/documents.json, cited)
+# the haulier's fuel records for the two runs, in litres of diesel per 100 km: a 37 t combination loaded, and the
+# empty tanker of 17 t on its way back; about 10 kWh in a litre of diesel (as the plastics flow's barge, D41)
+LPG_FUEL_L_100 = {"full": Decimal(33), "empty": Decimal(24)}
+if LPG_GROSS > LIMIT:
+    raise SystemExit(f"lpg: the tanker's {LPG_GROSS} kg exceed the Accord's {LIMIT} kg for a combination (O134)")
+if LPG_NET > LPG_TANK["max_load_kg"]:
+    raise SystemExit(f"lpg: {LPG_NET} kg of propane exceed the tank's maximum load of {LPG_TANK['max_load_kg']} kg")
+REQUESTED_DELIVERY[("lpg", 1)] = (2, 2, "The propane is wanted on Wednesday 10 June, before the cold weekend the "
+                                        "forecast gives.")
+
+
+def lpg_contact(why):
+    """Kelpstone's plant control room, the 24-hour contact for its propane on the road (D36's pattern)."""
+    desk = PARTY["42-xb"]["identity"]["desks"]["emergency"]
+    return {**party("42-xb", short=True),
+            "Contact": {"Name": V(desk["name"], why),
+                        "Telephone": V(desk["telephone"], "The control room answers around the clock, while the "
+                                                          "tanker is on the road; under the reserved +999."),
+                        "Note": V(desk["hours"], "When it answers.")}}
+
+
+def lpg_emission(run, frm, to, why):
+    """The CO2e of one run of the tanker, from the haulier's fuel records: the litres the run used, as kWh of diesel,
+    times the tank-to-wheel factor (O138, owner's answer of 2026-11-20)."""
+    litres = (Decimal(str(LPG_KM)) * LPG_FUEL_L_100[run] / 100).quantize(Decimal(1))
+    kwh = litres * 10
+    full = run == "full"
+    return {"EnvironmentalEmissionTypeCode": V("CO2E", "Greenhouse gases as CO2 equivalent."),
+            "ValueMeasure": V(str(round(kwh * DIESEL_TTW)), f"{kwh:,} kWh times {DIESEL_TTW} kg CO2e per kWh.",
+                              unitCode="KGM"),
+            "ValueFactorNumeric": V(str(DIESEL_TTW), "Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per "
+                                                     "litre of about 10 kWh, the order of the default factor for "
+                                                     "diesel in EN 16258 (D41)."),
+            "ValueBaseMeasure": V(str(kwh), f"The diesel the run used, {litres} litres of about 10 kWh, from the "
+                                            f"haulier's fuel records: about {LPG_FUEL_L_100[run]} litres per 100 km "
+                                            f"for the {wmap.whole(LPG_KM)} km "
+                                            + ("of the combination loaded." if full else "of the tanker empty."),
+                                  unitCode="KWH"),
+            "Description": V(why, "What the figure covers."),
+            "EmissionCalculationMethod": {
+                "CalculationMethodCode": V("CALCULATED", "From the fuel used and an emission factor."),
+                "FullnessIndicationCode": V("5" if full else "4", (
+                    "UN/EDIFACT 8169 code 5: full. The tank goes loaded to Lumeport, filled to its maximum load."
+                    if full else "UN/EDIFACT 8169 code 4: empty. A tanker of propane comes back empty: there is no "
+                                 "load for it on the way north, so its empty run counts against the consignment."),
+                    listID="UN/EDIFACT EDED 8169"),
+                "MeasurementFromLocation": {"Name": V(frm, "Where the run starts.")},
+                "MeasurementToLocation": {"Name": V(to, "Where it ends.")}}}
+
+
+def lpg_consignment(f):
+    """The waybill's consignment (D48): the propane in bulk in the tank semi-trailer, which is the transport
+    equipment and carries the placard and the orange plates; the tanker's emission for the water company's
+    greenhouse-gas report, loaded and empty (O138)."""
+    hz = ITEM["propane"]["hazard"]
+    t = LPG_TRUCK["tare_kg"]
+    leg = kit.flow_leg(f, "52-xb")
+    plant, works = leg["from_place"]["name"], leg["to_place"]["name"]
+    loaded = {
+        "ID": V(f"{ITEM['propane']['sellers_id']}-DG", "Kelpstone's dangerous goods record of its propane."),
+        "UNDGCode": V(hz["un"][2:], "The UN number, from the Dangerous Goods List of the UN Model Regulations."),
+        "ProperShippingName": V(hz["name"], "The proper shipping name of the UN entry, as the transport document "
+                                            "must give it."),
+        "TechnicalName": V(hz["technical"], "The mixture the n.o.s. entry is described by (special provision 274): "
+                                            "mixture C, of which the trade name is propane; in a tank, \"propane\" "
+                                            "may be used only beside the mixture's name (ADR 2.2.2.3)."),
+        "HazardClassID": V(hz["class"], "Division 2.1, flammable gases."),
+        "PlacardNotation": V(hz["label"], "The class 2.1 placard on both sides and at the back of the tank."),
+        "UpperOrangeHazardPlacardID": V(hz["hin"], "The hazard identification number on the upper half of the "
+                                                   "orange plates at the front and back of the tanker: 2, gas, and "
+                                                   "3, flammable."),
+        "LowerOrangeHazardPlacardID": V(hz["un"][2:], "The UN number on the lower half of the orange plates."),
+        "TunnelRestrictionCode": V(hz["tunnel"], "The tunnel restriction code the transport document gives: in a "
+                                                 "tank, no passage through tunnels of categories B to E. The road "
+                                                 "from Gullhaven to Lumeport passes through no tunnel."),
+        "NetWeightMeasure": qty(LPG_NET, "KGM", "The propane in the tank, from the weighbridge."),
+        "ContactParty": lpg_contact("Whom to call in an incident with the propane."),
+        "HazardousGoodsTransit": {
+            "TransportEmergencyCardCode": V("TEC2", "The Trade Accord's emergency card for class 2, the instructions "
+                                                    "in writing the crew carries in the cab for this transit."),
+            "HazardousRegulationCode": V("ADR", "Road: the ADR, which the Trade Accord's road rules apply to the "
+                                                "carriage of dangerous goods, also within one country.")}}
+    tank = {"ID": V(LPG_TANK["serial"], "The haulier's number of its tank semi-trailer, painted on the tank."),
+            "TransportEquipmentTypeCode": V("TE", "UN/EDIFACT 8053 code TE: trailer, here the tank semi-trailer.",
+                                            listID="UN/EDIFACT EDED 8053"),
+            "DangerousGoodsApprovedIndicator": V("true", "Approved for the propane it carries."),
+            "Description": V(LPG_TANK["approval"], "The tank, as its approval plate gives it."),
+            "TareWeightMeasure": qty(t["trailer"], "KGM", "The tank semi-trailer empty, from the haulier's fleet "
+                                                          "data (world/parties.json)."),
+            "LoadedHazardousItem": loaded}
+    return {"HazardousRiskIndicator": V("true", "The consignment is dangerous goods."),
+            "TransportHandlingUnit": {
+                "ID": V(LPG_TANK["serial"], "The propane travels in bulk, without packages: the tank is the unit "
+                                            "it is handled in, by the tank's number."),
+                "HazardousRiskIndicator": V("true", "Dangerous goods."),
+                "TransportEquipment": tank},
+            "EnvironmentalEmission": [
+                lpg_emission("full", plant, works, "The loaded run, Gullhaven to Lumeport."),
+                lpg_emission("empty", works, plant, "The tanker's empty run back to Gullhaven the next day, counted "
+                                                    "against this consignment: the Coastal State Water Company's "
+                                                    "greenhouse-gas report asks its suppliers' carriers for the "
+                                                    "whole round trip.")]}
+
+
+def lpg_stage(f):
+    t = LPG_TRUCK["tare_kg"]
+    leg = kit.flow_leg(f, "52-xb")
+    return {"ID": V("1", "The one road leg, from the plant to Lumeport."),
+            "TransportModeCode": V("3", "UN/ECE Recommendation 19 code 3: road transport.",
+                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
+            "HazardousRiskIndicator": V("true", "Dangerous goods on the road."),
+            "TransportMeans": {
+                **kit.means("52-xb", "GT-04"),
+                "MeasurementDimension": [
+                    {"AttributeID": V("GROSSWEIGHT", "The tanker weighed full on the plant's weighbridge."),
+                     "Measure": V(str(LPG_GROSS), f"Within the Accord's {LIMIT:,} kg for a combination.",
+                                  unitCode="KGM"),
+                     "Description": V("Loaded, at 06:45", "When it was weighed.")},
+                    {"AttributeID": V("TAREWEIGHT", "The same tanker weighed empty before loading."),
+                     "Measure": V(str(LPG_TARE), f"The tractor about {t['tractor']:,} kg and the tank semi-trailer "
+                                                 f"about {t['trailer']:,} kg (world/parties.json).", unitCode="KGM"),
+                     "Description": V("Empty, at 05:40", "When it was weighed.")}]},
+            "DriverPerson": kit.person(LPG_TRUCK["driver"]["first"], LPG_TRUCK["driver"]["family"],
+                                       "The driver, trained for dangerous goods in tanks."),
+            "PlannedDepartureTransportEvent": kit.event(f, LPG_LOAD_DAY, LPG_DEPARTS + ":00", "The tanker leaves "
+                                                        "the plant once loaded and weighed.",
+                                                        location=kit.leg_location(leg, "from",
+                                                                                  "The plant's loading bay.")),
+            "PlannedArrivalTransportEvent": kit.event(f, LPG_LOAD_DAY, wmap.hm(LPG_ARRIVES), f"About "
+                                                      f"{wmap.nearest(LPG_KM, 5)} km at about {LPG_TRUCK_KMH} km/h, "
+                                                      "with the driver's break of 45 minutes.",
+                                                      location=kit.leg_location(leg, "to",
+                                                                                "The boiler house's storage."))}
+
+
+def lpg(n, doc):
+    f, d = LPG, doc["doc"]
+    if d == "Order":
+        return kit.order(f, n, doc, 0, "Ordered when the storage reading of Monday morning showed a third left.",
+                         "Delivered at place unloaded: Kelpstone has the propane carried and pumped into the water "
+                         "company's storage tank.", "Into the propane storage of the district heating plant, "
+                         "Reservoir Road, Lumeport")
+    if d == "DespatchAdvice":
+        out = kit.despatch_advice(f, n, doc, LPG_LOAD_DAY, "Sent when the tanker leaves the plant.",
+                                  "The propane loaded, from the weighbridge: in bulk, without packaging.")
+        out["IssueTime"] = V("07:05:00", "Just after the tanker left the plant.")
+        out["DespatchLine"][0]["Note"] = V("20.18 t loaded for the 20 t ordered: a full tanker load, weighed.",
+                                           "The line as despatched.")
+        return out
+    if d == "Waybill":
+        out = kit.waybill(f, n, doc, LPG_LOAD_DAY, "Issued at the plant when the haulier took over the loaded tank.",
+                          LPG_NET, "The propane, net, from the plant's weighbridge.")
+        out["IssueTime"] = V("06:50:00", "After the tanker was weighed full.")
+        out["OtherInstruction"] = V("Pump into the propane storage at the boiler house; the water company's operator "
+                                    "reads the storage level before and after and signs the note.",
+                                    "What the carrier must do at delivery.")
+        kit.deep_merge(out["Shipment"]["Consignment"], lpg_consignment(f))
+        out["Shipment"]["Consignment"]["MainCarriageShipmentStage"] = lpg_stage(f)
+        return out
+    if d == "Invoice":
+        return kit.invoice(f, n, doc, LPG_INVOICE_DAY, "Issued the working day after the delivery.",
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The water company's order.")},
+                            "AdditionalDocumentReference": {
+                                "ID": V(LPG_WEIGHBRIDGE, "The weighbridge ticket whose net weight is billed."),
+                                "IssueDate": V(f.date(LPG_LOAD_DAY), "Printed when the tanker was weighed full.")}},
+                           [{"item": "propane", "qty": LPG.deal[0]["delivered"],
+                             "invoice_why": "The tonnes loaded, from the weighbridge ticket."}])
+    raise SystemExit(f"lpg scenario: no document {n} {doc['doc']}")
+
+
+SCENARIOS["lpg"] = _with_enrichment("lpg", lpg)
+FLOWS["lpg"] = LPG
