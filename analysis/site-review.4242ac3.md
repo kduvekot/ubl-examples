@@ -173,7 +173,10 @@ irrelevant · structure · process.
   the side where they cover the least, and no longer overprint other names; the pipelines are a solid brown line, the
   land border stays dotted; the gas platform is marked and named; a legend under the mainland panel explains the
   roads, railway, pipeline, border, sea and air routes, towns, villages, ports, airports and the platform
-  (`analysis/world-position/refine_map.py`).
+  (`analysis/world-position/refine_map.py`). **Owner, same day:** the country names near the centre of each country (the
+  point of its land farthest from coast and border), moved only to keep clear of towns, names and roads; Lisavu's name
+  beside the island in the sea, since the island is narrower than its name; the ports, airports and platform named
+  first, so that the towns' and villages' names keep clear of them; no names overprint each other (checked).
 - **What:** the 4,961 px PNG (6.8 MB) is shown at natural size, so the page scrolls sideways at every width
   (no image rule in `site/site.css`); "Port of Selanu" stands about 45 km from its symbol, "Selanu Airport"
   reads as a village, "Euridice Crossing" overprints "Tallowford"; no legend, so border and pipelines look
