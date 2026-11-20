@@ -303,6 +303,15 @@ def write(world, model, built):
         w(f"| Border metering station ({st['pipeline']} pipeline) | {st['country']}, "
           f"{state_of(world, st['country'], st['at'])} | {st['at'][0]}/{st['at'][1]} | {fmt_pos(world, st['at'])} | "
           f"{height_text(model, st['at'])} | {first_clause(st['note'])} |")
+    # a quarter: one building several parties share on one square, each in its own wing (map "quarters", O247)
+    pname = {p["id"]: p["identity"]["name"] for p in world["parties"]}
+    for qd in model.get("quarters", []):
+        cq = next(p["c"] for p in world["parties"] if p["id"] == qd["wings"][0])
+        side = {(1, 0): "east", (-1, 0): "west", (0, 1): "south", (0, -1): "north"}.get(tuple(qd["open"]), "?")
+        w(f"| {qd['name']} | {cq}, {state_of(world, cq, qd['at'])} | {qd['at'][0]}/{qd['at'][1]} | "
+          f"{fmt_pos(world, qd['at'])} | {height_text(model, qd['at'])} | One building with wings round a court that "
+          f"opens on the street `{qd['street']}` ({side} side); room for {qd['room']} bodies, "
+          f"{len(qd['wings'])} in it: {', '.join(f'{pname[x]} ({x})' for x in qd['wings'])}. |")
     crossing = None
     rp = [tuple(q) for q in routes["road"]["pts"]]
     for a, b in zip(rp, rp[1:]):
@@ -369,6 +378,7 @@ def write(world, model, built):
     w("| Route | Mode | What it is | From → to | Length | Straight | Factor | Earlier (old list; D19/D44) |")
     w("|---|---|---|---|---|---|---|---|")
     exact = {tuple(x["at"]): x["identity"]["name"] for x in world["parties"]}
+    exact.update({tuple(qd["at"]): qd["name"] for qd in model.get("quarters", [])})     # a square several parties share
     exact.update({tuple(pf["at"]): "the gas platform" for pf in world.get("platforms", [])})
     exact.update({tuple(q["at"]): q["key"] for q in pl})
 

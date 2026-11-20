@@ -77,6 +77,7 @@ Every town, the 4 localities of parties (villages and the two sides of the road 
 |---|---|---|---|---|---|
 | Gas platform (Kelpstone Gas) | offshore, XB's shelf | 78/15 | 27.5090 S 15.4901 W (27° 30.54′ S, 15° 29.41′ W) | sea | The gas field's production platform, offshore: it has no name or address in the documents, only its place in the world's map grid and its WGS 84 coordinates. Offshore block 19/03. |
 | Border metering station (gas pipeline) | XB, Northern Territory | 72/52 | 28.6757 S 15.7079 W (28° 40.54′ S, 15° 42.48′ W) | 297 m | The border metering station of the gas pipeline, on Bayvarra's side of the border: it measures the gas that crosses into Urvania. |
+| Government Quarter | XB, Coastal State | 139/127 | 31.0405 S 13.2755 W (31° 02.43′ S, 13° 16.53′ W) | 88 m | One building with wings round a court that opens on the street `civic` (north side); room for 6 bodies, 3 in it: Lumeport Public Works Department (2-xb), Federal Department of Agriculture of Bayvarra (57-xb), Bayvarra Information Service (21-xb). |
 | Road border crossing (route `road`) | XU/XB | 96/120 → 97/120 | 30.8198 S 14.8003 W (30° 49.19′ S, 14° 48.02′ W) | 134 m | Where the main road from Ferrano to Marrowdale passes from Urvania into Bayvarra. |
 | The border's river point (terrain "crossing") | XU/XB | 97.38/123.12 | 30.9182 S 14.7865 W (30° 55.09′ S, 14° 47.19′ W) | river | Where the land border meets the main river, at the confluence of the largest plateau tributary; below it the river is the border. |
 
@@ -105,7 +106,7 @@ Every party on the map with its place (the town of its address), the district of
 | Lumeport Public Works Department (2-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Government Hill (administration, 3.2 km) | 4.9 km SE | inside | 139/127 | 31.0405 S 13.2755 W (31° 02.43′ S, 13° 16.53′ W) | 88 m |
 | Saltmere Engineering (27-xb) | Foundry Road, Marrowdale | Marrowdale | Market Square (core, 7.7 km) | 7.8 km NE | edge | 125/111 | 30.5360 S 13.7838 W (30° 32.16′ S, 13° 47.03′ W) | 299 m |
 | Procurement Review Board of Bayvarra (28-xb) | Justice Row, Lumeport (Government Hill) | Lumeport | Government Hill (administration, 6.2 km) | 7.8 km SE | edge | 140/127 | 31.0405 S 13.2392 W (31° 02.43′ S, 13° 14.35′ W) | 66 m |
-| Bayvarra Information Service (21-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Northshore (suburb, 4.8 km) | 7.8 km NE | edge | 140/125 | 30.9775 S 13.2392 W (30° 58.65′ S, 13° 14.35′ W) | 64 m |
+| Bayvarra Information Service (21-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Government Hill (administration, 3.2 km) | 4.9 km SE | inside | 139/127 | 31.0405 S 13.2755 W (31° 02.43′ S, 13° 16.53′ W) | 88 m |
 | Lumeport Trade Accord Council (32-xb) | Exchange Street, Lumeport (Old Town) | Lumeport | Northshore (suburb, 2.0 km) | 7.8 km NE | inside | 139/124 | 30.9459 S 13.2755 W (30° 56.76′ S, 13° 16.53′ W) | 58 m |
 | Harbourline Factoring (24-xb) | Exchange Street, Lumeport (Old Town) | Lumeport | Northshore (suburb, 2.0 km) | 4.9 km NE | inside | 139/125 | 30.9775 S 13.2755 W (30° 58.65′ S, 13° 16.53′ W) | 97 m |
 | Bank of Lumeport (25-xb) | Exchange Street, Lumeport (Old Town) | Lumeport | Dockside (port, 2.3 km) | 4.9 km SW | inside | 137/127 | 31.0405 S 13.3481 W (31° 02.43′ S, 13° 20.89′ W) | 85 m |
@@ -145,7 +146,7 @@ Every party on the map with its place (the town of its address), the district of
 | Selanu General Hospital (50-xl) | Reef Street, Selanu | Selanu | Agreement Quarter (industry, 5.6 km) | 7.0 km S | edge | 237/114 | 33.0631 S 2.2001 W (33° 03.78′ S, 2° 12.01′ W) | 18 m |
 | Harrowmead Fruit Growers (55-xb) | Orchard Road, Harrowmead | Harrowmead | - | 4.9 km NE | - | 97/104 | 30.3153 S 14.8003 W (30° 18.92′ S, 14° 48.02′ W) | 366 m |
 | Hafefo Fresh Produce (56-xl) | Wharf Road, Selanu | Selanu | Agreement Quarter (industry, 2.5 km) | 3.5 km W | inside | 236/112 | 33.0000 S 2.2376 W (33° 00.00′ S, 2° 14.26′ W) | 141 m |
-| Federal Department of Agriculture of Bayvarra (57-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Northshore (suburb, 14.5 km) | 14.4 km E | outside | 142/127 | 31.0405 S 13.1666 W (31° 02.43′ S, 13° 10.00′ W) | 10 m |
+| Federal Department of Agriculture of Bayvarra (57-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Government Hill (administration, 3.2 km) | 4.9 km SE | inside | 139/127 | 31.0405 S 13.2755 W (31° 02.43′ S, 13° 16.53′ W) | 88 m |
 
 ## 3. Distances along the routes
 
@@ -307,7 +308,6 @@ Found by the generator (each from the data above):
 - Ferrano Grid (44-xu) lies outside Ferrano's built-up area (22.4 km from the centre; the town is about 15 km across).
 - Fernhollow Studio (48-xb) lies outside Lumeport's built-up area (11.1 km from the centre; the town is about 12 km across).
 - Quillmoor Pharma Distribution (49-xb) lies outside Lumeport's built-up area (18.8 km from the centre; the town is about 12 km across).
-- Federal Department of Agriculture of Bayvarra (57-xb) lies outside Lumeport's built-up area (14.4 km from the centre; the town is about 12 km across).
 - Customs Administration of Urvania (19-xu) stands 3.5 km from where the road `road` crosses the border (97/120).
 - Customs and Border Service of Bayvarra (19-xb) stands 0.0 km from where the road `road` crosses the border (97/120).
 - Gullhaven (Kelpstone Gas) is reached by road only from Larkmouth (`road-north`): Ferrano – Gullhaven is 714 km by road against 270 km in a straight line. The lpg flow (D48, a road tanker from the gas plant) needs this settled.

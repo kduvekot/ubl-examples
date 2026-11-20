@@ -28,7 +28,7 @@ For every tile the model records:
   ab  1 for a bridge's or a tunnel's approach (an embankment or a cutting: its ground is left as it is)
   ov  where a road and a rail line cross on a bridge (an overpass): "road" or "rail", the way on the bridge
   hb  1 for a town's own harbour (map "towns", "harbour": Larkmouth's quay, without a party)
-  b   id of the party standing here
+  b   id of the party standing here (on a quarter's square the first of its occupants: model "quarters")
   hs  a house: [level 1..4, facing direction 0..3 towards its street]; in a town, a square of houses (the
       built-up area's own streets run within it), outside the towns a single house (a farmstead)
   um  the built-up area of a town or village on this square: a mask of its SUB x SUB sub-squares of 875 m
@@ -58,7 +58,8 @@ For every tile the model records:
 
 Structural rules (the build stops when one is broken):
   * buildings do not share tiles and do not stand on roads, rails or water,
-    except parties marked "on" a route (customs posts, rail stations);
+    except parties marked "on" a route (customs posts, rail stations); the parties of a quarter (map "quarters": one
+    building with a wing for each, round a court that opens on its street) share its square;
   * every party has access: a road next to it, or rail for rail parties,
     or water for ports and quays; missing access roads are laid by the model, over the terrain with the router of
     the map's routes (tools/routing.py; tools/lay_routes.py writes them into the map, so that the map holds every
@@ -135,6 +136,9 @@ Structural rules (the build stops when one is broken):
     pipeline carries a pipeline leg (or feeds the producer from its platform).
     The model records each leg's way on the map ("legs"): the map's vehicles
     travel exactly these.
+
+The model also lists the quarters (map "quarters"): each with its square, its occupants in the order of their wings
+and "open", the side of its square its court opens on (the step towards its street).
 
 Usage: python3 tools/world_model.py [out.json]   (default: print a summary)
 """
@@ -331,7 +335,20 @@ def build(world):
             r["path"] = r["path"] + [mouth]                # into the estuary, open water
         r["water"] = True
 
-    # 3. parties: footprints on flat ground; a port's quay side is open water
+    # 3. parties: footprints on flat ground; a port's quay side is open water. A quarter (map "quarters") is one
+    #    building that several parties share on one square, each in a wing of its own (O247: the government quarter
+    #    on Government Hill): its occupants ("wings") stand on its square, the square's "b" is the first of them, and
+    #    no other party shares a square
+    party_by_id = {p["id"]: p for p in world["parties"]}
+    wing_of = {}
+    for qd in world.get("quarters", []):
+        if len(qd["wings"]) > qd["room"] or len(set(qd["wings"])) != len(qd["wings"]):
+            problems.append(f"quarter '{qd['id']}' has {len(qd['wings'])} occupants for room for {qd['room']}, or one twice")
+        for pid in qd["wings"]:
+            p = party_by_id.get(pid)
+            if not p or footprint(p) != [tuple(qd["at"])]:
+                problems.append(f"quarter '{qd['id']}': its occupant {pid} does not stand on its square {tuple(qd['at'])}")
+            wing_of[pid] = qd
     owner = {}
     for p in world["parties"]:
         for (i, j) in footprint(p):
@@ -340,6 +357,9 @@ def build(world):
                 problems.append(f"#{p['n']} {p['name']} stands on water at {(i, j)}")
             t["k"], t["h"], t["c"] = "g", 0, p["c"]
             if (i, j) in owner:
+                qd = wing_of.get(p["id"])
+                if qd and qd is wing_of.get(owner[(i, j)]["id"]) and tuple(qd["at"]) == (i, j):
+                    continue                                # a wing of the quarter that stands here
                 problems.append(f"#{p['n']} {p['name']} and {owner[(i, j)]['name']} share tile {(i, j)}")
             owner[(i, j)] = p
             t["b"] = p["id"]
@@ -873,6 +893,23 @@ def build(world):
                 else:
                     drop({q})
                 changed = True
+
+    # a quarter's court opens on its street (map "quarters", "street"): the side of its square that the street passes
+    # (not a building the street ends at; the first in DIRS order where it passes more than one), and the street leads
+    # into the court there
+    quarters_out = []
+    for qd in world.get("quarters", []):
+        q = tuple(qd["at"])
+        street = next((r for r in world["routes"] if r["id"] == qd.get("street")), None)
+        on = {tuple(x) for x in (street or {}).get("path", [])}
+        sides = [d for d in DIRS if (q[0] + d[0], q[1] + d[1]) in on and (q[0] + d[0], q[1] + d[1]) not in owner]
+        if not sides:
+            problems.append(f"quarter '{qd['id']}' at {q}: its street '{qd.get('street')}' does not pass beside it")
+            continue
+        d = sides[0]
+        enter((q[0] + d[0], q[1] + d[1]), q)
+        quarters_out.append({"id": qd["id"], "name": qd["name"], "kind": qd["kind"], "at": list(q), "room": qd["room"],
+                             "wings": list(qd["wings"]), "open": list(d), "street": qd.get("street")})
 
     # a driveway for every party beside a road that no road leads into yet (owner, 2026-11-19, MO007): from the road
     # square beside it (a road that ends there first, then a main road, then the busiest) into its building, so that a truck leaves and arrives on a road
@@ -1523,7 +1560,7 @@ def build(world):
 
     model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
              "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs, "structures": structures,
-             "rapids": [list(q) for q in rapids], "access": access,
+             "rapids": [list(q) for q in rapids], "access": access, "quarters": quarters_out,
              "river_level": [[i, j, round(lv, 1)] for (i, j), lv in river_level.items()],
              # the border on the water (the river below the crossing, the estuary's axis), in tile coordinates (a
              # square's centre at its index)
