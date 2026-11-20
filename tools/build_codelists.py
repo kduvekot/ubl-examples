@@ -204,8 +204,9 @@ def gc_list(key, lst):
     ET.indent(root, space="   ")
     if scope == "external" and lst.get("source"):
         src = lst["source"]
-        note = (f"A world copy of {lst['name']}: the codes the world uses, and others of the same list. Built from "
-                f"world/codelists/sources/{src.get('file') or ', '.join(src['files'])} ({src.get('version', version)}).")
+        # where the copy was built from is in world/codelists/sources/PROVENANCE*.md, not in the published file (O256 b)
+        note = (f"A world copy of {lst['name']}, version {version}: the codes the world uses, and others of the same "
+                "list, as its agency publishes them.")
         if any(c.get("added") for c in lst["codes"].values()):
             note += f" Added for the world: {', '.join(k for k, c in lst['codes'].items() if c.get('added'))}."
     elif scope == "external":
@@ -217,8 +218,7 @@ def gc_list(key, lst):
                 "UBL's own list has none, or one that an instance cannot quote.")
     else:
         note = f"A code list of the UBL example world: {lst['name'].lower()}. {lst.get('description', '')}".strip()
-    head = (f'<?xml version="1.0" encoding="UTF-8"?>\n<!-- {note} Made by tools/build_codelists.py from '
-            f'world/codelists/lists.json. -->\n')
+    head = f'<?xml version="1.0" encoding="UTF-8"?>\n<!-- {note} -->\n'      # no generator path (O256 b)
     return head.encode() + ET.tostring(root, encoding="utf-8") + b"\n"
 
 
