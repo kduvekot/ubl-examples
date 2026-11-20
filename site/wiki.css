@@ -1,0 +1,36 @@
+/* The Encyclopedia: a classic reference work, deliberately unlike the main site: paper, serif text, framed infoboxes. */
+:root { --paper:#fbf9f4; --ink:#202122; --soft:#4a4a48; --rule:#c8c2b4; --frame:#a7a196; --box:#f3efe5; --link:#2b4f86;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:"Inter",system-ui,sans-serif; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#1b1a17; --ink:#e6e2d8; --soft:#bdb7aa; --rule:#4a463d; --frame:#6c665a; --box:#25231f; --link:#9ab6e6; } }
+html { background:var(--paper); color-scheme:light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.65 var(--serif); }
+a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+.wbar { display:flex; align-items:baseline; gap:.8rem; flex-wrap:wrap; padding:.9rem 1.25rem .7rem; border-bottom:3px double var(--rule); }
+.wname { font:700 1.55rem/1 var(--serif); color:var(--ink); letter-spacing:.01em; }
+.wsub { font-style:italic; color:var(--soft); }
+.wsite { margin-left:auto; font:600 .8rem/1 var(--sans); color:var(--soft); }
+.wlayout { display:grid; grid-template-columns:12rem minmax(0,1fr); gap:2rem; max-width:72rem; margin:0 auto; padding:1.25rem; }
+.wside { font:.85rem/1.5 var(--sans); }
+.wside-h { margin:1rem 0 .3rem; font-weight:600; color:var(--soft); text-transform:uppercase; letter-spacing:.06em; font-size:.72rem; border-bottom:1px solid var(--rule); }
+.wside ul { list-style:none; margin:0; padding:0; } .wside li { margin:.2rem 0; }
+.wmain { min-width:0; max-width:50rem; }
+.wmain h1 { font:400 2rem/1.2 var(--serif); margin:0 0 .1rem; padding-bottom:.25rem; border-bottom:1px solid var(--rule); }
+.wmain .short { margin:.1rem 0 1rem; font-style:italic; color:var(--soft); font-size:.95rem; }
+.wmain h2 { font:600 1.35rem/1.3 var(--serif); margin:1.8rem 0 .6rem; padding-bottom:.2rem; border-bottom:1px solid var(--rule); font-variant:small-caps; letter-spacing:.02em; clear:none; }
+.wmain p { margin:.6rem 0; overflow-wrap:break-word; }
+.infobox { float:right; clear:right; width:20rem; max-width:100%; margin:0 0 1rem 1.25rem; border:1px solid var(--frame);
+  background:var(--box); border-collapse:collapse; font:.84rem/1.45 var(--sans); }
+.infobox caption { font:700 1.05rem/1.3 var(--serif); padding:.5rem; background:var(--box); border:1px solid var(--frame); border-bottom:0; }
+.infobox th { text-align:left; vertical-align:top; padding:.3rem .5rem; width:38%; font-weight:600; }
+.infobox td { padding:.3rem .5rem; } .infobox tr + tr th, .infobox tr + tr td { border-top:1px solid var(--rule); }
+.wmain table:not(.infobox) { border-collapse:collapse; margin:.8rem 0; font:.86rem/1.45 var(--sans); display:block; overflow-x:auto; }
+.wmain table:not(.infobox) th, .wmain table:not(.infobox) td { border:1px solid var(--rule); padding:.3rem .55rem; text-align:left; vertical-align:top; }
+.wmain table:not(.infobox) th { background:var(--box); }
+.wtoc { display:inline-block; border:1px solid var(--frame); background:var(--box); padding:.4rem .9rem; margin:.4rem 0 1rem; font:.85rem/1.5 var(--sans); }
+.wtoc summary { font-weight:600; cursor:pointer; } .wtoc ol { margin:.3rem 0; padding-left:1.4rem; }
+.wmain ol { font-size:.9rem; } .categories { clear:both; margin-top:2rem; padding:.4rem .7rem; border:1px solid var(--rule); background:var(--box); font:.82rem/1.5 var(--sans); }
+.wfoot { border-top:1px solid var(--rule); padding:1rem 1.25rem; font:.8rem/1.5 var(--sans); color:var(--soft); text-align:center; }
+@media (max-width: 48rem) {
+  .wlayout { grid-template-columns:1fr; gap:.5rem; } .wside { order:2; border-top:1px solid var(--rule); }
+  .infobox { float:none; width:100%; margin:0 0 1rem; } }

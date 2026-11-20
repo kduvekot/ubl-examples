@@ -30,6 +30,12 @@ Next to the world, the repository holds the sample documents the OASIS UBL Techn
 published with each release of UBL, with their history reconstructed one document per commit:
 [the releases and their changes](releases.html) and [how the history was built](history.html).
 
+## The Encyclopedia
+
+The [Encyclopedia](wiki/index.html) is the world's own reference work: its countries, towns, companies and
+institutions, with their history, each article made from the world's data. It is being written; the first
+articles are there.
+
 ## The method note
 
 A longer description of the principles, the world and the checks, written in the layout of an OASIS

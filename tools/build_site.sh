@@ -160,6 +160,16 @@ for md in "$OUT"/.world-md/*.md; do
   page "$md" "$name.html" "$(sed -n '1s/^# //p' "$md")"
 done
 rm -rf "$OUT/.world-md"
+# The Encyclopedia (/wiki/): articles made from the world data (tools/build_wiki.py), in a look of its own
+python3 tools/build_wiki.py "$OUT/.wiki-md"
+mkdir -p "$OUT/wiki" && cp site/wiki.css "$OUT/wiki/wiki.css"
+WCSSV=$(sha256sum site/wiki.css | cut -c1-10)
+for md in "$OUT"/.wiki-md/*.md; do
+  name=$(basename "$md" .md)
+  pandoc -f gfm -t html5 -s --template=site/wiki.html -M pagetitle="$(sed -n '1s/^# //p' "$md")" -V cssv="$WCSSV" \
+    "$md" -o "$OUT/wiki/$name.html"
+done
+rm -rf "$OUT/.wiki-md"
 # The example documents: a page per document (values and reasons), and the XML files themselves
 # (build_world.py adds to each page its place in the flow's story, its neighbours, parties and specification)
 for md in "$OUT"/.example-md/*/*.md; do

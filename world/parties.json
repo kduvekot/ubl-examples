@@ -269,6 +269,24 @@
     "code": "VI",
     "since": 2019,
     "volume": 6000
+   },
+   "wiki": {
+    "short": "Urvanian maker of park benches and street furniture",
+    "lead": "**Valdara Industries** is a maker of park benches and street furniture in [[Ferrano]], [[Urvania]], founded in {founded_year}, the year of Urvania's independence. It casts its frames in its own foundry and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Valdara was founded in 1962 as one of the manufacturers of Urvania's protected economy. When the [[Lumeport Trade Accord]] entered into force in 1996, it made [[Lumeway Distribution]] its distributor for [[Bayvarra]] and [[Lisavu]], which is why its benches reach the island through [[Lumeport]]."
+     },
+     {
+      "title": "Products",
+      "text": "Its best-known product is the park bench Serra 180: frames of ductile iron, cast in its foundry from the mine's ore and about 35 % steel and iron scrap, with slats from the sawmill in [[Marrowdale]], packed in recycled packaging from [[Bayvarra]]."
+     },
+     {
+      "title": "Trade",
+      "text": "Valdara sells to its distributor abroad and tenders in public procurement; it buys ore from [[Serravona Mining]] and timber from [[Marrowdale Sawmill]]."
+     }
+    ]
    }
   },
   {
@@ -2370,6 +2388,16 @@
     "volumes": {
      "TransportationStatus": 160000
     }
+   },
+   "wiki": {
+    "short": "Seaport of Lumeport, Bayvarra",
+    "lead": "The **Port of Lumeport** runs the seaport of [[Lumeport]], [[Bayvarra]]: its berths, its container yard and its vessel traffic. It was formed as a company in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The port's deep-water quays lie at the inner basin behind the narrows of the estuary, linked to the railway. Its ships sail to [[Lisavu]] and beyond, among them the weekly service of [[Tidewell Ocean Lines]] to [[Selanu]]."
+     }
+    ]
    }
   },
   {
@@ -4207,6 +4235,16 @@
     "code": "LCF",
     "volume": 40,
     "format": "n/yyyy"
+   },
+   "wiki": {
+    "short": "Cotton farm near Lintwell, Lisavu",
+    "lead": "**Lisavu Cotton Farm** is a cotton farm near Lintwell on the dry north-eastern plain of [[Lisavu]], run by its owner since {founded_year}.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The farm grows cotton on the plain where the island's rain shadow keeps the land dry and sunny. After the harvest, from March to May, it delivers its seed cotton to [[Selanu Cotton Ginnery]], which weighs and grades it and writes the farm's invoices itself."
+     }
+    ]
    }
   },
   {
