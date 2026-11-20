@@ -88,6 +88,8 @@ for code, c in countries.items():
         articles[cur["name"]] = {"kind": "currency", "key": cur["code"], "data": dict(cur, country=code), "wiki": cur["wiki"]}
 for p in world["parties"]:
     known.add(p["identity"]["name"])
+    if p["identity"].get("person"):         # no articles about persons, and no names of persons (owner)
+        continue
     if p.get("wiki"):
         articles[p["identity"]["name"]] = {"kind": "party", "key": p["id"], "data": p, "wiki": p["wiki"]}
 for it in world["items"]:
@@ -258,7 +260,8 @@ def generated_sections(a):
         if d.get("districts"):
             out_ += ["## Districts", "", "| District | Grew | Character |", "|---|---|---|"]
             out_ += [f"| {x['name']} | {x.get('years', '')} | {x.get('note', '')} |" for x in d["districts"]] + [""]
-        here = [p for p in world["parties"] if town_of(p) == d["name"] and p["c"] == d["country"]]
+        here = [p for p in world["parties"] if town_of(p) == d["name"] and p["c"] == d["country"]
+                and not p["identity"].get("person")]
         if here:
             out_ += ["## Companies and institutions", ""]
             out_ += [f"- [[{p['identity']['name']}]], {p['name'].lower()}" for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
@@ -342,6 +345,32 @@ for c in ("Countries", "Treaties", "Towns", "Villages", "Companies and instituti
     if c in by_cat:
         index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
 open(os.path.join(out, "index.md"), "w", encoding="utf-8").write("\n".join(index))
+
+# no names of persons in the encyclopedia (owner): the people the world's data names (consumers, staff, drivers,
+# ship masters, designers) are looked for in every article
+PERSONS = set()
+
+
+def _people(x):
+    if isinstance(x, dict):
+        for k, v in x.items():
+            if k in ("person_name", "driver", "master", "employee") and isinstance(v, dict):
+                full = " ".join(v.get(f, "") for f in ("first", "family")).strip()
+                if full:
+                    PERSONS.add(full)
+            _people(v)
+    elif isinstance(x, list):
+        for v in x:
+            _people(v)
+
+
+_people(world["parties"])
+PERSONS |= {p["identity"]["name"] for p in world["parties"] if p["identity"].get("person")}
+for f in os.listdir(out):
+    text = open(os.path.join(out, f), encoding="utf-8").read()
+    for who in PERSONS:
+        if re.search(rf"\b{re.escape(who)}\b", text):
+            problems.append(f"{f}: names a person, {who}")
 
 if problems:
     sys.exit("encyclopedia problems:\n  " + "\n  ".join(problems))
