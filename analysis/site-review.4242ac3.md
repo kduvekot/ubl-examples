@@ -84,7 +84,7 @@ irrelevant · structure · process.
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | open |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | open |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | open |
-| SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | open |
+| SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | decided |
 | SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | open |
 | SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | open |
 | SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | open |
@@ -231,7 +231,16 @@ irrelevant · structure · process.
 - **Parts:** E-09, B-04.
 
 ### SR-13 · Leads and reasons left behind by a taken flow decision
-- **Status:** open
+- **Status:** decided 2026-11-20 (owner): fix all seven points at the source as proposed in the parts, in one fix
+  commit that also records O112 for those passages:
+  1. tender/13, 15, 20: "consortium partner" becomes the subcontractor Saltmere (`world/documents.json`);
+  2. tender/02 and the review board's party text: "for appeals" (no mediation), also `tools/party_cover.py`;
+  3. road/01 and rail/01: reasons of the southern calendar (autumn stock; rebuild stock before winter), dates kept;
+  4. sea/24: issued on the next working day (Monday 1 June);
+  5. **tender/40 Tender Receipt is built, as D38 decided** (owner), and tender/18 cites it instead of the receipt
+     "(not shown)";
+  6. road/11, tender/26, contest/05 and 10: one clause each for the turn of the story;
+  7. packaging/09: the trade fair in its place per O133.
 - **What:**
   - tender/13, 15, 20: "consortium partner" while the page shows `SOLE` and Saltmere as subcontractor (D28 p.3; `world/documents.json:2321, 2345, 2401`) (high);
   - tender/02: review body "for appeals and mediation" (D28 p.7; also `world/parties.json:1698`, `tools/party_cover.py:40`);
