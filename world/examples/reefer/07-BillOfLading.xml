@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2160</cbc:ProfileExecutionID>
   <cbc:ID>TWLU000033272</cbc:ID>
   <cbc:CarrierAssignedID>1200033272</cbc:CarrierAssignedID>
   <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>

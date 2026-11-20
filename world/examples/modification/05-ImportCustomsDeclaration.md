@@ -16,6 +16,8 @@ The plant, holder of the authorisation, enters the blanks into inward processing
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0015**  
+  The collaboration this document belongs to: Tostara's declaration entering the first load of ash blanks into inward processing, to their release into the procedure. Tostara Wood Modification started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0003**  
   The importer's declaration number.
 - `UUID` = **42bf875d-0c59-5c56-8017-2165bd938f88**  
@@ -316,6 +318,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>26-0015</cbc:ProfileExecutionID>
   <cbc:ID>26-0003</cbc:ID>
   <cbc:UUID>42bf875d-0c59-5c56-8017-2165bd938f88</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>

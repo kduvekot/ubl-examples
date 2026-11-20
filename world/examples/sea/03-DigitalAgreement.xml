@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-agreement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0956</cbc:ProfileExecutionID>
   <cbc:ID>LMW-DAG-26-0048</cbc:ID>
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

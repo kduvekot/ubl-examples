@@ -16,6 +16,8 @@ The bill of lading of the reefer, issued to the forwarder that booked it, with t
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Bill of lading". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2160**  
+  The collaboration this document belongs to: the sea carriage of the reefer Bayforth books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
 - `ID` = **TWLU000033272**  
   The bill of lading number.
 - `CarrierAssignedID` = **1200033272**  
@@ -729,6 +731,7 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2160</cbc:ProfileExecutionID>
   <cbc:ID>TWLU000033272</cbc:ID>
   <cbc:CarrierAssignedID>1200033272</cbc:CarrierAssignedID>
   <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>

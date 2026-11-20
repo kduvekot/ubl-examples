@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0955</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CAT-26-0006</cbc:ID>
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>

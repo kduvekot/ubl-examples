@@ -373,7 +373,7 @@ Inside `PaymentTerms`:
 
 - `ID` = **DEPOSIT**  
   The deposit, the first instalment.
-- `PrepaidPaymentReferenceID` = **26-0024**  
+- `PrepaidPaymentReferenceID` = **26-0025**  
   The deposit payment, already received.
 - `ReferenceEventCode` = **8** (listID `UN/EDIFACT EDED 2475`)  
   Due when the order is accepted. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 8 = Date of confirmation of order received.
@@ -430,7 +430,7 @@ Inside `PaymentTerms`:
 
 Inside `PrepaidPayment`:
 
-- `ID` = **26-0024**  
+- `ID` = **26-0025**  
   The buyer's payment of the deposit.
 - `PaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit asked for in the order response.
@@ -438,7 +438,7 @@ Inside `PrepaidPayment`:
   Credited to the distributor's account.
 - `PaidDate` = **2026-05-08**  
   Paid by the buyer the day after the order was accepted.
-- `InstructionID` = **26-0023**  
+- `InstructionID` = **26-0024**  
   The buyer's payment order.
 
 ### Payment Alternative Exchange Rate
@@ -945,7 +945,7 @@ Inside `InvoiceLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>DEPOSIT</cbc:ID>
-    <cbc:PrepaidPaymentReferenceID>26-0024</cbc:PrepaidPaymentReferenceID>
+    <cbc:PrepaidPaymentReferenceID>26-0025</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
     <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
@@ -983,11 +983,11 @@ Inside `InvoiceLine`:
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
-    <cbc:ID>26-0024</cbc:ID>
+    <cbc:ID>26-0025</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
     <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
     <cbc:PaidDate>2026-05-08</cbc:PaidDate>
-    <cbc:InstructionID>26-0023</cbc:InstructionID>
+    <cbc:InstructionID>26-0024</cbc:InstructionID>
   </cac:PrepaidPayment>
   <cac:PaymentAlternativeExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

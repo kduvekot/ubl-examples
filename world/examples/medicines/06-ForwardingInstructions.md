@@ -16,6 +16,8 @@ The wholesaler asks its forwarder to book the Monday morning flight: the cold ch
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-3980**  
+  The collaboration this document belongs to: the forwarding by air Quillmoor gives Bayforth Forwarding. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **QLM-FI-26-2388**  
   The instruction number.
 - `UUID` = **9c9dac7e-9d28-5eec-bf12-be960571ab4f**  
@@ -494,6 +496,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3980</cbc:ProfileExecutionID>
   <cbc:ID>QLM-FI-26-2388</cbc:ID>
   <cbc:UUID>9c9dac7e-9d28-5eec-bf12-be960571ab4f</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>

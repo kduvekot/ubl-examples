@@ -36,7 +36,7 @@ The packaging maker pays from Bayvarra to the waste processor's account in Urvan
   No credits taken.
 - `TotalPaymentAmount` = **9984000** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
-- `PaymentOrderReference` = **26-0025**  
+- `PaymentOrderReference` = **26-0026**  
   The payment order the payer gave its bank.
 - `InvoicingPartyReference` = **RF9120260473**  
   The reference the invoicing party asked to quote.
@@ -159,7 +159,7 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **26-0025**  
+- `InstructionID` = **26-0026**  
   The payer's own number for the payment order it gave its bank.
 - `PaymentID` = **RF9120260473** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
@@ -289,7 +289,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XUF">9984000</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">9984000</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>26-0025</cbc:PaymentOrderReference>
+  <cbc:PaymentOrderReference>26-0026</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF9120260473</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
@@ -382,7 +382,7 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>26-0025</cbc:InstructionID>
+    <cbc:InstructionID>26-0026</cbc:InstructionID>
     <cbc:PaymentID schemeID="ISO 11649">RF9120260473</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB96BLUM38020504712805</cbc:ID>

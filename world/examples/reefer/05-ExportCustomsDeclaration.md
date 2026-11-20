@@ -16,6 +16,8 @@ The forwarder, as customs agent, declares the export for the cooperative at the 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2122**  
+  The collaboration this document belongs to: Bayforth's export declaration of the cooperative's fruit at the seaport, to its release for export. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
 - `ID` = **BYF-EX-26-0425**  
   The exporter's reference.
 - `UUID` = **ca2e9f0b-93b7-590c-8f63-af6616df28de**  
@@ -390,6 +392,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2122</cbc:ProfileExecutionID>
   <cbc:ID>BYF-EX-26-0425</cbc:ID>
   <cbc:UUID>ca2e9f0b-93b7-590c-8f63-af6616df28de</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>

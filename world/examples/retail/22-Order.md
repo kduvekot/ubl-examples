@@ -16,6 +16,8 @@ The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900342286**  
+  The collaboration this document belongs to: the web order of a Marrow set in the store's webshop, to its collection in the store. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **8800068458**  
   The webshop's order number: the store's site writes the order for the customer and numbers it.
 - `UUID` = **6f338d06-4cfb-5630-b53e-6ac243c84956**  
@@ -312,6 +314,7 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900342286</cbc:ProfileExecutionID>
   <cbc:ID>8800068458</cbc:ID>
   <cbc:UUID>6f338d06-4cfb-5630-b53e-6ac243c84956</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>

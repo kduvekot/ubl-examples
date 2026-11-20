@@ -16,6 +16,8 @@ The packaging maker declares the import in Bayvarra.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0370**  
+  The collaboration this document belongs to: Rivermouth's import declaration of the granulate, to its release for free circulation. Rivermouth Packaging started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0074**  
   The importer's declaration number.
 - `UUID` = **3ab58340-2ba7-5229-ab1a-e01715bcc1ef**  
@@ -224,7 +226,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **26-0451**  
+- `ID` = **26-0452**  
   The shipment declared.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -359,6 +361,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>26-0370</cbc:ProfileExecutionID>
   <cbc:ID>26-0074</cbc:ID>
   <cbc:UUID>3ab58340-2ba7-5229-ab1a-e01715bcc1ef</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
@@ -519,7 +522,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>26-0451</cbc:ID>
+    <cbc:ID>26-0452</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Recycled PE granulate</cbc:Description>

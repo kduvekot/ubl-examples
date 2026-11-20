@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0239</cbc:ProfileExecutionID>
   <cbc:ID>DAL/2026/0309</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

@@ -16,7 +16,9 @@ The customs broker, as the hospital's direct representative, declares the import
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
-- `ID` = **26-1361**  
+- `ProfileExecutionID` = **26-1361**  
+  The collaboration this document belongs to: Tevaro's import declaration of the hospital's medicines at Selanu airport, to their release for free circulation. Tevaro Customs Brokers started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-1362**  
   The customs broker's number of the declaration.
 - `UUID` = **8f2e6a5d-e54e-599b-97f3-65f0e0767e2a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -438,7 +440,8 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ID>26-1361</cbc:ID>
+  <cbc:ProfileExecutionID>26-1361</cbc:ProfileExecutionID>
+  <cbc:ID>26-1362</cbc:ID>
   <cbc:UUID>8f2e6a5d-e54e-599b-97f3-65f0e0767e2a</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>

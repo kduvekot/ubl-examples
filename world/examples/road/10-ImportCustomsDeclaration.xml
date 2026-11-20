@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0633</cbc:ProfileExecutionID>
   <cbc:ID>LMW-IM-26-0127</cbc:ID>
   <cbc:UUID>d05f73ca-d179-5742-b609-b8871aacb98b</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>

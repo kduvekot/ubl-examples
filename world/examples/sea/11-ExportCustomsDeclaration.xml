@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2524</cbc:ProfileExecutionID>
   <cbc:ID>BYF-EX-26-0505</cbc:ID>
   <cbc:UUID>4b360143-92f4-557a-aac2-22d33c03e880</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>

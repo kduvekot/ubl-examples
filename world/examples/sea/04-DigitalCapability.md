@@ -16,6 +16,8 @@ The agreement's governor tells the buyer which documents the distributor can sen
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Digital capability". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
   The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0956**  
+  The collaboration this document belongs to: Lumeway's onboarding of Velumi Trading as a new island customer: its business card, the digital agreement they join and the capability statement of the agreement's governor. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LTAC/2026/0205**  
   The governor's number.
 - `UUID` = **5754c138-ef9f-5b93-ae9f-9a48fe182097**  
@@ -406,6 +408,7 @@ Inside `DigitalProcess`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-capability:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0956</cbc:ProfileExecutionID>
   <cbc:ID>LTAC/2026/0205</cbc:ID>
   <cbc:UUID>5754c138-ef9f-5b93-ae9f-9a48fe182097</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

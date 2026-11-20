@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>26-0373</cbc:ProfileExecutionID>
   <cbc:ID>26-0002</cbc:ID>
   <cbc:UUID>c8939b73-1616-5856-9d43-118e4ddb2b7e</cbc:UUID>
   <cbc:Name>Recycled PE granulate, second quarter 2026</cbc:Name>

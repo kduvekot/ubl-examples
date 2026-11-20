@@ -16,6 +16,8 @@ The power station invoices the electricity it fed in for the retail company in M
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the national specification "Invoice rules of Urvania"; the community specification "Urvania energy market". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900004627**  
+  The collaboration this document belongs to: Montebrio Power's bill for March's electricity to Ferrano Energy, to its payment. Montebrio Power started it and gave it this identifier, which every document of it repeats.
 - `ID` = **2026/0133**  
   The seller's invoice number.
 - `UUID` = **f2bffa54-247a-500b-9993-16f7d9a166d9**  
@@ -389,6 +391,7 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900004627</cbc:ProfileExecutionID>
   <cbc:ID>2026/0133</cbc:ID>
   <cbc:UUID>f2bffa54-247a-500b-9993-16f7d9a166d9</cbc:UUID>
   <cbc:IssueDate>2026-04-03</cbc:IssueDate>

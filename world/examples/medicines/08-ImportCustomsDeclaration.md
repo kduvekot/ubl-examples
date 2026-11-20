@@ -16,6 +16,8 @@ The wholesaler declares the generator for import at Lumeport airport on the Sund
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-4067**  
+  The collaboration this document belongs to: Quillmoor's import declaration of the technetium generator at Lumeport airport, to its release for free circulation. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **QLM-IM-26-0814**  
   The importer's declaration number.
 - `UUID` = **dec43f2a-2397-55dd-a970-1f967ceff30c**  
@@ -271,6 +273,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>QLM-TX-26-4067</cbc:ProfileExecutionID>
   <cbc:ID>QLM-IM-26-0814</cbc:ID>
   <cbc:UUID>dec43f2a-2397-55dd-a970-1f967ceff30c</cbc:UUID>
   <cbc:IssueDate>2026-06-14</cbc:IssueDate>
