@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: nature of transaction. The kind of transaction behind a movement of goods, for customs and trade statistics. The descriptions name the matching code of the nature-of-transaction list of the UN International Merchandise Trade Statistics and the EU. -->
+<!-- A code list of the UBL example world: nature of transaction. The kind of transaction behind a movement of goods, for customs and trade statistics. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>NatureOfTransactionCode</ShortName>
@@ -54,7 +54,7 @@
             <SimpleValue>Lehito kiose vapene vaheli</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Goods bought and sold (UN/EU nature of transaction 1).</SimpleValue>
+            <SimpleValue>Goods bought and sold.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -71,7 +71,7 @@
             <SimpleValue>Tiseta mutaki liape</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Goods returned to the seller (UN/EU 2).</SimpleValue>
+            <SimpleValue>Goods returned to the seller.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -88,7 +88,7 @@
             <SimpleValue>Miato vekafa mamohe</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Goods given without payment (UN/EU 3).</SimpleValue>
+            <SimpleValue>Goods given without payment.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -105,7 +105,7 @@
             <SimpleValue>Kifupa vapene lelova manasei</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Goods sent for or returned after processing under contract (UN/EU 4 and 5).</SimpleValue>
+            <SimpleValue>Goods sent for or returned after processing under contract.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -122,7 +122,7 @@
             <SimpleValue>Salelefo velepe</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>Goods leased under a financial lease (UN/EU 9).</SimpleValue>
+            <SimpleValue>Goods leased under a financial lease.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

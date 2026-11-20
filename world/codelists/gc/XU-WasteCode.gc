@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: waste list. Urvania's national list of waste, under its waste law: it takes over the entries and the six-digit numbers of the European List of Waste (Commission Decision 2000/532/EC, as amended by Decision 2014/955/EU), whose rules for choosing an entry it also follows: first the chapter of the activity that produces the waste (01 to 12, 17 to 20), then chapters 13 to 15, then 16. The world holds the entries for packaging waste (15 01); a code is written without the spaces of the printed list. -->
+<!-- A code list of the UBL example world: waste list. Urvania's national list of waste, under its waste law, with six-digit entries in chapters. An entry is chosen by the chapter of the activity that produces the waste first (01 to 12, 17 to 20), then chapters 13 to 15, then 16. Its entries for packaging waste are under 15 01; a code is written without the spaces of the printed list. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>WasteCode</ShortName>

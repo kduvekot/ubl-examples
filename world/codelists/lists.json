@@ -2875,27 +2875,27 @@
   "NatureOfTransaction": {
    "scope": "regional",
    "name": "Nature of transaction",
-   "description": "The kind of transaction behind a movement of goods, for customs and trade statistics. The descriptions name the matching code of the nature-of-transaction list of the UN International Merchandise Trade Statistics and the EU.",
+   "description": "The kind of transaction behind a movement of goods, for customs and trade statistics.",
    "codes": {
     "PURCHASE": [
      "Outright purchase or sale",
-     "Goods bought and sold (UN/EU nature of transaction 1)."
+     "Goods bought and sold."
     ],
     "RETURN": [
      "Return of goods",
-     "Goods returned to the seller (UN/EU 2)."
+     "Goods returned to the seller."
     ],
     "FREE": [
      "Transfer without payment",
-     "Goods given without payment (UN/EU 3)."
+     "Goods given without payment."
     ],
     "PROCESSING": [
      "For or after processing",
-     "Goods sent for or returned after processing under contract (UN/EU 4 and 5)."
+     "Goods sent for or returned after processing under contract."
     ],
     "LEASE": [
      "Financial lease",
-     "Goods leased under a financial lease (UN/EU 9)."
+     "Goods leased under a financial lease."
     ]
    }
   },
@@ -6986,7 +6986,7 @@
   "AddressFormat": {
    "scope": "regional",
    "name": "Address format",
-   "description": "The address formats of the three countries: one code per country, its layout as the description (world/countries.json, address).",
+   "description": "The address formats of the three countries: one code per country, its layout as the description.",
    "codes": {
     "XU": [
      "Address format of Urvania",
@@ -7285,7 +7285,7 @@
   "XU:Waste": {
    "scope": "XU",
    "name": "Waste list",
-   "description": "Urvania's national list of waste, under its waste law: it takes over the entries and the six-digit numbers of the European List of Waste (Commission Decision 2000/532/EC, as amended by Decision 2014/955/EU), whose rules for choosing an entry it also follows: first the chapter of the activity that produces the waste (01 to 12, 17 to 20), then chapters 13 to 15, then 16. The world holds the entries for packaging waste (15 01); a code is written without the spaces of the printed list.",
+   "description": "Urvania's national list of waste, under its waste law, with six-digit entries in chapters. An entry is chosen by the chapter of the activity that produces the waste first (01 to 12, 17 to 20), then chapters 13 to 15, then 16. Its entries for packaging waste are under 15 01; a code is written without the spaces of the printed list.",
    "source": {
     "format": "eurlex-low",
     "file": "eurlex-low/CELEX_02000D0532-20150601_EN.html",

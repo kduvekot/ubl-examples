@@ -11,8 +11,14 @@ analysis/codelist-decisions.md): no internal references in what a reader sees. S
 
 and warns on words that tell the project's history ("no longer", "was moved", "proposed addition").
 
+It also reads the names and descriptions of the world's own code lists (the Trade Accord's and the national lists in
+world/codelists/lists.json, published as genericode files) with the same rules and one more, for the EU's law: "EU",
+"European Union", "Directive" (owner, O256 a). Copies of established international lists (UN/EDIFACT, ISO, the WCO's
+HS, UN CPC, UNECE recommendations …) keep their codes and texts as published and are not read.
+
 Usage: python3 tools/check_published.py <site-dir>
 """
+import json
 import os
 import re
 import sys
@@ -22,6 +28,8 @@ FAIL = re.compile(r"(?<![\w`/=-])(?:D\d{1,2}(?: point \d+)?|O\d{1,3}|MO\d{3}|OW\
                   r"|\bworklist C\d+|\(C\d{2,3}\)|\b[a-z]+/\d{2}#F\d+"
                   r"|\b(?:world|tools|analysis)/[\w/-]+\.(?:json|py|md)\b|\bEN 16931\b|\bPeppol\b|\bXRechnung\b"
                   r"|\bdecision P-[A-Z0-9]+\b|\bP-SB\b|\bfinding for the (?:UBL )?TC\b")
+EU_LAW = re.compile(r"\bEU\b|\bEuropean Union\b|\bDirective\b")
+OWN_LISTS = ("regional", "XU", "XB", "XL")          # the scopes of the world's own lists in world/codelists/lists.json
 WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
 SKIP_DIRS = {"note", "codelists", "examples"}
 SKIP_PAGES = {"releases.html", "history.html"}      # the OASIS samples' history: about the project, not the world
@@ -60,6 +68,20 @@ def main(site):
                 fails.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
             for m in WARN.finditer(text):
                 warns.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
+    lists = json.load(open(os.path.join(os.path.dirname(__file__), "..", "world", "codelists", "lists.json"),
+                           encoding="utf-8"))["lists"]
+    for key, cl in lists.items():
+        if cl.get("scope") not in OWN_LISTS:
+            continue
+        texts = [("name", cl.get("name", "")), ("description", cl.get("description", ""))]
+        for code, v in (cl.get("codes") or {}).items():
+            texts += [(f"code {code}", t) for t in (v if isinstance(v, list) else [v]) if isinstance(t, str)]
+        for what, t in texts:
+            for rule in (FAIL, EU_LAW):
+                for m in rule.finditer(t):
+                    if rule is FAIL and "Basel" in t[max(0, m.start() - 60):m.end()]:
+                        continue                      # the Basel Convention's own operation codes D1 to D15
+                    fails.append(f"code list {key}, {what}: …{t[max(0, m.start() - 50):m.end() + 10].strip()}…")
     for w in warns[:5]:
         print("warning:", w)
     if warns:
