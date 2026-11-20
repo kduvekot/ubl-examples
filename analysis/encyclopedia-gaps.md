@@ -35,7 +35,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bank of Selanu (22-xl)
 
-- Who founded the bank in 1965 and why; whether it was the island's first bank.
+- ~~Who founded the bank in 1965 and why; whether it was the island's first bank.~~ Filled 2026-11-20 (OW003): founded in 1878 by the Lisavan rulers, the estates and the merchants of Selanu.
 - Who owns it (the state, local owners or a mainland bank).
 - When Coral net began.
 
@@ -152,7 +152,7 @@ decided with the owner one at a time, like the gaps here.
 
 - Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.
 - How many barges it runs besides Fiumella IV, and what other bulk it carries.
-- The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.
+- ~~The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.~~ Settled 2026-11-20 (O264): a rugged coast without a deep-water port.
 
 ### Gullhaven Tank Haulage (52-xb)
 
@@ -182,7 +182,7 @@ decided with the owner one at a time, like the gaps here.
 
 - When the customs service was set up and how it was organised under the English settlers.
 - Its staff numbers and its head office, if different from the Wharf Road office.
-- When the island was settled and became independent (not set).
+- ~~When the island was settled and became independent (not set).~~ Filled 2026-11-20 (OW003, OW005).
 
 ### Kelaro Air Cargo (12-xl)
 
@@ -192,8 +192,8 @@ decided with the owner one at a time, like the gaps here.
 ### Kelpstone Gas (42-xb)
 
 - Who founded and owns Kelpstone Gas, and the name of the field and the platform.
-- The platform's distance from the plant: the story gives about 80 km (subsea line about 83 km), the party's site data about 10.
-- The pipeline's name: the company's fleet calls it the Kelpstone–Ferrano gas pipeline, the map the Gullhaven–Serravona gas pipeline.
+- ~~The platform's distance from the plant: the story gives about 80 km (subsea line about 83 km), the party's site data about 10.~~ Settled 2026-11-20 (O264): about 80 km; the 10 is the rounding step.
+- ~~The pipeline's name: the company's fleet calls it the Kelpstone–Ferrano gas pipeline, the map the Gullhaven–Serravona gas pipeline.~~ Settled 2026-11-20: the Kelpstone–Ferrano gas pipeline, as the data names it.
 - The field's reserves and yearly output.
 
 ### Lumeport Airport Cargo Terminal (17-xb)
@@ -215,7 +215,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Trade Accord Council (32-xb)
 
-- When the Council was set up, and whether with the Accord of 1994, its entry into force in 1996 or the later protocol on electronic business documents (whose date is not set)
+- When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)
 - Its membership, how it decides and who chairs it
 - Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)
 - Its headcount
@@ -235,7 +235,7 @@ decided with the owner one at a time, like the gaps here.
 ### Marrowdale Sawmill (36-xb)
 
 - who founded the mill
-- whether it fells its own timber or only buys logs from the Upland State Forest (the sources say both)
+- ~~whether it fells its own timber or only buys logs from the Upland State Forest (the sources say both)~~ Settled 2026-11-20: it buys its logs from the Upland State Forest.
 
 ### Montebrio Power (43-xu)
 
@@ -256,7 +256,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Procurement Review Board of Bayvarra (28-xb)
 
-- When and by which law the board was set up, possibly with the Accord's common procurement rules (their date is not set).
+- ~~When and by which law the board was set up, possibly with the Accord's common procurement rules (their date is not set).~~ Filled 2026-11-20 (OW007): under the procurement protocol of 1999.
 - Its members, how many cases it hears a year, and any case it has decided.
 - Whether the government quarter building is the address on Justice Row or a separate site.
 
