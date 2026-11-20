@@ -974,7 +974,8 @@
     "33": "",
     "2302": "",
     "815": "",
-    "71": ""
+    "71": "",
+    "3113": ""
    }
   },
   "IATAAircraftType": {
@@ -2215,6 +2216,10 @@
     "1950": [
      "Aerosols",
      "Class 2."
+    ],
+    "1965": [
+     "Hydrocarbon gas mixture, liquefied, n.o.s.",
+     "Class 2.1."
     ]
    },
    "entries_note": "classes: the class or division of each UN entry, subsidiary: its subsidiary hazard; both from the Dangerous Goods List (column 3 and 4), as BAM DGG-Info gives it. The build checks that every dangerous goods item has the class and proper shipping name of its UN number.",
@@ -2226,7 +2231,8 @@
     "2920": "8",
     "1202": "3",
     "1203": "3",
-    "1950": "2"
+    "1950": "2",
+    "1965": "2.1"
    },
    "subsidiary": {
     "2920": "3"
@@ -2420,6 +2426,10 @@
     ],
     "171": [
      "Substances (Low to Moderate Hazard)",
+     ""
+    ],
+    "115": [
+     "Gases - Flammable (Including Refrigerated Liquids)",
      ""
     ]
    }
@@ -7115,6 +7125,10 @@
      "Iron ores and concentrates, non-agglomerated",
      ""
     ],
+    "271112": [
+     "Petroleum gases and other gaseous hydrocarbons; liquefied, propane",
+     ""
+    ],
     "271121": [
      "Natural gas, in gaseous state",
      ""
@@ -7670,6 +7684,20 @@
      "The English of Lisavu, beside Lisavan: it uses the Lisavan names of places (Selanu rather than the official Port Wrenfield) in running text."
     ]
    }
+  },
+  "UNCL8169": {
+   "scope": "external",
+   "name": "UN/EDIFACT 8169 Full or empty indicator",
+   "listID": "UN/EDIFACT EDED 8169",
+   "agency": "UN/CEFACT",
+   "version": "D22A",
+   "reference": "UN/EDIFACT data element 8169 Full or empty indicator code, as UN/CEFACT's vocabulary gives it (TransportEquipmentFullnessCodeList); used where an emission is calculated for a run of transport equipment that is full, partly full or empty (decision D48, O138).",
+   "source": {
+    "format": "cefact",
+    "file": "uncefact/transportequipmentfullnesscodelist.json",
+    "version": "D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)"
+   },
+   "codes": "all"
   }
  },
  "bindings": [
@@ -8135,6 +8163,13 @@
    "list": "LoadType",
    "parents": [
     "TransportEquipment"
+   ]
+  },
+  {
+   "element": "FullnessIndicationCode",
+   "list": "UNCL8169",
+   "parents": [
+    "EmissionCalculationMethod"
    ]
   },
   {

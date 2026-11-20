@@ -2198,6 +2198,38 @@
    "origin_criterion": "P"
   },
   {
+   "id": "propane",
+   "seller": "42-xb",
+   "name": "Propane, commercial",
+   "kind": "goods",
+   "unit": "TNE",
+   "price": {
+    "amount": 560.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "KG-LPG",
+   "standard_id": "KXU19676LPG",
+   "hs": "271112",
+   "cpc": "33410",
+   "origin": "XB",
+   "description": "Commercial propane separated from the field's gas at the Gullhaven plant and liquefied under pressure, hydrocarbon gas mixture C; sold by the tonne, weighed on the plant's weighbridge, and delivered by road tanker.",
+   "net_kg": 1000,
+   "gross_kg": 1000,
+   "purchase": "energy",
+   "business_use": "consumed",
+   "origin_criterion": "P",
+   "hazard": {
+    "un": "UN1965",
+    "class": "2.1",
+    "name": "Hydrocarbon gas mixture, liquefied, n.o.s.",
+    "technical": "Mixture C",
+    "label": "2.1",
+    "erg": "115",
+    "tunnel": "B/D",
+    "hin": "23"
+   }
+  },
+  {
    "id": "power-wholesale",
    "seller": "43-xu",
    "name": "Electricity, wholesale",

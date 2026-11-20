@@ -269,3 +269,25 @@ Only an extract is kept, to keep the repository small: `eurofxref-hist-2020-2023
 ```
 4da29371e5b036f49c27153dbfc51e32c0374b8bc9b02132d8b9f97715d9a8fa  ./ecb-eurofxref/eurofxref-hist-2020-2023.csv
 ```
+
+## Added 2026-11-20: propane by road tanker (D48, stage 6 group G10)
+
+For the lpg flow's propane (UN 1965) and the tanker's emission figures. Accessed on **2026-11-20**.
+
+| Directory | Source | Version |
+|---|---|---|
+| uncefact/ | https://github.com/uncefact/vocabulary-outputs `_data/transportequipmentfullnesscodelist.json` (UN/CEFACT, "TransportEquipmentFullnessCodeList": the codes of UN/EDIFACT data element 8169 Full or empty indicator, 1 to 13, e.g. "4" "Empty", "5" "Full", "8" "Full, single consignment"), for the world list `UNCL8169` | commit 51768f9c41be13673bc6d555c8c21c79d9e481a0 (2024-07-29), the same commit as the other files of `sources/uncefact/` |
+| erg2024/ | https://cameochemicals.noaa.gov/erg_guides/en/Guide_115.pdf (NOAA CAMEO Chemicals; US government work). UN-to-guide mapping from https://cameochemicals.noaa.gov/unna/1965: "Material Names Hydrocarbon gas mixture, liquefied, n.o.s. Response Guide 115 … Gases - Flammable (Including Refrigerated Liquids)", "Emergency Response Guidebook (ERG, 2024)"; its Hazmat Table (49 CFR 172.101) row: "UN Hydrocarbon gas mixture, liquefied, n.o.s. 2.1 … 2.1 - Flammable gas" | ERG 2024 (PDF title "GUIDE 115 Gases - Flammable (Including Refrigerated Liquids)") |
+| (bam, not copied) | BAM DGG-Info, UN 1965 "Kohlenwasserstoffgas, Gemisch C, verflüssigt" (BAM-Nr. 456): ADR 2025 https://www.dgg.bam.de/dgginfo/detailinfo/adr/sp5n6sn3 and UN Rec. https://www.dgg.bam.de/dgginfo/detailinfo/un/sp5n6sn3 (reached through the search form, which needs its session) | "Detailinfo ADR 2025"; "Detailinfo UN Rec. 23rd rev. ed." |
+
+```
+d958b8b224039d2367a4db41d2c31754f2ef5bd463ceda2c4d2ce7a40bd55e6e  ./uncefact/transportequipmentfullnesscodelist.json
+fb57468c3b3a632a2e7a19da5cf52c5427ba8a6e8ba7377dd394e1aad560666e  ./erg2024/Guide_115.pdf
+```
+
+What was read on BAM's pages for UN 1965, mixture C:
+
+- UN Rec. 23rd rev. ed.: "UN-Nr.: 1965 Klasse: 2.1"; "Klasse 2.1 Flammable gases"; "Namen für die Beförderungspapiere … HYDROCARBON GAS MIXTURE, LIQUEFIED, N.O.S. (Mixture C)"; "Vorschriften-Namen … HYDROCARBON GAS MIXTURE, LIQUEFIED, N.O.S."; special provision 274 (the proper shipping name supplemented with the technical name).
+- ADR 2025: "Klassifizierungscode 2F Verflüssigtes Gas, entzündbar"; "Beförderungskategorie 2"; "Gefahrnummer 23 entzündbares Gas"; "Gefahrzettel 2.1"; "Tunnelbeschränkungscode B/D: Beförderungen in Tanks: Durchfahrt verboten durch Tunnel der Kategorien B, C, D und E. Sonstige Beförderungen: Durchfahrt verboten durch Tunnel der Kategorien D und E."; for tanks "Großzettel / Kennzeichen 2.1" and "Orangefarbene Tafel Gefahrnummer 23 entzündbares Gas UN-Nummer 1965"; "Tankcodierung PxBN(M)"; the table of special provision 274/ADR 2.2.2.3 names mixture C "Gemisch C" oder "Propan", with the footnote "Bei Beförderungen in Tanks dürfen die Handelsnamen "Butan" und "Propan" nur als Zusatz verwendet werden."
+
+What `world/codelists/lists.json` takes from them: UN 1965 with its name and class 2.1 in `UNModelRegsUN`; guide 115 in `ERG2024`; the list `UNCL8169`, bound to `EmissionCalculationMethod/FullnessIndicationCode`; Recommendation 28 code 3113 "Lorry, articulated with tank" (from `rec28/Rec28_Rev4.2e_2018.csv`, already kept) in `UNECERec28`. The orange plate numbers 23 over 1965 and the tunnel code B/D of the examples are the ADR values above; the technical name is "Mixture C", with "propane" only as the trade name beside it.
