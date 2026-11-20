@@ -181,6 +181,17 @@
         </cac:Contact>
       </cac:CarrierParty>
     </cac:Despatch>
+    <cac:Shipment>
+      <cbc:ID>1</cbc:ID>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cac:Temperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+          <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureClassCode">CHILLED</cbc:MeasureCode>
+          <cbc:Description>Chilled, not frozen</cbc:Description>
+        </cac:Temperature>
+      </cac:GoodsItem>
+    </cac:Shipment>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>

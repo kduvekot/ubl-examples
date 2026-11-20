@@ -551,12 +551,10 @@ Inside `Shipment`:
   How much is carried.
 - `GoodsItem/Item/Name` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
   The goods, named.
-- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  The temperature to carry the goods at: the middle of their range, which the active container is set to. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Temperature/AttributeID` = **SETPOINT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The set point: the temperature to carry the goods at, the middle of their range, which the active container is set to. The code is from the Trade Accord's temperature attribute list: SETPOINT = Set point. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **5** (unitCode `CEL`)  
   In degrees Celsius.
-- `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
-  Which value of the range it is: the one to keep. The code is from the Trade Accord's temperature qualifier list: TARGET = Target.
 - `GoodsItem/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   The range the maker's storage conditions give: 2 to 8 °C, never frozen. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/MinimumTemperature/Measure` = **2** (unitCode `CEL`)  
@@ -575,12 +573,10 @@ Inside `Shipment`:
   How much is carried.
 - `GoodsItem/Item/Name` = **Insulin human, 100 IU/ml, vial of 10 ml**  
   The goods, named.
-- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  The temperature to carry the goods at: the middle of their range, which the active container is set to. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Temperature/AttributeID` = **SETPOINT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The set point: the temperature to carry the goods at, the middle of their range, which the active container is set to. The code is from the Trade Accord's temperature attribute list: SETPOINT = Set point. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **5** (unitCode `CEL`)  
   In degrees Celsius.
-- `GoodsItem/Temperature/MeasureCode` = **TARGET** (listID `urn:ubl-examples:world:codelist:TemperatureQualifierCode`)  
-  Which value of the range it is: the one to keep. The code is from the Trade Accord's temperature qualifier list: TARGET = Target.
 - `GoodsItem/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   The range the maker's storage conditions give: 2 to 8 °C, never frozen. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/MinimumTemperature/Measure` = **2** (unitCode `CEL`)  
@@ -1206,9 +1202,8 @@ Inside `Signature`:
         <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">5</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
       </cac:Temperature>
       <cac:MinimumTemperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
@@ -1228,9 +1223,8 @@ Inside `Signature`:
         <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">5</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
       </cac:Temperature>
       <cac:MinimumTemperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>

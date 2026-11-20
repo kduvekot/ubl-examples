@@ -70,7 +70,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `GoodsItem/InsurancePolicy` | 0..n | sea/19-ImportCustomsDeclaration |  |  | open |
 | `InsurancePolicy/ExcessAmount` | 0..1 | sea/14-BillOfLading |  |  | open |
 | `Shipment/FreightAllowanceCharge` | 0..n | sea/11-ExportCustomsDeclaration |  |  | open |
-| `Shipment/InsuranceValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration |  |  | open |
 | `ShipmentStage/FreightAllowanceCharge` | 0..n | sea/14-BillOfLading |  |  | open |
 | `Statement/AllowanceCharge` | 0..n | sea/25-Statement | a charge of the factor's own in its statement, such as a factoring fee, if the factoring agreement gives one | sea | open |
 | `StatementLine/AllowanceCharge` | 0..n | sea/25-Statement |  |  | open |
@@ -146,7 +145,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `ShipmentStage/DetentionTransportEvent` | 0..n | sea/17-TransportationStatus |  |  | open |
 | `TransportEquipment/AttachedTransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
 | `TransportEquipment/Package` | 0..n | sea/14-BillOfLading |  |  | open |
-| `TransportEquipment/ServiceAllowanceCharge` | 0..n | sea/17-TransportationStatus |  |  | open |
 | `WHOAffectedAreaVisit/VisitDate` | 1 | sea/16-CommonTransportationReport |  |  | open |
 | `WHOAffectedAreaVisit/WHOAffectedAreaPortLocation` | 1 | sea/16-CommonTransportationReport |  |  | open |
 
@@ -366,7 +364,6 @@ Coverage 5058 → 5049 (commit 0edd7d78), 9 elements.
 |---|---|---|---|---|---|
 | `Consignment/OfficeOfEntryLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `ImportCustomsDeclaration/CustomsExitOfficeLocation` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `ImportCustomsDeclaration/ValidityPeriod` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `TransitCustomsDeclaration/ImportCustomsExitOfficeLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
@@ -569,7 +566,6 @@ Coverage 4950 → 4947 (commit 964ca3d7), 3 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `GoodsCertificate/FreightForwarderParty` | 0..1 | cotton/10-GoodsCertificate | | | open |
 | `GoodsCertificate/LegalAuthorityParty` | 0..1 | cotton/10-GoodsCertificate | | | open |
 | `GoodsCertificate/PreviousDocumentReference` | 0..1 | cotton/10-GoodsCertificate | | | open |
 
@@ -674,11 +670,8 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `HazardousGoodsTransit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousGoodsTransit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousItem/AdditionalTemperature` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `TransportEquipment/AirFlowPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's fresh-air exchange (O137, O205) | reefer | candidate |
 | `TransportEquipment/AnimalFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `TransportEquipment/HazardousGoodsTransit` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `TransportEquipment/HumanFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer, approved for food (O137, O205) | reefer | candidate |
-| `TransportEquipment/HumidityPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's humidity setting (O137, O205) | reefer | candidate |
 
 > C85, C86, D39: the urgent frames fly on a direct air waybill, one small consignment on a named flight, so the consolidation, the house consignment and its sequence number go (air/04#F2, F7); the forwarder trucks the skid to the terminal itself and Nalevi collects it at Selanu, so no substitute carrier (04#F6); CPT is stated once, on the order change's air line, so neither the order change nor its delivery carries delivery terms (01#F5); the acceptance is unconditional, so it has no validity period (02#F4).
 
@@ -691,7 +684,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `Consignment/SubstituteCarrierParty` | 0..1 | air/04-Waybill | a carrier that performs the carriage in place of the contracting carrier, such as an airline's road feeder service; none decided | | open |
 | `Delivery/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
 | `OrderChange/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
-| `OrderResponse/ValidityPeriod` | 0..1 | air/02-OrderResponse | a conditional acceptance whose terms lapse at a stated time | | open |
 ### G3: ore, rail (2026-11-19)
 
 Stage 6, building group G3 (C81, C90).
@@ -711,7 +703,6 @@ Stage 6, building group G3 (C81, C90).
 | `TransportEquipment/LegalStatusIndicator` | 0..1 | rail/08-Waybill | | | open |
 | `TransportEquipment/OperatingParty` | 0..1 | rail/08-Waybill | | | open |
 | `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
-| `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
 
 ### G7: furniture, retail, packaging (2026-11-19)
 
@@ -1078,21 +1069,21 @@ Elements that were in this register and are covered again, with the example that
 | `EnvironmentalEmission/ValueBaseMeasure` | lpg/03-Waybill | and the base: the kWh of diesel each run used, from the haulier's fuel records (1,700 kWh loaded, 1,240 kWh empty) | 2026-11-20 |
 | `Attachment/EmbeddedDocument` | medicines/12-TransportationStatus | the active container's logger readings, a comma-separated text of 25 readings from its closing at the wholesaler to its opening at Selanu's cargo terminal, attached to the arrival status so the hospital pharmacy keeps them with its stock records (D47) | 2026-11-20 |
 | `Attachment/FileName` | medicines/12-TransportationStatus | the name of the logger's file attached to the arrival status (D47) | 2026-11-20 |
-| `Condition/MaximumMeasure` | medicines/12-TransportationStatus | the highest temperature the active container logged on the way to the island, inside 2 to 8 °C (D47) | 2026-11-20 |
-| `Condition/Measure` | medicines/10-TransportationStatus, medicines/12-TransportationStatus | the container's temperature read at acceptance at Lumeport's cargo terminal, and when it was opened at Selanu (D47) | 2026-11-20 |
-| `Condition/MinimumMeasure` | medicines/12-TransportationStatus | the lowest temperature the active container logged on the way (D47) | 2026-11-20 |
-| `GoodsItem/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the highest temperature each cold-chain goods item may reach: 8 °C for the vaccine and the insulin, -15 °C for the frozen vaccine (D47, O124) | 2026-11-20 |
-| `GoodsItem/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the lowest: 2 °C, and -50 °C for the frozen vaccine (D47, O124) | 2026-11-20 |
-| `GoodsItem/Temperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the vaccine's and the insulin's carriage temperature, the set point of 5 °C (D47, O124) | 2026-11-20 |
+| `Condition/MaximumMeasure` | medicines/12-TransportationStatus, reefer/10-TransportationStatus | the highest temperature the active container logged on the way to the island, inside 2 to 8 °C (D47); and the highest, while the reefer was off power between the quay and the ship (O137) | 2026-11-20 |
+| `Condition/Measure` | medicines/10-TransportationStatus, medicines/12-TransportationStatus, reefer/10-TransportationStatus | the container's temperature read at acceptance at Lumeport's cargo terminal, and when it was opened at Selanu (D47); and the average supply-air temperature of the reefer over the voyage, from the carrier's reefer monitoring, in its status on discharge (O137) | 2026-11-20 |
+| `Condition/MinimumMeasure` | medicines/12-TransportationStatus, reefer/10-TransportationStatus | the lowest temperature the active container logged on the way (D47); and the lowest supply-air reading of the voyage (O137) | 2026-11-20 |
+| `GoodsItem/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the highest temperature each cold-chain goods item may reach: 8 °C for the vaccine and the insulin, -15 °C for the frozen vaccine (D47, O124); and the warmest, 1 °C (O137) | 2026-11-20 |
+| `GoodsItem/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the lowest: 2 °C, and -50 °C for the frozen vaccine (D47, O124); and the coldest the fruit may be carried at, 0 °C (O137) | 2026-11-20 |
+| `GoodsItem/Temperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/11-ReceiptAdvice | the vaccine's and the insulin's carriage temperature, the set point of 5 °C (D47, O124); and the set point 0.5 °C the fruit is carried at, and the pulp temperature the wholesaler measures at unloading (O137) | 2026-11-20 |
 | `Invoice/PaymentCurrencyCode` | medicines/02-Invoice | the Indian maker invoices in rupees and asks payment in euro, the currency the wholesaler pays its suppliers abroad in (O229; a trade outside the Accord, O51) | 2026-11-20 |
 | `Invoice/PaymentExchangeRate` | medicines/02-Invoice | the ECB's euro reference rate of the invoice date, 110.938 rupees per euro, by which the rupee amount is paid in euro (O229, O51) | 2026-11-20 |
 | `LotIdentification/ExpiryDate` | medicines/09-DespatchAdvice | the expiry dates of the makers' lots of the influenza and varicella vaccines and of the insulin, which the hospital pharmacy checks on receipt (D47) | 2026-11-20 |
 | `RadioactiveMaterial/TransportIndexNumeric` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the technetium generator's Type A package, transport index 1.5, Category III-YELLOW (D47, O202) | 2026-11-20 |
 | `Status/IndicationIndicator` | medicines/12-TransportationStatus | whether the temperature stayed within 2 to 8 °C for the whole carriage, which the hospital needs to accept the goods (D47) | 2026-11-20 |
 | `Temperature/MeasureCode` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the set point of the cold-chain goods as the target of their range (TARGET, D47) | 2026-11-20 |
-| `TransportEquipment/MaximumTemperature` | medicines/11-Waybill | the airline's active RKN container's upper limit, 8 °C (D47, O124) | 2026-11-20 |
-| `TransportEquipment/MinimumTemperature` | medicines/11-Waybill | its lower limit, 2 °C (D47, O124) | 2026-11-20 |
-| `TransportEquipment/RefrigerationOnIndicator` | medicines/11-Waybill | the active container switched on, holding its set point on its batteries (D47, O124) | 2026-11-20 |
+| `TransportEquipment/MaximumTemperature` | medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the airline's active RKN container's upper limit, 8 °C (D47, O124); and the highest, 1 °C: warmer, the fruit ripens on the way (O137) | 2026-11-20 |
+| `TransportEquipment/MinimumTemperature` | medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | its lower limit, 2 °C (D47, O124); and the lowest air temperature the reefer may reach, 0 °C: colder, the fruit begins to freeze (O137) | 2026-11-20 |
+| `TransportEquipment/RefrigerationOnIndicator` | medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/10-TransportationStatus | the active container switched on, holding its set point on its batteries (D47, O124); and the reefer's refrigeration running from pre-cooling to the cold store, and again on the port's power at Selanu (O137) | 2026-11-20 |
 | `TransportHandlingUnit/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the cold-chain handling unit at 8 °C at most, the frozen vaccine's box at -15 °C (D47, O124) | 2026-11-20 |
 | `TransportHandlingUnit/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | at 2 °C at least, the frozen vaccine's box at -50 °C (D47, O124) | 2026-11-20 |
 | `Order/OriginatorDocumentReference` | sea/05-Order | the Port of Selanu's request to the trader, which the order's port line follows (G8, O172) | 2026-11-19 |
@@ -1108,3 +1099,12 @@ Elements that were in this register and are covered again, with the example that
 | `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `CircularityProfile/RecycledContentPercent` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `Item/EnvironmentalCertificate` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
+| `TransportEquipment/ServiceAllowanceCharge` | reefer/07-BillOfLading | the carrier's charge for reefer power and monitoring at Selanu after discharge, a day, collect from the consignee (O137) | 2026-11-20 |
+| `ImportCustomsDeclaration/ValidityPeriod` | reefer/09-ImportCustomsDeclaration | the wholesaler's import declaration lodged before the reefer arrives, so that the fruit is released on discharge; it lapses if the goods are not presented within 30 days (O137; also O150's candidate) | 2026-11-20 |
+| `TransportEquipment/AirFlowPercent` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer's fresh-air vent, open 15 %: apples and pears breathe, and fresh air carries off their carbon dioxide and ethylene (O137, O205) | 2026-11-20 |
+| `TransportEquipment/HumanFoodApprovedIndicator` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer approved for food, for unpacked fruit in open trays (O137) | 2026-11-20 |
+| `TransportEquipment/HumidityPercent` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer set to hold about 90 % relative humidity, so that the fruit does not shrivel (O137) | 2026-11-20 |
+| `TransportEquipment/StorageLocation` | reefer/10-TransportationStatus | the power point in the Port of Selanu's reefer rack where the reefer stands from discharge until it is collected (O137) | 2026-11-20 |
+| `OrderResponse/ValidityPeriod` | reefer/02-OrderResponse | the cooperative's conditional acceptance of the wholesaler's order, three pallets of pears instead of four and a fifth of Granny Smith, open until Friday 17 April at noon, its cut-off for booking the reefer on the Thursday's ship (O236) | 2026-11-20 |
+| `Shipment/InsuranceValueAmount` | reefer/03-ForwardingInstructions | the cooperative instructs its forwarder to insure the reefer's fruit for 110 % of its CIP value, the least cover Incoterms 2020 CIP asks of the seller (O239) | 2026-11-20 |
+| `GoodsCertificate/FreightForwarderParty` | reefer/04-GoodsCertificate | Bayforth, the cooperative's forwarder, applies for the phytosanitary certificate on the cooperative's behalf and collects it with the export papers (O239) | 2026-11-20 |

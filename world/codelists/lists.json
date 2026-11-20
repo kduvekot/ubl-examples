@@ -1318,6 +1318,10 @@
     "UNDERDECK": [
      "Under-deck stowage",
      "Stow below deck only."
+    ],
+    "POWER": [
+     "Keep on power",
+     "A refrigerated container: stow it at a power point and keep its refrigeration running."
     ]
    }
   },
@@ -1577,22 +1581,22 @@
     ]
    }
   },
-  "TemperatureQualifier": {
+  "TemperatureClass": {
    "scope": "regional",
-   "name": "Temperature qualifier",
-   "description": "What a temperature stands for.",
+   "name": "Temperature class",
+   "description": "The class of temperature goods are to be kept or carried at, where a document asks for the class and gives no figure: the carrier or the warehouse sets the figure the goods need within the class.",
    "codes": {
-    "TARGET": [
-     "Target",
-     "The temperature to keep."
+    "CHILLED": [
+     "Chilled",
+     "Kept cold above freezing, at about 0 to 5 °C, as fresh fruit, vegetables, meat and dairy products are."
     ],
-    "MIN": [
-     "Minimum",
-     "The lowest temperature allowed."
+    "FROZEN": [
+     "Frozen",
+     "Kept frozen, at -18 °C or colder."
     ],
-    "MAX": [
-     "Maximum",
-     "The highest temperature allowed."
+    "AMBIENT": [
+     "Ambient",
+     "Not temperature-controlled: kept at the temperature of its surroundings, protected from frost and heat."
     ]
    }
   },
@@ -7040,6 +7044,10 @@
     "LLP": [
      "Limited liability partnership",
      ""
+    ],
+    "COOP": [
+     "Cooperative society",
+     "A society its members own and use, such as growers who pack and sell their fruit together; abbreviated Co-op in its name."
     ]
    }
   },
@@ -7123,6 +7131,8 @@
     "version": "CPC Ver.2.1 structure of the UN Statistics Division (Ver.3.0 was published in June 2025)"
    },
    "codes": {
+    "01341": "",
+    "01342": "",
     "01921": "",
     "12020": "",
     "14100": "",
@@ -7158,6 +7168,14 @@
    "version": "HS 2022",
    "reference": "Harmonized System Nomenclature 2022 edition (WCO); the subheadings written as six digits, as customs data carry them",
    "codes": {
+    "080810": [
+     "Apples, fresh",
+     ""
+    ],
+    "080830": [
+     "Pears, fresh",
+     ""
+    ],
     "260111": [
      "Iron ores and concentrates, non-agglomerated",
      ""
@@ -7634,6 +7652,10 @@
     "TRANSPORT": [
      "Transport temperature",
      "The temperature in the cargo space during transport."
+    ],
+    "SETPOINT": [
+     "Set point",
+     "The temperature a refrigerated unit is set to keep in its cargo space."
     ],
     "PRODUCT": [
      "Product temperature",
@@ -8182,7 +8204,7 @@
   },
   {
    "element": "MeasureCode",
-   "list": "TemperatureQualifier"
+   "list": "TemperatureClass"
   },
   {
    "element": "CargoTypeCode",

@@ -2298,6 +2298,11 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "sea": [("XB", lambda: -(__import__("examples_scenarios").SEA_FREIGHT
                              + __import__("examples_scenarios").INSURANCE), "XBL",
              "less the sea freight and the cargo insurance to the island, which the CIF price holds")],
+    # the CIP price holds the reefer's carriage and the insurance to Selanu (O137): the island's landed value as it
+    # stands; Bayvarra's value at export leaves out the sea freight and the insurance beyond its border
+    "reefer": [("XB", lambda: -(sum(__import__("examples_scenarios").RF_SEA_FREIGHT)
+                                + __import__("examples_scenarios").RF_INSURANCE), "XBL",
+                "less the sea freight and the cargo insurance to the island, which the CIP price holds")],
 }
 
 
@@ -2471,6 +2476,8 @@ def import_preference(content, doc):
         tax = (total * 10 / 100).quantize(q)
         text = (f"No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of {total:,} "
                 f"{money_name}, {tax:,} {money_name}.")
+        if any(int(kit_maker(ITEM_BY_NAME[g["Description"].value]).get("hs", "99")[:2]) <= 24 for g in goods):
+            text += " Food pays it too: the island taxes imported food to encourage its own farms."
     else:
         text = ("No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at "
                 "the final retail sale.")
@@ -3862,7 +3869,8 @@ def main(flow_id, check=False):
 
 
 FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "contest", "carnet",
-                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "lpg", "medicines"]
+                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "lpg", "medicines",
+                       "reefer"]
 
 
 if __name__ == "__main__":

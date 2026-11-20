@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GoodsCertificate xmlns="urn:oasis:names:specification:ubl:schema:xsd:GoodsCertificate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+  <cbc:UUID>616346e3-707a-5e63-8f7d-13691b27093e</cbc:UUID>
+  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
+  <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
+  <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
+  <cbc:Description>The fruit has been inspected and is considered free of the quarantine pests the island names.</cbc:Description>
+  <cbc:Note>Inspected at the packhouse in Harrowmead before loading.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2026-04-21</cbc:StartDate>
+    <cbc:EndDate>2026-05-05</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:ApplicableTerritoryAddress>
+    <cac:Country>
+      <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+    </cac:Country>
+  </cac:ApplicableTerritoryAddress>
+  <cac:ExporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9527430900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-415873</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-418726</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Orchard Road</cbc:StreetName>
+      <cbc:BuildingNumber>3</cbc:BuildingNumber>
+      <cbc:CityName>Harrowmead</cbc:CityName>
+      <cbc:PostalZone>71640</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Harrowmead Fruit Growers Co-op</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Sales office</cbc:Name>
+      <cbc:JobTitle>Export sales coordinator</cbc:JobTitle>
+      <cbc:Department>Sales</cbc:Department>
+      <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+      <cbc:ElectronicMail>sales@harrowmeadfruit.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20415873</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ExporterParty>
+  <cac:ImporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-043529</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40618392</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>58</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:ImporterParty>
+  <cac:WarehouseParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+  </cac:WarehouseParty>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsignorParty>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsigneeParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Dockside Way</cbc:StreetName>
+      <cbc:BuildingNumber>4</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38525</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:FreightForwarderParty>
+  <cac:IssuerParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5946128073</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Federal Department of Agriculture of Bayvarra</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-582034</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Civic Square</cbc:StreetName>
+      <cbc:BuildingNumber>9</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38521</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Federal Department of Agriculture of Bayvarra</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">5946128073</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Export certification</cbc:Name>
+      <cbc:JobTitle>Plant health inspector</cbc:JobTitle>
+      <cbc:Department>Plant Health Service</cbc:Department>
+      <cbc:Telephone>+999 2 38 6719 2485</cbc:Telephone>
+      <cbc:ElectronicMail>export.certification@agriculture-xb.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:30–16:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:5946128073</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:IssuerParty>
+  <cac:ApplicantParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+  </cac:ApplicantParty>
+  <cac:Shipment>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">13036.8</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">672</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
+        <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">II</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">080810</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01341</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:OriginAddress>
+          <cbc:District>Harrowmead, Upland State</cbc:District>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:OriginAddress>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">280</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
+        <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">II</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">080810</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01341</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:OriginAddress>
+          <cbc:District>Harrowmead, Upland State</cbc:District>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:OriginAddress>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">168</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
+        <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">II</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">080830</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01342</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:OriginAddress>
+          <cbc:District>Harrowmead, Upland State</cbc:District>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:OriginAddress>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Shipment>
+  <cac:Attestation>
+    <cbc:ID>FDA-ATT-26-0218</cbc:ID>
+    <cbc:Name>Freedom from quarantine pests</cbc:Name>
+    <cbc:Description>Sampled at the packhouse and found free of codling moth and fire blight.</cbc:Description>
+    <cbc:Note>Two per cent of the cartons sampled: 23 of 1,120.</cbc:Note>
+    <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5946128073</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Federal Department of Agriculture of Bayvarra</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
+    <cac:AttestationLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TypeCode listID="urn:ubl-examples:world:codelist:AttestationTypeCode">PEST</cbc:TypeCode>
+      <cbc:Description>Codling moth (Cydia pomonella): none found.</cbc:Description>
+      <cac:CriterionItem>
+        <cbc:ID>XL-PH-12</cbc:ID>
+        <cbc:CriterionDescription>No live larvae and no entry holes in a sample of 2 % of the cartons.</cbc:CriterionDescription>
+        <cac:DeclaredPropertyItem>
+          <cbc:Name>Apples and pears, fresh</cbc:Name>
+        </cac:DeclaredPropertyItem>
+      </cac:CriterionItem>
+      <cac:SubAttestationLine>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Description>Fire blight (Erwinia amylovora): no symptoms in the orchards of origin this season.</cbc:Description>
+      </cac:SubAttestationLine>
+    </cac:AttestationLine>
+  </cac:Attestation>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:Signature>
+    <cbc:ID>FDA-SIG-26-PH</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">5946128073</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Federal Department of Agriculture of Bayvarra</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+</GoodsCertificate>

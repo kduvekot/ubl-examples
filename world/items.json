@@ -2288,6 +2288,228 @@
    "purchase": "energy"
   },
   {
+   "id": "apples-gala",
+   "seller": "55-xb",
+   "name": "Apples Gala, carton 18 kg, count 100",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 26.0,
+    "currency": "XBL",
+    "why": "The cooperative's price for the island this season, a carton carriage and insurance paid to the Port of Selanu (CIP): it holds the reefer's haulage to Lumeport, the sea freight and the cargo insurance."
+   },
+   "sellers_id": "HFC-GAL100",
+   "gtin": "9527430001014",
+   "hs": "080810",
+   "cpc": "01341",
+   "origin": "XB",
+   "origin_criterion": "P",
+   "origin_district": "Harrowmead, Upland State",
+   "description": "Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.",
+   "net_kg": 18.0,
+   "gross_kg": 18.9,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   },
+   "fruit_carton": {
+    "mm": [
+     500,
+     300,
+     290
+    ],
+    "material": "Corrugated fibreboard, with moulded pulp trays",
+    "name": "Telescopic fruit carton"
+   },
+   "pallet": {
+    "per": 56,
+    "layers": 7,
+    "per_layer": 8,
+    "mm": [
+     1200,
+     1000,
+     2180
+    ],
+    "tare_kg": 28.0,
+    "stack": 1,
+    "why": "A pallet of 1,200 × 1,000 mm, eight cartons a layer, seven layers, strapped with corner boards, 2.18 m high: the reefer's load line allows 2.25 m, and fruit pallets are not stacked."
+   },
+   "brand": "Harrowmead",
+   "properties": [
+    [
+     "Variety",
+     "Gala"
+    ],
+    {
+     "name": "Quality class",
+     "value": "Class I",
+     "why": "The class the fruit is graded and packed in under the Trade Accord's marketing standard for fresh fruit, which follows the UNECE standard FFV-50 for apples: fruit of good quality, characteristic of its variety, with slight defects of shape, development and colouring and of the skin allowed; above it the ‘Extra’ class, below it Class II."
+    },
+    [
+     "Count",
+     "100 fruit to the carton"
+    ]
+   ],
+   "lot_prefix": "HFC-L26-",
+   "storage": {
+    "temperature_c": [
+     "0",
+     "1"
+    ],
+    "set_point_c": "0.5",
+    "humidity_percent": "90",
+    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene."
+   }
+  },
+  {
+   "id": "apples-granny",
+   "seller": "55-xb",
+   "name": "Apples Granny Smith, carton 18 kg, count 100",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 24.5,
+    "currency": "XBL",
+    "why": "The cooperative's price for the island this season, a carton carriage and insurance paid to the Port of Selanu (CIP): it holds the reefer's haulage to Lumeport, the sea freight and the cargo insurance."
+   },
+   "sellers_id": "HFC-GSM100",
+   "gtin": "9527430001021",
+   "hs": "080810",
+   "cpc": "01341",
+   "origin": "XB",
+   "origin_criterion": "P",
+   "origin_district": "Harrowmead, Upland State",
+   "description": "Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.",
+   "net_kg": 18.0,
+   "gross_kg": 18.9,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   },
+   "fruit_carton": {
+    "mm": [
+     500,
+     300,
+     290
+    ],
+    "material": "Corrugated fibreboard, with moulded pulp trays",
+    "name": "Telescopic fruit carton"
+   },
+   "pallet": {
+    "per": 56,
+    "layers": 7,
+    "per_layer": 8,
+    "mm": [
+     1200,
+     1000,
+     2180
+    ],
+    "tare_kg": 28.0,
+    "stack": 1,
+    "why": "A pallet of 1,200 × 1,000 mm, eight cartons a layer, seven layers, strapped with corner boards, 2.18 m high: the reefer's load line allows 2.25 m, and fruit pallets are not stacked."
+   },
+   "brand": "Harrowmead",
+   "properties": [
+    [
+     "Variety",
+     "Granny Smith"
+    ],
+    {
+     "name": "Quality class",
+     "value": "Class I",
+     "why": "The class the fruit is graded and packed in under the Trade Accord's marketing standard for fresh fruit, which follows the UNECE standard FFV-50 for apples: fruit of good quality, characteristic of its variety, with slight defects of shape, development and colouring and of the skin allowed; above it the ‘Extra’ class, below it Class II."
+    },
+    [
+     "Count",
+     "100 fruit to the carton"
+    ]
+   ],
+   "lot_prefix": "HFC-L26-",
+   "storage": {
+    "temperature_c": [
+     "0",
+     "1"
+    ],
+    "set_point_c": "0.5",
+    "humidity_percent": "90",
+    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene."
+   }
+  },
+  {
+   "id": "pears-packham",
+   "seller": "55-xb",
+   "name": "Pears Packham's Triumph, carton 18 kg, count 80",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 27.0,
+    "currency": "XBL",
+    "why": "The cooperative's price for the island this season, a carton carriage and insurance paid to the Port of Selanu (CIP): it holds the reefer's haulage to Lumeport, the sea freight and the cargo insurance."
+   },
+   "sellers_id": "HFC-PKT080",
+   "gtin": "9527430002011",
+   "hs": "080830",
+   "cpc": "01342",
+   "origin": "XB",
+   "origin_criterion": "P",
+   "origin_district": "Harrowmead, Upland State",
+   "description": "Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.",
+   "net_kg": 18.0,
+   "gross_kg": 18.9,
+   "package": {
+    "type": "CT",
+    "per_package": 1
+   },
+   "fruit_carton": {
+    "mm": [
+     500,
+     300,
+     290
+    ],
+    "material": "Corrugated fibreboard, with moulded pulp trays",
+    "name": "Telescopic fruit carton"
+   },
+   "pallet": {
+    "per": 56,
+    "layers": 7,
+    "per_layer": 8,
+    "mm": [
+     1200,
+     1000,
+     2180
+    ],
+    "tare_kg": 28.0,
+    "stack": 1,
+    "why": "A pallet of 1,200 × 1,000 mm, eight cartons a layer, seven layers, strapped with corner boards, 2.18 m high: the reefer's load line allows 2.25 m, and fruit pallets are not stacked."
+   },
+   "brand": "Harrowmead",
+   "properties": [
+    [
+     "Variety",
+     "Packham's Triumph"
+    ],
+    {
+     "name": "Quality class",
+     "value": "Class I",
+     "why": "The class the fruit is graded and packed in under the Trade Accord's marketing standard for fresh fruit, which follows the UNECE standard FFV-51 for pears: fruit of good quality, characteristic of its variety, with slight defects of shape, development and colouring and of the skin allowed; above it the ‘Extra’ class, below it Class II."
+    },
+    [
+     "Count",
+     "80 fruit to the carton"
+    ]
+   ],
+   "lot_prefix": "HFC-L26-",
+   "storage": {
+    "temperature_c": [
+     "0",
+     "1"
+    ],
+    "set_point_c": "0.5",
+    "humidity_percent": "90",
+    "why": "Apples and pears keep at 0 to 1 °C and about 90 % relative humidity: colder they freeze, warmer they ripen, drier they shrivel; they breathe, so the reefer's fresh-air vent stays partly open to carry off their carbon dioxide and ethylene."
+   }
+  },
+  {
    "id": "flu-vaccine",
    "seller": "58-in",
    "name": "Influenza vaccine, inactivated, 10 prefilled syringes",

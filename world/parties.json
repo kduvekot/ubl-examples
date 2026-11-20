@@ -2115,6 +2115,15 @@
      "plate": "BV LP 2205",
      "trailer": "BV CH 0412",
      "type": "37"
+    },
+    {
+     "id": "B-08",
+     "kind": "road",
+     "name": "Container chassis truck with a clip-on generator set",
+     "plate": "BV LP 2208",
+     "trailer": "BV CH 0436",
+     "type": "37",
+     "genset": "A diesel generator set clipped to the chassis, which powers a reefer's refrigeration on the road"
     }
    ]
   },
@@ -4707,6 +4716,231 @@
      "description": "The hospital pharmacy's van: a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained for class 7."
     }
    ]
+  },
+  {
+   "id": "55-xb",
+   "n": "55",
+   "name": "Fruit Packers' Cooperative",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    97,
+    104
+   ],
+   "h": 2,
+   "kind": "warehouse",
+   "what": "The fruit growers of the slopes above Harrowmead, in the wetter west of Upland State, own it together: it grades, packs and cold-stores its members' apples and pears and sells them at home and overseas, the island among its markets.",
+   "how": "Fresh produce is sold by variety, size and lot, and must stay cold all the way. UBL carries the varieties and grower lots in the despatch advice, the reefer's settings in the forwarding instructions and the bill of lading, and the phytosanitary certificate the importing country asks for, so the buyer can trace every pallet to the orchard and check the cold chain.",
+   "identity": {
+    "name": "Harrowmead Fruit Growers",
+    "kind": "company",
+    "registry_id": "20415873",
+    "endpoint": "XB:20415873",
+    "contact": {
+     "name": "Sales office",
+     "email": "sales@harrowmeadfruit.example",
+     "telephone": "+999 2 7164 281 590",
+     "department": "Sales",
+     "hours": "Weekdays 07:00–16:00",
+     "job_title": "Export sales coordinator"
+    },
+    "tax_id": "UL-1239416",
+    "address": {
+     "StreetName": "Orchard Road",
+     "BuildingNumber": "3",
+     "CityName": "Harrowmead",
+     "CountrySubentity": "Upland State",
+     "PostalZone": "71640",
+     "CountrySubentityCode": "XB-UL",
+     "ID": "UL-ADR-418726"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB77BLUM38712006153948",
+     "branch": "387120"
+    },
+    "industry": "0124",
+    "website": "https://www.harrowmeadfruit.example",
+    "language": "en",
+    "legal": {
+     "form": "COOP",
+     "founded": "1958-03-11",
+     "headcount": 160,
+     "turnover": {
+      "amount": "36500000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
+     "business": "industry"
+    },
+    "customs_id": "XB-TR-415873",
+    "identification": {
+     "convention": "GS1",
+     "company_prefix": "9527430",
+     "gln": "9527430900003",
+     "locations": {
+      "packhouse": {
+       "gln": "9527430900010",
+       "name": "Packhouse and cold store, loading dock",
+       "description": "The loading dock of the packhouse and cold store on Orchard Road, Harrowmead"
+      }
+     }
+    },
+    "desks": {
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Packhouse",
+      "email": "dispatch@harrowmeadfruit.example"
+     },
+     "logistics": {
+      "name": "Export logistics",
+      "job_title": "Logistics planner",
+      "department": "Logistics",
+      "email": "logistics@harrowmeadfruit.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@harrowmeadfruit.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Export sales coordinator",
+      "department": "Sales",
+      "email": "sales@harrowmeadfruit.example"
+     }
+    },
+    "week": "office"
+   }
+  },
+  {
+   "id": "56-xl",
+   "n": "56",
+   "name": "Fresh Produce Wholesaler",
+   "cat": "commerce",
+   "c": "XL",
+   "at": [
+    236,
+    112
+   ],
+   "h": 2,
+   "kind": "warehouse",
+   "what": "Imports fruit and vegetables the island does not grow or not in the season, keeps them in its own cold store by the port and supplies the island's shops, hotels and the hospital's kitchen.",
+   "how": "A fresh-produce importer must know what is on its way and in what state it arrives. UBL brings it the supplier's despatch advice with the lots, the carrier's reefer data and its own receipt advice with the temperatures read at unloading, so a claim on a lot that arrived too warm rests on the documents.",
+   "identity": {
+    "name": "Hafefo Fresh Produce",
+    "kind": "company",
+    "registry_id": "IC43529",
+    "endpoint": "XL:IC43529",
+    "contact": {
+     "name": "Purchasing",
+     "email": "purchasing@hafefo.example",
+     "telephone": "+999 3 726 8104",
+     "department": "Purchasing",
+     "hours": "Monday to Saturday 05:00–14:00",
+     "job_title": "Buyer"
+    },
+    "address": {
+     "StreetName": "Wharf Road",
+     "BuildingNumber": "58",
+     "CityName": "Selanu",
+     "ID": "40618392"
+    },
+    "account": {
+     "bank": "22-xl",
+     "number": "XL21BSEL0010008247361",
+     "branch": "001"
+    },
+    "industry": "4631",
+    "website": "https://www.hafefo.example",
+    "language": "en",
+    "legal": {
+     "form": "LTD",
+     "founded": "1997-08-04",
+     "headcount": 32,
+     "turnover": {
+      "amount": "4480000.000",
+      "currency": "XLC",
+      "year": 2025
+     },
+     "business": "distributor"
+    },
+    "customs_id": "XL-TR-043529",
+    "identification": {
+     "convention": "own"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Import clerk",
+      "department": "Purchasing",
+      "email": "customs@hafefo.example"
+     },
+     "goods_in": {
+      "name": "Cold store",
+      "job_title": "Cold store supervisor",
+      "department": "Cold store",
+      "email": "coldstore@hafefo.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@hafefo.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@hafefo.example"
+     }
+    },
+    "week": "shop"
+   }
+  },
+  {
+   "id": "57-xb",
+   "n": "57",
+   "name": "Department of Agriculture (XB)",
+   "cat": "government",
+   "c": "XB",
+   "at": [
+    137,
+    123
+   ],
+   "h": 2,
+   "kind": "office",
+   "what": "Bayvarra's federal Department of Agriculture: its Plant Health Service is the country's plant protection organisation under the IPPC, which inspects plants and plant products for export and issues their phytosanitary certificates.",
+   "how": "A plant protection organisation inspects a consignment before export and certifies it free of the pests the importing country names. UBL's goods certificate carries the inspection, its findings and the issuing authority, so the importing country's inspectors and customs can check it before the goods arrive.",
+   "identity": {
+    "name": "Federal Department of Agriculture of Bayvarra",
+    "kind": "public",
+    "registry_id": "5946128073",
+    "endpoint": "XB:5946128073",
+    "contact": {
+     "name": "Export certification",
+     "email": "export.certification@agriculture-xb.example",
+     "telephone": "+999 2 38 6719 2485",
+     "department": "Plant Health Service",
+     "hours": "Weekdays 07:30–16:00",
+     "job_title": "Plant health inspector"
+    },
+    "address": {
+     "StreetName": "Civic Square",
+     "BuildingNumber": "9",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38521",
+     "CitySubdivisionName": "Government Hill",
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-582034"
+    },
+    "industry": "8413",
+    "language": "en",
+    "week": "office"
+   }
   }
  ],
  "referenced": [
